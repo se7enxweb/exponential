@@ -24759,14 +24759,14 @@ c89ec402a3c204c25d3c2111db5422aa  kernel/classes/migration/expmigrationfiles.php
 296b8babb47c1db45123836c5511f626  kernel/classes/migration/expmigrationidmap.php
 f47ab1d0c808c5dffc45d2927d2fc944  kernel/classes/migration/expmigrationini.php
 b1c9d6ffc594af28e4b08a70f97ada0d  kernel/classes/migration/expmigrationinstall.php
-7103687154e98e06f29bc5fe16926636  kernel/classes/migration/expmigrationjob.php
+1c5220b647668f0ac2ff8d0e4a56436c  kernel/classes/migration/expmigrationjob.php
 0efa5a76a0952ff389b9a4ddc11317e2  kernel/classes/migration/expmigrationlocator.php
 37f5e6848363c86b1cd2a35f323d0d16  kernel/classes/migration/expmigrationlock.php
 7a78c32853d6bd97c7b773ca78477d70  kernel/classes/migration/expmigrationpartlyrevertiblesteptype.php
 29140c84add547f1ba9e1ca98c2731af  kernel/classes/migration/expmigrationphp.php
 97ccf399e0fd787826bdc0f13cf39b3d  kernel/classes/migration/expmigrationprocess.php
 e46892f199255d18b220cef3920a7578  kernel/classes/migration/expmigrationprogress.php
-ab3cace103b665195e8faa40e46c1691  kernel/classes/migration/expmigrationqueuehandler.php
+f247132e22cd38bd7b9e028ba5ca8316  kernel/classes/migration/expmigrationqueuehandler.php
 958e400123b8cb15b51a1a6141f18cee  kernel/classes/migration/expmigrationrecord.php
 3f5fd8049f48bc3d55f81b5b9928a606  kernel/classes/migration/expmigrationrecorder.php
 73f4e699ec7e44177d355851f73940a7  kernel/classes/migration/expmigrationrecording.php
@@ -25001,7 +25001,7 @@ ef40fbfa4ef0f214ece766208b91c111  kernel/classes/syscard/providers/expsyscardsit
 e584941799ff377c57dc25b77440192c  kernel/classes/transfer/expkerneltransfercancelledexception.php
 e6ae92e3ab00edecc496e3cf00d4e0d0  kernel/classes/transfer/expkerneltransfercontext.php
 444705660d1fc028ced03ebfe0295d75  kernel/classes/transfer/expkerneltransferhistory.php
-9626daa0abb994aec77fe715bbaa8556  kernel/classes/transfer/expkerneltransferqueuehandler.php
+a8bf35a42c71559a1b1fd11777a5fca6  kernel/classes/transfer/expkerneltransferqueuehandler.php
 bb684c7456da2ed018434f184223a1e9  kernel/classes/transfer/expkerneltransferregistry.php
 fe79c7a1eb6079c6177a5a7ff87f6ad3  kernel/classes/transfer/expkerneltransferrun.php
 4ec81ec89d392dab0d7cfdc91bd81408  kernel/classes/transfer/expkerneltransferrunner.php
@@ -26752,8 +26752,8 @@ d41d8cd98f00b204e9800998ecf8427e  openspec/specs/.gitkeep
 40c7a22b435e0cc56484e4822baa854b  openspec/specs/admin/search-page/spec.md
 cff22610bddd02e8cf7795f65a6e682f  openspec/specs/admin/search-suggestions/spec.md
 b30a45607707aac28b209398030287b4  phpcs.xml.dist
-68174ab434c414999078f7ff1daa07f2  phpstan-baseline.neon
-7c5cd0a2292dfce2ccdd6ccc3cd35a12  phpstan.neon.dist
+df997c82c44bb52db6fd8a131ae2e8b3  phpstan-baseline.neon
+d0c444da64532de0fa023226f56bc9d1  phpstan.neon.dist
 6c6e982564dd33e20b29beaf7e5f4330  phpunit.xml
 c981f3e6ff32017cd87f4b02adc3dfa9  robots.txt
 242b474556fa73a01c4a1cc2b0348abb  runcronjobs.php

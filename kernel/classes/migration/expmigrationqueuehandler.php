@@ -29,7 +29,6 @@
  */
 if ( interface_exists( 'expQueueHandler' ) && class_exists( 'expQueueHandlerBase' ) )
 {
-    // @phpstan-ignore-next-line expqueue is an extension: its classes exist only where it is active
     class expMigrationQueueHandler extends expQueueHandlerBase
     {
         public function validate( array $payload )
@@ -50,7 +49,6 @@ if ( interface_exists( 'expQueueHandler' ) && class_exists( 'expQueueHandlerBase
                 $context->heartbeat();
             } );
             if ( $exit !== 0 )
-                // @phpstan-ignore-next-line expqueue is an extension: its classes exist only where it is active
                 throw new expQueuePermanentException( 'the migration run ended with exit ' . $exit, 'migration' );
             return array( 'exit' => $exit );
         }

@@ -127,12 +127,6 @@ parameters:
 			path: kernel/classes/datatypes/ezurl/ezurltype.php
 
 		-
-			message: '#^Function crypt invoked with 1 parameter, 2 required\.$#'
-			identifier: arguments.count
-			count: 1
-			path: kernel/classes/datatypes/ezuser/ezldapuser.php
-
-		-
 			message: '#^Variable \$LDAPFilters might not be defined\.$#'
 			identifier: variable.undefined
 			count: 3
@@ -289,12 +283,6 @@ parameters:
 			path: kernel/classes/ezcollaborationitem.php
 
 		-
-			message: '#^Static call to instance method eZCollaborationItemHandler\:\:notificationParticipantTemplate\(\)\.$#'
-			identifier: method.staticCall
-			count: 1
-			path: kernel/classes/ezcollaborationitemhandler.php
-
-		-
 			message: '#^Variable \$handlerClass might not be defined\.$#'
 			identifier: variable.undefined
 			count: 1
@@ -359,18 +347,14 @@ parameters:
 			identifier: class.notFound
 			count: 2
 			path: kernel/classes/ezcontentobject.php
+			reportUnmatched: false
 
 		-
 			message: '#^Class MongoDB\\Model\\BSONDocument not found\.$#'
 			identifier: class.notFound
 			count: 2
 			path: kernel/classes/ezcontentobject.php
-
-		-
-			message: '#^Undefined variable\: \$contentObjectID$#'
-			identifier: variable.undefined
-			count: 1
-			path: kernel/classes/ezcontentobject.php
+			reportUnmatched: false
 
 		-
 			message: '#^Variable \$accessNode might not be defined\.$#'
@@ -505,18 +489,6 @@ parameters:
 			path: kernel/classes/ezcontentobjectversion.php
 
 		-
-			message: '#^Deprecated in PHP 8\.0\: Required parameter \$module follows optional parameter \$parameters\.$#'
-			identifier: parameter.requiredAfterOptional
-			count: 1
-			path: kernel/classes/ezcontentupload.php
-
-		-
-			message: '#^Static call to instance method eZContentUpload\:\:nodeAliasID\(\)\.$#'
-			identifier: method.staticCall
-			count: 1
-			path: kernel/classes/ezcontentupload.php
-
-		-
 			message: '#^Undefined variable\: \$storeResult$#'
 			identifier: variable.undefined
 			count: 12
@@ -641,12 +613,6 @@ parameters:
 			identifier: variable.undefined
 			count: 2
 			path: kernel/classes/eznodeviewfunctions.php
-
-		-
-			message: '#^Static call to instance method eZOrderItem\:\:cleanup\(\)\.$#'
-			identifier: method.staticCall
-			count: 1
-			path: kernel/classes/ezorder.php
 
 		-
 			message: '#^Variable \$startDate might not be defined\.$#'
@@ -895,18 +861,6 @@ parameters:
 			path: kernel/classes/eztrigger.php
 
 		-
-			message: '#^Undefined variable\: \$actionName$#'
-			identifier: variable.undefined
-			count: 2
-			path: kernel/classes/ezurlaliasml.php
-
-		-
-			message: '#^Undefined variable\: \$alwaysMask$#'
-			identifier: variable.undefined
-			count: 2
-			path: kernel/classes/ezurlaliasml.php
-
-		-
 			message: '#^Undefined variable\: \$pathData$#'
 			identifier: variable.undefined
 			count: 1
@@ -937,12 +891,6 @@ parameters:
 			path: kernel/classes/ezvatmanager.php
 
 		-
-			message: '#^Undefined variable\: \$id$#'
-			identifier: variable.undefined
-			count: 1
-			path: kernel/classes/ezworkflow.php
-
-		-
 			message: '#^Result of method eZPersistentObject\:\:store\(\) \(void\) is used\.$#'
 			identifier: staticMethod.void
 			count: 2
@@ -965,12 +913,6 @@ parameters:
 			identifier: variable.undefined
 			count: 1
 			path: kernel/classes/notification/eznotificationeventtype.php
-
-		-
-			message: '#^Variable \$secondsDiff might not be defined\.$#'
-			identifier: variable.undefined
-			count: 1
-			path: kernel/classes/notification/eznotificationschedule.php
 
 		-
 			message: '#^Variable \$nodeLimit might not be defined\.$#'
@@ -1147,12 +1089,6 @@ parameters:
 			path: kernel/clustering/gateway.php
 
 		-
-			message: '#^Undefined variable\: \$view_dir$#'
-			identifier: variable.undefined
-			count: 1
-			path: kernel/common/ezobjectforwarder.php
-
-		-
 			message: '#^Variable \$uri might not be defined\.$#'
 			identifier: variable.undefined
 			count: 1
@@ -1171,21 +1107,9 @@ parameters:
 			path: kernel/common/eztemplatesstatisticsreporter.php
 
 		-
-			message: '#^Variable \$tocText might not be defined\.$#'
-			identifier: variable.undefined
-			count: 1
-			path: kernel/common/eztocoperator.php
-
-		-
 			message: '#^Undefined variable\: \$code$#'
 			identifier: variable.undefined
 			count: 2
-			path: kernel/common/ezurloperator.php
-
-		-
-			message: '#^Variable \$code might not be defined\.$#'
-			identifier: variable.undefined
-			count: 9
 			path: kernel/common/ezurloperator.php
 
 		-
@@ -1205,12 +1129,6 @@ parameters:
 			identifier: variable.undefined
 			count: 3
 			path: kernel/content/attribute_edit.php
-
-		-
-			message: '#^Static call to instance method eZContentClass\:\:canInstantiateClasses\(\)\.$#'
-			identifier: method.staticCall
-			count: 1
-			path: kernel/content/ezcontentfunctioncollection.php
 
 		-
 			message: '#^Variable \$mainNodeID might not be defined\.$#'
@@ -1282,12 +1200,6 @@ parameters:
 			message: '#^Variable \$class might not be defined\.$#'
 			identifier: variable.undefined
 			count: 3
-			path: kernel/content/versionviewframe.php
-
-		-
-			message: '#^Variable \$contentObject might not be defined\.$#'
-			identifier: variable.undefined
-			count: 26
 			path: kernel/content/versionviewframe.php
 
 		-
@@ -1417,12 +1329,6 @@ parameters:
 			path: kernel/private/api/content/repository.php
 
 		-
-			message: '#^Deprecated in PHP 8\.0\: Required parameter \$fetchCall follows optional parameter \$debug\.$#'
-			identifier: parameter.requiredAfterOptional
-			count: 1
-			path: kernel/private/classes/clusterfilehandlers/dfsbackends/mysqli.php
-
-		-
 			message: '#^Variable \$files might not be defined\.$#'
 			identifier: variable.undefined
 			count: 1
@@ -1439,30 +1345,6 @@ parameters:
 			identifier: property.notFound
 			count: 1
 			path: kernel/private/classes/clusterfilehandlers/ezdfsfilehandler.php
-
-		-
-			message: '#^Access to an undefined property eZDFSFileHandler\:\:\$metaData\.$#'
-			identifier: property.notFound
-			count: 11
-			path: kernel/private/classes/clusterfilehandlers/ezdfsfilehandler.php
-
-		-
-			message: '#^Access to an undefined property eZDFSFileHandler\:\:\$uniqueName\.$#'
-			identifier: property.notFound
-			count: 1
-			path: kernel/private/classes/clusterfilehandlers/ezdfsfilehandler.php
-
-		-
-			message: '#^Non\-static access to static property eZDFSFileHandler\:\:\$nonExistantStaleCacheHandling\.$#'
-			identifier: staticProperty.nonStaticAccess
-			count: 1
-			path: kernel/private/classes/clusterfilehandlers/ezdfsfilehandler.php
-
-		-
-			message: '#^Static call to instance method eZDBGarbageCollector\:\:collectBaskets\(\)\.$#'
-			identifier: method.staticCall
-			count: 1
-			path: kernel/private/classes/cronjobs/basket_cleanup.php
 
 		-
 			message: '#^Undefined variable\: \$cli$#'
@@ -1523,12 +1405,6 @@ parameters:
 			identifier: variable.undefined
 			count: 3
 			path: kernel/private/classes/cronjobs/internal_drafts_cleanup.php
-
-		-
-			message: '#^Undefined variable\: \$cli$#'
-			identifier: variable.undefined
-			count: 17
-			path: kernel/private/classes/cronjobs/linkcheck.php
 
 		-
 			message: '#^Undefined variable\: \$cli$#'
@@ -1637,12 +1513,6 @@ parameters:
 			identifier: return.missing
 			count: 1
 			path: kernel/private/classes/ezpautoloadclioutput.php
-
-		-
-			message: '#^Variable \$init in isset\(\) is never defined\.$#'
-			identifier: isset.variable
-			count: 1
-			path: kernel/private/classes/ezpcontentpublishingqueue.php
 
 		-
 			message: '#^Variable \$relationship might not be defined\.$#'
@@ -2203,24 +2073,6 @@ parameters:
 			path: kernel/private/classes/views/content/bookmark.php
 
 		-
-			message: '#^Undefined variable\: \$Result$#'
-			identifier: variable.undefined
-			count: 3
-			path: kernel/private/classes/views/content/bookmark.php
-
-		-
-			message: '#^Variable \$Result in isset\(\) always exists and is not nullable\.$#'
-			identifier: isset.variable
-			count: 1
-			path: kernel/private/classes/views/content/bookmark.php
-
-		-
-			message: '#^Variable \$Result in isset\(\) is never defined\.$#'
-			identifier: isset.variable
-			count: 3
-			path: kernel/private/classes/views/content/bookmark.php
-
-		-
 			message: '#^Undefined variable\: \$Module$#'
 			identifier: variable.undefined
 			count: 7
@@ -2431,21 +2283,9 @@ parameters:
 			path: kernel/private/classes/views/content/dashboard.php
 
 		-
-			message: '#^Undefined variable\: \$Module$#'
-			identifier: variable.undefined
-			count: 6
-			path: kernel/private/classes/views/content/download.php
-
-		-
 			message: '#^Undefined variable\: \$Params$#'
 			identifier: variable.undefined
 			count: 4
-			path: kernel/private/classes/views/content/download.php
-
-		-
-			message: '#^Undefined variable\: \$Result$#'
-			identifier: variable.undefined
-			count: 7
 			path: kernel/private/classes/views/content/download.php
 
 		-
@@ -2455,32 +2295,8 @@ parameters:
 			path: kernel/private/classes/views/content/download.php
 
 		-
-			message: '#^Variable \$Result in isset\(\) is never defined\.$#'
-			identifier: isset.variable
-			count: 7
-			path: kernel/private/classes/views/content/download.php
-
-		-
 			message: '#^Undefined variable\: \$Params$#'
 			identifier: variable.undefined
-			count: 1
-			path: kernel/private/classes/views/content/draft.php
-
-		-
-			message: '#^Undefined variable\: \$Result$#'
-			identifier: variable.undefined
-			count: 1
-			path: kernel/private/classes/views/content/draft.php
-
-		-
-			message: '#^Variable \$Result in isset\(\) always exists and is not nullable\.$#'
-			identifier: isset.variable
-			count: 1
-			path: kernel/private/classes/views/content/draft.php
-
-		-
-			message: '#^Variable \$Result in isset\(\) is never defined\.$#'
-			identifier: isset.variable
 			count: 1
 			path: kernel/private/classes/views/content/draft.php
 
@@ -2543,42 +2359,6 @@ parameters:
 			identifier: isset.variable
 			count: 4
 			path: kernel/private/classes/views/content/hide.php
-
-		-
-			message: '#^Undefined variable\: \$Module$#'
-			identifier: variable.undefined
-			count: 23
-			path: kernel/private/classes/views/content/history.php
-
-		-
-			message: '#^Undefined variable\: \$Params$#'
-			identifier: variable.undefined
-			count: 3
-			path: kernel/private/classes/views/content/history.php
-
-		-
-			message: '#^Undefined variable\: \$Result$#'
-			identifier: variable.undefined
-			count: 12
-			path: kernel/private/classes/views/content/history.php
-
-		-
-			message: '#^Variable \$Result in isset\(\) always exists and is not nullable\.$#'
-			identifier: isset.variable
-			count: 1
-			path: kernel/private/classes/views/content/history.php
-
-		-
-			message: '#^Variable \$Result in isset\(\) is never defined\.$#'
-			identifier: isset.variable
-			count: 12
-			path: kernel/private/classes/views/content/history.php
-
-		-
-			message: '#^Undefined variable\: \$Params$#'
-			identifier: variable.undefined
-			count: 4
-			path: kernel/private/classes/views/content/keyword.php
 
 		-
 			message: '#^Variable \$Result in isset\(\) always exists and is not nullable\.$#'
@@ -2651,18 +2431,6 @@ parameters:
 			identifier: isset.variable
 			count: 8
 			path: kernel/private/classes/views/content/pdf.php
-
-		-
-			message: '#^Undefined variable\: \$Params$#'
-			identifier: variable.undefined
-			count: 2
-			path: kernel/private/classes/views/content/pendinglist.php
-
-		-
-			message: '#^Variable \$Result in isset\(\) always exists and is not nullable\.$#'
-			identifier: isset.variable
-			count: 1
-			path: kernel/private/classes/views/content/pendinglist.php
 
 		-
 			message: '#^Undefined variable\: \$Params$#'
@@ -2935,12 +2703,6 @@ parameters:
 			path: kernel/private/classes/views/content/translations.php
 
 		-
-			message: '#^Variable \$Result in isset\(\) always exists and is not nullable\.$#'
-			identifier: isset.variable
-			count: 5
-			path: kernel/private/classes/views/content/translations.php
-
-		-
 			message: '#^Variable \$Result in isset\(\) is never defined\.$#'
 			identifier: isset.variable
 			count: 1
@@ -3097,12 +2859,6 @@ parameters:
 			path: kernel/private/classes/views/content/versionview.php
 
 		-
-			message: '#^Undefined variable\: \$Params$#'
-			identifier: variable.undefined
-			count: 4
-			path: kernel/private/classes/views/content/versionview.php
-
-		-
 			message: '#^Undefined variable\: \$Result$#'
 			identifier: variable.undefined
 			count: 6
@@ -3145,20 +2901,8 @@ parameters:
 			path: kernel/private/classes/views/content/view.php
 
 		-
-			message: '#^Undefined variable\: \$Params$#'
-			identifier: variable.undefined
-			count: 11
-			path: kernel/private/classes/views/error/view.php
-
-		-
 			message: '#^Undefined variable\: \$Result$#'
 			identifier: variable.undefined
-			count: 2
-			path: kernel/private/classes/views/error/view.php
-
-		-
-			message: '#^Variable \$Params in isset\(\) is never defined\.$#'
-			identifier: isset.variable
 			count: 2
 			path: kernel/private/classes/views/error/view.php
 
@@ -3445,18 +3189,6 @@ parameters:
 			path: kernel/private/classes/views/package/export.php
 
 		-
-			message: '#^Undefined variable\: \$Result$#'
-			identifier: variable.undefined
-			count: 3
-			path: kernel/private/classes/views/package/export.php
-
-		-
-			message: '#^Variable \$Result in isset\(\) is never defined\.$#'
-			identifier: isset.variable
-			count: 3
-			path: kernel/private/classes/views/package/export.php
-
-		-
 			message: '#^Undefined variable\: \$Params$#'
 			identifier: variable.undefined
 			count: 2
@@ -3499,24 +3231,6 @@ parameters:
 			path: kernel/private/classes/views/package/list.php
 
 		-
-			message: '#^Undefined variable\: \$Result$#'
-			identifier: variable.undefined
-			count: 3
-			path: kernel/private/classes/views/package/list.php
-
-		-
-			message: '#^Variable \$Result in isset\(\) always exists and is not nullable\.$#'
-			identifier: isset.variable
-			count: 1
-			path: kernel/private/classes/views/package/list.php
-
-		-
-			message: '#^Variable \$Result in isset\(\) is never defined\.$#'
-			identifier: isset.variable
-			count: 3
-			path: kernel/private/classes/views/package/list.php
-
-		-
 			message: '#^Undefined variable\: \$Params$#'
 			identifier: variable.undefined
 			count: 2
@@ -3550,24 +3264,6 @@ parameters:
 			message: '#^Undefined variable\: \$Params$#'
 			identifier: variable.undefined
 			count: 1
-			path: kernel/private/classes/views/package/upload.php
-
-		-
-			message: '#^Undefined variable\: \$Result$#'
-			identifier: variable.undefined
-			count: 4
-			path: kernel/private/classes/views/package/upload.php
-
-		-
-			message: '#^Variable \$Result in isset\(\) always exists and is not nullable\.$#'
-			identifier: isset.variable
-			count: 1
-			path: kernel/private/classes/views/package/upload.php
-
-		-
-			message: '#^Variable \$Result in isset\(\) is never defined\.$#'
-			identifier: isset.variable
-			count: 4
 			path: kernel/private/classes/views/package/upload.php
 
 		-
@@ -3625,56 +3321,14 @@ parameters:
 			path: kernel/private/classes/views/package/viewfile.php
 
 		-
-			message: '#^Undefined variable\: \$Params$#'
-			identifier: variable.undefined
-			count: 6
-			path: kernel/private/classes/views/pdf/edit.php
-
-		-
-			message: '#^Undefined variable\: \$Result$#'
-			identifier: variable.undefined
-			count: 5
-			path: kernel/private/classes/views/pdf/edit.php
-
-		-
 			message: '#^Variable \$Params in isset\(\) is never defined\.$#'
 			identifier: isset.variable
 			count: 2
 			path: kernel/private/classes/views/pdf/edit.php
 
 		-
-			message: '#^Variable \$Result in isset\(\) always exists and is not nullable\.$#'
-			identifier: isset.variable
-			count: 1
-			path: kernel/private/classes/views/pdf/edit.php
-
-		-
-			message: '#^Variable \$Result in isset\(\) is never defined\.$#'
-			identifier: isset.variable
-			count: 5
-			path: kernel/private/classes/views/pdf/edit.php
-
-		-
 			message: '#^Undefined variable\: \$Params$#'
 			identifier: variable.undefined
-			count: 1
-			path: kernel/private/classes/views/pdf/list.php
-
-		-
-			message: '#^Undefined variable\: \$Result$#'
-			identifier: variable.undefined
-			count: 1
-			path: kernel/private/classes/views/pdf/list.php
-
-		-
-			message: '#^Variable \$Result in isset\(\) always exists and is not nullable\.$#'
-			identifier: isset.variable
-			count: 1
-			path: kernel/private/classes/views/pdf/list.php
-
-		-
-			message: '#^Variable \$Result in isset\(\) is never defined\.$#'
-			identifier: isset.variable
 			count: 1
 			path: kernel/private/classes/views/pdf/list.php
 
@@ -3769,12 +3423,6 @@ parameters:
 			path: kernel/private/classes/views/role/list.php
 
 		-
-			message: '#^Undefined variable\: \$role$#'
-			identifier: variable.undefined
-			count: 1
-			path: kernel/private/classes/views/role/list.php
-
-		-
 			message: '#^Variable \$Params in isset\(\) is never defined\.$#'
 			identifier: isset.variable
 			count: 1
@@ -3817,21 +3465,9 @@ parameters:
 			path: kernel/private/classes/views/role/policyedit.php
 
 		-
-			message: '#^Undefined variable\: \$Params$#'
-			identifier: variable.undefined
-			count: 3
-			path: kernel/private/classes/views/role/view.php
-
-		-
 			message: '#^Undefined variable\: \$Result$#'
 			identifier: variable.undefined
 			count: 4
-			path: kernel/private/classes/views/role/view.php
-
-		-
-			message: '#^Variable \$Params in isset\(\) is never defined\.$#'
-			identifier: isset.variable
-			count: 1
 			path: kernel/private/classes/views/role/view.php
 
 		-
@@ -4051,99 +3687,9 @@ parameters:
 			path: kernel/private/classes/views/section/view.php
 
 		-
-			message: '#^Undefined variable\: \$Module$#'
-			identifier: variable.undefined
-			count: 1
-			path: kernel/private/classes/views/settings/edit.php
-
-		-
-			message: '#^Undefined variable\: \$Params$#'
-			identifier: variable.undefined
-			count: 10
-			path: kernel/private/classes/views/settings/edit.php
-
-		-
-			message: '#^Undefined variable\: \$Result$#'
-			identifier: variable.undefined
-			count: 1
-			path: kernel/private/classes/views/settings/edit.php
-
-		-
-			message: '#^Variable \$Module might not be defined\.$#'
-			identifier: variable.undefined
-			count: 1
-			path: kernel/private/classes/views/settings/edit.php
-
-		-
-			message: '#^Variable \$Result in isset\(\) always exists and is not nullable\.$#'
-			identifier: isset.variable
-			count: 1
-			path: kernel/private/classes/views/settings/edit.php
-
-		-
-			message: '#^Variable \$Result in isset\(\) is never defined\.$#'
-			identifier: isset.variable
-			count: 1
-			path: kernel/private/classes/views/settings/edit.php
-
-		-
-			message: '#^Variable \$block might not be defined\.$#'
-			identifier: variable.undefined
-			count: 8
-			path: kernel/private/classes/views/settings/edit.php
-
-		-
-			message: '#^Variable \$iniFile might not be defined\.$#'
-			identifier: variable.undefined
-			count: 10
-			path: kernel/private/classes/views/settings/edit.php
-
-		-
-			message: '#^Variable \$settingType might not be defined\.$#'
-			identifier: variable.undefined
-			count: 2
-			path: kernel/private/classes/views/settings/edit.php
-
-		-
-			message: '#^Variable \$siteAccess might not be defined\.$#'
-			identifier: variable.undefined
-			count: 6
-			path: kernel/private/classes/views/settings/edit.php
-
-		-
-			message: '#^Variable \$valueToWrite might not be defined\.$#'
-			identifier: variable.undefined
-			count: 3
-			path: kernel/private/classes/views/settings/edit.php
-
-		-
 			message: '#^Undefined variable\: \$Params$#'
 			identifier: variable.undefined
 			count: 4
-			path: kernel/private/classes/views/settings/view.php
-
-		-
-			message: '#^Variable \$Result in isset\(\) always exists and is not nullable\.$#'
-			identifier: isset.variable
-			count: 1
-			path: kernel/private/classes/views/settings/view.php
-
-		-
-			message: '#^Variable \$ini might not be defined\.$#'
-			identifier: variable.undefined
-			count: 3
-			path: kernel/private/classes/views/settings/view.php
-
-		-
-			message: '#^Variable \$placement might not be defined\.$#'
-			identifier: variable.undefined
-			count: 2
-			path: kernel/private/classes/views/settings/view.php
-
-		-
-			message: '#^Variable \$settingFile might not be defined\.$#'
-			identifier: variable.undefined
-			count: 6
 			path: kernel/private/classes/views/settings/view.php
 
 		-
@@ -4243,31 +3789,7 @@ parameters:
 			path: kernel/private/classes/views/setup/designextension.php
 
 		-
-			message: '#^Undefined variable\: \$Params$#'
-			identifier: variable.undefined
-			count: 5
-			path: kernel/private/classes/views/setup/extensions.php
-
-		-
-			message: '#^Variable \$Params in isset\(\) is never defined\.$#'
-			identifier: isset.variable
-			count: 3
-			path: kernel/private/classes/views/setup/extensions.php
-
-		-
-			message: '#^Variable \$Result in isset\(\) always exists and is not nullable\.$#'
-			identifier: isset.variable
-			count: 1
-			path: kernel/private/classes/views/setup/extensions.php
-
-		-
 			message: '#^Variable \$Params might not be defined\.$#'
-			identifier: variable.undefined
-			count: 1
-			path: kernel/private/classes/views/setup/ezsetup.php
-
-		-
-			message: '#^Variable \$partName might not be defined\.$#'
 			identifier: variable.undefined
 			count: 1
 			path: kernel/private/classes/views/setup/ezsetup.php
@@ -4372,42 +3894,6 @@ parameters:
 			message: '#^Undefined variable\: \$Params$#'
 			identifier: variable.undefined
 			count: 1
-			path: kernel/private/classes/views/setup/preload.php
-
-		-
-			message: '#^Variable \$Result in isset\(\) always exists and is not nullable\.$#'
-			identifier: isset.variable
-			count: 1
-			path: kernel/private/classes/views/setup/preload.php
-
-		-
-			message: '#^Undefined variable\: \$Params$#'
-			identifier: variable.undefined
-			count: 2
-			path: kernel/private/classes/views/setup/preloadjob.php
-
-		-
-			message: '#^Undefined variable\: \$Result$#'
-			identifier: variable.undefined
-			count: 1
-			path: kernel/private/classes/views/setup/preloadjob.php
-
-		-
-			message: '#^Variable \$Result in isset\(\) is never defined\.$#'
-			identifier: isset.variable
-			count: 1
-			path: kernel/private/classes/views/setup/preloadjob.php
-
-		-
-			message: '#^Variable \$Params might not be defined\.$#'
-			identifier: variable.undefined
-			count: 1
-			path: kernel/private/classes/views/setup/preloadstream.php
-
-		-
-			message: '#^Undefined variable\: \$Params$#'
-			identifier: variable.undefined
-			count: 1
 			path: kernel/private/classes/views/setup/rad.php
 
 		-
@@ -4427,12 +3913,6 @@ parameters:
 			identifier: isset.variable
 			count: 1
 			path: kernel/private/classes/views/setup/radsurvey.php
-
-		-
-			message: '#^Undefined variable\: \$Params$#'
-			identifier: variable.undefined
-			count: 3
-			path: kernel/private/classes/views/setup/session.php
 
 		-
 			message: '#^Undefined variable\: \$Result$#'
@@ -4467,18 +3947,6 @@ parameters:
 		-
 			message: '#^Undefined variable\: \$Params$#'
 			identifier: variable.undefined
-			count: 1
-			path: kernel/private/classes/views/setup/settingstoolbar.php
-
-		-
-			message: '#^Undefined variable\: \$Result$#'
-			identifier: variable.undefined
-			count: 1
-			path: kernel/private/classes/views/setup/settingstoolbar.php
-
-		-
-			message: '#^Variable \$Result in isset\(\) is never defined\.$#'
-			identifier: isset.variable
 			count: 1
 			path: kernel/private/classes/views/setup/settingstoolbar.php
 
@@ -4499,12 +3967,6 @@ parameters:
 			identifier: variable.undefined
 			count: 1
 			path: kernel/private/classes/views/setup/staticcachestream.php
-
-		-
-			message: '#^Class eZExtension referenced with incorrect case\: eZextension\.$#'
-			identifier: class.nameCase
-			count: 1
-			path: kernel/private/classes/views/setup/systemupgrade.php
 
 		-
 			message: '#^Undefined variable\: \$Params$#'
@@ -4913,12 +4375,6 @@ parameters:
 			identifier: variable.undefined
 			count: 1
 			path: kernel/private/classes/views/shop/discountgroupedit.php
-
-		-
-			message: '#^Static call to instance method eZDiscountSubRule\:\:remove\(\)\.$#'
-			identifier: method.staticCall
-			count: 1
-			path: kernel/private/classes/views/shop/discountgroupmembershipview.php
 
 		-
 			message: '#^Undefined variable\: \$Module$#'
@@ -5605,12 +5061,6 @@ parameters:
 			path: kernel/private/classes/views/state/view.php
 
 		-
-			message: '#^Static call to instance method eZPersistentObject\:\:remove\(\)\.$#'
-			identifier: method.staticCall
-			count: 1
-			path: kernel/private/classes/views/trigger/list.php
-
-		-
 			message: '#^Undefined variable\: \$Params$#'
 			identifier: variable.undefined
 			count: 1
@@ -5671,18 +5121,6 @@ parameters:
 			path: kernel/private/classes/views/url/list.php
 
 		-
-			message: '#^Variable \$countParameters might not be defined\.$#'
-			identifier: variable.undefined
-			count: 1
-			path: kernel/private/classes/views/url/list.php
-
-		-
-			message: '#^Variable \$listParameters might not be defined\.$#'
-			identifier: variable.undefined
-			count: 1
-			path: kernel/private/classes/views/url/list.php
-
-		-
 			message: '#^Undefined variable\: \$Params$#'
 			identifier: variable.undefined
 			count: 3
@@ -5737,12 +5175,6 @@ parameters:
 			path: kernel/private/classes/views/user/edit.php
 
 		-
-			message: '#^Undefined variable\: \$Result$#'
-			identifier: variable.undefined
-			count: 8
-			path: kernel/private/classes/views/user/edit.php
-
-		-
 			message: '#^Variable \$Params in isset\(\) is never defined\.$#'
 			identifier: isset.variable
 			count: 2
@@ -5753,18 +5185,6 @@ parameters:
 			identifier: isset.variable
 			count: 1
 			path: kernel/private/classes/views/user/edit.php
-
-		-
-			message: '#^Variable \$Result in isset\(\) is never defined\.$#'
-			identifier: isset.variable
-			count: 8
-			path: kernel/private/classes/views/user/edit.php
-
-		-
-			message: '#^Undefined variable\: \$Params$#'
-			identifier: variable.undefined
-			count: 2
-			path: kernel/private/classes/views/user/forgotpassword.php
 
 		-
 			message: '#^Variable \$Result in isset\(\) always exists and is not nullable\.$#'
@@ -5827,37 +5247,7 @@ parameters:
 			path: kernel/private/classes/views/user/password.php
 
 		-
-			message: '#^Undefined variable\: \$Result$#'
-			identifier: variable.undefined
-			count: 4
-			path: kernel/private/classes/views/user/password.php
-
-		-
 			message: '#^Variable \$Result in isset\(\) always exists and is not nullable\.$#'
-			identifier: isset.variable
-			count: 1
-			path: kernel/private/classes/views/user/password.php
-
-		-
-			message: '#^Variable \$Result in isset\(\) is never defined\.$#'
-			identifier: isset.variable
-			count: 4
-			path: kernel/private/classes/views/user/password.php
-
-		-
-			message: '#^Variable \$confirmPassword in isset\(\) is never defined\.$#'
-			identifier: isset.variable
-			count: 1
-			path: kernel/private/classes/views/user/password.php
-
-		-
-			message: '#^Variable \$newPassword in isset\(\) is never defined\.$#'
-			identifier: isset.variable
-			count: 1
-			path: kernel/private/classes/views/user/password.php
-
-		-
-			message: '#^Variable \$oldPassword in isset\(\) is never defined\.$#'
 			identifier: isset.variable
 			count: 1
 			path: kernel/private/classes/views/user/password.php
@@ -5974,12 +5364,6 @@ parameters:
 			message: '#^Variable \$Params in isset\(\) is never defined\.$#'
 			identifier: isset.variable
 			count: 2
-			path: kernel/private/classes/views/user/unactivated.php
-
-		-
-			message: '#^Variable \$Result in isset\(\) always exists and is not nullable\.$#'
-			identifier: isset.variable
-			count: 1
 			path: kernel/private/classes/views/user/unactivated.php
 
 		-
@@ -6229,12 +5613,6 @@ parameters:
 			path: kernel/private/classes/views/workflow/grouplist.php
 
 		-
-			message: '#^Undefined variable\: \$TemplateData$#'
-			identifier: variable.undefined
-			count: 1
-			path: kernel/private/classes/views/workflow/grouplist.php
-
-		-
 			message: '#^Variable \$Result in isset\(\) always exists and is not nullable\.$#'
 			identifier: isset.variable
 			count: 1
@@ -6244,12 +5622,6 @@ parameters:
 			message: '#^Variable \$Result in isset\(\) is never defined\.$#'
 			identifier: isset.variable
 			count: 2
-			path: kernel/private/classes/views/workflow/grouplist.php
-
-		-
-			message: '#^Variable \$TemplateData in isset\(\) is never defined\.$#'
-			identifier: isset.variable
-			count: 1
 			path: kernel/private/classes/views/workflow/grouplist.php
 
 		-
@@ -6379,34 +5751,10 @@ parameters:
 			path: kernel/private/classes/views/workflow/workflowlist.php
 
 		-
-			message: '#^Method eZWebDAVContentBackend\:\:resetProperties\(\) should return bool but return statement is missing\.$#'
-			identifier: return.missing
-			count: 1
-			path: kernel/private/classes/webdav/ezwebdavcontentbackend.php
-
-		-
-			message: '#^Undefined variable\: \$name$#'
-			identifier: variable.undefined
-			count: 2
-			path: kernel/private/classes/webdav/ezwebdavcontentbackend.php
-
-		-
 			message: '#^Variable \$nodeID might not be defined\.$#'
 			identifier: variable.undefined
 			count: 1
 			path: kernel/private/classes/webdav/ezwebdavcontentbackend.php
-
-		-
-			message: '#^Method eZWebDAVContentBackendAuth\:\:ownsLock\(\) should return bool but return statement is missing\.$#'
-			identifier: return.missing
-			count: 1
-			path: kernel/private/classes/webdav/ezwebdavcontentbackendauth.php
-
-		-
-			message: '#^Variable \$hasAccess might not be defined\.$#'
-			identifier: variable.undefined
-			count: 1
-			path: kernel/private/classes/webdav/ezwebdavcontentbackendauth.php
 
 		-
 			message: '#^Variable \$Params might not be defined\.$#'
@@ -6416,12 +5764,6 @@ parameters:
 
 		-
 			message: '#^Variable \$Params might not be defined\.$#'
-			identifier: variable.undefined
-			count: 1
-			path: kernel/private/modules/oauthadmin/action.php
-
-		-
-			message: '#^Variable \$Result might not be defined\.$#'
 			identifier: variable.undefined
 			count: 1
 			path: kernel/private/modules/oauthadmin/action.php
@@ -6449,12 +5791,6 @@ parameters:
 			identifier: variable.undefined
 			count: 3
 			path: kernel/private/modules/switchlanguage/to.php
-
-		-
-			message: '#^Result of static method ezpOauthUtility\:\:getToken\(\) \(void\) is used\.$#'
-			identifier: staticMethod.void
-			count: 1
-			path: kernel/private/rest/classes/auth/styles/oauth.php
 
 		-
 			message: '#^Class ezpRestContentProviderInterface not found\.$#'
@@ -6485,18 +5821,6 @@ parameters:
 			identifier: variable.undefined
 			count: 1
 			path: kernel/private/rest/classes/mvc_configuration.php
-
-		-
-			message: '#^Variable \$token might not be defined\.$#'
-			identifier: variable.undefined
-			count: 1
-			path: kernel/private/rest/classes/oauth/utility.php
-
-		-
-			message: '#^Constructor of class ezpRestRequest has an unused parameter \$isFatal\.$#'
-			identifier: constructor.unusedParameter
-			count: 1
-			path: kernel/private/rest/classes/request/rest_request.php
 
 		-
 			message: '#^Method ezpRestFeedDecorator\:\:getItemVariable\(\) should return string but return statement is missing\.$#'
@@ -6577,12 +5901,6 @@ parameters:
 			path: kernel/setup/steps/ezstep_installer.php
 
 		-
-			message: '#^Variable \$chosenSiteType might not be defined\.$#'
-			identifier: variable.undefined
-			count: 1
-			path: kernel/setup/steps/ezstep_installer.php
-
-		-
 			message: '#^Call to an undefined method eZStepSitePackages\:\:chosenSiteTypes\(\)\.$#'
 			identifier: method.notFound
 			count: 2
@@ -6635,12 +5953,14 @@ parameters:
 			identifier: class.notFound
 			count: 2
 			path: lib/ezdb/classes/expmongodb.php
+			reportUnmatched: false
 
 		-
 			message: '#^Instantiated class MongoDB\\Client not found\.$#'
 			identifier: class.notFound
 			count: 1
 			path: lib/ezdb/classes/expmongodb.php
+			reportUnmatched: false
 
 		-
 			message: '#^Method eZDBInterface\:\:arrayQuery\(\) should return array but return statement is missing\.$#'
@@ -6763,12 +6083,6 @@ parameters:
 			path: lib/ezdbschema/classes/ezpgsqlschema.php
 
 		-
-			message: '#^Deprecated in PHP 8\.0\: Required parameter \$params follows optional parameter \$add_default_not_null\.$#'
-			identifier: parameter.requiredAfterOptional
-			count: 1
-			path: lib/ezdbschema/classes/ezpgsqlschema.php
-
-		-
 			message: '#^Variable \$sql might not be defined\.$#'
 			identifier: variable.undefined
 			count: 1
@@ -6785,24 +6099,6 @@ parameters:
 			identifier: return.missing
 			count: 1
 			path: lib/ezfile/classes/ezfile.php
-
-		-
-			message: '#^Call to an undefined method eZGZIPCompressionHandler\:\:handler\(\)\.$#'
-			identifier: method.notFound
-			count: 2
-			path: lib/ezfile/classes/ezgzipcompressionhandler.php
-
-		-
-			message: '#^Undefined variable\: \$charsetName$#'
-			identifier: variable.undefined
-			count: 1
-			path: lib/ezi18n/classes/ezchartransform.php
-
-		-
-			message: '#^Variable \$charsetName might not be defined\.$#'
-			identifier: variable.undefined
-			count: 1
-			path: lib/ezi18n/classes/ezchartransform.php
 
 		-
 			message: '#^Variable \$str might not be defined\.$#'
@@ -6823,34 +6119,10 @@ parameters:
 			path: lib/ezi18n/classes/ezcodepagemapper.php
 
 		-
-			message: '#^Static call to instance method eZCodePage\:\:fileModification\(\)\.$#'
-			identifier: method.staticCall
-			count: 2
-			path: lib/ezi18n/classes/ezcodepagemapper.php
-
-		-
-			message: '#^Variable \$eZCodePageMapperCacheCodeDate might not be defined\.$#'
-			identifier: variable.undefined
-			count: 1
-			path: lib/ezi18n/classes/ezcodepagemapper.php
-
-		-
 			message: '#^Variable \$internalCharset might not be defined\.$#'
 			identifier: variable.undefined
 			count: 2
 			path: lib/ezi18n/classes/eztextcodec.php
-
-		-
-			message: '#^Method eZTSTranslator\:\:remove\(\) should return bool but return statement is missing\.$#'
-			identifier: return.missing
-			count: 2
-			path: lib/ezi18n/classes/eztstranslator.php
-
-		-
-			message: '#^Method eZTSTranslator\:\:removeKey\(\) should return bool but return statement is missing\.$#'
-			identifier: return.missing
-			count: 2
-			path: lib/ezi18n/classes/eztstranslator.php
 
 		-
 			message: '#^Variable \$info might not be defined\.$#'
@@ -7018,18 +6290,6 @@ parameters:
 			message: '#^Call to an undefined method Cpdf\:\:xOffset\(\)\.$#'
 			identifier: method.notFound
 			count: 5
-			path: lib/ezpdf/classes/class.pdf.php
-
-		-
-			message: '#^Deprecated in PHP 8\.0\: Required parameter \$imageHeight follows optional parameter \$h\.$#'
-			identifier: parameter.requiredAfterOptional
-			count: 1
-			path: lib/ezpdf/classes/class.pdf.php
-
-		-
-			message: '#^Deprecated in PHP 8\.0\: Required parameter \$imageWidth follows optional parameter \$h\.$#'
-			identifier: parameter.requiredAfterOptional
-			count: 1
 			path: lib/ezpdf/classes/class.pdf.php
 
 		-
@@ -7249,18 +6509,6 @@ parameters:
 			path: lib/eztemplate/classes/eztemplateexecuteoperator.php
 
 		-
-			message: '#^Access to an undefined property eZTemplateExpInfoOperator\:\:\$ExpInfoName\.$#'
-			identifier: property.notFound
-			count: 2
-			path: lib/eztemplate/classes/eztemplateexpinfooperator.php
-
-		-
-			message: '#^Access to an undefined property eZTemplateExpInfoOperator\:\:\$Operators\.$#'
-			identifier: property.notFound
-			count: 2
-			path: lib/eztemplate/classes/eztemplateexpinfooperator.php
-
-		-
 			message: '#^Undefined variable\: \$extraParameters$#'
 			identifier: variable.undefined
 			count: 1
@@ -7375,12 +6623,6 @@ parameters:
 			path: lib/eztemplate/classes/eztemplatetoolbarfunction.php
 
 		-
-			message: '#^Variable \$base might not be defined\.$#'
-			identifier: variable.undefined
-			count: 6
-			path: lib/eztemplate/classes/eztemplateunitoperator.php
-
-		-
 			message: '#^Variable \$prefix_base might not be defined\.$#'
 			identifier: variable.undefined
 			count: 3
@@ -7409,12 +6651,6 @@ parameters:
 			identifier: variable.undefined
 			count: 1
 			path: lib/ezutils/classes/ezcachehelper.php
-
-		-
-			message: '#^Constant EZPUBLISH_LOG_ROTATE_FILES not found\.$#'
-			identifier: constant.notFound
-			count: 2
-			path: lib/ezutils/classes/ezdebug.php
 
 		-
 			message: '#^Method eZDebugSetting\:\:isConditionTrue\(\) should return bool but return statement is missing\.$#'
@@ -7489,20 +6725,8 @@ parameters:
 			path: lib/ezutils/classes/ezmodule.php
 
 		-
-			message: '#^Variable \$ViewList might not be defined\.$#'
-			identifier: variable.undefined
-			count: 1
-			path: lib/ezutils/classes/ezmodule.php
-
-		-
 			message: '#^Variable \$hookEntries in isset\(\) always exists and is not nullable\.$#'
 			identifier: isset.variable
-			count: 1
-			path: lib/ezutils/classes/ezmodule.php
-
-		-
-			message: '#^Variable \$retVal might not be defined\.$#'
-			identifier: variable.undefined
 			count: 1
 			path: lib/ezutils/classes/ezmodule.php
 
@@ -7564,12 +6788,6 @@ parameters:
 			message: '#^Call to function unset\(\) contains undefined variable \$paramValue\.$#'
 			identifier: unset.variable
 			count: 2
-			path: lib/ezutils/classes/ezuri.php
-
-		-
-			message: '#^Method eZURI\:\:convertFilterString\(\) should return string but return statement is missing\.$#'
-			identifier: return.missing
-			count: 1
 			path: lib/ezutils/classes/ezuri.php
 
 		-
