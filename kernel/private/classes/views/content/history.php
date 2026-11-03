@@ -295,7 +295,7 @@ class History extends \Exponential\Runnable\ModuleView
                 $version->removeThis();
             }
         }
-        catch ( Throwable $e )
+        catch ( \Throwable $e )
         {
             // nothing of a transaction that failed half way is committed by a later commit()
             if ( $db->transactionCounter() > 0 )
@@ -421,7 +421,7 @@ class History extends \Exponential\Runnable\ModuleView
         {
             $newVersionID = $object->copyRevertTo( $versionID, $language );
         }
-        catch ( Throwable $e )
+        catch ( \Throwable $e )
         {
             // nothing of a transaction that failed half way is committed by a later commit()
             if ( $db->transactionCounter() > 0 )

@@ -103,7 +103,7 @@ class Bookmark extends \Exponential\Runnable\ModuleView
             {
                 $moved = $request && \eZContentBrowseBookmarkFolder::shift( $userID, $request['type'], $request['id'], $request['direction'] );
             }
-            catch ( Throwable $e )
+            catch ( \Throwable $e )
             {
                 // nothing of a transaction that failed half way is committed by a later commit()
                 if ( $db->transactionCounter() > 0 )
@@ -127,7 +127,7 @@ class Bookmark extends \Exponential\Runnable\ModuleView
                 $saved = \eZContentBrowseBookmarkFolder::setOrder( $userID, $http->postVariable( 'OrderType', 'bookmark' ),
                                                                   (int) $http->postVariable( 'OrderFolderID', 0 ), $http->postVariable( 'OrderIDs', '' ) );
             }
-            catch ( Throwable $e )
+            catch ( \Throwable $e )
             {
                 // nothing of a transaction that failed half way is committed by a later commit()
                 if ( $db->transactionCounter() > 0 )
@@ -188,7 +188,7 @@ class Bookmark extends \Exponential\Runnable\ModuleView
             {
                 $now = $position > 0 ? \eZContentBrowseBookmarkFolder::moveToPosition( $userID, 'bookmark', $id, $position ) : false;
             }
-            catch ( Throwable $e )
+            catch ( \Throwable $e )
             {
                 // nothing of a transaction that failed half way is committed by a later commit()
                 if ( $db->transactionCounter() > 0 )
@@ -221,7 +221,7 @@ class Bookmark extends \Exponential\Runnable\ModuleView
                         }
                     }
                 }
-                catch ( Throwable $e )
+                catch ( \Throwable $e )
                 {
                     // nothing of a transaction that failed half way is committed by a later commit()
                     if ( $db->transactionCounter() > 0 )
@@ -270,7 +270,7 @@ class Bookmark extends \Exponential\Runnable\ModuleView
                         }
                     }
                 }
-                catch ( Throwable $e )
+                catch ( \Throwable $e )
                 {
                     // nothing of a transaction that failed half way is committed by a later commit()
                     if ( $db->transactionCounter() > 0 )

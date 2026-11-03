@@ -126,7 +126,7 @@ class Assign extends \Exponential\Runnable\ModuleView
                                         \eZContentObjectTreeNode::assignSectionToSubTree( $nodeID, $SectionID, false, true, $sectionScope, true );
                                     }
                                 }
-                                catch ( Throwable $e )
+                                catch ( \Throwable $e )
                                 {
                                     // nothing of a transaction that failed half way is committed by a later commit()
                                     if ( $db->transactionCounter() > 0 )

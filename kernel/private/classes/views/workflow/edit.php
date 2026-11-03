@@ -110,7 +110,7 @@ class Edit extends \Exponential\Runnable\ModuleView
                             $ingroup->store();
                         }
                     }
-                    catch ( Throwable $e )
+                    catch ( \Throwable $e )
                     {
                         // nothing of a transaction that failed half way is committed by a later commit()
                         if ( $db->transactionCounter() > 0 )
@@ -147,7 +147,7 @@ class Edit extends \Exponential\Runnable\ModuleView
                 $ingroup = \eZWorkflowGroupLink::create( $WorkflowID, $WorkflowVersion, $GroupID, $GroupName );
                 $ingroup->store();
             }
-            catch ( Throwable $e )
+            catch ( \Throwable $e )
             {
                 // nothing of a transaction that failed half way is committed by a later commit()
                 if ( $db->transactionCounter() > 0 )
@@ -172,7 +172,7 @@ class Edit extends \Exponential\Runnable\ModuleView
                 $workflow->removeThis( true );
                 \eZWorkflowGroupLink::removeWorkflowMembers( $WorkflowID, 1 );
             }
-            catch ( Throwable $e )
+            catch ( \Throwable $e )
             {
                 // nothing of a transaction that failed half way is committed by a later commit()
                 if ( $db->transactionCounter() > 0 )
@@ -272,7 +272,7 @@ class Edit extends \Exponential\Runnable\ModuleView
                         $reject->remove();
                     }
                 }
-                catch ( Throwable $e )
+                catch ( \Throwable $e )
                 {
                     // nothing of a transaction that failed half way is committed by a later commit()
                     if ( $db->transactionCounter() > 0 )
@@ -394,7 +394,7 @@ class Edit extends \Exponential\Runnable\ModuleView
                     $new_event->store();
 
                 }
-                catch ( Throwable $e )
+                catch ( \Throwable $e )
                 {
                     // nothing of a transaction that failed half way is committed by a later commit()
                     if ( $db->transactionCounter() > 0 )

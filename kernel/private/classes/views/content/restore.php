@@ -204,7 +204,7 @@ class Restore extends \Exponential\Runnable\ModuleView
                 \eZContentObject::fixReverseRelations( $objectID, 'restore', false );
 
             }
-            catch ( Throwable $e )
+            catch ( \Throwable $e )
             {
                 // nothing of a transaction that failed half way is committed by a later commit()
                 if ( $db->transactionCounter() > 0 )

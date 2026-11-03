@@ -79,7 +79,7 @@ function expModuleViewContentCopyCopyObject( $Module, $object, $allVersions, $ne
         eZContentObjectTreeNode::updateNodeVisibility( $newNode, $newParentNode );
 
     }
-    catch ( Throwable $e )
+    catch ( \Throwable $e )
     {
         // nothing of a transaction that failed half way is committed by a later commit()
         if ( $db->transactionCounter() > 0 )

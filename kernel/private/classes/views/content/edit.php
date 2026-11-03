@@ -123,7 +123,7 @@ if ( !function_exists( 'expContentEditCheckContentActions' ) )
                 {
                     $parentObject->addContentObjectRelation( $object->attribute( 'id' ), $parentArray[1] );
                 }
-                catch ( Throwable $e )
+                catch ( \Throwable $e )
                 {
                     // nothing of a transaction that failed half way is committed by a later commit()
                     if ( $db->transactionCounter() > 0 )
@@ -363,7 +363,7 @@ if ( !function_exists( 'expContentEditCheckContentActions' ) )
                         else
                             eZDebug::writeWarning( "Unknown value for the future node hidden state: '$futureNodeHiddenState'" );
                     }
-                    catch ( Throwable $e )
+                    catch ( \Throwable $e )
                     {
                         // nothing of a transaction that failed half way is committed by a later commit()
                         if ( $db->transactionCounter() > 0 )
@@ -383,7 +383,7 @@ if ( !function_exists( 'expContentEditCheckContentActions' ) )
                         $parentNode = eZContentObjectTreeNode::fetch( $parentNodeID );
                         eZContentObjectTreeNode::updateNodeVisibility( $node, $parentNode, /* $recursive = */ false );
                     }
-                    catch ( Throwable $e )
+                    catch ( \Throwable $e )
                     {
                         // nothing of a transaction that failed half way is committed by a later commit()
                         if ( $db->transactionCounter() > 0 )
@@ -696,7 +696,7 @@ class Edit extends \Exponential\Runnable\ModuleView
                         $removeVersion->removeThis();
                         $version = $obj->createNewVersionIn( $EditLanguage, false, false, true, \eZContentObjectVersion::STATUS_INTERNAL_DRAFT );
                     }
-                    catch ( Throwable $e )
+                    catch ( \Throwable $e )
                     {
                         // nothing of a transaction that failed half way is committed by a later commit()
                         if ( $db->transactionCounter() > 0 )

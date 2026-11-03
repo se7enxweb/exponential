@@ -210,7 +210,7 @@ class Convertprice2multiprice extends \Exponential\Runnable\Command
             }
 
         }
-        catch ( Throwable $e )
+        catch ( \Throwable $e )
         {
             // nothing of a transaction that failed half way is committed by a later commit()
             if ( $db->transactionCounter() > 0 )

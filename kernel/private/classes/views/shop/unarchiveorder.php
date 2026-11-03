@@ -41,7 +41,7 @@ class Unarchiveorder extends \Exponential\Runnable\ModuleView
                 \eZOrder::unarchiveOrder( $archiveID );
             }
         }
-        catch ( Throwable $e )
+        catch ( \Throwable $e )
         {
             // nothing of a transaction that failed half way is committed by a later commit()
             if ( $db->transactionCounter() > 0 )

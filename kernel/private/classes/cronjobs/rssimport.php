@@ -212,7 +212,7 @@ function importRSSItem( $item, $rssImport, $cli, $channel )
         $contentObject->setAttribute( 'remote_id', 'RSSImport_'.$rssImportID.'_'. $md5Sum );
         $contentObject->store();
     }
-    catch ( Throwable $e )
+    catch ( \Throwable $e )
     {
         // nothing of a transaction that failed half way is committed by a later commit()
         if ( $db->transactionCounter() > 0 )
@@ -301,7 +301,7 @@ function importRSSItem( $item, $rssImport, $cli, $channel )
         $version->store();
         $contentObject->store();
     }
-    catch ( Throwable $e )
+    catch ( \Throwable $e )
     {
         // nothing of a transaction that failed half way is committed by a later commit()
         if ( $db->transactionCounter() > 0 )
