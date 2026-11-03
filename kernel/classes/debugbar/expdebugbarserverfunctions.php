@@ -15,6 +15,7 @@
  *   expdebugbar::policies[::<role>[::<offset>[::<search>]]]
  *                                           a page of the policies of the user's roles (User tab); "-" for no role
  *                                           or search, the search as base64url
+ *   expdebugbar::session                    the request's own PHP session (User tab, section Session)
  *   expdebugbar::panelheight                POST height: the open panel's height, kept in the user preference
  *                                           expdebugbar_panel_height
  *
@@ -448,6 +449,26 @@ class expDebugBarServerFunctions extends ezjscServerFunctions
         self::requireSetup();
         list( $role, $offset, $query ) = self::policyArgs( $args );
         return expDebugBarPolicies::forUser( eZUser::currentUser(), $role, $query, $offset );
+    }
+
+    /**
+     * expdebugbar::session: the PHP session of this very request for the User tab (section "Session", loaded when
+     * opened): its keys as a tree, grouped by extension, values of secrets masked, and its frame. Never another
+     * session. Who sees the User tab may open it (expDebugBarUser::mayView()): setup/setup, or an anonymous visitor
+     * who gets the debug output; the save path and the handler class only with setup/setup.
+     *
+     * @return array expDebugBarSession::forSession()
+     */
+    public static function session( $args )
+    {
+        $user = eZUser::currentUser();
+        $loggedIn = $user instanceof eZUser && $user->isRegistered();
+        if ( !expDebugBarUser::mayView( self::canWrite(), $loggedIn, eZDebug::isDebugEnabled() ) )
+            throw new InvalidArgumentException( 'The session is shown to users with setup/setup, or to an anonymous visitor who gets the debug output' );
+        // the answer holds the user's own session: no cache or proxy may keep it
+        if ( !headers_sent() )
+            header( 'Cache-Control: private, no-store' );
+        return expDebugBarSession::current( self::canWrite() );
     }
 
     /**

@@ -2238,6 +2238,9 @@
     "kernel/classes/debugbar/expdebugbarpolicies.php": [
       "tests/tests/kernel/classes/debugbar/expDebugBarPoliciesTest.php"
     ],
+    "kernel/classes/debugbar/expdebugbarsession.php": [
+      "tests/tests/kernel/classes/debugbar/expDebugBarSessionTest.php"
+    ],
     "lib/twig/classes/exptwigrenderer.php": [
       "tests/tests/lib/twig/expTwigTemplateRenderTest.php",
       "tests/tests/lib/twig/expTwigOperatorParityTest.php",

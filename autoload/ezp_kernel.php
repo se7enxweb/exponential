@@ -1308,6 +1308,7 @@ return array(
       'expDebugBarRegistry'                                          => 'kernel/classes/debugbar/expdebugbarregistry.php',
       'expDebugBarReport'                                            => 'lib/ezutils/classes/expdebugbarreport.php',
       'expDebugBarServerFunctions'                                   => 'kernel/classes/debugbar/expdebugbarserverfunctions.php',
+      'expDebugBarSession'                                           => 'kernel/classes/debugbar/expdebugbarsession.php',
       'expDebugBarSettings'                                          => 'kernel/classes/debugbar/expdebugbarsettings.php',
       'expDebugBarSummary'                                           => 'kernel/classes/debugbar/expdebugbarsummary.php',
       'expDebugBarUser'                                              => 'kernel/classes/debugbar/expdebugbaruser.php',

@@ -32,6 +32,8 @@ Never edit `extension/ezjscore/settings/ezjscore.ini` itself: an update replaces
 > <root>/ezjscore/call/expdebugbar::log, expdebugbar::summary  
 > <root>/ezjscore/call/expdebugbar::policies::<role>::<offset>::<search>  (in the path: role id or -, offset,  
 >   base64url of the search or -; the policies of the user's roles, a page at a time; setup/setup)  
+> <root>/ezjscore/call/expdebugbar::session  (the request's own PHP session for the User tab, secrets masked;  
+>   setup/setup, or an anonymous visitor with debug output)  
 > <root>/ezjscore/call/expdebugbar::panelheight  (POST height in pixels or 0, ezxform\_token: user preference  
 >   expdebugbar\_panel\_height, the height of the open panel)  
 > Every function checks itself: reading needs debug output for the request or setup/setup or  

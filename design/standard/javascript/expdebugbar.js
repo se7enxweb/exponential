@@ -55,6 +55,13 @@
   const nextId = (p) => 'exp-debug-' + p + '-' + (++uid);
   const hint = (text, level) => el('p', { class: 'exp-debug-hint' + (level ? ' exp-debug-' + level : ''), role: level === 'high' || level === 'warn' ? 'alert' : null }, text);
 
+  // the session section asks the server once it is seen: the bar open and neither its tab nor its sub-tab hidden
+  function showSessions() {
+    const details = document.getElementById('debug-details');
+    if (!details || !details.classList.contains('active')) return;
+    root.querySelectorAll('[data-exp-debug-session]').forEach((s) => { if (s._load && !s.closest('[hidden]')) s._load(); });
+  }
+
   /* ---------------------------------------------------------------- tabs */
   const tabs = Array.from(root.querySelectorAll('.exp-debug-tab'));
   const panelOf = (tab) => document.getElementById(tab.getAttribute('aria-controls'));
@@ -76,6 +83,7 @@
     // The settings and cache tabs ask the server only when they are seen, not on every page view.
     const details = document.getElementById('debug-details');
     if (loaders[id] && !loaded[id] && details && details.classList.contains('active')) { loaded[id] = true; loaders[id](); }
+    showSessions();
   };
   // The toolbar theme lists the tabs one below the other from 761px on (expdebugbar-toolbar.css): there the up and
   // down arrows move. Asked again on every key and on every change of the width, so a resized window agrees.
@@ -376,6 +384,216 @@
       body.replaceChildren(el('p', { class: 'exp-debug-policies-tools' }, search, ' ', roleSelect), status, table, more);
       reload();
     });
+  });
+
+  /* ---------------------------------------------------------------- User tab: the user's own session, loaded when opened */
+  // expdebugbar::session answers this request's own $_SESSION as a tree (grouped by extension, secrets masked) and the
+  // frame of the session. Built here, so the session is not in the page until the section is opened.
+  root.querySelectorAll('[data-exp-debug-session]').forEach((details) => {
+    const body = details.querySelector('.exp-debug-session-body');
+    if (!body) return;
+    let loaded = false;
+    const size = (bytes) => bytes < 1024 ? bytes + ' B' : (Math.round(bytes / 102.4) / 10) + ' KB';
+    const typeOf = (n) => n.type + (n.length !== null && n.length !== undefined && !(n.type === 'string' || n.type === 'binary') ? ' (' + n.length + ')' : '');
+    // a short array of scalars reads best on one line: [85, 93] or {region: "x", type: "y"}
+    const inline = (n) => {
+      if (!Array.isArray(n.children) || n.more || !n.children.length || n.children.length > 6) return null;
+      if (n.children.some((c) => c.masked || Array.isArray(c.children) || c.depth_cut || c.cut || c.value === null)) return null;
+      const list = n.children.every((c, i) => c.key === String(i));
+      const text = list ? '[' + n.children.map((c) => c.type === 'string' ? JSON.stringify(c.value) : c.value).join(', ') + ']'
+        : '{' + n.children.map((c) => c.key + ': ' + (c.type === 'string' ? JSON.stringify(c.value) : c.value)).join(', ') + '}';
+      return text.length <= 140 ? text : null;
+    };
+    // every node is a row; children are rows below it, indented, hidden until their parent is opened
+    const rowsOf = (n, depth, parent, rows) => {
+      const tr = el('tr', { class: 'exp-debug-session-row', 'data-depth': String(depth) });
+      tr.style.setProperty('--depth', depth);
+      if (parent) { tr.hidden = true; tr._parent = parent; }
+      const short = inline(n);
+      const nested = Array.isArray(n.children) && !short && (n.children.length || n.more);
+      const toggle = nested ? el('button', { type: 'button', class: 'exp-debug-session-toggle', 'aria-expanded': 'false', 'aria-label': n.key, title: t('Open') }, '▸') : el('span', { class: 'exp-debug-session-toggle-space' });
+      let valueCell;
+      if (n.masked) valueCell = el('span', { class: 'exp-debug-badge exp-debug-session-masked', 'data-level': 'warn' }, t('masked'));
+      else if (short) valueCell = el('code', {}, short);
+      else if (nested) valueCell = el('em', { class: 'exp-debug-session-soft' }, t('%count entries', { '%count': n.length }));
+      else if (Array.isArray(n.children)) valueCell = el('em', { class: 'exp-debug-session-soft' }, t('empty'));
+      else if (n.depth_cut) valueCell = el('em', { class: 'exp-debug-session-soft' }, t('nested too deep to show'));
+      else valueCell = el('code', { title: n.cut ? t('cut, %count characters in all', { '%count': n.length }) : null }, (n.type === 'string' ? JSON.stringify(n.value) : n.value) + (n.cut ? ' …' : ''));
+      tr.append(el('td', { class: 'exp-debug-session-keycell' }, toggle, el('code', { class: 'exp-debug-session-key' }, n.key)),
+        el('td', { class: 'exp-debug-session-soft' }, typeOf(n)),
+        el('td', { class: 'exp-debug-session-size' }, size(n.bytes)),
+        el('td', { class: 'exp-debug-session-value' }, valueCell));
+      tr._children = [];
+      rows.push(tr);
+      if (parent) parent._children.push(tr);
+      if (nested) {
+        n.children.forEach((c) => rowsOf(c, depth + 1, tr, rows));
+        if (n.more) {
+          const more = el('tr', { class: 'exp-debug-session-row', 'data-depth': String(depth + 1) }, el('td', { colspan: '4' }, el('em', {}, t('%count more', { '%count': n.more }))));
+          more.style.setProperty('--depth', depth + 1);
+          more.hidden = true; more._parent = tr; more._children = [];
+          tr._children.push(more); rows.push(more);
+        }
+        toggle.addEventListener('click', () => setOpen(tr, toggle.getAttribute('aria-expanded') !== 'true'));
+      }
+      return rows;
+    };
+    // open shows the direct children; closing hides the whole branch
+    const setOpen = (tr, open) => {
+      const toggle = tr.querySelector('.exp-debug-session-toggle');
+      if (toggle && toggle.tagName === 'BUTTON') { toggle.setAttribute('aria-expanded', open ? 'true' : 'false'); toggle.textContent = open ? '▾' : '▸'; toggle.title = t(open ? 'Close' : 'Open'); }
+      const walk = (r, show) => r._children.forEach((c) => {
+        c.hidden = !show;
+        const tg = c.querySelector('.exp-debug-session-toggle');
+        const childOpen = tg && tg.tagName === 'BUTTON' && tg.getAttribute('aria-expanded') === 'true';
+        walk(c, show && childOpen);
+      });
+      walk(tr, open);
+    };
+    const tableOf = (entries) => {
+      const rows = [];
+      entries.forEach((n) => rowsOf(n, 0, null, rows));
+      const table = el('table', { class: 'exp-debug-facts exp-debug-session-table' },
+        el('tr', {}, el('th', {}, t('Key')), el('th', {}, t('Type')), el('th', { class: 'exp-debug-session-size' }, t('Size')), el('th', {}, t('Value'))), ...rows);
+      table._rows = rows;
+      return table;
+    };
+    const frameOf = (f) => {
+      const yes = (v) => t(v ? 'yes' : 'no');
+      const rows = [
+        [t('Started'), yes(f.started)],
+        [t('Cookie name'), f.name || ''],
+        [t('Session ID'), f.id || '–'],
+        [t('Handler'), (f.handler ? f.handler + ', ' : '') + (f.save_handler || '')],
+      ];
+      if (f.save_path !== null && f.save_path !== undefined) rows.push([t('Save path'), f.save_path || t('PHP default')]);
+      rows.push([t('Lifetime (gc_maxlifetime)'), f.gc_maxlifetime + ' s']);
+      Object.keys(f.settings || {}).forEach((k) => rows.push(['site.ini [Session] ' + k, f.settings[k] === '' ? t('not set') : f.settings[k]]));
+      const c = f.cookie || {};
+      rows.push([t('Cookie'), [t('lifetime %s s', { '%s': c.lifetime }), 'path ' + (c.path || '/'), c.domain ? 'domain ' + c.domain : null,
+        c.secure ? 'secure' : null, c.httponly ? 'httponly' : null, c.samesite ? 'samesite=' + c.samesite : null].filter(Boolean).join(', ')]);
+      return el('table', { class: 'exp-debug-facts exp-debug-session-frame' }, ...rows.map((r) => el('tr', {}, el('th', {}, r[0]), el('td', {}, String(r[1])))));
+    };
+    const render = (a) => {
+      const parts = [el('p', { class: 'exp-debug-hint exp-debug-render-explain' }, t('Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.'))];
+      parts.push(el('p', {}, el('strong', {}, t('%count keys, %size', { '%count': a.count, '%size': size(a.bytes) })), ' ',
+        a.large ? el('span', { class: 'exp-debug-badge', 'data-level': 'warn' }, t('large')) : null));
+      if (!a.count) parts.push(hint(a.frame && a.frame.started ? t('The session is empty.') : t('No session was started for this request.')));
+      const tables = [];
+      if (a.count) {
+        const filter = el('input', { type: 'search', class: 'exp-debug-session-filter', placeholder: t('Key or value'), 'aria-label': t('Search the session') });
+        const openAll = el('button', { type: 'button', class: 'exp-debug-button' }, t('Open all'));
+        const closeAll = el('button', { type: 'button', class: 'exp-debug-button' }, t('Close all'));
+        const every = () => tables.flatMap((tb) => tb._rows);
+        // rows come in tree order: a parent opens before its children, so every branch ends up open
+        openAll.addEventListener('click', () => every().forEach((r) => { const tg = r.querySelector('.exp-debug-session-toggle'); if (tg && tg.tagName === 'BUTTON') setOpen(r, true); }));
+        closeAll.addEventListener('click', () => every().forEach((r) => { const tg = r.querySelector('.exp-debug-session-toggle'); if (tg && tg.tagName === 'BUTTON') setOpen(r, false); }));
+        // a match shows its row and every row above it; an empty search restores the folded state
+        let pending = null;
+        filter.addEventListener('input', () => { clearTimeout(pending); pending = setTimeout(search, 150); });
+        const search = () => {
+          const q = filter.value.trim().toLowerCase();
+          const rows = every();
+          if (!q) { rows.forEach((r) => { r.hidden = !!r._parent; r.classList.remove('exp-debug-session-hit'); const tg = r.querySelector('.exp-debug-session-toggle'); if (tg && tg.tagName === 'BUTTON') { tg.setAttribute('aria-expanded', 'false'); tg.textContent = '▸'; } }); return; }
+          rows.forEach((r) => { r.hidden = true; r.classList.remove('exp-debug-session-hit'); });
+          rows.forEach((r) => {
+            // the key and the value, not the type and size columns
+            const key = r.querySelector('.exp-debug-session-key'), value = r.querySelector('.exp-debug-session-value');
+            if (((key ? key.textContent : '') + ' ' + (value ? value.textContent : '')).toLowerCase().indexOf(q) === -1) return;
+            r.hidden = false; r.classList.add('exp-debug-session-hit');
+            // the rows above a match are shown open
+            for (let p = r._parent; p; p = p._parent) {
+              p.hidden = false;
+              const tg = p.querySelector('.exp-debug-session-toggle');
+              if (tg && tg.tagName === 'BUTTON') { tg.setAttribute('aria-expanded', 'true'); tg.textContent = '▾'; }
+            }
+          });
+        };
+        parts.push(el('p', { class: 'exp-debug-session-tools' }, filter, ' ', openAll, ' ', closeAll));
+      }
+      (a.groups || []).forEach((g) => {
+        parts.push(el('h4', { class: 'exp-debug-session-group' }, g.extension ? t('Extension %name', { '%name': g.extension }) : t('Kernel and others'), ' ',
+          el('span', { class: 'exp-debug-session-soft' }, t('%count keys, %size', { '%count': g.keys, '%size': size(g.bytes) }))));
+        const table = tableOf(g.entries);
+        tables.push(table);
+        parts.push(table);
+      });
+      if (a.truncated) parts.push(hint(t('Not every entry is shown: the session has more than can be listed here.'), 'warn'));
+      if (a.left) parts.push(hint(t('%count keys are not listed.', { '%count': a.left }), 'warn'));
+      parts.push(el('h4', {}, t('Frame')), frameOf(a.frame || {}));
+      body.replaceChildren(...parts);
+    };
+    const load = () => {
+      body.replaceChildren(el('p', { class: 'exp-debug-hint', role: 'status' }, t('Loading...')));
+      call('session', {}).then((answer) => {
+        if (!answer || !Array.isArray(answer.groups)) throw new Error(t('No answer'));
+        render(answer);
+      }).catch((err) => failure(body, err, load));
+    };
+    // asked when its sub-tab is first shown (see below)
+    details._load = () => {
+      if (loaded) return;
+      loaded = true;
+      load();
+    };
+  });
+
+  /* ---------------------------------------------------------------- sub-tabs (User, Rendering) and explanations */
+  // The parts of a tab as sub-tabs; the last one shown is kept per tab. "?" shows the explanations, which are folded
+  // away otherwise. With the filter box on, each sub-tab shows its matches. The session is asked for only when its
+  // sub-tab is seen: the bar open, the User tab and the sub-tab shown (showSessions, also called by select()).
+  root.querySelectorAll('.exp-debug-subtabs').forEach((bar) => {
+    const scope = bar.getAttribute('data-scope') || 'user';
+    const subtabs = Array.from(bar.querySelectorAll('.exp-debug-subtab'));
+    const panelOfSub = (b) => document.getElementById(b.getAttribute('aria-controls'));
+    const help = bar.querySelector('.exp-debug-subtab-help');
+    const showSub = (id, focus) => {
+      let hit = subtabs.find((b) => b.getAttribute('data-subtab') === id) || subtabs[0];
+      subtabs.forEach((b) => {
+        const on = b === hit;
+        b.setAttribute('aria-selected', on ? 'true' : 'false');
+        b.tabIndex = on ? 0 : -1;
+        const panel = panelOfSub(b);
+        if (panel) panel.hidden = !on;
+        if (on && focus) b.focus();
+      });
+      write('exp-debug-' + scope + '-subtab', hit.getAttribute('data-subtab'));
+      showSessions();
+    };
+    subtabs.forEach((b, i) => {
+      b.addEventListener('click', () => showSub(b.getAttribute('data-subtab')));
+      b.addEventListener('keydown', (e) => {
+        const j = e.key === 'ArrowRight' ? (i + 1) % subtabs.length : e.key === 'ArrowLeft' ? (i - 1 + subtabs.length) % subtabs.length
+          : e.key === 'Home' ? 0 : e.key === 'End' ? subtabs.length - 1 : null;
+        if (j === null) return;
+        e.preventDefault();
+        showSub(subtabs[j].getAttribute('data-subtab'), true);
+      });
+    });
+    const setHelp = (on) => {
+      if (!help) return;
+      help.setAttribute('aria-pressed', on ? 'true' : 'false');
+      help.title = t(on ? 'Hide explanations' : 'Show explanations');
+      subtabs.forEach((b) => { const panel = panelOfSub(b); if (panel) panel.classList.toggle('exp-debug-explain-folded', !on); });
+      write('exp-debug-' + scope + '-help', on ? '1' : '0');
+    };
+    if (help) {
+      help.hidden = false;
+      help.addEventListener('click', () => setHelp(help.getAttribute('aria-pressed') !== 'true'));
+      setHelp(read('exp-debug-' + scope + '-help') === '1');
+    }
+    // the matches of the filter box per sub-tab, counted after the bar's own filter ran
+    const box = document.getElementById('exp-debug-filter');
+    if (box) box.addEventListener('input', () => setTimeout(() => {
+      const q = (box.value || '').trim();
+      subtabs.forEach((b) => {
+        const panel = panelOfSub(b);
+        if (!q || !panel) { b.removeAttribute('data-matches'); return; }
+        const n = Array.from(panel.querySelectorAll('table tr')).filter((tr) => tr.querySelector('td') && !tr.classList.contains('exp-debug-filter-hidden')).length;
+        b.setAttribute('data-matches', String(n));
+      });
+    }, 0));
+    showSub(read('exp-debug-' + scope + '-subtab') || subtabs[0].getAttribute('data-subtab'));
   });
 
   /* ---------------------------------------------------------------- IP helpers (client side validation) */
