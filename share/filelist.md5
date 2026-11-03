@@ -462,7 +462,7 @@ f2ca9f0ba6ba3907c6329fdf324f3b91  design/admin/override/templates/windows_user.t
 e4286f3980c415c880cdb413793a0eea  design/admin/stylesheets/ezinfo.css
 95913ad6d0f23181284c4f849417bd8c  design/admin/stylesheets/modules/content.css
 13853d0ea557befc5c9de97b44bd01f4  design/admin/stylesheets/modules/help.css
-b371e41cc093bf4cf1ea006576c67d35  design/admin/stylesheets/modules/people.css
+ad39b6d6686649da879ae5c11dc6d148  design/admin/stylesheets/modules/people.css
 c20144b49f9eaa6bc589e15490a657de  design/admin/stylesheets/modules/setup.css
 b8a9bc23a795b8d48a9dcf70d4dcead9  design/admin/stylesheets/modules/structure.css
 3f6cb52db7363b1107114a1554b38a99  design/admin/stylesheets/modules/workflow.css
@@ -1275,7 +1275,7 @@ e0c996a801b1373df9824852298b20d9  design/admin4/override/templates/tiny_image.tp
 e26094514c3dac416b5fb6be0a9d9e21  design/admin4/stylesheets/ezinfo.css
 95913ad6d0f23181284c4f849417bd8c  design/admin4/stylesheets/modules/content.css
 13853d0ea557befc5c9de97b44bd01f4  design/admin4/stylesheets/modules/help.css
-b371e41cc093bf4cf1ea006576c67d35  design/admin4/stylesheets/modules/people.css
+ad39b6d6686649da879ae5c11dc6d148  design/admin4/stylesheets/modules/people.css
 c20144b49f9eaa6bc589e15490a657de  design/admin4/stylesheets/modules/setup.css
 b8a9bc23a795b8d48a9dcf70d4dcead9  design/admin4/stylesheets/modules/structure.css
 3f6cb52db7363b1107114a1554b38a99  design/admin4/stylesheets/modules/workflow.css
@@ -25223,7 +25223,7 @@ fa9666366c649f1a9b0337c34105678c  kernel/common/eztemplatedesignresource.php
 23a7c9af2e5dbf7dac821ce6009f3afe  kernel/common/eztopmenuoperator.php
 c30dac35a7606138c170976b8a2b5d3d  kernel/common/eztreemenuoperator.php
 cc61597ab067f3b2006d2e8986126ccb  kernel/common/ezurloperator.php
-63c5d213542d54f60a424e8055e20a02  kernel/common/ezwordtoimageoperator.php
+ef14a24ca0cdc27e16bd86f5449f92d5  kernel/common/ezwordtoimageoperator.php
 16195ff0512d081fa7adcc0ccc49e70a  kernel/common/i18n.php
 e7d3d51e4726f6c28e398092ba9f2052  kernel/common/template.php
 6ebb6f2f7b9d0330561914a6e3dd67d8  kernel/content/action.php
@@ -27008,7 +27008,7 @@ e5c09d9e4932f30d364759d243eb01df  share/help/seed-topics.json
 27b07790be30d1577541464bc445fff3  share/icons/big-smile.gif
 0e1abb7c8f76d149177749fe2a397ce3  share/icons/blunk.gif
 9d76fce3ac59b65b057119623fb7b030  share/icons/bootstrap-icons/LICENSE
-91c052542630109b82669d0b5fc3f97f  share/icons/bootstrap-icons/icon.ini
+cccd824776554672019de301941fd5c3  share/icons/bootstrap-icons/icon.ini
 797ba6fddeb332e414af85b9f2b47d58  share/icons/bootstrap-icons/svg/123.svg
 405af68fb0e0797e11aff096d9be8a4d  share/icons/bootstrap-icons/svg/archive.svg
 8081c555057a13d171959373f4119bf8  share/icons/bootstrap-icons/svg/arrow-90deg-up.svg
