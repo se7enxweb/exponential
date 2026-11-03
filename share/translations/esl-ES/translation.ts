@@ -5397,7 +5397,7 @@
     </message>
     <message>
         <source>Choose one content type to search in one of its attributes.</source>
-        <translation>Elija un tipo de contenido para buscar en uno de sus atributos.</translation>
+        <translation>Elige un tipo de contenido para buscar en uno de sus atributos.</translation>
     </message>
     <message>
         <source>Section</source>
@@ -5477,7 +5477,7 @@
     </message>
     <message>
         <source>Or choose filters and apply them to list the content they match.</source>
-        <translation>O elija filtros y aplíquelos para listar el contenido que coincide con ellos.</translation>
+        <translation>O elige filtros y aplícalos para listar el contenido que coincide con ellos.</translation>
     </message>
     <message>
         <source>The filters narrow the search down once you have typed words.</source>
@@ -5493,7 +5493,7 @@
     </message>
     <message>
         <source>Remove a filter above.</source>
-        <translation>Quite uno de los filtros de arriba.</translation>
+        <translation>Quita uno de los filtros de arriba.</translation>
     </message>
     <message>
         <source>Translations</source>
