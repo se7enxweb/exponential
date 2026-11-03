@@ -50,6 +50,7 @@
 <fieldset class="block a4-content-imagepick">
     <legend class="a4-content-imagepick-legend">{'Choose an existing image'|i18n( 'design/standard/content/datatype' )}</legend>
     <p class="a4-help">{'The image file of the object you choose is copied into this field. The other object does not change.'|i18n( 'design/standard/content/datatype' )}</p>
+    {if $exp_pick.error}{* a refused copy is the field's validation error, which admin4's edit_attribute.tpl prints above the field *}{/if}
     {if $exp_pick.copied_from}<p class="a4-ok-text" role="status">{'The image of "%name" was copied into this field.'|i18n( 'design/standard/content/datatype', , hash( '%name', $exp_pick.copied_from ) )|wash}</p>{/if}
     <div class="a4-searchrow">
         <input class="button" type="submit" name="CustomActionButton[{$attribute.id}_browse_for_image]" value="{'Browse for an image'|i18n( 'design/standard/content/datatype' )}" />

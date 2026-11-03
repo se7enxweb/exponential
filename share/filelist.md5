@@ -1357,7 +1357,7 @@ afe296b9f61bc7df7010688feac4bb9a  design/admin4/templates/content/create_languag
 8b9a7b74d36d5b80929b387bb98e4c51  design/admin4/templates/content/datatype/edit/ezbinaryfile.tpl
 84bf3ccc2c3f488650c29eb4edd1e1d5  design/admin4/templates/content/datatype/edit/ezdate.tpl
 008f7e888580cfed2f8e8df5afbedbf2  design/admin4/templates/content/datatype/edit/ezdatetime.tpl
-c3a2ecc73d976acacedf86cc1d65d97e  design/admin4/templates/content/datatype/edit/ezimage.tpl
+dfe84f679479a3754c84667f6493fe27  design/admin4/templates/content/datatype/edit/ezimage.tpl
 6d377bbd5a9d61aea579d8c2df921c27  design/admin4/templates/content/datatype/edit/ezimage_editor.tpl
 f6b269cf246754bc59940d067a896586  design/admin4/templates/content/datatype/edit/ezimage_new.tpl
 4f337b9400a05632a96103d0079e99b3  design/admin4/templates/content/datatype/edit/ezinisetting.tpl
