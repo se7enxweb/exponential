@@ -13161,7 +13161,7 @@ abe08b4c1433579efbb54605157734a1  doc/eng-us/specifications/6.0/bccie.md
 ed4655b6f42ce8207a9f65b3b9eda5d9  doc/eng-us/specifications/6.0/database-drivers-2026-09.md
 72a569391bfcbb9dc2ccdb0075ff3fee  doc/eng-us/specifications/6.0/database-drivers-sqlite-oracle.md
 bf49bf4081ca354836b5074963f34999  doc/eng-us/specifications/6.0/datatype-input-hardening.md
-e40168fd7aa13b5a20ea6ae3b72e1911  doc/eng-us/specifications/6.0/exp-user-json-output.md
+a449387601e9e39d917045122f660b15  doc/eng-us/specifications/6.0/exp-user-json-output.md
 d4319a4e3b09997677c74dae68fe6136  doc/eng-us/specifications/6.0/explayouts-ui-api.md
 5194bdcdc9b5b72e5e15c20105edea83  doc/eng-us/specifications/6.0/expservices.md
 8840a174e80b3ca4c75f98eaf9210eb2  doc/eng-us/specifications/6.0/extension-metadata.md
@@ -22661,7 +22661,7 @@ a48c5e82768427127dddc8781c2a8b69  doc/ger-de/spezifikationen/6.0/cjw_newsletter.
 6b4de505e0586130053ba881b8585df0  doc/ger-de/spezifikationen/6.0/datenbanktreiber-2026-09.md
 8260c08fc420ce1b250fd94dbd979f5c  doc/ger-de/spezifikationen/6.0/datenbanktreiber-sqlite-oracle.md
 f62c06e4d47ed65828a7100fb6249882  doc/ger-de/spezifikationen/6.0/datentyp-eingabehaertung.md
-353c3f1dcfd33bf17a0dd034eaec3cb6  doc/ger-de/spezifikationen/6.0/exp-user-json-ausgabe.md
+25070d289b37879592c1e8cedd6e2c9a  doc/ger-de/spezifikationen/6.0/exp-user-json-ausgabe.md
 f88e8ef0cfdc14aa84bc239512586eab  doc/ger-de/spezifikationen/6.0/explayouts-ui-api.md
 8ab206556fe45ca48cb6f6c7cca67831  doc/ger-de/spezifikationen/6.0/expservices.md
 a2dd0d48d159efa131973c4a856043da  doc/ger-de/spezifikationen/6.0/extension-metadaten.md

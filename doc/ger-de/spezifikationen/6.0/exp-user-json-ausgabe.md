@@ -145,7 +145,9 @@ Ein Eintrag von `accounts`:
 
 Das `result` einer Importzeile ist `would_create` im Probelauf und `created` mit `--apply`; `skipped` (den
 Anmeldenamen gibt es schon) und `refused` (mit `errors`) sind in beiden gleich. `exp:user:export` schreibt die Konten
-selbst nach `--output` oder auf die Standardausgabe; mit `--format=json` enthält der Bericht `count` und `output`.
+selbst nach `--output` oder auf die Standardausgabe. Ohne `--output` sind die Daten die ganze Ausgabe: es wird kein
+Bericht ausgegeben, und der Exit-Code sagt, ob es geklappt hat. Mit `--output` gibt der Befehl einen Bericht aus, mit
+`--format=json` als JSON, mit `count` und `output`.
 
 ## Beispiel
 

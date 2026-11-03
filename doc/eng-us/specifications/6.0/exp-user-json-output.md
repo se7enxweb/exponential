@@ -144,7 +144,9 @@ An entry of `accounts`:
 
 The `result` of an import row is `would_create` in a dry run and `created` with `--apply`; `skipped` (the login
 exists) and `refused` (with `errors`) are the same in both. `exp:user:export` writes the accounts themselves to
-`--output` or standard output; with `--format=json` the report holds `count` and `output`.
+`--output` or standard output. Without `--output` the data is the whole output: no report is printed and the exit code
+says whether it worked. With `--output` the command prints a report, as JSON with `--format=json`, holding `count` and
+`output`.
 
 ## Example
 
