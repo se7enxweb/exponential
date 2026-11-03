@@ -38,7 +38,7 @@ Nach dieser Lektion können die Teilnehmenden:
 
 ### So präsentieren Sie es
 
-Quelle: [Die erweiterte Suche](../../../suchen.md#die-erweiterte-suche).
+Quelle: [Die erweiterte Suche](../../../suchen.md#die-suchseite-und-ihre-filter).
 
 1. **Öffnen** (1 Minute). **Erweiterte Suche** im **Suchbereich** oder der Hinweis auf die erweiterte Suche unter dem
    Suchformular der Ergebnisseite.
@@ -111,7 +111,7 @@ Verwenden Sie die Schulungsinstallation und die Elemente, die Sie in diesem Kurs
 <summary>Antworten</summary>
 
 1. Alle Wörter müssen vorkommen, in beliebiger Reihenfolge, gegenüber den Wörtern zusammen in dieser Reihenfolge.
-2. **Attribute aktualisieren** ([Suchen](../../../suchen.md#die-erweiterte-suche)).
+2. **Attribute aktualisieren** ([Suchen](../../../suchen.md#die-suchseite-und-ihre-filter)).
 3. Drei beliebige von **Beliebiges Datum**, **Letzter Tag**, **Letzte Woche**, **Letzter Monat**,
    **Letzten drei Monate**, **Letztes Jahr**.
 4. **Falsch.** Sie findet veröffentlichte Inhalte, die Sie lesen dürfen.
@@ -121,7 +121,7 @@ Verwenden Sie die Schulungsinstallation und die Elemente, die Sie in diesem Kurs
 
 ## Weiterführende Literatur
 
-- [Suchen](../../../suchen.md#die-erweiterte-suche): das erweiterte Formular.
+- [Suchen](../../../suchen.md#die-suchseite-und-ihre-filter): das erweiterte Formular.
 - [Sektionen](../../../../anleitungen/sektionen.md): was die Sektionen unter **In** sind.
 
 ## Verwandte Seiten

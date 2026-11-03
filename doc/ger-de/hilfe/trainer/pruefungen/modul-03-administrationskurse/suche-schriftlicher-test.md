@@ -81,7 +81,7 @@ eingegeben hat, und diese kann personenbezogene Daten enthalten; deshalb steht F
 1. `/`, wenn der Fokus nicht in einem anderen Feld steht ([Suchen](../../../suchen.md#die-schnellsuche)).
 2. Setzen Sie im **Suchbereich** **Wo** auf **Aktueller Ort**
    ([Suchen](../../../suchen.md#die-suche-eingrenzen)).
-3. **Klasse** ([Suchen](../../../suchen.md#die-erweiterte-suche)).
+3. **Klasse** ([Suchen](../../../suchen.md#die-suchseite-und-ihre-filter)).
 4. Im **Inhaltsfinder** unter dem Baum, dann **Finden**
    ([Suchen](../../../suchen.md#ein-objekt-über-seine-nummer-oder-adresse-öffnen)).
 5. Drei von: Die Rolle verbirgt es, es liegt im Papierkorb, es ist nur ein Entwurf, der Index ist noch nicht

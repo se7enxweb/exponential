@@ -78,7 +78,7 @@ personal data; that is why question 10 is in the test.
 1. `/`, when the focus is not in another field ([Searching](../../../searching.md#the-quick-search)).
 2. In **Search scope**, set **Where** to **Current location**
    ([Searching](../../../searching.md#narrow-the-search)).
-3. **Class** ([Searching](../../../searching.md#the-advanced-search)).
+3. **Class** ([Searching](../../../searching.md#the-search-page-and-its-filters)).
 4. In the **Content finder** below the tree, then **Find**
    ([Searching](../../../searching.md#open-an-item-by-its-number-or-address)).
 5. Three of: the role hides it, it is in the trash, it is only a draft, the index has not caught up yet
