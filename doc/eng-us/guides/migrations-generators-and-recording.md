@@ -7,8 +7,9 @@ generate a migration from it, then run that migration on staging and production.
 
 This page explains the recording and the generators of Exponential 6.0.15: the one that turns a recording into a
 migration file, the one that writes a migration of what an installation has now (content, classes, roles, sections,
-settings), the skeletons of every kind of migration file, the editor of the administration and the converter from the
-reference bundle's YAML. Generating from a diff follows later. The output below was produced on SQLite on 1 and 2 November 2026.
+settings), the one that writes a migration of what changed since a saved state (a caption, another installation, a
+database dump), the skeletons of every kind of migration file, the editor of the administration and the converter
+from the reference bundle's YAML. The output below was produced on SQLite on 1 and 2 November 2026.
 
 [Guides](README.md) · [Migrations](migrations.md) · Related: [PHP migrations](migrations-php.md),
 [Rollback and captions](migrations-rollback-and-captions.md), [The file format](../specifications/6.0/migration-file-format.md#recorded-events-exp-migration-recording-event1),
@@ -470,6 +471,79 @@ identifiers, users by secrets, secret settings left out.
 ```text
 $ ./console exp:migration:generate --from-class=news_article --from-role="News editor" --from-section=news news_setup --apply
 ```
+
+## Generating a migration from a difference
+
+`--from-diff` compares the installation now with a saved state and writes a migration of what changed. Run on the
+saved state, the migration makes it like this installation: changes made in the administration of one installation
+become a migration for the others, without a recording running at the time.
+
+| `--from-diff=` | The saved state |
+|---|---|
+| a caption id (`20261102-101500`) | the caption (Sicherungspunkt): its database dump and its copy of `settings/override`. `./console exp:migration:caption --list` lists them; `--backup-dir` names the folder of captions made without git_manager |
+| a file (`var/backup/before.sqlite`, `before.sql`) | a database dump of the same schema: a SQLite file (read in place, read-only), or an SQL dump of this installation's engine (SQLite, MySQL or MariaDB, PostgreSQL) loaded into a throwaway database `<database>_migdiff_<pid>` with the installation's account and dropped afterwards. A MongoDB dump is not read: restore it into a database of its own and compare with that installation by its address |
+| an address (`https://staging.example.com`) | another installation, read once through its REST route `GET /api/migration/v1/snapshot` (policy `migration/read`; an API key with the scope `migration:read`, named by `--token=<secret name>` or `--token=env:VARIABLE`). Nothing is written there |
+
+`--compare` names what is compared; the default is everything but content:
+
+| Kind | Compared by | Steps |
+|---|---|---|
+| `classes` | identifier: the definition and every attribute | `content_class` ensure, or delete |
+| `roles` | name: the policies with their limitations (not the assignments: they name users) | `role` ensure, or delete |
+| `sections` | identifier: name and navigation part | `section` ensure, or delete |
+| `states` | identifier of the object state group: its states and names | `object_state_group` ensure, or delete |
+| `languages` | locale: the name | `language` ensure, or delete |
+| `content` | with `--subtree=<node>`: the objects of that subtree by remote id (modified, version, section, parent); `--max-objects` (default 500) refuses a larger subtree instead of comparing part of it | `content` ensure (parents first); delete of the topmost removed object |
+| `settings` | `settings/override`: every variable of every file (only a caption or another installation has them) | `settings` set, or remove |
+
+What was added or changed is generated as `--from-content`, `--from-class` and the others generate it (mode
+`ensure`, stable identifiers, users by secrets); what was removed becomes a delete step, after everything that is
+made. Each side is read as a snapshot of fingerprints (a SHA-1 of what a step would set), so another installation
+never hands out a value: the values in the migration are always this installation's. Secret settings are left out of
+both snapshots: set them by hand. A moved object is listed in the header, to be done by hand with a location step.
+
+```text
+$ ./console exp:migration:generate --from-diff=var/backup/before.sqlite --compare=classes,roles,sections,languages,content --subtree=2 news_changes
+Exponential migrations: generate from a difference, dry run (--apply writes the file)
+Compared with the dump before.sqlite
+  classes    0 added, 1 changed, 0 removed
+  roles      0 added, 0 changed, 1 removed
+  sections   1 added, 1 changed, 0 removed
+  languages  1 added, 0 changed, 0 removed
+  content    0 added, 1 changed, 0 removed
+    1  language/ensure language nor-NO
+    2  section/ensure section diff_news
+    3  section/ensure section standard
+    4  class/create class folder
+    5  content/create object remote:9459d3c29e15006e45197295722c7ade
+    6  role/delete role Editor
+File migrations/20261102120000_news_changes.yml
+
+    # description: What changed since the dump before.sqlite
+    #
+    # Generated from the difference to the dump before.sqlite (classes 0 added, 1 changed, 0 removed; roles 0 added,
+    # 0 changed, 1 removed; sections 1 added, 1 changed, 0 removed; ...).
+    # Run on that state, it makes it like this installation.
+    # Check it before the run: ./console exp:migration:check and ./console exp:migration:dry-run
+    steps:
+        - type: language
+          mode: ensure
+          locale: nor-NO
+          name: Norsk
+        - type: section
+          mode: ensure
+          identifier: standard
+          name: "Standard (changed)"
+          navigation_part: ezcontentnavigationpart
+        ...
+        - type: role
+          mode: delete
+          role: Editor
+```
+
+(The plan lines name the recorded form, `create`; the steps use `ensure`.) Without differences nothing is written and
+the command ends with 0 and "no differences: nothing to generate". With `--apply` the file is written; an existing
+file is never replaced.
 
 ## Skeletons
 

@@ -25,7 +25,7 @@ e9a221cfefd482545e28180305af7f54  .htaccess_root_static
 46884c493a70f93699d00c996034fbf3  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 afffc46af33f147f5fbcf7e6d9be3fb4  autoload.php
-d7111127b377d79a6812e165ee110685  autoload/ezp_kernel.php
+9f26d0b3620480df41ae752a6261383d  autoload/ezp_kernel.php
 e930cee886a2bb3d48841249c278e5cc  benchmarks/classes/ezbenchmark.php
 7d53275297ef3644b03de14c378ce32a  benchmarks/classes/ezbenchmarkcase.php
 c7d5434eac3788fbeb0a44161d7cdda8  benchmarks/classes/ezbenchmarkclirunner.php
@@ -3721,7 +3721,7 @@ d3cd9752d1bc4351a0ab0729a558843f  doc/eng-us/branch-overview.md
 9aad8564171ca8a3ebbdf24d0ac878f1  doc/eng-us/doxygen/Doxyfile
 96a0cec80eb773687ca28840ecc67ca1  doc/eng-us/doxygen/empty.html
 218a5bdcfb7e8b6199a72d575b78aac8  doc/eng-us/examples/README.md
-718775e548906f10f0b515f2fb500f35  doc/eng-us/examples/commands/README.md
+6941d5f32b07c509ffaa617be61382e5  doc/eng-us/examples/commands/README.md
 0416e2e6ffd13c1ea43a337855961707  doc/eng-us/examples/commands/accesscheck.md
 47d52e658c8d83c44d5cb6fae172824e  doc/eng-us/examples/commands/addanonymouspublicpolicies.md
 6d35731551f1ea3e02af6513220b0122  doc/eng-us/examples/commands/adddefaultstates.md
@@ -3773,7 +3773,7 @@ af1f032f0b5eb70a73e6efb9b27d06ef  doc/eng-us/examples/commands/explovestack.md
 d191449b755d7b9d60da9ad09107af4a  doc/eng-us/examples/commands/expmigrationconvert.md
 171c1e01657495bf83e575e3e4c342eb  doc/eng-us/examples/commands/expmigrationdeploy.md
 4ec07d5eab0c580a049d7fd9b2a9056d  doc/eng-us/examples/commands/expmigrationdryrun.md
-47a39f37c40f855eed5f160cc983551d  doc/eng-us/examples/commands/expmigrationgenerate.md
+8cd29333665d56f0c77d0cb0f18fabd2  doc/eng-us/examples/commands/expmigrationgenerate.md
 cd80dbece5d46b1d4b4ed69bf39775cb  doc/eng-us/examples/commands/expmigrationheal.md
 b29488d86676a67549a1e760db0b86a9  doc/eng-us/examples/commands/expmigrationmigrate.md
 fe8029a581c530b848866f3caf04ac77  doc/eng-us/examples/commands/expmigrationpush.md
@@ -5355,8 +5355,8 @@ e981d8b6bfc47eae2a81c2651bd056db  doc/eng-us/examples/ini-settings/requestrules/
 bfb887da3c43bb9e7bbe419811bf29ac  doc/eng-us/examples/ini-settings/requestrules/Rule-system_url_content_view_notfound.md
 cf9c0c3cbfa4bf3fbb0034a02defc8ee  doc/eng-us/examples/ini-settings/requestrules/Rule-system_url_full_view_audit.md
 959725da41a32e2b54dfe87f05785a79  doc/eng-us/examples/ini-settings/requestrules/Rule-system_url_full_view_to_alias.md
-0f8f024558a069f2ca9458ccb4e9ade8  doc/eng-us/examples/ini-settings/rest/ApiKeySettings.md
-cb0116ac93b9ff648150743447ab0fe8  doc/eng-us/examples/ini-settings/rest/ApiProvider.md
+907d9d9ce14e245a25ea3def07d3296d  doc/eng-us/examples/ini-settings/rest/ApiKeySettings.md
+30eb2038bd192ed723ad8969a4bc79a1  doc/eng-us/examples/ini-settings/rest/ApiProvider.md
 f03a38793bf6b11e16691cfec0b17612  doc/eng-us/examples/ini-settings/rest/Authentication.md
 c96ff90781a378411143192c8466ee5b  doc/eng-us/examples/ini-settings/rest/CacheSettings.md
 d21a9606681dfe00727029d405ebe666  doc/eng-us/examples/ini-settings/rest/CorsSettings.md
@@ -7050,7 +7050,7 @@ a101a3bb9c015da9204c6718c2598563  doc/eng-us/guides/images/maintenance/installat
 d11111815c1efec3a438ecccd836072e  doc/eng-us/guides/mail-preferences-developer.md
 9090ac1bfc0b083e83885f6eb1f344b0  doc/eng-us/guides/maintenance-mode.md
 9255535da21ab6b9e3c42ceb3745564c  doc/eng-us/guides/migrations-engines-and-performance.md
-6cefa6268793d6acec05f387c20c1d61  doc/eng-us/guides/migrations-generators-and-recording.md
+ae64cbe2fceaab75f6327a1b16b31f39  doc/eng-us/guides/migrations-generators-and-recording.md
 e447c8180e8bb448ab16d5fc8952e530  doc/eng-us/guides/migrations-packages-deploy-and-long-runs.md
 9caf4fc6ee9df5f7c80a63ccb7b26b26  doc/eng-us/guides/migrations-php.md
 efa4c83772c62541c2485641434718e1  doc/eng-us/guides/migrations-remote-deploy.md
@@ -7071,7 +7071,7 @@ a9e263b9dc1180066ed522ffcde201ac  doc/eng-us/guides/passkeys.md
 d79ee6f6d33aa7bb6763edf5adab0741  doc/eng-us/guides/pdf-exports.md
 b3508a46f8832f33104756fa6a795c63  doc/eng-us/guides/preloading-caches.md
 a18d1933d4f72ad93e278381d78e827f  doc/eng-us/guides/remote-services-and-apps.md
-4762005716c817e70b990c96b4baf1dc  doc/eng-us/guides/rest-api-v1-and-v2.md
+9b4012f8b0e92fbb81a407e200060a60  doc/eng-us/guides/rest-api-v1-and-v2.md
 cd91a7c1c714e9d97dac609915a069f2  doc/eng-us/guides/roles-and-policies.md
 f337e682866a0c40c31e27575e8f3a38  doc/eng-us/guides/rss-feeds.md
 95673ee9935e9be417754641a1ca13dc  doc/eng-us/guides/sections.md
@@ -13286,7 +13286,7 @@ c13a558f647f18e92dfbeea060cebe4d  doc/ger-de/.examples/descriptions/11-ini-setti
 fd6f22c56fda95c1d7e7e361ba9d2d24  doc/ger-de/.examples/descriptions/13-command-exptemplateconvert.json
 85af8ffdf051840844de4b6bac2787b7  doc/ger-de/.examples/descriptions/13-command-setupfiles-configphp.json
 e91597991b8a1a75aa283ea4d6171c5f  doc/ger-de/.examples/descriptions/13-command-upgrade.json
-6cbc26fe4d1ac44af0d7052cb0f15cdb  doc/ger-de/.examples/descriptions/13-commands-ini-and-cronjobs-2026-10-28.json
+c51a21fb67f0c8ea8e26c04193aae6db  doc/ger-de/.examples/descriptions/13-commands-ini-and-cronjobs-2026-10-28.json
 f16d86ab0286e7abf7b93b1e644bbb1f  doc/ger-de/.examples/descriptions/13-ini-settings-bookmark-ini.json
 0d5d623e07a6f3a7de4d6e0c017f46b7  doc/ger-de/.examples/descriptions/13-passkeys-reauth.json
 f45a78a78b0190153b1ea14d27b8799c  doc/ger-de/.examples/descriptions/14-twig-ini-and-template-bridge-2026-10-29.json
@@ -13298,7 +13298,7 @@ f45a78a78b0190153b1ea14d27b8799c  doc/ger-de/.examples/descriptions/14-twig-ini-
 94bc98a826c7352b502724c0c179fb24  doc/ger-de/.examples/descriptions/19-graphql-api-starter-2026-10-30.json
 4b3123282c26437cef7e45cb65269a22  doc/ger-de/.examples/descriptions/20-editor-role-class-sets-2026-10-30.json
 3e5f3c6f2f15b756e23860af52d46bf0  doc/ger-de/.examples/descriptions/20-graphql-api-realtime-2026-10-30.json
-ea02b03bd6a49a8e4a96a4e8152a6dc3  doc/ger-de/.examples/descriptions/21-command-migration-2026-10-31.json
+a492de0510a824ced1ba60a036ec5155  doc/ger-de/.examples/descriptions/21-command-migration-2026-10-31.json
 f26edba2f4dce1ecdfe95d75e31d053e  doc/ger-de/.examples/descriptions/21-legacy-fork-fixes-2026-10-31.json
 98601c733889b38a62f0f2ab1a605634  doc/ger-de/.examples/descriptions/22-migration-ini-cronjob-and-template-check-2026-10-31.json
 26458ad79eb818c7bca8362306c42667  doc/ger-de/.examples/descriptions/23-migration-admin-2026-11-01.json
@@ -13319,6 +13319,7 @@ e877bec75852cba6107371661f58b064  doc/ger-de/.examples/descriptions/31-migration
 b8f2793235dc711a4414d2586363d371  doc/ger-de/.examples/descriptions/32-migration-remote-deploy-part2-2026-11-10.json
 f3b5d80ee09ab898084c12c09f95ac08  doc/ger-de/.examples/descriptions/32-static-publishing-siteaccesses-2026-11-02.json
 9bd7cfb9220679a7eb4466426ac90edc  doc/ger-de/.examples/descriptions/33-migration-editor-convert-split-2026-11-02.json
+00b0ea11e32bd8d3d5bbc7c1f4c559ce  doc/ger-de/.examples/descriptions/34-migration-generate-from-diff-2026-11-02.json
 8d1419735c866a444da349c8cf9f480f  doc/ger-de/.examples/descriptions/34-migration-remote-deploy-part3-2026-11-02.json
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
@@ -13405,7 +13406,7 @@ cdb807c8a883bb76e36aac6edc139c2e  doc/ger-de/anleitungen/klassische-menueeinstel
 19ad3fdd043c1d4d4d203bb6dd95c158  doc/ger-de/anleitungen/mail-einstellungen-administrator.md
 60703bdde17fe14d72e5fab3560aaf0c  doc/ger-de/anleitungen/mail-einstellungen-entwickler.md
 17645822c44993ab2d20b5f54a8f1632  doc/ger-de/anleitungen/migrationen-engines-und-leistung.md
-92f194a057ee2583a7edfb47666ff600  doc/ger-de/anleitungen/migrationen-erzeugen-und-aufzeichnen.md
+cb079be4a393c43af422550caaec8119  doc/ger-de/anleitungen/migrationen-erzeugen-und-aufzeichnen.md
 8f7c6818af856393aaf6318d6d3b7564  doc/ger-de/anleitungen/migrationen-fehlerbehebung.md
 f1903287d1576c2b7ad8249b2842d9b2  doc/ger-de/anleitungen/migrationen-pakete-deploy-und-lange-laeufe.md
 bb60c3e2c793e9b30a9768ec74cce73b  doc/ger-de/anleitungen/migrationen-php.md
@@ -13422,7 +13423,7 @@ fb6880b3d82b28215fb0d664ecf3f351  doc/ger-de/anleitungen/oeffentlich-entwickeln-
 1271f7f154a24ac92678b9dc95861a1a  doc/ger-de/anleitungen/pakete.md
 575b4ba2020a8e3d1d389c78eb8b9257  doc/ger-de/anleitungen/passkeys.md
 e6b2e42e0fbcb6f71c0d627295536c75  doc/ger-de/anleitungen/pdf-exporte.md
-1eb00278d712e0bd771f929e465306b7  doc/ger-de/anleitungen/rest-api-v1-und-v2.md
+4e5c4137c8a68720051538fc886ac7e2  doc/ger-de/anleitungen/rest-api-v1-und-v2.md
 296d6912eab7b7915cf59b235283ed90  doc/ger-de/anleitungen/rollen-und-richtlinien.md
 e198e604191172c7dfb6193e2b6ba90b  doc/ger-de/anleitungen/rss-feeds.md
 2512e6146acb757c89781c1580f25ba0  doc/ger-de/anleitungen/seiten-cache-mit-litespeed.md
@@ -13590,7 +13591,7 @@ a0a8364c2f555c71637fa962fe98910d  doc/ger-de/bc/6.0/vertrauenswuerdige-proxys.md
 1f6ee4c60a711526c9cd31416441a991  doc/ger-de/bc/6.0/zugriff-auf-entwuerfe.md
 87bcef5fa01d68c26dfd2cb9e2021c07  doc/ger-de/bc/6.0/zusaetzliche-erweiterungsverzeichnisse.md
 73895665ec5c4c5ba649a9ab6b9c1d7d  doc/ger-de/beispiele/README.md
-87e90c4f6288eed21f1a913ef3318b20  doc/ger-de/beispiele/befehle/README.md
+29496bc5752776cc67aff78df4aa9fa8  doc/ger-de/beispiele/befehle/README.md
 fb78cc24f28e4e7e208a831fc04c7de3  doc/ger-de/beispiele/befehle/accesscheck.md
 e5b188fae769a1201a72f50d98683190  doc/ger-de/beispiele/befehle/addanonymouspublicpolicies.md
 1b32eaf6f85858eaa99ca055cddccb7a  doc/ger-de/beispiele/befehle/adddefaultstates.md
@@ -13642,7 +13643,7 @@ cfae99e30e49125b83c0ec01171d96a8  doc/ger-de/beispiele/befehle/exphelpcontent.md
 086259a46b7ba649940fdf7efd7ac79e  doc/ger-de/beispiele/befehle/expmigrationconvert.md
 f0e6e4c766e1f10274a08c9d1c007973  doc/ger-de/beispiele/befehle/expmigrationdeploy.md
 78ae3ae8ddafd12ddc720900b76db1f9  doc/ger-de/beispiele/befehle/expmigrationdryrun.md
-449059a6ca9f81b0ef8b27dfc55c682e  doc/ger-de/beispiele/befehle/expmigrationgenerate.md
+3202ee88dc3438965bd22e6a86d02bc2  doc/ger-de/beispiele/befehle/expmigrationgenerate.md
 39bc2cf9249baec4074d531809d3ea80  doc/ger-de/beispiele/befehle/expmigrationheal.md
 1c519461e0d1c24366332bdfa8200f12  doc/ger-de/beispiele/befehle/expmigrationmigrate.md
 92dd1af54aa80bf64dc6a4f7506e6a9b  doc/ger-de/beispiele/befehle/expmigrationpush.md
@@ -15197,8 +15198,8 @@ dc48f04df985a8939d27831aff2e009c  doc/ger-de/beispiele/ini-einstellungen/request
 8ec636034a953636af798bf867a07e54  doc/ger-de/beispiele/ini-einstellungen/requestrules/Rule-system_url_content_view_notfound.md
 bffa3d1610d812b8a80f9653da9b31ee  doc/ger-de/beispiele/ini-einstellungen/requestrules/Rule-system_url_full_view_audit.md
 f055606300a444711ff86a9e9839642c  doc/ger-de/beispiele/ini-einstellungen/requestrules/Rule-system_url_full_view_to_alias.md
-edcdbe64e22d5dc7a8a1c8167641614b  doc/ger-de/beispiele/ini-einstellungen/rest/ApiKeySettings.md
-b5708e3d71e31905215c8300dc39afe4  doc/ger-de/beispiele/ini-einstellungen/rest/ApiProvider.md
+12f1def5e23d98cfe686e1c4b9719333  doc/ger-de/beispiele/ini-einstellungen/rest/ApiKeySettings.md
+9b0505a0525c25091d042fc09a8500b5  doc/ger-de/beispiele/ini-einstellungen/rest/ApiProvider.md
 d374066bb97cbf9fcf5699dcfd671b3a  doc/ger-de/beispiele/ini-einstellungen/rest/Authentication.md
 a16cbd5cdbedf80418b0aaf089058b62  doc/ger-de/beispiele/ini-einstellungen/rest/CacheSettings.md
 90f42368ec39d9158ec2d7cd02bde0d2  doc/ger-de/beispiele/ini-einstellungen/rest/CorsSettings.md
@@ -24490,6 +24491,7 @@ ca1d0063945165c253886e9474bda6ae  kernel/classes/migration/expmigrationconverter
 a7e8a4596e85e5feefff3e57647352eb  kernel/classes/migration/expmigrationdefinition.php
 cee4958660a5adc04e3b025bd77d23f6  kernel/classes/migration/expmigrationdeploynotifier.php
 7bc4df870c8fb92b0fd3b8f0803379d7  kernel/classes/migration/expmigrationdeployrecord.php
+010dbc179bd22ac4d65295cfc91ee369  kernel/classes/migration/expmigrationdiff.php
 1b37e5cc50fe805fd44047e2a34e54b6  kernel/classes/migration/expmigrationeditor.php
 c89ec402a3c204c25d3c2111db5422aa  kernel/classes/migration/expmigrationfiles.php
 698a035a7dde2900d764fddd4d418cee  kernel/classes/migration/expmigrationgenerator.php
@@ -24512,7 +24514,7 @@ ab3cace103b665195e8faa40e46c1691  kernel/classes/migration/expmigrationqueuehand
 3f5fd8049f48bc3d55f81b5b9928a606  kernel/classes/migration/expmigrationrecorder.php
 73f4e699ec7e44177d355851f73940a7  kernel/classes/migration/expmigrationrecording.php
 4d6147e64bba6e69b28797f10b22e624  kernel/classes/migration/expmigrationrecordingevent.php
-b990c647792bce3fb9b9448b3cf56197  kernel/classes/migration/expmigrationrecordinggenerator.php
+527068d238eb62c922d2b9a5afbd621a  kernel/classes/migration/expmigrationrecordinggenerator.php
 9146e38ab178d30bc1ccb238d4eadae2  kernel/classes/migration/expmigrationrecordingresolver.php
 4fe812ae992065c6f97cfad419935a02  kernel/classes/migration/expmigrationrecordingsource.php
 f7edf4a8507e6363f14444779199706a  kernel/classes/migration/expmigrationrecordingsteps.php
@@ -24545,8 +24547,8 @@ d09cce1cdaa6081038873db8c55b5793  kernel/classes/migration/expmigrationupgradeso
 72b37383241df61f274b446590e9cb7f  kernel/classes/migration/expmigrationyaml.php
 1ab9ed75bd235736eab1532fe0385508  kernel/classes/migration/expmigrationyamlparser.php
 4cc84e9c2d01c90fa6f0725c04490e44  kernel/classes/migration/expmigrationyamlwriter.php
-1efe824633f81adfe9ff04a8b3762289  kernel/classes/migration/rest/expmigrationrestcontroller.php
-acec234faa782b18e4d086f8605201b6  kernel/classes/migration/rest/expmigrationrestprovider.php
+c52784493e5105fb6d92625fdde9a506  kernel/classes/migration/rest/expmigrationrestcontroller.php
+fb784c8bbd83665cb9bebd75cc1366e2  kernel/classes/migration/rest/expmigrationrestprovider.php
 f98f4262977131dfd35ed82f089fd02a  kernel/classes/migration/rest/expmigrationrestviewcontroller.php
 5f193728d499d0b726709c664e573dfc  kernel/classes/migration/steps/expmigrationsiteinstaller.php
 6bde2681a25db900de70b30aabb49f9e  kernel/classes/migration/steps/expmigrationstepassert.php
@@ -25145,13 +25147,13 @@ fb3a3a5f3af0553e8c2c1ac4c048f7b7  kernel/private/classes/commands/exphelpexample
 099dc77b3fcba4c0c532c01f59788c6a  kernel/private/classes/commands/explogs.php
 cecc6e167e074a05d9a0c7b9c85017a8  kernel/private/classes/commands/exploremipsumfill.php
 0fdd4c3ba5e52392568e7324aefa3713  kernel/private/classes/commands/explovestack.php
-5fbf0a1482b237cfd13836330e606c10  kernel/private/classes/commands/expmigrationbase.php
+81f21672ab97e455c6ffc75d588d57fe  kernel/private/classes/commands/expmigrationbase.php
 3cc4a3b31daa57c3c15e81674e9089f0  kernel/private/classes/commands/expmigrationcaption.php
 c6655a675fb8c4d26a8e5e1e4e24fa0a  kernel/private/classes/commands/expmigrationcheck.php
 4716b71721a5e424fd96a8e167b8b3f4  kernel/private/classes/commands/expmigrationconvert.php
 bca77c90a8636b57c6894930a7aacc68  kernel/private/classes/commands/expmigrationdeploy.php
 84d07953ed791dc0ba4f52f331615065  kernel/private/classes/commands/expmigrationdryrun.php
-1b481131657280804a5c826f88bc314b  kernel/private/classes/commands/expmigrationgenerate.php
+35dea31e627b05e8d69445c5e505abaa  kernel/private/classes/commands/expmigrationgenerate.php
 2878b78fd99f3d79db37122ec1934df3  kernel/private/classes/commands/expmigrationheal.php
 8db5902d62f62c77a943578ee06c3e0b  kernel/private/classes/commands/expmigrationmigrate.php
 533ad2bdf45196305ff188fcbe1a7146  kernel/private/classes/commands/expmigrationpush.php
@@ -26460,7 +26462,7 @@ bada4e0f552e8fc8c771aec209487b83  settings/querycache.ini
 21696fbd63b02afd759ad1e39c5a8e8a  settings/rad.ini
 a5de15343b43044c3212fdc6953d813f  settings/requestclassifier.ini
 f7103c5bfddb7fcd5cbd36dc6cab1df1  settings/requestrules.ini
-faab3f3faaa26df04b8f8c5b70f9c910  settings/rest.ini
+85c944b84352ca4e900256a7e545f96a  settings/rest.ini
 0e25e6140fca0aab71d94cdb05352146  settings/secrets.ini
 3d58b3c9abd483644a07965e143cb05f  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
@@ -28619,7 +28621,7 @@ cc4738f42a4e507b507690ced983d0aa  tests/tests/kernel/classes/migration/expMigrat
 df2891775fbe7ed2454048f98673e152  tests/tests/kernel/classes/migration/expMigrationCaptionFakes.php
 73d1596bcf3555216d9f028f3da14351  tests/tests/kernel/classes/migration/expMigrationCaptionSqliteTest.php
 f617f2f7957aa9bc8dc7d9e73bc47f02  tests/tests/kernel/classes/migration/expMigrationCaptionTest.php
-b927a3a4030c09d55e72b5c6353a0af1  tests/tests/kernel/classes/migration/expMigrationCommandContractTest.php
+3e438a88973f1e4a87e40893c58c6618  tests/tests/kernel/classes/migration/expMigrationCommandContractTest.php
 f317c6c5599454cb669cdb72f76edb25  tests/tests/kernel/classes/migration/expMigrationCommandDatabaseTest.php
 af7cfd6fdaccf80222488af9083577ec  tests/tests/kernel/classes/migration/expMigrationCommandEngineChecks.php
 af3623e16b241e1b9bcf3e52b085f013  tests/tests/kernel/classes/migration/expMigrationCommandSqliteTest.php
@@ -28630,6 +28632,10 @@ ddc36a1d2b6a8564e354c233db2dfddf  tests/tests/kernel/classes/migration/expMigrat
 84bcd0ca15fcb735ff754cdde0525cd3  tests/tests/kernel/classes/migration/expMigrationContentStepsTest.php
 5aa4adadc493572b2b957f6869ea9894  tests/tests/kernel/classes/migration/expMigrationConverterTest.php
 081ac6800e88df89dc2fce1d8752013e  tests/tests/kernel/classes/migration/expMigrationDefinitionTest.php
+1612ac6a42a79a7cd1fe1353862948b9  tests/tests/kernel/classes/migration/expMigrationDiffDatabaseTest.php
+077ec0372f1c9ad8cbd0ee8559a05c59  tests/tests/kernel/classes/migration/expMigrationDiffEngineChecks.php
+287184a1983038bcc0468751f1f048f0  tests/tests/kernel/classes/migration/expMigrationDiffSqliteTest.php
+59036128273d1777fec3b63f73c10042  tests/tests/kernel/classes/migration/expMigrationDiffTest.php
 8bebfde6a721f1873081e8b5cec8bba7  tests/tests/kernel/classes/migration/expMigrationEditorTest.php
 e324cf43867bec217cdf174afd6e0afa  tests/tests/kernel/classes/migration/expMigrationFileStepsTest.php
 193be194e88bf16fddcad31b94bd52b3  tests/tests/kernel/classes/migration/expMigrationGeneratorTest.php
@@ -29414,6 +29420,7 @@ c817175aad18a0e8f74e914c5f4c129f  tests/tests/lib/ezdb/ezmysqldb_fk_test.php
 b420e648e58a85dd6a5f9b4c864ff4c9  tests/tests/lib/ezdb/mongodb/expMigrationCaptionMongoDBTest.php
 a253766ecdacb35f10a837742a5abbb5  tests/tests/lib/ezdb/mongodb/expMigrationCommandMongoDBTest.php
 1aed1a08a3d57def468149158d202c3d  tests/tests/lib/ezdb/mongodb/expMigrationContentStepsMongoDBTest.php
+30ec0050f802e6f620df000736f118dc  tests/tests/lib/ezdb/mongodb/expMigrationDiffMongoDBTest.php
 00756bb5459a1df788b0431f8522bb03  tests/tests/lib/ezdb/mongodb/expMigrationGraphqlMongoDBTest.php
 c1f5e05ea4538dd4afd8dcf4a5d139b3  tests/tests/lib/ezdb/mongodb/expMigrationLayoutHttpMailCommandStepsMongoDBTest.php
 bf12ae274419737797c1ac64e4db9d1e  tests/tests/lib/ezdb/mongodb/expMigrationPerformanceMongoDBTest.php

@@ -1,6 +1,6 @@
 <?php
 /**
- * The controller of the migration routes (expMigrationRestProvider): the status, the runs and one run, for the user
+ * The controller of the migration routes (expMigrationRestProvider): the status, the runs, one run and the snapshot, for the user
  * the REST layer authenticated, who needs the policy migration/read (403 without it). An unknown run is 404.
  *
  * Never kept in the REST application cache (rest.ini [expMigrationRestController_CacheSettings]): a status changes
@@ -46,6 +46,21 @@ class expMigrationRestController extends ezpRestMvcController
             return $refusal;
         $run = self::service()->run( (string)$this->runId );
         return $run === null ? self::status( 404, array( 'error' => 'not_found' ) ) : self::result( $run );
+    }
+
+    /**
+     * The fingerprints another installation compares with (exp:migration:generate --from-diff=<address>): never a
+     * value, secret settings left out (expMigrationDiff::localSnapshot()).
+     */
+    public function doSnapshot()
+    {
+        $refusal = $this->refusal();
+        if ( $refusal !== null )
+            return $refusal;
+        $get = $this->request instanceof ezcMvcRequest && isset( $this->request->get ) ? (array)$this->request->get : array();
+        $snapshot = expMigrationDiff::localSnapshot( $get );
+        return $snapshot['errors'] && !$snapshot['kinds'] ? self::status( 400, array( 'error' => 'bad_request', 'error_message' => implode( '; ', $snapshot['errors'] ) ) )
+                                                         : self::result( $snapshot );
     }
 
     /** @return expMigrationService */

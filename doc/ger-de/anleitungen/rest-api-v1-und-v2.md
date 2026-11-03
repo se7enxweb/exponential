@@ -319,6 +319,7 @@ Kernels, `rest.ini [ApiProvider] ProviderClass[migration]`):
 | `GET` | `/api/migration/v1/status` | `summary` (pending, failed, orphans, total, ready), `environment`, `engine`, `lock`, jede Migration mit ihrem Zustand (`migrations`), `orphans`, `warnings`, `errors` |
 | `GET` | `/api/migration/v1/runs?limit=20&offset=0` | die letzten Läufe, die neuesten zuerst (höchstens 100 auf einmal) |
 | `GET` | `/api/migration/v1/runs/<Lauf-ID>` | ein Lauf und die Migrationen, die er geschrieben hat; `404` für einen unbekannten Lauf |
+| `GET` | `/api/migration/v1/snapshot?compare=classes,roles&subtree=<Remote-ID des Knotens>&limit=500` | Fingerabdrücke (SHA-1) der Klassen, Rollen, Sektionen, Objektzustandsgruppen, Sprachen, Einstellungen von `settings/override` (ohne Geheimnisse) und eines Inhalts-Teilbaums, nie ein Wert: womit `exp:migration:generate --from-diff=<Adresse>` einer anderen Installation vergleicht ([Generatoren](migrationen-erzeugen-und-aufzeichnen.md#eine-migration-aus-einem-vergleich-erzeugen)); `400` für eine unbekannte Art |
 
 Der Benutzer braucht die Richtlinie `migration/read` (ohne sie `403 access_denied`). Ein persönlicher API-Schlüssel
 braucht die Berechtigung `migration:read` („Read the state of the migrations"); ein OAuth-Token liest als sein

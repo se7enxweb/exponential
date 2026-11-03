@@ -272,7 +272,8 @@ class expMigrationRecordingGenerator
      *
      * @param array[] $events
      * @param array $options name, source, description, author, apply, registry, time, root, directory, ensure (modes
-     *                       ensure instead of create), comments (lines for the header)
+     *                       ensure instead of create), comments (lines for the header), manual (lines to be done by
+     *                       hand that the caller found, listed before those of the steps)
      * @param array $report emptyReport()
      * @return array the report
      */
@@ -286,6 +287,7 @@ class expMigrationRecordingGenerator
             $report['omitted'] = array_values( array_unique( array_merge( $report['omitted'], (array)$entry['omitted'] ) ) );
         }
         $made = expMigrationRecordingSteps::fromPlan( $plan, array( 'ensure' => !empty( $options['ensure'] ) ) );
+        $made['manual'] = array_values( array_unique( array_merge( isset( $options['manual'] ) ? (array)$options['manual'] : array(), $made['manual'] ) ) );
         $report['manual'] = $made['manual'];
         $registry = isset( $options['registry'] ) ? $options['registry'] : expMigrationStepRegistry::fromSettings();
         $report['missing_step_types'] = self::missingIn( $made['steps'], $registry );

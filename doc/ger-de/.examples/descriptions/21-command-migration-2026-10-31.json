@@ -68,8 +68,8 @@
         "de": "Die Migrationen in einer Transaktion ausführen, die zurückgerollt wird (PostgreSQL und SQLite; anderswo wird der Plan aufgelistet)"
     },
     "command:expmigrationgenerate": {
-        "en": "Write a new migration file: --skeleton writes an empty migration (PHP, or with --type=yml, sql, ini or graphql that kind); --from-recording turns a recording of changes into a YAML migration; --from-content, --from-class, --from-role, --from-section and --from-settings turn what the installation has into one; a dry run unless --apply",
-        "de": "Schreibt eine neue Migrationsdatei: --skeleton schreibt eine leere Migration (PHP, oder mit --type=yml, sql, ini oder graphql diese Art); --from-recording macht aus einer Aufzeichnung von Änderungen eine YAML-Migration; --from-content, --from-class, --from-role, --from-section und --from-settings machen eine aus dem, was die Installation hat; ein Probelauf ohne --apply"
+        "en": "Write a new migration file: --skeleton writes an empty migration (PHP, or with --type=yml, sql, ini or graphql that kind); --from-recording turns a recording of changes into a YAML migration; --from-content, --from-class, --from-role, --from-section and --from-settings turn what the installation has into one; --from-diff turns what changed since a caption, another installation or a database dump into one; a dry run unless --apply",
+        "de": "Schreibt eine neue Migrationsdatei: --skeleton schreibt eine leere Migration (PHP, oder mit --type=yml, sql, ini oder graphql diese Art); --from-recording macht aus einer Aufzeichnung von Änderungen eine YAML-Migration; --from-content, --from-class, --from-role, --from-section und --from-settings machen eine aus dem, was die Installation hat; --from-diff macht eine aus dem, was sich seit einem Sicherungspunkt, gegenüber einer anderen Installation oder einem Datenbank-Dump geändert hat; ein Probelauf ohne --apply"
     },
     "command:expmigrationgenerate --engine": {
         "en": "With --type=sql: the file of one engine (mysql, pgsql, sqlite, oracle, mongodb) instead of the portable one",
@@ -84,8 +84,8 @@
         "de": "Mit --from-content: die Ebenen unter jedem Knoten, die mit hineinkommen (Standard 0: der Knoten allein)"
     },
     "command:expmigrationgenerate --max-objects": {
-        "en": "With --from-content: at most this many objects (default 500)",
-        "de": "Mit --from-content: höchstens so viele Objekte (Standard 500)"
+        "en": "With --from-content, or --from-diff with --subtree: at most this many objects (default 500)",
+        "de": "Mit --from-content oder mit --from-diff und --subtree: höchstens so viele Objekte (Standard 500)"
     },
     "command:expmigrationgenerate --from-class": {
         "en": "Generate a YAML migration of content classes (identifiers, comma-separated)",
