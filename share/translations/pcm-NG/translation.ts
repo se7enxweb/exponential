@@ -69207,6 +69207,174 @@ You go need change di class of di node wit di swap functionality.</translation>
         <source>No answer</source>
         <translation>No answer dey</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>dem don cover am</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Show di explanation dem</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Hide di explanation dem</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Open am</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Open dem all</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Close dem all</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Key abi value</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Search di session</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Di type</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>%count more dey</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>e enter inside too deep to show</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>dem cut am, %count characters for all</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Wen e start</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Di cookie name</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>Di session ID</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Di handler</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Where e dey save</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>Wetin PHP dey use by default</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>How long e go last (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Di cookie</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>e go last %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Na your own PHP session, as e be wen dem open di section, no be another person own at all. Di values of keys wey resemble secret (tokens, hashes, passwords) dem don cover am (debugbar.ini SessionMask[]); everything else dey show as dem store am, personal data join.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count key dem, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>e big</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Di session empty.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Nobody start session for dis request.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Di extension %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Kernel and di others</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>No be every entry dey show: di session get pass wetin we fit list for here.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count key dem no dey for di list.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Di frame</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Values wey resemble token (JSON Web Token, di credentials for Authorization header, private key, long hex abi random text) dem dey cover am too, no matter wetin dem call di key (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>Di key resemble secret (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>Di value resemble token.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>E dey under key wey dem don cover.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>Di session as text, dem cover am like di table.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>Di session big pass %size (debugbar.ini SessionWarnBytes): every request wey dis user make dey read di whole session, and e dey write am wen e change.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP dey keep dis session for files and e dey lock di file for di whole request: requests from di same user (plenty tabs, AJAX calls) dey wait for each other.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Keep am open</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>E big pass %size (debugbar.ini SessionWarnBytes): every request wey dis user make dey read di whole session.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits of %count dem read from di cache</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Dem no render any template (view wey dem read from di view cache no dey render any).</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

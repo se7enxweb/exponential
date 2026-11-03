@@ -69138,6 +69138,174 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No answer</source>
         <translation>応答がありません</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>マスク済み</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>説明を表示</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>説明を非表示</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>開く</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>すべて開く</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>すべて閉じる</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>キーまたは値</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>セッションを検索</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>種類</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>ほか %count 件</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>入れ子が深すぎて表示できません</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>切り詰め済み、全 %count 文字</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>開始日時</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>クッキー名</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>セッション ID</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>ハンドラー</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>保存パス</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>PHP の既定値</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>有効期間 (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>クッキー</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>有効期間 %s 秒</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>あなた自身の PHP セッションです。このセクションを開いた時点の状態で、他のセッションが表示されることはありません。秘密に見えるキー (トークン、ハッシュ、パスワード) の値はマスクされます (debugbar.ini SessionMask[])。それ以外はすべて、個人データも含めて保存されているとおりに表示されます。</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count 個のキー、%size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>大きい</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>セッションは空です。</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>このリクエストではセッションが開始されませんでした。</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>拡張機能 %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>カーネルとその他</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>すべてのエントリが表示されているわけではありません: セッションにはここに一覧表示できる以上の内容があります。</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count 個のキーは一覧に含まれていません。</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>フレーム</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>トークンに見える値 (JSON Web Token、Authorization ヘッダーの資格情報、秘密鍵、長い 16 進数またはランダムなテキスト) も、キーの名前にかかわらずマスクされます (debugbar.ini SessionValueMask[])。</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>キーが秘密のように見えます (debugbar.ini SessionMask[])。</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>値がトークンのように見えます。</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>マスクされたキーの下にあります。</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>テーブルと同様にマスクされた、テキスト形式のセッションです。</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>セッションが %size を超えています (debugbar.ini SessionWarnBytes): このユーザーのすべてのリクエストがセッション全体を読み取り、変更されたときには書き込みます。</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP はこのセッションをファイルに保存し、リクエスト全体の間ファイルをロックします: 同じユーザーのリクエスト (複数のタブ、AJAX 呼び出し) は互いを待ちます。</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>開いたままにする</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>%size を超えています (debugbar.ini SessionWarnBytes): このユーザーのすべてのリクエストがセッション全体を読み取ります。</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%count 個中 %hits 個をキャッシュから読み取り</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>テンプレートはレンダリングされませんでした (ビューキャッシュから読み取られたビューは何もレンダリングしません)。</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

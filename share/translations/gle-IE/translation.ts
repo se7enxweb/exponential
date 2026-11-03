@@ -69138,6 +69138,174 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
         <source>No answer</source>
         <translation>Gan freagra</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>ceilte</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Taispeáin mínithe</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Folaigh mínithe</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Oscail</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Oscail gach ceann</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Dún gach ceann</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Eochair nó luach</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Cuardaigh an seisiún</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Cineál</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>%count eile</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>neadaithe ró-dhomhain le taispeáint</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>gearrtha, %count carachtar ar fad</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Tosaithe</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Ainm an fhianáin</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>Aitheantas an tseisiúin</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Láimhseálaí</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Conair shábhála</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>Réamhshocrú PHP</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Saolré (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Fianán</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>saolré %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Do sheisiún PHP féin, mar a bhí sé nuair a osclaíodh an chuid, riamh seisiún eile. Ceiltear luachanna eochracha a bhfuil cuma rúin orthu (comharthaí, haiseanna, pasfhocail) (debugbar.ini SessionMask[]); taispeántar gach rud eile mar a stóráladh é, sonraí pearsanta freisin.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count eochair, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>mór</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Tá an seisiún folamh.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Níor tosaíodh seisiún don iarratas seo.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Eisínteacht %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Eithne agus eile</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Ní thaispeántar gach iontráil: tá níos mó sa seisiún ná is féidir a liostú anseo.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>Níl %count eochair liostaithe.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Fráma</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Ceiltear freisin luachanna a bhfuil cuma comhartha orthu (JSON Web Token, dintiúir ceanntáisc Authorization, eochair phríobháideach, téacs fada heicsidheachúlach nó randamach), cibé ainm atá ar a n-eochair (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>Tá cuma rúin ar an eochair (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>Tá cuma comhartha ar an luach.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Faoi eochair cheilte.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>An seisiún mar théacs, ceilte mar an tábla.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>Tá an seisiún níos mó ná %size (debugbar.ini SessionWarnBytes): léann gach iarratas ón úsáideoir seo an seisiún ar fad, agus scríobhann sé é nuair a athraíodh é.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>Coinníonn PHP an seisiún seo i gcomhaid agus cuireann sé glas ar an gcomhad don iarratas ar fad: fanann iarratais ón úsáideoir céanna (roinnt cluaisíní, glaonna AJAX) ar a chéile.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Coinnigh oscailte</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>Níos mó ná %size (debugbar.ini SessionWarnBytes): léann gach iarratas ón úsáideoir seo an seisiún ar fad.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits as %count léite ón taisce</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Níor rindreáladh aon teimpléad (ní rindreálann amharc a léadh ón taisce amharc ceann ar bith).</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

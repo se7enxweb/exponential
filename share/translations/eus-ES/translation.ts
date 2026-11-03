@@ -69199,6 +69199,174 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
         <source>No answer</source>
         <translation>Erantzunik ez</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>mozorrotua</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Erakutsi azalpenak</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Ezkutatu azalpenak</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Ireki</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Ireki guztiak</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Itxi guztiak</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Gakoa edo balioa</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Bilatu saioan</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Mota</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>%count gehiago</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>erakusteko sakonegi habiaratua</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>moztua, guztira %count karaktere</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Hasita</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Cookiearen izena</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>Saioaren IDa</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Kudeatzailea</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Gordetzeko bidea</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>PHPren balio lehenetsia</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Iraupena (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Cookiea</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>iraupena %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Zure PHP saioa, atala ireki zenean zegoen bezala, inoiz ez beste bat. Sekretuak diruditen gakoen balioak (tokenak, hashak, pasahitzak) mozorrotuta daude (debugbar.ini SessionMask[]); gainerako guztia gordeta dagoen bezala erakusten da, datu pertsonalak ere bai.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count gako, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>handia</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Saioa hutsik dago.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Ez da saiorik hasi eskaera honetarako.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>%name hedapena</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Nukleoa eta beste batzuk</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Ez dira sarrera guztiak erakusten: saioak hemen zerrenda daitezkeenak baino gehiago ditu.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count gako ez dira zerrendatzen.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Markoa</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Token baten itxura duten balioak (JSON Web Token bat, Authorization goiburu baten kredentzialak, gako pribatu bat, testu hamaseitar edo ausazko luze bat) ere mozorrotzen dira, haien gakoak edozein izen duela ere (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>Gakoak sekretu baten itxura du (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>Balioak token baten itxura du.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Mozorrotutako gako baten azpian.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>Saioa testu gisa, taula bezala mozorrotuta.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>Saioa %size baino handiagoa da (debugbar.ini SessionWarnBytes): erabiltzaile honen eskaera bakoitzak saio osoa irakurtzen du, eta aldatu denean idatzi egiten du.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHPk saio hau fitxategietan gordetzen du eta fitxategia blokeatzen du eskaera osoan zehar: erabiltzaile beraren eskaerek (hainbat fitxa, AJAX deiak) elkarri itxaroten diote.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Mantendu irekita</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>%size baino handiagoa (debugbar.ini SessionWarnBytes): erabiltzaile honen eskaera bakoitzak saio osoa irakurtzen du.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%count blokeetatik %hits cachetik irakurriak</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Ez da txantiloirik errendatu (ikuspegi-cachetik irakurritako ikuspegi batek ez du bat ere errendatzen).</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

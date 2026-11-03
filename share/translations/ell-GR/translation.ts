@@ -69138,6 +69138,174 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No answer</source>
         <translation>Καμία απάντηση</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>αποκρυμμένο</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Εμφάνιση επεξηγήσεων</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Απόκρυψη επεξηγήσεων</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Άνοιγμα</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Άνοιγμα όλων</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Κλείσιμο όλων</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Κλειδί ή τιμή</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Αναζήτηση στην περίοδο λειτουργίας</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Τύπος</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>%count ακόμη</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>υπερβολικά βαθιά ένθεση για εμφάνιση</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>περικομμένο, %count χαρακτήρες συνολικά</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Έναρξη</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Όνομα cookie</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>Αναγνωριστικό περιόδου λειτουργίας</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Χειριστής</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Διαδρομή αποθήκευσης</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>Προεπιλογή της PHP</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Διάρκεια ζωής (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Cookie</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>διάρκεια ζωής %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Η δική σας περίοδος λειτουργίας PHP, όπως ήταν όταν άνοιξε η ενότητα, ποτέ κάποια άλλη. Οι τιμές κλειδιών που μοιάζουν με μυστικά (διακριτικά, κατακερματισμοί, κωδικοί πρόσβασης) αποκρύπτονται (debugbar.ini SessionMask[])· όλα τα υπόλοιπα εμφανίζονται όπως είναι αποθηκευμένα, ακόμη και τα προσωπικά δεδομένα.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count κλειδιά, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>μεγάλη</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Η περίοδος λειτουργίας είναι κενή.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Δεν ξεκίνησε περίοδος λειτουργίας για αυτό το αίτημα.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Επέκταση %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Πυρήνας και άλλα</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Δεν εμφανίζονται όλες οι εγγραφές: η περίοδος λειτουργίας περιέχει περισσότερες από όσες μπορούν να παρατεθούν εδώ.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count κλειδιά δεν παρατίθενται.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Πλαίσιο</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Τιμές που μοιάζουν με διακριτικό (ένα JSON Web Token, τα διαπιστευτήρια μιας κεφαλίδας Authorization, ένα ιδιωτικό κλειδί, ένα μακρύ δεκαεξαδικό ή τυχαίο κείμενο) αποκρύπτονται επίσης, όπως κι αν λέγεται το κλειδί τους (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>Το κλειδί μοιάζει με μυστικό (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>Η τιμή μοιάζει με διακριτικό.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Κάτω από αποκρυμμένο κλειδί.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>Η περίοδος λειτουργίας ως κείμενο, με απόκρυψη όπως στον πίνακα.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>Η περίοδος λειτουργίας είναι μεγαλύτερη από %size (debugbar.ini SessionWarnBytes): κάθε αίτημα αυτού του χρήστη διαβάζει ολόκληρη την περίοδο λειτουργίας και την εγγράφει όταν έχει αλλάξει.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>Η PHP διατηρεί αυτήν την περίοδο λειτουργίας σε αρχεία και κλειδώνει το αρχείο για όλο το αίτημα: τα αιτήματα του ίδιου χρήστη (πολλές καρτέλες, κλήσεις AJAX) περιμένουν το ένα το άλλο.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Να μένει ανοιχτό</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>Μεγαλύτερη από %size (debugbar.ini SessionWarnBytes): κάθε αίτημα αυτού του χρήστη διαβάζει ολόκληρη την περίοδο λειτουργίας.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits από %count διαβάστηκαν από την προσωρινή μνήμη</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Δεν αποδόθηκε κανένα πρότυπο (μια προβολή που διαβάζεται από την προσωρινή μνήμη προβολών δεν αποδίδει κανένα).</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

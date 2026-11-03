@@ -69199,6 +69199,174 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No answer</source>
         <translation>პასუხი არ არის</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>შენიღბული</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>განმარტებების ჩვენება</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>განმარტებების დამალვა</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>გახსნა</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>ყველას გახსნა</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>ყველას დახურვა</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>გასაღები ან მნიშვნელობა</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>სესიაში ძებნა</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>ტიპი</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>კიდევ %count</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>საჩვენებლად ზედმეტად ღრმად ჩადგმული</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>შემოკლებულია, სულ %count სიმბოლო</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>დაწყებულია</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>ქუქის სახელი</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>სესიის ID</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>დამმუშავებელი</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>შენახვის გზა</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>PHP-ის ნაგულისხმევი</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>სიცოცხლის ხანგრძლივობა (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>ქუქი</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>სიცოცხლის ხანგრძლივობა %s წმ</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>თქვენი საკუთარი PHP სესია, ისეთი, როგორიც იყო განყოფილების გახსნისას, არასოდეს სხვისი. იმ გასაღებების მნიშვნელობები, რომლებიც საიდუმლოს ჰგავს (ტოკენები, ჰეშები, პაროლები), შენიღბულია (debugbar.ini SessionMask[]); ყველაფერი დანარჩენი ნაჩვენებია ისე, როგორც შენახულია, პერსონალური მონაცემებიც.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count გასაღები, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>დიდი</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>სესია ცარიელია.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>ამ მოთხოვნისთვის სესია არ დაწყებულა.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>გაფართოება %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>ბირთვი და სხვები</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>ყველა ჩანაწერი არ არის ნაჩვენები: სესიაში იმაზე მეტია, ვიდრე აქ შეიძლება ჩამოითვალოს.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count გასაღები არ არის ჩამოთვლილი.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>ჩარჩო</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>მნიშვნელობები, რომლებიც ტოკენს ჰგავს (JSON Web Token, Authorization სათაურის ავტორიზაციის მონაცემები, პირადი გასაღები, გრძელი თექვსმეტობითი ან შემთხვევითი ტექსტი), ასევე შენიღბულია, რაც არ უნდა ერქვას მათ გასაღებს (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>გასაღები საიდუმლოს ჰგავს (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>მნიშვნელობა ტოკენს ჰგავს.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>შენიღბული გასაღების ქვეშ.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>სესია ტექსტად, შენიღბული ისევე, როგორც ცხრილი.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>სესია %size-ზე დიდია (debugbar.ini SessionWarnBytes): ამ მომხმარებლის ყოველი მოთხოვნა კითხულობს მთელ სესიას და წერს მას, როცა ის შეიცვალა.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP ამ სესიას ფაილებში ინახავს და ფაილს მთელი მოთხოვნის განმავლობაში ბლოკავს: ერთი და იმავე მომხმარებლის მოთხოვნები (რამდენიმე ჩანართი, AJAX გამოძახებები) ერთმანეთს ელოდება.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>ღიად დატოვება</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>%size-ზე დიდი (debugbar.ini SessionWarnBytes): ამ მომხმარებლის ყოველი მოთხოვნა კითხულობს მთელ სესიას.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>ქეშიდან წაკითხულია %hits / %count</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>არცერთი შაბლონი არ დარენდერებულა (ხედების ქეშიდან წაკითხული ხედი არცერთს არ არენდერებს).</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

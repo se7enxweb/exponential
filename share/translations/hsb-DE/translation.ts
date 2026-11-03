@@ -69199,6 +69199,174 @@ Musyće klasu suka z funkciju wuměny změnić.</translation>
         <source>No answer</source>
         <translation>Žana wotmołwa</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>zakryte</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Wujasnjenja pokazać</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Wujasnjenja schować</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Wotewrěć</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Wšě wočinić</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Wšě začinić</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Kluč abo hódnota</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Posedźenje přepytać</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Typ</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>%count dalšich</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>za pokazanje přehłuboko zakašćikowane</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>skrótšene, dohromady %count znamješkow</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Startowane</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Mjeno placka</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>ID posedźenja</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Wobdźěłar</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Składowanska šćežka</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>Standard PHP</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Žiwjenska doba (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Plack</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>žiwjenska doba %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Waše swójske PHP-posedźenje, kaž bě, jako so wotrězk wočini, ženje druhe. Hódnoty klučow, kotrež kaž potajnstwa wupadaja (tokeny, hashe, hesła), so zakryja (debugbar.ini SessionMask[]); wšo druhe so tak pokaza, kaž je składowane, tež wosobinske daty.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count klučow, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>wulke</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Posedźenje je prózdne.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Za tute naprašowanje njeje so žane posedźenje startowało.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Rozšěrjenje %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Jadro a druhe</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Njepokazuja so wšě zapiski: posedźenje wobsahuje wjace, hač so tu nalistować hodźi.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count klučow njeje nalistowanych.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Wobłuk</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Tež hódnoty, kotrež kaž token wupadaja (JSON Web Token, přistupne daty hłowy Authorization, priwatny kluč, dołhi hex abo připadny tekst), so zakryja, njedźiwajo na to, kak jich kluč rěka (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>Kluč wupada kaž potajnstwo (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>Hódnota wupada kaž token.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Pod zakrytym klučom.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>Posedźenje jako tekst, zakryte kaž tabela.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>Posedźenje je wjetše hač %size (debugbar.ini SessionWarnBytes): kóžde naprašowanje tutoho wužiwarja čita cyłe posedźenje a pisa je, hdyž je so změniło.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP składuje tute posedźenje w datajach a zawrje dataju za cyłe naprašowanje: naprašowanja samsneho wužiwarja (wjacore rajtarki, AJAX-wołanja) na so čakaja.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Wotewrjene wostajić</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>Wjetše hač %size (debugbar.ini SessionWarnBytes): kóžde naprašowanje tutoho wužiwarja čita cyłe posedźenje.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits z %count z pufrowaka wučitane</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Žana předłoha njeje so rysowała (napohlad wučitany z pufrowaka napohladow žanu njerysuje).</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

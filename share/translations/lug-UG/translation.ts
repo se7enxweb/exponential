@@ -69199,6 +69199,174 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
         <source>No answer</source>
         <translation>Tewali kuddamu</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>kikwekeddwa</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Laga ennyinnyonnyola</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Kweka ennyinnyonnyola</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Ggulawo</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Yggulawo zonna</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Yigaze zonna</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Ekisumuluzo oba omuwendo</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Noonya mu lutuula</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Ekika</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>%count endala</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>kiri wansi nnyo okulagibwa</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>kisaliddwako, ennukuta %count zonna awamu</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Kitandikiddwa</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Erinnya lya kuki</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>ID y'olutuula</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Ekikwata</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Ekkubo ery'okuterekamu</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>Ekisookerwako ekya PHP</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Obuwangaazi (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Kuki</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>obuwangaazi %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Olutuula lwo lwennyini olwa PHP, nga bwe lwali ekitundu we kyaggulirwawo, si lwa muntu mulala n'akatono. Emiwendo gy'ebisumuluzo ebifaanana ng'ebyama (tokeni, hash, ebigambo by'ekyama) gikwekebwa (debugbar.ini SessionMask[]); ebirala byonna biragibwa nga bwe byaterekebwa, ne data ey'obuntu.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>Ebisumuluzo %count, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>kinene</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Olutuula temuli kintu.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Tewali lutuula lwatandikibwa ku kusaba kuno.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Ekyongerezo %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Omusingi n'ebirala</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Si buli kiyingizibwa nti kiragibwa: olutuula lulina bingi okusinga ebiyinza okuwandiikibwa wano.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>Ebisumuluzo %count tebiwandiikiddwa.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Fuleemu</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Emiwendo egifaanana nga tokeni (JSON Web Token, ebikakasa eby'omutwe gwa Authorization, ekisumuluzo eky'obwannannyini, ekiwandiiko ekiwanvu ekya hex oba ekitategekeddwa) nagyo gikwekebwa, ka ekisumuluzo kyagyo kibe kiyitibwa kitya (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>Ekisumuluzo kifaanana ng'ekyama (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>Omuwendo gufaanana nga tokeni.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Wansi w'ekisumuluzo ekikwekeddwa.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>Olutuula ng'ekiwandiiko, nga lukwekeddwa nga ttebulo.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>Olutuula lusinga %size (debugbar.ini SessionWarnBytes): buli kusaba kw'omukozesa ono kusoma olutuula lwonna, era kuluwandiika bwe lukyuka.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP etereka olutuula luno mu fayiro era ensiba fayiro okumala okusaba kwonna: okusaba kw'omukozesa y'omu (ttabu eziwera, okuyita kwa AJAX) kulindagana.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Kisigaze nga kiggule</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>Kisinga %size (debugbar.ini SessionWarnBytes): buli kusaba kw'omukozesa ono kusoma olutuula lwonna.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits ku %count zisomeddwa okuva mu kaasi</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Tewali tempuleeti yakoleddwa (endabika esomeddwa okuva mu kaasi y'endabika tekola n'emu).</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

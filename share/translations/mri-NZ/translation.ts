@@ -69199,6 +69199,174 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
         <source>No answer</source>
         <translation>Kāore he whakautu</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>kua huna</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Whakaatuhia ngā whakamārama</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Hunāia ngā whakamārama</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Huaki</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Huaki katoa</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Kati katoa</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Kī, uara rānei</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Rapua te wātū</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Momo</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>%count anō</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>he hōhonu rawa te kōhanga hei whakaatu</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>kua tapahia, %count ngā pūāhua katoa</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>I tīmata</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Ingoa pihikete</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>ID wātū</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Kaiwhakahaere</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Ara penapena</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>Taunoa a PHP</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Roanga ora (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Pihikete</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>roanga %s hēk</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Tō ake wātū PHP, pērā i tōna āhua i te wā i whakatuwheratia ai te wāhanga, kaua rawa he wātū o tētahi atu. Ka huna ngā uara o ngā kī e rite ana ki ngā mea muna (ngā token, ngā hash, ngā kupuhipa) (debugbar.ini SessionMask[]); ka whakaatuhia ētahi atu katoa pērā i tā rātou penapena, tae atu ki ngā raraunga whaiaro.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count kī, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>nui</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Kua kau te wātū.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Kāore he wātū i tīmatahia mō tēnei tono.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Toronga %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Kernel me ētahi atu</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Kāore ngā tāurunga katoa e whakaaturia ana: he nui ake kei te wātū i tērā e taea te rārangi ki konei.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>Kāore e rārangitia ana ngā kī %count.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Anga</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Ka huna anō ngā uara e rite ana ki te token (he JSON Web Token, ngā taipitopito tuakiri o te pane Authorization, he kī tūmataiti, he kuputuhi hex roa, matapōkere rānei), ahakoa he aha te ingoa o tō rātou kī (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>He rite te kī ki tētahi mea muna (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>He rite te uara ki te token.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Kei raro i tētahi kī kua huna.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>Te wātū hei kuputuhi, kua huna pērā i te ripanga.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>He nui ake te wātū i te %size (debugbar.ini SessionWarnBytes): ka pānui ia tono a tēnei kaiwhakamahi i te wātū katoa, ā, ka tuhi i a ia ina hurihia.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>Ka penapena a PHP i tēnei wātū ki ngā kōnae, ā, ka rakaina te kōnae mō te tono katoa: ka tatari ngā tono a te kaiwhakamahi kotahi (he maha ngā ripa, ngā karanga AJAX) tētahi ki tētahi.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Waiho tuwhera</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>Nui ake i te %size (debugbar.ini SessionWarnBytes): ka pānui ia tono a tēnei kaiwhakamahi i te wātū katoa.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits o te %count i pānuitia mai i te keteroki</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Kāore he tātauira i tukuna (kāore e tukuna he tātauira e tētahi tirohanga i pānuitia mai i te keteroki tirohanga).</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -69199,6 +69199,174 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No answer</source>
         <translation>Жоп дац</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>къайлаяьккхина</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Кхетамаш гайта</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Кхетамаш къайлабаха</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Схьаделла</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Массо а схьаделла</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Массо а дӀакъовла</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>ДогӀа я маьӀна</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Сессехь лаха</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Тайпа</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>кхин %count</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>гайта тӀех кӀорга чудиллина</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>хадийна, массо а %count символ</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>ДӀаболийна</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Кукин цӀе</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>Сессин ID</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Кхочушдийриг</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Ӏалашъяран некъ</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>PHP-н стандарт</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Дахаран хан (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Куки</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>дахаран хан %s с</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Хьан шен PHP-сесси, дакъа схьаделлачу хенахь хиллачу кепара, цкъа а кхин цхьа сесси йоцуш. Къайле санна хетачу догӀийн (токенаш, хэшаш, пароль) маьӀнаш къайлайохуш ду (debugbar.ini SessionMask[]); кхин массо а Ӏалашйинчу кепара гайтина ду, шен хаамаш а.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count догӀа, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>доккха</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Сесси еса ю.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>ХӀокху дехарна цхьа а сесси ца йолийна.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Шордар %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Ядро а, кхиберш а</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Массо а дӀаяздар гайтина дац: сессехь кхузахь дагардан тарлучул сов ду.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count догӀа могӀамехь дац.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Гура</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Токен санна хетачу маьӀнаш а (JSON Web Token, Authorization кортан бакъонаш, шен догӀа, деха hex я цхьанхьа нисделла текст) къайлайохуш ду, церан догӀанан цӀе муха елахь а (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>ДогӀа къайле санна хета (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>МаьӀна токен санна хета.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Къайлаяьккхинчу догӀанан кӀел.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>Сесси текстан кепехь, таблица санна къайлаяьккхина.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>Сесси %size-л йоккха ю (debugbar.ini SessionWarnBytes): хӀокху пайдаэцархочун хӀора дехаро ерриге сесси йоьшу, хийцаелча иза дӀаяздо.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP-с хӀара сесси файлашкахь латтайо, ерриге дехар чекхдаллалц файл блокировать йо: цхьана пайдаэцархочун дехарш (масех вкладка, AJAX-кхайкхамаш) вовшашка хьоьжу.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Схьаделла латто</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>%size-л йоккха (debugbar.ini SessionWarnBytes): хӀокху пайдаэцархочун хӀора дехаро ерриге сесси йоьшу.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%count-х %hits кэшера йешна</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Цхьа а кеп ца хӀоттийна (хьажаран кэшера йешначу хьажаро цхьа а кеп ца хӀоттайо).</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

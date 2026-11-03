@@ -69197,6 +69197,174 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No answer</source>
         <translation>മറുപടിയില്ല</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>മറച്ചിരിക്കുന്നു</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>വിശദീകരണങ്ങൾ കാണിക്കുക</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>വിശദീകരണങ്ങൾ മറയ്ക്കുക</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>തുറക്കുക</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>എല്ലാം തുറക്കുക</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>എല്ലാം അടയ്ക്കുക</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>കീ അല്ലെങ്കിൽ മൂല്യം</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>സെഷനിൽ തിരയുക</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>തരം</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>%count കൂടി</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>കാണിക്കാൻ കഴിയാത്തത്ര ആഴത്തിൽ നെസ്റ്റ് ചെയ്തിരിക്കുന്നു</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>മുറിച്ചു, ആകെ %count പ്രതീകങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>ആരംഭിച്ചത്</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>കുക്കിയുടെ പേര്</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>സെഷൻ ID</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>ഹാൻഡ്‌ലർ</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>സംരക്ഷണ പാത</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>PHP സ്ഥിരസ്ഥിതി</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>ആയുസ്സ് (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>കുക്കി</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>ആയുസ്സ് %s സെ</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>നിങ്ങളുടെ സ്വന്തം PHP സെഷൻ, വിഭാഗം തുറന്നപ്പോൾ ഉണ്ടായിരുന്നതുപോലെ, ഒരിക്കലും മറ്റൊന്നല്ല. രഹസ്യങ്ങൾ പോലെ തോന്നുന്ന കീകളുടെ (ടോക്കണുകൾ, ഹാഷുകൾ, പാസ്‌വേഡുകൾ) മൂല്യങ്ങൾ മറയ്ക്കുന്നു (debugbar.ini SessionMask[]); മറ്റെല്ലാം, വ്യക്തിഗത ഡാറ്റയും, സംഭരിച്ചതുപോലെ കാണിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count കീകൾ, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>വലുത്</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>സെഷൻ ശൂന്യമാണ്.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>ഈ അഭ്യർത്ഥനയ്ക്കായി ഒരു സെഷനും ആരംഭിച്ചില്ല.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>എക്സ്റ്റൻഷൻ %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>കേർണലും മറ്റുള്ളവയും</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>എല്ലാ എൻട്രികളും കാണിക്കുന്നില്ല: ഇവിടെ ലിസ്റ്റ് ചെയ്യാവുന്നതിലും കൂടുതൽ സെഷനിലുണ്ട്.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count കീകൾ ലിസ്റ്റ് ചെയ്തിട്ടില്ല.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>ഫ്രെയിം</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>ടോക്കൺ പോലെ തോന്നുന്ന മൂല്യങ്ങളും (JSON Web Token, Authorization ഹെഡറിന്റെ ക്രെഡൻഷ്യലുകൾ, സ്വകാര്യ കീ, നീണ്ട ഹെക്സ് അല്ലെങ്കിൽ ക്രമരഹിത ടെക്സ്റ്റ്) അവയുടെ കീയുടെ പേര് എന്തായാലും മറയ്ക്കുന്നു (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>കീ ഒരു രഹസ്യം പോലെ തോന്നുന്നു (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>മൂല്യം ഒരു ടോക്കൺ പോലെ തോന്നുന്നു.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>മറച്ച കീയുടെ കീഴിൽ.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>ടെക്സ്റ്റായി സെഷൻ, പട്ടികയിലെ പോലെ മറച്ചത്.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>സെഷൻ %size-നേക്കാൾ വലുതാണ് (debugbar.ini SessionWarnBytes): ഈ ഉപയോക്താവിന്റെ ഓരോ അഭ്യർത്ഥനയും മുഴുവൻ സെഷനും വായിക്കുന്നു, മാറിയാൽ അത് എഴുതുന്നു.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP ഈ സെഷൻ ഫയലുകളിൽ സൂക്ഷിക്കുകയും മുഴുവൻ അഭ്യർത്ഥനയ്ക്കും ഫയൽ ലോക്ക് ചെയ്യുകയും ചെയ്യുന്നു: ഒരേ ഉപയോക്താവിന്റെ അഭ്യർത്ഥനകൾ (നിരവധി ടാബുകൾ, AJAX കോളുകൾ) പരസ്പരം കാത്തിരിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>തുറന്നിടുക</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>%size-നേക്കാൾ വലുത് (debugbar.ini SessionWarnBytes): ഈ ഉപയോക്താവിന്റെ ഓരോ അഭ്യർത്ഥനയും മുഴുവൻ സെഷനും വായിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%count-ൽ %hits കാഷെയിൽ നിന്ന് വായിച്ചു</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>ഒരു ടെംപ്ലേറ്റും റെൻഡർ ചെയ്തില്ല (വ്യൂ കാഷെയിൽ നിന്ന് വായിച്ച വ്യൂ ഒന്നും റെൻഡർ ചെയ്യുന്നില്ല).</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

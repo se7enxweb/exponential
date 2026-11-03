@@ -69199,6 +69199,174 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
         <source>No answer</source>
         <translation>Neniu respondo</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>maskita</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Montri klarigojn</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Kaŝi klarigojn</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Malfermi</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Malfermi ĉiujn</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Fermi ĉiujn</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Ŝlosilo aŭ valoro</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Serĉi en la seanco</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Tipo</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>%count pliaj</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>tro profunde ingita por montri</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>tranĉita, %count signoj entute</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Startigita</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Nomo de la kuketo</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>Seanca identigilo</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Traktilo</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Konserva vojo</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>Implicita valoro de PHP</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Vivdaŭro (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Kuketo</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>vivdaŭro %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Via propra PHP-seanco, kia ĝi estis kiam la sekcio estis malfermita, neniam alia. Valoroj de ŝlosiloj, kiuj aspektas kiel sekretoj (ĵetonoj, haketoj, pasvortoj), estas maskitaj (debugbar.ini SessionMask[]); ĉio alia estas montrata kiel konservita, ankaŭ personaj datumoj.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count ŝlosiloj, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>granda</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>La seanco estas malplena.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Neniu seanco estis komencita por ĉi tiu peto.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Etendaĵo %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Kerno kaj aliaj</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Ne ĉiu ero estas montrata: la seanco havas pli ol eblas listigi ĉi tie.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count ŝlosiloj ne estas listigitaj.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Kadro</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Valoroj, kiuj aspektas kiel ĵetono (JSON Web Token, la akreditaĵoj de kapo Authorization, privata ŝlosilo, longa deksesuma aŭ hazarda teksto), ankaŭ estas maskitaj, kiel ajn nomiĝas ilia ŝlosilo (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>La ŝlosilo aspektas kiel sekreto (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>La valoro aspektas kiel ĵetono.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Sub maskita ŝlosilo.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>La seanco kiel teksto, maskita kiel la tabelo.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>La seanco estas pli granda ol %size (debugbar.ini SessionWarnBytes): ĉiu peto de ĉi tiu uzanto legas la tutan seancon kaj skribas ĝin, kiam ĝi ŝanĝiĝis.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP tenas ĉi tiun seancon en dosieroj kaj ŝlosas la dosieron dum la tuta peto: petoj de la sama uzanto (pluraj langetoj, AJAX-alvokoj) atendas unu la alian.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Teni malfermita</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>Pli granda ol %size (debugbar.ini SessionWarnBytes): ĉiu peto de ĉi tiu uzanto legas la tutan seancon.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits el %count legitaj el la kaŝmemoro</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Neniu ŝablono estis bildigita (vido legita el la vida kaŝmemoro bildigas neniun).</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -69197,6 +69197,174 @@ Kuzodingeka nishintshe isigaba sendawo yomsuka ngokusebenzisa umsebenzi wokushin
         <source>No answer</source>
         <translation>Alukho impendulo</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>kufihliwe</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Bonisa izincazelo</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Fihla izincazelo</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Vula</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Vula konke</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Vala konke</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Ukhiye noma inani</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Sesha kuseshini</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Uhlobo</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>%count okwengeziwe</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>kufakwe ngaphakathi kakhulu ukuthi kuboniswe</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>kunqunyiwe, %count izinhlamvu sezizonke</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Kuqalile</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Igama lekhukhi</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>I-ID yeseshini</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Isiphathi</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Indlela yokugcina</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>Okuzenzakalelayo kwe-PHP</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Isikhathi sokuphila (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Ikhukhi</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>isikhathi sokuphila %s imizuzwana</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Iseshini yakho ye-PHP, njengoba yayinjalo lapho isigaba sivulwa, akusoze kube enye. Amanani okhiye ababukeka njengezimfihlo (amathokheni, ama-hash, amaphasiwedi) ayafihlwa (debugbar.ini SessionMask[]); konke okunye kuboniswa njengoba kugciniwe, kuhlanganise nedatha yomuntu siqu.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count okhiye, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>enkulu</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Iseshini ayinalutho.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Ayikho iseshini eqaliwe yalesi sicelo.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Isandiso %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>I-kernel nokunye</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Akuwona wonke amangeniso aboniswayo: iseshini inokuningi kunalokho okungabhalwa lapha.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count okhiye abafakwanga ohlwini.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Uhlaka</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Amanani abukeka njengethokheni (i-JSON Web Token, iziqinisekiso zesihloko se-Authorization, ukhiye oyimfihlo, umbhalo omude we-hex noma ongahleliwe) nawo ayafihlwa, noma ngabe ukhiye wawo ubizwa ngokuthini (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>Ukhiye ubukeka njengemfihlo (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>Inani libukeka njengethokheni.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Ngaphansi kokhiye ofihliwe.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>Iseshini njengombhalo, ifihlwe njengethebula.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>Iseshini inkulu kuno-%size (debugbar.ini SessionWarnBytes): sonke isicelo salo msebenzisi sifunda iseshini yonke, futhi siyibhale uma ishintshile.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>I-PHP igcina le seshini kumafayela futhi ikhiye ifayela isikhathi sonke sesicelo: izicelo zomsebenzisi oyedwa (amathebhu amaningi, izingcingo ze-AJAX) ziyalindana.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Gcina kuvuliwe</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>Inkulu kuno-%size (debugbar.ini SessionWarnBytes): sonke isicelo salo msebenzisi sifunda iseshini yonke.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits kokungu-%count kufundwe kunqolobane</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Asikho isifanekiso esinikeziwe (ukubuka okufundwe kunqolobane yokubuka akunikezi nesisodwa).</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

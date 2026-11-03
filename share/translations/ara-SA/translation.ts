@@ -67688,6 +67688,174 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No answer</source>
         <translation>لا توجد استجابة</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>محجوب</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>إظهار الشروح</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>إخفاء الشروح</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>فتح</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>فتح الكل</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>إغلاق الكل</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>المفتاح أو القيمة</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>البحث في الجلسة</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>النوع</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>%count أخرى</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>متداخل بعمق أكبر من أن يُعرض</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>مقتطع، %count حرفًا إجمالًا</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>بدأ</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>اسم ملف تعريف الارتباط</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>معرّف الجلسة</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>المعالج</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>مسار الحفظ</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>القيمة الافتراضية في PHP</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>مدة الصلاحية (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>ملف تعريف الارتباط</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>مدة الصلاحية %s ث</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>جلستك الخاصة في PHP كما كانت عند فتح القسم، وليست جلسة أخرى أبدًا. تُحجب قيم المفاتيح التي تبدو أسرارًا (الرموز المميزة، والتجزئات، وكلمات المرور) (debugbar.ini SessionMask[])؛ ويُعرض كل ما عدا ذلك كما هو مخزّن، بما في ذلك البيانات الشخصية.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count مفاتيح، %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>كبيرة</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>الجلسة فارغة.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>لم تُبدأ أي جلسة لهذا الطلب.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>الامتداد %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>النواة وغيرها</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>لا تُعرض جميع الإدخالات: تحتوي الجلسة على أكثر مما يمكن سرده هنا.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count مفاتيح غير مدرجة.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>الإطار</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>تُحجب أيضًا القيم التي تبدو رمزًا مميزًا (JSON Web Token، أو بيانات اعتماد ترويسة Authorization، أو مفتاح خاص، أو نص سداسي عشري أو عشوائي طويل)، أيًّا كان اسم مفتاحها (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>يبدو المفتاح سرًّا (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>تبدو القيمة رمزًا مميزًا.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>تحت مفتاح محجوب.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>الجلسة نصًّا، محجوبة مثل الجدول.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>الجلسة أكبر من %size (debugbar.ini SessionWarnBytes): كل طلب من هذا المستخدم يقرأ الجلسة كاملة، ويكتبها عندما تتغيّر.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>يحفظ PHP هذه الجلسة في ملفات ويقفل الملف طوال الطلب: تنتظر طلبات المستخدم نفسه (عدة علامات تبويب، استدعاءات AJAX) بعضها بعضًا.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>إبقاء مفتوحًا</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>أكبر من %size (debugbar.ini SessionWarnBytes): كل طلب من هذا المستخدم يقرأ الجلسة كاملة.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits من %count قُرئت من ذاكرة التخزين المؤقت</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>لم تتم معالجة أي قالب (العرض المقروء من ذاكرة التخزين المؤقت للعروض لا يعالج أي قالب).</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

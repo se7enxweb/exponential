@@ -69197,6 +69197,174 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No answer</source>
         <translation>సమాధానం లేదు</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>మాస్క్ చేయబడింది</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>వివరణలను చూపండి</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>వివరణలను దాచండి</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>తెరవండి</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>అన్నీ తెరవండి</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>అన్నింటినీ మూసివేయండి</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>కీ లేదా విలువ</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>సెషన్‌లో శోధించండి</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>రకం</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>మరో %count</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>చూపడానికి చాలా లోతుగా నెస్ట్ చేయబడింది</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>కత్తిరించబడింది, మొత్తం %count అక్షరాలు</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>ప్రారంభమైంది</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>కుకీ పేరు</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>సెషన్ ID</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>హ్యాండ్లర్</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>సేవ్ పాత్</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>PHP డిఫాల్ట్</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>జీవితకాలం (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>కుకీ</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>జీవితకాలం %s సె</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>మీ స్వంత PHP సెషన్, విభాగం తెరిచినప్పుడు ఉన్నట్లుగానే, ఎప్పుడూ వేరొకరిది కాదు. రహస్యాల్లా కనిపించే కీల విలువలు (టోకెన్‌లు, హ్యాష్‌లు, పాస్‌వర్డ్‌లు) మాస్క్ చేయబడతాయి (debugbar.ini SessionMask[]); మిగతావన్నీ నిల్వ చేసినట్లుగానే చూపబడతాయి, వ్యక్తిగత డేటా కూడా.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count కీలు, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>పెద్దది</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>సెషన్ ఖాళీగా ఉంది.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>ఈ అభ్యర్థన కోసం ఏ సెషన్ ప్రారంభించబడలేదు.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>ఎక్స్‌టెన్షన్ %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>కెర్నల్ మరియు ఇతరాలు</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>అన్ని ఎంట్రీలు చూపబడలేదు: ఇక్కడ జాబితా చేయగలిగిన దానికంటే సెషన్‌లో ఎక్కువ ఉన్నాయి.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count కీలు జాబితా చేయబడలేదు.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>ఫ్రేమ్</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>టోకెన్‌లా కనిపించే విలువలు (ఒక JSON Web Token, Authorization హెడర్ యొక్క ఆధారాలు, ఒక ప్రైవేట్ కీ, పొడవైన హెక్స్ లేదా యాదృచ్ఛిక టెక్స్ట్) కూడా మాస్క్ చేయబడతాయి, వాటి కీ పేరు ఏదైనా సరే (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>కీ ఒక రహస్యంలా కనిపిస్తోంది (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>విలువ ఒక టోకెన్‌లా కనిపిస్తోంది.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>మాస్క్ చేయబడిన కీ కింద.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>టెక్స్ట్‌గా సెషన్, పట్టికలాగే మాస్క్ చేయబడింది.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>సెషన్ %size కంటే పెద్దది (debugbar.ini SessionWarnBytes): ఈ వినియోగదారు యొక్క ప్రతి అభ్యర్థన మొత్తం సెషన్‌ను చదువుతుంది, మరియు అది మారినప్పుడు రాస్తుంది.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP ఈ సెషన్‌ను ఫైళ్లలో ఉంచుతుంది మరియు మొత్తం అభ్యర్థన సమయంలో ఫైల్‌ను లాక్ చేస్తుంది: ఒకే వినియోగదారు యొక్క అభ్యర్థనలు (అనేక ట్యాబ్‌లు, AJAX కాల్‌లు) ఒకదాని కోసం ఒకటి వేచి ఉంటాయి.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>తెరిచే ఉంచండి</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>%size కంటే పెద్దది (debugbar.ini SessionWarnBytes): ఈ వినియోగదారు యొక్క ప్రతి అభ్యర్థన మొత్తం సెషన్‌ను చదువుతుంది.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%countలో %hits కాష్ నుండి చదవబడ్డాయి</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>ఏ టెంప్లేట్ రెండర్ చేయబడలేదు (వ్యూ కాష్ నుండి చదివిన వ్యూ ఏదీ రెండర్ చేయదు).</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

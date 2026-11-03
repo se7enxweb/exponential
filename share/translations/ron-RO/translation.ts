@@ -69138,6 +69138,174 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
         <source>No answer</source>
         <translation>Niciun răspuns</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>mascat</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Afișare explicații</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Ascundere explicații</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Deschidere</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Deschidere totală</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Închidere totală</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Cheie sau valoare</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Caută în sesiune</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Tip</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>încă %count</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>imbricat prea adânc pentru a fi afișat</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>trunchiat, %count caractere în total</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Pornit</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Numele cookie-ului</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>ID-ul sesiunii</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Gestionar</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Cale de salvare</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>Valoarea implicită PHP</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Durată de viață (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Cookie</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>durată de viață %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Propria dumneavoastră sesiune PHP, așa cum era când a fost deschisă secțiunea, niciodată alta. Valorile cheilor care par secrete (tokenuri, hash-uri, parole) sunt mascate (debugbar.ini SessionMask[]); tot restul este afișat așa cum este stocat, inclusiv datele personale.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count chei, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>mare</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Sesiunea este goală.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Nu a fost pornită nicio sesiune pentru această cerere.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Extensia %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Nucleu și altele</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Nu sunt afișate toate intrările: sesiunea conține mai mult decât se poate lista aici.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count chei nu sunt listate.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Cadru</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Valorile care par un token (un JSON Web Token, datele de autentificare ale unui antet Authorization, o cheie privată, un text hexazecimal sau aleatoriu lung) sunt de asemenea mascate, indiferent cum se numește cheia lor (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>Cheia pare un secret (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>Valoarea pare un token.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Sub o cheie mascată.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>Sesiunea ca text, mascată ca tabelul.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>Sesiunea este mai mare de %size (debugbar.ini SessionWarnBytes): fiecare cerere a acestui utilizator citește întreaga sesiune și o scrie atunci când s-a modificat.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP păstrează această sesiune în fișiere și blochează fișierul pe toată durata cererii: cererile aceluiași utilizator (mai multe file, apeluri AJAX) se așteaptă unele pe altele.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Menține deschis</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>Mai mare de %size (debugbar.ini SessionWarnBytes): fiecare cerere a acestui utilizator citește întreaga sesiune.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits din %count citite din memoria cache</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Nu a fost randat niciun șablon (o vizualizare citită din memoria cache a vizualizărilor nu randează niciunul).</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

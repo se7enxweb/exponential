@@ -69199,6 +69199,174 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No answer</source>
         <translation>응답 없음</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>마스킹됨</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>설명 표시</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>설명 숨기기</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>열기</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>모두 열기</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>모두 닫기</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>키 또는 값</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>세션 검색</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>류형</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>%count개 더</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>중첩이 너무 깊어 표시할 수 없음</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>잘림, 전체 %count자</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>시작 시간</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>쿠키 이름</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>세션 ID</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>핸들러</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>저장 경로</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>PHP 기본값</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>수명 (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>쿠키</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>수명 %s초</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>사용자 자신의 PHP 세션으로, 이 섹션을 열었을 때의 상태이며 다른 세션은 절대 아닙니다. 비밀처럼 보이는 키(토큰, 해시, 비밀번호)의 값은 마스킹됩니다(debugbar.ini SessionMask[]). 그 밖의 모든 것은 개인 데이터를 포함하여 저장된 그대로 표시됩니다.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>키 %count개, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>큼</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>세션이 비어 있습니다.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>이 요청에 대해 시작된 세션이 없습니다.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>%name 확장</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>커널 및 기타</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>모든 항목이 표시되지는 않습니다: 세션에 여기에 나열할 수 있는 것보다 많은 항목이 있습니다.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>키 %count개가 나열되지 않았습니다.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>프레임</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>토큰처럼 보이는 값(JSON Web Token, Authorization 헤더의 자격 증명, 개인 키, 긴 16진수 또는 임의 텍스트)도 키 이름과 관계없이 마스킹됩니다(debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>키가 비밀처럼 보입니다(debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>값이 토큰처럼 보입니다.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>마스킹된 키 아래에 있습니다.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>표와 같이 마스킹된 텍스트 형식의 세션입니다.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>세션이 %size보다 큽니다(debugbar.ini SessionWarnBytes): 이 사용자의 모든 요청이 전체 세션을 읽고, 변경되면 기록합니다.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP는 이 세션을 파일에 보관하고 요청 전체 동안 파일을 잠급니다: 같은 사용자의 요청(여러 탭, AJAX 호출)은 서로를 기다립니다.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>열린 상태 유지</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>%size보다 큼(debugbar.ini SessionWarnBytes): 이 사용자의 모든 요청이 전체 세션을 읽습니다.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%count개 중 %hits개를 캐시에서 읽음</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>렌더링된 템플릿이 없습니다(뷰 캐시에서 읽은 뷰는 아무것도 렌더링하지 않음).</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

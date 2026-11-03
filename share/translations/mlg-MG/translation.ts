@@ -69199,6 +69199,174 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
         <source>No answer</source>
         <translation>Tsy misy valiny</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>nafenina</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Asehoy ny fanazavana</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Afeno ny fanazavana</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Sokafy</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Sokafy daholo</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Akatony daholo</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Fanalahidy na sanda</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Hikaroka ao amin'ny fotoam-pidirana</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Karazana</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>%count hafa koa</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>lalina loatra ny fametrahana ka tsy azo aseho</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>notapahina, litera %count raha atambatra</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Natomboka</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Anaran'ny cookie</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>ID-n'ny fotoam-pidirana</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Mpikirakira</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Lalana fitahirizana</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>Sanda ampiasain'ny PHP raha tsy misy</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Faharetana (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Cookie</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>faharetana %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Ny fotoam-pidiranao PHP manokana, araka ny toetrany tamin'ny nanokafana ny fizarana, tsy an'olon-kafa mihitsy. Nafenina ny sandan'ireo fanalahidy toa tsiambaratelo (token, hash, tenimiafina) (debugbar.ini SessionMask[]); aseho araka ny nitahirizana azy avokoa ny ambiny, eny fa na ny angona manokana aza.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>fanalahidy %count, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>lehibe</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Foana ny fotoam-pidirana.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Tsy nisy fotoam-pidirana natomboka ho an'ity fangatahana ity.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Fanitarana %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Kernel sy ny hafa</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Tsy aseho avokoa ny singa rehetra: be noho izay azo lisitra eto ny ao amin'ny fotoam-pidirana.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>Tsy voalisitra ny fanalahidy %count.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Rafitra manodidina</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Nafenina koa ireo sanda toa token (JSON Web Token, ny mari-pamantarana ao amin'ny loha Authorization, fanalahidy manokana, lahatsoratra hex lava na kisendrasendra), na inona na inona anaran'ny fanalahidiny (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>Toa tsiambaratelo ilay fanalahidy (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>Toa token ilay sanda.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Ao ambanin'ny fanalahidy nafenina.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>Ny fotoam-pidirana ho lahatsoratra, nafenina tahaka ny tabilao.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>Lehibe noho %size ny fotoam-pidirana (debugbar.ini SessionWarnBytes): mamaky ny fotoam-pidirana manontolo ny fangatahana rehetra ataon'ity mpampiasa ity, ary manoratra azy rehefa niova.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>Tehirizin'ny PHP ao anaty rakitra ity fotoam-pidirana ity ary hidiany mandritra ny fangatahana manontolo ilay rakitra: mifampiandry ny fangatahan'ny mpampiasa iray ihany (takelaka maromaro, antso AJAX).</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Avelao hisokatra</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>Lehibe noho %size (debugbar.ini SessionWarnBytes): mamaky ny fotoam-pidirana manontolo ny fangatahana rehetra ataon'ity mpampiasa ity.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits amin'ny %count novakiana avy amin'ny tahiry vonjimaika</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Tsy nisy modely naseho (ny fijery novakiana avy amin'ny tahiry vonjimaikan'ny fijery dia tsy mampiseho modely).</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

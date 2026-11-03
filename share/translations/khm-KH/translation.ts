@@ -69199,6 +69199,174 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No answer</source>
         <translation>គ្មានចម្លើយ</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>បានបិទបាំង</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>បង្ហាញការពន្យល់</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>លាក់ការពន្យល់</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>បើក</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>បើកទាំងអស់</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>បិទទាំងអស់</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>សោ ឬតម្លៃ</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>ស្វែងរកក្នុងវគ្គ</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>ប្រភេទ</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>%count ទៀត</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>ដាក់ក្នុងគ្នាជ្រៅពេកដើម្បីបង្ហាញ</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>បានកាត់ សរុប %count តួអក្សរ</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>បានចាប់ផ្តើម</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>ឈ្មោះខុកឃី</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>លេខសម្គាល់វគ្គ</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>កម្មវិធីគ្រប់គ្រង</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>ផ្លូវរក្សាទុក</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>លំនាំដើម PHP</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>អាយុកាល (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>ខុកឃី</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>អាយុកាល %s វិនាទី</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>វគ្គ PHP ផ្ទាល់ខ្លួនរបស់អ្នក ដូចដែលវាមាននៅពេលផ្នែកនេះត្រូវបានបើក មិនដែលជាវគ្គផ្សេងទេ។ តម្លៃនៃសោដែលមើលទៅដូចជាអាថ៌កំបាំង (ថូខឹន ហាស ពាក្យសម្ងាត់) ត្រូវបានបិទបាំង (debugbar.ini SessionMask[]); អ្វីៗផ្សេងទៀតត្រូវបានបង្ហាញដូចដែលបានរក្សាទុក រួមទាំងទិន្នន័យផ្ទាល់ខ្លួនផងដែរ។</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>សោ %count, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>ធំ</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>វគ្គទទេ។</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>គ្មានវគ្គណាមួយត្រូវបានចាប់ផ្តើមសម្រាប់សំណើនេះទេ។</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>ផ្នែកបន្ថែម %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>ខឺណែល និងផ្សេងទៀត</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>មិនមែនធាតុទាំងអស់ត្រូវបានបង្ហាញទេ៖ វគ្គមានច្រើនជាងអ្វីដែលអាចរាយនៅទីនេះ។</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>សោ %count មិនត្រូវបានរាយទេ។</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>ស៊ុម</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>តម្លៃដែលមើលទៅដូចជាថូខឹន (JSON Web Token, អត្តសញ្ញាណនៃក្បាល Authorization, សោឯកជន, អត្ថបទ hex ឬចៃដន្យដ៏វែង) ក៏ត្រូវបានបិទបាំងដែរ មិនថាសោរបស់វាមានឈ្មោះអ្វីទេ (debugbar.ini SessionValueMask[])។</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>សោមើលទៅដូចជាអាថ៌កំបាំង (debugbar.ini SessionMask[])។</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>តម្លៃមើលទៅដូចជាថូខឹន។</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>នៅក្រោមសោដែលបានបិទបាំង។</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>វគ្គជាអត្ថបទ បិទបាំងដូចតារាង។</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>វគ្គធំជាង %size (debugbar.ini SessionWarnBytes)៖ រាល់សំណើរបស់អ្នកប្រើនេះអានវគ្គទាំងមូល ហើយសរសេរវានៅពេលវាបានផ្លាស់ប្តូរ។</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP រក្សាទុកវគ្គនេះក្នុងឯកសារ ហើយចាក់សោឯកសារពេញមួយសំណើ៖ សំណើរបស់អ្នកប្រើដដែល (ផ្ទាំងច្រើន ការហៅ AJAX) រង់ចាំគ្នាទៅវិញទៅមក។</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>រក្សាបើក</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>ធំជាង %size (debugbar.ini SessionWarnBytes)៖ រាល់សំណើរបស់អ្នកប្រើនេះអានវគ្គទាំងមូល។</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits ក្នុងចំណោម %count បានអានពីឃ្លាំងសម្ងាត់</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>គ្មានគំរូណាមួយត្រូវបានបង្ហាញទេ (ទិដ្ឋភាពដែលបានអានពីឃ្លាំងសម្ងាត់ទិដ្ឋភាពមិនបង្ហាញគំរូណាមួយទេ)។</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

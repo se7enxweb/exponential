@@ -69138,6 +69138,174 @@ Triedu uzla budete musieť zmeniť pomocou funkcie výmeny.</translation>
         <source>No answer</source>
         <translation>Žiadna odpoveď</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>maskované</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Zobraziť vysvetlenia</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Skryť vysvetlenia</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Otvoriť</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Otvoriť všetko</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Zavrieť všetko</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Kľúč alebo hodnota</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Hľadať v relácii</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Typ</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>ďalších %count</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>vnorené príliš hlboko na zobrazenie</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>skrátené, spolu %count znakov</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Začaté</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Názov súboru cookie</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>ID relácie</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Obslužný program</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Cesta ukladania</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>Predvolené v PHP</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Životnosť (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Súbor cookie</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>životnosť %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Vaša vlastná relácia PHP, taká, aká bola pri otvorení sekcie, nikdy iná. Hodnoty kľúčov, ktoré vyzerajú ako tajomstvá (tokeny, hashe, heslá), sú maskované (debugbar.ini SessionMask[]); všetko ostatné sa zobrazuje tak, ako je uložené, aj osobné údaje.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count kľúčov, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>veľká</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Relácia je prázdna.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Pre túto požiadavku nebola spustená žiadna relácia.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Rozšírenie %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Jadro a ostatné</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Nie sú zobrazené všetky položky: relácia obsahuje viac, než sa dá tu vypísať.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count kľúčov nie je uvedených.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Rámec</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Hodnoty, ktoré vyzerajú ako token (JSON Web Token, prihlasovacie údaje hlavičky Authorization, súkromný kľúč, dlhý hexadecimálny alebo náhodný text), sú tiež maskované bez ohľadu na to, ako sa ich kľúč volá (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>Kľúč vyzerá ako tajomstvo (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>Hodnota vyzerá ako token.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Pod maskovaným kľúčom.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>Relácia ako text, maskovaná ako tabuľka.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>Relácia je väčšia ako %size (debugbar.ini SessionWarnBytes): každá požiadavka tohto používateľa načíta celú reláciu a zapíše ju, keď sa zmenila.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP uchováva túto reláciu v súboroch a uzamyká súbor počas celej požiadavky: požiadavky toho istého používateľa (viacero kariet, volania AJAX) na seba čakajú.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Ponechať otvorené</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>Väčšia ako %size (debugbar.ini SessionWarnBytes): každá požiadavka tohto používateľa načíta celú reláciu.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits z %count načítaných z vyrovnávacej pamäte</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Nebola vykreslená žiadna šablóna (zobrazenie načítané z vyrovnávacej pamäte zobrazení žiadnu nevykresľuje).</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

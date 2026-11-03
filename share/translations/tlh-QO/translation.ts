@@ -67691,6 +67691,174 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>No answer</source>
         <translation>jang pagh</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>So'lu'pu'</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>QIjmeH De' yIcha'</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>QIjmeH De' yISo'</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>yIpoSmoH</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Hoch yIpoSmoH</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Hoch yISoQmoH</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>ngaQHa'moHwI' ngoD ghap</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>poHDaq yInej</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Segh</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>latlh %count</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>cha'laHbe'lu': tlhoy 'aD</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>pe'lu'pu', Hoch %count ngutlh</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>taghlu'ta'</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>chab pong</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>poH ID</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>SeHwI'</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>polmeH He</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>PHP motlh</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>yInmeH poH (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>chab</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>yInmeH poH %s lup</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>PHP poHlIj neH 'oH, 'ay' poSmoHlu'DI' ghu'Daj; latlh poH not cha'lu'. pegh rurbogh ngaQHa'moHwI'mey ngoDmey (tokenmey, hashmey, mu'mey pegh) So'lu' (debugbar.ini SessionMask[]); latlh Hoch cha'lu' polta'lu'meH rur, nuv De' je.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>ngaQHa'moHwI' %count, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>tIn</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>chIm poH.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>tlhobghachvamvaD poH taghlu'be'.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>%name chelwI'</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>ngoq botlh latlh je</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Hoch chelwI' cha'lu'be': naDev tetlhlu'laHbogh law' poH ngaS law'.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>ngaQHa'moHwI' %count tetlhlu'be'.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>HeH</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>token rurbogh ngoDmey (JSON Web Token, Authorization nach 'ollaHghach De', pegh ngaQHa'moHwI', hex ghap mIwHa' ghItlh tIq) So'lu' je, ngaQHa'moHwI'chaj pong vay' (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>pegh rur ngaQHa'moHwI' (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>token rur ngoD.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>So'lu'pu'bogh ngaQHa'moHwI' bIng.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>ghItlh rur poH, SomraS rur So'lu'pu'.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>%size tIn law' poH tIn puS (debugbar.ini SessionWarnBytes): lo'wI'vam tlhobghach Hoch poH naQ laD, choHDI' ghItlh je.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP poHvam polmeH ghItlhmey lo', tlhobghach naQ ghItlh ngaQmoH: lo'wI' rap tlhobghachmey (tetlh 'ay'mey law', AJAX rI'meH) ghom loS.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>poSmoHtaH</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>%size tIn law' (debugbar.ini SessionWarnBytes): lo'wI'vam tlhobghach Hoch poH naQ laD.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>De' polwI'vo' %hits laDlu'ta' (Hoch: %count)</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>mIw 'echlet chenmoHlu'be' (Dut De' polwI'vo' laDlu'bogh Dut pagh chenmoH).</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

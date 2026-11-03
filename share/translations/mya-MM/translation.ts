@@ -69199,6 +69199,174 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No answer</source>
         <translation>အဖြေ မရှိပါ</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>ဖုံးကွယ်ထားသည်</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>ရှင်းလင်းချက်များ ပြရန်</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>ရှင်းလင်းချက်များ ဖျောက်ရန်</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>ဖွင့်ရန်</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>အားလုံးဖွင့်ရန်</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>အားလုံးပိတ်ရန်</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>ကီး သို့မဟုတ် တန်ဖိုး</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>ဆက်ရှင်တွင် ရှာဖွေရန်</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>အမျိုးအစား</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>နောက်ထပ် %count ခု</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>ပြသရန် အလွန်နက်စွာ အဆင့်ဆင့်ထည့်ထားသည်</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>ဖြတ်ထားသည်၊ စုစုပေါင်း စာလုံး %count လုံး</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>စတင်ချိန်</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>ကွတ်ကီးအမည်</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>ဆက်ရှင် ID</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>ကိုင်တွယ်သူ</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>သိမ်းဆည်းရာလမ်းကြောင်း</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>PHP မူရင်း</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>သက်တမ်း (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>ကွတ်ကီး</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>သက်တမ်း %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>သင်၏ကိုယ်ပိုင် PHP ဆက်ရှင်ဖြစ်ပြီး ကဏ္ဍကို ဖွင့်ခဲ့သည့်အချိန်က အခြေအနေအတိုင်း ဖြစ်ကာ အခြားတစ်ခု ဘယ်တော့မှ မဟုတ်ပါ။ လျှို့ဝှက်ချက်နှင့်တူသော ကီးများ (တိုကင်များ၊ ဟက်ရှ်များ၊ စကားဝှက်များ) ၏ တန်ဖိုးများကို ဖုံးကွယ်ထားသည် (debugbar.ini SessionMask[])။ ကျန်အရာအားလုံးကို ကိုယ်ရေးကိုယ်တာ ဒေတာများအပါအဝင် သိမ်းဆည်းထားသည့်အတိုင်း ပြသသည်။</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>ကီး %count ခု၊ %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>ကြီးသည်</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>ဆက်ရှင်သည် ဗလာဖြစ်နေသည်။</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>ဤတောင်းဆိုမှုအတွက် ဆက်ရှင် မစတင်ခဲ့ပါ။</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>တိုးချဲ့မှု %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>ကာနယ်နှင့် အခြား</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>ထည့်သွင်းချက်တိုင်းကို မပြပါ- ဆက်ရှင်တွင် ဤနေရာ၌ စာရင်းပြနိုင်သည်ထက် ပိုများသည်။</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>ကီး %count ခုကို စာရင်းမပြထားပါ။</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>ဘောင်</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>တိုကင်နှင့်တူသော တန်ဖိုးများ (JSON Web Token၊ Authorization ခေါင်းစီး၏ အထောက်အထားများ၊ ကိုယ်ပိုင်ကီး၊ ရှည်လျားသော hex သို့မဟုတ် ကျပန်းစာသား) ကိုလည်း ၎င်းတို့၏ကီးအမည် မည်သို့ပင်ဖြစ်စေ ဖုံးကွယ်ထားသည် (debugbar.ini SessionValueMask[])။</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>ကီးသည် လျှို့ဝှက်ချက်နှင့် တူသည် (debugbar.ini SessionMask[])။</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>တန်ဖိုးသည် တိုကင်နှင့် တူသည်။</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>ဖုံးကွယ်ထားသော ကီးတစ်ခု၏ အောက်တွင်။</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>ဇယားကဲ့သို့ ဖုံးကွယ်ထားသော စာသားအဖြစ် ဆက်ရှင်။</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>ဆက်ရှင်သည် %size ထက် ကြီးသည် (debugbar.ini SessionWarnBytes)- ဤအသုံးပြုသူ၏ တောင်းဆိုမှုတိုင်းသည် ဆက်ရှင်တစ်ခုလုံးကို ဖတ်ပြီး ပြောင်းလဲသည့်အခါ ရေးသည်။</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP သည် ဤဆက်ရှင်ကို ဖိုင်များတွင် သိမ်းထားပြီး တောင်းဆိုမှုတစ်ခုလုံးအတွက် ဖိုင်ကို လော့ခ်ချသည်- တူညီသောအသုံးပြုသူ၏ တောင်းဆိုမှုများ (တက်ဘ်အများအပြား၊ AJAX ခေါ်ဆိုမှုများ) သည် တစ်ခုနှင့်တစ်ခု စောင့်ကြသည်။</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>ဖွင့်ထားရန်</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>%size ထက် ကြီးသည် (debugbar.ini SessionWarnBytes)- ဤအသုံးပြုသူ၏ တောင်းဆိုမှုတိုင်းသည် ဆက်ရှင်တစ်ခုလုံးကို ဖတ်သည်။</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%count အနက် %hits ကို ကက်ရှ်မှ ဖတ်ခဲ့သည်</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>ပုံစံပြား တစ်ခုမျှ မပြသခဲ့ပါ (မြင်ကွင်းကက်ရှ်မှ ဖတ်သော မြင်ကွင်းသည် မည်သည့်အရာကိုမျှ မပြသပါ)။</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -69199,6 +69199,174 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
         <source>No answer</source>
         <translation>Mana kutichiychu</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>pakasqa</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Sut'ichaykunata rikuchiy</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Sut'ichaykunata pakay</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Kichay</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Tukuyta kichay</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Tukuyta wisq'ay</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Kichana utaq chani</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Tinkuypi maskay</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Laya</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>%count aswan</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>ancha ukhupi churasqa, mana rikuchiyta atikunchu</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>kuchusqa, llapanpi %count sananchakuna</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Qallarisqa</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Cookiepa sutin</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>Tinkuypa ID-nin</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Kamachiq</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Waqaychana ñan</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>PHP-pa kikinmanta</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Kawsay pacha (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Cookie</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>kawsay pacha %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Qampa kikiyki PHP tinkuyniyki, t'aqa kicharisqa kaqtin hina, manapuni huk runaq tinkuynin. Pakasqa rimaykuna hina rikchakuq kichanakunaq chaninkuna (tokenkuna, hashkuna, yaykuna rimaykuna) pakasqa kanku (debugbar.ini SessionMask[]); llapan wakinkunaqa waqaychasqa hina rikuchisqa kanku, sapan runaq willakuyninkunapas.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count kichanakuna, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>hatun</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Tinkuyqa ch'usaqmi.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Kay mañakuypaq mana ima tinkuypas qallarisqachu.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Yapakuq %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Kernel wakinkunapas</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Mana llapan yaykuykunachu rikuchisqa: tinkuypiqa kaypi sutichanapaq atisqamanta aswan kan.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count kichanakuna mana sutichasqachu.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Muyuriq</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Token hina rikchakuq chanikunapas (JSON Web Token, Authorization umalliq riqsichiqninkuna, sapan kichana, hatun hex utaq kikinmanta qillqa) pakasqa kanku, kichanankupa sutin ima kaptinpas (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>Kichanaqa pakasqa rimay hina rikchakun (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>Chaniqa token hina rikchakun.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Pakasqa kichanaq uranpi.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>Tinkuy qillqa hina, tabla hina pakasqa.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>Tinkuyqa %size-manta aswan hatunmi (debugbar.ini SessionWarnBytes): kay ruraqpa sapa mañakuynin llapan tinkuyta ñawirin, hinallataq tikrasqa kaqtin qillqan.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP kay tinkuyta willañiqikunapi waqaychan, llapan mañakuy kaqkama willañiqita wichqan: huklla ruraqpa mañakuyninkuna (achka tabkuna, AJAX waqyakuykuna) paykunapura suyanakunku.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Kichasqa saqiy</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>%size-manta aswan hatun (debugbar.ini SessionWarnBytes): kay ruraqpa sapa mañakuynin llapan tinkuyta ñawirin.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%count-manta %hits utqay waqaychamanta ñawirisqa</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Mana ima plantillapas rurasqachu (qhawana waqaychamanta ñawirisqa qhawanaqa mana ima plantillatapas ruranchu).</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

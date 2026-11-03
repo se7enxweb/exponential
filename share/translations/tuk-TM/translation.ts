@@ -69199,6 +69199,174 @@ Düwüniň klasyny çalyşmak funksiýasy bilen üýtgetmeli bolarsyňyz.</trans
         <source>No answer</source>
         <translation>Jogap ýok</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>gizlenen</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Düşündirişleri görkez</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Düşündirişleri gizle</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Aç</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Hemmesini aç</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Hemmesini ýap</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Açar ýa-da baha</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Sessiýada gözle</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Görnüş</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>ýene %count</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>görkezmek üçin örän çuň içine salnan</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>kesildi, jemi %count nyşan</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Başlandy</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Kukiniň ady</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>Sessiýa ID-si</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Işleýji</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Ýatda saklamak ýoly</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>PHP-niň deslapky bahasy</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Ýaşaýyş möhleti (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Kuki</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>ýaşaýyş möhleti %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Siziň öz PHP sessiýaňyz, bölüm açylan wagtyndaky ýaly, hiç haçan başga biriniňki däl. Gizlin maglumata meňzeýän açarlaryň (tokenler, heşler, parollar) bahalary gizlenýär (debugbar.ini SessionMask[]); galan ähli zat, şahsy maglumatlar hem, saklanyşy ýaly görkezilýär.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count açar, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>uly</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Sessiýa boş.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Bu haýyş üçin hiç hili sessiýa başlanmady.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Giňeltme %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Ýadro we beýlekiler</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Ähli ýazgylar görkezilmeýär: sessiýada şu ýerde sanap bolýandan köp zat bar.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count açar sanawda ýok.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Çarçuwa</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Tokene meňzeýän bahalar (JSON Web Token, Authorization sözbaşysynyň şahsyýet maglumatlary, şahsy açar, uzyn hex ýa-da tötänleýin tekst) hem açarynyň ady näme bolsa-da gizlenýär (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>Açar gizlin maglumata meňzeýär (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>Baha tokene meňzeýär.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Gizlenen açaryň aşagynda.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>Sessiýa tekst görnüşinde, tablisa ýaly gizlenen.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>Sessiýa %size-dan uly (debugbar.ini SessionWarnBytes): bu ulanyjynyň her haýyşy bütin sessiýany okaýar we üýtgände ony ýazýar.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP bu sessiýany faýllarda saklaýar we tutuş haýyş dowamynda faýly gulplaýar: şol bir ulanyjynyň haýyşlary (birnäçe tab, AJAX çagyryşlary) biri-birine garaşýar.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Açyk sakla</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>%size-dan uly (debugbar.ini SessionWarnBytes): bu ulanyjynyň her haýyşy bütin sessiýany okaýar.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%count-dan %hits keşden okaldy</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Hiç hili şablon işlenmedi (görnüş keşinden okalan görnüş hiç bir şablon işlemeýär).</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -69197,6 +69197,174 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No answer</source>
         <translation>沒有回應</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>已遮罩</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>顯示說明</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>隱藏說明</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>開啟</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>全部開啟</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>全部關閉</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>索引鍵或值</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>搜尋工作階段</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>類型</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>還有 %count 個</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>巢狀層級太深，無法顯示</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>已截斷，共 %count 個字元</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>開始時間</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Cookie 名稱</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>工作階段 ID</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>處理常式</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>儲存路徑</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>PHP 預設值</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>存留期（gc_maxlifetime）</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Cookie</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>存留期 %s 秒</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>您自己的 PHP 工作階段，為開啟此區段時的狀態，絕不會是其他人的。看起來像機密的索引鍵（權杖、雜湊、密碼），其值會被遮罩（debugbar.ini SessionMask[]）；其他一切都依儲存的原樣顯示，個人資料也一樣。</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count 個索引鍵，%size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>大</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>工作階段是空的。</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>此要求未啟動任何工作階段。</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>擴充功能 %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>核心與其他</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>未顯示所有項目：工作階段的內容超過此處可列出的數量。</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>有 %count 個索引鍵未列出。</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>框架</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>看起來像權杖的值（JSON Web Token、Authorization 標頭的認證、私密金鑰、長的十六進位或隨機文字）也會被遮罩，無論其索引鍵名稱為何（debugbar.ini SessionValueMask[]）。</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>此索引鍵看起來像機密（debugbar.ini SessionMask[]）。</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>此值看起來像權杖。</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>位於已遮罩的索引鍵之下。</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>以文字呈現的工作階段，遮罩方式與表格相同。</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>工作階段大於 %size（debugbar.ini SessionWarnBytes）：此使用者的每個要求都會讀取整個工作階段，並在其變更時寫入。</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP 將此工作階段保存在檔案中，並在整個要求期間鎖定該檔案：同一使用者的要求（多個分頁、AJAX 呼叫）會互相等待。</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>保持開啟</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>大於 %size（debugbar.ini SessionWarnBytes）：此使用者的每個要求都會讀取整個工作階段。</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%count 個中有 %hits 個從快取讀取</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>未轉譯任何範本（從檢視快取讀取的檢視不會轉譯範本）。</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

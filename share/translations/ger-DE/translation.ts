@@ -72264,6 +72264,38 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Role assignments</source>
         <translation>Rollenzuweisungen</translation>
     </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Werte, die wie ein Token aussehen (ein JSON Web Token, die Zugangsdaten eines Authorization-Headers, ein privater Schlüssel, ein langer Hex- oder Zufallstext), sind ebenfalls maskiert, gleich wie ihr Schlüssel heißt (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>Der Schlüssel sieht nach einem Geheimnis aus (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>Der Wert sieht wie ein Token aus.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Unter einem maskierten Schlüssel.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>Die Session als Text, maskiert wie die Tabelle.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>Die Session ist größer als %size (debugbar.ini SessionWarnBytes): Jeder Request dieses Benutzers liest die ganze Session und schreibt sie, wenn sie sich geändert hat.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP hält diese Session in Dateien und sperrt die Datei für den ganzen Request: Requests desselben Benutzers (mehrere Tabs, AJAX-Aufrufe) warten aufeinander.</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>Größer als %size (debugbar.ini SessionWarnBytes): Jeder Request dieses Benutzers liest die ganze Session.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/audit</name>

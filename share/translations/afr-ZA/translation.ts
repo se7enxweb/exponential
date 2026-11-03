@@ -69138,6 +69138,174 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
         <source>No answer</source>
         <translation>Geen antwoord</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>gemasker</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Wys verduidelikings</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Versteek verduidelikings</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Maak oop</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Open almal</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Sluit almal</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Sleutel of waarde</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Soek in die sessie</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Tipe</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>nog %count</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>te diep genestel om te wys</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>afgesny, %count karakters in totaal</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Begin</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Koekienaam</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>Sessie-ID</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Hanteerder</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Stoorpad</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>PHP-verstek</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Leeftyd (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Koekie</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>leeftyd %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>U eie PHP-sessie, soos dit was toe die afdeling geopen is, nooit ’n ander een nie. Waardes van sleutels wat soos geheime lyk (tokens, hashes, wagwoorde) word gemasker (debugbar.ini SessionMask[]); alles anders word gewys soos dit gestoor is, persoonlike data ook.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count sleutels, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>groot</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Die sessie is leeg.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Geen sessie is vir hierdie versoek begin nie.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Uitbreiding %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Kern en ander</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Nie elke inskrywing word gewys nie: die sessie bevat meer as wat hier gelys kan word.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count sleutels word nie gelys nie.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Raam</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Waardes wat soos ’n token lyk (’n JSON Web Token, die geloofsbriewe van ’n Authorization-kopskrif, ’n privaat sleutel, ’n lang heks- of lukrake teks) word ook gemasker, ongeag wat hul sleutel genoem word (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>Die sleutel lyk soos ’n geheim (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>Die waarde lyk soos ’n token.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Onder ’n gemaskerde sleutel.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>Die sessie as teks, gemasker soos die tabel.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>Die sessie is groter as %size (debugbar.ini SessionWarnBytes): elke versoek van hierdie gebruiker lees die hele sessie en skryf dit wanneer dit verander het.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP hou hierdie sessie in lêers en sluit die lêer vir die hele versoek: versoeke van dieselfde gebruiker (verskeie oortjies, AJAX-oproepe) wag vir mekaar.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Hou oop</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>Groter as %size (debugbar.ini SessionWarnBytes): elke versoek van hierdie gebruiker lees die hele sessie.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits van %count uit die kas gelees</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Geen sjabloon is aangebied nie (’n aansig wat uit die aansigkas gelees is, bied geen aan nie).</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

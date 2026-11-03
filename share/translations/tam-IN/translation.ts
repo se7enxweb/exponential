@@ -69197,6 +69197,174 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No answer</source>
         <translation>பதில் இல்லை</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>மறைக்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>விளக்கங்களைக் காட்டு</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>விளக்கங்களை மறை</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>திற</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>அனைத்தையும் திற</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>அனைத்தையும் மூடு</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>விசை அல்லது மதிப்பு</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>அமர்வில் தேடு</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>வகை</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>மேலும் %count</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>காட்ட முடியாத அளவு ஆழமாக உள்ளமைக்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>வெட்டப்பட்டது, மொத்தம் %count எழுத்துகள்</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>தொடங்கியது</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>குக்கீ பெயர்</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>அமர்வு ID</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>கையாளி</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>சேமிப்புப் பாதை</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>PHP இயல்புநிலை</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>ஆயுட்காலம் (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>குக்கீ</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>ஆயுட்காலம் %s வி</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>உங்களுடைய சொந்த PHP அமர்வு, பகுதி திறக்கப்பட்டபோது இருந்தபடியே, ஒருபோதும் வேறொன்று அல்ல. ரகசியங்கள் போலத் தோன்றும் விசைகளின் (டோக்கன்கள், ஹாஷ்கள், கடவுச்சொற்கள்) மதிப்புகள் மறைக்கப்படுகின்றன (debugbar.ini SessionMask[]); மற்ற அனைத்தும், தனிப்பட்ட தரவும்கூட, சேமிக்கப்பட்டபடியே காட்டப்படுகின்றன.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count விசைகள், %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>பெரியது</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>அமர்வு காலியாக உள்ளது.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>இந்தக் கோரிக்கைக்கு எந்த அமர்வும் தொடங்கப்படவில்லை.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>நீட்சி %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>கெர்னலும் பிறவும்</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>எல்லா உள்ளீடுகளும் காட்டப்படவில்லை: இங்கே பட்டியலிடக்கூடியதை விட அதிகமாக அமர்வில் உள்ளது.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count விசைகள் பட்டியலிடப்படவில்லை.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>சட்டகம்</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>டோக்கன் போலத் தோன்றும் மதிப்புகளும் (JSON Web Token, Authorization தலைப்பின் சான்றுகள், தனிப்பட்ட விசை, நீண்ட ஹெக்ஸ் அல்லது சீரற்ற உரை) அவற்றின் விசையின் பெயர் எதுவாக இருந்தாலும் மறைக்கப்படுகின்றன (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>விசை ஒரு ரகசியம் போலத் தோன்றுகிறது (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>மதிப்பு ஒரு டோக்கன் போலத் தோன்றுகிறது.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>மறைக்கப்பட்ட விசையின் கீழ்.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>உரையாக அமர்வு, அட்டவணையைப் போலவே மறைக்கப்பட்டது.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>அமர்வு %size-ஐ விடப் பெரியது (debugbar.ini SessionWarnBytes): இந்தப் பயனரின் ஒவ்வொரு கோரிக்கையும் முழு அமர்வையும் படிக்கிறது, அது மாறியபோது அதை எழுதுகிறது.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP இந்த அமர்வைக் கோப்புகளில் வைத்து, முழுக் கோரிக்கைக்கும் கோப்பைப் பூட்டுகிறது: ஒரே பயனரின் கோரிக்கைகள் (பல தாவல்கள், AJAX அழைப்புகள்) ஒன்றுக்கொன்று காத்திருக்கின்றன.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>திறந்தே வை</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>%size-ஐ விடப் பெரியது (debugbar.ini SessionWarnBytes): இந்தப் பயனரின் ஒவ்வொரு கோரிக்கையும் முழு அமர்வையும் படிக்கிறது.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%count-இல் %hits தற்காலிகச் சேமிப்பிலிருந்து படிக்கப்பட்டன</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>எந்த வார்ப்புருவும் வழங்கப்படவில்லை (காட்சித் தற்காலிகச் சேமிப்பிலிருந்து படிக்கப்பட்ட காட்சி எந்த வார்ப்புருவையும் வழங்காது).</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -69199,6 +69199,174 @@ Kailangan mong palitan ang class ng node gamit ang swap functionality.</translat
         <source>No answer</source>
         <translation>Walang sagot</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>nakatago</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Ipakita ang mga paliwanag</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Itago ang mga paliwanag</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Buksan</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Buksan lahat</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Isara lahat</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Key o halaga</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Hanapin sa sesyon</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Uri</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>%count pa</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>masyadong malalim ang pagkaka-nest para ipakita</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>pinutol, %count na character sa kabuuan</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Nagsimula</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Pangalan ng cookie</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>ID ng sesyon</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Tagapangasiwa</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Path ng pag-iimbak</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>Default ng PHP</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Tagal ng buhay (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Cookie</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>tagal %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Ang sarili mong PHP na sesyon, gaya noong binuksan ang seksyon, hindi kailanman ang sa iba. Ang mga halaga ng mga key na mukhang lihim (mga token, hash, password) ay nakatago (debugbar.ini SessionMask[]); ang lahat ng iba pa ay ipinapakita gaya ng pagkakaimbak, pati ang personal na datos.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count na key, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>malaki</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Walang laman ang sesyon.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Walang sinimulang sesyon para sa request na ito.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Ekstensyon %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Kernel at iba pa</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Hindi lahat ng entry ay ipinapakita: mas marami ang laman ng sesyon kaysa sa maililista rito.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count na key ang hindi nakalista.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Balangkas</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Ang mga halagang mukhang token (isang JSON Web Token, ang mga kredensyal ng isang Authorization header, isang pribadong key, mahabang hex o random na teksto) ay nakatago rin, anuman ang pangalan ng kanilang key (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>Mukhang lihim ang key (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>Mukhang token ang halaga.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Sa ilalim ng nakatagong key.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>Ang sesyon bilang teksto, nakatago gaya ng talahanayan.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>Mas malaki ang sesyon kaysa %size (debugbar.ini SessionWarnBytes): binabasa ng bawat request ng user na ito ang buong sesyon, at isinusulat ito kapag nagbago.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>Iniimbak ng PHP ang sesyong ito sa mga file at nila-lock ang file sa buong request: naghihintayan ang mga request ng parehong user (ilang tab, mga AJAX call).</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Panatilihing bukas</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>Mas malaki kaysa %size (debugbar.ini SessionWarnBytes): binabasa ng bawat request ng user na ito ang buong sesyon.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits sa %count ang nabasa mula sa cache</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Walang template na na-render (ang view na nabasa mula sa view cache ay walang nire-render).</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

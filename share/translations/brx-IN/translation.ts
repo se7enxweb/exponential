@@ -69199,6 +69199,174 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No answer</source>
         <translation>जायो गैया</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>गुपुत खालामनाय</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>बेखेवनायफोरखौ दिन्थि</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>बेखेवनायफोरखौ गुपुत खालाम</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>खोल</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>जोबोद गोख्रों</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>जोबोद बन्द</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>चाबि एबा मान</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>सेसनआव दां</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>रोखोम</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>बांसिन %count</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>दिन्थिनो जाथाव गोथौ नेस्टेड</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>दानस्लायनाय, गासैयाव %count हांखो</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>सुरु जादों</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>कुकिनि मुं</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>सेसन आइडि</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>हेन्डलार</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>थिना दोननाय लामा</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>PHP डिफल्ट</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>जिउनि सम (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>कुकि</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>जिउनि सम %s सेकेन्ड</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>नोंथांनि गावनि PHP सेसन, सेक्सनखौ खेवनाय समाव जेरै दंमोन, जेबो गुबुन सेसन नङा। गुपुत बादि नुनाय चाबिफोरनि (टकेन, हेस, पासवर्ड) मानफोरखौ गुपुत खालामनाय जायो (debugbar.ini SessionMask[]); गुबुन गासैबो जेरै थिना दोननाय जादों बेबादिनो दिन्थिनाय जायो, सायखोमानि डेटाबो।</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count चाबि, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>गेदेर</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>सेसनआ लांदां।</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>बे आरज'नि थाखाय जेबो सेसन जागायनाय जाया।</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>एक्सटेनसन %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>कार्नेल आरो गुबुनफोर</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>गासै बिलाइफोरखौ दिन्थिनाय जाया: सेसनआव बेयाव फारिलाइनो हानायनिख्रुइ बांसिन दं।</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count चाबिखौ फारिलाइयाव होनाय जाया।</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>फ्रेम</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>टकेन बादि नुनाय मानफोरखौबो (JSON Web Token, Authorization हेडारनि क्रेडेन्सियाल, सायखोमानि चाबि, गोलाव हेक्स एबा जायखिजायै लिरनाय) गुपुत खालामनाय जायो, बिसोरनि चाबिनि मुंआ जायखिजाया जाब्लाबो (debugbar.ini SessionValueMask[])।</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>चाबिआ गुपुत बादि नुयो (debugbar.ini SessionMask[])।</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>मानआ टकेन बादि नुयो।</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>गुपुत खालामनाय चाबिनि सिंआव।</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>लिरनाय महरै सेसन, फारिलाइ बादि गुपुत खालामनाय।</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>सेसनआ %size निख्रुइ गेदेर (debugbar.ini SessionWarnBytes): बे बाहायगिरिनि गासै आरज'आ आबुं सेसनखौ फरायो, आरो सोलायब्ला बेखौ लिरो।</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP आ बे सेसनखौ फाइलफोराव थिना दोनो आरो आबुं आरज'नि समाव फाइलखौ लक खालामो: रोखोम बाहायगिरिनि आरज'फोरा (बांसिन टेब, AJAX कल) गावजों गाव नेथासिनो।</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>खेवनै रैखा</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>%size निख्रुइ गेदेर (debugbar.ini SessionWarnBytes): बे बाहायगिरिनि गासै आरज'आ आबुं सेसनखौ फरायो।</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%count निफ्राय %hits क्यासनिफ्राय फरायनाय जादों</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>जेबो टेम्पलेट रेन्डार खालामनाय जाया (भिउ क्यासनिफ्राय फरायनाय भिउआ जेबो टेम्पलेटखौ रेन्डार खालामा)।</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

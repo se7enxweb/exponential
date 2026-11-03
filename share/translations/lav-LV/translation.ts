@@ -69138,6 +69138,174 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
         <source>No answer</source>
         <translation>Nav atbildes</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>maskēts</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Rādīt skaidrojumus</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Slēpt skaidrojumus</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Atvērt</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Atvērt visu</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Aizvērt visu</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Atslēga vai vērtība</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Meklēt sesijā</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Tips</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>vēl %count</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>ligzdots pārāk dziļi, lai parādītu</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>saīsināts, kopā %count rakstzīmes</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Sākts</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Sīkfaila nosaukums</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>Sesijas ID</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Apdarinātājs</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Saglabāšanas ceļš</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>PHP noklusējums</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Darbības laiks (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Sīkfails</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>darbības laiks %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Jūsu pašu PHP sesija tāda, kāda tā bija, kad sadaļa tika atvērta, nekad cita. To atslēgu vērtības, kas izskatās pēc noslēpumiem (marķieri, jaucējvērtības, paroles), ir maskētas (debugbar.ini SessionMask[]); viss pārējais tiek rādīts tā, kā saglabāts, arī personas dati.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count atslēgas, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>liela</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Sesija ir tukša.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Šim pieprasījumam netika sākta neviena sesija.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Paplašinājums %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Kodols un citi</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Ne visi ieraksti ir parādīti: sesijā ir vairāk, nekā šeit var uzskaitīt.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count atslēgas nav uzskaitītas.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Ietvars</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Vērtības, kas izskatās pēc marķiera (JSON Web Token, Authorization galvenes akreditācijas dati, privātā atslēga, garš heksadecimāls vai nejaušs teksts), arī tiek maskētas neatkarīgi no tā, kā sauc to atslēgu (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>Atslēga izskatās pēc noslēpuma (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>Vērtība izskatās pēc marķiera.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Zem maskētas atslēgas.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>Sesija kā teksts, maskēta tāpat kā tabula.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>Sesija ir lielāka par %size (debugbar.ini SessionWarnBytes): katrs šī lietotāja pieprasījums nolasa visu sesiju un ieraksta to, ja tā ir mainījusies.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP glabā šo sesiju failos un bloķē failu visa pieprasījuma laikā: viena lietotāja pieprasījumi (vairākas cilnes, AJAX izsaukumi) gaida cits citu.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Atstāt atvērtu</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>Lielāka par %size (debugbar.ini SessionWarnBytes): katrs šī lietotāja pieprasījums nolasa visu sesiju.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits no %count nolasīti no kešatmiņas</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Netika atveidota neviena veidne (skats, kas nolasīts no skatu kešatmiņas, neatveido nevienu).</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

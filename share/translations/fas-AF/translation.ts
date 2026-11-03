@@ -69199,6 +69199,174 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No answer</source>
         <translation>پاسخی وجود ندارد</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>پنهان‌شده</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>نمایش توضیحات</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>پنهان کردن توضیحات</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>باز کردن</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>باز کردن همه</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>بستن همه</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>کلید یا مقدار</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>جستجو در نشست</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>نوع</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>%count مورد دیگر</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>برای نمایش بیش از حد تودرتو است</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>کوتاه‌شده، در مجموع %count نویسه</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>آغاز شد</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>نام کوکی</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>شناسهٔ نشست</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>گرداننده</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>مسیر ذخیره</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>پیش‌فرض PHP</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>طول عمر (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>کوکی</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>طول عمر %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>نشست PHP خود شما، همان‌گونه که هنگام باز شدن این بخش بود، هرگز نشست دیگری. مقادیر کلیدهایی که شبیه رازها هستند (توکن‌ها، هش‌ها، رمزهای عبور) پنهان می‌شوند (debugbar.ini SessionMask[])؛ همه چیز دیگر همان‌گونه که ذخیره شده نشان داده می‌شود، داده‌های شخصی نیز.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count کلید، %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>بزرگ</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>نشست خالی است.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>برای این درخواست هیچ نشستی آغاز نشد.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>افزونهٔ %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>هسته و دیگران</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>همهٔ ورودی‌ها نشان داده نمی‌شوند: نشست بیش از آنچه بتوان اینجا فهرست کرد دارد.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count کلید فهرست نشده‌اند.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>چارچوب</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>مقادیری که شبیه توکن هستند (یک JSON Web Token، اعتبارنامه‌های یک سرآیند Authorization، یک کلید خصوصی، یک متن طولانی هگز یا تصادفی) نیز پنهان می‌شوند، نام کلیدشان هرچه باشد (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>کلید شبیه یک راز است (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>مقدار شبیه یک توکن است.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>زیر یک کلید پنهان‌شده.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>نشست به‌صورت متن، پنهان‌شده مانند جدول.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>نشست بزرگ‌تر از %size است (debugbar.ini SessionWarnBytes): هر درخواست این کاربر کل نشست را می‌خواند و هنگامی که تغییر کرده باشد آن را می‌نویسد.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP این نشست را در فایل‌ها نگه می‌دارد و فایل را برای کل درخواست قفل می‌کند: درخواست‌های یک کاربر (چند زبانه، فراخوانی‌های AJAX) منتظر یکدیگر می‌مانند.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>باز نگه‌داشتن</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>بزرگ‌تر از %size (debugbar.ini SessionWarnBytes): هر درخواست این کاربر کل نشست را می‌خواند.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits از %count از حافظهٔ پنهان خوانده شد</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>هیچ قالبی رندر نشد (نمایی که از حافظهٔ پنهان نما خوانده شود هیچ قالبی رندر نمی‌کند).</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

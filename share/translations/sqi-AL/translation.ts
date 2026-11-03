@@ -69138,6 +69138,174 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <source>No answer</source>
         <translation>Nuk ka përgjigje</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>i maskuar</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Shfaq shpjegimet</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Fshih shpjegimet</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Hap</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Hapi të gjitha</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Mbylli të gjitha</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Çelës ose vlerë</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Kërko në seancë</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Lloji</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>edhe %count</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>i futur shumë thellë për t'u shfaqur</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>i shkurtuar, %count karaktere gjithsej</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Nisur</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Emri i cookie-t</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>ID-ja e seancës</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Trajtuesi</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Shtegu i ruajtjes</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>Parazgjedhja e PHP-së</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Jetëgjatësia (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Cookie-t</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>jetëgjatësia %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Seanca juaj PHP, ashtu siç ishte kur u hap seksioni, kurrë ndonjë tjetër. Vlerat e çelësave që duken si sekrete (tokenë, hash-e, fjalëkalime) maskohen (debugbar.ini SessionMask[]); gjithçka tjetër shfaqet ashtu siç është ruajtur, edhe të dhënat personale.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count çelësa, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>e madhe</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Seanca është bosh.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Për këtë kërkesë nuk u nis asnjë seancë.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Zgjerimi %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Kerneli dhe të tjerë</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Nuk shfaqen të gjitha zërat: seanca ka më shumë nga sa mund të listohen këtu.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count çelësa nuk janë listuar.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Korniza</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Vlerat që duken si token (një JSON Web Token, kredencialet e një koke Authorization, një çelës privat, një tekst i gjatë heksadecimal ose i rastësishëm) maskohen gjithashtu, pavarësisht si quhet çelësi i tyre (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>Çelësi duket si sekret (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>Vlera duket si token.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Nën një çelës të maskuar.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>Seanca si tekst, e maskuar si tabela.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>Seanca është më e madhe se %size (debugbar.ini SessionWarnBytes): çdo kërkesë e këtij përdoruesi lexon të gjithë seancën dhe e shkruan kur ka ndryshuar.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP e mban këtë seancë në skedarë dhe e kyç skedarin gjatë gjithë kërkesës: kërkesat e të njëjtit përdorues (disa skeda, thirrje AJAX) presin njëra-tjetrën.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Mbaje të hapur</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>Më e madhe se %size (debugbar.ini SessionWarnBytes): çdo kërkesë e këtij përdoruesi lexon të gjithë seancën.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits nga %count lexuar nga memoria e përkohshme</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Nuk u vizatua asnjë shabllon (një pamje e lexuar nga memoria e përkohshme e pamjeve nuk vizaton asnjë).</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

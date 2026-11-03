@@ -69197,6 +69197,174 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
         <source>No answer</source>
         <translation>Enweghị azịza</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>ezoro ezo</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Gosi nkọwa</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Zoo nkọwa</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Mepee</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Mepee ha niile</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Mechie ha niile</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Igodo ma ọ bụ uru</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Chọọ n'ime oge nnọdụ</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Ụdị</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>%count ọzọ</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>etinyere n'ime miri emi nke ukwuu iji gosi</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>ebipụrụ, mkpụrụedemede %count n'ozuzu</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Malitere</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Aha kuki</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>ID oge nnọdụ</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Onye njikwa</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Ụzọ nchekwa</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>Ndabara PHP</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Ogologo ndụ (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Kuki</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>ogologo ndụ %s sek</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Oge nnọdụ PHP nke gị, dị ka ọ dị mgbe e meghere ngalaba ahụ, ọ dịghị mgbe ọ bụ nke ọzọ. A na-ezo uru nke igodo ndị yiri ihe nzuzo (tokens, hashes, okwuntughe) (debugbar.ini SessionMask[]); a na-egosi ihe ndị ọzọ niile dị ka e chekwara ha, gụnyere data nkeonwe.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>igodo %count, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>buru ibu</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Oge nnọdụ ahụ tọgbọrọ chakoo.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Amaliteghị oge nnọdụ ọ bụla maka arịrịọ a.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Mgbatị %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Isi sistemụ na ndị ọzọ</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Egosighị ntinye niile: oge nnọdụ ahụ nwere karịa ihe enwere ike idepụta ebe a.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>Edepụtaghị igodo %count.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Okpokolo</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>A na-ezokwa uru ndị yiri token (JSON Web Token, nzere nke isi Authorization, igodo nzuzo, ogologo ederede hex ma ọ bụ nke enweghị usoro), n'agbanyeghị aha igodo ha (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>Igodo ahụ yiri ihe nzuzo (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>Uru ahụ yiri token.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>N'okpuru igodo ezoro ezo.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>Oge nnọdụ ahụ dị ka ederede, ezoro ezo dị ka tebụl ahụ.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>Oge nnọdụ ahụ karịrị %size (debugbar.ini SessionWarnBytes): arịrịọ ọ bụla nke onye ọrụ a na-agụ oge nnọdụ ahụ dum, ma na-ede ya mgbe ọ gbanwere.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP na-edobe oge nnọdụ a na faịlụ ma kpọchie faịlụ ahụ maka arịrịọ ahụ dum: arịrịọ nke otu onye ọrụ (ọtụtụ taabụ, oku AJAX) na-echere ibe ha.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Debe ya ka ọ mepere emepe</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>Karịrị %size (debugbar.ini SessionWarnBytes): arịrịọ ọ bụla nke onye ọrụ a na-agụ oge nnọdụ ahụ dum.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits n'ime %count agụrụ site na cache</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Enweghị ndebiri e sere (ele a gụrụ site na cache ele anaghị ese nke ọ bụla).</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

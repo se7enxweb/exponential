@@ -69199,6 +69199,174 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No answer</source>
         <translation>هیچ وەڵامێک نییە</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>شاردراوە</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>ڕوونکردنەوەکان پیشان بدە</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>ڕوونکردنەوەکان بشارەوە</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>کردنەوە</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>کردنەوەی هەموو</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>داخستنی هەموو</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>کلیل یان بەها</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>گەڕان لە دانیشتن</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>جۆر</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>%count ی تر</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>زۆر قووڵ تێکهەڵکێش کراوە بۆ پیشاندان</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>بڕاوە، سەرجەم %count پیت</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>دەستی پێکرد</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>ناوی کووکی</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>ناسنامەی دانیشتن</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>بەڕێوەبەر</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>ڕێڕەوی پاشەکەوت</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>بنەڕەتی PHP</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>ماوەی ژیان (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>کووکی</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>ماوەی ژیان %s چ</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>دانیشتنی PHP ی خۆت، وەک ئەوەی کاتێک بەشەکە کرایەوە هەبوو، هەرگیز هی کەسێکی تر نا. بەهای ئەو کلیلانەی وەک نهێنی دەردەکەون (تۆکن، هاش، وشەی نهێنی) شاردراونەتەوە (debugbar.ini SessionMask[])؛ هەموو شتێکی تر وەک خۆی پاشەکەوت کراوە پیشان دەدرێت، زانیاریی کەسیش.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count کلیل، %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>گەورە</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>دانیشتنەکە بەتاڵە.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>هیچ دانیشتنێک بۆ ئەم داواکارییە دەستی پێنەکرد.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>پێوەکراوی %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>کێرنێل و ئەوانی تر</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>هەموو تۆمارەکان پیشان نادرێن: دانیشتنەکە زیاترە لەوەی لێرە بتوانرێت لیست بکرێت.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count کلیل لیست نەکراون.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>چوارچێوە</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>ئەو بەهایانەی وەک تۆکن دەردەکەون (JSON Web Token، زانیاریی ناسینەوەی سەردێڕی Authorization، کلیلێکی تایبەت، دەقێکی hex ی درێژ یان هەڕەمەکی) ئەوانیش دەشاردرێنەوە، ناوی کلیلەکەیان هەرچی بێت (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>کلیلەکە وەک نهێنی دەردەکەوێت (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>بەهاکە وەک تۆکن دەردەکەوێت.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>لە ژێر کلیلێکی شاردراوەدا.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>دانیشتنەکە وەک دەق، وەک خشتەکە شاردراوە.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>دانیشتنەکە لە %size گەورەترە (debugbar.ini SessionWarnBytes): هەر داواکارییەکی ئەم بەکارهێنەرە هەموو دانیشتنەکە دەخوێنێتەوە، و کاتێک گۆڕا دەینووسێتەوە.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP ئەم دانیشتنە لە فایلدا هەڵدەگرێت و فایلەکە بۆ هەموو داواکارییەکە قوفڵ دەکات: داواکارییەکانی هەمان بەکارهێنەر (چەند تاب، بانگکردنی AJAX) چاوەڕێی یەکتر دەکەن.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>بە کراوەیی بهێڵەوە</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>لە %size گەورەترە (debugbar.ini SessionWarnBytes): هەر داواکارییەکی ئەم بەکارهێنەرە هەموو دانیشتنەکە دەخوێنێتەوە.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits لە %count لە کاشەوە خوێندرانەوە</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>هیچ قاڵبێک دروست نەکرا (دیمەنێک کە لە کاشی دیمەنەوە خوێندرابێتەوە هیچ قاڵبێک دروست ناکات).</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

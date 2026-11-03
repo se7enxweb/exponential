@@ -69199,6 +69199,174 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No answer</source>
         <translation>පිළිතුරක් නැත</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>වසන ලදී</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>පැහැදිලි කිරීම් පෙන්වන්න</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>පැහැදිලි කිරීම් සඟවන්න</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>විවෘත කරන්න</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>සියල්ල විවෘත කරන්න</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>සියල්ල වසන්න</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>යතුර හෝ අගය</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>සැසිය තුළ සොයන්න</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>වර්ගය</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>තවත් %count</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>පෙන්වීමට නොහැකි තරම් ගැඹුරින් කූඩු කර ඇත</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>කපා ඇත, මුළු අක්ෂර %count</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>ආරම්භ කළා</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>කුකියේ නම</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>සැසි ID</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>හසුරුවනය</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>සුරැකීමේ මාර්ගය</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>PHP පෙරනිමිය</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>ආයු කාලය (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>කුකිය</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>ආයු කාලය %s තත්</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>ඔබගේම PHP සැසිය, කොටස විවෘත කළ මොහොතේ තිබූ ආකාරයටම, කිසිදා වෙනත් කෙනෙකුගේ නොවේ. රහස් ලෙස පෙනෙන යතුරුවල (ටෝකන, හැෂ්, මුරපද) අගයන් වසා ඇත (debugbar.ini SessionMask[]); අනෙක් සියල්ල ගබඩා කළ ආකාරයටම පෙන්වයි, පුද්ගලික දත්ත ද.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>යතුරු %count, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>විශාල</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>සැසිය හිස් ය.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>මෙම ඉල්ලීම සඳහා කිසිදු සැසියක් ආරම්භ කර නැත.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>දිගුව %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>කර්නලය සහ වෙනත්</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>සියලු ඇතුළත් කිරීම් පෙන්වා නැත: සැසියේ මෙහි ලැයිස්තු ගත කළ හැකි ප්‍රමාණයට වඩා ඇත.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>යතුරු %count ක් ලැයිස්තු ගත කර නැත.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>රාමුව</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>ටෝකනයක් ලෙස පෙනෙන අගයන් ද (JSON Web Token එකක්, Authorization ශීර්ෂයක අක්තපත්‍ර, පුද්ගලික යතුරක්, දිගු hex හෝ අහඹු පෙළක්) ඒවායේ යතුරේ නම කුමක් වුවත් වසා ඇත (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>යතුර රහසක් ලෙස පෙනේ (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>අගය ටෝකනයක් ලෙස පෙනේ.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>වසන ලද යතුරක් යටතේ.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>පෙළ ලෙස සැසිය, වගුව මෙන් වසා ඇත.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>සැසිය %size ට වඩා විශාල ය (debugbar.ini SessionWarnBytes): මෙම පරිශීලකයාගේ සෑම ඉල්ලීමක්ම සම්පූර්ණ සැසිය කියවන අතර, එය වෙනස් වූ විට එය ලියයි.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP මෙම සැසිය ගොනුවල තබා ගන්නා අතර සම්පූර්ණ ඉල්ලීම පුරා ගොනුව අගුළු දමයි: එකම පරිශීලකයාගේ ඉල්ලීම් (ටැබ් කිහිපයක්, AJAX ඇමතුම්) එකිනෙකා එනතුරු බලා සිටී.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>විවෘතව තබන්න</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>%size ට වඩා විශාල ය (debugbar.ini SessionWarnBytes): මෙම පරිශීලකයාගේ සෑම ඉල්ලීමක්ම සම්පූර්ණ සැසිය කියවයි.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%count න් %hits ක් හැඹිලියෙන් කියවා ඇත</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>කිසිදු අච්චුවක් විදැහුම් කර නැත (දසුන් හැඹිලියෙන් කියවූ දසුනක් කිසිවක් විදැහුම් නොකරයි).</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

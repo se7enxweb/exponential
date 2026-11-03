@@ -69138,6 +69138,174 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
         <source>No answer</source>
         <translation>Sense resposta</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>emmascarat</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Mostra les explicacions</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Amaga les explicacions</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Obre</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Obre-ho tot</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Tanca-ho tot</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Clau o valor</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Cerca a la sessió</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Tipus</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>%count més</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>massa niat per mostrar-ho</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>retallat, %count caràcters en total</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Iniciat</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Nom de la galeta</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>ID de sessió</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Gestor</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Camí de desament</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>Valor per defecte de PHP</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Durada (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Galeta</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>durada %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>La teva pròpia sessió PHP, tal com era quan es va obrir la secció, mai una altra. Els valors de les claus que semblen secrets (testimonis, hash, contrasenyes) s'emmascaren (debugbar.ini SessionMask[]); la resta es mostra tal com està desat, també les dades personals.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count claus, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>gran</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>La sessió és buida.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>No s'ha iniciat cap sessió per a aquesta sol·licitud.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Extensió %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Nucli i altres</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>No es mostren totes les entrades: la sessió en té més de les que es poden llistar aquí.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count claus no es llisten.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Marc</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Els valors que semblen un testimoni (un JSON Web Token, les credencials d'una capçalera Authorization, una clau privada, un text hexadecimal o aleatori llarg) també s'emmascaren, sigui quin sigui el nom de la seva clau (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>La clau sembla un secret (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>El valor sembla un testimoni.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Sota una clau emmascarada.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>La sessió com a text, emmascarada com la taula.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>La sessió és més gran que %size (debugbar.ini SessionWarnBytes): cada sol·licitud d'aquest usuari llegeix tota la sessió i l'escriu quan ha canviat.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP desa aquesta sessió en fitxers i bloqueja el fitxer durant tota la sol·licitud: les sol·licituds del mateix usuari (diverses pestanyes, crides AJAX) s'esperen les unes a les altres.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Mantén obert</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>Més gran que %size (debugbar.ini SessionWarnBytes): cada sol·licitud d'aquest usuari llegeix tota la sessió.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits de %count llegits de la memòria cau</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>No s'ha renderitzat cap plantilla (una vista llegida de la memòria cau de vistes no en renderitza cap).</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

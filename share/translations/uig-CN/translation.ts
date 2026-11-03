@@ -69199,6 +69199,174 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No answer</source>
         <translation>جاۋاب يوق</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>يوشۇرۇلغان</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>چۈشەندۈرۈشنى كۆرسەت</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>چۈشەندۈرۈشنى يوشۇر</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>ئاچ</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>ھەممىنى ئاچ</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>ھەممىنى يوپ</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>ئاچقۇچ ياكى قىممەت</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>سۆزلىشىشتىن ئىزدە</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>تىپ</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>يەنە %count</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>كۆرسىتىشكە بەك چوڭقۇر ئۇۋىلانغان</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>كېسىلگەن، جەمئىي %count ھەرپ</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>باشلاندى</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>كۇكى ئىسمى</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>سۆزلىشىش ID سى</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>بىر تەرەپ قىلغۇچ</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>ساقلاش يولى</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>PHP نىڭ كۆڭۈلدىكى قىممىتى</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>ياشاش ۋاقتى (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>كۇكى</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>ياشاش ۋاقتى %s سېكۇنت</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>سىزنىڭ ئۆزىڭىزنىڭ PHP سۆزلىشىشى، بۇ بۆلەك ئېچىلغان ۋاقىتتىكى ھالىتى، ھەرگىز باشقىسىنىڭ ئەمەس. مەخپىيەتكە ئوخشايدىغان ئاچقۇچلارنىڭ (توكېن، ھاش، پارول) قىممىتى يوشۇرۇلىدۇ (debugbar.ini SessionMask[])؛ قالغان ھەممىسى ساقلانغان پېتى كۆرسىتىلىدۇ، شەخسىي سانلىق مەلۇماتمۇ.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count ئاچقۇچ، %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>چوڭ</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>سۆزلىشىش قۇرۇق.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>بۇ تەلەپ ئۈچۈن ھېچقانداق سۆزلىشىش باشلانمىدى.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>كېڭەيتىلمە %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>يادرو ۋە باشقىلار</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>ھەممە تۈر كۆرسىتىلمىدى: سۆزلىشىشتە بۇ يەردە تىزىشقا بولىدىغاندىن كۆپ تۈر بار.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count ئاچقۇچ تىزىلمىدى.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>رامكا</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>توكېنغا ئوخشايدىغان قىممەتلەرمۇ (JSON Web Token، Authorization بېشىنىڭ كىملىك ئۇچۇرى، شەخسىي ئاچقۇچ، ئۇزۇن ئون ئالتىلىك ياكى ئىختىيارى تېكىست) ئاچقۇچىنىڭ ئىسمى قانداق بولۇشىدىن قەتئىينەزەر يوشۇرۇلىدۇ (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>ئاچقۇچ مەخپىيەتكە ئوخشايدۇ (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>قىممەت توكېنغا ئوخشايدۇ.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>يوشۇرۇلغان ئاچقۇچنىڭ ئاستىدا.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>تېكىست شەكلىدىكى سۆزلىشىش، جەدۋەلگە ئوخشاش يوشۇرۇلغان.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>سۆزلىشىش %size دىن چوڭ (debugbar.ini SessionWarnBytes): بۇ ئىشلەتكۈچىنىڭ ھەر بىر تەلىپى پۈتۈن سۆزلىشىشنى ئوقۇيدۇ، ئۆزگەرگەندە ئۇنى يازىدۇ.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP بۇ سۆزلىشىشنى ھۆججەتلەردە ساقلايدۇ ۋە پۈتۈن تەلەپ جەريانىدا ھۆججەتنى قۇلۇپلايدۇ: ئوخشاش ئىشلەتكۈچىنىڭ تەلەپلىرى (بىر نەچچە بەتكۈچ، AJAX چاقىرىقلىرى) بىر-بىرىنى كۈتىدۇ.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>ئوچۇق قالدۇر</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>%size دىن چوڭ (debugbar.ini SessionWarnBytes): بۇ ئىشلەتكۈچىنىڭ ھەر بىر تەلىپى پۈتۈن سۆزلىشىشنى ئوقۇيدۇ.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%count نىڭ %hits ى غەملەكتىن ئوقۇلدى</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>ھېچقانداق قېلىپ سىزىلمىدى (كۆرۈنۈش غەملىكىدىن ئوقۇلغان كۆرۈنۈش ھېچقانداق قېلىپ سىزمايدۇ).</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
