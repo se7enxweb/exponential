@@ -56,7 +56,7 @@
 <div class="a4-formrow">
     <label for="templatecreate-class">{'Class'|i18n( 'design/admin/visual/templatecreate' )}</label>
     <div>
-    <select class="a4-input is-auto" id="templatecreate-class" name="Match[class_identifier]">
+    <select class="a4-input" id="templatecreate-class" name="Match[class_identifier]">
         <option value="-1">{'All classes'|i18n( 'design/admin/visual/templatecreate' )}</option>
         {section name=Class loop=fetch('content', 'can_instantiate_class_list')}
             {let contentClass = fetch( content, class, hash( class_id, $Class:item.id ) )}
@@ -105,7 +105,7 @@
 <div class="a4-formrow">
     <label for="templatecreate-class">{'Class'|i18n( 'design/admin/visual/templatecreate' )}</label>
     <div>
-    <select class="a4-input is-auto" id="templatecreate-class" name="Match[class_identifier]">
+    <select class="a4-input" id="templatecreate-class" name="Match[class_identifier]">
         <option value="-1">{'Any'|i18n( 'design/admin/visual/templatecreate' )}</option>
         {section name=Class loop=fetch('content', 'class_list', hash('sorts', array()))}
         <option value="{$Class:item.identifier|wash}">{$Class:item.name|wash}</option>
