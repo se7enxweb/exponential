@@ -44399,6 +44399,42 @@ Si commentaria approbatori mittere aut statum inspicere vis, URL infra adhibe.</
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Post introitum usor novam tesseram eligere debet, antequam quidquam aliud faciat. Hoc utere, cum alicui tesseram temporariam das.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Imaginem exstantem elige</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Fasciculus imaginis rei quam eligis in hunc campum transcribitur. Altera res non mutatur.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>Imago rei "%name" in hunc campum transcripta est.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Imagines perlustra</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Imagines nomine quaere</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Quaerere</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Imagine rei "%name" utere</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Hac imagine utere</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Nulla imago quaesitioni tuae respondet.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56120,6 +56156,26 @@ rationem tuam activeres.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>Imago SVG legi non potuit, aut nihil in ea tuto ostendi potest.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Imago transcribi non potuit. Iterum conare, aut administratorem situs, quaeso, adi.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Res electa non exstat aut eam legere tibi non licet.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Res electa imaginem non habet.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Fasciculus imaginis rei electae legi non potuit.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Imago rei electae maior est quam hic campus permittit: %1 octeti.</translation>
     </message>
 </context>
 <context>

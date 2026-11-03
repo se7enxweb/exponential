@@ -44457,6 +44457,42 @@ Os ydych am anfon sylwadau at y cymeradwywr neu weld y statws defnyddiwch yr URL
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Ar ôl mewngofnodi, rhaid i'r defnyddiwr ddewis cyfrinair newydd cyn gwneud unrhyw beth arall. Defnyddiwch hyn pan fyddwch yn rhoi cyfrinair dros dro i rywun.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Dewis delwedd sy'n bodoli</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Caiff ffeil delwedd y gwrthrych a ddewiswch ei chopïo i'r maes hwn. Nid yw'r gwrthrych arall yn newid.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>Cafodd delwedd “%name” ei chopïo i'r maes hwn.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Pori am ddelwedd</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Chwilio delweddau yn ôl enw</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Chwilio</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Defnyddio delwedd “%name”</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Defnyddio'r ddelwedd hon</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Does dim delwedd yn cyfateb i'ch chwiliad.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ eich cyfrif.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>Nid oedd modd darllen y ddelwedd SVG, neu ni ellir dangos dim ohoni'n ddiogel.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Doedd dim modd copïo'r ddelwedd. Rhowch gynnig arall arni neu cysylltwch â gweinyddwr y wefan.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Dyw'r gwrthrych a ddewiswyd ddim yn bodoli neu does gennych ddim hawl i'w ddarllen.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Does gan y gwrthrych a ddewiswyd ddim delwedd.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Doedd dim modd darllen ffeil delwedd y gwrthrych a ddewiswyd.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Mae delwedd y gwrthrych a ddewiswyd yn fwy nag y mae'r maes hwn yn ei ganiatáu: %1 beit.</translation>
     </message>
 </context>
 <context>

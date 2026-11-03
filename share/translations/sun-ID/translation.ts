@@ -44457,6 +44457,42 @@ Upami anjeun hoyong ngirim koméntar ka nu masihan persetujuan atanapi ningali s
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Saatos asup, pamaké kedah milih sandi énggal sateuacan ngalakukeun nu séjén. Anggo ieu nalika anjeun masihan sandi samentawis ka batur.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Pilih gambar anu geus aya</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Berkas gambar tina objék anu dipilih ku anjeun bakal disalin kana widang ieu. Objék séjénna henteu robah.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>Gambar tina “%name” geus disalin kana widang ieu.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Sungsi gambar</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Teangan gambar dumasar ngaran</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Paluruh</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Paké gambar tina “%name”</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Paké gambar ieu</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Teu aya gambar anu cocog jeung pamilarian anjeun.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ akun anjeun.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>Gambar SVG teu tiasa dibaca, atanapi euweuh eusina nu tiasa ditingalikeun kalayan aman.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Gambar teu bisa disalin. Mangga cobian deui atawa hubungi administrator situs.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Objék anu dipilih teu aya atawa anjeun teu meunang maca éta.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Objék anu dipilih teu boga gambar.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Berkas gambar tina objék anu dipilih teu bisa dibaca.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Gambar tina objék anu dipilih leuwih badag tibatan nu diidinan ku widang ieu: %1 bait.</translation>
     </message>
 </context>
 <context>

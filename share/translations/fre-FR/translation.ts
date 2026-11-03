@@ -37328,6 +37328,42 @@ Si vous voulez laisser un commentaire au responsable de l&apos;approbation ou en
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Après sa connexion, l&apos;utilisateur doit choisir un nouveau mot de passe avant de faire quoi que ce soit d&apos;autre. Utilisez cette option lorsque vous donnez un mot de passe provisoire à quelqu&apos;un.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Choisir une image existante</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Le fichier image de l’objet que vous choisissez est copié dans ce champ. L’autre objet n’est pas modifié.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>L’image de « %name » a été copiée dans ce champ.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Parcourir pour trouver une image</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Rechercher des images par nom</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Recherche</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Utiliser l’image de « %name »</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Utiliser cette image</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Aucune image ne correspond à votre recherche.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/diff</name>
@@ -49152,6 +49188,26 @@ votre compte.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>L&apos;image SVG n&apos;a pas pu être lue, ou rien de son contenu ne peut être affiché en toute sécurité.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>L’image n’a pas pu être copiée. Veuillez réessayer ou contacter l’administrateur du site.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>L’objet sélectionné n’existe pas ou vous n’avez pas le droit de le lire.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>L’objet sélectionné n’a pas d’image.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Le fichier image de l’objet sélectionné n’a pas pu être lu.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>L’image de l’objet sélectionné dépasse la taille autorisée pour ce champ : %1 octets.</translation>
     </message>
 </context>
 <context>

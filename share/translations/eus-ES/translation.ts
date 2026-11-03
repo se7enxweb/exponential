@@ -44457,6 +44457,42 @@ Onartzaileari iruzkinak bidali nahi badizkiozu edo egoera ikusi nahi baduzu, era
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Saioa hasi ondoren, erabiltzaileak pasahitz berri bat aukeratu behar du beste ezer egin aurretik. Erabili norbaiti behin-behineko pasahitza ematen diozunean.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Aukeratu lehendik dagoen irudi bat</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Aukeratzen duzun objektuaren irudi-fitxategia eremu honetara kopiatzen da. Beste objektua ez da aldatzen.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>«%name» objektuaren irudia eremu honetara kopiatu da.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Arakatu irudi bat bilatzeko</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Bilatu irudiak izenaren arabera</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Bilatu</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Erabili «%name» objektuaren irudia</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Erabili irudi hau</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Ez dago zure bilaketarekin bat datorren irudirik.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ aktibatzeko.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>Ezin izan da SVG irudia irakurri, edo ez dago bertan modu seguruan erakus daitekeen ezer.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Ezin izan da irudia kopiatu. Saiatu berriro edo jarri harremanetan gunearen administratzailearekin.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Hautatutako objektua ez dago edo ez duzu irakurtzeko baimenik.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Hautatutako objektuak ez du irudirik.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Ezin izan da hautatutako objektuaren irudi-fitxategia irakurri.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Hautatutako objektuaren irudia eremu honek onartzen duena baino handiagoa da: %1 byte.</translation>
     </message>
 </context>
 <context>

@@ -44457,6 +44457,42 @@ If you wan send comments to di approver or see di status, use di URL wey dey bel
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>After di user don sign in, e must choose new password before e do anything else. Use am wen you give somebody temporary password.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Choose picture wey dey already</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Di picture file of di object wey you choose go copy enter dis field. Di oda object no go change.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>Di picture of "%name" don copy enter dis field.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Browse find picture</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Search pictures by dia name</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Search</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Use di picture of "%name"</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Use dis picture</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>No picture match wetin you search.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ your account.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>Dem no fit read di SVG image, or nothing inside am dey safe to show.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>We no fit copy di picture. Abeg try again or contact di site administrator.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Di object wey you select no dey or you no get permission to read am.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Di object wey you select no get picture.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>We no fit read di picture file of di object wey you select.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Di picture of di object wey you select big pass wetin dis field allow: %1 bytes.</translation>
     </message>
 </context>
 <context>

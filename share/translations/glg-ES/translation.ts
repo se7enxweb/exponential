@@ -44457,6 +44457,42 @@ Se quere enviar comentarios ao aprobador ou ver a situación, use o URL de abaix
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Despois de acceder, o usuario debe escoller un contrasinal novo antes de facer outra cousa. Úseo cando lle dea a alguén un contrasinal temporal.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Escoller unha imaxe existente</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>O ficheiro de imaxe do obxecto que escollas cópiase neste campo. O outro obxecto non cambia.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>A imaxe de «%name» copiouse neste campo.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Explorar para buscar unha imaxe</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Buscar imaxes polo nome</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Busca</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Usar a imaxe de «%name»</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Usar esta imaxe</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Ningunha imaxe coincide coa túa busca.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ erro. Non tente enviar de novo o pagamento.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>Non se puido ler a imaxe SVG, ou nada nela pode amosarse de xeito seguro.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Non se puido copiar a imaxe. Téntao de novo ou contacta co administrador do sitio.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>O obxecto seleccionado non existe ou non tes permiso para lelo.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>O obxecto seleccionado non ten imaxe.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Non se puido ler o ficheiro de imaxe do obxecto seleccionado.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>A imaxe do obxecto seleccionado é maior do que permite este campo: %1 bytes.</translation>
     </message>
 </context>
 <context>

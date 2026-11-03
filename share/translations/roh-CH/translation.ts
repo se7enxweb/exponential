@@ -44457,6 +44457,42 @@ Sche Vus vulais trametter commentaris a l'approvader u guardar il status, duvrai
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Suenter s'annunziar sto l'utilisader tscherner in nov pled-clav, avant ch'el po far insatge auter. Duvrai quai, cura che Vus dais in pled-clav temporar a insatgi.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Tscherner in maletg existent</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>La datoteca dal maletg da l'object che Vus tschernis vegn copiada en quest champ. L'auter object na vegn betg midà.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>Il maletg da «%name» è vegnì copià en quest champ.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Sfegliar ils maletgs</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Tschertgar maletgs tenor num</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Tschertgar</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Utilisar il maletg da «%name»</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Utilisar quest maletg</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Nagin maletg na correspunda a Vossa tschertga.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ quest sbagl. Na empruvai betg da trametter danovamain il pajament.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>Il maletg SVG n'ha betg pudì vegnir legì, u nagut en el na po vegnir mussà a moda segira.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Il maletg n'ha betg pudì vegnir copià. Empruvai danovamain u contactai l'administratur da la website.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>L'object tschernì n'exista betg u Vus na dastgais betg al leger.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>L'object tschernì n'ha nagin maletg.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>La datoteca dal maletg da l'object tschernì n'ha betg pudì vegnir legida.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Il maletg da l'object tschernì è pli grond che quai che quest champ permetta: %1 bytes.</translation>
     </message>
 </context>
 <context>

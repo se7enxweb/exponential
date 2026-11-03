@@ -49651,6 +49651,42 @@ Wenn Sie einen Kommentar zum Freigebenden schicken oder den Status sehen wollen,
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Nach der Anmeldung muss der Benutzer ein neues Passwort wählen, bevor er etwas anderes tun kann. Verwenden Sie dies, wenn Sie jemandem ein vorläufiges Passwort geben.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Vorhandenes Bild auswählen</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Die Bilddatei des Objekts, das Sie auswählen, wird in dieses Feld kopiert. Das andere Objekt bleibt unverändert.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>Das Bild von „%name“ wurde in dieses Feld kopiert.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Nach einem Bild durchsuchen</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Bilder nach Namen suchen</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Suchen</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Bild von „%name“ verwenden</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Dieses Bild verwenden</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Kein Bild entspricht Ihrer Suche.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -63871,6 +63907,26 @@ diesen Fehler. Bitte versuchen Sie nicht, die Zahlung erneut zu senden.</transla
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>Das SVG-Bild konnte nicht gelesen werden, oder nichts darin kann sicher angezeigt werden.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Das Bild konnte nicht kopiert werden. Bitte versuchen Sie es erneut oder wenden Sie sich an den Administrator der Website.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Das ausgewählte Objekt existiert nicht oder Sie dürfen es nicht lesen.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Das ausgewählte Objekt hat kein Bild.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Die Bilddatei des ausgewählten Objekts konnte nicht gelesen werden.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Das Bild des ausgewählten Objekts ist größer, als dieses Feld erlaubt: %1 Bytes.</translation>
     </message>
 </context>
 <context>

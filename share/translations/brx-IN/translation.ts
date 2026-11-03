@@ -44457,6 +44457,42 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>साइन-इन खालामनायनि उनाव बेबहार खालामग्रा आ आखुं मावबो खालामनोनि सिगां गोदान पासओयार्ड मोनसे सायख्रानो गोनां. नों आथोनै पासओयार्ड मोनसे होनाय सोमोयाव बेखौ बेबहार खालाम.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>दङ्गासिनो मुहुर सायख</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>नोंथाङा सायखनाय बस्तुनि मुहुर फाइलखौ बे फिल्डआव कपि खालामनाय जायो। गुबुन बस्तुआ सोलायाखै।</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>“%name”नि मुहुरखौ बे फिल्डआव कपि खालामनाय जाबाय।</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>मुहुरनि थाखाय ब्राउज खालाम</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>मुंजों मुहुर नागिर</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>नायनाय</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>“%name”नि मुहुरखौ बाहाय</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>बे मुहुरखौ बाहाय</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>नोंथांनि नागिरनायजों मोनसेबो मुहुर गोरोबाखै।</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ your account.</source>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>SVG मुहुरखौ फरायनो हायाखै, नाबा बेआव निरापदै नुजाबाय मावबो दैया.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>मुहुरखौ कपि खालामनो हायाखै। नाजा फिन्से हुद, एबा साइट अडमिनिस्ट्रेटरआव सोमोन्धो खालाम।</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>सायखनाय बस्तुआ गैया एबा नोंथाङा बेखौ फरायनो हाया।</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>सायखनाय बस्तुआव मोनसेबो मुहुर गैया।</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>सायखनाय बस्तुनि मुहुर फाइलखौ फरायनो हायाखै।</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>सायखनाय बस्तुनि मुहुरा बे फिल्डआ गनायथि होनायनिख्रुइ गेदेर: %1 बाइट।</translation>
     </message>
 </context>
 <context>

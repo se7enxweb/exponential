@@ -44457,6 +44457,42 @@ Tassyklaýja teswir ibermek ýa-da statusy görmek isleseňiz, aşakdaky URL-ni 
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Girenden soň ulanyjy başga bir zat etmezden öň täze açar sözi saýlamaly. Kimdir birine wagtlaýyn açar sözi berenizde ulanyň.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Bar bolan suraty saýlaň</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Saýlan obýektiňiziň surat faýly bu meýdana göçürilýär. Beýleki obýekt üýtgemeýär.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>“%name” obýektiniň suraty bu meýdana göçürildi.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Surat üçin gözden geçir</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Suratlary ady boýunça gözle</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Gözle</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>“%name” obýektiniň suratyny ulan</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Bu suraty ulan</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Gözlegiňize gabat gelýän surat ýok.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ bu ýalňyşlyk barada habar beriň. Tölegi gaýtadan ibermäge synanyşmaň.</
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>SVG suraty okalyp bilinmedi ýa-da onuň içindäki hiç zat howpsuz görkezilip bilinmeýär.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Suraty göçürip bolmady. Gaýtadan synanyşyň ýa-da saýtyň administratory bilen habarlaşyň.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Saýlanan obýekt ýok ýa-da ony okamaga rugsadyňyz ýok.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Saýlanan obýektiň suraty ýok.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Saýlanan obýektiň surat faýlyny okap bolmady.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Saýlanan obýektiň suraty bu meýdanyň rugsat berşinden uly: %1 baýt.</translation>
     </message>
 </context>
 <context>

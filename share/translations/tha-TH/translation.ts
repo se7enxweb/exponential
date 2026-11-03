@@ -44457,6 +44457,42 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>หลังจากเข้าสู่ระบบ ผู้ใช้ต้องเลือกรหัสผ่านใหม่ก่อนทำสิ่งอื่นใด. ใช้ตัวเลือกนี้เมื่อคุณให้รหัสผ่านชั่วคราวแก่ผู้อื่น.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>เลือกรูปภาพที่มีอยู่</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>ไฟล์รูปภาพของออบเจ็กต์ที่คุณเลือกจะถูกคัดลอกไปยังฟิลด์นี้ ออบเจ็กต์อื่นจะไม่เปลี่ยนแปลง</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>คัดลอกรูปภาพของ “%name” ไปยังฟิลด์นี้แล้ว</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>เรียกดูรูปภาพ</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>ค้นหารูปภาพตามชื่อ</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>ค้นหา</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>ใช้รูปภาพของ “%name”</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>ใช้รูปภาพนี้</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>ไม่มีรูปภาพที่ตรงกับการค้นหาของคุณ</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ your account.</source>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>ไม่สามารถอ่านรูปภาพ SVG ได้ หรือไม่มีส่วนใดในรูปภาพที่แสดงได้อย่างปลอดภัย.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>ไม่สามารถคัดลอกรูปภาพได้ โปรดลองอีกครั้งหรือติดต่อผู้ดูแลเว็บไซต์</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>ออบเจ็กต์ที่เลือกไม่มีอยู่ หรือคุณไม่มีสิทธิ์อ่าน</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>ออบเจ็กต์ที่เลือกไม่มีรูปภาพ</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>ไม่สามารถอ่านไฟล์รูปภาพของออบเจ็กต์ที่เลือกได้</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>รูปภาพของออบเจ็กต์ที่เลือกมีขนาดใหญ่เกินกว่าที่ฟิลด์นี้อนุญาต: %1 ไบต์</translation>
     </message>
 </context>
 <context>

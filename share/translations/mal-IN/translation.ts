@@ -44455,6 +44455,42 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>സൈൻ ഇൻ ചെയ്തതിന് ശേഷം, മറ്റെന്തെങ്കിലും ചെയ്യുന്നതിന് മുമ്പ് ഉപയോക്താവ് ഒരു പുതിയ പാസ്വേഡ് തിരഞ്ഞെടുക്കണം. ആർക്കെങ്കിലും താൽക്കാലിക പാസ്വേഡ് നൽകുമ്പോൾ ഇത് ഉപയോഗിക്കുക.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>നിലവിലുള്ള ഒരു ചിത്രം തിരഞ്ഞെടുക്കുക</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>നിങ്ങൾ തിരഞ്ഞെടുക്കുന്ന ഒബ്ജക്റ്റിന്റെ ചിത്ര ഫയൽ ഈ ഫീൽഡിലേക്ക് പകർത്തുന്നു. മറ്റേ ഒബ്ജക്റ്റിന് മാറ്റമൊന്നും വരില്ല.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>"%name" എന്നതിന്റെ ചിത്രം ഈ ഫീൽഡിലേക്ക് പകർത്തി.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>ചിത്രത്തിനായി ബ്രൗസ് ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>പേര് ഉപയോഗിച്ച് ചിത്രങ്ങൾ തിരയുക</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>തിരയുക</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>"%name" എന്നതിന്റെ ചിത്രം ഉപയോഗിക്കുക</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>ഈ ചിത്രം ഉപയോഗിക്കുക</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>നിങ്ങളുടെ തിരയലുമായി പൊരുത്തപ്പെടുന്ന ചിത്രങ്ങളൊന്നുമില്ല.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56176,6 +56212,26 @@ your account.</source>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>SVG ചിത്രം വായിക്കാൻ കഴിഞ്ഞില്ല, അല്ലെങ്കിൽ അതിലെ ഒന്നും സുരക്ഷിതമായി പ്രദർശിപ്പിക്കാൻ കഴിയില്ല.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>ചിത്രം പകർത്താനായില്ല. ദയവായി വീണ്ടും ശ്രമിക്കുക അല്ലെങ്കിൽ സൈറ്റ് അഡ്മിനിസ്ട്രേറ്ററെ ബന്ധപ്പെടുക.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>തിരഞ്ഞെടുത്ത ഒബ്ജക്റ്റ് നിലവിലില്ല, അല്ലെങ്കിൽ അത് വായിക്കാൻ നിങ്ങൾക്ക് അനുമതിയില്ല.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>തിരഞ്ഞെടുത്ത ഒബ്ജക്റ്റിന് ചിത്രമില്ല.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>തിരഞ്ഞെടുത്ത ഒബ്ജക്റ്റിന്റെ ചിത്ര ഫയൽ വായിക്കാനായില്ല.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>തിരഞ്ഞെടുത്ത ഒബ്ജക്റ്റിന്റെ ചിത്രം ഈ ഫീൽഡ് അനുവദിക്കുന്നതിനേക്കാൾ വലുതാണ്: %1 ബൈറ്റുകൾ.</translation>
     </message>
 </context>
 <context>

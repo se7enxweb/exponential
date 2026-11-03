@@ -44457,6 +44457,42 @@ Jus háliidat sáddet kommeanttaid dohkkehaddjái dahje oaidnit stáhtusa, geava
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Maŋŋel sisačálihemiin geavaheaddji ferte válljet ođđa beassansáni ovdalgo máhttá dahkat eará. Geavat dán go addet earáide gaskaboddosaš beassansáni.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Vállje gova mii juo gávdno</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Dan objeavtta govvafiila maid válljet máŋgejuvvo dán gieddái. Nubbi objeakta ii rievdda.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>”%name” govva máŋgejuvvui dán gieddái.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Bláđđe gova</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Oza govaid nama mielde</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Ohcat</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Geavat ”%name” gova</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Geavat dán gova</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Ii oktage govva heive du ohcamii.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ du konto.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>SVG-govva ii sáhttán lohkkojuvvot, dahje das ii sáhte maidege čájehit sihkkarit.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Gova ii sáhttán máŋget. Geahččal ođđasit dahje váldde oktavuođa neahttabáikki administráhtoriin.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Válljejuvvon objeakta ii gávdno dahje dus ii leat lohpi lohkat dan.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Válljejuvvon objeavttas ii leat govva.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Válljejuvvon objeavtta govvafiilla ii sáhttán lohkat.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Válljejuvvon objeavtta govva lea stuorát go dát gieddi lohpida: %1 byte.</translation>
     </message>
 </context>
 <context>

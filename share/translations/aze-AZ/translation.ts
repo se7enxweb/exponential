@@ -44457,6 +44457,42 @@ Təsdiqləyiciyə şərh göndərmək və ya statusa baxmaq istəyirsinizsə, a�
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Daxil olduqdan sonra istifadəçi başqa heç nə etməzdən əvvəl yeni şifrə seçməlidir. Kiməsə müvəqqəti şifrə verdikdə bundan istifadə edin.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Mövcud şəkli seçin</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Seçdiyiniz obyektin şəkil faylı bu sahəyə kopyalanır. Digər obyekt dəyişmir.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>“%name” obyektinin şəkli bu sahəyə kopyalandı.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Şəkil üçün nəzərdən keçirin</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Şəkilləri ada görə axtarın</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Axtar</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>“%name” obyektinin şəklindən istifadə edin</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Bu şəkildən istifadə edin</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Axtarışınıza uyğun şəkil yoxdur.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ həmin məktubdakı göstərişlərə əməl edin.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>SVG şəkli oxuna bilmədi və ya içindəki heç nə təhlükəsiz göstərilə bilməz.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Şəkli kopyalamaq mümkün olmadı. Zəhmət olmasa yenidən cəhd edin və ya sayt administratoru ilə əlaqə saxlayın.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Seçilmiş obyekt mövcud deyil və ya onu oxumağa icazəniz yoxdur.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Seçilmiş obyektin şəkli yoxdur.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Seçilmiş obyektin şəkil faylını oxumaq mümkün olmadı.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Seçilmiş obyektin şəkli bu sahənin icazə verdiyindən böyükdür: %1 bayt.</translation>
     </message>
 </context>
 <context>

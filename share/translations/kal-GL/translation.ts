@@ -44396,6 +44396,42 @@ Akuersisumut oqaaseqaatinik nassiussiniaruit imaluunniit killiffia takuniarukku 
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Iserluni kingorna atuisoq allanik suliaqalinnginnermini isissutissamik nutaamik toqqaasariaqarpoq. Una atoruk, kimulluunniit isissutissamik piffissap ilaannaani atugassamik tunniussiguit.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Assi pioreersoq toqqaruk</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Objektip toqqakkavit assiata fiilia immersugassamut matumunnga assilineqassaaq. Objekti alla allanngorneqanngilaq.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>"%name"-p assia immersugassamut matumunnga assilineqarpoq.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Assimik qinerit</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Assit aqqisigut ujarlerit</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Ujarlerit</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>"%name"-p assia atoruk</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Assi una atoruk</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Ujarlernerpinnut assi naapertuuttoqanngilaq.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56117,6 +56153,26 @@ ilitsersuutit malikkit.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>SVG-assi atuarneqarsinnaanngilaq, imaluunniit imaanit sunaluunniit isumannaatsumik takutinneqarsinnaanngilaq.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Assi assilineqarsinnaanngilaq. Misileqqiguk imaluunniit nittartakkap aqutsisua attavigiuk.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Objekti toqqagaq pilersimanngilaq imaluunniit atuarsinnaanngilat.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Objekti toqqagaq assiqanngilaq.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Objektip toqqagaasup assiata fiilia atuarneqarsinnaanngilaq.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Objektip toqqagaasup assia immersugassap matuma akuerisaanit anginerujussuuvoq: %1 bytes.</translation>
     </message>
 </context>
 <context>

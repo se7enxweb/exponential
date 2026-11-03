@@ -44457,6 +44457,42 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>লগইন তৌরবগী মখাদা ইউজরনা অতোপ্পা করিসু তৌবগী মখলদা অনৌবা পাসওয়র্দ অমা সিলেক্ট তৌবা ঙমই. মীঅমদা অস্থায়ী পাসওয়র্দ পীবদা মসি ব্যবহার তৌবিয়ু.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>লৈরিবা ইমেজ অমা খনবিয়ু</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>নহাক্না খনবা অবজেক্ট অদুগী ইমেজ ফাইল অসি ফিল্ড অসিদা কোপি তৌই. অতোপ্পা অবজেক্ট অদু হোংদোকপা লৈতে.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>"%name" গী ইমেজ অসি ফিল্ড অসিদা কোপি তৌরে.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>ইমেজ অমা ব্রাউজ তৌবা</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>মমিংগী মথক্তা ইমেজশিং সার্চ তৌবা</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>সার্চ</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>"%name" গী ইমেজ শিজিন্নবা</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>ইমেজ অসি শিজিন্নবা</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>নহাক্কী সার্চকা মান্নবা ইমেজ অমত্তা লৈতে.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ your account.</source>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>SVG ইমেজ অসি পাংজরদে, নত্তরোইসু মনুংদা নিরাপদ তৌনা ফোংদোকপা ঙমবা অমতা লৈদে.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>ইমেজ অদু কোপি তৌবা ঙমদ্রে. অনৌদা ফংবিয়ু নত্তরেগা সাইটগী এদমিনিষ্ট্রেটরগা য়ান্নবিয়ু.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>খনখিবা অবজেক্ট অদু লৈতে নত্তরগা নহাক্না মদু পাবা য়াদে.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>খনখিবা অবজেক্ট অদুদা ইমেজ লৈতে.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>খনখিবা অবজেক্ট অদুগী ইমেজ ফাইল পাবা ঙমদ্রে.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>খনখিবা অবজেক্ট অদুগী ইমেজ অসি ফিল্ড অসিনা য়াবা মখাক্তগী চাউই: %1 বাইট.</translation>
     </message>
 </context>
 <context>

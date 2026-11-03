@@ -44396,6 +44396,42 @@ Jolic cośo wósobje, kótaraž pśizwólijo, komentary pósłaś abo status wi�
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Pó pśizjawjenju musy wužywaŕ nowe gronidło wubraś, nježli až cyni něco drugego. Wužywajśo to, gaž dajośo někomu nachylne gronidło.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Eksistěrujucy wobraz wubraś</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Wobrazowa dataja objekta, kótaryž wuběraśo, se do toś togo póla kopěrujo. Drugi objekt se njezměnijo.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>Wobraz „%name“ jo se do toś togo póla kopěrował.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Wobraz pśepytaś</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Wobraze pó mjenju pytaś</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Pytaś</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Wobraz „%name“ wužywaś</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Toś ten wobraz wužywaś</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Žeden wobraz njewótpowědujo wašomu pytanjeju.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56117,6 +56153,26 @@ Wašo konto aktiwěrowali.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>Wobraz SVG njedajo se cytaś abo nic w nim njedajo se wěsće pokazaś.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Wobraz njejo se dał kopěrowaś. Pšosym wopytajśo hyšći raz abo stajśo se z administratorom sedła do zwiska.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Wubrany objekt njeeksistěrujo abo njesmějośo jen cytaś.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Wubrany objekt njama žeden wobraz.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Wobrazowa dataja wubranego objekta njejo se dała cytaś.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Wobraz wubranego objekta jo wětšy, ako toś to pólo dowólujo: %1 bajtow.</translation>
     </message>
 </context>
 <context>

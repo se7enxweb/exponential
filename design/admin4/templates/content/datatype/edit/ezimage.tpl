@@ -42,6 +42,43 @@
     <input id="ezcoa-{if ne( $attribute_base, 'ContentObjectAttribute' )}{$attribute_base}-{/if}{$attribute.contentclassattribute_id}_{$attribute.contentclass_attribute_identifier}_file" class="box ezcc-{$attribute.object.content_class.identifier} ezcca-{$attribute.object.content_class.identifier}_{$attribute.contentclass_attribute_identifier}" name="{$attribute_base}_data_imagename_{$attribute.id}" type="file" />
 </div>
 
+{* Choose an existing image: the image file of the chosen object is copied into this field (expImageCopy);
+   the browse is the content browser, the search a post of this form; nothing refers to the other object. *}
+{def $exp_pick = $attribute_content.existing_image_pick
+     $exp_pick_id = concat( 'ezcoa-', cond( ne( $attribute_base, 'ContentObjectAttribute' ), concat( $attribute_base, '-' ), '' ), $attribute.contentclassattribute_id, '_', $attribute.contentclass_attribute_identifier )}
+{ezscript_require( 'expimagepick.js' )}
+<fieldset class="block a4-content-imagepick">
+    <legend class="a4-content-imagepick-legend">{'Choose an existing image'|i18n( 'design/standard/content/datatype' )}</legend>
+    <p class="a4-help">{'The image file of the object you choose is copied into this field. The other object does not change.'|i18n( 'design/standard/content/datatype' )}</p>
+    {if $exp_pick.error}{* a refused copy is the field's validation error, which admin4's edit_attribute.tpl prints above the field *}{/if}
+    {if $exp_pick.copied_from}<p class="a4-ok-text" role="status">{'The image of "%name" was copied into this field.'|i18n( 'design/standard/content/datatype', , hash( '%name', $exp_pick.copied_from ) )|wash}</p>{/if}
+    <div class="a4-searchrow">
+        <input class="button" type="submit" name="CustomActionButton[{$attribute.id}_browse_for_image]" value="{'Browse for an image'|i18n( 'design/standard/content/datatype' )}" />
+    </div>
+    <label for="{$exp_pick_id}_imagesearch">{'Search images by name'|i18n( 'design/standard/content/datatype' )}</label>
+    <div class="a4-searchrow">
+        <input id="{$exp_pick_id}_imagesearch" class="box exp-image-pick-text" type="search" name="{$attribute_base}_data_imagesearch_{$attribute.id}" value="{$exp_pick.text|wash}" data-exp-image-pick-search="{$attribute.id}" />
+        <input class="button exp-image-pick-search" id="{$exp_pick_id}_imagesearch_button" type="submit" name="CustomActionButton[{$attribute.id}_search_existing_image]" value="{'Search'|i18n( 'design/standard/content/datatype' )}" />
+    </div>
+    {if $exp_pick.searched}
+    {if $exp_pick.results|count}
+    <ul class="a4-content-imagepick-results">
+    {foreach $exp_pick.results as $exp_hit}
+        <li class="a4-content-imagepick-result">
+            <span class="a4-content-imagepick-thumb">{attribute_view_gui attribute=$exp_hit.attribute image_class='small'}</span>
+            <span class="a4-content-imagepick-name">{$exp_hit.name|wash}</span>
+            <span class="a4-content-imagepick-class a4-muted">{$exp_hit.class_name|wash}</span>
+            <button class="button" type="submit" name="CustomActionButton[{$attribute.id}_use_existing_image]" value="{$exp_hit.object_id}" aria-label="{'Use the image of "%name"'|i18n( 'design/standard/content/datatype', , hash( '%name', $exp_hit.name ) )|wash}">{'Use this image'|i18n( 'design/standard/content/datatype' )}</button>
+        </li>
+    {/foreach}
+    </ul>
+    {else}
+    <p class="a4-empty">{'No image matches your search.'|i18n( 'design/standard/content/datatype' )}</p>
+    {/if}
+    {/if}
+</fieldset>
+{undef $exp_pick $exp_pick_id}
+
 {* Alternative image text. *}
 <div class="block">
     <label for="ezcoa-{if ne( $attribute_base, 'ContentObjectAttribute' )}{$attribute_base}-{/if}{$attribute.contentclassattribute_id}_{$attribute.contentclass_attribute_identifier}_alttext">{'Alternative image text'|i18n( 'design/standard/content/datatype' )}{if $alt_text_required} <span class="required">({'required'|i18n( 'design/standard/content/datatype' )})</span>{/if}</label>

@@ -44457,6 +44457,42 @@ Raha te handefa fanehoan-kevitra ho an'ny mpankato ianao na hijery ny sata dia a
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Rehefa avy niditra ny mpampiasa dia tsy maintsy misafidy teny miafina vaovao alohan'ny hanaovana zavatra hafa. Ampiasao rehefa manome teny miafina vonjimaika olona ianao.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Misafidiana sary efa misy</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Adika ao amin'ity saha ity ny rakitra saryn'ny zavatra safidinao. Tsy miova ilay zavatra hafa.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>Voadika ao amin'ity saha ity ny saryn'i "%name".</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Tsirihina ny sary</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Hikaroka sary araka ny anarana</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Fikarohana</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Ampiasao ny saryn'i "%name"</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Ampiasao ity sary ity</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Tsy misy sary mifanaraka amin'ny fikarohanao.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ mba hampandehanana ny kaontinao.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>Tsy afaka novakiana ny sary SVG, na tsy misy azo asehoana tsy misy risika ao anatiny.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Tsy afaka nadika ilay sary. Andramo indray azafady na mifandraisa amin'ny mpitantana ny tranonkala.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Tsy misy ilay zavatra voafidy na tsy mahazo mamaky azy ianao.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Tsy manana sary ilay zavatra voafidy.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Tsy azo novakiana ny rakitra saryn'ilay zavatra voafidy.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Lehibe noho izay avelan'ity saha ity ny saryn'ilay zavatra voafidy: byte %1.</translation>
     </message>
 </context>
 <context>

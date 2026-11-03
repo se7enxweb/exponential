@@ -44457,6 +44457,42 @@ Su nga bëggee yónni xalaat ci ki koy nangu walla xool xaalaatam, jëfandikoo U
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Ginnaaw bi mu duggee, jëfandikukat bi war na tànn baatu jàll bu bees balaa mu def beneen lu mu mën. Jëfandikool ko bu nga jox kenn baatu jàll bu yàggul.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Tànnal nataal bu fi nekk</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Fisie nataalu objee bi nga tànn dañu koy sotti ci tool bii. Objee bi ci des du soppiku.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>Nataalu “%name” sotti nañu ko ci tool bii.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Wëndeelu ngir am nataal</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Seetal ay nataal ci tur</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Seet</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Jëfandikool nataalu “%name”</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Jëfandikool nataal bii</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Amul benn nataal bu dëppoo ak sa seet.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ juumte bii. Bu jéemaat yónnee fey bi.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>Manul a jàng nataal SVG bi, mbaa dara ci biir manul a feeñ ci kaaraange.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Mënuñu woon a sotti nataal bi. Jéemaatal walla jokkoo ak njiitu sit bi.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Objee bi ñu tànn amul walla sañoo koo jàng.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Objee bi ñu tànn amul nataal.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Mënuñu woon a jàng fisie nataalu objee bi ñu tànn.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Nataalu objee bi ñu tànn moo ëpp li tool bii may: %1 bayt.</translation>
     </message>
 </context>
 <context>

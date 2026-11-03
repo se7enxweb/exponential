@@ -44457,6 +44457,42 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>පිවිසීමෙන් පසු, වෙනත් කිසිවක් කිරීමට පෙර පරිශීලකයා නව මුරපදයක් තෝරා ගත යුතුය. යමෙකුට තාවකාලික මුරපදයක් ලබා දෙන විට මෙය භාවිතා කරන්න.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>පවතින රූපයක් තෝරන්න</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>ඔබ තෝරන වස්තුවේ රූප ගොනුව මෙම ක්ෂේත්‍රයට පිටපත් කෙරේ. අනෙක් වස්තුව වෙනස් නොවේ.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>“%name” හි රූපය මෙම ක්ෂේත්‍රයට පිටපත් කරන ලදී.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>රූපයක් සඳහා පිරික්සන්න</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>නමින් රූප සොයන්න</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>සොයන්න</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>“%name” හි රූපය භාවිත කරන්න</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>මෙම රූපය භාවිත කරන්න</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>ඔබගේ සෙවුමට ගැළපෙන රූපයක් නැත.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ your account.</source>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>SVG රූපය කියවිය නොහැකි විය, නැතහොත් එහි ඇති කිසිවක් ආරක්ෂිතව පෙන්විය නොහැක.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>රූපය පිටපත් කළ නොහැකි විය. කරුණාකර නැවත උත්සාහ කරන්න හෝ අඩවි පරිපාලක අමතන්න.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>තෝරාගත් වස්තුව නොපවතී හෝ ඔබට එය කියවීමට අවසර නැත.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>තෝරාගත් වස්තුවට රූපයක් නැත.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>තෝරාගත් වස්තුවේ රූප ගොනුව කියවිය නොහැකි විය.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>තෝරාගත් වස්තුවේ රූපය මෙම ක්ෂේත්‍රය ඉඩ දෙන ප්‍රමාණයට වඩා විශාලය: බයිට %1.</translation>
     </message>
 </context>
 <context>

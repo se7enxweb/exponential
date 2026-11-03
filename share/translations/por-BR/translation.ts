@@ -46032,6 +46032,42 @@ Se quiser enviar comentários ao aprovador ou ver o status do processo, use a UR
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Depois de entrar, o usuário precisa escolher uma nova senha antes de fazer qualquer outra coisa. Use esta opção quando você der uma senha temporária a alguém.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Escolher uma imagem existente</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>O arquivo de imagem do objeto escolhido é copiado para este campo. O outro objeto não é alterado.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>A imagem de “%name” foi copiada para este campo.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Procurar uma imagem</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Pesquisar imagens por nome</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Pesquisar</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Usar a imagem de “%name”</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Usar esta imagem</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Nenhuma imagem corresponde à sua pesquisa.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -58078,6 +58114,26 @@ este erro. Não tente reenviar o pagamento.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>Não foi possível ler a imagem SVG, ou nada nela pode ser exibido com segurança.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Não foi possível copiar a imagem. Tente novamente ou contate o administrador do site.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>O objeto selecionado não existe ou você não tem permissão para lê-lo.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>O objeto selecionado não tem imagem.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Não foi possível ler o arquivo de imagem do objeto selecionado.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>A imagem do objeto selecionado é maior do que este campo permite: %1 bytes.</translation>
     </message>
 </context>
 <context>

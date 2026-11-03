@@ -44457,6 +44457,42 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Пасля ўваходу карыстальнік павінен выбраць новы пароль, перш чым рабіць што-небудзь іншае. Выкарыстоўвайце гэта, калі даяце камусьці часовы пароль.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Выбраць існуючую выяву</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Файл выявы абранага вамі аб'екта капіруецца ў гэта поле. Іншы аб'ект не змяняецца.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>Выява «%name» скапіравана ў гэта поле.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Выбраць выяву праз агляд</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Шукаць выявы па назве</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Пошук</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Выкарыстаць выяву «%name»</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Выкарыстаць гэту выяву</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Няма выяў, якія адпавядаюць вашаму пошуку.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ your account.</source>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>Не ўдалося прачытаць выяву SVG, або ў ёй няма нічога, што можна бяспечна паказаць.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Не ўдалося скапіраваць выяву. Паспрабуйце яшчэ раз або звярніцеся да адміністратара сайта.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Абраны аб'ект не існуе або вы не маеце права яго чытаць.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Абраны аб'ект не мае выявы.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Не ўдалося прачытаць файл выявы абранага аб'екта.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Выява абранага аб'екта большая, чым дазваляе гэта поле: %1 байт.</translation>
     </message>
 </context>
 <context>

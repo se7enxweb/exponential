@@ -4,7 +4,7 @@ audience: editor
 category: media
 order: 10
 summary: The media library, uploading one file or many at once, ZIP files, alternative text, and what to do after the upload.
-keywords: upload, multiupload, multi-upload, images, files, media library, zip, drag and drop, alt text, alternative text, video, pdf
+keywords: upload, multiupload, multi-upload, images, files, media library, zip, drag and drop, alt text, alternative text, video, pdf, existing image, copy image, reuse image, choose image, browse image, search image
 context: ezmultiupload/upload, content/upload
 type: help
 ---
@@ -81,6 +81,26 @@ confirmation).
 When you edit an article and its *Image* field (or another relation field) is empty, **Upload new** uploads a file
 straight from the form and links it. The new item lands in the place your site has set for such uploads. See
 [Creating and editing content](editing-content.md#relations-and-images).
+
+## Use an existing image in an image field
+
+When an item has an image field of its own (an *Image* item, or an article whose image is a field rather than a
+relation), the field offers **Choose an existing image** below the upload. Use it when the picture you want is already
+on the site:
+
+- **Browse for an image** opens the content browser in the media library. Pick the item whose image you want and
+  click **Select**; you come back to the form.
+- Or type part of the item's name into **Search images by name** and press **Search** (or Enter). The items found are
+  listed with a small preview; **Use this image** takes one. An empty search lists the newest images.
+
+The image **file is copied** into the field you are editing, together with its alternative text when yours is empty.
+It is not a link: the field then holds its own copy, exactly as if you had uploaded the file, so you can edit it,
+replace it or remove it, and the other item does not change. If someone later edits or removes the other item, your
+copy stays as it is. You only see and copy images of items you may read; the size limit and the accepted image types
+of the field apply as for an upload. Publish or store the draft as usual to keep the change.
+
+If you want several pages to show the *same* image item, so that a new version of it appears everywhere, use a
+relation field instead (see [Creating and editing content](editing-content.md#relations-and-images)).
 
 ## Good practice
 

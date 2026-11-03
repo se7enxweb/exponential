@@ -44457,6 +44457,42 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>کاربر پس از ورود باید پیش از هر کار دیگری رمز عبور جدیدی انتخاب کند. هنگامی که به کسی رمز عبور موقت می‌دهید از این گزینه استفاده کنید.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>انتخاب یک تصویر موجود</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>فایل تصویر شیئی که انتخاب می‌کنید در این فیلد کاپی می‌شود. شیء دیگر تغییر نمی‌کند.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>تصویر «%name» در این فیلد کاپی شد.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>مرور برای یافتن تصویر</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>جستجوی تصاویر بر اساس نام</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>جستجو</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>استفاده از تصویر «%name»</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>استفاده از این تصویر</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>هیچ تصویری با جستجوی شما مطابقت ندارد.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ your account.</source>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>تصویر SVG خوانده نشد، یا هیچ بخشی از آن را نمی‌توان به‌صورت امن نمایش داد.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>تصویر کاپی نشد. لطفاً دوباره کوشش کنید یا با مدیر سایت به تماس شوید.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>شیء انتخاب‌شده وجود ندارد یا اجازهٔ خواندن آن را ندارید.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>شیء انتخاب‌شده تصویری ندارد.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>فایل تصویر شیء انتخاب‌شده خوانده نشد.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>تصویر شیء انتخاب‌شده از حد مجاز این فیلد بزرگ‌تر است: %1 بایت.</translation>
     </message>
 </context>
 <context>

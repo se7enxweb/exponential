@@ -44455,6 +44455,42 @@ Haddii aad rabto inaad faallooyin u dirto ansaxiyaha ama aad aragto xaaladda, is
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Ka dib marka uu galo, isticmaaluhu waa inuu dooranayaa erayga sirta ah ee cusub kahor inta aanu wax kale samayn. Isticmaal marka aad qof siiso erayga sirta ah ee ku meel gaarka ah.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Dooro sawir jira</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Faylka sawirka shayga aad doorato waxaa lagu koobiyeynayaa goobtan. Shayga kale isma beddelo.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>Sawirka “%name” waxaa lagu koobiyeeyay goobtan.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Baadh sawir</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Ku raadi sawirrada magac</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Raadi</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Isticmaal sawirka “%name”</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Isticmaal sawirkan</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Ma jiro sawir ku habboon raadintaada.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56176,6 +56212,26 @@ hawlgeliso akoonkaaga.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>Sawirka SVG lama akhrin karo, ama wax ka mid ah lama tusi karo si ammaan ah.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Sawirka lama koobiyeyn karin. Fadlan isku day mar kale ama la xiriir maamulaha goobta.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Shayga la doortay ma jiro ama looma oggola inaad akhrido.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Shayga la doortay ma laha sawir.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Faylka sawirka shayga la doortay lama akhrin karin.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Sawirka shayga la doortay wuu ka weyn yahay inta goobtani oggolaato: %1 bayt.</translation>
     </message>
 </context>
 <context>

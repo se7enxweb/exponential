@@ -44458,6 +44458,42 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>בתר עללא, מפלחנא חיב למגבא מלתא דעברא חדתא קדם דנעבד מדם אחרין. אמלו בה כד יהבין לאנש מלתא דעברא זמניתא.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>גבו צורתא דאיתה</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>קובצא דצורתא דצבותא דגביתון מתנסח להדין חקלא. צבותא אחריתא לא משתניא.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>צורתא ד«%name» אתנסחת להדין חקלא.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>חירו לצורתא</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>בעו צורתא בשמא</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>בציא</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>אשתמשו בצורתא ד«%name»</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>אשתמשו בהדא צורתא</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>לית צורתא דדמיא לבעותכון.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56179,6 +56215,26 @@ your account.</source>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>צורתא ד SVG לא אשתמלי למתקריו, או לית בה מדם דמציא למתחזיו בטיבותא.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>צורתא לא אתנסחת. בבעותא נסו תוב או אתקרבו למדברנא דאתרא.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>צבותא דאתגביאת לא איתה או לא שליט לכון למקרא יתה.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>לצבותא דאתגביאת לית לה צורתא.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>קובצא דצורתא דצבותא דאתגביאת לא אתקרי.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>צורתא דצבותא דאתגביאת רבא מן מא דהדין חקלא שביק: %1 בייטין.</translation>
     </message>
 </context>
 <context>

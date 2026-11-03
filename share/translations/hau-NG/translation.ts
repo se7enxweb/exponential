@@ -44455,6 +44455,42 @@ Idan ana son aika sharhi ga mai amincewa ko duba matsayi, a yi amfani da URL da 
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Bayan shiga, dole ne mai amfani ya zaɓi sabuwar kalmar sirri kafin ya yi wani abu dabam. A yi amfani da shi idan an ba wani kalmar sirri ta ɗan lokaci.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Zaɓi hoton da ke akwai</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Ana kwafin fayil ɗin hoton abin da ka zaɓa zuwa wannan fili. Ɗayan abin ba ya canzawa.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>An kwafi hoton "%name" zuwa wannan fili.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Bincika don neman hoto</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Nemi hotuna ta suna</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Nema</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Yi amfani da hoton "%name"</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Yi amfani da wannan hoton</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Babu hoton da ya dace da bincikenka.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56176,6 +56212,26 @@ asusunka.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>Ba a iya karanta hoton SVG ba, ko babu wani abu a cikinsa da za a iya nunawa lafiya.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Ba a iya kwafin hoton ba. Da fatan za a sake gwadawa ko a tuntuɓi mai kula da shafin.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Abin da aka zaɓa babu shi ko ba ka da izinin karanta shi.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Abin da aka zaɓa ba shi da hoto.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Ba a iya karanta fayil ɗin hoton abin da aka zaɓa ba.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Hoton abin da aka zaɓa ya fi girman da wannan fili ya yarda: baiti %1.</translation>
     </message>
 </context>
 <context>

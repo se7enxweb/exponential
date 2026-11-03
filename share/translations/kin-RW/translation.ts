@@ -44457,6 +44457,42 @@ Niba mushaka kohereza ibitekerezo ku wemeza cyangwa kureba uko bihagaze, mukores
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Nyuma yo kwinjira, umukoresha agomba guhitamo ijambobanga rishya mbere yo gukora ikindi kintu. Mubikoreshe igihe muhaye umuntu ijambobanga ry'agateganyo.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Hitamo ifoto isanzwe ihari</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Dosiye y’ifoto y’ikintu uhisemo yandukurwa muri uyu murima. Ikindi kintu ntigihinduka.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>Ifoto ya "%name" yandukuwe muri uyu murima.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Kuzenguruka ushaka ifoto</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Gushakisha amafoto ukoresheje izina</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Gushakisha</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Koresha ifoto ya "%name"</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Koresha iyi foto</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Nta foto ihuye n’ibyo washakishije.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ iri kosa. Nyamuneka ntimugerageze kongera kohereza ubwishyu.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>Ifoto ya SVG ntishobora gusomwa, cyangwa nta kiyirimo gishobora kwerekanwa mu mutekano.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Ifoto ntiyashoboye kwandukurwa. Ongera ugerageze cyangwa uvugane n’umuyobozi w’urubuga.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Ikintu cyahiswemo ntikibaho cyangwa ntiwemerewe kugisoma.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Ikintu cyahiswemo nta foto gifite.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Dosiye y’ifoto y’ikintu cyahiswemo ntiyashoboye gusomwa.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Ifoto y’ikintu cyahiswemo irarenze ingano uyu murima wemera: bayiti %1.</translation>
     </message>
 </context>
 <context>

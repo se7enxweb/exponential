@@ -44396,6 +44396,42 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>로그인한 후 사용자는 다른 작업을 하기 전에 새 암호를 선택해야 합니다. 다른 사람에게 임시 암호를 제공할 때 사용합니다.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>기존 이미지 선택</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>선택한 개체의 이미지 파일이 이 필드에 복사됩니다. 다른 개체는 변경되지 않습니다.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>"%name"의 이미지가 이 필드에 복사되었습니다.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>이미지 찾아보기</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>이름으로 이미지 검색</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>검색</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>"%name"의 이미지 사용</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>이 이미지 사용</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>검색과 일치하는 이미지가 없습니다.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56117,6 +56153,26 @@ your account.</source>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>SVG 이미지를 읽을 수 없거나 그 안에 안전하게 표시할 수 있는 내용이 없습니다.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>이미지를 복사할 수 없습니다. 다시 시도하거나 사이트 관리자에게 문의하십시오.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>선택한 개체가 존재하지 않거나 읽을 권한이 없습니다.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>선택한 개체에 이미지가 없습니다.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>선택한 개체의 이미지 파일을 읽을 수 없습니다.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>선택한 개체의 이미지가 이 필드에서 허용하는 크기보다 큽니다: %1바이트.</translation>
     </message>
 </context>
 <context>

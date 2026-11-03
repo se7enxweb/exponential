@@ -44457,6 +44457,42 @@ Um tú vilt senda viðmerkingar til góðkennaran ella síggja støðuna, brúka
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Eftir innritan skal brúkarin velja eitt nýtt loyniorð, áðrenn hann kann gera okkurt annað. Brúka tað, tá tú gevur onkrum eitt brádligt loyniorð.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Vel eina verandi mynd</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Myndafílan hjá lutinum, sum tú velur, verður avritað inn í henda teigin. Hin luturin broytist ikki.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>Myndin hjá „%name“ varð avritað inn í henda teigin.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Kaga eftir mynd</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Leita eftir myndum eftir navni</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Leita</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Nýt myndina hjá „%name“</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Nýt hesa myndina</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Eingin mynd samsvarar leitingini.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ hesi villu. Royn ikki at senda gjaldið aftur.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>SVG-myndin kundi ikki lesast, ella einki í henni kann vísast trygt.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Myndin kundi ikki avritast. Royn aftur ella set teg í samband við umsitaran av heimasíðuni.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Valdi luturin finst ikki, ella tú hevur ikki loyvi at lesa hann.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Valdi luturin hevur onga mynd.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Myndafílan hjá valda lutinum kundi ikki lesast.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Myndin hjá valda lutinum er størri, enn henda teigurin loyvir: %1 bytes.</translation>
     </message>
 </context>
 <context>

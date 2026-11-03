@@ -44457,6 +44457,42 @@ Kapau ʻokú ke loto ke fekau ha ngaahi fakakaukau ki he tokotaha fakangofua pe 
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Hili hono hū, kuo pau ke fili ʻe he tokotaha fakaʻaongaʻi ha lea fufū foʻou ʻi he teʻeki fai ha meʻa kehe. Fakaʻaongaʻi ia ʻo ka ke ʻoatu ki ha taha ha lea fufū fakataimi.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Fili ha tā ʻoku ʻosi ʻi ai</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>ʻE kopi ʻa e faile tā ʻo e ʻōpeki ʻoku ke fili ki he funga tohi ko ʻeni. ʻOku ʻikai liliu ʻa e ʻōpeki ʻe taha.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>Kuo kopi ʻa e tā ʻo “%name” ki he funga tohi ko ʻeni.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Vakavakai ki ha tā</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Kumi ʻa e ngaahi tā ʻaki ʻa e hingoa</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Kumi</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Fakaʻaongaʻi ʻa e tā ʻo “%name”</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Fakaʻaongaʻi ʻa e tā ko ʻeni</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>ʻOku ʻikai ha tā ʻoku hoa mo hoʻo kumi.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ Kātaki ʻo fetuʻutaki ki he tokotaha pule ʻo e uepisaiti pea fakahā ange
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>Naʻe ʻikai lava ʻo lau ʻa e tā SVG, pe ʻoku ʻikai ha meʻa ʻi ai ʻe lava ʻo fakahā ʻi he malu.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Naʻe ʻikai lava ke kopi ʻa e tā. Kātaki ʻo toe feinga pe fetuʻutaki ki he pule ʻo e saiti.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>ʻOku ʻikai ke ʻi ai ʻa e ʻōpeki naʻe fili pe ʻoku ʻikai ke ke ngofua ke lau ia.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>ʻOku ʻikai ha tā ʻa e ʻōpeki naʻe fili.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Naʻe ʻikai lava ke lau ʻa e faile tā ʻo e ʻōpeki naʻe fili.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>ʻOku lahi ange ʻa e tā ʻo e ʻōpeki naʻe fili ʻi he meʻa ʻoku ngofua ki he funga tohi ko ʻeni: ngaahi paite ʻe %1.</translation>
     </message>
 </context>
 <context>

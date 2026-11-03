@@ -435,6 +435,18 @@ class eZImageType extends eZDataType
         return $required;
     }
 
+    /**
+     * Whether $filename is the name of an image file the site accepts (by its name; SVG only when
+     * svgAccepted()). The check an upload's name must pass, for other ways a file comes in.
+     *
+     * @param string $filename
+     * @return bool
+     */
+    public static function isAcceptedImageFileName( $filename )
+    {
+        return self::validateImageFileExtension( $filename );
+    }
+
     private static function validateImageFileExtension($filename)
     {
         if ( !is_string( $filename ) || $filename === '' )
@@ -860,10 +872,91 @@ class eZImageType extends eZDataType
 
     function customObjectAttributeHTTPAction( $http, $action, $contentObjectAttribute, $parameters )
     {
-        if( $action == "delete_image" )
+        $attributeID = $contentObjectAttribute->attribute( 'id' );
+        switch ( $action )
         {
-            $this->deleteStoredObjectAttribute( $contentObjectAttribute );
+            case 'delete_image':
+            {
+                $this->deleteStoredObjectAttribute( $contentObjectAttribute );
+            } break;
+
+            // "Choose an existing image": browse the content tree for an object with an image
+            case 'browse_for_image':
+            {
+                if ( !isset( $parameters['module'] ) || !$parameters['module'] instanceof eZModule )
+                    break;
+                $browseParameters = array( 'action_name' => 'ExpImageFromObject_' . $attributeID,
+                                           'type' => 'ExpImageFromObjectToDataType',
+                                           'browse_custom_action' => array( 'name' => 'CustomActionButton[' . $attributeID . '_set_image_from_browse]',
+                                                                            'value' => $attributeID ),
+                                           'persistent_data' => array( 'HasObjectInput' => 0 ),
+                                           'from_page' => $parameters['current-redirection-uri'] );
+                $classIdentifiers = expImageCopy::imageClassIdentifiers();
+                if ( !empty( $classIdentifiers ) )
+                    $browseParameters['class_array'] = $classIdentifiers;
+                eZContentBrowse::browse( $browseParameters, $parameters['module'] );
+            } break;
+
+            // The object chosen in the browse: its image is copied into this field
+            case 'set_image_from_browse':
+            {
+                if ( $http->hasPostVariable( 'BrowseCancelButton' ) ||
+                     !$http->hasPostVariable( 'BrowseActionName' ) ||
+                     $http->postVariable( 'BrowseActionName' ) !== 'ExpImageFromObject_' . $attributeID ||
+                     !$http->hasPostVariable( 'SelectedObjectIDArray' ) )
+                    break;
+                $this->copyImageFromObject( $contentObjectAttribute, $http->postVariable( 'SelectedObjectIDArray' ) );
+            } break;
+
+            // An object found by the search of the edit form: the button's value is its id
+            case 'use_existing_image':
+            {
+                $buttons = $http->hasPostVariable( 'CustomActionButton' ) ? $http->postVariable( 'CustomActionButton' ) : array();
+                $key = $attributeID . '_use_existing_image';
+                $this->copyImageFromObject( $contentObjectAttribute, is_array( $buttons ) && isset( $buttons[$key] ) ? $buttons[$key] : false );
+            } break;
+
+            // The search of the edit form: the objects with an image whose name has the text
+            case 'search_existing_image':
+            {
+                $base = isset( $parameters['base_name'] ) ? $parameters['base_name'] : 'ContentObjectAttribute';
+                $textName = $base . '_data_imagesearch_' . $attributeID;
+                $text = $http->hasPostVariable( $textName ) ? $http->postVariable( $textName ) : '';
+                $text = is_scalar( $text ) ? trim( (string)$text ) : '';
+                $handler = $contentObjectAttribute->attribute( 'content' );
+                if ( $handler instanceof eZImageAliasHandler )
+                {
+                    $handler->setExistingImagePick( array( 'text' => $text,
+                                                           'searched' => true,
+                                                           'results' => expImageCopy::search( $text ) ) );
+                }
+            } break;
         }
+    }
+
+    /**
+     * Copies the image of the object $sourceObjectID into $contentObjectAttribute (expImageCopy) and
+     * tells the edit form how it went: the field shows the reason when the copy is refused.
+     *
+     * @param eZContentObjectAttribute $contentObjectAttribute
+     * @param mixed $sourceObjectID as posted
+     * @return bool
+     */
+    protected function copyImageFromObject( $contentObjectAttribute, $sourceObjectID )
+    {
+        $result = expImageCopy::copyFromObject( $contentObjectAttribute, $sourceObjectID );
+        $handler = $contentObjectAttribute->attribute( 'content' );
+        if ( $result === true )
+        {
+            $source = eZContentObject::fetch( (int)expImageCopy::objectIDFromInput( $sourceObjectID ) );
+            if ( $handler instanceof eZImageAliasHandler )
+                $handler->setExistingImagePick( array( 'copied_from' => $source instanceof eZContentObject ? (string)$source->attribute( 'name' ) : '' ) );
+            return true;
+        }
+        $contentObjectAttribute->setValidationError( $result );
+        if ( $handler instanceof eZImageAliasHandler )
+            $handler->setExistingImagePick( array( 'error' => $result ) );
+        return false;
     }
 
     /*!

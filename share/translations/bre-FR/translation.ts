@@ -44457,6 +44457,42 @@ Ma fell deoc'h kas evezhiadennoù d'an aprouer pe welout ar statud, implijit an 
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Goude kevreañ e rank an implijer diuzañ ur ger-tremen nevez a-raok ober netra all. Implijit an dibarzh-mañ pa roit ur ger-tremen amzeriek d'unan bennak.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Dibab ur skeudenn zo anezhi</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Restr skeudenn an objed a zibabit a vez eilet en tachenn-mañ. An objed all ne cheñch ket.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>Skeudenn «%name» a zo bet eilet en tachenn-mañ.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Furchal evit kavout ur skeudenn</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Klask skeudennoù dre an anv</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Klask</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Implijout skeudenn «%name»</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Implijout ar skeudenn-mañ</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Skeudenn ebet ne glot gant ho klask.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ Arabat klask adkas ar paeamant.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>Ne oa ket posupl lenn ar skeudenn SVG, pe ne c'haller diskouez netra enni en un doare diarvar.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>N'eus ket bet gallet eilañ ar skeudenn. Klaskit en-dro pe kit e darempred gant merour al lec'hienn.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>N'eus ket eus an objed dibabet pe n'oc'h ket aotreet d'e lenn.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>N'en deus skeudenn ebet an objed dibabet.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>N'eus ket bet gallet lenn restr skeudenn an objed dibabet.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Brasoc'h eo skeudenn an objed dibabet eget ar pezh a aotre an dachenn-mañ: %1 okted.</translation>
     </message>
 </context>
 <context>

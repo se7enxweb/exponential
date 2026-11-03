@@ -44457,6 +44457,42 @@ Kon gusto nimong magpadala og mga komento sa tigpaluyo o tan-awon ang status gam
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Human mag-sign in, kinahanglan nga pilion sa tiggamit ang bag-ong password sa wala pa buhata ang bisan unsa. Gamita kini kon hatagan nimo ang usa ka tawo og temporaryo nga password.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Pagpili og kasamtangang hulagway</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Ang file sa hulagway sa butang nga imong pilion kopyahon ngadto niining field. Ang laing butang dili mausab.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>Ang hulagway sa “%name” nakopya na ngadto niining field.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Pangitag hulagway pinaagi sa pag-browse</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Pangitaa ang mga hulagway pinaagi sa ngalan</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Pangitaa</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Gamita ang hulagway sa “%name”</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Gamita kining hulagwaya</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Walay hulagway nga mitakdo sa imong pagpangita.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ ang imong account.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>Dili mabasa ang SVG nga hulagway, o walay bahin niini nga luwas nga mapakita.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Dili makopya ang hulagway. Palihug sulayi pag-usab o kontaka ang administrador sa site.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Ang napiling butang wala maglungtad o dili ka tugotan sa pagbasa niini.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Ang napiling butang walay hulagway.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Dili mabasa ang file sa hulagway sa napiling butang.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Ang hulagway sa napiling butang mas dako kaysa gitugot niining field: %1 ka byte.</translation>
     </message>
 </context>
 <context>

@@ -44396,6 +44396,42 @@ Dacă doriți să trimiteți comentarii aprobatorului sau să vizualizați stare
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>După conectare, utilizatorul trebuie să aleagă o parolă nouă înainte de a face orice altceva. Utilizați această opțiune când dați cuiva o parolă temporară.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Alegeți o imagine existentă</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Fișierul imagine al obiectului ales este copiat în acest câmp. Celălalt obiect nu se modifică.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>Imaginea din „%name” a fost copiată în acest câmp.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Răsfoire imagini</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Căutare imagini după nume</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Căutare</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Folosiți imaginea din „%name”</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Folosiți această imagine</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Nicio imagine nu corespunde căutării dumneavoastră.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56117,6 +56153,26 @@ activa contul.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>Imaginea SVG nu a putut fi citită sau nimic din ea nu poate fi afișat în siguranță.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Imaginea nu a putut fi copiată. Vă rugăm să încercați din nou sau să contactați administratorul site-ului.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Obiectul selectat nu există sau nu aveți permisiunea de a-l citi.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Obiectul selectat nu are o imagine.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Fișierul imagine al obiectului selectat nu a putut fi citit.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Imaginea obiectului selectat este mai mare decât permite acest câmp: %1 octeți.</translation>
     </message>
 </context>
 <context>

@@ -44457,6 +44457,42 @@ Chaskiqman rimariykunata kachayta icha kaynin qhawayta munaspaqa uraypi URL-ta a
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Yaykuptinqa apaykachaqqa imatapas ruwanampaq ñawpaqtaqa musuq pakasqa simita akllanan. Pimanpas pachallapaq pakasqa simita qukuptiyki llamk'achiy.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Kachkaq rikchayta akllay</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Akllasqayki objetup rikchay willañiqinqa kay kitiman copiasqa kanqa. Huk objetuqa manam tikrakunchu.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>"%name" nisqap rikchayninqa kay kitimanmi copiasqa karqan.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Rikchayta purimuy</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Rikchaykunata sutinwan maskay</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Maskay</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>"%name" nisqap rikchayninta llamk'achiy</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Kay rikchayta llamk'achiy</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Manam ima rikchaypas maskasqaykiman tupanchu.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ llamk'achinaykipaq.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>SVG rikchayta mana ñawiyta atirqanchu, icha chay ukhupi mana imapas sapaqchasqa rikuchisqa kayta atinchu.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Rikchayqa manam copiakuyta atirqanchu. Ama hina kaspa, huktawan ruraykachay icha web kamachiqwan rimay.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Akllasqa objetuqa manam kanchu, icha manam ñawinchayta atiwaqchu.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Akllasqa objetuqa manam rikchayniyuqchu.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Akllasqa objetup rikchay willañiqinqa manam ñawinchakuyta atirqanchu.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Akllasqa objetup rikchayninqa kay kitip saqisqanmanta aswan hatunmi: %1 bytes.</translation>
     </message>
 </context>
 <context>

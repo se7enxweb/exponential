@@ -44398,6 +44398,42 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>לאחר הכניסה, המשתמש חייב לבחור סיסמה חדשה לפני כל פעולה אחרת. אפשרות זו מתאימה למסירת סיסמה זמנית.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>בחירת תמונה קיימת</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>קובץ התמונה של האובייקט שנבחר מועתק לשדה זה. האובייקט האחר אינו משתנה.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>התמונה של "%name" הועתקה לשדה זה.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>דפדוף לבחירת תמונה</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>חיפוש תמונות לפי שם</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>חיפוש</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>שימוש בתמונה של "%name"</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>שימוש בתמונה זו</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>אין תמונה התואמת לחיפוש.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56119,6 +56155,26 @@ your account.</source>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>לא ניתן היה לקרוא את תמונת ה־SVG, או שאין בה דבר שניתן להציג בבטחה.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>לא ניתן היה להעתיק את התמונה. נא לנסות שוב או לפנות למנהל האתר.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>האובייקט שנבחר אינו קיים או שאין לך הרשאה לקרוא אותו.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>לאובייקט שנבחר אין תמונה.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>לא ניתן היה לקרוא את קובץ התמונה של האובייקט שנבחר.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>התמונה של האובייקט שנבחר גדולה מהמותר בשדה זה: %1 בתים.</translation>
     </message>
 </context>
 <context>

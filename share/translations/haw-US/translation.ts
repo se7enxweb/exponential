@@ -44457,6 +44457,42 @@ INā makemake ʻoe e hoʻouna i nā manaʻo i ka mea hoʻāpono a nānā paha i 
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Ma hope o ka ʻeʻe ʻana mai, pono ka mea hoʻohana e koho i ʻōlelo huna hou ma mua o ka hana ʻana i kekahi mea ʻē aʻe. E hoʻohana i kēia inā hāʻawi ʻoe i kekahi i ʻōlelo huna pōkole.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>E koho i kekahi kiʻi e kū nei</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>E kope ʻia ka faila kiʻi o ka mea āu e koho ai i loko o kēia pahu. ʻAʻole e loli ka mea ʻē aʻe.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>Ua kope ʻia ke kiʻi o "%name" i loko o kēia pahu.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Kele no kekahi kiʻi</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>ʻImi i nā kiʻi ma ka inoa</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>ʻImi</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>E hoʻohana i ke kiʻi o "%name"</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>E hoʻohana i kēia kiʻi</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>ʻAʻohe kiʻi i kūlike me kāu ʻimi.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ kēia hewa. Mai hoʻāʻo e hoʻouna hou i ka uku.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>ʻAʻole hiki ke heluhelu ʻia ke kiʻi SVG, a i ʻole ʻaʻohe mea i loko ona e hiki ke hōʻike ʻia me ka palekana.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>ʻAʻole hiki ke kope i ke kiʻi. E ʻoluʻolu, e hoʻāʻo hou a i ʻole e kāhea aku i ka luna hoʻomalu o ka pūnaewele.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>ʻAʻole i loaʻa ka mea i koho ʻia, a i ʻole ʻaʻole ʻae ʻia ʻoe e heluhelu iā ia.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>ʻAʻohe kiʻi o ka mea i koho ʻia.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>ʻAʻole hiki ke heluhelu i ka faila kiʻi o ka mea i koho ʻia.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Ua ʻoi aku ka nui o ke kiʻi o ka mea i koho ʻia ma mua o ka mea i ʻae ʻia e kēia pahu: %1 paita.</translation>
     </message>
 </context>
 <context>

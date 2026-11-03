@@ -44396,6 +44396,42 @@ Kui soovite kinnitajale kommentaare saata või olekut vaadata, kasutage allpool 
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Pärast sisselogimist peab kasutaja enne muude toimingute tegemist valima uue parooli. Kasutage seda, kui annate kellelegi ajutise parooli.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Olemasoleva pildi valimine</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Teie valitud objekti pildifail kopeeritakse sellesse välja. Teine objekt ei muutu.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>Objekti „%name“ pilt kopeeriti sellesse välja.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Sirvi pildi valimiseks</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Otsi pilte nime järgi</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Otsi</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Kasuta objekti „%name“ pilti</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Kasuta seda pilti</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Teie otsingule ei vasta ükski pilt.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56117,6 +56153,26 @@ juhiseid.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>SVG-pilti ei saanud lugeda või selles pole midagi, mida saaks ohutult kuvada.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Pilti ei õnnestunud kopeerida. Proovige uuesti või võtke ühendust saidi administraatoriga.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Valitud objekti ei ole olemas või teil pole õigust seda lugeda.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Valitud objektil pole pilti.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Valitud objekti pildifaili ei õnnestunud lugeda.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Valitud objekti pilt on suurem, kui see väli lubab: %1 baiti.</translation>
     </message>
 </context>
 <context>

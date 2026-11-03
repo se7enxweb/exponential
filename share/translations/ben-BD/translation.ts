@@ -44455,6 +44455,42 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>সাইন ইন করার পর ব্যবহারকারীকে অন্য কিছু করার আগে একটি নতুন পাসওয়ার্ড বেছে নিতে হবে। কাউকে অস্থায়ী পাসওয়ার্ড দিলে এটি ব্যবহার করুন।</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>একটি বিদ্যমান ছবি বেছে নিন</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>আপনি যে অবজেক্টটি বেছে নেবেন তার ছবির ফাইলটি এই ফিল্ডে কপি করা হয়। অন্য অবজেক্টটি পরিবর্তিত হয় না।</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>“%name”-এর ছবিটি এই ফিল্ডে কপি করা হয়েছে।</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>ছবির জন্য ব্রাউজ করুন</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>নাম দিয়ে ছবি খুঁজুন</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>অনুসন্ধান</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>“%name”-এর ছবিটি ব্যবহার করুন</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>এই ছবিটি ব্যবহার করুন</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>আপনার অনুসন্ধানের সাথে কোনো ছবি মেলেনি।</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56176,6 +56212,26 @@ your account.</source>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>SVG ছবিটি পড়া যায়নি, অথবা এতে নিরাপদে দেখানো যায় এমন কিছু নেই।</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>ছবিটি কপি করা যায়নি। অনুগ্রহ করে আবার চেষ্টা করুন অথবা সাইট প্রশাসকের সাথে যোগাযোগ করুন।</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>নির্বাচিত অবজেক্টটি নেই অথবা এটি পড়ার অনুমতি আপনার নেই।</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>নির্বাচিত অবজেক্টটির কোনো ছবি নেই।</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>নির্বাচিত অবজেক্টটির ছবির ফাইল পড়া যায়নি।</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>নির্বাচিত অবজেক্টটির ছবি এই ফিল্ডের অনুমোদিত আকারের চেয়ে বড়: %1 বাইট।</translation>
     </message>
 </context>
 <context>

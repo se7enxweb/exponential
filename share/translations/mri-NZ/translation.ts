@@ -44457,6 +44457,42 @@ Mēnā e hiahia ana koe ki te tuku kōrero ki te kaiwhakamana, ki te tiro rānei
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Whai muri i te takiuru, me kōwhiri te kaiwhakamahi i tētahi kupuhipa hou i mua i te mahi i tētahi atu mea. Whakamahia ina hoatu koe i tētahi kupuhipa taupua ki tētahi tangata.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Kōwhiria tētahi atahanga e tīariari ana</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Ka tāruatia te kōnae atahanga o te ahanoa ka kōwhiria e koe ki tēnei āpure. Kāore te ahanoa atu e panoni.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>Kua tāruatia te atahanga o "%name" ki tēnei āpure.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Pūtirotiro mō tētahi atahanga</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Rapua ngā atahanga mā te ingoa</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Rapu</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Whakamahia te atahanga o "%name"</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Whakamahia tēnei atahanga</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Kāore he atahanga e ōrite ana ki tāu rapunga.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ i tō pūkete.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>Kāore i taea te pānui i te atahanga SVG, kāore rānei he mea i roto e taea te whakaatu i runga i te haumaru.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Kāore i taea te tārua i te atahanga. Tēnā koa, whakamātauria anō, whakapā atu rānei ki te kaiwhakahaere pae.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Kāore te ahanoa i kōwhiria i te tīariari, kāore rānei koe e whakaaetia ki te pānui i a ia.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Kāore he atahanga o te ahanoa i kōwhiria.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Kāore i taea te pānui i te kōnae atahanga o te ahanoa i kōwhiria.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>He nui ake te atahanga o te ahanoa i kōwhiria i tā tēnei āpure e whakaae ai: %1 paita.</translation>
     </message>
 </context>
 <context>

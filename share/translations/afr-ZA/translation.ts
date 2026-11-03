@@ -44396,6 +44396,42 @@ Gebruik die URL hieronder as u opmerkings aan die goedkeurder wil stuur of die s
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Na aanmelding moet die gebruiker eers &apos;n nuwe wagwoord kies voordat enigiets anders gedoen kan word. Gebruik dit wanneer &apos;n tydelike wagwoord aan iemand gegee word.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Kies 'n bestaande beeld</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Die beeldlêer van die objek wat u kies, word na hierdie veld gekopieer. Die ander objek verander nie.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>Die beeld van “%name” is na hierdie veld gekopieer.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Blaai vir 'n beeld</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Soek beelde volgens naam</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Soek</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Gebruik die beeld van “%name”</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Gebruik hierdie beeld</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Geen beeld pas by u soektog nie.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56117,6 +56153,26 @@ u rekening te aktiveer.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>Die SVG-beeld kon nie gelees word nie, of niks daarin kan veilig vertoon word nie.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Die beeld kon nie gekopieer word nie. Probeer asseblief weer of kontak die werfadministrateur.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Die gekose objek bestaan nie of u mag dit nie lees nie.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Die gekose objek het geen beeld nie.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Die beeldlêer van die gekose objek kon nie gelees word nie.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Die beeld van die gekose objek is groter as wat hierdie veld toelaat: %1 grepe.</translation>
     </message>
 </context>
 <context>

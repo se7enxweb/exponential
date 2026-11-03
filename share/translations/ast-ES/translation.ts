@@ -44457,6 +44457,42 @@ Si quies unviar comentarios al aprobador o ver l'estáu, usa la URL d'abaxo.</tr
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Dempués d'aniciar sesión, l'usuariu tien d'esbillar una contraseña nueva enantes de facer cualquier otra cosa. Úsalo cuando-y des a daquién una contraseña temporal.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Escoyer una imaxe esistente</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>El ficheru d'imaxe del oxetu qu'escueyas cópiase nesti campu. L'otru oxetu nun camuda.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>La imaxe de «%name» copióse nesti campu.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Esplorar pa buscar una imaxe</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Guetar imáxenes pol nome</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Guetar</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Usar la imaxe de «%name»</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Usar esta imaxe</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Nenguna imaxe concasa cola to gueta.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ si esbillesti l'opción "%3" de "%4" </translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>Nun se pudo lleer la imaxe SVG, o nun contién nada que se pueda amosar de forma segura.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Nun se pudo copiar la imaxe. Volvi a intentalo o contauta col alministrador del sitiu.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>L'oxetu esbilláu nun esiste o nun tienes permisu pa lleelu.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>L'oxetu esbilláu nun tien imaxe.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Nun se pudo lleer el ficheru d'imaxe del oxetu esbilláu.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>La imaxe del oxetu esbilláu ye mayor de lo que permite esti campu: %1 bytes.</translation>
     </message>
 </context>
 <context>

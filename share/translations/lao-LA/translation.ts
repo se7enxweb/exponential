@@ -44457,6 +44457,42 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>ຫຼັງຈາກເຂົ້າສູ່ລະບົບ ຜູ້ໃຊ້ຕ້ອງເລືອກລະຫັດຜ່ານໃໝ່ກ່ອນເຮັດສິ່ງອື່ນ. ໃຊ້ມັນເມື່ອທ່ານໃຫ້ລະຫັດຜ່ານຊົ່ວຄາວແກ່ໃຜຜູ້ໜຶ່ງ.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>ເລືອກຮູບພາບທີ່ມີຢູ່ແລ້ວ</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>ໄຟລ໌ຮູບພາບຂອງອອບເຈັກທີ່ທ່ານເລືອກຈະຖືກສຳເນົາເຂົ້າໃນຊ່ອງນີ້. ອອບເຈັກອື່ນຈະບໍ່ມີການປ່ຽນແປງ.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>ຮູບພາບຂອງ "%name" ໄດ້ຖືກສຳເນົາເຂົ້າໃນຊ່ອງນີ້ແລ້ວ.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>ທ່ອງເບິ່ງຮູບພາບ</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>ຄົ້ນຫາຮູບພາບຕາມຊື່</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>ຄົ້ນຫາ</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>ໃຊ້ຮູບພາບຂອງ "%name"</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>ໃຊ້ຮູບພາບນີ້</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>ບໍ່ມີຮູບພາບທີ່ກົງກັບການຄົ້ນຫາຂອງທ່ານ.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ your account.</source>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>ບໍ່ສາມາດອ່ານຮູບພາບ SVG ໄດ້ ຫຼືບໍ່ມີຫຍັງໃນມັນທີ່ສາມາດສະແດງໄດ້ຢ່າງປອດໄພ.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>ບໍ່ສາມາດສຳເນົາຮູບພາບໄດ້. ກະລຸນາລອງໃໝ່ ຫຼືຕິດຕໍ່ຜູ້ເບິ່ງແຍງລະບົບຂອງໄຊ.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>ອອບເຈັກທີ່ເລືອກບໍ່ມີຢູ່ ຫຼືທ່ານບໍ່ມີສິດອ່ານມັນ.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>ອອບເຈັກທີ່ເລືອກບໍ່ມີຮູບພາບ.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>ບໍ່ສາມາດອ່ານໄຟລ໌ຮູບພາບຂອງອອບເຈັກທີ່ເລືອກໄດ້.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>ຮູບພາບຂອງອອບເຈັກທີ່ເລືອກໃຫຍ່ກວ່າທີ່ຊ່ອງນີ້ອະນຸຍາດ: %1 ໄບຕ໌.</translation>
     </message>
 </context>
 <context>

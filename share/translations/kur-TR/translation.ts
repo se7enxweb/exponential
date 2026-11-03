@@ -44455,6 +44455,42 @@ Heke hûn dixwazin şîroveyan ji pejirîner re bişînin an rewşê bibînin, U
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Piştî têketinê, divê bikarhêner berî her tiştî şîfreyeke nû hilbijêre. Dema ku hûn şîfreyeke demkî didin kesekî, vê bikar bînin.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Wêneyekî heyî hilbijêrin</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Pelê wêneyê heyberê ku hûn hilbijêrin di vê qadê de tê kopîkirin. Heyberê din nayê guhertin.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>Wêneyê "%name" di vê qadê de hate kopîkirin.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Li wêneyekî bigerin</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Wêneyan li gorî navê bigerin</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Lêgerîn</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Wêneyê "%name" bi kar bînin</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Vê wêneyê bi kar bînin</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Tu wêne li gorî lêgerîna we nayê dîtin.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56176,6 +56212,26 @@ bişopînin.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>Wêneyê SVG nehate xwendin, an tiştek tê de nikare bi ewlehî were nîşandan.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Wêne nehate kopîkirin. Ji kerema xwe dîsa biceribînin an bi rêvebirê malperê re têkilî daynin.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Heyberê hilbijartî tune ye an hûn nikarin wî bixwînin.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Wêneyê heyberê hilbijartî tune ye.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Pelê wêneyê heyberê hilbijartî nehate xwendin.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Wêneyê heyberê hilbijartî ji ya ku ev qad destûr dide mezintir e: %1 bayt.</translation>
     </message>
 </context>
 <context>

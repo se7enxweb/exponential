@@ -44457,6 +44457,42 @@ Yaada nama mirkaneessuuf ergu yookiin sadarkaa ilaaluu yoo barbaaddan URL armaan
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Erga seenee booda, fayyadamaan wanta biraa osoo hin hojjetin jecha icciitii haaraa filachuu qaba. Yeroo nama tokkoof jecha icciitii yeroo gabaabaa kennitan fayyadamaa.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Suuraa jiru filadhaa</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Faayiliin suuraa wanta isin filattanii dirree kana keessatti garagalfama. Wanti kaan hin jijjiiramu.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>Suuraan "%name" dirree kana keessatti garagalfameera.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Suuraa daawwadhaa</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Suuraalee maqaan barbaadaa</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Barbaadi</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Suuraa "%name" fayyadamaa</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Suuraa kana fayyadamaa</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Suuraan barbaacha keessan wajjin walsimu hin jiru.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ herrega keessan hojii irra oolchaa.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>Suuraan SVG dubbifamuu hin dandeenye, yookiin wanti isa keessa jiru nageenyaan agarsiifamuu hin danda'u.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Suuraan garagalfamuu hin dandeenye. Maaloo altokko deebi'aa yaalaa yookiin bulchaa marsariitii quunnamaa.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Wanti filatame hin jiru yookiin isin dubbisuuf hayyama hin qabdan.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Wanti filatame suuraa hin qabu.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Faayiliin suuraa wanta filatamee dubbifamuu hin dandeenye.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Suuraan wanta filatamee kan dirreen kun hayyamu caalaa guddaa dha: baayitii %1.</translation>
     </message>
 </context>
 <context>

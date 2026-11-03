@@ -860,3 +860,37 @@ html.a4-js .a4-content-preview-stage .a4-content-preview-device iframe { width: 
 .a4-content-locations-scroll { max-width: 100%; overflow-x: auto; }
 .a4-content-locations th { white-space: normal; }
 .a4-content-locations td:nth-child(2) { min-width: 16em; }
+
+/* ---- image field: "Choose an existing image" (content/datatype/edit/ezimage.tpl), the search results ----------- */
+
+.a4-content-imagepick { margin: var(--a4-space-4) 0; padding: var(--a4-space-3) var(--a4-space-4); border: 1px solid var(--a4-line); border-radius: var(--a4-radius-s); }
+.a4-content-imagepick .a4-content-imagepick-legend { padding: 0 var(--a4-space-1); font-weight: var(--a4-weight-heading); }
+.a4-content-imagepick .a4-help { margin: 0 0 var(--a4-space-3); }
+.a4-content-imagepick .a4-searchrow + label { display: block; margin-top: var(--a4-space-3); }
+.a4-content-imagepick .a4-content-imagepick-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 160px), 1fr));
+  gap: var(--a4-space-3);
+  margin: var(--a4-space-3) 0 0;
+  padding: 0;
+  list-style: none;
+}
+.a4-content-imagepick .a4-content-imagepick-result {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--a4-space-1);
+  min-width: 0;
+  padding: var(--a4-space-2);
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius-s);
+  background-color: var(--a4-surface);
+}
+.a4-content-imagepick .a4-content-imagepick-thumb { display: block; max-width: 100%; }
+.a4-content-imagepick .a4-content-imagepick-thumb img { display: block; max-width: 100%; height: auto; }
+.a4-content-imagepick .a4-content-imagepick-thumb .attribute-image,
+.a4-content-imagepick .a4-content-imagepick-thumb p { margin: 0; }
+.a4-content-imagepick .a4-content-imagepick-name { font-weight: var(--a4-weight-medium); overflow-wrap: anywhere; }
+.a4-content-imagepick .a4-content-imagepick-class { font-size: var(--a4-text-s); }
+.a4-content-imagepick .a4-content-imagepick-result .button { margin-top: auto; }
+.a4-content-imagepick .a4-empty { margin-top: var(--a4-space-3); }

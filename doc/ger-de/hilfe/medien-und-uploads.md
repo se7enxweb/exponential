@@ -4,7 +4,7 @@ audience: editor
 category: media
 order: 10
 summary: Die Medienbibliothek, eine Datei oder viele auf einmal hochladen, ZIP-Dateien, Alternativtext und was nach dem Hochladen zu tun ist.
-keywords: hochladen, Upload, Mehrfach-Upload, Bilder, Dateien, Medienbibliothek, ZIP, Ziehen und Ablegen, Alternativtext, Video, PDF, upload, multiupload, multi-upload, images, files, media library, zip, drag and drop, alt text, alternative text, video, pdf
+keywords: hochladen, Upload, Mehrfach-Upload, Bilder, Dateien, Medienbibliothek, ZIP, Ziehen und Ablegen, Alternativtext, Video, PDF, upload, multiupload, multi-upload, images, files, media library, zip, drag and drop, alt text, alternative text, video, pdf, vorhandenes Bild, Bild kopieren, Bild wiederverwenden, Bild auswählen, existing image, copy image, reuse image
 context: ezmultiupload/upload, content/upload
 type: help
 ---
@@ -90,6 +90,29 @@ Wenn Sie einen Artikel bearbeiten und sein Feld *Image* (oder ein anderes Bezieh
 hochladen** eine Datei direkt aus dem Formular hoch und verknüpft sie. Das neue Objekt landet an dem Ort, den Ihre Site
 für solche Uploads festgelegt hat. Siehe
 [Inhalte anlegen und bearbeiten](inhalte-bearbeiten.md#verknüpfungen-und-bilder).
+
+## Ein vorhandenes Bild in ein Bildfeld übernehmen
+
+Wenn ein Objekt ein eigenes Bildfeld hat (ein Objekt *Image* oder ein Artikel, dessen Bild ein Feld und keine
+Beziehung ist), bietet das Feld unter dem Hochladen **Vorhandenes Bild auswählen** an. Nutzen Sie es, wenn das
+gewünschte Bild schon auf der Site liegt:
+
+- **Nach einem Bild durchsuchen** öffnet den Inhaltsbrowser in der Medienbibliothek. Wählen Sie das Objekt, dessen Bild
+  Sie möchten, und klicken Sie auf **Auswählen**; Sie kommen zum Formular zurück.
+- Oder geben Sie einen Teil des Objektnamens in **Bilder nach Namen suchen** ein und drücken Sie **Suchen** (oder die
+  Eingabetaste). Die gefundenen Objekte erscheinen mit einer kleinen Vorschau; **Dieses Bild verwenden** übernimmt eines.
+  Eine leere Suche zeigt die neuesten Bilder.
+
+Die **Bilddatei wird kopiert** in das Feld, das Sie bearbeiten, zusammen mit ihrem Alternativtext, wenn Ihrer leer ist.
+Es ist keine Verknüpfung: Das Feld hat danach eine eigene Kopie, genau als hätten Sie die Datei hochgeladen. Sie können
+sie bearbeiten, ersetzen oder entfernen, und das andere Objekt ändert sich nicht. Wird das andere Objekt später
+bearbeitet oder entfernt, bleibt Ihre Kopie, wie sie ist. Sie sehen und kopieren nur Bilder von Objekten, die Sie lesen
+dürfen; die Größengrenze und die erlaubten Bildtypen des Feldes gelten wie beim Hochladen. Speichern oder
+veröffentlichen Sie den Entwurf wie gewohnt, um die Änderung zu behalten.
+
+Wenn mehrere Seiten *dasselbe* Bildobjekt zeigen sollen, sodass eine neue Version davon überall erscheint, verwenden
+Sie stattdessen ein Beziehungsfeld (siehe
+[Inhalte anlegen und bearbeiten](inhalte-bearbeiten.md#verknüpfungen-und-bilder)).
 
 ## Bewährte Vorgehensweise
 

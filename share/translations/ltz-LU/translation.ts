@@ -44457,6 +44457,42 @@ Wann Dir dem Approbateur e Kommentar schécke wëllt oder de Status gesinn wëll
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>No der Umeldung muss de Benotzer en neit Passwuert wielen, ier e soss eppes ka maachen. Benotzt dat, wann Dir engem e provisorescht Passwuert gitt.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>E bestoend Bild auswielen</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>D'Bilddatei vum Objet, deen Dir auswielt, gëtt an dëst Feld kopéiert. Deen aneren Objet gëtt net geännert.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>D'Bild vu „%name“ gouf an dëst Feld kopéiert.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>No engem Bild duerchsichen</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Biller no Numm sichen</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Sichen</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>D'Bild vu „%name“ benotzen</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Dëst Bild benotzen</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Kee Bild entsprécht Ärer Sich.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ dëse Feeler. Probéiert net, d'Bezuelung nach eng Kéier ofzeschécken.</transl
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>D'SVG-Bild konnt net gelies ginn, oder näischt dran kann sécher ugewise ginn.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>D'Bild konnt net kopéiert ginn. Probéiert et w.e.g. nach eng Kéier oder kontaktéiert den Administrateur vun der Websäit.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>De gewielten Objet existéiert net oder Dir däerft en net liesen.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>De gewielten Objet huet kee Bild.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>D'Bilddatei vum gewielten Objet konnt net gelies ginn.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>D'Bild vum gewielten Objet ass méi grouss wéi dëst Feld erlaabt: %1 Bytes.</translation>
     </message>
 </context>
 <context>

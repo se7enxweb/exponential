@@ -44457,6 +44457,42 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>បន្ទាប់ពីចូល អ្នកប្រើត្រូវតែជ្រើសរើសពាក្យសម្ងាត់ថ្មី មុនពេលធ្វើអ្វីផ្សេងទៀត។ ប្រើវានៅពេលអ្នកផ្តល់ពាក្យសម្ងាត់បណ្តោះអាសន្នដល់នរណាម្នាក់។</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>ជ្រើសរើសរូបភាពដែលមានស្រាប់</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>ឯកសាររូបភាពនៃវត្ថុដែលអ្នកជ្រើសរើស ត្រូវបានចម្លងចូលក្នុងវាលនេះ។ វត្ថុផ្សេងទៀតមិនផ្លាស់ប្តូរទេ។</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>រូបភាពរបស់ "%name" ត្រូវបានចម្លងចូលក្នុងវាលនេះ។</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>រុករករូបភាព</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>ស្វែងរករូបភាពតាមឈ្មោះ</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>ស្វែងរក</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>ប្រើរូបភាពរបស់ "%name"</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>ប្រើរូបភាពនេះ</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>គ្មានរូបភាពណាត្រូវនឹងការស្វែងរករបស់អ្នកទេ។</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ your account.</source>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>មិនអាចអានរូបភាព SVG បានទេ ឬគ្មានអ្វីក្នុងវាដែលអាចបង្ហាញបានដោយសុវត្ថិភាពទេ។</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>មិនអាចចម្លងរូបភាពបានទេ។ សូមព្យាយាមម្តងទៀត ឬទាក់ទងអ្នកគ្រប់គ្រងគេហទំព័រ។</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>វត្ថុដែលបានជ្រើសរើសមិនមានទេ ឬអ្នកមិនមានសិទ្ធិអានវា។</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>វត្ថុដែលបានជ្រើសរើសមិនមានរូបភាពទេ។</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>មិនអាចអានឯកសាររូបភាពនៃវត្ថុដែលបានជ្រើសរើសបានទេ។</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>រូបភាពនៃវត្ថុដែលបានជ្រើសរើសធំជាងទំហំដែលវាលនេះអនុញ្ញាត៖ %1 បៃ។</translation>
     </message>
 </context>
 <context>

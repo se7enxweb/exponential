@@ -44457,6 +44457,42 @@ As jo opmerkings nei de goedkarder stjoere wolle of de status besjen wolle, brû
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Nei it oanmelden moat de brûker in nij wachtwurd kieze foardat er wat oars dwaan kin. Brûk dit as jo immen in tydlik wachtwurd jouwe.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Kies in besteande ôfbylding</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>It ôfbyldingsbestân fan it objekt dat jo kieze, wurdt nei dit fjild kopiearre. It oare objekt feroaret net.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>De ôfbylding fan ‘%name’ is nei dit fjild kopiearre.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Trochblêdzje nei in ôfbylding</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Ôfbyldingen sykje op namme</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Sykje</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>De ôfbylding fan ‘%name’ brûke</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Dizze ôfbylding brûke</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Gjin ôfbylding komt oerien mei jo sykopdracht.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ te aktivearjen.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>De SVG-ôfbylding koe net lêzen wurde, of der stiet neat yn dat feilich toand wurde kin.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>De ôfbylding koe net kopiearre wurde. Besykje it opnij of nim kontakt op mei de behearder fan de side.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>It selektearre objekt bestiet net of jo meie it net lêze.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>It selektearre objekt hat gjin ôfbylding.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>It ôfbyldingsbestân fan it selektearre objekt koe net lêzen wurde.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>De ôfbylding fan it selektearre objekt is grutter as dit fjild talit: %1 bytes.</translation>
     </message>
 </context>
 <context>

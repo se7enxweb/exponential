@@ -44457,6 +44457,42 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>كىرگەندىن كېيىن ئىشلەتكۈچى باشقا ئىش قىلىشتىن ئىلگىرى يېڭى ئىم تاللىشى كېرەك. بىرىگە ۋاقىتلىق ئىم بەرگەندە ئىشلىتىڭ.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>مەۋجۇت رەسىمنى تاللاڭ</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>سىز تاللىغان ئوبيېكتنىڭ رەسىم ھۆججىتى بۇ مەيدانغا كۆچۈرۈلىدۇ. يەنە بىر ئوبيېكت ئۆزگەرمەيدۇ.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>«%name» نىڭ رەسىمى بۇ مەيدانغا كۆچۈرۈلدى.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>رەسىم ئۈچۈن كۆرۈش</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>رەسىملەرنى ئىسىم بويىچە ئىزدەش</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>ئىزدە</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>«%name» نىڭ رەسىمىنى ئىشلىتىش</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>بۇ رەسىمنى ئىشلىتىش</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>ئىزدىشىڭىزگە ماس كېلىدىغان رەسىم يوق.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ your account.</source>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>SVG رەسىمىنى ئوقۇغىلى بولمىدى ياكى ئۇنىڭدىكى ھېچقانداق نەرسىنى بىخەتەر كۆرسەتكىلى بولمايدۇ.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>رەسىمنى كۆچۈرگىلى بولمىدى. قايتا سىناڭ ياكى تور بېكەت باشقۇرغۇچىسى بىلەن ئالاقىلىشىڭ.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>تاللانغان ئوبيېكت مەۋجۇت ئەمەس ياكى ئۇنى ئوقۇش ھوقۇقىڭىز يوق.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>تاللانغان ئوبيېكتنىڭ رەسىمى يوق.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>تاللانغان ئوبيېكتنىڭ رەسىم ھۆججىتىنى ئوقۇغىلى بولمىدى.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>تاللانغان ئوبيېكتنىڭ رەسىمى بۇ مەيدان رۇخسەت قىلغاندىن چوڭ: %1 بايت.</translation>
     </message>
 </context>
 <context>

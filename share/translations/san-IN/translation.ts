@@ -44457,6 +44457,42 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>प्रवेशानन्तरम् उपयोक्त्रा अन्यत्किमपि कर्तुं पूर्वं नूतनः गुप्तशब्दः चेतव्यः. कस्मैचित् अस्थायिनं गुप्तशब्दं ददाति चेत् इदं प्रयुञ्जताम्।</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>विद्यमानं चित्रं चिनोतु</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>भवता चितस्य पदार्थस्य चित्रसञ्चिका अस्मिन् क्षेत्रे प्रतिलिप्यते। अन्यः पदार्थः न परिवर्तते।</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>"%name" इत्यस्य चित्रम् अस्मिन् क्षेत्रे प्रतिलिपितम्।</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>चित्रार्थं विचरणम्</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>नाम्ना चित्राणाम् अन्वेषणम्</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>अन्वेषणम्</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>"%name" इत्यस्य चित्रम् उपयुज्यताम्</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>इदं चित्रम् उपयुज्यताम्</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>भवतः अन्वेषणेन सह किमपि चित्रं न मेलति।</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ your account.</source>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>SVG चित्रं पठितुं न शक्तम्, अथवा तस्मिन् सुरक्षितं दर्शयितुं योग्यं किमपि नास्ति।</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>चित्रं प्रतिलिपितुं न अशक्यत। कृपया पुनः प्रयतताम् अथवा जालस्थलप्रशासकेन सह सम्पर्कं करोतु।</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>चितः पदार्थः नास्ति अथवा भवान् तं पठितुं न अनुमतः।</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>चितस्य पदार्थस्य चित्रं नास्ति।</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>चितस्य पदार्थस्य चित्रसञ्चिका पठितुं न अशक्यत।</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>चितस्य पदार्थस्य चित्रम् अस्य क्षेत्रस्य अनुमतेः अधिकं विशालम् अस्ति: %1 बाइट्।</translation>
     </message>
 </context>
 <context>

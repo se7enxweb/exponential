@@ -44457,6 +44457,42 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Киргенден кийин колдонуучу башка бир нерсе кылуудан мурун жаңы сырсөз тандашы керек. Бирөөгө убактылуу сырсөз бергениңизде колдонуңуз.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Бар сүрөттү тандоо</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Сиз тандаган объекттин сүрөт файлы ушул талаага көчүрүлөт. Башка объект өзгөрбөйт.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>«%name» сүрөтү ушул талаага көчүрүлдү.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Сүрөттү карап чыгуу</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Сүрөттөрдү аталышы боюнча издөө</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Издөө</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>«%name» сүрөтүн колдонуу</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Бул сүрөттү колдонуу</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Издөөңүзгө дал келген сүрөт жок.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ your account.</source>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>SVG сүрөтүн окуу мүмкүн болгон жок же андагы эч нерсе коопсуз көрсөтүлө албайт.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Сүрөттү көчүрүү мүмкүн болгон жок. Кайра аракет кылыңыз же сайттын администраторуна кайрылыңыз.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Тандалган объект жок же аны окууга уруксатыңыз жок.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Тандалган объектте сүрөт жок.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Тандалган объекттин сүрөт файлын окуу мүмкүн болгон жок.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Тандалган объекттин сүрөтү бул талаа уруксат бергенден чоң: %1 байт.</translation>
     </message>
 </context>
 <context>

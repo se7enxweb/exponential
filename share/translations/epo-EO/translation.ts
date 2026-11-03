@@ -44457,6 +44457,42 @@ Se vi volas sendi komentojn al la aprobanto aŭ vidi la staton, uzu la suban URL
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Post ensaluto la uzanto devas elekti novan pasvorton, antaŭ ol fari ion alian. Uzu tion, kiam vi donas al iu provizoran pasvorton.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Elekti ekzistantan bildon</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>La bilddosiero de la objekto, kiun vi elektas, estas kopiata en ĉi tiun kampon. La alia objekto ne ŝanĝiĝas.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>La bildo de „%name“ estis kopiita en ĉi tiun kampon.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Foliumi por bildo</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Serĉi bildojn laŭ nomo</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Serĉi</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Uzi la bildon de „%name“</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Uzi ĉi tiun bildon</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Neniu bildo kongruas kun via serĉo.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ vian konton.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>La SVG-bildo ne povis esti legita, aŭ nenio en ĝi povas esti montrata sekure.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Ne eblis kopii la bildon. Bonvolu provi denove aŭ kontakti la administranton de la retejo.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>La elektita objekto ne ekzistas aŭ vi ne rajtas legi ĝin.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>La elektita objekto havas neniun bildon.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Ne eblis legi la bilddosieron de la elektita objekto.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>La bildo de la elektita objekto estas pli granda ol ĉi tiu kampo permesas: %1 bajtoj.</translation>
     </message>
 </context>
 <context>

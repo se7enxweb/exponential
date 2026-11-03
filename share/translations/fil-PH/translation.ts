@@ -44457,6 +44457,42 @@ Kung gusto mong magpadala ng mga komento sa tagapag-apruba o tingnan ang status,
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Pagkatapos mag-log in, dapat pumili ang user ng bagong password bago gumawa ng anupaman. Gamitin ito kapag nagbigay ka ng pansamantalang password sa isang tao.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Pumili ng umiiral na larawan</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Kinokopya sa field na ito ang file ng larawan ng object na pipiliin mo. Hindi nagbabago ang kabilang object.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>Nakopya sa field na ito ang larawan ng "%name".</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Mag-browse ng larawan</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Maghanap ng mga larawan ayon sa pangalan</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Maghanap</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Gamitin ang larawan ng "%name"</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Gamitin ang larawang ito</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Walang larawang tumutugma sa iyong paghahanap.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ ang iyong account.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>Hindi mabasa ang SVG na larawan, o walang bahagi nito na maipapakita nang ligtas.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Hindi makopya ang larawan. Pakisubukang muli o makipag-ugnayan sa administrator ng site.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Hindi umiiral ang napiling object o hindi mo ito maaaring basahin.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Walang larawan ang napiling object.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Hindi mabasa ang file ng larawan ng napiling object.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Mas malaki ang larawan ng napiling object kaysa pinapayagan ng field na ito: %1 bytes.</translation>
     </message>
 </context>
 <context>

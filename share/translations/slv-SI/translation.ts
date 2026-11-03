@@ -44396,6 +44396,42 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Po prijavi mora uporabnik izbrati novo geslo, preden lahko naredi kar koli drugega. To uporabite, ko komu daste začasno geslo.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Izberite obstoječo sliko</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Slikovna datoteka objekta, ki ga izberete, se kopira v to polje. Drugi objekt se ne spremeni.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>Slika objekta »%name« je bila kopirana v to polje.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Prebrskaj za sliko</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Iskanje slik po imenu</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Išči</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Uporabi sliko objekta »%name«</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Uporabi to sliko</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Nobena slika ne ustreza vašemu iskanju.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56117,6 +56153,26 @@ da aktivirate svoj račun.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>Slike SVG ni bilo mogoče prebrati ali pa v njej ni ničesar, kar bi bilo mogoče varno prikazati.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Slike ni bilo mogoče kopirati. Poskusite znova ali se obrnite na skrbnika spletnega mesta.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Izbrani objekt ne obstaja ali ga nimate pravice brati.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Izbrani objekt nima slike.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Slikovne datoteke izbranega objekta ni bilo mogoče prebrati.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Slika izbranega objekta je večja, kot dovoljuje to polje: %1 bajtov.</translation>
     </message>
 </context>
 <context>

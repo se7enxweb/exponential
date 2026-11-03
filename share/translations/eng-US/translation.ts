@@ -45445,6 +45445,42 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Choose an existing image</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>The image file of the object you choose is copied into this field. The other object does not change.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>The image of "%name" was copied into this field.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Browse for an image</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Search images by name</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Search</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Use the image of "%name"</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Use this image</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>No image matches your search.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -57162,6 +57198,26 @@ your account.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>The SVG image could not be read, or nothing in it can be shown safely.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>The image could not be copied. Please try again or contact the site administrator.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>The selected object does not exist or you may not read it.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>The selected object has no image.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>The image file of the selected object could not be read.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>The image of the selected object is larger than this field allows: %1 bytes.</translation>
     </message>
 </context>
 <context>

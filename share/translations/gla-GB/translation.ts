@@ -44457,6 +44457,42 @@ Ma tha sibh airson beachdan a chur chun an neach-aontachaidh no an staid fhaicin
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Às dèidh clàradh a-steach, feumaidh an cleachdaiche facal-faire ùr a thaghadh mus dèan e dad eile. Cleachdaibh seo nuair a bheir sibh facal-faire sealach do chuideigin.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Tagh dealbh a tha ann mu thràth</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Thèid lethbhreac de dh’fhaidhle deilbh an oibseict a thaghas tu a chur san raon seo. Cha tèid an t-oibseact eile atharrachadh.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>Chaidh lethbhreac de dhealbh “%name” a chur san raon seo.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Brabhsaich airson deilbh</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Lorg dealbhan a-rèir ainm</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Lorg</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Cleachd an dealbh aig “%name”</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Cleachd an dealbh seo</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Chan eil dealbh sam bith a’ freagairt ris an lorg agad.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ ur cunntas a ghnìomhachadh.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>Cha b' urrainnear an dealbh SVG a leughadh, no chan eil dad ann a ghabhas a shealltainn gu sàbhailte.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Cha b’ urrainn dhuinn lethbhreac a dhèanamh dhen dealbh. Feuch ris a-rithist no cuir fios gu rianaire na làraich.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Chan eil an t-oibseact a thagh thu ann no chan fhaod thu a leughadh.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Chan eil dealbh aig an oibseact a thagh thu.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Cha b’ urrainn dhuinn faidhle deilbh an oibseict a thagh thu a leughadh.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Tha dealbh an oibseict a thagh thu nas motha na tha an raon seo a’ ceadachadh: %1 baidht.</translation>
     </message>
 </context>
 <context>

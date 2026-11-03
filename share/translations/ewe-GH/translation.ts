@@ -44457,6 +44457,42 @@ Ne èdi be yeaɖo nyaɖeɖewo ɖe lɔlɔ̃ɖeedzila ŋu alo yeakpɔ ɖoƒea la, 
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Ne wòge ɖe eme vɔ la, ele be zãla la natia mɔxenya yeye hafi awɔ naneke bubu. Zãe ne èle mɔxenya ɣeyiɣi kpui nam ame aɖe.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Tia nɔnɔmetata si li xoxo</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Woaɖe nu si nètia la ƒe nɔnɔmetata ƒe faɛl ƒe kɔpi ade teƒe sia. Nu bubu la matrɔ o.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>Woɖe “%name” ƒe nɔnɔmetata ƒe kɔpi de teƒe sia.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Kpɔ nuwo me hena nɔnɔmetata</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Di nɔnɔmetatawo le ŋkɔ nu</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Di</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Zã “%name” ƒe nɔnɔmetata</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Zã nɔnɔmetata sia</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Nɔnɔmetata aɖeke mesɔ kple wò didi o.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ Taflatse, megada asi ɖe ga ɖoɖo ƒe ɖoɖo ɖa ake o.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>Womete ŋu xlẽ SVG nɔnɔmetata la o, alo nu aɖeke mele eme si woate ŋu afia le dedie o.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Womete ŋu ɖe nɔnɔmetata la ƒe kɔpi o. Taflatse, gbugbɔ do kpɔ alo ƒo ka kple nyatakakaɖoƒea ƒe dziɖula.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Nu si wotia la meli o alo mɔ meli na wò be nàxlẽe o.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Nɔnɔmetata aɖeke mele nu si wotia la ŋu o.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Womete ŋu xlẽ nu si wotia la ƒe nɔnɔmetata ƒe faɛl o.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Nu si wotia la ƒe nɔnɔmetata lolo wu esi teƒe sia ɖe mɔ ɖo: byte %1.</translation>
     </message>
 </context>
 <context>

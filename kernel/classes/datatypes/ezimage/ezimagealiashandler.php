@@ -69,7 +69,8 @@ class eZImageAliasHandler
                                    'original_filename',
                                    'is_valid',
                                    'focal_point',
-                                   'crop_rectangle' ),
+                                   'crop_rectangle',
+                                   'existing_image_pick' ),
                             array_keys( $aliasList ) );
     }
 
@@ -84,7 +85,8 @@ class eZImageAliasHandler
                               'original_filename',
                               'is_valid',
                               'focal_point',
-                              'crop_rectangle' ) ) )
+                              'crop_rectangle',
+                              'existing_image_pick' ) ) )
             return true;
 
         $imageManager = eZImageManager::factory();
@@ -114,6 +116,10 @@ class eZImageAliasHandler
         if ( $attributeName === 'crop_rectangle' )
         {
             return $this->cropRectangle();
+        }
+        if ( $attributeName === 'existing_image_pick' )
+        {
+            return $this->existingImagePick();
         }
         $aliasName = $attributeName;
         return $this->imageAlias( $aliasName );
@@ -2208,7 +2214,33 @@ class eZImageAliasHandler
         $this->generateXMLData( !$stored );
     }
 
+    /**
+     * What "Choose an existing image" of the edit form shows for this field in this request: the
+     * search text, whether a search was made, the objects found (expImageCopy::search()), the
+     * reason a copy was refused and the name of the object a copy was taken from.
+     *
+     * @return array
+     */
+    function existingImagePick()
+    {
+        $pick = is_array( $this->ExistingImagePick ) ? $this->ExistingImagePick : array();
+        return $pick + array( 'text' => '', 'searched' => false, 'results' => array(), 'error' => '', 'copied_from' => '' );
+    }
+
+    /**
+     * Sets entries of existingImagePick(), for this request only: the state lives on this handler,
+     * never in a static, so it is never seen by another request or user.
+     *
+     * @param array $pick
+     */
+    function setExistingImagePick( array $pick )
+    {
+        $this->ExistingImagePick = array_merge( $this->existingImagePick(), $pick );
+    }
+
     /// \privatesection
+    /// What "Choose an existing image" shows in this request, see existingImagePick().
+    public $ExistingImagePick = null;
     /// Contains a some eZContentObjectAttribute's attributes.
     public $ContentObjectAttributeData;
     /// Deprecated. Contains a reference to the object attribute

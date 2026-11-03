@@ -44396,6 +44396,42 @@ Jekk trid tibgħat kummenti lill-approvatur jew tara l-istatus, uża l-URL hawn 
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Wara li jidħol, l-utent irid jagħżel password ġdida qabel ma jagħmel xi ħaġa oħra. Uża dan meta tagħti lil xi ħadd password temporanja.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Agħżel immaġni eżistenti</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Il-fajl tal-immaġni tal-oġġett li tagħżel jiġi kkupjat f'dan il-qasam. L-oġġett l-ieħor ma jinbidilx.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>L-immaġni ta' "%name" ġiet ikkupjata f'dan il-qasam.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Esplora għal immaġni</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Fittex immaġnijiet skont l-isem</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Fittex</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Uża l-immaġni ta' "%name"</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Uża din l-immaġni</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>L-ebda immaġni ma taqbel mat-tfittxija tiegħek.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56117,6 +56153,26 @@ il-kont tiegħek.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>L-immaġni SVG ma setgħetx tinqara, jew xejn minnha ma jista&apos; jintwera b&apos;mod sigur.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>L-immaġni ma setgħetx tiġi kkupjata. Erġa' pprova jew ikkuntattja lill-amministratur tas-sit, jekk jogħġbok.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>L-oġġett magħżul ma jeżistix jew m'għandekx permess taqrah.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>L-oġġett magħżul m'għandux immaġni.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Il-fajl tal-immaġni tal-oġġett magħżul ma setax jinqara.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>L-immaġni tal-oġġett magħżul hija akbar milli jippermetti dan il-qasam: %1 byte.</translation>
     </message>
 </context>
 <context>

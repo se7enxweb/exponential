@@ -44457,6 +44457,42 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>साइन इन केल्या उपरांत वापरप्यान दुसरें कितेंय करपा आदीं नवो पासवर्ड निवडूंक जाय. कोणाक तात्पुरतो पासवर्ड दितना हाचो वापर करात.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>अस्तित्वांत आशिल्ली प्रतिमा वेंचात</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>तुमी वेंचतात त्या ऑब्जेक्टाची प्रतिमा फायल ह्या फील्डांत कॉपी जाता. दुसरो ऑब्जेक्ट बदलना.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>"%name" हाची प्रतिमा ह्या फील्डांत कॉपी केल्या.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>प्रतिमे खातीर ब्राउझ करात</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>नांवान प्रतिमा सोदात</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>सोद</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>"%name" हाची प्रतिमा वापरात</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>ही प्रतिमा वापरात</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>तुमच्या सोदाक जुळपी प्रतिमा ना.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ your account.</source>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>SVG प्रतिमा वाचूंक जाली ना, वा तातूंतलें कांयच सुरक्षीतपणान दाखोवंक जायना.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>प्रतिमा कॉपी करूंक जाली ना. उपकार करून परत यत्न करात वा सायटीच्या प्रशासकाक संपर्क करात.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>वेंचिल्लो ऑब्जेक्ट अस्तित्वांत ना वा तो वाचपाक तुमकां परवानगी ना.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>वेंचिल्ल्या ऑब्जेक्टाक प्रतिमा ना.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>वेंचिल्ल्या ऑब्जेक्टाची प्रतिमा फायल वाचूंक जाली ना.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>वेंचिल्ल्या ऑब्जेक्टाची प्रतिमा ह्या फील्डाक परवानगी आसा त्या परस व्हडली आसा: %1 बायट.</translation>
     </message>
 </context>
 <context>

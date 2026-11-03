@@ -37316,6 +37316,42 @@ Om du vill skicka kommentarer till personen som godkänner eller visa statusen, 
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Efter inloggningen måste användaren välja ett nytt lösenord innan något annat kan göras. Använd det när du ger någon ett tillfälligt lösenord.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Välj en befintlig bild</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Bildfilen från objektet du väljer kopieras till det här fältet. Det andra objektet ändras inte.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>Bilden från ”%name” kopierades till det här fältet.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Bläddra efter en bild</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Sök bilder efter namn</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Sök</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Använd bilden från ”%name”</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Använd den här bilden</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Ingen bild matchar din sökning.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/diff</name>
@@ -49103,6 +49139,26 @@ det här felet. Försök inte skicka betalningen igen.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>SVG-bilden kunde inte läsas, eller så kan inget i den visas säkert.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Bilden kunde inte kopieras. Försök igen eller kontakta webbplatsens administratör.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Det valda objektet finns inte eller så får du inte läsa det.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Det valda objektet har ingen bild.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Bildfilen för det valda objektet kunde inte läsas.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Bilden i det valda objektet är större än vad fältet tillåter: %1 byte.</translation>
     </message>
 </context>
 <context>

@@ -44457,6 +44457,42 @@ Bw'oyagala okutuma endowooza eri akkiriza oba okulaba omutendera kozesa URL eri 
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Oluvannyuma lw'okuyingira, omukozesa alina okulonda ekigambo ky'ekyama ekipya nga tannakola kintu kirala kyonna. Kikozese ng'owa omuntu ekigambo ky'ekyama eky'ekiseera.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Londa ekifaananyi ekiriwo</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Fayiro y'ekifaananyi ky'ekintu ky'olonda ekoppololwa mu kifo kino. Ekintu ekirala tekikyusibwa.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>Ekifaananyi kya "%name" kikoppoddwa mu kifo kino.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Lambula onoonye ekifaananyi</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Noonya ebifaananyi ng'okozesa erinnya</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Noonya</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Kozesa ekifaananyi kya "%name"</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Kozesa ekifaananyi kino</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Tewali kifaananyi kikwatagana n'ky'onoonya.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ ensobi eno. Bambi tokemba kuddamu kuweereza kusasula.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>Ekifaananyi kya SVG tekisobose kusomebwa, oba tewali kiri mu kyo ekiyinza okulagibwa mu butebenkevu.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Ekifaananyi tekisobodde kukoppololwa. Bambi geza nate oba labagana n'omuddukanya w'omukutu.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Ekintu ekirondeddwa tekiriiwo oba tokkirizibwa kukisoma.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Ekintu ekirondeddwa tekirina kifaananyi.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Fayiro y'ekifaananyi ky'ekintu ekirondeddwa teyasobodde kusomebwa.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Ekifaananyi ky'ekintu ekirondeddwa kisinga obunene ekifo kino kye kikkiriza: bayiti %1.</translation>
     </message>
 </context>
 <context>

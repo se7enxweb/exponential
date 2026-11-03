@@ -44457,6 +44457,42 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>로그인한 후 사용자는 다른 작업을 하기 전에 새 암호를 선택해야 합니다. 다른 사람에게 림시 암호를 제공할 때 사용합니다.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>기존 화상 선택</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>선택한 객체의 화상 파일이 이 마당에 복사됩니다. 다른 객체는 변경되지 않습니다.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>《%name》의 화상을 이 마당에 복사하였습니다.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>화상 찾아보기</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>이름으로 화상 검색</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>검색</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>《%name》의 화상 사용</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>이 화상 사용</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>검색과 일치하는 화상이 없습니다.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ your account.</source>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>SVG 화상을 읽을수 없거나 그 안에 안전하게 표시할수 있는 내용이 없습니다.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>화상을 복사할수 없습니다. 다시 시도하거나 사이트 관리자에게 문의하십시오.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>선택한 객체가 존재하지 않거나 읽을 권한이 없습니다.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>선택한 객체에 화상이 없습니다.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>선택한 객체의 화상 파일을 읽을수 없습니다.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>선택한 객체의 화상이 이 마당에서 허용하는 크기보다 큽니다: %1 바이트.</translation>
     </message>
 </context>
 <context>

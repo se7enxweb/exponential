@@ -44396,6 +44396,42 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Μετά τη σύνδεση, ο χρήστης πρέπει να επιλέξει νέο κωδικό πρόσβασης πριν κάνει οτιδήποτε άλλο. Χρησιμοποιήστε το όταν δίνετε σε κάποιον έναν προσωρινό κωδικό πρόσβασης.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Επιλογή υπάρχουσας εικόνας</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Το αρχείο εικόνας του αντικειμένου που επιλέγετε αντιγράφεται σε αυτό το πεδίο. Το άλλο αντικείμενο δεν αλλάζει.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>Η εικόνα του «%name» αντιγράφηκε σε αυτό το πεδίο.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Περιήγηση για εικόνα</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Αναζήτηση εικόνων κατά όνομα</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Αναζήτηση</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Χρήση της εικόνας του «%name»</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Χρήση αυτής της εικόνας</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Καμία εικόνα δεν ταιριάζει με την αναζήτησή σας.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56117,6 +56153,26 @@ your account.</source>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>Δεν ήταν δυνατή η ανάγνωση της εικόνας SVG ή τίποτα σε αυτήν δεν μπορεί να εμφανιστεί με ασφάλεια.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Δεν ήταν δυνατή η αντιγραφή της εικόνας. Δοκιμάστε ξανά ή επικοινωνήστε με τον διαχειριστή του ιστότοπου.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Το επιλεγμένο αντικείμενο δεν υπάρχει ή δεν έχετε δικαίωμα ανάγνωσής του.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Το επιλεγμένο αντικείμενο δεν έχει εικόνα.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Δεν ήταν δυνατή η ανάγνωση του αρχείου εικόνας του επιλεγμένου αντικειμένου.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Η εικόνα του επιλεγμένου αντικειμένου είναι μεγαλύτερη από όσο επιτρέπει αυτό το πεδίο: %1 byte.</translation>
     </message>
 </context>
 <context>

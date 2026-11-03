@@ -44457,6 +44457,42 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>سایِن اِن کرنہٕ پَتہٕ گَژھہِ صارِفن بییٚ کینہہ کرنہٕ کھۄتہ گۄڈ نوٚو پاس ورڈ ژُنُن۔ یَتھ اِستعمال کٔرِو یَدۍ توٚہہ کَنہِ کس وقتی پاس ورڈ دِیِو۔</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>موجوٗدٕ تَصویر ژارِو</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>یَتھ آبجیکٹَس توٚہہ ژارِو، تَمِچ تَصویر فایل گَژھہِ یتھ فیلڈَس مَنٛز کاپی۔ بیٚیہ آبجیکٹ چھُنہٕ بَدلان۔</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>"%name" ہٕنٛز تَصویر آیہٕ یتھ فیلڈَس مَنٛز کاپی کرنہٕ۔</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>تَصویرِ خٲطرٕ براوز کٔرِو</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>ناوٕ کِنۍ تَصویرٕ ژھارِو</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>ژھارِو</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>"%name" ہٕنٛز تَصویر استعمال کٔرِو</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>یہ تَصویر استعمال کٔرِو</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>توٚہہٕنٛدِس ژھانٛڈنَس سٟتۍ چھےٚ نہٕ کانٛہہ تَصویر مٕلان۔</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ your account.</source>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>SVG تَصویر ہیکِو نہٕ پَرِتھ، یا تَمہِ منز کٲنٛہہ چیز ہیکِو نہٕ محفوظ طریقہ سان ہیکھاوِتھ۔</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>تَصویر ہیچھ نہٕ کاپی گٔژِھتھ۔ مہربٲنی کٔرِتھ بیٚیہ کوٗشِش کٔرِو یا سایٹ اٮ۪ڈمِنِسٹریٹرَس سٟتۍ رابطہٕ کٔرِو۔</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>ژارنہٕ آمُت آبجیکٹ چھُنہٕ موجوٗد یا چھےٚ نہٕ توٚہہِ اَمِیُک پَرنُک اِجازَت۔</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>ژارنہٕ آمتِس آبجیکٹَس چھےٚ نہٕ کانٛہہ تَصویر۔</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>ژارنہٕ آمتِس آبجیکٹٕچ تَصویر فایل ہیچھ نہٕ پٔرِتھ۔</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>ژارنہٕ آمتِس آبجیکٹٕچ تَصویر چھےٚ یتھ فیلڈٕچ اِجازَت کھۄتہٕ بٔڑ: %1 بایٹ۔</translation>
     </message>
 </context>
 <context>

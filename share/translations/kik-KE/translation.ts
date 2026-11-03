@@ -44457,6 +44457,42 @@ Nĩ ũngĩenda gũtũma ũhoro kũrĩ mũtĩkĩria kana kũrora ũrĩa kĩrĩ, h
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Thutha wa gũtoonya, mũhũthiri no nginya athuure kiugo kĩerũ kĩa hitho mbere ya gwĩka kĩndũ kĩngĩ. Hũthĩra ũndũ ũcio rĩrĩa ũkũhe mũndũ kiugo kĩa hitho kĩa ihinda inini.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Thuura mbica ĩrĩa ĩrĩ kuo</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Faĩro ya mbica ya kĩndũ kĩrĩa ũthuura nĩĩkopagĩrio mũhianĩre-inĩ ũyũ. Kĩndũ kĩrĩa kĩngĩ gĩtigũcenjio.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>Mbica ya "%name" nĩĩkopagĩrio mũhianĩre-inĩ ũyũ.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Rora-rora ũcarie mbica</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Caria mbica na rĩĩtwa</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Caria</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Hũthĩra mbica ya "%name"</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Hũthĩra mbica ĩno</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Gũtirĩ mbica ĩringaine na ũcaria waku.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ Ndagũthaitha, ũhoye mũrũgamĩrĩri wa saiti na ũmũmenyithie
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>Mbica ya SVG ndĩahotetwo gũthomwo, kana gũtirĩ kĩndũ thĩinĩ wayo kĩngĩonanio na thayũ.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Mbica ndĩngĩhota gũkopagĩrio. Ndagũthaitha geria rĩngĩ kana ũranie na mũrori wa thaiti.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Kĩndũ kĩrĩa gĩthuurĩtwo gĩtirĩ kuo kana ndwĩtĩkĩrĩtio gũgĩthoma.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Kĩndũ kĩrĩa gĩthuurĩtwo gĩtirĩ na mbica.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Faĩro ya mbica ya kĩndũ kĩrĩa gĩthuurĩtwo ndĩngĩhota gũthomwo.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Mbica ya kĩndũ kĩrĩa gĩthuurĩtwo nĩ nene gũkĩra ũrĩa mũhianĩre ũyũ wĩtĩkĩrĩte: baiti %1.</translation>
     </message>
 </context>
 <context>
