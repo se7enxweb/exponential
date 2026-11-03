@@ -496,7 +496,7 @@ c776b1b3be862fe04c3f70c459dde834  design/admin/templates/class/copy_confirm.tpl
 2f32def3d98933143182da37d73213f4  design/admin/templates/class/datatype/browse_objectrelation_placement.tpl
 90b2f4b8116b9ef3e04ceb886a6fd516  design/admin/templates/class/datatype/browse_objectrelationlist_placement.tpl
 f1fcfe57ed2c9983e33c4999450e8db9  design/admin/templates/class/datatype_flags.tpl
-0134cead9682688b54145ba8916929a6  design/admin/templates/class/datatype_list.tpl
+d363052070da5256a471ee11d8d60e76  design/admin/templates/class/datatype_list.tpl
 f8cb9cb885627edcbe3dbc5020228028  design/admin/templates/class/datatype_view.tpl
 c978f9f5efed9306fdffebebb08b7fb8  design/admin/templates/class/edit.tpl
 f22ab5b4dc7e3569f64e4f001a4d7351  design/admin/templates/class/edit_denied.tpl
@@ -1312,7 +1312,7 @@ c776b1b3be862fe04c3f70c459dde834  design/admin4/templates/class/copy_confirm.tpl
 2f32def3d98933143182da37d73213f4  design/admin4/templates/class/datatype/browse_objectrelation_placement.tpl
 90b2f4b8116b9ef3e04ceb886a6fd516  design/admin4/templates/class/datatype/browse_objectrelationlist_placement.tpl
 f1fcfe57ed2c9983e33c4999450e8db9  design/admin4/templates/class/datatype_flags.tpl
-0134cead9682688b54145ba8916929a6  design/admin4/templates/class/datatype_list.tpl
+d363052070da5256a471ee11d8d60e76  design/admin4/templates/class/datatype_list.tpl
 f8cb9cb885627edcbe3dbc5020228028  design/admin4/templates/class/datatype_view.tpl
 09816b82356454cb438f69289d325a6a  design/admin4/templates/class/edit.tpl
 f22ab5b4dc7e3569f64e4f001a4d7351  design/admin4/templates/class/edit_denied.tpl

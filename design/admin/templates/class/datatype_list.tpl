@@ -129,7 +129,7 @@
         {case}{/case}
         {/switch}
     </td>
-    <td data-value="{$row.class|wash}">{if $row.class|ne( '' )}<code>{$row.class|wash}</code><br /><span class="a4-meta a4-wrap">{$row.file|wash}</span>{else}<span class="a4-muted">{'none'|i18n( 'design/admin/class/datatype' )}</span>{/if}</td>
+    <td data-value="{$row.class|wash}">{if $row.class|ne( '' )}<code title="{$row.file|wash}">{$row.class|wash}</code>{else}<span class="a4-muted">{'none'|i18n( 'design/admin/class/datatype' )}</span>{/if}</td>
     <td class="a4-num" data-value="{$row.classes}">{$row.classes}</td>
     <td class="a4-num" data-value="{$row.class_attributes}">{$row.class_attributes}</td>
     <td class="a4-num" data-value="{$row.objects}">{$row.objects}</td>
