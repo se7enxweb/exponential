@@ -67,8 +67,7 @@ class expAuditIndexTest extends PHPUnit\Framework\TestCase
                 $script->initialize();
             }
             eZExecution::setCleanExit();
-            if ( !eZDB::instance()->isConnected() )
-                throw new RuntimeException( 'no database connection' );
+            ezpLiveInstallation::installedSiteDatabase();
             if ( !expAuditIndexSchema::isInstalled() )
                 throw new RuntimeException( 'the audit index tables are not installed (update/common/scripts/6.0/createaudittables.php)' );
             self::$booted = true;
