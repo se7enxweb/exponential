@@ -380,7 +380,7 @@ class expUserAccountOverview
      * @param eZContentObject|null $object
      * @return array|null active, method
      */
-    protected static function twoFactorOf( $object )
+    public static function twoFactorOf( $object )
     {
         if ( !$object instanceof eZContentObject || !eZModule::exists( 'user2fa' ) )
             return null;

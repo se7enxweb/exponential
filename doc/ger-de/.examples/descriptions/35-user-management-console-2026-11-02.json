@@ -1,0 +1,302 @@
+{
+    "command:expuserapprove": {
+        "en": "Approve a waiting registration (activate the account, or accept its approval item and publish it), or reject it with --reject, as Users > Unactivated and the approval item do (a dry run unless --apply)",
+        "de": "Eine wartende Registrierung freigeben (das Konto aktivieren oder seinen Freigabeeintrag annehmen und es veröffentlichen) oder mit --reject ablehnen, wie es Benutzer > Nicht aktiviert und der Freigabeeintrag tun (ein Probelauf ohne --apply)"
+    },
+    "command:expuserapprove --apply": {
+        "en": "Make the change; without it the command only lists what it would change (a dry run)",
+        "de": "Die Änderung vornehmen; ohne die Option listet der Befehl nur auf, was er ändern würde (ein Probelauf)"
+    },
+    "command:expuserapprove --as": {
+        "en": "Act as this user (login, e-mail or id; default the user of [UserSettings] UserCreatorID); the audit records it as who did it",
+        "de": "Als dieser Benutzer handeln (Anmeldename, E-Mail-Adresse oder ID; Vorgabe der Benutzer aus [UserSettings] UserCreatorID); das Audit hält ihn als Handelnden fest"
+    },
+    "command:expuserapprove --dry-run": {
+        "en": "The default, kept for scripts that pass it: list what would change, change nothing",
+        "de": "Die Vorgabe, beibehalten für Skripte, die sie übergeben: auflisten, was sich ändern würde, nichts ändern"
+    },
+    "command:expuserapprove --format": {
+        "en": "text (default) or json (the machine output exp-user/1)",
+        "de": "text (Vorgabe) oder json (die maschinenlesbare Ausgabe exp-user/1)"
+    },
+    "command:expuserapprove --reject": {
+        "en": "Reject the registration instead: deny its approval and remove the account for good",
+        "de": "Die Registrierung stattdessen ablehnen: ihre Freigabe verweigern und das Konto endgültig entfernen"
+    },
+    "command:expusercreate": {
+        "en": "Create a user account through the content publish, as the administration does (its workflows and the approval of new accounts run): login, e-mail, names, groups, and a password from standard input, a generated one or the activation mail (a dry run unless --apply)",
+        "de": "Ein Benutzerkonto über das Veröffentlichen von Inhalten anlegen, wie es die Administration tut (seine Workflows und die Freigabe neuer Konten laufen): Anmeldename, E-Mail-Adresse, Namen, Gruppen und ein Passwort von der Standardeingabe, ein erzeugtes oder die Aktivierungsmail (ein Probelauf ohne --apply)"
+    },
+    "command:expusercreate --apply": {
+        "en": "Make the change; without it the command only lists what it would change (a dry run)",
+        "de": "Die Änderung vornehmen; ohne die Option listet der Befehl nur auf, was er ändern würde (ein Probelauf)"
+    },
+    "command:expusercreate --as": {
+        "en": "Act as this user (login, e-mail or id; default the user of [UserSettings] UserCreatorID); the audit records it as who did it",
+        "de": "Als dieser Benutzer handeln (Anmeldename, E-Mail-Adresse oder ID; Vorgabe der Benutzer aus [UserSettings] UserCreatorID); das Audit hält ihn als Handelnden fest"
+    },
+    "command:expusercreate --class": {
+        "en": "The user class of the new account (default the class of [UserSettings] UserClassID)",
+        "de": "Die Benutzerklasse des neuen Kontos (Vorgabe die Klasse aus [UserSettings] UserClassID)"
+    },
+    "command:expusercreate --disabled": {
+        "en": "Create the account disabled (enable it later with exp:user:enable)",
+        "de": "Das Konto deaktiviert anlegen (später mit exp:user:enable aktivieren)"
+    },
+    "command:expusercreate --dry-run": {
+        "en": "The default, kept for scripts that pass it: list what would change, change nothing",
+        "de": "Die Vorgabe, beibehalten für Skripte, die sie übergeben: auflisten, was sich ändern würde, nichts ändern"
+    },
+    "command:expusercreate --email": {
+        "en": "The e-mail address (create: of the new account; edit: the new address)",
+        "de": "Die E-Mail-Adresse (create: des neuen Kontos; edit: die neue Adresse)"
+    },
+    "command:expusercreate --first-name": {
+        "en": "The first name (the attribute first_name of the user class)",
+        "de": "Der Vorname (das Attribut first_name der Benutzerklasse)"
+    },
+    "command:expusercreate --format": {
+        "en": "text (default) or json (the machine output exp-user/1)",
+        "de": "text (Vorgabe) oder json (die maschinenlesbare Ausgabe exp-user/1)"
+    },
+    "command:expusercreate --generate-password": {
+        "en": "Generate a password that passes the password rules and print it once",
+        "de": "Ein Passwort erzeugen, das die Passwortregeln erfüllt, und es einmal ausgeben"
+    },
+    "command:expusercreate --group": {
+        "en": "A user group by node id or name: list only its members (below it, at any depth); create: the group of the new account (repeat for more, the first is the main group; default [UserSettings] DefaultUserPlacement)",
+        "de": "Eine Benutzergruppe per Knoten-ID oder Name: nur ihre Mitglieder auflisten (unter ihr, in jeder Tiefe); create: die Gruppe des neuen Kontos (für mehrere wiederholen, die erste ist die Hauptgruppe; Vorgabe [UserSettings] DefaultUserPlacement)"
+    },
+    "command:expusercreate --last-name": {
+        "en": "The last name (the attribute last_name of the user class)",
+        "de": "Der Nachname (das Attribut last_name der Benutzerklasse)"
+    },
+    "command:expusercreate --login": {
+        "en": "The login name (create: of the new account; edit: the new login name)",
+        "de": "Der Anmeldename (create: des neuen Kontos; edit: der neue Anmeldename)"
+    },
+    "command:expusercreate --password-stdin": {
+        "en": "Read the password from standard input (one line), never from the command line; it must pass the password rules",
+        "de": "Das Passwort von der Standardeingabe lesen (eine Zeile), nie von der Befehlszeile; es muss die Passwortregeln erfüllen"
+    },
+    "command:expusercreate --send-activation": {
+        "en": "Create the account disabled and send the activation mail; the person sets a password with \"Forgot password\"",
+        "de": "Das Konto deaktiviert anlegen und die Aktivierungsmail senden; die Person setzt ihr Passwort mit „Passwort vergessen“"
+    },
+    "command:expuserdelete": {
+        "en": "Remove a user account for good, as the administration does; refuses the anonymous user, the administrator accounts, the user who acts and the last administrator (a dry run unless --apply)",
+        "de": "Ein Benutzerkonto endgültig entfernen, wie es die Administration tut; verweigert den anonymen Benutzer, die Administratorkonten, den handelnden Benutzer und den letzten Administrator (ein Probelauf ohne --apply)"
+    },
+    "command:expuserdelete --apply": {
+        "en": "Make the change; without it the command only lists what it would change (a dry run)",
+        "de": "Die Änderung vornehmen; ohne die Option listet der Befehl nur auf, was er ändern würde (ein Probelauf)"
+    },
+    "command:expuserdelete --as": {
+        "en": "Act as this user (login, e-mail or id; default the user of [UserSettings] UserCreatorID); the audit records it as who did it",
+        "de": "Als dieser Benutzer handeln (Anmeldename, E-Mail-Adresse oder ID; Vorgabe der Benutzer aus [UserSettings] UserCreatorID); das Audit hält ihn als Handelnden fest"
+    },
+    "command:expuserdelete --dry-run": {
+        "en": "The default, kept for scripts that pass it: list what would change, change nothing",
+        "de": "Die Vorgabe, beibehalten für Skripte, die sie übergeben: auflisten, was sich ändern würde, nichts ändern"
+    },
+    "command:expuserdelete --format": {
+        "en": "text (default) or json (the machine output exp-user/1)",
+        "de": "text (Vorgabe) oder json (die maschinenlesbare Ausgabe exp-user/1)"
+    },
+    "command:expuserdisable": {
+        "en": "Disable a user account and end its sessions, as Edit user settings does; refuses the protected accounts and the last administrator (a dry run unless --apply)",
+        "de": "Ein Benutzerkonto deaktivieren und seine Sitzungen beenden, wie es Benutzereinstellungen bearbeiten tut; verweigert die geschützten Konten und den letzten Administrator (ein Probelauf ohne --apply)"
+    },
+    "command:expuserdisable --apply": {
+        "en": "Make the change; without it the command only lists what it would change (a dry run)",
+        "de": "Die Änderung vornehmen; ohne die Option listet der Befehl nur auf, was er ändern würde (ein Probelauf)"
+    },
+    "command:expuserdisable --as": {
+        "en": "Act as this user (login, e-mail or id; default the user of [UserSettings] UserCreatorID); the audit records it as who did it",
+        "de": "Als dieser Benutzer handeln (Anmeldename, E-Mail-Adresse oder ID; Vorgabe der Benutzer aus [UserSettings] UserCreatorID); das Audit hält ihn als Handelnden fest"
+    },
+    "command:expuserdisable --dry-run": {
+        "en": "The default, kept for scripts that pass it: list what would change, change nothing",
+        "de": "Die Vorgabe, beibehalten für Skripte, die sie übergeben: auflisten, was sich ändern würde, nichts ändern"
+    },
+    "command:expuserdisable --format": {
+        "en": "text (default) or json (the machine output exp-user/1)",
+        "de": "text (Vorgabe) oder json (die maschinenlesbare Ausgabe exp-user/1)"
+    },
+    "command:expuseredit": {
+        "en": "Change a user account: e-mail address, login, first and last name, groups added or removed, the main group (a dry run unless --apply)",
+        "de": "Ein Benutzerkonto ändern: E-Mail-Adresse, Anmeldename, Vor- und Nachname, hinzugefügte oder entfernte Gruppen, die Hauptgruppe (ein Probelauf ohne --apply)"
+    },
+    "command:expuseredit --add-group": {
+        "en": "Add the account to this user group (node id or name; repeat for more)",
+        "de": "Das Konto dieser Benutzergruppe hinzufügen (Knoten-ID oder Name; für mehrere wiederholen)"
+    },
+    "command:expuseredit --apply": {
+        "en": "Make the change; without it the command only lists what it would change (a dry run)",
+        "de": "Die Änderung vornehmen; ohne die Option listet der Befehl nur auf, was er ändern würde (ein Probelauf)"
+    },
+    "command:expuseredit --as": {
+        "en": "Act as this user (login, e-mail or id; default the user of [UserSettings] UserCreatorID); the audit records it as who did it",
+        "de": "Als dieser Benutzer handeln (Anmeldename, E-Mail-Adresse oder ID; Vorgabe der Benutzer aus [UserSettings] UserCreatorID); das Audit hält ihn als Handelnden fest"
+    },
+    "command:expuseredit --dry-run": {
+        "en": "The default, kept for scripts that pass it: list what would change, change nothing",
+        "de": "Die Vorgabe, beibehalten für Skripte, die sie übergeben: auflisten, was sich ändern würde, nichts ändern"
+    },
+    "command:expuseredit --email": {
+        "en": "The e-mail address (create: of the new account; edit: the new address)",
+        "de": "Die E-Mail-Adresse (create: des neuen Kontos; edit: die neue Adresse)"
+    },
+    "command:expuseredit --first-name": {
+        "en": "The first name (the attribute first_name of the user class)",
+        "de": "Der Vorname (das Attribut first_name der Benutzerklasse)"
+    },
+    "command:expuseredit --format": {
+        "en": "text (default) or json (the machine output exp-user/1)",
+        "de": "text (Vorgabe) oder json (die maschinenlesbare Ausgabe exp-user/1)"
+    },
+    "command:expuseredit --last-name": {
+        "en": "The last name (the attribute last_name of the user class)",
+        "de": "Der Nachname (das Attribut last_name der Benutzerklasse)"
+    },
+    "command:expuseredit --login": {
+        "en": "The login name (create: of the new account; edit: the new login name)",
+        "de": "Der Anmeldename (create: des neuen Kontos; edit: der neue Anmeldename)"
+    },
+    "command:expuseredit --main-group": {
+        "en": "Make this group (node id or name, one the account is or becomes a member of) its main group",
+        "de": "Diese Gruppe (Knoten-ID oder Name, eine, in der das Konto Mitglied ist oder wird) zu seiner Hauptgruppe machen"
+    },
+    "command:expuseredit --remove-group": {
+        "en": "Remove the account from this user group (node id or name; repeat for more); an account keeps at least one",
+        "de": "Das Konto aus dieser Benutzergruppe entfernen (Knoten-ID oder Name; für mehrere wiederholen); ein Konto behält mindestens eine"
+    },
+    "command:expuserenable": {
+        "en": "Enable a disabled user account again, as Edit user settings does; an account that was never activated is approved with exp:user:approve instead (a dry run unless --apply)",
+        "de": "Ein deaktiviertes Benutzerkonto wieder aktivieren, wie es Benutzereinstellungen bearbeiten tut; ein nie aktiviertes Konto wird stattdessen mit exp:user:approve freigegeben (ein Probelauf ohne --apply)"
+    },
+    "command:expuserenable --apply": {
+        "en": "Make the change; without it the command only lists what it would change (a dry run)",
+        "de": "Die Änderung vornehmen; ohne die Option listet der Befehl nur auf, was er ändern würde (ein Probelauf)"
+    },
+    "command:expuserenable --as": {
+        "en": "Act as this user (login, e-mail or id; default the user of [UserSettings] UserCreatorID); the audit records it as who did it",
+        "de": "Als dieser Benutzer handeln (Anmeldename, E-Mail-Adresse oder ID; Vorgabe der Benutzer aus [UserSettings] UserCreatorID); das Audit hält ihn als Handelnden fest"
+    },
+    "command:expuserenable --dry-run": {
+        "en": "The default, kept for scripts that pass it: list what would change, change nothing",
+        "de": "Die Vorgabe, beibehalten für Skripte, die sie übergeben: auflisten, was sich ändern würde, nichts ändern"
+    },
+    "command:expuserenable --format": {
+        "en": "text (default) or json (the machine output exp-user/1)",
+        "de": "text (Vorgabe) oder json (die maschinenlesbare Ausgabe exp-user/1)"
+    },
+    "command:expuserlist": {
+        "en": "List user accounts: filter by state (enabled, disabled, unactivated, pending, locked, never signed in, inactive ...), group and search, with paging",
+        "de": "Benutzerkonten auflisten: nach Zustand (aktiviert, deaktiviert, nicht aktiviert, wartend, gesperrt, nie angemeldet, inaktiv ...), Gruppe und Suche filtern, seitenweise"
+    },
+    "command:expuserlist --days": {
+        "en": "With --state=inactive: not signed in for this many days (default 180)",
+        "de": "Mit --state=inactive: seit so vielen Tagen nicht angemeldet (Vorgabe 180)"
+    },
+    "command:expuserlist --format": {
+        "en": "text (default) or json (the machine output exp-user/1)",
+        "de": "text (Vorgabe) oder json (die maschinenlesbare Ausgabe exp-user/1)"
+    },
+    "command:expuserlist --group": {
+        "en": "A user group by node id or name: list only its members (below it, at any depth); create: the group of the new account (repeat for more, the first is the main group; default [UserSettings] DefaultUserPlacement)",
+        "de": "Eine Benutzergruppe per Knoten-ID oder Name: nur ihre Mitglieder auflisten (unter ihr, in jeder Tiefe); create: die Gruppe des neuen Kontos (für mehrere wiederholen, die erste ist die Hauptgruppe; Vorgabe [UserSettings] DefaultUserPlacement)"
+    },
+    "command:expuserlist --limit": {
+        "en": "How many accounts to list (default 25, at most 500)",
+        "de": "Wie viele Konten aufgelistet werden (Vorgabe 25, höchstens 500)"
+    },
+    "command:expuserlist --offset": {
+        "en": "Skip this many accounts first (the next page: --offset=25)",
+        "de": "Zuerst so viele Konten überspringen (die nächste Seite: --offset=25)"
+    },
+    "command:expuserlist --order": {
+        "en": "asc (default) or desc",
+        "de": "asc (Vorgabe) oder desc"
+    },
+    "command:expuserlist --search": {
+        "en": "Only accounts whose login, name or e-mail address contains this text",
+        "de": "Nur Konten, deren Anmeldename, Name oder E-Mail-Adresse diesen Text enthält"
+    },
+    "command:expuserlist --sort": {
+        "en": "The order: name (default), login, email, last_visit, login_count or id",
+        "de": "Die Reihenfolge: name (Vorgabe), login, email, last_visit, login_count oder id"
+    },
+    "command:expuserlist --state": {
+        "en": "Only accounts in this state: all (default), enabled, disabled, unactivated, pending, locked, never, inactive, orphaned, duplicate_login or duplicate_email",
+        "de": "Nur Konten in diesem Zustand: all (Vorgabe), enabled, disabled, unactivated, pending, locked, never, inactive, orphaned, duplicate_login oder duplicate_email"
+    },
+    "command:expuserpending": {
+        "en": "List the registrations that wait: for the e-mail address to be confirmed, for an administrator, or for an approval item, newest first",
+        "de": "Die wartenden Registrierungen auflisten: auf die Bestätigung der E-Mail-Adresse, auf einen Administrator oder auf einen Freigabeeintrag, die neuesten zuerst"
+    },
+    "command:expuserpending --format": {
+        "en": "text (default) or json (the machine output exp-user/1)",
+        "de": "text (Vorgabe) oder json (die maschinenlesbare Ausgabe exp-user/1)"
+    },
+    "command:expuserpending --limit": {
+        "en": "How many accounts to list (default 25, at most 500)",
+        "de": "Wie viele Konten aufgelistet werden (Vorgabe 25, höchstens 500)"
+    },
+    "command:expuserpending --offset": {
+        "en": "Skip this many accounts first (the next page: --offset=25)",
+        "de": "Zuerst so viele Konten überspringen (die nächste Seite: --offset=25)"
+    },
+    "command:expuserpending --search": {
+        "en": "Only accounts whose login, name or e-mail address contains this text",
+        "de": "Nur Konten, deren Anmeldename, Name oder E-Mail-Adresse diesen Text enthält"
+    },
+    "command:expuserresetpassword": {
+        "en": "Reset a user's password: send the \"reset your password\" link, set a generated password shown once, or one read from standard input; optionally require a new password at the next sign-in (a dry run unless --apply)",
+        "de": "Das Passwort eines Benutzers zurücksetzen: den Link „Passwort zurücksetzen“ senden, ein erzeugtes Passwort setzen und einmal anzeigen oder eines von der Standardeingabe; auf Wunsch bei der nächsten Anmeldung ein neues verlangen (ein Probelauf ohne --apply)"
+    },
+    "command:expuserresetpassword --apply": {
+        "en": "Make the change; without it the command only lists what it would change (a dry run)",
+        "de": "Die Änderung vornehmen; ohne die Option listet der Befehl nur auf, was er ändern würde (ein Probelauf)"
+    },
+    "command:expuserresetpassword --as": {
+        "en": "Act as this user (login, e-mail or id; default the user of [UserSettings] UserCreatorID); the audit records it as who did it",
+        "de": "Als dieser Benutzer handeln (Anmeldename, E-Mail-Adresse oder ID; Vorgabe der Benutzer aus [UserSettings] UserCreatorID); das Audit hält ihn als Handelnden fest"
+    },
+    "command:expuserresetpassword --dry-run": {
+        "en": "The default, kept for scripts that pass it: list what would change, change nothing",
+        "de": "Die Vorgabe, beibehalten für Skripte, die sie übergeben: auflisten, was sich ändern würde, nichts ändern"
+    },
+    "command:expuserresetpassword --format": {
+        "en": "text (default) or json (the machine output exp-user/1)",
+        "de": "text (Vorgabe) oder json (die maschinenlesbare Ausgabe exp-user/1)"
+    },
+    "command:expuserresetpassword --generate": {
+        "en": "Set a generated password that passes the password rules, print it once and end the account's sessions",
+        "de": "Ein erzeugtes Passwort setzen, das die Passwortregeln erfüllt, es einmal ausgeben und die Sitzungen des Kontos beenden"
+    },
+    "command:expuserresetpassword --password-stdin": {
+        "en": "Read the password from standard input (one line), never from the command line; it must pass the password rules",
+        "de": "Das Passwort von der Standardeingabe lesen (eine Zeile), nie von der Befehlszeile; es muss die Passwortregeln erfüllen"
+    },
+    "command:expuserresetpassword --require-change": {
+        "en": "The account must choose a new password at its next sign-in",
+        "de": "Das Konto muss bei seiner nächsten Anmeldung ein neues Passwort wählen"
+    },
+    "command:expuserresetpassword --send-link": {
+        "en": "Send the \"reset your password\" mail with its one-time link (the password stays until the link is used)",
+        "de": "Die Mail „Passwort zurücksetzen“ mit ihrem Einmal-Link senden (das Passwort bleibt, bis der Link benutzt wird)"
+    },
+    "command:expusershow": {
+        "en": "Show one user account: groups, roles with their limitation, enabled or locked, last visit, registration state, two-step sign-in and active sessions (never a password hash)",
+        "de": "Ein Benutzerkonto anzeigen: Gruppen, Rollen mit ihrer Einschränkung, aktiviert oder gesperrt, letzter Besuch, Zustand der Registrierung, Anmeldung in zwei Schritten und aktive Sitzungen (nie ein Passwort-Hash)"
+    },
+    "command:expusershow --as": {
+        "en": "Act as this user (login, e-mail or id; default the user of [UserSettings] UserCreatorID); the audit records it as who did it",
+        "de": "Als dieser Benutzer handeln (Anmeldename, E-Mail-Adresse oder ID; Vorgabe der Benutzer aus [UserSettings] UserCreatorID); das Audit hält ihn als Handelnden fest"
+    },
+    "command:expusershow --format": {
+        "en": "text (default) or json (the machine output exp-user/1)",
+        "de": "text (Vorgabe) oder json (die maschinenlesbare Ausgabe exp-user/1)"
+    }
+}

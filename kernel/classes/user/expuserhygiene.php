@@ -236,7 +236,8 @@ class expUserHygiene
     }
 
     /**
-     * The FROM and WHERE of the list, its count and the CSV.
+     * The FROM and WHERE of the list, its count and the CSV. Besides FILTERS the console (expUserManager) uses the
+     * filters enabled and unactivated, and $filters['ids'] (only these accounts); the page never passes them.
      *
      * @param array $filters see normaliseFilters()
      * @param bool $searchEmail whether the search looks into the e-mail addresses (only for a viewer who sees them)
@@ -267,6 +268,15 @@ class expUserHygiene
             case 'disabled':
                 // an account without its ezuser_setting row is not enabled either
                 $sql .= ' AND ( s.is_enabled = 0 OR s.user_id IS NULL )';
+                break;
+            case 'enabled':
+                // the console's filter (exp:user:list --state=enabled), not offered on the page
+                $sql .= ' AND s.is_enabled <> 0';
+                break;
+            case 'unactivated':
+                // the console's filter (exp:user:list --state=unactivated): disabled with an account key
+                $sql .= ' AND ( s.is_enabled = 0 OR s.user_id IS NULL )'
+                      . ' AND EXISTS ( SELECT 1 FROM ezuser_accountkey k WHERE k.user_id = u.contentobject_id )';
                 break;
             case 'locked':
                 // eZUser::isEnabledAfterFailedLogin(): locked once the attempts exceed the limit; no limit, no lock
@@ -305,6 +315,12 @@ class expUserHygiene
 
         if ( (int)$afterID > 0 )
             $sql .= ' AND u.contentobject_id > ' . (int)$afterID;
+        // only these accounts (the console: one account, the waiting registrations)
+        if ( isset( $filters['ids'] ) && is_array( $filters['ids'] ) )
+        {
+            $ids = array_values( array_unique( array_map( 'intval', $filters['ids'] ) ) );
+            $sql .= ' AND u.contentobject_id IN ( ' . ( $ids ? implode( ', ', $ids ) : '0' ) . ' )';
+        }
         return $sql;
     }
 

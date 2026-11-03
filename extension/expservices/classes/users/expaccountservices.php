@@ -139,30 +139,8 @@ class expAccountServices extends expUsersBase
         }
         else if ( $users )
         {
-            $user = $users[0];
-            $hash = bin2hex( random_bytes( 16 ) );
-            eZForgotPassword::removeByUserID( (int)$user->id() );
-            eZUserOperationCollection::forgotpassword( (int)$user->id(), $hash, time() );
-            $ini = eZINI::instance();
-            $tpl = eZTemplate::factory();
-            $tpl->setVariable( 'user', $user );
-            $tpl->setVariable( 'object', $user->attribute( 'contentobject' ) );
-            $tpl->setVariable( 'password', '' );
-            $tpl->setVariable( 'link', true );
-            $tpl->setVariable( 'hash_key', $hash );
-            $body = $tpl->fetch( 'design:user/forgotpasswordmail.tpl' );
-            $mail = new eZMail();
-            if ( $tpl->hasVariable( 'content_type' ) )
-                $mail->setContentType( $tpl->variable( 'content_type' ) );
-            $sender = $ini->variable( 'MailSettings', 'EmailSender' ) ?: $ini->variable( 'MailSettings', 'AdminEmail' );
-            $mail->setSender( $sender );
-            $mail->setReceiver( $email );
-            $mail->setSubject( $tpl->hasVariable( 'subject' ) ? $tpl->variable( 'subject' ) : ezpI18n::tr( 'kernel/user/register', 'Registration info' ) );
-            expMailTemplateBody::apply( $mail, $tpl, $body );
-            $mail->setCategory( 'security' );
-            $sent = eZMailTransport::send( $mail );
-            if ( class_exists( 'expAuditHook' ) )
-                expAuditHook::emit( 'access.user.password.reset.request', array( 'object' => expAuditHook::user( $user ), 'after' => array( 'mail_sent' => (bool)$sent ) ) );
+            // the mail of user/forgotpassword with a new one-time key, audited (shared with exp:user:reset-password --send-link)
+            expUserManager::sendResetLink( $users[0] );
         }
         else
             self::failed( 'unknown_email' );

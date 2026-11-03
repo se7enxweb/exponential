@@ -1345,7 +1345,8 @@
     ],
     "kernel/classes/user/expuserhygiene.php": [
       "tests/tests/kernel/classes/user/expUserHygieneTest.php",
-      "tests/tests/kernel/classes/user/expUserDeactivationTest.php"
+      "tests/tests/kernel/classes/user/expUserDeactivationTest.php",
+      "tests/tests/kernel/classes/user/expUserManagerSqliteTest.php"
     ],
     "kernel/private/classes/views/contentcheck/brokenrelations.php": [
       "tests/tests/kernel/contentcheck/expContentCheckQueryTest.php"
@@ -2025,10 +2026,15 @@
       "tests/tests/kernel/classes/user/expDemoModeTest.php"
     ],
     "extension/expservices/classes/users/expusersbase.php": [
-      "tests/tests/kernel/classes/user/expDemoModeTest.php"
+      "tests/tests/kernel/classes/user/expDemoModeTest.php",
+      "tests/tests/extension/expservices/users/expUserServicesTest.php",
+      "tests/tests/extension/expservices/users/expAccountServicesTest.php",
+      "tests/tests/kernel/classes/user/expUserManagerSqliteTest.php"
     ],
     "extension/expservices/classes/users/expaccountservices.php": [
-      "tests/tests/kernel/classes/user/expDemoModeTest.php"
+      "tests/tests/kernel/classes/user/expDemoModeTest.php",
+      "tests/tests/extension/expservices/users/expAccountServicesTest.php",
+      "tests/tests/kernel/classes/user/expUserManagerSqliteTest.php"
     ],
     "design/admin/templates/parts/exp_demo_mode_banner.tpl": [
       "tests/tests/kernel/classes/user/expDemoModeTest.php"
@@ -2946,6 +2952,25 @@
     "kernel/private/classes/commands/expmigrationheal.php": [
       "tests/tests/kernel/classes/migration/expMigrationCommandContractTest.php",
       "tests/tests/kernel/classes/migration/expMigrationRemoteDeployTriggerHealTest.php"
+    ],
+    "kernel/classes/user/expusermanager.php": [
+      "tests/tests/kernel/classes/user/expUserCommandContractTest.php",
+      "tests/tests/kernel/classes/user/expUserManagerSqliteTest.php",
+      "tests/tests/kernel/classes/user/expUserManagerDatabaseTest.php"
+    ],
+    "kernel/private/classes/commands/expuser*.php": [
+      "tests/tests/kernel/classes/user/expUserCommandContractTest.php"
+    ],
+    "bin/php/expuser*.php": [
+      "tests/tests/kernel/classes/user/expUserCommandContractTest.php"
+    ],
+    "kernel/classes/user/expuseraccountoverview.php": [
+      "tests/tests/kernel/classes/user/expUserAccountOverviewTest.php",
+      "tests/tests/kernel/classes/user/expUserManagerSqliteTest.php"
+    ],
+    "tests/tests/kernel/classes/user/expUserManagerEngineChecks.php": [
+      "tests/tests/kernel/classes/user/expUserManagerSqliteTest.php",
+      "tests/tests/kernel/classes/user/expUserManagerDatabaseTest.php"
     ]
   },
   "generated": {
