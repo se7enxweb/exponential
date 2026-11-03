@@ -29454,7 +29454,7 @@ f54256794d7afd565ddc265d793da87d  tests/tests/kernel/common/eZTemplateDesignReso
 15aaf30b1fd89743585ec193a0d63b67  tests/tests/kernel/common/eZTopMenuOperatorSetupTabAccessTest.php
 5a17f1485864bb33714b2e6e43e8f779  tests/tests/kernel/common/eZTopMenuOperatorSetupTabsTest.php
 c942dcc1e90873d238ed9ca5194fabc5  tests/tests/kernel/common/eZURLOperatorAbsoluteEscapeTest.php
-47c714474908f922bd5fb039b550e6d8  tests/tests/kernel/common/eZWordToImageOperatorDesignThemeTest.php
+50f194ee9204ca78ac677b7b757723a5  tests/tests/kernel/common/eZWordToImageOperatorDesignThemeTest.php
 4422b7bc57eb440478b6d7df1d73da8d  tests/tests/kernel/common/eZWordToImageOperatorIconRootDirectoryTest.php
 0ccca843833b2f45aa96eb6504935c29  tests/tests/kernel/common/ezautolinkoperator_test.php
 17b1c47785983bb257d494a8e216bfb4  tests/tests/kernel/common/ezpI18nMissingTranslationLogTest.php
