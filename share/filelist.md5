@@ -646,7 +646,7 @@ a4873536a0ad994d0e56ddf37be43421  design/admin/templates/exphelp/parts/viewer_me
 69992051147dd0f6b3dbc0892bee4fa9  design/admin/templates/exphelp/parts/viewer_toc.tpl
 29544d120498d45938323cf2f975795c  design/admin/templates/exphelp/report.tpl
 0da944c96b222491489353b8e1132af6  design/admin/templates/exphelp/search.tpl
-b379fd86b2517824ac91c91d86ff6851  design/admin/templates/exphelp/state_confirm.tpl
+bd05c133e0b29674a8ba49d9c709cd22  design/admin/templates/exphelp/state_confirm.tpl
 093f2fe2d7b93257610d67cd15e7a6ae  design/admin/templates/exphelp/topic.tpl
 f35e7a19ea1c01fcdae3328e2a96be17  design/admin/templates/exphelp/viewer.tpl
 1416b96e06d51497b25248747bdf6918  design/admin/templates/ezinfo/about.tpl
@@ -1483,7 +1483,7 @@ a4873536a0ad994d0e56ddf37be43421  design/admin4/templates/exphelp/parts/viewer_m
 69992051147dd0f6b3dbc0892bee4fa9  design/admin4/templates/exphelp/parts/viewer_toc.tpl
 29544d120498d45938323cf2f975795c  design/admin4/templates/exphelp/report.tpl
 0da944c96b222491489353b8e1132af6  design/admin4/templates/exphelp/search.tpl
-b379fd86b2517824ac91c91d86ff6851  design/admin4/templates/exphelp/state_confirm.tpl
+bd05c133e0b29674a8ba49d9c709cd22  design/admin4/templates/exphelp/state_confirm.tpl
 093f2fe2d7b93257610d67cd15e7a6ae  design/admin4/templates/exphelp/topic.tpl
 f35e7a19ea1c01fcdae3328e2a96be17  design/admin4/templates/exphelp/viewer.tpl
 77a9cc3a3fb139e1b90c2677228fce3e  design/admin4/templates/ezinfo/about.tpl
@@ -27842,7 +27842,7 @@ e1ffce9c44669b53944492b6ad85357c  tests/tests/design/AdminHeaderTest.php
 3ca1b7ccc51475cf1cf4e572e25a7c7f  tests/tests/design/AdminHelpFrameClassScopeTest.php
 0b6c210a98f8937b84577dc64170b49f  tests/tests/design/AdminHelpLanguageLineTest.php
 99e2c87996d18a40fee1d89b93a67188  tests/tests/design/AdminHelpScriptTest.php
-ee2f2d4cb304b640a6f21616a917a275  tests/tests/design/AdminHelpViewParametersOnlyTest.php
+20ac10dce2925906bc1d0073a81da7e6  tests/tests/design/AdminHelpViewParametersOnlyTest.php
 52b15fda0cbdb43a01997f0ea9484a0b  tests/tests/design/AdminI18nStringTagsTest.php
 0187cbef9eae45ad64742fb7dc041362  tests/tests/design/AdminIconsTest.php
 c9da5a94d56cef4b491128b85c181193  tests/tests/design/AdminJQuery4RemovedApisTest.php

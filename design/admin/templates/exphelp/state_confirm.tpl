@@ -6,7 +6,7 @@
    Variables (kernel/private/classes/views/exphelp/state.php): help_title, help_current, help_target (state
    identifiers), help_hides (the step hides a released page from readers), help_state_url, help_back_url.
    The same file is in design/admin and design/admin4. *}
-<div class="a4-page a4-help-frame">
+<div class="a4-page a4-help-frame" data-exphelp>
     <header class="a4-help-pagehead">
         <h1 class="a4-help-title" id="exphelp-confirm-title">{if $help_hides}{'Hide this page from readers?'|i18n( 'kernel/exphelp' )}{else}{'Send this page back to Draft?'|i18n( 'kernel/exphelp' )}{/if}</h1>
     </header>
