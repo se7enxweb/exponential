@@ -27,7 +27,7 @@ Historie bleibt. Exponential lädt zur Laufzeit nichts aus `openspec/`.
 | `openspec/changes/<name>/` | Eine laufende Änderung: `proposal.md`, `specs/`, `design.md`, `tasks.md`, `plan.md`, `verify.md` |
 | `openspec/changes/archive/<datum>-<name>/` | Eine fertige und gemergte Änderung, so aufbewahrt, wie sie war |
 | `openspec/specs/` | Das aktuelle Verhalten, eine Spec je Fähigkeit; eine archivierte Änderung führt ihre Specs hier zusammen |
-| `doc/handoff/` | Eine längere Spezifikation eines Tickets, auf die Änderungen als Entwurfsquelle verweisen, mit ihren Mockups |
+| `openspec/handoff/` | Eine längere Spezifikation eines Tickets, auf die Änderungen als Entwurfsquelle verweisen, mit ihren Mockups |
 
 ## Die Schritte einer Änderung
 
@@ -52,7 +52,7 @@ Ist die Änderung gemergt, wandert sie nach `openspec/changes/archive/`, und ihr
 
 | Änderung | Stand |
 |---|---|
-| `add-workflow-definitions`, `add-workflow-runtime`, `add-workflow-jobs-and-timers`, `add-workflow-admin-ui`, `add-workflow-review-options`, `add-workflow-integrations`, `add-workflow-webhooks-and-importers`, `add-workflow-reference-cases` | Geplant: die grafischen redaktionellen Workflows der Erweiterung `expworkflow`; Entwurfsquelle `doc/handoff/expworkflow-16702-spec.md` |
+| `add-workflow-definitions`, `add-workflow-runtime`, `add-workflow-jobs-and-timers`, `add-workflow-admin-ui`, `add-workflow-review-options`, `add-workflow-integrations`, `add-workflow-webhooks-and-importers`, `add-workflow-reference-cases` | Geplant: die grafischen redaktionellen Workflows der Erweiterung `expworkflow`; Entwurfsquelle `openspec/handoff/expworkflow-16702-spec.md` |
 | `archive/2026-11-02-add-admin-search` | Fertig: Suchvorschläge beim Tippen und die Suchseite mit ihrer Filterleiste; Specs in `openspec/specs/admin/` |
 
 Die Artefakte von OpenSpec selbst sind auf Englisch geschrieben.

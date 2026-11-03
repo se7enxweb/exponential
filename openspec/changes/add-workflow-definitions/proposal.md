@@ -1,7 +1,7 @@
 # Proposal
 
 Redmine #16702 (https://pm.team.in-mv.com/issues/16702), milestone 1 of 8.
-Binding design source: `doc/handoff/expworkflow-16702-spec.md`, sections 3, 4, 5 and 12.1.
+Binding design source: `openspec/handoff/expworkflow-16702-spec.md`, sections 3, 4, 5 and 12.1.
 Meant for upstream (se7enxweb): a new extension `expworkflow` for any Exponential 6 installation.
 
 ## Why

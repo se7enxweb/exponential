@@ -7,7 +7,7 @@ context: |
   with the administration designs admin and admin4 and an extension system.
 
   Binding design source: the ticket of the change and, where one exists, its specification under
-  doc/handoff/ (for example doc/handoff/expworkflow-16702-spec.md for the workflow changes).
+  openspec/handoff/ (for example openspec/handoff/expworkflow-16702-spec.md for the workflow changes).
 
   Architecture rules:
   - A siteaccess is database + design + var directory (+ search core). Every tool that touches storage

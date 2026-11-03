@@ -1,7 +1,7 @@
 # Proposal
 
 Redmine #16702 (https://pm.team.in-mv.com/issues/16702), milestone 2 of 8.
-Binding design source: `doc/handoff/expworkflow-16702-spec.md`, sections 5 (pinning, migration), 6.1–6.5, 6.7, 9, 12.2.
+Binding design source: `openspec/handoff/expworkflow-16702-spec.md`, sections 5 (pinning, migration), 6.1–6.5, 6.7, 9, 12.2.
 Meant for upstream (se7enxweb). Depends on `add-workflow-definitions`.
 
 ## Why

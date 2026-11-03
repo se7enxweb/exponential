@@ -1,7 +1,7 @@
 # Proposal
 
 Redmine #16702 (https://pm.team.in-mv.com/issues/16702), milestone 8 of 8.
-Binding design source: `doc/handoff/expworkflow-16702-spec.md`, sections 2, 10, 12.8 and "Acceptance".
+Binding design source: `openspec/handoff/expworkflow-16702-spec.md`, sections 2, 10, 12.8 and "Acceptance".
 Meant for upstream (se7enxweb). Depends on all earlier `add-workflow-*` changes.
 
 ## Why

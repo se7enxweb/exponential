@@ -26,7 +26,7 @@ history. Nothing in `openspec/` is loaded by Exponential at run time.
 | `openspec/changes/<name>/` | A change in progress: `proposal.md`, `specs/`, `design.md`, `tasks.md`, `plan.md`, `verify.md` |
 | `openspec/changes/archive/<date>-<name>/` | A change that is finished and merged, kept as it was |
 | `openspec/specs/` | The current behavior, one spec per capability; an archived change merges its specs here |
-| `doc/handoff/` | A longer specification of a ticket that changes refer to as their design source, with its mockups |
+| `openspec/handoff/` | A longer specification of a ticket that changes refer to as their design source, with its mockups |
 
 ## The steps of a change
 
@@ -48,7 +48,7 @@ When the change is merged it moves to `openspec/changes/archive/` and its specs 
 
 | Change | State |
 |---|---|
-| `add-workflow-definitions`, `add-workflow-runtime`, `add-workflow-jobs-and-timers`, `add-workflow-admin-ui`, `add-workflow-review-options`, `add-workflow-integrations`, `add-workflow-webhooks-and-importers`, `add-workflow-reference-cases` | Planned: the graphical editorial workflows of the extension `expworkflow`; design source `doc/handoff/expworkflow-16702-spec.md` |
+| `add-workflow-definitions`, `add-workflow-runtime`, `add-workflow-jobs-and-timers`, `add-workflow-admin-ui`, `add-workflow-review-options`, `add-workflow-integrations`, `add-workflow-webhooks-and-importers`, `add-workflow-reference-cases` | Planned: the graphical editorial workflows of the extension `expworkflow`; design source `openspec/handoff/expworkflow-16702-spec.md` |
 | `archive/2026-11-02-add-admin-search` | Finished: search suggestions while typing and the search page with its filter bar; specs in `openspec/specs/admin/` |
 
 ## Related pages

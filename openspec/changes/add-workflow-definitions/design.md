@@ -2,7 +2,7 @@
 
 ## Context
 
-See proposal.md for the motivation. The build spec (`doc/handoff/expworkflow-16702-spec.md`) fixes
+See proposal.md for the motivation. The build spec (`openspec/handoff/expworkflow-16702-spec.md`) fixes
 the definition format (section 3), the tables (section 4) and the binding idea (section 5). This
 change builds the parts that need no runtime: format, validation, versions, binding resolution and
 storage. The extension `expqueue` already solves multi-engine storage with

@@ -1,8 +1,8 @@
 # Proposal
 
 Redmine #16702 (https://pm.team.in-mv.com/issues/16702), milestone 4 of 8.
-Binding design source: `doc/handoff/expworkflow-16702-spec.md`, sections 8.1–8.4, 9, 12.4; mockup
-`doc/handoff/workflow-designer.png`.
+Binding design source: `openspec/handoff/expworkflow-16702-spec.md`, sections 8.1–8.4, 9, 12.4; mockup
+`openspec/handoff/workflow-designer.png`.
 Meant for upstream (se7enxweb). Depends on `add-workflow-jobs-and-timers`.
 
 ## Why

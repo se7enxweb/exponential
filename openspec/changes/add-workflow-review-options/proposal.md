@@ -1,7 +1,7 @@
 # Proposal
 
 Redmine #16702 (https://pm.team.in-mv.com/issues/16702), milestone 6 of 8.
-Binding design source: `doc/handoff/expworkflow-16702-spec.md`, sections 3 (review options), 7
+Binding design source: `openspec/handoff/expworkflow-16702-spec.md`, sections 3 (review options), 7
 (ezapprove2, ezapprovetanta, oceditorialstuff), 8.5, 12.6.
 Meant for upstream (se7enxweb). Depends on `add-workflow-integrations` and `add-workflow-admin-ui`.
 

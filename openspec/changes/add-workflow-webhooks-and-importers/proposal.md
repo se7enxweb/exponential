@@ -1,7 +1,7 @@
 # Proposal
 
 Redmine #16702 (https://pm.team.in-mv.com/issues/16702), milestone 7 of 8.
-Binding design source: `doc/handoff/expworkflow-16702-spec.md`, sections 7.1, 7.2, 7.3, 8.4 (list
+Binding design source: `openspec/handoff/expworkflow-16702-spec.md`, sections 7.1, 7.2, 7.3, 8.4 (list
 of replaceable extensions), 12.7.
 Meant for upstream (se7enxweb). Depends on `add-workflow-review-options`.
 
