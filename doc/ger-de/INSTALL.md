@@ -533,7 +533,7 @@ springt ein, solange das echte unbrauchbar ist (`fallback`, Standard `self-signe
 ohne Neustart eingewechselt. Das Zertifikatssubsystem der Engine bezieht und erneuert außerdem Zertifikate von
 Let's Encrypt (oder jeder ACME-CA) und liest Archive und PKCS#12-Bündel; es wird unter `Q.web.https` konfiguriert und in
 [Velocity: HTTPS und Zertifikate](funktionen/6.0/velocity-https-zertifikate.md) beschrieben.
-`[HTTPSSettings] HSTSMaxAge` (ausgeliefert mit 300 Sekunden) setzt Strict-Transport-Security; erhöhen Sie den Wert erst,
+`[HTTPSSettings] HSTSMaxAge` (ausgeliefert mit 0, aus; 300 zum Einstieg) setzt Strict-Transport-Security; erhöhen Sie den Wert erst,
 wenn jeder Name der Website dauerhaft auf HTTPS läuft.
 
 **Konfigurationsaufbau.** Die Konfiguration von Velocity folgt Debians `/etc/apache2`: `/etc/vc/vc.conf`,

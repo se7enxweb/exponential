@@ -517,7 +517,7 @@ expired, key matches); a self-signed certificate stands in while the real one is
 `self-signed`), and a renewed certificate is swapped in without a restart. The engine's certificate subsystem also
 obtains and renews Let's Encrypt (or any ACME CA) certificates and reads archives and PKCS#12 bundles; it is
 configured under `Q.web.https` and described in [Velocity HTTPS and certificates](features/6.0/velocity-https-certificates.md).
-`[HTTPSSettings] HSTSMaxAge` (300 seconds shipped) sets Strict-Transport-Security; raise it only when every name of
+`[HTTPSSettings] HSTSMaxAge` (shipped as 0, off; 300 to start) sets Strict-Transport-Security; raise it only when every name of
 the site is on HTTPS for good.
 
 **Configuration layout.** Velocity's configuration follows Debian's `/etc/apache2`: `/etc/vc/vc.conf`,

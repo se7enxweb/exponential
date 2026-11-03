@@ -1933,10 +1933,16 @@ class expRADSurvey
             // None of these is anybody's extension point, and between them they are a large part of the tree
             // (an extension's node_modules alone holds thousands of files): they are not entered at all, so
             // neither the walk nor the check of the kept sweep stats them.
+            // A directory the web server user cannot read (a root-owned scratch directory in an extension, say)
+            // is left out as well: entering it would throw UnexpectedValueException and fail the whole survey.
             $directory = new RecursiveCallbackFilterIterator( $directory, function ( $file ) {
-                return !( $file->isDir() && in_array( $file->getFilename(), self::$sourceTreeSkippedDirectories, true ) );
+                if ( !$file->isDir() )
+                    return true;
+                return $file->isReadable() && $file->isExecutable()
+                    && !in_array( $file->getFilename(), self::$sourceTreeSkippedDirectories, true );
             } );
-            $iterator  = new RecursiveIteratorIterator( $directory, RecursiveIteratorIterator::SELF_FIRST );
+            $iterator  = new RecursiveIteratorIterator( $directory, RecursiveIteratorIterator::SELF_FIRST,
+                                                        RecursiveIteratorIterator::CATCH_GET_CHILD );
 
             foreach ( $iterator as $file )
             {

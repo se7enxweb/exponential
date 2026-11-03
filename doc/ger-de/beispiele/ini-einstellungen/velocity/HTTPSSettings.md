@@ -60,21 +60,23 @@ Key=
 
 > Strict-Transport-Security bei jeder über HTTPS gesendeten Antwort: statische Dateien,  
 > die eigenen Seiten des Servers und die Antworten der Skripte, sofern eine Antwort nicht  
-> schon einen trägt. Nie über einfaches HTTP. In Sekunden; 0 sendet keinen.  
+> schon einen trägt. Nie über einfaches HTTP. In Sekunden; 0 (die Vorgabe) sendet keinen.  
 >
-> 300 ist das, was die Frontends Apache und nginx dieser Installation senden. Ein  
-> Browser, der ihn gesehen hat, verweigert einfaches HTTP für diesen Hostnamen, auf jedem  
-> Port, so lange, und tut das auch weiter, nachdem die Einstellung gesenkt wurde: Erhöhen Sie  
-> ihn (ein Jahr sind 31536000) erst, wenn jeder Name der Website dauerhaft über  
-> HTTPS ausgeliefert wird.  
+> Ein Browser, der den Header gesehen hat, verweigert einfaches HTTP für diesen Hostnamen,  
+> auf jedem Port, so lange, und tut das auch weiter, nachdem die Einstellung gesenkt wurde.  
+> Deshalb ist er aus, bis eine Installation ihn in settings/override verlangt. Beginnen Sie  
+> klein (300) und erhöhen Sie in Stufen (ein Tag sind 86400, ein Jahr sind 31536000), erst  
+> wenn jeder Name der Website dauerhaft über HTTPS ausgeliefert wird. Sendet ein Frontend  
+> (Apache, nginx, ein CDN) den Header für denselben Hostnamen schon, verwenden Sie hier  
+> denselben Wert.  
 
-Standard: `300`.
+Standard: `0`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
 # settings/override/velocity.ini.append.php
 [HTTPSSettings]
-HSTSMaxAge=300
+HSTSMaxAge=0
 */ ?>
 ```
 
