@@ -70,6 +70,14 @@ class Advancedsearch extends \Exponential\Runnable\ModuleView
         $tpl = \eZTemplate::factory();
 
         $ini = \eZINI::instance();
+        // The administration's filtered search page took in the advanced search: a posted advanced search form and
+        // an address with view parameters are answered with a 303 to content/search with the same search as view
+        // parameters (expContentSearchFilters::viewSuffix()); a query string is not read
+        if ( Search::templateSearchesItself( 'content/advancedsearch.tpl' ) )
+        {
+            $request = \expViewParameters::isPost() ? $_POST : \expContentSearchFilters::requestFromViewParameters( $Params );
+            \expViewParameters::redirect( 'content/search' . \expContentSearchFilters::fromRequest( $request )->viewSuffix() );
+        }
         // as content/search: the administration's filtered search page searches itself (Search::templateSearchesItself())
         $useSearchCode = $ini->variable( 'SearchSettings', 'SearchViewHandling' ) == 'default'
                          && !Search::templateSearchesItself( 'content/advancedsearch.tpl' );

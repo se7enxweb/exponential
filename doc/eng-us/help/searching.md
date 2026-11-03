@@ -66,7 +66,8 @@ The funnel button in the search field opens **Search scope**:
 
 The search page (**Search** in the header, or `content/search`) has the search field on top, the **Filters** beside
 the results (above them on a narrow screen, folded under **Show filters**) and the results in a table. It also
-takes in the former advanced search: an old link to `content/advancedsearch` shows this page with the same search.
+takes in the former advanced search: an old link to `content/advancedsearch` opens this page. The address of a search
+keeps every filter (`content/search/(text)/easter/(class)/2,16`), so you can bookmark it or send it to a colleague.
 
 - **Words**: **All words** (the default), **Any word** or **Exact phrase**;
 - **Content type**: one or more types, grouped by class group; the less used ones are under **Show more**. With

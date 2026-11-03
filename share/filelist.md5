@@ -559,7 +559,7 @@ deffb644bbfdf3644f9cf76d6a4901d8  design/admin/templates/content/related/file.tp
 72a5f36046a954b1a36ae80cd8df26bb  design/admin/templates/content/restore.tpl
 b6e48b9b258ffbd0df2b2b9714d066fd  design/admin/templates/content/reverserelatedlist.tpl
 7fdf4ac9a9095d216b700c3ae187cec2  design/admin/templates/content/search.tpl
-0274c525b5e50555913681e10ef8ce21  design/admin/templates/content/search_page.tpl
+0000b08126831084f380c563e8544fae  design/admin/templates/content/search_page.tpl
 d4d4e380fd28b727f8e5d33d5bce8b56  design/admin/templates/content/searchresult.tpl
 45081f95eb7dedfaf4165ca148e7e8b4  design/admin/templates/content/translationnew.tpl
 309adfdcc06a0f07b383af5304df8de8  design/admin/templates/content/translations.tpl
@@ -768,7 +768,7 @@ f01fb23c42516d4cc58bb4d48ebf55e8  design/admin/templates/page_copyright.tpl
 e564dcd60747102cd28699dc161aa579  design/admin/templates/page_header.tpl
 658df4da89d3c912a6bc9a3335604445  design/admin/templates/page_leftmenu.tpl
 8042a9d3f3a0e261d4b3e5659671874c  design/admin/templates/page_login_copyright.tpl
-8629cf9e7d1f9a6c11694ef84faeb6f4  design/admin/templates/page_search.tpl
+9b8610086cfe325150b320990b1ed40c  design/admin/templates/page_search.tpl
 3ceb59d3584d417fdb51fe11e73f2729  design/admin/templates/page_topmenu.tpl
 7595633233e131b1b54c3d3e493c4568  design/admin/templates/page_topmenuitem.tpl
 def1e69baea2cb9d93a8d1af2bf5f692  design/admin/templates/page_toppath.tpl
@@ -1084,7 +1084,7 @@ b2eb690cdc87ce43c243e5d764bddd39  design/admin3/templates/page_head_style.tpl
 cb128a4645e891cd796919aad3ed36d1  design/admin3/templates/page_header.tpl
 0cc20dc6c8574f20b41e26a7833d57bf  design/admin3/templates/page_leftmenu.tpl
 9e0d4bb0d5f1abe264c44b711a81e085  design/admin3/templates/page_mainarea.tpl
-68ef800e886d8f0bbe4c2216f50e0c18  design/admin3/templates/page_search.tpl
+378cb3101873ff30e92dea3024216fd4  design/admin3/templates/page_search.tpl
 e197b66c63a2bcf4e5d9777cd91f6300  design/admin3/templates/page_topmenu.tpl
 cf8663798cf45b3045efbc98b8d831c5  design/admin3/templates/page_topmenuitem.tpl
 f71b23340155f6953a9b8b8f8269ebe9  design/admin3/templates/pagelayout.tpl
@@ -1400,7 +1400,7 @@ ee9413387057151e421be661a3e3f0a1  design/admin4/templates/content/removeeditvers
 72a5f36046a954b1a36ae80cd8df26bb  design/admin4/templates/content/restore.tpl
 b6e48b9b258ffbd0df2b2b9714d066fd  design/admin4/templates/content/reverserelatedlist.tpl
 7fdf4ac9a9095d216b700c3ae187cec2  design/admin4/templates/content/search.tpl
-0274c525b5e50555913681e10ef8ce21  design/admin4/templates/content/search_page.tpl
+0000b08126831084f380c563e8544fae  design/admin4/templates/content/search_page.tpl
 d4d4e380fd28b727f8e5d33d5bce8b56  design/admin4/templates/content/searchresult.tpl
 f5c05b96a0d08b1c2aa472d971a245c2  design/admin4/templates/content/translationnew.tpl
 c60276c0a804238b6e5f375ccf4a61c5  design/admin4/templates/content/translations.tpl
@@ -1613,7 +1613,7 @@ cb128a4645e891cd796919aad3ed36d1  design/admin4/templates/page_header.tpl
 b8e61d3a5a8ce7617372a96054f362bb  design/admin4/templates/page_leftmenu.tpl
 8042a9d3f3a0e261d4b3e5659671874c  design/admin4/templates/page_login_copyright.tpl
 442dc3f6f797080f31819836eca9fbb2  design/admin4/templates/page_mainarea.tpl
-e24642231f65793a30ed5596a0bc9572  design/admin4/templates/page_search.tpl
+51e387cb6e788dc04957ba4c852cd685  design/admin4/templates/page_search.tpl
 3d4afea787dd6fc64ddbc5f6d7e973d6  design/admin4/templates/page_topmenu.tpl
 262c20c7eaf7f90d393c1872af532d33  design/admin4/templates/page_topmenuitem.tpl
 a502e42cfc314d22305306bf64fc6c58  design/admin4/templates/page_toppath.tpl
@@ -3494,7 +3494,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-f0e2ecd918caa57d7f077e4c499b22e6  doc/changelogs/6.0/6.0.15.md
+7d8bea08598023f4872f785d87390d95  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -4819,7 +4819,7 @@ caf60908b53ecf82087e9a61ba87f97f  doc/eng-us/examples/ini-settings/error/README.
 9adcf9753d3ee0535abb30108786a1df  doc/eng-us/examples/ini-settings/exphelp/CategorySettings.md
 557fe8ed9a4915b7a452bf8c6227414a  doc/eng-us/examples/ini-settings/exphelp/CommitFeedSettings.md
 911d1187ea9ea5ab50301cfb83357cfc  doc/eng-us/examples/ini-settings/exphelp/ContentSettings.md
-00e6df6d7f10d76379ce97b809a9378c  doc/eng-us/examples/ini-settings/exphelp/ContextHelp.md
+1812ed5fe2b62cbe1424f533d80a8e86  doc/eng-us/examples/ini-settings/exphelp/ContextHelp.md
 3d307f778430f1bdd6462b040e20299c  doc/eng-us/examples/ini-settings/exphelp/DashboardSettings.md
 90f841d4dbe892c1f296413d1b4d0557  doc/eng-us/examples/ini-settings/exphelp/DocLanguages.md
 129f2a0f3ebae02dbea9bda88c6ecc84  doc/eng-us/examples/ini-settings/exphelp/FeaturedSettings.md
@@ -11678,7 +11678,7 @@ a5222d6181149b9dc971b6b0e7f50ec8  doc/eng-us/help/resellers/sales/naming-and-bra
 94b50c4cfd073c4dd347688b59d1205a  doc/eng-us/help/resellers/sales/powered-by-exponential.md
 b00714130b76fb0c884c9dc788b5f665  doc/eng-us/help/resellers/sales/pre-sales-questions-and-answers.md
 a420b17ab5dabd8778223cc4aae2b073  doc/eng-us/help/resellers/sales/sales-process.md
-760381145a43bc9cd628acf087427348  doc/eng-us/help/searching.md
+8b79d549bbcc4c9c865b32c20613b8be  doc/eng-us/help/searching.md
 a5c7ce5b15c58ce20085b4f8951ef35b  doc/eng-us/help/security-hardening.md
 667c277cee294d069affee6d78b8ad88  doc/eng-us/help/setting-up-editor-and-admin-accounts.md
 633930576e562b5c2200cd0a1ae93a7c  doc/eng-us/help/site-packages/README.md
@@ -12067,7 +12067,7 @@ c8a6efdb3cf6ca6fc4b6aedb4fc66b5f  doc/eng-us/help/trainers/assessments/module-03
 c916bf7d100e82b29ed673cb92b3cea2  doc/eng-us/help/trainers/assessments/module-03-administration-courses/multisite-practical-task.md
 c05e9432246ae939d645899f5db89f9a  doc/eng-us/help/trainers/assessments/module-03-administration-courses/multisite-written-test.md
 e30b7761d1fc9e30027b705e4c15091f  doc/eng-us/help/trainers/assessments/module-03-administration-courses/search-practical-task.md
-7258a899434f11a09e05d5ca0669ad64  doc/eng-us/help/trainers/assessments/module-03-administration-courses/search-written-test.md
+66806c4e3835a197d2b352072c08fefc  doc/eng-us/help/trainers/assessments/module-03-administration-courses/search-written-test.md
 dea78243a45074ca7f8019b91e86a785  doc/eng-us/help/trainers/assessments/module-03-administration-courses/site-administrators-practical-task.md
 84de7e884e5fb08a13ec26b0f93ae357  doc/eng-us/help/trainers/assessments/module-03-administration-courses/site-administrators-written-test.md
 b78c4918c95f0cec0cac847691c4c9bc  doc/eng-us/help/trainers/assessments/module-04-technical-courses/README.md
@@ -12186,7 +12186,7 @@ f3f0a98da432c82143e2c7d963b435e0  doc/eng-us/help/trainers/editors-101/module-06
 8f2f16faff33363dd174bb43d9fc3de0  doc/eng-us/help/trainers/editors-101/module-06-publishing-and-versions/previewing-a-draft.md
 6ee4f7f4ba985165facf75efee19f9ef  doc/eng-us/help/trainers/editors-101/module-06-publishing-and-versions/versions-and-comparing.md
 9940181bf1d0f3e91b03da1876506706  doc/eng-us/help/trainers/editors-101/module-07-finding-content/README.md
-7746e19e079339c11b5cc68fcd205494  doc/eng-us/help/trainers/editors-101/module-07-finding-content/the-advanced-search.md
+79b080bb032112b606c4a17562361f33  doc/eng-us/help/trainers/editors-101/module-07-finding-content/the-advanced-search.md
 aff3fd37b3d15aef7e86f1f9b5cb6615  doc/eng-us/help/trainers/editors-101/module-07-finding-content/the-quick-search.md
 77e047d74f69d5c48a53553f9a6d4115  doc/eng-us/help/trainers/editors-101/module-08-dashboard-bookmarks-account/README.md
 d4b0a899a266b0fe3fd39e5309d8f34c  doc/eng-us/help/trainers/editors-101/module-08-dashboard-bookmarks-account/bookmarks.md
@@ -14723,7 +14723,7 @@ c0826060d31f4f671cf8ba3d77d354c0  doc/ger-de/beispiele/ini-einstellungen/exphelp
 dc29d191dc30061207a57e59ec373979  doc/ger-de/beispiele/ini-einstellungen/exphelp/CategorySettings.md
 3ee4d0df3ab50d81df4f1d1fb7418724  doc/ger-de/beispiele/ini-einstellungen/exphelp/CommitFeedSettings.md
 443764edab956661efdf37f507fed418  doc/ger-de/beispiele/ini-einstellungen/exphelp/ContentSettings.md
-a63b61b2e601fef3c63a25f444fc8d4a  doc/ger-de/beispiele/ini-einstellungen/exphelp/ContextHelp.md
+b6d0a37020fea55cc170358d193ef7ea  doc/ger-de/beispiele/ini-einstellungen/exphelp/ContextHelp.md
 042fdd336ba3bb20b30720f8cfed518d  doc/ger-de/beispiele/ini-einstellungen/exphelp/DashboardSettings.md
 f59c63f3cbd331c311a4e0d57b5358ed  doc/ger-de/beispiele/ini-einstellungen/exphelp/DocLanguages.md
 9117afc84ad0155a1030b6b3bd3087fd  doc/ger-de/beispiele/ini-einstellungen/exphelp/FeaturedSettings.md
@@ -20320,9 +20320,9 @@ a11a0a28d2d52cd108d2bdb0e51d517c  doc/ger-de/hilfe/statisches-veroeffentlichen/s
 6c6fd11d41e1b182fe18e96da66c6072  doc/ger-de/hilfe/statisches-veroeffentlichen/was-statisches-veroeffentlichen-ist.md
 aa7950ea103082ba387a015e033b0e2a  doc/ger-de/hilfe/statisches-veroeffentlichen/wenn-eine-veroeffentlichung-fehlschlaegt.md
 d33aee31a89c450d6cf2048147ea92af  doc/ger-de/hilfe/statisches-veroeffentlichen/wer-veroeffentlichen-darf-rollen-und-richtlinien.md
-e5481f5aca9fbf3f22b247f3572cb15b  doc/ger-de/hilfe/suchen.md
+387a3a56143005aaa3a64faea88703dd  doc/ger-de/hilfe/suchen.md
 11f6935aa99a4119d4977f067c15fc9a  doc/ger-de/hilfe/systemseiten-als-lesezeichen.md
-0db08d3b7e5409f6c9059764702086b0  doc/ger-de/hilfe/tastenkuerzel.md
+a0c368729fab00e20fc5c9c690316850  doc/ger-de/hilfe/tastenkuerzel.md
 649d334ea26ec5ee6659f0e7b1f1b80f  doc/ger-de/hilfe/template-operatoren/README.md
 1e7fdd22a35c33a153848891c7e53338  doc/ger-de/hilfe/template-operatoren/arithmetische-operatoren.md
 de03d6cbf05f2f706b586b90cdd4632f  doc/ger-de/hilfe/template-operatoren/array-operatoren.md
@@ -20730,7 +20730,7 @@ db1fa7bcc253e5368bb0700957c92d5c  doc/ger-de/hilfe/trainer/pruefungen/modul-03-a
 ff5b6a683ce581d7b1db72b81e735027  doc/ger-de/hilfe/trainer/pruefungen/modul-03-administrationskurse/multisite-praktische-aufgabe.md
 3cfbb0ee448edb11308da11e79d24dac  doc/ger-de/hilfe/trainer/pruefungen/modul-03-administrationskurse/multisite-schriftlicher-test.md
 e9ae02768f3249c35dc63f72df26e0c1  doc/ger-de/hilfe/trainer/pruefungen/modul-03-administrationskurse/suche-praktische-aufgabe.md
-d03a103aa27454fe36785b78093897af  doc/ger-de/hilfe/trainer/pruefungen/modul-03-administrationskurse/suche-schriftlicher-test.md
+9bd1b0a50c3ea264eb39020d58dc6888  doc/ger-de/hilfe/trainer/pruefungen/modul-03-administrationskurse/suche-schriftlicher-test.md
 eef24d08be8fdf8f34d442004a5306a4  doc/ger-de/hilfe/trainer/pruefungen/modul-03-administrationskurse/website-administratoren-praktische-aufgabe.md
 ba3f6832d03cb69bdd3f8bbed7fc771a  doc/ger-de/hilfe/trainer/pruefungen/modul-03-administrationskurse/website-administratoren-schriftlicher-test.md
 f95cfe055c69b18983fc0bdfd833ab51  doc/ger-de/hilfe/trainer/pruefungen/modul-04-technische-kurse/README.md
@@ -20781,7 +20781,7 @@ f49eaccc7722a566c1d367e0255412d1  doc/ger-de/hilfe/trainer/redakteure-101/modul-
 f3fdb925c81066dc76f6f5e99b18dd6c  doc/ger-de/hilfe/trainer/redakteure-101/modul-06-veroeffentlichen-und-versionen/vorschau-eines-entwurfs.md
 c6202b6744ebe50feb79a0807bf50f96  doc/ger-de/hilfe/trainer/redakteure-101/modul-06-veroeffentlichen-und-versionen/zurueckgehen-verbergen-und-der-papierkorb.md
 01d82c08acb9e2d717f241b70f5a60e2  doc/ger-de/hilfe/trainer/redakteure-101/modul-07-inhalte-finden/README.md
-090c432763fac8482d424aedeb61aad9  doc/ger-de/hilfe/trainer/redakteure-101/modul-07-inhalte-finden/die-erweiterte-suche.md
+65187b951164afdd5bedf45e75858ca5  doc/ger-de/hilfe/trainer/redakteure-101/modul-07-inhalte-finden/die-erweiterte-suche.md
 75a8ae95a90e2cc88719e7ab8fc0baae  doc/ger-de/hilfe/trainer/redakteure-101/modul-07-inhalte-finden/die-schnellsuche.md
 6a8ab01cfa1ede6c08a68a819c99519b  doc/ger-de/hilfe/trainer/redakteure-101/modul-08-dashboard-lesezeichen-konto/README.md
 833e1a95f582c49a433ea761795f99a3  doc/ger-de/hilfe/trainer/redakteure-101/modul-08-dashboard-lesezeichen-konto/das-dashboard.md
@@ -24234,7 +24234,7 @@ d8df80e6f7684b3a57b83865cb18d6df  kernel/classes/expcontentlanguagestates.php
 ceb8038b13ca2723d475c854688ff1f8  kernel/classes/expcontentpendinglist.php
 d12fb45b9e7a2f18cb6002e8e5a728c6  kernel/classes/expcontentpreviewlink.php
 e6c056b88718931c6627826b3008518a  kernel/classes/expcontentschedule.php
-9aad55d8d126f37c3656970764f03503  kernel/classes/expcontentsearchfilters.php
+b163cc0f92edc0fa9de9132ab60f1713  kernel/classes/expcontentsearchfilters.php
 b96ea510a324ff861e315d1ac4aed6cd  kernel/classes/expcronjobpause.php
 c9b12f35141dfbdc4e1ca9e9bace958f  kernel/classes/expcrontabsetup.php
 903bec3bf1081f1d2721446139da40ca  kernel/classes/expdemomode.php
@@ -25561,7 +25561,7 @@ e3520c0aec0d5644d24878392b78c124  kernel/private/classes/views/class/translation
 cd7983fbc98bd2329c06da71e9b384c1  kernel/private/classes/views/collaboration/item.php
 a0dfae33c90fce6b6e3e2ac283ec7355  kernel/private/classes/views/collaboration/view.php
 47ce07bd06e03ce865fb96d50f81fdee  kernel/private/classes/views/content/action.php
-76a4519df354ee4ba563b18d5dd49a48  kernel/private/classes/views/content/advancedsearch.php
+2052e6d066c62757b1c61358d42c0d67  kernel/private/classes/views/content/advancedsearch.php
 801fa3a21b47401b60b424fadb544964  kernel/private/classes/views/content/bookmark.php
 5513a551c2f24d5a25d237b99519f622  kernel/private/classes/views/content/browse.php
 7deea2188b33b0c4b5b5e880f9210ab5  kernel/private/classes/views/content/collectedinfo.php
@@ -25589,7 +25589,7 @@ c5250f152637793a9dec11c8c58b9621  kernel/private/classes/views/content/queued.ph
 141749c8150097182c5434cb25da9405  kernel/private/classes/views/content/removeobject.php
 315ab5874d17fe38beb5923ac2aabe80  kernel/private/classes/views/content/restore.php
 4c76096eb254f944fb870043b35f6c05  kernel/private/classes/views/content/reverserelatedlist.php
-6cdce017ecfae5f241c2a5f81df929a2  kernel/private/classes/views/content/search.php
+931ab921227f7b5b21535d19b70dd150  kernel/private/classes/views/content/search.php
 d7eb50f9fc448059c7a761655e8f0e2b  kernel/private/classes/views/content/sharedpreview.php
 8a9eb394e340040723f45a0b05f73fcd  kernel/private/classes/views/content/subitemsexport.php
 28f29a90d8706da4651c88d4a10dea0c  kernel/private/classes/views/content/suggest.php
@@ -26572,7 +26572,7 @@ c4c0a602ae69e69429f9341c8c240481  settings/debugbar.ini
 b0c004af769060ac23ef847a4250a782  settings/design.ini
 b244336d7be89b1697f8232f4f0fe201  settings/editorpolicies.ini
 32345e49a48d1f9bf1251ad9dde479b7  settings/error.ini
-aa7082d430a1ea7df0355a36a36e7da2  settings/exphelp.ini
+faf784ec51d876fe48e02223bf803e9b  settings/exphelp.ini
 4209ce0fc8d74237bef6f2415d450959  settings/extendedattributefilter.ini
 e87b6557bf97b4e7a43f052afcca7015  settings/ezxml.ini
 fb2495206b5c7b42cdef926446b6f7c0  settings/fetchalias.ini
@@ -28036,7 +28036,7 @@ a64cfa46b8f48e5a5fa9b77178cccc6f  tests/tests/design/AdminRetiredClassesTest.php
 5ba0d36087b71d9a6936b3405a8fb91c  tests/tests/design/AdminScriptsBehaviourTest.php
 907ab53e2ab09acaa0bed9cc35090800  tests/tests/design/AdminScriptsTest.php
 99a796f1bbe30a724253f89d3c7ecb19  tests/tests/design/AdminSearchSuggestTest.php
-66b846c50b6aa3b185b78bd277202acd  tests/tests/design/AdminSearchTest.php
+0e0449b1cbae7341ec63d367af332d68  tests/tests/design/AdminSearchTest.php
 6fb26c4c02b0cc7d20306448d08db456  tests/tests/design/AdminSectionScopeTest.php
 8ece8ddb00b8dc5b62126ebd234606ea  tests/tests/design/AdminSelfContainedTest.php
 8a3b808d1ee42e2d45746587cb9cdd28  tests/tests/design/AdminSetupOverviewTest.php
@@ -28522,7 +28522,7 @@ a6f6894206dbc0dde7dae7dba8bf008a  tests/tests/kernel/classes/expContentLanguages
 7ae2670b84ae38e5b8c5a5b23cb9cccf  tests/tests/kernel/classes/expContentPreviewLinkTest.php
 530d3937f557729c918c83262d7ea3b5  tests/tests/kernel/classes/expContentRemoveLeftoversTest.php
 db6ee7a9d8d4631eaad0c55b6b5ce17d  tests/tests/kernel/classes/expContentScheduleTest.php
-83455d3f245d2db4b81b3ba368e44e58  tests/tests/kernel/classes/expContentSearchFiltersTest.php
+db01fb72c26c1e5062e90cc2766f0e2b  tests/tests/kernel/classes/expContentSearchFiltersTest.php
 7d1aa02d1bc554730e39b449430164d6  tests/tests/kernel/classes/expCronjobPauseTest.php
 25a6ff60c12764a1b9811f86ce18533f  tests/tests/kernel/classes/expCronjobRunnerScheduleTest.php
 9f3998cf6c064a3c02c62ad6c6f696f9  tests/tests/kernel/classes/expCronjobScriptDocumentationTest.php

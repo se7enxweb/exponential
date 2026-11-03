@@ -46,7 +46,7 @@
 
 {* DESIGN: Content START *}<div class="box-bc"><div class="box-ml"><div class="box-content">
 
-<form class="a4-search-form" id="search-form" action={'/content/search/'|ezurl} method="get" role="search" aria-label="{'Search'|i18n( 'design/admin/content/search' )|wash}" data-search-filters="">
+<form class="a4-search-form" id="search-form" action={'/content/search/'|ezurl} method="post" role="search" aria-label="{'Search'|i18n( 'design/admin/content/search' )|wash}" data-search-filters="">
 
 <div class="a4-field a4-search-query">
     <label for="Search">{'Search for'|i18n( 'design/admin/content/search' )}</label>
@@ -65,7 +65,7 @@
     {* on a narrow page the script folds the bar under this button (the chips above the results show what is set) *}
     <button type="button" class="a4-btn a4-btn-small a4-search-filters-toggle exp-js-only" hidden="hidden" aria-expanded="true" data-search-toggle="" data-text-show="{'Show filters'|i18n( 'design/admin/content/search' )|wash}" data-text-hide="{'Hide filters'|i18n( 'design/admin/content/search' )|wash}">{'Hide filters'|i18n( 'design/admin/content/search' )}</button>
     <div class="a4-actions">
-        {if $page.has_filters}<a class="a4-btn a4-btn-small" href={concat( '/content/search', $search_has_text|choose( '', concat( '?SearchText=', $f.text|urlencode ) ) )|ezurl}>{'Reset'|i18n( 'design/admin/content/search' )}</a>{/if}
+        {if $page.has_filters}<a class="a4-btn a4-btn-small" href={concat( '/content/search', $search_has_text|choose( '', concat( '/(text)/', $f.text|view_parameter ) ) )|ezurl}>{'Reset'|i18n( 'design/admin/content/search' )}</a>{/if}
         <button type="submit" class="a4-btn a4-btn-small a4-btn-primary" data-search-apply="">{'Apply'|i18n( 'design/admin/content/search' )}</button>
     </div>
 </div>
@@ -207,7 +207,7 @@
 
 <div class="a4-actions a4-search-filters-foot">
     <button type="submit" class="a4-btn a4-btn-primary" data-search-apply="">{'Apply'|i18n( 'design/admin/content/search' )}</button>
-    {if $page.has_filters}<a class="a4-btn" href={concat( '/content/search', $search_has_text|choose( '', concat( '?SearchText=', $f.text|urlencode ) ) )|ezurl}>{'Reset'|i18n( 'design/admin/content/search' )}</a>{/if}
+    {if $page.has_filters}<a class="a4-btn" href={concat( '/content/search', $search_has_text|choose( '', concat( '/(text)/', $f.text|view_parameter ) ) )|ezurl}>{'Reset'|i18n( 'design/admin/content/search' )}</a>{/if}
 </div>
 </aside>
 
@@ -253,7 +253,7 @@
     {case match='subtree'}{set $chip_name = 'Location'|i18n( 'design/admin/content/search' )}{/case}
     {case}{/case}
     {/switch}
-    <li><a class="a4-tag a4-search-chip" href={concat( '/content/search', $chip.query|ne( '' )|choose( '', concat( '?', $chip.query ) ) )|ezurl} title="{'Remove this filter'|i18n( 'design/admin/content/search' )|wash}"><span>{$chip_name|wash}: <bdi>{$chip_value|wash}</bdi></span><span class="a4-icon a4-bi-x-lg" role="img" aria-label="{'Remove this filter'|i18n( 'design/admin/content/search' )|wash}"></span></a></li>
+    <li><a class="a4-tag a4-search-chip" href={concat( '/content/search', $chip.query )|ezurl} title="{'Remove this filter'|i18n( 'design/admin/content/search' )|wash}"><span>{$chip_name|wash}: <bdi>{$chip_value|wash}</bdi></span><span class="a4-icon a4-bi-x-lg" role="img" aria-label="{'Remove this filter'|i18n( 'design/admin/content/search' )|wash}"></span></a></li>
     {undef $chip_name $chip_value}
 {/foreach}
 </ul>
@@ -262,7 +262,7 @@
 {* eZ Find's spelling suggestion: the same search with the suggested words *}
 {if $page.spellcheck}
 {* the help search's "Did you mean:" (kernel/exphelp), translated in every catalogue *}
-<p class="a4-notice is-info">{'Did you mean:'|i18n( 'kernel/exphelp' )} <a href={concat( '/content/search?', $page.spellcheck.query )|ezurl}>{$page.spellcheck.text|wash}</a></p>
+<p class="a4-notice is-info">{'Did you mean:'|i18n( 'kernel/exphelp' )} <a href={concat( '/content/search', $page.spellcheck.query )|ezurl}>{$page.spellcheck.text|wash}</a></p>
 {/if}
 
 {* Excluded words *}
@@ -292,7 +292,7 @@
 </div>
 {elseif $page.result|not}
 {* A page past the last one ((offset) beyond the matches, an old link or a list that shrank) *}
-<p class="a4-notice is-info" role="status">{'There are no matches on this page.'|i18n( 'design/admin/content/search' )} <a href={concat( '/content/search', $search_query|ne( '' )|choose( '', concat( '?', $search_query ) ) )|ezurl}>{'Go to the first page'|i18n( 'design/admin/content/search' )}</a></p>
+<p class="a4-notice is-info" role="status">{'There are no matches on this page.'|i18n( 'design/admin/content/search' )} <a href={concat( '/content/search', $search_query )|ezurl}>{'Go to the first page'|i18n( 'design/admin/content/search' )}</a></p>
 {else}
 {include name=Result uri='design:content/searchresult.tpl' search_result=$page.result search_text=$f.text}
 <div class="a4-listfoot">
@@ -300,7 +300,7 @@
 {include name=Navigator
          uri='design:navigator/google.tpl'
          page_uri='/content/search'
-         page_uri_suffix=concat( '?', $search_query )
+         page_uri_suffix=$search_query
          item_count=$page.count
          view_parameters=hash( 'offset', $page.offset )
          item_limit=$f.limit}

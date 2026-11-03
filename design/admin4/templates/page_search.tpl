@@ -17,7 +17,7 @@
     {set $section_id = ezhttp( 'SectionID', 'get' )}
 {/if}
 <div class="searchblock" data-searchblock="1">
-<form action={'/content/search/'|ezurl} method="get" role="search" aria-label="{'Quick search'|i18n( 'design/admin/pagelayout' )|wash}">
+<form action={'/content/search/'|ezurl} method="post" role="search" aria-label="{'Quick search'|i18n( 'design/admin/pagelayout' )|wash}">
     {if $ui_context_edit}
         <div class="searchtextwrapper">
             <input id="searchtext{$box}" class="form-control searchtext disabled" name="SearchText" type="search" size="20" value="{if is_set( $search_text )}{$search_text|wash}{/if}" disabled="disabled" title="{$search_title|wash}" aria-label="{$search_title|wash}" placeholder="{'Search...'|i18n( 'design/admin/pagelayout' )}" />

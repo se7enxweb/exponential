@@ -6,7 +6,7 @@
     {set $section_id = ezhttp( 'SectionID', 'get' )}
 {/if}
 <div class="searchblock">
-<form action={'/content/search/'|ezurl} method="get">
+<form action={'/content/search/'|ezurl} method="post">
     {if $ui_context_edit}
         <label for="searchtext" class="a4-sr-only">{$search_title|wash}</label>
         <input id="searchtext" name="SearchText" class="disabled" type="text" size="20" value="{if is_set( $search_text )}{$search_text|wash}{/if}" disabled="disabled" title="{$search_title|wash}" />

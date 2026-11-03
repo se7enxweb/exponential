@@ -55,11 +55,12 @@ class AdminSearchTest extends PHPUnit\Framework\TestCase
     public function testTheSearchFormIsALabelledSearchLandmark()
     {
         $tpl = self::read( 'design/admin4/templates/content/search_page.tpl' );
-        $this->assertStringContainsString( '<form class="a4-search-form" id="search-form" action={\'/content/search/\'|ezurl} method="get" role="search" aria-label=', $tpl );
+        $this->assertStringContainsString( '<form class="a4-search-form" id="search-form" action={\'/content/search/\'|ezurl} method="post" role="search" aria-label=', $tpl );
         $this->assertStringContainsString( '<label for="Search">', $tpl );
         $this->assertStringContainsString( 'type="search" name="SearchText" id="Search"', $tpl );
-        $this->assertSame( 1, substr_count( $tpl, '<form' ), 'one GET form: every filter, the sort order and the words go together' );
-        $this->assertStringNotContainsString( 'method="post"', $tpl );
+        $this->assertSame( 1, substr_count( $tpl, '<form' ), 'one form: every filter, the sort order and the words go together; it is posted and answered with a 303 to the view parameters' );
+        $this->assertStringNotContainsString( 'method="get"', $tpl );
+        $this->assertStringNotContainsString( "concat( '?", $tpl, 'no link of the page carries a query string' );
     }
 
     /** AS-01 */
@@ -82,8 +83,8 @@ class AdminSearchTest extends PHPUnit\Framework\TestCase
     public function testThePagesKeepTheWholeSearch()
     {
         $tpl = self::read( 'design/admin4/templates/content/search_page.tpl' );
-        // the query string of the search without the page (expContentSearchFilters::queryString(): every filter, the sort order, the page size)
-        $this->assertStringContainsString( 'page_uri_suffix=concat( \'?\', $search_query )', $tpl );
+        // the search as view parameters without the page (expContentSearchFilters::viewSuffix(): every filter, the sort order, the page size)
+        $this->assertStringContainsString( 'page_uri_suffix=$search_query', $tpl );
         $this->assertStringContainsString( '$search_query = $page.query', $tpl );
         $this->assertStringContainsString( 'view_parameters=hash( \'offset\', $page.offset )', $tpl );
         $this->assertStringContainsString( 'item_limit=$f.limit}', $tpl );
@@ -262,7 +263,7 @@ class AdminSearchTest extends PHPUnit\Framework\TestCase
     {
         $tpl = self::read( 'design/admin4/templates/content/search_page.tpl' );
         $this->assertStringContainsString( "{elseif \$page.result|not}", $tpl );
-        $this->assertStringContainsString( "{'There are no matches on this page.'|i18n( 'design/admin/content/search' )} <a href={concat( '/content/search', \$search_query|ne( '' )|choose( '', concat( '?', \$search_query ) ) )|ezurl}>{'Go to the first page'|i18n( 'design/admin/content/search' )}</a>", $tpl );
+        $this->assertStringContainsString( "{'There are no matches on this page.'|i18n( 'design/admin/content/search' )} <a href={concat( '/content/search', \$search_query )|ezurl}>{'Go to the first page'|i18n( 'design/admin/content/search' )}</a>", $tpl );
         $this->assertLessThan( strpos( $tpl, "{include name=Result uri='design:content/searchresult.tpl'" ), strpos( $tpl, '{elseif $page.result|not}' ) );
     }
 
@@ -270,11 +271,11 @@ class AdminSearchTest extends PHPUnit\Framework\TestCase
     public function testEachChipLinksToTheSearchWithoutIt()
     {
         $tpl = self::read( 'design/admin4/templates/content/search_page.tpl' );
-        $this->assertStringContainsString( "<a class=\"a4-tag a4-search-chip\" href={concat( '/content/search', \$chip.query|ne( '' )|choose( '', concat( '?', \$chip.query ) ) )|ezurl}", $tpl );
+        $this->assertStringContainsString( "<a class=\"a4-tag a4-search-chip\" href={concat( '/content/search', \$chip.query )|ezurl}", $tpl );
         foreach ( array( 'mode', 'class', 'class_attribute', 'section', 'modified', 'published', 'owner', 'language', 'subtree' ) as $type )
             $this->assertStringContainsString( "{case match='$type'}", $tpl, $type );
         // the spelling suggestion keeps the filters
-        $this->assertStringContainsString( "<a href={concat( '/content/search?', \$page.spellcheck.query )|ezurl}>{\$page.spellcheck.text|wash}</a>", $tpl );
+        $this->assertStringContainsString( "<a href={concat( '/content/search', \$page.spellcheck.query )|ezurl}>{\$page.spellcheck.text|wash}</a>", $tpl );
     }
 
     /** AS-14 */

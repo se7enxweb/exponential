@@ -55,6 +55,28 @@ class expContentSearchFilters
     /** How many classes of a class group are shown before "Show more" */
     const CLASSES_SHOWN = 6;
 
+    /** The filters as view parameters: request name => the name in the address (/(name)/value) */
+    const VIEW_PARAMETERS = array( 'SearchText' => 'text', 'SearchMode' => 'mode', 'ClassID' => 'class',
+                                   'ClassAttributeID' => 'attribute', 'SectionID' => 'section',
+                                   'Modified' => 'modified', 'ModifiedFrom' => 'modified_from', 'ModifiedTo' => 'modified_to',
+                                   'Published' => 'published', 'PublishedFrom' => 'published_from', 'PublishedTo' => 'published_to',
+                                   'Owner' => 'owner', 'Language' => 'language', 'SubTreeArray' => 'subtree',
+                                   'SortBy' => 'sort', 'SearchPageLimit' => 'limit' );
+
+    /** The filters that are lists: one view parameter, the values joined by commas (/(class)/2,16) */
+    const LIST_PARAMETERS = array( 'ClassID', 'SectionID', 'SubTreeArray' );
+
+    /** The fields of the search forms whose POST the views answer with a 303 to the view parameters: the filter
+     *  bar, the header search field and the fields of the former advanced search */
+    const FORM_FIELDS = array( 'SearchText', 'SearchMode', 'ClassID', 'ClassAttributeID', 'SectionID', 'Modified',
+                               'ModifiedFrom', 'ModifiedTo', 'Published', 'PublishedFrom', 'PublishedTo', 'Owner',
+                               'Language', 'SubTreeArray', 'SortBy', 'SearchPageLimit', 'SearchButton',
+                               'PhraseSearchText', 'SearchContentClassID', 'SearchContentClassAttributeID',
+                               'SearchSectionID', 'SearchDate', 'SearchTimestamp' );
+
+    /** @var array the request of the current view's view parameters (useViewParameters()) */
+    private static $viewRequest = array();
+
     /** @var string */
     private $engine;
     /** @var array what the back end can do */
@@ -397,6 +419,89 @@ class expContentSearchFilters
      */
     public function queryString( array $without = array(), array $with = array() )
     {
+        $parts = array();
+        foreach ( $this->pairs( $without, $with ) as $name => $value )
+        {
+            foreach ( (array)$value as $item )
+                $parts[] = urlencode( is_array( $value ) ? $name . '[]' : $name ) . '=' . urlencode( (string)$item );
+        }
+        return implode( '&', $parts );
+    }
+
+    /**
+     * This search as view parameters, without the page (offset): the address part after content/search for the
+     * pager, the sort order, the chips and the spelling suggestion, "/(text)/easter/(class)/2,16". The page never
+     * writes a query string (?Name=value), and the views never read one (expViewParameters).
+     *
+     * @param array $without request names to leave out, or name => value to leave out one value of a list
+     * @param array $with request names to set instead
+     * @return string '' when nothing is set
+     */
+    public function viewSuffix( array $without = array(), array $with = array() )
+    {
+        $options = array();
+        foreach ( $this->pairs( $without, $with ) as $name => $value )
+        {
+            if ( isset( self::VIEW_PARAMETERS[$name] ) )
+                $options[self::VIEW_PARAMETERS[$name]] = is_array( $value ) ? implode( ',', $value ) : (string)$value;
+        }
+        return expViewParameters::suffix( $options );
+    }
+
+    /**
+     * The request (request name => value, lists as arrays) that the view parameters of an address give, for the
+     * constructor: the inverse of viewSuffix().
+     *
+     * @param array $params the view's $Params (its UserParameters)
+     * @return array
+     */
+    public static function requestFromViewParameters( array $params )
+    {
+        $request = array();
+        foreach ( self::VIEW_PARAMETERS as $name => $parameter )
+        {
+            $value = expViewParameters::get( $params, $parameter );
+            if ( $value === false || $value === '' )
+                continue;
+            $request[$name] = in_array( $name, self::LIST_PARAMETERS, true ) ? explode( ',', $value ) : $value;
+        }
+        return $request;
+    }
+
+    /**
+     * The view parameters of the current content/search or content/advancedsearch request, which the template
+     * fetch reads (fromCurrentRequest()). Set by the view before it renders the page.
+     *
+     * @param array $params the view's $Params
+     */
+    public static function useViewParameters( array $params )
+    {
+        self::$viewRequest = self::requestFromViewParameters( $params );
+    }
+
+    /**
+     * The search a request of the search forms asks for (the filter bar, the header field, the former advanced
+     * search), checked against the catalogue of this installation: the views answer such a POST with a 303 to
+     * content/search and viewSuffix().
+     *
+     * @param array $request usually $_POST
+     * @return expContentSearchFilters
+     */
+    public static function fromRequest( array $request )
+    {
+        return new self( $request, self::currentEngine(), self::currentCatalog() );
+    }
+
+    /**
+     * The request values of this search with some left out or set instead, the class attribute only with exactly
+     * one class.
+     *
+     * @param array $without
+     * @param array $with
+     * @return array
+     */
+    private function pairs( array $without, array $with )
+    {
         $pairs = $this->requestValues();
         foreach ( $without as $name => $value )
         {
@@ -416,14 +521,7 @@ class expContentSearchFilters
         // the class attribute belongs to exactly one class
         if ( isset( $pairs['ClassAttributeID'] ) && ( !isset( $pairs['ClassID'] ) || count( (array)$pairs['ClassID'] ) !== 1 ) )
             unset( $pairs['ClassAttributeID'] );
-
-        $parts = array();
-        foreach ( $pairs as $name => $value )
-        {
-            foreach ( (array)$value as $item )
-                $parts[] = urlencode( is_array( $value ) ? $name . '[]' : $name ) . '=' . urlencode( (string)$item );
-        }
-        return implode( '&', $parts );
+        return $pairs;
     }
 
     /**
@@ -437,22 +535,22 @@ class expContentSearchFilters
         $p = $this->parameters;
         $chips = array();
         if ( $p['mode'] !== $this->capabilities['modes'][0] && trim( $p['text'] ) !== '' )
-            $chips[] = array( 'type' => 'mode', 'value' => $p['mode'], 'label' => $p['mode'], 'query' => $this->queryString( array( 'SearchMode' ) ) );
+            $chips[] = array( 'type' => 'mode', 'value' => $p['mode'], 'label' => $p['mode'], 'query' => $this->viewSuffix( array( 'SearchMode' ) ) );
         foreach ( $p['class_ids'] as $classID )
         {
             $name = isset( $this->catalog['classes'][$classID] ) ? $this->catalog['classes'][$classID]['name'] : (string)$classID;
-            $chips[] = array( 'type' => 'class', 'value' => $classID, 'label' => $name, 'query' => $this->queryString( array( 'ClassID' => $classID ) ) );
+            $chips[] = array( 'type' => 'class', 'value' => $classID, 'label' => $name, 'query' => $this->viewSuffix( array( 'ClassID' => $classID ) ) );
         }
         if ( $p['class_attribute_id'] )
         {
             $attributes = $this->classAttributes();
             $name = isset( $attributes[$p['class_attribute_id']] ) ? $attributes[$p['class_attribute_id']] : (string)$p['class_attribute_id'];
-            $chips[] = array( 'type' => 'class_attribute', 'value' => $p['class_attribute_id'], 'label' => $name, 'query' => $this->queryString( array( 'ClassAttributeID' ) ) );
+            $chips[] = array( 'type' => 'class_attribute', 'value' => $p['class_attribute_id'], 'label' => $name, 'query' => $this->viewSuffix( array( 'ClassAttributeID' ) ) );
         }
         foreach ( $p['section_ids'] as $sectionID )
         {
             $name = isset( $this->catalog['sections'][$sectionID] ) ? $this->catalog['sections'][$sectionID] : (string)$sectionID;
-            $chips[] = array( 'type' => 'section', 'value' => $sectionID, 'label' => $name, 'query' => $this->queryString( array( 'SectionID' => $sectionID ) ) );
+            $chips[] = array( 'type' => 'section', 'value' => $sectionID, 'label' => $name, 'query' => $this->viewSuffix( array( 'SectionID' => $sectionID ) ) );
         }
         foreach ( array( 'modified' => 'Modified', 'published' => 'Published' ) as $field => $name )
         {
@@ -465,20 +563,20 @@ class expContentSearchFilters
             if ( $range['period'] === 'custom' && $range['from'] === '' && $range['to'] !== '' )
                 $label = '≤ ' . $range['to'];
             $chips[] = array( 'type' => $field, 'value' => $range['period'], 'label' => $label,
-                              'query' => $this->queryString( array( $name, $name . 'From', $name . 'To' ) ) );
+                              'query' => $this->viewSuffix( array( $name, $name . 'From', $name . 'To' ) ) );
         }
         if ( $p['owner']['id'] )
-            $chips[] = array( 'type' => 'owner', 'value' => $p['owner']['id'], 'label' => $p['owner']['name'], 'query' => $this->queryString( array( 'Owner' ) ) );
+            $chips[] = array( 'type' => 'owner', 'value' => $p['owner']['id'], 'label' => $p['owner']['name'], 'query' => $this->viewSuffix( array( 'Owner' ) ) );
         if ( $p['language'] !== '' )
         {
             $name = isset( $this->catalog['languages'][$p['language']] ) ? $this->catalog['languages'][$p['language']] : $p['language'];
-            $chips[] = array( 'type' => 'language', 'value' => $p['language'], 'label' => $name, 'query' => $this->queryString( array( 'Language' ) ) );
+            $chips[] = array( 'type' => 'language', 'value' => $p['language'], 'label' => $name, 'query' => $this->viewSuffix( array( 'Language' ) ) );
         }
         foreach ( $p['subtree_ids'] as $nodeID )
         {
             $node = $this->node( $nodeID );
             $chips[] = array( 'type' => 'subtree', 'value' => $nodeID, 'label' => $node ? $node['path'] : '#' . $nodeID,
-                              'query' => $this->queryString( array( 'SubTreeArray' => $nodeID ) ) );
+                              'query' => $this->viewSuffix( array( 'SubTreeArray' => $nodeID ) ) );
         }
         return $chips;
     }
@@ -609,7 +707,7 @@ class expContentSearchFilters
             // eZ Find's spelling suggestion: the same search with the suggested words
             $collation = !$failed && $this->capabilities['spell_check'] ? $extras->attribute( 'spellcheck_collation' ) : null;
             if ( is_string( $collation ) && trim( $collation ) !== '' && trim( $collation ) !== trim( $this->parameters['text'] ) )
-                $spellcheck = array( 'text' => $collation, 'query' => $this->queryString( array(), array( 'SearchText' => $collation ) ) );
+                $spellcheck = array( 'text' => $collation, 'query' => $this->viewSuffix( array(), array( 'SearchText' => $collation ) ) );
             // eZ Find shortens a text to the words its query fields allow
             if ( !$failed && $this->capabilities['spell_check'] && $extras->attribute( 'text_shortened' ) )
                 $textShortened = true;
@@ -649,7 +747,7 @@ class expContentSearchFilters
                       'extras' => $extras,
                       'search_data' => $search,
                       'chips' => $this->activeFilters(),
-                      'query' => $this->queryString(),
+                      'query' => $this->viewSuffix(),
                       'class_groups' => $this->classGroups( $facets['class'] ),
                       'class_attributes' => $attributes,
                       'sections' => $sections,
@@ -669,8 +767,8 @@ class expContentSearchFilters
      */
     public static function fromCurrentRequest( $offset = 0 )
     {
-        $request = array_merge( $_GET, $_POST );
-        $filters = new self( $request, self::currentEngine(), self::currentCatalog() );
+        // the view parameters the view handed over (useViewParameters()); a query string is never read
+        $filters = new self( self::$viewRequest, self::currentEngine(), self::currentCatalog() );
         return $filters->fetch( $offset );
     }
 

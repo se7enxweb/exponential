@@ -8,7 +8,10 @@
  *  SF-03 - eZ Find gets only parameters of the eZ Find package, the extended filters only when registered
  *  SF-04 - The built-in engine gets fetch( content, search ) parameters and is not offered what it cannot do
  *  SF-05 - Dates: periods from the start of the day, custom ranges inclusive, invalid dates rejected
- *  SF-06 - Query strings: Name[]=value, chips leave out exactly their value, defaults are not written
+ *  SF-06 - Query strings: Name[]=value; the chips and the page as view parameters, each chip without exactly its
+ *          value, defaults not written
+ *  SF-14 - View parameters: viewSuffix() and requestFromViewParameters() give the same search back; a query string
+ *          is never read
  *  SF-07 - Search modes: all, any (OR) and the phrase
  *  SF-08 - The page size and the sort order
  *  SF-09 - Facet counts and the class groups with "Show more"
@@ -209,9 +212,8 @@ class expContentSearchFiltersTest extends PHPUnit\Framework\TestCase
         $chips = $filters->activeFilters();
         $this->assertSame( array( 'class', 'class', 'section', 'published', 'owner', 'language', 'subtree' ), array_column( $chips, 'type' ) );
         $this->assertSame( array( 'Article', 'Folder', 'Standard', '≥ 2026-01-01', 'Administrator User', 'Deutsch', 'Home' ), array_column( $chips, 'label' ) );
-        $this->assertStringNotContainsString( 'ClassID%5B%5D=2', $chips[0]['query'] );
-        $this->assertStringContainsString( 'ClassID%5B%5D=1', $chips[0]['query'] );
-        $this->assertStringNotContainsString( 'Published', $chips[3]['query'] );
+        $this->assertSame( '/(text)/a%26b/(class)/1/(section)/1/(published)/custom/(published_from)/2026-01-01/(owner)/admin/(language)/ger-DE/(subtree)/2', $chips[0]['query'], 'a chip is the search without its value, as view parameters' );
+        $this->assertStringNotContainsString( '(published', $chips[3]['query'] );
         foreach ( $chips as $chip )
             $this->assertStringNotContainsString( 'offset', $chip['query'] );
 
@@ -237,7 +239,7 @@ class expContentSearchFiltersTest extends PHPUnit\Framework\TestCase
             expContentSearchFilters::ENGINE_EZFIND, array( 'extended_filters' => array( 'ezfindallwords' ) ) )->ezfindParameters( 0 ) ) );
         $chips = self::filters( array( 'SearchText' => 'a b', 'SearchMode' => 'phrase' ) )->activeFilters();
         $this->assertSame( 'mode', $chips[0]['type'] );
-        $this->assertSame( 'SearchText=a+b', $chips[0]['query'] );
+        $this->assertSame( '/(text)/a%20b', $chips[0]['query'] );
         // the text is cut to the limits of the view
         $long = self::filters( array( 'SearchText' => 'a b c d' ), expContentSearchFilters::ENGINE_EZFIND, array( 'maximum_words' => 2 ) )->parameters();
         $this->assertSame( 'a b', $long['text'] );
@@ -371,12 +373,43 @@ class expContentSearchFiltersTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( 'ezfind/search' ), $calls, 'eZ Find searches with filters alone' );
         $this->assertSame( 1, $page['count'] );
         $this->assertSame( 10, $page['offset'] );
-        $this->assertSame( 'ClassID%5B%5D=2', $page['query'] );
+        $this->assertSame( '/(class)/2', $page['query'] );
 
         $page = self::filters( array( 'SearchText' => 'x' ), expContentSearchFilters::ENGINE_KERNEL )->fetch( 0, $execute );
         $this->assertSame( array( 'ezfind/search', 'content/search' ), $calls );
         $this->assertSame( array( array( 'node' ) ), array( $page['result'] ) );
         $this->assertFalse( $page['failed'] );
         $this->assertSame( array( 'Standard', 'Media' ), array_column( $page['sections'], 'name' ) );
+    }
+
+    /** SF-14 */
+    public function testTheSearchTravelsAsViewParameters()
+    {
+        $filters = self::filters( array( 'SearchText' => 'a/b (c) 100%', 'ClassID' => array( '2', '1' ), 'SectionID' => '1',
+                                         'SubTreeArray' => array( '2' ), 'Modified' => 'custom', 'ModifiedFrom' => '2026-01-01',
+                                         'ModifiedTo' => '2026-02-01', 'Owner' => 'admin', 'Language' => 'ger-DE',
+                                         'SortBy' => 'name_desc', 'SearchPageLimit' => '3', 'SearchMode' => 'any' ) );
+        $suffix = $filters->viewSuffix();
+        $this->assertStringNotContainsString( '?', $suffix );
+        $this->assertStringNotContainsString( '&', $suffix );
+        $this->assertStringContainsString( '/(class)/2,1/', $suffix, 'a list is one parameter, its values joined by commas' );
+
+        // the kernel decodes the address and hands the (name)/value pairs to the view as UserParameters
+        $user = array();
+        $segments = explode( '/', ltrim( $suffix, '/' ) );
+        for ( $i = 0; $i + 1 < count( $segments ); $i += 2 )
+            $user[trim( $segments[$i], '()' )] = rawurldecode( $segments[$i + 1] );
+        $request = expContentSearchFilters::requestFromViewParameters( array( 'UserParameters' => $user ) );
+        $this->assertSame( 'a/b (c) 100%', $request['SearchText'] );
+        $this->assertSame( array( '2', '1' ), $request['ClassID'] );
+        $again = self::filters( $request );
+        $this->assertSame( $filters->parameters(), $again->parameters(), 'the address gives the same search back' );
+        $this->assertSame( $suffix, $again->viewSuffix() );
+
+        // a query string is not a view parameter; the page reads only what the view hands over
+        $this->assertSame( array(), expContentSearchFilters::requestFromViewParameters( array( 'UserParameters' => array(), 'SearchText' => 'x' ) ) );
+        $this->assertSame( '', self::filters( array() )->viewSuffix() );
+        $this->assertContains( 'PhraseSearchText', expContentSearchFilters::FORM_FIELDS, 'a posted advanced search is redirected too' );
+        $this->assertContains( 'SearchText', expContentSearchFilters::FORM_FIELDS );
     }
 }

@@ -72,8 +72,20 @@ class Search extends \Exponential\Runnable\ModuleView
         // default: the view searches and hands the result to the template. A template that is the administration's
         // filtered search page searches itself (fetch content/filtered_search): the view's own search would only
         // run the same query a second time
+        $filteredPage = self::templateSearchesItself( 'content/search.tpl' );
+        if ( $filteredPage )
+        {
+            // The page takes its search as view parameters only (/(text)/easter/(class)/2,16, see
+            // expContentSearchFilters::viewSuffix()), never as a query string. Its filter bar and the header search
+            // field are posted and answered with a 303 to that address; a search of the browse window
+            // (Mode=browse) is not the page and keeps its own handling below.
+            if ( \expViewParameters::posted( $_POST, 'Mode' ) !== 'browse'
+                 && \expViewParameters::redirectsPost( $_POST, \expContentSearchFilters::FORM_FIELDS ) )
+                \expViewParameters::redirect( 'content/search' . \expContentSearchFilters::fromRequest( $_POST )->viewSuffix() );
+            \expContentSearchFilters::useViewParameters( $Params );
+        }
         $useSearchCode = $ini->variable( 'SearchSettings', 'SearchViewHandling' ) == 'default'
-                         && !self::templateSearchesItself( 'content/search.tpl' );
+                         && !$filteredPage;
         $logSearchStats = $ini->variable( 'SearchSettings', 'LogSearchStats' ) == 'enabled';
 
         if ( $http->hasVariable( 'BrowsePageLimit' ) )
@@ -108,6 +120,9 @@ class Search extends \Exponential\Runnable\ModuleView
         $requestedSearchText = $searchText;
         $searchText = self::limitSearchText( $searchText, $maximumWords, $maximumLength );
         $searchTextShortened = $searchText !== $requestedSearchText;
+        // the filtered search page: its text is the view parameter (text), for the statistics and the audit
+        if ( $filteredPage )
+            $searchText = self::limitSearchText( (string)\expViewParameters::get( $Params, 'text' ), $maximumWords, $maximumLength );
 
         // A section that does not exist is no section: the search is not limited to it
         $searchSectionID = -1;
