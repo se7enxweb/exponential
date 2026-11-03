@@ -1292,7 +1292,8 @@
       "tests/tests/kernel/classes/uiswitch/expUISwitchTest.php"
     ],
     "lib/eztemplate/classes/eztemplatecachefunction.php": [
-      "tests/tests/kernel/classes/uiswitch/expUISwitchTest.php"
+      "tests/tests/kernel/classes/uiswitch/expUISwitchTest.php",
+      "tests/tests/lib/eztemplate/eZTemplateCacheBlockRecursionTest.php"
     ],
     "kernel/classes/audit/expaudittaxonomy.php": [
       "tests/tests/kernel/classes/audit/expAuditRecordTest.php",
@@ -3033,6 +3034,18 @@
       "tests/tests/lib/eztemplate/eZTemplateCompiledLoopRecursionTest.php"
     ],
     "lib/eztemplate/classes/eztemplateforfunction.php": [
+      "tests/tests/lib/eztemplate/eZTemplateCompiledLoopRecursionTest.php"
+    ],
+    "lib/eztemplate/classes/eztemplatewhilefunction.php": [
+      "tests/tests/lib/eztemplate/eZTemplateCompiledLoopRecursionTest.php"
+    ],
+    "lib/eztemplate/classes/eztemplatedofunction.php": [
+      "tests/tests/lib/eztemplate/eZTemplateCompiledLoopRecursionTest.php"
+    ],
+    "lib/eztemplate/classes/eztemplatecompiledloop.php": [
+      "tests/tests/lib/eztemplate/eZTemplateCompiledLoopRecursionTest.php"
+    ],
+    "lib/eztemplate/classes/eztemplateincludefunction.php": [
       "tests/tests/lib/eztemplate/eZTemplateCompiledLoopRecursionTest.php"
     ]
   },
