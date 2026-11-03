@@ -138,7 +138,8 @@ class expDebugBarSummary
                               'by_ip' => $ini ? $ini->variable( 'DebugSettings', 'DebugByIP' ) === 'enabled' : false,
                               'by_user' => $ini ? $ini->variable( 'DebugSettings', 'DebugByUser' ) === 'enabled' : false,
                               // the entry that matched is a line of the list: only for those who may see the list
-                              'ip_match' => isset( $GLOBALS['eZDebugIPMatch'] ) ? ( $mayReadLists ? $GLOBALS['eZDebugIPMatch'] : true ) : null ),
+                              // the line of the IP list that matched: with setup/setup only, never to a reader by the debug output
+                              'ip_match' => isset( $GLOBALS['eZDebugIPMatch'] ) ? ( self::mayReadLists( false ) ? $GLOBALS['eZDebugIPMatch'] : true ) : null ),
             'querycache' => self::queryCache( $thresholds['querycache_hit_rate'] ),
             'engine' => self::engine(),
             'siteaccess' => isset( $GLOBALS['eZCurrentAccess']['name'] ) ? $GLOBALS['eZCurrentAccess']['name'] : null,
@@ -182,10 +183,12 @@ class expDebugBarSummary
     /**
      * Whether the current user may see the IP and user lists, the versions and the memory of OPcache and APCu:
      * setup/setup, or the debug output under debugbar.ini ReadAccess=debug (expDebugBarRegistry::readsAll()).
+     *
+     * @param bool $byDebugOutput false: setup/setup only (the line of the IP list that matched, other people's data)
      */
-    protected static function mayReadLists()
+    protected static function mayReadLists( $byDebugOutput = true )
     {
-        if ( class_exists( 'expDebugBarRegistry' ) && class_exists( 'eZDebug', false ) && expDebugBarRegistry::readsAll( eZDebug::isDebugEnabled() ) )
+        if ( $byDebugOutput && class_exists( 'expDebugBarRegistry' ) && class_exists( 'eZDebug', false ) && expDebugBarRegistry::readsAll( eZDebug::isDebugEnabled() ) )
             return true;
         if ( !class_exists( 'eZUser', false ) )
             return false;

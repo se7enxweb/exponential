@@ -81,7 +81,10 @@ log, the IP test, the cache list, the policies of their roles, OPcache and APCu.
 `setup/setup`, clearing a cache `setup/managecache`, both with the form token. `debugbar.ini [DebugBarSettings]
 ReadAccess=privileged` keeps the reading to those policies too, the stricter rule; a site that gives
 the debug report to visitors it does not trust with its configuration sets it
-([details](../../bc/6.0/debug-bar.md#who-reads-what-readaccess)).
+([details](../../bc/6.0/debug-bar.md#who-reads-what-readaccess)). Nobody reads other people's data: the session is
+always the visitor's own, the change log comes without who made each change and the IP and user lists are masked for
+a reader without `setup/setup`. Debug output on a public address shows every visitor their own session: set
+`ReadAccess=privileged` in production.
 
 ## Settings
 

@@ -7,6 +7,8 @@
  *           logged-in user without setup/setup (expDebugBarUser::mayView())
  *   - UP-11 ReadAccess: debug unless it says privileged; readsAll() only with debug output; reading the cache list
  *           is not clearing, the form for it only with setup/managecache
+ *   - UP-12 a reader by the debug output (ReadAccess=debug, no setup/setup) gets nobody else's data: the change log
+ *           without user id, login and address, the IP and the user list masked, the IP test without the list lines
  *   - UP-09 expdebugbar::policies takes its arguments from the path: role id or "-", offset, the search as base64url
  *           ("-" for none); anything else refused, the search held to 100 characters
  *   - UP-10 the script asks with everything in the path, never the query string, and only when the section is opened
@@ -106,5 +108,44 @@ class expDebugBarUserPoliciesTest extends PHPUnit\Framework\TestCase
                                            'role, page and search in the path, no parameters' );
         $this->assertStringNotContainsString( "call('policies', {", $js );
         $this->assertStringContainsString( "details.addEventListener('toggle'", $js, 'asked when the section is opened' );
+    }
+    /** UP-12 */
+    public function testAReaderByTheDebugOutputGetsNobodyElsesData()
+    {
+        $log = expDebugBarServerFunctions::forReader( array(
+            array( 'id' => 'a', 'time' => 1, 'user_id' => 14, 'user' => 'admin', 'ip' => '192.0.2.7', 'setting' => 'debug_output', 'old' => 'disabled', 'new' => 'enabled' ),
+        ) );
+        $this->assertNull( $log[0]['user_id'] );
+        $this->assertNull( $log[0]['user'] );
+        $this->assertNull( $log[0]['ip'] );
+        $this->assertSame( 'enabled', $log[0]['new'], 'what changed stays' );
+
+        $settings = expDebugBarServerFunctions::listsMasked( array(
+            array( 'id' => 'debug_ip_list', 'type' => 'iplist', 'secret' => false, 'effective' => array( '192.0.2.7', '198.51.100.0/24' ),
+                   'default' => array(), 'files' => array( array( 'scope' => 'global', 'path' => 'settings/override/site.ini.append.php', 'value' => array( '192.0.2.7' ) ) ),
+                   'scopes' => array( 'global' => array( '192.0.2.7' ) ), 'entries' => array( array( 'line' => '192.0.2.7' ) ) ),
+            array( 'id' => 'debug_user_list', 'type' => 'userlist', 'secret' => false, 'effective' => array( '14' ) ),
+            array( 'id' => 'debug_output', 'type' => 'bool', 'secret' => false, 'effective' => 'enabled' ),
+        ) );
+        $json = json_encode( $settings );
+        $this->assertStringNotContainsString( '192.0.2.7', $json );
+        $this->assertStringNotContainsString( '198.51.100', $json );
+        $this->assertTrue( $settings[0]['secret'] );
+        $this->assertArrayNotHasKey( 'entries', $settings[0] );
+        $this->assertSame( array( expIniEditor::MASK ), $settings[1]['effective'] );
+        $this->assertSame( 'enabled', $settings[2]['effective'], 'other settings unchanged' );
+
+        $ip = expDebugBarServerFunctions::ownIpAnswer( array(
+            'address' => '203.0.113.5', 'client_ip' => '203.0.113.5', 'allowed' => true,
+            'matched' => array( 'index' => 1, 'line' => '203.0.113.0/24 # office' ), 'request_match' => array( 'line' => '203.0.113.0/24 # office' ),
+            'entries' => array( array( 'line' => '192.0.2.7' ) ),
+            'warnings' => array( array( 'code' => 'open', 'message' => "'0.0.0.0/0' opens debug" ), array( 'code' => 'expired', 'message' => '1 entry has expired' ) ),
+        ) );
+        $json = json_encode( $ip );
+        $this->assertStringNotContainsString( 'office', $json );
+        $this->assertStringNotContainsString( '192.0.2.7', $json );
+        $this->assertStringNotContainsString( '0.0.0.0', $json );
+        $this->assertTrue( $ip['allowed'], 'whether the own address is allowed stays' );
+        $this->assertSame( '203.0.113.5', $ip['address'] );
     }
 }

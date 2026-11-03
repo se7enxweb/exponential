@@ -309,7 +309,7 @@ php vendor/bin/phpunit tests/tests/kernel/classes/debugbar/
 | `RadSurveyDebugBarTest` | die zwei Registries, die Gesamtzahl, die Zahlen der Leiste, die neuen Problemarten |
 | `expDebugBarUserTest` | die Registerkarte Benutzer: die Teile des Schlüssels im Ansichts-Cache, die vom Benutzer abhängen, und jeder ignore-Tweak, der Schlüssel der Präferenzen gegenüber dem Code, den er ersetzt hat, die Präferenzen jedes Ansichtsmodus (ein Name mit zwei Standardwerten), der Fingerabdruck, das Profil aus dem Schlüssel einer Ansicht (Teile, die ein Listener weggelassen oder geändert hat, pr_user), anonyme Besucher, der Chip, die maskierte Registerkarte, der Text zum Kopieren. Ohne Datenbank |
 | `expDebugBarPoliciesTest` | die Richtlinien der Registerkarte Benutzer (UP-01 bis UP-04, UP-06 bis UP-08): Zeilen und Einschränkungswerte als eine sortierte Liste, die Auswahl nach Rolle und nach Suche (Modul/Funktion, Rollenname, Klassenname, Einschränkung, gespeicherter Wert), eine Suche nach Modul und Funktion, die auch die gewährenden Platzhalter findet, eine Zeile mit lesbaren Werten, der Abschnitt nur für Berechtigte mit der Adresse für die Rollen-Links, die Wörter des Skripts, die Abfragen in Blöcken zu 500 IDs, 600 Richtlinien von 300 Rollen. Ohne Datenbank |
-| `expDebugBarUserPoliciesTest` | wer die Registerkarte Benutzer sieht und wie ihre Richtlinien angefragt werden (UP-05 unter beiden Werten von ReadAccess, UP-09, UP-10, UP-11 ReadAccess und die Cache-Liste ohne Formular für einen Leser): die Argumente von `expdebugbar::policies` im Pfad und was abgelehnt wird, die Anfrage des Skripts ohne Query-String. Ohne Datenbank |
+| `expDebugBarUserPoliciesTest` | wer die Registerkarte Benutzer sieht und wie ihre Richtlinien angefragt werden (UP-05 unter beiden Werten von ReadAccess, UP-09, UP-10, UP-11 ReadAccess und die Cache-Liste ohne Formular für einen Leser, UP-12 wer über die Debug-Ausgabe liest, erhält keine Daten anderer): die Argumente von `expdebugbar::policies` im Pfad und was abgelehnt wird, die Anfrage des Skripts ohne Query-String. Ohne Datenbank |
 | `expDebugBarSessionTest` | der Abschnitt Session der Registerkarte Benutzer (US-01 bis US-06): Schlüssel nach der Extension gruppiert, die sie einleitet, der Kernel zuerst; Geheimnisse maskiert samt allem darunter, die Masken aus debugbar.ini oder die Vorgaben, eine ungültige Maske als Text; Typ, Größe, gekürzte Zeichenketten, Binärwerte als Hex, Objekte mit allen Eigenschaften; die Grenzen für Tiefe, Kinder und Einträge; die gekürzte Session-ID; der Abschnitt für alle, die die Registerkarte sehen, Wörter und Anfrage des Skripts. Ohne Session |
 
 `expDebugBarSettingsTest` startet den Kernel einmal im Siteaccess admin mit der eigenen Datenbank der Installation, wie
@@ -548,12 +548,24 @@ Caches leeren brauchen immer `setup/setup` bzw. `setup/managecache` und das Form
 
 | ReadAccess | Wer liest |
 |---|---|
-| `debug` (Standard) | jeder, der die Debug-Ausgabe erhält (`DebugByIP`, `DebugByUser`), angemeldet oder nicht, liest alles: die Einstellungen mit ihren Werten, die IP- und die Benutzerliste, das Änderungsprotokoll und den IP-Test, die Cache-Liste, die Richtlinien seiner Rollen, Speicherpfad und Handler-Klasse der Session, die Registerkarten Benutzer und Rendering, die Versionen von PHP und Exponential, OPcache und APCu, Prozess und Host |
+| `debug` (Standard) | jeder, der die Debug-Ausgabe erhält (`DebugByIP`, `DebugByUser`), angemeldet oder nicht, liest alles außer den Daten anderer: die Einstellungen mit ihren Werten (IP- und Benutzerliste maskiert), das Änderungsprotokoll ohne den Urheber jeder Änderung, den IP-Test nur für die eigene Adresse, die Cache-Liste, die Richtlinien seiner Rollen, Speicherpfad und Handler-Klasse der Session, die Registerkarten Benutzer und Rendering, die Versionen von PHP und Exponential, OPcache und APCu, Prozess und Host |
 | `privileged` | die strengere Regel: Einstellungen, Protokoll, IP-Test und Richtlinien für `setup/setup`, die Cache-Liste für `setup/managecache`, Versionen, OPcache und APCu für beide; die Registerkarten Benutzer und Rendering für `setup/setup` und für einen anonymen Besucher, der die Debug-Ausgabe erhält |
 
 Wer die Debug-Ausgabe erhält, entscheiden die IP- und die Benutzerliste (unten): Unter `debug` sind sie die Liste
 derer, die die Leiste lesen. Eine Website, die die Debug-Ausgabe an Besucher gibt, denen sie die Konfiguration nicht
 anvertraut, setzt `ReadAccess=privileged`.
+
+**Warnung: Debug-Ausgabe auf einer öffentlichen Adresse zeigt jedem Besucher seine eigene Session.** Mit
+`DebugOutput=enabled` und ausgeschaltetem `DebugByIP` (oder einer IP-Liste, die öffentliche Netze erfasst) erhält jeder
+Besucher die Debug-Ausgabe und liest unter `ReadAccess=debug` die Registerkarte Benutzer mit seiner eigenen PHP-Session
+(Geheimnisse nach Name und Wert maskiert), seinen Rollen, Richtlinien und Präferenzen sowie die Debug-Einstellungen der
+Website mit ihren Dateipfaden. Niemand liest je die Session oder die Benutzerdaten eines anderen Besuchers: Die
+Session-Antwort ist nur die eigene Session der Anfrage, `no-store`, für einen angemeldeten Benutzer ein POST mit dem
+Formular-Token; wer ohne `setup/setup` liest, erhält das Änderungsprotokoll ohne den Urheber jeder Änderung
+(Benutzer-ID, Login und Adresse), IP- und Benutzerliste maskiert und den IP-Test nur für die eigene Adresse
+(`expDebugBarServerFunctions::readsWithoutPolicy()`, `forReader()`, `listsMasked()`, `ownIpAnswer()`). Trotzdem gilt:
+**Im Produktivbetrieb `ReadAccess=privileged` setzen** und die Debug-Ausgabe auf eine IP- oder Benutzerliste
+beschränken.
 
 ### Wer Debug erhält: die IP-Liste und die Benutzerliste
 

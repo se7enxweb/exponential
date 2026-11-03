@@ -86,7 +86,10 @@ Wer den Debug-Bericht erhält, liest standardmäßig alles, was die Leiste zeigt
 ändern braucht die Richtlinie `setup/setup`, einen Cache zu leeren `setup/managecache`, beides mit dem Formular-Token.
 `debugbar.ini [DebugBarSettings] ReadAccess=privileged` beschränkt auch das Lesen auf diese Richtlinien, die strengere
 Regel; eine Website, die den Debug-Bericht an Besucher gibt, denen sie ihre Konfiguration nicht
-anvertraut, setzt es ([Details](../../bc/6.0/debug-leiste.md#wer-was-lesen-darf-readaccess)).
+anvertraut, setzt es ([Details](../../bc/6.0/debug-leiste.md#wer-was-lesen-darf-readaccess)). Niemand liest die
+Daten anderer: Die Session ist immer die eigene des Besuchers, das Änderungsprotokoll kommt ohne den Urheber jeder
+Änderung, IP- und Benutzerliste sind für Leser ohne `setup/setup` maskiert. Debug-Ausgabe auf einer öffentlichen
+Adresse zeigt jedem Besucher seine eigene Session: Im Produktivbetrieb `ReadAccess=privileged` setzen.
 
 ## Einstellungen
 

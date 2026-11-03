@@ -405,7 +405,7 @@ class expDebugBarSessionTest extends PHPUnit\Framework\TestCase
                          '~\$_(GET|POST|REQUEST|COOKIE)~' ) as $pattern )
             $this->assertDoesNotMatchRegularExpression( $pattern, $class, $pattern );
         $functions = file_get_contents( $root . '/kernel/classes/debugbar/expdebugbarserverfunctions.php' );
-        $this->assertMatchesRegularExpression( '~public static function session\( \$args \)\s*\{(?:(?!\$args).)*?return expDebugBarSession::current\( self::canWrite\(\) \);~s',
+        $this->assertMatchesRegularExpression( '~public static function session\( \$args \)\s*\{(?:(?!\$args).)*?return expDebugBarSession::current\( self::canReadSetup\(\) \);~s',
                                                $functions, 'the arguments are never used' );
         $this->assertStringContainsString( "header( 'Cache-Control: private, no-store, max-age=0' );", $functions );
     }

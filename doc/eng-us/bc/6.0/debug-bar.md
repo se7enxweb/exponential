@@ -292,7 +292,7 @@ php vendor/bin/phpunit tests/tests/kernel/classes/debugbar/
 | `RadSurveyDebugBarTest` | the two registries, the total, the bar's figures, the new problem kinds |
 | `expDebugBarPoliciesTest` | the policies of the User tab (UP-01 to UP-04, UP-06 to UP-08): rows and limitation values as one sorted list, the selection by role and by search (module/function, role name, class name, limitation, stored value), a search for a module and function that also finds the wildcards granting it, a row with readable values, the section only for those allowed, with the address for the role links, the script's words, the queries in chunks of 500 ids, 600 policies of 300 roles. No database |
 | `expDebugBarUserTest` | the User tab: the user's parts of the view cache key and each ignore tweak, the preferences key against the code it replaced, the preferences of every view mode (one name with two defaults), the fingerprint, the profile from a view's key (parts a listener left out or changed, pr_user), anonymous visitors, the chip, the tab escaped, the copy text. No database |
-| `expDebugBarUserPoliciesTest` | who sees the User tab, and how its policies are asked for (UP-05 under both values of ReadAccess, UP-09, UP-10, UP-11 ReadAccess and the cache list without its form for a reader): the arguments of `expdebugbar::policies` in the path and what is refused, the script's request without a query string. No database |
+| `expDebugBarUserPoliciesTest` | who sees the User tab, and how its policies are asked for (UP-05 under both values of ReadAccess, UP-09, UP-10, UP-11 ReadAccess and the cache list without its form for a reader, UP-12 a reader by the debug output gets nobody else's data): the arguments of `expdebugbar::policies` in the path and what is refused, the script's request without a query string. No database |
 | `expDebugBarSessionTest` | the section Session of the User tab (US-01 to US-06): keys grouped by the extension that prefixes them, the kernel first; secrets masked with everything below them, the masks of debugbar.ini or the defaults, an invalid mask taken as text; a node's type, size, cut strings, binary as hex, objects with every property; the limits of depth, children and entries; the shortened session id; the section offered to whoever sees the tab, the script's words and request. No session |
 
 `expDebugBarSettingsTest` starts the kernel once on the admin siteaccess with the installation's own database, as
@@ -511,12 +511,22 @@ caches always need `setup/setup` and `setup/managecache`, with the form token (`
 
 | ReadAccess | Who reads |
 |---|---|
-| `debug` (the default) | whoever gets the debug output (`DebugByIP`, `DebugByUser`), logged in or not, reads everything: the settings with their values, the IP and user lists, the change log and the IP test, the cache list, the policies of their roles, the session's save path and handler class, the User and the Rendering tab, the versions of PHP and Exponential, OPcache and APCu, the process and the host |
+| `debug` (the default) | whoever gets the debug output (`DebugByIP`, `DebugByUser`), logged in or not, reads everything but other people's data: the settings with their values (the IP and the user list masked), the change log without who made each change, the IP test for their own address only, the cache list, the policies of their roles, the session's save path and handler class, the User and the Rendering tab, the versions of PHP and Exponential, OPcache and APCu, the process and the host |
 | `privileged` | the stricter rule: the settings, the log, the IP test and the policies for `setup/setup`, the cache list for `setup/managecache`, the versions, OPcache and APCu for either; the User and the Rendering tab for `setup/setup` and for an anonymous visitor who gets the debug output |
 
 Who gets the debug output is decided by the IP and the user list (below): under `debug` they are the list of who reads
 the bar. A site that gives the debug output to visitors it does not trust with the configuration sets
 `ReadAccess=privileged`.
+
+**Warning: debug output on a public address shows each visitor their own session.** With `DebugOutput=enabled` and
+`DebugByIP` disabled (or an IP list that matches public networks) every visitor gets the debug output, and under
+`ReadAccess=debug` reads the User tab with their own PHP session (secrets masked by name and by value), their roles,
+policies and preferences, and the site's debug settings with their file paths. Nobody ever reads another visitor's
+session or user data: the session answer is the request's own session only, `no-store`, and for a signed-in user
+a POST with the form token; a reader without `setup/setup` gets the change log without who made each change (user
+id, login and address), the IP and the user list masked and the IP test only for their own address
+(`expDebugBarServerFunctions::readsWithoutPolicy()`, `forReader()`, `listsMasked()`, `ownIpAnswer()`). Still,
+**set `ReadAccess=privileged` in production**, and keep the debug output to an IP or user list.
 
 ### Who gets debug: the IP list and the user list
 
