@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>Биринчи баракка өтүү</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Башка</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>Акыркы 7 күн</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Өз мөөнөтү</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Бардык сөздөр</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Каалаган сөз</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Так сөз айкашы</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Тиешелүүлүк</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Аталышы А–Я</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Аталышы Я–А</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Өзгөртүлгөн, адегенде эң жаңысы</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Өзгөртүлгөн, адегенде эң эскиси</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Жарыяланган, адегенде эң жаңысы</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Жарыяланган, адегенде эң эскиси</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Өзгөртүлгөн</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Чыпкалар</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Чыпкаларды көрсөтүү</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Чыпкаларды жашыруу</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Баштапкы абалга келтирүү</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Колдонуу</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Сөздөр</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Мазмун түрү</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Дагы көрсөтүү (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Анын атрибуттарынын биринен издөө үчүн бир мазмун түрүн тандаңыз.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Бөлүм</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Булак</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Чейин</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Башталыш күнү жарактуу күн эмес.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Аяктоо күнү жарактуу күн эмес.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Ээси</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>Колдонуучунун ID, логин же электрондук почта дареги.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>«%input» боюнча колдонуучу табылган жок.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Тил</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Каалаган тил</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Орду</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count орду</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Бетке жыйынтыктар</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>«%text» боюнча жыйынтыктар (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Жыйынтыктар (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Иреттөө шарты</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Иреттөө</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Активдүү чыпкалар</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Бул чыпканы алып салуу</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Же чыпкаларды тандап, аларга дал келген мазмунду тизмелөө үчүн колдонуңуз.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Сөздөрдү киргизгенден кийин чыпкалар издөөнү тарытат.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>«%text» боюнча жыйынтык табылган жок.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Жыйынтык табылган жок.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Жогорудагы чыпкалардын бирин алып салыңыз.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Котормолор</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Аракеттер</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>%name түзөтүү</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Түзөтүү</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Help center</source>
         <translation>Жардам борбору</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Мазмун</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Документтин барактары</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Колдонуучулар</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Мазмун класстары</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Башкаруу</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>%number-барак</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Бардык жыйынтыктарды көрүү</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count жыйынтык</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Бир жыйынтык</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count сунуш</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Сунуштар жок</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Сунуштарды жүктөө мүмкүн болгон жок.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Сунуштар</translation>
     </message>
 </context>
 <context>

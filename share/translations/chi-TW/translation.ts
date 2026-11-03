@@ -5167,6 +5167,210 @@
         <source>Go to the first page</source>
         <translation>移至第一頁</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>其他</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>最近 7 天</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>自訂範圍</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>所有字詞</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>任一字詞</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>完全相符的詞組</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>相關性</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>名稱 A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>名稱 Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>修改時間，最新的在前</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>修改時間，最舊的在前</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>發布時間，最新的在前</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>發布時間，最舊的在前</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>修改時間</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>篩選條件</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>顯示篩選條件</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>隱藏篩選條件</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>重設</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>套用</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>字詞</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>內容類型</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>顯示更多（%count）</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>請選擇一個內容類型，以便在其某個屬性中搜尋。</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>區段</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>從</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>至</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>開始日期不是有效的日期。</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>結束日期不是有效的日期。</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>擁有者</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>使用者 ID、登入名稱或電子郵件地址。</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>找不到符合「%input」的使用者。</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>語言</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>任何語言</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>位置</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count 個位置</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>每頁結果數</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>「%text」的結果（%count）</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>結果（%count）</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>排序依據</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>排序</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>使用中的篩選條件</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>移除此篩選條件</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>或選擇篩選條件並套用，以列出符合的內容。</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>輸入字詞後，篩選條件會縮小搜尋範圍。</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>找不到「%text」的結果。</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>找不到結果。</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>請移除上方的一個篩選條件。</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>翻譯</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>動作</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>編輯 %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>編輯</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13909,6 +14113,61 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Help center</source>
         <translation>說明中心</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>內容</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>文件頁面</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>使用者</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>內容類別</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>管理</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>第 %number 頁</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>檢視所有結果</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count 個結果</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>1 個結果</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count 個建議</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>沒有建議</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>無法載入建議。</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>建議</translation>
     </message>
 </context>
 <context>

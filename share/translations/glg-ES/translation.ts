@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>Ir á primeira páxina</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Outro</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>Últimos 7 días</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Intervalo personalizado</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Todas as palabras</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Calquera palabra</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Frase exacta</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Relevancia</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Nome A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Nome Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Modificado, máis recente primeiro</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Modificado, máis antigo primeiro</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Publicado, máis recente primeiro</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Publicado, máis antigo primeiro</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Modificado</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Filtros</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Amosar filtros</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Agochar filtros</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Restablecer</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Aplicar</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Palabras</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Tipo de contido</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Amosar máis (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Escolla un tipo de contido para buscar nun dos seus atributos.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Sección</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>De</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Para</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>A data de inicio non é unha data válida.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>A data de fin non é unha data válida.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Propietario</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>ID de usuario, nome de acceso ou enderezo de correo electrónico.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>Non se atopou ningún usuario para «%input».</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Idioma</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Calquera idioma</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Localización</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count localizacións</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Resultados por páxina</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Resultados para «%text» (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Resultados (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Ordenar por</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Ordenar</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Filtros activos</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Quitar este filtro</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Ou escolla filtros e aplíqueos para listar o contido que coincide con eles.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Os filtros restrinxen a busca unha vez que escribiu palabras.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>Non se atoparon resultados para «%text».</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Non se atoparon resultados.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Quite un dos filtros de arriba.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Traducións</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Accións</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>Editar %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Editar</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Nota: os paquetes non se desinstalarán.</translation>
     <message>
         <source>Help center</source>
         <translation>Centro de axuda</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Contido</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Páxinas de documentos</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Usuarios</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Clases de contido</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Administración</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Páxina %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Ver todos os resultados</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count resultados</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Un resultado</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count suxestións</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Sen suxestións</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Non se puideron cargar as suxestións.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Suxestións</translation>
     </message>
 </context>
 <context>

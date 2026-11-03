@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>Ke halaman pertama</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Lainnya</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>7 hari terakhir</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Rentang khusus</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Semua kata</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Kata apa saja</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Frasa persis</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Relevansi</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Nama A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Nama Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Diubah, terbaru dahulu</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Diubah, terlama dahulu</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Diterbitkan, terbaru dahulu</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Diterbitkan, terlama dahulu</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Diubah</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Filter</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Tampilkan filter</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Sembunyikan filter</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Atur ulang</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Terapkan</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Kata</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Tipe konten</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Tampilkan lebih banyak (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Pilih satu tipe konten untuk mencari di salah satu atributnya.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Seksi</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Dari</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Sampai</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Tanggal mulai bukan tanggal yang valid.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Tanggal akhir bukan tanggal yang valid.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Pemilik</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>ID pengguna, nama login, atau alamat e-mail.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>Tidak ada pengguna yang ditemukan untuk “%input”.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Bahasa</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Bahasa apa saja</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Lokasi</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count lokasi</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Hasil per halaman</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Hasil untuk “%text” (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Hasil (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Urutkan menurut</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Urutkan</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Filter aktif</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Hapus filter ini</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Atau pilih filter dan terapkan untuk menampilkan konten yang cocok.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Filter mempersempit pencarian setelah Anda mengetik kata.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>Tidak ada hasil yang ditemukan untuk “%text”.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Tidak ada hasil yang ditemukan.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Hapus salah satu filter di atas.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Terjemahan</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Tindakan</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>Sunting %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Sunting</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Catatan: Paket tidak akan dicopot.</translation>
     <message>
         <source>Help center</source>
         <translation>Pusat bantuan</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Konten</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Halaman dokumen</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Pengguna</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Kelas konten</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Administrasi</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Halaman %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Lihat semua hasil</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count hasil</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Satu hasil</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count saran</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Tidak ada saran</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Saran tidak dapat dimuat.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Saran</translation>
     </message>
 </context>
 <context>

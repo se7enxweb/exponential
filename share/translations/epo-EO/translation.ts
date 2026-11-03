@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>Iri al la unua paĝo</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Alia</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>Lastaj 7 tagoj</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Propra periodo</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Ĉiuj vortoj</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Iu ajn vorto</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Preciza frazo</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Rilateco</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Nomo A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Nomo Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Modifita, plej novaj unue</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Modifita, plej malnovaj unue</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Publikigita, plej novaj unue</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Publikigita, plej malnovaj unue</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Modifita</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Filtriloj</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Montri filtrilojn</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Kaŝi filtrilojn</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Restarigi</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Apliki</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Vortoj</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Enhavotipo</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Montri pli (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Elektu unu enhavotipon por serĉi en unu el ĝiaj atributoj.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Sekcio</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>El</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Al</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>La komenca dato ne estas valida dato.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>La fina dato ne estas valida dato.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Posedanto</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>Uzanto-ID, salutnomo aŭ retpoŝtadreso.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>Neniu uzanto troviĝis por “%input”.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Lingvo</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Iu ajn lingvo</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Loko</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count lokoj</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Rezultoj po paĝo</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Rezultoj por “%text” (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Rezultoj (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Ordigi laŭ</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Ordigi</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Aktivaj filtriloj</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Forpreni ĉi tiun filtrilon</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Aŭ elektu filtrilojn kaj apliku ilin por listigi la kongruan enhavon.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>La filtriloj malvastigas la serĉon post kiam vi tajpis vortojn.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>Neniuj rezultoj troviĝis por “%text”.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Neniuj rezultoj troviĝis.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Forigu filtrilon supre.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Tradukoj</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Agoj</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>Redakti %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Redakti</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Noto: La pakoj ne estos malinstalitaj.</translation>
     <message>
         <source>Help center</source>
         <translation>Helpcentro</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Enhavo</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Dokumentpaĝoj</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Uzantoj</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Enhavoklasoj</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Administrado</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Paĝo %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Vidi ĉiujn rezultojn</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count rezultoj</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Unu rezulto</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count sugestoj</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Neniuj sugestoj</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>La sugestoj ne povis esti ŝargitaj.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Sugestoj</translation>
     </message>
 </context>
 <context>

@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>Mandehana any amin'ny pejy voalohany</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Hafa</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>7 andro farany</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Fe-potoana manokana</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Teny rehetra</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Teny iray na inona na inona</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Fehezanteny marina tsara</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Fifandraisana</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Anarana A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Anarana Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Novaina, ny vaovao indrindra aloha</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Novaina, ny tranainy indrindra aloha</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Navoaka, ny vaovao indrindra aloha</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Navoaka, ny tranainy indrindra aloha</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Novaina</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Sivana</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Asehoy ny sivana</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Afeno ny sivana</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Avereno amin'ny aloha</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Ampiharo</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Teny</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Karazana votoaty</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Asehoy bebe kokoa (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Mifidiana karazana votoaty iray hikarohana amin'ny iray amin'ireo toetrany.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Fizarana</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Avy any</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Ho an'ny</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Tsy daty manan-kery ny daty fanombohana.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Tsy daty manan-kery ny daty fiafarana.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Tompony</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>ID mpampiasa, anarana fidirana na adiresy mailaka.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>Tsy nahitana mpampiasa ho an'ny “%input”.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Fiteny</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Fiteny rehetra</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Toerana</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>Toerana %count</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Valiny isaky ny pejy</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Valiny ho an'ny “%text” (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Valiny (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Alaharo araka ny</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Fampilaharana</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Sivana mavitrika</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Esory ity sivana ity</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Na mifidiana sivana ary ampiharo mba hanehoana ny votoaty mifanaraka.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Manery ny fikarohana ny sivana rehefa avy nanoratra teny ianao.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>Tsy nahitana valiny ho an'ny “%text”.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Tsy nahitana valiny.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Esory ny sivana iray etsy ambony.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Fandikana</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Hetsika</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>Ovay %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Ovay</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Fanamarihana: Tsy hesorina ny fametrahan'ny fonosana.</translation>
     <message>
         <source>Help center</source>
         <translation>Foibe fanampiana</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Votoaty</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Pejin'ny antontan-taratasy</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Mpampiasa</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Kilasy votoaty</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Fitantanana</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Pejy %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Jereo ny valiny rehetra</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>Valiny %count</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Valiny iray</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>Soso-kevitra %count</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Tsy misy soso-kevitra</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Tsy azo nalaina ny soso-kevitra.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Soso-kevitra</translation>
     </message>
 </context>
 <context>

@@ -5167,6 +5167,210 @@
         <source>Go to the first page</source>
         <translation>ಮೊದಲ ಪುಟಕ್ಕೆ ಹೋಗಿ</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>ಇತರೆ</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>ಕಳೆದ 7 ದಿನಗಳು</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>ಕಸ್ಟಮ್ ಅವಧಿ</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>ಎಲ್ಲಾ ಪದಗಳು</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>ಯಾವುದೇ ಪದ</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>ನಿಖರ ಪದಗುಚ್ಛ</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>ಪ್ರಸ್ತುತತೆ</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>ಹೆಸರು ಅ–ಳ</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>ಹೆಸರು ಳ–ಅ</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>ಮಾರ್ಪಡಿಸಲಾಗಿದೆ, ಹೊಸದು ಮೊದಲು</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>ಮಾರ್ಪಡಿಸಲಾಗಿದೆ, ಹಳೆಯದು ಮೊದಲು</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>ಪ್ರಕಟಿಸಲಾಗಿದೆ, ಹೊಸದು ಮೊದಲು</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>ಪ್ರಕಟಿಸಲಾಗಿದೆ, ಹಳೆಯದು ಮೊದಲು</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>ಮಾರ್ಪಡಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>ಫಿಲ್ಟರ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>ಫಿಲ್ಟರ್‌ಗಳನ್ನು ತೋರಿಸು</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>ಫಿಲ್ಟರ್‌ಗಳನ್ನು ಮರೆಮಾಡು</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>ಮರುಹೊಂದಿಸು</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>ಅನ್ವಯಿಸು</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>ಪದಗಳು</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>ವಿಷಯದ ಪ್ರಕಾರ</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>ಇನ್ನಷ್ಟು ತೋರಿಸು (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>ಅದರ ಗುಣಲಕ್ಷಣಗಳಲ್ಲಿ ಒಂದರಲ್ಲಿ ಹುಡುಕಲು ಒಂದು ವಿಷಯದ ಪ್ರಕಾರವನ್ನು ಆಯ್ಕೆಮಾಡಿ.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>ವಿಭಾಗ</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>ಇಂದ</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>ಗೆ</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>ಪ್ರಾರಂಭ ದಿನಾಂಕವು ಮಾನ್ಯ ದಿನಾಂಕವಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>ಅಂತಿಮ ದಿನಾಂಕವು ಮಾನ್ಯ ದಿನಾಂಕವಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>ಮಾಲೀಕ</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>ಬಳಕೆದಾರ ID, ಲಾಗಿನ್ ಅಥವಾ ಇ-ಮೇಲ್ ವಿಳಾಸ.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>“%input” ಗಾಗಿ ಯಾವುದೇ ಬಳಕೆದಾರ ಕಂಡುಬಂದಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>ಭಾಷೆ</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>ಯಾವುದೇ ಭಾಷೆ</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>ಸ್ಥಳ</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count ಸ್ಥಳಗಳು</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>ಪ್ರತಿ ಪುಟಕ್ಕೆ ಫಲಿತಾಂಶಗಳು</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>“%text” ಗಾಗಿ ಫಲಿತಾಂಶಗಳು (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>ಫಲಿತಾಂಶಗಳು (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>ಇದರಂತೆ ವಿಂಗಡಿಸಿ</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>ವಿಂಗಡಿಸು</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>ಸಕ್ರಿಯ ಫಿಲ್ಟರ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>ಈ ಫಿಲ್ಟರ್ ಅನ್ನು ತೆಗೆದುಹಾಕಿ</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>ಅಥವಾ ಹೊಂದಾಣಿಕೆಯಾಗುವ ವಿಷಯವನ್ನು ಪಟ್ಟಿ ಮಾಡಲು ಫಿಲ್ಟರ್‌ಗಳನ್ನು ಆಯ್ಕೆಮಾಡಿ ಮತ್ತು ಅನ್ವಯಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>ನೀವು ಪದಗಳನ್ನು ಟೈಪ್ ಮಾಡಿದ ನಂತರ ಫಿಲ್ಟರ್‌ಗಳು ಹುಡುಕಾಟವನ್ನು ಕಿರಿದಾಗಿಸುತ್ತವೆ.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>“%text” ಗಾಗಿ ಯಾವುದೇ ಫಲಿತಾಂಶಗಳು ಕಂಡುಬಂದಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>ಯಾವುದೇ ಫಲಿತಾಂಶಗಳು ಕಂಡುಬಂದಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>ಮೇಲಿನ ಒಂದು ಫಿಲ್ಟರ್ ಅನ್ನು ತೆಗೆದುಹಾಕಿ.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>ಅನುವಾದಗಳು</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>ಕ್ರಿಯೆಗಳು</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>%name ಸಂಪಾದಿಸು</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>ಸಂಪಾದಿಸು</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13909,6 +14113,61 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Help center</source>
         <translation>ಸಹಾಯ ಕೇಂದ್ರ</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>ವಿಷಯ</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>ದಾಖಲೆ ಪುಟಗಳು</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>ಬಳಕೆದಾರರು</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>ವಿಷಯ ವರ್ಗಗಳು</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>ಆಡಳಿತ</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>ಪುಟ %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>ಎಲ್ಲಾ ಫಲಿತಾಂಶಗಳನ್ನು ನೋಡಿ</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count ಫಲಿತಾಂಶಗಳು</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>ಒಂದು ಫಲಿತಾಂಶ</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count ಸಲಹೆಗಳು</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>ಯಾವುದೇ ಸಲಹೆಗಳಿಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>ಸಲಹೆಗಳನ್ನು ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>ಸಲಹೆಗಳು</translation>
     </message>
 </context>
 <context>

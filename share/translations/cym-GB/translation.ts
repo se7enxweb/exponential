@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>Mynd i'r dudalen gyntaf</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Arall</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>7 diwrnod diwethaf</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Ystod bersonol</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Pob gair</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Unrhyw air</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Union ymadrodd</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Perthnasedd</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Enw A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Enw Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Addaswyd, y mwyaf newydd yn gyntaf</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Addaswyd, yr hynaf yn gyntaf</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Cyhoeddwyd, y mwyaf newydd yn gyntaf</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Cyhoeddwyd, yr hynaf yn gyntaf</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Addaswyd</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Hidlwyr</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Dangos hidlwyr</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Cuddio hidlwyr</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Ailosod</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Gweithredu</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Geiriau</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Math o gynnwys</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Dangos rhagor (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Dewiswch un math o gynnwys i chwilio yn un o'i briodoleddau.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Adran</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>O</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>I</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Nid yw'r dyddiad dechrau yn ddyddiad dilys.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Nid yw'r dyddiad gorffen yn ddyddiad dilys.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Perchennog</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>ID defnyddiwr, enw mewngofnodi neu gyfeiriad e-bost.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>Ni chafwyd hyd i ddefnyddiwr ar gyfer ‘%input’.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Iaith</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Unrhyw iaith</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Lleoliad</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count lleoliad</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Canlyniadau fesul tudalen</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Canlyniadau ar gyfer ‘%text’ (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Canlyniadau (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Didoli yn ôl</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Didoli</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Hidlwyr gweithredol</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Tynnu'r hidlydd hwn</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Neu dewiswch hidlwyr a'u gweithredu i restru'r cynnwys sy'n cyfateb iddynt.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Mae'r hidlwyr yn culhau'r chwiliad ar ôl i chi deipio geiriau.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>Ni chafwyd canlyniadau ar gyfer ‘%text’.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Ni chafwyd canlyniadau.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Tynnwch un o'r hidlwyr uchod.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Cyfieithiadau</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Gweithredoedd</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>Golygu %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Golygu</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Sylwer: ni fydd y pecynnau'n cael eu dadosod.</translation>
     <message>
         <source>Help center</source>
         <translation>Canolfan gymorth</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Cynnwys</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Tudalennau dogfennau</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Defnyddwyr</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Dosbarthiadau cynnwys</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Gweinyddu</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Tudalen %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Gweld pob canlyniad</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count canlyniad</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Un canlyniad</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count awgrym</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Dim awgrymiadau</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Nid oedd modd llwytho'r awgrymiadau.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Awgrymiadau</translation>
     </message>
 </context>
 <context>

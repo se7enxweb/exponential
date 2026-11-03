@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>प्रथमं पृष्ठं गच्छतु</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>अन्यत्</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>अन्तिमाः 7 दिवसाः</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>स्वनिर्धारिता अवधिः</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>सर्वे शब्दाः</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>कोऽपि शब्दः</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>यथार्थं वाक्यांशम्</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>प्रासङ्गिकता</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>नाम अ–ज्ञ</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>नाम ज्ञ–अ</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>परिवर्तितम्, नवीनतमं प्रथमम्</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>परिवर्तितम्, प्राचीनतमं प्रथमम्</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>प्रकाशितम्, नवीनतमं प्रथमम्</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>प्रकाशितम्, प्राचीनतमं प्रथमम्</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>परिवर्तितम्</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>छानकाः</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>छानकान् दर्शयतु</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>छानकान् गोपयतु</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>पुनःस्थापनम्</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>प्रयोगः</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>शब्दाः</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>विषयप्रकारः</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>अधिकं दर्शयतु (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>तस्य कस्मिंश्चित् गुणे अन्वेष्टुम् एकं विषयप्रकारं चिनोतु।</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>विभागः</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>स्रोतः</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>प्रति</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>आरम्भदिनाङ्कः मान्यः दिनाङ्कः नास्ति।</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>अन्तिमदिनाङ्कः मान्यः दिनाङ्कः नास्ति।</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>स्वामी</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>उपयोक्तृ-ID, प्रवेशनाम वा ई-मेल-सङ्केतः।</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>“%input” इत्यस्य कोऽपि उपयोक्ता न लब्धः।</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>भाषा</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>काऽपि भाषा</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>स्थानम्</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count स्थानानि</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>प्रतिपृष्ठं फलानि</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>“%text” इत्यस्य फलानि (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>फलानि (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>क्रमणम् आधारेण</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>क्रमणम्</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>सक्रियाः छानकाः</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>इमं छानकम् अपसारयतु</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>अथवा छानकान् चित्वा प्रयुज्य तदनुरूपं विषयवस्तु सूचयतु।</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>शब्दान् लिखितवत्सु छानकाः अन्वेषणं संकुचितं कुर्वन्ति।</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>“%text” इत्यस्य किमपि फलं न लब्धम्।</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>किमपि फलं न लब्धम्।</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>उपरि एकं छानकम् अपसारयतु।</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>अनुवादाः</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>क्रियाः</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>%name सम्पादयतु</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>सम्पादनम्</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Help center</source>
         <translation>साहाय्यकेन्द्रम्</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>विषयवस्तु</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>प्रलेखपृष्ठानि</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>उपयोक्तारः</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>विषयवर्गाः</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>प्रशासनम्</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>पृष्ठम् %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>सर्वाणि फलानि पश्यतु</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>फलानि: %count</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>एकं फलम्</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count सूचनाः</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>सूचनाः न सन्ति</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>सूचनाः आनेतुं न शक्ताः।</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>सूचनाः</translation>
     </message>
 </context>
 <context>

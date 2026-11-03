@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>Yah haa hello adiiɗo</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Goɗɗi</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>ñalɗi 7 cakkitiiɗi</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Kelme suɓaaɗe</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Konguɗi fof</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Konngol kala</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Konngol kaɓɓingol</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Fawaade</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Innde A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Innde Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Waylaama, ɓurɗo hesɗude adan</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Waylaama, ɓurɗo hiiɗde adan</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Muuɓtinaama, ɓurɗo hesɗude adan</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Muuɓtinaama, ɓurɗo hiiɗde adan</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Waylaama</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Sooɓirde</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Hollu sooɓirde</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Suuɗ sooɓirde</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Fuɗɗitin</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Jaɓ</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Konguɗi</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Sifaa loowdi</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Hollu ko ɓuri (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Suɓo sifaa loowdi gooto ngam yiylaade e gooto e jikkuuji mum.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Taƴre</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Diga</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Haa</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Ñalnde fuɗɗoode nden moƴƴaani.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Ñalnde gasoode nden moƴƴaani.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Jom</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>ID kuutoro, innde seŋorde walla ñiiɓirde iimeel.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>Alaa kuutoro yiytaaɗo e “%input”.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Ɗemngal</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Ɗemngal kala</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Nokku</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>Nokkuuji %count</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Pirooji e hello kala</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Pirooji “%text” (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Pirooji (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Yuɓɓin e</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Yuɓɓin</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Sooɓirde ɗe ina gollii</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Itt sooɓirde ndee</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Walla suɓo sooɓirde, jaɓaa ɗe ngam hollude loowdi fottiindi e majje.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Sooɓirde ɗee ɓeydat yiylo ngo so a winndii konguɗi.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>Alaa pirooji yiytaa e “%text”.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Alaa pirooji yiytaa.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Momtu sooɓirde gooto dow.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Pirooji</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Golle</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>Waylu %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Waylu</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Maandu: Paketji ɗin ittaaka aafugo maɓɓe.</translation>
     <message>
         <source>Help center</source>
         <translation>Nokku ballal</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Loowdi</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Kelle dokimaa</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Kuutorɓe</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Sifaaji loowdi</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Toppitagol</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Hello %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Yiy pirooji fof</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>Pirooji %count</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Pirol gootol</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>Basiyaaji %count</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Alaa basiyaaji</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Basiyaaji ɗii loowaaki.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Basiyaaji</translation>
     </message>
 </context>
 <context>

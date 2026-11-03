@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>Rach dhan chiad duilleag</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Eile</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>Na 7 làithean mu dheireadh</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Raon gnàthaichte</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Na faclan uile</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Facal sam bith</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Abairt cheart</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Buntainneas</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Ainm A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Ainm Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Atharraichte, as ùire an toiseach</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Atharraichte, as sine an toiseach</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Foillsichte, as ùire an toiseach</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Foillsichte, as sine an toiseach</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Atharraichte</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Criathragan</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Seall na criathragan</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Falaich na criathragan</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Ath-shuidhich</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Cuir an sàs</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Faclan</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Seòrsa susbainte</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Seall barrachd (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Tagh aon seòrsa susbainte gus lorg a dhèanamh ann an aon dhe na buadhan aige.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Earrann</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Bho</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Gu</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Chan eil an ceann-latha tòiseachaidh dligheach.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Chan eil an ceann-latha crìochnachaidh dligheach.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Sealbhadair</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>ID cleachdaiche, ainm clàraidh no seòladh puist-d.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>Cha deach cleachdaiche a lorg airson “%input”.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Cànan</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Cànan sam bith</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Ionad</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count ionadan</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Toraidhean gach duilleag</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Toraidhean airson “%text” (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Toraidhean (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Seòrsaich a rèir</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Seòrsaich</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Criathragan gnìomhach</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Thoir air falbh a' chriathrag seo</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>No tagh criathragan is cuir an sàs iad gus an t-susbaint a fhreagras riutha a liostadh.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Cuingichidh na criathragan an lorg nuair a bhios tu air faclan a sgrìobhadh.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>Cha deach toradh a lorg airson “%text”.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Cha deach toradh a lorg.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Thoir air falbh criathrag gu h-àrd.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Eadar-theangachaidhean</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Gnìomhan</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>Deasaich %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Deasaich</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ An aire: Cha tèid na pacaidean a dhì-stàladh.</translation>
     <message>
         <source>Help center</source>
         <translation>Ionad na cobhrach</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Susbaint</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Duilleagan sgrìobhainn</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Cleachdaichean</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Clasaichean susbainte</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Rianachd</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Duilleag %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Seall na toraidhean uile</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count toraidhean</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Aon toradh</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count molaidhean</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Gun mholaidhean</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Cha b’ urrainn dhuinn na molaidhean a luchdadh.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Molaidhean</translation>
     </message>
 </context>
 <context>

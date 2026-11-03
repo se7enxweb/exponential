@@ -5167,6 +5167,210 @@
         <source>Go to the first page</source>
         <translation>Je zuwa shafin farko</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Sauran</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>Kwanaki 7 da suka gabata</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Kewayon na musamman</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Duk kalmomi</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Kowace kalma</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Ainihin jumla</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Dacewa</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Suna A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Suna Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>An gyara, sabuwa da farko</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>An gyara, tsohuwa da farko</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>An wallafa, sabuwa da farko</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>An wallafa, tsohuwa da farko</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>An gyara</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Matatun</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Nuna matatun</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Ɓoye matatun</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Sake saiti</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Aiwatar</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Kalmomi</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Nau'in abun ciki</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Nuna ƙari (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Zaɓi nau'in abun ciki ɗaya don bincika a ɗaya daga cikin halayensa.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Sashe</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Daga</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Zuwa</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Ranar farawa ba ingantacciyar rana ba ce.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Ranar ƙarshe ba ingantacciyar rana ba ce.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Mamallaki</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>ID na mai amfani, sunan shiga ko adireshin imel.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>Ba a sami mai amfani don “%input” ba.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Harshe</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Kowane harshe</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Wuri</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>Wurare %count</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Sakamako a kowane shafi</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Sakamako don “%text” (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Sakamako (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Tsara bisa</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Tsara</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Tacewar da ke aiki</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Cire wannan tace</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Ko zaɓi matatun ka aiwatar da su don jera abun cikin da ya dace da su.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Matatun suna taƙaita binciken da zarar ka rubuta kalmomi.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>Ba a sami sakamako don “%text” ba.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Ba a sami sakamako ba.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Cire matata ɗaya a sama.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Fassarori</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Ayyuka</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>Gyara %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Gyara</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13909,6 +14113,61 @@ Lura: Ba za a cire shigarwar fakitin ba.</translation>
     <message>
         <source>Help center</source>
         <translation>Cibiyar Taimako</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Abun ciki</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Shafukan takarda</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Masu amfani</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Azuzuwan abun ciki</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Gudanarwa</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Shafi %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Duba duk sakamako</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>Sakamako %count</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Sakamako ɗaya</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>Shawarwari %count</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Babu shawarwari</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Ba a iya loda shawarwarin ba.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Shawarwari</translation>
     </message>
 </context>
 <context>

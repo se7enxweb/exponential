@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>Menyang kaca kapisan</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Liyane</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>7 dina pungkasan</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Rentang dhewe</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Kabeh tembung</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Tembung apa wae</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Frasa persis</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Relevansi</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Jeneng A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Jeneng Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Diowahi, paling anyar dhisik</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Diowahi, paling lawas dhisik</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Diterbitake, paling anyar dhisik</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Diterbitake, paling lawas dhisik</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Diowahi</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Saringan</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Tampilake saringan</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Delikake saringan</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Setel maneh</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Trapake</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Tembung</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Jinis isi</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Tampilake luwih akeh (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Pilih siji jinis isi kanggo nggoleki ing salah sijine atribute.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Seksi</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Saka</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Nganti</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Tanggal wiwitan dudu tanggal sing sah.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Tanggal pungkasan dudu tanggal sing sah.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Sing nduwe</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>ID panganggo, jeneng mlebu utawa alamat e-mail.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>Ora ana panganggo sing ketemu kanggo “%input”.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Basa</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Basa apa wae</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Lokasi</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count lokasi</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Asil saben kaca</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Asil kanggo “%text” (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Asil (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Urutake miturut</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Urutake</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Saringan aktif</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Copot saringan iki</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Utawa pilih saringan lan trapake kanggo nampilake isi sing cocog.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Saringan mbatesi panggolekan sawise sampeyan ngetik tembung.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>Ora ana asil sing ketemu kanggo “%text”.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Ora ana asil sing ketemu.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Busak salah siji saringan ing ndhuwur.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Terjemahan</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Tindakan</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>Sunting %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Sunting</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Cathetan: Paket ora bakal dicopot pasangane.</translation>
     <message>
         <source>Help center</source>
         <translation>Pusat pitulung</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Isi</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Kaca dokumen</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Panganggo</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Kelas isi</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Administrasi</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Kaca %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Deleng kabeh asil</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count asil</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Siji asil</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count saran</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Ora ana saran</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Saran ora bisa dimuat.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Saran</translation>
     </message>
 </context>
 <context>

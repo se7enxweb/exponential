@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>Kɔ krataafa a ɛdi kan no so</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Afoforɔ</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>Nnansa 7 a atwam</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Bere a wo ankasa wopaw</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Nsɛmfua nyinaa</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Asɛmfua biara</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Kasasin pɔtee</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Ne ho hia</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Din A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Din Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Wɔasesa, foforɔ di kan</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Wɔasesa, dedaa di kan</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Wɔatintim, foforɔ di kan</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Wɔatintim, dedaa di kan</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Wɔasesa</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Ntwaso</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Kyerɛ ntwaso</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Fa ntwaso sie</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>San yɛ sɛ hwee</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>De yɛ adwuma</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Nsɛmfua</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Emu nsɛm su</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Kyerɛ pii (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Paw emu nsɛm su baako na hwehwɛ wɔ ne su ahodoɔ no baako mu.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Ɔfa</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Firi</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Kɔsi</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Da a ɛfiri hɔ no nyɛ da a ɛfata.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Da a ɛkɔsi hɔ no nyɛ da a ɛfata.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Wura</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>Odefoɔ ID, din a wode kɔ mu anaa e-mail address.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>Wɔanhu odefoɔ biara wɔ “%input” ho.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Kasa</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Kasa biara</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Beaeɛ</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>Beaeɛ %count</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Nea efiri mu ba wɔ krataafa biara so</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Nea efiri mu ba ma “%text” (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Nea efiri mu ba (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Hyehyɛ denam so</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Hyehyɛ</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Twa so a ɛreyɛ adwuma</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Yi twa so yi</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Anaa paw ntwaso na fa di dwuma na wo nya emu nsɛm a ɛne no hyia.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Ntwaso no tew nhwehwɛmu no so bere a woakyerɛw nsɛmfua no.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>Wɔanhu biribiara wɔ “%text” ho.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Wɔanhu biribiara.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Yi ntwaso baako a ɛwɔ soro hɔ fi hɔ.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Nkyerɛaseɛ</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Nneyɛeɛ</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>Sesa %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Sesa</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Makyerɛ: Wɔrenyi boa no afi mu a wɔde ahyɛ mu.</translation>
     <message>
         <source>Help center</source>
         <translation>Mmoa mfimfini</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Emu nsɛm</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Nkrataa mu krataafa</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Adefoɔ</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Emu nsɛm kuo</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Ahwɛsoɔ</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Krataafa %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Hwɛ nea efiri mu ba nyinaa</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>Nhwehwɛmu aba %count</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Nea efiri mu ba baako</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>Nyansahyɛ %count</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Nyansahyɛ biara nni hɔ</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Yɛantumi amfa nyansahyɛ no amma.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Nyansahyɛ</translation>
     </message>
 </context>
 <context>

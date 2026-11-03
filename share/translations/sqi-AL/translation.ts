@@ -5167,6 +5167,210 @@
         <source>Go to the first page</source>
         <translation>Shko te faqja e parë</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Të tjera</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>7 ditët e fundit</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Periudhë e personalizuar</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Të gjitha fjalët</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Çdo fjalë</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Fraza e saktë</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Rëndësia</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Emri A–Zh</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Emri Zh–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Modifikuar, më të rejat në fillim</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Modifikuar, më të vjetrat në fillim</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Publikuar, më të rejat në fillim</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Publikuar, më të vjetrat në fillim</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Modifikuar</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Filtrat</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Shfaq filtrat</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Fshih filtrat</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Rivendos</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Zbato</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Fjalët</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Lloji i përmbajtjes</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Shfaq më shumë (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Zgjidhni një lloj përmbajtjeje për të kërkuar në një nga atributet e tij.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Seksioni</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Nga</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Deri</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Data e fillimit nuk është datë e vlefshme.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Data e mbarimit nuk është datë e vlefshme.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Pronari</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>ID e përdoruesit, emri i hyrjes ose adresa e-mail.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>Nuk u gjet asnjë përdorues për “%input”.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Gjuha</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Çdo gjuhë</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Vendndodhja</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count vendndodhje</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Rezultate për faqe</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Rezultate për “%text” (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Rezultate (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Rendit sipas</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Renditja</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Filtrat aktivë</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Hiq këtë filtër</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Ose zgjidhni filtra dhe zbatojini për të listuar përmbajtjen që përputhet me ta.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Filtrat e ngushtojnë kërkimin pasi të keni shkruar fjalë.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>Nuk u gjetën rezultate për “%text”.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Nuk u gjetën rezultate.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Hiqni një filtër më sipër.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Përkthimet</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Veprimet</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>Redakto %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Redakto</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13850,6 +14054,61 @@ Shënim: paketat nuk do të çinstalohen.</translation>
     <message>
         <source>Help center</source>
         <translation>Qendra e ndihmës</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Përmbajtja</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Faqet e dokumenteve</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Përdoruesit</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Klasat e përmbajtjes</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Administrimi</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Faqja %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Shiko të gjitha rezultatet</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>Rezultate: %count</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Një rezultat</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count sugjerime</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Asnjë sugjerim</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Sugjerimet nuk mund të ngarkoheshin.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Sugjerime</translation>
     </message>
 </context>
 <context>

@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>Thiĩ ũrũa-inĩ wa mbere</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Ĩngĩ</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>Mĩthenya 7 ĩrĩa ĩhĩtũku</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Ihinda rĩrĩa wĩthurĩire</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Ciugo ciothe</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Kiugo o gĩothe</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Ciugo o ũguo</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Kũiganana</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Rĩĩtwa A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Rĩĩtwa Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Nĩ gĩcenjetio, kĩa rĩu mbere</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Nĩ gĩcenjetio, kĩa tene mbere</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Nĩ kĩrutĩtwo, kĩa rĩu mbere</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Nĩ kĩrutĩtwo, kĩa tene mbere</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Nĩ gĩcenjetio</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Thuurania</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Onania thuurania</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Hitha thuurania</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Cookia</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Hũthĩra</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Ciugo</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Mũthemba wa ũhoro</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Onania makĩria (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Thuura mũthemba ũmwe wa ũhoro nĩguo ũcarie thĩinĩ wa kĩmwe kĩa mĩtaratara yaguo.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Gĩcunjĩ</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Kuuma</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Nginya</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Mũthenya wa kwambĩrĩria ti mũthenya wagĩrĩire.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Mũthenya wa kũrĩkia ti mũthenya wagĩrĩire.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Mwene</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>ID ya mũhũthiri, rĩĩtwa rĩa gũtoonya kana adiresi ya e-mail.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>Gũtiarĩ mũhũthiri wonekire wa “%input”.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Rũthiomi</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Rũthiomi o rũothe</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Handũ</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>Handũ %count</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Maciaro o rũpapura</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Maciaro ma “%text” (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Maciaro (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Bange kũringana na</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Bange</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Thuurania iria irĩ wĩra-inĩ</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Ehereria thuurania ĩno</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Kana thuura thuurania na ũcihũthĩre nĩguo wone ũhoro ũrĩa ũiganainie nacio.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Thuurania nĩ inyihagia mũcario warĩkia kwandĩka ciugo.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>Gũtiarĩ maciaro monekire ma “%text”.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Gũtiarĩ maciaro monekire.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Eheria thuurania ĩmwe igũrũ.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Ũtaũri</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Ciĩko</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>Cenjia %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Cenjia</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Rũmbũiya: Ikĩohe ndigaruta mũingĩrĩrie.</translation>
     <message>
         <source>Help center</source>
         <translation>Kĩrĩndĩ kĩa ũteithio</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Ũhoro</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Mapapura ma ndogumendi</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Ahũthiri</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Irathi cia ũhoro</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Ũrũgamĩrĩri</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Rũpapura %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Rora maciaro mothe</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>Maciaro %count</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Gĩciaro kĩmwe</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>Mataaro %count</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Gũtirĩ mataaro</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Mataaro matingĩahotire gũtoonyio.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Mataaro</translation>
     </message>
 </context>
 <context>

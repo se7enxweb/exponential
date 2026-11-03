@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>প্ৰথম পৃষ্ঠালৈ যাওক</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>অন্যান্য</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>যোৱা ৭ দিন</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>নিজৰ পছন্দৰ সময়সীমা</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>সকলো শব্দ</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>যিকোনো শব্দ</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>হুবহু বাক্যাংশ</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>প্ৰাসংগিকতা</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>নাম A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>নাম Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>সলনি কৰা, শেহতীয়াখিনি প্ৰথমে</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>সলনি কৰা, পুৰণিখিনি প্ৰথমে</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>প্ৰকাশিত, শেহতীয়াখিনি প্ৰথমে</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>প্ৰকাশিত, পুৰণিখিনি প্ৰথমে</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>সলনি কৰা</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>ফিল্টাৰসমূহ</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>ফিল্টাৰ দেখুৱাওক</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>ফিল্টাৰ লুকুৱাওক</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>ৰিছেট কৰক</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>প্ৰয়োগ কৰক</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>শব্দসমূহ</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>সমলৰ প্ৰকাৰ</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>অধিক দেখুৱাওক (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>ইয়াৰ এটা বৈশিষ্ট্যত সন্ধান কৰিবলৈ এটা সমলৰ প্ৰকাৰ বাছক।</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>শাখা</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>ৰ পৰা</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>লৈ</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>আৰম্ভণিৰ তাৰিখটো বৈধ তাৰিখ নহয়।</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>শেষৰ তাৰিখটো বৈধ তাৰিখ নহয়।</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>মালিক</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>ব্যৱহাৰকাৰীৰ ID, লগইন বা ই-মেইল ঠিকনা।</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>“%input”ৰ বাবে কোনো ব্যৱহাৰকাৰী পোৱা নগ'ল।</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>ভাষা</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>যিকোনো ভাষা</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>অৱস্থান</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count টা অৱস্থান</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>প্ৰতি পৃষ্ঠাত ফলাফল</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>“%text”ৰ ফলাফল (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>ফলাফল (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>ইয়াৰ দ্বাৰা সজাওক</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>সজাওক</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>সক্ৰিয় ফিল্টাৰ</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>এই ফিল্টাৰ আঁতৰাওক</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>অথবা ফিল্টাৰ বাছি প্ৰয়োগ কৰক আৰু মিল থকা সমলৰ তালিকা চাওক।</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>শব্দ টাইপ কৰাৰ পিছত ফিল্টাৰে সন্ধান সংকুচিত কৰে।</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>“%text”ৰ বাবে কোনো ফলাফল পোৱা নগ'ল।</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>কোনো ফলাফল পোৱা নগ'ল।</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>ওপৰৰ এটা ফিল্টাৰ আঁতৰাওক।</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>অনুবাদসমূহ</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>কাৰ্য</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>%name সম্পাদনা কৰক</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>সম্পাদনা কৰক</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Help center</source>
         <translation>সহায় কেন্দ্ৰ</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>সমল</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>নথিৰ পৃষ্ঠাসমূহ</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>ব্যৱহাৰকাৰী</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>সমল শ্ৰেণী</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>প্ৰশাসন</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>পৃষ্ঠা %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>সকলো ফলাফল চাওক</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count টা ফলাফল</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>এটা ফলাফল</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count টা পৰামৰ্শ</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>কোনো পৰামৰ্শ নাই</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>পৰামৰ্শসমূহ ল'ড কৰিব পৰা নগ'ল।</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>পৰামৰ্শসমূহ</translation>
     </message>
 </context>
 <context>

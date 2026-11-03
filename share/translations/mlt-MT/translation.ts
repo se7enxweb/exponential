@@ -5167,6 +5167,210 @@
         <source>Go to the first page</source>
         <translation>Mur fl-ewwel paġna</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Oħrajn</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>L-aħħar 7 ijiem</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Perjodu personalizzat</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Il-kliem kollha</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Kwalunkwe kelma</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Frażi eżatta</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Rilevanza</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Isem A–Ż</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Isem Ż–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Immodifikat, l-aktar ġodda l-ewwel</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Immodifikat, l-eqdem l-ewwel</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Ippubblikat, l-aktar ġodda l-ewwel</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Ippubblikat, l-eqdem l-ewwel</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Immodifikat</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Filtri</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Uri l-filtri</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Aħbi l-filtri</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Irrisettja</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Applika</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Kliem</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Tip ta' kontenut</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Uri aktar (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Agħżel tip ta' kontenut wieħed biex tfittex f'wieħed mill-attributi tiegħu.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Taqsima</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Minn</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Sa</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Id-data tal-bidu mhijiex data valida.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Id-data tat-tmiem mhijiex data valida.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Sid</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>ID tal-utent, login jew indirizz tal-email.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>Ma nstab l-ebda utent għal “%input”.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Lingwa</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Kwalunkwe lingwa</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Post</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count postijiet</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Riżultati għal kull paġna</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Riżultati għal “%text” (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Riżultati (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Issortja skont</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Sortjar</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Filtri attivi</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Neħħi dan il-filtru</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Jew agħżel filtri u applikahom biex telenka l-kontenut li jaqbel magħhom.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Il-filtri jnaqqsu t-tfittxija ladarba tkun ittajpjajt il-kliem.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>Ma nstab l-ebda riżultat għal “%text”.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Ma nstab l-ebda riżultat.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Neħħi filtru minn ta' fuq.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Traduzzjonijiet</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Azzjonijiet</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>Editja %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Editja</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13850,6 +14054,61 @@ Nota: il-pakketti mhux se jiġu ddiżinstallati.</translation>
     <message>
         <source>Help center</source>
         <translation>Ċentru tal-għajnuna</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Kontenut</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Paġni tad-dokumenti</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Utenti</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Klassijiet tal-kontenut</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Amministrazzjoni</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Paġna %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Ara r-riżultati kollha</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>Riżultati: %count</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Riżultat wieħed</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count suġġerimenti</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>L-ebda suġġeriment</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Is-suġġerimenti ma setgħux jitniżżlu.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Suġġerimenti</translation>
     </message>
 </context>
 <context>

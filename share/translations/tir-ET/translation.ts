@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>ናብ ቀዳማይ ገጽ ኺድ</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>ካልእ</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>ዝሓለፉ 7 መዓልታት</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>ብውልቂ ዝተመርጸ ግዜ</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>ኩሎም ቃላት</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>ዝኾነ ቃል</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>ልክዕ ሓረግ</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>ተዛማዲነት</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>ስም ሀ–ፐ</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>ስም ፐ–ሀ</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>ዝተቐየረ፡ ሓደሽቲ ቅድሚት</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>ዝተቐየረ፡ ኣረጊት ቅድሚት</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>ዝተሓትመ፡ ሓደሽቲ ቅድሚት</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>ዝተሓትመ፡ ኣረጊት ቅድሚት</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>ዝተቐየረ</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>መጻረዪታት</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>መጻረዪታት ኣርኢ</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>መጻረዪታት ሕባእ</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>ኣጽሪ</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>ተግብር</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>ቃላት</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>ዓይነት ትሕዝቶ</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>ተወሳኺ ኣርኢ (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>ኣብ ሓደ ካብ ባህርያቱ ንምድላይ ሓደ ዓይነት ትሕዝቶ ምረጽ።</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>ክፋል</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>ካብ</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>ናብ</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>ናይ መጀመርታ ዕለት ቅኑዕ ዕለት ኣይኮነን።</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>ናይ መወዳእታ ዕለት ቅኑዕ ዕለት ኣይኮነን።</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>ወናኒ</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>መለለዪ ተጠቃሚ፡ ናይ እቶ ስም ወይ ኣድራሻ ኢ-መይል።</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>ን“%input” ዝኾነ ተጠቃሚ ኣይተረኽበን።</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>ቋንቋ</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>ዝኾነ ቋንቋ</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>ቦታ</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count ቦታታት</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>ውጽኢታት ኣብ ነፍሲ ወከፍ ገጽ</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>ውጽኢታት ን“%text” (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>ውጽኢታት (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>ብ ደርድር</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>ደርድር</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>ንጡፍ መጻረዪታት</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>እዚ መጻረዪ ኣውጽእ</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>ወይ መጻረዪታት መሪጽካ ነቲ ዝሰማማዕ ትሕዝቶ ንምዝርዛር ተግብሮም።</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>ቃላት ምስ ጸሓፍካ መጻረዪታት ንምድላይ የጽብብዎ።</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>ን“%text” ዝኾነ ውጽኢት ኣይተረኽበን።</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>ዝኾነ ውጽኢት ኣይተረኽበን።</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>ኣብ ላዕሊ ዘሎ ሓደ መጻረዪ ኣውጽእ።</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>ትርጉማት</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>ተግባራት</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>%name ኣርትዕ</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>ኣርትዕ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Help center</source>
         <translation>ማእከል ሓገዝ</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>ትሕዝቶ</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>ገጻት ሰነዳት</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>ተጠቀምቲ</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>ክፍልታት ትሕዝቶ</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>ምሕደራ</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>ገጽ %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>ኩሉ ውጽኢታት ርአ</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count ውጽኢታት</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>ሓደ ውጽኢት</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count ሓሳባት</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>ሓሳባት የለን</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>ሓሳባት ክጽዓኑ ኣይከኣሉን።</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>ሓሳባት</translation>
     </message>
 </context>
 <context>

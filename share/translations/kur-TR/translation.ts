@@ -5167,6 +5167,210 @@
         <source>Go to the first page</source>
         <translation>Biçin rûpela yekem</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Yên din</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>7 rojên dawî</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Navbera taybet</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Hemû peyv</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Her peyvek</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Hevoka tam</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Têkildarî</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Nav A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Nav Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Guhertin, nûtirîn pêşî</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Guhertin, kevntirîn pêşî</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Weşandin, nûtirîn pêşî</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Weşandin, kevntirîn pêşî</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Dîroka guhertinê</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Parzûn</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Parzûnan nîşan bide</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Parzûnan veşêre</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Ji nû ve danîn</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Sepandin</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Peyv</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Cureyê naverokê</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Bêtir nîşan bide (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Ji bo lêgerînê di yek ji taybetmendiyên wê de, cureyekî naverokê hilbijêre.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Beş</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Ji</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Heta</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Dîroka destpêkê ne dîrokeke derbasdar e.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Dîroka dawiyê ne dîrokeke derbasdar e.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Xwedî</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>Nasnameya bikarhêner, navê têketinê an navnîşana e-nameyê.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>Ji bo “%input” tu bikarhêner nehat dîtin.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Ziman</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Her ziman</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Cih</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count cih</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Encam ji bo her rûpelê</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Encamên ji bo “%text” (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Encam (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Rêzkirin li gorî</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Rêzkirin</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Parzûnên çalak</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Rakirina vê parzûnê</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>An jî parzûnan hilbijêre û bisepîne da ku naveroka lihevhatî were rêzkirin.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Piştî ku te peyv nivîsandin, parzûn lêgerînê teng dikin.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>Ji bo “%text” tu encam nehat dîtin.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Tu encam nehat dîtin.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Parzûnekê li jor rake.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Werger</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Çalakî</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>%name sererast bike</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Sererastkirin</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13909,6 +14113,61 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
     <message>
         <source>Help center</source>
         <translation>Navenda alîkariyê</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Naverok</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Rûpelên belgeyê</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Bikarhêner</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Çînên naverokê</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Rêveberî</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Rûpel %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Hemû encaman bibîne</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>Encam: %count</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Encamek</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count pêşniyar</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Pêşniyar tune</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Pêşniyar nehatin barkirin.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Pêşniyar</translation>
     </message>
 </context>
 <context>

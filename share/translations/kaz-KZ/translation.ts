@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>Бірінші бетке өту</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Басқа</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>Соңғы 7 күн</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Өз кезеңі</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Барлық сөздер</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Кез келген сөз</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Нақты тіркес</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Сәйкестік</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Атауы А–Я</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Атауы Я–А</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Өзгертілген, алдымен ең жаңасы</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Өзгертілген, алдымен ең ескісі</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Жарияланған, алдымен ең жаңасы</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Жарияланған, алдымен ең ескісі</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Өзгертілген</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Сүзгілер</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Сүзгілерді көрсету</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Сүзгілерді жасыру</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Нөлге қайтару</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Қолдану</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Сөздер</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Мазмұн түрі</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Тағы көрсету (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Оның атрибуттарының бірінен іздеу үшін бір мазмұн түрін таңдаңыз.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Бөлім</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Қайдан</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Дейін</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Басталу күні жарамды күн емес.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Аяқталу күні жарамды күн емес.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Иесі</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>Пайдаланушы ID, логин немесе электрондық пошта мекенжайы.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>«%input» бойынша пайдаланушы табылмады.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Тіл</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Кез келген тіл</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Орын</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count орын</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Беттегі нәтижелер саны</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>«%text» бойынша нәтижелер (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Нәтижелер (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Сұрыптау бойынша</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Сұрыптау</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Белсенді сүзгілер</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Бұл сүзгіні алып тастау</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Немесе сүзгілерді таңдап, оларға сәйкес мазмұнды тізімдеу үшін қолданыңыз.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Сөздерді енгізгеннен кейін сүзгілер іздеуді тарылтады.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>«%text» бойынша нәтиже табылмады.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Нәтиже табылмады.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Жоғарыдағы сүзгілердің бірін алып тастаңыз.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Аудармалар</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Әрекеттер</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>%name өңдеу</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Өңдеу</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Help center</source>
         <translation>Анықтама орталығы</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Мазмұн</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Құжат беттері</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Пайдаланушылар</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Мазмұн кластары</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Әкімшілік</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>%number-бет</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Барлық нәтижелерді көру</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>Нәтижелер: %count</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Бір нәтиже</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count ұсыныс</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Ұсыныстар жоқ</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Ұсыныстарды жүктеу мүмкін болмады.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Ұсыныстар</translation>
     </message>
 </context>
 <context>

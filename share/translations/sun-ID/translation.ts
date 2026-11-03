@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>Ka kaca kahiji</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Séjénna</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>7 poé ka tukang</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Rentang sorangan</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Sadaya kecap</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Kecap mana waé</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Frasa pasti</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Rélevansi</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Ngaran A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Ngaran Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Dirobih, nu panganyarna heula</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Dirobih, nu pangkolotna heula</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Dipedalkeun, nu panganyarna heula</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Dipedalkeun, nu pangkolotna heula</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Dirobih</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Saringan</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Témbongkeun saringan</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Sumputkeun saringan</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Set deui</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Terapkeun</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Kecap</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Jinis eusi</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Témbongkeun deui (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Pilih hiji jinis eusi pikeun milarian dina salah sahiji atributna.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Séksi</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Ti</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Ka</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Tanggal mimiti lain tanggal nu sah.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Tanggal ahir lain tanggal nu sah.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Nu gaduh</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>ID pamaké, login atawa alamat surélék.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>Teu kapendak pamaké pikeun “%input”.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Basa</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Basa mana waé</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Lokasi</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count lokasi</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Hasil per kaca</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Hasil pikeun “%text” (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Hasil (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Susun nurutkeun</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Susun</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Saringan aktip</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Hapus saringan ieu</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Atawa pilih saringan teras terapkeun pikeun mintonkeun eusi nu cocog.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Saringan ngawatesan pamilarian saatos anjeun ngetik kecap.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>Teu kapendak hasil pikeun “%text”.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Teu kapendak hasil.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Hapus salah sahiji saringan di luhur.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Tarjamahan</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Tindakan</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>Édit %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Édit</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Catetan: Pakét moal dicabut pamasanganana.</translation>
     <message>
         <source>Help center</source>
         <translation>Puseur pitulung</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Eusi</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Kaca dokumén</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Pamaké</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Kelas eusi</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Administrasi</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Kaca %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Tingali sadaya hasil</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count hasil</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Hiji hasil</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count saran</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Teu aya saran</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Saran teu tiasa dimuat.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Saran</translation>
     </message>
 </context>
 <context>

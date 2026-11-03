@@ -5170,6 +5170,210 @@
         <source>Go to the first page</source>
         <translation>אזלתא לפאתא קדמיתא</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>אחרנא</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>7 יומתא אחריא</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>תחומא דצביונא</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>כולהון מלא</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>כל מלתא</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>פתגמא חתיכא</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>שייכותא</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>שמא א–ת</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>שמא ת–א</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>משוחלפא, חדתא קדמיא</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>משוחלפא, עתיקא קדמיא</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>מפרסמא, חדתא קדמיא</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>מפרסמא, עתיקא קדמיא</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>משוחלפא</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>מצללנא</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>חזי מצללנא</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>טשי מצללנא</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>אפסיא</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>מפלחא</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>מלא</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>זנא דמליותא</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>חזי יתיר (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>גבי זנא חד דמליותא למבעא בחד מן סימנוהי.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>פלגותא</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>מן</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>עד</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>יומא דשורייא לא תריצא.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>יומא דסופא לא תריצא.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>מרא</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>ID דמפלחנא, שמא דמעלנא או כתובת אימייל.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>לא אשתכח מפלחנא ל“%input”.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>לשנא</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>כל לישנא</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>דוכתא</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count דוכתא</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>פתורא לכל דפא</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>פתורא ל“%text” (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>פתורא (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>סדרא איך</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>סדרא</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>מצללנא פעילא</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>שקלא דהנא מצללנא</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>או גבי מצללנא ושוי יתהון למחזי מליותא דמסתכמא בהון.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>מצללנא מזערין בעותא בתר דכתבת מלא.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>לא אשתכח פתורא ל“%text”.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>לא אשתכח פתורא.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>שקול מצללנא חד מלעיל.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>תורגמא</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>סוערנא</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>תוקנא %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>תוקנא</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13912,6 +14116,61 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Help center</source>
         <translation>מרכזא דעודרנא</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>מליותא</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>דפי כתבא</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>מפלחנא</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>זניא דמליותא</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>דוברא</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>דפא %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>חזי כל פתורא</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count פתורא</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>פתורא חד</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count עצתא</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>לית עצתא</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>עצתא לא אתטענו.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>עצתא</translation>
     </message>
 </context>
 <context>

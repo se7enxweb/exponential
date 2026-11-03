@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>Yi axa gbãtɔ la dzi</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Bubuwo</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>Ŋkeke 7 mamlɛtɔ</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Ɣeyiɣi si nètia</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Nya siwo katã</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Nya ɖesiaɖe</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Nyagbe pɛpɛpɛ</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Kadodo</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Ŋkɔ A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Ŋkɔ Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Wotrɔ asi le eŋu, yeyetɔwo gbã</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Wotrɔ asi le eŋu, xoxotɔwo gbã</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Woɖe ɖe go, yeyetɔwo gbã</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Woɖe ɖe go, xoxotɔwo gbã</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Wotrɔ asi le eŋu</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Tsotsonuwo</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Ɖe tsotsonuwo fia</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Ɣla tsotsonuwo</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Ɖo ɖe ɖoɖo gbãtɔ me</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Zãe</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Nyawo</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Emenu ƒomevi</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Ɖe bubuwo fia (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Tia emenu ƒomevi ɖeka be nàdi nu le eƒe nɔnɔmewo dometɔ ɖeka me.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Akpa</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Tso</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Va se ɖe</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Gɔmedzeŋkekea menye ŋkeke si sɔ o.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Nuwuŋkekea menye ŋkeke si sɔ o.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Nutɔ</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>Zãla ƒe ID, gesiŋkɔ alo e-mail adrɛs.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>Womekpɔ zãla aɖeke na “%input” o.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Gbe</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Gbe ɖesiaɖe</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Teƒe</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>Teƒe %count</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Emetsonuwo le axa ɖeka dzi</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Emetsonuwo na “%text” (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Emetsonuwo (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Ɖo ɖe ɖoɖo nu le</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Ɖoɖo</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Tsotsonu siwo le dɔ wɔm</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Ɖe tsotsonu sia ɖa</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Alo tia tsotsonuwo eye nàzã wo be nàkpɔ emenu siwo sɔ kple wo.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Ne èŋlɔ nyawo vɔ la, tsotsonuwo ɖea didia dzi kpɔtɔna.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>Womekpɔ emetsonu aɖeke na “%text” o.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Womekpɔ emetsonu aɖeke o.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Ɖe tsotsonu ɖeka si le etame ɖa.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Gbegɔmeɖeɖewo</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Dɔwɔwɔwo</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>Trɔ asi le %name ŋu</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Trɔ asi le eŋu</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Nyabiala: Womaɖe agbawo ɖa le ɖoɖoɖi me o.</translation>
     <message>
         <source>Help center</source>
         <translation>Kpekpeɖeŋu ƒe afi</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Emenuwo</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Agbalẽ ƒe axawo</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Zãlawo</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Emenu ƒe hatsotsowo</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Dziɖuɖu</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Axa %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Kpɔ emetsonuwo katã</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>Nuŋɔŋlɔ %count</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Emetsonu ɖeka</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>Aɖaŋuɖoɖo %count</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Aɖaŋuɖoɖo aɖeke meli o</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Womete ŋu tsɔ aɖaŋuɖoɖoawo vɛ o.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Aɖaŋuɖoɖowo</translation>
     </message>
 </context>
 <context>

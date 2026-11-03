@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>Đi đến trang đầu tiên</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Khác</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>7 ngày qua</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Khoảng thời gian tùy chọn</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Tất cả các từ</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Bất kỳ từ nào</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Cụm từ chính xác</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Mức độ liên quan</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Tên A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Tên Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Đã sửa đổi, mới nhất trước</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Đã sửa đổi, cũ nhất trước</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Đã xuất bản, mới nhất trước</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Đã xuất bản, cũ nhất trước</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Đã sửa đổi</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Bộ lọc</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Hiện bộ lọc</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Ẩn bộ lọc</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Đặt lại</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Áp dụng</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Từ khóa</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Loại nội dung</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Hiện thêm (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Chọn một loại nội dung để tìm kiếm trong một thuộc tính của nó.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Khu vực</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Từ</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Đến</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Ngày bắt đầu không phải là ngày hợp lệ.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Ngày kết thúc không phải là ngày hợp lệ.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Chủ sở hữu</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>ID người dùng, tên đăng nhập hoặc địa chỉ e-mail.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>Không tìm thấy người dùng nào cho “%input”.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Ngôn ngữ</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Bất kỳ ngôn ngữ nào</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Vị trí</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count vị trí</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Kết quả mỗi trang</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Kết quả cho “%text” (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Kết quả (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Sắp xếp theo</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Sắp xếp</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Bộ lọc đang áp dụng</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Gỡ bỏ bộ lọc này</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Hoặc chọn bộ lọc và áp dụng để liệt kê nội dung phù hợp.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Bộ lọc thu hẹp tìm kiếm sau khi bạn nhập từ khóa.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>Không tìm thấy kết quả nào cho “%text”.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Không tìm thấy kết quả nào.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Gỡ bỏ một bộ lọc ở trên.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Bản dịch</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Thao tác</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>Chỉnh sửa %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Chỉnh sửa</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Lưu ý: Các gói sẽ không bị gỡ cài đặt.</translation>
     <message>
         <source>Help center</source>
         <translation>Trung tâm trợ giúp</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Nội dung</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Trang tài liệu</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Người dùng</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Lớp nội dung</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Quản trị</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Trang %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Xem tất cả kết quả</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count kết quả</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Một kết quả</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count gợi ý</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Không có gợi ý</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Không thể tải gợi ý.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Gợi ý</translation>
     </message>
 </context>
 <context>

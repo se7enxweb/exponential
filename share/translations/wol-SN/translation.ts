@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>Dem ci xët bu njëkk bi</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Yeneen</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>Ñetti fan ak ñaar yu mujj</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Diir bu nga tànn</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Baat yépp</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Benn baat</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Kàddu gu wóor</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Jokkoo</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Tur A–Y</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Tur Y–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Soppi nañu ko, yu bees yi jëkk</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Soppi nañu ko, yu yàgg yi jëkk</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Siiwal nañu ko, yu bees yi jëkk</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Siiwal nañu ko, yu yàgg yi jëkk</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Soppi nañu ko</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Sef yi</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Wone sef yi</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Nëbb sef yi</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Defaraat</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Jëfandikoo</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Baat yi</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Xeetu li ci biir</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Wone yeneen (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Tànnal benn xeetu li ci biir ngir seet ci benn ci jikkoom yi.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Xaaj</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Ci</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Ba</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Bésu tàmbali bi du bés bu baax.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Bésu jeexital bi du bés bu baax.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Boroom</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>ID jëfandikukat, turu dugg walla adresu e-mail.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>Gisuñu benn jëfandikukat ngir “%input”.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Làkk</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Benn làkk</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Bérab</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count bérab</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Njureef ci xët wu nekk</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Njureef yu “%text” (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Njureef yi (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Toftale ci</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Toftale</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Sef yu dox</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Dindi sef bii</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Walla tànnal ay sef te jëfandikoo leen ngir wone li ci biir bu ci dëppoo.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Sef yi dañuy wàññi seet gi bu nga bindee ay baat.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>Amul benn njureef ngir “%text”.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Amul benn njureef.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Dindil benn sef ci kaw.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Tekki yi</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Jëf yi</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>Soppi %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Soppi</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Xamal ne: paket yi dootuñu ñu dindi samp.</translation>
     <message>
         <source>Help center</source>
         <translation>Bérabu ndimbal</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Li ci biir</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Xëti dokimaa yi</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Jëfandikukat yi</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Klaasu li ci biir yi</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Wàllu saytu</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Xët %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Xool njureef yépp</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count njureef</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Benn njureef</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count ndigal</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Amul ndigal</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Mënuñu yeb ndigal yi.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Ndigal yi</translation>
     </message>
 </context>
 <context>

@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>ໄປທີ່ໜ້າທຳອິດ</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>ອື່ນໆ</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>7 ມື້ຜ່ານມາ</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>ຊ່ວງເວລາກຳນົດເອງ</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>ທຸກຄຳ</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>ຄຳໃດກໍໄດ້</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>ປະໂຫຍກທີ່ກົງກັນ</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>ຄວາມກ່ຽວຂ້ອງ</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>ຊື່ A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>ຊື່ Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>ແກ້ໄຂ, ໃໝ່ສຸດກ່ອນ</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>ແກ້ໄຂ, ເກົ່າສຸດກ່ອນ</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>ເຜີຍແຜ່, ໃໝ່ສຸດກ່ອນ</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>ເຜີຍແຜ່, ເກົ່າສຸດກ່ອນ</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>ແກ້ໄຂເມື່ອ</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>ຕົວກັ່ນຕອງ</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>ສະແດງຕົວກັ່ນຕອງ</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>ເຊື່ອງຕົວກັ່ນຕອງ</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>ຣີເຊັດ</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>ນຳໃຊ້</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>ຄຳ</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>ປະເພດເນື້ອຫາ</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>ສະແດງເພີ່ມເຕີມ (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>ເລືອກປະເພດເນື້ອຫາໜຶ່ງ ເພື່ອຄົ້ນຫາໃນແອັດທຣິບິວໜຶ່ງຂອງມັນ.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>ພາກສ່ວນ</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>ຈາກ</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>ເຖິງ</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>ວັນທີເລີ່ມຕົ້ນບໍ່ແມ່ນວັນທີທີ່ຖືກຕ້ອງ.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>ວັນທີສິ້ນສຸດບໍ່ແມ່ນວັນທີທີ່ຖືກຕ້ອງ.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>ເຈົ້າຂອງ</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>ID ຜູ້ໃຊ້, ຊື່ເຂົ້າລະບົບ ຫຼື ທີ່ຢູ່ອີເມວ.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>ບໍ່ພົບຜູ້ໃຊ້ສຳລັບ “%input”.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>ພາສາ</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>ພາສາໃດກໍໄດ້</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>ຕຳແໜ່ງ</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count ຕຳແໜ່ງ</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>ຜົນລັບຕໍ່ໜ້າ</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>ຜົນລັບສຳລັບ “%text” (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>ຜົນລັບ (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>ຮຽງລຳດັບຕາມ</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>ຮຽງລຳດັບ</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>ຕົວກັ່ນຕອງທີ່ໃຊ້ຢູ່</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>ເອົາຕົວກັ່ນຕອງນີ້ອອກ</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>ຫຼື ເລືອກຕົວກັ່ນຕອງ ແລະ ນຳໃຊ້ ເພື່ອສະແດງລາຍການເນື້ອຫາທີ່ກົງກັນ.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>ຕົວກັ່ນຕອງຈະຈຳກັດການຄົ້ນຫາໃຫ້ແຄບລົງ ເມື່ອທ່ານພິມຄຳແລ້ວ.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>ບໍ່ພົບຜົນລັບສຳລັບ “%text”.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>ບໍ່ພົບຜົນລັບ.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>ເອົາຕົວກັ່ນຕອງດ້ານເທິງອອກ.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>ການແປ</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>ການດຳເນີນການ</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>ແກ້ໄຂ %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>ແກ້ໄຂ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Help center</source>
         <translation>ສູນຊ່ວຍເຫຼືອ</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>ເນື້ອຫາ</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>ໜ້າເອກະສານ</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>ຜູ້ໃຊ້</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>ຄລາສເນື້ອຫາ</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>ສ່ວນຜູ້ເບິ່ງແຍງລະບົບ</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>ໜ້າ %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>ເບິ່ງຜົນລັບທັງໝົດ</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count ຜົນລັບ</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>ໜຶ່ງຜົນລັບ</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count ຄຳແນະນຳ</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>ບໍ່ມີຄຳແນະນຳ</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>ບໍ່ສາມາດໂຫຼດຄຳແນະນຳໄດ້.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>ຄຳແນະນຳ</translation>
     </message>
 </context>
 <context>

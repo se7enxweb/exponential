@@ -5167,6 +5167,210 @@
         <source>Go to the first page</source>
         <translation>لومړۍ پاڼه پرانیستل</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>نور</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>وروستۍ 7 ورځې</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>ځانګړې موده</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>ټولې کلمې</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>هره کلمه</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>دقیقه جمله</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>اړوندتیا</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>نوم A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>نوم Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>بدل شوی، نوي لومړی</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>بدل شوی، زاړه لومړی</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>خپور شوی، نوي لومړی</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>خپور شوی، زاړه لومړی</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>بدل شوی</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>فلټرونه</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>فلټرونه ښودل</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>فلټرونه پټول</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>بېرته تنظیمول</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>پلي کول</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>کلمې</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>د منځپانګې ډول</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>نور ښودل (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>د منځپانګې یو ډول وټاکئ ترڅو د هغه په یوه ځانګړنه کې ولټوئ.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>برخه</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>له</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>تر</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>د پیل نېټه سمه نېټه نه ده.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>د پای نېټه سمه نېټه نه ده.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>خاوند</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>د کارن ID، د ننوتلو نوم یا برېښنالیک پته.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>د «%input» لپاره هېڅ کارن ونه موندل شو.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>ژبه</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>هره ژبه</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>ځای</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count ځایونه</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>په هره پاڼه کې پایلې</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>د «%text» پایلې (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>پایلې (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>اوډل د</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>اوډل</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>فعال فلټرونه</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>دا فلټر لرې کول</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>یا فلټرونه وټاکئ او پلي یې کړئ ترڅو برابره منځپانګه لېست شي.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>کله چې کلمې ولیکئ، فلټرونه لټون محدودوي.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>د «%text» لپاره هېڅ پایله ونه موندل شوه.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>هېڅ پایله ونه موندل شوه.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>پورته یو فلټر لرې کړئ.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>ژباړې</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>کړنې</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>%name سمول</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>سمول</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13909,6 +14113,61 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Help center</source>
         <translation>د مرستې مرکز</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>منځپانګه</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>د سند پاڼې</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>کارنان</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>د منځپانګې کلاسونه</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>مدیریت</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>پاڼه %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>ټولې پایلې وګورئ</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count پایلې</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>یوه پایله</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count وړاندیزونه</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>هېڅ وړاندیز نشته</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>وړاندیزونه پورته نه شول.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>وړاندیزونه</translation>
     </message>
 </context>
 <context>

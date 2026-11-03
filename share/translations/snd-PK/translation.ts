@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>پهرين صفحي تي وڃو</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>ٻيو</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>آخري 7 ڏينهن</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>مرضي جو عرصو</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>سڀ لفظ</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>ڪو به لفظ</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>بلڪل جملو</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>مطابقت</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>نالو ا–ي</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>نالو ي–ا</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>تبديل ٿيل، نوان پهريان</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>تبديل ٿيل، پراڻا پهريان</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>شايع ٿيل، نوان پهريان</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>شايع ٿيل، پراڻا پهريان</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>تبديل ٿيل</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>فلٽر</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>فلٽر ڏيکاريو</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>فلٽر لڪايو</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>ري سيٽ ڪريو</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>لاڳو ڪريو</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>لفظ</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>مواد جو قسم</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>وڌيڪ ڏيکاريو (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>مواد جو هڪ قسم چونڊيو ته جيئن ان جي ڪنهن هڪ خاصيت ۾ ڳولا ڪري سگهو.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>سيڪشن</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>کان</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>کي</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>شروعاتي تاريخ صحيح تاريخ ناهي.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>آخري تاريخ صحيح تاريخ ناهي.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>مالڪ</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>استعمال ڪندڙ جي ID، لاگ ان يا اي ميل پتو.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>“%input” لاءِ ڪو استعمال ڪندڙ نه مليو.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>ٻولي</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>ڪا به ٻولي</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>جڳهه</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count جڳهيون</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>في صفحو نتيجا</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>“%text” لاءِ نتيجا (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>نتيجا (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>هن مطابق ترتيب ڏيو</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>ترتيب ڏيو</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>سرگرم فلٽر</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>هي فلٽر هٽايو</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>يا فلٽر چونڊيو ۽ انهن کي لاڳو ڪريو ته جيئن ملندڙ مواد جي فهرست ڏسي سگهو.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>لفظ لکڻ کان پوءِ فلٽر ڳولا کي محدود ڪن ٿا.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>“%text” لاءِ ڪي نتيجا نه مليا.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>ڪي نتيجا نه مليا.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>مٿي ڏنل ڪو فلٽر هٽايو.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>ترجما</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>ڪارروايون</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>%name تبديل ڪريو</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>تبديل ڪريو</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Help center</source>
         <translation>مدد جو مرڪز</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>مواد</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>دستاويزن جا صفحا</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>استعمال ڪندڙ</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>مواد جا ڪلاس</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>انتظام</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>صفحو %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>سڀ نتيجا ڏسو</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count نتيجا</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>هڪ نتيجو</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count تجويزون</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>ڪا تجويز ناهي</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>تجويزون لوڊ نه ٿي سگهيون.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>تجويزون</translation>
     </message>
 </context>
 <context>

@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>첫 페지로 이동</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>기타</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>최근 7일</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>지정 기간</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>모든 단어</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>임의의 단어</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>정확한 문구</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>관련도</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>이름 오름차순</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>이름 내림차순</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>수정날자, 새것부터</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>수정날자, 오랜것부터</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>발행날자, 새것부터</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>발행날자, 오랜것부터</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>수정일</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>필터</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>필터 보이기</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>필터 감추기</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>초기화</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>적용</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>단어</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>콘텐츠형태</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>더 보기 (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>속성들중 하나에서 검색하려면 콘텐츠형태를 하나 선택하십시오.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>섹션</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>시작</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>종료</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>시작날자가 옳은 날자가 아닙니다.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>마감날자가 옳은 날자가 아닙니다.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>소유자</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>사용자 ID, 가입명 또는 전자우편주소.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>《%input》에 해당한 사용자를 찾지 못하였습니다.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>언어</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>모든 언어</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>위치</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>위치 %count개</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>페지당 결과수</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>《%text》 검색결과 (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>결과 (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>정렬 기준</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>정렬</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>활성 필터</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>이 필터 제거</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>또는 필터를 선택하고 적용하여 해당한 콘텐츠를 렬거하십시오.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>단어를 입력하면 필터가 검색범위를 좁힙니다.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>《%text》에 대한 결과가 없습니다.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>결과가 없습니다.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>우의 필터를 제거하십시오.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>번역</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>작업</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>%name 편집</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>편집</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Help center</source>
         <translation>도움말 쎈터</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>콘텐츠</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>문서페지</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>사용자</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>콘텐츠클라스</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>관리</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>%number페지</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>모든 결과 보기</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>결과 %count개</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>결과 1개</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>제안 %count개</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>제안 없음</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>제안을 불러올수 없습니다.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>제안</translation>
     </message>
 </context>
 <context>

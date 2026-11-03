@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>Kujya ku rupapuro rwa mbere</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Ibindi</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>Iminsi 7 ishize</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Igihe wihitiyemo</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Amagambo yose</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Ijambo iryo ari ryo ryose</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Interuro nyayo</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Akamaro</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Izina A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Izina Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Byahinduwe, ibishya mbere</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Byahinduwe, ibishaje mbere</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Byatangajwe, ibishya mbere</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Byatangajwe, ibishaje mbere</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Byahinduwe</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Iyunguruzo</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Erekana iyunguruzo</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Hisha iyunguruzo</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Gusubiza kuri zeru</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Gushyira mu bikorwa</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Amagambo</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Ubwoko bw'ibirimo</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Erekana ibindi (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Hitamo ubwoko bumwe bw'ibirimo kugira ngo ushakire muri imwe mu miterere yabwo.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Igice</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Kuva</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Kuri</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Itariki yo gutangira si itariki yemewe.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Itariki yo kurangiza si itariki yemewe.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Nyirabyo</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>ID y'ukoresha, izina ryo kwinjira cyangwa aderesi ya imeli.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>Nta mukoresha wabonetse kuri “%input”.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Ururimi</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Ururimi urwo ari rwo rwose</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Ahantu</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>Ahantu %count</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Ibisubizo kuri buri paji</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Ibisubizo bya “%text” (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Ibisubizo (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Gutondeka ukurikije</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Gutondeka</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Iyunguruzo rikora</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Gukuraho iri yunguruzo</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Cyangwa hitamo iyunguruzo uyishyire mu bikorwa kugira ngo ugaragaze ibirimo bihuye na yo.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Iyunguruzo rigabanya ishakisha umaze kwandika amagambo.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>Nta bisubizo byabonetse kuri “%text”.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Nta bisubizo byabonetse.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Kuraho iyunguruzo rimwe riri hejuru.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Ubusobanuro</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Ibikorwa</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>Hindura %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Guhindura</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Icyitonderwa: Amapaki ntazakurwa muri sisitemu.</translation>
     <message>
         <source>Help center</source>
         <translation>Ikigo cy'ubufasha</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Ibirimo</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Paji z'inyandiko</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Abakoresha</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Ubwoko bw'ibirimo</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Ubuyobozi</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Paji %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Reba ibisubizo byose</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>Ibisubizo %count</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Igisubizo kimwe</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>Ibitekerezo %count</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Nta bitekerezo</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Ibitekerezo ntibyashoboye gufunguka.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Ibitekerezo</translation>
     </message>
 </context>
 <context>

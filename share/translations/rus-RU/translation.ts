@@ -5167,6 +5167,210 @@
         <source>Go to the first page</source>
         <translation>Перейти на первую страницу</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Другое</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>Последние 7 дней</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Свой период</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Все слова</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Любое слово</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Точная фраза</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Релевантность</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Название А–Я</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Название Я–А</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Изменено, сначала новые</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Изменено, сначала старые</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Опубликовано, сначала новые</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Опубликовано, сначала старые</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Изменено</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Фильтры</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Показать фильтры</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Скрыть фильтры</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Сбросить</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Применить</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Слова</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Тип содержимого</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Показать ещё (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Выберите один тип содержимого, чтобы искать по одному из его атрибутов.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Секция</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Откуда</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>По</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Начальная дата указана неверно.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Конечная дата указана неверно.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Владелец</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>ID пользователя, логин или адрес e-mail.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>Пользователь «%input» не найден.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Язык</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Любой язык</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Расположение</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>Расположений: %count</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Результатов на странице</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Результаты по запросу «%text» (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Результаты (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Сортировать по</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Сортировка</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Активные фильтры</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Убрать этот фильтр</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Или выберите фильтры и примените их, чтобы вывести подходящее содержимое.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Фильтры сужают поиск, когда вы ввели слова.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>По запросу «%text» ничего не найдено.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Ничего не найдено.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Уберите один из фильтров выше.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Переводы</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Действия</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>Изменить %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Изменить</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13850,6 +14054,61 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Help center</source>
         <translation>Центр справки</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Содержимое</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Страницы документов</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Пользователи</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Классы содержимого</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Администрирование</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Страница %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Показать все результаты</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>Результатов: %count</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Один результат</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>Подсказок: %count</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Нет подсказок</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Не удалось загрузить подсказки.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Подсказки</translation>
     </message>
 </context>
 <context>

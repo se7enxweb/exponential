@@ -5167,6 +5167,210 @@
         <source>Go to the first page</source>
         <translation>Eiti į pirmą puslapį</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Kita</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>Paskutinės 7 dienos</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Pasirinktinis laikotarpis</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Visi žodžiai</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Bet kuris žodis</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Tiksli frazė</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Atitiktis</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Pavadinimas A–Ž</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Pavadinimas Ž–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Pakeista, naujausi pirma</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Pakeista, seniausi pirma</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Paskelbta, naujausi pirma</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Paskelbta, seniausi pirma</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Pakeista</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Filtrai</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Rodyti filtrus</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Slėpti filtrus</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Atstatyti</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Taikyti</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Žodžiai</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Turinio tipas</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Rodyti daugiau (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Pasirinkite vieną turinio tipą, kad galėtumėte ieškoti viename iš jo atributų.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Skyrius</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Iš</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Iki</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Pradžios data nėra tinkama data.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Pabaigos data nėra tinkama data.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Savininkas</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>Naudotojo ID, prisijungimo vardas arba el. pašto adresas.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>Pagal „%input“ naudotojas nerastas.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Kalba</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Bet kuri kalba</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Vieta</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>Vietų: %count</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Rezultatų puslapyje</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Rezultatai pagal „%text“ (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Rezultatai (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Rūšiuoti pagal</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Rūšiavimas</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Aktyvūs filtrai</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Šalinti šį filtrą</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Arba pasirinkite filtrus ir pritaikykite juos, kad būtų parodytas atitinkantis turinys.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Įvedus žodžius, filtrai susiaurina paiešką.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>Pagal „%text“ rezultatų nerasta.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Rezultatų nerasta.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Pašalinkite vieną iš aukščiau esančių filtrų.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Vertimai</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Veiksmai</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>Redaguoti %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Redaguoti</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13850,6 +14054,61 @@ Pastaba: paketai nebus pašalinti iš įdiegtų (neįdiegiami).</translation>
     <message>
         <source>Help center</source>
         <translation>Žinyno centras</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Turinys</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Dokumentų puslapiai</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Naudotojai</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Turinio klasės</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Administravimas</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>%number puslapis</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Peržiūrėti visus rezultatus</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>Rezultatų: %count</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Vienas rezultatas</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>Pasiūlymų: %count</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Pasiūlymų nėra</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Nepavyko įkelti pasiūlymų.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Pasiūlymai</translation>
     </message>
 </context>
 <context>

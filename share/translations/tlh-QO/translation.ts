@@ -5170,6 +5170,210 @@
         <source>Go to the first page</source>
         <translation>wa&apos;DIch nav yIjaH</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>latlh</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>Hu'mey 7 Qav</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>poH DawIvbogh</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Hoch mu'mey</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>vay' mu'</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>mu'tlhegh qar</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>potlhghach</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>pong a–'</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>pong '–a</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>choHlu'ta', chu'qu'wI' wa'DIch</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>choHlu'ta', ngo'qu'wI' wa'DIch</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>ngeHlu'ta', chu'qu'wI' wa'DIch</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>ngeHlu'ta', ngo'qu'wI' wa'DIch</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>choHlu'ta'</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Say'moHwI'mey</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Say'moHwI'mey tIcha'</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Say'moHwI'mey tISo'</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>yIchImmoH</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>yIlo'</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>mu'mey</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>De' Segh</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>latlh yIcha' (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>De' Segh wa' yIwIv, ghaH DaqDaj wa'Daq yInej.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>'ay'</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Hal</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>ghoch</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>tagh jaj lugh 'oHbe'.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Qav jaj lugh 'oHbe'.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>ghajwI'</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>lo'wI' mI', 'el pong pagh De'wI' QIn Daq.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>“%input” lo'wI' tu'lu'be'.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Hol</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>vay' Hol</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Daq</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count Daqmey</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>nav wa'Daq tu'lu'bogh De'mey</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>“%text” tu'lu'bogh De'mey (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>tu'lu'bogh De'mey (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>tetlh mIw yIlan</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>tetlh mIw yIchoH</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>chu'lu'ta'bogh Say'moHwI'mey</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Say'moHwI'vam yIteq</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>pagh Say'moHwI'mey tIwIv 'ej tIlo'; vaj De' mumay'bogh tetlh cha'lu'.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>mu'mey DaghItlhDI', nejmeH Daq mach Say'moHwI'mey.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>“%text” vItu'be'.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>pagh tu'lu'.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>dung Say'moHwI' wa' yIteq.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>mughghachmey</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>vangghachmey</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>%name yIchoH</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>yIchoH</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13853,6 +14057,61 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
     <message>
         <source>Help center</source>
         <translation>QaH botlh</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>De'</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>ghItlh navmey</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>lo'wI'pu'</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>De' buvmey</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>loHghach</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>nav %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>tu'lu'bogh De'mey Hoch tIlegh</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count tu'lu'</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>wa' tu'lu'</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count chupmey</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>chupmey tu'lu'be'</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>chupmey lI'laHbe'lu'.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>chupmey</translation>
     </message>
 </context>
 <context>

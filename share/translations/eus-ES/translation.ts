@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>Joan lehenengo orrira</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Bestelakoak</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>Azken 7 egunak</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Tarte pertsonalizatua</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Hitz guztiak</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Edozein hitz</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Esaldi zehatza</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Garrantzia</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Izena A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Izena Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Aldatua, berrienak lehenengo</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Aldatua, zaharrenak lehenengo</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Argitaratua, berrienak lehenengo</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Argitaratua, zaharrenak lehenengo</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Aldatua</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Iragazkiak</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Erakutsi iragazkiak</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Ezkutatu iragazkiak</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Berrezarri</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Aplikatu</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Hitzak</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Eduki mota</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Erakutsi gehiago (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Aukeratu eduki mota bat haren atributuetako batean bilatzeko.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Atala</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Nondik</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Arte</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Hasiera-data ez da baliozko data.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Amaiera-data ez da baliozko data.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Jabea</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>Erabiltzaile IDa, saio-hasierako izena edo helbide elektronikoa.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>Ez da erabiltzailerik aurkitu «%input» bilaketarako.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Hizkuntza</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Edozein hizkuntza</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Kokapena</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count kokapen</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Emaitzak orrialdeko</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>«%text» bilaketaren emaitzak (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Emaitzak (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Ordenatu honen arabera</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Ordenatu</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Iragazki aktiboak</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Kendu iragazki hau</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Edo aukeratu iragazkiak eta aplikatu, haiekin bat datorren edukia zerrendatzeko.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Iragazkiek bilaketa murrizten dute hitzak idatzi ondoren.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>Ez da emaitzarik aurkitu «%text» bilaketarako.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Ez da emaitzarik aurkitu.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Kendu goiko iragazkietako bat.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Itzulpenak</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Ekintzak</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>Editatu %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Editatu</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Oharra: paketeak ez dira desinstalatuko.</translation>
     <message>
         <source>Help center</source>
         <translation>Laguntza-zentroa</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Edukia</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Dokumentu-orriak</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Erabiltzaileak</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Eduki-klaseak</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Administrazioa</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>%number. orria</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Ikusi emaitza guztiak</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count emaitza</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Emaitza bat</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count iradokizun</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Ez dago iradokizunik</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Ezin izan dira iradokizunak kargatu.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Iradokizunak</translation>
     </message>
 </context>
 <context>

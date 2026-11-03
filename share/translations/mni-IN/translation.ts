@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>অহানবা পেজতা চৎপা</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>অমনা</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>মখলগী নুমিৎ 7</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>মশানা খল্লবা মতম</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>ৱাহৈ পুম্নমক</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>ৱাহৈ কনানা অমত্তা</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>চুম্লবা ৱাহৈ পরেং</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>মরী লৈনবা</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>মিং A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>মিং Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>সুধরবা, অনৌবা অহানবা</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>সুধরবা, অরিবা অহানবা</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>থাদোকপা, অনৌবা অহানবা</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>থাদোকপা, অরিবা অহানবা</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>সুধরবা</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>ফিল্টরশিং</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>ফিল্টরশিং উৎপা</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>ফিল্টরশিং নৈহনবা</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>রিসেট তৌবা</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>লাগ্নবা</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>ৱাহৈশিং</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>কন্টেন্টকী মখল</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>হেন্না উৎপা (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>কন্টেন্টকী মখল অমগী এট্রিবিউট অমদা থিনবগীদমক কন্টেন্টকী মখল অমা খল্লু।</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>সেক্সন</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>মখোয়দগী</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>মফম</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>হৌবা তারিখ অসি চুম্বা তারিখ নত্তে।</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>লোইবা তারিখ অসি চুম্বা তারিখ নত্তে।</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>মওংবা</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>ইউজর ID, লোগিন নত্ত্রগা ই-মেল এড্রেস।</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>“%input” গীদমক ইউজর অমত্তা ফংদ্রে।</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>লোন্</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>লোন্ কনানা অমত্তা</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>মখোয়</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>মফম %count</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>লমায় অমদা ফলাফল</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>“%text” গী ফলাফল (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>ফলাফল (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>মসিগী অসিনা সর্ট তৌবা</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>সর্ট তৌবা</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>চালু ফিল্টরশিং</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>ফিল্টর অসি থোক্কনবা</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>নত্ত্রগা মান্নবা কন্টেন্ট লিস্ট তৌনবা ফিল্টরশিং খল্লগা লাগ্নবীয়ু।</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>ৱাহৈশিং টাইপ তৌরবা মতুংদা ফিল্টরশিংনা থিবা অসি অপিকপা ওইহল্লি।</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>“%text” গী ফলাফল অমত্তা ফংদ্রে।</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>ফলাফল অমত্তা ফংদ্রে।</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>মথক্তা লৈবা ফিল্টর অমা থোক্কদবীয়ু।</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>অনুবাদশিং</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>একসন</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>%name এডিট তৌবা</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>এডিট তৌবা</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Help center</source>
         <translation>ফংজেল কেন্দ্র</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>কন্টেন্ট</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>দোকুমেন্টকী লমায়শিং</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>ইউজরশিং</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>কন্টেন্ট ক্লাসশিং</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>এদমিনিষ্ট্রেসন</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>লমায় %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>ফলাফল পুম্নমক য়েংবা</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>ফলাফল %count</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>ফলাফল অমা</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>পাউতাক %count</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>পাউতাক অমত্তা লৈতে</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>পাউতাকশিং লোড তৌবা ঙমদ্রে।</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>পাউতাকশিং</translation>
     </message>
 </context>
 <context>

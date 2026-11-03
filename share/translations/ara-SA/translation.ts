@@ -5167,6 +5167,210 @@
         <source>Go to the first page</source>
         <translation>الانتقال إلى الصفحة الأولى</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>أخرى</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>آخر 7 أيام</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>نطاق مخصص</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>كل الكلمات</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>أي كلمة</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>العبارة بالضبط</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>الصلة</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>الاسم أ–ي</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>الاسم ي–أ</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>تاريخ التعديل، الأحدث أولاً</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>تاريخ التعديل، الأقدم أولاً</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>تاريخ النشر، الأحدث أولاً</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>تاريخ النشر، الأقدم أولاً</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>عُدّل</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>عوامل التصفية</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>إظهار عوامل التصفية</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>إخفاء عوامل التصفية</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>إعادة تعيين</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>تطبيق</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>الكلمات</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>نوع المحتوى</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>عرض المزيد (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>اختر نوع محتوى واحدًا للبحث في إحدى سماته.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>القسم</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>من</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>إلى</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>تاريخ البداية ليس تاريخًا صالحًا.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>تاريخ النهاية ليس تاريخًا صالحًا.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>المالك</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>معرّف المستخدم أو اسم الدخول أو عنوان البريد الإلكتروني.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>لم يُعثر على مستخدم لـ «%input».</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>اللغة</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>أي لغة</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>الموقع</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count مواقع</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>النتائج في كل صفحة</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>نتائج «%text» (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>النتائج (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>الفرز حسب</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>الفرز</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>عوامل التصفية النشطة</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>إزالة عامل التصفية هذا</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>أو اختر عوامل التصفية وطبّقها لعرض المحتوى المطابق لها.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>تضيّق عوامل التصفية نطاق البحث بعد كتابة الكلمات.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>لم يُعثر على نتائج لـ «%text».</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>لم يُعثر على نتائج.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>أزل أحد عوامل التصفية أعلاه.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>الترجمات</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>الإجراءات</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>تحرير %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>تحرير</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13850,6 +14054,61 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Help center</source>
         <translation>مركز المساعدة</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>المحتوى</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>صفحات المستندات</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>المستخدمون</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>فئات المحتوى</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>الإدارة</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>الصفحة %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>عرض كل النتائج</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count نتيجة</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>نتيجة واحدة</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count اقتراحات</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>لا توجد اقتراحات</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>تعذّر تحميل الاقتراحات.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>الاقتراحات</translation>
     </message>
 </context>
 <context>

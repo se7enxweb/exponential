@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>بڕۆ بۆ یەکەم پەڕە</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>هی تر</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>7 ڕۆژی ڕابردوو</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>مەودای دڵخواز</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>هەموو وشەکان</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>هەر وشەیەک</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>دەستەواژەی ورد</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>پەیوەندیداری</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>ناو ئا–ی</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>ناو ی–ئا</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>گۆڕدراو، نوێترین سەرەتا</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>گۆڕدراو، کۆنترین سەرەتا</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>بڵاوکراوە، نوێترین سەرەتا</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>بڵاوکراوە، کۆنترین سەرەتا</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>گۆڕدراو</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>پاڵاوتنەکان</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>پیشاندانی پاڵاوتنەکان</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>شاردنەوەی پاڵاوتنەکان</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>ڕێکخستنەوە</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>جێبەجێکردن</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>وشەکان</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>جۆری ناوەڕۆک</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>زیاتر پیشان بدە (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>جۆرێکی ناوەڕۆک هەڵبژێرە بۆ گەڕان لە یەکێک لە تایبەتمەندییەکانی.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>بەش</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>لە</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>بۆ</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>بەرواری دەستپێک بەرواری دروست نییە.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>بەرواری کۆتایی بەرواری دروست نییە.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>خاوەن</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>ناسنامەی بەکارهێنەر، ناوی چوونەژوورەوە یان ناونیشانی ئیمەیڵ.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>هیچ بەکارهێنەرێک بۆ «%input» نەدۆزرایەوە.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>زمان</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>هەر زمانێک</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>شوێن</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count شوێن</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>ئەنجام لە هەر پەڕەیەکدا</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>ئەنجامەکانی «%text» (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>ئەنجامەکان (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>ڕیزکردن بەپێی</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>ڕیزکردن</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>پاڵاوتنە چالاکەکان</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>لابردنی ئەم پاڵاوتنە</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>یان پاڵاوتنەکان هەڵبژێرە و جێبەجێیان بکە بۆ لیستکردنی ئەو ناوەڕۆکەی لەگەڵیان دەگونجێت.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>پاڵاوتنەکان دوای نووسینی وشەکان گەڕانەکە تەسک دەکەنەوە.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>هیچ ئەنجامێک بۆ «%text» نەدۆزرایەوە.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>هیچ ئەنجامێک نەدۆزرایەوە.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>پاڵاوتنێک لە سەرەوە لاببە.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>وەرگێڕانەکان</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>کردارەکان</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>دەستکاریکردنی %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>دەستکاری بکە</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Help center</source>
         <translation>ناوەندی یارمەتی</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>ناوەڕۆک</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>پەڕەکانی بەڵگەنامە</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>بەکارهێنەران</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>پۆلەکانی ناوەڕۆک</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>بەڕێوەبردن</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>پەڕەی %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>بینینی هەموو ئەنجامەکان</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count ئەنجام</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>یەک ئەنجام</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count پێشنیار</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>هیچ پێشنیارێک نییە</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>پێشنیارەکان بار نەکران.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>پێشنیارەکان</translation>
     </message>
 </context>
 <context>

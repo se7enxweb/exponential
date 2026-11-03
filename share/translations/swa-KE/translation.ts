@@ -5167,6 +5167,210 @@
         <source>Go to the first page</source>
         <translation>Nenda kwenye ukurasa wa kwanza</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Nyingine</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>Siku 7 zilizopita</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Kipindi maalum</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Maneno yote</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Neno lolote</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Kifungu kamili</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Umuhimu</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Jina A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Jina Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Imebadilishwa, mpya kwanza</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Imebadilishwa, za zamani kwanza</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Imechapishwa, mpya kwanza</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Imechapishwa, za zamani kwanza</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Imebadilishwa</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Vichujio</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Onyesha vichujio</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Ficha vichujio</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Weka upya</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Tumia</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Maneno</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Aina ya maudhui</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Onyesha zaidi (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Chagua aina moja ya maudhui ili kutafuta katika mojawapo ya sifa zake.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Sehemu</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Kutoka</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Hadi</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Tarehe ya kuanzia si tarehe sahihi.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Tarehe ya mwisho si tarehe sahihi.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Mmiliki</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>Kitambulisho cha mtumiaji, jina la kuingia au anwani ya barua pepe.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>Hakuna mtumiaji aliyepatikana kwa “%input”.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Lugha</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Lugha yoyote</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Eneo</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>Maeneo %count</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Matokeo kwa kila ukurasa</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Matokeo ya “%text” (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Matokeo (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Panga kwa</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Panga</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Vichujio amilifu</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Ondoa kichujio hiki</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Au chagua vichujio na uvitumie ili kuorodhesha maudhui yanayolingana navyo.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Vichujio hupunguza utafutaji baada ya kuandika maneno.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>Hakuna matokeo yaliyopatikana kwa “%text”.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Hakuna matokeo yaliyopatikana.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Ondoa kichujio kimoja hapo juu.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Tafsiri</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Vitendo</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>Hariri %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Hariri</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13909,6 +14113,61 @@ Kumbuka: Usakinishaji wa vifurushi hautaondolewa.</translation>
     <message>
         <source>Help center</source>
         <translation>Kituo cha usaidizi</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Maudhui</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Kurasa za hati</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Watumiaji</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Madarasa ya maudhui</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Usimamizi</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Ukurasa %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Tazama matokeo yote</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>Matokeo %count</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Tokeo moja</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>Mapendekezo %count</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Hakuna mapendekezo</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Mapendekezo hayakuweza kupakiwa.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Mapendekezo</translation>
     </message>
 </context>
 <context>

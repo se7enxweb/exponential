@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>Ñawpaq raphiman riy</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Huk</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>Qhipa 7 p'unchaw</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Akllasqa pacha</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Tukuy simikuna</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Huk simillapas</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Chiqan rimay</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Tupanakuy</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Suti A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Suti Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Hukchasqa, musuqkuna ñawpaqta</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Hukchasqa, machukuna ñawpaqta</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Uyarichisqa, musuqkuna ñawpaqta</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Uyarichisqa, machukuna ñawpaqta</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Hukchasqa</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Suysukuna</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Suysukunata rikuchiy</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Suysukunata pakay</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Kutichiy</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Hunt'achiy</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Simikuna</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Ukhun laya</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Astawan rikuchiy (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Huk ukhun layata akllay, huk kaqninkunapi maskanaykipaq.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Raki</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Maymanta</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Kayman</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Qallariy p'unchawqa manam allin p'unchawchu.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Tukukuy p'unchawqa manam allin p'unchawchu.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Kapuq</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>Apaykachaqpa ID, yaykuna suti utaq e-mail chaskina.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>Manam “%input” nisqapaq apaykachaq tarikunchu.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Simi</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Mayqin simipas</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Tiyana</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count tiyanakuna</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Sapa raphipi lluqsiykuna</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>“%text” nisqapaq lluqsiykuna (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Lluqsiykuna (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Ñiqinchay:</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Ñiqinchay</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Llamk'achkaq suysukuna</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Kay suysuta hurquy</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Utaq suysukunata akllay hinaspa hunt'achiy, tupaq ukhunta rikuchinapaq.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Simikunata qillqasqayki qhipaqa suysukuna maskayta k'iklluchin.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>Manam “%text” nisqapaq lluqsiykuna tarikunchu.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Manam lluqsiykuna tarikunchu.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Hawapi huk suysuta hurquy.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>T'ikraykuna</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Ruraykuna</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>%name hukchay</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Hukchay</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Yuyay: q'ipikunaqa manam churasqata hurqusqa kanqachu.</translation>
     <message>
         <source>Help center</source>
         <translation>Yanapay wasi</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Ukhun</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Qillqa raphikuna</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Apaykachaqkuna</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Ukhun t'aqakuna</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Kamachiy</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Raphi %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Tukuy lluqsiykunata qhaway</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count lluqsiy</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Huk lluqsiy</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count yuyaychakuykuna</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Mana yuyaychakuykuna kanchu</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Manam yuyaychakuykuna apakuyta atikunchu.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Yuyaychakuykuna</translation>
     </message>
 </context>
 <context>

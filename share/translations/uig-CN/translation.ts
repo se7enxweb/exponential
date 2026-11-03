@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>بىرىنچى بەتكە بار</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>باشقا</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>ئاخىرقى 7 كۈن</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>ئۆزى بەلگىلىگەن ۋاقىت دائىرىسى</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>بارلىق سۆزلەر</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>خالىغان سۆز</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>ئېنىق ئىبارە</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>مۇناسىۋەتلىكلىك</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>ئىسىم A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>ئىسىم Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>ئۆزگەرتىلگەن، ئەڭ يېڭىسى ئالدىدا</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>ئۆزگەرتىلگەن، ئەڭ كونىسى ئالدىدا</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>ئېلان قىلىنغان، ئەڭ يېڭىسى ئالدىدا</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>ئېلان قىلىنغان، ئەڭ كونىسى ئالدىدا</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>ئۆزگەرتىلگەن</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>سۈزگۈچلەر</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>سۈزگۈچلەرنى كۆرسەت</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>سۈزگۈچلەرنى يوشۇر</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>قايتا تەڭشە</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>قوللان</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>سۆزلەر</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>مەزمۇن تىپى</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>تېخىمۇ كۆپ كۆرسەت (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>خاسلىقلىرىنىڭ بىرىدە ئىزدەش ئۈچۈن بىر مەزمۇن تىپىنى تاللاڭ.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>بۆلەك</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>مەنبە</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>ئاخىرى</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>باشلىنىش ۋاقتى ئىناۋەتلىك چېسلا ئەمەس.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>ئاخىرلىشىش ۋاقتى ئىناۋەتلىك چېسلا ئەمەس.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>ئىگىسى</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>ئىشلەتكۈچى ID، كىرىش ئىسمى ياكى ئېلخەت ئادرېسى.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>“%input” ئۈچۈن ئىشلەتكۈچى تېپىلمىدى.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>تىل</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>خالىغان تىل</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>ئورۇن</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count ئورۇن</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>ھەر بەتتىكى نەتىجە</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>“%text” نىڭ نەتىجىلىرى (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>نەتىجىلەر (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>تىزىش ئۆلچىمى</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>تىز</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>ئاكتىپ سۈزگۈچلەر</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>بۇ سۈزگۈچنى چىقىرىۋەت</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>ياكى سۈزگۈچلەرنى تاللاپ قوللىنىپ، ماس كېلىدىغان مەزمۇنلارنى تىزىڭ.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>سۆز كىرگۈزگەندىن كېيىن سۈزگۈچلەر ئىزدەش دائىرىسىنى تارايتىدۇ.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>“%text” ئۈچۈن نەتىجە تېپىلمىدى.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>نەتىجە تېپىلمىدى.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>يۇقىرىدىكى بىر سۈزگۈچنى چىقىرىۋېتىڭ.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>تەرجىمىلەر</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>مەشغۇلاتلار</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>%name نى تەھرىرلە</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>تەھرىرلە</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Help center</source>
         <translation>ياردەم مەركىزى</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>مەزمۇن</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>ھۆججەت بەتلىرى</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>ئىشلەتكۈچىلەر</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>مەزمۇن تىپلىرى</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>باشقۇرۇش</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>%number-بەت</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>بارلىق نەتىجىلەرنى كۆرۈش</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count نەتىجە</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>بىر نەتىجە</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count تەۋسىيە</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>تەۋسىيە يوق</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>تەۋسىيەلەرنى يۈكلىگىلى بولمىدى.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>تەۋسىيەلەر</translation>
     </message>
 </context>
 <context>

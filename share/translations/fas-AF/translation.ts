@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>رفتن به صفحهٔ نخست</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>سایر</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>7 روز گذشته</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>بازهٔ دلخواه</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>همهٔ واژه‌ها</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>هر واژه</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>عبارت دقیق</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>ارتباط</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>نام الف–ی</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>نام ی–الف</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>تاریخ تغییر، جدیدترین اول</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>تاریخ تغییر، قدیمی‌ترین اول</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>تاریخ نشر، جدیدترین اول</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>تاریخ نشر، قدیمی‌ترین اول</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>تاریخ تغییر</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>فیلترها</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>نمایش فیلترها</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>پنهان کردن فیلترها</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>بازنشانی</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>اعمال</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>واژه‌ها</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>نوع محتوا</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>نمایش بیشتر (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>یک نوع محتوا را انتخاب کنید تا در یکی از ویژگی‌های آن جستجو شود.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>بخش</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>از</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>تا</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>تاریخ شروع معتبر نیست.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>تاریخ پایان معتبر نیست.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>مالک</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>شناسهٔ کاربر، نام کاربری یا آدرس ایمیل.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>هیچ کاربری برای «%input» پیدا نشد.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>زبان</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>هر زبان</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>مکان</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count مکان</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>نتایج در هر صفحه</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>نتایج برای «%text» (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>نتایج (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>مرتب‌سازی بر اساس</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>مرتب‌سازی</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>فیلترهای فعال</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>برداشتن این فیلتر</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>یا فیلترهایی را انتخاب و اعمال کنید تا محتوای مطابق با آن‌ها فهرست شود.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>پس از نوشتن واژه‌ها، فیلترها جستجو را محدودتر می‌کنند.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>هیچ نتیجه‌ای برای «%text» پیدا نشد.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>هیچ نتیجه‌ای پیدا نشد.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>یکی از فیلترهای بالا را حذف کنید.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>ترجمه‌ها</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>عملیات</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>ویرایش %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>ویرایش</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Help center</source>
         <translation>مرکز راهنما</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>محتوا</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>صفحه‌های سند</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>کاربران</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>کلاس‌های محتوا</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>مدیریت</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>صفحهٔ %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>مشاهدهٔ همهٔ نتایج</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count نتیجه</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>یک نتیجه</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count پیشنهاد</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>پیشنهادی وجود ندارد</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>پیشنهادها بارگیری نشد.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>پیشنهادها</translation>
     </message>
 </context>
 <context>

@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>Adto sa unang panid</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Uban pa</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>Miaging 7 ka adlaw</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Pinili nga gidugayon</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Tanang pulong</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Bisan unsang pulong</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Eksaktong hugpong sa pulong</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Kalambigitan</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Ngalan A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Ngalan Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Giusab, pinakabag-o una</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Giusab, pinakadaan una</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Gipatik, pinakabag-o una</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Gipatik, pinakadaan una</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Giusab</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Mga filter</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Ipakita ang mga filter</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Itago ang mga filter</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>I-reset</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>I-apply</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Mga pulong</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Matang sa sulod</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Ipakita ang dugang (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Pagpili og usa ka matang sa sulod aron mangita sa usa sa mga attribute niini.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Seksyon</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Gikan sa</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Hangtod</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Ang petsa sa pagsugod dili balido nga petsa.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Ang petsa sa pagtapos dili balido nga petsa.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Tag-iya</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>ID sa tiggamit, login o e-mail address.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>Walay tiggamit nga nakit-an alang sa “%input”.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Pinulongan</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Bisan unsang pinulongan</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Lokasyon</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count ka lokasyon</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Mga resulta matag panid</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Mga resulta alang sa “%text” (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Mga resulta (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Han-aya sumala sa</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Paghan-ay</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Aktibong mga filter</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Kuhaa kini nga filter</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>O pagpili og mga filter ug i-apply kini aron malista ang sulod nga mohaum niini.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Ang mga filter mopiho sa pagpangita human ka makasulat og mga pulong.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>Walay resulta nga nakit-an alang sa “%text”.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Walay resulta nga nakit-an.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Tangtanga ang usa ka filter sa ibabaw.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Mga hubad</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Mga aksyon</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>Usba ang %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Usba</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Hinumdomi: Dili i-uninstall ang mga pakete.</translation>
     <message>
         <source>Help center</source>
         <translation>Sentro sa tabang</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Sulod</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Mga panid sa dokumento</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Mga tiggamit</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Mga klase sa sulod</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Administrasyon</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Panid %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Tan-awa ang tanang resulta</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count ka resulta</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Usa ka resulta</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count ka sugyot</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Walay sugyot</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Dili ma-load ang mga sugyot.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Mga sugyot</translation>
     </message>
 </context>
 <context>

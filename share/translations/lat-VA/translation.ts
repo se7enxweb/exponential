@@ -5170,6 +5170,210 @@
         <source>Go to the first page</source>
         <translation>Ad primam paginam ire</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Aliud</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>Ultimi 7 dies</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Spatium proprium</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Omnia verba</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Quodvis verbum</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Locutio exacta</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Congruentia</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Nomen A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Nomen Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Mutatum, recentissima prima</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Mutatum, antiquissima prima</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Editum, recentissima prima</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Editum, antiquissima prima</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Mutatum</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Filtra</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Filtra ostendere</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Filtra celare</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Ad initium reducere</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Adhibere</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Verba</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Genus contenti</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Plura ostendere (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Unum genus contenti elige, ut in uno eius attributorum quaeras.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Sectio</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Ex</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Usque ad</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Dies initii non est dies validus.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Dies finis non est dies validus.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Possessor</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>ID usoris, nomen inscriptionis vel inscriptio electronica.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>Nullus usor inventus est pro “%input”.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Lingua</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Quaevis lingua</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Locus</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count loci</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Inventa per paginam</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Inventa pro “%text” (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Inventa (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Ordinare secundum</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Ordinare</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Filtra activa</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Hoc filtrum removere</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Vel filtra elige et adhibe, ut contenta congruentia enumerentur.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Filtra quaestionem coartant, postquam verba scripseris.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>Nulla inventa sunt pro “%text”.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Nulla inventa sunt.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Filtrum supra remove.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Translationes</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Actiones</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>%name recensere</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Recensere</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13853,6 +14057,61 @@ Nota: institutio sarcinarum non revocabitur.</translation>
     <message>
         <source>Help center</source>
         <translation>Centrum auxilii</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Contenta</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Paginae documentorum</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Usores</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Classes contenti</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Administratio</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Pagina %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Omnia inventa videre</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count inventa</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Unum inventum</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count suggestiones</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Nullae suggestiones</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Suggestiones onerari non potuerunt.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Suggestiones</translation>
     </message>
 </context>
 <context>

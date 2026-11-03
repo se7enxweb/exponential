@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>Оди на првата страница</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Друго</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>Последни 7 дена</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Прилагоден период</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Сите зборови</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Кој било збор</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Точна фраза</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Релевантност</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Име А–Ш</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Име Ш–А</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Изменето, најново прво</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Изменето, најстаро прво</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Објавено, најново прво</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Објавено, најстаро прво</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Изменето</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Филтри</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Прикажи филтри</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Скриј филтри</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Ресетирај</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Примени</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Зборови</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Тип на содржина</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Прикажи повеќе (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Изберете еден тип на содржина за да пребарувате во еден од неговите атрибути.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Секција</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Од</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>До</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Почетниот датум не е валиден датум.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Крајниот датум не е валиден датум.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Сопственик</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>Кориснички ID, најава или е-адреса.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>Не е пронајден корисник за „%input“.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Јазик</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Кој било јазик</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Локација</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count локации</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Резултати по страница</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Резултати за „%text“ (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Резултати (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Подреди по</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Подредување</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Активни филтри</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Отстрани го овој филтер</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Или изберете филтри и применете ги за да се прикаже содржината што одговара.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Филтрите го стеснуваат пребарувањето откако ќе внесете зборови.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>Не се пронајдени резултати за „%text“.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Не се пронајдени резултати.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Отстранете филтер погоре.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Преводи</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Дејства</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>Уреди %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Уреди</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Help center</source>
         <translation>Центар за помош</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Содржина</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Страници на документи</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Корисници</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Класи на содржина</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Администрација</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Страница %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Прикажи ги сите резултати</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count резултати</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Еден резултат</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count предлози</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Нема предлози</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Предлозите не можеа да се вчитаат.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Предлози</translation>
     </message>
 </context>
 <context>

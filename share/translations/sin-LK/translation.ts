@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>පළමු පිටුවට යන්න</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>වෙනත්</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>පසුගිය දින 7</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>අභිරුචි කාල පරාසය</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>සියලු වචන</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>ඕනෑම වචනයක්</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>නිශ්චිත වාක්‍ය ඛණ්ඩය</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>අදාළත්වය</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>නම A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>නම Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>වෙනස් කළ, නවතම පළමුව</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>වෙනස් කළ, පැරණිතම පළමුව</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>ප්‍රකාශිත, නවතම පළමුව</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>ප්‍රකාශිත, පැරණිතම පළමුව</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>වෙනස් කළ</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>පෙරහන්</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>පෙරහන් පෙන්වන්න</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>පෙරහන් සඟවන්න</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>යළි සකසන්න</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>යොදන්න</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>වචන</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>අන්තර්ගත වර්ගය</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>තවත් පෙන්වන්න (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>එහි එක් ගුණාංගයක සෙවීමට එක් අන්තර්ගත වර්ගයක් තෝරන්න.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>කොටස</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>මෙයින්</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>වෙත</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>ආරම්භක දිනය වලංගු දිනයක් නොවේ.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>අවසාන දිනය වලංගු දිනයක් නොවේ.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>හිමිකරු</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>පරිශීලක ID, පිවිසුම් නාමය හෝ ඊමේල් ලිපිනය.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>“%input” සඳහා පරිශීලකයෙකු හමු නොවීය.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>භාෂාව</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>ඕනෑම භාෂාවක්</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>ස්ථානය</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>ස්ථාන %count ක්</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>පිටුවකට ප්‍රතිඵල</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>“%text” සඳහා ප්‍රතිඵල (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>ප්‍රතිඵල (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>අනුව වර්ග කරන්න</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>වර්ග කරන්න</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>සක්‍රිය පෙරහන්</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>මෙම පෙරහන ඉවත් කරන්න</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>නැතහොත් පෙරහන් තෝරා ඒවාට ගැළපෙන අන්තර්ගතය ලැයිස්තුගත කිරීමට ඒවා යොදන්න.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>ඔබ වචන ටයිප් කළ පසු පෙරහන් සෙවීම පටු කරයි.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>“%text” සඳහා ප්‍රතිඵල හමු නොවීය.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>ප්‍රතිඵල හමු නොවීය.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>ඉහත පෙරහනක් ඉවත් කරන්න.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>පරිවර්තන</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>ක්‍රියා</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>%name සංස්කරණය කරන්න</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>සංස්කරණය කරන්න</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Help center</source>
         <translation>උදව් මධ්‍යස්ථානය</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>අන්තර්ගතය</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>ලේඛන පිටු</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>පරිශීලකයින්</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>අන්තර්ගත පන්ති</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>පරිපාලනය</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>පිටුව %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>සියලු ප්‍රතිඵල බලන්න</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>ප්‍රතිඵල %count ක්</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>එක් ප්‍රතිඵලයක්</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>යෝජනා %count ක්</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>යෝජනා නැත</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>යෝජනා පූරණය කළ නොහැකි විය.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>යෝජනා</translation>
     </message>
 </context>
 <context>

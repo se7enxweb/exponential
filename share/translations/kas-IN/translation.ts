@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>گۄڈنِکس صفحس گَژھِو</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>بییہ</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>پتمن 7 دۄہن</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>مَرضی مُطٲبِق مُدَت</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>سٲری لَفٕظ</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>کانٛہہ تہِ لَفٕظ</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>ٹھیٖک جُملہٕ</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>مُطابِقَت</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>ناو ا–ی</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>ناو ی–ا</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>تَرمیم شُدٕہ، نٔوۍ گۄڈٕ</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>تَرمیم شُدٕہ، پرٛان گۄڈٕ</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>شایع شُدٕہ، نٔوۍ گۄڈٕ</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>شایع شُدٕہ، پرٛان گۄڈٕ</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>تَرمیم شُدٕہ</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>فِلٹَر</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>فِلٹَر ہاوِو</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>فِلٹَر ژھٔپاوِو</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>ری سیٹ کٔرِو</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>لاگوٗ کٔرِو</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>لَفٕظ</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>مَواد قٕسم</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>بیٚیہِ ہاوِو (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>اَکھ مَواد قٕسم ژارِو تاکہ تَمہٕ کِس اَکِس خٲصِیتس منٛز ژھانٛڈِو۔</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>سیکشَن</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>پیٹھ</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>تام</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>شروٗعاتی تٲریخ چھےٚ نہٕ صحیح تٲریخ۔</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>آخری تٲریخ چھےٚ نہٕ صحیح تٲریخ۔</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>مالِک</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>صارِف ID، لاگ اِن یا ای میل پَتہٕ۔</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>“%input” خٲطرٕ میوٗل نہٕ کانٛہہ صارِف۔</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>زَبان</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>کانٛہہ تہِ زَبان</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>جاے</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count جاے</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>فی صفحہٕ نَتیٖجہٕ</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>“%text” خٲطرٕ نَتیٖجہٕ (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>نَتیٖجہٕ (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>یِتھ مُطابِق ترتیٖب دِیُن</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>ترتیٖب دِیُن</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>سَرگَرم فِلٹَر</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>یہ فِلٹَر ہٹٲوِو</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>یا فِلٹَر ژارِو تہٕ لاگوٗ کٔرِو تاکہ مُطابِق مَواد یِیہِ فہرِستس منٛز۔</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>لَفٕظ لیٚکھنہٕ پَتہٕ چھِ فِلٹَر تلاش محدوٗد کران۔</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>“%text” خٲطرٕ میوٗل نہٕ کانٛہہ نَتیٖجہٕ۔</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>کانٛہہ نَتیٖجہٕ میوٗل نہٕ۔</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>پیٹھہٕ کُن اَکھ فِلٹَر ہٹٲوِو۔</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>ترجمہ</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>عَمَل</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>%name تَرمیم کٔرِو</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>تَرمیم کٔرِو</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Help center</source>
         <translation>مَدَد مَرکَز</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>مَواد</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>دَستاویز صفحہٕ</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>صارِف</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>مَواد کلاسہٕ</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>اَنتِظام</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>صفحہٕ %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>سٲری نَتیٖجہٕ وُچھِو</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count نَتیٖجہٕ</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>اَکھ نَتیٖجہٕ</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count تَجویز</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>کانٛہہ تَجویز نہٕ</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>تَجویز ہیٚکہٕ نہٕ لوڈ گٔژھِتھ۔</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>تَجویز</translation>
     </message>
 </context>
 <context>

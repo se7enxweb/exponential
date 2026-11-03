@@ -5167,6 +5167,210 @@
         <source>Go to the first page</source>
         <translation>पहले पृष्ठ पर जाएँ</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>अन्य</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>पिछले 7 दिन</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>कस्टम अवधि</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>सभी शब्द</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>कोई भी शब्द</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>सटीक वाक्यांश</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>प्रासंगिकता</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>नाम अ–ज्ञ</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>नाम ज्ञ–अ</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>संशोधित, नवीनतम पहले</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>संशोधित, सबसे पुराना पहले</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>प्रकाशित, नवीनतम पहले</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>प्रकाशित, सबसे पुराना पहले</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>संशोधित</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>फ़िल्टर</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>फ़िल्टर दिखाएँ</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>फ़िल्टर छिपाएँ</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>रीसेट करें</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>लागू करें</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>शब्द</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>सामग्री प्रकार</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>और दिखाएँ (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>उसके किसी एक एट्रिब्यूट में खोजने के लिए एक सामग्री प्रकार चुनें।</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>अनुभाग</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>से</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>तक</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>प्रारंभ तिथि मान्य तिथि नहीं है।</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>समाप्ति तिथि मान्य तिथि नहीं है।</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>स्वामी</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>उपयोगकर्ता ID, लॉगिन या ई-मेल पता।</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>“%input” के लिए कोई उपयोगकर्ता नहीं मिला।</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>भाषा</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>कोई भी भाषा</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>स्थान</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count स्थान</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>प्रति पृष्ठ परिणाम</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>“%text” के लिए परिणाम (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>परिणाम (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>इसके अनुसार सॉर्ट करें</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>सॉर्ट क्रम</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>सक्रिय फ़िल्टर</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>यह फ़िल्टर निकालें</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>या फ़िल्टर चुनें और उनसे मेल खाने वाली सामग्री की सूची देखने के लिए उन्हें लागू करें।</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>शब्द टाइप करने के बाद फ़िल्टर खोज को सीमित करते हैं।</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>“%text” के लिए कोई परिणाम नहीं मिला।</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>कोई परिणाम नहीं मिला।</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>ऊपर से कोई फ़िल्टर हटाएँ।</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>अनुवाद</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>क्रियाएँ</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>%name संपादित करें</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>संपादित करें</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13850,6 +14054,61 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Help center</source>
         <translation>सहायता केंद्र</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>सामग्री</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>दस्तावेज़ पृष्ठ</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>उपयोगकर्ता</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>सामग्री वर्ग</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>व्यवस्थापन</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>पृष्ठ %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>सभी परिणाम देखें</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>परिणाम: %count</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>एक परिणाम</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count सुझाव</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>कोई सुझाव नहीं</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>सुझाव लोड नहीं किए जा सके।</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>सुझाव</translation>
     </message>
 </context>
 <context>

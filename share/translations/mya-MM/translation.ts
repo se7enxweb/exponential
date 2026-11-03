@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>ပထမစာမျက်နှာသို့ သွားရန်</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>အခြား</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>ပြီးခဲ့သော ရက် 7 ရက်</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>စိတ်ကြိုက် ကာလ</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>စကားလုံးအားလုံး</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>မည်သည့်စကားလုံးမဆို</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>တိကျသော စကားစု</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>သက်ဆိုင်မှု</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>အမည် A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>အမည် Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>ပြင်ဆင်ချိန်၊ အသစ်ဆုံး ဦးစွာ</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>ပြင်ဆင်ချိန်၊ အဟောင်းဆုံး ဦးစွာ</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>ထုတ်ဝေချိန်၊ အသစ်ဆုံး ဦးစွာ</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>ထုတ်ဝေချိန်၊ အဟောင်းဆုံး ဦးစွာ</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>ပြင်ဆင်ပြီး</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>စစ်ထုတ်မှုများ</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>စစ်ထုတ်မှုများ ပြရန်</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>စစ်ထုတ်မှုများ ဝှက်ရန်</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>ပြန်သတ်မှတ်ရန်</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>အသုံးချရန်</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>စကားလုံးများ</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>အကြောင်းအရာ အမျိုးအစား</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>ထပ်ပြရန် (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>၎င်း၏ attribute တစ်ခုတွင် ရှာဖွေရန် အကြောင်းအရာ အမျိုးအစား တစ်ခုကို ရွေးပါ။</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>အပိုင်း</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>မှ</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>သို့</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>စတင်ရက်စွဲသည် မှန်ကန်သော ရက်စွဲ မဟုတ်ပါ။</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>ပြီးဆုံးရက်စွဲသည် မှန်ကန်သော ရက်စွဲ မဟုတ်ပါ။</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>ပိုင်ရှင်</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>အသုံးပြုသူ ID၊ ဝင်ရောက်အမည် သို့မဟုတ် အီးမေးလ်လိပ်စာ။</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>“%input” အတွက် အသုံးပြုသူ မတွေ့ပါ။</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>ဘာသာစကား</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>မည်သည့်ဘာသာစကားမဆို</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>တည်နေရာ</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>တည်နေရာ %count ခု</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>စာမျက်နှာတစ်ခုလျှင် ရလဒ်</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>“%text” အတွက် ရလဒ်များ (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>ရလဒ်များ (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>စီရန်</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>စီရန်</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>အသုံးပြုနေသော စစ်ထုတ်မှုများ</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>ဤစစ်ထုတ်မှုကို ဖယ်ရှားရန်</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>သို့မဟုတ် ကိုက်ညီသော အကြောင်းအရာကို စာရင်းပြရန် စစ်ထုတ်မှုများကို ရွေးပြီး အသုံးချပါ။</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>စကားလုံးများ ရိုက်ထည့်ပြီးသည်နှင့် စစ်ထုတ်မှုများက ရှာဖွေမှုကို ကျဉ်းစေသည်။</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>“%text” အတွက် ရလဒ် မတွေ့ပါ။</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>ရလဒ် မတွေ့ပါ။</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>အပေါ်ရှိ စစ်ထုတ်မှုတစ်ခုကို ဖယ်ရှားပါ။</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>ဘာသာပြန်ချက်များ</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>လုပ်ဆောင်ချက်များ</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>%name ကို တည်းဖြတ်ရန်</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>တည်းဖြတ်ရန်</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Help center</source>
         <translation>အကူအညီ စင်တာ</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>အကြောင်းအရာ</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>စာရွက်စာတမ်း စာမျက်နှာများ</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>အသုံးပြုသူများ</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>အကြောင်းအရာ အတန်းအစားများ</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>စီမံခန့်ခွဲမှု</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>စာမျက်နှာ %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>ရလဒ်အားလုံး ကြည့်ရန်</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>ရလဒ် %count ခု</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>ရလဒ် တစ်ခု</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>အကြံပြုချက် %count ခု</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>အကြံပြုချက် မရှိပါ</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>အကြံပြုချက်များကို ဖွင့်၍ မရပါ။</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>အကြံပြုချက်များ</translation>
     </message>
 </context>
 <context>

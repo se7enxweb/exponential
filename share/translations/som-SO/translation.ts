@@ -5167,6 +5167,210 @@
         <source>Go to the first page</source>
         <translation>U gudub bogga ugu horreeya</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Kale</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>7-dii maalmood ee la soo dhaafay</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Muddo gaar ah</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Dhammaan erayada</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Eray kasta</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Weedh sax ah</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Khusayn</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Magaca A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Magaca Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>La beddelay, kuwa ugu cusub marka hore</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>La beddelay, kuwa ugu da'da weyn marka hore</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>La daabacay, kuwa ugu cusub marka hore</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>La daabacay, kuwa ugu da'da weyn marka hore</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>La beddelay</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Shaandhooyin</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Muuji shaandhooyinka</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Qari shaandhooyinka</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Dib u deji</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Dabaq</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Erayo</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Nooca nuxurka</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Muuji wax badan (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Dooro hal nooc oo nuxur ah si aad uga raadiso mid ka mid ah astaamihiisa.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Qaybta</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Laga bilaabo</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Ku</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Taariikhda bilowgu ma aha taariikh sax ah.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Taariikhda dhammaadku ma aha taariikh sax ah.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Mulkiile</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>Aqoonsiga isticmaalaha, magaca gelitaanka ama ciwaanka e-maylka.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>Lama helin isticmaale “%input”.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Luqad</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Luqad kasta</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Goobta</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count goobood</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Natiijooyin boggiiba</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Natiijooyinka “%text” (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Natiijooyin (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Kala sooc sida</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Kala sooc</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Shaandhooyinka firfircoon</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Ka saar shaandhadan</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Ama dooro shaandhooyin oo dabaq si aad u liis gareyso nuxurka ay la jaanqaadaan.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Shaandhooyinku waxay yareeyaan raadinta marka aad qorto erayo.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>Natiijo looma helin “%text”.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Natiijo lama helin.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Ka saar shaandho kor ku taal.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Tarjumaado</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Ficillo</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>Tafatir %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Tafatir</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13909,6 +14113,61 @@ Fiiro gaar ah: Xirmooyinka lama saari doono rakibaaddooda.</translation>
     <message>
         <source>Help center</source>
         <translation>Xarunta caawimaadda</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Nuxur</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Bogagga dukumentiyada</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Isticmaalayaasha</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Fasalada nuxurka</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Maamulka</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Bogga %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Eeg dhammaan natiijooyinka</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count natiijo</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Hal natiijo</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count soo jeedin</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Soo jeedin ma jirto</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Soo jeedimaha lama soo dejin karin.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Soo jeedimo</translation>
     </message>
 </context>
 <context>

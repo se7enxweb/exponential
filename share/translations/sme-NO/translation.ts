@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>Mana vuosttaš siidui</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Eará</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>Maŋimuš 7 beaivvi</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Iežas áigodat</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Buot sánit</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Vaikko makkár sátni</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Dárkilis cealkka</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Relevánsa</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Namma A–Ž</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Namma Ž–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Rievdaduvvon, ođđasepmosat vuos</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Rievdaduvvon, boarrasepmosat vuos</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Almmuhuvvon, ođđasepmosat vuos</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Almmuhuvvon, boarrasepmosat vuos</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Rievdaduvvon</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Sillut</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Čájet silluid</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Čiega silluid</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Nuollat</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Geavahit</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Sánit</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Sisdoallotiipa</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Čájet eambbo (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Vállje ovtta sisdoallotiippa ohcat ovtta dan attribuhtain.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Oassi</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Gos</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Gosa</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Álgobeaivi ii leat gustovaš beaivemearri.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Loahppabeaivi ii leat gustovaš beaivemearri.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Eaiggát</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>Geavaheaddji ID, sisačálihannamma dahje e-poastačujuhus.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>Ii gávdnon geavaheaddji ”%input” várás.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Giella</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Vaikko makkár giella</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Sajádat</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count sajádaga</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Bohtosat juohke siidui</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Bohtosat ”%text” várás (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Bohtosat (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Sorteret dan mielde</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Sorteren</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Aktiivvalaš sillut</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Váldde dán sillu eret</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Dahje vállje silluid ja geavat daid čájehit sisdoalu mii heive daidda.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Sillut gáržžidit ohcama go leat čállán sániid.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>Eai gávdnon bohtosat ”%text” várás.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Eai gávdnon bohtosat.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Váldde eret ovtta sillu bajábealde.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Jorgalusat</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Doaimmat</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>Rievdadit %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Rievdadit</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Muitte: Páhkaid sajáiduhttin ii sihkkojuvvo.</translation>
     <message>
         <source>Help center</source>
         <translation>Veahkkeguovddáš</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Sisdoallu</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Dokumeantta siiddut</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Geavaheaddjit</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Sisdoalloluohkkát</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Hálddašeapmi</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Siidu %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Čájet buot bohtosiid</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count bohtosa</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Okta boađus</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count evttohusa</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Eai leat evttohusat</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Evttohusaid ii sáhttán viežžat.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Evttohusat</translation>
     </message>
 </context>
 <context>

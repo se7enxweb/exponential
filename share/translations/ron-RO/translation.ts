@@ -5167,6 +5167,210 @@
         <source>Go to the first page</source>
         <translation>Salt la prima pagină</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Altele</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>Ultimele 7 zile</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Interval personalizat</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Toate cuvintele</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Oricare cuvânt</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Expresie exactă</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Relevanță</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Nume A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Nume Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Modificat, cele mai noi primele</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Modificat, cele mai vechi primele</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Publicat, cele mai noi primele</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Publicat, cele mai vechi primele</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Modificat</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Filtre</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Afișare filtre</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Ascundere filtre</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Resetare</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Aplicare</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Cuvinte</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Tip de conținut</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Afișare mai multe (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Alegeți un tip de conținut pentru a căuta într-unul dintre atributele sale.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Secțiune</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Din</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Până la</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Data de început nu este o dată validă.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Data de sfârșit nu este o dată validă.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Proprietar</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>ID-ul utilizatorului, numele de autentificare sau adresa de e-mail.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>Nu a fost găsit niciun utilizator pentru „%input”.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Limbă</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Orice limbă</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Locație</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count locații</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Rezultate pe pagină</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Rezultate pentru „%text” (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Rezultate (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Sortare după</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Sortare</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Filtre active</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Eliminare filtru</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Sau alegeți filtre și aplicați-le pentru a lista conținutul corespunzător.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Filtrele restrâng căutarea după ce ați introdus cuvinte.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>Nu au fost găsite rezultate pentru „%text”.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Nu au fost găsite rezultate.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Eliminați un filtru de mai sus.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Traduceri</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Acțiuni</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>Editare %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Editare</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13850,6 +14054,61 @@ Notă: pachetele nu vor fi dezinstalate.</translation>
     <message>
         <source>Help center</source>
         <translation>Centru de ajutor</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Conținut</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Pagini de documente</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Utilizatori</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Clase de conținut</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Administrare</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Pagina %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Vizualizare toate rezultatele</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>Rezultate: %count</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Un rezultat</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count sugestii</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Nicio sugestie</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Sugestiile nu au putut fi încărcate.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Sugestii</translation>
     </message>
 </context>
 <context>
