@@ -287,7 +287,10 @@ class expMigrationRemoteDeployTest extends PHPUnit\Framework\TestCase
         $this->assertFalse( expMigrationRemoteDeploy::statesInSync( array( 'a' => array( 's 1' => 'done' ), 'b' => array() ) ) );
         $this->assertFalse( expMigrationRemoteDeploy::statesInSync( array( 'a' => array( 's 1' => 'failed' ) ) ) );
         $this->assertSame( array( 'dry run: x', 'captions are off there ([CaptionSettings]): without the caption before the run it could not be taken back, so it is not switched' ),
-                           expMigrationRemoteDeploy::verifyProblems( array( 'exit' => 1, 'errors' => array( 'x' ), 'captions' => array( 'pre' => 'off' ) ), array(), array() ) );
+                           expMigrationRemoteDeploy::verifyProblems( array( 'exit' => 1, 'errors' => array( 'x' ), 'captions' => array( 'pre' => 'off' ),
+                                                                            'migrations' => array( array( 'id' => 'm', 'action' => 'would-apply' ) ) ), array(), array() ) );
+        // nothing to apply there: no caption is taken, and none is needed
+        $this->assertSame( array(), expMigrationRemoteDeploy::verifyProblems( array( 'exit' => 0, 'captions' => array( 'pre' => 'off' ), 'migrations' => array() ), array(), array() ) );
     }
 
     /** RD-05 */

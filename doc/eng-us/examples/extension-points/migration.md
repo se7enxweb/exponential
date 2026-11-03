@@ -2,7 +2,7 @@
 title: Extension points in migration.ini
 audience: developer, admin
 category: examples
-summary: Settings of migration.ini that list handlers, classes or directories an extension can add to (1, found by name).
+summary: Settings of migration.ini that list handlers, classes or directories an extension can add to (3, found by name).
 keywords: migration.ini, extension point, handler, extension, hook
 type: generated
 generated: exp:help:examples
@@ -22,6 +22,30 @@ Shipped: `migrations`. [The setting](../ini-settings/migration/MigrationSettings
 # extension/expexample/settings/migration.ini.append.php
 [MigrationSettings]
 ExtensionDirectory=migrations    # replace with your class or value
+*/ ?>
+```
+
+## RemoteSettings PhpCheck
+
+Shipped: `major`. [The setting](../ini-settings/migration/RemoteSettings.md#phpcheck).
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# extension/expexample/settings/migration.ini.append.php
+[RemoteSettings]
+PhpCheck=major    # replace with your class or value
+*/ ?>
+```
+
+## RemoteSettings ExtensionCheck
+
+Shipped: `migrations`. [The setting](../ini-settings/migration/RemoteSettings.md#extensioncheck).
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# extension/expexample/settings/migration.ini.append.php
+[RemoteSettings]
+ExtensionCheck=migrations    # replace with your class or value
 */ ?>
 ```
 

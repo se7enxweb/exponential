@@ -52,7 +52,7 @@ next one. --rollback=<deploy id> takes back every remote that applied a deploy.
 | `--remotes` | required | The remotes: ids or group names of [RemoteSettings] RemoteList[] in migration.ini, or all (a comma list or repeated) |
 | `--apply` |  | Make the changes (the default is a dry run that lists them and changes nothing) |
 | `--dry-run` |  | The default, accepted for scripts that pass it: list what would change, change nothing |
-| `--transfer-only` |  | Send and verify the migration files, but do not run them (with --apply; the only mode for FTP remotes) |
+| `--transfer-only` |  | Send and verify the migration files, but do not run them (with --apply; the only mode for an FTP remote without a trigger) |
 | `--only` | required | Only these migrations (migration ids, a comma list or repeated) |
 | `--format` | required | text (default) or json (the machine output exp-migration/1) |
 | `--parallel` | required | How many remotes are worked on at the same time (default [RemoteSettings] Parallel) |

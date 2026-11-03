@@ -24,7 +24,11 @@ A remote whose settings are wrong is marked **settings to fix**, with what is wr
 
 **Test connection** reaches the remote once and changes nothing: for SSH, sftp, rsync and local it reads the remote's
 migration status (its kernel version, how many migrations are done, pending and failed, whether a run holds its lock);
-for FTP it signs in and reads `index.php` back, because the migration status of an FTP remote cannot be read.
+for FTP it signs in and reads `index.php` back, because the migration status of an FTP remote cannot be read (an
+FTP remote with the HTTP trigger is read like an SSH one). The trigger (`Trigger`, `TriggerSecret`) is set in
+`settings/override/migration.ini.append.php`; the wizard keeps it when it saves the remote. See the guide
+[Migrations: deploying to remote installations](../../guides/migrations-remote-deploy.md), "FTP remotes with the HTTP
+trigger".
 
 ### The wizard
 
@@ -51,7 +55,10 @@ the newest first, with its state, every remote's state, who started it and when.
 1. **The remotes**: tick remotes one by one, a group (every remote of it), or both.
 2. **How**:
    - **Send and run**: the migrations are sent, verified and run on every remote with one shared run id.
-   - **Transfer only**: the files are sent and verified, nothing is run (the only way for an FTP remote).
+   - **Transfer only**: the files are sent and verified, nothing is run (the only way for an FTP remote without the
+     HTTP trigger).
+   The fixes of `[RemoteSettings] SelfHeal[]` (a stale run lock, missing folders, file modes, caches) are made on each
+   remote as part of it, and the deploy's page lists them under the remote.
    - **Staged**: stage by stage, see below.
    - **Only these migrations**: optional migration ids; empty means every migration of the site and its extensions.
 

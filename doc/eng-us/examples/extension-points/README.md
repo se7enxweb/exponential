@@ -40,7 +40,7 @@ Where an extension plugs into the kernel through settings: INI settings that nam
 | [ldap.ini](ldap.md) | kernel | 2 | LDAPSearchFilters, LDAPGroupClass |
 | [mailpreferences.ini](mailpreferences.md) | kernel | 11 | HandlerClass, HandlerClass, HandlerClass, HandlerClass, HandlerClass, HandlerClass ... |
 | [membermanagement.ini](membermanagement.md) | kernel | 1 | GuardedClasses |
-| [migration.ini](migration.md) | kernel | 1 | ExtensionDirectory |
+| [migration.ini](migration.md) | kernel | 3 | ExtensionDirectory, PhpCheck, ExtensionCheck |
 | [module.ini](module.md) | kernel | 2 | ModuleRepositories, ExtensionRepositories |
 | [notification.ini](notification.md) | kernel | 5 | IncludeClasses, ExtensionDirectories, ExtensionDirectories, ExtensionDirectories, DefaultTransport |
 | [package.ini](package.md) | kernel | 3 | ExtensionDirectories, HandlerList, HandlerList |

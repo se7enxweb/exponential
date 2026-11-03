@@ -2,7 +2,7 @@
 title: Erweiterungspunkte in migration.ini
 audience: developer, admin
 category: examples
-summary: Einstellungen von migration.ini, die Handler, Klassen oder Verzeichnisse auflisten, die eine Erweiterung ergänzen kann (1, am Namen erkannt).
+summary: Einstellungen von migration.ini, die Handler, Klassen oder Verzeichnisse auflisten, die eine Erweiterung ergänzen kann (3, am Namen erkannt).
 keywords: Erweiterungspunkt, Erweiterung, migration.ini, extension point, handler, extension, hook
 type: generated
 generated: exp:help:examples
@@ -22,6 +22,30 @@ Ausgeliefert: `migrations`. [Die Einstellung](../ini-einstellungen/migration/Mig
 # extension/expexample/settings/migration.ini.append.php
 [MigrationSettings]
 ExtensionDirectory=migrations    # durch Ihre Klasse oder Ihren Wert ersetzen
+*/ ?>
+```
+
+## RemoteSettings PhpCheck
+
+Ausgeliefert: `major`. [Die Einstellung](../ini-einstellungen/migration/RemoteSettings.md#phpcheck).
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# extension/expexample/settings/migration.ini.append.php
+[RemoteSettings]
+PhpCheck=major    # durch Ihre Klasse oder Ihren Wert ersetzen
+*/ ?>
+```
+
+## RemoteSettings ExtensionCheck
+
+Ausgeliefert: `migrations`. [Die Einstellung](../ini-einstellungen/migration/RemoteSettings.md#extensioncheck).
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# extension/expexample/settings/migration.ini.append.php
+[RemoteSettings]
+ExtensionCheck=migrations    # durch Ihre Klasse oder Ihren Wert ersetzen
 */ ?>
 ```
 

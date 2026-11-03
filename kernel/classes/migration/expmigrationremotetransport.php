@@ -14,6 +14,8 @@
  *
  *   array( 'argv' => string[], 'env' => array, 'cwd' => string|null, 'stdin' => string|null )   a process, no shell
  *   array( 'copy' => array( local file => destination file ) )                                  a local copy (local)
+ *   array( 'http' => array( url, body, key ) )        a request to the remote's HTTP trigger (FTP remotes with Trigger),
+ *                                                     signed when it starts (expMigrationTrigger, curl -K -)
  *
  * Transports: ssh (commands over ssh, files with scp), sftp (files with an sftp batch), rsync (files with rsync over
  * ssh, --checksum and --partial: only what differs is sent, a broken transfer resumes), ftp and ftps (curl; files
@@ -39,6 +41,9 @@ class expMigrationRemoteTransport
     /** @var bool the host key was checked against HostKeyFingerprint: only known keys are accepted */
     protected $strict = false;
 
+    /** @var string|null the secret of the remote's HTTP trigger (setTriggerKey()) */
+    protected $triggerKey = null;
+
     /**
      * @param expMigrationRemote $remote
      * @param expMigrationRemoteCredential $credential problem() already called
@@ -55,6 +60,12 @@ class expMigrationRemoteTransport
     public function setStrict( $strict )
     {
         $this->strict = (bool)$strict;
+    }
+
+    /** @param string|null $key the secret the remote's HTTP trigger checks (TriggerSecret) */
+    public function setTriggerKey( $key )
+    {
+        $this->triggerKey = $key === null ? null : (string)$key;
     }
 
     /**
@@ -109,6 +120,14 @@ class expMigrationRemoteTransport
             return array( 'argv' => array_merge( array( $this->remote->php() ), $args ), 'env' => array(), 'cwd' => $this->remote->path(), 'stdin' => null );
         if ( !$this->remote->canRun() )
             return null;
+        if ( $this->remote->isFtp() )
+        {
+            // an FTP remote runs nothing over FTP: its HTTP trigger runs the console script there
+            $request = expMigrationTrigger::requestFromArgs( $args );
+            if ( $request === null || $this->triggerKey === null )
+                return null;
+            return array( 'http' => array( 'url' => $this->remote->trigger(), 'body' => json_encode( $request, JSON_UNESCAPED_SLASHES ), 'key' => $this->triggerKey ) );
+        }
         $command = 'cd ' . self::quote( $this->remote->path() ) . ' && ' . implode( ' ', array_map( array( __CLASS__, 'quote' ), array_merge( array( $this->remote->php() ), $args ) ) );
         $ssh = $this->ssh();
         return array( 'argv' => array_merge( array( 'ssh' ), $ssh['options'], array( '--', $this->login(), $command ) ), 'env' => $ssh['env'], 'cwd' => null, 'stdin' => null );

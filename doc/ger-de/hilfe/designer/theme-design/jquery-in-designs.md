@@ -28,7 +28,7 @@ Lizenzdateien. `ezjscore.ini [eZJSCore]` nennt sie:
 
 ```ini
 LocalScripts[jquery]=jquery-4.0.0.min.js
-LocalScripts[jqueryMigrate]=jquery-migrate-4.0.2.min.js
+LocalScripts[jqueryMigrate]=
 LocalScripts[jqueryUI]=jquery-ui-1.14.2.min.js
 ```
 
@@ -40,7 +40,7 @@ Nennen Sie den Generatorschlüssel im selben Aufruf vor Ihrem eigenen Skript, da
 {ezscript_load( array( 'ezjsc::jquery', 'mytheme.js' ) )}
 ```
 
-`ezjsc::jquery` gibt jQuery gefolgt von jQuery Migrate aus; `ezjsc::jqueryUI` gibt jQuery UI aus. Mehrere Templates können
+`ezjsc::jquery` gibt jQuery aus (gefolgt von jQuery Migrate, wenn es eingeschaltet ist); `ezjsc::jqueryUI` gibt jQuery UI aus. Mehrere Templates können
 `ezjsc::jquery` anfordern; es wird einmal ausgegeben.
 
 ## Lokal oder CDN
@@ -52,18 +52,35 @@ Standard, wenn Sie keinen Grund haben.
 
 ## Älterer Code und jQuery Migrate
 
-jQuery 4 hat alte APIs entfernt. jQuery Migrate 4.0.2, das `ezjsc::jquery` nach jQuery lädt, stellt sie wieder her, sodass älterer Code
-weiter funktioniert. Der mitgelieferte Build ist still; um jeden alten Aufruf, den er wiederherstellt, in der Konsole des Browsers zu
-sehen, setzen Sie auf einem Entwicklungs-Siteaccess den meldenden Build:
+jQuery 4 hat alte APIs entfernt. jQuery Migrate 4.0.2 stellt sie wieder her, sodass älterer Code weiter funktioniert. Es wird
+weiter mitgeliefert, ist aber seit 6.0.15 ausgeschaltet: `LocalScripts[jqueryMigrate]` und `ExternalScripts[jqueryMigrate]` sind in
+`ezjscore.ini` leer, und expui hat `Migrate=disabled` in `expui.ini`, weil die Admin-Designs und die Erweiterungen, die sie laden,
+keine der entfernten APIs mehr aufrufen. Ein Wächtertest (`tests/tests/design/AdminJQuery4RemovedApisTest.php`) sorgt dafür, dass
+das für die Admin-Designs so bleibt.
+
+### jQuery Migrate wieder einschalten
+
+Eine Site, deren eigener Code noch eine entfernte API aufruft, schaltet Migrate in einem Override wieder ein; dann lädt
+`ezjsc::jquery` es direkt nach jQuery. Der meldende Build zeigt jeden alten Aufruf, den er wiederherstellt, in der Konsole des
+Browsers, und `jQuery.migrateMessages` listet sie auf; im Produktivbetrieb nehmen Sie den stillen Build `jquery-migrate-4.0.2.min.js`:
 
 ```ini
-# ezjscore.ini.append.php of a development siteaccess
+# settings/override/ezjscore.ini.append.php (oder ein Siteaccess)
 [eZJSCore]
 LocalScripts[jqueryMigrate]=jquery-migrate-4.0.2.js
+ExternalScripts[jqueryMigrate]=https://code.jquery.com/jquery-migrate-4.0.2.min.js
 ```
 
-Beheben Sie die gemeldeten Aufrufe; dann kann ein Design jQuery 4 allein laden (`LocalScripts[jqueryMigrate]=` leer, laut dem Kommentar
-in `ezjscore.ini`).
+und für Seiten, die jQuery über expui laden (`exp::core`):
+
+```ini
+# settings/override/expui.ini.append.php
+[ExpUI]
+Migrate=enabled
+```
+
+Leeren Sie danach die INI- und Template-Block-Caches und die gepackten Skripte. Beheben Sie die Aufrufe, die Migrate meldet, und
+schalten Sie es dann wieder aus.
 
 ## YUI ist weg
 

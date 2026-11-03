@@ -51,6 +51,8 @@ class Expmigrationremotestatus extends Expmigrationdeploy
             'parallel' => $this->number( $options, 'parallel', $settings['parallel'], 1 ),
             'timeout' => $this->number( $options, 'timeout', $settings['timeout'], 10 ),
             'retries' => $settings['retries'],
+            'php_check' => $settings['php_check'],
+            'extension_check' => $settings['extension_check'],
             'root' => \eZSys::rootDir(),
             'version' => class_exists( 'ExponentialSDK' ) ? (string)\ExponentialSDK::version() : '',
         ) );

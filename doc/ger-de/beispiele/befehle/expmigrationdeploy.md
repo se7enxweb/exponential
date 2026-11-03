@@ -54,7 +54,7 @@ next one. --rollback=<deploy id> takes back every remote that applied a deploy.
 | `--remotes` | erforderlich | Die Gegenstellen: IDs oder Gruppennamen aus [RemoteSettings] RemoteList[] in migration.ini, oder all (durch Kommas getrennt oder wiederholt) |
 | `--apply` |  | Die Änderungen vornehmen (ohne die Option ein Probelauf, der sie auflistet und nichts ändert) |
 | `--dry-run` |  | Der Standard, angenommen für Skripte, die ihn übergeben: auflisten, was sich ändern würde, nichts ändern |
-| `--transfer-only` |  | Die Migrationsdateien senden und prüfen, aber nicht ausführen (mit --apply; der einzige Modus für FTP-Gegenstellen) |
+| `--transfer-only` |  | Die Migrationsdateien senden und prüfen, aber nicht ausführen (mit --apply; der einzige Modus für eine FTP-Gegenstelle ohne Trigger) |
 | `--only` | erforderlich | Nur diese Migrationen (Migrations-IDs, als Komma-Liste oder wiederholt) |
 | `--format` | erforderlich | text (Standard) oder json (die Maschinenausgabe exp-migration/1) |
 | `--parallel` | erforderlich | An wie vielen Gegenstellen gleichzeitig gearbeitet wird (Vorgabe [RemoteSettings] Parallel) |

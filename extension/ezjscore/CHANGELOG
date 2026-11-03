@@ -2,6 +2,9 @@
 - Updated: ezjscore.ini [ezjscServer_ezjscnode] HardLimit is 500 instead of false, so ezjscnode::subtree and the
   admin's expsubitems rows return at most 500 items per request, the largest page size the sub-items list offers;
   a request for more is cut to 500. false or 0 switches the limit off as before.
+- Updated: jQuery Migrate is switched off: ezjscore.ini [eZJSCore] LocalScripts[jqueryMigrate] and
+  ExternalScripts[jqueryMigrate] are empty, so ezjsc::jquery loads jQuery 4.0.0 alone. Migrate 4.0.2 is still shipped;
+  the comment in ezjscore.ini names the settings that switch it back on.
 
 # 1.8.7 (2026-10-29)
 - Updated: every file header and the metadata name the copyright holders as "Copyright (C) 1998 - 2026 Exponential

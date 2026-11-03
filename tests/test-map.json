@@ -2865,7 +2865,9 @@
     "kernel/classes/migration/expmigrationremote*.php": [
       "tests/tests/kernel/classes/migration/expMigrationRemoteDeployTest.php",
       "tests/tests/kernel/classes/migration/expMigrationRemoteDeployStagedTest.php",
-      "tests/tests/kernel/classes/migration/expMigrationRemoteDeployIntegrationTest.php"
+      "tests/tests/kernel/classes/migration/expMigrationRemoteDeployIntegrationTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationRemoteDeployTriggerHealTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationRemoteDeployInstallationTest.php"
     ],
     "kernel/classes/migration/expmigrationdeploy{record,notifier}.php": [
       "tests/tests/kernel/classes/migration/expMigrationRemoteDeployStagedTest.php"
@@ -2932,6 +2934,18 @@
     ],
     "bin/php/expmigrationreposplit.php": [
       "tests/tests/kernel/classes/migration/expMigrationCommandContractTest.php"
+    ],
+    "kernel/classes/migration/expmigration{trigger,heal}.php": [
+      "tests/tests/kernel/classes/migration/expMigrationRemoteDeployTriggerHealTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationRemoteDeployInstallationTest.php"
+    ],
+    "kernel/private/classes/views/migration/trigger.php": [
+      "tests/tests/kernel/classes/migration/expMigrationRemoteDeployTriggerHealTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationRemoteDeployInstallationTest.php"
+    ],
+    "kernel/private/classes/commands/expmigrationheal.php": [
+      "tests/tests/kernel/classes/migration/expMigrationCommandContractTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationRemoteDeployTriggerHealTest.php"
     ]
   },
   "generated": {

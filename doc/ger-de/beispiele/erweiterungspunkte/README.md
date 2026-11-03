@@ -40,7 +40,7 @@ Wo eine Erweiterung sich über Einstellungen in den Kernel einklinkt: INI-Einste
 | [ldap.ini](ldap.md) | Kernel | 2 | LDAPSearchFilters, LDAPGroupClass |
 | [mailpreferences.ini](mailpreferences.md) | Kernel | 11 | HandlerClass, HandlerClass, HandlerClass, HandlerClass, HandlerClass, HandlerClass ... |
 | [membermanagement.ini](membermanagement.md) | Kernel | 1 | GuardedClasses |
-| [migration.ini](migration.md) | Kernel | 1 | ExtensionDirectory |
+| [migration.ini](migration.md) | Kernel | 3 | ExtensionDirectory, PhpCheck, ExtensionCheck |
 | [module.ini](module.md) | Kernel | 2 | ModuleRepositories, ExtensionRepositories |
 | [notification.ini](notification.md) | Kernel | 5 | IncludeClasses, ExtensionDirectories, ExtensionDirectories, ExtensionDirectories, DefaultTransport |
 | [package.ini](package.md) | Kernel | 3 | ExtensionDirectories, HandlerList, HandlerList |

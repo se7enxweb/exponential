@@ -2,14 +2,14 @@
 title: migration.ini [RemoteSettings]
 audience: developer, admin
 category: examples
-summary: "Die Einstellungen von [RemoteSettings] in migration.ini: RemoteList, Parallel, Timeout, Retries, StoreReports, StageOrder, Notify, NotifyEmail"
-keywords: Einstellung, migration.ini, RemoteSettings, INI, setting, RemoteList, Parallel, Timeout, Retries, StoreReports, StageOrder, Notify, NotifyEmail
+summary: "Die Einstellungen von [RemoteSettings] in migration.ini: RemoteList, Parallel, Timeout, Retries, StoreReports, StageOrder, Notify, NotifyEmail ..."
+keywords: Einstellung, migration.ini, RemoteSettings, INI, setting, RemoteList, Parallel, Timeout, Retries, StoreReports, StageOrder, Notify, NotifyEmail, SelfHeal, StaleLockAge, DiskMargin, PhpCheck, ExtensionCheck
 type: generated
 generated: exp:help:examples
 ---
 # migration.ini [RemoteSettings]
 
-Der Block `[RemoteSettings]` von `settings/migration.ini`, mit 8 Einstellung(en).
+Der Block `[RemoteSettings]` von `settings/migration.ini`, mit 13 Einstellung(en).
 
 Bearbeiten Sie `settings/migration.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -19,10 +19,11 @@ Bearbeiten Sie `settings/migration.ini` nie selbst: Ein Update ersetzt die Datei
 
 ## RemoteList
 
-> Gegenstellen: andere Installationen, auf die diese ihre Migrationen überträgt (./console exp:migration:deploy --remotes=...),  
-> alle gleichzeitig und im Gleichstand. Ein Abschnitt \[Remote\_<id>\] je ID von RemoteList\[\]; setzen Sie sie in settings/override.  
-> Ein Gegenstellen-Abschnitt enthält nie ein Geheimnis: Credential nennt eines des Geheimnisspeichers (Setup > Secrets) oder eine  
-> Umgebungsvariable (env:VARIABLE). Anleitung: doc/ger-de/anleitungen/migrationen-remote-deploy.md  
+> Gegenstellen: andere Installationen, auf die diese ihre Migrationen überträgt (./console exp:migration:deploy  
+> --remotes=...), alle gleichzeitig und im Gleichstand. Ein Abschnitt \[Remote\_<id>\] für jede ID aus RemoteList\[\]; setzen  
+> Sie sie in settings/override. Ein Abschnitt einer Gegenstelle enthält nie ein Geheimnis: Credential nennt eines aus dem  
+> Geheimnisspeicher (Einrichtung > Geheimnisse) oder eine Umgebungsvariable (env:VARIABLE). Anleitung:  
+> doc/ger-de/anleitungen/migrationen-remote-deploy.md  
 >
 > \[Remote\_production1\]  
 > Environment=production           alpha, dev, stage, beta, production, post, arch ... (die Bezeichnung in den Berichten)  
@@ -35,6 +36,9 @@ Bearbeiten Sie `settings/migration.ini` nie selbst: Ein Update ersetzt die Datei
 > Credential=sshkey:deploy\_production1  
 > Groups\[\]=production              --remotes=production wählt jede Gegenstelle der Gruppe  
 > HostKeyFingerprint=SHA256:...    optional: der Host-Schlüssel muss ihn haben (sonst wird er beim ersten Kontakt gelernt)  
+> Trigger=https://node1.example.com/migration/trigger    nur ftp und ftps: der signierte HTTP-Trigger der Gegenstelle  
+>                                  führt die Migrationen dort aus (\[TriggerSettings\] dort); ohne ihn sendet FTP nur  
+> TriggerSecret=trigger\_node1      das Geheimnis, mit dem die Anfragen des Triggers signiert werden (ein Geheimnisname oder env:VARIABLE)  
 
 Standard: eine leere Liste.
 
@@ -159,6 +163,85 @@ Standard: leer.
 # settings/override/migration.ini.append.php
 [RemoteSettings]
 NotifyEmail=
+*/ ?>
+```
+
+## SelfHeal
+
+> Selbstheilung: die Korrekturen, die ein Deploy auf einer Gegenstelle vornehmen darf (./console exp:migration:heal  
+> dort), jede nur, wenn sie aufgeführt ist, und jede in den fixes der Gegenstelle im Bericht vermerkt. Vor dem Preflight:  
+> stale-lock (eine Laufsperre, deren Prozess beendet ist, älter als StaleLockAge, auf jenem Host vom selben Benutzer  
+> gehalten), paths (fehlende Migrationsordner), modes (die Rechte aus \[FileSettings\] für die Migrationsordner und  
+> var/<site>/migration, nur ergänzt); nach dem Umschalten: caches (ini und template-override). Nie korrigiert, nur  
+> gemeldet: PHP- oder Erweiterungsversionen, ein Fehler der Migration selbst.  
+
+Standard: eine leere Liste.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/migration.ini.append.php
+[RemoteSettings]
+# ein leeres "SelfHeal[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
+SelfHeal[]
+*/ ?>
+```
+
+## StaleLockAge
+
+> Sekunden, ab denen eine gehaltene Laufsperre, deren Prozess beendet ist, als verwaist gilt (SelfHeal\[\]=stale-lock).  
+
+Standard: `7200`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/migration.ini.append.php
+[RemoteSettings]
+StaleLockAge=7200
+*/ ?>
+```
+
+## DiskMargin
+
+> Der freie Plattenplatz, den eine Gegenstelle über die Größe der Dateien hinaus haben muss, die ein Deploy ihr sendet (Bytes, oder mit K, M, G).  
+
+Standard: `50M`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/migration.ini.append.php
+[RemoteSettings]
+DiskMargin=50M
+*/ ?>
+```
+
+## PhpCheck
+
+> Die PHP-Version einer Gegenstelle im Vergleich zu der dieser Installation: major (dieselbe Hauptversion, sonst hält  
+> der Deploy an), minor (dieselbe Haupt- und Nebenversion), warn (ein Unterschied ist nur eine Warnung), off.  
+
+Standard: `major`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/migration.ini.append.php
+[RemoteSettings]
+PhpCheck=major
+*/ ?>
+```
+
+## ExtensionCheck
+
+> Die Erweiterungen einer Gegenstelle im Vergleich zu denen dieser Installation: migrations (jede Erweiterung, deren  
+> Migrationen gesendet werden, ist dort mit derselben Version aktiv, sonst hält der Deploy an; andere Unterschiede sind  
+> Warnungen), all (jede aktive Erweiterung), warn (Unterschiede sind nur Warnungen), off.  
+
+Standard: `migrations`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/migration.ini.append.php
+[RemoteSettings]
+ExtensionCheck=migrations
 */ ?>
 ```
 
