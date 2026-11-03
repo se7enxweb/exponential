@@ -191,7 +191,7 @@ class Vatrules extends \Exponential\Runnable\ModuleView
                 foreach ( $ruleIDList as $ruleID )
                     \eZVatRule::removeVatRule( $ruleID );
             }
-            catch ( Throwable $e )
+            catch ( \Throwable $e )
             {
                 // nothing of a transaction that failed half way is committed by a later commit()
                 if ( $db->transactionCounter() > 0 )
@@ -219,7 +219,7 @@ class Vatrules extends \Exponential\Runnable\ModuleView
                     $cat->store();
                 }
             }
-            catch ( Throwable $e )
+            catch ( \Throwable $e )
             {
                 // nothing of a transaction that failed half way is committed by a later commit()
                 if ( $db->transactionCounter() > 0 )

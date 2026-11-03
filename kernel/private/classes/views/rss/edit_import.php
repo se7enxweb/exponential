@@ -69,7 +69,7 @@ function expModuleViewRssEditImportStore( $rssImport, $http, $publish = false )
             $rssImport->setAttribute( 'status', eZRSSImport::STATUS_DRAFT );
             $rssImport->remove();
         }
-        catch ( Throwable $e )
+        catch ( \Throwable $e )
         {
             // nothing of a transaction that failed half way is committed by a later commit()
             if ( $db->transactionCounter() > 0 )

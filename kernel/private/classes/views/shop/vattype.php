@@ -64,7 +64,7 @@ function expModuleViewShopVatTypeApplyChanges( $module, $http, $vatTypeArray = f
             $vatType->store();
         }
     }
-    catch ( Throwable $e )
+    catch ( \Throwable $e )
     {
         // nothing of a transaction that failed half way is committed by a later commit()
         if ( $db->transactionCounter() > 0 )
@@ -263,7 +263,7 @@ class Vattype extends \Exponential\Runnable\ModuleView
                     }
                 }
             }
-            catch ( Throwable $e )
+            catch ( \Throwable $e )
             {
                 // nothing of a transaction that failed half way is committed by a later commit()
                 if ( $db->transactionCounter() > 0 )

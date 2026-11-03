@@ -60,7 +60,7 @@ function expModuleViewRolePolicyEditProcessDropdownLimitations( &$policy, $curre
         }
 
     }
-    catch ( Throwable $e )
+    catch ( \Throwable $e )
     {
         // nothing of a transaction that failed half way is committed by a later commit()
         if ( $db->transactionCounter() > 0 )
@@ -159,7 +159,7 @@ class Policyedit extends \Exponential\Runnable\ModuleView
                         \eZPolicyLimitationValue::removeByValue( $deletedID, $policyID );
                     }
                 }
-                catch ( Throwable $e )
+                catch ( \Throwable $e )
                 {
                     // nothing of a transaction that failed half way is committed by a later commit()
                     if ( $db->transactionCounter() > 0 )
@@ -193,7 +193,7 @@ class Policyedit extends \Exponential\Runnable\ModuleView
                         \eZPolicyLimitationValue::removeByValue( $path, $policyID );
                     }
                 }
-                catch ( Throwable $e )
+                catch ( \Throwable $e )
                 {
                     // nothing of a transaction that failed half way is committed by a later commit()
                     if ( $db->transactionCounter() > 0 )
@@ -310,7 +310,7 @@ class Policyedit extends \Exponential\Runnable\ModuleView
                 // Replace the real edited policy with the temporary one
                 $policy->saveTemporary();
             }
-            catch ( Throwable $e )
+            catch ( \Throwable $e )
             {
                 // nothing of a transaction that failed half way is committed by a later commit()
                 if ( $db->transactionCounter() > 0 )
@@ -382,7 +382,7 @@ class Policyedit extends \Exponential\Runnable\ModuleView
                 }
 
             }
-            catch ( Throwable $e )
+            catch ( \Throwable $e )
             {
                 // nothing of a transaction that failed half way is committed by a later commit()
                 if ( $db->transactionCounter() > 0 )
@@ -430,7 +430,7 @@ class Policyedit extends \Exponential\Runnable\ModuleView
                     }
                 }
             }
-            catch ( Throwable $e )
+            catch ( \Throwable $e )
             {
                 // nothing of a transaction that failed half way is committed by a later commit()
                 if ( $db->transactionCounter() > 0 )
