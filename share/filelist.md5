@@ -2826,7 +2826,7 @@ b898e8ef7724e37b2b6286d5f10119c1  design/standard/templates/content/edit_placeme
 23dcd6d6ce6130caf3174bafbef08b4f  design/standard/templates/content/edit_redirection.tpl
 b47784b07d7484a95f2ca4c6d6fe8703  design/standard/templates/content/edit_right_menu.tpl
 adae0def427fd51706089f0a31a1063e  design/standard/templates/content/edit_validation.tpl
-9db3672180966a36aa9fbd1de6fa9bec  design/standard/templates/content/front_search_page.tpl
+330602121f5494a6ca178af6db5b8e77  design/standard/templates/content/front_search_page.tpl
 d8079a06a353c58205c4023b72fdd1a3  design/standard/templates/content/history.tpl
 a716d7ff7c19c5cac43aaafeeb84c4a1  design/standard/templates/content/history_access_messages.tpl
 456ae8da6dd39dde2bdb8e80b7f218ea  design/standard/templates/content/job.tpl
@@ -3518,7 +3518,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-50d13156e003ae04b4c479a37441532a  doc/changelogs/6.0/6.0.15.md
+2341611a4a751aea5d49a94964c4c3db  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -11742,7 +11742,7 @@ a5222d6181149b9dc971b6b0e7f50ec8  doc/eng-us/help/resellers/sales/naming-and-bra
 94b50c4cfd073c4dd347688b59d1205a  doc/eng-us/help/resellers/sales/powered-by-exponential.md
 41ae0d0facf25f9c806d6926bbc62138  doc/eng-us/help/resellers/sales/pre-sales-questions-and-answers.md
 a420b17ab5dabd8778223cc4aae2b073  doc/eng-us/help/resellers/sales/sales-process.md
-c1e92a1de4145e6e61dcc0848ecc5c1b  doc/eng-us/help/searching.md
+ac670c914631e8fe651a67dbe581f5b0  doc/eng-us/help/searching.md
 a5c7ce5b15c58ce20085b4f8951ef35b  doc/eng-us/help/security-hardening.md
 0e664fa25d750b89071708b2406b538c  doc/eng-us/help/setting-up-editor-and-admin-accounts.md
 633930576e562b5c2200cd0a1ae93a7c  doc/eng-us/help/site-packages/README.md
@@ -20496,7 +20496,7 @@ a11a0a28d2d52cd108d2bdb0e51d517c  doc/ger-de/hilfe/statisches-veroeffentlichen/s
 6c6fd11d41e1b182fe18e96da66c6072  doc/ger-de/hilfe/statisches-veroeffentlichen/was-statisches-veroeffentlichen-ist.md
 aa7950ea103082ba387a015e033b0e2a  doc/ger-de/hilfe/statisches-veroeffentlichen/wenn-eine-veroeffentlichung-fehlschlaegt.md
 d33aee31a89c450d6cf2048147ea92af  doc/ger-de/hilfe/statisches-veroeffentlichen/wer-veroeffentlichen-darf-rollen-und-richtlinien.md
-387a3a56143005aaa3a64faea88703dd  doc/ger-de/hilfe/suchen.md
+a8b001d7921ef2acb109b487040684c2  doc/ger-de/hilfe/suchen.md
 11f6935aa99a4119d4977f067c15fc9a  doc/ger-de/hilfe/systemseiten-als-lesezeichen.md
 a0c368729fab00e20fc5c9c690316850  doc/ger-de/hilfe/tastenkuerzel.md
 649d334ea26ec5ee6659f0e7b1f1b80f  doc/ger-de/hilfe/template-operatoren/README.md

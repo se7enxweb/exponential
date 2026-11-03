@@ -5,7 +5,8 @@
    order), the active filters as chips that each link to the search without them, "Did you mean" (eZ Find), the
    results as the design's line views and the pages. An old ?SearchText= link opens the empty page, as in the
    administration. The look is stylesheets/front_search.css (--exps-* tokens); a design restyles it with those tokens.
-   Parameters (optional): result_view (the node view of a result, default line), title (the heading).
+   Parameters (optional): result_view (the node view of a result, default line), result_template (instead: a template
+   included for each result with $node, for a design that draws results its own way), title (the heading).
    Guide: doc/eng-us/help/searching.md ("Searching on the site"). *}
 {def $page = fetch( 'content', 'filtered_search', hash( 'offset', first_set( $view_parameters.offset, 0 ) ) )
      $f = $page.filters
@@ -105,7 +106,7 @@
 {else}
 <ol class="exps-plain exps-search-results">
 {foreach $page.result as $result}
-    <li class="exps-search-result">{node_view_gui view=$front_view content_node=$result}</li>
+    <li class="exps-search-result">{if is_set( $result_template )}{include uri=$result_template node=$result}{else}{node_view_gui view=$front_view content_node=$result}{/if}</li>
 {/foreach}
 </ol>
 <nav class="exps-search-pager" aria-label="{'Pages'|i18n( 'design/admin/audit' )|wash}">

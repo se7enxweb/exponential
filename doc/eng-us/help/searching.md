@@ -128,6 +128,49 @@ that the visitor may read are found.
 
 ![The search of the public site with the results for healthy](images/search/site-search-box.webp)
 
+### Suggestions on the site
+
+From the third character on, the site's search field opens a list of suggestions while the visitor types: the pages
+that match, each with its name, its type and a small picture. Up and Down move through them, Enter opens the one
+chosen (or searches when none is), Escape closes the list, and Ctrl+/ (Cmd+/ on a Mac) reaches the field from anywhere
+on the page. The last entry, "View all results", opens the search page.
+
+Only content is suggested, and only what the visitor may read: an anonymous visitor sees what is public. User
+accounts, content classes, the administration's pages and settings are never suggested. On a site with its own part
+of the tree (such as /bold) only the pages of that part are found.
+
+### Searching on the site
+
+The site's search page works as the administration's: the words and the filters travel in the address
+(`/content/search/(text)/easter/(class)/16`), so a search can be bookmarked and shared, and a filter bar beside the
+results narrows the search down by content type and changes the sort order. Each active filter is shown as a chip
+above the results; a click on it removes that filter. When eZ Find is the search engine, "Did you mean" offers the
+same search with corrected words. An old link of the form `/content/search?SearchText=...` opens the empty search
+page.
+
+### Settings for the site search (for administrators)
+
+The suggestions are on for every siteaccess. They are set in `site.ini [SiteSearchSuggestSettings]`, per siteaccess
+in its `site.ini.append.php`:
+
+| Setting | Default | Meaning |
+| --- | --- | --- |
+| `Enabled` | `true` | `false`: a plain search field; `content/sitesuggest` answers 404 |
+| `MinLength` | `3` | the fewest characters typed before suggestions are asked for |
+| `Limit` | `6` | the most suggestions (0 to 20) |
+| `ExcludeClasses[]` | `user`, `user_group` | classes never suggested (a class with a user account never is) |
+| `ThumbnailAlias` | `small` | the image alias of the small picture; empty: the class icon |
+| `PublicCacheTTL` | `60` | seconds an anonymous answer is kept (on the server and in shared caches) |
+| `RateLimit`, `RateWindow` | `60`, `60` | requests of one address per window; more are answered 429 |
+
+The visitor needs the policy `content/read`, as for the search itself. A signed-in user's suggestions are never
+cached.
+
+For a design: put `{include uri='design:parts/front_search_suggest.tpl'}` inside the header's search form (with
+`method="post"` and a field named `SearchText`), and let the design's `content/search.tpl` hold
+`{include uri='design:content/front_search_page.tpl'}`. Both are drawn by `stylesheets/front_search.css` with
+`--exps-*` tokens that a design sets to its own colors, in light and dark.
+
 ## Tips
 
 - Search finds whole words. Try a shorter or a different word if nothing is found.

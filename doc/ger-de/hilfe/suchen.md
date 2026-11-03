@@ -136,6 +136,49 @@ werden nur veröffentlichte, sichtbare Objekte, die der Besucher lesen darf.
 
 ![Die Suche der öffentlichen Site mit den Ergebnissen für healthy](../../eng-us/help/images/search/site-search-box.webp)
 
+### Vorschläge auf der Site
+
+Ab dem dritten Zeichen öffnet das Suchfeld der Site beim Tippen eine Liste mit Vorschlägen: die passenden Seiten, jede
+mit Namen, Typ und einem kleinen Bild. Mit den Pfeiltasten nach oben und unten wählt man aus, Enter öffnet den
+gewählten Vorschlag (oder sucht, wenn keiner gewählt ist), Escape schließt die Liste, und Strg+/ (Cmd+/ auf dem Mac)
+springt von überall auf der Seite ins Feld. Der letzte Eintrag, „Alle Ergebnisse anzeigen“, öffnet die Suchseite.
+
+Vorgeschlagen werden nur Inhalte, und nur solche, die der Besucher lesen darf: ein anonymer Besucher sieht, was
+öffentlich ist. Benutzerkonten, Inhaltsklassen, Seiten und Einstellungen der Administration werden nie vorgeschlagen.
+Auf einer Site mit einem eigenen Teil des Baums (etwa /bold) werden nur die Seiten dieses Teils gefunden.
+
+### Auf der Site suchen
+
+Die Suchseite der Site arbeitet wie die der Administration: Suchwörter und Filter stehen in der Adresse
+(`/content/search/(text)/ostern/(class)/16`), eine Suche lässt sich also als Lesezeichen speichern und weitergeben.
+Eine Filterleiste neben den Ergebnissen grenzt die Suche nach Inhaltstyp ein und ändert die Sortierung. Jeder aktive
+Filter steht als Chip über den Ergebnissen; ein Klick darauf entfernt ihn. Ist eZ Find die Suchmaschine, bietet
+„Meinten Sie“ dieselbe Suche mit korrigierten Wörtern an. Ein alter Link der Form `/content/search?SearchText=...`
+öffnet die leere Suchseite.
+
+### Einstellungen der Site-Suche (für Administratoren)
+
+Die Vorschläge sind für jeden Siteaccess eingeschaltet. Eingestellt werden sie in `site.ini
+[SiteSearchSuggestSettings]`, je Siteaccess in dessen `site.ini.append.php`:
+
+| Einstellung | Vorgabe | Bedeutung |
+| --- | --- | --- |
+| `Enabled` | `true` | `false`: ein einfaches Suchfeld; `content/sitesuggest` antwortet 404 |
+| `MinLength` | `3` | so viele Zeichen müssen getippt sein, bevor Vorschläge geholt werden |
+| `Limit` | `6` | höchstens so viele Vorschläge (0 bis 20) |
+| `ExcludeClasses[]` | `user`, `user_group` | Klassen, die nie vorgeschlagen werden (eine Klasse mit Benutzerkonto nie) |
+| `ThumbnailAlias` | `small` | der Bildalias des kleinen Bildes; leer: das Klassensymbol |
+| `PublicCacheTTL` | `60` | so viele Sekunden wird eine anonyme Antwort aufbewahrt (auf dem Server und in geteilten Caches) |
+| `RateLimit`, `RateWindow` | `60`, `60` | Anfragen einer Adresse je Zeitfenster; weitere werden mit 429 beantwortet |
+
+Der Besucher braucht die Richtlinie `content/read`, wie für die Suche selbst. Die Vorschläge eines angemeldeten
+Benutzers werden nie zwischengespeichert.
+
+Für ein Design: `{include uri='design:parts/front_search_suggest.tpl'}` in das Suchformular der Kopfzeile setzen (mit
+`method="post"` und einem Feld namens `SearchText`), und das `content/search.tpl` des Designs
+`{include uri='design:content/front_search_page.tpl'}` enthalten lassen. Beide zeichnet `stylesheets/front_search.css`
+mit `--exps-*`-Tokens, die ein Design auf seine eigenen Farben setzt, hell und dunkel.
+
 ## Tipps
 
 - Die Suche findet ganze Wörter. Versuchen Sie ein kürzeres oder ein anderes Wort, wenn nichts gefunden wird.
