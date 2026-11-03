@@ -1,6 +1,6 @@
 <form method="post" action={'visual/toolbarlist'|ezurl}>
 
-<div class="context-block">
+<div class="context-block a4-page a4-visual">
 
 {* DESIGN: Header START *}<div class="box-header"><div class="box-ml">
 
@@ -10,7 +10,7 @@
 
 {* DESIGN: Header END *}</div></div>
 
-{* DESIGN: Content START *}<div class="box-ml"><div class="box-mr"><div class="box-content">
+{* DESIGN: Content START *}<div class="box-bc"><div class="box-ml"><div class="box-content">
 
 <div class="context-attributes">
 
@@ -20,7 +20,7 @@
     {/if}
 {*        <label>{'Select siteaccess'|i18n( 'design/admin/visual/toolbar' )}:</label> *}
 
-        <select name="CurrentSiteAccess" aria-label="{'Select siteaccess'|i18n( 'design/admin/visual/toolbar' )|wash}">
+        <select class="a4-input is-auto" name="CurrentSiteAccess" aria-label="{'Select siteaccess'|i18n( 'design/admin/visual/toolbar' )|wash}">
             {section var=siteaccess loop=$siteaccess_list}
                 {if eq( $current_siteaccess, $siteaccess )}
                     <option value="{$siteaccess}" selected="selected">{$siteaccess}</option>
@@ -32,20 +32,18 @@
 
 </div>
 
+<div class="a4-toolbar is-bottom">
+<div class="a4-actions">
+        <input class="a4-btn" type="submit" name="SelectCurrentSiteAccessButton" value="{'Set'|i18n( 'design/admin/visual/toolbar' )}" />
+</div>
+</div>
+
 {* DESIGN: Content END *}</div></div></div>
 
-<div class="controlbar">
-{* DESIGN: Control bar START *}<div class="box-bc"><div class="box-ml">
-<div class="block">
-        <input class="button" type="submit" name="SelectCurrentSiteAccessButton" value="{'Set'|i18n( 'design/admin/visual/toolbar' )}" />
-</div>
-{* DESIGN: Control bar END *}</div></div>
-</div>
-
 </div>
 
 
-<div class="context-block">
+<div class="context-block a4-page a4-visual">
 
 {* DESIGN: Header START *}<div class="box-header"><div class="box-ml">
 
@@ -57,15 +55,17 @@
 
 {* DESIGN: Content START *}<div class="box-bc"><div class="box-ml"><div class="box-content">
 
-<table class="list" cellspacing="0">
-{section var=toolbar loop=$toolbar_list sequence=array( bglight, bgdark )}
-<tr class="{$toolbar.sequence}">
+<div class="a4-table-wrap">
+<table class="a4-table">
+{section var=toolbar loop=$toolbar_list}
+<tr>
     <td>
     <a href={concat( 'visual/toolbar/', $current_siteaccess, '/', $toolbar )|ezurl}>{$toolbar}</a>
     </td>
 </tr>
 {/section}
 </table>
+</div>
 
 {* DESIGN: Content END *}</div></div></div>
 

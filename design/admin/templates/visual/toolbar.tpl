@@ -1,5 +1,7 @@
 <form method="post" action={concat( 'visual/toolbar/', $current_siteaccess, '/', $toolbar_position )|ezurl}>
 
+<div class="context-block a4-page a4-visual">
+
 {* DESIGN: Header START *}<div class="box-header"><div class="box-ml">
 
 <h1 class="context-title">{'Tool list for <Toolbar_%toolbar_position>'|i18n( 'design/admin/visual/toolbar',, hash( '%toolbar_position', $toolbar_position ) )|wash}
@@ -9,7 +11,7 @@
 
 {* DESIGN: Header END *}</div></div>
 
-{* DESIGN: Content START *}<div class="box-ml"><div class="box-mr"><div class="box-content">
+{* DESIGN: Content START *}<div class="box-bc"><div class="box-ml"><div class="box-content">
 <div class="context-attributes">
 
 {section show=$tool_list}
@@ -115,35 +117,34 @@
 {'There are currently no tools in this toolbar'|i18n( 'design/admin/visual/toolbar' )}
 {/section}
 
-<div class="block">
-<div class="button-left">
-<input class="button" type="submit" name="RemoveButton" value="{'Remove selected'|i18n('design/admin/visual/toolbar')}" />
+<div class="a4-toolbar is-bottom">
+<div class="a4-actions">
+<input class="a4-btn" type="submit" name="RemoveButton" value="{'Remove selected'|i18n('design/admin/visual/toolbar')}" />
 </div>
-<div class="button-right">
-<input class="button" type="submit" name="UpdatePlacementButton" value="{'Update priorities'|i18n('design/admin/visual/toolbar')}" />
+<div class="a4-actions">
+<input class="a4-btn" type="submit" name="UpdatePlacementButton" value="{'Update priorities'|i18n('design/admin/visual/toolbar')}" />
 </div>
 </div>
 
-<div class="block">
-<select name="toolName">
+<div class="a4-toolbar is-bottom">
+<select class="a4-input is-auto" name="toolName">
 {section var=Tool loop=$available_tool_list}
     <option value="{$Tool}">{$Tool}</option>
 {/section}
 </select>
-<input class="button" type="submit" name="NewToolButton" value="{'Add Tool'|i18n('design/admin/visual/toolbar')}" />
+<input class="a4-btn" type="submit" name="NewToolButton" value="{'Add Tool'|i18n('design/admin/visual/toolbar')}" />
+</div>
+
+<div class="a4-toolbar is-bottom">
+    <div class="a4-actions">
+       <input class="a4-btn a4-btn-primary" type="submit" name="StoreButton" value="{'Apply changes'|i18n('design/admin/visual/toolbar')}" title="{'Click this button to store changes if you have modified the parameters above.'|i18n( 'design/admin/visual/toolbar' )}" />
+       <input class="a4-btn" type="submit" name="BackToToolbarsButton" value="{'Back to toolbars'|i18n('design/admin/visual/toolbar')}" title="{'Go back to the toolbar list.'|i18n( 'design/admin/visual/toolbar' )}" />
+    </div>
+</div>
+
 </div>
 
 {* DESIGN: Content END *}</div></div></div>
-
-
-<div class="controlbar">
-{* DESIGN: Control bar START *}<div class="box-bc"><div class="box-ml">
-    <div class="block">
-       <input class="button" type="submit" name="StoreButton" value="{'Apply changes'|i18n('design/admin/visual/toolbar')}" title="{'Click this button to store changes if you have modified the parameters above.'|i18n( 'design/admin/visual/toolbar' )}" />
-       <input class="button" type="submit" name="BackToToolbarsButton" value="{'Back to toolbars'|i18n('design/admin/visual/toolbar')}" title="{'Go back to the toolbar list.'|i18n( 'design/admin/visual/toolbar' )}" />
-    </div>
-{* DESIGN: Control bar END *}</div></div>
-</div>
 
 </div>
 

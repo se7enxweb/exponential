@@ -41,7 +41,9 @@ class Templateedit extends \Exponential\Runnable\ModuleView
         $tpl = \eZTemplate::factory();
 
         $Result = array();
-        $Result['path'] = array( array( 'url' => false,
+        $Result['path'] = array( array( 'url' => '/visual/templatelist/',
+                                        'text' => \ezpI18n::tr( 'kernel/design', 'Template list' ) ),
+                                 array( 'url' => false,
                                         'text' => \ezpI18n::tr( 'kernel/design', 'Template edit' ) ) );
 
         $template = "";

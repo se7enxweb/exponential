@@ -42,7 +42,7 @@
 
 <form method="post" name="templateview" action={concat( '/visual/templateview', $template_settings.template, $page_offset|gt( 0 )|choose( '', concat( '/(offset)/', $page_offset ) ) )|ezurl}>
 
-<div class="context-block visual-templateview">
+<div class="context-block a4-page a4-visual visual-templateview">
 
 {* DESIGN: Header START *}<div class="box-header"><div class="box-ml">
 
@@ -52,7 +52,7 @@
 
 {* DESIGN: Header END *}</div></div>
 
-{* DESIGN: Content START *}<div class="box-ml"><div class="box-mr"><div class="box-content">
+{* DESIGN: Content START *}<div class="box-bc"><div class="box-ml"><div class="box-content">
 
 <div class="templateview-facts">
     <div class="templateview-fact">
@@ -61,16 +61,16 @@
     </div>
     <div class="templateview-fact">
         <label class="templateview-fact-label" for="templateview-siteaccess">{'Siteaccess'|i18n( 'design/admin/visual/templateview' )}</label>
-        <select name="CurrentSiteAccess" id="templateview-siteaccess">
+        <select class="a4-input is-auto" name="CurrentSiteAccess" id="templateview-siteaccess">
         {section name=SiteAccess loop=ezini('SiteAccessSettings','RelatedSiteAccessList')}
             <option value="{$SiteAccess:item|wash}"{if eq( $current_siteaccess, $:item )} selected="selected"{/if}>{$:item|wash}</option>
         {/section}
         </select>
-        <input class="button" type="submit" name="SelectCurrentSiteAccessButton" value="{'Set'|i18n( 'design/admin/visual/templateview' )}" />
+        <input class="a4-btn" type="submit" name="SelectCurrentSiteAccessButton" value="{'Set'|i18n( 'design/admin/visual/templateview' )}" />
     </div>
 </div>
 
-<div class="controlbar templateview-topbar">
+<div class="a4-toolbar templateview-topbar">
 {include uri='design:visual/templateview_buttons.tpl'}
 </div>
 
@@ -91,7 +91,7 @@
 
 <div class="override-filter">
     <label for="override-filter-input">{'Filter this page'|i18n( 'design/admin/visual/templateview' )}</label>
-    <input type="search" id="override-filter-input" class="halfbox" placeholder="{'Name, file or condition'|i18n( 'design/admin/visual/templateview' )|wash}" />
+    <input type="search" id="override-filter-input" class="a4-input is-auto" placeholder="{'Name, file or condition'|i18n( 'design/admin/visual/templateview' )|wash}" />
     <span class="override-filter-note" id="override-filter-note" hidden="hidden">{'Clear the filter to move overrides.'|i18n( 'design/admin/visual/templateview' )}</span>
 </div>
 
@@ -192,13 +192,11 @@
 </div>
 {/section}
 
-{* DESIGN: Content END *}</div></div></div>
-
-<div class="controlbar">
-{* DESIGN: Control bar START *}<div class="box-bc"><div class="box-ml">
+<div class="a4-toolbar is-bottom templateview-bottombar">
 {include uri='design:visual/templateview_buttons.tpl'}
-{* DESIGN: Control bar END *}</div></div>
 </div>
+
+{* DESIGN: Content END *}</div></div></div>
 
 </div>
 
