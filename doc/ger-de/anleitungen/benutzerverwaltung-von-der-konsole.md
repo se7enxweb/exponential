@@ -6,7 +6,8 @@ deaktivieren, aktivieren und entfernen, Passwörter zurücksetzen und Registrier
 tun das jeweils so wie die Administration, deshalb verhalten sich Workflows, die Freigabe neuer Konten, das Audit und
 das Benutzer-Auditprotokoll genau wie bei einem Klick.
 
-[Anleitungen](README.md) · Verwandt: [Sicherheit und Audit](sicherheit-und-audit.md),
+[Anleitungen](README.md) · Verwandt: [Das Hilfehandbuch Benutzerverwaltung von der Konsole](../hilfe/benutzerverwaltung-von-der-konsole/README.md),
+[Sicherheit und Audit](sicherheit-und-audit.md),
 [Das Benutzer-Auditprotokoll](../hilfe/das-benutzer-auditprotokoll.md),
 [Konten für Redakteure und Administratoren einrichten](../hilfe/konten-fuer-redakteure-und-administratoren-einrichten.md),
 [Mitglieder verwalten](../hilfe/mitglieder-verwalten.md), [Konsolenbefehle](../beispiele/befehle/README.md)

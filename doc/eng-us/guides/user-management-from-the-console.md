@@ -5,7 +5,8 @@ a shell, a deploy script or a CI job: list and inspect accounts, create and chan
 them, reset passwords and approve registrations. The `exp:user` commands do each of these the way the administration
 does, so workflows, the approval of new accounts, the audit and the user audit behave exactly as when you click.
 
-[Guides](README.md) · Related: [Security and audit](security-and-audit.md),
+[Guides](README.md) · Related: [The help manual User management from the console](../help/user-management-from-the-console/README.md),
+[Security and audit](security-and-audit.md),
 [The user audit log](../help/the-user-audit-log.md), [Setting up editor and administrator accounts](../help/setting-up-editor-and-admin-accounts.md),
 [Managing members](../help/managing-members.md), [Console commands](../examples/commands/README.md)
 
