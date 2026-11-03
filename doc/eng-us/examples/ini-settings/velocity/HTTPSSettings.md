@@ -60,21 +60,23 @@ Key=
 
 > Strict-Transport-Security on every answer sent over HTTPS: static files,  
 > the server's own pages and the scripts' answers, unless an answer carries  
-> one already. Never over plain HTTP. In seconds; 0 sends none.  
+> one already. Never over plain HTTP. In seconds; 0 (the default) sends none.  
 >
-> 300 is what the Apache and nginx front ends of this installation send. A  
-> browser that has seen it refuses plain HTTP to this host name, on every  
-> port, for that long, and keeps doing so after the setting is lowered: raise  
-> it (a year is 31536000) only once every name of the site is served over  
-> HTTPS for good.  
+> A browser that has seen the header refuses plain HTTP to this host name, on  
+> every port, for that long, and keeps doing so after the setting is lowered,  
+> so it is off until an installation asks for it in settings/override. Start  
+> small (300), and raise it in stages (a day is 86400, a year is 31536000)  
+> only once every name of the site is served over HTTPS for good. Where a  
+> front end (Apache, nginx, a CDN) sends the header for the same host name  
+> already, use the same value here.  
 
-Default: `300`.
+Default: `0`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
 # settings/override/velocity.ini.append.php
 [HTTPSSettings]
-HSTSMaxAge=300
+HSTSMaxAge=0
 */ ?>
 ```
 

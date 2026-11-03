@@ -201,7 +201,7 @@ curl -skI https://127.0.0.1:8080/ | head -1
 
 Erwarten Sie `HTTP/2 200` (oder eine Weiterleitung). Der Velocity-Server kann außerdem selbst ein selbstsigniertes Zertifikat erzeugen, Let's-Encrypt-Zertifikate beziehen und erneuern und ein erneuertes Zertifikat ohne Neustart einwechseln: [Velocity HTTPS und Zertifikate](../funktionen/6.0/velocity-https-zertifikate.md).
 
-Strict-Transport-Security wird bei HTTPS-Antworten mit `[HTTPSSettings] HSTSMaxAge` gesendet (ausgeliefert 300 Sekunden). Erhöhen Sie den Wert erst dann auf ein Jahr (`31536000`), wenn jeder Name der Site dauerhaft über HTTPS ausgeliefert wird: Ein Browser merkt sich den Wert auch dann, wenn Sie ihn später senken ([HTTP/2 und Sicherheit](../spezifikationen/6.0/velocity-http2-und-sicherheit.md)).
+Strict-Transport-Security wird bei HTTPS-Antworten mit `[HTTPSSettings] HSTSMaxAge` gesendet (ausgeliefert 0, also keiner; beginnen Sie mit 300). Erhöhen Sie den Wert erst dann auf ein Jahr (`31536000`), wenn jeder Name der Site dauerhaft über HTTPS ausgeliefert wird: Ein Browser merkt sich den Wert auch dann, wenn Sie ihn später senken ([HTTP/2 und Sicherheit](../spezifikationen/6.0/velocity-http2-und-sicherheit.md)).
 
 ## 7. Eine PHP-Änderung mit einem Befehl ausliefern
 
@@ -291,7 +291,7 @@ Alle stehen in `settings/velocity.ini` (ausgelieferte Standardwerte). `exp:veloc
 | `[CacheSettings]` | `DefaultTtl` | `30` | Sekunden, die eine Antwort in diesem Cache bleibt |
 | `[HTTPSSettings]` | `Enabled` | `false` | HTTPS auf dem `HTTPSPort` von Velocity |
 | `[HTTPSSettings]` | `Certificate`, `Key` | leer | PEM-Dateien Ihres Zertifikats und Schlüssels |
-| `[HTTPSSettings]` | `HSTSMaxAge` | `300` | Lebensdauer von Strict-Transport-Security in Sekunden |
+| `[HTTPSSettings]` | `HSTSMaxAge` | `0` | Lebensdauer von Strict-Transport-Security in Sekunden |
 | `[DeploySettings]` | `PhpFpmService` | `auto` | Der PHP-FPM-Dienst, den `exp:velocity deploy` neu lädt |
 | `[FrankenPHPSettings]` | `Port`, `HTTPSPort` | `8089`, `8444` | Ports der FrankenPHP-Engine |
 | `[PHPServerSettings]` | `Port` | `8087` | Port der Engine `php` (des eigenen Servers von PHP) |
