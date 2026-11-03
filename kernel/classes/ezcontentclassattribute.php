@@ -337,16 +337,26 @@ class eZContentClassAttribute extends eZPersistentObject
 
         $db = eZDB::instance();
         $db->begin();
-        $dataType->preStoreVersionedClassAttribute( $this, $version );
+        try
+        {
+            $dataType->preStoreVersionedClassAttribute( $this, $version );
 
-        $this->setAttribute( 'serialized_name_list', $this->NameList->serializeNames() );
-        $this->setAttribute( 'serialized_description_list', $this->DescriptionList->serializeNames() );
-        $this->setAttribute( 'serialized_data_text', $this->DataTextI18nList->serializeNames() );
+            $this->setAttribute( 'serialized_name_list', $this->NameList->serializeNames() );
+            $this->setAttribute( 'serialized_description_list', $this->DescriptionList->serializeNames() );
+            $this->setAttribute( 'serialized_data_text', $this->DataTextI18nList->serializeNames() );
 
-        parent::store();
+            parent::store();
 
-        // store the content data for this attribute
-        $dataType->storeVersionedClassAttribute( $this, $version );
+            // store the content data for this attribute
+            $dataType->storeVersionedClassAttribute( $this, $version );
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
     }
 
@@ -363,8 +373,18 @@ class eZContentClassAttribute extends eZPersistentObject
 
             $db = eZDB::instance();
             $db->begin();
-            $dataType->deleteStoredClassAttribute( $this, $this->Version );
-            $this->remove();
+            try
+            {
+                $dataType->deleteStoredClassAttribute( $this, $this->Version );
+                $this->remove();
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
             $db->commit();
             return true;
         }
@@ -552,10 +572,20 @@ class eZContentClassAttribute extends eZPersistentObject
         else
             $ids[] = (int)$this->ID;
         $db->begin();
-        foreach ( $ids as $index => $id )
+        try
         {
-            $db->query( 'UPDATE ezcontentclass_attribute SET placement = ' . ( $index + 1 ) . ' WHERE id = ' . $id .
-                        ' AND contentclass_id = ' . $cid . ' AND version = ' . $version );
+            foreach ( $ids as $index => $id )
+            {
+                $db->query( 'UPDATE ezcontentclass_attribute SET placement = ' . ( $index + 1 ) . ' WHERE id = ' . $id .
+                            ' AND contentclass_id = ' . $cid . ' AND version = ' . $version );
+            }
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
     }
@@ -582,10 +612,20 @@ class eZContentClassAttribute extends eZPersistentObject
         if ( $clean )
             return false;
         $db->begin();
-        foreach ( $placements as $id => $placement )
+        try
         {
-            $db->query( 'UPDATE ezcontentclass_attribute SET placement = ' . (int)$placement . ' WHERE id = ' . (int)$id .
-                        ' AND contentclass_id = ' . (int)$classID . ' AND version = ' . (int)$version );
+            foreach ( $placements as $id => $placement )
+            {
+                $db->query( 'UPDATE ezcontentclass_attribute SET placement = ' . (int)$placement . ' WHERE id = ' . (int)$id .
+                            ' AND contentclass_id = ' . (int)$classID . ' AND version = ' . (int)$version );
+            }
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
         return $placements;

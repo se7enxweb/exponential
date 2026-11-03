@@ -332,6 +332,63 @@ class eZDB
     }
 
     /**
+     * Runs $work in a transaction of the current database: begin(), $work(), commit(). When $work throws, the
+     * transaction is rolled back (every level of it, as rollback() always does) and the exception is thrown on, so
+     * nothing it wrote is committed later by an outer commit() or by checkTransactionCounter().
+     *
+     * @param callable $work called with the database object
+     * @param eZDBInterface|null $db the database, eZDB::instance() when null
+     * @return mixed what $work returned
+     * @throws Throwable what $work threw
+     * @since 6.0.15
+     */
+    static function transaction( $work, $db = null )
+    {
+        if ( !$db instanceof eZDBInterface )
+            $db = eZDB::instance();
+        $db->begin();
+        try
+        {
+            $result = call_user_func( $work, $db );
+        }
+        catch ( Throwable $e )
+        {
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
+        $db->commit();
+        return $result;
+    }
+
+    /**
+     * Rolls back a transaction that is still open on the current database, if there is one: what an exception
+     * between begin() and commit() left behind. Called when a web request ends with an exception, before its
+     * cleanup handlers run (they write the session, which would otherwise only raise the counter of the
+     * transaction that is left), and at the start of each request (expKernelServiceScope::DEFAULT_RESET_HOOKS), for
+     * a persistent worker whose request before ended without its commit. Nothing half done is committed by a later
+     * commit() or by checkTransactionCounter().
+     *
+     * @param string $reason written to the error log with the level of the transaction
+     * @return int the levels that were open, 0 when no transaction was open
+     * @since 6.0.15
+     */
+    static function rollbackOpenTransaction( $reason = 'a transaction was left open by the request before' )
+    {
+        if ( !self::hasInstance() )
+            return 0;
+        $db = $GLOBALS['eZDBGlobalInstance'];
+        $levels = (int)$db->transactionCounter();
+        if ( $levels <= 0 )
+            return 0;
+        eZDebug::writeError( "Rolled back an open transaction ($levels level(s)): $reason", __METHOD__ );
+        $db->rollback();
+        // rollback() leaves the counter alone when transactions are disabled in the settings
+        $db->TransactionCounter = 0;
+        return $levels;
+    }
+
+    /**
      * Sets the default eZDB error handling mode.
      * Use eZDB::instance()->setErrorHandling() with the same parameters to set error handling for one instance only
      *

@@ -117,12 +117,22 @@ class eZRole extends eZPersistentObject
     {
         $db = eZDB::instance();
         $db->begin();
+        try
+        {
 
-        $newRole = eZRole::createNew();
-        $this->copyPolicies( $newRole->attribute( 'id' ) );
-        $newRole->setAttribute( 'name', ezpI18n::tr( 'kernel/role/edit', 'Copy of %rolename', null,
-                                                array( '%rolename' => $this->attribute( 'name' ) ) ) );
-        $newRole->store();
+            $newRole = eZRole::createNew();
+            $this->copyPolicies( $newRole->attribute( 'id' ) );
+            $newRole->setAttribute( 'name', ezpI18n::tr( 'kernel/role/edit', 'Copy of %rolename', null,
+                                                    array( '%rolename' => $this->attribute( 'name' ) ) ) );
+            $newRole->store();
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
         // Audit (doc/eng-us/bc/6.0/audit.md, access.role.copy)
         if ( class_exists( 'expAuditHook' ) )
@@ -162,13 +172,23 @@ class eZRole extends eZPersistentObject
         }
 
         $db->begin();
+        try
+        {
 
-        $newRole = eZRole::createNew();
-        $this->copyPolicies( $newRole->attribute( 'id' ) );
-        $newRole->setAttribute( 'name', $this->attribute( 'name' ) );
-        $newRole->setAttribute( 'version', $this->attribute( 'id' ) );
-        $newRole->store();
+            $newRole = eZRole::createNew();
+            $this->copyPolicies( $newRole->attribute( 'id' ) );
+            $newRole->setAttribute( 'name', $this->attribute( 'name' ) );
+            $newRole->setAttribute( 'version', $this->attribute( 'id' ) );
+            $newRole->store();
 
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
         return $newRole;
     }
@@ -229,15 +249,25 @@ class eZRole extends eZPersistentObject
 
         $db = eZDB::instance();
         $db->begin();
-        $policy->store();
-        if ( count( $limitations ) > 0 )
+        try
         {
-            foreach ( $limitations as $limitationIdentifier => $limitationValues )
+            $policy->store();
+            if ( count( $limitations ) > 0 )
             {
-                if ( !is_array( $limitationValues ) )
-                    $limitationValues = array( $limitationValues );
-                $policy->appendLimitation( $limitationIdentifier, $limitationValues );
+                foreach ( $limitations as $limitationIdentifier => $limitationValues )
+                {
+                    if ( !is_array( $limitationValues ) )
+                        $limitationValues = array( $limitationValues );
+                    $policy->appendLimitation( $limitationIdentifier, $limitationValues );
+                }
             }
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
 
@@ -267,9 +297,19 @@ class eZRole extends eZPersistentObject
     {
         $db = eZDB::instance();
         $db->begin();
-        foreach ( $this->attribute( 'policies' ) as $policy )
+        try
         {
-            $policy->copy( $roleID );
+            foreach ( $this->attribute( 'policies' ) as $policy )
+            {
+                $policy->copy( $roleID );
+            }
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
     }
@@ -290,18 +330,28 @@ class eZRole extends eZPersistentObject
         {
             $db = eZDB::instance();
             $db->begin();
-            foreach( $policyList as $key => $policy )
+            try
             {
-                if ( is_object( $policy ) )
+                foreach( $policyList as $key => $policy )
                 {
-                    if ( $policy->attribute( 'module_name' ) == $moduleName )
+                    if ( is_object( $policy ) )
                     {
-                        if ( ( $functionName === false ) || ( $policy->attribute( 'function_name' ) == $functionName ) )
+                        if ( $policy->attribute( 'module_name' ) == $moduleName )
                         {
-                            $hasPolicy = true;
+                            if ( ( $functionName === false ) || ( $policy->attribute( 'function_name' ) == $functionName ) )
+                            {
+                                $hasPolicy = true;
+                            }
                         }
                     }
                 }
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
             }
             $db->commit();
         }
@@ -328,24 +378,34 @@ class eZRole extends eZPersistentObject
 
         $db = eZDB::instance();
         $db->begin();
-        $this->store();
+        try
+        {
+            $this->store();
 
-        $query = "UPDATE  ezpolicy
+            $query = "UPDATE  ezpolicy
                   SET role_id = " . $this->attribute( 'id' ) . "
                   WHERE role_id = " . $temporaryVersion->attribute( 'id' );
-        if ( $db->databaseName() === 'mongo' )
-        {
-            $db->mongoUpdateMany( 'ezpolicy',
-                [ 'role_id' => (int)$temporaryVersion->attribute( 'id' ) ],
-                [ '$set' => [ 'role_id' => (int)$this->attribute( 'id' ) ] ]
-            );
+            if ( $db->databaseName() === 'mongo' )
+            {
+                $db->mongoUpdateMany( 'ezpolicy',
+                    [ 'role_id' => (int)$temporaryVersion->attribute( 'id' ) ],
+                    [ '$set' => [ 'role_id' => (int)$this->attribute( 'id' ) ] ]
+                );
+            }
+            else
+            {
+                $db->query( $query );
+            }
+            $temporaryVersion->removePolicies( false );
+            $temporaryVersion->remove();
         }
-        else
+        catch ( Throwable $e )
         {
-            $db->query( $query );
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
-        $temporaryVersion->removePolicies( false );
-        $temporaryVersion->remove();
         $db->commit();
 
         // Expire role cache
@@ -373,9 +433,19 @@ class eZRole extends eZPersistentObject
 
         $db = eZDB::instance();
         $db->begin();
-        foreach ( $temporaryRoles as $role )
+        try
         {
-            $role->removeThis();
+            foreach ( $temporaryRoles as $role )
+            {
+                $role->removeThis();
+            }
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
     }
@@ -415,35 +485,45 @@ class eZRole extends eZPersistentObject
         }
         $db = eZDB::instance();
         $db->begin();
-        $policies = $this->attribute( 'policies' );
-        $roleID = (int)$this->attribute( 'id' );
-        $removePolicies = function () use ( $policies, $roleID ) {
-            foreach ( $policies as $policy )
-            {
-                $policy->removeThis();
-            }
-            // policyList() has only the policies in use (original_id 0). The copies role/policyedit makes to edit a
-            // policy (original_id set) belong to the role too and were left behind without it.
-            $left = eZPersistentObject::fetchObjectList( eZPolicy::definition(), null, array( 'role_id' => $roleID ),
-                                                         null, null, true );
-            foreach ( is_array( $left ) ? $left : array() as $policy )
-            {
-                $policy->removeThis();
-            }
-        };
-        if ( class_exists( 'expAuditHook' ) )
-            expAuditHook::muted( 'access.policy.remove', $removePolicies );
-        else
-            $removePolicies();
-        if ( $db->databaseName() === 'mongo' )
+        try
         {
-            $db->deleteWhere( 'ezrole',      [ 'id'      => (int)$this->attribute( 'id' ) ] );
-            $db->deleteWhere( 'ezuser_role', [ 'role_id' => (int)$this->attribute( 'id' ) ] );
+            $policies = $this->attribute( 'policies' );
+            $roleID = (int)$this->attribute( 'id' );
+            $removePolicies = function () use ( $policies, $roleID ) {
+                foreach ( $policies as $policy )
+                {
+                    $policy->removeThis();
+                }
+                // policyList() has only the policies in use (original_id 0). The copies role/policyedit makes to edit a
+                // policy (original_id set) belong to the role too and were left behind without it.
+                $left = eZPersistentObject::fetchObjectList( eZPolicy::definition(), null, array( 'role_id' => $roleID ),
+                                                             null, null, true );
+                foreach ( is_array( $left ) ? $left : array() as $policy )
+                {
+                    $policy->removeThis();
+                }
+            };
+            if ( class_exists( 'expAuditHook' ) )
+                expAuditHook::muted( 'access.policy.remove', $removePolicies );
+            else
+                $removePolicies();
+            if ( $db->databaseName() === 'mongo' )
+            {
+                $db->deleteWhere( 'ezrole',      [ 'id'      => (int)$this->attribute( 'id' ) ] );
+                $db->deleteWhere( 'ezuser_role', [ 'role_id' => (int)$this->attribute( 'id' ) ] );
+            }
+            else
+            {
+                $db->query( "DELETE FROM ezrole WHERE id='" . $db->escapeString( $this->attribute( 'id' ) ) . "'" );
+                $db->query( "DELETE FROM ezuser_role WHERE role_id = '" . $db->escapeString( $this->attribute( 'id' ) ) . "'" );
+            }
         }
-        else
+        catch ( Throwable $e )
         {
-            $db->query( "DELETE FROM ezrole WHERE id='" . $db->escapeString( $this->attribute( 'id' ) ) . "'" );
-            $db->query( "DELETE FROM ezuser_role WHERE role_id = '" . $db->escapeString( $this->attribute( 'id' ) ) . "'" );
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
         if ( $auditData !== null )
@@ -460,12 +540,22 @@ class eZRole extends eZPersistentObject
     {
         $db = eZDB::instance();
         $db->begin();
-        if ( $fromDB )
+        try
         {
-            foreach ( $this->attribute( 'policies' ) as $policy )
+            if ( $fromDB )
             {
-                $policy->removeThis();
+                foreach ( $this->attribute( 'policies' ) as $policy )
+                {
+                    $policy->removeThis();
+                }
             }
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
         unset( $this->Policies );
@@ -486,22 +576,32 @@ class eZRole extends eZPersistentObject
         {
             $db = eZDB::instance();
             $db->begin();
-
-            foreach( $policyList as $key => $policy )
+            try
             {
-                if ( is_object( $policy ) )
+
+                foreach( $policyList as $key => $policy )
                 {
-                    if ( $policy->attribute( 'module_name' ) == $moduleName )
+                    if ( is_object( $policy ) )
                     {
-                        if ( ( $functionName === false ) || ( $policy->attribute( 'function_name' ) == $functionName ) )
+                        if ( $policy->attribute( 'module_name' ) == $moduleName )
                         {
-                            $policy->removeThis();
-                            unset( $this->Policies[$key] );
+                            if ( ( $functionName === false ) || ( $policy->attribute( 'function_name' ) == $functionName ) )
+                            {
+                                $policy->removeThis();
+                                unset( $this->Policies[$key] );
+                            }
                         }
                     }
                 }
-            }
 
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
             $db->commit();
         }
     }
@@ -517,80 +617,90 @@ class eZRole extends eZPersistentObject
         // Clean up role assignments with limitations related to this object
         $db = eZDB::instance();
         $db->begin();
-        $pathString = $node->attribute( 'path_string' );
-        $nodeID = $node->attribute( 'node_id' );
-        if ( $db->databaseName() === 'mongo' )
+        try
         {
-            // Delete ezuser_role assignments whose limit_value starts with $pathString (Subtree scope)
-            $db->deleteWhere( 'ezuser_role', [
-                'limit_identifier' => 'Subtree',
-                'limit_value'      => [ '$regex' => '^' . preg_quote( $pathString ) ],
-            ] );
-        }
-        else
-        {
-            $db->query( "DELETE FROM ezuser_role
+            $pathString = $node->attribute( 'path_string' );
+            $nodeID = $node->attribute( 'node_id' );
+            if ( $db->databaseName() === 'mongo' )
+            {
+                // Delete ezuser_role assignments whose limit_value starts with $pathString (Subtree scope)
+                $db->deleteWhere( 'ezuser_role', [
+                    'limit_identifier' => 'Subtree',
+                    'limit_value'      => [ '$regex' => '^' . preg_quote( $pathString ) ],
+                ] );
+            }
+            else
+            {
+                $db->query( "DELETE FROM ezuser_role
                          WHERE limit_value LIKE '$pathString%' AND limit_identifier='Subtree'" );
-        }
-                        // Clean up subtree limitations related to this object
+            }
+                            // Clean up subtree limitations related to this object
 
 
-        $limitationsToFix = eZPolicyLimitation::findByType( 'SubTree', $node->attribute( 'path_string' ), true, true );
+            $limitationsToFix = eZPolicyLimitation::findByType( 'SubTree', $node->attribute( 'path_string' ), true, true );
 
-        foreach( $limitationsToFix as $limitation )
-        {
-            $values = $limitation->attribute( 'values' );
-            $valueCount = count( $values );
-            if ( $valueCount > 0 )
+            foreach( $limitationsToFix as $limitation )
             {
-                foreach ( $values as $value )
+                $values = $limitation->attribute( 'values' );
+                $valueCount = count( $values );
+                if ( $valueCount > 0 )
                 {
-                    if ( strpos( $value->attribute( 'value' ), $node->attribute( 'path_string' ) ) === 0 )
+                    foreach ( $values as $value )
                     {
-                        $value->remove();
-                        $valueCount--;
+                        if ( strpos( $value->attribute( 'value' ), $node->attribute( 'path_string' ) ) === 0 )
+                        {
+                            $value->remove();
+                            $valueCount--;
+                        }
+                    }
+                }
+                if( $valueCount == 0 )
+                {
+                    $policy = eZPolicy::fetch( $limitation->attribute( 'policy_id' ) );
+                    if ( is_object ( $policy ) )
+                    {
+                        $policy->removeThis();
                     }
                 }
             }
-            if( $valueCount == 0 )
-            {
-                $policy = eZPolicy::fetch( $limitation->attribute( 'policy_id' ) );
-                if ( is_object ( $policy ) )
-                {
-                    $policy->removeThis();
-                }
-            }
-        }
 
-        $limitationsToFixNode = eZPolicyLimitation::findByType( 'Node', $node->attribute( 'node_id' ) );
+            $limitationsToFixNode = eZPolicyLimitation::findByType( 'Node', $node->attribute( 'node_id' ) );
 
-        foreach( $limitationsToFixNode as $limitation )
-        {
-            $values = $limitation->attribute( 'values' );
-            $valueCount = count( $values );
-            if ( $valueCount > 0 )
+            foreach( $limitationsToFixNode as $limitation )
             {
-                foreach ( $values as $value )
+                $values = $limitation->attribute( 'values' );
+                $valueCount = count( $values );
+                if ( $valueCount > 0 )
                 {
-                    if ( $value->attribute( 'value' ) == $node->attribute( 'node_id' ) )
+                    foreach ( $values as $value )
                     {
-                        $value->remove();
-                        $valueCount--;
+                        if ( $value->attribute( 'value' ) == $node->attribute( 'node_id' ) )
+                        {
+                            $value->remove();
+                            $valueCount--;
+                        }
+                    }
+                }
+                if( $valueCount == 0 )
+                {
+                    $policy = eZPolicy::fetch( $limitation->attribute( 'policy_id' ) );
+                    if ( is_object ( $policy ) )
+                    {
+                        $policy->removeThis();
                     }
                 }
             }
-            if( $valueCount == 0 )
-            {
-                $policy = eZPolicy::fetch( $limitation->attribute( 'policy_id' ) );
-                if ( is_object ( $policy ) )
-                {
-                    $policy->removeThis();
-                }
-            }
+
+            eZRole::expireCache();
+
         }
-
-        eZRole::expireCache();
-
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
 
     }
@@ -1331,43 +1441,53 @@ class eZRole extends eZPersistentObject
 
         $db = eZDB::instance();
         $db->begin();
-
-        $module   = $policy->attribute( 'module_name' );
-        $function = $policy->attribute( 'function_name' );
-        $policy->setAttribute( 'module_name', $other->attribute( 'module_name' ) );
-        $policy->setAttribute( 'function_name', $other->attribute( 'function_name' ) );
-        $other->setAttribute( 'module_name', $module );
-        $other->setAttribute( 'function_name', $function );
-        $policy->store();
-        $other->store();
-
-        // Both lists are read before either is written, so no row is moved twice.
-        $limitationsOfA = eZPolicyLimitation::fetchByPolicyID( $a );
-        $limitationsOfB = eZPolicyLimitation::fetchByPolicyID( $b );
-        foreach ( (array)$limitationsOfA as $limitation )
+        try
         {
-            $limitation->setAttribute( 'policy_id', $b );
-            $limitation->store();
-        }
-        foreach ( (array)$limitationsOfB as $limitation )
-        {
-            $limitation->setAttribute( 'policy_id', $a );
-            $limitation->store();
-        }
 
-        $copiesOfA = eZPersistentObject::fetchObjectList( eZPolicy::definition(), null, array( 'original_id' => $a ), null, null, true );
-        $copiesOfB = eZPersistentObject::fetchObjectList( eZPolicy::definition(), null, array( 'original_id' => $b ), null, null, true );
-        foreach ( (array)$copiesOfA as $copy )
-        {
-            $copy->setAttribute( 'original_id', $b );
-            $copy->store();
-        }
-        foreach ( (array)$copiesOfB as $copy )
-        {
-            $copy->setAttribute( 'original_id', $a );
-            $copy->store();
-        }
+            $module   = $policy->attribute( 'module_name' );
+            $function = $policy->attribute( 'function_name' );
+            $policy->setAttribute( 'module_name', $other->attribute( 'module_name' ) );
+            $policy->setAttribute( 'function_name', $other->attribute( 'function_name' ) );
+            $other->setAttribute( 'module_name', $module );
+            $other->setAttribute( 'function_name', $function );
+            $policy->store();
+            $other->store();
 
+            // Both lists are read before either is written, so no row is moved twice.
+            $limitationsOfA = eZPolicyLimitation::fetchByPolicyID( $a );
+            $limitationsOfB = eZPolicyLimitation::fetchByPolicyID( $b );
+            foreach ( (array)$limitationsOfA as $limitation )
+            {
+                $limitation->setAttribute( 'policy_id', $b );
+                $limitation->store();
+            }
+            foreach ( (array)$limitationsOfB as $limitation )
+            {
+                $limitation->setAttribute( 'policy_id', $a );
+                $limitation->store();
+            }
+
+            $copiesOfA = eZPersistentObject::fetchObjectList( eZPolicy::definition(), null, array( 'original_id' => $a ), null, null, true );
+            $copiesOfB = eZPersistentObject::fetchObjectList( eZPolicy::definition(), null, array( 'original_id' => $b ), null, null, true );
+            foreach ( (array)$copiesOfA as $copy )
+            {
+                $copy->setAttribute( 'original_id', $b );
+                $copy->store();
+            }
+            foreach ( (array)$copiesOfB as $copy )
+            {
+                $copy->setAttribute( 'original_id', $a );
+                $copy->store();
+            }
+
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
 
         unset( $this->Policies );
@@ -1560,10 +1680,20 @@ class eZRole extends eZPersistentObject
             return false;
 
         $db->begin();
+        try
+        {
 
-        $query = "INSERT INTO ezuser_role ( role_id, contentobject_id, limit_identifier, limit_value ) VALUES ( '$this->ID', '$userID', '$limitIdent', '$limitValue' )";
-        $db->query( $query );
+            $query = "INSERT INTO ezuser_role ( role_id, contentobject_id, limit_identifier, limit_value ) VALUES ( '$this->ID', '$userID', '$limitIdent', '$limitValue' )";
+            $db->query( $query );
 
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
         $this->auditAssignment( 'access.role.assign', $userID, $limitIdent, $limitValue, $auditLimit );
         return true;

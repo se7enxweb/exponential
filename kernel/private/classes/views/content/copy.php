@@ -43,39 +43,49 @@ function expModuleViewContentCopyCopyObject( $Module, $object, $allVersions, $ne
 
     $db = eZDB::instance();
     $db->begin();
-    $newObject = $object->copy( $allVersions );
-    // We should reset section that will be updated in updateSectionID().
-    // If sectionID is 0 then the object has been newly created
-    $newObject->setAttribute( 'section_id', 0 );
-    $newObject->store();
-
-    $curVersion        = $newObject->attribute( 'current_version' );
-    $curVersionObject  = $newObject->attribute( 'current' );
-    $newObjAssignments = $curVersionObject->attribute( 'node_assignments' );
-    unset( $curVersionObject );
-
-    // remove old node assignments
-    foreach( $newObjAssignments as $assignment )
+    try
     {
-        $assignment->purge();
+        $newObject = $object->copy( $allVersions );
+        // We should reset section that will be updated in updateSectionID().
+        // If sectionID is 0 then the object has been newly created
+        $newObject->setAttribute( 'section_id', 0 );
+        $newObject->store();
+
+        $curVersion        = $newObject->attribute( 'current_version' );
+        $curVersionObject  = $newObject->attribute( 'current' );
+        $newObjAssignments = $curVersionObject->attribute( 'node_assignments' );
+        unset( $curVersionObject );
+
+        // remove old node assignments
+        foreach( $newObjAssignments as $assignment )
+        {
+            $assignment->purge();
+        }
+
+        // and create a new one
+        $nodeAssignment = eZNodeAssignment::create( array(
+                                                         'contentobject_id' => $newObject->attribute( 'id' ),
+                                                         'contentobject_version' => $curVersion,
+                                                         'parent_node' => $newParentNodeID,
+                                                         'is_main' => 1
+                                                         ) );
+        $nodeAssignment->store();
+
+        // publish the newly created object
+        eZOperationHandler::execute( 'content', 'publish', array( 'object_id' => $newObject->attribute( 'id' ),
+                                                                  'version'   => $curVersion ) );
+        // Update "is_invisible" attribute for the newly created node.
+        $newNode = $newObject->attribute( 'main_node' );
+        eZContentObjectTreeNode::updateNodeVisibility( $newNode, $newParentNode );
+
     }
-
-    // and create a new one
-    $nodeAssignment = eZNodeAssignment::create( array(
-                                                     'contentobject_id' => $newObject->attribute( 'id' ),
-                                                     'contentobject_version' => $curVersion,
-                                                     'parent_node' => $newParentNodeID,
-                                                     'is_main' => 1
-                                                     ) );
-    $nodeAssignment->store();
-
-    // publish the newly created object
-    eZOperationHandler::execute( 'content', 'publish', array( 'object_id' => $newObject->attribute( 'id' ),
-                                                              'version'   => $curVersion ) );
-    // Update "is_invisible" attribute for the newly created node.
-    $newNode = $newObject->attribute( 'main_node' );
-    eZContentObjectTreeNode::updateNodeVisibility( $newNode, $newParentNode );
-
+    catch ( Throwable $e )
+    {
+        // nothing of a transaction that failed half way is committed by a later commit()
+        if ( $db->transactionCounter() > 0 )
+            $db->rollback();
+        throw $e;
+    }
     $db->commit();
 
     // Audit (doc/eng-us/bc/6.0/audit.md, content.node.copy)

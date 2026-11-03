@@ -83,54 +83,64 @@ class Forgotpassword extends \Exponential\Runnable\ModuleView
 
                 $db = \eZDB::instance();
                 $db->begin();
-
-                // Change user password; the audit records it as the reset below, not as a password change of its own
-                $changePassword = function () use ( $userID, $newPassword ) {
-                    if ( \eZOperationHandler::operationIsAvailable( 'user_password' ) )
-                    {
-                        \eZOperationHandler::execute( 'user',
-                                                      'password', array( 'user_id'    => $userID,
-                                                                         'new_password'  => $newPassword ) );
-                    }
-                    else
-                    {
-                        \eZUserOperationCollection::password( $userID, $newPassword );
-                    }
-                };
-                if ( class_exists( 'expAuditHook' ) )
-                    \expAuditHook::muted( 'access.user.password.change', $changePassword );
-                else
-                    $changePassword();
-
-                $receiver = $email;
-                $mail = new \eZMail();
-                if ( !$mail->validate( $receiver ) )
+                try
                 {
+
+                    // Change user password; the audit records it as the reset below, not as a password change of its own
+                    $changePassword = function () use ( $userID, $newPassword ) {
+                        if ( \eZOperationHandler::operationIsAvailable( 'user_password' ) )
+                        {
+                            \eZOperationHandler::execute( 'user',
+                                                          'password', array( 'user_id'    => $userID,
+                                                                             'new_password'  => $newPassword ) );
+                        }
+                        else
+                        {
+                            \eZUserOperationCollection::password( $userID, $newPassword );
+                        }
+                    };
+                    if ( class_exists( 'expAuditHook' ) )
+                        \expAuditHook::muted( 'access.user.password.change', $changePassword );
+                    else
+                        $changePassword();
+
+                    $receiver = $email;
+                    $mail = new \eZMail();
+                    if ( !$mail->validate( $receiver ) )
+                    {
+                    }
+
+                    $tpl = \eZTemplate::factory();
+                    $tpl->setVariable( 'user', $userToSendEmail );
+                    $tpl->setVariable( 'object', $userToSendEmail->attribute( 'contentobject' ) );
+                    $tpl->setVariable( 'password', $newPassword );
+
+                    $templateResult = $tpl->fetch( 'design:user/forgotpasswordmail.tpl' );
+                    $emailSender = $ini->variable( 'MailSettings', 'EmailSender' );
+                    if ( !$emailSender )
+                        $emailSender = $ini->variable( 'MailSettings', 'AdminEmail' );
+                    $mail->setSender( $emailSender );
+                    $mail->setReceiver( $receiver );
+                    $subject = \ezpI18n::tr( 'kernel/user/register', 'Registration info' );
+                    if ( $tpl->hasVariable( 'subject' ) )
+                        $subject = $tpl->variable( 'subject' );
+                    if ( $tpl->hasVariable( 'content_type' ) )
+                        $mail->setContentType( $tpl->variable( 'content_type' ) );
+                    $mail->setSubject( $subject );
+                    \expMailTemplateBody::apply( $mail, $tpl, $templateResult );
+                    $mail->setCategory( 'security' );
+                    $mailResult = \eZMailTransport::send( $mail );
+                    $tpl->setVariable( 'generated', true );
+                    $tpl->setVariable( 'email', $email );
+                    $forgotPasswdObj->remove();
                 }
-
-                $tpl = \eZTemplate::factory();
-                $tpl->setVariable( 'user', $userToSendEmail );
-                $tpl->setVariable( 'object', $userToSendEmail->attribute( 'contentobject' ) );
-                $tpl->setVariable( 'password', $newPassword );
-
-                $templateResult = $tpl->fetch( 'design:user/forgotpasswordmail.tpl' );
-                $emailSender = $ini->variable( 'MailSettings', 'EmailSender' );
-                if ( !$emailSender )
-                    $emailSender = $ini->variable( 'MailSettings', 'AdminEmail' );
-                $mail->setSender( $emailSender );
-                $mail->setReceiver( $receiver );
-                $subject = \ezpI18n::tr( 'kernel/user/register', 'Registration info' );
-                if ( $tpl->hasVariable( 'subject' ) )
-                    $subject = $tpl->variable( 'subject' );
-                if ( $tpl->hasVariable( 'content_type' ) )
-                    $mail->setContentType( $tpl->variable( 'content_type' ) );
-                $mail->setSubject( $subject );
-                \expMailTemplateBody::apply( $mail, $tpl, $templateResult );
-                $mail->setCategory( 'security' );
-                $mailResult = \eZMailTransport::send( $mail );
-                $tpl->setVariable( 'generated', true );
-                $tpl->setVariable( 'email', $email );
-                $forgotPasswdObj->remove();
+                catch ( Throwable $e )
+                {
+                    // nothing of a transaction that failed half way is committed by a later commit()
+                    if ( $db->transactionCounter() > 0 )
+                        $db->rollback();
+                    throw $e;
+                }
                 $db->commit();
                 // Audit (doc/eng-us/bc/6.0/audit.md, access.user.password.reset): never the hash key, never the password
                 if ( class_exists( 'expAuditHook' ) )

@@ -372,10 +372,20 @@ class expMailPreferences
         };
         $result = array( 'preferences' => $count( 'expmail_preference' ), 'pending' => $count( 'expmail_pending' ), 'anonymised' => 0 );
         $db->begin();
-        $db->query( "DELETE FROM expmail_preference WHERE recipient_key = '$key'" );
-        $db->query( "DELETE FROM expmail_pending WHERE recipient_key = '$key'" );
-        expConsentLog::record( $this->recipient, '', 'erase', '', '', $context );
-        $result['anonymised'] = expConsentLog::anonymise( $this->recipient );
+        try
+        {
+            $db->query( "DELETE FROM expmail_preference WHERE recipient_key = '$key'" );
+            $db->query( "DELETE FROM expmail_pending WHERE recipient_key = '$key'" );
+            expConsentLog::record( $this->recipient, '', 'erase', '', '', $context );
+            $result['anonymised'] = expConsentLog::anonymise( $this->recipient );
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
         $this->rows = null;
         self::notifyErased( $this->recipient, $context );

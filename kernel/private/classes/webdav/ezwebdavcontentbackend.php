@@ -2439,16 +2439,26 @@ class eZWebDAVContentBackend extends ezcWebdavSimpleBackend implements ezcWebdav
         {
             $db = eZDB::instance();
             $db->begin();
-            $version = $contentObject->version( 1 );
-            $version->setAttribute( 'status', eZContentObjectVersion::STATUS_DRAFT );
-            $version->store();
+            try
+            {
+                $version = $contentObject->version( 1 );
+                $version->setAttribute( 'status', eZContentObjectVersion::STATUS_DRAFT );
+                $version->store();
 
-            $contentObjectID = $contentObject->attribute( 'id' );
-            $contentObjectAttributes = $version->contentObjectAttributes();
+                $contentObjectID = $contentObject->attribute( 'id' );
+                $contentObjectAttributes = $version->contentObjectAttributes();
 
-            // @todo @as avoid using [0] (could be another index in some classes)
-            $contentObjectAttributes[0]->setAttribute( 'data_text', basename( $target ) );
-            $contentObjectAttributes[0]->store();
+                // @todo @as avoid using [0] (could be another index in some classes)
+                $contentObjectAttributes[0]->setAttribute( 'data_text', basename( $target ) );
+                $contentObjectAttributes[0]->store();
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
             $db->commit();
 
             $operationResult = eZOperationHandler::execute( 'content', 'publish', array( 'object_id' => $contentObjectID,
@@ -2798,40 +2808,50 @@ class eZWebDAVContentBackend extends ezcWebdavSimpleBackend implements ezcWebdav
 
         $db = eZDB::instance();
         $db->begin();
-        $newObject = $object->copy( true );
-
-        // We should reset section that will be updated in updateSectionID().
-        // If sectionID is 0 than the object has been newly created
-        $newObject->setAttribute( 'section_id', 0 );
-        $newObject->store();
-
-        $curVersion        = $newObject->attribute( 'current_version' );
-        $curVersionObject  = $newObject->attribute( 'current' );
-        $newObjAssignments = $curVersionObject->attribute( 'node_assignments' );
-        unset( $curVersionObject );
-
-        // remove old node assignments
-        foreach ( $newObjAssignments as $assignment )
+        try
         {
-            $assignment->purge();
+            $newObject = $object->copy( true );
+
+            // We should reset section that will be updated in updateSectionID().
+            // If sectionID is 0 than the object has been newly created
+            $newObject->setAttribute( 'section_id', 0 );
+            $newObject->store();
+
+            $curVersion        = $newObject->attribute( 'current_version' );
+            $curVersionObject  = $newObject->attribute( 'current' );
+            $newObjAssignments = $curVersionObject->attribute( 'node_assignments' );
+            unset( $curVersionObject );
+
+            // remove old node assignments
+            foreach ( $newObjAssignments as $assignment )
+            {
+                $assignment->purge();
+            }
+
+            // and create a new one
+            $nodeAssignment = eZNodeAssignment::create( array(
+                                                             'contentobject_id' => $newObject->attribute( 'id' ),
+                                                             'contentobject_version' => $curVersion,
+                                                             'parent_node' => $newParentNodeID,
+                                                             'is_main' => 1
+                                                             ) );
+            $nodeAssignment->store();
+
+            // publish the newly created object
+            eZOperationHandler::execute( 'content', 'publish', array( 'object_id' => $newObject->attribute( 'id' ),
+                                                                      'version'   => $curVersion ) );
+            // Update "is_invisible" attribute for the newly created node.
+            $newNode = $newObject->attribute( 'main_node' );
+            eZContentObjectTreeNode::updateNodeVisibility( $newNode, $newParentNode );
+
         }
-
-        // and create a new one
-        $nodeAssignment = eZNodeAssignment::create( array(
-                                                         'contentobject_id' => $newObject->attribute( 'id' ),
-                                                         'contentobject_version' => $curVersion,
-                                                         'parent_node' => $newParentNodeID,
-                                                         'is_main' => 1
-                                                         ) );
-        $nodeAssignment->store();
-
-        // publish the newly created object
-        eZOperationHandler::execute( 'content', 'publish', array( 'object_id' => $newObject->attribute( 'id' ),
-                                                                  'version'   => $curVersion ) );
-        // Update "is_invisible" attribute for the newly created node.
-        $newNode = $newObject->attribute( 'main_node' );
-        eZContentObjectTreeNode::updateNodeVisibility( $newNode, $newParentNode );
-
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
         return true;
     }
@@ -2858,55 +2878,65 @@ class eZWebDAVContentBackend extends ezcWebdavSimpleBackend implements ezcWebdav
 
         $db = eZDB::instance();
         $db->begin();
-        $newObject = $object->copy( true );
-
-        // We should reset section that will be updated in updateSectionID().
-        // If sectionID is 0 than the object has been newly created
-        $newObject->setAttribute( 'section_id', 0 );
-
-        // @as 2009-01-08 - Added check for destination name the same as the source name
-        // (this was causing problems with nodes disappearing after renaming)
-        $newName = $destinationName;
-        if ( $destinationName === null
-             || strtolower( $destinationName ) === strtolower( $object->attribute( 'name' ) ) )
+        try
         {
-            $newName = 'Copy of ' . $object->attribute( 'name' );
+            $newObject = $object->copy( true );
+
+            // We should reset section that will be updated in updateSectionID().
+            // If sectionID is 0 than the object has been newly created
+            $newObject->setAttribute( 'section_id', 0 );
+
+            // @as 2009-01-08 - Added check for destination name the same as the source name
+            // (this was causing problems with nodes disappearing after renaming)
+            $newName = $destinationName;
+            if ( $destinationName === null
+                 || strtolower( $destinationName ) === strtolower( $object->attribute( 'name' ) ) )
+            {
+                $newName = 'Copy of ' . $object->attribute( 'name' );
+            }
+
+            // @todo @as avoid using [0] (could be another index in some classes)
+            $contentObjectAttributes = $newObject->contentObjectAttributes();
+            $contentObjectAttributes[0]->setAttribute( 'data_text', $newName );
+            $contentObjectAttributes[0]->store();
+
+            $newObject->store();
+
+            $curVersion        = $newObject->attribute( 'current_version' );
+            $curVersionObject  = $newObject->attribute( 'current' );
+            $newObjAssignments = $curVersionObject->attribute( 'node_assignments' );
+            unset( $curVersionObject );
+
+            // remove old node assignments
+            foreach ( $newObjAssignments as $assignment )
+            {
+                $assignment->purge();
+            }
+
+            // and create a new one
+            $nodeAssignment = eZNodeAssignment::create( array(
+                                                             'contentobject_id' => $newObject->attribute( 'id' ),
+                                                             'contentobject_version' => $curVersion,
+                                                             'parent_node' => $newParentNodeID,
+                                                             'is_main' => 1
+                                                             ) );
+            $nodeAssignment->store();
+
+            // publish the newly created object
+            eZOperationHandler::execute( 'content', 'publish', array( 'object_id' => $newObject->attribute( 'id' ),
+                                                                      'version'   => $curVersion ) );
+            // Update "is_invisible" attribute for the newly created node.
+            $newNode = $newObject->attribute( 'main_node' );
+            eZContentObjectTreeNode::updateNodeVisibility( $newNode, $newParentNode );
+
         }
-
-        // @todo @as avoid using [0] (could be another index in some classes)
-        $contentObjectAttributes = $newObject->contentObjectAttributes();
-        $contentObjectAttributes[0]->setAttribute( 'data_text', $newName );
-        $contentObjectAttributes[0]->store();
-
-        $newObject->store();
-
-        $curVersion        = $newObject->attribute( 'current_version' );
-        $curVersionObject  = $newObject->attribute( 'current' );
-        $newObjAssignments = $curVersionObject->attribute( 'node_assignments' );
-        unset( $curVersionObject );
-
-        // remove old node assignments
-        foreach ( $newObjAssignments as $assignment )
+        catch ( Throwable $e )
         {
-            $assignment->purge();
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
-
-        // and create a new one
-        $nodeAssignment = eZNodeAssignment::create( array(
-                                                         'contentobject_id' => $newObject->attribute( 'id' ),
-                                                         'contentobject_version' => $curVersion,
-                                                         'parent_node' => $newParentNodeID,
-                                                         'is_main' => 1
-                                                         ) );
-        $nodeAssignment->store();
-
-        // publish the newly created object
-        eZOperationHandler::execute( 'content', 'publish', array( 'object_id' => $newObject->attribute( 'id' ),
-                                                                  'version'   => $curVersion ) );
-        // Update "is_invisible" attribute for the newly created node.
-        $newNode = $newObject->attribute( 'main_node' );
-        eZContentObjectTreeNode::updateNodeVisibility( $newNode, $newParentNode );
-
         $db->commit();
         return true;
     }

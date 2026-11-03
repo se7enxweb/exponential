@@ -184,15 +184,25 @@ class eZURLType extends eZDataType
 
         $db = eZDB::instance();
         $db->begin();
-
-        foreach ( $urls as $urlID )
+        try
         {
-            if ( !eZURLObjectLink::hasObjectLinkList( $urlID ) )
-            {
-                eZURL::removeByID( $urlID );
-            }
-        }
 
+            foreach ( $urls as $urlID )
+            {
+                if ( !eZURLObjectLink::hasObjectLinkList( $urlID ) )
+                {
+                    eZURL::removeByID( $urlID );
+                }
+            }
+
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
     }
 
@@ -236,19 +246,29 @@ class eZURLType extends eZDataType
 
             $db = eZDB::instance();
             $db->begin();
-
-            $objectLinkList = eZURLObjectLink::fetchLinkObjectList( $objectAttributeID, $objectAttributeVersion );
-
-            // In order not to have duplicated links, delete existing ones that have been created during the version creation process
-            // and create a clean one (we can't update url_id since there's no primary key). This fixes EZP-20988
-            if ( !empty( $objectLinkList ) )
+            try
             {
-                eZURLObjectLink::removeURLlinkList( $objectAttributeID, $objectAttributeVersion );
+
+                $objectLinkList = eZURLObjectLink::fetchLinkObjectList( $objectAttributeID, $objectAttributeVersion );
+
+                // In order not to have duplicated links, delete existing ones that have been created during the version creation process
+                // and create a clean one (we can't update url_id since there's no primary key). This fixes EZP-20988
+                if ( !empty( $objectLinkList ) )
+                {
+                    eZURLObjectLink::removeURLlinkList( $objectAttributeID, $objectAttributeVersion );
+                }
+
+                $linkObjectLink = eZURLObjectLink::create( $urlID, $objectAttributeID, $objectAttributeVersion );
+                $linkObjectLink->store();
+
             }
-
-            $linkObjectLink = eZURLObjectLink::create( $urlID, $objectAttributeID, $objectAttributeVersion );
-            $linkObjectLink->store();
-
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
             $db->commit();
         }
     }

@@ -340,12 +340,22 @@ class eZRSSExportOPMLItem extends eZPersistentObject
         $added    = 0;
 
         $db->begin();
-        foreach ( $real as $targetID )
+        try
         {
-            $item = self::create( $exportId, $targetID, $priority++ );
-            $item->setAttribute( 'status', $status );
-            $item->store();
-            $added++;
+            foreach ( $real as $targetID )
+            {
+                $item = self::create( $exportId, $targetID, $priority++ );
+                $item->setAttribute( 'status', $status );
+                $item->store();
+                $added++;
+            }
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
 
@@ -377,8 +387,18 @@ class eZRSSExportOPMLItem extends eZPersistentObject
 
         $db = eZDB::instance();
         $db->begin();
-        $db->query( 'DELETE FROM ezrss_export_opml_item WHERE rssexport_id=' . (int) $exportId
-                    . ' AND id IN (' . implode( ',', $clean ) . ')' );
+        try
+        {
+            $db->query( 'DELETE FROM ezrss_export_opml_item WHERE rssexport_id=' . (int) $exportId
+                        . ' AND id IN (' . implode( ',', $clean ) . ')' );
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
 
         return count( $clean );
@@ -418,19 +438,29 @@ class eZRSSExportOPMLItem extends eZPersistentObject
     {
         $db = eZDB::instance();
         $db->begin();
-        $db->query( 'DELETE FROM ezrss_export_opml_item WHERE rssexport_id=' . (int) $exportId
-                    . ' AND status=' . (int) $toStatus );
-
-        foreach ( self::fetchList( $exportId, $fromStatus ) as $item )
+        try
         {
-            $copy = self::create( $exportId,
-                                  $item->attribute( 'target_export_id' ),
-                                  $item->attribute( 'priority' ) );
-            $copy->setAttribute( 'parent_id', $item->attribute( 'parent_id' ) );
-            foreach ( self::copiedFields() as $field )
-                $copy->setAttribute( $field, $item->attribute( $field ) );
-            $copy->setAttribute( 'status', $toStatus );
-            $copy->store();
+            $db->query( 'DELETE FROM ezrss_export_opml_item WHERE rssexport_id=' . (int) $exportId
+                        . ' AND status=' . (int) $toStatus );
+
+            foreach ( self::fetchList( $exportId, $fromStatus ) as $item )
+            {
+                $copy = self::create( $exportId,
+                                      $item->attribute( 'target_export_id' ),
+                                      $item->attribute( 'priority' ) );
+                $copy->setAttribute( 'parent_id', $item->attribute( 'parent_id' ) );
+                foreach ( self::copiedFields() as $field )
+                    $copy->setAttribute( $field, $item->attribute( $field ) );
+                $copy->setAttribute( 'status', $toStatus );
+                $copy->store();
+            }
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
     }

@@ -248,17 +248,27 @@ class expContentSchedule
         $count = 0;
         $db = eZDB::instance();
         $db->begin();
-        foreach ( (array)$version->translationList( false, false ) as $language )
+        try
         {
-            foreach ( (array)$version->contentObjectAttributes( $language ) as $attribute )
+            foreach ( (array)$version->translationList( false, false ) as $language )
             {
-                $identifier = (string)$attribute->attribute( 'contentclass_attribute_identifier' );
-                if ( !array_key_exists( $identifier, $writes ) || !in_array( $attribute->attribute( 'data_type_string' ), self::DATATYPES, true ) )
-                    continue;
-                $attribute->setAttribute( 'data_int', (int)$writes[$identifier] > 0 ? (int)$writes[$identifier] : null );
-                $attribute->store();
-                $count++;
+                foreach ( (array)$version->contentObjectAttributes( $language ) as $attribute )
+                {
+                    $identifier = (string)$attribute->attribute( 'contentclass_attribute_identifier' );
+                    if ( !array_key_exists( $identifier, $writes ) || !in_array( $attribute->attribute( 'data_type_string' ), self::DATATYPES, true ) )
+                        continue;
+                    $attribute->setAttribute( 'data_int', (int)$writes[$identifier] > 0 ? (int)$writes[$identifier] : null );
+                    $attribute->store();
+                    $count++;
+                }
             }
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
         return $count;

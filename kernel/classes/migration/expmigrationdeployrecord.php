@@ -130,11 +130,21 @@ class expMigrationDeployRecord
             return false;
         $id = "'" . $db->escapeString( $rows['deploy']['deploy_id'] ) . "'";
         $db->begin();
-        $db->query( 'DELETE FROM ' . self::HOST_TABLE . ' WHERE deploy_id = ' . $id );
-        $db->query( 'DELETE FROM ' . self::DEPLOY_TABLE . ' WHERE deploy_id = ' . $id );
-        $db->query( self::insertSql( $db, self::DEPLOY_TABLE, $rows['deploy'] ) );
-        foreach ( $rows['hosts'] as $host )
-            $db->query( self::insertSql( $db, self::HOST_TABLE, $host ) );
+        try
+        {
+            $db->query( 'DELETE FROM ' . self::HOST_TABLE . ' WHERE deploy_id = ' . $id );
+            $db->query( 'DELETE FROM ' . self::DEPLOY_TABLE . ' WHERE deploy_id = ' . $id );
+            $db->query( self::insertSql( $db, self::DEPLOY_TABLE, $rows['deploy'] ) );
+            foreach ( $rows['hosts'] as $host )
+                $db->query( self::insertSql( $db, self::HOST_TABLE, $host ) );
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
         return true;
     }

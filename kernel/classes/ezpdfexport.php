@@ -171,12 +171,22 @@ class eZPDFExport extends eZPersistentObject
 
         $db = eZDB::instance();
         $db->begin();
-        parent::store();
-        if ( $publish )
+        try
         {
-            $this->setAttribute( 'version', eZPDFExport::VERSION_DRAFT );
-            $this->remove();
-            $this->setAttribute( 'version', $originalVersion );
+            parent::store();
+            if ( $publish )
+            {
+                $this->setAttribute( 'version', eZPDFExport::VERSION_DRAFT );
+                $this->remove();
+                $this->setAttribute( 'version', $originalVersion );
+            }
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
     }

@@ -189,34 +189,44 @@ class eZImageFile extends eZPersistentObject
     {
         $db = eZDB::instance();
         $db->begin();
-
-        eZImageFile::removeFilepath( $contentObjectAttributeID, $oldFilepath );
-        $result = eZImageFile::appendFilepath( $contentObjectAttributeID, $newFilepath );
-
-        // Translations share one image: the owning attribute holds the file
-        // and the others reference the same path. Only the owner's row was
-        // followed when the file moved, so every sibling was left naming a
-        // path that no longer exists - four dangling rows after an install.
-        // The file really has moved, so the references have to move with it.
-        //
-        // Only rows of the same content object are siblings. A row of another
-        // object naming the path is that object's own (an object copied before
-        // copies owned their files): re-pointing it at this object's new path
-        // took the source's row away from the source's file, so removing the
-        // copy later left the row behind and could delete the source's file.
-        $objectID = $followSharedRows ? eZImageFile::contentObjectIDOfAttribute( $contentObjectAttributeID ) : false;
-        foreach ( $objectID ? eZImageFile::fetchListByFilePath( $oldFilepath ) : array() as $sharedRow )
+        try
         {
-            $sharedAttributeID = (int) $sharedRow['contentobject_attribute_id'];
-            if ( $sharedAttributeID === (int) $contentObjectAttributeID )
-                continue;
-            if ( eZImageFile::contentObjectIDOfAttribute( $sharedAttributeID ) !== $objectID )
-                continue;
 
-            eZImageFile::removeFilepath( $sharedAttributeID, $oldFilepath );
-            eZImageFile::appendFilepath( $sharedAttributeID, $newFilepath, true );
+            eZImageFile::removeFilepath( $contentObjectAttributeID, $oldFilepath );
+            $result = eZImageFile::appendFilepath( $contentObjectAttributeID, $newFilepath );
+
+            // Translations share one image: the owning attribute holds the file
+            // and the others reference the same path. Only the owner's row was
+            // followed when the file moved, so every sibling was left naming a
+            // path that no longer exists - four dangling rows after an install.
+            // The file really has moved, so the references have to move with it.
+            //
+            // Only rows of the same content object are siblings. A row of another
+            // object naming the path is that object's own (an object copied before
+            // copies owned their files): re-pointing it at this object's new path
+            // took the source's row away from the source's file, so removing the
+            // copy later left the row behind and could delete the source's file.
+            $objectID = $followSharedRows ? eZImageFile::contentObjectIDOfAttribute( $contentObjectAttributeID ) : false;
+            foreach ( $objectID ? eZImageFile::fetchListByFilePath( $oldFilepath ) : array() as $sharedRow )
+            {
+                $sharedAttributeID = (int) $sharedRow['contentobject_attribute_id'];
+                if ( $sharedAttributeID === (int) $contentObjectAttributeID )
+                    continue;
+                if ( eZImageFile::contentObjectIDOfAttribute( $sharedAttributeID ) !== $objectID )
+                    continue;
+
+                eZImageFile::removeFilepath( $sharedAttributeID, $oldFilepath );
+                eZImageFile::appendFilepath( $sharedAttributeID, $newFilepath, true );
+            }
+
         }
-
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
         return $result;
     }

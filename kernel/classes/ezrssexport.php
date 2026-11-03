@@ -270,14 +270,24 @@ class eZRSSExport extends eZPersistentObject
 
         $db = eZDB::instance();
         $db->begin();
-        if ( $storeAsValid )
+        try
         {
-            $oldStatus = $this->attribute( 'status' );
-            $this->setAttribute( 'status', eZRSSExport::STATUS_VALID );
+            if ( $storeAsValid )
+            {
+                $oldStatus = $this->attribute( 'status' );
+                $this->setAttribute( 'status', eZRSSExport::STATUS_VALID );
+            }
+            $this->setAttribute( 'modified', $dateTime );
+            $this->setAttribute( 'modifier_id', $user->attribute( "contentobject_id" ) );
+            parent::store();
         }
-        $this->setAttribute( 'modified', $dateTime );
-        $this->setAttribute( 'modifier_id', $user->attribute( "contentobject_id" ) );
-        parent::store();
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
         if ( $storeAsValid )
         {
@@ -296,15 +306,25 @@ class eZRSSExport extends eZPersistentObject
 
         $db = eZDB::instance();
         $db->begin();
-        foreach ( $exportItems as $item )
+        try
         {
-            $item->remove();
+            foreach ( $exportItems as $item )
+            {
+                $item->remove();
+            }
+            // The outlines of this status go with it. Only this status: removing a
+            // draft must leave the published document standing, exactly as the
+            // export items above do.
+            eZRSSExportOPMLItem::removeByExport( $this->ID, $this->Status );
+            $this->remove();
         }
-        // The outlines of this status go with it. Only this status: removing a
-        // draft must leave the published document standing, exactly as the
-        // export items above do.
-        eZRSSExportOPMLItem::removeByExport( $this->ID, $this->Status );
-        $this->remove();
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
     }
 

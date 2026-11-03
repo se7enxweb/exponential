@@ -109,15 +109,25 @@ class eZCollaborationGroup extends eZPersistentObject
 
         $db = eZDB::instance();
         $db->begin();
+        try
+        {
 
-        $group->store();
-        if ( $pathString == '' )
-            $pathString = $group->attribute( 'id' );
-        else
-            $pathString .= '/' . $group->attribute( 'id' );
-        $group->setAttribute( 'path_string', $pathString );
-        $group->sync();
+            $group->store();
+            if ( $pathString == '' )
+                $pathString = $group->attribute( 'id' );
+            else
+                $pathString .= '/' . $group->attribute( 'id' );
+            $group->setAttribute( 'path_string', $pathString );
+            $group->sync();
 
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
         return $group;
     }

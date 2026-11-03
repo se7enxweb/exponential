@@ -42,21 +42,31 @@ class eZEnumType extends eZDataType
 
             $db = eZDB::instance();
             $db->begin();
-
-            // Delete stored object attributes when initialize translated attribute.
-            if ( $originalContentObjectAttributeID != $contentObjectAttributeID )
-                $this->deleteStoredObjectAttribute( $contentObjectAttribute, $currentVersion );
-
-            $newVersionEnumObject = eZEnumObjectValue::fetchAllElements( $originalContentObjectAttributeID, $currentVersion );
-
-            for ( $i = 0; $i < count( $newVersionEnumObject ); ++$i )
+            try
             {
-                $enumobjectvalue =  $newVersionEnumObject[$i];
-                $enumobjectvalue->setAttribute( 'contentobject_attribute_id', $contentObjectAttribute->attribute( 'id' ) );
-                $enumobjectvalue->setAttribute( 'contentobject_attribute_version',  $contentObjectAttributeVersion );
-                $enumobjectvalue->store();
-            }
 
+                // Delete stored object attributes when initialize translated attribute.
+                if ( $originalContentObjectAttributeID != $contentObjectAttributeID )
+                    $this->deleteStoredObjectAttribute( $contentObjectAttribute, $currentVersion );
+
+                $newVersionEnumObject = eZEnumObjectValue::fetchAllElements( $originalContentObjectAttributeID, $currentVersion );
+
+                for ( $i = 0; $i < count( $newVersionEnumObject ); ++$i )
+                {
+                    $enumobjectvalue =  $newVersionEnumObject[$i];
+                    $enumobjectvalue->setAttribute( 'contentobject_attribute_id', $contentObjectAttribute->attribute( 'id' ) );
+                    $enumobjectvalue->setAttribute( 'contentobject_attribute_version',  $contentObjectAttributeVersion );
+                    $enumobjectvalue->store();
+                }
+
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
             $db->commit();
         }
     }
@@ -68,15 +78,25 @@ class eZEnumType extends eZDataType
 
         $db = eZDB::instance();
         $db->begin();
-
-        foreach ( $oldEnums as $oldEnum )
+        try
         {
-            $enum = clone $oldEnum;
-            $enum->setAttribute( 'contentclass_attribute_id', $newClassAttribute->attribute( 'id' ) );
-            $enum->setAttribute( 'contentclass_attribute_version', $newClassAttribute->attribute( 'version' ) );
-            $enum->store();
-        }
 
+            foreach ( $oldEnums as $oldEnum )
+            {
+                $enum = clone $oldEnum;
+                $enum->setAttribute( 'contentclass_attribute_id', $newClassAttribute->attribute( 'id' ) );
+                $enum->setAttribute( 'contentclass_attribute_version', $newClassAttribute->attribute( 'version' ) );
+                $enum->store();
+            }
+
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
     }
 
@@ -93,10 +113,20 @@ class eZEnumType extends eZDataType
             $enums = eZEnumValue::fetchAllElements( $contentClassAttributeID, 0 );
             $db = eZDB::instance();
             $db->begin();
-            foreach ( $enums as $enum )
+            try
             {
-                $enum->setAttribute( 'contentclass_attribute_version', 1 );
-                $enum->store();
+                foreach ( $enums as $enum )
+                {
+                    $enum->setAttribute( 'contentclass_attribute_version', 1 );
+                    $enum->store();
+                }
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
             }
             $db->commit();
         }
@@ -148,43 +178,53 @@ class eZEnumType extends eZDataType
 
             $db = eZDB::instance();
             $db->begin();
-
-            // Remove stored enumerations before we store new enumerations
-            eZEnum::removeObjectEnumerations( $contentObjectAttributeID, $contentObjectAttributeVersion );
-
-            // The element list, its ids and values are hidden fields of the
-            // form, so what was stored used to be whatever was posted: any id,
-            // any text, and a selected element once per time it was posted,
-            // compared in a loop of elements x selections (a huge form kept the
-            // request busy). The selections are now matched against the
-            // elements the class really has, and each is stored with the id,
-            // name and value the class gives it, in the class's order, once.
-            if ( is_array( $array_selectedEnumElement ) )
+            try
             {
-                $selected = array();
-                foreach ( $array_selectedEnumElement as $selectedElement )
+
+                // Remove stored enumerations before we store new enumerations
+                eZEnum::removeObjectEnumerations( $contentObjectAttributeID, $contentObjectAttributeVersion );
+
+                // The element list, its ids and values are hidden fields of the
+                // form, so what was stored used to be whatever was posted: any id,
+                // any text, and a selected element once per time it was posted,
+                // compared in a loop of elements x selections (a huge form kept the
+                // request busy). The selections are now matched against the
+                // elements the class really has, and each is stored with the id,
+                // name and value the class gives it, in the class's order, once.
+                if ( is_array( $array_selectedEnumElement ) )
                 {
-                    if ( is_scalar( $selectedElement ) )
-                        $selected[(string)$selectedElement] = true;
+                    $selected = array();
+                    foreach ( $array_selectedEnumElement as $selectedElement )
+                    {
+                        if ( is_scalar( $selectedElement ) )
+                            $selected[(string)$selectedElement] = true;
+                    }
+                    $classAttribute = $contentObjectAttribute->contentClassAttribute();
+                    $isMultiple = $classAttribute ? $classAttribute->attribute( self::IS_MULTIPLE_FIELD ) : 1;
+                    $classEnum = $classAttribute ? $classAttribute->content() : null;
+                    $classElements = $classEnum instanceof eZEnum ? (array)$classEnum->attribute( 'enum_list' ) : array();
+                    foreach ( $classElements as $classElement )
+                    {
+                        $eElement = (string)$classElement->attribute( 'enumelement' );
+                        if ( !isset( $selected[$eElement] ) )
+                            continue;
+                        eZEnum::storeObjectEnumeration( $contentObjectAttributeID,
+                                                        $contentObjectAttributeVersion,
+                                                        $classElement->attribute( 'id' ),
+                                                        $eElement,
+                                                        $classElement->attribute( 'enumvalue' ) );
+                        // Radio buttons and a single select give one choice
+                        if ( !$isMultiple )
+                            break;
+                    }
                 }
-                $classAttribute = $contentObjectAttribute->contentClassAttribute();
-                $isMultiple = $classAttribute ? $classAttribute->attribute( self::IS_MULTIPLE_FIELD ) : 1;
-                $classEnum = $classAttribute ? $classAttribute->content() : null;
-                $classElements = $classEnum instanceof eZEnum ? (array)$classEnum->attribute( 'enum_list' ) : array();
-                foreach ( $classElements as $classElement )
-                {
-                    $eElement = (string)$classElement->attribute( 'enumelement' );
-                    if ( !isset( $selected[$eElement] ) )
-                        continue;
-                    eZEnum::storeObjectEnumeration( $contentObjectAttributeID,
-                                                    $contentObjectAttributeVersion,
-                                                    $classElement->attribute( 'id' ),
-                                                    $eElement,
-                                                    $classElement->attribute( 'enumvalue' ) );
-                    // Radio buttons and a single select give one choice
-                    if ( !$isMultiple )
-                        break;
-                }
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
             }
             $db->commit();
             return true;

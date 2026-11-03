@@ -245,130 +245,140 @@ class Register extends \Exponential\Runnable\ModuleView
 
         $db = \eZDB::instance();
         $db->begin();
-
-        // Fix issue EZP-22524
-        if ( $http->hasSessionVariable( "RegisterUserID" ) )
+        try
         {
-            if ( $http->hasSessionVariable( 'StartedRegistration' ) )
+
+            // Fix issue EZP-22524
+            if ( $http->hasSessionVariable( "RegisterUserID" ) )
             {
-                \eZDebug::writeWarning( 'Cancel module run to protect against multiple form submits', 'user/register' );
-                $http->removeSessionVariable( "RegisterUserID" );
-                $http->removeSessionVariable( 'StartedRegistration' );
-                $db->commit();
-                return $this->viewResult( isset( $Result ) ? $Result : null,  \eZModule::HOOK_STATUS_CANCEL_RUN );
+                if ( $http->hasSessionVariable( 'StartedRegistration' ) )
+                {
+                    \eZDebug::writeWarning( 'Cancel module run to protect against multiple form submits', 'user/register' );
+                    $http->removeSessionVariable( "RegisterUserID" );
+                    $http->removeSessionVariable( 'StartedRegistration' );
+                    $db->commit();
+                    return $this->viewResult( isset( $Result ) ? $Result : null,  \eZModule::HOOK_STATUS_CANCEL_RUN );
+                }
+
+                $userID = $http->sessionVariable( "RegisterUserID" );
+
+                $object = \eZContentObject::fetch( $userID );
+                if ( $object === null )
+                {
+                    $http->removeSessionVariable( "RegisterUserID" );
+                    $http->removeSessionVariable( 'StartedRegistration' );
+                }
             }
 
-            $userID = $http->sessionVariable( "RegisterUserID" );
-
-            $object = \eZContentObject::fetch( $userID );
-            if ( $object === null )
+            // Create new user object if user is not logged in
+            if ( !$http->hasSessionVariable( "RegisterUserID" ) )
             {
-                $http->removeSessionVariable( "RegisterUserID" );
-                $http->removeSessionVariable( 'StartedRegistration' );
+                // flag if user client supports cookies and if we should do redirect
+                $userClientValidates  = true;
+                $doValidationRedirect = false;
+                if ( !\eZSession::userHasSessionCookie() )
+                {
+                    if ( $redirectNumber == '2' )
+                        $userClientValidates = false;
+                    else
+                        $doValidationRedirect = true;
+                }
+
+                if ( $doValidationRedirect )
+                {
+                    $db->rollback();
+                    return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->redirectTo( '/user/register/2' ) );
+                }
+                else if ( !$userClientValidates )
+                {
+                    $db->rollback();
+
+                    $tpl->setVariable( 'user_has_cookie', \eZSession::userHasSessionCookie(), 'User' );
+                    $tpl->setVariable( 'user_session_validates', true, 'User' );
+
+                    $Result = array();
+                    $Result['content'] = $tpl->fetch( 'design:user/register_user_not_valid.tpl' );
+                    $Result['path'] = array( array( 'url' => false,
+                                            'text' => \ezpI18n::tr( 'kernel/user', 'User' ) ),
+                                     array( 'url' => false,
+                                            'text' => \ezpI18n::tr( 'kernel/user', 'Register' ) ) );
+                    return $this->viewResult( isset( $Result ) ? $Result : null,  $Result );
+                }
+                // else create user object
+
+                if ( $http->hasSessionVariable( 'StartedRegistration' ) )
+                {
+                    \eZDebug::writeWarning( 'Cancel module run to protect against multiple form submits', 'user/register' );
+                    $http->removeSessionVariable( "RegisterUserID" );
+                    $http->removeSessionVariable( 'StartedRegistration' );
+                    $db->commit();
+                    return $this->viewResult( isset( $Result ) ? $Result : null,  \eZModule::HOOK_STATUS_CANCEL_RUN );
+                }
+                else if ( $http->hasPostVariable( 'PublishButton' ) or $http->hasPostVariable( 'CancelButton' ) )
+                {
+                    $http->setSessionVariable( 'StartedRegistration', 1 );
+                }
+
+                $ini = \eZINI::instance();
+                $errMsg = '';
+                $checkErrNodeId = false;
+
+                $defaultUserPlacement = (int)$ini->variable( "UserSettings", "DefaultUserPlacement" );
+
+                $sql = "SELECT count(*) as count FROM ezcontentobject_tree WHERE node_id = $defaultUserPlacement";
+                $rows = $db->arrayQuery( $sql );
+                $count = $rows[0]['count'];
+                if ( $count < 1 )
+                {
+                    $errMsg = \ezpI18n::tr( 'design/standard/user', 'The node (%1) specified in [UserSettings].DefaultUserPlacement setting in site.ini does not exist!', null, array( $defaultUserPlacement ) );
+                    $checkErrNodeId = true;
+                    \eZDebug::writeError( "$errMsg" );
+                    $tpl->setVariable( 'errMsg', $errMsg );
+                    $tpl->setVariable( 'checkErrNodeId', $checkErrNodeId );
+                }
+                $userClassID = $ini->variable( "UserSettings", "UserClassID" );
+                $class = \eZContentClass::fetch( $userClassID );
+
+                $userCreatorID = $ini->variable( "UserSettings", "UserCreatorID" );
+                $defaultSectionID = $ini->variable( "UserSettings", "DefaultSectionID" );
+                if ( $defaultSectionID == 0 && $count > 0 )
+                {
+                    $parentContentObject = \eZContentObject::fetchByNodeID( $defaultUserPlacement );
+                    $defaultSectionID = $parentContentObject->attribute( 'section_id' );
+                }
+
+                $contentObject = $class->instantiate( $userCreatorID, $defaultSectionID );
+                $objectID = $contentObject->attribute( 'id' );
+
+                // Store the ID in session variable
+                $http->setSessionVariable( "RegisterUserID", $objectID );
+
+                $userID = $objectID;
+
+                $nodeAssignment = \eZNodeAssignment::create( array( 'contentobject_id' => $contentObject->attribute( 'id' ),
+                                                                   'contentobject_version' => 1,
+                                                                   'parent_node' => $defaultUserPlacement,
+                                                                   'is_main' => 1 ) );
+                $nodeAssignment->store();
             }
+
+            $Params['ObjectID'] = $userID;
+
+            $Module->addHook( 'post_publish', 'registerSearchObject', 1, false );
+            $Module->addHook( 'action_check', 'expUserRegisterCheckContentActions' );
+
+            $OmitSectionSetting = true;
+
+            $includeResult = include( 'kernel/content/attribute_edit.php' );
+
         }
-
-        // Create new user object if user is not logged in
-        if ( !$http->hasSessionVariable( "RegisterUserID" ) )
+        catch ( Throwable $e )
         {
-            // flag if user client supports cookies and if we should do redirect
-            $userClientValidates  = true;
-            $doValidationRedirect = false;
-            if ( !\eZSession::userHasSessionCookie() )
-            {
-                if ( $redirectNumber == '2' )
-                    $userClientValidates = false;
-                else
-                    $doValidationRedirect = true;
-            }
-
-            if ( $doValidationRedirect )
-            {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
                 $db->rollback();
-                return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->redirectTo( '/user/register/2' ) );
-            }
-            else if ( !$userClientValidates )
-            {
-                $db->rollback();
-
-                $tpl->setVariable( 'user_has_cookie', \eZSession::userHasSessionCookie(), 'User' );
-                $tpl->setVariable( 'user_session_validates', true, 'User' );
-
-                $Result = array();
-                $Result['content'] = $tpl->fetch( 'design:user/register_user_not_valid.tpl' );
-                $Result['path'] = array( array( 'url' => false,
-                                        'text' => \ezpI18n::tr( 'kernel/user', 'User' ) ),
-                                 array( 'url' => false,
-                                        'text' => \ezpI18n::tr( 'kernel/user', 'Register' ) ) );
-                return $this->viewResult( isset( $Result ) ? $Result : null,  $Result );
-            }
-            // else create user object
-
-            if ( $http->hasSessionVariable( 'StartedRegistration' ) )
-            {
-                \eZDebug::writeWarning( 'Cancel module run to protect against multiple form submits', 'user/register' );
-                $http->removeSessionVariable( "RegisterUserID" );
-                $http->removeSessionVariable( 'StartedRegistration' );
-                $db->commit();
-                return $this->viewResult( isset( $Result ) ? $Result : null,  \eZModule::HOOK_STATUS_CANCEL_RUN );
-            }
-            else if ( $http->hasPostVariable( 'PublishButton' ) or $http->hasPostVariable( 'CancelButton' ) )
-            {
-                $http->setSessionVariable( 'StartedRegistration', 1 );
-            }
-
-            $ini = \eZINI::instance();
-            $errMsg = '';
-            $checkErrNodeId = false;
-
-            $defaultUserPlacement = (int)$ini->variable( "UserSettings", "DefaultUserPlacement" );
-
-            $sql = "SELECT count(*) as count FROM ezcontentobject_tree WHERE node_id = $defaultUserPlacement";
-            $rows = $db->arrayQuery( $sql );
-            $count = $rows[0]['count'];
-            if ( $count < 1 )
-            {
-                $errMsg = \ezpI18n::tr( 'design/standard/user', 'The node (%1) specified in [UserSettings].DefaultUserPlacement setting in site.ini does not exist!', null, array( $defaultUserPlacement ) );
-                $checkErrNodeId = true;
-                \eZDebug::writeError( "$errMsg" );
-                $tpl->setVariable( 'errMsg', $errMsg );
-                $tpl->setVariable( 'checkErrNodeId', $checkErrNodeId );
-            }
-            $userClassID = $ini->variable( "UserSettings", "UserClassID" );
-            $class = \eZContentClass::fetch( $userClassID );
-
-            $userCreatorID = $ini->variable( "UserSettings", "UserCreatorID" );
-            $defaultSectionID = $ini->variable( "UserSettings", "DefaultSectionID" );
-            if ( $defaultSectionID == 0 && $count > 0 )
-            {
-                $parentContentObject = \eZContentObject::fetchByNodeID( $defaultUserPlacement );
-                $defaultSectionID = $parentContentObject->attribute( 'section_id' );
-            }
-
-            $contentObject = $class->instantiate( $userCreatorID, $defaultSectionID );
-            $objectID = $contentObject->attribute( 'id' );
-
-            // Store the ID in session variable
-            $http->setSessionVariable( "RegisterUserID", $objectID );
-
-            $userID = $objectID;
-
-            $nodeAssignment = \eZNodeAssignment::create( array( 'contentobject_id' => $contentObject->attribute( 'id' ),
-                                                               'contentobject_version' => 1,
-                                                               'parent_node' => $defaultUserPlacement,
-                                                               'is_main' => 1 ) );
-            $nodeAssignment->store();
+            throw $e;
         }
-
-        $Params['ObjectID'] = $userID;
-
-        $Module->addHook( 'post_publish', 'registerSearchObject', 1, false );
-        $Module->addHook( 'action_check', 'expUserRegisterCheckContentActions' );
-
-        $OmitSectionSetting = true;
-
-        $includeResult = include( 'kernel/content/attribute_edit.php' );
-
         $db->commit();
 
         if ( $includeResult != 1 )

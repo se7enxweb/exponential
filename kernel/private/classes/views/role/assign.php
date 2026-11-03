@@ -121,13 +121,23 @@ class Assign extends \Exponential\Runnable\ModuleView
 
             $db = \eZDB::instance();
             $db->begin();
-            foreach ( $selectedObjectIDArray as $objectID )
+            try
             {
-                $role->assignToUser( $objectID, $limitIdent, $limitValue );
-            }
-            // Clear role caches.
-            \eZRole::expireCache();
+                foreach ( $selectedObjectIDArray as $objectID )
+                {
+                    $role->assignToUser( $objectID, $limitIdent, $limitValue );
+                }
+                // Clear role caches.
+                \eZRole::expireCache();
 
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
             $db->commit();
             if ( count( $selectedObjectIDArray ) > 0 )
             {

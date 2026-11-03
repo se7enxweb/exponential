@@ -253,23 +253,33 @@ class expUserDeactivation
 
         $db = eZDB::instance();
         $db->begin();
-        $params = array( 'parent_node_id' => (int)$parent->attribute( 'node_id' ),
-                         'class_identifier' => $class->attribute( 'identifier' ),
-                         'creator_id' => (int)eZUser::currentUserID(),
-                         'remote_id' => self::REMOTE_ID,
-                         'attributes' => $attributes );
-        if ( (int)$sectionID > 0 )
-            $params['section_id'] = (int)$sectionID;
-        $object = eZContentFunctions::createAndPublishObject( $params );
-        $node = $object instanceof eZContentObject ? $object->mainNode() : null;
-        if ( !$node instanceof eZContentObjectTreeNode )
+        try
         {
-            $db->rollback();
-            return array( 'ok' => false, 'node' => null, 'error' => 'failed' );
+            $params = array( 'parent_node_id' => (int)$parent->attribute( 'node_id' ),
+                             'class_identifier' => $class->attribute( 'identifier' ),
+                             'creator_id' => (int)eZUser::currentUserID(),
+                             'remote_id' => self::REMOTE_ID,
+                             'attributes' => $attributes );
+            if ( (int)$sectionID > 0 )
+                $params['section_id'] = (int)$sectionID;
+            $object = eZContentFunctions::createAndPublishObject( $params );
+            $node = $object instanceof eZContentObject ? $object->mainNode() : null;
+            if ( !$node instanceof eZContentObjectTreeNode )
+            {
+                $db->rollback();
+                return array( 'ok' => false, 'node' => null, 'error' => 'failed' );
+            }
+            if ( (int)$sectionID > 0 && (int)$object->attribute( 'section_id' ) !== (int)$sectionID )
+                eZContentObjectTreeNode::assignSectionToSubTree( (int)$node->attribute( 'node_id' ), (int)$sectionID );
+            eZContentObjectTreeNode::hideSubTree( $node );
         }
-        if ( (int)$sectionID > 0 && (int)$object->attribute( 'section_id' ) !== (int)$sectionID )
-            eZContentObjectTreeNode::assignSectionToSubTree( (int)$node->attribute( 'node_id' ), (int)$sectionID );
-        eZContentObjectTreeNode::hideSubTree( $node );
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
         eZSearch::updateNodeVisibility( (int)$node->attribute( 'node_id' ), 'hide' );
         eZContentCacheManager::clearContentCacheIfNeeded( (int)$object->attribute( 'id' ) );
@@ -723,20 +733,30 @@ class expUserDeactivation
 
         $db = eZDB::instance();
         $db->begin();
-        if ( $remember !== null )
-            self::remember( $id, $remember );
-        $ok = !$wasEnabled || expUserHygiene::perform( 'disable', $id );
-        $removeIDs = array();
-        foreach ( $others as $node )
-            $removeIDs[] = (int)$node->attribute( 'node_id' );
-        if ( $ok && $removeIDs )
-            $ok = self::operation( 'removelocation', array( 'node_list' => $removeIDs ) );
-        if ( $ok && $before['main'] !== $groupID )
-            $ok = self::operation( 'move', array( 'node_id' => (int)$main->attribute( 'node_id' ), 'object_id' => $id, 'new_parent_node_id' => $groupID ) );
-        if ( !$ok )
+        try
         {
-            $db->rollback();
-            return array( 'ok' => false, 'error' => 'failed' );
+            if ( $remember !== null )
+                self::remember( $id, $remember );
+            $ok = !$wasEnabled || expUserHygiene::perform( 'disable', $id );
+            $removeIDs = array();
+            foreach ( $others as $node )
+                $removeIDs[] = (int)$node->attribute( 'node_id' );
+            if ( $ok && $removeIDs )
+                $ok = self::operation( 'removelocation', array( 'node_list' => $removeIDs ) );
+            if ( $ok && $before['main'] !== $groupID )
+                $ok = self::operation( 'move', array( 'node_id' => (int)$main->attribute( 'node_id' ), 'object_id' => $id, 'new_parent_node_id' => $groupID ) );
+            if ( !$ok )
+            {
+                $db->rollback();
+                return array( 'ok' => false, 'error' => 'failed' );
+            }
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
         eZContentObject::clearCache( array( $id ) );
@@ -838,17 +858,27 @@ class expUserDeactivation
 
         $db = eZDB::instance();
         $db->begin();
-        $ok = $wasEnabled || expUserHygiene::perform( 'enable', $id );
-        if ( $ok && $inGroup )
-            $ok = self::operation( 'move', array( 'node_id' => (int)$main->attribute( 'node_id' ), 'object_id' => $id, 'new_parent_node_id' => $plan['main'] ) );
-        if ( $ok && $add )
-            $ok = self::operation( 'addlocation', array( 'node_id' => (int)$main->attribute( 'node_id' ), 'object_id' => $id, 'select_node_id_array' => $add ) );
-        if ( !$ok )
+        try
         {
-            $db->rollback();
-            return array( 'ok' => false, 'error' => 'failed' );
+            $ok = $wasEnabled || expUserHygiene::perform( 'enable', $id );
+            if ( $ok && $inGroup )
+                $ok = self::operation( 'move', array( 'node_id' => (int)$main->attribute( 'node_id' ), 'object_id' => $id, 'new_parent_node_id' => $plan['main'] ) );
+            if ( $ok && $add )
+                $ok = self::operation( 'addlocation', array( 'node_id' => (int)$main->attribute( 'node_id' ), 'object_id' => $id, 'select_node_id_array' => $add ) );
+            if ( !$ok )
+            {
+                $db->rollback();
+                return array( 'ok' => false, 'error' => 'failed' );
+            }
+            self::forget( $id );
         }
-        self::forget( $id );
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
         eZContentObject::clearCache( array( $id ) );
         eZContentCacheManager::clearContentCacheIfNeeded( $id );

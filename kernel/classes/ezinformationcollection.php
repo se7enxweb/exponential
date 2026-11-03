@@ -102,11 +102,21 @@ class eZInformationCollection extends eZPersistentObject
 
         $db = eZDB::instance();
         $db->begin();
+        try
+        {
 
-        $db->query( "DELETE FROM ezinfocollection
+            $db->query( "DELETE FROM ezinfocollection
                      WHERE contentobject_id = '$delID'" );
-        $db->query( "DELETE FROM ezinfocollection_attribute
+            $db->query( "DELETE FROM ezinfocollection_attribute
                      WHERE contentobject_id = '$delID'" );
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
     }
 
@@ -783,8 +793,18 @@ class eZInformationCollection extends eZPersistentObject
     {
         $db = eZDB::instance();
         $db->begin();
-        eZInformationCollectionAttribute::cleanup();
-        $db->query( "DELETE FROM ezinfocollection" );
+        try
+        {
+            eZInformationCollectionAttribute::cleanup();
+            $db->query( "DELETE FROM ezinfocollection" );
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
     }
 

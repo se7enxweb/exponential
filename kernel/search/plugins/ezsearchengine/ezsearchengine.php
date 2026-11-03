@@ -164,9 +164,19 @@ class eZSearchEngine implements ezpSearchEngine
 
         $db = eZDB::instance();
         $db->begin();
-        for( $arrayCount = 0; $arrayCount < $wordCount; $arrayCount += 1000 )
+        try
         {
-            $placement = $this->indexWords( $contentObject, array_slice( $indexArray, $arrayCount, 1000 ), $wordIDArray, $placement );
+            for( $arrayCount = 0; $arrayCount < $wordCount; $arrayCount += 1000 )
+            {
+                $placement = $this->indexWords( $contentObject, array_slice( $indexArray, $arrayCount, 1000 ), $wordIDArray, $placement );
+            }
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
 
@@ -207,76 +217,96 @@ class eZSearchEngine implements ezpSearchEngine
         if ( in_array( $dbName, array( 'mysql', 'mongo', 'sqlite', 'postgresql' ), true ) )
         {
             $db->begin();
-            for( $arrayCount = 0; $arrayCount < $wordCount; $arrayCount += 500 )
+            try
             {
-                // Fetch already indexed words from database
-                $wordArrayChuck = array_slice( $indexArrayOnlyWords, $arrayCount, 500 );
-                $wordsString = implode( '\',\'',  $wordArrayChuck );
-                $wordRes = $db->arrayQuery( "SELECT * FROM ezsearch_word WHERE word IN ( '$wordsString' ) " );
-
-                // Build a has of the existing words
-                $wordResCount = count( $wordRes );
-                $existingWordArray = array();
-                $wordIDArray = array();
-                for ( $i = 0; $i < $wordResCount; $i++ )
+                for( $arrayCount = 0; $arrayCount < $wordCount; $arrayCount += 500 )
                 {
-                    $wordIDArray[] = $wordRes[$i]['id'];
-                    $existingWordArray[] = $wordRes[$i]['word'];
-                    $wordArray[$wordRes[$i]['word']] = $wordRes[$i]['id'];
-                }
+                    // Fetch already indexed words from database
+                    $wordArrayChuck = array_slice( $indexArrayOnlyWords, $arrayCount, 500 );
+                    $wordsString = implode( '\',\'',  $wordArrayChuck );
+                    $wordRes = $db->arrayQuery( "SELECT * FROM ezsearch_word WHERE word IN ( '$wordsString' ) " );
 
-                // Update the object count of existing words by one
-                $wordIDString = implode( ',', $wordIDArray );
-                if ( count( $wordIDArray ) > 0 )
-                    $db->query( "UPDATE ezsearch_word SET object_count=( object_count + 1 ) WHERE id IN ( $wordIDString )" );
+                    // Build a has of the existing words
+                    $wordResCount = count( $wordRes );
+                    $existingWordArray = array();
+                    $wordIDArray = array();
+                    for ( $i = 0; $i < $wordResCount; $i++ )
+                    {
+                        $wordIDArray[] = $wordRes[$i]['id'];
+                        $existingWordArray[] = $wordRes[$i]['word'];
+                        $wordArray[$wordRes[$i]['word']] = $wordRes[$i]['id'];
+                    }
 
-                // Insert if there is any news words
-                $newWordArray = array_diff( $wordArrayChuck, $existingWordArray );
-                if ( count ($newWordArray) > 0 )
-                {
-                    $newWordString = implode( "', '1' ), ('", $newWordArray );
-                    $db->query( "INSERT INTO
+                    // Update the object count of existing words by one
+                    $wordIDString = implode( ',', $wordIDArray );
+                    if ( count( $wordIDArray ) > 0 )
+                        $db->query( "UPDATE ezsearch_word SET object_count=( object_count + 1 ) WHERE id IN ( $wordIDString )" );
+
+                    // Insert if there is any news words
+                    $newWordArray = array_diff( $wordArrayChuck, $existingWordArray );
+                    if ( count ($newWordArray) > 0 )
+                    {
+                        $newWordString = implode( "', '1' ), ('", $newWordArray );
+                        $db->query( "INSERT INTO
                                ezsearch_word ( word, object_count )
                              VALUES ('$newWordString', '1' )" );
-                    $newWordString = implode( "','", $newWordArray );
-                    $newWordRes = $db->arrayQuery( "select id,word from ezsearch_word where word in ( '$newWordString' ) " );
-                    $newWordCount = count( $newWordRes );
-                    for ( $i=0;$i<$newWordCount;++$i )
-                    {
-                        $wordLowercase = $trans->transformByGroup( $newWordRes[$i]['word'], 'lowercase' );
-                        $wordArray[$newWordRes[$i]['word']] = $newWordRes[$i]['id'];
+                        $newWordString = implode( "','", $newWordArray );
+                        $newWordRes = $db->arrayQuery( "select id,word from ezsearch_word where word in ( '$newWordString' ) " );
+                        $newWordCount = count( $newWordRes );
+                        for ( $i=0;$i<$newWordCount;++$i )
+                        {
+                            $wordLowercase = $trans->transformByGroup( $newWordRes[$i]['word'], 'lowercase' );
+                            $wordArray[$newWordRes[$i]['word']] = $newWordRes[$i]['id'];
+                        }
                     }
                 }
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
             }
             $db->commit();
         }
         else
         {
             $db->begin();
-            foreach ( $indexArrayOnlyWords as $indexWord )
+            try
             {
-                $indexWord = $trans->transformByGroup( $indexWord, 'lowercase' );
-                $indexWord = $db->escapeString( $indexWord );
-
-                // Store word if it does not exist.
-                $wordRes = array();
-
-                $wordRes = $db->arrayQuery( "SELECT * FROM ezsearch_word WHERE word='$indexWord'" );
-
-                if ( count( $wordRes ) == 1 )
+                foreach ( $indexArrayOnlyWords as $indexWord )
                 {
-                    $wordID = $wordRes[0]["id"];
-                    $db->query( "UPDATE ezsearch_word SET object_count=( object_count + 1 ) WHERE id='$wordID'" );
-                }
-                else
-                {
-                    $db->query( "INSERT INTO
+                    $indexWord = $trans->transformByGroup( $indexWord, 'lowercase' );
+                    $indexWord = $db->escapeString( $indexWord );
+
+                    // Store word if it does not exist.
+                    $wordRes = array();
+
+                    $wordRes = $db->arrayQuery( "SELECT * FROM ezsearch_word WHERE word='$indexWord'" );
+
+                    if ( count( $wordRes ) == 1 )
+                    {
+                        $wordID = $wordRes[0]["id"];
+                        $db->query( "UPDATE ezsearch_word SET object_count=( object_count + 1 ) WHERE id='$wordID'" );
+                    }
+                    else
+                    {
+                        $db->query( "INSERT INTO
                                ezsearch_word ( word, object_count )
                              VALUES ( '$indexWord', '1' )" );
-                    $wordID = $db->lastSerialID( "ezsearch_word", "id" );
-                }
+                        $wordID = $db->lastSerialID( "ezsearch_word", "id" );
+                    }
 
-                $wordArray[$indexWord] = $wordID;
+                    $wordArray[$indexWord] = $wordID;
+                }
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
             }
             $db->commit();
         }
@@ -382,10 +412,12 @@ class eZSearchEngine implements ezpSearchEngine
         else
         {
             $db->begin();
-            foreach ( array_keys( $valuesStringList ) as $key )
+            try
             {
-                $valuesString = $valuesStringList[$key];
-                $db->query("INSERT INTO
+                foreach ( array_keys( $valuesStringList ) as $key )
+                {
+                    $valuesString = $valuesStringList[$key];
+                    $db->query("INSERT INTO
                            ezsearch_object_word_link
                            ( word_id,
                              contentobject_id,
@@ -400,6 +432,14 @@ class eZSearchEngine implements ezpSearchEngine
                              identifier,
                              integer_value )
                              VALUES $valuesString"  );
+                }
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
             }
             $db->commit();
         }
@@ -434,34 +474,44 @@ class eZSearchEngine implements ezpSearchEngine
         $doDelete = false;
 
         $db->begin();
-        if ( $db->databaseName() === 'mysql' )
+        try
         {
-            // fetch all the words and decrease the object count on all the words
-            $wordArray = $db->arrayQuery( "SELECT word_id FROM ezsearch_object_word_link WHERE contentobject_id='$contentObjectId'" );
-            $wordIDList = array();
-            foreach ( $wordArray as $word )
-                $wordIDList[] = $word["word_id"];
-            if ( count( $wordIDList ) > 0 )
+            if ( $db->databaseName() === 'mysql' )
             {
-                $wordIDString = implode( ',', $wordIDList );
-                $db->query( "UPDATE ezsearch_word SET object_count=( object_count - 1 ) WHERE id in ( $wordIDString )" );
-                $doDelete = true;
+                // fetch all the words and decrease the object count on all the words
+                $wordArray = $db->arrayQuery( "SELECT word_id FROM ezsearch_object_word_link WHERE contentobject_id='$contentObjectId'" );
+                $wordIDList = array();
+                foreach ( $wordArray as $word )
+                    $wordIDList[] = $word["word_id"];
+                if ( count( $wordIDList ) > 0 )
+                {
+                    $wordIDString = implode( ',', $wordIDList );
+                    $db->query( "UPDATE ezsearch_word SET object_count=( object_count - 1 ) WHERE id in ( $wordIDString )" );
+                    $doDelete = true;
+                }
             }
-        }
-        else
-        {
-            $cnt = $db->arrayQuery( "SELECT COUNT( word_id ) AS cnt FROM ezsearch_object_word_link WHERE contentobject_id='$contentObjectId'" );
-            if ( $cnt[0]['cnt'] > 0 )
+            else
             {
-                $db->query( "UPDATE ezsearch_word SET object_count=( object_count - 1 ) WHERE id in ( SELECT word_id FROM ezsearch_object_word_link WHERE contentobject_id='$contentObjectId' )" );
-                $doDelete = true;
+                $cnt = $db->arrayQuery( "SELECT COUNT( word_id ) AS cnt FROM ezsearch_object_word_link WHERE contentobject_id='$contentObjectId'" );
+                if ( $cnt[0]['cnt'] > 0 )
+                {
+                    $db->query( "UPDATE ezsearch_word SET object_count=( object_count - 1 ) WHERE id in ( SELECT word_id FROM ezsearch_object_word_link WHERE contentobject_id='$contentObjectId' )" );
+                    $doDelete = true;
+                }
             }
-        }
 
-        if ( $doDelete )
+            if ( $doDelete )
+            {
+                $db->query( "DELETE FROM ezsearch_word WHERE object_count='0'" );
+                $db->query( "DELETE FROM ezsearch_object_word_link WHERE contentobject_id='$contentObjectId'" );
+            }
+        }
+        catch ( Throwable $e )
         {
-            $db->query( "DELETE FROM ezsearch_word WHERE object_count='0'" );
-            $db->query( "DELETE FROM ezsearch_object_word_link WHERE contentobject_id='$contentObjectId'" );
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
 
@@ -2437,8 +2487,18 @@ class eZSearchEngine implements ezpSearchEngine
     {
         $db = eZDB::instance();
         $db->begin();
-        $db->query( "DELETE FROM ezsearch_word" );
-        $db->query( "DELETE FROM ezsearch_object_word_link" );
+        try
+        {
+            $db->query( "DELETE FROM ezsearch_word" );
+            $db->query( "DELETE FROM ezsearch_object_word_link" );
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
     }
 

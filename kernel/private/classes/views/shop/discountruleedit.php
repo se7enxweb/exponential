@@ -211,54 +211,64 @@ class Discountruleedit extends \Exponential\Runnable\ModuleView
             // remove products stored in the database and store them again
             $db = \eZDB::instance();
             $db->begin();
-            if ( $discountRuleID )
+            try
             {
-                $discountRule = \eZDiscountSubRule::fetch( $discountRuleID );
-                \eZDiscountSubRuleValue::removeBySubRuleID ( $discountRuleID );
-            }
-            else
-            {
-                $discountRule = \eZDiscountSubRule::create( $discountGroupID );
+                if ( $discountRuleID )
+                {
+                    $discountRule = \eZDiscountSubRule::fetch( $discountRuleID );
+                    \eZDiscountSubRuleValue::removeBySubRuleID ( $discountRuleID );
+                }
+                else
+                {
+                    $discountRule = \eZDiscountSubRule::create( $discountGroupID );
+                    $discountRule->store();
+                    $discountRuleID = $discountRule->attribute( 'id' );
+                }
+
+                $discountRule->setAttribute( 'name', trim( $http->postVariable( 'discountrule_name' ) ) );
+                $discountRule->setAttribute( 'discount_percent', $http->postVariable( 'discountrule_percent' ) );
+                $discountRule->setAttribute( 'limitation', '*' );
+
+                if ( $http->hasPostVariable( 'Products' ) && $http->postVariable( 'Products' ) )
+                {
+                    foreach( $productList as $product )
+                    {
+                        $ruleValue = \eZDiscountSubRuleValue::create( $discountRuleID, $product->attribute( 'id' ), 2 );
+                        $ruleValue->store();
+                    }
+                    $discountRule->setAttribute( 'limitation', false );
+                }
+                else
+                {
+                    if ( $discountRuleSelectedClasses && !in_array( -1, $discountRuleSelectedClasses ) )
+                    {
+                        foreach( $discountRuleSelectedClasses as $classID )
+                        {
+                            $ruleValue = \eZDiscountSubRuleValue::create( $discountRuleID, $classID, 0 );
+                            $ruleValue->store();
+                        }
+                        $discountRule->setAttribute( 'limitation', false );
+                    }
+                    if ( $discountRuleSelectedSections && !in_array( -1, $discountRuleSelectedSections ) )
+                    {
+                        foreach( $discountRuleSelectedSections as $sectionID )
+                        {
+                            $ruleValue = \eZDiscountSubRuleValue::create( $discountRuleID, $sectionID, 1 );
+                            $ruleValue->store();
+                        }
+                        $discountRule->setAttribute( 'limitation', false );
+                    }
+                }
+
                 $discountRule->store();
-                $discountRuleID = $discountRule->attribute( 'id' );
             }
-
-            $discountRule->setAttribute( 'name', trim( $http->postVariable( 'discountrule_name' ) ) );
-            $discountRule->setAttribute( 'discount_percent', $http->postVariable( 'discountrule_percent' ) );
-            $discountRule->setAttribute( 'limitation', '*' );
-
-            if ( $http->hasPostVariable( 'Products' ) && $http->postVariable( 'Products' ) )
+            catch ( Throwable $e )
             {
-                foreach( $productList as $product )
-                {
-                    $ruleValue = \eZDiscountSubRuleValue::create( $discountRuleID, $product->attribute( 'id' ), 2 );
-                    $ruleValue->store();
-                }
-                $discountRule->setAttribute( 'limitation', false );
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
             }
-            else
-            {
-                if ( $discountRuleSelectedClasses && !in_array( -1, $discountRuleSelectedClasses ) )
-                {
-                    foreach( $discountRuleSelectedClasses as $classID )
-                    {
-                        $ruleValue = \eZDiscountSubRuleValue::create( $discountRuleID, $classID, 0 );
-                        $ruleValue->store();
-                    }
-                    $discountRule->setAttribute( 'limitation', false );
-                }
-                if ( $discountRuleSelectedSections && !in_array( -1, $discountRuleSelectedSections ) )
-                {
-                    foreach( $discountRuleSelectedSections as $sectionID )
-                    {
-                        $ruleValue = \eZDiscountSubRuleValue::create( $discountRuleID, $sectionID, 1 );
-                        $ruleValue->store();
-                    }
-                    $discountRule->setAttribute( 'limitation', false );
-                }
-            }
-
-            $discountRule->store();
             $db->commit();
 
             // we changed prices => remove content cache

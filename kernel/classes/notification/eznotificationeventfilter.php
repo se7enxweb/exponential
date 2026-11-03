@@ -164,39 +164,49 @@ class eZNotificationEventFilter
     {
         $db = eZDB::instance();
         $db->begin();
-        $failed = false;
-        foreach( $availableHandlers as $handlerKey => $handler )
+        try
         {
-            if ( $handler === false )
+            $failed = false;
+            foreach( $availableHandlers as $handlerKey => $handler )
             {
-                eZDebug::writeError( "Notification handler does not exist: $handlerKey", __METHOD__ );
-                continue;
+                if ( $handler === false )
+                {
+                    eZDebug::writeError( "Notification handler does not exist: $handlerKey", __METHOD__ );
+                    continue;
+                }
+                try
+                {
+                    $handler->handle( $event );
+                }
+                catch ( Throwable $e )
+                {
+                    // one handler's failure must not stop the others; the event is not retried, as a
+                    // handler that has sent already would send again
+                    $failed = true;
+                    eZDebug::writeError( "Notification handler $handlerKey failed on event " . $event->attribute( 'id' ) . ': ' . $e->getMessage(), __METHOD__ );
+                }
             }
-            try
+            if ( $failed )
+                ++$result['failed'];
+            ++$result['events'];
+            if ( eZNotificationCollectionItem::fetchCountForEvent( $event->attribute( 'id' ) ) == 0 )
             {
-                $handler->handle( $event );
+                $event->remove();
+                ++$result['removed'];
             }
-            catch ( Throwable $e )
+            else
             {
-                // one handler's failure must not stop the others; the event is not retried, as a
-                // handler that has sent already would send again
-                $failed = true;
-                eZDebug::writeError( "Notification handler $handlerKey failed on event " . $event->attribute( 'id' ) . ': ' . $e->getMessage(), __METHOD__ );
+                $event->setAttribute( 'status', eZNotificationEvent::STATUS_HANDLED );
+                $event->store();
+                ++$result['kept'];
             }
         }
-        if ( $failed )
-            ++$result['failed'];
-        ++$result['events'];
-        if ( eZNotificationCollectionItem::fetchCountForEvent( $event->attribute( 'id' ) ) == 0 )
+        catch ( Throwable $e )
         {
-            $event->remove();
-            ++$result['removed'];
-        }
-        else
-        {
-            $event->setAttribute( 'status', eZNotificationEvent::STATUS_HANDLED );
-            $event->store();
-            ++$result['kept'];
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
     }
@@ -278,12 +288,22 @@ class eZNotificationEventFilter
 
         $db = eZDB::instance();
         $db->begin();
-        foreach( $availableHandlers as $handler )
+        try
         {
-            if ( $handler !== false )
+            foreach( $availableHandlers as $handler )
             {
-                $handler->cleanup();
+                if ( $handler !== false )
+                {
+                    $handler->cleanup();
+                }
             }
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
     }

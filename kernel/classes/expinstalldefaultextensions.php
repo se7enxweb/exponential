@@ -360,13 +360,23 @@ class expInstallDefaultExtensions
         $installer = new eZSiteInstaller();
         $db = eZDB::instance();
         $db->begin();
-        $installer->addClassAttributes( array(
-            'class' => array( 'identifier' => 'user' ),
-            'attributes' => array(
-                array( 'identifier' => 'two_factor', 'name' => 'Two-step sign-in', 'data_type_string' => self::TWO_FACTOR_DATATYPE,
-                       'can_translate' => 0, 'is_required' => 0, 'is_searchable' => 0, 'language' => $language ? $language : false )
-            )
-        ) );
+        try
+        {
+            $installer->addClassAttributes( array(
+                'class' => array( 'identifier' => 'user' ),
+                'attributes' => array(
+                    array( 'identifier' => 'two_factor', 'name' => 'Two-step sign-in', 'data_type_string' => self::TWO_FACTOR_DATATYPE,
+                           'can_translate' => 0, 'is_required' => 0, 'is_searchable' => 0, 'language' => $language ? $language : false )
+                )
+            ) );
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
         return 'user class: two-step sign-in field added';
     }

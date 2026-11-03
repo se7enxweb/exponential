@@ -95,13 +95,23 @@ function checkNodeAssignments( $module, $class, $object, $version, $contentObjec
                     $setMainNode = false;
                     $db = eZDB::instance();
                     $db->begin();
-                    $version->assignToNode(
-                        $nodeID,
-                        $isMain,
-                        0,
-                        $class->attribute( 'sort_field' ),
-                        $class->attribute( 'sort_order' )
-                    );
+                    try
+                    {
+                        $version->assignToNode(
+                            $nodeID,
+                            $isMain,
+                            0,
+                            $class->attribute( 'sort_field' ),
+                            $class->attribute( 'sort_order' )
+                        );
+                    }
+                    catch ( Throwable $e )
+                    {
+                        // nothing of a transaction that failed half way is committed by a later commit()
+                        if ( $db->transactionCounter() > 0 )
+                            $db->rollback();
+                        throw $e;
+                    }
                     $db->commit();
                 }
             }
@@ -495,7 +505,17 @@ function checkNodeActions( $module, $class, $object, $version, $contentObjectAtt
         $nodeID = $http->postVariable( 'RemoveNodeID' );
         $db = eZDB::instance();
         $db->begin();
-        $version->removeAssignment( $nodeID );
+        try
+        {
+            $version->removeAssignment( $nodeID );
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
     }
 
@@ -528,7 +548,17 @@ function checkNodeActions( $module, $class, $object, $version, $contentObjectAtt
                     {
                         $db = eZDB::instance();
                         $db->begin();
-                        $version->removeAssignment( $nodeID );
+                        try
+                        {
+                            $version->removeAssignment( $nodeID );
+                        }
+                        catch ( Throwable $e )
+                        {
+                            // nothing of a transaction that failed half way is committed by a later commit()
+                            if ( $db->transactionCounter() > 0 )
+                                $db->rollback();
+                            throw $e;
+                        }
                         $db->commit();
                     }
                 }
@@ -550,7 +580,17 @@ function checkNodeActions( $module, $class, $object, $version, $contentObjectAtt
                 }
                 $db = eZDB::instance();
                 $db->begin();
-                $version->removeAssignment( $nodeID );
+                try
+                {
+                    $version->removeAssignment( $nodeID );
+                }
+                catch ( Throwable $e )
+                {
+                    // nothing of a transaction that failed half way is committed by a later commit()
+                    if ( $db->transactionCounter() > 0 )
+                        $db->rollback();
+                    throw $e;
+                }
                 $db->commit();
             }
         }
@@ -595,12 +635,22 @@ function checkNodeActions( $module, $class, $object, $version, $contentObjectAtt
             {
                 $db = eZDB::instance();
                 $db->begin();
-                foreach ( $assignments as $assignment )
+                try
                 {
-                    if ( $assignment->attribute( 'op_code' ) == eZNodeAssignment::OP_CODE_CREATE )
+                    foreach ( $assignments as $assignment )
                     {
-                        $assignment->purge();
+                        if ( $assignment->attribute( 'op_code' ) == eZNodeAssignment::OP_CODE_CREATE )
+                        {
+                            $assignment->purge();
+                        }
                     }
+                }
+                catch ( Throwable $e )
+                {
+                    // nothing of a transaction that failed half way is committed by a later commit()
+                    if ( $db->transactionCounter() > 0 )
+                        $db->rollback();
+                    throw $e;
                 }
                 $db->commit();
             }
@@ -624,15 +674,25 @@ function checkNodeActions( $module, $class, $object, $version, $contentObjectAtt
                 $mainNodeChanged = false;
                 $db = eZDB::instance();
                 $db->begin();
-                foreach ( $assignments as $assignment )
+                try
                 {
-                    $assignmentID = $assignment->attribute( 'id' );
-                    if ( $assignment->attribute( 'is_main' ) )
-                        $mainNodeChanged = true;
-                    eZNodeAssignment::removeByID( $assignmentID );
+                    foreach ( $assignments as $assignment )
+                    {
+                        $assignmentID = $assignment->attribute( 'id' );
+                        if ( $assignment->attribute( 'is_main' ) )
+                            $mainNodeChanged = true;
+                        eZNodeAssignment::removeByID( $assignmentID );
+                    }
+                    if ( $mainNodeChanged )
+                        eZNodeAssignment::setNewMainAssignment( $objectID, $versionInt );
                 }
-                if ( $mainNodeChanged )
-                    eZNodeAssignment::setNewMainAssignment( $objectID, $versionInt );
+                catch ( Throwable $e )
+                {
+                    // nothing of a transaction that failed half way is committed by a later commit()
+                    if ( $db->transactionCounter() > 0 )
+                        $db->rollback();
+                    throw $e;
+                }
                 $db->commit();
                 unset( $mainNodeChanged );
             }
@@ -770,41 +830,51 @@ function handleNodeTemplate( $module, $class, $object, $version, $contentObjectA
 
     $db = eZDB::instance();
     $db->begin();
-    foreach ( $assignedNodeArray as $assignedNodeKey => $assignedNode )
+    try
     {
-        $node = $assignedNode->getParentNode();
-        if ( $node !== null )
+        foreach ( $assignedNodeArray as $assignedNodeKey => $assignedNode )
         {
-            $remoteID = $assignedNode->attribute( 'remote_id' );
-            if ( $remoteID > 0 )
+            $node = $assignedNode->getParentNode();
+            if ( $node !== null )
             {
-                if ( isset( $remoteMap[$remoteID] ) )
+                $remoteID = $assignedNode->attribute( 'remote_id' );
+                if ( $remoteID > 0 )
                 {
-                    if ( is_array( $remoteMap[$remoteID] ) )
+                    if ( isset( $remoteMap[$remoteID] ) )
                     {
-                        $remoteMap[$remoteID][] = $assignedNode;
+                        if ( is_array( $remoteMap[$remoteID] ) )
+                        {
+                            $remoteMap[$remoteID][] = $assignedNode;
+                        }
+                        else
+                        {
+                            $currentRemote = $remoteMap[$remoteID];
+                            unset( $remoteMap[$remoteID] );
+                            $remoteMap[$remoteID] = array();
+                            $remoteMap[$remoteID][] = $currentRemote;
+                            $remoteMap[$remoteID][] = $assignedNode;
+                        }
                     }
                     else
                     {
-                        $currentRemote = $remoteMap[$remoteID];
-                        unset( $remoteMap[$remoteID] );
-                        $remoteMap[$remoteID] = array();
-                        $remoteMap[$remoteID][] = $currentRemote;
-                        $remoteMap[$remoteID][] = $assignedNode;
+                        $remoteMap[$remoteID] = $assignedNode;
                     }
                 }
-                else
-                {
-                    $remoteMap[$remoteID] = $assignedNode;
-                }
+            }
+            else
+            {
+                $assignedNode->purge();
+                if( isset( $assignedNodeArray[$assignedNodeKey] ) )
+                    unset( $assignedNodeArray[$assignedNodeKey] );
             }
         }
-        else
-        {
-            $assignedNode->purge();
-            if( isset( $assignedNodeArray[$assignedNodeKey] ) )
-                unset( $assignedNodeArray[$assignedNodeKey] );
-        }
+    }
+    catch ( Throwable $e )
+    {
+        // nothing of a transaction that failed half way is committed by a later commit()
+        if ( $db->transactionCounter() > 0 )
+            $db->rollback();
+        throw $e;
     }
     $db->commit();
     eZDebugSetting::writeDebug( 'kernel-content-edit', $assignedNodeArray, "assigned nodes array" );

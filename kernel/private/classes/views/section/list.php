@@ -128,22 +128,32 @@ class ListView extends \Exponential\Runnable\ModuleView
 
                     $db = \eZDB::instance();
                     $db->begin();
-                    foreach ( $sectionIDArray as $sectionID )
+                    try
                     {
-                        $section = \eZSection::fetch( $sectionID );
-                        if ( is_object( $section ) and
-                             $section->canBeRemoved() )
+                        foreach ( $sectionIDArray as $sectionID )
                         {
-                            // Clear content cache if needed
-                            \eZContentCacheManager::clearContentCacheIfNeededBySectionID( $sectionID );
-                            // Audit (doc/eng-us/bc/6.0/audit.md, content.section.remove)
-                            if ( class_exists( 'expAuditHook' ) )
-                                \expAuditHook::emit( 'content.section.remove', array( 'object' => \expAuditHook::section( $section ),
-                                    'before' => array( 'name' => (string)$section->attribute( 'name' ), 'identifier' => (string)$section->attribute( 'identifier' ) ) ) );
-                            $removedNames[] = (string)$section->attribute( 'name' );
-                            $section->remove();
-                            \ezpEvent::getInstance()->notify( 'content/section/cache', array( $sectionID ) );
+                            $section = \eZSection::fetch( $sectionID );
+                            if ( is_object( $section ) and
+                                 $section->canBeRemoved() )
+                            {
+                                // Clear content cache if needed
+                                \eZContentCacheManager::clearContentCacheIfNeededBySectionID( $sectionID );
+                                // Audit (doc/eng-us/bc/6.0/audit.md, content.section.remove)
+                                if ( class_exists( 'expAuditHook' ) )
+                                    \expAuditHook::emit( 'content.section.remove', array( 'object' => \expAuditHook::section( $section ),
+                                        'before' => array( 'name' => (string)$section->attribute( 'name' ), 'identifier' => (string)$section->attribute( 'identifier' ) ) ) );
+                                $removedNames[] = (string)$section->attribute( 'name' );
+                                $section->remove();
+                                \ezpEvent::getInstance()->notify( 'content/section/cache', array( $sectionID ) );
+                            }
                         }
+                    }
+                    catch ( Throwable $e )
+                    {
+                        // nothing of a transaction that failed half way is committed by a later commit()
+                        if ( $db->transactionCounter() > 0 )
+                            $db->rollback();
+                        throw $e;
                     }
                     $db->commit();
                     // the confirmation is used up: a second post of the same form removes nothing

@@ -151,67 +151,77 @@ function expModuleViewContentCopySubtreeCopyPublishContentObject( $sourceObject,
 
     $db = eZDB::instance();
     $db->begin();
-
-    // make copy of source object
-    $newObject             = $sourceObject->copy( $allVersions ); // insert source and new object's ids in $syncObjectIDList
-    // We should reset section that will be updated in updateSectionID().
-    // If sectionID is 0 than the object has been newly created
-    $newObject->setAttribute( 'section_id', 0 );
-    $newObject->store();
-
-    $syncObjectIDListSrc[] = $sourceObjectID;
-
-    $curVersion        = $newObject->attribute( 'current_version' );
-    $curVersionObject  = $newObject->attribute( 'current' );
-
-    $newObjAssignments = $curVersionObject->attribute( 'node_assignments' );
-
-    // copy nodeassigments:
-    $assignmentsForRemoving = array();
-    $foundMainAssignment = false;
-    foreach ( $newObjAssignments as $assignment )
+    try
     {
-        $parentNodeID = $assignment->attribute( 'parent_node' );
 
-        // if assigment is outside of subtree being copied then do not copy this assigment
-        $key1 = array_search( $parentNodeID, $sourceSubtreeNodeIDList );
-        $key2 = array_search( $parentNodeID, $nodeIDBlackList );
-        if ( $key1 === false or $key2 !== false )
-        {
-            $assignmentsForRemoving[] = $assignment->attribute( 'id' );
-            continue;
-        }
+        // make copy of source object
+        $newObject             = $sourceObject->copy( $allVersions ); // insert source and new object's ids in $syncObjectIDList
+        // We should reset section that will be updated in updateSectionID().
+        // If sectionID is 0 than the object has been newly created
+        $newObject->setAttribute( 'section_id', 0 );
+        $newObject->store();
 
-        $key = array_search( $parentNodeID, $syncNodeIDListSrc );
-        if ( $key === false )
-        {
-            eZDebug::writeError( "Cannot publish contentobject (ID=$sourceObjectID). Parent is not published yet.",
-                                 "Subtree Copy error: copyPublishContentObject()" );
-            return 4;
-        }
+        $syncObjectIDListSrc[] = $sourceObjectID;
 
-        if ( $assignment->attribute( 'is_main' ) )
-            $foundMainAssignment = true;
+        $curVersion        = $newObject->attribute( 'current_version' );
+        $curVersionObject  = $newObject->attribute( 'current' );
 
-        $newParentNodeID = $syncNodeIDListNew[ $key ];
-        $assignment->setAttribute( 'parent_node', $newParentNodeID );
-        $assignment->store();
-    }
-    // remove assigments which are outside of subtree being copied:
-    eZNodeAssignment::purgeByID( $assignmentsForRemoving );
-
-    // if main nodeassigment was not copied then set as main first nodeassigment
-    if ( $foundMainAssignment == false )
-    {
         $newObjAssignments = $curVersionObject->attribute( 'node_assignments' );
-        // We need to check if it has any assignments before changing the data.
-        if ( isset( $newObjAssignments[0] ) )
-        {
-            $newObjAssignments[0]->setAttribute( 'is_main', 1 );
-            $newObjAssignments[0]->store();
-        }
-    }
 
+        // copy nodeassigments:
+        $assignmentsForRemoving = array();
+        $foundMainAssignment = false;
+        foreach ( $newObjAssignments as $assignment )
+        {
+            $parentNodeID = $assignment->attribute( 'parent_node' );
+
+            // if assigment is outside of subtree being copied then do not copy this assigment
+            $key1 = array_search( $parentNodeID, $sourceSubtreeNodeIDList );
+            $key2 = array_search( $parentNodeID, $nodeIDBlackList );
+            if ( $key1 === false or $key2 !== false )
+            {
+                $assignmentsForRemoving[] = $assignment->attribute( 'id' );
+                continue;
+            }
+
+            $key = array_search( $parentNodeID, $syncNodeIDListSrc );
+            if ( $key === false )
+            {
+                eZDebug::writeError( "Cannot publish contentobject (ID=$sourceObjectID). Parent is not published yet.",
+                                     "Subtree Copy error: copyPublishContentObject()" );
+                return 4;
+            }
+
+            if ( $assignment->attribute( 'is_main' ) )
+                $foundMainAssignment = true;
+
+            $newParentNodeID = $syncNodeIDListNew[ $key ];
+            $assignment->setAttribute( 'parent_node', $newParentNodeID );
+            $assignment->store();
+        }
+        // remove assigments which are outside of subtree being copied:
+        eZNodeAssignment::purgeByID( $assignmentsForRemoving );
+
+        // if main nodeassigment was not copied then set as main first nodeassigment
+        if ( $foundMainAssignment == false )
+        {
+            $newObjAssignments = $curVersionObject->attribute( 'node_assignments' );
+            // We need to check if it has any assignments before changing the data.
+            if ( isset( $newObjAssignments[0] ) )
+            {
+                $newObjAssignments[0]->setAttribute( 'is_main', 1 );
+                $newObjAssignments[0]->store();
+            }
+        }
+
+    }
+    catch ( Throwable $e )
+    {
+        // nothing of a transaction that failed half way is committed by a later commit()
+        if ( $db->transactionCounter() > 0 )
+            $db->rollback();
+        throw $e;
+    }
     $db->commit();
 
     // publish the newly created object

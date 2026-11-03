@@ -489,8 +489,18 @@ class expUserGroupManager
             return $r;
         $db = eZDB::instance();
         $db->begin();
-        $done = $role->assignToUser( (int)$target['object_id'], $limitation['identifier'], $limitation['value'] );
-        eZRole::expireCache();
+        try
+        {
+            $done = $role->assignToUser( (int)$target['object_id'], $limitation['identifier'], $limitation['value'] );
+            eZRole::expireCache();
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
         self::clearCaches();
         if ( !$done )
@@ -531,9 +541,19 @@ class expUserGroupManager
             return $r;
         $db = eZDB::instance();
         $db->begin();
-        foreach ( $ids as $id )
-            $role->removeUserAssignmentByID( $id );
-        eZRole::expireCache();
+        try
+        {
+            foreach ( $ids as $id )
+                $role->removeUserAssignmentByID( $id );
+            eZRole::expireCache();
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
         self::clearCaches();
         $r['applied'] = true;

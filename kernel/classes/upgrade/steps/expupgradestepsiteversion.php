@@ -82,11 +82,21 @@ class expUpgradeStepSiteVersion extends expUpgradeBaseStep
         $db = $context->db();
         $stored = self::stored( $db );
         $db->begin();
-        if ( $stored === '' )
-            $db->query( "INSERT INTO ezsite_data ( name, value ) VALUES ( 'ezpublish-version', '" . self::VALUE . "' )" );
-        else
-            $db->query( "UPDATE ezsite_data SET value = '" . self::VALUE . "' WHERE name = 'ezpublish-version'" );
-        $db->query( "UPDATE ezsite_data SET value = '1' WHERE name = 'ezpublish-release'" );
+        try
+        {
+            if ( $stored === '' )
+                $db->query( "INSERT INTO ezsite_data ( name, value ) VALUES ( 'ezpublish-version', '" . self::VALUE . "' )" );
+            else
+                $db->query( "UPDATE ezsite_data SET value = '" . self::VALUE . "' WHERE name = 'ezpublish-version'" );
+            $db->query( "UPDATE ezsite_data SET value = '1' WHERE name = 'ezpublish-release'" );
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
         return array( 'ezpublish-version is ' . self::VALUE );
     }

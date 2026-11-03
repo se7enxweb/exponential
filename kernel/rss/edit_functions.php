@@ -43,218 +43,228 @@ class eZRSSEditFunction
 
         $db = eZDB::instance();
         $db->begin();
-
-        // An OPML export lists feeds, not articles: it has no content source
-        // and no class mapping, so the source rows below are neither read nor
-        // validated for one. Validating them would fail an export that is
-        // perfectly correct, because its empty source row names no class.
-        $isOPML = $http->hasPostVariable( 'RSSVersion' )
-                  && $http->postVariable( 'RSSVersion' ) === 'OPML';
-
-        /* Create the new RSS feed */
-        for ( $itemCount = 0; !$isOPML && $itemCount < $http->postVariable( 'Item_Count' ); $itemCount++ )
+        try
         {
-            if ( $skipValuesID == $http->postVariable( 'Item_ID_' . $itemCount ) )
+
+            // An OPML export lists feeds, not articles: it has no content source
+            // and no class mapping, so the source rows below are neither read nor
+            // validated for one. Validating them would fail an export that is
+            // perfectly correct, because its empty source row names no class.
+            $isOPML = $http->hasPostVariable( 'RSSVersion' )
+                      && $http->postVariable( 'RSSVersion' ) === 'OPML';
+
+            /* Create the new RSS feed */
+            for ( $itemCount = 0; !$isOPML && $itemCount < $http->postVariable( 'Item_Count' ); $itemCount++ )
             {
-                continue;
+                if ( $skipValuesID == $http->postVariable( 'Item_ID_' . $itemCount ) )
+                {
+                    continue;
+                }
+
+                $rssExportItem = eZRSSExportItem::fetch( $http->postVariable( 'Item_ID_'.$itemCount ), true, eZRSSExport::STATUS_DRAFT );
+                if( $rssExportItem == null )
+                {
+                    continue;
+                }
+
+                // RSS is supposed to feed certain objects from the subnodes
+                if ( $http->hasPostVariable( 'Item_Subnodes_'.$itemCount ) )
+                {
+                    $rssExportItem->setAttribute( 'subnodes', 1 );
+                }
+                else // Do not include subnodes
+                {
+                    $rssExportItem->setAttribute( 'subnodes', 0 );
+                }
+
+                $rssExportItem->setAttribute( 'class_id', $http->postVariable( 'Item_Class_'.$itemCount ) );
+                $class = eZContentClass::fetch(  $http->postVariable( 'Item_Class_'.$itemCount ) );
+
+                $titleClassAttributeIdentifier = $http->postVariable( 'Item_Class_Attribute_Title_'.$itemCount );
+                $descriptionClassAttributeIdentifier = $http->postVariable( 'Item_Class_Attribute_Description_'.$itemCount );
+                $categoryClassAttributeIdentifier = $http->postVariable( 'Item_Class_Attribute_Category_'.$itemCount );
+
+                if ( !$class )
+                {
+                    $validated = false;
+                    $validationErrors[] = ezpI18n::tr( 'kernel/rss/edit_export',
+                                                  'Selected class does not exist' );
+                }
+                else
+                {
+                    $dataMap = $class->attribute( 'data_map' );
+                    if ( !isset( $dataMap[$titleClassAttributeIdentifier] ) )
+                    {
+                        $valid = false;
+                        $validationErrors[] = ezpI18n::tr( 'kernel/rss/edit_export',
+                                                      'Invalid selection for title class %1 does not have attribute "%2"', null,
+                                                      array( $class->attribute( 'name'), $titleClassAttributeIdentifier ) );
+                    }
+                    if ( $descriptionClassAttributeIdentifier != '' && !isset( $dataMap[$descriptionClassAttributeIdentifier] ) )
+                    {
+                        $valid = false;
+                        $validationErrors[] = ezpI18n::tr( 'kernel/rss/edit_export',
+                                                      'Invalid selection for description class %1 does not have attribute "%2"', null,
+                                                      array( $class->attribute( 'name'), $descriptionClassAttributeIdentifier ) );
+                    }
+                    if ( $categoryClassAttributeIdentifier != '' && !isset( $dataMap[$categoryClassAttributeIdentifier] ) )
+                    {
+                        $valid = false;
+                        $validationErrors[] = ezpI18n::tr( 'kernel/rss/edit_export',
+                                                      'Invalid selection for category class %1 does not have attribute "%2"', null,
+                                                      array( $class->attribute( 'name'), $categoryClassAttributeIdentifier ) );
+                    }
+                }
+
+                $rssExportItem->setAttribute( 'title', $http->postVariable( 'Item_Class_Attribute_Title_' . $itemCount ) );
+                $rssExportItem->setAttribute( 'description', $http->postVariable( 'Item_Class_Attribute_Description_' . $itemCount ) );
+                $rssExportItem->setAttribute( 'category', $http->postVariable( 'Item_Class_Attribute_Category_' . $itemCount ) );
+
+                if ( $http->hasPostVariable( 'Item_Class_Attribute_Enclosure_' . $itemCount ) )
+                    $rssExportItem->setAttribute( 'enclosure', $http->postVariable( 'Item_Class_Attribute_Enclosure_' . $itemCount ) );
+
+                if( $publish && $valid )
+                {
+                    $rssExportItem->setAttribute( 'status', eZRSSExport::STATUS_VALID );
+                    $rssExportItem->store();
+                    // delete drafts
+                    $rssExportItem->setAttribute( 'status', eZRSSExport::STATUS_DRAFT );
+                    $rssExportItem->remove();
+                }
+                else
+                {
+                    $rssExportItem->store();
+                }
+            }
+            $rssExportID = $http->postVariable( 'RSSExport_ID' );
+            $rssExport = eZRSSExport::fetch( $rssExportID, true, eZRSSExport::STATUS_DRAFT );
+
+            // The draft can be gone by the time Save is pressed: the edit timed out
+            // and the draft was collected, or it was cleared from elsewhere while
+            // this page sat open. Taking the published row up again lets the save
+            // land rather than throwing away everything that was typed - and saying
+            // so plainly beats a fatal on a null.
+            if ( !$rssExport instanceof eZRSSExport )
+            {
+                $rssExport = eZRSSExport::fetch( $rssExportID, true, eZRSSExport::STATUS_VALID );
+                if ( $rssExport instanceof eZRSSExport )
+                {
+                    $rssExport->setAttribute( 'status', eZRSSExport::STATUS_DRAFT );
+                    $rssExport->store();
+                }
             }
 
-            $rssExportItem = eZRSSExportItem::fetch( $http->postVariable( 'Item_ID_'.$itemCount ), true, eZRSSExport::STATUS_DRAFT );
-            if( $rssExportItem == null )
+            if ( !$rssExport instanceof eZRSSExport )
             {
-                continue;
+                $db->commit();
+                return array( 'valid' => false,
+                              'published' => false,
+                              'validation_errors' => array(
+                                  ezpI18n::tr( 'kernel/rss/edit_export',
+                                               'This RSS export no longer exists. It may have been removed while this page was open.' ) ) );
             }
 
-            // RSS is supposed to feed certain objects from the subnodes
-            if ( $http->hasPostVariable( 'Item_Subnodes_'.$itemCount ) )
+            $rssExport->setAttribute( 'title', $http->postVariable( 'title' ) );
+            $rssExport->setAttribute( 'url', $http->postVariable( 'url' ) );
+            // $rssExport->setAttribute( 'site_access', $http->postVariable( 'SiteAccess' ) );
+            $rssExport->setAttribute( 'description', $http->postVariable( 'Description' ) );
+            $rssExport->setAttribute( 'rss_version', $http->postVariable( 'RSSVersion' ) );
+            $rssExport->setAttribute( 'number_of_objects', $http->postVariable( 'NumberOfObjects' ) );
+            $rssExport->setAttribute( 'image_id', $http->postVariable( 'RSSImageID' ) );
+            if ( $http->hasPostVariable( 'active' ) )
             {
-                $rssExportItem->setAttribute( 'subnodes', 1 );
-            }
-            else // Do not include subnodes
-            {
-                $rssExportItem->setAttribute( 'subnodes', 0 );
-            }
-
-            $rssExportItem->setAttribute( 'class_id', $http->postVariable( 'Item_Class_'.$itemCount ) );
-            $class = eZContentClass::fetch(  $http->postVariable( 'Item_Class_'.$itemCount ) );
-
-            $titleClassAttributeIdentifier = $http->postVariable( 'Item_Class_Attribute_Title_'.$itemCount );
-            $descriptionClassAttributeIdentifier = $http->postVariable( 'Item_Class_Attribute_Description_'.$itemCount );
-            $categoryClassAttributeIdentifier = $http->postVariable( 'Item_Class_Attribute_Category_'.$itemCount );
-
-            if ( !$class )
-            {
-                $validated = false;
-                $validationErrors[] = ezpI18n::tr( 'kernel/rss/edit_export',
-                                              'Selected class does not exist' );
+                $rssExport->setAttribute( 'active', 1 );
             }
             else
             {
-                $dataMap = $class->attribute( 'data_map' );
-                if ( !isset( $dataMap[$titleClassAttributeIdentifier] ) )
+                $rssExport->setAttribute( 'active', 0 );
+            }
+            $rssExport->setAttribute( 'access_url', str_replace( array( '/', '?', '&', '>', '<' ), '',  $http->postVariable( 'Access_URL' ) ) );
+
+            // The OPML head, and the wording of the outlines, both of which only an
+            // OPML export has a page to set them on.
+            if ( $isOPML )
+            {
+                $head = array();
+                foreach ( array( 'ownerName', 'ownerEmail', 'ownerId', 'docs',
+                                 'expansionState', 'vertScrollState',
+                                 'windowTop', 'windowLeft', 'windowBottom', 'windowRight' ) as $field )
                 {
-                    $valid = false;
-                    $validationErrors[] = ezpI18n::tr( 'kernel/rss/edit_export',
-                                                  'Invalid selection for title class %1 does not have attribute "%2"', null,
-                                                  array( $class->attribute( 'name'), $titleClassAttributeIdentifier ) );
+                    if ( !$http->hasPostVariable( 'OPMLHead_' . $field ) )
+                        continue;
+
+                    $value = $http->postVariable( 'OPMLHead_' . $field );
+                    if ( is_scalar( $value ) )
+                        $head[$field] = $value;   // setOPMLHead checks and caps each one
                 }
-                if ( $descriptionClassAttributeIdentifier != '' && !isset( $dataMap[$descriptionClassAttributeIdentifier] ) )
-                {
-                    $valid = false;
-                    $validationErrors[] = ezpI18n::tr( 'kernel/rss/edit_export',
-                                                  'Invalid selection for description class %1 does not have attribute "%2"', null,
-                                                  array( $class->attribute( 'name'), $descriptionClassAttributeIdentifier ) );
-                }
-                if ( $categoryClassAttributeIdentifier != '' && !isset( $dataMap[$categoryClassAttributeIdentifier] ) )
-                {
-                    $valid = false;
-                    $validationErrors[] = ezpI18n::tr( 'kernel/rss/edit_export',
-                                                  'Invalid selection for category class %1 does not have attribute "%2"', null,
-                                                  array( $class->attribute( 'name'), $categoryClassAttributeIdentifier ) );
-                }
+                $rssExport->setOPMLHead( $head );
+
+                self::storeOPMLItems( $http, $rssExport->attribute( 'id' ) );
             }
 
-            $rssExportItem->setAttribute( 'title', $http->postVariable( 'Item_Class_Attribute_Title_' . $itemCount ) );
-            $rssExportItem->setAttribute( 'description', $http->postVariable( 'Item_Class_Attribute_Description_' . $itemCount ) );
-            $rssExportItem->setAttribute( 'category', $http->postVariable( 'Item_Class_Attribute_Category_' . $itemCount ) );
-
-            if ( $http->hasPostVariable( 'Item_Class_Attribute_Enclosure_' . $itemCount ) )
-                $rssExportItem->setAttribute( 'enclosure', $http->postVariable( 'Item_Class_Attribute_Enclosure_' . $itemCount ) );
-
-            if( $publish && $valid )
+            // The podcast channel fields, which only an Apple Podcasts export has a
+            // page to set them on. Checkboxes post nothing when they are off, so
+            // the booleans are read from whether they arrived at all rather than
+            // from their value.
+            if ( $http->hasPostVariable( 'RSSVersion' ) && $http->postVariable( 'RSSVersion' ) === 'ITUNES' )
             {
-                $rssExportItem->setAttribute( 'status', eZRSSExport::STATUS_VALID );
-                $rssExportItem->store();
-                // delete drafts
-                $rssExportItem->setAttribute( 'status', eZRSSExport::STATUS_DRAFT );
-                $rssExportItem->remove();
+                $head = array();
+
+                foreach ( array( 'author', 'ownerName', 'ownerEmail', 'imageUrl',
+                                 'category', 'subcategory', 'type', 'summary',
+                                 'subtitle', 'copyright', 'language', 'newFeedUrl' ) as $field )
+                {
+                    if ( !$http->hasPostVariable( 'Podcast_' . $field ) )
+                        continue;
+
+                    $value = $http->postVariable( 'Podcast_' . $field );
+                    if ( is_scalar( $value ) )
+                        $head[$field] = $value;   // setPodcastHead checks and caps each one
+                }
+
+                foreach ( array( 'explicit', 'block', 'complete' ) as $field )
+                    $head[$field] = $http->hasPostVariable( 'Podcast_' . $field ) ? 'true' : 'false';
+
+                $rssExport->setPodcastHead( $head );
+            }
+            if ( $http->hasPostVariable( 'MainNodeOnly' ) )
+            {
+                $rssExport->setAttribute( 'main_node_only', 1 );
             }
             else
             {
-                $rssExportItem->store();
+                $rssExport->setAttribute( 'main_node_only', 0 );
             }
-        }
-        $rssExportID = $http->postVariable( 'RSSExport_ID' );
-        $rssExport = eZRSSExport::fetch( $rssExportID, true, eZRSSExport::STATUS_DRAFT );
 
-        // The draft can be gone by the time Save is pressed: the edit timed out
-        // and the draft was collected, or it was cleared from elsewhere while
-        // this page sat open. Taking the published row up again lets the save
-        // land rather than throwing away everything that was typed - and saying
-        // so plainly beats a fatal on a null.
-        if ( !$rssExport instanceof eZRSSExport )
-        {
-            $rssExport = eZRSSExport::fetch( $rssExportID, true, eZRSSExport::STATUS_VALID );
-            if ( $rssExport instanceof eZRSSExport )
+            $published = false;
+            if ( $publish && $valid )
             {
-                $rssExport->setAttribute( 'status', eZRSSExport::STATUS_DRAFT );
+                $rssExport->store( true );
+
+                // The outlines follow the export: the draft rows become the valid
+                // ones, and the draft is cleared out behind them.
+                if ( $isOPML )
+                {
+                    eZRSSExportOPMLItem::copyStatus( $rssExport->attribute( 'id' ),
+                                                     eZRSSExport::STATUS_DRAFT,
+                                                     eZRSSExport::STATUS_VALID );
+                }
+
+                // remove draft
+                $rssExport->remove();
+                $published = true;
+            }
+            else
+            {
                 $rssExport->store();
             }
         }
-
-        if ( !$rssExport instanceof eZRSSExport )
+        catch ( Throwable $e )
         {
-            $db->commit();
-            return array( 'valid' => false,
-                          'published' => false,
-                          'validation_errors' => array(
-                              ezpI18n::tr( 'kernel/rss/edit_export',
-                                           'This RSS export no longer exists. It may have been removed while this page was open.' ) ) );
-        }
-
-        $rssExport->setAttribute( 'title', $http->postVariable( 'title' ) );
-        $rssExport->setAttribute( 'url', $http->postVariable( 'url' ) );
-        // $rssExport->setAttribute( 'site_access', $http->postVariable( 'SiteAccess' ) );
-        $rssExport->setAttribute( 'description', $http->postVariable( 'Description' ) );
-        $rssExport->setAttribute( 'rss_version', $http->postVariable( 'RSSVersion' ) );
-        $rssExport->setAttribute( 'number_of_objects', $http->postVariable( 'NumberOfObjects' ) );
-        $rssExport->setAttribute( 'image_id', $http->postVariable( 'RSSImageID' ) );
-        if ( $http->hasPostVariable( 'active' ) )
-        {
-            $rssExport->setAttribute( 'active', 1 );
-        }
-        else
-        {
-            $rssExport->setAttribute( 'active', 0 );
-        }
-        $rssExport->setAttribute( 'access_url', str_replace( array( '/', '?', '&', '>', '<' ), '',  $http->postVariable( 'Access_URL' ) ) );
-
-        // The OPML head, and the wording of the outlines, both of which only an
-        // OPML export has a page to set them on.
-        if ( $isOPML )
-        {
-            $head = array();
-            foreach ( array( 'ownerName', 'ownerEmail', 'ownerId', 'docs',
-                             'expansionState', 'vertScrollState',
-                             'windowTop', 'windowLeft', 'windowBottom', 'windowRight' ) as $field )
-            {
-                if ( !$http->hasPostVariable( 'OPMLHead_' . $field ) )
-                    continue;
-
-                $value = $http->postVariable( 'OPMLHead_' . $field );
-                if ( is_scalar( $value ) )
-                    $head[$field] = $value;   // setOPMLHead checks and caps each one
-            }
-            $rssExport->setOPMLHead( $head );
-
-            self::storeOPMLItems( $http, $rssExport->attribute( 'id' ) );
-        }
-
-        // The podcast channel fields, which only an Apple Podcasts export has a
-        // page to set them on. Checkboxes post nothing when they are off, so
-        // the booleans are read from whether they arrived at all rather than
-        // from their value.
-        if ( $http->hasPostVariable( 'RSSVersion' ) && $http->postVariable( 'RSSVersion' ) === 'ITUNES' )
-        {
-            $head = array();
-
-            foreach ( array( 'author', 'ownerName', 'ownerEmail', 'imageUrl',
-                             'category', 'subcategory', 'type', 'summary',
-                             'subtitle', 'copyright', 'language', 'newFeedUrl' ) as $field )
-            {
-                if ( !$http->hasPostVariable( 'Podcast_' . $field ) )
-                    continue;
-
-                $value = $http->postVariable( 'Podcast_' . $field );
-                if ( is_scalar( $value ) )
-                    $head[$field] = $value;   // setPodcastHead checks and caps each one
-            }
-
-            foreach ( array( 'explicit', 'block', 'complete' ) as $field )
-                $head[$field] = $http->hasPostVariable( 'Podcast_' . $field ) ? 'true' : 'false';
-
-            $rssExport->setPodcastHead( $head );
-        }
-        if ( $http->hasPostVariable( 'MainNodeOnly' ) )
-        {
-            $rssExport->setAttribute( 'main_node_only', 1 );
-        }
-        else
-        {
-            $rssExport->setAttribute( 'main_node_only', 0 );
-        }
-
-        $published = false;
-        if ( $publish && $valid )
-        {
-            $rssExport->store( true );
-
-            // The outlines follow the export: the draft rows become the valid
-            // ones, and the draft is cleared out behind them.
-            if ( $isOPML )
-            {
-                eZRSSExportOPMLItem::copyStatus( $rssExport->attribute( 'id' ),
-                                                 eZRSSExport::STATUS_DRAFT,
-                                                 eZRSSExport::STATUS_VALID );
-            }
-
-            // remove draft
-            $rssExport->remove();
-            $published = true;
-        }
-        else
-        {
-            $rssExport->store();
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
         return array( 'valid' => $valid,
@@ -312,55 +322,65 @@ class eZRSSEditFunction
 
         $db = eZDB::instance();
         $db->begin();
-        foreach ( $ids as $itemID )
+        try
         {
-            $item = eZRSSExportOPMLItem::fetch( $itemID, true, eZRSSExport::STATUS_DRAFT );
-            if ( !$item || (int) $item->attribute( 'rssexport_id' ) !== (int) $exportID )
-                continue;   // not ours, or gone since the page was drawn
-
-            // Trimmed to what the column holds, and stripped of characters no
-            // xml document can carry, before it is stored - not after, when a
-            // strict database would already have refused the row.
-            $item->setAttribute( 'outline_text', eZRSSExportOPMLItem::safeText( isset( $text[$itemID] ) ? $text[$itemID] : '' ) );
-            $item->setAttribute( 'title', eZRSSExportOPMLItem::safeText( isset( $title[$itemID] ) ? $title[$itemID] : '' ) );
-            $item->setAttribute( 'description', eZRSSExportOPMLItem::safeText( isset( $desc[$itemID] ) ? $desc[$itemID] : '' ) );
-            $item->setAttribute( 'category', eZRSSExportOPMLItem::safeText( isset( $category[$itemID] ) ? $category[$itemID] : '' ) );
-            $item->setAttribute( 'language', eZRSSExportOPMLItem::safeText( isset( $language[$itemID] ) ? $language[$itemID] : '', eZRSSExportOPMLItem::MAX_SHORT ) );
-
-            // Addresses are checked here as well as on the way out, so an
-            // address a reader must not follow is never stored in the first
-            // place and cannot be seen in the edit page either.
-            $item->setAttribute( 'xml_url', eZRSSExportOPMLItem::safeURL( isset( $xmlUrl[$itemID] ) ? $xmlUrl[$itemID] : '' ) );
-            $item->setAttribute( 'html_url', eZRSSExportOPMLItem::safeURL( isset( $htmlUrl[$itemID] ) ? $htmlUrl[$itemID] : '' ) );
-            $item->setAttribute( 'url', eZRSSExportOPMLItem::safeURL( isset( $url[$itemID] ) ? $url[$itemID] : '' ) );
-
-            if ( isset( $type[$itemID] ) && in_array( $type[$itemID], $types, true ) )
-                $item->setAttribute( 'outline_type', $type[$itemID] );
-
-            if ( isset( $priority[$itemID] ) && is_scalar( $priority[$itemID] ) && is_numeric( $priority[$itemID] ) )
-                $item->setAttribute( 'priority', max( 0, min( 999999, (int) $priority[$itemID] ) ) );
-
-            // A line cannot be its own parent, and a parent it does not share an
-            // export with would put it in somebody else's document.
-            if ( isset( $parent[$itemID] ) && is_scalar( $parent[$itemID] ) && is_numeric( $parent[$itemID] ) )
+            foreach ( $ids as $itemID )
             {
-                $parentID = (int) $parent[$itemID];
-                if ( $parentID === (int) $itemID )
-                    $parentID = 0;
-                if ( $parentID )
+                $item = eZRSSExportOPMLItem::fetch( $itemID, true, eZRSSExport::STATUS_DRAFT );
+                if ( !$item || (int) $item->attribute( 'rssexport_id' ) !== (int) $exportID )
+                    continue;   // not ours, or gone since the page was drawn
+
+                // Trimmed to what the column holds, and stripped of characters no
+                // xml document can carry, before it is stored - not after, when a
+                // strict database would already have refused the row.
+                $item->setAttribute( 'outline_text', eZRSSExportOPMLItem::safeText( isset( $text[$itemID] ) ? $text[$itemID] : '' ) );
+                $item->setAttribute( 'title', eZRSSExportOPMLItem::safeText( isset( $title[$itemID] ) ? $title[$itemID] : '' ) );
+                $item->setAttribute( 'description', eZRSSExportOPMLItem::safeText( isset( $desc[$itemID] ) ? $desc[$itemID] : '' ) );
+                $item->setAttribute( 'category', eZRSSExportOPMLItem::safeText( isset( $category[$itemID] ) ? $category[$itemID] : '' ) );
+                $item->setAttribute( 'language', eZRSSExportOPMLItem::safeText( isset( $language[$itemID] ) ? $language[$itemID] : '', eZRSSExportOPMLItem::MAX_SHORT ) );
+
+                // Addresses are checked here as well as on the way out, so an
+                // address a reader must not follow is never stored in the first
+                // place and cannot be seen in the edit page either.
+                $item->setAttribute( 'xml_url', eZRSSExportOPMLItem::safeURL( isset( $xmlUrl[$itemID] ) ? $xmlUrl[$itemID] : '' ) );
+                $item->setAttribute( 'html_url', eZRSSExportOPMLItem::safeURL( isset( $htmlUrl[$itemID] ) ? $htmlUrl[$itemID] : '' ) );
+                $item->setAttribute( 'url', eZRSSExportOPMLItem::safeURL( isset( $url[$itemID] ) ? $url[$itemID] : '' ) );
+
+                if ( isset( $type[$itemID] ) && in_array( $type[$itemID], $types, true ) )
+                    $item->setAttribute( 'outline_type', $type[$itemID] );
+
+                if ( isset( $priority[$itemID] ) && is_scalar( $priority[$itemID] ) && is_numeric( $priority[$itemID] ) )
+                    $item->setAttribute( 'priority', max( 0, min( 999999, (int) $priority[$itemID] ) ) );
+
+                // A line cannot be its own parent, and a parent it does not share an
+                // export with would put it in somebody else's document.
+                if ( isset( $parent[$itemID] ) && is_scalar( $parent[$itemID] ) && is_numeric( $parent[$itemID] ) )
                 {
-                    $parentItem = eZRSSExportOPMLItem::fetch( $parentID, true, eZRSSExport::STATUS_DRAFT );
-                    if ( !$parentItem || (int) $parentItem->attribute( 'rssexport_id' ) !== (int) $exportID )
+                    $parentID = (int) $parent[$itemID];
+                    if ( $parentID === (int) $itemID )
                         $parentID = 0;
+                    if ( $parentID )
+                    {
+                        $parentItem = eZRSSExportOPMLItem::fetch( $parentID, true, eZRSSExport::STATUS_DRAFT );
+                        if ( !$parentItem || (int) $parentItem->attribute( 'rssexport_id' ) !== (int) $exportID )
+                            $parentID = 0;
+                    }
+                    $item->setAttribute( 'parent_id', $parentID );
                 }
-                $item->setAttribute( 'parent_id', $parentID );
+
+                $item->setAttribute( 'is_comment', isset( $comment[$itemID] ) ? 1 : 0 );
+                $item->setAttribute( 'is_breakpoint', isset( $break[$itemID] ) ? 1 : 0 );
+                $item->setAttribute( 'subnodes', isset( $subnodes[$itemID] ) ? 1 : 0 );
+
+                $item->store();
             }
-
-            $item->setAttribute( 'is_comment', isset( $comment[$itemID] ) ? 1 : 0 );
-            $item->setAttribute( 'is_breakpoint', isset( $break[$itemID] ) ? 1 : 0 );
-            $item->setAttribute( 'subnodes', isset( $subnodes[$itemID] ) ? 1 : 0 );
-
-            $item->store();
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
     }

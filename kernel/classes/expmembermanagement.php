@@ -533,16 +533,26 @@ class expMemberManagement
         $changes = self::changes( $rule );
         $db = eZDB::instance();
         $db->begin();
-        $role = $changes['role'];
-        if ( $role === null )
+        try
         {
-            $role = eZRole::create( $rule['role'] );
-            $role->store();
+            $role = $changes['role'];
+            if ( $role === null )
+            {
+                $role = eZRole::create( $rule['role'] );
+                $role->store();
+            }
+            foreach ( $changes['add'] as $policy )
+                $role->appendPolicy( $policy['module'], $policy['function'], $policy['limitations'] );
+            foreach ( $changes['assign'] as $group )
+                $role->assignToUser( $group['object_id'] );
         }
-        foreach ( $changes['add'] as $policy )
-            $role->appendPolicy( $policy['module'], $policy['function'], $policy['limitations'] );
-        foreach ( $changes['assign'] as $group )
-            $role->assignToUser( $group['object_id'] );
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
         // a new content/edit policy would edit objects held for review: keep the review hold whole
         $changes['review_hold'] = $changes['add'] && class_exists( 'expReviewHold' ) ? expReviewHold::limitPolicies() : array();

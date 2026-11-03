@@ -288,16 +288,26 @@ class eZOrder extends eZPersistentObject
 
         $db = eZDB::instance();
         $db->begin();
-        $newCollection = $collection->copy();
-        if ( !$newCollection )
+        try
         {
-            $db->commit();
-            $retValue = false;
-            return $retValue;
-        }
-        $this->setAttribute( 'productcollection_id', $newCollection->attribute( 'id' ) );
-        $this->store();
+            $newCollection = $collection->copy();
+            if ( !$newCollection )
+            {
+                $db->commit();
+                $retValue = false;
+                return $retValue;
+            }
+            $this->setAttribute( 'productcollection_id', $newCollection->attribute( 'id' ) );
+            $this->store();
 
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
         return $newCollection;
     }
@@ -1187,11 +1197,21 @@ class eZOrder extends eZPersistentObject
     {
         $db = eZDB::instance();
         $db->begin();
-        if ( $removeCollection )
-            $this->removeCollection();
-        $this->removeHistory();
-        $this->removeOrderItems();
-        $this->remove();
+        try
+        {
+            if ( $removeCollection )
+                $this->removeCollection();
+            $this->removeHistory();
+            $this->removeOrderItems();
+            $this->remove();
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
     }
 
@@ -1471,21 +1491,31 @@ class eZOrder extends eZPersistentObject
     {
         $db = eZDB::instance();
         $db->begin();
+        try
+        {
 
-        $time = time();
-        if ( $userID === false )
-            $userID = eZUser::currentUserID();
+            $time = time();
+            if ( $userID === false )
+                $userID = eZUser::currentUserID();
 
-        $history = eZOrderStatusHistory::create( $this->OrderNr, $statusID, $userID, $time );
-        $history->store();
+            $history = eZOrderStatusHistory::create( $this->OrderNr, $statusID, $userID, $time );
+            $history->store();
 
-        $auditOld = $this->StatusID;
-        $this->StatusID = $statusID;
-        $this->StatusModified = $time;
-        $this->StatusModifierID = $userID;
+            $auditOld = $this->StatusID;
+            $this->StatusID = $statusID;
+            $this->StatusModified = $time;
+            $this->StatusModifierID = $userID;
 
-        $this->store();
+            $this->store();
 
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
 
         // Audit (doc/eng-us/bc/6.0/audit.md, commerce.order.status)
@@ -1670,10 +1700,20 @@ class eZOrder extends eZPersistentObject
             $orderNr = (int)$rows[0]['order_nr'];
             $db = eZDB::instance();
             $db->begin();
-            $db->query( "DELETE FROM ezorder where id='$orderID'" );
-            $db->query( "DELETE FROM ezproductcollection where id='$productCollectionID'" );
-            $db->query( "DELETE FROM ezproductcollection_item where productcollection_id='$productCollectionID'" );
-            $db->query( "DELETE FROM ezorder_status_history WHERE order_id=$orderNr" );
+            try
+            {
+                $db->query( "DELETE FROM ezorder where id='$orderID'" );
+                $db->query( "DELETE FROM ezproductcollection where id='$productCollectionID'" );
+                $db->query( "DELETE FROM ezproductcollection_item where productcollection_id='$productCollectionID'" );
+                $db->query( "DELETE FROM ezorder_status_history WHERE order_id=$orderNr" );
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
             $db->commit();
             if ( $auditData !== null )
                 expAuditHook::emit( 'commerce.order.delete', $auditData );
@@ -1727,23 +1767,33 @@ class eZOrder extends eZPersistentObject
 
         $db = eZDB::instance();
         $db->begin();
-        if ( count( $rows ) > 0 )
+        try
         {
-            $productCollectionIDList = array();
-            foreach ( $rows as $row )
+            if ( count( $rows ) > 0 )
             {
-                $productCollectionIDList[] = $row['productcollection_id'];
+                $productCollectionIDList = array();
+                foreach ( $rows as $row )
+                {
+                    $productCollectionIDList[] = $row['productcollection_id'];
+                }
+                eZProductCollection::cleanupList( $productCollectionIDList );
             }
-            eZProductCollection::cleanupList( $productCollectionIDList );
-        }
-        // Who removes all orders (doc/eng-us/bc/6.0/audit.md, commerce.order.purge)
-        if ( class_exists( 'expAuditHook' ) )
-            expAuditHook::emit( 'commerce.order.purge', array( 'object' => array( 'type' => 'orders', 'id' => 'all' ),
-                'before' => array( 'count' => count( $rows ) ) ) );
+            // Who removes all orders (doc/eng-us/bc/6.0/audit.md, commerce.order.purge)
+            if ( class_exists( 'expAuditHook' ) )
+                expAuditHook::emit( 'commerce.order.purge', array( 'object' => array( 'type' => 'orders', 'id' => 'all' ),
+                    'before' => array( 'count' => count( $rows ) ) ) );
 
-        eZOrderItem::cleanup();
-        $db->query( "DELETE FROM ezorder_status_history" );
-        $db->query( "DELETE FROM ezorder" );
+            eZOrderItem::cleanup();
+            $db->query( "DELETE FROM ezorder_status_history" );
+            $db->query( "DELETE FROM ezorder" );
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
     }
 

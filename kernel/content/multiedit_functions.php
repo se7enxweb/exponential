@@ -259,40 +259,50 @@ class eZMultiEdit
 
         $db = eZDB::instance();
         $db->begin();
-
-        for ( $i = 0; $i < $count; $i++ )
+        try
         {
-            $object = $class->instantiate( $creatorID, $sectionID, false, $language ?: false );
 
-            if ( !$object instanceof eZContentObject )
-                continue;
+            for ( $i = 0; $i < $count; $i++ )
+            {
+                $object = $class->instantiate( $creatorID, $sectionID, false, $language ?: false );
 
-            $object->store();
+                if ( !$object instanceof eZContentObject )
+                    continue;
 
-            $assignment = eZNodeAssignment::create(
-                array( 'contentobject_id'      => $object->attribute( 'id' ),
-                       'contentobject_version' => $object->attribute( 'current_version' ),
-                       'parent_node'           => (int) $parentNodeID,
-                       'is_main'               => 1,
-                       'sort_field'            => $class->attribute( 'sort_field' ),
-                       'sort_order'            => $class->attribute( 'sort_order' ) ) );
-            $assignment->store();
+                $object->store();
 
-            // Internal, like the drafts openDrafts() makes: it keeps a form
-            // that is abandoned out of the author's draft list.
-            $version = $object->version( 1 );
-            $version->setAttribute( 'modified', eZDateTime::currentTimeStamp() );
-            $version->setAttribute( 'status', eZContentObjectVersion::STATUS_INTERNAL_DRAFT );
-            $version->store();
+                $assignment = eZNodeAssignment::create(
+                    array( 'contentobject_id'      => $object->attribute( 'id' ),
+                           'contentobject_version' => $object->attribute( 'current_version' ),
+                           'parent_node'           => (int) $parentNodeID,
+                           'is_main'               => 1,
+                           'sort_field'            => $class->attribute( 'sort_field' ),
+                           'sort_order'            => $class->attribute( 'sort_order' ) ) );
+                $assignment->store();
 
-            // objectID => version, not just the id. The caller has to hand
-            // these to openDrafts() as drafts it already owns, or that method
-            // opens a *second* version - and the node assignment lives on the
-            // first one, so the second publishes with nowhere to go and the
-            // object ends up with no location at all.
-            $created[(int) $object->attribute( 'id' )] = (int) $version->attribute( 'version' );
+                // Internal, like the drafts openDrafts() makes: it keeps a form
+                // that is abandoned out of the author's draft list.
+                $version = $object->version( 1 );
+                $version->setAttribute( 'modified', eZDateTime::currentTimeStamp() );
+                $version->setAttribute( 'status', eZContentObjectVersion::STATUS_INTERNAL_DRAFT );
+                $version->store();
+
+                // objectID => version, not just the id. The caller has to hand
+                // these to openDrafts() as drafts it already owns, or that method
+                // opens a *second* version - and the node assignment lives on the
+                // first one, so the second publishes with nowhere to go and the
+                // object ends up with no location at all.
+                $created[(int) $object->attribute( 'id' )] = (int) $version->attribute( 'version' );
+            }
+
         }
-
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
 
         return array( 'created' => $created, 'error' => false );
@@ -479,18 +489,28 @@ class eZMultiEdit
 
             $db = eZDB::instance();
             $db->begin();
+            try
+            {
 
-            // Only a version that validated becomes a real draft; the rest stay
-            // internal, which is what keeps a half filled form out of the
-            // author's draft list.
-            if ( $objectValid )
-                $version->setAttribute( 'status', eZContentObjectVersion::STATUS_DRAFT );
+                // Only a version that validated becomes a real draft; the rest stay
+                // internal, which is what keeps a half filled form out of the
+                // author's draft list.
+                if ( $objectValid )
+                    $version->setAttribute( 'status', eZContentObjectVersion::STATUS_DRAFT );
 
-            $version->setAttribute( 'modified', time() );
-            $version->store();
+                $version->setAttribute( 'modified', time() );
+                $version->store();
 
-            $object->storeInput( $attributes, $inputMap );
+                $object->storeInput( $attributes, $inputMap );
 
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
             $db->commit();
 
             ezpEvent::getInstance()->notify( 'content/cache/version',

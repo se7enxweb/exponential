@@ -53,12 +53,22 @@ class Discountgroupmembershipview extends \Exponential\Runnable\ModuleView
 
             $db = \eZDB::instance();
             $db->begin();
-            foreach ( $discountRuleIDList  as $discountRuleID )
+            try
             {
-                \eZDiscountSubRuleValue::removeBySubRuleID ( $discountRuleID );
-                $discountRule = \eZDiscountSubRule::fetch( $discountRuleID );
-                if ( $discountRule )
-                    $discountRule->remove( $discountRuleID );
+                foreach ( $discountRuleIDList  as $discountRuleID )
+                {
+                    \eZDiscountSubRuleValue::removeBySubRuleID ( $discountRuleID );
+                    $discountRule = \eZDiscountSubRule::fetch( $discountRuleID );
+                    if ( $discountRule )
+                        $discountRule->remove( $discountRuleID );
+                }
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
             }
             $db->commit();
 
@@ -88,13 +98,23 @@ class Discountgroupmembershipview extends \Exponential\Runnable\ModuleView
 
             $db = \eZDB::instance();
             $db->begin();
-            foreach ( $selectedObjectIDArray as $objectID )
+            try
             {
-                if ( !in_array(  $objectID, $userIDArray ) )
+                foreach ( $selectedObjectIDArray as $objectID )
                 {
-                    $userRule = \eZUserDiscountRule::create( $discountGroupID, $objectID );
-                    $userRule->store();
+                    if ( !in_array(  $objectID, $userIDArray ) )
+                    {
+                        $userRule = \eZUserDiscountRule::create( $discountGroupID, $objectID );
+                        $userRule->store();
+                    }
                 }
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
             }
             $db->commit();
 
@@ -109,9 +129,19 @@ class Discountgroupmembershipview extends \Exponential\Runnable\ModuleView
 
                 $db = \eZDB::instance();
                 $db->begin();
-                foreach ( $customerIDArray as $customerID )
+                try
                 {
-                    \eZUserDiscountRule::removeUser( $customerID );
+                    foreach ( $customerIDArray as $customerID )
+                    {
+                        \eZUserDiscountRule::removeUser( $customerID );
+                    }
+                }
+                catch ( Throwable $e )
+                {
+                    // nothing of a transaction that failed half way is committed by a later commit()
+                    if ( $db->transactionCounter() > 0 )
+                        $db->rollback();
+                    throw $e;
                 }
                 $db->commit();
             }

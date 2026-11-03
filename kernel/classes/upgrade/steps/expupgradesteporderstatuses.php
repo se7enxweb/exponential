@@ -90,11 +90,21 @@ class expUpgradeStepOrderStatuses extends expUpgradeBaseStep
             throw new RuntimeException( 'cannot read ezorder_status' );
         $done = array();
         $db->begin();
-        foreach ( $missing as $id )
+        try
         {
-            $status = new eZOrderStatus( array( 'is_active' => 1, 'name' => self::STATUSES[$id], 'status_id' => $id ) );
-            $status->store();
-            $done[] = sprintf( 'added order status %d "%s"', $id, self::STATUSES[$id] );
+            foreach ( $missing as $id )
+            {
+                $status = new eZOrderStatus( array( 'is_active' => 1, 'name' => self::STATUSES[$id], 'status_id' => $id ) );
+                $status->store();
+                $done[] = sprintf( 'added order status %d "%s"', $id, self::STATUSES[$id] );
+            }
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
         eZOrderStatus::flush();

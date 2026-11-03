@@ -135,56 +135,66 @@ class Userregister extends \Exponential\Runnable\ModuleView
 
                 $db = \eZDB::instance();
                 $db->begin();
-                $order = $basket->createOrder();
+                try
+                {
+                    $order = $basket->createOrder();
 
-                $doc = new \DOMDocument( '1.0', 'utf-8' );
+                    $doc = new \DOMDocument( '1.0', 'utf-8' );
 
-                $root = $doc->createElement( "shop_account" );
-                $doc->appendChild( $root );
+                    $root = $doc->createElement( "shop_account" );
+                    $doc->appendChild( $root );
 
-                $firstNameNode = $doc->createElement( "first-name", $firstName );
-                $root->appendChild( $firstNameNode );
+                    $firstNameNode = $doc->createElement( "first-name", $firstName );
+                    $root->appendChild( $firstNameNode );
 
-                $lastNameNode = $doc->createElement( "last-name", $lastName );
-                $root->appendChild( $lastNameNode );
+                    $lastNameNode = $doc->createElement( "last-name", $lastName );
+                    $root->appendChild( $lastNameNode );
 
-                $emailNode = $doc->createElement( "email", $email );
-                $root->appendChild( $emailNode );
+                    $emailNode = $doc->createElement( "email", $email );
+                    $root->appendChild( $emailNode );
 
-                $street1Node = $doc->createElement( "street1", $street1 );
-                $root->appendChild( $street1Node );
+                    $street1Node = $doc->createElement( "street1", $street1 );
+                    $root->appendChild( $street1Node );
 
-                $street2Node = $doc->createElement( "street2", $street2 );
-                $root->appendChild( $street2Node );
+                    $street2Node = $doc->createElement( "street2", $street2 );
+                    $root->appendChild( $street2Node );
 
-                $zipNode = $doc->createElement( "zip", $zip );
-                $root->appendChild( $zipNode );
+                    $zipNode = $doc->createElement( "zip", $zip );
+                    $root->appendChild( $zipNode );
 
-                // Stored as <city>; eZUserShopAccountHandler reads <place> too, so
-                // orders written before the rename still render.
-                $placeNode = $doc->createElement( "city", $place );
-                $root->appendChild( $placeNode );
+                    // Stored as <city>; eZUserShopAccountHandler reads <place> too, so
+                    // orders written before the rename still render.
+                    $placeNode = $doc->createElement( "city", $place );
+                    $root->appendChild( $placeNode );
 
-                $stateNode = $doc->createElement( "state", $state );
-                $root->appendChild( $stateNode );
+                    $stateNode = $doc->createElement( "state", $state );
+                    $root->appendChild( $stateNode );
 
-                $countryNode = $doc->createElement( "country", $country );
-                $root->appendChild( $countryNode );
+                    $countryNode = $doc->createElement( "country", $country );
+                    $root->appendChild( $countryNode );
 
-                $phoneNode = $doc->createElement( "phone", $phone );
-                $root->appendChild( $phoneNode );
+                    $phoneNode = $doc->createElement( "phone", $phone );
+                    $root->appendChild( $phoneNode );
 
-                $commentNode = $doc->createElement( "comment", $comment );
-                $root->appendChild( $commentNode );
+                    $commentNode = $doc->createElement( "comment", $comment );
+                    $root->appendChild( $commentNode );
 
-                $xmlString = $doc->saveXML();
+                    $xmlString = $doc->saveXML();
 
-                $order->setAttribute( 'data_text_1', $xmlString );
-                $order->setAttribute( 'account_identifier', "ez" );
+                    $order->setAttribute( 'data_text_1', $xmlString );
+                    $order->setAttribute( 'account_identifier', "ez" );
 
-                $order->setAttribute( 'ignore_vat', 0 );
+                    $order->setAttribute( 'ignore_vat', 0 );
 
-                $order->store();
+                    $order->store();
+                }
+                catch ( Throwable $e )
+                {
+                    // nothing of a transaction that failed half way is committed by a later commit()
+                    if ( $db->transactionCounter() > 0 )
+                        $db->rollback();
+                    throw $e;
+                }
                 $db->commit();
                 \eZShopFunctions::setPreferredUserCountry( $country );
                 $http->setSessionVariable( 'MyTemporaryOrderID', $order->attribute( 'id' ) );

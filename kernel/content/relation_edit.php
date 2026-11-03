@@ -27,10 +27,20 @@ function checkRelationAssignments( $module, $class, $object, $version, $contentO
         {
             $db = eZDB::instance();
             $db->begin();
-            foreach ( $selectedObjectIDArray as $selectedObjectID )
+            try
             {
-                if ( $selectedObjectID != $objectID && !in_array( $selectedObjectID, $relatedObjectIDArray ) )
-                    $object->addContentObjectRelation( $selectedObjectID, $editVersion );
+                foreach ( $selectedObjectIDArray as $selectedObjectID )
+                {
+                    if ( $selectedObjectID != $objectID && !in_array( $selectedObjectID, $relatedObjectIDArray ) )
+                        $object->addContentObjectRelation( $selectedObjectID, $editVersion );
+                }
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
             }
             $db->commit();
         }
@@ -46,7 +56,17 @@ function checkRelationAssignments( $module, $class, $object, $version, $contentO
         {
             $db = eZDB::instance();
             $db->begin();
-            $object->addContentObjectRelation( $relatedObjectID, $editVersion );
+            try
+            {
+                $object->addContentObjectRelation( $relatedObjectID, $editVersion );
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
             $db->commit();
         }
         // We redirect to the edit page to get the correct url,
@@ -121,7 +141,17 @@ function checkRelationActions( $module, $class, $object, $version, $contentObjec
                 {
                     $db = eZDB::instance();
                     $db->begin();
-                    $object->addContentObjectRelation( $relatedObjectID, $editVersion );
+                    try
+                    {
+                        $object->addContentObjectRelation( $relatedObjectID, $editVersion );
+                    }
+                    catch ( Throwable $e )
+                    {
+                        // nothing of a transaction that failed half way is committed by a later commit()
+                        if ( $db->transactionCounter() > 0 )
+                            $db->rollback();
+                        throw $e;
+                    }
                     $db->commit();
                 }
             }
@@ -160,9 +190,19 @@ function checkRelationActions( $module, $class, $object, $version, $contentObjec
 
         $db = eZDB::instance();
         $db->begin();
-        foreach ( $relationObjectIDs as $relationObjectID )
+        try
         {
-            $object->removeContentObjectRelation( $relationObjectID, $editVersion );
+            foreach ( $relationObjectIDs as $relationObjectID )
+            {
+                $object->removeContentObjectRelation( $relationObjectID, $editVersion );
+            }
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
 
@@ -183,7 +223,17 @@ function checkRelationActions( $module, $class, $object, $version, $contentObjec
             $class = eZContentClass::fetch( $contentClassID );
             $db = eZDB::instance();
             $db->begin();
-            $relatedContentObject = $class->instantiate( false, $sectionID );
+            try
+            {
+                $relatedContentObject = $class->instantiate( false, $sectionID );
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
             $db->commit();
             $newObjectID = $relatedContentObject->attribute( 'id' );
             $relatedContentVersion = $relatedContentObject->attribute( 'current' );
@@ -192,18 +242,28 @@ function checkRelationActions( $module, $class, $object, $version, $contentObjec
             {
                 $db = eZDB::instance();
                 $db->begin();
-                $assignmentHandler = new eZContentObjectAssignmentHandler( $relatedContentObject, $relatedContentVersion );
-                $sectionID = (int) $assignmentHandler->setupAssignments( array( 'group-name' => 'RelationAssignmentSettings',
-                                                                   'default-variable-name' => 'DefaultAssignment',
-                                                                   'specific-variable-name' => 'ClassSpecificAssignment',
-                                                                   'section-id-wanted' => true,
-                                                                   'fallback-node-id' => $object->attribute( 'main_node_id' ) ) );
+                try
+                {
+                    $assignmentHandler = new eZContentObjectAssignmentHandler( $relatedContentObject, $relatedContentVersion );
+                    $sectionID = (int) $assignmentHandler->setupAssignments( array( 'group-name' => 'RelationAssignmentSettings',
+                                                                       'default-variable-name' => 'DefaultAssignment',
+                                                                       'specific-variable-name' => 'ClassSpecificAssignment',
+                                                                       'section-id-wanted' => true,
+                                                                       'fallback-node-id' => $object->attribute( 'main_node_id' ) ) );
 
-                $http->setSessionVariable( 'ParentObject', array( $object->attribute( 'id' ), $editVersion, $editLanguage ) );
-                $http->setSessionVariable( 'NewObjectID', $newObjectID );
+                    $http->setSessionVariable( 'ParentObject', array( $object->attribute( 'id' ), $editVersion, $editLanguage ) );
+                    $http->setSessionVariable( 'NewObjectID', $newObjectID );
 
-                /* Change section ID to the same one as the main node placement */
-                $db->query("UPDATE ezcontentobject SET section_id = {$sectionID} WHERE id = {$newObjectID}");
+                    /* Change section ID to the same one as the main node placement */
+                    $db->query("UPDATE ezcontentobject SET section_id = {$sectionID} WHERE id = {$newObjectID}");
+                }
+                catch ( Throwable $e )
+                {
+                    // nothing of a transaction that failed half way is committed by a later commit()
+                    if ( $db->transactionCounter() > 0 )
+                        $db->rollback();
+                    throw $e;
+                }
                 $db->commit();
                 $module->redirectToView( 'edit', array( $relatedContentObject->attribute( 'id' ),
                                                         $relatedContentObject->attribute( 'current_version' ),
@@ -213,7 +273,17 @@ function checkRelationActions( $module, $class, $object, $version, $contentObjec
             {
                 $db = eZDB::instance();
                 $db->begin();
-                $relatedContentObject->purge();
+                try
+                {
+                    $relatedContentObject->purge();
+                }
+                catch ( Throwable $e )
+                {
+                    // nothing of a transaction that failed half way is committed by a later commit()
+                    if ( $db->transactionCounter() > 0 )
+                        $db->rollback();
+                    throw $e;
+                }
                 $db->commit();
             }
 

@@ -1542,7 +1542,27 @@ WHERE user_id = '" . $userID . "' AND
         // Clear current basket if necessary
         $db = eZDB::instance();
         $db->begin();
-        eZBasket::cleanupCurrentBasket();
+        try
+        {
+            try
+            {
+                eZBasket::cleanupCurrentBasket();
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
 
         if ( $contentObjectID )
@@ -2140,57 +2160,77 @@ WHERE user_id = '" . $userID . "' AND
 
         $db = eZDB::instance();
         $db->begin();
-
-        if ( $db->databaseName() === 'mongo' )
+        try
         {
-            $existing = $db->aggregate( 'ezuservisit', [
-                [ '$match' => [ 'user_id' => $userID ] ],
-                [ '$limit' => 1 ],
-            ] );
-            if ( !empty( $existing ) )
+            try
             {
-                $failedLoginAttempts = $value === false
-                    ? ( (int)( $existing[0]['failed_login_attempts'] ?? 0 ) + 1 )
-                    : (int)$value;
-                $db->mongoUpdateOne( 'ezuservisit',
-                    [ 'user_id' => $userID ],
-                    [ '$set' => [ 'failed_login_attempts' => $failedLoginAttempts ] ] );
+
+                if ( $db->databaseName() === 'mongo' )
+                {
+                    $existing = $db->aggregate( 'ezuservisit', [
+                        [ '$match' => [ 'user_id' => $userID ] ],
+                        [ '$limit' => 1 ],
+                    ] );
+                    if ( !empty( $existing ) )
+                    {
+                        $failedLoginAttempts = $value === false
+                            ? ( (int)( $existing[0]['failed_login_attempts'] ?? 0 ) + 1 )
+                            : (int)$value;
+                        $db->mongoUpdateOne( 'ezuservisit',
+                            [ 'user_id' => $userID ],
+                            [ '$set' => [ 'failed_login_attempts' => $failedLoginAttempts ] ] );
+                    }
+                    else
+                    {
+                        $failedLoginAttempts = $value === false ? 1 : (int)$value;
+                        $db->insert( 'ezuservisit', [
+                            'user_id'               => $userID,
+                            'failed_login_attempts' => $failedLoginAttempts,
+                        ] );
+                    }
+                }
+                else
+                {
+                    $userVisitArray = $db->arrayQuery( "SELECT 1 FROM ezuservisit WHERE user_id=$userID" );
+                    if ( isset( $userVisitArray[0] ) )
+                    {
+                        if ( $value === false )
+                        {
+                            $failedLoginAttempts = $userObject->failedLoginAttempts();
+                            $failedLoginAttempts += 1;
+                        }
+                        else
+                            $failedLoginAttempts = (int) $value;
+
+                        $db->query( "UPDATE ezuservisit SET failed_login_attempts=$failedLoginAttempts WHERE user_id=$userID" );
+                    }
+                    else
+                    {
+                        if ( $value === false )
+                        {
+                            $failedLoginAttempts = 1;
+                        }
+                        else
+                            $failedLoginAttempts = (int) $value;
+
+                        $db->query( "INSERT INTO ezuservisit ( failed_login_attempts, user_id ) VALUES ( $failedLoginAttempts, $userID )" );
+                    }
+                }
             }
-            else
+            catch ( Throwable $e )
             {
-                $failedLoginAttempts = $value === false ? 1 : (int)$value;
-                $db->insert( 'ezuservisit', [
-                    'user_id'               => $userID,
-                    'failed_login_attempts' => $failedLoginAttempts,
-                ] );
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
             }
         }
-        else
+        catch ( Throwable $e )
         {
-            $userVisitArray = $db->arrayQuery( "SELECT 1 FROM ezuservisit WHERE user_id=$userID" );
-            if ( isset( $userVisitArray[0] ) )
-            {
-                if ( $value === false )
-                {
-                    $failedLoginAttempts = $userObject->failedLoginAttempts();
-                    $failedLoginAttempts += 1;
-                }
-                else
-                    $failedLoginAttempts = (int) $value;
-
-                $db->query( "UPDATE ezuservisit SET failed_login_attempts=$failedLoginAttempts WHERE user_id=$userID" );
-            }
-            else
-            {
-                if ( $value === false )
-                {
-                    $failedLoginAttempts = 1;
-                }
-                else
-                    $failedLoginAttempts = (int) $value;
-
-                $db->query( "INSERT INTO ezuservisit ( failed_login_attempts, user_id ) VALUES ( $failedLoginAttempts, $userID )" );
-            }
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
 

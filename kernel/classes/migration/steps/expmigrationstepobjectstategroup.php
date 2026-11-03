@@ -253,15 +253,25 @@ class expMigrationStepObjectStateGroup extends expMigrationStepStructureBase imp
         $language = expMigrationStepContentBase::localeOf( isset( $step['language'] ) ? $step['language'] : null );
         $db = eZDB::instance();
         $db->begin();
-        $group = new eZContentObjectStateGroup( array( 'identifier' => (string)$step['identifier'] ) );
-        $group->setAttribute( 'default_language_id', (int)eZContentLanguage::idByLocale( $language ) );
-        self::translate( $group, $step, $language );
-        self::store( $group, 'the object state group ' . $step['identifier'] );
-        $added = array();
-        foreach ( isset( $step['states'] ) ? (array)$step['states'] : array() as $state )
+        try
         {
-            $this->addState( $group, $state, $language );
-            $added[] = $state['identifier'];
+            $group = new eZContentObjectStateGroup( array( 'identifier' => (string)$step['identifier'] ) );
+            $group->setAttribute( 'default_language_id', (int)eZContentLanguage::idByLocale( $language ) );
+            self::translate( $group, $step, $language );
+            self::store( $group, 'the object state group ' . $step['identifier'] );
+            $added = array();
+            foreach ( isset( $step['states'] ) ? (array)$step['states'] : array() as $state )
+            {
+                $this->addState( $group, $state, $language );
+                $added[] = $state['identifier'];
+            }
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
         $group = eZContentObjectStateGroup::fetchById( (int)$group->attribute( 'id' ) );
@@ -283,71 +293,81 @@ class expMigrationStepObjectStateGroup extends expMigrationStepStructureBase imp
         $lines = array();
         $db = eZDB::instance();
         $db->begin();
-        $changed = array();
-        if ( !$ensure && isset( $step['identifier'] ) && (string)$group->attribute( 'identifier' ) !== (string)$step['identifier'] )
+        try
         {
-            if ( eZContentObjectStateGroup::fetchByIdentifier( (string)$step['identifier'] ) )
-                throw new RuntimeException( 'another object state group has the identifier ' . $step['identifier'] );
-            $group->setAttribute( 'identifier', (string)$step['identifier'] );
-            $changed[] = 'identifier';
-        }
-        $changed = array_merge( $changed, self::translate( $group, $step, $language ) );
-        if ( $changed )
-        {
-            self::store( $group, $label );
-            $lines[] = "updated $label: " . implode( ', ', $changed );
-        }
-        $add = $ensure ? array() : ( isset( $step['add_states'] ) ? (array)$step['add_states'] : array() );
-        $change = $ensure ? array() : ( isset( $step['update_states'] ) ? (array)$step['update_states'] : array() );
-        if ( $ensure )
-        {
-            foreach ( isset( $step['states'] ) ? (array)$step['states'] : array() as $state )
+            $changed = array();
+            if ( !$ensure && isset( $step['identifier'] ) && (string)$group->attribute( 'identifier' ) !== (string)$step['identifier'] )
+            {
+                if ( eZContentObjectStateGroup::fetchByIdentifier( (string)$step['identifier'] ) )
+                    throw new RuntimeException( 'another object state group has the identifier ' . $step['identifier'] );
+                $group->setAttribute( 'identifier', (string)$step['identifier'] );
+                $changed[] = 'identifier';
+            }
+            $changed = array_merge( $changed, self::translate( $group, $step, $language ) );
+            if ( $changed )
+            {
+                self::store( $group, $label );
+                $lines[] = "updated $label: " . implode( ', ', $changed );
+            }
+            $add = $ensure ? array() : ( isset( $step['add_states'] ) ? (array)$step['add_states'] : array() );
+            $change = $ensure ? array() : ( isset( $step['update_states'] ) ? (array)$step['update_states'] : array() );
+            if ( $ensure )
+            {
+                foreach ( isset( $step['states'] ) ? (array)$step['states'] : array() as $state )
+                {
+                    if ( self::stateOf( $group, $state['identifier'] ) instanceof eZContentObjectState )
+                        $change[$state['identifier']] = $state;
+                    else
+                        $add[] = $state;
+                }
+            }
+            foreach ( $add as $state )
             {
                 if ( self::stateOf( $group, $state['identifier'] ) instanceof eZContentObjectState )
-                    $change[$state['identifier']] = $state;
-                else
-                    $add[] = $state;
+                    throw new RuntimeException( "$label has the state " . $state['identifier'] . ' already' );
+                $this->addState( $group, $state, $language );
+                $lines[] = "added to $label the state " . $state['identifier'];
+            }
+            foreach ( $change as $identifier => $state )
+            {
+                $existing = self::stateOf( $group, (string)$identifier );
+                if ( !$existing instanceof eZContentObjectState )
+                    throw new RuntimeException( "$label has no state $identifier" );
+                $stateChanges = array();
+                if ( !$ensure && isset( $state['identifier'] ) && $state['identifier'] !== (string)$identifier )
+                {
+                    $existing->setAttribute( 'identifier', $state['identifier'] );
+                    $stateChanges[] = 'identifier';
+                }
+                $stateChanges = array_merge( $stateChanges, self::translate( $existing, (array)$state, $language ) );
+                if ( $stateChanges )
+                {
+                    self::store( $existing, "the state $identifier of $label" );
+                    $lines[] = "changed the state $identifier of $label: " . implode( ', ', $stateChanges );
+                }
+            }
+            if ( !$ensure && !empty( $step['remove_states'] ) )
+            {
+                $ids = array();
+                foreach ( (array)$step['remove_states'] as $identifier )
+                {
+                    $state = self::stateOf( $group, (string)$identifier );
+                    if ( !$state instanceof eZContentObjectState )
+                        throw new RuntimeException( "$label has no state $identifier to remove" );
+                    $ids[] = (int)$state->attribute( 'id' );
+                }
+                if ( count( $ids ) >= count( self::statesOf( $group ) ) )
+                    throw new RuntimeException( "$label keeps at least one state (delete the group to remove them all)" );
+                self::removeStates( $group, $ids );
+                $lines[] = "removed from $label the states " . implode( ', ', (array)$step['remove_states'] );
             }
         }
-        foreach ( $add as $state )
+        catch ( Throwable $e )
         {
-            if ( self::stateOf( $group, $state['identifier'] ) instanceof eZContentObjectState )
-                throw new RuntimeException( "$label has the state " . $state['identifier'] . ' already' );
-            $this->addState( $group, $state, $language );
-            $lines[] = "added to $label the state " . $state['identifier'];
-        }
-        foreach ( $change as $identifier => $state )
-        {
-            $existing = self::stateOf( $group, (string)$identifier );
-            if ( !$existing instanceof eZContentObjectState )
-                throw new RuntimeException( "$label has no state $identifier" );
-            $stateChanges = array();
-            if ( !$ensure && isset( $state['identifier'] ) && $state['identifier'] !== (string)$identifier )
-            {
-                $existing->setAttribute( 'identifier', $state['identifier'] );
-                $stateChanges[] = 'identifier';
-            }
-            $stateChanges = array_merge( $stateChanges, self::translate( $existing, (array)$state, $language ) );
-            if ( $stateChanges )
-            {
-                self::store( $existing, "the state $identifier of $label" );
-                $lines[] = "changed the state $identifier of $label: " . implode( ', ', $stateChanges );
-            }
-        }
-        if ( !$ensure && !empty( $step['remove_states'] ) )
-        {
-            $ids = array();
-            foreach ( (array)$step['remove_states'] as $identifier )
-            {
-                $state = self::stateOf( $group, (string)$identifier );
-                if ( !$state instanceof eZContentObjectState )
-                    throw new RuntimeException( "$label has no state $identifier to remove" );
-                $ids[] = (int)$state->attribute( 'id' );
-            }
-            if ( count( $ids ) >= count( self::statesOf( $group ) ) )
-                throw new RuntimeException( "$label keeps at least one state (delete the group to remove them all)" );
-            self::removeStates( $group, $ids );
-            $lines[] = "removed from $label the states " . implode( ', ', (array)$step['remove_states'] );
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
         eZContentObjectState::cleanDefaultsCache();
@@ -488,18 +508,28 @@ class expMigrationStepObjectStateGroup extends expMigrationStepStructureBase imp
                 $left[] = $state;
         $db = eZDB::instance();
         $db->begin();
-        $newDefault = (int)$left[0]->attribute( 'id' );
-        foreach ( $ids as $id )
+        try
         {
-            $db->query( 'UPDATE ezcobj_state_link SET contentobject_state_id=' . $newDefault . ' WHERE contentobject_state_id=' . (int)$id );
-            eZContentObjectState::removeByID( (int)$id );
+            $newDefault = (int)$left[0]->attribute( 'id' );
+            foreach ( $ids as $id )
+            {
+                $db->query( 'UPDATE ezcobj_state_link SET contentobject_state_id=' . $newDefault . ' WHERE contentobject_state_id=' . (int)$id );
+                eZContentObjectState::removeByID( (int)$id );
+            }
+            foreach ( $left as $priority => $state )
+            {
+                if ( (int)$state->attribute( 'priority' ) === $priority )
+                    continue;
+                $state->setAttribute( 'priority', $priority );
+                $state->sync( array( 'priority' ) );
+            }
         }
-        foreach ( $left as $priority => $state )
+        catch ( Throwable $e )
         {
-            if ( (int)$state->attribute( 'priority' ) === $priority )
-                continue;
-            $state->setAttribute( 'priority', $priority );
-            $state->sync( array( 'priority' ) );
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
         eZContentObjectState::cleanDefaultsCache();

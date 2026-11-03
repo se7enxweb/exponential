@@ -1253,43 +1253,53 @@ class eZSiteInstaller
 
         $db = eZDB::instance();
         $db->begin();
-        $node->store();
-        $selectedNode->setAttribute( 'contentobject_id', $objectID );
-        $selectedNode->setAttribute( 'contentobject_version', $objectVersion );
-        $selectedNode->store();
-
-        // modify path string
-        $changedOriginalNode = eZContentObjectTreeNode::fetch( $nodeID );
-        $changedOriginalNode->updateSubTreePath();
-        $changedTargetNode = eZContentObjectTreeNode::fetch( $selectedNodeID );
-        $changedTargetNode->updateSubTreePath();
-
-        // modify section
-        if( $changedOriginalNode->attribute( 'main_node_id' ) == $changedOriginalNode->attribute( 'node_id' ) )
+        try
         {
-            $changedOriginalObject = $changedOriginalNode->object();
-            $parentObject = $nodeParent->object();
-            if( $changedOriginalObject->attribute( 'section_id' ) != $parentObject->attribute( 'section_id' ) )
-            {
+            $node->store();
+            $selectedNode->setAttribute( 'contentobject_id', $objectID );
+            $selectedNode->setAttribute( 'contentobject_version', $objectVersion );
+            $selectedNode->store();
 
-                eZContentObjectTreeNode::assignSectionToSubTree( $changedOriginalNode->attribute( 'main_node_id' ),
-                                                                 $parentObject->attribute( 'section_id' ),
-                                                                 $changedOriginalObject->attribute( 'section_id' ) );
+            // modify path string
+            $changedOriginalNode = eZContentObjectTreeNode::fetch( $nodeID );
+            $changedOriginalNode->updateSubTreePath();
+            $changedTargetNode = eZContentObjectTreeNode::fetch( $selectedNodeID );
+            $changedTargetNode->updateSubTreePath();
+
+            // modify section
+            if( $changedOriginalNode->attribute( 'main_node_id' ) == $changedOriginalNode->attribute( 'node_id' ) )
+            {
+                $changedOriginalObject = $changedOriginalNode->object();
+                $parentObject = $nodeParent->object();
+                if( $changedOriginalObject->attribute( 'section_id' ) != $parentObject->attribute( 'section_id' ) )
+                {
+
+                    eZContentObjectTreeNode::assignSectionToSubTree( $changedOriginalNode->attribute( 'main_node_id' ),
+                                                                     $parentObject->attribute( 'section_id' ),
+                                                                     $changedOriginalObject->attribute( 'section_id' ) );
+                }
             }
+            if( $changedTargetNode->attribute( 'main_node_id' ) == $changedTargetNode->attribute( 'node_id' ) )
+            {
+                $changedTargetObject = $changedTargetNode->object();
+                $selectedParentObject = $selectedNodeParent->object();
+                if( $changedTargetObject->attribute( 'section_id' ) != $selectedParentObject->attribute( 'section_id' ) )
+                {
+
+                    eZContentObjectTreeNode::assignSectionToSubTree( $changedTargetNode->attribute( 'main_node_id' ),
+                                                                     $selectedParentObject->attribute( 'section_id' ),
+                                                                     $changedTargetObject->attribute( 'section_id' ) );
+                }
+            }
+
         }
-        if( $changedTargetNode->attribute( 'main_node_id' ) == $changedTargetNode->attribute( 'node_id' ) )
+        catch ( Throwable $e )
         {
-            $changedTargetObject = $changedTargetNode->object();
-            $selectedParentObject = $selectedNodeParent->object();
-            if( $changedTargetObject->attribute( 'section_id' ) != $selectedParentObject->attribute( 'section_id' ) )
-            {
-
-                eZContentObjectTreeNode::assignSectionToSubTree( $changedTargetNode->attribute( 'main_node_id' ),
-                                                                 $selectedParentObject->attribute( 'section_id' ),
-                                                                 $changedTargetObject->attribute( 'section_id' ) );
-            }
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
-
         $db->commit();
 
         // clear cache for new placement.

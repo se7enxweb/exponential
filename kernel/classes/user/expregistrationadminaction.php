@@ -714,29 +714,39 @@ class expRegistrationAdminAction
                 continue;
             $db = eZDB::instance();
             $db->begin();
-            $workflow = eZWorkflow::fetch( $process->attribute( 'workflow_id' ) );
-            $workflowEvent = $process->attribute( 'event_id' ) != 0 ? eZWorkflowEvent::fetch( $process->attribute( 'event_id' ) ) : null;
-            $eventLog = array();
-            $process->run( $workflow, $workflowEvent, $eventLog );
-            if ( (int)$process->attribute( 'status' ) === eZWorkflow::STATUS_DONE )
+            try
             {
-                $bodyMemento = eZOperationMemento::fetchChild( $process->attribute( 'memento_key' ) );
-                $mainMemento = $bodyMemento ? $bodyMemento->attribute( 'main_memento' ) : null;
-                if ( $bodyMemento && $mainMemento )
+                $workflow = eZWorkflow::fetch( $process->attribute( 'workflow_id' ) );
+                $workflowEvent = $process->attribute( 'event_id' ) != 0 ? eZWorkflowEvent::fetch( $process->attribute( 'event_id' ) ) : null;
+                $eventLog = array();
+                $process->run( $workflow, $workflowEvent, $eventLog );
+                if ( (int)$process->attribute( 'status' ) === eZWorkflow::STATUS_DONE )
                 {
-                    $mementoData = $bodyMemento->data();
-                    $mementoData['main_memento'] = $mainMemento;
-                    $mementoData['skip_trigger'] = true;
-                    $mementoData['memento_key'] = $process->attribute( 'memento_key' );
-                    $bodyMemento->remove();
-                    $parameters = isset( $mementoData['parameters'] ) ? $mementoData['parameters'] : array();
-                    eZOperationHandler::execute( $mementoData['module_name'], $mementoData['operation_name'], $parameters, $mementoData );
+                    $bodyMemento = eZOperationMemento::fetchChild( $process->attribute( 'memento_key' ) );
+                    $mainMemento = $bodyMemento ? $bodyMemento->attribute( 'main_memento' ) : null;
+                    if ( $bodyMemento && $mainMemento )
+                    {
+                        $mementoData = $bodyMemento->data();
+                        $mementoData['main_memento'] = $mainMemento;
+                        $mementoData['skip_trigger'] = true;
+                        $mementoData['memento_key'] = $process->attribute( 'memento_key' );
+                        $bodyMemento->remove();
+                        $parameters = isset( $mementoData['parameters'] ) ? $mementoData['parameters'] : array();
+                        eZOperationHandler::execute( $mementoData['module_name'], $mementoData['operation_name'], $parameters, $mementoData );
+                    }
+                    $process->removeThis();
                 }
-                $process->removeThis();
+                else
+                {
+                    $process->store();
+                }
             }
-            else
+            catch ( Throwable $e )
             {
-                $process->store();
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
             }
             $db->commit();
         }

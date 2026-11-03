@@ -85,8 +85,18 @@ class expUpgradeStepOrderSiteaccessBackfill extends expUpgradeScriptStep
             if ( !$order )
                 continue;
             $db->begin();
-            $order->setAttribute( 'siteaccess', $siteaccess );
-            $order->store();
+            try
+            {
+                $order->setAttribute( 'siteaccess', $siteaccess );
+                $order->store();
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
             $db->commit();
             $done[] = "order $id: siteaccess $siteaccess";
         }

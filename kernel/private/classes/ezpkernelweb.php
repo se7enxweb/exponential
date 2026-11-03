@@ -512,6 +512,10 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
         }
         catch ( Throwable $e )
         {
+            // What the module left open when it threw is rolled back: never committed later, and the cleanup
+            // handlers of shutdown() (the session) do not write inside it
+            if ( class_exists( 'eZDB' ) )
+                eZDB::rollbackOpenTransaction( 'the request ended with ' . get_class( $e ) . ': ' . $e->getMessage() );
             if ( $e instanceof Exception )
                 $this->shutdown();
             // Close our buffer (a persistent worker never ends the request to do it); flushed,

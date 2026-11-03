@@ -172,17 +172,27 @@ class eZPolicy extends eZPersistentObject
 
         $db = eZDB::instance();
         $db->begin();
-        $limitation->store();
-        $limitationID = $limitation->attribute( 'id' );
-        $limitations = array();
-        foreach ( $values as $value )
+        try
         {
-            $limitationValue = eZPolicyLimitationValue::create( $limitationID, $value );
-            $limitationValue->store();
-            if ( isset( $limitation->Values ) )
+            $limitation->store();
+            $limitationID = $limitation->attribute( 'id' );
+            $limitations = array();
+            foreach ( $values as $value )
             {
-                $limitation->Values[] = $limitationValue;
+                $limitationValue = eZPolicyLimitationValue::create( $limitationID, $value );
+                $limitationValue->store();
+                if ( isset( $limitation->Values ) )
+                {
+                    $limitation->Values[] = $limitationValue;
+                }
             }
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
 
@@ -207,10 +217,20 @@ class eZPolicy extends eZPersistentObject
 
         $db = eZDB::instance();
         $db->begin();
-        $newPolicy = eZPolicy::createNew( $roleID, $params  );
-        foreach ( $this->attribute( 'limitations' ) as $limitation )
+        try
         {
-            $limitation->copy( $newPolicy->attribute( 'id' ) );
+            $newPolicy = eZPolicy::createNew( $roleID, $params  );
+            foreach ( $this->attribute( 'limitations' ) as $limitation )
+            {
+                $limitation->copy( $newPolicy->attribute( 'id' ) );
+            }
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
 
@@ -248,18 +268,28 @@ class eZPolicy extends eZPersistentObject
         }
         $db = eZDB::instance();
         $db->begin();
-        foreach ( $this->attribute( 'limitations' ) as $limitation )
+        try
         {
-            $limitation->removeThis();
-        }
-        if ( $db->databaseName() === 'mongo' )
-        {
-            $db->deleteWhere( 'ezpolicy', [ 'id' => (int)$this->attribute( 'id' ) ] );
-        }
-        else
-        {
-            $db->query( "DELETE FROM ezpolicy
+            foreach ( $this->attribute( 'limitations' ) as $limitation )
+            {
+                $limitation->removeThis();
+            }
+            if ( $db->databaseName() === 'mongo' )
+            {
+                $db->deleteWhere( 'ezpolicy', [ 'id' => (int)$this->attribute( 'id' ) ] );
+            }
+            else
+            {
+                $db->query( "DELETE FROM ezpolicy
                          WHERE id='" . $db->escapeString( $this->attribute( 'id' ) ) . "'" );
+            }
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
         if ( $auditData !== null )

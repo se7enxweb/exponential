@@ -61,11 +61,21 @@ function expModuleViewRssEditImportStore( $rssImport, $http, $publish = false )
     {
         $db = eZDB::instance();
         $db->begin();
-        $rssImport->setAttribute( 'status', eZRSSImport::STATUS_VALID );
-        $rssImport->store();
-        // remove draft
-        $rssImport->setAttribute( 'status', eZRSSImport::STATUS_DRAFT );
-        $rssImport->remove();
+        try
+        {
+            $rssImport->setAttribute( 'status', eZRSSImport::STATUS_VALID );
+            $rssImport->store();
+            // remove draft
+            $rssImport->setAttribute( 'status', eZRSSImport::STATUS_DRAFT );
+            $rssImport->remove();
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
     }
     else

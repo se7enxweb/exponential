@@ -1550,8 +1550,28 @@ class eZPersistentObject
             $swapSQL1 = eZPersistentObject::swapRow( $table, $columnKeys, $orderColumn, $columnRows, 1, 0 );
             $swapSQL2 = eZPersistentObject::swapRow( $table, $columnKeys, $orderColumn, $columnRows, 0, 1 );
             $db->begin();
-            $db->query( $swapSQL1 );
-            $db->query( $swapSQL2 );
+            try
+            {
+                try
+                {
+                    $db->query( $swapSQL1 );
+                    $db->query( $swapSQL2 );
+                }
+                catch ( Throwable $e )
+                {
+                    // nothing of a transaction that failed half way is committed by a later commit()
+                    if ( $db->transactionCounter() > 0 )
+                        $db->rollback();
+                    throw $e;
+                }
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
             $db->commit();
         }
         else

@@ -523,12 +523,22 @@ class expRolePage
             return 0;
         $db = eZDB::instance();
         $db->begin();
-        $made = 0;
-        foreach ( $steps as $step )
+        try
         {
-            if ( !$draft->movePolicy( $step[0], $step[1] ) )
-                break;
-            $made++;
+            $made = 0;
+            foreach ( $steps as $step )
+            {
+                if ( !$draft->movePolicy( $step[0], $step[1] ) )
+                    break;
+                $made++;
+            }
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
         return $made;

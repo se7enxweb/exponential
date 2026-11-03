@@ -370,63 +370,73 @@ class eZContentObjectStateGroup extends eZPersistentObject
         $db = eZDB::instance();
 
         $db->begin();
-
-        $languageMask = 1;
-        // set language mask and always available bits
-        foreach ( $this->AllTranslations as $translation )
+        try
         {
-            if ( $translation->hasData() )
+
+            $languageMask = 1;
+            // set language mask and always available bits
+            foreach ( $this->AllTranslations as $translation )
             {
-                $languageID = $translation->attribute( 'real_language_id' );
-                if ( empty( $this->DefaultLanguageID ) )
+                if ( $translation->hasData() )
                 {
-                    $this->DefaultLanguageID = $languageID & ~1;
+                    $languageID = $translation->attribute( 'real_language_id' );
+                    if ( empty( $this->DefaultLanguageID ) )
+                    {
+                        $this->DefaultLanguageID = $languageID & ~1;
+                    }
+                    // if default language, set always available flag
+                    if ( $languageID & $this->DefaultLanguageID )
+                    {
+                        $translation->setAttribute( 'language_id', $languageID | 1 );
+                    }
+                    // otherwise, remove always available flag if it's set
+                    else
+                    {
+                        $translation->setAttribute( 'language_id',  $languageID & ~1 );
+                    }
+
+                    $languageMask = $languageMask | $languageID;
                 }
-                // if default language, set always available flag
-                if ( $languageID & $this->DefaultLanguageID )
+            }
+            $this->setAttribute( 'language_mask', $languageMask );
+
+            // store state group
+            eZPersistentObject::storeObject( $this, $fieldFilters );
+
+            // store or remove translations
+            foreach ( $this->AllTranslations as $translation )
+            {
+                if ( !$translation->hasData() )
                 {
-                    $translation->setAttribute( 'language_id', $languageID | 1 );
+                    // the name and description are empty
+                    // so the translation needs to be removed if it was stored before
+                    if ( $translation->attribute( 'contentobject_state_group_id' ) !== null )
+                    {
+                        $translation->remove();
+                    }
                 }
-                // otherwise, remove always available flag if it's set
                 else
                 {
-                    $translation->setAttribute( 'language_id',  $languageID & ~1 );
+                    if ( $translation->attribute( 'contentobject_state_group_id' ) != $this->ID )
+                    {
+                        $translation->setAttribute( 'contentobject_state_group_id', $this->ID );
+                    }
+
+                    $translation->store();
                 }
-
-                $languageMask = $languageMask | $languageID;
             }
+
+            $handler = eZExpiryHandler::instance();
+            $handler->setTimestamp( 'state-limitations', time() );
+
         }
-        $this->setAttribute( 'language_mask', $languageMask );
-
-        // store state group
-        eZPersistentObject::storeObject( $this, $fieldFilters );
-
-        // store or remove translations
-        foreach ( $this->AllTranslations as $translation )
+        catch ( Throwable $e )
         {
-            if ( !$translation->hasData() )
-            {
-                // the name and description are empty
-                // so the translation needs to be removed if it was stored before
-                if ( $translation->attribute( 'contentobject_state_group_id' ) !== null )
-                {
-                    $translation->remove();
-                }
-            }
-            else
-            {
-                if ( $translation->attribute( 'contentobject_state_group_id' ) != $this->ID )
-                {
-                    $translation->setAttribute( 'contentobject_state_group_id', $this->ID );
-                }
-
-                $translation->store();
-            }
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
-
-        $handler = eZExpiryHandler::instance();
-        $handler->setTimestamp( 'state-limitations', time() );
-
         $db->commit();
     }
 
@@ -568,17 +578,27 @@ class eZContentObjectStateGroup extends eZPersistentObject
     {
         $db = eZDB::instance();
         $db->begin();
-        $states = eZContentObjectState::fetchByGroup( $id );
-        foreach ( $states as $state )
+        try
         {
-            eZContentObjectState::removeByID( $state->attribute( 'id' ) );
+            $states = eZContentObjectState::fetchByGroup( $id );
+            foreach ( $states as $state )
+            {
+                eZContentObjectState::removeByID( $state->attribute( 'id' ) );
+            }
+            eZPersistentObject::removeObject( eZContentObjectStateGroupLanguage::definition(), array( 'contentobject_state_group_id' => $id ) );
+            eZPersistentObject::removeObject( eZContentObjectStateGroup::definition(), array( 'id' => $id ) );
+            // the group's StateGroup_<identifier> limitation goes with it, as store() adds it
+            eZExpiryHandler::instance()->setTimestamp( 'state-limitations', time() );
+            self::$limitationsCache = null;
+            eZContentObjectState::cleanDefaultsCache();
         }
-        eZPersistentObject::removeObject( eZContentObjectStateGroupLanguage::definition(), array( 'contentobject_state_group_id' => $id ) );
-        eZPersistentObject::removeObject( eZContentObjectStateGroup::definition(), array( 'id' => $id ) );
-        // the group's StateGroup_<identifier> limitation goes with it, as store() adds it
-        eZExpiryHandler::instance()->setTimestamp( 'state-limitations', time() );
-        self::$limitationsCache = null;
-        eZContentObjectState::cleanDefaultsCache();
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
     }
 
@@ -594,49 +614,59 @@ class eZContentObjectStateGroup extends eZPersistentObject
 
         $db = eZDB::instance();
         $db->begin();
-
-        $states = $this->states();
-
-        foreach ( $states as $state )
+        try
         {
-            $stateID = $state->attribute( 'id' );
-            if ( in_array( $stateID, $idList ) )
-            {
-                $removeIDList[] = $stateID;
-            }
-            else if ( $newDefaultStateID === null )
-            {
-                $newDefaultStateID = $stateID;
-            }
-        }
 
-        $removeIDListCount = count( $removeIDList );
-        if ( $removeIDListCount > 0 )
-        {
-            if ( $newDefaultStateID )
-            {
-                $contentObjectStateIDCondition = $removeIDListCount > 1 ? $db->generateSQLINStatement( $removeIDList, 'contentobject_state_id' ) :
-                                                                          "contentobject_state_id=$removeIDList[0]";
-                $db->query( "UPDATE ezcobj_state_link
-                             SET contentobject_state_id=$newDefaultStateID
-                             WHERE $contentObjectStateIDCondition" );
-                eZContentObjectState::cleanDefaultsCache();
-            }
+            $states = $this->states();
 
-            foreach ( $removeIDList as $id )
-            {
-                eZContentObjectState::removeByID( $id );
-            }
-
-            // re-order remaining states in the same group
-            $states = $this->states( true );
-            $i = 0;
             foreach ( $states as $state )
             {
-                $state->setAttribute( 'priority', $i );
-                $state->sync( array( 'priority' ) );
-                $i++;
+                $stateID = $state->attribute( 'id' );
+                if ( in_array( $stateID, $idList ) )
+                {
+                    $removeIDList[] = $stateID;
+                }
+                else if ( $newDefaultStateID === null )
+                {
+                    $newDefaultStateID = $stateID;
+                }
             }
+
+            $removeIDListCount = count( $removeIDList );
+            if ( $removeIDListCount > 0 )
+            {
+                if ( $newDefaultStateID )
+                {
+                    $contentObjectStateIDCondition = $removeIDListCount > 1 ? $db->generateSQLINStatement( $removeIDList, 'contentobject_state_id' ) :
+                                                                              "contentobject_state_id=$removeIDList[0]";
+                    $db->query( "UPDATE ezcobj_state_link
+                             SET contentobject_state_id=$newDefaultStateID
+                             WHERE $contentObjectStateIDCondition" );
+                    eZContentObjectState::cleanDefaultsCache();
+                }
+
+                foreach ( $removeIDList as $id )
+                {
+                    eZContentObjectState::removeByID( $id );
+                }
+
+                // re-order remaining states in the same group
+                $states = $this->states( true );
+                $i = 0;
+                foreach ( $states as $state )
+                {
+                    $state->setAttribute( 'priority', $i );
+                    $state->sync( array( 'priority' ) );
+                    $i++;
+                }
+            }
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
     }
@@ -674,12 +704,22 @@ class eZContentObjectStateGroup extends eZPersistentObject
 
         $db = eZDB::instance();
         $db->begin();
-        foreach ( $stateIDList as $i => $updateID )
+        try
         {
-            if ( $currentStateIDList[$i] != $updateID )
+            foreach ( $stateIDList as $i => $updateID )
             {
-                $db->query( "UPDATE ezcobj_state SET priority=$i WHERE id=$updateID" );
+                if ( $currentStateIDList[$i] != $updateID )
+                {
+                    $db->query( "UPDATE ezcobj_state SET priority=$i WHERE id=$updateID" );
+                }
             }
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
 

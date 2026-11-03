@@ -315,9 +315,19 @@ class expMigrationStepUser extends expMigrationStepContent
         $userId = (int)$user->attribute( 'contentobject_id' );
         $db = eZDB::instance();
         $db->begin();
-        self::writePassword( $user, $step );
-        $user->store();
-        eZUserType::storeIsEnabled( $userId, isset( $step['enabled'] ) ? self::flagOf( $step['enabled'] ) : 1 );
+        try
+        {
+            self::writePassword( $user, $step );
+            $user->store();
+            eZUserType::storeIsEnabled( $userId, isset( $step['enabled'] ) ? self::flagOf( $step['enabled'] ) : 1 );
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
         $lines = array( 'created the user ' . $step['login'] . " ($userId) in node " . expMigrationStepSchema::show( $groups[0] ) );
         foreach ( array_slice( $groups, 1 ) as $group )
@@ -352,29 +362,39 @@ class expMigrationStepUser extends expMigrationStepContent
         $account = array();
         $db = eZDB::instance();
         $db->begin();
-        if ( isset( $step['email'] ) && (string)$user->attribute( 'email' ) !== (string)$step['email'] )
+        try
         {
-            $other = eZUser::fetchByEmail( (string)$step['email'] );
-            if ( eZUser::requireUniqueEmail() && $other instanceof eZUser && (int)$other->attribute( 'contentobject_id' ) !== $userId )
-                throw new RuntimeException( 'another account has the e-mail address ' . $step['email'] );
-            $user->setAttribute( 'email', (string)$step['email'] );
-            $account[] = 'email';
-        }
-        if ( !$ensure && ( isset( $step['password'] ) || isset( $step['password_hash'] ) ) )
-        {
-            self::writePassword( $user, $step );
-            $account[] = 'the password';
-        }
-        if ( $account )
-            $user->store();
-        if ( isset( $step['enabled'] ) )
-        {
-            $setting = eZUserSetting::fetch( $userId );
-            if ( !$setting instanceof eZUserSetting || (int)$setting->attribute( 'is_enabled' ) !== self::flagOf( $step['enabled'] ) )
+            if ( isset( $step['email'] ) && (string)$user->attribute( 'email' ) !== (string)$step['email'] )
             {
-                eZUserType::storeIsEnabled( $userId, self::flagOf( $step['enabled'] ) );
-                $account[] = $step['enabled'] ? 'enabled' : 'disabled';
+                $other = eZUser::fetchByEmail( (string)$step['email'] );
+                if ( eZUser::requireUniqueEmail() && $other instanceof eZUser && (int)$other->attribute( 'contentobject_id' ) !== $userId )
+                    throw new RuntimeException( 'another account has the e-mail address ' . $step['email'] );
+                $user->setAttribute( 'email', (string)$step['email'] );
+                $account[] = 'email';
             }
+            if ( !$ensure && ( isset( $step['password'] ) || isset( $step['password_hash'] ) ) )
+            {
+                self::writePassword( $user, $step );
+                $account[] = 'the password';
+            }
+            if ( $account )
+                $user->store();
+            if ( isset( $step['enabled'] ) )
+            {
+                $setting = eZUserSetting::fetch( $userId );
+                if ( !$setting instanceof eZUserSetting || (int)$setting->attribute( 'is_enabled' ) !== self::flagOf( $step['enabled'] ) )
+                {
+                    eZUserType::storeIsEnabled( $userId, self::flagOf( $step['enabled'] ) );
+                    $account[] = $step['enabled'] ? 'enabled' : 'disabled';
+                }
+            }
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
         if ( $account )

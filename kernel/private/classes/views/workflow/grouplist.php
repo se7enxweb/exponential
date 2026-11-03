@@ -241,20 +241,30 @@ class Grouplist extends \Exponential\Runnable\ModuleView
         $names = array();
         $db = \eZDB::instance();
         $db->begin();
-        foreach ( $plan['remove'] as $workflowID )
-            self::removeWorkflowCompletely( $workflowID );
-        foreach ( $plan['unlink'] as $workflowID => $staying )
-            foreach ( $groupIDs as $groupID )
-                \eZWorkflowGroupLink::removeByID( $workflowID, 0, $groupID );
-        foreach ( $groupIDs as $groupID )
+        try
         {
-            $group = \eZWorkflowGroup::fetch( $groupID );
-            if ( $group )
+            foreach ( $plan['remove'] as $workflowID )
+                self::removeWorkflowCompletely( $workflowID );
+            foreach ( $plan['unlink'] as $workflowID => $staying )
+                foreach ( $groupIDs as $groupID )
+                    \eZWorkflowGroupLink::removeByID( $workflowID, 0, $groupID );
+            foreach ( $groupIDs as $groupID )
             {
-                $names[] = (string)$group->attribute( 'name' );
-                $group->remove();
+                $group = \eZWorkflowGroup::fetch( $groupID );
+                if ( $group )
+                {
+                    $names[] = (string)$group->attribute( 'name' );
+                    $group->remove();
+                }
+                \eZWorkflowGroupLink::removeGroupMembers( $groupID );
             }
-            \eZWorkflowGroupLink::removeGroupMembers( $groupID );
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
         return array( 'names' => $names, 'removed' => count( $plan['remove'] ), 'unlinked' => count( $plan['unlink'] ) );

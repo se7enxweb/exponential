@@ -177,52 +177,72 @@ class eZContentOperationCollection
     {
         $db = eZDB::instance();
         $db->begin();
-
-        if ( !$versionNum )
+        try
         {
-            if( $db->DatabaseName() == 'sqlite' )
+            try
             {
-                $objectRows = $db->arrayQuery( "SELECT * FROM ezcontentobject WHERE id = $objectID" );
+
+                if ( !$versionNum )
+                {
+                    if( $db->DatabaseName() == 'sqlite' )
+                    {
+                        $objectRows = $db->arrayQuery( "SELECT * FROM ezcontentobject WHERE id = $objectID" );
+                    }
+                    else
+                    {
+                        $objectRows = $db->arrayQuery( "SELECT * FROM ezcontentobject WHERE id = $objectID FOR UPDATE" );
+                    }
+
+                    if ( empty( $objectRows ) )
+                    {
+                        $db->commit(); // We haven't made any changes, but commit here to avoid affecting any outer transactions.
+                        return;
+                    }
+
+                    $versionNum = $objectRows[0]['current_version'];
+                }
+
+                if( $db->DatabaseName() == 'sqlite' )
+                {
+                    $versionRows = $db->arrayQuery( "SELECT * FROM ezcontentobject_version WHERE version = $versionNum AND contentobject_id = $objectID" );
+                }
+                else
+                {
+                    $versionRows = $db->arrayQuery( "SELECT * FROM ezcontentobject_version WHERE version = $versionNum AND contentobject_id = $objectID FOR UPDATE" );
+                }
+
+                if ( empty( $versionRows ) )
+                {
+                    $db->commit(); // We haven't made any changes, but commit here to avoid affecting any outer transactions.
+                    return;
+                }
+
+                $version = eZContentObjectVersion::fetch( $versionRows[0]['id'] );
+                if ( !$version )
+                {
+                    $db->commit(); // We haven't made any changes, but commit here to avoid affecting any outer transactions.
+                    return;
+                }
+
+                $version->setAttribute( 'status', $status );
+                $version->store();
+
             }
-            else
+            catch ( Throwable $e )
             {
-                $objectRows = $db->arrayQuery( "SELECT * FROM ezcontentobject WHERE id = $objectID FOR UPDATE" );
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
             }
-
-            if ( empty( $objectRows ) )
-            {
-                $db->commit(); // We haven't made any changes, but commit here to avoid affecting any outer transactions.
-                return;
-            }
-
-            $versionNum = $objectRows[0]['current_version'];
         }
-
-        if( $db->DatabaseName() == 'sqlite' )
+        catch ( Throwable $e )
         {
-            $versionRows = $db->arrayQuery( "SELECT * FROM ezcontentobject_version WHERE version = $versionNum AND contentobject_id = $objectID" );
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
-        else
-        {
-            $versionRows = $db->arrayQuery( "SELECT * FROM ezcontentobject_version WHERE version = $versionNum AND contentobject_id = $objectID FOR UPDATE" );
-        }
-
-        if ( empty( $versionRows ) )
-        {
-            $db->commit(); // We haven't made any changes, but commit here to avoid affecting any outer transactions.
-            return;
-        }
-
-        $version = eZContentObjectVersion::fetch( $versionRows[0]['id'] );
-        if ( !$version )
-        {
-            $db->commit(); // We haven't made any changes, but commit here to avoid affecting any outer transactions.
-            return;
-        }
-
-        $version->setAttribute( 'status', $status );
-        $version->store();
-
         $db->commit();
     }
 
@@ -250,49 +270,69 @@ class eZContentOperationCollection
 
         $db = eZDB::instance();
         $db->begin();
-
-        $object->setAttribute( 'status', eZContentObject::STATUS_PUBLISHED );
-        $version->setAttribute( 'status', eZContentObjectVersion::STATUS_PUBLISHED );
-        $object->setAttribute( 'current_version', $versionNum );
-
-        $objectIsAlwaysAvailable = $object->isAlwaysAvailable();
-        $object->setAttribute( 'language_mask', eZContentLanguage::maskByLocale( $version->translationList( false, false ), $objectIsAlwaysAvailable ) );
-
-        if ( $object->attribute( 'published' ) == 0 )
+        try
         {
-            $object->setAttribute( 'published', time() );
-        }
-        $object->setAttribute( 'modified', time() );
-        $classID = $object->attribute( 'contentclass_id' );
+            try
+            {
 
-        $class = eZContentClass::fetch( $classID );
-        $objectName = $class->contentObjectName( $object );
-        $object->setName( $objectName, $versionNum );
-        $existingTranslations = $version->translations( false );
-        foreach( $existingTranslations as $translation )
+                $object->setAttribute( 'status', eZContentObject::STATUS_PUBLISHED );
+                $version->setAttribute( 'status', eZContentObjectVersion::STATUS_PUBLISHED );
+                $object->setAttribute( 'current_version', $versionNum );
+
+                $objectIsAlwaysAvailable = $object->isAlwaysAvailable();
+                $object->setAttribute( 'language_mask', eZContentLanguage::maskByLocale( $version->translationList( false, false ), $objectIsAlwaysAvailable ) );
+
+                if ( $object->attribute( 'published' ) == 0 )
+                {
+                    $object->setAttribute( 'published', time() );
+                }
+                $object->setAttribute( 'modified', time() );
+                $classID = $object->attribute( 'contentclass_id' );
+
+                $class = eZContentClass::fetch( $classID );
+                $objectName = $class->contentObjectName( $object );
+                $object->setName( $objectName, $versionNum );
+                $existingTranslations = $version->translations( false );
+                foreach( $existingTranslations as $translation )
+                {
+                    $translatedName = $class->contentObjectName( $object, $versionNum, $translation );
+                    $object->setName( $translatedName, $versionNum, $translation );
+                }
+
+                if ( $objectIsAlwaysAvailable )
+                {
+                    $initialLanguageID = $object->attribute( 'initial_language_id' );
+                    $object->setAlwaysAvailableLanguageID( $initialLanguageID );
+                }
+
+                $version->store();
+                $object->store();
+
+                eZContentObjectTreeNode::setVersionByObjectID( $objectID, $versionNum );
+
+                $nodes = $object->assignedNodes();
+                foreach ( $nodes as $node )
+                {
+                    $node->setName( $object->attribute( 'name' ) );
+                    $node->updateSubTreePath();
+                }
+
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
+        }
+        catch ( Throwable $e )
         {
-            $translatedName = $class->contentObjectName( $object, $versionNum, $translation );
-            $object->setName( $translatedName, $versionNum, $translation );
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
-
-        if ( $objectIsAlwaysAvailable )
-        {
-            $initialLanguageID = $object->attribute( 'initial_language_id' );
-            $object->setAlwaysAvailableLanguageID( $initialLanguageID );
-        }
-
-        $version->store();
-        $object->store();
-
-        eZContentObjectTreeNode::setVersionByObjectID( $objectID, $versionNum );
-
-        $nodes = $object->assignedNodes();
-        foreach ( $nodes as $node )
-        {
-            $node->setName( $object->attribute( 'name' ) );
-            $node->updateSubTreePath();
-        }
-
         $db->commit();
 
         /* Check if current class is the user class, and if so, clean up the user-policy cache */
@@ -702,13 +742,33 @@ class eZContentOperationCollection
 
                         $db = eZDB::instance();
                         $db->begin();
-                        $object->store();
-                        $mainNodeID = $object->attribute( 'main_node_id' );
-                        if ( $mainNodeID > 0 )
+                        try
                         {
-                            eZContentObjectTreeNode::assignSectionToSubTree( $mainNodeID,
-                                                                             $newSectionID,
-                                                                             $oldSectionID );
+                            try
+                            {
+                                $object->store();
+                                $mainNodeID = $object->attribute( 'main_node_id' );
+                                if ( $mainNodeID > 0 )
+                                {
+                                    eZContentObjectTreeNode::assignSectionToSubTree( $mainNodeID,
+                                                                                     $newSectionID,
+                                                                                     $oldSectionID );
+                                }
+                            }
+                            catch ( Throwable $e )
+                            {
+                                // nothing of a transaction that failed half way is committed by a later commit()
+                                if ( $db->transactionCounter() > 0 )
+                                    $db->rollback();
+                                throw $e;
+                            }
+                        }
+                        catch ( Throwable $e )
+                        {
+                            // nothing of a transaction that failed half way is committed by a later commit()
+                            if ( $db->transactionCounter() > 0 )
+                                $db->rollback();
+                            throw $e;
                         }
                         $db->commit();
                     }
@@ -756,19 +816,39 @@ class eZContentOperationCollection
 
         $db = eZDB::instance();
         $db->begin();
-        foreach ( $assignedExistingNodes as $node )
+        try
         {
-            if ( in_array( $node->attribute( 'parent_node_id' ), $removeParentNodeList ) )
+            try
             {
-                eZContentObjectTreeNode::removeSubtrees( array( $node->attribute( 'node_id' ) ), $moveToTrash );
+                foreach ( $assignedExistingNodes as $node )
+                {
+                    if ( in_array( $node->attribute( 'parent_node_id' ), $removeParentNodeList ) )
+                    {
+                        eZContentObjectTreeNode::removeSubtrees( array( $node->attribute( 'node_id' ) ), $moveToTrash );
+                    }
+                }
+
+                if ( count( $removeAssignmentsList ) > 0 )
+                {
+                    eZNodeAssignment::purgeByID( $removeAssignmentsList );
+                }
+
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
             }
         }
-
-        if ( count( $removeAssignmentsList ) > 0 )
+        catch ( Throwable $e )
         {
-            eZNodeAssignment::purgeByID( $removeAssignmentsList );
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
-
         $db->commit();
     }
 
@@ -1284,53 +1364,73 @@ class eZContentOperationCollection
 
         $db = eZDB::instance();
         $db->begin();
-        $locationAdded = false;
-        $auditInserted = array();
-        $node = eZContentObjectTreeNode::fetch( $nodeID );
-        foreach ( $selectedNodeIDArray as $selectedNodeID )
+        try
         {
-            if ( !in_array( $selectedNodeID, $parentNodeIDArray ) )
+            try
             {
-                $parentNode = eZContentObjectTreeNode::fetch( $selectedNodeID );
-                $parentNodeObject = $parentNode->attribute( 'object' );
-
-                $canCreate = ( ( $parentNode->checkAccess( 'create', $class->attribute( 'id' ), $parentNodeObject->attribute( 'contentclass_id' ) ) == 1 ) ||
-                                ( $parentNode->canAddLocation() && $node->canRead() ) );
-                // A location of a user account (or group) in a group whose new accounts need approval: only for
-                // someone who would not wait for that approval (doc/eng-us/bc/6.0/user-account-approval.md)
-                if ( $canCreate && class_exists( 'expUserApproval' ) && !expUserApproval::placementAllowed( $object, $parentNode ) )
-                    $canCreate = false;
-
-                if ( $canCreate )
+                $locationAdded = false;
+                $auditInserted = array();
+                $node = eZContentObjectTreeNode::fetch( $nodeID );
+                foreach ( $selectedNodeIDArray as $selectedNodeID )
                 {
-                    $insertedNode = $object->addLocation( $selectedNodeID, true );
+                    if ( !in_array( $selectedNodeID, $parentNodeIDArray ) )
+                    {
+                        $parentNode = eZContentObjectTreeNode::fetch( $selectedNodeID );
+                        $parentNodeObject = $parentNode->attribute( 'object' );
 
-                    // Now set is as published and fix main_node_id
-                    $insertedNode->setAttribute( 'contentobject_is_published', 1 );
-                    $insertedNode->setAttribute( 'main_node_id', $node->attribute( 'main_node_id' ) );
-                    $insertedNode->setAttribute( 'contentobject_version', $node->attribute( 'contentobject_version' ) );
-                    // Make sure the url alias is set updated.
-                    $insertedNode->updateSubTreePath();
-                    $insertedNode->sync();
+                        $canCreate = ( ( $parentNode->checkAccess( 'create', $class->attribute( 'id' ), $parentNodeObject->attribute( 'contentclass_id' ) ) == 1 ) ||
+                                        ( $parentNode->canAddLocation() && $node->canRead() ) );
+                        // A location of a user account (or group) in a group whose new accounts need approval: only for
+                        // someone who would not wait for that approval (doc/eng-us/bc/6.0/user-account-approval.md)
+                        if ( $canCreate && class_exists( 'expUserApproval' ) && !expUserApproval::placementAllowed( $object, $parentNode ) )
+                            $canCreate = false;
 
-                    $locationAdded = true;
-                    $auditInserted[] = (int)$insertedNode->attribute( 'node_id' );
+                        if ( $canCreate )
+                        {
+                            $insertedNode = $object->addLocation( $selectedNodeID, true );
+
+                            // Now set is as published and fix main_node_id
+                            $insertedNode->setAttribute( 'contentobject_is_published', 1 );
+                            $insertedNode->setAttribute( 'main_node_id', $node->attribute( 'main_node_id' ) );
+                            $insertedNode->setAttribute( 'contentobject_version', $node->attribute( 'contentobject_version' ) );
+                            // Make sure the url alias is set updated.
+                            $insertedNode->updateSubTreePath();
+                            $insertedNode->sync();
+
+                            $locationAdded = true;
+                            $auditInserted[] = (int)$insertedNode->attribute( 'node_id' );
+                        }
+                    }
+                }
+                if ( $locationAdded )
+                {
+
+                    //call appropriate method from search engine
+                    eZSearch::addNodeAssignment( $nodeID, $objectID, $selectedNodeIDArray );
+
+                    // clear user policy cache if this was a user object
+                    if ( in_array( $object->attribute( 'contentclass_id' ), $userClassIDArray ) )
+                    {
+                        eZUser::purgeUserCacheByUserId( $object->attribute( 'id' ) );
+                    }
+
+
                 }
             }
-        }
-        if ( $locationAdded )
-        {
-
-            //call appropriate method from search engine
-            eZSearch::addNodeAssignment( $nodeID, $objectID, $selectedNodeIDArray );
-
-            // clear user policy cache if this was a user object
-            if ( in_array( $object->attribute( 'contentclass_id' ), $userClassIDArray ) )
+            catch ( Throwable $e )
             {
-                eZUser::purgeUserCacheByUserId( $object->attribute( 'id' ) );
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
             }
-
-
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
 
@@ -1433,66 +1533,86 @@ class eZContentOperationCollection
 
         $db = eZDB::instance();
         $db->begin();
-
-        foreach ( $removeNodeIdList as $nodeId )
+        try
         {
-            $node     = eZContentObjectTreeNode::fetch($nodeId);
-            $objectId = $node->attribute( 'contentobject_id' );
-            foreach ( eZNodeAssignment::fetchForObject( $objectId,
-                                                        eZContentObject::fetch( $objectId )->attribute( 'current_version' ),
-                                                        0, false ) as $nodeAssignmentKey => $nodeAssignment )
+            try
             {
-                if ( $nodeAssignment['parent_node'] == $node->attribute( 'parent_node_id' ) )
+
+                foreach ( $removeNodeIdList as $nodeId )
                 {
-                    $nodeAssignmentIdList[$nodeAssignment['id']] = 1;
+                    $node     = eZContentObjectTreeNode::fetch($nodeId);
+                    $objectId = $node->attribute( 'contentobject_id' );
+                    foreach ( eZNodeAssignment::fetchForObject( $objectId,
+                                                                eZContentObject::fetch( $objectId )->attribute( 'current_version' ),
+                                                                0, false ) as $nodeAssignmentKey => $nodeAssignment )
+                    {
+                        if ( $nodeAssignment['parent_node'] == $node->attribute( 'parent_node_id' ) )
+                        {
+                            $nodeAssignmentIdList[$nodeAssignment['id']] = 1;
+                        }
+                    }
+
+                    if ( $nodeId == $node->attribute( 'main_node_id' ) )
+                    {
+                        $mainNodeChanged[$objectId] = 1;
+                        $auditOldMain[$objectId] = (int)$nodeId;
+                    }
+                    // Audit (doc/eng-us/bc/6.0/audit.md, content.node.remove): described before it goes, recorded after the commit
+                    // (4.x name location-remove; "main" says whether the removed location was the object's main one)
+                    if ( class_exists( 'expAuditHook' ) && expAuditHook::on( 'content.node.remove' ) )
+                    {
+                        $auditData = eZContentObjectTreeNode::auditRemovalData( $node, eZContentObject::fetch( $objectId ), 'content.node.remove', array() );
+                        $auditData['before']['main'] = ( $nodeId == $node->attribute( 'main_node_id' ) );
+                        $auditRemoved[] = $auditData;
+                    }
+                    $node->removeThis();
+
+                    if ( !isset( $objectIdList[$objectId] ) )
+                        $objectIdList[$objectId] = eZContentObject::fetch( $objectId );
                 }
-            }
 
-            if ( $nodeId == $node->attribute( 'main_node_id' ) )
-            {
-                $mainNodeChanged[$objectId] = 1;
-                $auditOldMain[$objectId] = (int)$nodeId;
-            }
-            // Audit (doc/eng-us/bc/6.0/audit.md, content.node.remove): described before it goes, recorded after the commit
-            // (4.x name location-remove; "main" says whether the removed location was the object's main one)
-            if ( class_exists( 'expAuditHook' ) && expAuditHook::on( 'content.node.remove' ) )
-            {
-                $auditData = eZContentObjectTreeNode::auditRemovalData( $node, eZContentObject::fetch( $objectId ), 'content.node.remove', array() );
-                $auditData['before']['main'] = ( $nodeId == $node->attribute( 'main_node_id' ) );
-                $auditRemoved[] = $auditData;
-            }
-            $node->removeThis();
+                eZNodeAssignment::purgeByID( array_keys( $nodeAssignmentIdList ) );
 
-            if ( !isset( $objectIdList[$objectId] ) )
-                $objectIdList[$objectId] = eZContentObject::fetch( $objectId );
+                $auditMainChanged = array();
+                foreach ( array_keys( $mainNodeChanged ) as $objectId )
+                {
+                    $allNodes = $objectIdList[$objectId]->assignedNodes();
+                    // Registering node that will be promoted as 'main'
+                    if ( isset( $allNodes[0] ) )
+                    {
+                        $mainNodeChanged[$objectId] = $allNodes[0];
+                        eZContentObjectTreeNode::updateMainNodeID( $allNodes[0]->attribute( 'node_id' ), $objectId, false, $allNodes[0]->attribute( 'parent_node_id' ) );
+                        // Audit (content.node.main, 4.x main-node-update): recorded after the commit
+                        $auditMainChanged[$objectId] = array( $auditOldMain[$objectId],
+                                                              (int)$allNodes[0]->attribute( 'node_id' ),
+                                                              (int)$allNodes[0]->attribute( 'parent_node_id' ) );
+                    }
+                }
+
+                // Give other search engines that the default one a chance to reindex
+                // when removing locations.
+                if ( !eZSearch::getEngine() instanceof eZSearchEngine )
+                {
+                    foreach ( array_keys( $objectIdList ) as $objectId )
+                        eZContentOperationCollection::registerSearchObject( $objectId );
+                }
+
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
         }
-
-        eZNodeAssignment::purgeByID( array_keys( $nodeAssignmentIdList ) );
-
-        $auditMainChanged = array();
-        foreach ( array_keys( $mainNodeChanged ) as $objectId )
+        catch ( Throwable $e )
         {
-            $allNodes = $objectIdList[$objectId]->assignedNodes();
-            // Registering node that will be promoted as 'main'
-            if ( isset( $allNodes[0] ) )
-            {
-                $mainNodeChanged[$objectId] = $allNodes[0];
-                eZContentObjectTreeNode::updateMainNodeID( $allNodes[0]->attribute( 'node_id' ), $objectId, false, $allNodes[0]->attribute( 'parent_node_id' ) );
-                // Audit (content.node.main, 4.x main-node-update): recorded after the commit
-                $auditMainChanged[$objectId] = array( $auditOldMain[$objectId],
-                                                      (int)$allNodes[0]->attribute( 'node_id' ),
-                                                      (int)$allNodes[0]->attribute( 'parent_node_id' ) );
-            }
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
-
-        // Give other search engines that the default one a chance to reindex
-        // when removing locations.
-        if ( !eZSearch::getEngine() instanceof eZSearchEngine )
-        {
-            foreach ( array_keys( $objectIdList ) as $objectId )
-                eZContentOperationCollection::registerSearchObject( $objectId );
-        }
-
         $db->commit();
 
         //call appropriate method from search engine
@@ -1683,74 +1803,94 @@ class eZContentOperationCollection
 
         $db = eZDB::instance();
         $db->begin();
-
-        $node->setAttribute( 'contentobject_id', $selectedObjectID );
-        $node->setAttribute( 'contentobject_version', $selectedObjectVersion );
-
-        $selectedNode->setAttribute( 'contentobject_id', $objectID );
-        $selectedNode->setAttribute( 'contentobject_version', $objectVersion );
-
-        // fix main node id
-        if ( $node->isMain() && !$selectedNode->isMain() )
+        try
         {
-            $node->setAttribute( 'main_node_id', $selectedNode->attribute( 'main_node_id' ) );
-            $selectedNode->setAttribute( 'main_node_id', $selectedNode->attribute( 'node_id' ) );
-        }
-        else if ( $selectedNode->isMain() && !$node->isMain() )
-        {
-            $selectedNode->setAttribute( 'main_node_id', $node->attribute( 'main_node_id' ) );
-            $node->setAttribute( 'main_node_id', $node->attribute( 'node_id' ) );
-        }
-
-        $node->store();
-        $selectedNode->store();
-
-        // clear user policy cache if this was a user object
-        if ( in_array( $object->attribute( 'contentclass_id' ), $userClassIDArray ) )
-        {
-            eZUser::purgeUserCacheByUserId( $object->attribute( 'id' ) );
-        }
-
-        if ( in_array( $selectedObject->attribute( 'contentclass_id' ), $userClassIDArray ) )
-        {
-            eZUser::purgeUserCacheByUserId( $selectedObject->attribute( 'id' ) );
-        }
-
-        // modify path string
-        $changedOriginalNode = eZContentObjectTreeNode::fetch( $nodeID );
-        $changedOriginalNode->updateSubTreePath();
-        $changedTargetNode = eZContentObjectTreeNode::fetch( $selectedNodeID );
-        $changedTargetNode->updateSubTreePath();
-
-        // modify section
-        if ( $changedOriginalNode->isMain() )
-        {
-            $changedOriginalObject = $changedOriginalNode->object();
-            $parentObject = $nodeParent->object();
-            if ( $changedOriginalObject->attribute( 'section_id' ) != $parentObject->attribute( 'section_id' ) )
+            try
             {
 
-                self::assignSectionUnaudited( $changedOriginalNode->attribute( 'main_node_id' ),
-                                                                $parentObject->attribute( 'section_id' ),
-                                                                $changedOriginalObject->attribute( 'section_id' ) );
+                $node->setAttribute( 'contentobject_id', $selectedObjectID );
+                $node->setAttribute( 'contentobject_version', $selectedObjectVersion );
+
+                $selectedNode->setAttribute( 'contentobject_id', $objectID );
+                $selectedNode->setAttribute( 'contentobject_version', $objectVersion );
+
+                // fix main node id
+                if ( $node->isMain() && !$selectedNode->isMain() )
+                {
+                    $node->setAttribute( 'main_node_id', $selectedNode->attribute( 'main_node_id' ) );
+                    $selectedNode->setAttribute( 'main_node_id', $selectedNode->attribute( 'node_id' ) );
+                }
+                else if ( $selectedNode->isMain() && !$node->isMain() )
+                {
+                    $selectedNode->setAttribute( 'main_node_id', $node->attribute( 'main_node_id' ) );
+                    $node->setAttribute( 'main_node_id', $node->attribute( 'node_id' ) );
+                }
+
+                $node->store();
+                $selectedNode->store();
+
+                // clear user policy cache if this was a user object
+                if ( in_array( $object->attribute( 'contentclass_id' ), $userClassIDArray ) )
+                {
+                    eZUser::purgeUserCacheByUserId( $object->attribute( 'id' ) );
+                }
+
+                if ( in_array( $selectedObject->attribute( 'contentclass_id' ), $userClassIDArray ) )
+                {
+                    eZUser::purgeUserCacheByUserId( $selectedObject->attribute( 'id' ) );
+                }
+
+                // modify path string
+                $changedOriginalNode = eZContentObjectTreeNode::fetch( $nodeID );
+                $changedOriginalNode->updateSubTreePath();
+                $changedTargetNode = eZContentObjectTreeNode::fetch( $selectedNodeID );
+                $changedTargetNode->updateSubTreePath();
+
+                // modify section
+                if ( $changedOriginalNode->isMain() )
+                {
+                    $changedOriginalObject = $changedOriginalNode->object();
+                    $parentObject = $nodeParent->object();
+                    if ( $changedOriginalObject->attribute( 'section_id' ) != $parentObject->attribute( 'section_id' ) )
+                    {
+
+                        self::assignSectionUnaudited( $changedOriginalNode->attribute( 'main_node_id' ),
+                                                                        $parentObject->attribute( 'section_id' ),
+                                                                        $changedOriginalObject->attribute( 'section_id' ) );
+                    }
+                }
+                if ( $changedTargetNode->isMain() )
+                {
+                    $changedTargetObject = $changedTargetNode->object();
+                    $selectedParentObject = $selectedNodeParent->object();
+                    if ( $changedTargetObject->attribute( 'section_id' ) != $selectedParentObject->attribute( 'section_id' ) )
+                    {
+
+                        self::assignSectionUnaudited( $changedTargetNode->attribute( 'main_node_id' ),
+                                                                        $selectedParentObject->attribute( 'section_id' ),
+                                                                        $changedTargetObject->attribute( 'section_id' ) );
+                    }
+                }
+
+                eZContentObject::fixReverseRelations( $objectID, 'swap' );
+                eZContentObject::fixReverseRelations( $selectedObjectID, 'swap' );
+
             }
-        }
-        if ( $changedTargetNode->isMain() )
-        {
-            $changedTargetObject = $changedTargetNode->object();
-            $selectedParentObject = $selectedNodeParent->object();
-            if ( $changedTargetObject->attribute( 'section_id' ) != $selectedParentObject->attribute( 'section_id' ) )
+            catch ( Throwable $e )
             {
-
-                self::assignSectionUnaudited( $changedTargetNode->attribute( 'main_node_id' ),
-                                                                $selectedParentObject->attribute( 'section_id' ),
-                                                                $changedTargetObject->attribute( 'section_id' ) );
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
             }
         }
-
-        eZContentObject::fixReverseRelations( $objectID, 'swap' );
-        eZContentObject::fixReverseRelations( $selectedObjectID, 'swap' );
-
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
 
         // clear cache for new placement.
@@ -1857,11 +1997,31 @@ class eZContentOperationCollection
                  } );
              $db = eZDB::instance();
              $db->begin();
-             $curNode->setAttribute( 'sort_field', $sortingField );
-             // false (descending, the default here) is stored as 0: an empty value
-             // in this column was stored as its default, 1 (ascending)
-             $curNode->setAttribute( 'sort_order', $sortingOrder ? eZContentObjectTreeNode::SORT_ORDER_ASC : eZContentObjectTreeNode::SORT_ORDER_DESC );
-             $curNode->store();
+             try
+             {
+                 try
+                 {
+                     $curNode->setAttribute( 'sort_field', $sortingField );
+                     // false (descending, the default here) is stored as 0: an empty value
+                     // in this column was stored as its default, 1 (ascending)
+                     $curNode->setAttribute( 'sort_order', $sortingOrder ? eZContentObjectTreeNode::SORT_ORDER_ASC : eZContentObjectTreeNode::SORT_ORDER_DESC );
+                     $curNode->store();
+                 }
+                 catch ( Throwable $e )
+                 {
+                     // nothing of a transaction that failed half way is committed by a later commit()
+                     if ( $db->transactionCounter() > 0 )
+                         $db->rollback();
+                     throw $e;
+                 }
+             }
+             catch ( Throwable $e )
+             {
+                 // nothing of a transaction that failed half way is committed by a later commit()
+                 if ( $db->transactionCounter() > 0 )
+                     $db->rollback();
+                 throw $e;
+             }
              $db->commit();
              $object = $curNode->object();
              eZContentCacheManager::clearContentCacheIfNeeded( $object->attribute( 'id' ) );
@@ -1898,25 +2058,45 @@ class eZContentOperationCollection
              $objectIDs = array();
              $db = eZDB::instance();
              $db->begin();
-             for ( $i = 0, $l = count( $priorityArray ); $i < $l; $i++ )
+             try
              {
-                 $priority = (int) $priorityArray[$i];
-                 $nodeID = (int) $priorityIDArray[$i];
-                 $node = eZContentObjectTreeNode::fetch( $nodeID );
-                 if ( !$node instanceof eZContentObjectTreeNode )
+                 try
                  {
-                     continue;
-                 }
+                     for ( $i = 0, $l = count( $priorityArray ); $i < $l; $i++ )
+                     {
+                         $priority = (int) $priorityArray[$i];
+                         $nodeID = (int) $priorityIDArray[$i];
+                         $node = eZContentObjectTreeNode::fetch( $nodeID );
+                         if ( !$node instanceof eZContentObjectTreeNode )
+                         {
+                             continue;
+                         }
 
-                 $objectIDs[] = $node->attribute( 'contentobject_id' );
-                 $db->query( "UPDATE
+                         $objectIDs[] = $node->attribute( 'contentobject_id' );
+                         $db->query( "UPDATE
                                   ezcontentobject_tree
                               SET
                                   priority={$priority}
                               WHERE
                                   node_id={$nodeID} AND parent_node_id={$parentNodeID}" );
+                     }
+                     $curNode->updateAndStoreModified();
+                 }
+                 catch ( Throwable $e )
+                 {
+                     // nothing of a transaction that failed half way is committed by a later commit()
+                     if ( $db->transactionCounter() > 0 )
+                         $db->rollback();
+                     throw $e;
+                 }
              }
-             $curNode->updateAndStoreModified();
+             catch ( Throwable $e )
+             {
+                 // nothing of a transaction that failed half way is committed by a later commit()
+                 if ( $db->transactionCounter() > 0 )
+                     $db->rollback();
+                 throw $e;
+             }
              $db->commit();
              if ( !eZSearch::getEngine() instanceof eZSearchEngine )
              {
@@ -2217,50 +2397,70 @@ class eZContentOperationCollection
 
         $db = eZDB::instance();
         $db->begin();
-
-        $rssExport = eZRSSExport::create( $currentUserID );
-        $rssExport->setAttribute( 'access_url', 'rss_feed_' . $nodeID );
-        $rssExport->setAttribute( 'node_id', $nodeID );
-        $rssExport->setAttribute( 'main_node_only', '1' );
-        $rssExport->setAttribute( 'number_of_objects', $config->variable( 'RSSSettings', 'NumberOfObjectsDefault' ) );
-        $rssExport->setAttribute( 'rss_version', $config->variable( 'RSSSettings', 'DefaultVersion' ) );
-        $rssExport->setAttribute( 'status', eZRSSExport::STATUS_VALID );
-        $rssExport->setAttribute( 'title', $object->name() );
-        $rssExport->store();
-
-        $rssExportID = $rssExport->attribute( 'id' );
-
-        foreach( explode( ';', $feedItemClasses[$currentClassIdentifier] ) as $classIdentifier )
+        try
         {
-            $iniSection = 'RSSSettings_' . $classIdentifier;
-            if ( $config->hasVariable( $iniSection, 'FeedObjectAttributeMap' ) )
+            try
             {
-                $feedObjectAttributeMap = $config->variable( $iniSection, 'FeedObjectAttributeMap' );
-                $subNodesMap = $config->hasVariable( $iniSection, 'Subnodes' ) ? $config->variable( $iniSection, 'Subnodes' ) : array();
 
-                $rssExportItem = eZRSSExportItem::create( $rssExportID );
-                $rssExportItem->setAttribute( 'class_id', eZContentObjectTreeNode::classIDByIdentifier( $classIdentifier ) );
-                $rssExportItem->setAttribute( 'title', $feedObjectAttributeMap['title'] );
-                if ( isset( $feedObjectAttributeMap['description'] ) )
-                    $rssExportItem->setAttribute( 'description', $feedObjectAttributeMap['description'] );
+                $rssExport = eZRSSExport::create( $currentUserID );
+                $rssExport->setAttribute( 'access_url', 'rss_feed_' . $nodeID );
+                $rssExport->setAttribute( 'node_id', $nodeID );
+                $rssExport->setAttribute( 'main_node_only', '1' );
+                $rssExport->setAttribute( 'number_of_objects', $config->variable( 'RSSSettings', 'NumberOfObjectsDefault' ) );
+                $rssExport->setAttribute( 'rss_version', $config->variable( 'RSSSettings', 'DefaultVersion' ) );
+                $rssExport->setAttribute( 'status', eZRSSExport::STATUS_VALID );
+                $rssExport->setAttribute( 'title', $object->name() );
+                $rssExport->store();
 
-                if ( isset( $feedObjectAttributeMap['category'] ) )
-                    $rssExportItem->setAttribute( 'category', $feedObjectAttributeMap['category'] );
+                $rssExportID = $rssExport->attribute( 'id' );
 
-                if ( isset( $feedObjectAttributeMap['enclosure'] ) )
-                    $rssExportItem->setAttribute( 'enclosure', $feedObjectAttributeMap['enclosure'] );
+                foreach( explode( ';', $feedItemClasses[$currentClassIdentifier] ) as $classIdentifier )
+                {
+                    $iniSection = 'RSSSettings_' . $classIdentifier;
+                    if ( $config->hasVariable( $iniSection, 'FeedObjectAttributeMap' ) )
+                    {
+                        $feedObjectAttributeMap = $config->variable( $iniSection, 'FeedObjectAttributeMap' );
+                        $subNodesMap = $config->hasVariable( $iniSection, 'Subnodes' ) ? $config->variable( $iniSection, 'Subnodes' ) : array();
 
-                $rssExportItem->setAttribute( 'source_node_id', $nodeID );
-                $rssExportItem->setAttribute( 'status', eZRSSExport::STATUS_VALID );
-                $rssExportItem->setAttribute( 'subnodes', isset( $subNodesMap[$currentClassIdentifier] ) && $subNodesMap[$currentClassIdentifier] === 'true' );
-                $rssExportItem->store();
+                        $rssExportItem = eZRSSExportItem::create( $rssExportID );
+                        $rssExportItem->setAttribute( 'class_id', eZContentObjectTreeNode::classIDByIdentifier( $classIdentifier ) );
+                        $rssExportItem->setAttribute( 'title', $feedObjectAttributeMap['title'] );
+                        if ( isset( $feedObjectAttributeMap['description'] ) )
+                            $rssExportItem->setAttribute( 'description', $feedObjectAttributeMap['description'] );
+
+                        if ( isset( $feedObjectAttributeMap['category'] ) )
+                            $rssExportItem->setAttribute( 'category', $feedObjectAttributeMap['category'] );
+
+                        if ( isset( $feedObjectAttributeMap['enclosure'] ) )
+                            $rssExportItem->setAttribute( 'enclosure', $feedObjectAttributeMap['enclosure'] );
+
+                        $rssExportItem->setAttribute( 'source_node_id', $nodeID );
+                        $rssExportItem->setAttribute( 'status', eZRSSExport::STATUS_VALID );
+                        $rssExportItem->setAttribute( 'subnodes', isset( $subNodesMap[$currentClassIdentifier] ) && $subNodesMap[$currentClassIdentifier] === 'true' );
+                        $rssExportItem->store();
+                    }
+                    else
+                    {
+                        eZDebug::writeError( "site.ini[$iniSection]Source[] setting is not defined.", __METHOD__ );
+                    }
+                }
+
             }
-            else
+            catch ( Throwable $e )
             {
-                eZDebug::writeError( "site.ini[$iniSection]Source[] setting is not defined.", __METHOD__ );
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
             }
         }
-
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
 
         eZContentCacheManager::clearContentCacheIfNeeded( $objectID );

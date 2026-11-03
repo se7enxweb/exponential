@@ -117,96 +117,106 @@ class Convertprice2multiprice extends \Exponential\Runnable\Command
 
         $db = \eZDB::instance();
         $db->begin();
-        foreach ( $classList as $class )
+        try
         {
-            if ( \eZShopFunctions::isSimplePriceClass( $class ) )
+            foreach ( $classList as $class )
             {
-                $classID = $class->attribute( 'id' );
-                $objectListCount = \eZContentObject::fetchSameClassListCount( $classID );
-                if ( $objectListCount == 0 )
+                if ( \eZShopFunctions::isSimplePriceClass( $class ) )
                 {
-                    $cli->output( "No objects found for '" . $class->attribute( 'name' ) . "' class" );
-                    continue;
-                }
-
-                $cli->output( "Processing objects of the '" . $class->attribute( 'name' ) . "' class" );
-
-                $defaultCurrency = currencyForLocale();
-
-                if ( !$defaultCurrency )
-                    $script->shutdown( 1 );
-
-                $defaultCurrencyCode = $defaultCurrency->attribute( 'code' );
-
-                $priceClassAttribute = \eZShopFunctions::priceAttribute( $class );
-                $priceClassAttributeID = $priceClassAttribute->attribute( 'id' );
-
-                // replace 'ezprice' class attribute with 'ezmultiprice'.
-                $priceClassAttribute->setAttribute( 'data_type_string', 'ezmultiprice' );
-                $priceClassAttribute->setAttribute( \eZMultiPriceType::DEFAULT_CURRENCY_CODE_FIELD, $defaultCurrencyCode );
-                $priceClassAttribute->store();
-
-                unset( $GLOBALS['eZContentClassAttributeCache'][$priceClassAttributeID] );
-
-                // update objects
-                $offset = 0;
-                $limit = 1000;
-
-                $cli->output( 'Converting', false );
-                while ( $offset < $objectListCount )
-                {
-                    $objectList = \eZContentObject::fetchSameClassList( $class->attribute( 'id' ), true, $offset, $limit );
-                    $offset += count( $objectList );
-
-                    foreach ( $objectList as $object )
+                    $classID = $class->attribute( 'id' );
+                    $objectListCount = \eZContentObject::fetchSameClassListCount( $classID );
+                    if ( $objectListCount == 0 )
                     {
-                        $contentObjectID = $object->attribute( 'id' );
-                        $objectVersions =& $object->versions();
-                        foreach ( $objectVersions as $objectVersion )
-                        {
-                            $version = $objectVersion->attribute( 'version' );
-                            $objectAttributeList = \eZContentObjectAttribute::fetchSameClassAttributeIDList( $priceClassAttributeID, true, $version, $contentObjectID );
-
-                            foreach ( $objectAttributeList as $objectAttribute )
-                            {
-                                $priceValue = $objectAttribute->attribute( 'data_float' );
-
-                                $multiprice = \eZMultiPriceData::create( $objectAttribute->attribute( 'id' ),
-                                                                        $version,
-                                                                        $defaultCurrencyCode,
-                                                                        $priceValue,
-                                                                        \eZMultiPriceData::VALUE_TYPE_CUSTOM );
-                                $multiprice->store();
-
-                                $objectAttribute->setAttribute( 'data_type_string', 'ezmultiprice' );
-                                $objectAttribute->setAttribute( 'data_float', 0 );
-                                $objectAttribute->setAttribute( 'sort_key_int', 0 );
-                                $objectAttribute->store();
-                            }
-                        }
-
-                        $cli->output( '.', false );
-                        ++$convertedObjectsCount;
+                        $cli->output( "No objects found for '" . $class->attribute( 'name' ) . "' class" );
+                        continue;
                     }
+
+                    $cli->output( "Processing objects of the '" . $class->attribute( 'name' ) . "' class" );
+
+                    $defaultCurrency = currencyForLocale();
+
+                    if ( !$defaultCurrency )
+                        $script->shutdown( 1 );
+
+                    $defaultCurrencyCode = $defaultCurrency->attribute( 'code' );
+
+                    $priceClassAttribute = \eZShopFunctions::priceAttribute( $class );
+                    $priceClassAttributeID = $priceClassAttribute->attribute( 'id' );
+
+                    // replace 'ezprice' class attribute with 'ezmultiprice'.
+                    $priceClassAttribute->setAttribute( 'data_type_string', 'ezmultiprice' );
+                    $priceClassAttribute->setAttribute( \eZMultiPriceType::DEFAULT_CURRENCY_CODE_FIELD, $defaultCurrencyCode );
+                    $priceClassAttribute->store();
+
+                    unset( $GLOBALS['eZContentClassAttributeCache'][$priceClassAttributeID] );
+
+                    // update objects
+                    $offset = 0;
+                    $limit = 1000;
+
+                    $cli->output( 'Converting', false );
+                    while ( $offset < $objectListCount )
+                    {
+                        $objectList = \eZContentObject::fetchSameClassList( $class->attribute( 'id' ), true, $offset, $limit );
+                        $offset += count( $objectList );
+
+                        foreach ( $objectList as $object )
+                        {
+                            $contentObjectID = $object->attribute( 'id' );
+                            $objectVersions =& $object->versions();
+                            foreach ( $objectVersions as $objectVersion )
+                            {
+                                $version = $objectVersion->attribute( 'version' );
+                                $objectAttributeList = \eZContentObjectAttribute::fetchSameClassAttributeIDList( $priceClassAttributeID, true, $version, $contentObjectID );
+
+                                foreach ( $objectAttributeList as $objectAttribute )
+                                {
+                                    $priceValue = $objectAttribute->attribute( 'data_float' );
+
+                                    $multiprice = \eZMultiPriceData::create( $objectAttribute->attribute( 'id' ),
+                                                                            $version,
+                                                                            $defaultCurrencyCode,
+                                                                            $priceValue,
+                                                                            \eZMultiPriceData::VALUE_TYPE_CUSTOM );
+                                    $multiprice->store();
+
+                                    $objectAttribute->setAttribute( 'data_type_string', 'ezmultiprice' );
+                                    $objectAttribute->setAttribute( 'data_float', 0 );
+                                    $objectAttribute->setAttribute( 'sort_key_int', 0 );
+                                    $objectAttribute->store();
+                                }
+                            }
+
+                            $cli->output( '.', false );
+                            ++$convertedObjectsCount;
+                        }
+                    }
+                    $cli->output( ' ' );
                 }
-                $cli->output( ' ' );
             }
-        }
 
 
-        // create/update autoprices.
-        if ( is_array( $currencyList ) )
-        {
-            $cli->output( "Updating autoprices." );
-
-            foreach ( $currencyList as $currencyCode => $currency )
+            // create/update autoprices.
+            if ( is_array( $currencyList ) )
             {
-                \eZMultiPriceData::createPriceListForCurrency( $currencyCode );
+                $cli->output( "Updating autoprices." );
+
+                foreach ( $currencyList as $currencyCode => $currency )
+                {
+                    \eZMultiPriceData::createPriceListForCurrency( $currencyCode );
+                }
+
+                \eZMultiPriceData::updateAutoprices();
             }
 
-            \eZMultiPriceData::updateAutoprices();
         }
-
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
 
         \eZContentCacheManager::clearAllContentCache();
