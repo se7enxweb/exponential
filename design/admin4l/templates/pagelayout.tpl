@@ -10,7 +10,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {* SectionID is cast to a number: every distinct raw value would write its own cache file *}
+    {* The search's section (search_section_id) is cast to a number: every distinct raw value would write its own cache file *}
     {* Do some uncacheable left + right menu stuff before cache-block's *}
     {* $hide_left_menu and $hide_right_menu as the admin design defines them: on content edit pages (edit, history,
        version view ...) the page's own template brings the left column (Object information) and the content tree
@@ -24,7 +24,7 @@
      $admin_left_size      = ezpreference( 'admin_left_menu_size' )
      $admin_theme          = ezpreference( 'admin_theme' )
      $left_size_hash       = 0
-     $search_hash          = array( cond( ezhttp_hasvariable( 'SectionID', 'get' ), ezhttp( 'SectionID', 'get' )|int ) )
+     $search_hash          = array( first_set( $search_section_id, -1 )|int )
      $user_hash = concat( $current_user.role_id_list|implode( ',' ), ',', $current_user.limited_assignment_value_list|implode( ',' ), ',', $current_user.is_logged_in|choose( 'anonymous', 'user' ) )
      $uri_cache_key        = $module_result.uri
      $main_wrapped         = false()

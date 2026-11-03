@@ -787,11 +787,11 @@ f01fb23c42516d4cc58bb4d48ebf55e8  design/admin/templates/page_copyright.tpl
 e564dcd60747102cd28699dc161aa579  design/admin/templates/page_header.tpl
 658df4da89d3c912a6bc9a3335604445  design/admin/templates/page_leftmenu.tpl
 8042a9d3f3a0e261d4b3e5659671874c  design/admin/templates/page_login_copyright.tpl
-9b8610086cfe325150b320990b1ed40c  design/admin/templates/page_search.tpl
+a8fee46c65726ed155334516e31b8aec  design/admin/templates/page_search.tpl
 3ceb59d3584d417fdb51fe11e73f2729  design/admin/templates/page_topmenu.tpl
 7595633233e131b1b54c3d3e493c4568  design/admin/templates/page_topmenuitem.tpl
 def1e69baea2cb9d93a8d1af2bf5f692  design/admin/templates/page_toppath.tpl
-eb076059052245f28007ed6765446430  design/admin/templates/pagelayout.tpl
+35a10027417379593be9b800b1d1a036  design/admin/templates/pagelayout.tpl
 2891f454853f3b2f2cac2a94173e257a  design/admin/templates/parts/audit/menu.tpl
 806405f8a2d30391496982a5c36334cb  design/admin/templates/parts/content/menu.tpl
 440d25498d1044ac8599fc479c458323  design/admin/templates/parts/exp_demo_mode_banner.tpl
@@ -1105,7 +1105,7 @@ cb128a4645e891cd796919aad3ed36d1  design/admin3/templates/page_header.tpl
 a2501a7a5f982715d274939ff4ad0937  design/admin3/templates/page_search.tpl
 e197b66c63a2bcf4e5d9777cd91f6300  design/admin3/templates/page_topmenu.tpl
 cf8663798cf45b3045efbc98b8d831c5  design/admin3/templates/page_topmenuitem.tpl
-f71b23340155f6953a9b8b8f8269ebe9  design/admin3/templates/pagelayout.tpl
+8f94cf372aa50dc718528f8284e84b0c  design/admin3/templates/pagelayout.tpl
 e32e963f4d25c52a7f8d3eb520c0b227  design/admin3/templates/parts/user/menu.tpl
 03bf0a50004b366a1cbe7f46bb57d6ce  design/admin3/templates/window_controls.tpl
 a41265a8c8cf4698837a304aae23bb6a  design/admin4/fonts/IcoMoon.eot
@@ -1629,7 +1629,7 @@ a2501a7a5f982715d274939ff4ad0937  design/admin4/templates/page_search.tpl
 3d4afea787dd6fc64ddbc5f6d7e973d6  design/admin4/templates/page_topmenu.tpl
 262c20c7eaf7f90d393c1872af532d33  design/admin4/templates/page_topmenuitem.tpl
 a502e42cfc314d22305306bf64fc6c58  design/admin4/templates/page_toppath.tpl
-19bdc734dab9a5e86837b11048c0394d  design/admin4/templates/pagelayout.tpl
+505ecc75c8612c64fbad5afd08ad7461  design/admin4/templates/pagelayout.tpl
 435db8e2b723396436597f44d430a983  design/admin4/templates/parts/a4_environment_badge.tpl
 b4673e247c3d0aade999bd6f38e6e06d  design/admin4/templates/parts/a4_header_help.tpl
 32a2ced2131b7d1a0aed712e1147485a  design/admin4/templates/parts/a4_header_item.tpl
@@ -1901,7 +1901,7 @@ ac760fb7abe0c74c082db3e09d724006  design/admin4l/templates/explayouts/block/admi
 00dc6fc9a64cbb17ffcdd7be6133b9a8  design/admin4l/templates/explayouts/block/admin_toolbar_developer.tpl
 435fa478e336ab853226197df0b70fc2  design/admin4l/templates/explayouts/block/admin_toolbar_right.tpl
 006a94cb403062f61b9ed5592ea9f6ae  design/admin4l/templates/explayouts/block/admin_ui_switch.tpl
-73643cf2e5880f13d894a79f5f874f0c  design/admin4l/templates/pagelayout.tpl
+81b7e7c42c10ecd461daeaf7eeb50508  design/admin4l/templates/pagelayout.tpl
 e07ee98bdbd9a6b7b1224004fff07513  design/base/images/bin.gif
 86fff651cfbbcf360ef78737c6523d64  design/base/images/button.gif
 7ae68b7e4d3ceed5ac652b11f20face6  design/base/images/quote-down.gif
@@ -3052,7 +3052,7 @@ f061d1ccc56b10ebe5653c5e011329e1  design/standard/templates/page_mainarea.tpl
 cf0962351ff74ebfe70fbd7feeedd1b6  design/standard/templates/pagelayout.tpl
 3a6b816ea7602744a8e6a69a9a2147af  design/standard/templates/pagelayout/hooks/body_end.tpl
 61fb91bd0de24052c8877f0e8732b825  design/standard/templates/parts/exp_content_direction.tpl
-455a81fbf1c5db61d0037e9e6866230b  design/standard/templates/parts/header_search.tpl
+3c4eb8dba083672925e630657e6dfc13  design/standard/templates/parts/header_search.tpl
 656e972face87ddcb802d36cc0c6da54  design/standard/templates/parts/search_suggest.tpl
 d0ba090df7ef9e13793d7802efb17c85  design/standard/templates/parts/sortheader.tpl
 7c79e04f55cd77d4e6c7caf11a8ce457  design/standard/templates/pdf/edit.tpl
@@ -3514,7 +3514,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-6e0f78d07e4f90f325cdaf0fc5012844  doc/changelogs/6.0/6.0.15.md
+47f1ad980bd00524c7d41c21865d80d3  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -25735,7 +25735,7 @@ c5250f152637793a9dec11c8c58b9621  kernel/private/classes/views/content/queued.ph
 141749c8150097182c5434cb25da9405  kernel/private/classes/views/content/removeobject.php
 315ab5874d17fe38beb5923ac2aabe80  kernel/private/classes/views/content/restore.php
 4c76096eb254f944fb870043b35f6c05  kernel/private/classes/views/content/reverserelatedlist.php
-f2436f9a0c57600fb384ac25f99cfda3  kernel/private/classes/views/content/search.php
+0047c8b5361299cbd5f0a339f3fdb80f  kernel/private/classes/views/content/search.php
 d7eb50f9fc448059c7a761655e8f0e2b  kernel/private/classes/views/content/sharedpreview.php
 8a9eb394e340040723f45a0b05f73fcd  kernel/private/classes/views/content/subitemsexport.php
 28f29a90d8706da4651c88d4a10dea0c  kernel/private/classes/views/content/suggest.php
@@ -28169,7 +28169,7 @@ cf640022325724fc8a061137bbc5045e  tests/tests/bin/CopyrightNoticeTest.php
 ed0528c8354aa4f54271ca7e27161186  tests/tests/bin/githooks/CheckCommitRangeTest.php
 735d550178cf4be356e271b8fb236b6f  tests/tests/bin/phpcs/NoTypeDeclarationsSniffTest.php
 4e3eeb18c2ea423afb62388e5e3dcafc  tests/tests/bin/phpcs/fixtures/typedeclarations.inc
-c1e2705c6167b2548af38e143d2973ff  tests/tests/design/Admin4lReviewTest.php
+eee82979055f723bffdb019024ca907d  tests/tests/design/Admin4lReviewTest.php
 7540cc7d5347598b6d8a2617bfc6e3d6  tests/tests/design/AdminBaseStylesheetsTest.php
 3fc25e943b9b1a0de995c4331b00f103  tests/tests/design/AdminBookmarkPageButtonFlowTest.php
 2aaffc4ae8a8c94b7c87b23d7a501174  tests/tests/design/AdminBrowseCurrentNodeTest.php
@@ -28248,7 +28248,7 @@ a64cfa46b8f48e5a5fa9b77178cccc6f  tests/tests/design/AdminRetiredClassesTest.php
 5ba0d36087b71d9a6936b3405a8fb91c  tests/tests/design/AdminScriptsBehaviourTest.php
 907ab53e2ab09acaa0bed9cc35090800  tests/tests/design/AdminScriptsTest.php
 546a05d5f5e89956035033048b8aeee1  tests/tests/design/AdminSearchSuggestTest.php
-6e5545197a40cf84fae5f703876782dc  tests/tests/design/AdminSearchTest.php
+c7efb57d2cd3262114888210fa5ff3e4  tests/tests/design/AdminSearchTest.php
 6fb26c4c02b0cc7d20306448d08db456  tests/tests/design/AdminSectionScopeTest.php
 8ece8ddb00b8dc5b62126ebd234606ea  tests/tests/design/AdminSelfContainedTest.php
 8a3b808d1ee42e2d45746587cb9cdd28  tests/tests/design/AdminSetupOverviewTest.php
@@ -28256,7 +28256,7 @@ c14605b059143dd7cdcd79fe6d02daa0  tests/tests/design/AdminSetupTabsLeftMenuTest.
 1bbd917d4b1d5f827bd2928bccacba89  tests/tests/design/AdminSetupWizardTemplatesTest.php
 94a67d0efe9a74e17b3bd6d35233b34d  tests/tests/design/AdminSidebarDrawerTest.php
 6915ce6688eed31f2837d7020708d9e3  tests/tests/design/AdminSiteAccessMenuTest.php
-863edd4195b5d84af835c4faf19c20fd  tests/tests/design/AdminStoredValueEscapingTest.php
+29247c85fa91233b50927dfbb68516ec  tests/tests/design/AdminStoredValueEscapingTest.php
 6e1c8f216a7df677eef9652d06f75164  tests/tests/design/AdminStylingRulesTest.php
 aa823534029cf23f909dc347dd7c14e5  tests/tests/design/AdminSubitemsPriorityDragTest.php
 7fef53454e1ae913271196317e37437d  tests/tests/design/AdminSubitemsTranslationsTest.php
@@ -29494,7 +29494,7 @@ e362f9c65d9451ee027b70c915603b9a  tests/tests/kernel/logviewer/expLogWebServerFo
 215db8732827b09123adc1b6e5763461  tests/tests/kernel/logviewer/expLogWrapPreferenceTest.php
 a18f7e1fdfd3a9d03db0a2d4b0af50b9  tests/tests/kernel/private/autoload/eZAutoloadGeneratorTest.php
 4ef121ffb52a7a301b96b7fd6933a172  tests/tests/kernel/private/classes/ContentSearchPathPrefixSubTreeTest.php
-ecf7a1a9fb011c2c2feffeb8d3d7887e  tests/tests/kernel/private/classes/ContentSearchRequestTest.php
+1310f58acf319db34c59add68c74ba74  tests/tests/kernel/private/classes/ContentSearchRequestTest.php
 4c3bf5bdceec1831a075d6e577e5889c  tests/tests/kernel/private/classes/WebDAVPathsTest.php
 9deb998ae6e91d48a16bd364592d20df  tests/tests/kernel/private/classes/commands/expApplyFlagCommandsTest.php
 45cf7cebf09fdc8b6fac192cc77d7802  tests/tests/kernel/private/classes/commands/expApplyFlagCronCommandsTest.php

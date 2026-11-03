@@ -167,7 +167,7 @@ class AdminStoredValueEscapingTest extends PHPUnit\Framework\TestCase
         }
     }
 
-    /** Every distinct SectionID of the request wrote its own copy of the page layout cache */
+    /** Every distinct section of the search wrote its own copy of the page layout cache */
     public function testThePageLayoutKeysOnTheSectionIDAsANumber()
     {
         foreach ( array( 'admin', 'admin4' ) as $design )
@@ -175,8 +175,8 @@ class AdminStoredValueEscapingTest extends PHPUnit\Framework\TestCase
             $file = dirname( __DIR__, 3 ) . "/design/$design/templates/pagelayout.tpl";
             $this->assertFileExists( $file );
             $tpl = (string)file_get_contents( $file );
-            $this->assertStringContainsString( "ezhttp( 'SectionID', 'get' )|int", $tpl, $file );
-            $this->assertDoesNotMatchRegularExpression( "/ezhttp\\( 'SectionID', 'get' \\) \\)/", $tpl, $file );
+            $this->assertStringContainsString( 'first_set( $search_section_id, -1 )|int', $tpl, $file );
+            $this->assertStringNotContainsString( "'SectionID', 'get'", $tpl, $file );
         }
     }
 }

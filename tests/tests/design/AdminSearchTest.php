@@ -152,6 +152,34 @@ class AdminSearchTest extends PHPUnit\Framework\TestCase
         $this->assertMatchesRegularExpression( "#name=\"BrowsePageLimit\" type=\"hidden\" value=\"\{min\( min\( ezpreference\( 'admin_list_limit' \), 3 \)\|choose\( 10, 10, 25, 50 \), ezini\( 'SearchSettings', 'MaximumSearchLimit' \) \)\}\"#", $search );
     }
 
+    /** The header search preselects the section of the search's view parameter (section)/<id>, never a query string */
+    public function testTheHeaderSearchTakesTheSectionFromTheViewParameter()
+    {
+        $files = array( 'design/standard/templates/parts/header_search.tpl', 'design/admin/templates/page_search.tpl' );
+        foreach ( array( 'admin', 'admin3', 'admin4', 'admin4l' ) as $design )
+            $files[] = "design/$design/templates/pagelayout.tpl";
+        foreach ( $files as $file )
+        {
+            $tpl = self::read( $file );
+            $this->assertDoesNotMatchRegularExpression( "/ezhttp(_hasvariable)?\\([^)]*'get'/", $tpl, "$file reads no query string" );
+            $this->assertStringContainsString( 'first_set( $search_section_id, -1 )|int', $tpl, $file );
+        }
+
+        // /content/search/(text)/x/(section)/1 preselects section 1; none, several or an unknown one preselect nothing
+        $view = self::read( 'kernel/private/classes/views/content/search.php' );
+        $this->assertStringContainsString( "\$filteredPage && \$searchSectionID == -1 ? self::viewSectionID( \$scope['Params'] ) : \$searchSectionID", $view );
+        require_once self::root() . '/kernel/classes/expviewparameters.php';
+        require_once self::root() . '/kernel/private/classes/views/content/search.php';
+        $search = '\Exponential\View\Kernel\Content\Search';
+        $exists = function ( $id ) { return $id < 10; };
+        $params = function ( array $user ) { return array( 'UserParameters' => $user ); };
+        $this->assertSame( 1, $search::viewSectionID( $params( array( 'text' => 'x', 'section' => '1' ) ), $exists ) );
+        $this->assertSame( -1, $search::viewSectionID( $params( array( 'text' => 'x' ) ), $exists ) );
+        $this->assertSame( -1, $search::viewSectionID( $params( array( 'section' => '1,2' ) ), $exists ) );
+        $this->assertSame( -1, $search::viewSectionID( $params( array( 'section' => '42' ) ), $exists ) );
+        $this->assertSame( -1, $search::viewSectionID( $params( array( 'section' => 'abc' ) ), $exists ) );
+    }
+
     /** AS-07 */
     public function testListFiltersSayTheySearchOnePage()
     {

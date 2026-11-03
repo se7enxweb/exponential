@@ -184,7 +184,7 @@ class ContentSearchRequestTest extends PHPUnit\Framework\TestCase
         {
             $code = (string)file_get_contents( "kernel/private/classes/views/content/$view.php" );
             $this->assertMatchesRegularExpression( '#\$\w+ = \\\\eZSection::fetch\( \$searchSectionID \);\s+if \( !\$\w+ instanceof \\\\eZSection \)\s+\$searchSectionID = -1;#', $code, $view );
-            $this->assertSame( 1, substr_count( $code, '\eZSection::fetch(' ), "$view fetches the section once, before the search" );
+            $this->assertSame( 1, substr_count( $code, '\eZSection::fetch( $searchSectionID )' ), "$view fetches the searched section once, before the search" );
             $this->assertStringContainsString( '$Module->setTitle( "Search for: " . htmlspecialchars( $searchText, ENT_QUOTES, \'UTF-8\' ) );', $code, $view );
             $this->assertMatchesRegularExpression( '#\$Offset = is_numeric\( \$Offset \) \? max\( 0, \(int\)\$Offset \) : 0;#', $code, $view );
         }

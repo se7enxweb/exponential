@@ -41,11 +41,11 @@ class Admin4lReviewTest extends PHPUnit\Framework\TestCase
     }
 
     /** AL-R1 */
-    public function testTheGetSectionIdInTheCacheKeysIsANumber()
+    public function testTheSearchSectionIdInTheCacheKeysIsANumber()
     {
         $page = self::read( 'design/admin4l/templates/pagelayout.tpl' );
-        $this->assertStringContainsString( "ezhttp( 'SectionID', 'get' )|int", $page );
-        $this->assertDoesNotMatchRegularExpression( "/ezhttp\\( 'SectionID', 'get' \\)\\s*\\)/", $page, 'no raw value left' );
+        $this->assertStringContainsString( '$search_hash          = array( first_set( $search_section_id, -1 )|int )', $page );
+        $this->assertStringNotContainsString( "'SectionID', 'get'", $page, 'never the query string' );
     }
 
     /** AL-R2 */
