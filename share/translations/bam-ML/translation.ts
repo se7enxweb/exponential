@@ -69367,6 +69367,22 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Modɛli si ma jira (yecogo min kalanna yecogo kasi la, o tɛ foyi jira).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Jɔyɔrɔ diw</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Jɔyɔrɔw ni sariyaw</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>a tɛ kelen ye ni bisigilikɛla tɔgɔbaliw ta ye</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>a ye kelen ye ni bisigilikɛla tɔgɔbaliw ta ye</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

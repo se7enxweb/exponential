@@ -69375,6 +69375,22 @@ Panjenengan kudu ngowahi kelas simpul kasebut nganggo fungsi tukar.</translation
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Ora ana cithakan sing dirender (tampilan sing diwaca saka cache tampilan ora ngrender cithakan apa wae).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Panetepan peran</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Peran lan kawicaksanan</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>béda karo pengunjung anonim</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>padha karo pengunjung anonim</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -69365,6 +69365,22 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Template lama soo bandhigin (muuqaal laga akhriyay cache-ka muuqaallada midna ma soo bandhigo).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Meel dhigista doorarka</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Doorarka iyo siyaasadaha</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>way ka duwan tahay booqdayaasha aan la aqoon</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>la mid ah booqdayaasha aan la aqoon</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

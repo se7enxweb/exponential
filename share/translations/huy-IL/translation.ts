@@ -69376,6 +69376,22 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>לא אתעביד טופסא (חזוא דאתקרי מן סימתא דחזוא לא עביד חד).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>פוקדא דדורא</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>דורא ופוקדנא</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>שונה מן אורחים בלא שם</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>כמו אורחים בלא שם</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

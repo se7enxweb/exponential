@@ -69365,6 +69365,22 @@ Kuzodingeka nishintshe isigaba sendawo yomsuka ngokusebenzisa umsebenzi wokushin
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Asikho isifanekiso esinikeziwe (ukubuka okufundwe kunqolobane yokubuka akunikezi nesisodwa).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Ukunikezwa kwezindima</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Izindima nezinqubomgomo</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>kwehlukile kwezivakashi ezingaziwa</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>kuyafana nezivakashi ezingaziwa</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

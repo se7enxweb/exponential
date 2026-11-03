@@ -69306,6 +69306,22 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Nem jelent meg sablon (a nézet-gyorsítótárból beolvasott nézet egyet sem jelenít meg).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Szerepkör-hozzárendelések</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Szerepkörök és házirendek</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>eltér a névtelen látogatókétól</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>ugyanaz, mint a névtelen látogatóknál</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

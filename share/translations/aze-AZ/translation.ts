@@ -69367,6 +69367,22 @@ Düyünün sinfini dəyişdirmə funksiyasından istifadə edərək dəyişməli
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Heç bir şablon emal olunmadı (görünüş keşindən oxunan görünüş heç bir şablon emal etmir).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Rol təyinatları</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Rollar və siyasətlər</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>anonim ziyarətçilərdən fərqlidir</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>anonim ziyarətçilərdəki kimi</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

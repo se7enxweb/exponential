@@ -69122,6 +69122,22 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Nie wyrenderowano żadnego szablonu (widok odczytany z pamięci podręcznej widoków nie renderuje żadnego).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Przypisania ról</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Role i zasady</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>inny niż u anonimowych odwiedzających</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>taki sam jak u anonimowych odwiedzających</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

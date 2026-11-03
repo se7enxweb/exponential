@@ -69306,6 +69306,22 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Yhtään mallia ei hahmonnettu (näkymävälimuistista luettu näkymä ei hahmonna yhtään).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Roolien määritykset</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Roolit ja käytännöt</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>eri kuin anonyymeillä vierailijoilla</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>sama kuin anonyymeillä vierailijoilla</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

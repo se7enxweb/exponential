@@ -69192,6 +69192,22 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Nebyla vykreslena žádná šablona (pohled načtený z mezipaměti pohledů žádnou nevykresluje).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Přiřazení rolí</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Role a zásady</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>liší se od anonymních návštěvníků</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>stejné jako u anonymních návštěvníků</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

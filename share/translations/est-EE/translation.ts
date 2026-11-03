@@ -69306,6 +69306,22 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Ühtegi malli ei renderdatud (vaatevahemälust loetud vaade ei renderda ühtegi).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Rollide määramised</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Rollid ja poliitikad</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>erineb anonüümsete külastajate omast</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>sama mis anonüümsetel külastajatel</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -69317,6 +69317,22 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Nessun template è stato renderizzato (una vista letta dalla cache delle viste non ne renderizza nessuno).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Assegnazioni di ruolo</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Ruoli e politiche di accesso</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>diverso da quello dei visitatori anonimi</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>uguale a quello dei visitatori anonimi</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

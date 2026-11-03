@@ -69367,6 +69367,22 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>N'eus bet sevenet patrom ebet (ur gwel lennet eus krubuilh ar gwelioù na seven hini ebet).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Lakadurioù roll</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Rolloù ha reolennoù</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>disheñvel diouzh ar weladennerien dizanv</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>heñvel ouzh ar weladennerien dizanv</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

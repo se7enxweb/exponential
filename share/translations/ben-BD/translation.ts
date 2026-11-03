@@ -69365,6 +69365,22 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>কোনো টেমপ্লেট রেন্ডার করা হয়নি (ভিউ ক্যাশে থেকে পড়া একটি ভিউ কোনো টেমপ্লেট রেন্ডার করে না)।</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>ভূমিকা নির্ধারণ</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>ভূমিকা ও নীতিমালা</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>বেনামী দর্শকদের থেকে আলাদা</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>বেনামী দর্শকদের মতোই</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

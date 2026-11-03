@@ -69367,6 +69367,22 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Amul benn tampale bu ñu wone (gis-gis bu ñu jàng ci kaasu gis-gis yi du wone benn).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Jox wàll yi</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Wàll yi ak politig yi</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>wute na ak gan yi ñu xamul seen tur</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>benn la ak gan yi ñu xamul seen tur</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

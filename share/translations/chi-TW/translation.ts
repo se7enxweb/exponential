@@ -69365,6 +69365,22 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>未轉譯任何範本（從檢視快取讀取的檢視不會轉譯範本）。</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>角色指派</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>角色和原則</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>與匿名訪客不同</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>與匿名訪客相同</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

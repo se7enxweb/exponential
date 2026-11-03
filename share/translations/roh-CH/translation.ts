@@ -69367,6 +69367,22 @@ Vus stuais midar la classa dal nod cun la funcziun da barat.</translation>
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Nagin model n'è vegnì reproducì (ina vista legida da la memoria intermediara da vistas na reproducescha nagin).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Attribuziuns da rolla</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Rollas e directivas</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>auter che tar visitaders anonims</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>sco tar visitaders anonims</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

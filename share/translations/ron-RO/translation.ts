@@ -69306,6 +69306,22 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Nu a fost randat niciun șablon (o vizualizare citită din memoria cache a vizualizărilor nu randează niciunul).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Atribuiri de rol</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Roluri și politici</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>diferit de cel al vizitatorilor anonimi</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>la fel ca pentru vizitatorii anonimi</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

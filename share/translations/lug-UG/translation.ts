@@ -69367,6 +69367,22 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Tewali tempuleeti yakoleddwa (endabika esomeddwa okuva mu kaasi y'endabika tekola n'emu).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Okuteekebwa kw'obuvunaanyizibwa</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Obuvunaanyizibwa n'enkola</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>kyawukana ku ky'abagenyi abatamanyiddwa mannya</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>kye kimu n'eky'abagenyi abatamanyiddwa mannya</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

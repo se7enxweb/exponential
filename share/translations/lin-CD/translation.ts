@@ -69367,6 +69367,22 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Modèle moko te esalemi (vue oyo etangami na cache ya ba-vue esalaka modèle moko te).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Bopesi ya bamokumba</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Bokumba mpe mibeko</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>ekeseni na oyo ya bapaya bazangi nkombo</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>ndenge moko na oyo ya bapaya bazangi nkombo</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

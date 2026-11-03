@@ -69367,6 +69367,22 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>ʻAʻohe anakuhi i hōʻike ʻia (ʻaʻole hōʻike kekahi ʻike i heluhelu ʻia mai ke ahu ʻike i kekahi).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Nā hāʻawi kuleana</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Nā kuleana a me nā kulekele</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>ʻokoʻa mai nā malihini inoa ʻole</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>like me nā malihini inoa ʻole</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

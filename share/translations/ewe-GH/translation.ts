@@ -69367,6 +69367,22 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Womewɔ kpɔɖeŋu aɖeke o (nukpɔkpɔ si woxlẽ tso nukpɔkpɔ ƒe cache me mewɔa aɖeke o).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Dɔdeasi ƒe nanawo</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Dɔdeasiwo kple sededewo</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>mesɔ kple amedzro siwo ŋkɔ menya o tɔ o</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>esɔ kple amedzro siwo ŋkɔ menya o tɔ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

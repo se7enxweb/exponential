@@ -69367,6 +69367,22 @@ Anda perlu mengubah kelas simpul tersebut menggunakan fungsi tukar.</translation
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Tidak ada templat yang dirender (tampilan yang dibaca dari cache tampilan tidak merender templat apa pun).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Penetapan peran</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Peran dan kebijakan</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>berbeda dari pengunjung anonim</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>sama seperti pengunjung anonim</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

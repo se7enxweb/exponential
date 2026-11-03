@@ -67859,6 +67859,22 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>mIw 'echlet chenmoHlu'be' (Dut De' polwI'vo' laDlu'bogh Dut pagh chenmoH).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>patlh nobghachmey</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>patlhmey chaw' chutmey je</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>pong Huv'eghbe'bogh SuchwI'pu' rap be'</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>pong Huv'eghbe'bogh SuchwI'pu' rap</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

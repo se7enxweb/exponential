@@ -69367,6 +69367,22 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>টেম্প্লেট অমত্তা রেন্দর তৌদ্রে (ভিউ কেশদগী পাখিবা ভিউ অমনা অমত্তা রেন্দর তৌদে)।</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>ভূমিকা অসাইনমেন্টশিং</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>ভূমিকা অদুগা পলিসিশিং</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>মমিং লৈতবা লাকপশিংদগী তোঙানবা</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>মমিং লৈতবা লাকপশিংগা মান্নবা</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

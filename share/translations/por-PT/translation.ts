@@ -69306,6 +69306,22 @@ Será necessário alterar a classe do nó utilizando a funcionalidade de troca.<
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Nenhum modelo foi renderizado (uma vista lida da cache de vistas não renderiza nenhum).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Atribuições de funções</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Funções e políticas</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>diferente do dos visitantes anónimos</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>igual ao dos visitantes anónimos</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

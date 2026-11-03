@@ -69306,6 +69306,22 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Ни один шаблон не отрисован (представление, прочитанное из кэша представлений, не отрисовывает шаблонов).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Назначения ролей</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Роли и правила доступа</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>отличается от анонимных посетителей</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>как у анонимных посетителей</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

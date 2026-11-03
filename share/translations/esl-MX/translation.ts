@@ -71601,6 +71601,22 @@ Tendrás que cambiar la clase del nudo con la función de intercambio.</translat
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>No se renderizó ninguna plantilla (una vista leída de la caché de vistas no renderiza ninguna).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Asignaciones de rol</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Roles y políticas</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>distinto al de los visitantes anónimos</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>igual que para los visitantes anónimos</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -69367,6 +69367,22 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>කිසිදු අච්චුවක් විදැහුම් කර නැත (දසුන් හැඹිලියෙන් කියවූ දසුනක් කිසිවක් විදැහුම් නොකරයි).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>භූමිකා පැවරුම්</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>භූමිකා සහ ප්‍රතිපත්ති</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>නිර්නාමික අමුත්තන්ට වඩා වෙනස්</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>නිර්නාමික අමුත්තන්ට සමානයි</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

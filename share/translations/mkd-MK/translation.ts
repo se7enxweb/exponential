@@ -69367,6 +69367,22 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Не е рендериран ниту еден шаблон (приказ прочитан од кешот за прикази не рендерира ниту еден).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Доделени улоги</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Улоги и политики</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>различно од анонимните посетители</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>исто како кај анонимните посетители</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

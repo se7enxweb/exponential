@@ -69367,6 +69367,22 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>کانٛہہ ٹیمپلیٹ آو نہٕ رینڈر کرنہٕ (ویو کیشہٕ پٮ۪ٹھٕ پرنہٕ آمُت ویو چھُ نہٕ کانٛہہ رینڈر کران)۔</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>کردار تَفویٖض</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>کردار تہٕ پالیسی</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>گُمنام آنہٕ وٲلین نِشہٕ بیٛون</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>گُمنام آنہٕ وٲلین ہِیوٗے</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

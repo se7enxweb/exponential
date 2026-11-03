@@ -69367,6 +69367,22 @@ Yessefk ad tbeddleḍ asmil n tkerrist s useqdec n tawuri n ubeddel.</translatio
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Ulac tamudemt i yettwasekren (askan yettwaɣren seg tazarkatut n yiskanen ur yesseker ula yiwet).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Isumar n tlemmas</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Timlilin d tsertiyin</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>yemgarad ɣef yinebgawen udrigen</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>am yinebgawen udrigen</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

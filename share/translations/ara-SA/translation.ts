@@ -67856,6 +67856,22 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>لم تتم معالجة أي قالب (العرض المقروء من ذاكرة التخزين المؤقت للعروض لا يعالج أي قالب).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>تعيينات الأدوار</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>الأدوار والسياسات</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>يختلف عن الزوار المجهولين</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>مثل الزوار المجهولين</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

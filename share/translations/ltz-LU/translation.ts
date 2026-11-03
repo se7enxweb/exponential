@@ -69367,6 +69367,22 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Keng Schabloun gouf gerendert (eng Vue, déi aus dem Vue-Cache gelies gëtt, rendert keng).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Rollenzouweisungen</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Rollen a Richtlinnen</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>anescht wéi bei anonyme Visiteuren</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>wéi bei anonyme Visiteuren</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -69367,6 +69367,22 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Eingin formur varð gjørdur (ein vísing, lisin úr vísingarskjótgoymsluni, ger ongan).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Leiklutartilskipanir</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Leiklutir og politikkar</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>øðrvísi enn hjá dulnevndum vitjandi</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>sum hjá dulnevndum vitjandi</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

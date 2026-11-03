@@ -69375,6 +69375,22 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>ܠܐ ܐܬܥܒܕ ܛܘܦܣܐ ܡܕܡ (ܚܙܬܐ ܕܐܬܩܪܝܬ ܡܢ ܣܝܡܬܐ ܕܚܙ̈ܘܬܐ ܠܐ ܥܒܕܐ ܡܕܡ).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>ܦܘ̈ܩܕܐ ܕܕܘܪ̈ܐ</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>ܕܘܪ̈ܐ ܘܦܘܩ̈ܕܢܐ</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>ܦܪܝܫ ܡܢ ܣܥܘܪ̈ܐ ܕܠܐ ܫܡܐ</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>ܐܝܟ ܣܥܘܪ̈ܐ ܕܠܐ ܫܡܐ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

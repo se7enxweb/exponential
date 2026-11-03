@@ -69365,6 +69365,22 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Ba a zana wani samfuri ba (dubawar da aka karanta daga ma'ajiyar dubawa ba ta zana ko ɗaya).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Ba da ayyuka</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Ayyuka da manufofi</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>ya bambanta da na baƙi marasa suna</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>daidai da na baƙi marasa suna</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

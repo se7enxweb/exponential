@@ -69306,6 +69306,22 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Nebuvo atvaizduotas joks šablonas (rodinys, nuskaitytas iš rodinių talpyklos, jokio neatvaizduoja).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Vaidmenų priskyrimai</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Rolės ir politikos</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>skiriasi nuo anoniminių lankytojų</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>toks pat kaip anoniminių lankytojų</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

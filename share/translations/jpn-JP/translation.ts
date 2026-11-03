@@ -69306,6 +69306,22 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>テンプレートはレンダリングされませんでした (ビューキャッシュから読み取られたビューは何もレンダリングしません)。</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>ロールの割り当て</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>ロールとポリシー</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>匿名の訪問者とは異なる</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>匿名の訪問者と同じ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

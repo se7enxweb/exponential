@@ -69367,6 +69367,22 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Walay template nga na-render (ang view nga gibasa gikan sa view cache walay gi-render).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Mga assignment sa papel</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Mga papel ug palisiya</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>lahi sa mga anonimong bisita</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>pareho sa mga anonimong bisita</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

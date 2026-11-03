@@ -69367,6 +69367,22 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>किमपि प्रतिमानं न प्रदर्शितम् (दृश्यसञ्चयस्मृतेः पठितं दृश्यं किमपि प्रतिमानं न प्रदर्शयति)।</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>भूमिकानियोजनानि</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>भूमिकाः नीतयश्च</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>अज्ञातनामभ्यः आगन्तुकेभ्यः भिन्नम्</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>अज्ञातनामागन्तुकवत्</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

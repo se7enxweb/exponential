@@ -69306,6 +69306,22 @@ Razred vozlišča boste morali spremeniti s funkcijo zamenjave.</translation>
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Nobena predloga ni bila upodobljena (pogled, prebran iz predpomnilnika pogledov, ne upodobi nobene).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Dodelitve vlog</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Vloge in pravilniki</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>drugačno kot pri anonimnih obiskovalcih</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>enako kot pri anonimnih obiskovalcih</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

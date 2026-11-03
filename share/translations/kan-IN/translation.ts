@@ -69365,6 +69365,22 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>ಯಾವುದೇ ಟೆಂಪ್ಲೇಟ್ ರೆಂಡರ್ ಆಗಿಲ್ಲ (ವೀಕ್ಷಣೆ ಕ್ಯಾಷ್‌ನಿಂದ ಓದಿದ ವೀಕ್ಷಣೆ ಯಾವುದನ್ನೂ ರೆಂಡರ್ ಮಾಡುವುದಿಲ್ಲ).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>ಪಾತ್ರ ನಿಯೋಜನೆಗಳು</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>ಪಾತ್ರಗಳು ಮತ್ತು ನೀತಿಗಳು</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>ಅನಾಮಧೇಯ ಸಂದರ್ಶಕರಿಗಿಂತ ಭಿನ್ನ</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>ಅನಾಮಧೇಯ ಸಂದರ್ಶಕರಂತೆಯೇ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

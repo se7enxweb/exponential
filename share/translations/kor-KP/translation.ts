@@ -69367,6 +69367,22 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>렌더링된 템플릿이 없습니다(뷰 캐시에서 읽은 뷰는 아무것도 렌더링하지 않음).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>역할 할당</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>역할 및 정책</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>익명방문자와 다름</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>익명방문자와 같음</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

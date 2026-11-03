@@ -1795,6 +1795,10 @@
         "public": "French adjective public is spelled the same as English"
     },
     "ger-DE": {
+        "Session": "German IT usage writes Session (the guide and the tab say Session)",
+        "Handler": "technical term for the PHP session save handler, kept as in German IT usage",
+        "Cookie": "German uses the loanword Cookie",
+        "Extension %name": "German IT usage writes Extension for an Exponential extension",
         "Name A–Z": "Name is spelled the same in German; A–Z is the same alphabet range",
         "Name Z–A": "Name is spelled the same in German; Z–A is the same alphabet range",
         "Migration": "German word spelled the same",

@@ -69367,6 +69367,22 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>ပုံစံပြား တစ်ခုမျှ မပြသခဲ့ပါ (မြင်ကွင်းကက်ရှ်မှ ဖတ်သော မြင်ကွင်းသည် မည်သည့်အရာကိုမျှ မပြသပါ)။</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>အခန်းကဏ္ဍ သတ်မှတ်မှုများ</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>အခန်းကဏ္ဍများနှင့် မူဝါဒများ</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>အမည်မသိ ဧည့်သည်များနှင့် ကွဲပြားသည်</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>အမည်မသိ ဧည့်သည်များနှင့် အတူတူပင်</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

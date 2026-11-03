@@ -69367,6 +69367,22 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Không có mẫu nào được kết xuất (một chế độ xem đọc từ bộ nhớ đệm chế độ xem không kết xuất mẫu nào).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Phép gán vai trò</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Vai trò và chính sách</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>khác với khách truy cập ẩn danh</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>giống như khách truy cập ẩn danh</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

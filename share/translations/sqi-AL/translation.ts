@@ -69306,6 +69306,22 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Nuk u vizatua asnjë shabllon (një pamje e lexuar nga memoria e përkohshme e pamjeve nuk vizaton asnjë).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Caktimet e roleve</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Rolet dhe politikat</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>ndryshe nga vizitorët anonimë</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>njëlloj si për vizitorët anonimë</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

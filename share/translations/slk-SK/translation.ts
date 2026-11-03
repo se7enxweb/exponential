@@ -69306,6 +69306,22 @@ Triedu uzla budete musieť zmeniť pomocou funkcie výmeny.</translation>
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Nebola vykreslená žiadna šablóna (zobrazenie načítané z vyrovnávacej pamäte zobrazení žiadnu nevykresľuje).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Priradenia rolí</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Roly a politiky</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>líši sa od anonymných návštevníkov</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>rovnaké ako u anonymných návštevníkov</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

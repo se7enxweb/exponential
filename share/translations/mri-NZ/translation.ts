@@ -69367,6 +69367,22 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Kāore he tātauira i tukuna (kāore e tukuna he tātauira e tētahi tirohanga i pānuitia mai i te keteroki tirohanga).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Ngā tuku tūranga</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Ngā tūranga me ngā kaupapahere</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>he rerekē i ō ngā manuhiri ingoakore</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>he ōrite ki ō ngā manuhiri ingoakore</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

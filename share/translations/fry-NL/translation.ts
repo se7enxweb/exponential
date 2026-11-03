@@ -69367,6 +69367,22 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Der is gjin sjabloan renderre (in werjefte dy't út de werjeftebuffer lêzen wurdt, renderet gjinien).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Roltawizingen</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Rollen en belied</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>oars as by anonime besikers</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>itselde as by anonime besikers</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -68963,6 +68963,22 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Nijedan predložak nije iscrtan (prikaz pročitan iz predmemorije prikaza ne iscrtava nijedan).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Dodjele uloga</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Uloge i pravila</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>drukčije nego kod anonimnih posjetitelja</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>isto kao kod anonimnih posjetitelja</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

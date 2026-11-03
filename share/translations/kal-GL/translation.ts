@@ -69306,6 +69306,22 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Skabeloni sumilluunniit takutinneqanngilaq (takussutissaq takussutissat cache-iannit atuarneqartoq skabelonimik takutitsineq ajorpoq).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Atuuffimmik tunniussinerit</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Atuuffiit maleruagassallu</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>takusartut aqqeqanngitsunit allaanerusoq</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>takusartut aqqeqanngitsut assigalugit</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

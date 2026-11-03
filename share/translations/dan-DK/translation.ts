@@ -68312,6 +68312,22 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Ingen skabelon blev gengivet (en visning læst fra visningscachen gengiver ingen).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Rolletildelinger</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Roller og politikker</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>forskellig fra anonyme besøgende</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>samme som for anonyme besøgende</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

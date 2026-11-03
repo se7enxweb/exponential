@@ -69306,6 +69306,22 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Ekkert sniðmát var myndað (sýn sem lesin er úr sýnaskyndiminninu myndar ekkert).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Úthlutanir hlutverka</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Hlutverk og stefnur</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>frábrugðið nafnlausum gestum</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>sama og hjá nafnlausum gestum</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

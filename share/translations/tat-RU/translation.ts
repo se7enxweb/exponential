@@ -69367,6 +69367,22 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Бер шаблон да күрсәтелмәде (күренеш кэшыннан укылган күренеш бернәрсә дә күрсәтми).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Роль беркетүләре</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Роллар һәм сәясәтләр</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>аноним килүчеләрнекеннән аерыла</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>аноним килүчеләрдәге кебек</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

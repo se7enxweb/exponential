@@ -69367,6 +69367,22 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Ni rendrwyd unrhyw dempled (nid yw golwg a ddarllenwyd o storfa'r golygon yn rendro dim).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Neilltuadau rôl</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Rolau a pholisïau</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>yn wahanol i ymwelwyr dienw</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>yr un fath ag ymwelwyr dienw</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

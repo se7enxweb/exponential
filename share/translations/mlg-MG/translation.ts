@@ -69367,6 +69367,22 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Tsy nisy modely naseho (ny fijery novakiana avy amin'ny tahiry vonjimaikan'ny fijery dia tsy mampiseho modely).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Fanomezana anjara asa</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Anjara asa sy politika</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>tsy mitovy amin'ny an'ireo mpitsidika tsy fantatra anarana</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>mitovy amin'ny an'ireo mpitsidika tsy fantatra anarana</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

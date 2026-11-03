@@ -69367,6 +69367,22 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Ոչ մի ձևանմուշ չի մատուցվել (դիտման քեշից կարդացված դիտումը ոչ մի ձևանմուշ չի մատուցում)։</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Դերերի վերագրումներ</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Դերեր և քաղաքականություններ</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>տարբերվում է անանուն այցելուներից</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>նույնն է, ինչ անանուն այցելուներինը</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

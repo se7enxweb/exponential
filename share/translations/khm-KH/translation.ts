@@ -69367,6 +69367,22 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>គ្មានគំរូណាមួយត្រូវបានបង្ហាញទេ (ទិដ្ឋភាពដែលបានអានពីឃ្លាំងសម្ងាត់ទិដ្ឋភាពមិនបង្ហាញគំរូណាមួយទេ)។</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>ការកំណត់តួនាទី</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>តួនាទី និងគោលការណ៍</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>ខុសពីអ្នកទស្សនាអនាមិក</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>ដូចអ្នកទស្សនាអនាមិក</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

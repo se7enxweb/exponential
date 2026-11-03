@@ -69135,6 +69135,22 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Er is geen template gerenderd (een view die uit de viewcache wordt gelezen, rendert er geen).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Roltoewijzingen</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Rollen en beleidsregels</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>anders dan bij anonieme bezoekers</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>zoals bij anonieme bezoekers</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

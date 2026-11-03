@@ -69367,6 +69367,22 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Ez da txantiloirik errendatu (ikuspegi-cachetik irakurritako ikuspegi batek ez du bat ere errendatzen).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Rol-esleipenak</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Rolak eta gidalerroak</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>bisitari anonimoena ez bezalakoa</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>bisitari anonimoena bezalakoa</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

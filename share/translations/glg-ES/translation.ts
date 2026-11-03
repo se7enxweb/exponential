@@ -69367,6 +69367,22 @@ Terá que cambiar a clase do nodo coa función de intercambio.</translation>
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Non se renderizou ningún modelo (unha vista lida da caché de vistas non renderiza ningún).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Asignacións de rol</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Roles e políticas</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>distinto ao dos visitantes anónimos</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>igual ca para os visitantes anónimos</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -69367,6 +69367,22 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Gũtirĩ mũhiano woimĩrĩirio (mwonekano ũthometwo kuuma kĩigĩro-inĩ kĩa mionekano ndũrehaga o na ũmwe).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Kũhe marolo</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Marolo na mawatho</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>nĩ ngũrani na ageni matarĩ na rĩĩtwa</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>no ta ageni matarĩ na rĩĩtwa</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

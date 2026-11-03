@@ -69367,6 +69367,22 @@ Kailangan mong palitan ang class ng node gamit ang swap functionality.</translat
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Walang template na na-render (ang view na nabasa mula sa view cache ay walang nire-render).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Mga assignment ng tungkulin</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Mga tungkulin at patakaran</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>iba sa mga anonimong bisita</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>kapareho ng sa mga anonimong bisita</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

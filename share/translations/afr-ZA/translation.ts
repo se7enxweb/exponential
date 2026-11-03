@@ -69306,6 +69306,22 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Geen sjabloon is aangebied nie (’n aansig wat uit die aansigkas gelees is, bied geen aan nie).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Roltoewysings</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Rolle en beleide</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>anders as vir anonieme besoekers</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>dieselfde as vir anonieme besoekers</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -69375,6 +69375,22 @@ You go need change di class of di node wit di swap functionality.</translation>
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Dem no render any template (view wey dem read from di view cache no dey render any).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Role wey dem don give</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Roles and di rules wey follow dem</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>e no be di same as wetin anonymous visitors dey get</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>na di same tin wey anonymous visitors dey get</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

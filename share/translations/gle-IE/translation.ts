@@ -69306,6 +69306,22 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Níor rindreáladh aon teimpléad (ní rindreálann amharc a léadh ón taisce amharc ceann ar bith).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Sannaí ról</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Róil agus polasaithe</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>difriúil ó chuairteoirí anaithnide</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>mar an gcéanna le cuairteoirí anaithnide</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

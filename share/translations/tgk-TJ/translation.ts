@@ -69367,6 +69367,22 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Ягон қолиб тасвир нашуд (намоише, ки аз кэши намоишҳо хонда шудааст, ягон қолибро тасвир намекунад).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Таъйини нақшҳо</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Нақшҳо ва сиёсатҳо</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>аз меҳмонони беном фарқ мекунад</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>мисли меҳмонони беном</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

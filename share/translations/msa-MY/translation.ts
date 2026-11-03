@@ -69367,6 +69367,22 @@ Anda perlu menukar kelas nod tersebut dengan menggunakan fungsi tukar ganti.</tr
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Tiada templat dipaparkan (paparan yang dibaca dari cache paparan tidak memaparkan sebarang templat).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Penetapan peranan</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Peranan dan dasar</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>berbeza daripada pelawat tanpa nama</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>sama seperti pelawat tanpa nama</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

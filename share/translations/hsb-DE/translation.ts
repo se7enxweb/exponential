@@ -69367,6 +69367,22 @@ Musyće klasu suka z funkciju wuměny změnić.</translation>
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Žana předłoha njeje so rysowała (napohlad wučitany z pufrowaka napohladow žanu njerysuje).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Přirjadowanja rólow</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Róle a zasady</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>hinak hač pola anonymnych wopytowarjow</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>kaž pola anonymnych wopytowarjow</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

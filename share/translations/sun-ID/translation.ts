@@ -69375,6 +69375,22 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Teu aya citakan anu dirender (tampilan anu dibaca tina cache tampilan henteu ngarender citakan naon waé).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Panetepan peran</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Peran sareng kawijakan</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>béda jeung nu nganjang anonim</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>sarua jeung nu nganjang anonim</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

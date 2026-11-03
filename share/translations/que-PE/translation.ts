@@ -69367,6 +69367,22 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Mana ima plantillapas rurasqachu (qhawana waqaychamanta ñawirisqa qhawanaqa mana ima plantillatapas ruranchu).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Ruwana qukuykuna</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Ruwanakuna chaymanta kamachikuykuna</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>sutinnaq watukuqkunamanta hukniray</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>sutinnaq watukuqkuna hina</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

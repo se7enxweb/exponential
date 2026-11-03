@@ -69367,6 +69367,22 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>जेबो टेम्पलेट रेन्डार खालामनाय जाया (भिउ क्यासनिफ्राय फरायनाय भिउआ जेबो टेम्पलेटखौ रेन्डार खालामा)।</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>बाहागो असाइनफोर</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>बाहागोफोर आरो निति</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>मुं गैयि नायगिरिफ्राय आलादा</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>मुं गैयि नायगिरिफ्रायबादि</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -67915,6 +67915,22 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>هېڅ کېنډۍ ونه انځورل شوه (هغه لید چې د لید له کش څخه لوستل شوی وي هېڅ نه انځوروي).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>د رول ګمارنې</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>رولونه او تګلارې</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>له بې نومه لیدونکو سره توپير لري</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>د بې نومه لیدونکو په څېر</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

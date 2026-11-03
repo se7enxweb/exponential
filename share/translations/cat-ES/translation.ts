@@ -69306,6 +69306,22 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>No s'ha renderitzat cap plantilla (una vista llegida de la memòria cau de vistes no en renderitza cap).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Assignacions de rols</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Rols i polítiques</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>diferent del dels visitants anònims</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>igual que per als visitants anònims</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

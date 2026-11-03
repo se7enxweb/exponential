@@ -69367,6 +69367,22 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Cha deach teamplaid sam bith a reandaradh (cha reandaraich sealladh a chaidh a leughadh o thasgadan nan seallaidhean gin).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Sònrachaidhean dhreuchdan</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Dreuchdan is poileasaidhean</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>eadar-dhealaichte o luchd-tadhail gun ainm</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>co-ionann ri luchd-tadhail gun ainm</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

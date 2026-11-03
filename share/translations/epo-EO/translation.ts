@@ -69367,6 +69367,22 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Neniu ŝablono estis bildigita (vido legita el la vida kaŝmemoro bildigas neniun).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Rolasignoj</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Roloj kaj politikoj</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>malsama ol por anonimaj vizitantoj</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>sama kiel por anonimaj vizitantoj</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

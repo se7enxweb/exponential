@@ -69367,6 +69367,22 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Unkaan tokkollee hin dhiyaanne (mul'anni kuusaa mul'ataa irraa dubbifame unka tokkollee hin dhiyeessu).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Ramaddiiwwan gahee</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Gahee-wwan fi imaammatawwan</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>daawwattoota maqaa hin qabne irraa adda</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>akkuma daawwattoota maqaa hin qabne</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -67859,6 +67859,22 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Nulla formula reddita est (visus ex promptuario visuum lectus nullam reddit).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Assignationes munerum</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Munera et regulae</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>differt ab hospitibus anonymis</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>idem ac hospitibus anonymis</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -69367,6 +69367,22 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Hapana tembureti yakagadzirwa (maonero akaverengwa kubva kucache yemaonero haagadziri imwe).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Kugoverwa kwezvinzvimbo</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Zvinzvimbo nemitemo</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>zvakasiyana nezvevashanyi vasingazivikanwe</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>zvakafanana nezvevashanyi vasingazivikanwe</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

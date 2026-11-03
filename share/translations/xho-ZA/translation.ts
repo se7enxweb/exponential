@@ -69365,6 +69365,22 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Akukho tempileyithi inikezelweyo (imbonakalo efundwe kwikheshi yeembonakalo ayinikezeli nayiphi na).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Uyabelo lweendima</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Iindima kunye neenkqubo-mgaqo</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>yahlukile kwezeendwendwe ezingaziwayo</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>iyafana nezeendwendwe ezingaziwayo</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

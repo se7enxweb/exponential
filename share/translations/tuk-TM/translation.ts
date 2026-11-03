@@ -69367,6 +69367,22 @@ Düwüniň klasyny çalyşmak funksiýasy bilen üýtgetmeli bolarsyňyz.</trans
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Hiç hili şablon işlenmedi (görnüş keşinden okalan görnüş hiç bir şablon işlemeýär).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Rol bellemeleri</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Rollar we syýasatlar</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>näbelli myhmanlardan tapawutly</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>näbelli myhmanlardaky ýaly</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

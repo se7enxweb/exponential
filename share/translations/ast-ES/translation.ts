@@ -69367,6 +69367,22 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Nun se renderizó nenguna plantía (una vista lleída de la caché de vistes nun renderiza nenguna).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Asignaciones de rol</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Roles y polítiques</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>distintu al de los visitantes anónimos</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>igual que pa los visitantes anónimos</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

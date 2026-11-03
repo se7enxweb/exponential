@@ -69367,6 +69367,22 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>ไม่มีการเรนเดอร์เทมเพลต (มุมมองที่อ่านจากแคชมุมมองจะไม่เรนเดอร์เทมเพลตใดเลย)</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>การกำหนดบทบาท</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>บทบาทและนโยบาย</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>แตกต่างจากผู้เยี่ยมชมที่ไม่ระบุชื่อ</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>เหมือนกับผู้เยี่ยมชมที่ไม่ระบุชื่อ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -69168,6 +69168,22 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Ingen mal ble gjengitt (en visning lest fra visningscachen gjengir ingen).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Rolletildelinger</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Roller og tilgangsregler</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>forskjellig fra anonyme besøkende</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>samme som for anonyme besøkende</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -69367,6 +69367,22 @@ Esɛ sɛ wosesa nkɔmmɔbea no kuo de swap dwumadie no di dwuma.</translation>
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Wɔanyɛ nhwɛsoɔ biara (nhwɛ a wɔkenkan fi nhwɛ ntɛmkora mu nyɛ biara).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Dwumadie hyɛ</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Dwumadie ne nhyehyɛeɛ mmara</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>ɛnte sɛ ahɔho a wɔnnim wɔn din no deɛ</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>ɛte sɛ ahɔho a wɔnnim wɔn din no deɛ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

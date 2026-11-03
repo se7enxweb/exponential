@@ -69365,6 +69365,22 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>எந்த வார்ப்புருவும் வழங்கப்படவில்லை (காட்சித் தற்காலிகச் சேமிப்பிலிருந்து படிக்கப்பட்ட காட்சி எந்த வார்ப்புருவையும் வழங்காது).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>பங்கு ஒதுக்கீடுகள்</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>பங்குகளும் கொள்கைகளும்</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>அநாமதேய பார்வையாளர்களிடமிருந்து வேறுபட்டது</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>அநாமதேய பார்வையாளர்களைப் போன்றதே</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

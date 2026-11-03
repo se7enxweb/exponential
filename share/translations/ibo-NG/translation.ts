@@ -69365,6 +69365,22 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Enweghị ndebiri e sere (ele a gụrụ site na cache ele anaghị ese nke ọ bụla).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Nkenye ọrụ</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Ọrụ na ntụziaka iwu</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>dị iche na nke ndị ọbịa na-enweghị aha</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>dị ka nke ndị ọbịa na-enweghị aha</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

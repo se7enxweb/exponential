@@ -69367,6 +69367,22 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>არცერთი შაბლონი არ დარენდერებულა (ხედების ქეშიდან წაკითხული ხედი არცერთს არ არენდერებს).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>როლების მინიჭებები</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>როლები და პოლიტიკები</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>განსხვავდება ანონიმური სტუმრებისგან</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>ისევე, როგორც ანონიმური სტუმრებისთვის</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

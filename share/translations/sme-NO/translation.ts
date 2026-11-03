@@ -69367,6 +69367,22 @@ Don fertet rievdadit čuolmma luohká molsunfunkšuvnna bokte.</translation>
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Ii makkárge málle hábmejuvvon (oaidnu mii lohkkojuvvo oaidnogaskavuorkkás ii hábme ovttage).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Rollamearrademat</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Rollat ja njuolggadusat</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>earálagan go namahis guossiin</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>seamma go namahis guossiin</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

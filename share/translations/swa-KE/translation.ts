@@ -69365,6 +69365,22 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Hakuna kiolezo kilichotolewa (mwonekano uliosomwa kutoka kwenye akiba ya mionekano hautoi chochote).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Ukabidhi wa majukumu</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Majukumu na sera</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>tofauti na wa wageni wasiojulikana</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>sawa na wa wageni wasiojulikana</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

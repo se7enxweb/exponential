@@ -69367,6 +69367,22 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
         <source>No template was rendered (a view read from the view cache renders none).</source>
         <translation>Alaa modèle hollaama (yiyannde jangaande e cache yiyannde hollataa hay gootel).</translation>
     </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Hokkirɗe darnde</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Darnde e doosgolji</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>ceertii e koɓe jillotooɓe ɓe innde mum anndaaka</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>ko wano koɓe jillotooɓe ɓe innde mum anndaaka</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
