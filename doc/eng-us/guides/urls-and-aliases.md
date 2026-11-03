@@ -132,6 +132,7 @@ The settings, in `cronjob.ini [linkCheckSettings]` (override them in `settings/o
 | `HostDelay` | `1000` | milliseconds between two requests to the same host |
 | `RecheckInterval` | `72000` | seconds before a checked link is checked again; `0` checks every link on every run |
 | `MaxURLsPerRun` | `0` | links checked in one run (the ones checked longest ago first); `0` checks all |
+| `MaxRunTime` | `900` | seconds a run may spend checking links; the rest waits for the next run; `0` no limit |
 | `UserAgent` | `Exponential Link Validator (+https://exponential.earth)` | the User-Agent of the requests |
 | `AllowedPrivateHosts[]` | empty | hosts, addresses or IPv4 ranges (`10.1.0.0/16`) on a private network that may be tested |
 | `SiteURL[]` | empty | the site's own addresses, tried for a path that is no alias |
@@ -274,7 +275,7 @@ Unknown values fall back to the defaults. The forms, their field names and their
 | A link to an intranet page is never tested | its host is on a private network; add it to `AllowedPrivateHosts[]` |
 | A link to content is **Invalid** | its node or object was removed, is hidden or is not published; the line of the run names the node or object |
 | A link to `/admin/...` or an extension's module is **Invalid** | the module is only active in that siteaccess: run the part with `-s` of that siteaccess, or ignore the state |
-| A run takes long | most of it is `HostDelay` between links to the same host; lower it carefully, or set `MaxURLsPerRun` to spread the links over several runs |
+| A run takes long | most of it is `HostDelay` between links to the same host; lower it carefully, or set `MaxURLsPerRun`; a run stops after `MaxRunTime` (15 minutes) and the next one goes on |
 | The search statistics stay empty | no siteaccess has `LogSearchStats=enabled`; the page says so at the top |
 | A new alias "was modified by the system" | characters not allowed in an address were changed; the message shows the result |
 | A new alias to a node does not appear in the list | aliases of nodes are on the node's URL aliases tab |

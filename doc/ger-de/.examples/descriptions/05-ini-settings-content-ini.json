@@ -811,6 +811,10 @@
         "en": "Links checked in one run, the ones checked longest ago first; 0 checks all",
         "de": "In einem Lauf geprüfte Links, die am längsten nicht geprüften zuerst; 0 prüft alle"
     },
+    "ini:settings/cronjob.ini [linkCheckSettings] MaxRunTime": {
+        "en": "Seconds a run may spend checking links; the links left are the ones checked\nmost recently, and the next run starts with them. 0 checks until all are done.\nMost of a long run is HostDelay between links to the same host.",
+        "de": "Sekunden, die ein Lauf Links prüfen darf; übrig bleiben die zuletzt geprüften,\nund mit ihnen beginnt der nächste Lauf. 0 prüft, bis alle fertig sind.\nDen größten Teil eines langen Laufs macht HostDelay zwischen Links auf denselben Host aus."
+    },
     "ini:settings/cronjob.ini [linkCheckSettings] RecheckInterval": {
         "en": "Seconds before a checked link is checked again; 0 checks every link on every run",
         "de": "Sekunden, bis ein geprüfter Link erneut geprüft wird; 0 prüft jeden Link bei jedem Lauf"
