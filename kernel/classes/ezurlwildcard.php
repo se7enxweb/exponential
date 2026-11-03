@@ -113,11 +113,26 @@ class eZURLWildcard extends eZPersistentObject
     static function cleanup( $baseURL )
     {
         $db = eZDB::instance();
-        $baseURLText = $db->escapeString( $baseURL . "/*" );
         $sql = "DELETE FROM ezurlwildcard
-                WHERE source_url = '$baseURLText'";
+                WHERE " . self::sourceURLCondition( $db, $baseURL . "/*" );
         $db->query( $sql );
         self::expireCache();
+    }
+
+    /**
+     * The SQL condition "source_url is $url". On Oracle source_url is a CLOB, which "=" cannot compare (ORA-22848):
+     * DBMS_LOB.COMPARE() there.
+     *
+     * @param eZDBInterface $db
+     * @param string $url
+     * @return string
+     */
+    protected static function sourceURLCondition( $db, $url )
+    {
+        $text = $db->escapeString( (string)$url );
+        if ( $db->databaseName() === 'oracle' )
+            return "DBMS_LOB.COMPARE( source_url, TO_CLOB( '$text' ) ) = 0";
+        return "source_url = '$text'";
     }
 
     /**
@@ -171,6 +186,15 @@ class eZURLWildcard extends eZPersistentObject
      */
     public static function fetchBySourceURL( $url, $asObject = true )
     {
+        $db = eZDB::instance();
+        if ( $db->databaseName() === 'oracle' )
+        {
+            // a CLOB there: the row found by DBMS_LOB.COMPARE(), then read as on every engine
+            $rows = $db->arrayQuery( 'SELECT id FROM ezurlwildcard WHERE ' . self::sourceURLCondition( $db, $url ), array( 'limit' => 1 ) );
+            if ( !$rows )
+                return null;
+            return eZPersistentObject::fetchObject( self::definition(), null, array( 'id' => (int)$rows[0]['id'] ), $asObject );
+        }
         return eZPersistentObject::fetchObject( self::definition(),
                                                 null,
                                                 array( "source_url" => $url ),

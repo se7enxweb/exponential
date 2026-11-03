@@ -4648,7 +4648,8 @@ class eZContentObjectTreeNode extends eZPersistentObject
             // Avoid crashes due to database inconsistencies
             if ( $parentNode instanceof eZContentObjectTreeNode )
             {
-                $pathIdentificationString = $parentNode->attribute( 'path_identification_string' );
+                // NULL where the database keeps an empty string as NULL (Oracle: the top level node's)
+                $pathIdentificationString = (string)$parentNode->attribute( 'path_identification_string' );
             }
             else
             {

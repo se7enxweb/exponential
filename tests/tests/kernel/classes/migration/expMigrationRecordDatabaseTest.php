@@ -27,8 +27,8 @@ class expMigrationRecordDatabaseTest extends ezpDatabaseTestCase
     {
         $db = eZDB::instance();
         $engine = expKernelTableSchema::type( $db );
-        if ( !in_array( $engine, array( 'mysql', 'postgresql' ), true ) )
-            $this->markTestSkipped( "not a MySQL or PostgreSQL database: $engine" );
+        if ( !in_array( $engine, array( 'mysql', 'postgresql', 'oracle' ), true ) )
+            $this->markTestSkipped( "not a MySQL, PostgreSQL or Oracle database: $engine" );
         $this->checkCreateAndCopy( $db );
         $this->checkWriteAndRead( $db );
         $this->checkUpgradeRecord( $db );

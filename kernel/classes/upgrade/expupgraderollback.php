@@ -186,7 +186,8 @@ class expUpgradeRollback
                         . './console exp:maintenance on' );
         if ( $engine === 'oracle' )
         {
-            $connect = $server !== '' ? '//' . $server . ':' . ( $port ?: 1521 ) . '/' . $service : $service;
+            // a connection whose database is already a connect string (//host:port/service, a descriptor) keeps it
+            $connect = $server !== '' && strpbrk( $service, '/(' ) === false ? '//' . $server . ':' . ( $port ?: 1521 ) . '/' . $service : $service;
             $schema = strtoupper( $user );
             $steps[] = '2. Restore the schema ' . $schema . ' from the Data Pump export (expdp) taken before the change; impdp asks for the password: '
                      . 'impdp ' . $user . '@' . $connect . ' SCHEMAS=' . $schema . ' DIRECTORY=DATA_PUMP_DIR DUMPFILE=<the export>.dmp '

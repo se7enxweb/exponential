@@ -35,8 +35,10 @@ class ezpTestDatabaseHelper
         //oracle unit test doesn't support creating database, just use database string
         if ( $dsn->parts['phptype'] === 'oracle' )
         {
+            // every relation of the account, not only the ez* ones eZDBTool::cleanup() removes: the exp_* tables
+            // (exp_migration ...) would keep the rows of an earlier test
             $db = ezpDatabaseHelper::useDatabase( $dsn );
-            eZDBTool::cleanup( $db );
+            self::clean( $db );
             return $db;
         }
 
@@ -93,9 +95,10 @@ class ezpTestDatabaseHelper
      */
     public static function clean( eZDBInterface $db )
     {
-        // removes every table; only in a test database
-        if ( !self::isSetUpDatabaseName( $db->DB ) )
-            throw new RuntimeException( "refusing to empty the database '" . $db->DB . "': \"test\" is not a word of its name" );
+        // removes every table; only in a test database (on Oracle the account's schema: its database is a connect string)
+        $name = $db->databaseName() === 'oracle' ? $db->User : $db->DB;
+        if ( !self::isSetUpDatabaseName( $name ) )
+            throw new RuntimeException( "refusing to empty the database '" . $name . "': \"test\" is not a word of its name" );
 
         $supportedRelationTypes = $db->supportedRelationTypes();
         foreach( $supportedRelationTypes as $type )

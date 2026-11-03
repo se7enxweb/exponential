@@ -24,8 +24,8 @@ class expMigrationYamlDatabaseTest extends ezpDatabaseTestCase
     {
         parent::setUp();
         $engine = expKernelTableSchema::type( eZDB::instance() );
-        if ( !in_array( $engine, array( 'mysql', 'postgresql' ), true ) )
-            $this->markTestSkipped( "not a MySQL or PostgreSQL database: $engine" );
+        if ( !in_array( $engine, array( 'mysql', 'postgresql', 'oracle' ), true ) )
+            $this->markTestSkipped( "not a MySQL, PostgreSQL or Oracle database: $engine" );
         $this->yamlBegin();
         $this->runnerBegin( eZDB::instance() );
     }

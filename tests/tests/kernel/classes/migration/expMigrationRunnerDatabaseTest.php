@@ -1,6 +1,6 @@
 <?php
 /**
- * The migration runner on a real database server: MySQL/MariaDB and PostgreSQL in the database job
+ * The migration runner on a real database server: MySQL/MariaDB, PostgreSQL and Oracle in the database job
  * (tests/runtests.php --dsn ... --db-per-test), or a throwaway MySQL database of ezpThrowawayDatabase. The database
  * has the kernel schema (with exp_migration and exp_migration_run) and the clean data. Skipped without one.
  *
@@ -26,8 +26,8 @@ class expMigrationRunnerDatabaseTest extends ezpDatabaseTestCase
     {
         parent::setUp();
         $engine = expKernelTableSchema::type( eZDB::instance() );
-        if ( !in_array( $engine, array( 'mysql', 'postgresql' ), true ) )
-            $this->markTestSkipped( "not a MySQL or PostgreSQL database: $engine" );
+        if ( !in_array( $engine, array( 'mysql', 'postgresql', 'oracle' ), true ) )
+            $this->markTestSkipped( "not a MySQL, PostgreSQL or Oracle database: $engine" );
         $this->runnerBegin( eZDB::instance() );
     }
 

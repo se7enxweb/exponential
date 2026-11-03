@@ -15,6 +15,11 @@
  *       before the run, and the run's pre caption is reused; a changed row takes a new caption, which is reused while
  *       nothing changes. Only where the engine has an exact marker (SQLite, MySQL/MariaDB, PostgreSQL); MongoDB
  *       always takes a new one.
+ *  CE-3 Oracle (expMigrationCaptionDatabaseTest), which has no built-in dump or restore: CE-1's run goes on with the
+ *       warning that no caption could be taken (the message names expdp), nothing is restored after the failure and
+ *       the report gives the steps by hand (impdp with the account and the connect string of the connection); the
+ *       first migration's table and record stay, the failed one is recorded failed, the run row has no caption.
+ *       CE-2's run succeeds without captions.
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -104,6 +109,8 @@ trait expMigrationCaptionEngineChecks
     protected function checkRestoreAfterFailure( $db )
     {
         $engine = expKernelTableSchema::type( $db );
+        if ( $engine === 'oracle' )
+            return $this->checkRestoreByHandAfterFailure( $db );
         $this->clearCaptionChecks( $db );
         $context = $this->captionContext( $db, '20261031-140000-c0ffee' );
         $report = $this->captionRunner( $context )->run( $this->captionMigrations() );
@@ -146,6 +153,8 @@ trait expMigrationCaptionEngineChecks
     protected function checkPostCaptionAndReuse( $db )
     {
         $engine = expKernelTableSchema::type( $db );
+        if ( $engine === 'oracle' )
+            return $this->checkRunWithoutCaptions( $db );
         $this->clearCaptionChecks( $db );
         $context = $this->captionContext( $db, '20261031-140200-c0ffee' );
         $report = $this->captionRunner( $context )->run( $this->captionMigrations( false ) );
@@ -181,6 +190,64 @@ trait expMigrationCaptionEngineChecks
             $this->assertTrue( $again['reused'], "$engine: nothing changed since, the caption is reused" );
             $this->assertSame( $new['id'], $again['id'] );
         }
+        $this->clearCaptionChecks( $db );
+    }
+
+    /**
+     * CE-3, the failure: no caption, nothing restored, the steps by hand.
+     *
+     * @param eZDBInterface $db
+     */
+    protected function checkRestoreByHandAfterFailure( $db )
+    {
+        $engine = expKernelTableSchema::type( $db );
+        $this->clearCaptionChecks( $db );
+        $context = $this->captionContext( $db, '20261031-140000-c0ffee' );
+        $report = $this->captionRunner( $context )->run( $this->captionMigrations() );
+
+        $this->assertSame( 1, $report['exit'] );
+        $this->assertFalse( $report['captions']['pre']['ok'], "$engine: no built-in dump" );
+        $this->assertStringContainsString( 'expdp', implode( '; ', $report['captions']['pre']['messages'] ) );
+        $this->assertStringContainsString( 'no caption could be taken', implode( '; ', $report['warnings'] ) );
+        $this->assertSame( array( 'applied', 'failed' ), array_column( $report['migrations'], 'action' ) );
+        $this->assertSame( 'none', $report['restore']['state'], json_encode( $report['restore'] ) );
+        $steps = implode( "\n", $report['restore']['steps'] );
+        $connect = strpos( (string)$db->DB, '/' ) !== false ? (string)$db->DB : '//' . $db->Server . ':' . ( $db->Port ?: 1521 ) . '/' . $db->DB;
+        $this->assertStringContainsString( 'impdp ' . $db->User . '@' . $connect . ' SCHEMAS=' . strtoupper( $db->User ), $steps, 'the connect string of the connection' );
+
+        expKernelTableSchema::reset();
+        $this->assertTrue( expKernelTableSchema::exists( 'exp_test_wp4_note', $db, true ), "$engine: nothing restored, the table stays" );
+        $this->assertNotNull( expMigrationRecord::get( $db, 'site', '20261031140000_wp4_note' ), "$engine: the first migration stays applied" );
+        $failed = expMigrationRecord::get( $db, 'site', '20261031140100_wp4_fail' );
+        $this->assertNotNull( $failed, "$engine: the failure is recorded" );
+        $this->assertSame( 'failed', $failed['state'] );
+        $run = expMigrationRecord::run( $db, '20261031-140000-c0ffee' );
+        $this->assertNotNull( $run, "$engine: the run row" );
+        $this->assertSame( 'failed', $run['state'] );
+        $this->assertEmpty( $run['caption_pre'] );
+        $this->assertFalse( expMigrationLock::installation( $this->runnerDir() . '/upgrade.lock' )->isLocked(), 'the lock is free' );
+        $this->clearCaptionChecks( $db );
+    }
+
+    /**
+     * CE-3, a run that succeeds: without captions, with the warning.
+     *
+     * @param eZDBInterface $db
+     */
+    protected function checkRunWithoutCaptions( $db )
+    {
+        $engine = expKernelTableSchema::type( $db );
+        $this->clearCaptionChecks( $db );
+        $context = $this->captionContext( $db, '20261031-140200-c0ffee' );
+        $report = $this->captionRunner( $context )->run( $this->captionMigrations( false ) );
+        $this->assertSame( 0, $report['exit'], implode( '; ', $report['errors'] ) );
+        $this->assertFalse( $report['captions']['pre']['ok'], "$engine: no built-in dump" );
+        $this->assertStringContainsString( 'no caption could be taken', implode( '; ', $report['warnings'] ) );
+        $run = expMigrationRecord::run( $db, '20261031-140200-c0ffee' );
+        $this->assertNotNull( $run );
+        $this->assertEmpty( $run['caption_pre'] );
+        $this->assertEmpty( $run['caption_post'] );
+        $this->assertTrue( expKernelTableSchema::exists( 'exp_test_wp4_note', $db, true ) );
         $this->clearCaptionChecks( $db );
     }
 }
