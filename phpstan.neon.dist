@@ -29,5 +29,5 @@ parameters:
     bootstrapFiles:
         - autoload.php
     tmpDir: .devtools/phpstan
-    reportUnmatchedIgnoredErrors: false
+    reportUnmatchedIgnoredErrors: true
     treatPhpDocTypesAsCertain: false
