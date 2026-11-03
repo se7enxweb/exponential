@@ -93,14 +93,20 @@ class eZTemplateForFunction
 
         $variableStack   = "for_variable_stack_$uniqid";
         $namesArray = array( "for_firstval_$uniqid", "for_lastval_$uniqid", "for_i_$uniqid" );
+        // the sequence's PHP variables (eZTemplateCompiledLoop) are named after the loop as well
+        if ( $loop->hasSequence() )
+            $namesArray = array_merge( $namesArray, $loop->sequenceVariableNames() );
+
+        $newNodes[] = eZTemplateNodeTool::createCodePieceNode( "// for begins" );
+        // A template that includes itself runs this same code in the same scope: when the stack exists, a loop of this
+        // code is running and its variables are set, so they are saved before they are set for this loop (and
+        // restored after it). Otherwise nothing runs: no state to save, and compact() would warn of undefined variables.
+        $newNodes[] = eZTemplateNodeTool::createCodePieceNode( "if ( isset( \$$variableStack ) ) \$" . $variableStack ."[] = compact( '" . implode( "', '", $namesArray ) . "' );" );
+        $newNodes[] = eZTemplateNodeTool::createCodePieceNode( "else \$$variableStack = [];" );
 
         $newNodes[] = eZTemplateNodeTool::createCodePieceNode( "\$for_firstval_$uniqid = 0;" );
         $newNodes[] = eZTemplateNodeTool::createCodePieceNode( "\$for_lastval_$uniqid = 0;" );
         $newNodes[] = eZTemplateNodeTool::createCodePieceNode( "\$for_i_$uniqid = 0;" );
-
-        $newNodes[] = eZTemplateNodeTool::createCodePieceNode( "// for begins" );
-        $newNodes[] = eZTemplateNodeTool::createCodePieceNode( "if ( !isset( \$$variableStack ) ) \$$variableStack = [];" );
-        $newNodes[] = eZTemplateNodeTool::createCodePieceNode( "\$" . $variableStack ."[] = @compact( '" . implode( "', '", $namesArray ) . "' );" );
 
         $newNodes[] = eZTemplateNodeTool::createVariableNode( false, $parameters['first_val'], $nodePlacement, array( 'treat-value-as-non-object' => true ), "for_firstval_$uniqid" );
         $newNodes[] = eZTemplateNodeTool::createVariableNode( false, $parameters['last_val'],  $nodePlacement, array( 'treat-value-as-non-object' => true ), "for_lastval_$uniqid"  );
@@ -111,15 +117,15 @@ class eZTemplateForFunction
         $modifyLoopCounterCode = "\$for_firstval_$uniqid < \$for_lastval_$uniqid ? \$for_i_{$uniqid}++ : \$for_i_{$uniqid}--"; // . ";\n";
         $newNodes[] = eZTemplateNodeTool::createCodePieceNode( "for ( \$for_i_$uniqid = \$for_firstval_$uniqid ; ; $modifyLoopCounterCode )\n{" );
         $newNodes[] = eZTemplateNodeTool::createSpacingIncreaseNode();
-        // Check for index
-        $indexArray = isset( $parameters['loop_var'][0][1] ) ? $parameters['loop_var'][0][1] : array( "", 2, "default_index_$uniqid" );
-        $newNodes[] = eZTemplateNodeTool::createVariableNode( false, "for_i_$uniqid", $nodePlacement,
-                                                              array( 'text-result' => true ), $indexArray, false, true, true );
-
         $newNodes[] = eZTemplateNodeTool::createCodePieceNode( "if ( !( \$for_firstval_$uniqid < \$for_lastval_$uniqid ? " .
                                                                "\$for_i_$uniqid <= \$for_lastval_$uniqid : " .
                                                                "\$for_i_$uniqid >= \$for_lastval_$uniqid ) )\n" .
                                                                "   break;\n" );
+
+        // the index after the check, so it keeps the last value of the loop as in an interpreted {for}, not the one past it
+        $indexArray = isset( $parameters['loop_var'][0][1] ) ? $parameters['loop_var'][0][1] : array( "", 2, "default_index_$uniqid" );
+        $newNodes[] = eZTemplateNodeTool::createVariableNode( false, "for_i_$uniqid", $nodePlacement,
+                                                              array( 'text-result' => true ), $indexArray, false, true, true );
 
         $loop->processBody();
 
@@ -127,15 +133,18 @@ class eZTemplateForFunction
         $newNodes[] = eZTemplateNodeTool::createSpacingDecreaseNode();
         $newNodes[] = eZTemplateNodeTool::createCodePieceNode( "} // for" );
 
+        // the sequence's variables are removed before the state of a loop outside this one is restored; its template
+        // variable only when no loop of this code runs any more (below)
+        $loop->cleanup( false );
         $newNodes[] = eZTemplateNodeTool::createCodePieceNode( "if ( count( \$$variableStack ) ) extract( array_pop( \$$variableStack ) );\n" );
         $newNodes[] = eZTemplateNodeTool::createCodePieceNode( "else\n{\n" );
         $newNodes[] = eZTemplateNodeTool::createVariableUnsetNode( $indexArray );
         $newNodes[] = eZTemplateNodeTool::createVariableUnsetNode( "for_firstval_$uniqid" );
         $newNodes[] = eZTemplateNodeTool::createVariableUnsetNode( "for_lastval_$uniqid" );
         $newNodes[] = eZTemplateNodeTool::createVariableUnsetNode( "for_i_$uniqid" );
+        $loop->sequenceTemplateVariableCleanup();
         $newNodes[] = eZTemplateNodeTool::createVariableUnsetNode( $variableStack );
         $newNodes[] = eZTemplateNodeTool::createCodePieceNode( "}\n" );
-        $loop->cleanup();
         $newNodes[] = eZTemplateNodeTool::createCodePieceNode( "// for ends\n" );
 
         return $newNodes;

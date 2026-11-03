@@ -3028,6 +3028,12 @@
     ],
     "settings/logfile.ini": [
       "tests/tests/kernel/classes/viewcount/expViewCountRequestFilterTest.php"
+    ],
+    "lib/eztemplate/classes/eztemplateforeachfunction.php": [
+      "tests/tests/lib/eztemplate/eZTemplateCompiledLoopRecursionTest.php"
+    ],
+    "lib/eztemplate/classes/eztemplateforfunction.php": [
+      "tests/tests/lib/eztemplate/eZTemplateCompiledLoopRecursionTest.php"
     ]
   },
   "generated": {

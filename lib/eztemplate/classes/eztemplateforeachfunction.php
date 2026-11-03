@@ -109,8 +109,6 @@ class eZTemplateForeachFunction
 
         $newNodes[] = eZTemplateNodeTool::createCodePieceNode( "// foreach begins" );
 
-        $loop->initVars();
-
         $array           = "fe_array_$uniqid";
         $arrayKeys       = "fe_array_keys_$uniqid";
         $nItems          = "fe_n_items_$uniqid";
@@ -126,6 +124,15 @@ class eZTemplateForeachFunction
 
         $variableStack   = "fe_variable_stack_$uniqid";
         $namesArray = array( $array, $arrayKeys, $nItems, $nItemsProcessed, $i, $key, $val, $offset, $max, $reverse, $firstVal, $lastVal );
+        // the sequence's PHP variables (eZTemplateCompiledLoop) are named after the loop as well
+        if ( $loop->hasSequence() )
+            $namesArray = array_merge( $namesArray, $loop->sequenceVariableNames() );
+
+        // A template that includes itself runs this same code in the same scope: when the stack exists, a loop of this
+        // code is running and its variables are set, so they are saved before they are set for this loop (and
+        // restored after it). Otherwise nothing runs: no state to save, and compact() would warn of undefined variables.
+        $newNodes[] = eZTemplateNodeTool::createCodePieceNode( "if ( isset( \$$variableStack ) ) \$" . $variableStack ."[] = compact( '" . implode( "', '", $namesArray ) . "' );" );
+        $newNodes[] = eZTemplateNodeTool::createCodePieceNode( "else \$$variableStack = [];" );
 
         $newNodes[] = eZTemplateNodeTool::createCodePieceNode( "\$$array = [];" );
         $newNodes[] = eZTemplateNodeTool::createCodePieceNode( "\$$arrayKeys = [];" );
@@ -140,8 +147,8 @@ class eZTemplateForeachFunction
         $newNodes[] = eZTemplateNodeTool::createCodePieceNode( "\$$firstVal = 0;" );
         $newNodes[] = eZTemplateNodeTool::createCodePieceNode( "\$$lastVal = 0;" );
 
-        $newNodes[] = eZTemplateNodeTool::createCodePieceNode( "if ( !isset( \$$variableStack ) ) \$$variableStack = [];" );
-        $newNodes[] = eZTemplateNodeTool::createCodePieceNode( "\$" . $variableStack ."[] = @compact( '" . implode( "', '", $namesArray ) . "' );" );
+        // the sequence after the state is saved, since it sets the sequence's variables
+        $loop->initVars();
 
         $newNodes[] = eZTemplateNodeTool::createVariableNode( false, $parameters['array'], $nodePlacement, array( 'text-result' => false ), $array );
         $newNodes[] = eZTemplateNodeTool::createCodePieceNode( "\$$arrayKeys = is_array( \$$array ) ? array_keys( \$$array ) : [];" );
@@ -219,7 +226,8 @@ class eZTemplateForeachFunction
         $newNodes[] = eZTemplateNodeTool::createSpacingDecreaseNode();
         $newNodes[] = eZTemplateNodeTool::createCodePieceNode( "} // foreach" );
 
-        $loop->cleanup();
+        // the sequence's template variable only when no loop of this code runs any more (below)
+        $loop->cleanup( false );
 
         // unset the loop variables
         $newNodes[] = eZTemplateNodeTool::createCodePieceNode( "if ( count( \$$variableStack ) ) extract( array_pop( \$$variableStack ) );\n" );
@@ -236,6 +244,7 @@ class eZTemplateForeachFunction
         $newNodes[] = eZTemplateNodeTool::createVariableUnsetNode( $reverse );
         $newNodes[] = eZTemplateNodeTool::createVariableUnsetNode( $firstVal );
         $newNodes[] = eZTemplateNodeTool::createVariableUnsetNode( $lastVal );
+        $loop->sequenceTemplateVariableCleanup();
 
         $newNodes[] = eZTemplateNodeTool::createVariableUnsetNode( $variableStack );
         $newNodes[] = eZTemplateNodeTool::createCodePieceNode( "}\n" );
