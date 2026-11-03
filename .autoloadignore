@@ -25,3 +25,13 @@ var
 # .devtools holds the CI tooling (PHPStan, phpcs) and its caches; PHPStan writes generated
 # container classes there, which a -k run otherwise maps as kernel classes.
 \.devtools
+#
+# nxc_powercontent ships a copy of the kernel's content module from an older release. The extension
+# is not active, but its copies (eZContentFunctionCollection, eZContentOperationCollection,
+# ezpContentPublishingBehaviour) became kernel overrides and hid the kernel's newer methods
+# ("No method 'fetchViewBookmark' in class 'eZContentFunctionCollection'").
+extension/nxc_powercontent/modules
+#
+# sevenx_smarty was the Smarty extension; its classes are lib/smarty now (same names), so the generator must not
+# map its copies. The directory stays until it is deleted.
+extension/sevenx_smarty
