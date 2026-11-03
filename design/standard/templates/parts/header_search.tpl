@@ -11,12 +11,9 @@
    for a user who may not open content/suggest (no combobox that only gets an error page). *}
 {def $search_node_id = first_set( $search_subtree_array[0], $module_result.path[0].node_id, 1 )
      $search_title = "Search in all content"|i18n( 'design/admin/pagelayout' )
-     $section_id = -1
+     $section_id = first_set( $search_section_id, -1 )|int
      $box = first_set( $search_box, '' )
      $search_suggest = and( ezini( 'SearchSuggestSettings', 'Enabled', 'admininterface.ini' )|eq( 'true' ), $ui_context|ne( 'browse' ), fetch( 'user', 'can_open', hash( 'uri', 'content/suggest' ) ) )}
-{if ezhttp_hasvariable( 'SectionID', 'get' )}
-    {set $section_id = ezhttp( 'SectionID', 'get' )}
-{/if}
 <div class="searchblock" data-searchblock="1">
 <form action={'/content/search/'|ezurl} method="post" role="search" aria-label="{'Quick search'|i18n( 'design/admin/pagelayout' )|wash}">
     {if $ui_context_edit}

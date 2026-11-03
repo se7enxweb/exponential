@@ -199,7 +199,9 @@ class Search extends \Exponential\Runnable\ModuleView
 
         $searchData = false;
         $tpl->setVariable( "search_data", $searchData );
-        $tpl->setVariable( "search_section_id", $searchSectionID );
+        // The filtered search page has its section as the view parameter (section)/<id>: the header search's scope
+        // popup preselects it from search_section_id. The view's own search and the design keys stay as they were.
+        $tpl->setVariable( "search_section_id", $filteredPage && $searchSectionID == -1 ? self::viewSectionID( $scope['Params'] ) : $searchSectionID );
         $tpl->setVariable( "search_subtree_array", $subTreeArray );
         $tpl->setVariable( 'search_timestamp', $searchTimestamp );
         $tpl->setVariable( "search_text", $searchText );
@@ -327,6 +329,26 @@ class Search extends \Exponential\Runnable\ModuleView
     {
         $sectionID = is_scalar( $value ) ? (int)$value : 0;
         return $sectionID > 0 ? $sectionID : -1;
+    }
+
+    /**
+     * The section of the view parameter (section)/<id> when it names exactly one existing section, for the header
+     * search's scope popup (which holds one section); else -1. A query string is never read.
+     *
+     * @param array $params the view's $Params
+     * @param callable|null $exists checks that a section id exists (default eZSection::fetch())
+     * @return int
+     */
+    public static function viewSectionID( array $params, $exists = null )
+    {
+        $value = \expViewParameters::get( $params, 'section' );
+        if ( $value === false || strpos( $value, ',' ) !== false )
+            return -1;
+        $sectionID = self::sectionID( $value );
+        if ( $sectionID == -1 )
+            return -1;
+        $exists = $exists ?: function ( $id ) { return \eZSection::fetch( $id ) instanceof \eZSection; };
+        return $exists( $sectionID ) ? $sectionID : -1;
     }
 
     /**
