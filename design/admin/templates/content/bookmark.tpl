@@ -293,8 +293,8 @@
                 {if and( eq( $item.kind, 'view' ), eq( $item.state, 'ok' ) )}
                 <a class="a4-btn a4-btn-small" href={concat( '/', $item.uri )|ezurl} aria-describedby="{$card_id}-title">{'Open'|i18n( 'design/admin/content/bookmark' )}</a>
                 {elseif or( eq( $item.state, 'gone' ), eq( $item.state, 'denied' ), eq( $item.kind, 'view' ) )|not}
-                <a class="a4-btn a4-btn-small" href={concat( 'content/view/full/', $item.node_id )|ezurl} aria-describedby="{$card_id}-title">{'View'|i18n( 'design/admin/content/bookmark' )}</a>
-                {if $item.can_edit}<a class="a4-btn a4-btn-small" href={concat( 'content/edit/', $item.contentobject_id )|ezurl} aria-describedby="{$card_id}-title">{'Edit'|i18n( 'design/admin/content/bookmark' )}</a>{/if}
+                <a class="a4-btn a4-btn-small" href={concat( 'content/view/full/', $item.node_id )|ezurl} aria-describedby="{$card_id}-title" title="{'View'|i18n( 'design/admin/content/bookmark' )|wash}">{'View'|i18n( 'design/admin/content/bookmark' )}</a>
+                {if $item.can_edit}<a class="a4-btn a4-btn-small" href={concat( 'content/edit/', $item.contentobject_id )|ezurl} aria-describedby="{$card_id}-title" title="{'Edit'|i18n( 'design/admin/content/bookmark' )|wash}">{'Edit'|i18n( 'design/admin/content/bookmark' )}</a>{/if}
                 {/if}
                 {if $bp.order_buttons}
                 <button type="submit" class="a4-btn a4-btn-small a4-btn-icon" name="BookmarkShiftButton" value="up-{$item.id}" title="{'Move up'|i18n( 'design/admin/content/bookmark' )}" aria-label="{'Move %name up'|i18n( 'design/admin/content/bookmark',, hash( '%name', $item.name ) )|wash}"{if $bp.first_last.first|contains( $item.id )} disabled="disabled"{/if}><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 3.5 13 9l-1.06 1.06L8.75 6.8V13h-1.5V6.8l-3.19 3.26L3 9z"/></svg></button>

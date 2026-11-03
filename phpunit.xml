@@ -48,6 +48,10 @@
             <!-- the error module's view (kernel/error): headers of error pages; no database -->
             <directory suffix="Test.php">tests/tests/kernel/error</directory>
             <exclude>tests/tests/kernel/classes/security</exclude>
+            <!-- in the suite upgrade-smoke; a file can be in one suite only -->
+            <exclude>tests/tests/kernel/classes/upgrade</exclude>
+            <exclude>tests/tests/kernel/classes/help/expHelpSearchContractTest.php</exclude>
+            <exclude>tests/tests/kernel/classes/httpcache/ezpHttpCacheContractTest.php</exclude>
         </testsuite>
 
         <testsuite name="kernel-content">

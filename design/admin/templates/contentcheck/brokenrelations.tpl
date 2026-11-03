@@ -115,7 +115,7 @@
         {if $finding.target_name|ne( '' )}<div class="a4-meta">{$finding.target_name|wash}</div>{/if}</td>
     <td><span class="a4-tag {$kind_classes[$finding.kind]}">{$kind_names[$finding.kind]|wash}</span>
         <div class="a4-meta">{$hint_names[$finding.hint]|wash}</div></td>
-    <td>{if $finding.can_edit}<a class="a4-btn a4-btn-small" href={concat( '/content/edit/', $finding.source_id )|ezurl}>{'Edit'|i18n( 'kernel/contentcheck' )}</a>{/if}</td>
+    <td>{if $finding.can_edit}<a class="a4-btn a4-btn-small" href={concat( '/content/edit/', $finding.source_id )|ezurl} title="{'Edit'|i18n( 'kernel/contentcheck' )|wash}">{'Edit'|i18n( 'kernel/contentcheck' )}</a>{/if}</td>
 </tr>
 {/foreach}
 </tbody>

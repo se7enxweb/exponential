@@ -117,7 +117,7 @@
         <div class="a4-actions">
             {if $row.can_versionread}<a class="a4-btn a4-btn-small" href={concat( '/content/versionview/', $row.object_id, '/', $row.version, '/', $row.language, '/' )|ezurl} aria-describedby="{$card_id}-title">{'View'|i18n( 'design/admin/content/pendinglist' )}</a>{/if}
             {if and( $row.approval_id, $row.approval_link )}<a class="a4-btn a4-btn-small{if $row.approver} a4-btn-primary{/if}" href={concat( '/collaboration/item/full/', $row.approval_id )|ezurl} aria-describedby="{$card_id}-title">{if $row.approver}{'Open the approval'|i18n( 'design/admin/content/pendinglist' )}{else}{'Approval and comments'|i18n( 'design/admin/content/pendinglist' )}{/if}</a>{/if}
-            {if $row.node_id|gt( 0 )}<a class="a4-btn a4-btn-small" href={concat( '/content/view/full/', $row.node_id )|ezurl} aria-describedby="{$card_id}-title">{'Published page'|i18n( 'design/admin/content/pendinglist' )}</a>{/if}
+            {if $row.node_id|gt( 0 )}<a class="a4-btn a4-btn-small" href={concat( '/content/view/full/', $row.node_id )|ezurl} aria-describedby="{$card_id}-title" title="{'Published page'|i18n( 'design/admin/content/pendinglist' )|wash}">{'Published page'|i18n( 'design/admin/content/pendinglist' )}</a>{/if}
         </div>
     </div>
     <dl class="a4-facts">

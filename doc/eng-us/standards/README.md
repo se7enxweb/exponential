@@ -44,6 +44,7 @@ make compliance possible, but a site has to keep it.
 | Code prefixes | [Naming prefixes: sevenx and exp](naming-prefixes-sevenx-and-exp.md) | `sevenx` as 7x's official public PHP code prefix, `exp` for work assigned to the Exponential project and the Exponential Foundation |
 | Tests | [Testing and continuous integration](testing-and-ci.md) | PHPUnit, the test map, the CI workflows and the gates before a push |
 | History | [Source control and releases](source-control-and-releases.md) | Git conventions, commit messages, changelogs, tags and version numbers |
+| Planned changes | [Planned changes with OpenSpec](planned-changes-with-openspec.md) | OpenSpec: proposal, specs, design, tasks, plan, apply and verify of a larger change |
 | Documentation | [Documentation and publishing](documentation-and-publishing.md) | DITA 1.3, CommonMark and GFM, GNU FDL 1.3, PDF, EPUB 3 and EPUB Accessibility |
 | Interfaces | [APIs and protocols](apis-and-protocols.md) | OAuth 2.0 and OpenID Connect, REST and JSON, WebDAV, SOAP, feeds, mail, LDAP |
 | Databases | [Databases and SQL](databases-and-sql.md) | SQL and the dialect of each supported database, the database abstraction |

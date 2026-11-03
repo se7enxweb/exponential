@@ -313,7 +313,7 @@ class expMigrationGraphqlIntegrationTest extends PHPUnit\Framework\TestCase
     public function testRest()
     {
         $routes = ( new expMigrationRestProvider() )->getRoutes();
-        $this->assertSame( array( 'expMigrationStatus', 'expMigrationRuns', 'expMigrationRun' ), array_keys( $routes ) );
+        $this->assertSame( array( 'expMigrationStatus', 'expMigrationRuns', 'expMigrationRun', 'expMigrationSnapshot' ), array_keys( $routes ) );
         $this->assertInstanceOf( 'expMigrationRestViewController', ( new expMigrationRestProvider() )->getViewController() );
         $ini = eZINI::instance( 'rest.ini' );
         $this->assertSame( 'expMigrationRestProvider', $ini->variable( 'ApiProvider', 'ProviderClass' )['migration'] );

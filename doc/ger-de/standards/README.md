@@ -44,6 +44,7 @@ und ihrem Betrieb ab: Die Software kann Konformität möglich machen, aber eine 
 | Code-Präfixe | [Namenspräfixe: sevenx und exp](namenspraefixe-sevenx-und-exp.md) | `sevenx` als offizielles öffentliches PHP-Code-Präfix von 7x, `exp` für Arbeit, die dem Projekt Exponential und der Exponential Foundation zugeordnet ist |
 | Tests | [Tests und kontinuierliche Integration](tests-und-ci.md) | PHPUnit, die Testkarte, die CI-Workflows und die Prüfungen vor einem Push |
 | Historie | [Versionsverwaltung und Releases](versionsverwaltung-und-releases.md) | Git-Konventionen, Commit-Nachrichten, Changelogs, Tags und Versionsnummern |
+| Geplante Änderungen | [Geplante Änderungen mit OpenSpec](geplante-aenderungen-mit-openspec.md) | OpenSpec: Vorschlag, Specs, Entwurf, Aufgaben, Plan, Umsetzung und Prüfung einer größeren Änderung |
 | Dokumentation | [Dokumentation und Veröffentlichung](dokumentation-und-veroeffentlichung.md) | DITA 1.3, CommonMark und GFM, GNU FDL 1.3, PDF, EPUB 3 und EPUB Accessibility |
 | Schnittstellen | [APIs und Protokolle](apis-und-protokolle.md) | OAuth 2.0 und OpenID Connect, REST und JSON, WebDAV, SOAP, Feeds, Mail, LDAP |
 | Datenbanken | [Datenbanken und SQL](datenbanken-und-sql.md) | SQL und der Dialekt jeder unterstützten Datenbank, die Datenbankabstraktion |

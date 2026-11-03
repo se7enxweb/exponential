@@ -1,0 +1,54 @@
+schema: plan-driven
+
+# Project context for OpenSpec (https://github.com/Fission-AI/OpenSpec). Only what an agent cannot read off
+# the code. Write all OpenSpec artifacts in English.
+context: |
+  Product: Exponential 6, a maintained PHP CMS that continues the discontinued eZ Publish Legacy (PHP 8.1-8.5+, PHPUnit 13),
+  with the administration designs admin and admin4 and an extension system.
+
+  Binding design source: the ticket of the change and, where one exists, its specification under
+  openspec/handoff/ (for example openspec/handoff/expworkflow-16702-spec.md for the workflow changes).
+
+  Architecture rules:
+  - A siteaccess is database + design + var directory (+ search core). Every tool that touches storage
+    names the siteaccess it works on. CLI scripts: startup() -> getOptions() -> initialize(), exactly once;
+    long options documented in the --opt=value form.
+  - Configuration is INI with precedence settings/override > extension override > siteaccess > extension
+    (reverse activation order). After any INI change clear the whole cache (var/cache/ini, then
+    php bin/php/ezcache.php --clear-all per siteaccess).
+  - New functionality that not every installation needs goes into an extension. Changes to lib/ and
+    kernel/ stay surgical and keep every other design and frontend unchanged.
+  - The designs admin and admin4 are kept in step; the administration runs under a Content Security
+    Policy: no inline script or style, no event handler attributes, no jQuery or YUI in new code.
+  - Tests never write to a site database; database tests use throwaway databases (ezpDatabaseTestCase).
+
+  Project checks (verify cites each):
+  - The phpunit run of every affected suite of phpunit.xml (.github/workflows/phpunit.yml)
+  - php -l on every changed PHP and INI file; bin/php/eztemplatecheck.php on changed templates
+  - The root suites kernel-classes and lib when lib/ or kernel/ changed
+
+  Platform matrix: the databases the change touches (MySQL/MariaDB with utf8mb4, PostgreSQL, SQLite,
+  Oracle) and the search engines (built-in, eZ Find) where the change searches.
+
+rules:
+  proposal:
+    - Name the ticket the change implements and link it
+    - State explicitly what is out of scope and which ticket covers it
+  specs:
+    - Describe observable behavior only; class names, INI keys and file paths belong in design.md
+    - When behavior differs per siteaccess, role or search engine, say so in a scenario
+  design:
+    - Name the extension that carries the change; justify every edit in lib/ or kernel/
+    - Name the INI files and keys and where they live
+    - Name the policies (module/function) and limitations the change checks or adds
+    - Name the database tables and how they are created on an existing installation
+  tasks:
+    - Each task group lands its own tests and the documentation of the extension or feature it touches
+  verify:
+    - Cite the exact phpunit run line and result of each affected suite
+
+operations:
+  apply:
+    guidance:
+      - Work in a separate worktree (named exponential-<change-name>), never inside the main checkout
+      - In a fresh worktree install or copy vendor/ (no symlink) and run php bin/php/ezpgenerateautoloads.php -e

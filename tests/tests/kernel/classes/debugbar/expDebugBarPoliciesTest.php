@@ -107,7 +107,7 @@ class expDebugBarPoliciesTest extends PHPUnit\Framework\TestCase
                     'view_keys' => array(), 'from_listeners' => array(), 'view_profile' => null, 'assignments' => array() );
         $this->assertStringNotContainsString( 'data-exp-debug-policies', expDebugBarReport::userHtml( $u ) );
         $html = expDebugBarReport::userHtml( $u, true );
-        $this->assertMatchesRegularExpression( '#<details class="exp-debug-user-policies-section" data-exp-debug-policies data-role-url="[^"]*role/view/"><summary>Policies</summary>#', $html );
+        $this->assertMatchesRegularExpression( '#<details class="exp-debug-user-policies-section" data-exp-debug-policies data-role-url="[^"]*role/view/?"><summary>Policies</summary>#', $html );
         foreach ( array( 'Load more', 'Module/function', 'All roles (%count policies)', '%shown of %matched policies', 'No policy matches.' ) as $word )
             $this->assertContains( $word, expDebugBarReport::scriptStrings() );
     }
