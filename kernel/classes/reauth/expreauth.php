@@ -920,6 +920,8 @@ class expReauth
         $json = json_encode( array( 'error' => 'reauth_required', 'url' => $url ) );
         // the JSON alone, as graphql/query and expwt/api answer: where the debug output is on (DebugOutput, by IP),
         // its report would follow the content and the script that asked could not read the answer
+        if ( class_exists( 'eZDebug' ) )
+            eZDebug::updateSettings( array( 'debug-enabled' => false ) );
         if ( class_exists( 'eZExecution' ) && PHP_SAPI !== 'cli' )
         {
             echo $json;
