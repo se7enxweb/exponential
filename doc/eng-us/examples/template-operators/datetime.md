@@ -31,10 +31,10 @@ Built from the parameter list above; the values are placeholders (the operator's
 
 ## In a shipped template
 
-The first use in the templates of this installation, `design/admin/templates/exphelp/audience.tpl` line 127:
+The first use in the templates of this installation, `design/admin/templates/content/searchresult.tpl` line 53:
 
 ```tpl
-{if and( is_set( $change.time ), $change.time|gt( 0 ) )}<time datetime="{$change.time|datetime( 'custom', '%Y-%m-%dT%H:%i:%s' )}">{$change.time|l10n( 'shortdate' )}</time>{/if}
+<td class="a4-search-date"><time datetime="{$result_object.modified|datetime( 'custom', '%Y-%m-%dT%H:%i' )}">{$result_object.modified|l10n( shortdatetime )}</time></td>
 ```
 
 ## Related

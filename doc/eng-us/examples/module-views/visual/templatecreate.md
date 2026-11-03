@@ -28,7 +28,6 @@ The view names no policy function, so the user needs a policy for the whole modu
 | Key | Value |
 |---|---|
 | Navigation part | `ezvisualnavigationpart` |
-| UI context | `edit` |
 | Single POST actions | CreateOverrideButton: CreateOverride, CancelOverrideButton: CancelOverride |
 
 ## Example

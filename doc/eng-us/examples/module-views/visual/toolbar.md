@@ -28,7 +28,6 @@ The view names no policy function, so the user needs a policy for the whole modu
 | Key | Value |
 |---|---|
 | Navigation part | `ezvisualnavigationpart` |
-| UI context | `edit` |
 | Single POST actions | BackToToolbarsButton: BackToToolbars, NewToolButton: NewTool, UpdatePlacementButton: UpdatePlacement, BrowseButton: Browse, RemoveButton: Remove, StoreButton: Store |
 | POST actions | BrowseActionName |
 

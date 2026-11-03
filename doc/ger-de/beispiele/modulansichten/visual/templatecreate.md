@@ -28,7 +28,6 @@ Die Ansicht nennt keine Richtlinienfunktion, daher braucht der Benutzer eine Ric
 | Schlüssel | Wert |
 |---|---|
 | Navigationsbereich | `ezvisualnavigationpart` |
-| UI-Kontext | `edit` |
 | Einzelne POST-Aktionen | CreateOverrideButton: CreateOverride, CancelOverrideButton: CancelOverride |
 
 ## Beispiel
