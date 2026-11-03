@@ -69138,6 +69138,190 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No answer</source>
         <translation>Nema odgovora</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>маскирано</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Прикажи објашњења</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Сакриј објашњења</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Отвори</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Отвори све</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Затвори све</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Кључ или вредност</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Претражи сесију</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Тип</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>још %count</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>угнежђено предубоко за приказ</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>скраћено, укупно %count знакова</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Започето</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Име колачића</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>ID сесије</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Руковалац</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Путања за чување</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>Подразумевано у PHP-у</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Трајање (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Колачић</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>трајање %s с</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Ваша сопствена PHP сесија, онаква каква је била када је одељак отворен, никада туђа. Вредности кључева који личе на тајне (токени, хешеви, лозинке) су маскиране (debugbar.ini SessionMask[]); све остало се приказује онако како је сачувано, укључујући и личне податке.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count кључева, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>велика</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Сесија је празна.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>За овај захтев није покренута ниједна сесија.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Екстензија %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Језгро и остало</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Нису приказани сви уноси: сесија садржи више него што се овде може навести.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>Број ненаведених кључева: %count.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Оквир</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Вредности које личе на токен (JSON Web Token, акредитиви из заглавља Authorization, приватни кључ, дугачак хексадецимални или насумичан текст) такође се маскирају, без обзира на то како се њихов кључ зове (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>Кључ личи на тајну (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>Вредност личи на токен.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Испод маскираног кључа.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>Сесија као текст, маскирана као табела.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>Сесија је већа од %size (debugbar.ini SessionWarnBytes): сваки захтев овог корисника чита целу сесију и уписује је када се промени.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP чува ову сесију у датотекама и закључава датотеку током целог захтева: захтеви истог корисника (више картица, AJAX позиви) чекају једни на друге.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Задржи отворено</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>Већа од %size (debugbar.ini SessionWarnBytes): сваки захтев овог корисника чита целу сесију.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits од %count прочитано из кеша</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Ниједан шаблон није исцртан (приказ прочитан из кеша приказа не исцртава ниједан).</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Доделе улога</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Улоге и политике</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>другачије него код анонимних посетилаца</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>исто као код анонимних посетилаца</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

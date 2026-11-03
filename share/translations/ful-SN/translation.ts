@@ -69199,6 +69199,190 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
         <source>No answer</source>
         <translation>Walaa jaabawol</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>suuɗaama</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Hollu firooji</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Suuɗ firooji</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Uddu</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Udditu fof</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Uddu fof</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Kiɗ walla keewal</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Yiylo e jokkere ndee</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Fannu</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>%count goɗɗe</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>naatii ko ɓuri luggude ngam hollireede</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>taƴaama, alkule %count fof</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Fuɗɗii</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Innde kukii</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>ID jokkere</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Toppitoowo</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Laawol danndugol</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>Ko PHP suɓi</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Juuteendi nguurndam (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Kukii</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>juuteendi %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Jokkere PHP maa hoore maa, no wonnoo nde taƴre nde udditaa, wonaa jokkere goɗɗo. Keewe kiɗɗe nanndooje e cuuɗi (token, hash, finndeeji) ena suuɗaa (debugbar.ini SessionMask[]); kala goɗɗum hollirtee no danndiraa, hay humpitooji keeriiɗi.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>kiɗɗe %count, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>mawnde</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Jokkere ndee ena wolli.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Alaa jokkere fuɗɗaama ngam ndee ɗaɓɓaande.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Ɓeydaari %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Kernel e goɗɗe</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Naatgooji ɗi fof hollaaka: jokkere ndee ena jogii ko ɓuri ko waawi limteede ɗoo.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>Kiɗɗe %count limtaaka.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Kaɗɗungal</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Keewe nanndooje e token (JSON Web Token, seedeeji tiitoonde Authorization, kiɗ keeriiɗo, binndi hex juutɗi walla ko woni tan) ena suuɗee kadi, hay innde kiɗ mum woni hol ko (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>Kiɗ o ena nanndi e suuɗaaɗum (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>Keewal ngal ena nanndi e token.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Ley kiɗ suuɗaaɗo.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>Jokkere ndee wano binndi, suuɗaa wano tabalo o.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>Jokkere ndee ena ɓuri %size (debugbar.ini SessionWarnBytes): kala ɗaɓɓaande huutoroowo oo ena janga jokkere ndee fof, ena winnda nde so nde waylii.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP ena danndoo jokkere ndee e fiilaaji, ena uuma fiilde nde e ɗaɓɓaande nde fof: ɗaɓɓaaje huutoroowo gooto (tabbe keewɗe, noddaange AJAX) ena fadondira.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Accu ena udditii</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>Ena ɓuri %size (debugbar.ini SessionWarnBytes): kala ɗaɓɓaande huutoroowo oo ena janga jokkere ndee fof.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits e %count njangaama e cache</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Alaa modèle hollaama (yiyannde jangaande e cache yiyannde hollataa hay gootel).</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Hokkirɗe darnde</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Darnde e doosgolji</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>ceertii e koɓe jillotooɓe ɓe innde mum anndaaka</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>ko wano koɓe jillotooɓe ɓe innde mum anndaaka</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -69199,6 +69199,190 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
         <source>No answer</source>
         <translation>Walay tubag</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>gitago</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Ipakita ang mga pagpasabot</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Itago ang mga pagpasabot</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Abli</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Ablihi tanan</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Sirado tanan</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Yawi o bili</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Pangita sa sesyon</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Matang</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>%count pa</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>lawom kaayo nga nested aron ipakita</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>giputol, %count ka karakter sa tanan</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Gisugdan</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Ngalan sa cookie</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>ID sa sesyon</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Tigdumala</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Dalanan sa pagtipig</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>Default sa PHP</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Gidugayon (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Cookie</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>gidugayon %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Ang imong kaugalingong PHP nga sesyon, sama sa kahimtang niini sa dihang giablihan ang seksyon, dili gayud sa uban. Ang mga bili sa mga yawi nga morag sekreto (mga token, hash, password) gitago (debugbar.ini SessionMask[]); ang tanan nga uban gipakita sama sa pagkatipig niini, apil ang personal nga datos.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count ka yawi, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>dako</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Walay sulod ang sesyon.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Walay sesyon nga gisugdan alang niini nga hangyo.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Ekstensiyon %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Kernel ug uban pa</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Dili tanan nga entry gipakita: ang sesyon adunay labaw pa sa mahimong ilista dinhi.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count ka yawi ang wala gilista.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Gambalay</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Ang mga bili nga morag token (usa ka JSON Web Token, ang mga kredensyal sa usa ka Authorization header, usa ka pribadong yawi, taas nga hex o random nga teksto) gitago usab, bisan unsa pa ang ngalan sa ilang yawi (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>Ang yawi morag sekreto (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>Ang bili morag token.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Ubos sa gitagong yawi.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>Ang sesyon isip teksto, gitago sama sa talaan.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>Ang sesyon mas dako kay sa %size (debugbar.ini SessionWarnBytes): ang matag hangyo niini nga user mobasa sa tibuok sesyon, ug mosulat niini kon kini nausab.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>Gitipigan sa PHP kini nga sesyon sa mga file ug gi-lock ang file sa tibuok hangyo: ang mga hangyo sa samang user (pipila ka tab, mga tawag sa AJAX) maghulat sa usag usa.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Ipabilin nga abli</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>Mas dako kay sa %size (debugbar.ini SessionWarnBytes): ang matag hangyo niini nga user mobasa sa tibuok sesyon.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits sa %count gibasa gikan sa cache</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Walay template nga na-render (ang view nga gibasa gikan sa view cache walay gi-render).</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Mga assignment sa papel</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Mga papel ug palisiya</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>lahi sa mga anonimong bisita</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>pareho sa mga anonimong bisita</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

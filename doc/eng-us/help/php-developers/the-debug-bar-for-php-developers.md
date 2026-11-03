@@ -4,7 +4,7 @@ audience: php-developer, developer
 category: php-development
 order: 380
 summary: Using the Exp Debug bar as a PHP developer - the tabs (Messages, Settings, Cache, Timing, SQL, Templates, Included files, Memory, Rendering, User, Server), the summary thresholds, changing debug settings with undo, and adding a panel of your own with expDebugBarPanelInterface.
-keywords: debug bar, Exp Debug bar, expDebugBarReport, expDebugBarSummary, debugbar.ini, tabs, SQL tab, Timing tab, Rendering tab, User tab, cache profile, policies, Server tab, thresholds, expDebugBarPanelInterface, Panels, settings undo, debugbar.log, setup/setup
+keywords: debug bar, Exp Debug bar, expDebugBarReport, expDebugBarSummary, debugbar.ini, tabs, SQL tab, Timing tab, Rendering tab, User tab, session, cache profile, policies, Server tab, thresholds, expDebugBarPanelInterface, Panels, settings undo, debugbar.log, setup/setup
 type: help
 ---
 # The debug bar for PHP developers

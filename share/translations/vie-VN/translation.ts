@@ -69199,6 +69199,190 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
         <source>No answer</source>
         <translation>Không có phản hồi</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>đã che</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Hiện giải thích</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Ẩn giải thích</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Mở</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Mở tất cả</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Đóng tất cả</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Khóa hoặc giá trị</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Tìm trong phiên</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Loại</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>thêm %count</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>lồng quá sâu để hiển thị</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>đã cắt, tổng cộng %count ký tự</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Đã bắt đầu</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Tên cookie</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>ID phiên</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Trình xử lý</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Đường dẫn lưu</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>Mặc định của PHP</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Thời gian tồn tại (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Cookie</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>thời gian tồn tại %s giây</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Phiên PHP của chính bạn, như khi phần này được mở, không bao giờ là phiên khác. Giá trị của các khóa trông giống bí mật (token, mã băm, mật khẩu) được che (debugbar.ini SessionMask[]); mọi thứ khác được hiển thị như đã lưu, kể cả dữ liệu cá nhân.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count khóa, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>lớn</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Phiên trống.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Không có phiên nào được bắt đầu cho yêu cầu này.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Tiện ích mở rộng %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Lõi và các thành phần khác</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Không phải mục nào cũng được hiển thị: phiên có nhiều mục hơn số có thể liệt kê ở đây.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count khóa không được liệt kê.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Khung</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Các giá trị trông giống token (JSON Web Token, thông tin xác thực của tiêu đề Authorization, khóa riêng tư, văn bản thập lục phân hoặc ngẫu nhiên dài) cũng được che, bất kể khóa của chúng tên là gì (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>Khóa trông giống một bí mật (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>Giá trị trông giống một token.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Nằm dưới một khóa đã che.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>Phiên dưới dạng văn bản, được che giống như bảng.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>Phiên lớn hơn %size (debugbar.ini SessionWarnBytes): mỗi yêu cầu của người dùng này đọc toàn bộ phiên và ghi lại khi phiên thay đổi.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP lưu phiên này trong tệp và khóa tệp trong suốt yêu cầu: các yêu cầu của cùng một người dùng (nhiều tab, lệnh gọi AJAX) phải chờ nhau.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Giữ mở</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>Lớn hơn %size (debugbar.ini SessionWarnBytes): mỗi yêu cầu của người dùng này đọc toàn bộ phiên.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits trên %count đọc từ bộ nhớ đệm</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Không có mẫu nào được kết xuất (một chế độ xem đọc từ bộ nhớ đệm chế độ xem không kết xuất mẫu nào).</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Phép gán vai trò</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Vai trò và chính sách</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>khác với khách truy cập ẩn danh</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>giống như khách truy cập ẩn danh</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

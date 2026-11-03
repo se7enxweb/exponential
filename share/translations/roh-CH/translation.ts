@@ -69199,6 +69199,190 @@ Vus stuais midar la classa dal nod cun la funcziun da barat.</translation>
         <source>No answer</source>
         <translation>Nagina resposta</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>mascà</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Mussar explicaziuns</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Zuppentar explicaziuns</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Avrir</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Avrir tut</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Serrar tut</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Clav u valur</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Tschertgar en la sesida</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Tip</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>%count ulteriurs</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>inserì memia profund per vegnir mussà</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>scursanì, %count caracters en tut</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Cumenzà</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Num dal cookie</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>ID da la sesida</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Manipulader</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Percurs da memorisar</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>Standard da PHP</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Durada da vita (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Cookie</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>durada da vita %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Vossa atgna sesida PHP, sco ch'ella era cura che la secziun è vegnida averta, mai in'autra. Las valurs da clavs che paran secrets (tokens, hashes, pleds-clav) vegnan mascadas (debugbar.ini SessionMask[]); tut il rest vegn mussà sco memorisà, era datas persunalas.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count clavs, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>grond</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>La sesida è vida.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Per questa dumonda n'è vegnida startada nagina sesida.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Extensiun %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Nucleus ed auters</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Betg tut las endataziuns vegnan mussadas: la sesida cuntegna dapli che quai che po vegnir enumerà qua.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count clavs n'èn betg enumeradas.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Rom</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Valurs che paran in token (in JSON Web Token, las credenzialas d'in chau Authorization, ina clav privata, in lung text hex u casual) vegnan era mascadas, indifferent co che lur clav sa numna (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>La clav para in secret (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>La valur para in token.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Sut ina clav mascada.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>La sesida sco text, mascada sco la tabella.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>La sesida è pli gronda che %size (debugbar.ini SessionWarnBytes): mintga dumonda da quest utilisader legia l'entira sesida e la scriva, sch'ella è sa midada.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP tegna questa sesida en datotecas e bloccha la datoteca durant l'entira dumonda: las dumondas dal medem utilisader (plirs tabs, clamadas AJAX) spetgan l'ina sin l'autra.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Laschar avert</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>Pli grond che %size (debugbar.ini SessionWarnBytes): mintga dumonda da quest utilisader legia l'entira sesida.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits da %count legids da la memoria intermediara</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Nagin model n'è vegnì reproducì (ina vista legida da la memoria intermediara da vistas na reproducescha nagin).</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Attribuziuns da rolla</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Rollas e directivas</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>auter che tar visitaders anonims</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>sco tar visitaders anonims</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

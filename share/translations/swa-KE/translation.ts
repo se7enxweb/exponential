@@ -69197,6 +69197,190 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
         <source>No answer</source>
         <translation>Hakuna jibu</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>imefichwa</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Onyesha maelezo</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Ficha maelezo</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Fungua</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Fungua zote</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Funga zote</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Ufunguo au thamani</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Tafuta katika kipindi</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Aina</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>%count zaidi</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>imefungamana kwa kina mno kuonyeshwa</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>imekatwa, herufi %count kwa jumla</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Imeanzishwa</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Jina la kidakuzi</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>Kitambulisho cha kipindi</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Kishughulikiaji</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Njia ya kuhifadhi</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>Chaguo-msingi la PHP</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Muda wa kuishi (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Kidakuzi</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>muda wa kuishi %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Kipindi chako mwenyewe cha PHP, kama kilivyokuwa sehemu hii ilipofunguliwa, kamwe si kingine. Thamani za funguo zinazoonekana kama siri (tokeni, hashi, nywila) zimefichwa (debugbar.ini SessionMask[]); kila kitu kingine kinaonyeshwa kama kilivyohifadhiwa, data binafsi pia.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>funguo %count, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>kubwa</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Kipindi ni tupu.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Hakuna kipindi kilichoanzishwa kwa ombi hili.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Kiendelezi %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Kiini na vingine</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Si kila ingizo linaloonyeshwa: kipindi kina zaidi ya kinachoweza kuorodheshwa hapa.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>Funguo %count hazijaorodheshwa.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Fremu</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Thamani zinazoonekana kama tokeni (JSON Web Token, vitambulisho vya kichwa cha Authorization, ufunguo wa faragha, maandishi marefu ya heksadesimali au ya nasibu) pia zimefichwa, bila kujali ufunguo wake unaitwaje (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>Ufunguo unaonekana kama siri (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>Thamani inaonekana kama tokeni.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Chini ya ufunguo uliofichwa.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>Kipindi kama maandishi, kimefichwa kama jedwali.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>Kipindi ni kikubwa kuliko %size (debugbar.ini SessionWarnBytes): kila ombi la mtumiaji huyu husoma kipindi kizima, na hukiandika kinapobadilika.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP huhifadhi kipindi hiki katika faili na hufunga faili kwa ombi zima: maombi ya mtumiaji yuleyule (vichupo kadhaa, miito ya AJAX) husubiriana.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Acha wazi</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>Kikubwa kuliko %size (debugbar.ini SessionWarnBytes): kila ombi la mtumiaji huyu husoma kipindi kizima.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits kati ya %count zimesomwa kutoka kwenye akiba</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Hakuna kiolezo kilichotolewa (mwonekano uliosomwa kutoka kwenye akiba ya mionekano hautoi chochote).</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Ukabidhi wa majukumu</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Majukumu na sera</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>tofauti na wa wageni wasiojulikana</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>sawa na wa wageni wasiojulikana</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

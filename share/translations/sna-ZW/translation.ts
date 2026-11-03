@@ -69199,6 +69199,190 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
         <source>No answer</source>
         <translation>Hapana mhinduro</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>yakavanzwa</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Ratidza tsananguro</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Viga tsananguro</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Vhura</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Vhura zvose</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Vhara zvose</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Kiyi kana kukosha</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Tsvaga musesheni</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Rudzi</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>%count zvimwe</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>yakadzika zvakanyanya kuti iratidzwe</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>yakachekwa, mavara %count ese pamwe chete</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Kwakatanga</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Zita rekuki</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>ID yesesheni</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Mubati</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Nzira yekuchengetera</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>Zvakatemerwa nePHP</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Nguva yehupenyu (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Kuki</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>nguva %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Sesheni yako pachako yePHP, sezvayakanga yakaita pakavhurwa chikamu, kwete yemumwe munhu. Kukosha kwemakiyi anoita kunge zvakavanzika (matokeni, mahashi, mapassword) kunovanzwa (debugbar.ini SessionMask[]); zvimwe zvese zvinoratidzwa sezvazvakachengetwa, kunyange ruzivo rwega.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>makiyi %count, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>hombe</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Sesheni haina chinhu.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Hapana sesheni yakatangwa yechikumbiro ichi.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Chiwedzero %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Kernel nezvimwe</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Hazvisi zvese zviri kuratidzwa: sesheni ine zvakawanda kupfuura zvinogona kunyorwa pano.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>Makiyi %count haana kunyorwa.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Furemu</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Kukosha kunoita kunge tokeni (JSON Web Token, zvitupa zvemusoro weAuthorization, kiyi yakavanzika, mavara marefu ehex kana emhando ipi neipi) kunovanzwawo, zvisinei nezita rekiyi yako (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>Kiyi inoita kunge chakavanzika (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>Kukosha kunoita kunge tokeni.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Pasi pekiyi yakavanzwa.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>Sesheni sezvinyorwa, yakavanzwa setafura.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>Sesheni yakakura kupfuura %size (debugbar.ini SessionWarnBytes): chikumbiro chega chega chemushandisi uyu chinoverenga sesheni yese, uye chinoinyora kana yachinja.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP inochengeta sesheni iyi mumafaira uye inokiya faira panguva yose yechikumbiro: zvikumbiro zvemushandisi mumwe chete (mataabhu akawanda, mafoni eAJAX) zvinomirirana.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Chengeta yakavhurika</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>Yakakura kupfuura %size (debugbar.ini SessionWarnBytes): chikumbiro chega chega chemushandisi uyu chinoverenga sesheni yese.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits pa%count zvakaverengwa kubva kucache</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Hapana tembureti yakagadzirwa (maonero akaverengwa kubva kucache yemaonero haagadziri imwe).</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Kugoverwa kwezvinzvimbo</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Zvinzvimbo nemitemo</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>zvakasiyana nezvevashanyi vasingazivikanwe</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>zvakafanana nezvevashanyi vasingazivikanwe</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

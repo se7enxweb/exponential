@@ -69199,6 +69199,190 @@ Don fertet rievdadit čuolmma luohká molsunfunkšuvnna bokte.</translation>
         <source>No answer</source>
         <translation>Eai vástádus</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>maskerejuvvon</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Čájet čilgehusaid</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Čiega čilgehusaid</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Rahpat</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Rahpat buot</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Gidđat buot</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Čoavdi dahje árvu</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Oza sešuvnnas</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Šládja</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>%count eanet</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>menddo čiekŋalit siskkildan čájehussii</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>oaniduvvon, oktiibuot %count mearkka</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Álggahuvvon</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Diehtočoahku namma</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>Sešuvnna ID</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Gieđahalli</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Vurkenbálggis</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>PHP standárda</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Eallinágga (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Diehtočoahkku</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>eallinágga %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Du iežat PHP-sešuvdna, nugo dat lei go oassi rahppojuvvui, ii goassige eará. Čoavddaid árvvut mat orrot leame čiegusvuođat (tokenat, hashat, beassansánit), maskerejuvvojit (debugbar.ini SessionMask[]); buot eará čájehuvvo nugo dat lea vurkejuvvon, maiddái persovdnadieđut.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count čoavddaid, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>stuoris</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Sešuvdna lea guorus.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Dán jearaldahkii ii álggahuvvon makkárge sešuvdna.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Lasáhus %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Váibmu ja earát</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Buot merkošumit eai čájehuvvo: sešuvnnas lea eanet go dás sáhttá listut.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count čoavddaid eai leat listejuvvon.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Rámma</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Árvvut mat orrot leame token (JSON Web Token, Authorization-oaivegeaži duođaštusat, priváhta čoavdi, guhkes heksadesimála dahje sahtedohko teaksta), maskerejuvvojit maiddái, beroškeahttá mii sin čoavdi namma lea (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>Čoavdi orru leame čiegusvuohta (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>Árvu orru leame token.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Maskerejuvvon čoavddi vuolde.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>Sešuvdna teakstan, maskerejuvvon nugo tabealla.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>Sešuvdna lea stuorát go %size (debugbar.ini SessionWarnBytes): juohke dán geavaheaddji jearaldat lohká olles sešuvnna, ja čállá dan go dat lea rievdan.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP vurke dán sešuvnna fiillaide ja loahkká fiilla olles jearaldaga áigge: seamma geavaheaddji jearaldagat (máŋga gilkora, AJAX-gohčumat) vurdet guhtet guimmiideaset.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Doalaha rabas</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>Stuorát go %size (debugbar.ini SessionWarnBytes): juohke dán geavaheaddji jearaldat lohká olles sešuvnna.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits %count gaskkas lohkkojuvvon gaskavuorkkás</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Ii makkárge málle hábmejuvvon (oaidnu mii lohkkojuvvo oaidnogaskavuorkkás ii hábme ovttage).</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Rollamearrademat</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Rollat ja njuolggadusat</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>earálagan go namahis guossiin</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>seamma go namahis guossiin</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

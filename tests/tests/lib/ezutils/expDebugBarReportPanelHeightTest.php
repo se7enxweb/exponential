@@ -168,7 +168,7 @@ class expDebugBarReportPanelHeightTest extends PHPUnit\Framework\TestCase
         // #571: the bar is complete at the first paint: the minimise symbol, the link, "Keep open on reload" and the
         // hidden tab that restores the bar are in the markup, not added by the scripts after load
         $this->assertMatchesRegularExpression(
-            '#<h2><button type="button" class="exp-debug-logo" aria-label="[^"]+" title="[^"]+"><svg [^>]*class="exp-debug-symbol">.*?</svg></button><a href="\#debug-end"[^>]*>Exp Debug.*?<label class="debug-keep-open"><input type="checkbox"> [^<]+</label></h2><button type="button" class="exp-debug-restore" hidden #s',
+            '#<h2><button type="button" class="exp-debug-logo" aria-label="[^"]+" title="[^"]+"><svg [^>]*class="exp-debug-symbol">.*?</svg></button><a href="\#debug-end"[^>]*>Exp Debug.*?<label class="debug-keep-open"[^>]*><input type="checkbox"> [^<]+</label></h2><button type="button" class="exp-debug-restore" hidden #s',
             $report );
     }
 

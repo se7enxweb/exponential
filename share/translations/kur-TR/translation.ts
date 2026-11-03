@@ -67747,6 +67747,190 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <source>No answer</source>
         <translation>Bersiv tune</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>veşartî</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Ravekirinan nîşan bide</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Ravekirinan veşêre</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Vekirin</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Hemûyan vekirin</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Hemûyan girtin</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Mifte an nirx</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Di danişînê de bigere</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Cure</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>%count zêdetir</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>ji bo nîşandanê pir kûr hatiye hêlînkirin</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>hatiye birîn, bi tevahî %count tîp</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Dest pê kir</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Navê kukiyê</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>Nasnameya danişînê</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Rêveber</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Rêya tomarkirinê</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>Standarda PHP</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Jiyandem (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Kukî</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>jiyandem %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Danişîna we ya PHP ya xwe, wekî ku dema beş hate vekirin bû, qet ya kesekî din na. Nirxên miftên ku dişibin nehêniyan (token, hash, şîfre) têne veşartin (debugbar.ini SessionMask[]); her tiştê din wekî ku hatiye tomarkirin tê nîşandan, daneyên kesane jî.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count mifte, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>mezin</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Danişîn vala ye.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Ji bo vê daxwazê tu danişîn nehat destpêkirin.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Pêveka %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Kernel û yên din</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Hemû tomar nayên nîşandan: di danişînê de ji ya ku li vir dikare were lîstekirin zêdetir heye.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count mifte nayên lîstekirin.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Çarçove</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Nirxên ku dişibin tokenekê (JSON Web Token, nasnameyên sernivîsa Authorization, mifteyeke taybet, nivîseke hex a dirêj an rasthatî) jî têne veşartin, navê mifteya wan çi dibe bila bibe (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>Mifte dişibe nehêniyekê (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>Nirx dişibe tokenekê.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Di bin mifteyeke veşartî de.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>Danişîn wekî nivîs, wekî tabloyê veşartî.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>Danişîn ji %size mezintir e (debugbar.ini SessionWarnBytes): her daxwaza vê bikarhênerê tevahiya danişînê dixwîne, û dema ku guherî wê dinivîse.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP vê danişînê di pelan de diparêze û pelê di tevahiya daxwazê de kilît dike: daxwazên heman bikarhênerî (çend tab, bangên AJAX) li hev disekinin.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Vekirî bihêlin</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>Ji %size mezintir (debugbar.ini SessionWarnBytes): her daxwaza vê bikarhênerê tevahiya danişînê dixwîne.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits ji %count ji cache hatin xwendin</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Tu şablon nehat render kirin (dîtineke ku ji cache-a dîtinan hatiye xwendin tu şablonê render nake).</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Veqetandinên rolan</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Rol û polîtîka</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>ji yên serdanvanên nenas cuda ye</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>wek yên serdanvanên nenas</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

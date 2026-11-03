@@ -69199,6 +69199,190 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
         <source>No answer</source>
         <translation>Ensin respuesta</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>enmascaráu</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Amosar esplicaciones</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Anubrir esplicaciones</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Abrir</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Abrir too</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Zarrar too</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Clave o valor</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Guetar na sesión</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Tipu</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>%count más</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>añeráu demasiao fondo p'amosalo</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>cortáu, %count caráuteres en total</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Aniciáu</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Nome de la cookie</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>ID de sesión</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Xestor</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Camín d'atroxamientu</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>Predetermináu de PHP</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Duración (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Cookie</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>duración %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>La to propia sesión PHP, tal como taba cuando s'abrió la seición, enxamás la d'otru. Los valores de les claves que paecen secretos (tokens, hashes, contraseñes) enmascárense (debugbar.ini SessionMask[]); tolo demás amuésase tal como ta atroxao, tamién los datos personales.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count claves, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>grande</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>La sesión ta balera.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Nun s'anició nenguna sesión pa esta solicitú.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Estensión %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Nucleu y otros</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Nun s'amuesen toles entraes: la sesión tien más de lo que se pue llistar equí.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>Nun se llisten %count claves.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Marcu</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Los valores que paecen un token (un JSON Web Token, les credenciales d'una cabecera Authorization, una clave privada, un testu hex llargu o al debalu) enmascárense tamién, llámese como se llame la so clave (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>La clave paez un secretu (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>El valor paez un token.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Debaxo d'una clave enmascarada.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>La sesión como testu, enmascarada como la tabla.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>La sesión ye mayor que %size (debugbar.ini SessionWarnBytes): cada solicitú d'esti usuariu llee la sesión entera y escríbela cuando camudó.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP guarda esta sesión en ficheros y bloquia'l ficheru demientres tola solicitú: les solicitúes del mesmu usuariu (delles llingüetes, llamaes AJAX) esperen unes poles otres.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Caltener abierto</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>Mayor que %size (debugbar.ini SessionWarnBytes): cada solicitú d'esti usuariu llee la sesión entera.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits de %count lleíos de la caché</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Nun se renderizó nenguna plantía (una vista lleída de la caché de vistes nun renderiza nenguna).</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Asignaciones de rol</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Roles y polítiques</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>distintu al de los visitantes anónimos</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>igual que pa los visitantes anónimos</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

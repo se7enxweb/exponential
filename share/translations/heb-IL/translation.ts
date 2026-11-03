@@ -67690,6 +67690,190 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No answer</source>
         <translation>אין תשובה</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>מוסתר</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>הצגת הסברים</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>הסתרת הסברים</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>פתיחה</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>פתיחת הכול</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>סגירת הכול</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>מפתח או ערך</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>חיפוש בהפעלה</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>סוג</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>עוד %count</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>מקונן עמוק מדי להצגה</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>נחתך, %count תווים בסך הכול</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>התחיל</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>שם העוגייה</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>מזהה הפעלה</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>מטפל</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>נתיב שמירה</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>ברירת המחדל של PHP</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>משך חיים (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>עוגייה</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>משך חיים %s שנ׳</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>ההפעלה של PHP שלך עצמך, כפי שהייתה כשהמקטע נפתח, ולעולם לא של מישהו אחר. ערכים של מפתחות שנראים כמו סודות (אסימונים, גיבובים, סיסמאות) מוסתרים (debugbar.ini SessionMask[]); כל השאר מוצג כפי שנשמר, כולל מידע אישי.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count מפתחות, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>גדולה</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>ההפעלה ריקה.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>לא הותחלה הפעלה עבור בקשה זו.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>הרחבה %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>ליבה ואחרים</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>לא כל הרשומות מוצגות: בהפעלה יש יותר ממה שניתן לפרט כאן.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count מפתחות אינם מפורטים.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>מסגרת</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>ערכים שנראים כמו אסימון (JSON Web Token, פרטי הגישה של כותרת Authorization, מפתח פרטי, טקסט הקסדצימלי או אקראי ארוך) מוסתרים גם הם, יהיה שם המפתח שלהם אשר יהיה (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>המפתח נראה כמו סוד (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>הערך נראה כמו אסימון.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>מתחת למפתח מוסתר.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>ההפעלה כטקסט, מוסתרת כמו הטבלה.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>ההפעלה גדולה מ-%size (debugbar.ini SessionWarnBytes): כל בקשה של משתמש זה קוראת את כל ההפעלה, וכותבת אותה כשהיא השתנתה.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP שומר את ההפעלה הזו בקבצים ונועל את הקובץ לכל אורך הבקשה: בקשות של אותו משתמש (כמה כרטיסיות, קריאות AJAX) ממתינות זו לזו.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>השארה פתוחה</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>גדולה מ-%size (debugbar.ini SessionWarnBytes): כל בקשה של משתמש זה קוראת את כל ההפעלה.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits מתוך %count נקראו מהמטמון</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>לא עובדה אף תבנית (תצוגה שנקראה ממטמון התצוגות אינה מעבדת אף תבנית).</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>הקצאות תפקידים</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>תפקידים ומדיניות</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>שונה מזה של מבקרים אנונימיים</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>זהה לזה של מבקרים אנונימיים</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

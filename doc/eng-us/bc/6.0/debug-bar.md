@@ -238,6 +238,7 @@ and turns the level up **below** its values, see
 | `log[::<limit>]` | GET | setup/setup |
 | `summary` | GET | debug output for the request (the report itself; a visitor gets no IP list entry in it) |
 | `policies[::<role>[::<offset>[::<search>]]]` | GET; everything in the path: a role id or `-`, the offset, the search as base64url of its UTF-8 text or `-` (`expdebugbar::policies::-::0::Y29udGVudC9yZWFk` searches `content/read`) | setup/setup: the policies of the current user's roles, a page of 200 rows (see [User](#user-roles-and-cache-profile)) |
+| `session` | GET | who sees the User tab (`setup/setup`, or an anonymous visitor with debug output): the request's own PHP session, keys as a tree, grouped by extension, secrets masked, and its frame (see [User](#user-roles-and-cache-profile)) |
 | `panelheight` | POST `height` (pixels, `0` for the default) | a logged-in user (never an anonymous visitor) with debug output for the request: stores the user preference `expdebugbar_panel_height` (see [The panel's height](#the-panels-height)) |
 
 Every POST must carry the form token (`ezxform_token`, or the header `X-CSRF-Token`); the `settings` answer has
@@ -292,6 +293,7 @@ php vendor/bin/phpunit tests/tests/kernel/classes/debugbar/
 | `expDebugBarPoliciesTest` | the policies of the User tab (UP-01 to UP-04, UP-06 to UP-08): rows and limitation values as one sorted list, the selection by role and by search (module/function, role name, class name, limitation, stored value), a search for a module and function that also finds the wildcards granting it, a row with readable values, the section only for those allowed, with the address for the role links, the script's words, the queries in chunks of 500 ids, 600 policies of 300 roles. No database |
 | `expDebugBarUserTest` | the User tab: the user's parts of the view cache key and each ignore tweak, the preferences key against the code it replaced, the preferences of every view mode (one name with two defaults), the fingerprint, the profile from a view's key (parts a listener left out or changed, pr_user), anonymous visitors, the chip, the tab escaped, the copy text. No database |
 | `expDebugBarUserPoliciesTest` | who sees the User tab, and how its policies are asked for (UP-05, UP-09, UP-10): the arguments of `expdebugbar::policies` in the path and what is refused, the script's request without a query string. No database |
+| `expDebugBarSessionTest` | the section Session of the User tab (US-01 to US-06): keys grouped by the extension that prefixes them, the kernel first; secrets masked with everything below them, the masks of debugbar.ini or the defaults, an invalid mask taken as text; a node's type, size, cut strings, binary as hex, objects with every property; the limits of depth, children and entries; the shortened session id; the section offered to whoever sees the tab, the script's words and request. No session |
 
 `expDebugBarSettingsTest` starts the kernel once on the admin siteaccess with the installation's own database, as
 the subitems column tests do; no test database is created. Its writes go to a probe block
@@ -351,7 +353,7 @@ asset URL with a `?v=` query; it also checks the query cache report's source, th
 The bar stays at the bottom of the window wherever the page is scrolled; a click on "Exp Debug" opens the panel
 above it, which scrolls on its own. No page ever has to be scrolled to use it. "Keep open on reload" remembers the
 open panel in the browser (`localStorage` keys `exp-debug-keep`, `exp-debug-open`), and the last tab
-(`exp-debug-tab`). Escape closes the panel.
+(`exp-debug-tab`); in the `default` theme it reads "Keep open", the whole words as its tooltip. Escape closes the panel.
 
 ### Themes
 
@@ -360,8 +362,8 @@ also a setting of the bar (Settings tab, Debug output, "Bar theme").
 
 | Value | The bar |
 |---|---|
-| `default` | The summary as light chips (dark in a dark colour scheme), the details of a chip in its tooltip (`title`). Also any value that is not `toolbar`. |
-| `toolbar` | A dark, compact toolbar in both colour schemes, in the manner of the Symfony web debug toolbar: each block with an icon, the first block the request (HTTP status and module/view, green, amber from status 400, red from 500; it opens the Server tab), amber and red blocks filled with their colour, and the details of a block in a popup above it while the pointer or the keyboard focus is on it. "Keep open on reload" shows its box alone, the words as its tooltip. "Exp Debug", the switch of the panel, is a lighter block of its own at the right end, filled orange while the panel is open; its arrow points up, and down while it is open. |
+| `default` | The summary as light chips (dark in a dark colour scheme), the details of a chip in its tooltip (`title`). It starts with the request: the HTTP status and module/view, filled green, amber for a redirect (3xx but 304), red from status 400; it opens the Rendering tab, or the Server tab for a user who does not see it. Also any value that is not `toolbar`. |
+| `toolbar` | A dark, compact toolbar in both colour schemes, in the manner of the Symfony web debug toolbar: each block with an icon, the first block the request (HTTP status and module/view, green, amber for a redirect (3xx but 304), red from status 400; it opens the Rendering tab, or the Server tab for a user who does not see it), amber and red blocks filled with their colour, and the details of a block in a popup above it while the pointer or the keyboard focus is on it. "Keep open on reload" shows its box alone, the words as its tooltip. "Exp Debug", the switch of the panel, is a lighter block of its own at the right end, filled orange while the panel is open; its arrow points up, and down while it is open. |
 
 In the toolbar theme a chip carries its text in `.exp-debug-chip-text` and its popup in `.exp-debug-chip-info`
 (`aria-hidden`, the chip's `aria-label` says the same) and has no `title`. The popup lists the rows a chip gives
@@ -471,8 +473,8 @@ the report's own defaults.
 | Templates | the templates used (`ShowUsedTemplates`) and the CSS/JS packer report, or how to turn them on |
 | Included files | the included PHP files (`DisplayIncludedFiles`), or their number and how to list them |
 | Memory | the classic "Main resources" table, memory now, peak, limit and share, and the five steps that took the most |
-| Rendering | how the page was rendered: the controller, the content view cache and its key, the compiled templates (see [below](#rendering-controller-content-view-cache-and-compiled-templates)); only for `setup/setup` |
-| User | the user, their cache profile (the parts of the content view cache key that depend on them), their preferences, role assignments and, on demand and for `setup/setup` only, the policies of those roles (see [below](#user-roles-and-cache-profile)); for `setup/setup`, and for an anonymous visitor who gets the debug output |
+| Rendering | how the page was rendered: the controller, the content view cache and its key, the compiled templates (see [below](#rendering-controller-content-view-cache-and-compiled-templates)); for `setup/setup`, and for an anonymous visitor who gets the debug output |
+| User | the user, their cache profile (the parts of the content view cache key that depend on them), their preferences, role assignments, on demand their own PHP session (secrets masked) and, on demand and for `setup/setup` only, the policies of those roles (see [below](#user-roles-and-cache-profile)); for `setup/setup`, and for an anonymous visitor who gets the debug output |
 | (extensions) | a tab per panel an extension registers, after Memory (see [Panels of extensions](#panels-of-extensions)) |
 | Server | where the request entered and which process rendered the report (Exponential Velocity, PHP-FPM, mod_php, the command line ...), in one sentence (see [below](#server-where-the-request-entered-and-what-rendered-it)), the facts behind it, OPcache status, and Velocity's response cache; called Velocity until 16 October 2026, its section id is still `exp-debug-panel-velocity` |
 | Other | reports appended by extensions with `eZDebug::appendBottomReport()` that belong to no tab (only when there are any) |
@@ -518,15 +520,21 @@ it was last cleared, and all caches. Each clear says what it did.
 
 ### Rendering: controller, content view cache and compiled templates
 
-The tab answers "why is this page slow or not cached" without reading the code. Only a user with `setup/setup` sees
-it and its chips, as the cache key carries the role and limitation ids of the user. Each part opens with a short
-explanation of what it shows. It has five parts:
+The tab answers "why is this page slow or not cached" without reading the code. A user with `setup/setup` sees it
+and its chips, and, as the User tab, an anonymous visitor who gets the debug output: the cache key carries the role and
+limitation ids of the user, and an anonymous visitor's are those of every anonymous visitor. A logged-in user without
+`setup/setup` does not see it. It opens with an **overview** in one line: the module view that ran last, the state of
+the content view cache in a word (*hit*, *generated*, *off*; the reason as its tooltip), the cache blocks read from
+the cache of all, the templates rendered and those compiled in this request. Below it the five parts as **sub-tabs**,
+like the User tab: the one shown last is kept (`exp-debug-rendering-subtab`), the arrow keys, Home and End move
+between them, and the explanation each part opens with is folded away until "?" shows it (`exp-debug-rendering-help`).
+Without the script the parts are shown one below the other:
 
 - **Controller**: every module view that ran, in order (an error page or a forward adds one), with the view class
   that ran it (`Exponential\View\Kernel\...`, see [cli_cronjob_view_abstractions.md](cli_cronjob_view_abstractions.md))
   and the script; the siteaccess, the navigation part and, folded, the design order (the first base that has a
   template wins).
-- **Template tree**, right after the controller and open: every template in the order it started
+- **Template tree**: every template in the order it started
   (`eZTemplate::fetch()` for the outermost, `processURI()` for each `{include}`, `node_view_gui` and the like), nested
   under the template that included it with a guide line per level, and the time it took including what it included
   (not the parsing or compiling of the template itself). Where the overrides chose another file than the template's
@@ -570,8 +578,8 @@ Tests: `expRenderStatsTest`, `expRenderStatsCacheBlockTest` and `expRenderStatsT
 
 ### User: roles and cache profile
 
-Whether two users get the same content view cache files, and if not, why. The chip **`VC 3f9ac21e`** in the status
-bar is the user's **cache profile**: a fingerprint (8 hex digits) of the parts of the view cache key that depend on
+Whether two users get the same content view cache files, and if not, why. The chip **`admin · VC 3f9ac21e`** in the
+status bar names the user (the login, after a person icon) and their **cache profile**: a fingerprint (8 hex digits) of the parts of the view cache key that depend on
 the user. Two users with the same profile share the cache files of the views under the same ViewCacheTweaks; compare
 the chips of two browsers, or copy both profiles as text. A second fingerprint after it (`VC 3f9ac21e · 7b0d12aa`)
 covers the keys a `content/view/cachekeys` listener added for the view of this page; ` · pr_user` says every
@@ -593,21 +601,32 @@ A `ViewCacheTweaks` entry (`ignore_userroles`, `ignore_userlimitedlist`, `ignore
 a content view. With a content view on the page its key decides: a part a listener left out is shown as such and not
 counted, a part it changed counts with the key's value, marked *listener*.
 
-The tab shows the user (id, login, logged in, siteaccess, session), the profile with every part, a button that copies
-it as text (`name=value` per line), the preferences per view mode with the user's value and the default, and the role
-assignments: role id and name, the assignment's limitation, and whether it is assigned to the user or to a group (by
-name and object id). A logged-in user also sees the profile of **anonymous visitors**, *same as yours* or
+The tab opens with an **overview** in one or two lines: the user (id and login), logged in, the siteaccess, the
+session (how many keys and how large; only these figures are in the page), the cache profile with *same as anonymous
+visitors* or *different*, and the number of role assignments. Below it four **sub-tabs**; the one shown last is kept
+(`exp-debug-user-subtab`), the arrow keys, Home and End move between them, and with the filter box on each names its
+matching rows:
+
+- **Cache profile**: the profile with every part and a button that copies it as text (`name=value` per line).
+- **Preferences**: the preferences per view mode (`CachedViewPreferences`) with the user's value and the default.
+- **Roles and policies**: the role assignments (role id and name, the assignment's limitation, and whether it is
+  assigned to the user or to a group, by name and object id), and for `setup/setup` the policies (below).
+- **Session**: the user's own PHP session (below).
+
+The explanations of the parts are folded away; "?" at the right of the sub-tabs shows them, and the choice is kept
+(`exp-debug-user-help`). Without the script the parts are shown one below the other. A logged-in user who gets the debug output but may
+not see the tab (no `setup/setup`) gets a chip with their login only. A logged-in user also sees the profile of **anonymous visitors**, *same as yours* or
 *different*: the anonymous user's parts under the same tweaks, with the default preferences (an anonymous visitor's
 are in their session), without the keys of listeners, which may read the session and cannot be asked for them.
 
-For `setup/setup`, as the Rendering tab, since the parts carry role and limitation ids; and for an anonymous visitor
+For `setup/setup`, since the parts carry role and limitation ids; and for an anonymous visitor
 who gets the debug output (`DebugByIP` ...), whose ids are those of every anonymous visitor: they see the anonymous
 user's roles, groups and limitation values, and on a page with a content view the values of the keys of listeners.
-The Rendering tab stays `setup/setup` only. The data comes from `expDebugBarUser`
+The Rendering tab follows the same rule. The data comes from `expDebugBarUser`
 (`kernel/classes/debugbar/expdebugbaruser.php`); it reads the role assignments with one query and the preferences
 with `eZPreferences::values()`, only when the bar is rendered for such a user.
 
-**Policies.** For `setup/setup` the tab ends with a folded section *Policies*: the policies of the user's roles,
+**Policies.** For `setup/setup` the sub-tab *Roles and policies* ends with a folded section *Policies*: the policies of the user's roles,
 loaded only when it is opened (`expdebugbar::policies`), so a user with hundreds of roles costs the page nothing. The
 first answer lists the roles with their number of policies (the assignments as the tooltip of each) and the first
 page; a role, a search and *Load more* ask again, 200 rows at a time. A row is the module and function (`*` marked),
@@ -627,6 +646,47 @@ classes, sections and siteaccesses are read once, the names of the nodes of a pa
 when the search changes while one is on its way.
 
 Tests: `expDebugBarUserTest`, `expDebugBarPoliciesTest` and `expDebugBarUserPoliciesTest` (no database).
+
+**Session.** The sub-tab *Session* shows the user's **own** PHP session, loaded only when it is first seen: the bar
+open, the User tab and the sub-tab shown (`expdebugbar::session`, answered with `Cache-Control: private, no-store`),
+so it is never part of the page. It answers what a request of this very session has stored:
+the keys of `$_SESSION` as a table per group with the columns key, type, size as stored (serialized) and value; a
+nested array or object opens with ▸ into indented rows below it, a short one of up to six plain values reads on one
+line (`[85, 93]`, `{region: "x"}`), strings are quoted, long ones cut (the whole length in the tooltip), binary values
+show as hex. A search box finds keys and values and shows the rows above a match; "Open all" and "Close all" fold the
+tables. The keys are grouped by the active extension whose name starts them (`ezfind_…`, `myext_…`; the longest name
+wins), the kernel's and every other key first. Values of keys that look like secrets are **masked**: only the type and
+the length are shown, and everything below such a key is masked too. The masks are parts of key names, regular
+expressions without delimiters, case-insensitive, in `debugbar.ini [DebugBarSettings] SessionMask[]` (token, csrf,
+nonce, secret, passw, hash, key$, credential, auth, jwt, bearer, otp, saml, assertion, ticket, sid$; an extension adds its own). Below the keys the *frame*: whether a
+session was started, the cookie's name, the session id **shortened** to four characters (a screenshot does not hand
+over the session), the handler (`session.save_handler`; the handler class and the save path for `setup/setup` only),
+`session.gc_maxlifetime`, `site.ini [Session]` SessionTimeout, ActivityTimeout, CookieTimeout and RememberMeTimeout,
+and the cookie's lifetime, path, domain, `secure`, `httponly` and `samesite`. At most 8 levels, 200 children per level
+and 3000 entries are listed, the rest is counted (keys after the last entry as *not listed*); a session over 64 KB is
+marked *large*. Keys and texts that are not UTF-8 show as hex (`0x…`). The masks hide secrets, not personal data: a
+name or an address the application keeps in the session is shown as stored, to whoever may see the section. The section is offered to
+whoever sees the User tab, `setup/setup` and an anonymous visitor who gets the debug output; it only ever shows the
+session of the request that asks, there is no way to read another one, and nothing in it can change the session
+(`expDebugBarSession`, `kernel/classes/debugbar/expdebugbarsession.php`).
+
+**Masked values, the text and the warnings.** Values are also masked by what they look like, whatever their key is
+called: a JSON Web Token anywhere in a text, the credentials of an `Authorization` header (`Bearer …`, `Basic …`), a PEM
+private key, well-known API key prefixes (`sk_live_…`, `ghp_…`, `xoxb-…`, `AKIA…`), 32 or more hex digits, and a random
+text of 32 or more base64 characters (digits and both cases, varied enough not to be a word or a slug). A key that looks
+like a token itself (a token used as an array index) is shortened to four characters and masked with everything below
+it. The badge *masked* says in its tooltip why: the key's name, the value, or a masked key above it. More patterns go in
+`debugbar.ini [DebugBarSettings] SessionValueMask[]` (regular expressions without delimiters, case-sensitive; `(?i)` at
+the start for case-insensitive), matched against the first 4096 bytes of every text and every key; the built-in ones
+always apply. **Copy as text** copies the session as one `path = value` per line, grouped like the table and built on
+the server from the same masked entries (masked values as `***`, the session id shortened), to set two sessions side by
+side or to attach to an issue. A session larger than `SessionWarnBytes` (65536 bytes) is marked *large* in the overview
+and in the sub-tab, with the reason: every request of the user reads the whole session, and writes it when it changed.
+When PHP keeps the session in files (`session.save_handler=files`), a hint says that the file is locked for the whole
+request, so the requests of one user (several tabs, AJAX calls) wait for each other. The session is asked for with
+POST, with the form token when signed in; a request that the browser marks as sent by another site is refused
+(`Sec-Fetch-Site`), and the answer, a refusal included, carries `Cache-Control: private, no-store, max-age=0`, so
+neither the browser nor a proxy nor Velocity's response cache keeps it. Tests: `expDebugBarSessionTest` (no database).
 
 ### Panels of extensions
 

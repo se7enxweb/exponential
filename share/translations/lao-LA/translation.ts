@@ -69199,6 +69199,190 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No answer</source>
         <translation>ບໍ່ມີຄຳຕອບ</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>ຖືກປິດບັງ</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>ສະແດງຄຳອະທິບາຍ</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>ເຊື່ອງຄຳອະທິບາຍ</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>ເປີດ</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>ເປີດທັງໝົດ</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>ປິດທັງໝົດ</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>ກະແຈ ຫຼື ຄ່າ</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>ຄົ້ນຫາໃນເຊສຊັນ</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>ປະເພດ</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>ອີກ %count</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>ຊ້ອນກັນເລິກເກີນໄປທີ່ຈະສະແດງ</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>ຖືກຕັດ, ທັງໝົດ %count ຕົວອັກສອນ</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>ເລີ່ມເມື່ອ</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>ຊື່ຄຸກກີ້</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>ID ເຊສຊັນ</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>ຕົວຈັດການ</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>ເສັ້ນທາງບັນທຶກ</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>ຄ່າເລີ່ມຕົ້ນຂອງ PHP</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>ອາຍຸການໃຊ້ງານ (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>ຄຸກກີ້</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>ອາຍຸການໃຊ້ງານ %s ວິ</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>ເຊສຊັນ PHP ຂອງທ່ານເອງ ຕາມທີ່ມັນເປັນໃນຕອນທີ່ເປີດພາກສ່ວນນີ້ ບໍ່ແມ່ນຂອງຜູ້ອື່ນຈັກເທື່ອ. ຄ່າຂອງກະແຈທີ່ເບິ່ງຄືຄວາມລັບ (ໂທເຄັນ, ແຮຊ, ລະຫັດຜ່ານ) ຈະຖືກປິດບັງ (debugbar.ini SessionMask[]); ສ່ວນອື່ນທັງໝົດຈະສະແດງຕາມທີ່ບັນທຶກໄວ້ ລວມທັງຂໍ້ມູນສ່ວນຕົວ.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count ກະແຈ, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>ໃຫຍ່</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>ເຊສຊັນຫວ່າງເປົ່າ.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>ບໍ່ມີເຊສຊັນໃດຖືກເລີ່ມສຳລັບຄຳຮ້ອງຂໍນີ້.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>ສ່ວນຂະຫຍາຍ %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>ເຄີເນວ ແລະ ອື່ນໆ</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>ບໍ່ໄດ້ສະແດງທຸກລາຍການ: ເຊສຊັນມີຫຼາຍກວ່າທີ່ສາມາດລາຍຊື່ໄດ້ຢູ່ນີ້.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count ກະແຈບໍ່ໄດ້ຖືກລາຍຊື່.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>ກອບ</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>ຄ່າທີ່ເບິ່ງຄືໂທເຄັນ (JSON Web Token, ຂໍ້ມູນປະຈຳຕົວຂອງສ່ວນຫົວ Authorization, ກະແຈສ່ວນຕົວ, ຂໍ້ຄວາມ hex ຫຼື ສຸ່ມທີ່ຍາວ) ກໍຖືກປິດບັງເຊັ່ນກັນ ບໍ່ວ່າກະແຈຂອງມັນຈະມີຊື່ຫຍັງ (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>ກະແຈເບິ່ງຄືຄວາມລັບ (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>ຄ່າເບິ່ງຄືໂທເຄັນ.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>ຢູ່ລຸ່ມກະແຈທີ່ຖືກປິດບັງ.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>ເຊສຊັນເປັນຂໍ້ຄວາມ, ປິດບັງຄືກັບຕາຕະລາງ.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>ເຊສຊັນໃຫຍ່ກວ່າ %size (debugbar.ini SessionWarnBytes): ທຸກຄຳຮ້ອງຂໍຂອງຜູ້ໃຊ້ນີ້ອ່ານເຊສຊັນທັງໝົດ ແລະ ຂຽນມັນເມື່ອມັນປ່ຽນແປງ.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP ເກັບເຊສຊັນນີ້ໄວ້ໃນໄຟລ໌ ແລະ ລັອກໄຟລ໌ຕະຫຼອດຄຳຮ້ອງຂໍ: ຄຳຮ້ອງຂໍຂອງຜູ້ໃຊ້ດຽວກັນ (ຫຼາຍແຖບ, ການເອີ້ນ AJAX) ລໍຖ້າກັນ.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>ເປີດໄວ້</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>ໃຫຍ່ກວ່າ %size (debugbar.ini SessionWarnBytes): ທຸກຄຳຮ້ອງຂໍຂອງຜູ້ໃຊ້ນີ້ອ່ານເຊສຊັນທັງໝົດ.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits ຈາກ %count ອ່ານຈາກແຄຊ</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>ບໍ່ມີແມ່ແບບໃດຖືກສະແດງຜົນ (ມຸມມອງທີ່ອ່ານຈາກແຄຊມຸມມອງບໍ່ສະແດງຜົນແມ່ແບບໃດ).</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>ການມອບໝາຍບົດບາດ</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>ບົດບາດ ແລະນະໂຍບາຍ</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>ແຕກຕ່າງຈາກຜູ້ເຂົ້າຊົມທີ່ບໍ່ລະບຸຊື່</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>ຄືກັບຜູ້ເຂົ້າຊົມທີ່ບໍ່ລະບຸຊື່</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

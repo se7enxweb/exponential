@@ -69138,6 +69138,190 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
         <source>No answer</source>
         <translation>Ei vastausta</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>peitetty</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Näytä selitykset</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Piilota selitykset</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Avaa</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Avaa kaikki</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Sulje kaikki</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Avain tai arvo</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Hae istunnosta</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Tyyppi</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>%count lisää</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>liian syvälle sisäkkäinen näytettäväksi</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>katkaistu, yhteensä %count merkkiä</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Aloitettu</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Evästeen nimi</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>Istunnon tunnus</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Käsittelijä</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Tallennuspolku</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>PHP:n oletus</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Elinaika (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Eväste</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>elinaika %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Oma PHP-istuntosi sellaisena kuin se oli, kun osio avattiin, ei koskaan jonkun toisen. Salaisuuksilta näyttävien avainten (tunnisteet, tiivisteet, salasanat) arvot peitetään (debugbar.ini SessionMask[]); kaikki muu näytetään tallennetussa muodossa, myös henkilötiedot.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count avainta, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>suuri</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Istunto on tyhjä.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Tälle pyynnölle ei aloitettu istuntoa.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Laajennus %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Ydin ja muut</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Kaikkia merkintöjä ei näytetä: istunnossa on enemmän kuin tässä voidaan luetella.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count avainta ei ole luettelossa.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Kehys</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Myös tunnisteelta näyttävät arvot (JSON Web Token, Authorization-otsakkeen tunnistetiedot, yksityinen avain, pitkä heksadesimaali- tai satunnaisteksti) peitetään, olipa niiden avaimen nimi mikä tahansa (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>Avain näyttää salaisuudelta (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>Arvo näyttää tunnisteelta.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Peitetyn avaimen alla.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>Istunto tekstinä, peitettynä kuten taulukko.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>Istunto on suurempi kuin %size (debugbar.ini SessionWarnBytes): jokainen tämän käyttäjän pyyntö lukee koko istunnon ja kirjoittaa sen, kun se on muuttunut.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP säilyttää tämän istunnon tiedostoissa ja lukitsee tiedoston koko pyynnön ajaksi: saman käyttäjän pyynnöt (useat välilehdet, AJAX-kutsut) odottavat toisiaan.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Pidä auki</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>Suurempi kuin %size (debugbar.ini SessionWarnBytes): jokainen tämän käyttäjän pyyntö lukee koko istunnon.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits/%count luettu välimuistista</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Yhtään mallia ei hahmonnettu (näkymävälimuistista luettu näkymä ei hahmonna yhtään).</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Roolien määritykset</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Roolit ja käytännöt</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>eri kuin anonyymeillä vierailijoilla</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>sama kuin anonyymeillä vierailijoilla</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

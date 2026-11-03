@@ -69197,6 +69197,190 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
         <source>No answer</source>
         <translation>Jawaab ma jirto</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>la qariyay</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Muuji sharraxaadaha</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Qari sharraxaadaha</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Fur</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Fur dhammaan</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Xidh dhammaan</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Fure ama qiimo</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Ka raadi fadhiga</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Nooca</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>%count kale</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>si qoto dheer ayuu ugu dhex jiraa, lama muujin karo</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>la gooyay, wadarta %count xaraf</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Waa bilaabmay</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Magaca cookie-ga</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>Aqoonsiga fadhiga</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Maareeye</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Waddada kaydinta</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>Caadiga PHP</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Muddada nolosha (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Cookie-ga</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>muddada nolosha %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Fadhigaaga PHP ee adiga kuu gaarka ah, sidii uu ahaa markii qaybta la furay, weligiis mid kale maaha. Qiimaha furayaasha u eg sir (tokens, hashes, ereyada sirta ah) waa la qariyaa (debugbar.ini SessionMask[]); wax kasta oo kale waxaa loo muujiyaa sidii loo kaydiyay, xogta shakhsiga ah sidoo kale.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count fure, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>weyn</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Fadhigu waa madhan yahay.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Fadhi looma bilaabin codsigan.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Kordhin %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Xudunta iyo kuwo kale</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Dhammaan gelitaannada lama muujin: fadhigu wuxuu leeyahay wax ka badan inta halkan lagu taxi karo.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count fure lama taxin.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Qaabka</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Qiimayaasha u eg token (JSON Web Token, aqoonsiyada madaxa Authorization, fure gaar ah, qoraal dheer oo hex ah ama aan kala sooc lahayn) sidoo kale waa la qariyaa, wax kasta oo furahooda loogu yeero (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>Furuhu wuxuu u eg yahay sir (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>Qiimuhu wuxuu u eg yahay token.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Ka hooseeya fure la qariyay.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>Fadhiga oo qoraal ah, loo qariyay sida shaxda.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>Fadhigu wuu ka weyn yahay %size (debugbar.ini SessionWarnBytes): codsi kasta oo isticmaalahan ah wuxuu akhriyaa fadhiga oo dhan, wuxuuna qoraa marka uu isbeddelo.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP wuxuu fadhigan ku hayaa faylal wuxuuna xiraa faylka inta codsiga oo dhan socdo: codsiyada isla isticmaalaha (dhowr tab, wicitaannada AJAX) way is sugaan.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Furan ku hay</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>Ka weyn %size (debugbar.ini SessionWarnBytes): codsi kasta oo isticmaalahan ah wuxuu akhriyaa fadhiga oo dhan.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits ka mid ah %count waxaa laga akhriyay cache-ka</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Template lama soo bandhigin (muuqaal laga akhriyay cache-ka muuqaallada midna ma soo bandhigo).</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Meel dhigista doorarka</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Doorarka iyo siyaasadaha</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>way ka duwan tahay booqdayaasha aan la aqoon</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>la mid ah booqdayaasha aan la aqoon</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

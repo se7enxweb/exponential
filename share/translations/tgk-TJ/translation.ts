@@ -69199,6 +69199,190 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No answer</source>
         <translation>Ҷавоб нест</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>пинҳоншуда</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Нишон додани шарҳҳо</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Пинҳон кардани шарҳҳо</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Кушодан</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Ҳамаро кушодан</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Ҳамаро пӯшидан</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Калид ё қимат</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Ҷустуҷӯ дар ҷаласа</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Навъ</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>боз %count</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>барои нишон додан хеле амиқ ҷойгир шудааст</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>бурида шуд, ҳамагӣ %count аломат</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Оғоз шуд</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Номи куки</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>ID-и ҷаласа</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Коркардкунанда</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Роҳи нигоҳдорӣ</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>Пешфарзи PHP</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Мӯҳлати амал (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Куки</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>мӯҳлат %s с</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Ҷаласаи PHP-и худи шумо, ҳамон тавре ки ҳангоми кушодани бахш буд, ҳеҷ гоҳ аз они каси дигар. Қиматҳои калидҳое, ки ба сирр монанданд (токенҳо, ҳэшҳо, паролҳо), пинҳон карда мешаванд (debugbar.ini SessionMask[]); ҳама чизи дигар ҳамон тавре ки нигоҳ дошта шудааст нишон дода мешавад, ҳатто маълумоти шахсӣ.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count калид, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>калон</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Ҷаласа холӣ аст.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Барои ин дархост ягон ҷаласа оғоз нашуд.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Васеъкунии %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Ядро ва дигарон</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>На ҳамаи сабтҳо нишон дода шудаанд: дар ҷаласа аз он ки дар ин ҷо номбар кардан мумкин аст, бештар мавҷуд аст.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count калид номбар нашудааст.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Чаҳорчӯба</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Қиматҳое, ки ба токен монанданд (JSON Web Token, маълумоти эътимодномаи сарлавҳаи Authorization, калиди хусусӣ, матни дарози hex ё тасодуфӣ), низ пинҳон карда мешаванд, новобаста ба он ки калидашон чӣ ном дорад (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>Калид ба сирр монанд аст (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>Қимат ба токен монанд аст.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Зери калиди пинҳоншуда.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>Ҷаласа ҳамчун матн, мисли ҷадвал пинҳоншуда.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>Ҷаласа аз %size калонтар аст (debugbar.ini SessionWarnBytes): ҳар дархости ин корбар тамоми ҷаласаро мехонад ва ҳангоми тағйир ёфтанаш онро менависад.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP ин ҷаласаро дар файлҳо нигоҳ медорад ва файлро дар давоми тамоми дархост қулф мекунад: дархостҳои ҳамон як корбар (якчанд варақа, даъватҳои AJAX) якдигарро интизор мешаванд.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Кушода нигоҳ доштан</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>Аз %size калонтар (debugbar.ini SessionWarnBytes): ҳар дархости ин корбар тамоми ҷаласаро мехонад.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits аз %count аз кэш хонда шуд</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Ягон қолиб тасвир нашуд (намоише, ки аз кэши намоишҳо хонда шудааст, ягон қолибро тасвир намекунад).</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Таъйини нақшҳо</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Нақшҳо ва сиёсатҳо</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>аз меҳмонони беном фарқ мекунад</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>мисли меҳмонони беном</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

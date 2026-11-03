@@ -425,6 +425,7 @@
         "Webhook": "Czech uses the English term Webhook"
     },
     "dan-DK": {
+        "Cookie": "Danish standard term for an HTTP cookie is Cookie",
         "Minify": "technical term kept in English",
         "#level1 - #level2": "only PDF placeholder tokens and a separator; no words to translate",
         "#levelIndex1:#levelIndex2": "only PDF placeholder tokens and a separator; no words to translate",
@@ -674,6 +675,8 @@
         "Webhook": "Danish uses the English term Webhook"
     },
     "dut-NL": {
+        "Handler": "Dutch IT usage keeps handler for the PHP session save handler",
+        "Cookie": "Dutch standard term for an HTTP cookie is cookie",
         "Filters": "Filters is the Dutch plural of filter, spelled the same (catalogue already uses 'Actieve filters')",
         "Minify": "technical term kept in English",
         "#level1 - #level2": "code, file or setting name",
@@ -1045,6 +1048,7 @@
         "extra": "extra is the Dutch word"
     },
     "esl-ES": {
+        "Cookie": "Spanish uses the loanword cookie for HTTP cookies",
         "#level1 - #level2": "format placeholders only",
         "#levelIndex1:#levelIndex2": "format placeholders only",
         "%count AUDIT": "AUDIT is the literal log level keyword written in the log lines",
@@ -1228,6 +1232,7 @@
         "Webhook": "Spanish uses the English term Webhook"
     },
     "esl-MX": {
+        "Cookie": "Spanish uses the English loanword \"cookie\" as the standard web term",
         "#level1 - #level2": "PDF numbering placeholders only",
         "#levelIndex1:#levelIndex2": "PDF numbering placeholders only",
         "%count bytes": "placeholder and unit name, the same in Spanish",
@@ -1482,6 +1487,7 @@
         "WebDAV": "protocol name"
     },
     "fre-FR": {
+        "Cookie": "French uses cookie as the established term (Nom du cookie)",
         "Page %number": "Page is spelled the same in French",
         "%count suggestions": "suggestions is spelled the same in French",
         "Suggestions": "Suggestions is spelled the same in French",
@@ -1789,6 +1795,10 @@
         "public": "French adjective public is spelled the same as English"
     },
     "ger-DE": {
+        "Session": "German IT usage writes Session (the guide and the tab say Session)",
+        "Handler": "technical term for the PHP session save handler, kept as in German IT usage",
+        "Cookie": "German uses the loanword Cookie",
+        "Extension %name": "German IT usage writes Extension for an Exponential extension",
         "Name A–Z": "Name is spelled the same in German; A–Z is the same alphabet range",
         "Name Z–A": "Name is spelled the same in German; Z–A is the same alphabet range",
         "Migration": "German word spelled the same",
@@ -2100,6 +2110,7 @@
         "Webhook": "Hebrew interfaces use the English term Webhook"
     },
     "ita-IT": {
+        "Cookie": "Italian standard term for an HTTP cookie is cookie",
         "#level1 - #level2": "placeholders only",
         "%count SQL": "code name with placeholder",
         "%count h": "unit abbreviation",
@@ -2825,6 +2836,7 @@
         "Webhook": "Polish uses the English technical term webhook"
     },
     "por-BR": {
+        "Cookie": "Brazilian Portuguese uses the English loanword \"cookie\" as the standard web term",
         "#level1 - #level2": "code, setting, unit or placeholder text without words to translate",
         "#levelIndex1:#levelIndex2": "code, setting, unit or placeholder text without words to translate",
         "%count SQL": "code, setting, unit or placeholder text without words to translate",
@@ -3199,6 +3211,7 @@
         "JSON: %url": "format name JSON plus placeholder"
     },
     "swe-SE": {
+        "Cookie": "Swedish uses the word cookie for a browser cookie (Svenska datatermgruppen accepts it); the catalogue writes Cookienamn",
         "#level1 - #level2": "only PDF placeholder tokens and a separator; no words to translate",
         "#levelIndex1:#levelIndex2": "only PDF placeholder tokens and a separator; no words to translate",
         "%count SQL": "code, setting, unit or placeholder text without words to translate",
@@ -3953,6 +3966,7 @@
         "git host": "Bosnian uses git and the loanword host, as the catalogue's allowlist does for Host"
     },
     "dsb-DE": {
+        "Cookie": "Lower Sorbian uses the loanword Cookie for a browser cookie (Mozilla dsb terminology)",
         "#level1 - #level2": "format placeholders only",
         "#levelIndex1:#levelIndex2": "format placeholders only",
         "%count d": "units or placeholders without words to translate",
@@ -4362,6 +4376,7 @@
         "xmlUrl": "OPML attribute name (code identifier)"
     },
     "kal-GL": {
+        "Cookie": "Greenlandic uses the loanword cookie for HTTP cookies",
         "GitHub Actions workflow": "the name of the GitHub product, kept in English",
         "#levelIndex1:#levelIndex2": "format placeholders only",
         "%count min": "units or placeholders without words to translate",
@@ -4665,6 +4680,7 @@
         "Webhook": "Hungarian uses the English term Webhook"
     },
     "mlt-MT": {
+        "Cookie": "Maltese uses the English loanword \"cookie\" as the standard web term",
         "Basket": "same word used in Maltese",
         "Login": "same word used in Maltese",
         "#level1 - #level2": "format placeholders only",
@@ -4820,6 +4836,7 @@
         "Webhook": "Maltese uses the English technical term webhook"
     },
     "ron-RO": {
+        "Cookie": "Romanian uses the loanword cookie (Numele cookie-ului)",
         "#level1 - #level2": "format placeholders only",
         "#levelIndex1:#levelIndex2": "format placeholders only",
         "%count SQL": "placeholder and the acronym SQL",
@@ -5487,6 +5504,7 @@
         "Webhook": "Finnish uses the English term Webhook"
     },
     "ell-GR": {
+        "Cookie": "Greek UIs keep the technical term cookie in Latin script (Όνομα cookie)",
         "#level1 - #level2": "format placeholders only",
         "#levelIndex1:#levelIndex2": "format placeholders only",
         "%device, %width × %height px": "units or placeholders without words to translate",
@@ -6354,6 +6372,7 @@
         "xmlUrl": "identifier"
     },
     "por-PT": {
+        "Cookie": "European Portuguese uses cookie as the established term (Nome do cookie)",
         "Item": "Portuguese word spelled the same",
         "Zoom: %1 %": "zoom is the usual Portuguese term",
         "Original": "Portuguese word spelled the same",
@@ -9026,6 +9045,7 @@
         "WebDAV": "protocol name"
     },
     "chi-CN": {
+        "Cookie": "Chinese software UI uses the Latin word Cookie for browser cookies (also in Cookie 名称)",
         "#level1 - #level2": "format placeholders only",
         "#levelIndex1:#levelIndex2": "format placeholders only",
         "%speed MHz": "units or placeholders without words to translate",
@@ -9106,6 +9126,7 @@
         "Webhook": "Chinese developer usage keeps the English term Webhook"
     },
     "chi-TW": {
+        "Cookie": "Traditional Chinese UIs (Microsoft, Apple, Google zh-TW) write Cookie in Latin letters as-is",
         "#level1 - #level2": "format placeholders only",
         "#levelIndex1:#levelIndex2": "format placeholders only",
         "%speed MHz": "units or placeholders without words to translate",
@@ -9274,6 +9295,7 @@
         "Div": "HTML element name"
     },
     "vie-VN": {
+        "Cookie": "Vietnamese UIs use the loanword cookie as-is for a browser cookie",
         "OK": "OK kept",
         "iPhone": "product name",
         "iPad": "product name",
@@ -9376,6 +9398,7 @@
         "Webhook": "Vietnamese uses the English term webhook"
     },
     "ind-ID": {
+        "Cookie": "Indonesian uses the loanword cookie for browser cookies (Nama cookie)",
         "Mode": "Indonesian word spelled the same",
         "OK": "kept as in Indonesian software",
         "ID %id": "acronym and placeholder",
@@ -15822,6 +15845,7 @@
         "Div": "HTML element name"
     },
     "fil-PH": {
+        "Cookie": "Filipino uses the English loanword cookie for HTTP cookies",
         "Remote": "the English loanword used in Filipino software, like Host and Port in this catalogue",
         "GitHub Actions workflow": "the name of the GitHub product, kept in English",
         "Node ID: %node_id Visibility: %visibility": "placeholders and technical labels only",
@@ -17989,6 +18013,8 @@
         "Mutations": "the word the catalogue uses for this term, spelled as in English"
     },
     "aka-GH": {
+        "Handler": "Twi keeps the technical term handler untranslated; the catalogue already writes Sɛhyen handler for Session handler",
+        "Cookie": "Twi uses the English loanword Cookie for a browser cookie; there is no native term",
         "ID %id": "acronym and placeholder",
         "Link": "glossary: link",
         "Draft": "glossary loan word draft",
@@ -18659,6 +18685,7 @@
         "Webhook": "Kinyarwanda technical writing uses the English term Webhook"
     },
     "ceb-PH": {
+        "Cookie": "Cebuano uses the English loanword cookie for HTTP cookies",
         "GitHub Actions workflow": "the name of the GitHub product, kept in English",
         "Login": "technical term kept in English",
         "Minify": "technical term kept in English",
@@ -19131,6 +19158,7 @@
         "Div": "HTML element name"
     },
     "mlg-MG": {
+        "Cookie": "Malagasy web usage keeps the loanword cookie",
         "ID %id": "acronym with placeholder",
         "iPhone": "device product name",
         "iPad": "device product name",
@@ -19941,6 +19969,7 @@
         "+%added ~%changed -%removed": "Symbols and placeholders only, kept exactly as the brief requires"
     },
     "glg-ES": {
+        "Cookie": "Galician uses the loanword cookie for a browser cookie (Xunta and Mozilla gl terminology)",
         "ID %id": "ID acronym plus placeholder",
         "Desc.": "abbreviation of descending, same in Galician",
         "Asc.": "abbreviation of ascending, same in Galician",
@@ -20395,6 +20424,8 @@
         "+%added ~%changed -%removed": "Symbols and placeholders only; the brief requires it unchanged"
     },
     "ltz-LU": {
+        "Handler": "PHP session save handler; Luxembourgish/German technical usage keeps Handler",
+        "Cookie": "Luxembourgish uses the loanword Cookie (Cookie-Numm)",
         "Login": "same word used in Luxembourgish",
         "Container": "loanword spelled the same",
         "OK": "acronym",
@@ -21855,6 +21886,7 @@
         "Div": "HTML element name"
     },
     "ast-ES": {
+        "Cookie": "Asturian uses the loanword cookie for HTTP cookies",
         "ID %id": "acronym and placeholder",
         "Locale": "glossary: locale stays as a setting term",
         "Desc.": "abbreviation of descending, same in Asturian",
@@ -22106,6 +22138,7 @@
         "Webhook": "Breton uses the English technical term Webhook; there is no established Breton word"
     },
     "oci-FR": {
+        "Cookie": "Occitan software UIs use cookie as the established term (Nom del cookie)",
         "%count suggestions": "Suggestions (plural of suggestion) is spelled the same in Occitan",
         "Suggestions": "Suggestions (plural of suggestion) is spelled the same in Occitan",
         "Rectangle": "Occitan word spelled the same",
@@ -22719,6 +22752,7 @@
         "Div": "HTML element name (div), code"
     },
     "roh-CH": {
+        "Cookie": "Romansh uses the English loanword \"cookie\" as the standard web term",
         "Filters": "Filters (plural of filter) is spelled the same in Romansh",
         "Login": "same word used in Romansh",
         "%1 × %2 pixels": "Romansh plural spelled the same",
@@ -23077,6 +23111,7 @@
         "Webhook": "Upper Sorbian uses the English term Webhook"
     },
     "fry-NL": {
+        "Cookie": "Frisian, like Dutch, uses the loanword cookie for a browser cookie",
         "Filters": "Filters is the West Frisian plural of filter, spelled the same as English",
         "GitHub Actions workflow": "the name of the GitHub product, kept in English",
         "Type": "Frisian spells type the same",
@@ -23245,6 +23280,7 @@
         "Webhook": "Frisian uses the English technical term Webhook"
     },
     "fao-FO": {
+        "Cookie": "Faroese uses the English loanword \"cookie\" for browser cookies; no established native term",
         "GitHub Actions workflow": "the name of the GitHub product, kept in English",
         "ID %id": "acronym and placeholder",
         "iPhone": "product name",
@@ -23908,6 +23944,7 @@
         "+%added ~%changed -%removed": "Symbols and placeholders only; the brief keeps it unchanged"
     },
     "que-PE": {
+        "Cookie": "Quechua has no native term; the loanword cookie is used",
         "OK": "button label OK",
         "ID %id": "abbreviation with placeholder",
         "Media": "loan word used as in the glossary",

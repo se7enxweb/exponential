@@ -69138,6 +69138,190 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No answer</source>
         <translation>Ekkert svar</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>falið</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Sýna skýringar</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Fela skýringar</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Opna</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Opna allt</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Loka öllu</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Lykill eða gildi</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Leita í setunni</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Gerð</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>%count í viðbót</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>of djúpt hreiðrað til að sýna</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>stytt, %count stafir alls</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Hafið</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Heiti vefkökunnar</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>Auðkenni setu</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Meðhöndlari</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Vistunarslóð</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>Sjálfgefið í PHP</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Líftími (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Vefkaka</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>líftími %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Þín eigin PHP-seta, eins og hún var þegar hlutinn var opnaður, aldrei önnur. Gildi lykla sem líta út eins og leyndarmál (tókar, tætigildi, lykilorð) eru falin (debugbar.ini SessionMask[]); allt annað er sýnt eins og það er vistað, persónuupplýsingar líka.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count lyklar, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>stór</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Setan er tóm.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Engin seta var hafin fyrir þessa beiðni.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Viðbót: %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Kjarni og annað</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Ekki eru allar færslur sýndar: setan inniheldur fleiri en hægt er að telja upp hér.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count lyklar eru ekki taldir upp.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Rammi</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Gildi sem líta út eins og tóki (JSON Web Token, auðkenni Authorization-hauss, einkalykill, langur sextánundar- eða slembitexti) eru líka falin, hvað sem lykill þeirra heitir (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>Lykillinn lítur út eins og leyndarmál (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>Gildið lítur út eins og tóki.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Undir földum lykli.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>Setan sem texti, falin eins og taflan.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>Setan er stærri en %size (debugbar.ini SessionWarnBytes): hver beiðni þessa notanda les alla setuna og skrifar hana þegar hún hefur breyst.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP geymir þessa setu í skrám og læsir skránni alla beiðnina: beiðnir sama notanda (margir flipar, AJAX-köll) bíða hver eftir annarri.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Hafa opið</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>Stærri en %size (debugbar.ini SessionWarnBytes): hver beiðni þessa notanda les alla setuna.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits af %count lesnir úr skyndiminninu</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Ekkert sniðmát var myndað (sýn sem lesin er úr sýnaskyndiminninu myndar ekkert).</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Úthlutanir hlutverka</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Hlutverk og stefnur</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>frábrugðið nafnlausum gestum</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>sama og hjá nafnlausum gestum</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

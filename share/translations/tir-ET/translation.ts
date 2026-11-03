@@ -69199,6 +69199,190 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No answer</source>
         <translation>መልሲ የለን</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>ዝተሰወረ</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>መብርሂታት ኣርኢ</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>መብርሂታት ሕባእ</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>ክፈት</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>ኩሉ ክፈት</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>ኩሉ ዕጸው</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>መፍትሕ ወይ ዋጋ</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>ኣብ ክፍለ ግዜ ደልይ</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>ዓይነት</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>ተወሳኺ %count</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>ንምርኣይ ኣዝዩ ዓሚቝ ዝተኣታተወ</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>ተቖሪጹ፣ ብድምር %count ፊደላት</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>ተጀሚሩ</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>ስም ኩኪ</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>መለለዪ ክፍለ ግዜ</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>ኣተሓሓዚ</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>መዕቀቢ መንገዲ</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>ናይ PHP ነባሪ</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>ዕድመ (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>ኩኪ</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>ዕድመ %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>ናይ ገዛእ ርእስኹም ክፍለ ግዜ PHP፣ ክፍሊ ኣብ ዝተኸፍተሉ እዋን ከም ዝነበሮ፣ ፈጺሙ ካልእ ኣይኮነን። ምስጢራት ዝመስሉ መፍትሓት (ቶከናት፣ ሃሽታት፣ መሕለፊ ቃላት) ዋጋታት ይሰወሩ (debugbar.ini SessionMask[])፤ ካልእ ኩሉ ከም ዝተዓቀበ ይርአ፣ ውልቃዊ ሓበሬታ እውን።</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count መፍትሓት፣ %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>ዓቢ</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>ክፍለ ግዜ ባዶ እዩ።</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>ነዚ ሕቶ ዝኸውን ክፍለ ግዜ ኣይተጀመረን።</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>መስፋሕቲ %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>ከርነልን ካልኦትን</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>ኩሉ ኣታዊ ኣይርአን፦ ክፍለ ግዜ ኣብዚ ክዝርዘር ካብ ዝኽእል ንላዕሊ ኣለዎ።</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count መፍትሓት ኣይተዘርዘሩን።</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>ፍሬም</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>ቶከን ዝመስሉ ዋጋታት (JSON Web Token፣ ናይ Authorization ርእሲ መረጋገጺታት፣ ብሕታዊ መፍትሕ፣ ነዊሕ hex ወይ ብዘይ ስርዓት ዝተረኽበ ጽሑፍ) እውን ይሰወሩ፣ መፍትሖም ብዝኾነ ስም ይጸዋዕ (debugbar.ini SessionValueMask[])።</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>እቲ መፍትሕ ምስጢር ይመስል (debugbar.ini SessionMask[])።</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>እቲ ዋጋ ቶከን ይመስል።</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>ኣብ ትሕቲ ዝተሰወረ መፍትሕ።</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>ክፍለ ግዜ ከም ጽሑፍ፣ ከም ሰንጠረዥ ዝተሰወረ።</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>ክፍለ ግዜ ካብ %size ይዓቢ (debugbar.ini SessionWarnBytes)፦ ነፍሲ ወከፍ ሕቶ ናይዚ ተጠቃሚ ንብምሉኡ ክፍለ ግዜ የንብብ፣ ምስ ተቐየረ ድማ ይጽሕፎ።</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP ነዚ ክፍለ ግዜ ኣብ ፋይላት ይሕዞ፣ ነቲ ፋይል ድማ ንብምሉኡ ሕቶ ይዓጽዎ፦ ሕቶታት ናይ ሓደ ተጠቃሚ (ብዙሓት ታባት፣ ጻውዒታት AJAX) ንሓድሕዶም ይጽበዩ።</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>ክፉት ሓዝ</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>ካብ %size ዝዓበየ (debugbar.ini SessionWarnBytes)፦ ነፍሲ ወከፍ ሕቶ ናይዚ ተጠቃሚ ንብምሉኡ ክፍለ ግዜ የንብብ።</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits ካብ %count ካብ ካሽ ተነቢቦም</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>ዝኾነ ቅጥዒ ኣይተቐረበን (ካብ ናይ ምርኣይ ካሽ ዝተነበበ ምርኣይ ሓደ እውን ኣየቕርብን)።</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>ምምዳባት ተራ</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>ተራታትን ፖሊሲታትን</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>ካብ ስም-ኣልቦ በጻሕቲ ዝተፈልየ</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>ምስ ስም-ኣልቦ በጻሕቲ ሓደ ዓይነት</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

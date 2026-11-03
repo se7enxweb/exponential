@@ -69199,6 +69199,190 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No answer</source>
         <translation>ߛߙߋ߲߬ߧߊ߲ ߕߍ߫</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>ߘߏ߬ߜߏ߬ߣߍ߲߫</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>ߢߍߝߐߟߌ ߟߎ߬ ߦߌ߬ߘߊ߬</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>ߢߍߝߐߟߌ ߟߎ߬ ߘߏ߬ߜߏ߬</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>ߘߊ ߦߍߟߍ</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>ߓߍߍ ߦߍߟߍ</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>ߓߍߍ ߘߊߕߎߜ߳ߎ</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>ߞߌߟߍ ߥߟߊ߫ ߤߊߞߍ</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>ߛߍߛߌߦߐ߲ ߘߐ߫ ߢߌ߬ߣߌ߲߬</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>ߛߎߜ߳ߎߦߊ</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>%count ߜߘߍ߫ ߟߎ߬</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>ߊ߬ ߘߏ߲߬ߣߍ߲߫ ߘߎ߰ߡߊ߬ ߞߏߖߎ߰ ߞߵߊ߬ ߦߌ߬ߘߊ߬</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>ߊ߬ ߕߍ߰ߣߍ߲߫ ߘߌ߫߸ ߛߓߍߘߋ߲ %count ߓߍ߯ ߟߊߘߍ߬ߣߍ߲߫</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>ߘߊߡߌߣߍߣߊ</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>ߞߎߞߌ ߕߐ߮</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>ߛߍߛߌߦߐ߲ ID</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>ߓߟߏߟߊߟߊ</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>ߟߊߡߙߊ߬ ߛߌߟߊ</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>PHP ߓߊߖߎ߬ߕߍ߰ߓߊ</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>ߡߊ߰ߞߍ߬ߕߊ߬ ߕߎߡߊ (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>ߞߎߞߌ</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>ߡߊ߰ߞߍ߬ߕߊ߬ ߕߎߡߊ %s ߛ.</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>ߌ ߖߘߍ߬ ߟߊ߫ PHP ߛߍߛߌߦߐ߲ ߠߋ߬߸ ߊ߬ ߕߘߍ߬ ߞߍ߫ ߢߊ߬ ߡߍ߲߬ ߠߊ߫ ߕߎߡߊ ߡߍ߲߫ ߝߊߛߟߌ ߟߊߞߊ߬ߘߊ߫ ߟߊ߫߸ ߝߏߦߌ߬ ߕߍ߫ ߓߊ߬ߓߎ߬ߕߊ ߜߘߍ߫ ߘߌ߫. ߞߌߟߍ ߡߍ߲ ߠߎ߬ ߦߋ߫ ߞߎ߲߬ߘߐ߬ߝߍ߲ ߠߎ߬ ߟߋ߬ ߘߌ߫ (ߕߏߞߍ߲߫߸ ߤߊߛ߸ ߕߊ߬ߡߌ߲߬ߞߊ߲) ߏ߬ ߟߎ߬ ߤߊߞߍ ߟߎ߬ ߓߍ߯ ߘߏ߬ߜߏ߬ ߟߊ߫ (debugbar.ini SessionMask[])؛ ߝߋ߲߫ ߜߘߍ߫ ߓߍ߯ ߦߌ߬ߘߊ߬ ߟߊ߫ ߊ߬ ߟߊߡߙߊ߬ߣߍ߲߫ ߞߍ߫ ߢߊ߬ ߡߍ߲߬߸ ߡߐ߰ ߖߘߍ߬ ߟߊ߫ ߞߎ߲߬ߠߊ߬ߦߋߟߌ ߝߣߊ߫.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>ߞߌߟߍ %count߸ %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>ߓߏ߲߬</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>ߛߍߛߌߦߐ߲ ߝߎ߬ ߟߋ߬.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>ߛߍߛߌߦߐ߲߫ ߛߌ߫ ߡߊ߫ ߘߊߡߌ߬ߣߊ߬ ߢߌ߬ߣߌ߲߬ߠߌ߲ ߣߌ߲߬ ߠߊ߫.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>ߝߊߙߊߝߍ߲ %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>ߞߍߙߣߍߟ ߣߌ߫ ߜߘߍ߫ ߟߎ߬</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>ߟߊߘߏ߲ߠߌ ߓߍ߯ ߡߊ߫ ߦߌ߬ߘߊ߬: ߛߍߛߌߦߐ߲ ߞߣߐ߫ ߝߋ߲߫ ߛߌߦߊߡߊ߲߫ ߞߊ߬ ߕߊ߬ߡߌ߲߬ ߡߍ߲߫ ߛߋ߫ ߟߊ߫ ߛߓߍ߫ ߟߊ߫ ߦߊ߲߬.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>ߞߌߟߍ %count ߡߊ߫ ߛߓߍ߫.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>ߓߊ߲ߓߊ߲</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>ߤߊߞߍ ߡߍ߲ ߠߎ߬ ߦߋ߫ ߕߏߞߍ߲߫ ߘߌ߫ (JSON Web Token߸ Authorization ߞߎ߲߬ߘߐ ߟߊ߫ ߟߊߓߊ߰ߙߊ߬ߟߌ߬ߟߊ߬ߘߌ߬߸ ߞߌߟߍ ߖߘߍ߬ߘߐ߬߸ hex ߥߟߊ߫ ߛߓߍߟߌ߫ ߖߊ߲߬ ߓߟߏߓߟߏ) ߏ߬ ߟߎ߬ ߝߣߊ߫ ߓߍ߯ ߘߏ߬ߜߏ߬ ߟߊ߫߸ ߞߵߊ߬ ߟߊߞߊ߬ ߟߊ߫ ߞߌߟߍ ߕߐ߮ ߦߋ߫ ߡߎ߲߬ ߘߌ߫ (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>ߞߌߟߍ ߦߋ߫ ߞߎ߲߬ߘߐ߬ߝߍ߲߫ ߘߌ߫ (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>ߤߊߞߍ ߦߋ߫ ߕߏߞߍ߲߫ ߘߌ߫.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>ߞߌߟߍ ߘߏ߬ߜߏ߬ߣߍ߲ ߘߎ߰ߞߟߏ߬.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>ߛߍߛߌߦߐ߲ ߛߓߍߟߌ ߘߌ߫߸ ߘߏ߬ߜߏ߬ߣߍ߲߫ ߕߊ߬ߓߟߏ ߞߍ߫ ߢߊ߬.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>ߛߍߛߌߦߐ߲ ߓߏ߲߬ ߌ߲߬ %size ߘߌ߫ (debugbar.ini SessionWarnBytes): ߓߊ߯ߙߊߞߍߟߊ ߣߌ߲߬ ߟߊ߫ ߢߌ߬ߣߌ߲߬ߠߌ߲ ߓߍ߯ ߛߍߛߌߦߐ߲ ߓߍ߯ ߞߊ߬ߙߊ߲߬ ߠߊ߫߸ ߞߊ߬ ߊ߬ ߛߓߍ߫ ߣߌ߫ ߊ߬ ߡߊߝߊ߬ߟߋ߲߬ߣߍ߲߫ ߘߌ߫.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP ߦߋ߫ ߛߍߛߌߦߐ߲ ߣߌ߲߬ ߟߊߡߙߊ߬ ߟߊ߫ ߞߐߕߐ߯ ߟߎ߬ ߘߐ߫ ߞߊ߬ ߞߐߕߐ߮ ߛߐ߰ ߢߌ߬ߣߌ߲߬ߠߌ߲ ߓߍ߯ ߞߘߐ߫: ߓߊ߯ߙߊߞߍߟߊ ߞߋߟߋ߲ ߟߊ߫ ߢߌ߬ߣߌ߲߬ߠߌ߲ ߠߎ߬ (ߓߟߏߡߊ ߛߌߦߊߡߊ߲߫߸ AJAX ߞߟߌߟߌ) ߦߋ߫ ߢߐ߲߰ ߡߊߞߏ߲ߠߊ߲߫.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>ߊ߬ ߕߏ߫ ߦߍߟߍߣߍ߲߫</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>ߓߏ߲߬ ߌ߲߬ %size ߘߌ߫ (debugbar.ini SessionWarnBytes): ߓߊ߯ߙߊߞߍߟߊ ߣߌ߲߬ ߟߊ߫ ߢߌ߬ߣߌ߲߬ߠߌ߲ ߓߍ߯ ߛߍߛߌߦߐ߲ ߓߍ߯ ߞߊ߬ߙߊ߲߬ ߠߊ߫.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%count ߟߎ߬ ߘߐ߫ %hits ߞߊ߬ߙߊ߲߬ߣߍ߲߫ ߞߊߛߌ ߞߐ߫</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>ߡߏߘߍߟߌ߫ ߛߌ߫ ߡߊ߫ ߦߌ߬ߘߊ߬ (ߦߌ߬ߘߊ߬ߟߌ ߡߍ߲ ߞߊ߬ߙߊ߲߬ߣߍ߲߫ ߦߌ߬ߘߊ߬ߟߌ ߞߊߛߌ ߞߐ߫߸ ߏ߬ ߕߍ߫ ߡߏߘߍߟߌ߫ ߛߌ߫ ߦߌ߬ߘߊ߬).</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>ߖߐߦߐߙߐ ߘߌߟߎ</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>ߖߐߦߐߙߐߟߎ ߣߌ ߛߊߙߌߦߊߟߎ</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>ߓߊ߲ߓߊ߲ ߞߏ߫ ߕߐ߯ߒߕߊߓߊߟߌ ߟߎ߬ ߕߊ ߘߐ߫</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>ߞߋߟߋ߲ ߞߏ߫ ߕߐ߯ߒߕߊߓߊߟߌ ߟߎ߬ ߕߊ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

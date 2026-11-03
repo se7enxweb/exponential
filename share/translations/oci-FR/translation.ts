@@ -69199,6 +69199,190 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
         <source>No answer</source>
         <translation>Cap de responsa</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>mascat</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Afichar las explicacions</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Amagar las explicacions</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Dobrir</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Dobrir tot</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Barrar tot</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Clau o valor</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Cercar dins la sesilha</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Tipe</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>%count de mai</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>tròp prigondament imbricat per èsser afichat</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>copat, %count caractèrs en tot</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Aviat</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Nom del cookie</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>Identificant de sesilha</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Gestionari</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Camin d'enregistrament</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>Valor per defaut de PHP</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Durada de vida (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Cookie</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>durada de vida %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Vòstra pròpria sesilha PHP, tala coma èra quand la seccion foguèt dobèrta, jamai una autra. Las valors de las claus que semblan de secrets (getons, hashes, senhals) son mascadas (debugbar.ini SessionMask[]) ; tot lo demai es afichat tal coma es emmagazinat, las donadas personalas tanben.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count claus, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>granda</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>La sesilha es voida.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Cap de sesilha es pas estada començada per aquesta requèsta.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Extension %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Nuclèu e autres</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Totas las entradas son pas afichadas : la sesilha conten mai que çò que se pòt listar aquí.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count claus son pas listadas.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Quadre</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Las valors que semblan un geton (un JSON Web Token, los identificants d'una entèsta Authorization, una clau privada, un long tèxte exadecimal o aleatòri) son tanben mascadas, quin que siá lo nom de lor clau (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>La clau sembla un secret (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>La valor sembla un geton.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Jos una clau mascada.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>La sesilha coma tèxte, mascada coma la taula.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>La sesilha es mai granda que %size (debugbar.ini SessionWarnBytes) : cada requèsta d'aqueste utilizaire legís tota la sesilha e l'escriu quand a cambiat.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP garda aquesta sesilha dins de fichièrs e varrolha lo fichièr pendent tota la requèsta : las requèstas d'un meteis utilizaire (mantun onglet, apèls AJAX) s'espèran las unas las autras.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Gardar dobèrt</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>Mai granda que %size (debugbar.ini SessionWarnBytes) : cada requèsta d'aqueste utilizaire legís tota la sesilha.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits sus %count legits dempuèi l'escondedor</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Cap de modèl es pas estat rendut (una vista legida dempuèi l'escondedor de vistas ne rend pas cap).</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Assignacions de ròtle</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Ròtles e politicas</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>diferent de lo dels visitaires anonims</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>parièr coma per los visitaires anonims</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

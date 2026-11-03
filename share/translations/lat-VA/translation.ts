@@ -67691,6 +67691,190 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>No answer</source>
         <translation>Nullum responsum</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>celatum</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Explicationes ostendere</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Explicationes celare</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Aperire</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Omnia aperire</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Omnia claudere</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Clavis aut valor</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Quaere in sessione</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Genus</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>%count plura</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>nimis profunde inclusum ad ostendendum</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>praecisum, %count characteres in summa</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Inceptum</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Nomen crustuli</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>ID sessionis</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Tractator</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Via servandi</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>Praefinitum PHP</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Vita (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Crustulum</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>vita %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Tua ipsius sessio PHP, qualis erat cum sectio aperta est, numquam alia. Valores clavium quae arcana videntur (signa, hashes, tesserae) celantur (debugbar.ini SessionMask[]); cetera omnia ostenduntur ut condita sunt, etiam data personalia.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count claves, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>magna</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Sessio vacua est.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Nulla sessio huic petitioni incepta est.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Extensio %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Nucleus et cetera</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Non omnia inscripta ostenduntur: sessio plura continet quam hic enumerari possunt.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count claves non enumerantur.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Compages</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Valores qui signum videntur (JSON Web Token, credentialia capitis Authorization, clavis privata, longus textus hexadecimalis aut fortuitus) quoque celantur, quocumque nomine clavis eorum appellatur (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>Clavis arcanum videtur (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>Valor signum videtur.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Sub clave celata.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>Sessio ut textus, celata sicut tabula.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>Sessio maior est quam %size (debugbar.ini SessionWarnBytes): omnis petitio huius usoris totam sessionem legit, et scribit cum mutata est.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP hanc sessionem in fasciculis servat et fasciculum per totam petitionem claudit: petitiones eiusdem usoris (plures tabulae, vocationes AJAX) inter se exspectant.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Apertum servare</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>Maior quam %size (debugbar.ini SessionWarnBytes): omnis petitio huius usoris totam sessionem legit.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits ex %count ex promptuario lecta</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Nulla formula reddita est (visus ex promptuario visuum lectus nullam reddit).</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Assignationes munerum</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Munera et regulae</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>differt ab hospitibus anonymis</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>idem ac hospitibus anonymis</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

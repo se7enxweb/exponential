@@ -69138,6 +69138,190 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
         <source>No answer</source>
         <translation>Žedna wótegrono</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>maskěrowany</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Wujasnjenja pokazaś</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Wujasnjenja schowaś</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Wócyniś</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Wšykne wócyniś</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Wšykne zacyniś</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Kluc abo gódnota</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>W pósejźenju pytaś</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Typ</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>%count dalšnych</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>pśegluboko zakašćikowany za pokazanje</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>skrotšony, dogromady %count znamuškow</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Startowane</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Mě cookieja</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>ID pósejźenja</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Wobźěłowak</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Składowańska sćažka</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>Standard PHP</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Žywjeńska doba (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Cookie</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>žywjeńska doba %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Wašo swójske PHP-pósejźenje, kaž jo było, gaž jo se wótrězk wócynił, nigdy druge. Gódnoty klucow, kótarež wuglěduju ako pótajmnosći (tokeny, hašy, gronidła), su maskěrowane (debugbar.ini SessionMask[]); wšykno druge se pokazujo, kaž jo skłaźone, teke wósobinske daty.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count klucow, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>wjelike</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Pósejźenje jo prozne.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Za toś to napšašowanje njejo se žedne pósejźenje startowało.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Rozšyrjenje %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Jědro a druge</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Njepokazuju se wšykne zapiski: pósejźenje ma wěcej, ako dajo se how nalicyś.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count klucow se njenalicyjo.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Wobłuk</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Gódnoty, kótarež wuglěduju ako token (JSON Web Token, pśizjawjeńske daty głowy Authorization, priwatny kluc, dłujki heksadecimalny abo pśipadny tekst), se teke maskěruju, wšojadno kak jich kluc groni (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>Kluc wuglěda ako pótajmnosć (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>Gódnota wuglěda ako token.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Pód maskěrowanym klucom.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>Pósejźenje ako tekst, maskěrowane kaž tabela.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>Pósejźenje jo wětše ako %size (debugbar.ini SessionWarnBytes): kužde napšašowanje toś togo wužywarja cyta ceło pósejźenje a pišo jo, gaž jo se změniło.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP składujo toś to pósejźenje w datajach a zastajijo dataju za ceło napšašowanje: napšašowanja samskego wužywarja (někotare rejtariki, wołanja AJAX) cakaju na se.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Wócynjone wóstajiś</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>Wětše ako %size (debugbar.ini SessionWarnBytes): kužde napšašowanje toś togo wužywarja cyta ceło pósejźenje.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits z %count z pufrowaka cytane</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Žedna pśedłoga njejo se pśedstajiła (naglěd, cytany z pufrowaka naglědow, žednu njepśedstajijo).</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Pśirědowanja rolow</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Role a zasady</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>hynac ako pśi anonymnych woglědowarjach</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>ako pśi anonymnych woglědowarjach</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

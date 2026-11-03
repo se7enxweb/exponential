@@ -69199,6 +69199,190 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
         <source>No answer</source>
         <translation>Chan eil freagairt ann</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>falaichte</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Seall mìneachaidhean</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Falaich mìneachaidhean</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Fosgail</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Fosgail na h-uile</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Dùin na h-uile</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Iuchair no luach</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Lorg san t-seisean</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Seòrsa</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>%count a bharrachd</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>neadaichte ro dhomhainn airson a shealltainn</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>air a ghearradh, %count caractar uile gu lèir</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Air tòiseachadh</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Ainm a' bhriosgaid</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>ID an t-seisein</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Làimhsichear</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Slighe sàbhalaidh</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>Bun-roghainn PHP</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Fad-beatha (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Briosgaid</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>fad-beatha %s diog</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>An seisean PHP agad fhèin, mar a bha e nuair a chaidh an earrann fhosgladh, chan e seisean eile idir. Thèid luachan nan iuchraichean a tha coltach ri rùintean dìomhair (tòcanan, hashes, faclan-faire) a mhasgadh (debugbar.ini SessionMask[]); thèid a h-uile càil eile a shealltainn mar a chaidh a stòradh, dàta pearsanta cuideachd.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count iuchraichean, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>mòr</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Tha an seisean falamh.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Cha deach seisean sam bith a thòiseachadh airson an iarrtais seo.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Leudachan %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Eitean is eile</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Chan eil a h-uile innteart ga shealltainn: tha barrachd san t-seisean na ghabhas liostadh an-seo.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>Chan eil %count iuchraichean air an liostadh.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Frèam</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Thèid luachan a tha coltach ri tòcan (JSON Web Token, teisteasan bann-cinn Authorization, iuchair phrìobhaideach, teacsa hex no air thuaiream fada) a mhasgadh cuideachd, ge b' e dè an t-ainm a th' air an iuchair aca (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>Tha an iuchair coltach ri rùn dìomhair (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>Tha an luach coltach ri tòcan.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Fo iuchair mhasgaichte.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>An seisean mar theacsa, air a mhasgadh mar an clàr.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>Tha an seisean nas motha na %size (debugbar.ini SessionWarnBytes): leughaidh gach iarrtas aig a' chleachdaiche seo an seisean air fad, agus sgrìobhaidh e e nuair a dh'atharraich e.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>Cumaidh PHP an seisean seo ann am faidhlichean agus glasaidh e am faidhle fad an iarrtais gu lèir: fuirichidh iarrtasan aig an aon chleachdaiche (iomadh taba, gairmean AJAX) ri chèile.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Cùm fosgailte</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>Nas motha na %size (debugbar.ini SessionWarnBytes): leughaidh gach iarrtas aig a' chleachdaiche seo an seisean air fad.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits à %count air an leughadh on tasgadan</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Cha deach teamplaid sam bith a reandaradh (cha reandaraich sealladh a chaidh a leughadh o thasgadan nan seallaidhean gin).</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Sònrachaidhean dhreuchdan</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Dreuchdan is poileasaidhean</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>eadar-dhealaichte o luchd-tadhail gun ainm</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>co-ionann ri luchd-tadhail gun ainm</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

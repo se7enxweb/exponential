@@ -69199,6 +69199,190 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
         <source>No answer</source>
         <translation>Amul tontu</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>nëbbu</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Wone leeral yi</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Nëbb leeral yi</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Ubbi</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Ubbi yépp</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Tëj yépp</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Caabi walla njëg</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Wër ci sesiyoŋ bi</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Xeet</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>%count yeneen</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>dafa xóot lool ngir wone ko</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>dagg nañu ko, %count araf yépp</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Tambali nañu ko</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Turu kuki bi</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>ID sesiyoŋ</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Doxalkat</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Yoonu denc</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>Li PHP tann</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Diirub dund (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Kuki</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>diir %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Sa sesiyoŋ PHP bopp, ni mu meloon bi ñu ubbee xaaj bi, du sesiyoŋu keneen mukk. Njëgi caabi yi niru ay kumpa (token yi, hash yi, baatu jàll yi) dañuy nëbbu (debugbar.ini SessionMask[]); yeneen yépp dañuy wone ni ñu leen dence, ba ci xibaar yu kenn ki.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count caabi, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>mag</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Sesiyoŋ bi dafa neen.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Amul benn sesiyoŋ bu ñu tàmbali ngir laaj bii.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Yokkute %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Kernel ak yeneen</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Wonewuñu bind yépp: sesiyoŋ bi am na lu ëpp li ñu mana lim fii.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count caabi limuñu leen.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Kaadar</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Njëg yi niru token (JSON Web Token, xibaari xàmmee ci bopp Authorization, caabi bu kenn, mbind hex bu gudd walla bu ñu jaxase) ñoom itam dañuy nëbbu, lu mu mana doon turu seen caabi (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>Caabi bi niru kumpa (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>Njëg li niru token.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Ci suufu benn caabi bu ñu nëbb.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>Sesiyoŋ bi ni mbind, nëbbu ni tablo bi.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>Sesiyoŋ bi ëpp na %size (debugbar.ini SessionWarnBytes): laaj bu nekk bu jëfandikukat bii dafay jàng sesiyoŋ bi yépp, te bind ko bu soppikoo.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP dafay denc sesiyoŋ bii ci ay dosye te tëj dosye bi ci laaj bi yépp: laaj yu benn jëfandikukat (ay tab yu bare, wooteb AJAX) dañuy xaaraante.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Bàyyi ko ubbeeku</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>Ëpp na %size (debugbar.ini SessionWarnBytes): laaj bu nekk bu jëfandikukat bii dafay jàng sesiyoŋ bi yépp.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits ci %count lañu jàng ci kaas bi</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Amul benn tampale bu ñu wone (gis-gis bu ñu jàng ci kaasu gis-gis yi du wone benn).</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Jox wàll yi</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Wàll yi ak politig yi</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>wute na ak gan yi ñu xamul seen tur</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>benn la ak gan yi ñu xamul seen tur</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

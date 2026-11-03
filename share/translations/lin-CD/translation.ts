@@ -69199,6 +69199,190 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
         <source>No answer</source>
         <translation>Eyano ezali te</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>ebombami</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Lakisa ndimbola</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Bomba ndimbola</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Fungola</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Fungolá nyɔ́nsɔ</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Zipá nyɔ́nsɔ</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Elembo to motuya</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Luka na sesyo</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Lolenge</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>%count lisusu</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>ezali na kati mozindo mingi mpo na kolakisa</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>ekatami, bilembo %count nyonso</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Ebandaki</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Nkombo ya kuki</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>ID ya sesyo</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Motambwisi</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Nzela ya kobomba</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>Oyo PHP etiaka</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Ntango ya bomoi (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Kuki</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>ntango %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Sesyo na yo moko ya PHP, ndenge ezalaki ntango eteni efungwamaki, ya moto mosusu soki moke te. Mituya ya bilembo oyo ezali lokola mabombami (ba-token, ba-hash, maloba ya nkuku) ebombami (debugbar.ini SessionMask[]); makambo mosusu nyonso emonisami ndenge ebombamaki, ata ba-données ya moto moko.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>bilembo %count, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>monene</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Sesyo ezali mpamba.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Sesyo moko te ebandaki mpo na bosenga oyo.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Bokɔlisi %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Kernel mpe mosusu</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Biloko nyonso emonisami te: sesyo ezali na biloko mingi koleka oyo ekoki kotangama awa.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>Bilembo %count etangami te.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Mozingoli</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Mituya oyo ezali lokola token (JSON Web Token, bilembo ya bondimami ya motó Authorization, elembo ya sekele, makomi hex milayi to ya mpamba) mpe ebombamaka, ata nkombo ya elembo na yango ezali nini (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>Elembo ezali lokola sekele (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>Motuya ezali lokola token.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Na nse ya elembo moko ebombami.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>Sesyo lokola makomi, ebombami lokola tableau.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>Sesyo eleki %size (debugbar.ini SessionWarnBytes): bosenga nyonso ya mosaleli oyo etangaka sesyo mobimba, mpe ekomaka yango soki ebongwani.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP ebombaka sesyo oyo na ba-fichier mpe ekangaka fichier na ntango ya bosenga mobimba: masenga ya mosaleli moko (ba-onglet ebele, mabengi ya AJAX) ezelaka moko na mosusu.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Tika efungwama</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>Eleki %size (debugbar.ini SessionWarnBytes): bosenga nyonso ya mosaleli oyo etangaka sesyo mobimba.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits na %count etangami na cache</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Modèle moko te esalemi (vue oyo etangami na cache ya ba-vue esalaka modèle moko te).</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Bopesi ya bamokumba</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Bokumba mpe mibeko</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>ekeseni na oyo ya bapaya bazangi nkombo</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>ndenge moko na oyo ya bapaya bazangi nkombo</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

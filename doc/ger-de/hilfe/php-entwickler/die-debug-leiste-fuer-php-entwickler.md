@@ -4,7 +4,7 @@ audience: php-developer, developer
 category: php-development
 order: 380
 summary: Die Exp Debug-Leiste als PHP-Entwickler nutzen - die Reiter (Meldungen, Einstellungen, Cache, Zeiten, SQL, Templates, Eingebundene Dateien, Speicher, Rendering, Benutzer, Server), die Schwellenwerte der Zusammenfassung, das Ändern von Debug-Einstellungen mit Rückgängig und ein eigenes Panel mit expDebugBarPanelInterface.
-keywords: Debug-Leiste, Reiter, Cache-Profil, Richtlinien, Schwellenwerte, Panel, Rückgängig, debug bar, Exp Debug bar, expDebugBarReport, expDebugBarSummary, debugbar.ini, tabs, SQL tab, Timing tab, Rendering tab, User tab, Server tab, thresholds, expDebugBarPanelInterface, Panels, settings undo, debugbar.log, setup/setup
+keywords: Debug-Leiste, Reiter, Cache-Profil, Richtlinien, Schwellenwerte, Panel, Rückgängig, debug bar, Exp Debug bar, expDebugBarReport, expDebugBarSummary, debugbar.ini, tabs, SQL tab, Timing tab, Rendering tab, User tab, session, Server tab, thresholds, expDebugBarPanelInterface, Panels, settings undo, debugbar.log, setup/setup
 type: help
 ---
 # Die Debug-Leiste für PHP-Entwickler

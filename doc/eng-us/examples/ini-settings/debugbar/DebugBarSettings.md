@@ -3,13 +3,13 @@ title: debugbar.ini [DebugBarSettings]
 audience: developer, admin
 category: examples
 summary: "The settings of [DebugBarSettings] in debugbar.ini: Settings, Groups, GroupNames, DiscoverBlocks, ExtensionDiscovery, DiscoveryPattern, DiscoveryExclude, Presets ..."
-keywords: debugbar.ini, DebugBarSettings, INI, setting, Settings, Groups, GroupNames, DiscoverBlocks, ExtensionDiscovery, DiscoveryPattern, DiscoveryExclude, Presets, Thresholds, Panels, RenderTree, Theme, LogFile, LogListLimit
+keywords: debugbar.ini, DebugBarSettings, INI, setting, Settings, Groups, GroupNames, DiscoverBlocks, ExtensionDiscovery, DiscoveryPattern, DiscoveryExclude, Presets, Thresholds, SessionMask, SessionValueMask, SessionWarnBytes, Panels, RenderTree, Theme, LogFile, LogListLimit
 type: generated
 generated: exp:help:examples
 ---
 # debugbar.ini [DebugBarSettings]
 
-The block `[DebugBarSettings]` of `settings/debugbar.ini`, with 14 setting(s).
+The block `[DebugBarSettings]` of `settings/debugbar.ini`, with 17 setting(s).
 
 Never edit `settings/debugbar.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -201,6 +201,75 @@ Thresholds[templates]=150;400
 Thresholds[querycache_hit_rate]=50;10
 Thresholds[opcache_memory]=80;95
 Thresholds[apcu_memory]=75;90
+*/ ?>
+```
+
+## SessionMask
+
+> The section Session of the User tab (the user's own PHP session, loaded when opened): keys whose name matches one  
+> of these masks (a part of the name, a regular expression without delimiters, case-insensitive) show only their type  
+> and length, never the value; everything below a masked key is masked too. Empty: token, csrf, nonce, secret, passw,  
+> hash, key$, credential, auth, jwt, bearer, otp, saml, assertion, ticket, sid$. An extension adds its own in its  
+> settings/debugbar.ini.append.php. Masks hide secrets, not personal data: names or addresses in the session are shown.  
+
+Default: a list of 16: `token`, `csrf`, `nonce`, `secret`, `passw`, `hash`, `key$`, `credential`, `auth`, `jwt`, `bearer`, `otp` ....
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/debugbar.ini.append.php
+[DebugBarSettings]
+# an empty "SessionMask[]" first replaces the shipped list; without it the items are added
+SessionMask[]
+SessionMask[]=token
+SessionMask[]=csrf
+SessionMask[]=nonce
+SessionMask[]=secret
+SessionMask[]=passw
+SessionMask[]=hash
+SessionMask[]=key$
+SessionMask[]=credential
+SessionMask[]=auth
+SessionMask[]=jwt
+SessionMask[]=bearer
+SessionMask[]=otp
+SessionMask[]=saml
+SessionMask[]=assertion
+SessionMask[]=ticket
+SessionMask[]=sid$
+*/ ?>
+```
+
+## SessionValueMask
+
+> Values that are masked whatever their key is called, in addition to the patterns that always apply (a JSON Web  
+> Token anywhere in the text, the credentials of an Authorization header, a PEM private key, well-known API key  
+> prefixes, 32 or more hex digits, and a long random text of base64 characters): regular expressions without  
+> delimiters, case-sensitive (start one with (?i) for case-insensitive), matched against the first 4096 bytes of  
+> every text and every key. Example: SessionValueMask\[\]=^tok\_\[a-z0-9\]{20,}$  
+
+Default: an empty list.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/debugbar.ini.append.php
+[DebugBarSettings]
+# an empty "SessionValueMask[]" first replaces the shipped list; without it the items are added
+SessionValueMask[]
+*/ ?>
+```
+
+## SessionWarnBytes
+
+> A session larger than this many bytes (serialized) is marked as large in the User tab: every request of the user  
+> reads the whole session, and writes it when it changed.  
+
+Default: `65536`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/debugbar.ini.append.php
+[DebugBarSettings]
+SessionWarnBytes=65536
 */ ?>
 ```
 

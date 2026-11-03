@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # debugbar.ini
 
-Die ausgelieferten Einstellungen von `settings/debugbar.ini`: 42 Blöcke, 288 Einstellungen.
+Die ausgelieferten Einstellungen von `settings/debugbar.ini`: 42 Blöcke, 291 Einstellungen.
 
 > Das Register der Exp-Debug-Leiste (die angeheftete Leiste am unteren Rand einer Seite mit Debug-Ausgabe).  
 > Anleitung: doc/eng-us/bc/6.0/debug-bar.md  
@@ -40,7 +40,7 @@ Die ausgelieferten Einstellungen von `settings/debugbar.ini`: 42 Blöcke, 288 Ei
 
 | Block | Einstellungen |
 |---|---|
-| [DebugBarSettings](DebugBarSettings.md) | 14 |
+| [DebugBarSettings](DebugBarSettings.md) | 17 |
 | [Setting_debug_output](Setting_debug_output.md) | 7 |
 | [Setting_debug_mode](Setting_debug_mode.md) | 8 |
 | [Setting_debug_redirection](Setting_debug_redirection.md) | 7 |

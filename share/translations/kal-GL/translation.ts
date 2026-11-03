@@ -69138,6 +69138,190 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
         <source>No answer</source>
         <translation>Akissut ajorpoq</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>isertorneqartoq</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Nassuiaatit takutikkit</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Nassuiaatit isertukkit</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Ammaruk</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Tamaasa ammakkit</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Tamaasa matukkit</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Ilisarnaat imaluunniit naleq</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Isersimanermi ujarlerit</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Suussuseq</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>%count suli</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>takutinneqarsinnaanngitsumik itisoorujussuarmik ilanngussaq</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>naqqaneqartoq, naqinnerit katillugit %count</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Aallartinneqarfia</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Cookie-p aqqa</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>Isersimanerup ID-ia</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Suliarinnittoq</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Toqqorfiup aqqutaa</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>PHP-p nalinginnaasumik atugaa</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Atuuffiata sivisussusaa (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Cookie</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>atuuffia %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Isersimaneq PHP-mi illit nammineq, immikkoortoq ammarneqarmat qanoq ittuusoq, allap isersimanera naamik. Ilisarnaatit isertuussatut isikkullit (token-it, hash-it, isissutit) nalingi isertorneqarput (debugbar.ini SessionMask[]); allat tamarmik toqqorneqarnertut takutinneqarput, paasissutissat inummut tunngasut aamma.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>ilisarnaatit %count, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>angisooq</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Isersimaneq imaqanngilaq.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Qinnummut matumunnga isersimaneq aallartinneqanngilaq.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Ilassut %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Kernel allallu</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Allattugaatit tamarmik takutinneqanngillat: isersimaneq maani allattorneqarsinnaasunit amerlanerusunik imaqarpoq.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>Ilisarnaatit %count allattorneqanngillat.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Sinaakkut</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Nalingit token-itut isikkullit (JSON Web Token, Authorization-ip qulequtaata uppernarsaatai, ilisarnaat namminermut, hex takisooq imaluunniit allagaq tamaattaannaq) aamma isertorneqartarput, ilisarnaataat qanoq taaguuteqaraluarpataluunniit (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>Ilisarnaat isertuussatut isikkoqarpoq (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>Naleq token-itut isikkoqarpoq.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Ilisarnaatip isertorneqartup ataani.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>Isersimaneq allagaasoq, tabelitut isertorneqartoq.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>Isersimaneq %size-imit anneruvoq (debugbar.ini SessionWarnBytes): atuisup matuma qinnutai tamarmik isersimaneq tamaat atuartarpaat, allanngorsimappallu allattarlugu.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP-p isersimaneq una fiilini toqqortarpaa fiililu qinnuteqarneq tamaat parnaarsimatillugu: atuisup ataatsip qinnutai (tabit arlallit, AJAX-imut sianerneqarnerit) imminnut utaqqiattarput.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Ammatiinnaruk</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>%size-imit anneruvoq (debugbar.ini SessionWarnBytes): atuisup matuma qinnutai tamarmik isersimaneq tamaat atuartarpaat.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%count-iniit %hits cache-imit atuarneqarput</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Skabeloni sumilluunniit takutinneqanngilaq (takussutissaq takussutissat cache-iannit atuarneqartoq skabelonimik takutitsineq ajorpoq).</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Atuuffimmik tunniussinerit</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Atuuffiit maleruagassallu</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>takusartut aqqeqanngitsunit allaanerusoq</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>takusartut aqqeqanngitsut assigalugit</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

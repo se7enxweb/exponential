@@ -69138,6 +69138,190 @@ Razred vozlišča boste morali spremeniti s funkcijo zamenjave.</translation>
         <source>No answer</source>
         <translation>Ni odgovora</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>zakrito</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Prikaži razlage</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Skrij razlage</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Odpri</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Odpri vse</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Zapri vse</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Ključ ali vrednost</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Išči po seji</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Vrsta</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>še %count</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>pregloboko ugnezdeno za prikaz</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>odrezano, skupaj %count znakov</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Začeto</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Ime piškotka</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>ID seje</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>Obravnavalnik</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Pot shranjevanja</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>Privzeto v PHP</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Življenjska doba (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Piškotek</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>življenjska doba %s s</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Vaša lastna seja PHP, kakršna je bila ob odprtju razdelka, nikoli druga. Vrednosti ključev, ki so videti kot skrivnosti (žetoni, zgoščene vrednosti, gesla), so zakrite (debugbar.ini SessionMask[]); vse drugo je prikazano tako, kot je shranjeno, tudi osebni podatki.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>Ključi: %count, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>velika</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Seja je prazna.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Za to zahtevo ni bila začeta nobena seja.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Razširitev %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Jedro in drugi</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Niso prikazani vsi vnosi: seja vsebuje več, kot je mogoče našteti tukaj.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>Ključi, ki niso navedeni: %count.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Okvir</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Vrednosti, ki so videti kot žeton (JSON Web Token, poverilnice glave Authorization, zasebni ključ, dolgo šestnajstiško ali naključno besedilo), so prav tako zakrite, ne glede na ime njihovega ključa (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>Ključ je videti kot skrivnost (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>Vrednost je videti kot žeton.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Pod zakritim ključem.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>Seja kot besedilo, zakrita kot tabela.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>Seja je večja od %size (debugbar.ini SessionWarnBytes): vsaka zahteva tega uporabnika prebere celotno sejo in jo zapiše, ko se je spremenila.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP hrani to sejo v datotekah in zaklene datoteko za celotno zahtevo: zahteve istega uporabnika (več zavihkov, klici AJAX) čakajo druga na drugo.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Ohrani odprto</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>Večja od %size (debugbar.ini SessionWarnBytes): vsaka zahteva tega uporabnika prebere celotno sejo.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits od %count prebranih iz predpomnilnika</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Nobena predloga ni bila upodobljena (pogled, prebran iz predpomnilnika pogledov, ne upodobi nobene).</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Dodelitve vlog</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Vloge in pravilniki</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>drugačno kot pri anonimnih obiskovalcih</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>enako kot pri anonimnih obiskovalcih</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -67747,6 +67747,190 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <source>No answer</source>
         <translation>Yanıt yok</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>maskeli</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>Açıklamaları göster</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>Açıklamaları gizle</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Aç</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>Tümünü aç</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>Tümünü kapat</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>Anahtar veya değer</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>Oturumda ara</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Tür</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>%count tane daha</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>göstermek için fazla derin iç içe</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>kesildi, toplam %count karakter</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Başlatıldı</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Çerez adı</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>Oturum kimliği</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>İşleyici</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>Kayıt yolu</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>PHP varsayılanı</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>Ömür (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Çerez</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>ömür %s sn</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>Kendi PHP oturumunuz, bölüm açıldığı andaki haliyle, asla başka bir oturum değil. Gizli bilgiye benzeyen anahtarların (belirteçler, karmalar, parolalar) değerleri maskelenir (debugbar.ini SessionMask[]); geri kalan her şey, kişisel veriler de dahil, saklandığı gibi gösterilir.</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count anahtar, %size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>büyük</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>Oturum boş.</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>Bu istek için oturum başlatılmadı.</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>%name uzantısı</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>Çekirdek ve diğerleri</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>Tüm girdiler gösterilmiyor: oturumda burada listelenebilecekten fazlası var.</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>%count anahtar listelenmedi.</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>Çerçeve</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>Belirtece benzeyen değerler (bir JSON Web Token, bir Authorization başlığının kimlik bilgileri, özel bir anahtar, uzun bir onaltılık veya rastgele metin) de anahtarlarının adı ne olursa olsun maskelenir (debugbar.ini SessionValueMask[]).</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>Anahtar gizli bir bilgiye benziyor (debugbar.ini SessionMask[]).</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>Değer bir belirtece benziyor.</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>Maskeli bir anahtarın altında.</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>Tablo gibi maskelenmiş, metin olarak oturum.</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>Oturum %size boyutundan büyük (debugbar.ini SessionWarnBytes): bu kullanıcının her isteği tüm oturumu okur ve değiştiğinde yazar.</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP bu oturumu dosyalarda tutar ve dosyayı isteğin tamamı boyunca kilitler: aynı kullanıcının istekleri (birkaç sekme, AJAX çağrıları) birbirini bekler.</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>Açık tut</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>%size boyutundan büyük (debugbar.ini SessionWarnBytes): bu kullanıcının her isteği tüm oturumu okur.</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%hits / %count önbellekten okundu</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>Hiçbir şablon işlenmedi (görünüm önbelleğinden okunan bir görünüm hiçbir şablon işlemez).</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>Rol atamaları</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>Roller ve ilkeler</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>anonim ziyaretçilerinkinden farklı</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>anonim ziyaretçilerinkiyle aynı</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

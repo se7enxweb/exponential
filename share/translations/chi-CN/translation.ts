@@ -69197,6 +69197,190 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No answer</source>
         <translation>没有应答</translation>
     </message>
+    <message>
+        <source>masked</source>
+        <translation>已遮蔽</translation>
+    </message>
+    <message>
+        <source>Show explanations</source>
+        <translation>显示说明</translation>
+    </message>
+    <message>
+        <source>Hide explanations</source>
+        <translation>隐藏说明</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>打开</translation>
+    </message>
+    <message>
+        <source>Open all</source>
+        <translation>全部展开</translation>
+    </message>
+    <message>
+        <source>Close all</source>
+        <translation>全部折叠</translation>
+    </message>
+    <message>
+        <source>Key or value</source>
+        <translation>键或值</translation>
+    </message>
+    <message>
+        <source>Search the session</source>
+        <translation>搜索会话</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>类型</translation>
+    </message>
+    <message>
+        <source>%count more</source>
+        <translation>还有 %count 项</translation>
+    </message>
+    <message>
+        <source>nested too deep to show</source>
+        <translation>嵌套过深，无法显示</translation>
+    </message>
+    <message>
+        <source>cut, %count characters in all</source>
+        <translation>已截断，共 %count 个字符</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>开始时间</translation>
+    </message>
+    <message>
+        <source>Cookie name</source>
+        <translation>Cookie 名称</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation>会话 ID</translation>
+    </message>
+    <message>
+        <source>Handler</source>
+        <translation>处理程序</translation>
+    </message>
+    <message>
+        <source>Save path</source>
+        <translation>保存路径</translation>
+    </message>
+    <message>
+        <source>PHP default</source>
+        <translation>PHP 默认值</translation>
+    </message>
+    <message>
+        <source>Lifetime (gc_maxlifetime)</source>
+        <translation>生存期 (gc_maxlifetime)</translation>
+    </message>
+    <message>
+        <source>Cookie</source>
+        <translation>Cookie</translation>
+    </message>
+    <message>
+        <source>lifetime %s s</source>
+        <translation>生存期 %s 秒</translation>
+    </message>
+    <message>
+        <source>Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.</source>
+        <translation>您自己的 PHP 会话，即打开此部分时的状态，绝不会是其他会话。看起来像机密的键（令牌、哈希、密码）的值会被遮蔽（debugbar.ini SessionMask[]）；其他所有内容按存储时的原样显示，包括个人数据。</translation>
+    </message>
+    <message>
+        <source>%count keys, %size</source>
+        <translation>%count 个键，%size</translation>
+    </message>
+    <message>
+        <source>large</source>
+        <translation>较大</translation>
+    </message>
+    <message>
+        <source>The session is empty.</source>
+        <translation>会话为空。</translation>
+    </message>
+    <message>
+        <source>No session was started for this request.</source>
+        <translation>此请求未启动会话。</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>扩展 %name</translation>
+    </message>
+    <message>
+        <source>Kernel and others</source>
+        <translation>内核及其他</translation>
+    </message>
+    <message>
+        <source>Not every entry is shown: the session has more than can be listed here.</source>
+        <translation>并未显示所有条目：会话中的内容多于此处可列出的数量。</translation>
+    </message>
+    <message>
+        <source>%count keys are not listed.</source>
+        <translation>有 %count 个键未列出。</translation>
+    </message>
+    <message>
+        <source>Frame</source>
+        <translation>框架</translation>
+    </message>
+    <message>
+        <source>Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).</source>
+        <translation>看起来像令牌的值（JSON Web Token、Authorization 标头中的凭据、私钥、较长的十六进制或随机文本）也会被遮蔽，无论其键名是什么（debugbar.ini SessionValueMask[]）。</translation>
+    </message>
+    <message>
+        <source>The key looks like a secret (debugbar.ini SessionMask[]).</source>
+        <translation>该键看起来像机密（debugbar.ini SessionMask[]）。</translation>
+    </message>
+    <message>
+        <source>The value looks like a token.</source>
+        <translation>该值看起来像令牌。</translation>
+    </message>
+    <message>
+        <source>Below a masked key.</source>
+        <translation>位于被遮蔽的键之下。</translation>
+    </message>
+    <message>
+        <source>The session as text, masked like the table.</source>
+        <translation>以文本形式显示的会话，遮蔽方式与表格相同。</translation>
+    </message>
+    <message>
+        <source>The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.</source>
+        <translation>会话大于 %size（debugbar.ini SessionWarnBytes）：该用户的每个请求都会读取整个会话，并在会话更改时写入。</translation>
+    </message>
+    <message>
+        <source>PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.</source>
+        <translation>PHP 将此会话保存在文件中，并在整个请求期间锁定该文件：同一用户的请求（多个标签页、AJAX 调用）会相互等待。</translation>
+    </message>
+    <message>
+        <source>Keep open</source>
+        <translation>保持打开</translation>
+    </message>
+    <message>
+        <source>Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.</source>
+        <translation>大于 %size（debugbar.ini SessionWarnBytes）：该用户的每个请求都会读取整个会话。</translation>
+    </message>
+    <message>
+        <source>%hits of %count read from the cache</source>
+        <translation>%count 个中有 %hits 个从缓存读取</translation>
+    </message>
+    <message>
+        <source>No template was rendered (a view read from the view cache renders none).</source>
+        <translation>未渲染任何模板（从视图缓存读取的视图不渲染任何模板）。</translation>
+    </message>
+    <message>
+        <source>Role assignments</source>
+        <translation>角色分配</translation>
+    </message>
+    <message>
+        <source>Roles and policies</source>
+        <translation>角色和策略</translation>
+    </message>
+    <message>
+        <source>differs from anonymous visitors</source>
+        <translation>与匿名访客不同</translation>
+    </message>
+    <message>
+        <source>same as anonymous visitors</source>
+        <translation>与匿名访客相同</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
