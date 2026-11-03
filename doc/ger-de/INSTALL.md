@@ -52,7 +52,8 @@ hin, wenn es nötig ist.
 
 *Vollständiges Kapitel: [01-introduction](installation/01-einfuehrung.md)*
 
-Eine Installation besteht aus dem Exponential-Kernel, den in `composer.json` aufgeführten Extensions, einem Site-Paket mit
+Eine Installation besteht aus dem Exponential-Kernel, den in `composer.json` aufgeführten Extensions (welche sie hat und
+aktiviert: [Erweiterungen einer neuen Installation](funktionen/6.0/erweiterungen-einer-neuen-installation.md)), einem Site-Paket mit
 seinen Inhalten und seinem Design sowie drei Siteaccesses. Ihre Namen lauten immer `site`, `admin` und `editor`; was Sie
 bei der Installation wählen, ist der URL-Pfad, der Port oder der Hostname, der zu jedem von ihnen führt (der Match-Wert):
 

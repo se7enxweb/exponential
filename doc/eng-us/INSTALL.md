@@ -49,7 +49,8 @@ a script as `root`, add `--allow-root-user`; the script says so when it is neede
 
 *Full chapter: [01-introduction](install/01-introduction.md)*
 
-An installation is the Exponential kernel, the extensions listed in `composer.json`, a site package with its
+An installation is the Exponential kernel, the extensions listed in `composer.json` (which ones it has and activates:
+[Extensions of a new installation](features/6.0/extensions-of-a-new-installation.md)), a site package with its
 content and design, and three siteaccesses. Their names are always `site`, `admin` and `editor`; what you choose
 during the install is the URL path, port or host name that leads to each (the match value):
 

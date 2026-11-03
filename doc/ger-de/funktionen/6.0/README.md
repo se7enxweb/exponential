@@ -60,6 +60,7 @@ nginx mit PHP-FPM funktionieren weiter wie bisher.
 - [Kickstarter: eine ganze Site aus einer Datei installieren](kickstarter-cli.md)
 - [Konsolenbefehle für .htaccess und config.php](befehle-fuer-htaccess-und-config-php.md)
 - [Was eine neue Installation mitbringt: die Standardauswahl an Erweiterungen](standard-extension-auslieferung.md)
+- [Erweiterungen einer neuen Installation (6.0.15)](erweiterungen-einer-neuen-installation.md): mitgeliefert, installiert, standardmäßig aktiviert, ihre Tabellen
 - [Eine saubere Installation, die zu Shared Hosting passt und Exponential heißt](standardwerte-einer-sauberen-installation.md)
 - [Das neue Aussehen des Einrichtungsassistenten und der Siteaccess für den Editor](einrichtungsassistent-und-editor-siteaccess.md)
 - [Einstellungen pro Umgebung (EXP_ENV)](umgebungseinstellungen.md)

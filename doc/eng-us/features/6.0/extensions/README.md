@@ -6,7 +6,8 @@ settings with defaults, and what changed in the Exponential 6 releases.
 
 To activate an extension, add it to `ActiveExtensions[]` in `settings/override/site.ini.append.php`, regenerate the
 autoloads (`php bin/php/ezpgenerateautoloads.php -e`) and clear the caches. The page of each extension lists any extra
-step (tables, policies, keys).
+step (tables, policies, keys). Which extensions a new installation of 6.0.15 has on disk and activates, and where
+their tables come from: [Extensions of a new installation](../extensions-of-a-new-installation.md).
 
 ## Content and datatypes
 

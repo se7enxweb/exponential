@@ -5,6 +5,12 @@ toolbar a logged-in editor sees on the public site: edit, move, remove, create h
 upload or export a document. It requires `ezjscore`. [ezwebin](ezwebin.md), [ezflow](ezflow.md), [ezdemo](ezdemo.md)
 and the [simple theme](sevenx_themes_simple.md) all build on it.
 
+**Replaced by expwt.** The website sidebar [expwt](../website-sidebar.md) replaces ezwt. Since 6.0.15 no site package
+installs the `ezwt_extension` package, and the site package installers activate expwt in its place (see [Site
+packages no longer install extension packages](../../../bc/6.0/site-packages-no-extension-packages.md) and
+[Extensions of a new installation](../extensions-of-a-new-installation.md#ezwt-and-expwt)). An existing installation
+moves with `./console exp:wt:migrate-from-ezwt --apply`.
+
 ## Put it in your design
 
 1. In `pagelayout.tpl`, wrap the toolbar in a cache block keyed by the user's roles, so it adds no SQL:

@@ -12,7 +12,9 @@ grep -n '"se7enxweb/' composer.json
 ```
 
 Der erste Block der Ausgabe ist `suggest`, der zweite `require`. Die aktuellen Abschnitte `require` und `suggest` von
-`composer.json` sind maßgeblich; die Zeitleiste unten sagt Ihnen, wann jedes Teil hinzukam.
+`composer.json` sind maßgeblich; die Zeitleiste unten sagt Ihnen, wann jedes Teil hinzukam. Was eine Installation von
+6.0.15 auf der Platte hat, was sie standardmäßig aktiviert und woher die Tabellen kommen, steht in [Erweiterungen einer
+neuen Installation](erweiterungen-einer-neuen-installation.md).
 
 ## Wie es funktioniert
 
