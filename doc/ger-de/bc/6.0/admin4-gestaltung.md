@@ -213,6 +213,19 @@ setzt. Der Titel einer Link-Karte enthält genau einen Link, dessen Text der zug
 Sie eine Karte nie mit `<a>`. `tests/tests/design/AdminCardsTest.php` prüft die Teile und dass keine Karte von admin4
 mit einem Abschnittskopf beginnt.
 
+Innerhalb von `.a4-page` liest sich eine Kartenliste als Tabelle: Jedes `li.a4-card` einer `ul.a4-cards` ist eine
+Zeile mit Trennlinie, Zebrastreifen und Hover, die Angaben einer Zeile stehen in einer Zeile („ID: 2  Richtlinien: 1“),
+und ab 701 px sind die Zeilen Subgrids der Liste, sodass Name, Schaltflächen und Angaben in Spalten fluchten. Die
+Zeilenaktionen Anzeigen, Bearbeiten, Öffnen, Zuweisen und Kopieren (`.a4-btn-small`, erkannt am Linkziel) erscheinen
+als Symbolschaltflächen; ihr Text bleibt für Screenreader erhalten, und ein Template gibt einer solchen Schaltfläche
+einen `title` (ihre Beschriftung) als Tooltip. Tabellen (`.a4-table`) erhalten ab 601 px denselben Innenabstand, die
+Angaben jeder Karte, die keine Listenzeile ist (`.a4-card > dl.a4-facts`, auch in ihrem `.a4-card-body`), sind eine
+Zeile „Bezeichnung: Wert“, und die Attribute von `class/view` (`ol.a4-cards`) sind Zeilen. Auf Touchscreens behalten
+die Zeilenschaltflächen ihre volle Größe. Als Karten bleiben: das Quellenformular von `rss/edit_export`
+(`ul.a4-cards.a4-card-body`) und die Aktionskacheln von `user/edit`. Die Regeln stehen im Block „List rows“ von
+`components.css`; `tests/tests/design/AdminListRowsTest.php` prüft ihn. Eine Modulliste, die ein Kartenraster bleiben
+soll, verwendet `.a4-grid` statt `ul.a4-cards`.
+
 Zustände sind Klassen `.is-*` an der Komponente. Jede Komponente ist eine Klasse plus höchstens ein Element oder ein
 Zustand, daher gewinnt eine Modulregel mit einer Klasse mehr immer.
 

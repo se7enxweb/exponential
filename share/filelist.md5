@@ -431,7 +431,7 @@ b85be7774f406553186dbc720d2914a9  design/admin/override/templates/embed_image.tp
 e0c996a801b1373df9824852298b20d9  design/admin/override/templates/tiny_image.tpl
 a2c561e93ef63c93201e81acd4f32741  design/admin/override/templates/window_controls_user.tpl
 f2ca9f0ba6ba3907c6329fdf324f3b91  design/admin/override/templates/windows_user.tpl
-d2af496167257b5af74cdc5f8ce0bb31  design/admin/stylesheets/components.css
+8daa02b3c835045a509d16cba4c64748  design/admin/stylesheets/components.css
 74c4546c22cf2c24230dfa64314f4740  design/admin/stylesheets/content.css
 57a6c6137002ae3eeaf1e05958ecb19a  design/admin/stylesheets/core.css
 e4286f3980c415c880cdb413793a0eea  design/admin/stylesheets/ezinfo.css
@@ -1246,7 +1246,7 @@ b85be7774f406553186dbc720d2914a9  design/admin4/override/templates/embed_image.t
 e0c996a801b1373df9824852298b20d9  design/admin4/override/templates/tiny_image.tpl
 7fa5263575d70e112afa865433af87c9  design/admin4/stylesheets/admin4.css
 60043ca1b3b05084022afe6127dc974f  design/admin4/stylesheets/base.css
-d2af496167257b5af74cdc5f8ce0bb31  design/admin4/stylesheets/components.css
+8daa02b3c835045a509d16cba4c64748  design/admin4/stylesheets/components.css
 005d3f98e2671b2f9ea348032aaae860  design/admin4/stylesheets/core.css
 79bfd7f0041431e3d99f1f446678dbc0  design/admin4/stylesheets/editor_content.css
 e26094514c3dac416b5fb6be0a9d9e21  design/admin4/stylesheets/ezinfo.css
@@ -13536,7 +13536,7 @@ a309c3015f2e4822e567a6faa9f998b7  doc/ger-de/anleitungen/zwei-faktor-anmeldung.m
 9a2363742ead21d40c5d8a8741b42385  doc/ger-de/bc/5.90/indizierung-von-beziehungen.md
 dcf1b0b94d93bc43a5091638826844ee  doc/ger-de/bc/5.90/passwortlaenge.md
 039ce123c1a0a75a7c9e730e577e0136  doc/ger-de/bc/5.90/php7.md
-18ba28dfb1ebe6768e86f1cfb9cc8a64  doc/ger-de/bc/6.0/admin4-gestaltung.md
+689d7697b4e0de53b8a47785f689f6e0  doc/ger-de/bc/6.0/admin4-gestaltung.md
 5a4621981bfe41d7b35285f2ddc481b7  doc/ger-de/bc/6.0/admin4l.md
 5df1d6e52db73baef257a5a6ba2f57a5  doc/ger-de/bc/6.0/anonymous-rolle-richtlinien.md
 693eca963756cd0b335bee8289bc4022  doc/ger-de/bc/6.0/antwort-cache-und-navigation.md
