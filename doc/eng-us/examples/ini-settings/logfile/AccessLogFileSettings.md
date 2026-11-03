@@ -2,14 +2,14 @@
 title: logfile.ini [AccessLogFileSettings]
 audience: developer, admin
 category: examples
-summary: "The settings of [AccessLogFileSettings] in logfile.ini: StorageDir, LogFileName, SitePrefix, PathPrefix"
-keywords: logfile.ini, AccessLogFileSettings, INI, setting, StorageDir, LogFileName, SitePrefix, PathPrefix
+summary: "The settings of [AccessLogFileSettings] in logfile.ini: StorageDir, LogFileName, SitePrefix, PathPrefix, Host, Port, Hosts"
+keywords: logfile.ini, AccessLogFileSettings, INI, setting, StorageDir, LogFileName, SitePrefix, PathPrefix, Host, Port, Hosts
 type: generated
 generated: exp:help:examples
 ---
 # logfile.ini [AccessLogFileSettings]
 
-The block `[AccessLogFileSettings]` of `settings/logfile.ini`, with 4 setting(s).
+The block `[AccessLogFileSettings]` of `settings/logfile.ini`, with 7 setting(s).
 
 Never edit `settings/logfile.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -19,6 +19,8 @@ Never edit `settings/logfile.ini` itself: an update replaces it. Put the setting
 
 ## StorageDir
 
+> The access log of a siteaccess. Set it in settings/override for a log every siteaccess shares,  
+> or in settings/siteaccess/<siteaccess>/logfile.ini.append.php for a log of one siteaccess.  
 > Storage of the log file, for example /var/log/httpd  
 > Do not add trailing slash  
 
@@ -52,6 +54,8 @@ LogFileName=
 > apache log will start with for example mysite/content/view/full/node\_id. To  
 > remove this prefix in apache log before analysis the log, add mysite to  
 > SitePrefix. Example: SitePrefix\[\]=mysite  
+> Only a whole first path element is removed. When several counted siteaccesses share the log,  
+> the siteaccess matching removes the siteaccess's part of the path instead.  
 
 Default: a list of 1: ``.
 
@@ -68,6 +72,8 @@ SitePrefix[]=
 ## PathPrefix
 
 > If any site accesses use the PathPrefix setting, enter them here  
+> A path is looked up with each prefix in front first, then as it is. Empty: the PathPrefix  
+> of the siteaccess's site.ini \[SiteAccessSettings\].  
 
 Default: a list of 1: ``.
 
@@ -78,6 +84,51 @@ Default: a list of 1: ``.
 # an empty "PathPrefix[]" first replaces the shipped list; without it the items are added
 PathPrefix[]
 PathPrefix[]=
+*/ ?>
+```
+
+## Host
+
+> The host the log's requests were made to, for the siteaccess matching, when its lines do not  
+> name one (the common and combined formats do not; vhost\_combined does). Example: www.example.com  
+
+Default: empty.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/logfile.ini.append.php
+[AccessLogFileSettings]
+Host=
+*/ ?>
+```
+
+## Port
+
+> The port of the log's requests, for MatchOrder=port. Empty: 80.  
+
+Default: empty.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/logfile.ini.append.php
+[AccessLogFileSettings]
+Port=
+*/ ?>
+```
+
+## Hosts
+
+> Only lines of these hosts are counted for the siteaccess (a line that names no host takes  
+> Host). Empty: every host. Example: Hosts\[\]=www.example.com  
+
+Default: an empty list.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/logfile.ini.append.php
+[AccessLogFileSettings]
+# an empty "Hosts[]" first replaces the shipped list; without it the items are added
+Hosts[]
 */ ?>
 ```
 

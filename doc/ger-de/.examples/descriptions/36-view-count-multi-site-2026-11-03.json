@@ -1,0 +1,118 @@
+{
+    "command:expviewcountupdate": {
+        "en": "Count the page views of the web server's access logs into the view counter (ezview_counter), for one siteaccess or several",
+        "de": "Zählt die Seitenaufrufe aus den Zugriffsprotokollen des Webservers in den Aufrufzähler (ezview_counter), für einen Siteaccess oder mehrere"
+    },
+    "command:expviewcountupdate --all-siteaccesses": {
+        "en": "Every siteaccess of AvailableSiteAccessList with an access log, except the administrations",
+        "de": "Jeder Siteaccess aus AvailableSiteAccessList mit einem Zugriffsprotokoll, außer den Administrationen"
+    },
+    "command:expviewcountupdate --dry-run": {
+        "en": "Read and report, write neither the counts nor the resume state",
+        "de": "Lesen und berichten, weder die Zahlen noch den Zustand schreiben"
+    },
+    "command:expviewcountupdate --format": {
+        "en": "text (default) or json",
+        "de": "text (Standard) oder json"
+    },
+    "command:expviewcountupdate --from-start": {
+        "en": "With --dry-run: read the logs from their first line, ignoring the resume state",
+        "de": "Mit --dry-run: die Protokolle ab ihrer ersten Zeile lesen, ohne den Zustand zu beachten"
+    },
+    "command:expviewcountupdate --log-file": {
+        "en": "Read this access log for every counted siteaccess, in place of logfile.ini [AccessLogFileSettings]",
+        "de": "Dieses Zugriffsprotokoll für jeden gezählten Siteaccess lesen, statt logfile.ini [AccessLogFileSettings]"
+    },
+    "command:expviewcountupdate --reset-state": {
+        "en": "Count nothing; remove the resume state of the siteaccesses, so the next run reads the logs from their first line",
+        "de": "Nichts zählen; den Zustand der Siteaccesses entfernen, damit der nächste Lauf die Protokolle ab ihrer ersten Zeile liest"
+    },
+    "command:expviewcountupdate --siteaccess-list": {
+        "en": "These siteaccesses, comma separated (default: logfile.ini [ViewCountSettings] SiteAccessList[], else the siteaccess of -s)",
+        "de": "Diese Siteaccesses, durch Kommas getrennt (Standard: logfile.ini [ViewCountSettings] SiteAccessList[], sonst der Siteaccess von -s)"
+    },
+    "command:expviewcountupdate --skip-to-end": {
+        "en": "Count nothing; set the resume state to the end of the logs, so the next run counts only newer lines",
+        "de": "Nichts zählen; den Zustand auf das Ende der Protokolle setzen, damit der nächste Lauf nur neuere Zeilen zählt"
+    },
+    "command:expviewcountupdate --state-dir": {
+        "en": "Keep the resume state here, in place of logfile.ini [ViewCountSettings] StateDir",
+        "de": "Den Zustand hier ablegen, statt in logfile.ini [ViewCountSettings] StateDir"
+    },
+    "command:expviewcountupdate --top": {
+        "en": "List the most viewed nodes of the run (default 0, none)",
+        "de": "Die meistbesuchten Knoten des Laufs auflisten (Standard 0, keine)"
+    },
+    "ini:settings/logfile.ini [AccessLogFileSettings] Host": {
+        "en": "The host the log's requests were made to, for the siteaccess matching, when its lines do not\nname one (the common and combined formats do not; vhost_combined does). Example: www.example.com",
+        "de": "Der Host, an den die Anfragen des Protokolls gingen, für die Siteaccess-Erkennung, wenn seine Zeilen\nkeinen nennen (die Formate common und combined nennen keinen, vhost_combined schon). Beispiel: www.example.com"
+    },
+    "ini:settings/logfile.ini [AccessLogFileSettings] Hosts": {
+        "en": "Only lines of these hosts are counted for the siteaccess (a line that names no host takes\nHost). Empty: every host. Example: Hosts[]=www.example.com",
+        "de": "Nur Zeilen dieser Hosts werden für den Siteaccess gezählt (eine Zeile ohne Host nimmt\nHost). Leer: jeder Host. Beispiel: Hosts[]=www.example.com"
+    },
+    "ini:settings/logfile.ini [AccessLogFileSettings] Port": {
+        "en": "The port of the log's requests, for MatchOrder=port. Empty: 80.",
+        "de": "Der Port der Anfragen des Protokolls, für MatchOrder=port. Leer: 80."
+    },
+    "ini:settings/logfile.ini [ViewCountSettings] AllSiteAccesses": {
+        "en": "enabled: count every siteaccess of AvailableSiteAccessList[] that has an access log,\nexcept the administrations. SiteAccessList[] is not read then.",
+        "de": "enabled: jeden Siteaccess aus AvailableSiteAccessList[] mit einem Zugriffsprotokoll zählen,\naußer den Administrationen. SiteAccessList[] wird dann nicht gelesen."
+    },
+    "ini:settings/logfile.ini [ViewCountSettings] BotUserAgents": {
+        "en": "Requests whose user agent contains one of these (in any case) are robots, not views.",
+        "de": "Anfragen, deren User-Agent einen dieser Einträge enthält (in beliebiger Schreibweise), sind Robots, keine Aufrufe."
+    },
+    "ini:settings/logfile.ini [ViewCountSettings] LineRegexp": {
+        "en": "A log format of its own: a regular expression with named groups time, request, status and,\noptional, host, ip, agent, referer. Empty: the common, combined and vhost_combined formats\n(Apache, nginx, Plesk, Velocity), recognized by each line.",
+        "de": "Ein eigenes Protokollformat: ein regulärer Ausdruck mit den benannten Gruppen time, request, status und,\nwahlweise, host, ip, agent, referer. Leer: die Formate common, combined und vhost_combined\n(Apache, nginx, Plesk, Velocity), an jeder Zeile erkannt."
+    },
+    "ini:settings/logfile.ini [ViewCountSettings] LockTimeout": {
+        "en": "How long a run waits, in seconds, for another run that reads the same log.",
+        "de": "Wie lange ein Lauf in Sekunden auf einen anderen Lauf wartet, der dasselbe Protokoll liest."
+    },
+    "ini:settings/logfile.ini [ViewCountSettings] MatchSiteAccess": {
+        "en": "How the lines of a log are given to siteaccesses. auto: by the kernel's siteaccess\nmatching (site.ini [SiteAccessSettings] MatchOrder) when more than one counted siteaccess\nreads the log, else all lines to the one; enabled: always matched, so a log of several sites\ncounts only the lines of the counted siteaccess; disabled: never matched (every siteaccess of\na shared log counts every line).",
+        "de": "Wie die Zeilen eines Protokolls den Siteaccesses zugeordnet werden. auto: nach der Siteaccess-Erkennung\ndes Kernels (site.ini [SiteAccessSettings] MatchOrder), wenn mehr als ein gezählter Siteaccess\ndas Protokoll liest, sonst alle Zeilen an den einen; enabled: immer zugeordnet, ein Protokoll mehrerer\nSites zählt also nur die Zeilen des gezählten Siteaccess; disabled: nie zugeordnet (jeder Siteaccess\neines gemeinsamen Protokolls zählt jede Zeile)."
+    },
+    "ini:settings/logfile.ini [ViewCountSettings] MaxLineLength": {
+        "en": "The longest line read, in bytes. Longer lines are skipped.",
+        "de": "Die längste gelesene Zeile in Bytes. Längere Zeilen werden übersprungen."
+    },
+    "ini:settings/logfile.ini [ViewCountSettings] Methods": {
+        "en": "The request methods counted. Empty: every method.",
+        "de": "Die gezählten Anfragemethoden. Leer: jede Methode."
+    },
+    "ini:settings/logfile.ini [ViewCountSettings] RotatedSuffixes": {
+        "en": "The names of a log's rotated copy, appended to its name. After a rotation the rest of the\ncopy is read first, then the new log from its start. A copy is recognized by its inode or its\nfirst line, so a compressed copy (.1.gz) is found too.",
+        "de": "Die Namen der rotierten Kopie eines Protokolls, an seinen Namen angehängt. Nach einer Rotation wird\nzuerst der Rest der Kopie gelesen, dann das neue Protokoll von vorn. Eine Kopie wird an ihrer Inode oder\nihrer ersten Zeile erkannt, so wird auch eine komprimierte Kopie (.1.gz) gefunden."
+    },
+    "ini:settings/logfile.ini [ViewCountSettings] SiteAccessList": {
+        "en": "Which siteaccesses one run counts. Each reads the access log its own logfile.ini\n[AccessLogFileSettings] names. Empty: only the siteaccess the run is for\n(runcronjobs.php -s <siteaccess>), as the cronjob always did.\nExample: SiteAccessList[]=site",
+        "de": "Welche Siteaccesses ein Lauf zählt. Jeder liest das Zugriffsprotokoll, das seine eigene logfile.ini\n[AccessLogFileSettings] nennt. Leer: nur der Siteaccess, für den der Lauf ist\n(runcronjobs.php -s <siteaccess>), wie es der Cronjob immer tat.\nBeispiel: SiteAccessList[]=site"
+    },
+    "ini:settings/logfile.ini [ViewCountSettings] SkipEmptyUserAgent": {
+        "en": "enabled: a request without a user agent is a robot.",
+        "de": "enabled: eine Anfrage ohne User-Agent ist ein Robot."
+    },
+    "ini:settings/logfile.ini [ViewCountSettings] SkipExtensions": {
+        "en": "Paths ending in these extensions are files, not page views.",
+        "de": "Pfade mit diesen Endungen sind Dateien, keine Seitenaufrufe."
+    },
+    "ini:settings/logfile.ini [ViewCountSettings] SkipPathPrefixes": {
+        "en": "Paths starting with these are not page views: files, services and module views. They are\ncompared with the path as requested and with the path without the siteaccess's part.",
+        "de": "Pfade, die so beginnen, sind keine Seitenaufrufe: Dateien, Dienste und Modulansichten. Verglichen\nwird mit dem Pfad, wie er angefragt wurde, und mit dem Pfad ohne den Teil des Siteaccess."
+    },
+    "ini:settings/logfile.ini [ViewCountSettings] StateDir": {
+        "en": "Where the resume state is kept: one file per log, with each siteaccess's place in it.\nEmpty: viewcount below the VarDir of the run's siteaccess. A relative path is below the\ninstallation.",
+        "de": "Wo der Zustand liegt: eine Datei je Protokoll, darin die Stelle jedes Siteaccess.\nLeer: viewcount unterhalb des VarDir des Siteaccess des Laufs. Ein relativer Pfad liegt unter der\nInstallation."
+    },
+    "ini:settings/logfile.ini [ViewCountSettings] Statuses": {
+        "en": "The response statuses counted. 304 (not modified) is a view of a page the browser had.\nEmpty: every status.",
+        "de": "Die gezählten Antwortstatus. 304 (nicht geändert) ist ein Aufruf einer Seite, die der Browser schon hatte.\nLeer: jeder Status."
+    },
+    "ini:settings/logfile.ini [ViewCountSettings] ViewModes": {
+        "en": "The view modes counted for /content/view/<view mode>/<node>. Empty: every view mode.",
+        "de": "Die Ansichten, die für /content/view/<Ansicht>/<Knoten> zählen. Leer: jede Ansicht."
+    }
+}

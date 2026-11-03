@@ -481,6 +481,31 @@ class eZSiteAccess
     }
 
     /**
+     * The siteaccess that served an address, as match() finds it for a web request, for a tool that reads where
+     * requests went (the view counter reading an access log): without the side effects of a request, so no redirect
+     * of RedirectOnNormalize and no choice by the browser's language. Where no probe of MatchOrder matched, the
+     * answer is DefaultAccess with the key unmatched set.
+     *
+     * @param string $uriString the path, URL decoded, with or without the leading slash
+     * @param string $host
+     * @param int $port
+     * @param string $file
+     * @return array see match(), plus unmatched (true) where no probe matched
+     */
+    static function matchAddress( $uriString, $host, $port = 80, $file = '/index.php' )
+    {
+        self::$matchingTarget = true;
+        try
+        {
+            return self::match( new eZURI( trim( (string)$uriString, '/' ), false ), (string)$host, $port, $file );
+        }
+        finally
+        {
+            self::$matchingTarget = false;
+        }
+    }
+
+    /**
      * The default siteaccess for an address no probe of MatchOrder matched: the first entry of
      * $items (DefaultHostUriMatchMapItems[]=host;uri;siteaccess[;method[;language]]) whose host matches and whose
      * language the browser accepts, trying the languages of $acceptLanguage from the most wanted; else the first

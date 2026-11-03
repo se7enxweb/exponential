@@ -10,13 +10,16 @@ generated: exp:help:examples
 ---
 # logfile.ini
 
-The shipped settings of `settings/logfile.ini`: 1 blocks, 4 settings.
+The shipped settings of `settings/logfile.ini`: 2 blocks, 22 settings.
 
-> Exponential configuration file for parse apache log file  
+> Exponential configuration file for the view counter, which reads the web server's access logs  
+> (the cronjob updateviewcount.php and ./console exp:viewcount:update).  
+> Guide: doc/eng-us/guides/view-count-statistics.md  
 
 | Block | Settings |
 |---|---|
-| [AccessLogFileSettings](AccessLogFileSettings.md) | 4 |
+| [AccessLogFileSettings](AccessLogFileSettings.md) | 7 |
+| [ViewCountSettings](ViewCountSettings.md) | 15 |
 
 - [All examples](../../README.md)
 

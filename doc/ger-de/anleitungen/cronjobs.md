@@ -366,7 +366,7 @@ egal wer sie gestartet hat: siehe das [Audit-Protokoll](../funktionen/6.0/pruefp
 und wo sie liegt. Nichts führt sie je aus. In einer neuen Installation sind das unter anderem `session_gc.php` (abgelaufene
 Sitzungen), `old_drafts_cleanup.php`, `trashpurge.php` (leert den Papierkorb, oder mit `content.ini [TrashSettings]
 KeepItemsForDays` nur das, was älter ist), `staticcache_cleanup.php`, `subtreeexpirycleanup.php` und
-`updateviewcount.php`.
+`updateviewcount.php` (zählt Seitenaufrufe aus den Zugriffsprotokollen: [Seitenaufrufe zählen](seitenaufrufe-zaehlen.md)).
 
 Um eines einmal auszuführen, verwenden Sie die Shell (Abschnitt 13) mit `--script=<file>`. Um es regelmäßig auszuführen, fügen Sie es einem Teil hinzu: einem
 bestehenden oder einem eigenen Teil, damit es einen eigenen Zeitplan erhält:

@@ -784,8 +784,8 @@
         "de": "Der Code von cronjobs/unpublish.php, in eine Klasse verschoben (#207 Stufe 1). Die Datei cronjobs/unpublish.php ist ein Aufruf davon.\nAnleitung: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md"
     },
     "cronjob:updateviewcount.php": {
-        "en": "Flush the in-memory view count buffer to the database",
-        "de": "Schreibt den Puffer der Aufrufzähler aus dem Speicher in die Datenbank"
+        "en": "Count the page views of the web server's access logs into the view counter (ezview_counter)",
+        "de": "Zählt die Seitenaufrufe aus den Zugriffsprotokollen des Webservers in den Aufrufzähler (ezview_counter)"
     },
     "cronjob:updateviewcount.php docblock": {
         "en": "The code of cronjobs/updateviewcount.php, moved into a class (#207 stage 1). The file cronjobs/updateviewcount.php is one call to it.\nGuide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md",

@@ -7,7 +7,7 @@
  * The original header of cronjobs/updateviewcount.php:
  *
  *
- * @description Flush the in-memory view count buffer to the database
+ * @description Count the page views of the web server's access logs into the view counter (ezview_counter)
  *
  * File containing the updateviewcount.php cronjob
  *
@@ -22,6 +22,12 @@
 namespace Exponential\Cronjob\Kernel
 {
 
+/**
+ * The view counter as a cronjob part: the same work as ./console exp:viewcount:update without options. Which logs
+ * and siteaccesses it reads is set in logfile.ini (doc/eng-us/guides/view-count-statistics.md): without
+ * [ViewCountSettings] SiteAccessList[] or AllSiteAccesses, the [AccessLogFileSettings] of the siteaccess the cronjob
+ * runs for, as before.
+ */
 class Updateviewcount extends \Exponential\Runnable\CronjobPart
 {
     public function run( array $scope )
@@ -34,239 +40,22 @@ class Updateviewcount extends \Exponential\Runnable\CronjobPart
 
         set_time_limit( 0 );
 
-        $cli->output( "Update content view count..."  );
-
-        $dt = new \eZDateTime();
-        $startTime = $dt->day() . "/" . date( 'M', time() ) . "/" . $dt->year() . ":" . $dt->hour() . ":" . $dt->minute() . ":" . $dt->second();
-
-        $cli->output( "Started at " . $dt->toString() . "\n"  );
-
+        $cli->output( "Update content view count..." );
         \eZDB::instance()->setIsSQLOutputEnabled( false );
 
-        $startLine = "";
-        $hasStartLine = false;
-
-        // The log directory of the site, as eZSys::logDirectory() derives it (an absolute LogDir, LogVarDir)
-        $updateViewLogPath = \eZSys::logDirectory() . "/updateview.log";
-        if ( is_file( $updateViewLogPath ) )
+        $config = \expViewCountConfiguration::fromINI();
+        $report = ( new \expViewCountUpdater( $config ) )->run();
+        foreach ( \expViewCountUpdater::lines( $report ) as $line )
         {
-            $fh = fopen( $updateViewLogPath, "r" );
-            if ( $fh )
-            {
-                while ( !feof ( $fh ) )
-                {
-                    $line = fgets( $fh, 1024 );
-                    if ( preg_match( "/\[/", $line ) )
-                    {
-                        $startLine = $line;
-                        $hasStartLine = true;
-                    }
-                }
-                fclose( $fh );
-            }
-        }
-
-        $cli->output( "Start line:\n" . $startLine );
-        $lastLine = "";
-        $logFileIni = \eZINI::instance( 'logfile.ini' );
-        $logFilePath = $logFileIni->variable( 'AccessLogFileSettings', 'StorageDir' ) . '/' . $logFileIni->variable( 'AccessLogFileSettings', 'LogFileName' );
-        $prefixes = $logFileIni->variable( 'AccessLogFileSettings', 'SitePrefix' );
-        $pathPrefixes = $logFileIni->variable( 'AccessLogFileSettings', 'PathPrefix' );
-        $pathPrefixesCount = count( $pathPrefixes );
-
-        $nodeIDHashCounter = array();
-        $pathHashCounter = array();
-        $contentHash = array();
-        $nonContentHash = array();
-
-        if ( is_file( $logFilePath ) )
-        {
-            $handle = fopen( $logFilePath, "r" );
-            if ( $handle )
-            {
-                $startParse = false;
-                $stopParse = false;
-                while ( !feof ($handle) and !$stopParse )
-                {
-                    $line = fgets($handle, 1024);
-                    if ( empty( $line ) )
-                    {
-                        continue;
-                    }
-
-                    if ( $line != "" )
-                        $lastLine = $line;
-
-                    if ( $startParse or !$hasStartLine )
-                    {
-                        $logPartArray = preg_split( "/[\"]+/", $line );
-                        list( $ip, $timePart ) = explode( '[', $logPartArray[0] );
-                        list( $time, $rest ) = explode( ' ', $timePart );
-
-                        if ( $time == $startTime )
-                            $stopParse = true;
-
-                        list( $requireMethod, $url ) = explode( ' ', $logPartArray[1] );
-                        $url = preg_replace( "/\?.*/", "", $url);
-                        foreach ( $prefixes as $prefix )
-                        {
-                            $urlChanged = preg_replace( '/^\/' . preg_quote( $prefix, '/' ) . '(\/|$)/', '/', $url );
-                            if ( $urlChanged != $url )
-                            {
-                                $url = $urlChanged;
-                                break;
-                            }
-                        }
-
-                        if ( strpos( $url, 'content/view/full/' ) !== false )
-                        {
-                            $url = str_replace( "content/view/full/", "", $url );
-                            $url = str_replace( "/", "", $url );
-                            $url = preg_replace( "/\?(.*)/", "", $url );
-                            if ( !isset( $nodeIDHashCounter[$url] ) )
-                            {
-                                $nodeIDHashCounter[$url] = 1;
-                            }
-                            else
-                            {
-                                ++$nodeIDHashCounter[$url];
-                            }
-                        }
-                        else
-                        {
-                            $urlArray = explode( '/', $url );
-                            $firstElement = $urlArray[1];
-                            if ( isset( $contentHash[$firstElement] ) )
-                            {
-                                if ( !isset( $pathHashCounter[$url] ) )
-                                {
-                                    $pathHashCounter[$url] = 1;
-                                }
-                                else
-                                {
-                                    ++$pathHashCounter[$url];
-                                }
-                            }
-                            else if ( !isset( $nonContentHash[$firstElement] ) && ( $firstElement != "" || $url === '/' ) )
-                            {
-                                //check in database, if found, add to contentHash, else add to nonContentHash.
-                                $result = \eZURLAliasML::fetchNodeIDByPath( $firstElement );
-
-                                // Fix for sites using PathPrefix
-                                $pathPrefixIndex = 0;
-                                while ( !$result )
-                                {
-                                    if ( $pathPrefixIndex >= $pathPrefixesCount )
-                                        break;
-
-                                    // Try prepending each of the existing pathPrefixes, to see if one of them matches an existing node
-                                    $result = \eZURLAliasML::fetchNodeIDByPath( $pathPrefixes[$pathPrefixIndex] . '/' . $firstElement );
-                                    $pathPrefixIndex++;
-                                }
-
-                                if ( $result )
-                                {
-                                    $contentHash[$firstElement] = 1;
-                                    if ( !isset( $pathHashCounter[$url] ) )
-                                    {
-                                        $pathHashCounter[$url] = 1;
-                                    }
-                                    else
-                                    {
-                                        ++$pathHashCounter[$url];
-                                    }
-                                }
-                                else if ( $firstElement != "content" )
-                                {
-                                    $nonContentHash[$firstElement] = 1;
-                                }
-                            }
-                        }
-                    }
-                    if ( $line == $startLine )
-                    {
-                        $startParse = true;
-                    }
-                }
-                fclose( $handle );
-            }
+            if ( strpos( $line, 'Error: ' ) === 0 )
+                $cli->error( $line );
+            elseif ( strpos( $line, 'Warning: ' ) === 0 )
+                $cli->warning( $line );
             else
-            {
-                $cli->output( "Warning: Cannot open apache log-file '$logFilePath' for reading, please check permissions and try again." );
-            }
+                $cli->output( $line );
         }
-        else
-        {
-            $cli->output( "Warning: apache log-file '$logFilePath' doesn't exist, please check your ini-settings and try again." );
-        }
-
-        // Process the content of $pathHashCounter to transform it into $nodeIDHashCounter
-        foreach ( $pathHashCounter as $path => $count )
-        {
-           // Support for PathPrefix
-           if( $pathPrefixesCount >= 1 )
-           {
-               for ( $pathPrefixIndex = 0; !$nodeID && $pathPrefixIndex < $pathPrefixesCount; ++$pathPrefixIndex )
-               {
-                  // Try prepending each of the existing pathPrefixes, to see if one of them matches an existing node
-                  $nodeID = \eZURLAliasML::fetchNodeIDByPath( $pathPrefixes[$pathPrefixIndex] . $path );
-               }
-            }
-            else
-            {
-                $nodeID = \eZURLAliasML::fetchNodeIDByPath( $path );
-            }
-
-            if ( $nodeID )
-            {
-                if ( !isset( $nodeIDHashCounter[$nodeID] ) )
-                {
-                    $nodeIDHashCounter[$nodeID] = $count;
-                }
-                else
-                {
-                    $nodeIDHashCounter[$nodeID] += $count;
-                }
-            }
-            unset( $nodeID );
-        }
-
-        foreach ( $nodeIDHashCounter as $nodeID => $count )
-        {
-            if ( \eZContentObjectTreeNode::fetch( $nodeID ) != null )
-            {
-                $counter = \eZViewCounter::fetch( $nodeID );
-                if ( $counter == null )
-                {
-        	    $cli->output( "Node ( " . $nodeID . " ) View count have increased: Count: $count \n" );
-                    $counter = \eZViewCounter::create( $nodeID );
-                    $counter->setAttribute( 'count', $count );
-                    $counter->store();
-                }
-                else
-                {
-        	    $cli->output( "Node ( " . $nodeID . " ) View count have increased: Count: $count \n" );
-        	    $counter->increase( $count );
-                }
-            }
-        }
-
-        $dt = new \eZDateTime();
-
-        $fh = fopen( $updateViewLogPath, "w" );
-        if ( $fh )
-        {
-            fwrite(
-                $fh,
-                "# Finished at " . $dt->toString() . "\n" .
-                "# Last updated entry:" . "\n" .
-                $lastLine . "\n"
-            );
-            fclose( $fh );
-        }
-
-        $cli->output( "Finished at " . $dt->toString() . "\n"  );
-        $cli->output( "View count has been updated.\n" );
+        $cli->output( $report['exit_code'] === \expViewCountUpdater::EXIT_OK ? "View count has been updated." : "View count was not fully updated (see above)." );
+        return $report;
     }
 }
 

@@ -81,6 +81,52 @@ class eZViewCounter extends eZPersistentObject
         );
     }
 
+    /**
+     * Adds many views at once, in one transaction: a row that exists is raised by its count in the database
+     * ("count = count + n", so views counted in parallel are kept), a node without a row gets one. The rows are
+     * looked up 500 nodes at a time. Used by the view counter (expViewCountUpdater); works on every database the
+     * kernel supports, as it uses the same statements as increase() and store().
+     *
+     * @param int[] $counts node id => views to add; ids and counts below 1 are left out
+     * @return bool false when the database refused the transaction (nothing is added then)
+     */
+    public static function addCounts( array $counts )
+    {
+        $clean = array();
+        foreach ( $counts as $nodeID => $count )
+        {
+            if ( (int)$nodeID > 0 && (int)$count > 0 )
+                $clean[(int)$nodeID] = ( isset( $clean[(int)$nodeID] ) ? $clean[(int)$nodeID] : 0 ) + (int)$count;
+        }
+        if ( !$clean )
+            return true;
+        ksort( $clean );
+        $db = eZDB::instance();
+        $db->begin();
+        foreach ( array_chunk( array_keys( $clean ), 500 ) as $chunk )
+        {
+            $rows = eZPersistentObject::fetchObjectList( eZViewCounter::definition(), array( 'node_id' ),
+                                                         array( 'node_id' => array( $chunk ) ), null, null, false );
+            $existing = array();
+            foreach ( (array)$rows as $row )
+                $existing[(int)$row['node_id']] = true;
+            foreach ( $chunk as $nodeID )
+            {
+                if ( isset( $existing[$nodeID] ) )
+                {
+                    $db->query( "UPDATE ezview_counter SET count = count + " . (int)$clean[$nodeID] . " WHERE node_id=" . (int)$nodeID );
+                }
+                else
+                {
+                    $counter = eZViewCounter::create( $nodeID );
+                    $counter->setAttribute( 'count', $clean[$nodeID] );
+                    $counter->store();
+                }
+            }
+        }
+        return (bool)$db->commit();
+    }
+
     static function fetch( $node_id, $asObject = true )
     {
         return eZPersistentObject::fetchObject( eZViewCounter::definition(),

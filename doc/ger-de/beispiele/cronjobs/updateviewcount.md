@@ -2,14 +2,14 @@
 title: Cronjob updateviewcount.php
 audience: developer, admin
 category: examples
-summary: Schreibt den Puffer der Aufrufzähler aus dem Speicher in die Datenbank.
+summary: Zählt die Seitenaufrufe aus den Zugriffsprotokollen des Webservers in den Aufrufzähler (ezview_counter).
 keywords: Teil, updateviewcount.php, updateviewcount, cronjob, runcronjobs, part
 type: generated
 generated: exp:help:examples
 ---
 # Der Cronjob updateviewcount.php
 
-Schreibt den Puffer der Aufrufzähler aus dem Speicher in die Datenbank.
+Zählt die Seitenaufrufe aus den Zugriffsprotokollen des Webservers in den Aufrufzähler (ezview_counter).
 
 Einstiegspunkt `cronjobs/updateviewcount.php`, Code in `kernel/private/classes/cronjobs/updateviewcount.php`.
 

@@ -58,7 +58,7 @@ Every shipped INI file of the kernel and the bundled extensions, one page per bl
 | [kernelservices.ini](kernelservices/README.md) | kernel | 15 |
 | [layout.ini](layout/README.md) | kernel | 3 |
 | [ldap.ini](ldap/README.md) | kernel | 1 |
-| [logfile.ini](logfile/README.md) | kernel | 1 |
+| [logfile.ini](logfile/README.md) | kernel | 2 |
 | [logviewer.ini](logviewer/README.md) | kernel | 10 |
 | [mailpreferences.ini](mailpreferences/README.md) | kernel | 19 |
 | [membermanagement.ini](membermanagement/README.md) | kernel | 4 |

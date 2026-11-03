@@ -72,7 +72,7 @@ Every cronjob script of the kernel and the bundled extensions and the parts of t
 | [trashpurge.php](trashpurge.md) | Permanently delete objects in the trash (all, or as old as [TrashSettings] KeepItemsForDays says) |  |
 | [unlock.php](unlock.md) | Release content objects stuck in a locked editing state | unlock |
 | [unpublish.php](unpublish.md) | Process scheduled unpublish actions on content objects | (default) |
-| [updateviewcount.php](updateviewcount.md) | Flush the in-memory view count buffer to the database |  |
+| [updateviewcount.php](updateviewcount.md) | Count the page views of the web server's access logs into the view counter (ezview_counter) |  |
 | [useraudit.php](useraudit.md) | User audit log: removes the rows of expuser_audit older than audit.ini [UserAuditSettings] RetentionDays | infrequent, useraudit |
 | [usersessions.php](usersessions.md) | Signed-in sessions ("Your devices"): ends the sessions not used for [Session] SessionTimeout, removes ended ones after [UserSessionSettings] RetentionDays | infrequent, usersessions |
 | [workflow.php](workflow.md) | Process pending workflow events and advance stalled workflows | frequent |

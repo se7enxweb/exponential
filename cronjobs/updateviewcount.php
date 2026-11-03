@@ -1,6 +1,6 @@
 <?php
 /**
- * @description Flush the in-memory view count buffer to the database
+ * @description Count the page views of the web server's access logs into the view counter (ezview_counter)
  *
  * File containing the updateviewcount.php cronjob
  *

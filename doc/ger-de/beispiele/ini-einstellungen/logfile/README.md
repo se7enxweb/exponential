@@ -10,13 +10,16 @@ generated: exp:help:examples
 ---
 # logfile.ini
 
-Die ausgelieferten Einstellungen von `settings/logfile.ini`: 1 Blöcke, 4 Einstellungen.
+Die ausgelieferten Einstellungen von `settings/logfile.ini`: 2 Blöcke, 22 Einstellungen.
 
-> Exponential-Konfigurationsdatei zum Auswerten der Apache-Logdatei  
+> Konfigurationsdatei von Exponential für den Aufrufzähler, der die Zugriffsprotokolle des Webservers liest  
+> (der Cronjob updateviewcount.php und ./console exp:viewcount:update).  
+> Anleitung: doc/ger-de/anleitungen/seitenaufrufe-zaehlen.md  
 
 | Block | Einstellungen |
 |---|---|
-| [AccessLogFileSettings](AccessLogFileSettings.md) | 4 |
+| [AccessLogFileSettings](AccessLogFileSettings.md) | 7 |
+| [ViewCountSettings](ViewCountSettings.md) | 15 |
 
 - [Alle Beispiele](../../README.md)
 
