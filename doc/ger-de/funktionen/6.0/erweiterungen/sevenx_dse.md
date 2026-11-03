@@ -19,15 +19,20 @@ unter `/dse/dashboard`. Es ist die einzige freigegebene Extension für einen Dat
   nie eingegeben, in kein Formular geschrieben und nicht angezeigt, und in der Adresse steht nur der Serverschlüssel
   `main`. Eine SQLite-Datenbank ohne Pfad ist wie für den Kernel die Datei in `var/storage/sqlite3/`; ihre
   Tabellenliste lässt die eigenen Tabellen von SQLite (`sqlite_sequence` ...) weg.
-- **Jede andere Datenbank**: „Mit einer anderen Datenbank verbinden“ auf dem Dashboard und der Link „Change database“
-  im Editor öffnen das eigene Anmeldeformular von AdminNeo mit jedem Treiber, den es hier hat (MySQL/MariaDB,
-  PostgreSQL, MS SQL, SQLite, Oracle, MongoDB ..., soweit ihre PHP-Erweiterungen geladen sind), und den freien Feldern
-  für Server, Benutzername, Passwort und Datenbank; eine SQLite-Datei wird mit ihrem Pfad relativ zur Installation
-  angegeben (nur innerhalb davon). Die in der Sitzung gemerkten Anmeldungen werden dort ebenfalls angeboten. `main`
-  ist nur für Anfragen zu ihr der konfigurierte Server, das freie Formular steht also immer zur Verfügung.
+- **Jede andere Datenbank, die Datenbankauswahl**: „Mit einer anderen Datenbank verbinden“ auf dem Dashboard, der Link
+  „Datenbank wechseln“ im Editor und „Logout“ von AdminNeo öffnen die Datenbankauswahl
+  (`/dse/dashboard/(dse_choose)/1`): „Datenbank dieser Website öffnen“ mit einem Klick, die in dieser Sitzung gemerkten
+  Anmeldungen (die aktuelle Verbindung ist mit „Jetzt verbunden“ markiert, ein Klick wechselt zu einer anderen) und
+  das eigene Anmeldeformular von AdminNeo mit jedem Treiber, den es hier hat (MySQL/MariaDB, PostgreSQL, MS SQL,
+  SQLite, Oracle, MongoDB ..., soweit ihre PHP-Erweiterungen geladen sind), und den freien Feldern für Server,
+  Benutzername, Passwort und Datenbank; eine SQLite-Datei wird mit ihrem Pfad relativ zur Installation angegeben (nur
+  innerhalb davon). Die Liste zeigt nur Treiber, Server, Benutzername und Datenbank, nie ein Passwort. `main` ist nur
+  für Anfragen zu ihr der konfigurierte Server, das freie Formular steht also immer zur Verfügung. „Logout“ vergisst
+  die Anmeldung, von der es abmeldet; die anderen bleiben in der Liste.
 - **Sicherheitsschranke**: ein verpflichtender Haftungshinweis und ein Bildschirm zur **Bestätigung der Sicherung** bei
-  jedem direkten Zugriff.
-- **Gegen CSRF geschützter Wechsel der Datenbank**: Der Link „Change database“ trägt ein Token `dse_switch` pro
+  jedem Aufruf aus dem Menü. Ist er in einer Sitzung bestätigt, führt „Datenbank wechseln“ direkt zur
+  Datenbankauswahl; ohne diese Bestätigung (eine neue Sitzung) zeigt die Adresse der Auswahl zuerst die Warnung.
+- **Gegen CSRF geschützter Wechsel der Datenbank**: Der Link „Datenbank wechseln“ trägt ein Token `dse_switch` pro
   Sitzung; „return to last database“ funktioniert, ohne URLs zu speichern; die Sitzungen mit Serverpasswort von
   AdminNeo bleiben über die Schranke hinweg erhalten.
 - **Ansichtsparameter statt Query-Strings**: Der Zustand des Editors steht als Ansichtsparameter in der Adresse, zum

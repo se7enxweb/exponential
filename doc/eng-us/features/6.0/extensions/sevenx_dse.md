@@ -19,13 +19,18 @@ of Exponential.
   into a form or shown, and only the server key `main` appears in the address. An SQLite database named without a
   path is the file in `var/storage/sqlite3/`, as for the kernel; its table list leaves out SQLite's own tables
   (`sqlite_sequence` ...).
-- **Any other database**: "Connect to another database" on the dashboard, and the "Change database" link inside the
-  editor, open AdminNeo's own login form with every driver it has here (MySQL/MariaDB, PostgreSQL, MS SQL, SQLite,
-  Oracle, MongoDB ... as far as their PHP extensions are loaded) and the free-form server, username, password and
-  database fields; an SQLite file is named by its path relative to the installation (inside it only). The logins
-  remembered in the session are offered there too. `main` is the configured server only for requests about it, so
-  the free-form form is always available.
-- **Safety gate**: a mandatory disclaimer and **backup acknowledgement** screen on every bare access.
+- **Any other database, the database chooser**: "Connect to another database" on the dashboard, the "Change
+  database" link inside the editor and AdminNeo's "Logout" open the database chooser
+  (`/dse/dashboard/(dse_choose)/1`): "Open the database of this site" with one click, the logins remembered in this
+  session (the current connection marked "Connected now", one click switches to another), and AdminNeo's own login
+  form with every driver it has here (MySQL/MariaDB, PostgreSQL, MS SQL, SQLite, Oracle, MongoDB ... as far as their
+  PHP extensions are loaded) and the free-form server, username, password and database fields; an SQLite file is
+  named by its path relative to the installation (inside it only). The list shows only driver, server, username and
+  database, never a password. `main` is the configured server only for requests about it, so the free-form form is
+  always available. "Logout" forgets the login it signed out of; the others stay in the list.
+- **Safety gate**: a mandatory disclaimer and **backup acknowledgement** screen on every visit from the menu. Once
+  confirmed in a session, "Change database" goes straight to the database chooser; without that confirmation (a new
+  session) the chooser's address shows the warning first.
 - **CSRF-protected database switching**: the "Change database" link carries a per-session token `dse_switch`; "return
   to last database" works without storing URLs; AdminNeo's server password sessions are kept across the gate.
 - **View parameters, no query strings**: the editor's state is in the address as view parameters, for example
