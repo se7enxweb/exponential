@@ -56,6 +56,7 @@ class Datatype extends \Exponential\Runnable\ModuleView
                 ${$__name} = &$scope[$__name];
         unset( $__name );
 
+        $Params = $scope['Params'];
         $Module = $Params['Module'];
         $action = isset( $Params['Action'] ) && $Params['Action'] !== '' ? (string)$Params['Action'] : 'list';
         $userParameters = isset( $Params['UserParameters'] ) && is_array( $Params['UserParameters'] ) ? $Params['UserParameters'] : array();
