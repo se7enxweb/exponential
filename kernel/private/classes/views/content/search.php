@@ -82,7 +82,7 @@ class Search extends \Exponential\Runnable\ModuleView
             if ( \expViewParameters::posted( $_POST, 'Mode' ) !== 'browse'
                  && \expViewParameters::redirectsPost( $_POST, \expContentSearchFilters::FORM_FIELDS ) )
                 \expViewParameters::redirect( 'content/search' . \expContentSearchFilters::fromRequest( $_POST )->viewSuffix() );
-            \expContentSearchFilters::useViewParameters( $Params );
+            \expContentSearchFilters::useViewParameters( $scope['Params'] );
         }
         $useSearchCode = $ini->variable( 'SearchSettings', 'SearchViewHandling' ) == 'default'
                          && !$filteredPage;
@@ -122,7 +122,7 @@ class Search extends \Exponential\Runnable\ModuleView
         $searchTextShortened = $searchText !== $requestedSearchText;
         // the filtered search page: its text is the view parameter (text), for the statistics and the audit
         if ( $filteredPage )
-            $searchText = self::limitSearchText( (string)\expViewParameters::get( $Params, 'text' ), $maximumWords, $maximumLength );
+            $searchText = self::limitSearchText( (string)\expViewParameters::get( $scope['Params'], 'text' ), $maximumWords, $maximumLength );
 
         // A section that does not exist is no section: the search is not limited to it
         $searchSectionID = -1;
