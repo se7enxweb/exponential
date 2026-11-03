@@ -74,6 +74,7 @@ class expLinkCheck
                       'HostDelay' => 1000,         // milliseconds between two requests to the same host
                       'RecheckInterval' => 72000,  // seconds before a checked link is checked again (0: every run)
                       'MaxURLsPerRun' => 0,        // links checked in one run (0: all)
+                      'MaxRunTime' => 900,         // seconds a run may check links; the rest waits for the next run (0: no limit)
                       'UserAgent' => 'Exponential Link Validator (+https://exponential.earth)',
                       'AllowedPrivateHosts' => array(), // hosts, addresses or IPv4 ranges (a.b.c.d/n) on a private network that may be tested
                       'SiteURL' => array() );      // the site's own addresses, for paths that are not URL aliases

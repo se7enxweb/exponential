@@ -2,14 +2,14 @@
 title: cronjob.ini [linkCheckSettings]
 audience: developer, admin
 category: examples
-summary: "Die Einstellungen von [linkCheckSettings] in cronjob.ini: SiteURL, Timeout, ConnectTimeout, MaxRedirects, HostDelay, RecheckInterval, MaxURLsPerRun, UserAgent ..."
-keywords: Einstellung, cronjob.ini, linkCheckSettings, INI, setting, SiteURL, Timeout, ConnectTimeout, MaxRedirects, HostDelay, RecheckInterval, MaxURLsPerRun, UserAgent, AllowedPrivateHosts
+summary: "Die Einstellungen von [linkCheckSettings] in cronjob.ini: SiteURL, Timeout, ConnectTimeout, MaxRedirects, HostDelay, RecheckInterval, MaxURLsPerRun, MaxRunTime ..."
+keywords: Einstellung, cronjob.ini, linkCheckSettings, INI, setting, SiteURL, Timeout, ConnectTimeout, MaxRedirects, HostDelay, RecheckInterval, MaxURLsPerRun, MaxRunTime, UserAgent, AllowedPrivateHosts
 type: generated
 generated: exp:help:examples
 ---
 # cronjob.ini [linkCheckSettings]
 
-Der Block `[linkCheckSettings]` von `settings/cronjob.ini`, mit 9 Einstellung(en).
+Der Block `[linkCheckSettings]` von `settings/cronjob.ini`, mit 10 Einstellung(en).
 
 Bearbeiten Sie `settings/cronjob.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -119,6 +119,22 @@ Standard: `0`.
 # settings/override/cronjob.ini.append.php
 [linkCheckSettings]
 MaxURLsPerRun=0
+*/ ?>
+```
+
+## MaxRunTime
+
+> Sekunden, die ein Lauf Links prüfen darf; übrig bleiben die zuletzt geprüften,  
+> und mit ihnen beginnt der nächste Lauf. 0 prüft, bis alle fertig sind.  
+> Den größten Teil eines langen Laufs macht HostDelay zwischen Links auf denselben Host aus.  
+
+Standard: `900`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/cronjob.ini.append.php
+[linkCheckSettings]
+MaxRunTime=900
 */ ?>
 ```
 

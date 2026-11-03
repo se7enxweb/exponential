@@ -88,20 +88,28 @@ class Dashboard extends \Exponential\Runnable\ModuleView
     const CACHE_SECONDS = 60;
 
     /**
+     * Seconds the figures of the six days before today are kept (and the index's row count). Those days are over:
+     * only records the indexer catches up with late still change them. Counting them read every record of the
+     * week (140 000 on alpha, 9 to 12 seconds on SQLite); today's figures are counted afresh as before.
+     */
+    const PAST_CACHE_SECONDS = 3600;
+
+    /**
      * A section's figures from a short-lived cache file (var/<site>/cache/audit/), computed when missing or older
      * than CACHE_SECONDS; keyed by the section, the Channel limitation and the day.
      *
      * @param string $section
      * @param string[]|null $allowed
      * @param callable $compute
+     * @param int $seconds how long the figures are kept (CACHE_SECONDS by default)
      * @return array
      */
-    protected function cached( $section, $allowed, $compute )
+    protected function cached( $section, $allowed, $compute, $seconds = self::CACHE_SECONDS )
     {
         $dir = \eZSys::cacheDirectory() . '/audit';
         $file = $dir . '/dashboard-' . $section . '-' . md5( json_encode( $allowed ) . date( 'Ymd' ) ) . '.php';
         clearstatcache( true, $file );
-        if ( is_file( $file ) && filemtime( $file ) > time() - self::CACHE_SECONDS )
+        if ( is_file( $file ) && filemtime( $file ) > time() - (int)$seconds )
         {
             $data = @include $file;
             if ( is_array( $data ) )
@@ -144,6 +152,21 @@ class Dashboard extends \Exponential\Runnable\ModuleView
         arsort( $todayBy );
         arsort( $weekBy );
         return array( $todayBy, $weekBy );
+    }
+
+    /**
+     * Two sets of counts added up by key, most first.
+     *
+     * @param array $a key => n
+     * @param array $b key => n
+     * @return array key => n
+     */
+    public static function addCounts( array $a, array $b )
+    {
+        foreach ( $b as $key => $n )
+            $a[$key] = ( isset( $a[$key] ) ? (int)$a[$key] : 0 ) + (int)$n;
+        arsort( $a );
+        return $a;
     }
 
     /** @return int epoch ms of the start of today, local time */
@@ -192,10 +215,17 @@ class Dashboard extends \Exponential\Runnable\ModuleView
      */
     protected function volume( \expAuditQuery $q, $allowed )
     {
-        $today = array( 'from_ms' => self::todayMs() );
-        $week = array( 'from_ms' => self::todayMs() - 6 * 86400000 );
+        $todayMs = self::todayMs();
+        $today = array( 'from_ms' => $todayMs );
         $offsetMs = (int)date( 'Z' ) * 1000;
-        $perDay = $q->perDay( $week, $allowed, 'channel', $offsetMs );
+        // the six days before today, kept for PAST_CACHE_SECONDS; today counted afresh
+        $past = $this->cached( 'volume-past', $allowed, function () use ( $q, $allowed, $todayMs, $offsetMs ) {
+            $f = array( 'from_ms' => $todayMs - 6 * 86400000, 'to_ms' => $todayMs );
+            return array( 'per_day' => $q->perDay( $f, $allowed, 'channel', $offsetMs ),
+                          'domains' => array_column( $q->groupCount( array( 'domain_name' ), $f, $allowed, 1000 ), 'n', 'domain_name' ),
+                          'results' => array_column( $q->groupCount( array( 'result' ), $f, $allowed, 100 ), 'n', 'result' ) );
+        }, self::PAST_CACHE_SECONDS );
+        $perDay = $past['per_day'] + $q->perDay( $today, $allowed, 'channel', $offsetMs );
         $days = array();
         $max = 1;
         for ( $i = 6; $i >= 0; $i-- )
@@ -225,16 +255,17 @@ class Dashboard extends \Exponential\Runnable\ModuleView
                                  'url' => \expAuditConsole::url( 'audit/console', array( 'channel' => $c ) ) );
         }
         $families = array();
-        foreach ( $q->groupCount( array( 'domain_name' ), $week, $allowed, 10 ) as $r )
-            $families[] = array( 'domain' => $r['domain_name'], 'n' => (int)$r['n'],
-                                 'url' => \expAuditConsole::url( 'audit/console', array( 'name' => $r['domain_name'] . '.*' ) ) );
-        $results = function ( array $f ) use ( $q, $allowed ) {
-            $by = array_column( $q->groupCount( array( 'result' ), $f, $allowed, 5 ), 'n', 'result' );
+        $domains = self::addCounts( $past['domains'], array_column( $q->groupCount( array( 'domain_name' ), $today, $allowed, 1000 ), 'n', 'domain_name' ) );
+        foreach ( array_slice( $domains, 0, 10, true ) as $domain => $n )
+            $families[] = array( 'domain' => (string)$domain, 'n' => (int)$n,
+                                 'url' => \expAuditConsole::url( 'audit/console', array( 'name' => $domain . '.*' ) ) );
+        $results = function ( array $by ) {
             return array( 'refused' => isset( $by['refused'] ) ? (int)$by['refused'] : 0, 'failed' => isset( $by['failed'] ) ? (int)$by['failed'] : 0,
                           'total' => (int)array_sum( $by ) );
         };
+        $todayResults = array_column( $q->groupCount( array( 'result' ), $today, $allowed, 100 ), 'n', 'result' );
         return array( 'days' => $days, 'channels' => $channels, 'families' => $families,
-                      'today' => $results( $today ), 'week' => $results( $week ),
+                      'today' => $results( $todayResults ), 'week' => $results( self::addCounts( $past['results'], $todayResults ) ),
                       'refused_url' => \expAuditConsole::url( 'audit/console', array( 'result' => 'refused' ) ),
                       'failed_url' => \expAuditConsole::url( 'audit/console', array( 'result' => 'failed' ) ),
                       'charts_url' => \expAuditConsole::url( 'audit/charts', array(), array( 'days' => 7 ) ) );
@@ -391,7 +422,10 @@ class Dashboard extends \Exponential\Runnable\ModuleView
         if ( $usable )
         {
             $q = new \expAuditQuery();
-            $index['rows'] = (int)$q->count( array(), null );
+            // counting every record reads the whole time index (5 seconds for 800 000 on SQLite): kept a while
+            $rows = $this->cached( 'index-rows', null, function () use ( $q ) { return array( (int)$q->count( array(), null ) ); },
+                                   self::CACHE_SECONDS * 10 );
+            $index['rows'] = (int)$rows[0];
             $index['lag'] = ( new \expAuditIndexer() )->lag()['bytes'];
             $index['fulltext'] = $q->fullTextKind();
             $last = $q->fetch( array( 'name' => 'system.audit.reindex' ), null, 0, 1, 'time_ms' );

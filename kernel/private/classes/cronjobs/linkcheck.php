@@ -43,7 +43,7 @@ class Linkcheck extends \Exponential\Runnable\CronjobPart
         $counts = array( \expLinkCheck::VALID => 0, \expLinkCheck::INVALID => 0, \expLinkCheck::UNKNOWN => 0, 'skipped' => 0, 'changed' => 0 );
 
         $linkList = \eZURL::fetchList( array( 'only_published' => true, 'sort' => 'checked', 'as_object' => false ) );
-        // the links checked longest ago first, so a run cut short by MaxURLsPerRun moves on next time
+        // the links checked longest ago first, so a run cut short by MaxURLsPerRun or MaxRunTime moves on next time
         $linkList = array_reverse( is_array( $linkList ) ? $linkList : array() );
         $checked = 0;
         foreach ( $linkList as $link )
@@ -56,7 +56,8 @@ class Linkcheck extends \Exponential\Runnable\CronjobPart
                 $counts['skipped']++;
                 continue;
             }
-            if ( $settings['MaxURLsPerRun'] > 0 && $checked >= $settings['MaxURLsPerRun'] )
+            if ( ( $settings['MaxURLsPerRun'] > 0 && $checked >= $settings['MaxURLsPerRun'] )
+                 || self::overTime( $started, microtime( true ), (int)$settings['MaxRunTime'] ) )
             {
                 $counts['skipped']++;
                 continue;
@@ -81,7 +82,7 @@ class Linkcheck extends \Exponential\Runnable\CronjobPart
             $cli->output( "check-" . $cli->stylize( 'emphasize', $url ) . " " . $cli->stylize( $style, $answer['result'] ) . " (" . $answer['reason'] . ")" );
         }
 
-        $cli->output( sprintf( "All links have been checked! %d valid, %d invalid, %d not decided, %d skipped (checked recently or over MaxURLsPerRun), %d changed, %d requests, %.1f s",
+        $cli->output( sprintf( "All links have been checked! %d valid, %d invalid, %d not decided, %d skipped (checked recently, or over MaxURLsPerRun or MaxRunTime), %d changed, %d requests, %.1f s",
                                $counts[\expLinkCheck::VALID], $counts[\expLinkCheck::INVALID], $counts[\expLinkCheck::UNKNOWN],
                                $counts['skipped'], $counts['changed'], $checker->requests, microtime( true ) - $started ) );
     }
@@ -98,6 +99,20 @@ class Linkcheck extends \Exponential\Runnable\CronjobPart
     public static function isRecent( $lastChecked, $now, $interval )
     {
         return $interval > 0 && $lastChecked > 0 && $lastChecked > $now - $interval;
+    }
+
+    /**
+     * Whether a run that started at $started has used up MaxRunTime ($max seconds; 0: no limit). The links not
+     * checked then are the ones checked most recently, and the next run starts with them.
+     *
+     * @param float $started
+     * @param float $now
+     * @param int $max
+     * @return bool
+     */
+    public static function overTime( $started, $now, $max )
+    {
+        return $max > 0 && $now - $started >= $max;
     }
 }
 
