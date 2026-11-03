@@ -44457,6 +44457,42 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>लॉग इन कएलाक बाद प्रयोक्ता केँ किछु आर करबा सँ पहिने नव पासवर्ड चुनय पड़तनि। जखन अहाँ ककरो अस्थायी पासवर्ड दैत छी तखन एकर उपयोग करू।</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>पहिनेसँ उपलब्ध छवि चुनू</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>अहाँ जे ऑब्जेक्ट चुनब ओकर छवि फाइल एहि फील्डमे कॉपी कएल जाइत अछि। दोसर ऑब्जेक्टमे कोनो परिवर्तन नहि होइत अछि।</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>"%name" क छवि एहि फील्डमे कॉपी कएल गेल।</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>छवि लेल ब्राउज़ करू</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>नाम सँ छवि खोजू</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>खोजू</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>"%name" क छवि उपयोग करू</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>ई छवि उपयोग करू</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>अहाँक खोजसँ कोनो छवि मेल नहि खाइत अछि।</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ your account.</source>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>SVG छवि पढ़ल नहि जा सकल, वा ओहि मे एहन किछु नहि अछि जकरा सुरक्षित रूप सँ देखाओल जा सकय।</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>छवि कॉपी नहि भ' सकल। कृपया फेर सँ प्रयास करू वा साइट प्रशासक सँ संपर्क करू।</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>चुनल गेल ऑब्जेक्ट मौजूद नहि अछि वा अहाँकेँ ओकरा पढ़बाक अनुमति नहि अछि।</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>चुनल गेल ऑब्जेक्टमे कोनो छवि नहि अछि।</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>चुनल गेल ऑब्जेक्टक छवि फाइल नहि पढ़ल जा सकल।</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>चुनल गेल ऑब्जेक्टक छवि एहि फील्डक अनुमतिसँ पैघ अछि: %1 बाइट।</translation>
     </message>
 </context>
 <context>

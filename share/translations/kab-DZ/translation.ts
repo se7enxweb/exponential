@@ -44457,6 +44457,42 @@ Ma tebɣiḍ ad tazneḍ iwenniten i umqebbel neɣ ad twaliḍ liḥala seqdec U
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Ticki yekcem, aseqdac ilaq ad yfren awal uffir amaynut uqbel ad yexdem kra-nniḍen. Seqdec-it mi ara teǧǧeḍ i yiwen awal uffir askudan.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Fren tugna yellan yakan</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Afaylu n tugna n taɣawsa i tferneḍ ad yettwanɣel ɣer wurti-a. Taɣawsa-nniḍen ur tettbeddil ara.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>Tugna n "%name" tettwanɣel ɣer wurti-a.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Inig ɣef tugna</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Nadi tugniwin s yisem</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Nadi</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Seqdec tugna n "%name"</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Seqdec tugna-a</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Ulac tugna yemṣadan d unadi-inek.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ amiḍan-ik.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>Tugna SVG ur tezmir ara ad tettwaɣer, neɣ ulac deg-s ayen yezmer ad yettwaskan s tɣellist.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Tugna ur tezmir ara ad tettwanɣel. Ma ulac aɣilif, ɛreḍ tikkelt-nniḍen neɣ nermes anedbal n usmel.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Taɣawsa yettwafernen ulac-itt neɣ ur k-yettwasireg ara ad tt-teɣreḍ.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Taɣawsa yettwafernen ulac ɣur-s tugna.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Afaylu n tugna n taɣawsa yettwafernen ur yezmir ara ad yettwaɣer.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Tugna n taɣawsa yettwafernen tugar ayen i yettaǧǧa wurti-a: %1 n yibiten.</translation>
     </message>
 </context>
 <context>

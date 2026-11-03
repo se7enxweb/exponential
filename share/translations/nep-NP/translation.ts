@@ -44457,6 +44457,42 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>साइन इन गरेपछि प्रयोगकर्ताले अरू केही गर्नुअघि नयाँ पासवर्ड छान्नुपर्छ। कसैलाई अस्थायी पासवर्ड दिँदा यसलाई प्रयोग गर्नुहोस्।</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>अवस्थित तस्बिर छान्नुहोस्</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>तपाईंले छान्नुभएको वस्तुको तस्बिर फाइल यस फिल्डमा प्रतिलिपि गरिन्छ। अर्को वस्तु परिवर्तन हुँदैन।</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>"%name" को तस्बिर यस फिल्डमा प्रतिलिपि गरियो।</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>तस्बिरका लागि ब्राउज गर्नुहोस्</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>नामद्वारा तस्बिरहरू खोज्नुहोस्</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>खोज</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>"%name" को तस्बिर प्रयोग गर्नुहोस्</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>यो तस्बिर प्रयोग गर्नुहोस्</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>तपाईंको खोजसँग कुनै तस्बिर मेल खाँदैन।</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ your account.</source>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>SVG तस्बिर पढ्न सकिएन, वा त्यसमा सुरक्षित रूपमा देखाउन सकिने केही पनि छैन।</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>तस्बिर प्रतिलिपि गर्न सकिएन। कृपया फेरि प्रयास गर्नुहोस् वा साइट प्रशासकलाई सम्पर्क गर्नुहोस्।</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>छानिएको वस्तु अवस्थित छैन वा तपाईंलाई यसलाई पढ्ने अनुमति छैन।</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>छानिएको वस्तुमा तस्बिर छैन।</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>छानिएको वस्तुको तस्बिर फाइल पढ्न सकिएन।</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>छानिएको वस्तुको तस्बिर यस फिल्डले अनुमति दिनेभन्दा ठूलो छ: %1 बाइट।</translation>
     </message>
 </context>
 <context>

@@ -44457,6 +44457,42 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>შესვლის შემდეგ მომხმარებელმა, სანამ რამეს გააკეთებს, ახალი პაროლი უნდა აირჩიოს. გამოიყენეთ, როცა ვინმეს დროებით პაროლს აძლევთ.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>არსებული სურათის არჩევა</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>თქვენ მიერ არჩეული ობიექტის სურათის ფაილი კოპირდება ამ ველში. მეორე ობიექტი არ იცვლება.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>„%name“-ის სურათი დაკოპირდა ამ ველში.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>სურათის მოძებნა დათვალიერებით</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>სურათების ძიება სახელით</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>ძიება</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>„%name“-ის სურათის გამოყენება</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>ამ სურათის გამოყენება</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>თქვენს ძიებას არცერთი სურათი არ შეესაბამება.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ your account.</source>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>SVG სურათის წაკითხვა ვერ მოხერხდა, ან მასში არაფერია, რისი უსაფრთხოდ ჩვენებაც შეიძლება.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>სურათის კოპირება ვერ მოხერხდა. სცადეთ ხელახლა ან დაუკავშირდით საიტის ადმინისტრატორს.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>არჩეული ობიექტი არ არსებობს ან მისი წაკითხვის უფლება არ გაქვთ.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>არჩეულ ობიექტს სურათი არ აქვს.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>არჩეული ობიექტის სურათის ფაილის წაკითხვა ვერ მოხერხდა.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>არჩეული ობიექტის სურათი ამ ველისთვის დასაშვებზე დიდია: %1 ბაიტი.</translation>
     </message>
 </context>
 <context>

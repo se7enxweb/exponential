@@ -44457,6 +44457,42 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Մուտք գործելուց հետո օգտատերը պետք է նոր գաղտնաբառ ընտրի՝ նախքան որևէ այլ բան անելը։ Օգտագործեք դա, երբ ինչ-որ մեկին ժամանակավոր գաղտնաբառ եք տալիս։</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Ընտրել առկա պատկեր</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Ձեր ընտրած օբյեկտի պատկերի ֆայլը պատճենվում է այս դաշտ։ Մյուս օբյեկտը չի փոխվում։</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>«%name»-ի պատկերը պատճենվեց այս դաշտ։</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Զննել պատկեր գտնելու համար</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Որոնել պատկերներ ըստ անվան</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Որոնել</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Օգտագործել «%name»-ի պատկերը</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Օգտագործել այս պատկերը</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Ձեր որոնմանը համապատասխանող պատկեր չկա։</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ your account.</source>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>SVG պատկերը չհաջողվեց կարդալ, կամ դրանում ոչինչ չի կարող անվտանգ ցուցադրվել։</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Պատկերը հնարավոր չեղավ պատճենել։ Խնդրում ենք կրկին փորձել կամ կապվել կայքի ադմինիստրատորի հետ։</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Ընտրված օբյեկտը գոյություն չունի, կամ դուք իրավունք չունեք այն կարդալու։</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Ընտրված օբյեկտը պատկեր չունի։</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Ընտրված օբյեկտի պատկերի ֆայլը հնարավոր չեղավ կարդալ։</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Ընտրված օբյեկտի պատկերը մեծ է այս դաշտի թույլատրելի չափից՝ %1 բայթ։</translation>
     </message>
 </context>
 <context>

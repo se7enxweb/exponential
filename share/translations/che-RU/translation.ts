@@ -44457,6 +44457,42 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>ЧугӀоьлчул тӀаьхьа декъашхочо кхин хӀума дале хьалха керла пароль харжа веза. Цхьанна кхета пароль луш лелае.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Йолчу суртех цхьаъ харжа</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Ахь хаьржинчу объектан суртан файл кху меттиге копи йо. Вукху объектехь хийцам ца хуьлу.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>«%name» суртан копи кху меттиге йина.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Сурт схьалаха</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Суьрташ цӀарца лаха</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Лехар</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>«%name» сурт лело</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>ХӀара сурт лело</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Ахьа лехначунна терра сурт дац.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ your account.</source>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>SVG-сурт деша ца ели, е цу чохь кхерам боцуш гайта хӀума яц.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Сурт копи ца делира. Дехар до, юха гӀо де йа сайтан администратор кхетта.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Хаьржина объект яц, йа хьуна иза еша бакъо яц.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Хаьржинчу объектехь сурт дац.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Хаьржинчу объектан суртан файл еша ца делира.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Хаьржинчу объектан сурт кху меттиго магийначул доккха ду: %1 байт.</translation>
     </message>
 </context>
 <context>

@@ -44396,6 +44396,42 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>بعد تسجيل الدخول، يجب على المستخدم اختيار كلمة مرور جديدة قبل القيام بأي شيء آخر. استخدم هذا الخيار عندما تعطي شخصًا كلمة مرور مؤقتة.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>اختيار صورة موجودة</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>يُنسخ ملف صورة الكائن الذي تختاره إلى هذا الحقل. لا يتغير الكائن الآخر.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>نُسخت صورة «%name» إلى هذا الحقل.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>استعراض بحثًا عن صورة</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>البحث عن الصور بالاسم</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>بحث</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>استخدام صورة «%name»</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>استخدام هذه الصورة</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>لا توجد صورة تطابق بحثك.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56117,6 +56153,26 @@ your account.</source>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>تعذّرت قراءة صورة SVG، أو لا يوجد فيها ما يمكن عرضه بأمان.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>تعذّر نسخ الصورة. يرجى المحاولة مرة أخرى أو الاتصال بمسؤول الموقع.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>الكائن المحدد غير موجود أو لا يُسمح لك بقراءته.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>الكائن المحدد لا يحتوي على صورة.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>تعذّرت قراءة ملف صورة الكائن المحدد.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>صورة الكائن المحدد أكبر مما يسمح به هذا الحقل: %1 بايت.</translation>
     </message>
 </context>
 <context>

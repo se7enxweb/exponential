@@ -44455,6 +44455,42 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>登录后，用户必须先选择新密码，才能进行其他操作。为他人设置临时密码时请使用此选项。</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>选择现有图片</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>您所选对象的图片文件将复制到此字段中。另一个对象不会改变。</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>已将“%name”的图片复制到此字段中。</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>浏览选择图片</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>按名称搜索图片</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>搜索</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>使用“%name”的图片</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>使用此图片</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>没有与搜索匹配的图片。</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56176,6 +56212,26 @@ your account.</source>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>无法读取该 SVG 图片，或其中没有可安全显示的内容。</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>无法复制图片。请重试或联系站点管理员。</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>所选对象不存在，或您无权读取。</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>所选对象没有图片。</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>无法读取所选对象的图片文件。</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>所选对象的图片超出此字段允许的大小：%1 字节。</translation>
     </message>
 </context>
 <context>

@@ -44457,6 +44457,42 @@ So a yiɗi neldude tinndinooje e jaɓoowo walla yiyde ngonka, huutoy URL les.</t
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Caggal naatgol, kuutoro oo foti suɓtude finnde kesde adan ko feere fof. Huutoy ɗum nde a hokki goɗɗo finnde ɓurnde.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Suɓo natal ngal woodi</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Fiilde natal huunde nde cuɓataa ndee ina nattee e nder fowru ndu. Huunde goo ndee waylotaake.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>Natal "%name" nattaama e nder fowru ndu.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Yiylo natal e dow</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Yiylo nate e innde</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Yiylo</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Huutoro natal "%name"</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Huutoro natal ngal</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Alaa natal fotndungal e yiylo maa.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ konte maaɗa.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>Natal SVG waawaa tonngeede, walla alaa ko nder mayri waawi hollireede no kisal.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Natal ngal nattaaki. Eto kadi walla jokkondir e jiiloowo lowre ndee.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Huunde cuɓaande ndee woodaani walla a yamiraaka tarde nde.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Huunde cuɓaande ndee alaa natal.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Fiilde natal huunde cuɓaande ndee tarotaake.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Natal huunde cuɓaande ndee ɓurii ko fowru ndu jaɓi: %1 bytes.</translation>
     </message>
 </context>
 <context>

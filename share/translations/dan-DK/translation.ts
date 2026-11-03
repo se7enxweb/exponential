@@ -44697,6 +44697,42 @@ Hvis du vil sende kommentarer til godkenderen eller se status, kan du bruge URL'
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Efter login skal brugeren vælge en ny adgangskode, før der kan gøres andet. Brug det, når du giver nogen en midlertidig adgangskode.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Vælg et eksisterende billede</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Billedfilen fra det objekt, du vælger, kopieres til dette felt. Det andet objekt ændres ikke.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>Billedet fra »%name« blev kopieret til dette felt.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Gennemse for at finde et billede</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Søg i billeder efter navn</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Søg</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Brug billedet fra »%name«</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Brug dette billede</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Intet billede matcher din søgning.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56553,6 +56589,26 @@ din konto.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>SVG-billedet kunne ikke læses, eller intet i det kan vises sikkert.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Billedet kunne ikke kopieres. Prøv igen, eller kontakt sitets administrator.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Det valgte objekt findes ikke, eller du må ikke læse det.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Det valgte objekt har intet billede.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Billedfilen fra det valgte objekt kunne ikke læses.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Billedet fra det valgte objekt er større, end dette felt tillader: %1 byte.</translation>
     </message>
 </context>
 <context>

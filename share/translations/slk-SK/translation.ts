@@ -44396,6 +44396,42 @@ Ak chcete schvaľovateľovi poslať komentáre alebo zobraziť stav, použite ad
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Po prihlásení musí používateľ pred čímkoľvek iným zvoliť nové heslo. Použite to, keď niekomu dávate dočasné heslo.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Vybrať existujúci obrázok</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Súbor obrázka objektu, ktorý vyberiete, sa skopíruje do tohto poľa. Druhý objekt sa nezmení.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>Obrázok objektu „%name“ bol skopírovaný do tohto poľa.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Prehľadávať obrázky</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Hľadať obrázky podľa názvu</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Hľadať</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Použiť obrázok objektu „%name“</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Použiť tento obrázok</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Vášmu hľadaniu nezodpovedá žiadny obrázok.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56117,6 +56153,26 @@ svoje konto.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>Obrázok SVG sa nepodarilo prečítať alebo z neho nemožno nič bezpečne zobraziť.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Obrázok sa nepodarilo skopírovať. Skúste to znova alebo sa obráťte na správcu lokality.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Vybraný objekt neexistuje alebo nemáte oprávnenie ho čítať.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Vybraný objekt nemá obrázok.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Súbor obrázka vybraného objektu sa nepodarilo prečítať.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Obrázok vybraného objektu je väčší, ako toto pole povoľuje: %1 bajtov.</translation>
     </message>
 </context>
 <context>

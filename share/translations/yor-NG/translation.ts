@@ -44455,6 +44455,42 @@ Bí ẹ bá fẹ́ fi àwọn àsọyé ránṣẹ́ sí olùfọwọ́sí tàb�
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Lẹ́yìn ìwọlé, olùlò gbọ́dọ̀ yan ọ̀rọ̀ aṣínà tuntun kí ó tó ṣe ohunkóhun mìíràn. Ẹ lò ó nígbà tí ẹ bá fún ẹnìkan ní ọ̀rọ̀ aṣínà ìgbà díẹ̀.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Yan àwòrán tó ti wà tẹ́lẹ̀</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Fáìlì àwòrán ohun tí o bá yàn ni a ó dà kọ sínú pápá yìí. Ohun kejì kò ní yí padà.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>A ti da àwòrán “%name” kọ sínú pápá yìí.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Ṣàwárí àwòrán</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Wá àwọn àwòrán nípa orúkọ</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Wá</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Lo àwòrán “%name”</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Lo àwòrán yìí</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Kò sí àwòrán tó bá ìwádìí rẹ mu.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56176,6 +56212,26 @@ your account.</source>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>A kò lè ka àwòrán SVG náà, tàbí kò sí nǹkan kan nínú rẹ̀ tí a lè fihàn láìséwu.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>A kò lè da àwòrán náà kọ. Jọ̀wọ́ gbìyànjú lẹ́ẹ̀kan sí i tàbí kàn sí alábòójútó ojú-òpó náà.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Ohun tí a yàn kò sí tàbí o kò ní àṣẹ láti kà á.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Ohun tí a yàn kò ní àwòrán.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>A kò lè ka fáìlì àwòrán ohun tí a yàn.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Àwòrán ohun tí a yàn tóbi ju ohun tí pápá yìí gbà láàyè lọ: báìtì %1.</translation>
     </message>
 </context>
 <context>

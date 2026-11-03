@@ -44455,6 +44455,42 @@ Ikiwa unataka kutuma maoni kwa mwidhinishaji au kutazama hali, tumia URL iliyo h
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Baada ya kuingia, mtumiaji lazima achague nenosiri jipya kabla ya kufanya kitu kingine chochote. Tumia hili unapompa mtu nenosiri la muda.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Chagua picha iliyopo</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Faili ya picha ya kitu utakachochagua inanakiliwa kwenye sehemu hii. Kitu kingine hakibadiliki.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>Picha ya “%name” imenakiliwa kwenye sehemu hii.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Vinjari ili kupata picha</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Tafuta picha kwa jina</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Tafuta</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Tumia picha ya “%name”</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Tumia picha hii</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Hakuna picha inayolingana na utafutaji wako.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56176,6 +56212,26 @@ akaunti yako.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>Picha ya SVG haikuweza kusomwa, au hakuna kitu ndani yake kinachoweza kuonyeshwa kwa usalama.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Picha haikuweza kunakiliwa. Tafadhali jaribu tena au wasiliana na msimamizi wa tovuti.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Kitu kilichochaguliwa hakipo au huruhusiwi kukisoma.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Kitu kilichochaguliwa hakina picha.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Faili ya picha ya kitu kilichochaguliwa haikuweza kusomwa.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Picha ya kitu kilichochaguliwa ni kubwa kuliko sehemu hii inavyoruhusu: baiti %1.</translation>
     </message>
 </context>
 <context>

@@ -44396,6 +44396,42 @@ Jei norite išsiųsti komentarus patvirtintojui arba peržiūrėti būseną, nau
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Prisijungęs naudotojas, prieš darydamas ką nors kita, turi pasirinkti naują slaptažodį. Naudokite tai, kai kam nors suteikiate laikinąjį slaptažodį.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Pasirinkite esamą paveikslėlį</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Jūsų pasirinkto objekto paveikslėlio failas nukopijuojamas į šį lauką. Kitas objektas nepakeičiamas.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>„%name“ paveikslėlis nukopijuotas į šį lauką.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Naršyti paveikslėlius</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Ieškoti paveikslėlių pagal pavadinimą</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Paieška</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Naudoti „%name“ paveikslėlį</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Naudoti šį paveikslėlį</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Jūsų paieškos neatitinka joks paveikslėlis.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56117,6 +56153,26 @@ savo paskyrą.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>SVG paveikslėlio nepavyko nuskaityti arba jame nėra nieko, ką būtų galima saugiai rodyti.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Paveikslėlio nukopijuoti nepavyko. Bandykite dar kartą arba susisiekite su svetainės administratoriumi.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Pasirinktas objektas neegzistuoja arba jums neleidžiama jo skaityti.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Pasirinktas objektas neturi paveikslėlio.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Pasirinkto objekto paveikslėlio failo perskaityti nepavyko.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Pasirinkto objekto paveikslėlis didesnis, nei leidžia šis laukas: %1 baitų.</translation>
     </message>
 </context>
 <context>

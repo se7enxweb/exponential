@@ -44457,6 +44457,42 @@ Jika anda mahu menghantar komen kepada pelulus atau melihat status, gunakan URL 
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Selepas log masuk, pengguna mesti memilih kata laluan baharu sebelum melakukan apa-apa lagi. Gunakannya apabila anda memberi seseorang kata laluan sementara.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Pilih imej sedia ada</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Fail imej bagi objek yang anda pilih disalin ke dalam medan ini. Objek yang satu lagi tidak berubah.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>Imej "%name" telah disalin ke dalam medan ini.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Semak imbas untuk imej</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Cari imej mengikut nama</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Cari</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Gunakan imej "%name"</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Gunakan imej ini</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Tiada imej yang sepadan dengan carian anda.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ akaun anda.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>Imej SVG tidak dapat dibaca, atau tiada apa-apa di dalamnya yang boleh dipaparkan dengan selamat.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Imej tidak dapat disalin. Sila cuba lagi atau hubungi pentadbir laman.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Objek yang dipilih tidak wujud atau anda tidak dibenarkan membacanya.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Objek yang dipilih tidak mempunyai imej.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Fail imej bagi objek yang dipilih tidak dapat dibaca.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Imej bagi objek yang dipilih lebih besar daripada yang dibenarkan oleh medan ini: %1 bait.</translation>
     </message>
 </context>
 <context>

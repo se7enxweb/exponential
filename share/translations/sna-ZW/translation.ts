@@ -44457,6 +44457,42 @@ Kana muchida kutumira mhinduro kumunhu anobvumira kana kutarisa chimiro shandisa
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Mushure mekupinda, mushandisi anofanira kusarudza pasiwedhi itsva asati aita chimwe chinhu. Shandisai kana muchipa mumwe munhu pasiwedhi yenguva pfupi.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Sarudza mufananidzo uripo</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Faira remufananidzo wechinhu chaunosarudza rinokopirwa muchikamu chino. Chimwe chinhu hachichinji.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>Mufananidzo wa“%name” wakopirwa muchikamu chino.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Ongorora kuti uwane mufananidzo</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Tsvaga mifananidzo nezita</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Tsvaga</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Shandisa mufananidzo wa“%name”</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Shandisa mufananidzo uyu</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Hapana mufananidzo unoenderana nekutsvaga kwako.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ akaundi yenyu.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>Mufananidzo weSVG haugoni kuverengwa, kana kuti hapana chiri mukati chinogona kuratidzwa zvakachengeteka.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Mufananidzo hauna kukwanisa kukopirwa. Ndapota edza zvakare kana kuti bata mutungamiri wesaiti.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Chinhu chasarudzwa hachipo kana kuti haubvumirwe kuchiverenga.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Chinhu chasarudzwa hachina mufananidzo.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Faira remufananidzo rechinhu chasarudzwa harina kukwanisa kuverengwa.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Mufananidzo wechinhu chasarudzwa wakakura kupfuura zvinobvumirwa nechikamu chino: mabhaiti %1.</translation>
     </message>
 </context>
 <context>

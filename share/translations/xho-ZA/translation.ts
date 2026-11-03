@@ -44455,6 +44455,42 @@ Ukuba ufuna ukuthumela iimpawu kumvumi okanye ukubona imeko sebenzisa i-URL enge
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Emva kokungena, umsebenzisiufanele akhethe inombolo yokuvula entsha ngaphambi kokwenza enye into. Yisebenziseni xa ninika umntu inombolo yokuvula yethutyana.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Khetha umfanekiso okhoyo</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Ifayile yomfanekiso wento oyikhethayo ikhutshelwa kule ndawo. Enye into ayitshintshi.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>Umfanekiso we-“%name” ukhutshelwe kule ndawo.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Khangela umfanekiso</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Khangela imifanekiso ngegama</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Khangela</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Sebenzisa umfanekiso we-“%name”</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Sebenzisa lo mfanekiso</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Akukho mfanekiso uhambelana nokukhangela kwakho.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56176,6 +56212,26 @@ iakhawunti yenu isebenze.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>Umfanekiso we-SVG awukwazanga ukufundwa, okanye akukho nto kuwo enokubonakaliswa ngokukhuselekileyo.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Umfanekiso awukwazanga ukukhutshelwa. Nceda uzame kwakhona okanye uqhagamshelane nomlawuli wesiza.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Into ekhethiweyo ayikho okanye awuvumelekanga ukuyifunda.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Into ekhethiweyo ayinamfanekiso.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Ifayile yomfanekiso wento ekhethiweyo ayikwazanga ukufundwa.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Umfanekiso wento ekhethiweyo mkhulu kunoko le ndawo ikuvumelayo: iibhayithi ezi-%1.</translation>
     </message>
 </context>
 <context>

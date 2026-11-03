@@ -44457,6 +44457,42 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>ནང་འཛུལ་རྗེས་སྤྱོད་མཁན་གྱིས་གཞན་གང་ཡང་མ་བྱེད་གོང་གསང་གྲངས་གསར་པ་ཞིག་འདེམས་དགོས། མི་ཞིག་ལ་གནས་སྐབས་ཀྱི་གསང་གྲངས་སྤྲོད་སྐབས་འདི་བེད་སྤྱོད་བྱེད་རོགས།</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>ཡོད་བཞིན་པའི་པར་རིས་ཤིག་འདེམས།</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>ཁྱེད་ཀྱིས་བདམས་པའི་དངོས་པོའི་པར་རིས་ཡིག་ཆ་ཁུལ་འདིར་འདྲ་བཤུས་བྱེད། དངོས་པོ་གཞན་དེ་ལ་འགྱུར་བ་མི་འབྱུང་།</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>«%name» ཡི་པར་རིས་ཁུལ་འདིར་འདྲ་བཤུས་བྱས་ཟིན།</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>པར་རིས་ཤིག་ལྟ་ཞིབ་བྱེད།</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>མིང་ལྟར་པར་རིས་འཚོལ།</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>འཚོལ་བཤེར།</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>«%name» ཡི་པར་རིས་བེད་སྤྱོད།</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>པར་རིས་འདི་བེད་སྤྱོད།</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>ཁྱེད་ཀྱི་འཚོལ་ཞིབ་དང་མཐུན་པའི་པར་རིས་མེད།</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ your account.</source>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>SVG པར་རིས་ཀློག་མ་ཐུབ་པའམ། ནང་གི་གང་ཡང་བདེ་འཇགས་ངང་སྟོན་མི་ཐུབ།</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>པར་རིས་འདྲ་བཤུས་བྱེད་མ་ཐུབ། ཡང་བསྐྱར་ཚོད་ལྟ་བྱེད་པའམ་དྲ་ཚིགས་ཀྱི་དོ་དམ་པ་དང་འབྲེལ་བ་བྱེད་རོགས།</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>བདམས་པའི་དངོས་པོ་མེད་པའམ་ཁྱེད་ལ་དེ་ཀློག་པའི་དབང་ཚད་མེད།</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>བདམས་པའི་དངོས་པོ་ལ་པར་རིས་མེད།</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>བདམས་པའི་དངོས་པོའི་པར་རིས་ཡིག་ཆ་ཀློག་མ་ཐུབ།</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>བདམས་པའི་དངོས་པོའི་པར་རིས་དེ་ཁུལ་འདིས་ཆོག་པ་ལས་ཆེ། ཡིག་ཚགས་ %1།</translation>
     </message>
 </context>
 <context>

@@ -37276,6 +37276,42 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Po zalogowaniu użytkownik musi wybrać nowe hasło, zanim zrobi cokolwiek innego. Opcja przydaje się przy przekazywaniu komuś hasła tymczasowego.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Wybierz istniejący obraz</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Plik obrazu wybranego obiektu zostanie skopiowany do tego pola. Drugi obiekt nie ulega zmianie.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>Obraz z „%name” został skopiowany do tego pola.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Przeglądaj obrazy</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Szukaj obrazów według nazwy</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Wyszukać</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Użyj obrazu z „%name”</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Użyj tego obrazu</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Żaden obraz nie pasuje do wyszukiwania.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/diff</name>
@@ -49012,6 +49048,26 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>Nie można odczytać obrazu SVG lub nic w nim nie może zostać bezpiecznie wyświetlone.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Nie udało się skopiować obrazu. Proszę spróbować ponownie lub skontaktować się z administratorem.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Wybrany obiekt nie istnieje lub brak uprawnień do jego odczytu.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Wybrany obiekt nie ma obrazu.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Nie udało się odczytać pliku obrazu wybranego obiektu.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Obraz wybranego obiektu jest większy, niż pozwala to pole: %1 bajtów.</translation>
     </message>
 </context>
 <context>

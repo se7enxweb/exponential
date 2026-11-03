@@ -44457,6 +44457,42 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>ߘߏ߲ߣߌ ߞߐ߸ ߓߊߙߊߞߍߟߊ ߞߊ ߞߊߣ ߞߊ ߜ߳ߎ߲ߘߏߘߊߢߍ ߞߎߙߊ ߛߎߜ߳ߊ߲ߘߌ ߛߊߣߌ ߊ ߞߊ ߝߏߦߌ ߥߍߙߍ ߞߍ. ߊ ߞߍ ߣߌ ߌ ߦߋ ߜ߳ߎ߲ߘߏߘߊߢߍ ߥߊߕߌߡߊ߲ ߘߌ ߡߐߜ߳ߐ ߘߐ ߡߊ.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>ߖߊ ߡߌ߲ ߓߋ ߦߋ߲ ߓߊ߯ ߛߎߥߊ߲ߘߌ</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>ߌ ߓߊ߯ ߝߍ߲ ߡߍ߲ ߛߎߥߊ߲ߘߌ߫ ߊ ߖߊ ߞߐߕߐ߯ߘߐ ߓߍ߯ ߓߊߦߟߍߡߊ߲߫ ߞߊ ߘߏ߲߫ ߝߊ߲ ߣߌ߲߬ ߘߐ. ߝߍ߲ ߜߘߍ ߕߍ߫ ߡߊߝߊ߬ߟߋ߲߫.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>"%name" ߟߊ ߖߊ ߓߘߊ߫ ߓߊߦߟߍߡߊ߲߫ ߞߊ ߘߏ߲߫ ߝߊ߲ ߣߌ߲߬ ߘߐ.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>ߖߊ ߦߊߟߊ</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>ߖߊ ߟߎ߫ ߢߌߣߌ ߕߐ߮ ߟߊ߫</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>ߢߌߣߌ</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>"%name" ߟߊ ߖߊ ߟߊߓߊ߰ߙߊ߫</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>ߖߊ ߣߌ߲߬ ߟߊߓߊ߰ߙߊ߫</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>ߖߊ߫ ߛߌ߫ ߕߍ߫ ߓߍ߲߬ ߌ ߟߊ ߢߌߣߌ ߡߊ߬.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ your account.</source>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>SVG ߖߊ ߡߊ ߛߋ ߞߊ ߞߊߟߊ߲߸ ߥߊߟߊ ߊ ߞߐߣߐ ߝߏߦߌ ߕߍ ߛߋ ߞߊ ߖߌߙߊ ߣߌ ߟߊߞߊߣߊ ߦߋ.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>ߖߊ ߕߍ߫ ߛߋ߫ ߓߊߦߟߍߡߊ߲߫ ߠߊ߫. ߤߊߞߍߕߏ߸ ߌ ߞߊ ߛߋߜ߳ߌ߲ ߞߊ ߊ ߞߍ ߥߊߟߌߡߊ ߌ ߞߊ ߛߌߕߌ ߡߊߙߊߓߊߜ߳ߊ ߛߐߙߐ.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>ߝߍ߲ ߛߎߥߊ߲ߘߌߣߍ߲ ߕߍ߫ ߦߋ߲߬ ߥߟߊ߫ ߌ ߕߍ߫ ߛߋ߫ ߊ ߞߊ߬ߙߊ߲߬ ߠߊ߫.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>ߖߊ߫ ߕߍ߫ ߝߍ߲ ߛߎߥߊ߲ߘߌߣߍ߲ ߠߊ߫.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>ߝߍ߲ ߛߎߥߊ߲ߘߌߣߍ߲ ߟߊ ߖߊ ߞߐߕߐ߯ߘߐ ߕߍ߫ ߛߋ߫ ߞߊ߬ߙߊ߲߬ ߠߊ߫.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>ߝߍ߲ ߛߎߥߊ߲ߘߌߣߍ߲ ߟߊ ߖߊ ߓߏ߲߬ߓߊ߲߬ ߘߏ߲߫ ߝߊ߲ ߣߌ߲߬ ߟߊ߬ߘߌ߬ߢߍ߲߬ ߠߊ߫: %1 ߓߊߦߌߕߌ.</translation>
     </message>
 </context>
 <context>

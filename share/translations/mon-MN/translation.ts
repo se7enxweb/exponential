@@ -44457,6 +44457,42 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Нэвтэрсний дараа хэрэглэгч өөр юу ч хийхээс өмнө шинэ нууц үг сонгох ёстой. Хэн нэгэнд түр нууц үг өгөхдөө үүнийг ашиглана уу.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Одоо байгаа зургийг сонгох</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Таны сонгосон объектын зургийн файл энэ талбарт хуулагдана. Нөгөө объект өөрчлөгдөхгүй.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>«%name»-ийн зураг энэ талбарт хуулагдлаа.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Зураг үзэж сонгох</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Нэрээр зураг хайх</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Хайх</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>«%name»-ийн зургийг ашиглах</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Энэ зургийг ашиглах</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Таны хайлтад тохирох зураг алга.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ your account.</source>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>SVG зургийг уншиж чадсангүй, эсвэл түүнд аюулгүй харуулах зүйл алга.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Зургийг хуулж чадсангүй. Дахин оролдох эсвэл сайтын администратортой холбогдоно уу.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Сонгосон объект байхгүй эсвэл та түүнийг унших эрхгүй байна.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Сонгосон объектод зураг байхгүй.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Сонгосон объектын зургийн файлыг уншиж чадсангүй.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Сонгосон объектын зураг энэ талбарын зөвшөөрөхөөс том байна: %1 байт.</translation>
     </message>
 </context>
 <context>

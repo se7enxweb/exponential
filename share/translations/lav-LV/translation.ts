@@ -44396,6 +44396,42 @@ Ja vēlaties nosūtīt komentārus apstiprinātājam vai skatīt statusu, izmant
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Pēc pierakstīšanās lietotājam ir jāizvēlas jauna parole, pirms viņš var darīt ko citu. Izmantojiet to, ja kādam piešķirat pagaidu paroli.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Izvēlēties esošu attēlu</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Jūsu izvēlētā objekta attēla fails tiek nokopēts šajā laukā. Otrs objekts netiek mainīts.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>Objekta „%name” attēls tika nokopēts šajā laukā.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Pārlūkot attēlus</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Meklēt attēlus pēc nosaukuma</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Meklēt</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Izmantot objekta „%name” attēlu</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Izmantot šo attēlu</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Neviens attēls neatbilst jūsu meklēšanai.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56117,6 +56153,26 @@ tajā sniegtos norādījumus.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>Neizdevās nolasīt SVG attēlu, vai tajā nav nekā, ko varētu droši parādīt.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Attēlu nevarēja nokopēt. Lūdzu, mēģiniet vēlreiz vai sazinieties ar vietnes administratoru.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Izvēlētais objekts neeksistē, vai jums nav tiesību to lasīt.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Izvēlētajam objektam nav attēla.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Izvēlētā objekta attēla failu nevarēja nolasīt.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Izvēlētā objekta attēls ir lielāks, nekā šis lauks atļauj: %1 baiti.</translation>
     </message>
 </context>
 <context>

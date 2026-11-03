@@ -1410,6 +1410,7 @@ return array(
       'expI18nFallbackRuleInterface'                                 => 'lib/ezi18n/classes/expi18nfallbackruleinterface.php',
       'expI18nFallbackSameLanguageRule'                              => 'lib/ezi18n/classes/expi18nfallbacksamelanguagerule.php',
       'expI18nTranslationWaves'                                      => 'kernel/classes/i18n/expi18ntranslationwaves.php',
+      'expImageCopy'                                                 => 'kernel/classes/datatypes/ezimage/expimagecopy.php',
       'expImageFocalPoint'                                           => 'lib/ezimage/classes/expimagefocalpoint.php',
       'expImageUploadValidator'                                      => 'kernel/classes/expimageuploadvalidator.php',
       'expInfo'                                                      => 'lib/ezutils/classes/expinfo.php',

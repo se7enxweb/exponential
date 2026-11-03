@@ -44455,6 +44455,42 @@ Onaylayana yorum göndermek veya durumu görüntülemek istiyorsanız aşağıda
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Kullanıcı, oturum açtıktan sonra başka bir şey yapmadan önce yeni bir parola seçmelidir. Birine geçici bir parola verdiğinizde bunu kullanın.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Mevcut bir resim seçin</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Seçtiğiniz nesnenin resim dosyası bu alana kopyalanır. Diğer nesne değişmez.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>“%name” nesnesinin resmi bu alana kopyalandı.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Resim için gözat</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Resimleri ada göre ara</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Ara</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>“%name” nesnesinin resmini kullan</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Bu resmi kullan</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Aramanızla eşleşen resim yok.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56176,6 +56212,26 @@ o e-postadaki yönergeleri izleyin.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>SVG resmi okunamadı veya içindeki hiçbir şey güvenli şekilde gösterilemiyor.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Resim kopyalanamadı. Lütfen yeniden deneyin veya site yöneticisine başvurun.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Seçilen nesne mevcut değil veya onu okuma izniniz yok.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Seçilen nesnenin resmi yok.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Seçilen nesnenin resim dosyası okunamadı.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Seçilen nesnenin resmi bu alanın izin verdiğinden büyük: %1 bayt.</translation>
     </message>
 </context>
 <context>

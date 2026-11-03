@@ -44396,6 +44396,42 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>ログイン後、ユーザーは他の操作を行う前に新しいパスワードを設定する必要があります。仮のパスワードを渡すときに使用します。</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>既存の画像を選択</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>選択したオブジェクトの画像ファイルがこのフィールドにコピーされます。元のオブジェクトは変更されません。</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>「%name」の画像をこのフィールドにコピーしました。</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>画像を参照</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>名前で画像を検索</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>検索</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>「%name」の画像を使用</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>この画像を使用</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>検索に一致する画像はありません。</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56117,6 +56153,26 @@ your account.</source>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>SVG画像を読み取れなかったか、その中に安全に表示できるものがありません。</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>画像をコピーできませんでした。もう一度お試しいただくか、サイト管理者にお問い合わせください。</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>選択したオブジェクトが存在しないか、読み取る権限がありません。</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>選択したオブジェクトには画像がありません。</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>選択したオブジェクトの画像ファイルを読み取れませんでした。</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>選択したオブジェクトの画像は、このフィールドで許可されているサイズを超えています: %1 バイト。</translation>
     </message>
 </context>
 <context>

@@ -44396,6 +44396,42 @@ Jos haluat lähettää kommentteja hyväksyjälle tai tarkastella tilaa, käytä
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Kirjautumisen jälkeen käyttäjän on valittava uusi salasana ennen kuin hän voi tehdä mitään muuta. Käytä tätä, kun annat jollekulle väliaikaisen salasanan.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Valitse olemassa oleva kuva</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Valitsemasi objektin kuvatiedosto kopioidaan tähän kenttään. Toinen objekti ei muutu.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>Objektin ”%name” kuva kopioitiin tähän kenttään.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Selaa kuvia</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Hae kuvia nimen perusteella</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Hae</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Käytä objektin ”%name” kuvaa</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Käytä tätä kuvaa</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Hakuasi vastaavaa kuvaa ei löytynyt.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56117,6 +56153,26 @@ ohjeita.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>SVG-kuvaa ei voitu lukea, tai mitään sen sisältöä ei voi näyttää turvallisesti.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Kuvaa ei voitu kopioida. Yritä uudelleen tai ota yhteyttä sivuston ylläpitäjään.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Valittua objektia ei ole olemassa tai sinulla ei ole oikeutta lukea sitä.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Valitulla objektilla ei ole kuvaa.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Valitun objektin kuvatiedostoa ei voitu lukea.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Valitun objektin kuva on suurempi kuin tämä kenttä sallii: %1 tavua.</translation>
     </message>
 </context>
 <context>

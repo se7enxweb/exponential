@@ -44457,6 +44457,42 @@ Nếu bạn muốn gửi bình luận cho người phê duyệt hoặc xem tình
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Sau khi đăng nhập, người dùng phải chọn mật khẩu mới trước khi làm bất cứ điều gì khác. Hãy dùng tùy chọn này khi bạn cấp cho ai đó một mật khẩu tạm thời.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Chọn một hình ảnh có sẵn</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Tệp hình ảnh của đối tượng bạn chọn sẽ được sao chép vào trường này. Đối tượng kia không thay đổi.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>Hình ảnh của “%name” đã được sao chép vào trường này.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Duyệt tìm hình ảnh</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Tìm hình ảnh theo tên</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Tìm kiếm</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Dùng hình ảnh của “%name”</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Dùng hình ảnh này</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Không có hình ảnh nào khớp với tìm kiếm của bạn.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ tài khoản của bạn.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>Không thể đọc hình ảnh SVG, hoặc không có gì trong đó có thể hiển thị an toàn.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Không thể sao chép hình ảnh. Vui lòng thử lại hoặc liên hệ quản trị viên trang web.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Đối tượng đã chọn không tồn tại hoặc bạn không có quyền đọc.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Đối tượng đã chọn không có hình ảnh.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Không thể đọc tệp hình ảnh của đối tượng đã chọn.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Hình ảnh của đối tượng đã chọn lớn hơn mức trường này cho phép: %1 byte.</translation>
     </message>
 </context>
 <context>

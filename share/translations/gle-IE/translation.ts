@@ -44396,6 +44396,42 @@ Más mian leat nótaí tráchta a sheoladh chuig an gceadaitheoir nó an stádas
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Tar éis síniú isteach, caithfidh an t-úsáideoir pasfhocal nua a roghnú sula ndéanann sé aon rud eile. Úsáid é seo nuair a thugann tú pasfhocal sealadach do dhuine.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Roghnaigh íomhá atá ann cheana</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Cóipeáiltear comhad íomhá na hoibiachta a roghnaíonn tú isteach sa réimse seo. Ní athraítear an oibiacht eile.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>Cóipeáladh íomhá “%name” isteach sa réimse seo.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Brabhsáil le haghaidh íomhá</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Cuardaigh íomhánna de réir ainm</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Cuardaigh</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Úsáid íomhá “%name”</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Úsáid an íomhá seo</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Níl íomhá ar bith a mheaitseálann do chuardach.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56117,6 +56153,26 @@ do chuntas a ghníomhachtú.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>Níorbh fhéidir an íomhá SVG a léamh, nó níl aon rud inti is féidir a thaispeáint go sábháilte.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Níorbh fhéidir an íomhá a chóipeáil. Bain triail eile as nó déan teagmháil le riarthóir an tsuímh.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Níl an oibiacht roghnaithe ann nó níl cead agat í a léamh.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Níl íomhá ag an oibiacht roghnaithe.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Níorbh fhéidir comhad íomhá na hoibiachta roghnaithe a léamh.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Tá íomhá na hoibiachta roghnaithe níos mó ná mar a cheadaíonn an réimse seo: %1 beart.</translation>
     </message>
 </context>
 <context>

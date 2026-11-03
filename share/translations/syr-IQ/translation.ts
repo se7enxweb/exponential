@@ -44457,6 +44457,42 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>ܒܬܪ ܥܠܠܐ، ܡܦܠܚܢܐ ܚܝܒ ܠܡܓܒܐ ܡܠܬܐ ܕܥܒܪܐ ܚܕܬܐ ܩܕܡ ܕܢܥܒܕ ܡܕܡ ܐܚܪܝܢ. ܐܡܠܘ ܒܗ ܟܕ ܝܗܒܝܢ ܠܐܢܫ ܡܠܬܐ ܕܥܒܪܐ ܙܡܢܝܬܐ.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>ܓܒܝ ܨܘܪܬܐ ܐܝܬܝܬܐ</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>ܦܢܩܝܬܐ ܕܨܘܪܬܐ ܕܨܒܘܬܐ ܕܓܒܐ ܐܢܬ ܡܬܢܣܚܐ ܠܚܩܠܐ ܗܢܐ. ܨܒܘܬܐ ܐܚܪܬܐ ܠܐ ܡܫܬܚܠܦܐ.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>ܨܘܪܬܐ ܕ«%name» ܐܬܢܣܚܬ ܠܚܩܠܐ ܗܢܐ.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>ܚܝܪ ܠܨܘܪܬܐ</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>ܒܨܝ ܨܘܪܬܐ ܒܫܡܐ</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>ܒܨܝܐ</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>ܐܦܠܚ ܨܘܪܬܐ ܕ«%name»</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>ܐܦܠܚ ܨܘܪܬܐ ܗܕܐ</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>ܠܝܬ ܨܘܪܬܐ ܕܫܘܝܐ ܠܒܨܝܬܟ.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ your account.</source>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>ܨܘܪܬܐ ܕ SVG ܠܐ ܐܫܬܡܠܝ ܠܡܬܩܪܝܘ، ܐܘ ܠܝܬ ܒܗ ܡܕܡ ܕܡܨܝܐ ܠܡܬܚܙܝܘ ܒܛܝܒܘܬܐ.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>ܨܘܪܬܐ ܠܐ ܐܫܟܚܬ ܠܡܬܢܣܚܘ. ܒܥܝܐ ܢܣܝ ܬܘܒ ܐܘ ܡܠܠ ܥܡ ܡܕܒܪܢܐ ܕܕܘܟܬܐ.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>ܨܒܘܬܐ ܓܒܝܬܐ ܠܐ ܐܝܬܝܗ ܐܘ ܠܐ ܫܠܝܛ ܠܟ ܠܡܩܪܝܗ.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>ܨܒܘܬܐ ܓܒܝܬܐ ܠܝܬ ܠܗ ܨܘܪܬܐ.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>ܦܢܩܝܬܐ ܕܨܘܪܬܐ ܕܨܒܘܬܐ ܓܒܝܬܐ ܠܐ ܐܫܟܚܬ ܠܡܬܩܪܝܘ.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>ܨܘܪܬܐ ܕܨܒܘܬܐ ܓܒܝܬܐ ܪܒܬܐ ܝܬܝܪ ܡܢ ܕܡܦܣ ܚܩܠܐ ܗܢܐ: %1 ܒܝܬ̈ܐ.</translation>
     </message>
 </context>
 <context>

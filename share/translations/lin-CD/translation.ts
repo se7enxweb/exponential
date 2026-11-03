@@ -44457,6 +44457,42 @@ Soki olingi kotinda makanisi epai ya mondimisi to komona ezalela salelá URL oyo
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Sima ya kokɔta, mosaleli asengeli kopona liloba ya sekele ya sika liboso ya kosala eloko mosusu. Salelá yango ntango opesi moto liloba ya sekele ya ntango moke.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Pona elilingi oyo ezali kala</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Fisyé ya elilingi ya eloko oyo okopona ekozwa kopi na esika oyo. Eloko mosusu ekobongwana te.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>Elilingi ya "%name" ezwaki kopi na esika oyo.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Lukaluká elilingi</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Luka bililingi na nkombo</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Lukà</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Salela elilingi ya "%name"</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Salela elilingi oyo</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Elilingi moko te ekokani na boluki na yo.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ compte na yo.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>Elilingi ya SVG ekokaki kotangama te, to eloko moko te na kati na yango ekoki kolakisama na bobateli.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Elilingi ekokaki kozwa kopi te. Palado, meká lisusu to benga mokambi ya site.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Eloko oyo oponi ezali te to ozali na ndingisa ya kotánga yango te.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Eloko oyo oponi ezali na elilingi te.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Fisyé ya elilingi ya eloko oyo oponi ekokaki kotángama te.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Elilingi ya eloko oyo oponi eleki monene oyo esika oyo endimi: %1 bytes.</translation>
     </message>
 </context>
 <context>

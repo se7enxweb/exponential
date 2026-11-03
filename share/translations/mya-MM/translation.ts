@@ -44457,6 +44457,42 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>ဝင်ရောက်ပြီးနောက် အသုံးပြုသူသည် အခြားမည်သည့်အရာမျှ မလုပ်မီ စကားဝှက်အသစ်ကို ရွေးရမည်။ တစ်စုံတစ်ဦးအား ယာယီစကားဝှက် ပေးသည့်အခါ သုံးပါ။</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>ရှိပြီးသား ပုံတစ်ပုံ ရွေးချယ်ပါ</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>သင်ရွေးချယ်သော အရာဝတ္ထု၏ ပုံဖိုင်ကို ဤအကွက်ထဲသို့ ကူးယူပါမည်။ အခြားအရာဝတ္ထုမှာ မပြောင်းလဲပါ။</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>"%name" ၏ ပုံကို ဤအကွက်ထဲသို့ ကူးယူပြီးပါပြီ။</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>ပုံကို ရှာကြည့်ရန်</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>အမည်ဖြင့် ပုံများကို ရှာဖွေရန်</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>ရှာဖွေရန်</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>"%name" ၏ ပုံကို အသုံးပြုရန်</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>ဤပုံကို အသုံးပြုရန်</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>သင့်ရှာဖွေမှုနှင့် ကိုက်ညီသော ပုံ မရှိပါ။</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ your account.</source>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>SVG ပုံကို ဖတ်၍ မရပါ သို့မဟုတ် ၎င်းထဲမှ မည်သည့်အရာမျှ လုံခြုံစွာ ပြသ၍ မရပါ။</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>ပုံကို ကူးယူ၍ မရပါ။ ကျေးဇူးပြု၍ ထပ်မံကြိုးစားပါ သို့မဟုတ် ဆိုက်စီမံခန့်ခွဲသူကို ဆက်သွယ်ပါ။</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>ရွေးချယ်ထားသော အရာဝတ္ထု မရှိပါ သို့မဟုတ် ၎င်းကို ဖတ်ရန် သင့်တွင် ခွင့်ပြုချက် မရှိပါ။</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>ရွေးချယ်ထားသော အရာဝတ္ထုတွင် ပုံ မရှိပါ။</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>ရွေးချယ်ထားသော အရာဝတ္ထု၏ ပုံဖိုင်ကို ဖတ်၍ မရပါ။</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>ရွေးချယ်ထားသော အရာဝတ္ထု၏ ပုံသည် ဤအကွက်က ခွင့်ပြုထားသည်ထက် ကြီးနေပါသည်- %1 ဘိုက်။</translation>
     </message>
 </context>
 <context>

@@ -44457,6 +44457,42 @@ Agar tasdiqlovchiga izoh yubormoqchi yoki maqomni koʻrmoqchi boʻlsangiz, quyid
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Tizimga kirgandan soʻng foydalanuvchi boshqa narsa qilishdan oldin yangi parol tanlashi kerak. Kimgadir vaqtinchalik parol berganingizda foydalaning.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Mavjud rasmni tanlang</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Siz tanlagan obyektning rasm fayli ushbu maydonga nusxalanadi. Boshqa obyekt oʻzgarmaydi.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>“%name” rasmi ushbu maydonga nusxalandi.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Rasm uchun koʻrib chiqish</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Rasmlarni nomi boʻyicha qidirish</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Qidirish</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>“%name” rasmidan foydalanish</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Ushbu rasmdan foydalanish</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Qidiruvingizga mos rasm topilmadi.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ shu xatdagi yoʻriqnomaga amal qiling.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>SVG rasmini oʻqib boʻlmadi yoki undagi hech narsani xavfsiz koʻrsatib boʻlmaydi.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Rasmni nusxalab boʻlmadi. Qaytadan urinib koʻring yoki sayt administratoriga murojaat qiling.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Tanlangan obyekt mavjud emas yoki uni oʻqishga ruxsatingiz yoʻq.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Tanlangan obyektda rasm yoʻq.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Tanlangan obyektning rasm faylini oʻqib boʻlmadi.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Tanlangan obyektning rasmi ushbu maydon ruxsat berganidan katta: %1 bayt.</translation>
     </message>
 </context>
 <context>

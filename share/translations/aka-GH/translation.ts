@@ -44457,6 +44457,42 @@ Sɛ wopɛ sɛ wosoma adwenkyerɛ kɔma ɔpaafoɔ no anaa wohwɛ gyinabea no a, f
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Wɔhyɛ mu akyi no, ɛsɛ sɛ ɔdefoɔ no paw ahintasɛm foforɔ ansa na ɔyɛ biribi foforɔ. Fa di dwuma bere a wode ahintasɛm bere tiaa rema obi.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Yi mfonini a ɛwɔ hɔ dedaw</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Wɔbɛkopi adeɛ a woayi no mfonini fael no aba saa beaeɛ yi mu. Adeɛ foforɔ no rensesa.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>Wɔakopi “%name” mfonini no aba saa beaeɛ yi mu.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Hwehwɛ mu na fa mfonini</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Hwehwɛ mfonini wɔ din so</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Hwehwɛ</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Fa “%name” mfonini no di dwuma</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Fa mfonini yi di dwuma</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Mfonini biara nhyia wo hwehwɛ no.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ Mesrɛ wo, nsan nsoma sika no bio.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>Entumi nkenkan SVG mfonini no, anaa biribiara a ɛwɔ mu nni hɔ a wobɛtumi ahwɛ a ɛnyɛ hu.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Wɔantumi ankopi mfonini no. Mesrɛ wo sɔ hwɛ bio anaa fa nsɛm kɔ wɛbsaet ɔhwɛfoɔ nkyɛn.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Adeɛ a woayi no nni hɔ anaa wonni ho kwan sɛ wokenkan.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Adeɛ a woayi no nni mfonini biara.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Wɔantumi ankenkan adeɛ a woayi no mfonini fael no.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Adeɛ a woayi no mfonini no so sen deɛ saa beaeɛ yi ma kwan: bytes %1.</translation>
     </message>
 </context>
 <context>

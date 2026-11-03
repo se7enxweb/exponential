@@ -44455,6 +44455,42 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>ከገቡ በኋላ ተጠቃሚው ሌላ ማንኛውንም ነገር ከማድረጉ በፊት አዲስ የይለፍ ቃል መምረጥ አለበት። ለአንድ ሰው ጊዜያዊ የይለፍ ቃል ሲሰጡ ይህንን ይጠቀሙ።</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>ያለ ምስል ይምረጡ</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>የሚመርጡት ነገር የምስል ፋይል ወደዚህ መስክ ይቀዳል። ሌላኛው ነገር አይቀየርም።</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>የ«%name» ምስል ወደዚህ መስክ ተቀድቷል።</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>ምስል ያስሱ</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>ምስሎችን በስም ይፈልጉ</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>ፈልግ</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>የ«%name»ን ምስል ይጠቀሙ</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>ይህን ምስል ይጠቀሙ</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>ከፍለጋዎ ጋር የሚዛመድ ምስል የለም።</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56176,6 +56212,26 @@ your account.</source>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>የSVG ምስሉን ማንበብ አልተቻለም፣ ወይም በውስጡ ያለ ምንም ነገር በደህንነት ሊታይ አይችልም።</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>ምስሉን መቅዳት አልተቻለም። እባክዎ እንደገና ይሞክሩ ወይም የጣቢያውን አስተዳዳሪ ያነጋግሩ።</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>የተመረጠው ነገር የለም ወይም እንዲያነቡት አልተፈቀደልዎትም።</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>የተመረጠው ነገር ምስል የለውም።</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>የተመረጠውን ነገር የምስል ፋይል ማንበብ አልተቻለም።</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>የተመረጠው ነገር ምስል ይህ መስክ ከሚፈቅደው በላይ ነው፦ %1 ባይት።</translation>
     </message>
 </context>
 <context>

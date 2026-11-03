@@ -44457,6 +44457,42 @@ Se volètz mandar de comentaris a l'aprobador o ne veire l'estat, utilizatz l'UR
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Aprèp la connexion, l'utilizaire deu causir un novèl senhal abans de far quicòm mai. Utilizatz aquesta opcion quand balhatz un senhal provisòri a qualqu'un.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Causir un imatge existent</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Lo fichièr imatge de l'objècte que causissètz es copiat dins aqueste camp. L'autre objècte cambia pas.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>L'imatge de «%name» es estat copiat dins aqueste camp.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Percórrer los imatges</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Cercar d'imatges per nom</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Recercar</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Utilizar l'imatge de «%name»</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Utilizar aqueste imatge</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Cap d'imatge correspond pas a vòstra recèrca.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ vòstre compte.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>L'imatge SVG a pas pogut èsser legit, o res dedins pòt èsser afichat de manièra segura.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>L'imatge a pas pogut èsser copiat. Tornatz ensajar o contactatz l'administrator del site.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>L'objècte seleccionat existís pas o avètz pas lo drech de lo legir.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>L'objècte seleccionat a pas d'imatge.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Lo fichièr imatge de l'objècte seleccionat a pas pogut èsser legit.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>L'imatge de l'objècte seleccionat es mai grand que çò qu'aqueste camp permet: %1 octets.</translation>
     </message>
 </context>
 <context>

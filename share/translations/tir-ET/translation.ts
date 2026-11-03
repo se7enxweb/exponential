@@ -44457,6 +44457,42 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>ድሕሪ እቶት ተጠቃሚ ቅድሚ ዝኾነ ካልእ ሓድሽ መሕለፊ ቃል ክመርጽ ኣለዎ። ንሓደ ሰብ ግዚያዊ መሕለፊ ቃል ምስ ዝህቡ ተጠቐሙሉ።</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>ዘሎ ስእሊ ምረጽ</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>ፋይል ስእሊ ናይቲ እትመርጾ ኣቕሓ ናብዚ ሜዳ ይቕዳሕ። እቲ ካልእ ኣቕሓ ኣይቅየርን።</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>ስእሊ «%name» ናብዚ ሜዳ ተቐዲሑ።</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>ስእሊ ንምርካብ ርአ</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>ስእልታት ብስም ድለ</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>ድለ</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>ስእሊ «%name» ተጠቐም</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>ነዚ ስእሊ ተጠቐም</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>ምስ ድለያኻ ዝሰማማዕ ስእሊ የለን።</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ your account.</source>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>እቲ ስእሊ SVG ክንበብ ኣይተኻኣለን፣ ወይ ኣብኡ ዘሎ ዋላ ሓደ ብውሑስ ክርአ ኣይክእልን።</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>እቲ ስእሊ ክቕዳሕ ኣይከኣለን። በጃኻ እንደገና ፈትን ወይ ንኣመሓዳሪ መርበብ ተወከስ።</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>እቲ ዝተመርጸ ኣቕሓ የለን ወይ ከተንብቦ ፍቓድ የብልካን።</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>እቲ ዝተመርጸ ኣቕሓ ስእሊ የብሉን።</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>ፋይል ስእሊ ናይቲ ዝተመርጸ ኣቕሓ ክንበብ ኣይከኣለን።</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>ስእሊ ናይቲ ዝተመርጸ ኣቕሓ እዚ ሜዳ ካብ ዘፍቅዶ ይዓቢ: %1 ባይትስ።</translation>
     </message>
 </context>
 <context>

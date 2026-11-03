@@ -44455,6 +44455,42 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>సైన్ ఇన్ చేసిన తర్వాత, వినియోగదారు మరేదైనా చేసే ముందు కొత్త పాస్‌వర్డ్‌ను ఎంచుకోవాలి. మీరు ఎవరికైనా తాత్కాలిక పాస్‌వర్డ్ ఇచ్చినప్పుడు దీన్ని ఉపయోగించండి.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>ఇప్పటికే ఉన్న చిత్రాన్ని ఎంచుకోండి</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>మీరు ఎంచుకున్న ఆబ్జెక్ట్ యొక్క చిత్ర ఫైల్ ఈ ఫీల్డ్‌లోకి కాపీ చేయబడుతుంది. ఇతర ఆబ్జెక్ట్ మారదు.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>“%name” యొక్క చిత్రం ఈ ఫీల్డ్‌లోకి కాపీ చేయబడింది.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>చిత్రం కోసం బ్రౌజ్ చేయండి</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>పేరుతో చిత్రాలను శోధించండి</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>శోధన</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>“%name” యొక్క చిత్రాన్ని ఉపయోగించండి</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>ఈ చిత్రాన్ని ఉపయోగించండి</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>మీ శోధనకు సరిపోలే చిత్రం ఏదీ లేదు.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56176,6 +56212,26 @@ your account.</source>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>SVG చిత్రాన్ని చదవడం సాధ్యం కాలేదు, లేదా అందులో ఏదీ సురక్షితంగా చూపించడం సాధ్యం కాదు.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>చిత్రాన్ని కాపీ చేయడం సాధ్యం కాలేదు. దయచేసి మళ్లీ ప్రయత్నించండి లేదా సైట్ నిర్వాహకుడిని సంప్రదించండి.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>ఎంచుకున్న ఆబ్జెక్ట్ ఉనికిలో లేదు లేదా దాన్ని చదవడానికి మీకు అనుమతి లేదు.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>ఎంచుకున్న ఆబ్జెక్ట్‌కు చిత్రం లేదు.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>ఎంచుకున్న ఆబ్జెక్ట్ యొక్క చిత్ర ఫైల్‌ను చదవడం సాధ్యం కాలేదు.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>ఎంచుకున్న ఆబ్జెక్ట్ యొక్క చిత్రం ఈ ఫీల్డ్ అనుమతించే దానికంటే పెద్దది: %1 బైట్‌లు.</translation>
     </message>
 </context>
 <context>

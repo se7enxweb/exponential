@@ -44455,6 +44455,42 @@ O ji chọọ izipụ nkọwa nye onye na-ekwenye ma ọ bụ lee ọnọdụ ya
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Mgbe ọ banyechara, onye ọrụ ga-ahọrọ Okwuntughe ọhụrụ tupu ọ rụọ ihe ọ bụla ọzọ. Jiri ya mgbe ị na-enye mmadụ Okwuntughe nwa oge.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Họrọ foto dị adị</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>A na-eṅomi faịlụ foto nke ihe ị họọrọ n’ime ubi a. Ihe nke ọzọ anaghị agbanwe.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>Eṅomiela foto nke "%name" n’ime ubi a.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Chọgharịa maka foto</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Chọọ foto site n’aha</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Chọọ</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Jiri foto nke "%name"</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Jiri foto a</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Ọ dịghị foto kwekọrọ na ọchụchọ gị.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56176,6 +56212,26 @@ akaụntụ gị rụọ ọrụ.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>Enweghị ike ịgụ foto SVG ahụ, ma ọ bụ enweghị ihe dị n&apos;ime ya enwere ike igosi n&apos;enweghị ihe egwu.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Enweghị ike ịṅomi foto ahụ. Biko nwaa ọzọ ma ọ bụ kpọtụrụ onye nchịkwa saịtị.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Ihe a họọrọ adịghị ma ọ bụ ị nweghị ikike ịgụ ya.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Ihe a họọrọ enweghị foto.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Enweghị ike ịgụ faịlụ foto nke ihe a họọrọ.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Foto nke ihe a họọrọ karịrị ihe ubi a na-anabata: baịtị %1.</translation>
     </message>
 </context>
 <context>

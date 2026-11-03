@@ -37415,6 +37415,42 @@ Se vuoi inviare commenti all&apos;approvatore o vederne lo stato usa l&apos;URL 
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Dopo l&apos;accesso, l&apos;utente deve scegliere una nuova password prima di fare qualsiasi altra cosa. Usalo quando dai a qualcuno una password temporanea.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Scegli un’immagine esistente</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Il file immagine dell’oggetto scelto viene copiato in questo campo. L’altro oggetto non viene modificato.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>L’immagine di «%name» è stata copiata in questo campo.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Sfoglia per cercare un’immagine</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Cerca immagini per nome</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Cerca</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Usa l’immagine di «%name»</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Usa questa immagine</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Nessuna immagine corrisponde alla ricerca.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/diff</name>
@@ -49195,6 +49231,26 @@ per attivare il tuo account.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>Impossibile leggere l&apos;immagine SVG, oppure nulla al suo interno può essere mostrato in modo sicuro.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Impossibile copiare l’immagine. Riprova o contatta l’amministratore del sito.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>L’oggetto selezionato non esiste o non hai i permessi per leggerlo.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>L’oggetto selezionato non ha un’immagine.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Impossibile leggere il file immagine dell’oggetto selezionato.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>L’immagine dell’oggetto selezionato supera la dimensione consentita da questo campo: %1 byte.</translation>
     </message>
 </context>
 <context>

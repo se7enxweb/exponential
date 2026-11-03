@@ -44457,6 +44457,42 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>دوای چوونەژوورەوە، بەکارهێنەر دەبێت پێش هەر شتێکی دیکە وشەی نهێنییەکی نوێ هەڵبژێرێت. کاتێک وشەی نهێنییەکی کاتی دەدەن بە کەسێک بەکاری بهێنن.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>هەڵبژاردنی وێنەیەکی هەبوو</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>فایلی وێنەی ئەو ئۆبجێکتەی هەڵیدەبژێرن بۆ ئەم خانەیە کۆپی دەکرێت. ئۆبجێکتەکەی تر ناگۆڕێت.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>وێنەی «%name» بۆ ئەم خانەیە کۆپی کرا.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>گەڕان بەناو بۆ وێنە</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>گەڕان بە دوای وێنەدا بە ناو</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>گەڕان</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>بەکارهێنانی وێنەی «%name»</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>بەکارهێنانی ئەم وێنەیە</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>هیچ وێنەیەک لەگەڵ گەڕانەکەتان ناگونجێت.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56178,6 +56214,26 @@ your account.</source>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>وێنەی SVG نەخوێندرایەوە، یان هیچ بەشێکی بە سەلامەتی نیشان نادرێت.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>وێنەکە کۆپی نەکرا. تکایە دووبارە هەوڵ بدەنەوە یان پەیوەندی بە بەڕێوەبەری ماڵپەڕەوە بکەن.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>ئۆبجێکتی هەڵبژێردراو بوونی نییە یان ڕێگەتان پێ نادرێت بیخوێننەوە.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>ئۆبجێکتی هەڵبژێردراو هیچ وێنەیەکی نییە.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>فایلی وێنەی ئۆبجێکتی هەڵبژێردراو نەخوێندرایەوە.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>وێنەی ئۆبجێکتی هەڵبژێردراو لەوە گەورەترە کە ئەم خانەیە ڕێگەی پێدەدات: %1 بایت.</translation>
     </message>
 </context>
 <context>

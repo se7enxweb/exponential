@@ -44455,6 +44455,42 @@ Uma nifuna ukuthumela amazwana kumvumi noma ukubuka isimo sebenzisa i-URL engeza
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Ngemva kokungena, umsebenzisi kumele akhethe iphasiwedi entsha ngaphambi kokwenza okunye. Sebenzisa lokhu uma ninika othile iphasiwedi yesikhashana.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Khetha isithombe esikhona</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Ifayela lesithombe lento oyikhethayo likopishelwa kule nkambu. Enye into ayishintshi.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>Isithombe sika-“%name” sikopishelwe kule nkambu.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Phequlula ukuthola isithombe</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Sesha izithombe ngegama</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Sesha</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Sebenzisa isithombe sika-“%name”</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Sebenzisa lesi sithombe</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Asikho isithombe esihambisana nosesho lwakho.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56176,6 +56212,26 @@ isebenze i-akhawunti yenu.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>Isithombe se-SVG asikwazanga ukufundwa, noma akukho okuqukethwe kusona okungabonakaliswa ngokuphephile.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Isithombe asikwazanga ukukopishwa. Sicela uzame futhi noma uxhumane nomlawuli wesayithi.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Into ekhethiwe ayikho noma awuvunyelwe ukuyifunda.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Into ekhethiwe ayinaso isithombe.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Ifayela lesithombe lento ekhethiwe alikwazanga ukufundwa.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Isithombe sento ekhethiwe sikhulu kunalokho okuvunyelwe yile nkambu: amabhayithi angu-%1.</translation>
     </message>
 </context>
 <context>

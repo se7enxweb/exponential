@@ -44396,6 +44396,42 @@ Ef þú vilt senda samþykkjandanum athugasemdir eða skoða stöðuna skaltu no
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>Eftir innskráningu verður notandinn að velja nýtt aðgangsorð áður en hann gerir nokkuð annað. Notaðu þetta þegar þú lætur einhvern fá tímabundið aðgangsorð.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>Velja fyrirliggjandi mynd</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>Myndaskrá hlutarins sem þú velur er afrituð í þennan reit. Hinn hluturinn breytist ekki.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>Mynd „%name“ var afrituð í þennan reit.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>Fletta eftir mynd</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>Leita að myndum eftir nafni</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Leita</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>Nota mynd „%name“</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>Nota þessa mynd</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>Engin mynd samsvarar leitinni.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56117,6 +56153,26 @@ reikninginn þinn.</translation>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>Ekki tókst að lesa SVG-myndina, eða ekkert í henni er hægt að sýna á öruggan hátt.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>Ekki tókst að afrita myndina. Reyndu aftur eða hafðu samband við vefstjóra.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>Valinn hlutur er ekki til eða þú hefur ekki heimild til að lesa hann.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>Valinn hlutur hefur enga mynd.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>Ekki tókst að lesa myndaskrá valins hlutar.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>Mynd valins hlutar er stærri en þessi reitur leyfir: %1 bæti.</translation>
     </message>
 </context>
 <context>

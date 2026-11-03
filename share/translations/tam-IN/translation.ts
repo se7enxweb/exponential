@@ -44455,6 +44455,42 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
         <translation>உள்நுழைந்த பிறகு, வேறு எதையும் செய்வதற்கு முன் பயனர் புதிய கடவுச்சொல்லைத் தேர்ந்தெடுக்க வேண்டும். ஒருவருக்குத் தற்காலிக கடவுச்சொல்லை வழங்கும்போது இதைப் பயன்படுத்துங்கள்.</translation>
     </message>
+    <message>
+        <source>Choose an existing image</source>
+        <translation>ஏற்கனவே உள்ள படத்தைத் தேர்ந்தெடுக்கவும்</translation>
+    </message>
+    <message>
+        <source>The image file of the object you choose is copied into this field. The other object does not change.</source>
+        <translation>நீங்கள் தேர்ந்தெடுக்கும் பொருளின் படக் கோப்பு இந்தப் புலத்தில் நகலெடுக்கப்படும். மற்ற பொருள் மாறாது.</translation>
+    </message>
+    <message>
+        <source>The image of "%name" was copied into this field.</source>
+        <translation>“%name” இன் படம் இந்தப் புலத்தில் நகலெடுக்கப்பட்டது.</translation>
+    </message>
+    <message>
+        <source>Browse for an image</source>
+        <translation>படத்திற்காக உலாவு</translation>
+    </message>
+    <message>
+        <source>Search images by name</source>
+        <translation>பெயரால் படங்களைத் தேடு</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>தேடு</translation>
+    </message>
+    <message>
+        <source>Use the image of "%name"</source>
+        <translation>“%name” இன் படத்தைப் பயன்படுத்து</translation>
+    </message>
+    <message>
+        <source>Use this image</source>
+        <translation>இந்தப் படத்தைப் பயன்படுத்து</translation>
+    </message>
+    <message>
+        <source>No image matches your search.</source>
+        <translation>உங்கள் தேடலுடன் பொருந்தும் படம் எதுவும் இல்லை.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -56176,6 +56212,26 @@ your account.</source>
     <message>
         <source>The SVG image could not be read, or nothing in it can be shown safely.</source>
         <translation>SVG படத்தைப் படிக்க முடியவில்லை, அல்லது அதில் பாதுகாப்பாகக் காட்டக்கூடியது எதுவுமில்லை.</translation>
+    </message>
+    <message>
+        <source>The image could not be copied. Please try again or contact the site administrator.</source>
+        <translation>படத்தை நகலெடுக்க முடியவில்லை. மீண்டும் முயற்சிக்கவும் அல்லது தள நிர்வாகியைத் தொடர்பு கொள்ளவும்.</translation>
+    </message>
+    <message>
+        <source>The selected object does not exist or you may not read it.</source>
+        <translation>தேர்ந்தெடுக்கப்பட்ட பொருள் இல்லை அல்லது அதைப் படிக்க உங்களுக்கு அனுமதி இல்லை.</translation>
+    </message>
+    <message>
+        <source>The selected object has no image.</source>
+        <translation>தேர்ந்தெடுக்கப்பட்ட பொருளில் படம் இல்லை.</translation>
+    </message>
+    <message>
+        <source>The image file of the selected object could not be read.</source>
+        <translation>தேர்ந்தெடுக்கப்பட்ட பொருளின் படக் கோப்பைப் படிக்க முடியவில்லை.</translation>
+    </message>
+    <message>
+        <source>The image of the selected object is larger than this field allows: %1 bytes.</source>
+        <translation>தேர்ந்தெடுக்கப்பட்ட பொருளின் படம் இந்தப் புலம் அனுமதிப்பதை விடப் பெரியது: %1 பைட்டுகள்.</translation>
     </message>
 </context>
 <context>
