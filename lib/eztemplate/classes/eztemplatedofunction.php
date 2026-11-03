@@ -92,15 +92,23 @@ class eZTemplateDoFunction
         $loop->saveSequenceState();
         $loop->initVars();
 
-        // loop header
+        // loop header: the condition is tested at the top of every iteration but the first, so the PHP continue that
+        // {continue} and {skip} compile to goes on to the condition, as it does in the interpreter (not unset after the
+        // loop: a template that includes itself in the body runs this code in the same scope, and leaves it false)
+        $firstVar = "do_first_$uniqid";
+        $newNodes[] = eZTemplateNodeTool::createCodePieceNode( "\$$firstVar = true;" );
         $newNodes[] = eZTemplateNodeTool::createCodePieceNode( "while ( 1 ) // do..while\n{" );
         $newNodes[] = eZTemplateNodeTool::createSpacingIncreaseNode();
+        $newNodes[] = eZTemplateNodeTool::createCodePieceNode( "if ( !\$$firstVar )\n{" );
+        $newNodes[] = eZTemplateNodeTool::createSpacingIncreaseNode();
+        $newNodes[] = eZTemplateNodeTool::createVariableNode( false, $parameters['condition'], $nodePlacement, array( 'treat-value-as-non-object' => true ), 'do_cond' );
+        $newNodes[] = eZTemplateNodeTool::createCodePieceNode( "if ( ! \$do_cond ) break;" );
+        $newNodes[] = eZTemplateNodeTool::createSpacingDecreaseNode();
+        $newNodes[] = eZTemplateNodeTool::createCodePieceNode( "}\n\$$firstVar = false;" );
 
         $loop->processBody();
 
         // loop footer
-        $newNodes[] = eZTemplateNodeTool::createVariableNode( false, $parameters['condition'], $nodePlacement, array( 'treat-value-as-non-object' => true ), 'do_cond' );
-        $newNodes[] = eZTemplateNodeTool::createCodePieceNode( "if ( ! \$do_cond ) break;" );
         $newNodes[] = eZTemplateNodeTool::createSpacingDecreaseNode();
         $newNodes[] = eZTemplateNodeTool::createCodePieceNode( "} // do..while" );
         $newNodes[] = eZTemplateNodeTool::createVariableUnsetNode( 'do_cond' );

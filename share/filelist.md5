@@ -3515,7 +3515,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-4d6fb350a14d81e77be902ce65a3bfed  doc/changelogs/6.0/6.0.15.md
+726e7e5119c1d3574dd55a2e5a48af05  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -26613,7 +26613,7 @@ c26dbec4684104037b6b62edc581dde1  lib/eztemplate/classes/eztemplatedebugfunction
 06acc5b180ea347235f69be822c47365  lib/eztemplate/classes/eztemplatedeffunction.php
 9fe8bcfb026bf199ec0c120d16564f91  lib/eztemplate/classes/eztemplatedelimitfunction.php
 8010e697a29dcb8364acdd9c55aaa8e9  lib/eztemplate/classes/eztemplatedigestoperator.php
-ef5b305989675edc0bb49f9c902eb810  lib/eztemplate/classes/eztemplatedofunction.php
+11086cb6e5243674fdfb1840ffb02911  lib/eztemplate/classes/eztemplatedofunction.php
 4d4d7ae8a71004d17bec0b49e7e5e595  lib/eztemplate/classes/eztemplateelementparser.php
 9b7d2fe1ccdd1e70cee5b5bbff8658e0  lib/eztemplate/classes/eztemplateexecuteoperator.php
 494a00dfd43ef938d00619798185d899  lib/eztemplate/classes/eztemplateexpinfooperator.php
@@ -29963,6 +29963,7 @@ ae6e64544e6fb939af59a865ecb7aa1c  tests/tests/lib/ezsoap/eZSOAPMessageTest.php
 1048c0d6dab52f2435fd8f4089917bdd  tests/tests/lib/eztemplate/eZTemplateAttributeOperatorTest.php
 1f2cbf344c90e060d7673cd5391360d7  tests/tests/lib/eztemplate/eZTemplateCacheBlockAccessPathTest.php
 41303ff3343e21b266612a2a32269530  tests/tests/lib/eztemplate/eZTemplateCacheBlockRecursionTest.php
+fc294438b8c39a75473953bd8345f81d  tests/tests/lib/eztemplate/eZTemplateCompiledDoContinueTest.php
 11571a2592ed97415cadf3cd3b52271d  tests/tests/lib/eztemplate/eZTemplateCompiledInterpretedParityTest.php
 8a6e6f1365414d89fe0024760d300efd  tests/tests/lib/eztemplate/eZTemplateCompiledLoopRecursionTest.php
 86d5b7b448c070f3cdd141677761852b  tests/tests/lib/eztemplate/eZTemplateDebugCommentsTest.php
