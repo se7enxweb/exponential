@@ -158,7 +158,7 @@ function exportGitRelease( $ref, $exportPath )
     $releasePath = $exportPath . '/release';
     if ( is_dir( $releasePath . '/update/database' ) )
         return $releasePath;
-    if ( !is_dir( $releasePath ) && !@mkdir( $releasePath, 0700 ) )
+    if ( !is_dir( $releasePath ) && !@mkdir( $releasePath, \eZDir::dirMode( 0700 ) ) )
         return false;
     $archive = $exportPath . '/release.tar';
     $commands = array( 'git archive --format=tar -o ' . escapeshellarg( $archive ) . ' ' . escapeshellarg( $ref ) . ' update/database',

@@ -25421,7 +25421,7 @@ dadf3ececdba37d5c1c4519f06258277  kernel/private/classes/commands/audit.php
 d8f8d155154cdc77df0fda96eca4d9c7  kernel/private/classes/commands/cache.php
 7e675a5c0ed99de3a39a49ac6866275b  kernel/private/classes/commands/changelog2xmltext.php
 dfaae08f33403266f7403a9a051aa223  kernel/private/classes/commands/checkclasses.php
-3fbc569dbd9df46104b4270b692e65b4  kernel/private/classes/commands/checkdbfiles.php
+0214d9ea0d2304d1cad359b1573c3061  kernel/private/classes/commands/checkdbfiles.php
 a4c832d9f7b99ebc2f6b1986681d2468  kernel/private/classes/commands/cleanuppolicies.php
 1717d54026ca1647f4cedf5613e7a4bc  kernel/private/classes/commands/cleanuprss.php
 e4893218b5f80d2f5b7857d880ebcf87  kernel/private/classes/commands/cleanupversions.php
