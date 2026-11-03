@@ -76560,11 +76560,11 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Hide this page from readers?</source>
-        <translation>ཤོག་ལེབ་འདི་ཀློག་མི་ཚུ་ལས་སྦ་ནི་ཨིན་ན?</translation>
+        <translation>ཤོག་ལེབ་འདི་ཀློག་མི་ཚུ་ལས་སྦ་ནི་ཨིན་ན།</translation>
     </message>
     <message>
         <source>Send this page back to Draft?</source>
-        <translation>ཤོག་ལེབ་འདི་ཟིན་བྲིས་ལུ་ལོག་གཏང་ནི་ཨིན་ན?</translation>
+        <translation>ཤོག་ལེབ་འདི་ཟིན་བྲིས་ལུ་ལོག་གཏང་ནི་ཨིན་ན།</translation>
     </message>
     <message>
         <source>Readers no longer see %title until someone releases it again.</source>
