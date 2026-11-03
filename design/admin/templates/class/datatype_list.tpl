@@ -73,7 +73,11 @@
         {/foreach}
         </ul>
     </div>
-    <div class="a4-field">
+    <p class="a4-filter-count exp-js-only" id="datatypes-filter-count" aria-live="polite" hidden></p>
+</div>
+
+<div class="a4-filterbar">
+    <div class="a4-field a4-field-wide">
         <span id="datatypes-group-label"><strong>{'Provided by'|i18n( 'design/admin/class/datatype' )}</strong></span>
         <ul class="a4-tabs" aria-labelledby="datatypes-group-label">
             <li>{if $datatype_group|eq( '' )}<span class="current" aria-current="true">{'Everyone'|i18n( 'design/admin/class/datatype' )}</span>{else}<a href={concat( 'class/datatype/list', $filter_suffix )|ezurl}>{'Everyone'|i18n( 'design/admin/class/datatype' )}</a>{/if}</li>
@@ -84,7 +88,6 @@
         {/foreach}
         </ul>
     </div>
-    <p class="a4-filter-count exp-js-only" id="datatypes-filter-count" aria-live="polite" hidden></p>
 </div>
 
 {if $datatype_groups|count|eq( 0 )}
@@ -116,7 +119,7 @@
 <tbody data-list="1">
 {foreach $group.rows as $row}
 <tr data-search="{$row.search|wash}">
-    <th scope="row" data-value="{$row.string|wash}">
+    <td data-value="{$row.string|wash}">
         <a href={concat( 'class/datatype/view/', $row.string )|ezurl}><code>{$row.string|wash}</code></a>
         {if $row.name|ne( '' )}<br /><span class="a4-meta">{$row.name|wash}</span>{/if}
         {switch match=$row.status}
@@ -125,8 +128,8 @@
         {case match='unused'}<br /><span class="a4-tag">{'Not used'|i18n( 'design/admin/class/datatype' )}</span>{/case}
         {case}{/case}
         {/switch}
-    </th>
-    <td data-value="{$row.class|wash}">{if $row.class|ne( '' )}<code>{$row.class|wash}</code><br /><span class="a4-meta">{$row.file|wash}</span>{else}<span class="a4-muted">{'none'|i18n( 'design/admin/class/datatype' )}</span>{/if}</td>
+    </td>
+    <td data-value="{$row.class|wash}">{if $row.class|ne( '' )}<code>{$row.class|wash}</code><br /><span class="a4-meta a4-wrap">{$row.file|wash}</span>{else}<span class="a4-muted">{'none'|i18n( 'design/admin/class/datatype' )}</span>{/if}</td>
     <td class="a4-num" data-value="{$row.classes}">{$row.classes}</td>
     <td class="a4-num" data-value="{$row.class_attributes}">{$row.class_attributes}</td>
     <td class="a4-num" data-value="{$row.objects}">{$row.objects}</td>

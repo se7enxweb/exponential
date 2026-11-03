@@ -465,7 +465,7 @@ e4286f3980c415c880cdb413793a0eea  design/admin/stylesheets/ezinfo.css
 13853d0ea557befc5c9de97b44bd01f4  design/admin/stylesheets/modules/help.css
 ad39b6d6686649da879ae5c11dc6d148  design/admin/stylesheets/modules/people.css
 c20144b49f9eaa6bc589e15490a657de  design/admin/stylesheets/modules/setup.css
-2fba51cdc83e3aa57a2a3202e8c726ab  design/admin/stylesheets/modules/structure.css
+870f0f020eb45e6b5b306b731e3371bf  design/admin/stylesheets/modules/structure.css
 3f6cb52db7363b1107114a1554b38a99  design/admin/stylesheets/modules/workflow.css
 f6736900d8e33587c384e14e7705af9d  design/admin/stylesheets/packagecompare.css
 8cd271a31e61531f975f17be2f8defc4  design/admin/stylesheets/pagelayout.css
@@ -495,9 +495,9 @@ dfb5dabc1d9353978d6d04a6d8144135  design/admin/templates/class/classlist.tpl
 c776b1b3be862fe04c3f70c459dde834  design/admin/templates/class/copy_confirm.tpl
 2f32def3d98933143182da37d73213f4  design/admin/templates/class/datatype/browse_objectrelation_placement.tpl
 90b2f4b8116b9ef3e04ceb886a6fd516  design/admin/templates/class/datatype/browse_objectrelationlist_placement.tpl
-972a43977e5ebd7c9ce98560cc6bd442  design/admin/templates/class/datatype_flags.tpl
-0e74c577f6ad034f06fcf3b78b8645c7  design/admin/templates/class/datatype_list.tpl
-8812590739d94f202748f9ad669aacba  design/admin/templates/class/datatype_view.tpl
+f1fcfe57ed2c9983e33c4999450e8db9  design/admin/templates/class/datatype_flags.tpl
+0134cead9682688b54145ba8916929a6  design/admin/templates/class/datatype_list.tpl
+f8cb9cb885627edcbe3dbc5020228028  design/admin/templates/class/datatype_view.tpl
 c978f9f5efed9306fdffebebb08b7fb8  design/admin/templates/class/edit.tpl
 f22ab5b4dc7e3569f64e4f001a4d7351  design/admin/templates/class/edit_denied.tpl
 dbe5def951f76a833fe3992eb68bf430  design/admin/templates/class/exp_list_script.tpl
@@ -1282,7 +1282,7 @@ e26094514c3dac416b5fb6be0a9d9e21  design/admin4/stylesheets/ezinfo.css
 13853d0ea557befc5c9de97b44bd01f4  design/admin4/stylesheets/modules/help.css
 ad39b6d6686649da879ae5c11dc6d148  design/admin4/stylesheets/modules/people.css
 c20144b49f9eaa6bc589e15490a657de  design/admin4/stylesheets/modules/setup.css
-2fba51cdc83e3aa57a2a3202e8c726ab  design/admin4/stylesheets/modules/structure.css
+870f0f020eb45e6b5b306b731e3371bf  design/admin4/stylesheets/modules/structure.css
 3f6cb52db7363b1107114a1554b38a99  design/admin4/stylesheets/modules/workflow.css
 62655eab02017f2ff9eac6379e50922d  design/admin4/stylesheets/packagecompare.css
 1f9526457e76eaf166766b7160e70a51  design/admin4/stylesheets/theme/modalwindow.css
@@ -1311,9 +1311,9 @@ dc192213db8ef1ab9dff4a260b936978  design/admin4/templates/class/classlist.tpl
 c776b1b3be862fe04c3f70c459dde834  design/admin4/templates/class/copy_confirm.tpl
 2f32def3d98933143182da37d73213f4  design/admin4/templates/class/datatype/browse_objectrelation_placement.tpl
 90b2f4b8116b9ef3e04ceb886a6fd516  design/admin4/templates/class/datatype/browse_objectrelationlist_placement.tpl
-972a43977e5ebd7c9ce98560cc6bd442  design/admin4/templates/class/datatype_flags.tpl
-0e74c577f6ad034f06fcf3b78b8645c7  design/admin4/templates/class/datatype_list.tpl
-8812590739d94f202748f9ad669aacba  design/admin4/templates/class/datatype_view.tpl
+f1fcfe57ed2c9983e33c4999450e8db9  design/admin4/templates/class/datatype_flags.tpl
+0134cead9682688b54145ba8916929a6  design/admin4/templates/class/datatype_list.tpl
+f8cb9cb885627edcbe3dbc5020228028  design/admin4/templates/class/datatype_view.tpl
 09816b82356454cb438f69289d325a6a  design/admin4/templates/class/edit.tpl
 f22ab5b4dc7e3569f64e4f001a4d7351  design/admin4/templates/class/edit_denied.tpl
 664a67c6ba5fa354ca7962022abd5428  design/admin4/templates/class/edit_locked.tpl

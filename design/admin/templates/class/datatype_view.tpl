@@ -115,7 +115,7 @@
 <tbody>
 {foreach $datatype_classes as $class}
 <tr>
-    <th scope="row" data-value="{$class.name|wash}">{$class.identifier|class_icon( small, $class.name|wash )}&nbsp;<a href={concat( 'class/view/', $class.id )|ezurl}>{$class.name|wash}</a></th>
+    <td data-value="{$class.name|wash}">{$class.identifier|class_icon( small, $class.name|wash )}&nbsp;<a href={concat( 'class/view/', $class.id )|ezurl}>{$class.name|wash}</a></td>
     <td data-value="{$class.identifier|wash}"><code>{$class.identifier|wash}</code></td>
     <td class="a4-num" data-value="{$class.attributes}">{$class.attributes}</td>
     <td class="a4-num" data-value="{$class.objects}">{$class.objects}</td>
@@ -144,14 +144,14 @@
 <tbody>
 {foreach $datatype_attributes as $attribute}
 <tr>
-    <th scope="row" data-value="{$attribute.name|wash}">{$attribute.name|wash}<br /><code class="a4-meta">{$attribute.identifier|wash}</code> <span class="a4-meta">{'ID %id'|i18n( 'design/admin/class/datatype',, hash( '%id', $attribute.id ) )}</span></th>
+    <td data-value="{$attribute.name|wash}">{$attribute.name|wash}<br /><code class="a4-meta">{$attribute.identifier|wash}</code> <span class="a4-meta">{'ID %id'|i18n( 'design/admin/class/datatype',, hash( '%id', $attribute.id ) )}</span></td>
     <td data-value="{$attribute.class_name|wash}"><a href={concat( 'class/view/', $attribute.class_id )|ezurl}>{$attribute.class_name|wash}</a></td>
-    <td><ul class="a4-badges">
-        {if $attribute.required}<li class="a4-tag">{'Required'|i18n( 'design/admin/class/datatype' )}</li>{/if}
-        {if $attribute.searchable}<li class="a4-tag">{'Searchable'|i18n( 'design/admin/class/datatype' )}</li>{/if}
-        {if $attribute.translatable}<li class="a4-tag">{'Translatable'|i18n( 'design/admin/class/datatype' )}</li>{/if}
-        {if $attribute.information_collector}<li class="a4-tag">{'Collects information'|i18n( 'design/admin/class/datatype' )}</li>{/if}
-    </ul></td>
+    <td>
+        {if $attribute.required}<span class="a4-tag">{'Required'|i18n( 'design/admin/class/datatype' )}</span>{/if}
+        {if $attribute.searchable}<span class="a4-tag">{'Searchable'|i18n( 'design/admin/class/datatype' )}</span>{/if}
+        {if $attribute.translatable}<span class="a4-tag">{'Translatable'|i18n( 'design/admin/class/datatype' )}</span>{/if}
+        {if $attribute.information_collector}<span class="a4-tag">{'Collects information'|i18n( 'design/admin/class/datatype' )}</span>{/if}
+    </td>
     <td>{if $attribute.settings}{foreach $attribute.settings as $column => $value}<code class="a4-kbd" title="{$value|wash}">{$column|wash}={$value|shorten( 40 )|wash}</code> {/foreach}{else}<span class="a4-muted">{'none'|i18n( 'design/admin/class/datatype' )}</span>{/if}</td>
     <td class="a4-num" data-value="{$attribute.objects}">{$attribute.objects}</td>
     <td class="a4-num" data-value="{$attribute.object_attributes}">{$attribute.object_attributes}</td>
@@ -176,7 +176,7 @@
 <tbody>
 {foreach $datatype_nodes as $node}
 <tr>
-    <th scope="row"><a href={$node.url_alias|ezurl}>{$node.name|wash}</a> <span class="a4-meta">{'Node %id'|i18n( 'design/admin/class/datatype',, hash( '%id', $node.node_id ) )}</span></th>
+    <td><a href={$node.url_alias|ezurl}>{$node.name|wash}</a> <span class="a4-meta">{'Node %id'|i18n( 'design/admin/class/datatype',, hash( '%id', $node.node_id ) )}</span></td>
     <td>{$node.class_name|wash}</td>
     <td>{$node.object.modified|l10n( shortdatetime )}</td>
 </tr>

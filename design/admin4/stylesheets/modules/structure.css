@@ -653,3 +653,5 @@ a.a4-class-top {
 }
 [aria-sort="ascending"] > .a4-class-datatypes-sort::after { content: "\2191"; color: var(--a4-ink); }
 [aria-sort="descending"] > .a4-class-datatypes-sort::after { content: "\2193"; color: var(--a4-ink); }
+/* the flags of a datatype, one line of tags that wraps */
+.a4-class-datatypes-flags { display: inline-flex; flex-wrap: wrap; gap: var(--a4-space-1); }
