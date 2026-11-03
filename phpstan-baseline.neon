@@ -1101,7 +1101,7 @@ parameters:
 		-
 			message: '#^Variable \$code might not be defined\.$#'
 			identifier: variable.undefined
-			count: 9
+			count: 7
 			path: kernel/common/ezurloperator.php
 
 		-
@@ -1197,7 +1197,7 @@ parameters:
 		-
 			message: '#^Variable \$contentObject might not be defined\.$#'
 			identifier: variable.undefined
-			count: 26
+			count: 24
 			path: kernel/content/versionviewframe.php
 
 		-
@@ -1347,7 +1347,7 @@ parameters:
 		-
 			message: '#^Access to an undefined property eZDFSFileHandler\:\:\$metaData\.$#'
 			identifier: property.notFound
-			count: 11
+			count: 8
 			path: kernel/private/classes/clusterfilehandlers/ezdfsfilehandler.php
 
 		-
@@ -1413,7 +1413,7 @@ parameters:
 		-
 			message: '#^Undefined variable\: \$cli$#'
 			identifier: variable.undefined
-			count: 17
+			count: 5
 			path: kernel/private/classes/cronjobs/linkcheck.php
 
 		-
@@ -2295,7 +2295,7 @@ parameters:
 		-
 			message: '#^Undefined variable\: \$Module$#'
 			identifier: variable.undefined
-			count: 6
+			count: 5
 			path: kernel/private/classes/views/content/download.php
 
 		-
@@ -2307,7 +2307,7 @@ parameters:
 		-
 			message: '#^Undefined variable\: \$Result$#'
 			identifier: variable.undefined
-			count: 7
+			count: 6
 			path: kernel/private/classes/views/content/download.php
 
 		-
@@ -2319,7 +2319,7 @@ parameters:
 		-
 			message: '#^Variable \$Result in isset\(\) is never defined\.$#'
 			identifier: isset.variable
-			count: 7
+			count: 6
 			path: kernel/private/classes/views/content/download.php
 
 		-
@@ -2391,7 +2391,7 @@ parameters:
 		-
 			message: '#^Undefined variable\: \$Params$#'
 			identifier: variable.undefined
-			count: 4
+			count: 3
 			path: kernel/private/classes/views/content/keyword.php
 
 		-
@@ -2469,7 +2469,7 @@ parameters:
 		-
 			message: '#^Undefined variable\: \$Params$#'
 			identifier: variable.undefined
-			count: 2
+			count: 1
 			path: kernel/private/classes/views/content/pendinglist.php
 
 		-
@@ -2745,7 +2745,7 @@ parameters:
 		-
 			message: '#^Variable \$Result in isset\(\) always exists and is not nullable\.$#'
 			identifier: isset.variable
-			count: 5
+			count: 2
 			path: kernel/private/classes/views/content/translations.php
 
 		-
@@ -2907,7 +2907,7 @@ parameters:
 		-
 			message: '#^Undefined variable\: \$Params$#'
 			identifier: variable.undefined
-			count: 4
+			count: 3
 			path: kernel/private/classes/views/content/versionview.php
 
 		-
@@ -2955,7 +2955,7 @@ parameters:
 		-
 			message: '#^Undefined variable\: \$Params$#'
 			identifier: variable.undefined
-			count: 11
+			count: 7
 			path: kernel/private/classes/views/error/view.php
 
 		-
@@ -3381,7 +3381,7 @@ parameters:
 		-
 			message: '#^Undefined variable\: \$Params$#'
 			identifier: variable.undefined
-			count: 6
+			count: 4
 			path: kernel/private/classes/views/pdf/edit.php
 
 		-
@@ -3531,7 +3531,7 @@ parameters:
 		-
 			message: '#^Undefined variable\: \$Params$#'
 			identifier: variable.undefined
-			count: 3
+			count: 2
 			path: kernel/private/classes/views/role/view.php
 
 		-
@@ -3861,13 +3861,13 @@ parameters:
 		-
 			message: '#^Undefined variable\: \$Params$#'
 			identifier: variable.undefined
-			count: 5
+			count: 2
 			path: kernel/private/classes/views/setup/extensions.php
 
 		-
 			message: '#^Variable \$Params in isset\(\) is never defined\.$#'
 			identifier: isset.variable
-			count: 3
+			count: 1
 			path: kernel/private/classes/views/setup/extensions.php
 
 		-
@@ -3999,7 +3999,7 @@ parameters:
 		-
 			message: '#^Undefined variable\: \$Params$#'
 			identifier: variable.undefined
-			count: 3
+			count: 2
 			path: kernel/private/classes/views/setup/session.php
 
 		-
@@ -5265,7 +5265,7 @@ parameters:
 		-
 			message: '#^Undefined variable\: \$Result$#'
 			identifier: variable.undefined
-			count: 8
+			count: 7
 			path: kernel/private/classes/views/user/edit.php
 
 		-
@@ -5283,13 +5283,13 @@ parameters:
 		-
 			message: '#^Variable \$Result in isset\(\) is never defined\.$#'
 			identifier: isset.variable
-			count: 8
+			count: 7
 			path: kernel/private/classes/views/user/edit.php
 
 		-
 			message: '#^Undefined variable\: \$Params$#'
 			identifier: variable.undefined
-			count: 2
+			count: 1
 			path: kernel/private/classes/views/user/forgotpassword.php
 
 		-
@@ -5355,7 +5355,7 @@ parameters:
 		-
 			message: '#^Undefined variable\: \$Result$#'
 			identifier: variable.undefined
-			count: 4
+			count: 3
 			path: kernel/private/classes/views/user/password.php
 
 		-
@@ -5367,7 +5367,7 @@ parameters:
 		-
 			message: '#^Variable \$Result in isset\(\) is never defined\.$#'
 			identifier: isset.variable
-			count: 4
+			count: 3
 			path: kernel/private/classes/views/user/password.php
 
 		-
