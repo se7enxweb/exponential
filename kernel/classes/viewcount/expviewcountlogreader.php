@@ -16,7 +16,7 @@
  * - resumed:   the same file (inode and head), at least as long as the offset: read on from the offset.
  * - rotated:   the log was moved away and a new one started (logrotate's create), or copied and emptied
  *              (copytruncate): the rest of the old file is read first when one of RotatedSuffixes[] (access_log.1,
- *              access_log.1.gz, access_log.processed ...) is that file (same inode, or same first line), then the
+ *              access_log.1.gz, access_log.0) is that file (same inode, or same first line), then the
  *              new log from its first line.
  * - truncated: the log is shorter than the offset and no rotated copy was found: the new log from its first line;
  *              what was written between the last run and the truncation is lost, and the report says so.
@@ -38,7 +38,7 @@ class expViewCountLogReader
 
     /**
      * @param string $file the access log
-     * @param string[] $rotatedSuffixes names of the rotated copy, appended to the log's name (.1, .1.gz, .processed)
+     * @param string[] $rotatedSuffixes names of the rotated copy, appended to the log's name (.1, .1.gz, .0)
      * @param int $maxLineLength the longest line read, in bytes
      */
     public function __construct( $file, array $rotatedSuffixes = array( '.1', '.1.gz', '.0' ), $maxLineLength = 65536 )

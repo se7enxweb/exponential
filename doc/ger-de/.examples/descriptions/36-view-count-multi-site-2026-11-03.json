@@ -84,8 +84,8 @@
         "de": "Die gezählten Anfragemethoden. Leer: jede Methode."
     },
     "ini:settings/logfile.ini [ViewCountSettings] RotatedSuffixes": {
-        "en": "The names of a log's rotated copy, appended to its name. After a rotation the rest of the\ncopy is read first, then the new log from its start. A copy is recognized by its inode or its\nfirst line, so a compressed copy (.1.gz) is found too. Example for Plesk: .processed",
-        "de": "Die Namen der rotierten Kopie eines Protokolls, an seinen Namen angehängt. Nach einer Rotation wird\nzuerst der Rest der Kopie gelesen, dann das neue Protokoll von vorn. Eine Kopie wird an ihrer Inode oder\nihrer ersten Zeile erkannt, so wird auch eine komprimierte Kopie (.1.gz) gefunden. Beispiel für Plesk: .processed"
+        "en": "The names of a log's rotated copy, appended to its name. After a rotation the rest of the\ncopy is read first, then the new log from its start. A copy is recognized by its inode or its\nfirst line, so a compressed copy (.1.gz) is found too.",
+        "de": "Die Namen der rotierten Kopie eines Protokolls, an seinen Namen angehängt. Nach einer Rotation wird\nzuerst der Rest der Kopie gelesen, dann das neue Protokoll von vorn. Eine Kopie wird an ihrer Inode oder\nihrer ersten Zeile erkannt, so wird auch eine komprimierte Kopie (.1.gz) gefunden."
     },
     "ini:settings/logfile.ini [ViewCountSettings] SiteAccessList": {
         "en": "Which siteaccesses one run counts. Each reads the access log its own logfile.ini\n[AccessLogFileSettings] names. Empty: only the siteaccess the run is for\n(runcronjobs.php -s <siteaccess>), as the cronjob always did.\nExample: SiteAccessList[]=site",

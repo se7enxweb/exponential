@@ -45,7 +45,7 @@ serve several sites from one database ran into these problems, all of which the 
 | **"/" leaked to the content root.** The home page's hits were looked up as the URL alias "" (empty), and with a `PathPrefix` as "prefix/". | The tree root (node 2) or the prefix's top node got the home page's views, not the page the siteaccess shows at "/". | "/" is the siteaccess's `site.ini [SiteSettings] IndexPage`. |
 | **PathPrefix sites lost hits.** With `PathPrefix[]` set, a path was only looked up with a prefix in front. | Pages outside the prefix (shared folders, `PathPrefixExclude[]`) were never counted. | The prefixes first, then the path as it is; `PathPrefixExclude[]` is respected; the siteaccess's own `PathPrefix` is used when `logfile.ini` names none. |
 | **A shared virtual-host log mixed the sites.** Each siteaccess's run counted every line of the log. | With one Apache log for several siteaccesses (uri matching, `/bold/...`, or several hosts in one `vhost_combined` log) the views of every site were counted for each, so each view was counted several times, and paths were looked up with the wrong siteaccess's prefix and languages. | Lines are given to siteaccesses by the kernel's siteaccess matching, and `Hosts[]` limits a siteaccess to its hosts. |
-| **Rotation lost or doubled lines.** | A log rotated between two runs: the lines written after the last run and before the rotation were never read; with `copytruncate` the new log was searched for a line that was not there. | The rest of the rotated copy (`access_log.1`, `.1.gz`, Plesk's `.processed`) is read first, then the new log from its start. |
+| **Rotation lost or doubled lines.** | A log rotated between two runs: the lines written after the last run and before the rotation were never read; with `copytruncate` the new log was searched for a line that was not there. | The rest of the rotated copy (`access_log.1`, `access_log.1.gz`) is read first, then the new log from its start. |
 | **Everything counted.** | Robots, `POST` requests, `404` and `301` responses, and the redirect and the page it led to were counted alike. | Only `GET` with `200` or `304`, no robots, files or module pages; each rule can be changed or switched off (section 8). |
 
 The cronjob's description also said it would "flush the in-memory view count buffer to the database". There has
@@ -237,9 +237,13 @@ On each run the log is compared with the state:
   the last run and the truncation are lost, and the report warns about it. Run the counter more often than the log
   is rotated, or name the copy in `RotatedSuffixes[]`.
 
-**Plesk** moves the lines of `access_log` and `access_ssl_log` into `access_log.processed` and
-`access_ssl_log.processed` when it builds its statistics, and empties the live log. Either run the counter more
-often than the statistics (hourly is usual), with `RotatedSuffixes[]=.processed`, or read the `.processed` file.
+**Plesk** appends the lines of `access_log` and `access_ssl_log` to `access_log.processed` and
+`access_ssl_log.processed` when it builds its statistics, and empties the live log. The `.processed` file is a
+different file, so it is not a rotated copy of the live log. Read the `.processed` file instead
+(`LogFileName=access_ssl_log.processed`): it only grows, and its own rotated copies (`.processed.1.gz`) are found
+by the default `RotatedSuffixes[]`. The views then arrive after each statistics run. Or read the live log and run
+the counter more often than the statistics run, accepting that the lines between the last run and the
+statistics run are lost.
 
 ## 8. What counts as a page view
 

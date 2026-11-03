@@ -50,7 +50,7 @@ alle:
 | **"/" landete beim Wurzelknoten.** Die Aufrufe der Startseite wurden als URL-Alias "" (leer) gesucht, mit einem `PathPrefix` als "Präfix/". | Der Wurzelknoten (Knoten 2) oder der oberste Knoten des Präfixes bekam die Aufrufe der Startseite, nicht die Seite, die der Siteaccess unter "/" zeigt. | "/" ist die `site.ini [SiteSettings] IndexPage` des Siteaccess. |
 | **Sites mit PathPrefix verloren Aufrufe.** Mit `PathPrefix[]` wurde ein Pfad nur mit Präfix gesucht. | Seiten außerhalb des Präfixes (gemeinsame Ordner, `PathPrefixExclude[]`) wurden nie gezählt. | Erst mit den Präfixen, dann der Pfad, wie er ist; `PathPrefixExclude[]` gilt; nennt `logfile.ini` keinen, wird der `PathPrefix` des Siteaccess genommen. |
 | **Ein gemeinsames Protokoll mischte die Sites.** Der Lauf jedes Siteaccess zählte jede Zeile des Protokolls. | Mit einem Apache-Protokoll für mehrere Siteaccesses (Erkennung nach URI, `/bold/...`, oder mehrere Hosts in einem `vhost_combined`-Protokoll) wurden die Aufrufe jeder Site für jede gezählt, also jeder Aufruf mehrfach, und Pfade mit Präfix und Sprachen des falschen Siteaccess gesucht. | Zeilen gehen nach der Siteaccess-Erkennung des Kernels an die Siteaccesses, und `Hosts[]` beschränkt einen Siteaccess auf seine Hosts. |
-| **Rotation verlor oder verdoppelte Zeilen.** | Wurde ein Protokoll zwischen zwei Läufen rotiert, wurden die Zeilen nach dem letzten Lauf und vor der Rotation nie gelesen; mit `copytruncate` wurde im neuen Protokoll eine Zeile gesucht, die nicht darin stand. | Erst der Rest der rotierten Kopie (`access_log.1`, `.1.gz`, `.processed` von Plesk), dann das neue Protokoll von vorn. |
+| **Rotation verlor oder verdoppelte Zeilen.** | Wurde ein Protokoll zwischen zwei Läufen rotiert, wurden die Zeilen nach dem letzten Lauf und vor der Rotation nie gelesen; mit `copytruncate` wurde im neuen Protokoll eine Zeile gesucht, die nicht darin stand. | Erst der Rest der rotierten Kopie (`access_log.1`, `access_log.1.gz`), dann das neue Protokoll von vorn. |
 | **Alles wurde gezählt.** | Robots, `POST`-Anfragen, Antworten `404` und `301`, die Weiterleitung und die Seite, zu der sie führte, zählten gleich. | Nur `GET` mit `200` oder `304`, keine Robots, Dateien oder Modulseiten; jede Regel lässt sich ändern oder abschalten (Abschnitt 8). |
 
 Die Beschreibung des Cronjobs sprach außerdem davon, einen "Zwischenspeicher der Aufrufe im Speicher in die
@@ -248,10 +248,13 @@ Bei jedem Lauf wird das Protokoll mit dem Zustand verglichen:
   dem letzten Lauf und der Kürzung sind verloren, der Bericht warnt davor. Den Zähler öfter laufen lassen, als das
   Protokoll rotiert wird, oder die Kopie in `RotatedSuffixes[]` nennen.
 
-**Plesk** verschiebt die Zeilen von `access_log` und `access_ssl_log` beim Erstellen seiner Statistik nach
-`access_log.processed` und `access_ssl_log.processed` und leert das laufende Protokoll. Entweder den Zähler öfter als
-die Statistik laufen lassen (stündlich ist üblich), mit `RotatedSuffixes[]=.processed`, oder die
-`.processed`-Datei lesen.
+**Plesk** hängt die Zeilen von `access_log` und `access_ssl_log` beim Erstellen seiner Statistik an
+`access_log.processed` und `access_ssl_log.processed` an und leert das laufende Protokoll. Die `.processed`-Datei ist
+eine andere Datei, also keine rotierte Kopie des laufenden Protokolls. Stattdessen die `.processed`-Datei lesen
+(`LogFileName=access_ssl_log.processed`): Sie wächst nur, und ihre eigenen rotierten Kopien (`.processed.1.gz`)
+findet die Vorgabe von `RotatedSuffixes[]`. Die Aufrufe kommen dann nach jedem Lauf der Statistik an. Oder das
+laufende Protokoll lesen und den Zähler öfter laufen lassen als die Statistik, wobei die Zeilen zwischen dem
+letzten Lauf und dem Lauf der Statistik verloren gehen.
 
 ## 8. Was als Seitenaufruf zählt
 

@@ -5043,7 +5043,7 @@ b8ab63e1bfbcbe0bb41c94a32d04721f  doc/eng-us/examples/ini-settings/layout/print.
 789c2a9f80b7ecdc273c5f8973c1c2c6  doc/eng-us/examples/ini-settings/ldap/README.md
 f2f6c45b8277f2d506775dcd4429eb7c  doc/eng-us/examples/ini-settings/logfile/AccessLogFileSettings.md
 9e8cc11ccbd4172589fc679b44021a3e  doc/eng-us/examples/ini-settings/logfile/README.md
-bb54287331c2fd8a94be37a2bf844c32  doc/eng-us/examples/ini-settings/logfile/ViewCountSettings.md
+c994e203707c3065e714e11fe34797cc  doc/eng-us/examples/ini-settings/logfile/ViewCountSettings.md
 f03012263b6d9ae2a2aec5837698eccd  doc/eng-us/examples/ini-settings/logviewer/ActionSettings.md
 1b84b4270b549b53450ac4c06a06b31e  doc/eng-us/examples/ini-settings/logviewer/DigestSettings.md
 e66d0c048f9271bf98daf1aaa5189307  doc/eng-us/examples/ini-settings/logviewer/HealthSettings.md
@@ -7200,7 +7200,7 @@ fbd762b7a0907f18bac2dcccd44b49ab  doc/eng-us/guides/upgrade-check.md
 f668db27cb3444f6364a9cfbb6fc5b51  doc/eng-us/guides/urls-and-aliases.md
 c0ef983a2b3afe72eea1bf3e56b186a3  doc/eng-us/guides/user-management-from-the-console.md
 3606b85d04c493d11cd7be6e8fe8b999  doc/eng-us/guides/verify-its-you.md
-2cf00a67091ef31748882bd9df694c7e  doc/eng-us/guides/view-count-statistics.md
+041e81212cd3f6adbc8e3f2dcdfa7a23  doc/eng-us/guides/view-count-statistics.md
 952b7b28226e6eff085df210c88d6b08  doc/eng-us/guides/workflows.md
 ba6c6e3806e95b1fc79ffa6020f4bac3  doc/eng-us/guides/your-devices-and-sessions.md
 1ba5ebfde9579e699f5bb0b7c109f23f  doc/eng-us/help/README.md
@@ -13471,7 +13471,7 @@ f3b5d80ee09ab898084c12c09f95ac08  doc/ger-de/.examples/descriptions/32-static-pu
 00b0ea11e32bd8d3d5bbc7c1f4c559ce  doc/ger-de/.examples/descriptions/34-migration-generate-from-diff-2026-11-02.json
 8d1419735c866a444da349c8cf9f480f  doc/ger-de/.examples/descriptions/34-migration-remote-deploy-part3-2026-11-02.json
 f56beaea3e5d700ac7442b6a68d85cc2  doc/ger-de/.examples/descriptions/35-user-management-console-2026-11-02.json
-07ce2335ebfc2da521593adaf9a32611  doc/ger-de/.examples/descriptions/36-view-count-multi-site-2026-11-03.json
+5b57924308d0cf60b8d7c50c8028fb91  doc/ger-de/.examples/descriptions/36-view-count-multi-site-2026-11-03.json
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 84ecf8b47bf44a9a3d53d86b719e8e1b  doc/ger-de/.examples/strings.json
@@ -13579,7 +13579,7 @@ e6b2e42e0fbcb6f71c0d627295536c75  doc/ger-de/anleitungen/pdf-exporte.md
 296d6912eab7b7915cf59b235283ed90  doc/ger-de/anleitungen/rollen-und-richtlinien.md
 e198e604191172c7dfb6193e2b6ba90b  doc/ger-de/anleitungen/rss-feeds.md
 2512e6146acb757c89781c1580f25ba0  doc/ger-de/anleitungen/seiten-cache-mit-litespeed.md
-1274b067a7e57a0428a6075196ec35fd  doc/ger-de/anleitungen/seitenaufrufe-zaehlen.md
+77a1266b9917afd29599811737f1b3ea  doc/ger-de/anleitungen/seitenaufrufe-zaehlen.md
 6c14b68ff14fb3ae5a59c84bb5609cc8  doc/ger-de/anleitungen/sektionen.md
 65397ae907e9925c848b87c52e153223  doc/ger-de/anleitungen/setup-dateien-von-der-konsole.md
 3d68e8329fa2aaef4030a2530bd4e3a1  doc/ger-de/anleitungen/sicherheit-und-audit.md
@@ -15003,7 +15003,7 @@ b3fb892472ea42e9e40f78e4281dc214  doc/ger-de/beispiele/ini-einstellungen/layout/
 2c4afa2674c6643e1e8033f883273a69  doc/ger-de/beispiele/ini-einstellungen/ldap/README.md
 ddfab922d29f6524ddce3befa83a6453  doc/ger-de/beispiele/ini-einstellungen/logfile/AccessLogFileSettings.md
 211f5b8ff3b35dcd6fbc12bc6ba746f6  doc/ger-de/beispiele/ini-einstellungen/logfile/README.md
-55817b054446142681cadf7118f5f31e  doc/ger-de/beispiele/ini-einstellungen/logfile/ViewCountSettings.md
+9dd67961d506cb2711fcdbe69a37273a  doc/ger-de/beispiele/ini-einstellungen/logfile/ViewCountSettings.md
 231ba199b04505e2d7e6ecdd918a545b  doc/ger-de/beispiele/ini-einstellungen/logviewer/ActionSettings.md
 f2899e396825e6c3b1f6ca98f9b7c159  doc/ger-de/beispiele/ini-einstellungen/logviewer/DigestSettings.md
 aaaf6d52478fd4106ba952508e6177cf  doc/ger-de/beispiele/ini-einstellungen/logviewer/HealthSettings.md
@@ -25116,7 +25116,7 @@ daa99869e4d43dc153755b49f868a6af  kernel/classes/user/expusersessionreport.php
 f30b09f0d9113200ff0cc925b2521b56  kernel/classes/vathandlers/ezdefaultvathandler.php
 d1d68bb58820f005cd8714461edd375a  kernel/classes/viewcount/expviewcountconfiguration.php
 044744a8a135b626715f0558caa279b1  kernel/classes/viewcount/expviewcountlogparser.php
-c9ffa7e7d7cb5b7e70fbedfad6b4536b  kernel/classes/viewcount/expviewcountlogreader.php
+8b64fab388fa964671dbe46aad2cd63f  kernel/classes/viewcount/expviewcountlogreader.php
 f4399246f83be73441b7620232388fcf  kernel/classes/viewcount/expviewcountpathresolver.php
 f4e582315d76448bbe6eb7f6e6b8a63a  kernel/classes/viewcount/expviewcountrequestfilter.php
 e842b0b2acda01400ba815c9f45a3348  kernel/classes/viewcount/expviewcountsite.php
@@ -26816,7 +26816,7 @@ d67b9d8070da89d40e422a18fd8d5142  settings/httpcache.ini
 84963915c9c37378e037c332dc8f57f3  settings/kernelservices.ini
 ba31587f56f91488816b2dcd90470594  settings/layout.ini
 ba0c39f06c1735dda504b831ab1f89ef  settings/ldap.ini
-5b407058c8718dd64ecfdd69dae6cb22  settings/logfile.ini
+37bb6d4c91c9a734a3698c4e77926093  settings/logfile.ini
 473463c7f61e8acbcf8e30e022d70c59  settings/logviewer.ini
 f38064dccc9974bbc272bd49a25b4a96  settings/mailpreferences.ini
 c1f0320332dab25bd13faf6ea46c6a74  settings/membermanagement.ini

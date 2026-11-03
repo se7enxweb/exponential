@@ -102,7 +102,7 @@ LockTimeout=60
 
 > Die Namen der rotierten Kopie eines Protokolls, an seinen Namen angehängt. Nach einer Rotation wird  
 > zuerst der Rest der Kopie gelesen, dann das neue Protokoll von vorn. Eine Kopie wird an ihrer Inode oder  
-> ihrer ersten Zeile erkannt, so wird auch eine komprimierte Kopie (.1.gz) gefunden. Beispiel für Plesk: .processed  
+> ihrer ersten Zeile erkannt, so wird auch eine komprimierte Kopie (.1.gz) gefunden.  
 
 Standard: eine Liste mit 3: `.1`, `.1.gz`, `.0`.
 

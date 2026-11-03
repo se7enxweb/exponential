@@ -102,7 +102,7 @@ LockTimeout=60
 
 > The names of a log's rotated copy, appended to its name. After a rotation the rest of the  
 > copy is read first, then the new log from its start. A copy is recognized by its inode or its  
-> first line, so a compressed copy (.1.gz) is found too. Example for Plesk: .processed  
+> first line, so a compressed copy (.1.gz) is found too.  
 
 Default: a list of 3: `.1`, `.1.gz`, `.0`.
 
