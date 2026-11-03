@@ -265,7 +265,7 @@ class expPackageArchiveTest extends PHPUnit\Framework\TestCase
         $code = 'chdir( ' . var_export( $root, true ) . ' ); require "autoload.php";'
               . '$r = eZPackageUploadInspector::inspect( ' . var_export( realpath( $path ), true ) . ', "k1.ezpkg" );'
               . 'echo $r["ok"] ? "ok" : $r["code"];';
-        // display_errors=stderr: on PHP 8.4+ zetacomponents/archive prints deprecations, which belong on stderr and not
+        // display_errors=stderr: on PHP 8.4+ zetacomponents/archive 1.5.1 printed deprecations, which belong on stderr and not
         // in the answer read from stdout (Redmine #16709)
         $process = proc_open( array( PHP_BINARY, '-d', 'max_execution_time=0', '-d', 'display_errors=stderr', '-r', $code ),
                               array( 1 => array( 'pipe', 'w' ), 2 => array( 'pipe', 'w' ) ), $pipes, $root );

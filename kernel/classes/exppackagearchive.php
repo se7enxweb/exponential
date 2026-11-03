@@ -17,7 +17,8 @@
  * files, symbolic links), GNU tar --format=posix and bsdtar, the tar of macOS and the BSDs (ustar with PAX extended
  * headers for long or non-ASCII names and extended attributes).
  *
- * ezcArchive (zetacomponents/archive 1.5.1) cannot be pointed at such archives itself:
+ * ezcArchive (se7enxweb/expcomponents-archive 1.5.2, as zetacomponents/archive 1.5.1) cannot be pointed at such
+ * archives itself:
  * - its GNU header reader (tar/headers/gnu.php) loops for ever on every header whose type is not a digit, except the
  *   GNU long name "L" and long link "K": a PAX header ("x"/"g"), a GNU "D"/"M"/"N"/"S"/"V" header or a regular file
  *   typed "\0" in an archive with the "ustar" magic kept package/upload busy until max_execution_time (measured with
