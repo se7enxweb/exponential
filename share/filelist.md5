@@ -13329,6 +13329,7 @@ f9c1b32a75bd2edbc8184732bf534afa  doc/eng-us/standards/patterns/module-view.md
 aa57a726dc0740993dd6d133be08b6f5  doc/eng-us/standards/patterns/value-object.md
 96f72b089201975aefdf81972c112f5a  doc/eng-us/standards/patterns/workflow-event.md
 bad2519096e06e1dde4533665f591654  doc/eng-us/standards/php-and-composer.md
+e7452bc696f76c42ff4fc3fab577f9dd  doc/eng-us/standards/planned-changes-with-openspec.md
 31a8b4b37b1e81858be9ab41d77db05a  doc/eng-us/standards/privacy.md
 5305ce759b12efd18c5662266a014722  doc/eng-us/standards/security.md
 2267325f3fa45dde68c5c77fc42be96c  doc/eng-us/standards/source-control-and-releases.md
@@ -22599,6 +22600,7 @@ b1ba7030b320a504f1db415d69425f47  doc/ger-de/standards/architektur/kompatibilita
 4ea97756a72cffe60444636fa3cc53f3  doc/ger-de/standards/datenbanken-und-sql.md
 182aa838e35c4d7562910e0049130398  doc/ger-de/standards/datenschutz.md
 169104cdf8d670bcd81533d69c602ca6  doc/ger-de/standards/dokumentation-und-veroeffentlichung.md
+deae20f31b44be32090214187c6b5597  doc/ger-de/standards/geplante-aenderungen-mit-openspec.md
 fa3f046274916cda2ef3f9d4f2556b93  doc/ger-de/standards/internationalisierung.md
 a1beeef720410c50a7f9a68ab86af19b  doc/ger-de/standards/muster/README.md
 daa957fdf17fa8ad8edaa81824b949da  doc/ger-de/standards/muster/active-record.md
