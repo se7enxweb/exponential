@@ -51,7 +51,9 @@ trait expMigrationRunnerEngineChecks
         $ini = eZINI::instance();
         $this->runnerSaved['vardir'] = $ini->variable( 'FileSettings', 'VarDir' );
         $ini->setVariable( 'FileSettings', 'VarDir', $this->runnerDir() . '/var' );
-        unset( $GLOBALS['eZContentLanguageList'], $GLOBALS['eZContentLanguageMask'] );
+        // sections are kept by id and identifier for the process: another test's database may have had other
+        // sections under the same ids
+        unset( $GLOBALS['eZContentLanguageList'], $GLOBALS['eZContentLanguageMask'], $GLOBALS['eZContentSectionObjectCache'] );
         eZDB::setInstance( $db );
         eZModule::setGlobalPathList( eZModule::activeModuleRepositories( false ) );
         expKernelTableSchema::reset();
@@ -69,7 +71,7 @@ trait expMigrationRunnerEngineChecks
                 $GLOBALS['eZDBGlobalInstance'] = $this->runnerSaved['db'][0];
             eZModule::setGlobalPathList( $this->runnerSaved['modules'] );
             eZINI::instance()->setVariable( 'FileSettings', 'VarDir', $this->runnerSaved['vardir'] );
-            unset( $GLOBALS['eZContentLanguageList'], $GLOBALS['eZContentLanguageMask'] );
+            unset( $GLOBALS['eZContentLanguageList'], $GLOBALS['eZContentLanguageMask'], $GLOBALS['eZContentSectionObjectCache'] );
             if ( $this->runnerSaved['access'] === null )
                 unset( $GLOBALS['eZCurrentAccess'], $GLOBALS['eZSearchPlugin_migration_test'] );
             else

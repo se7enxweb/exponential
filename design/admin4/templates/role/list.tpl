@@ -109,7 +109,7 @@
             </ul>
         </div>
         <div class="a4-actions">
-            <a class="a4-btn a4-btn-small" href={concat( '/role/view/', $role_id )|ezurl} aria-describedby="{$card_id}-title">{'View'|i18n( 'design/admin/role/list' )}</a>
+            <a class="a4-btn a4-btn-small" href={concat( '/role/view/', $role_id )|ezurl} aria-describedby="{$card_id}-title" title="{'View'|i18n( 'design/admin/role/list' )|wash}">{'View'|i18n( 'design/admin/role/list' )}</a>
             <a class="a4-btn a4-btn-small" href={concat( '/role/edit/', $role_id )|ezurl} aria-describedby="{$card_id}-title" title="{'Edit the <%role_name> role.'|i18n( 'design/admin/role/list',, hash( '%role_name', $role.name ) )|wash}">{'Edit'|i18n( 'design/admin/role/list' )}</a>
             <a class="a4-btn a4-btn-small" href={concat( '/role/assign/', $role_id )|ezurl} aria-describedby="{$card_id}-title" title="{'Assign the <%role_name> role to a user or a user group.'|i18n( 'design/admin/role/list',, hash( '%role_name', $role.name ) )|wash}">{'Assign'|i18n( 'design/admin/role/list' )}</a>
             <a class="a4-btn a4-btn-small" href={concat( '/role/copy/', $role_id )|ezurl} aria-describedby="{$card_id}-title" title="{'Copy the <%role_name> role.'|i18n( 'design/admin/role/list',, hash( '%role_name', $role.name ) )|wash}">{'Copy'|i18n( 'design/admin/role/list' )}</a>

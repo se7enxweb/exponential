@@ -157,7 +157,7 @@
             </ul>
         </div>
         <div class="a4-actions">
-            <a class="a4-btn a4-btn-small" href={concat( '/url/view/', $url_id )|ezurl} aria-describedby="{$card_id}-title">{'View'|i18n( 'design/admin/url/list' )}</a>
+            <a class="a4-btn a4-btn-small" href={concat( '/url/view/', $url_id )|ezurl} aria-describedby="{$card_id}-title" title="{'View'|i18n( 'design/admin/url/list' )|wash}">{'View'|i18n( 'design/admin/url/list' )}</a>
             <a class="a4-btn a4-btn-small" href={concat( '/url/edit/', $url_id )|ezurl} aria-describedby="{$card_id}-title" title="{'Edit URL.'|i18n( 'design/admin/url/list' )}">{'Edit'|i18n( 'design/admin/url/list' )}</a>
             {* only web, mail and site addresses are made links: never javascript: or data: *}
             {if $check.openable}

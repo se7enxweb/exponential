@@ -119,10 +119,10 @@
         </div>
         <div class="a4-actions">
             {if $info.internal|not}
-            <a class="a4-btn a4-btn-small" href={concat( '/state/group_edit/', $info.identifier )|ezurl} aria-label="{'Edit the group %group'|i18n( 'design/admin/state/groups',, hash( '%group', $info.name ) )|wash}">{'Edit'|i18n( 'design/admin/state/groups' )}</a>
+            <a class="a4-btn a4-btn-small" href={concat( '/state/group_edit/', $info.identifier )|ezurl} aria-label="{'Edit the group %group'|i18n( 'design/admin/state/groups',, hash( '%group', $info.name ) )|wash}" title="{'Edit the group %group'|i18n( 'design/admin/state/groups',, hash( '%group', $info.name ) )|wash}">{'Edit'|i18n( 'design/admin/state/groups' )}</a>
             <label class="a4-pick"><input type="checkbox" name="RemoveIDList[]" value="{$info.id}" data-identifier="{$info.identifier|wash}" /><span>{'Select'|i18n( 'design/admin/state/groups' )}<span class="a4-sr-only"> {$info.name|wash}</span></span></label>
             {/if}
-            <a class="a4-btn a4-btn-small" href={$group_url|ezurl} aria-label="{'Open the group %group'|i18n( 'design/admin/state/groups',, hash( '%group', $info.name ) )|wash}">{'Open'|i18n( 'design/admin/state/groups' )}</a>
+            <a class="a4-btn a4-btn-small" href={$group_url|ezurl} aria-label="{'Open the group %group'|i18n( 'design/admin/state/groups',, hash( '%group', $info.name ) )|wash}" title="{'Open the group %group'|i18n( 'design/admin/state/groups',, hash( '%group', $info.name ) )|wash}">{'Open'|i18n( 'design/admin/state/groups' )}</a>
         </div>
     </div>
 

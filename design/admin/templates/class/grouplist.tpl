@@ -85,27 +85,27 @@
             {/if}
         </div>
         <div class="a4-actions">
-            <a class="a4-btn a4-btn-small" href={concat( $module.functions.classlist.uri, '/', $group.id )|ezurl} aria-describedby="{$card_id}-title">{'Open'|i18n( 'design/admin/class/grouplist' )}</a>
+            <a class="a4-btn a4-btn-small" href={concat( $module.functions.classlist.uri, '/', $group.id )|ezurl} aria-describedby="{$card_id}-title" title="{'Open'|i18n( 'design/admin/class/grouplist' )|wash}">{'Open'|i18n( 'design/admin/class/grouplist' )}</a>
             <a class="a4-btn a4-btn-small" href={concat( $module.functions.groupedit.uri, '/', $group.id )|ezurl} aria-describedby="{$card_id}-title" title="{'Edit the <%class_group_name> class group.'|i18n( 'design/admin/class/grouplist',, hash( '%class_group_name', $group.name ) )|wash}">{'Edit'|i18n( 'design/admin/class/grouplist' )}</a>
         </div>
     </div>
     {if and( $info, $info.class_count|gt( 0 ) )}
-    <p class="a4-card-body">
+    <p class="a4-card-body a4-classgroup-classes">
     {foreach $info.classes as $class}<a class="a4-kbd" href={concat( 'class/view/', $class.id )|ezurl} title="{$class.identifier|wash}">{$class.name|wash} <span class="a4-muted">{$class.objects}</span></a>{/foreach}
     {if $info.more|gt( 0 )}<a href={concat( $module.functions.classlist.uri, '/', $group.id )|ezurl}>{'and %count more'|i18n( 'design/admin/class/grouplist',, hash( '%count', $info.more ) )}</a>{/if}
     </p>
     {/if}
     <dl class="a4-facts">
-        <div>
+        <div class="a4-classgroup-last">
             <dt>{'Last change'|i18n( 'design/admin/class/grouplist' )}</dt>
             <dd>{if $info}{$info.last_modified|l10n( shortdatetime )}{if $info.last_class}<span class="a4-meta">{'class %name'|i18n( 'design/admin/class/grouplist',, hash( '%name', $info.last_class.name|wash ) )}</span>{/if}{else}{$group.modified|l10n( shortdatetime )}{/if}</dd>
         </div>
-        <div>
+        <div class="a4-classgroup-modified">
             <dt>{'Group modified'|i18n( 'design/admin/class/grouplist' )}</dt>
             <dd>{$group.modified|l10n( shortdatetime )}{if $group.modifier.contentobject}<span class="a4-meta">{'by %name'|i18n( 'design/admin/class/grouplist',, hash( '%name', $group.modifier.contentobject.name|wash ) )}</span>{/if}</dd>
         </div>
         {if $info}
-        <div class="a4-field-wide">
+        <div class="a4-field-wide a4-classgroup-removing">
             <dt>{'Removing it'|i18n( 'design/admin/class/grouplist' )}</dt>
             <dd>{if $info.removes|eq( 0 )}{'Removes only the group.'|i18n( 'design/admin/class/grouplist' )}{if $info.shared|gt( 0 )} {'Its %count classes stay in their other groups.'|i18n( 'design/admin/class/grouplist',, hash( '%count', $info.shared ) )}{/if}
                 {else}<strong{if $info.removes_objects|gt( 0 )} class="a4-bad-text"{/if}>{'Removes %classes classes and their %objects objects.'|i18n( 'design/admin/class/grouplist',, hash( '%classes', $info.removes, '%objects', $info.removes_objects ) )}</strong>{if $info.shared|gt( 0 )} {'%count classes stay in their other groups.'|i18n( 'design/admin/class/grouplist',, hash( '%count', $info.shared ) )}{/if}{/if}</dd>

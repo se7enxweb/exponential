@@ -220,6 +220,18 @@ holds exactly one link, whose text is the card's accessible name; never wrap a c
 `tests/tests/design/AdminCardsTest.php` checks the parts and
 that no admin4 card opens with a section head.
 
+Inside `.a4-page` a card list reads as a table: each `li.a4-card` of a `ul.a4-cards` is a row with a rule, zebra and
+hover, the facts of a row are one line ("ID: 2  Policies: 1"), and from 701 px the rows are subgrids of the list,
+so name, buttons and facts line up in columns. The row actions View, Edit, Open, Assign and Copy (`.a4-btn-small`
+found by their link target) are drawn as icon buttons; their text stays for screen readers, and a template gives
+such a button a `title` (its label) as tooltip. Tables (`.a4-table`)
+take the same padding from 601 px, the facts of every card that is not a list row (`.a4-card > dl.a4-facts`, also in
+its `.a4-card-body`) are one line of "Label: value", and the attributes of `class/view` (`ol.a4-cards`) are rows. On
+touch screens the row buttons keep their full size. Left as cards: the sources form of `rss/edit_export`
+(`ul.a4-cards.a4-card-body`) and the action tiles of `user/edit`. The rules are the block "List rows" of
+`components.css`; `tests/tests/design/AdminListRowsTest.php` checks it. A module list that should stay a grid of
+cards uses `.a4-grid` instead of `ul.a4-cards`.
+
 States are `.is-*` classes on the component. Each component is one class plus at most an element or a state, so a
 module rule with one more class always wins.
 
