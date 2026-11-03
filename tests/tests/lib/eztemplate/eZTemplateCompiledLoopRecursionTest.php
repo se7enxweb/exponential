@@ -45,8 +45,11 @@ class eZTemplateCompiledLoopRecursionTest extends PHPUnit\Framework\TestCase
 
     protected function setUp(): void
     {
-        foreach ( array( 'eZTemplateCompilerSettings', 'eZSiteBasics' ) as $name )
+        foreach ( array( 'eZTemplateCompilerSettings', 'eZSiteBasics', 'eZCurrentAccess' ) as $name )
             $this->savedGlobals[$name] = array_key_exists( $name, $GLOBALS ) ? array( $GLOBALS[$name] ) : null;
+        // the compiler reads the current siteaccess (eZExtension::prependSiteAccess()); run alone, no test set it yet
+        if ( !isset( $GLOBALS['eZCurrentAccess']['name'] ) )
+            $GLOBALS['eZCurrentAccess'] = array( 'name' => 'phpunit' );
     }
 
     protected function tearDown(): void
@@ -219,5 +222,37 @@ class eZTemplateCompiledLoopRecursionTest extends PHPUnit\Framework\TestCase
             '{foreach $nodes as $n}{if $n.id|eq(3)}{break}{/if}({$n.id}{if $n.children}{include uri="%self%" nodes=$n.children}{/if}){/foreach}',
             array( 'nodes' => self::tree() ),
             '(1(11))(2)' );
+    }
+    /** LR-05 */
+    public function testWhileAndDoWithASequenceGoOnAfterARecursiveInclude()
+    {
+        $this->assertBothWays( 'while_sequence',
+            '{def $i=0}{while $i|lt(2) sequence array(a,b) as $s}{set $i=$i|inc}[{$s}{$d}.{$i}{if $d|gt(0)}{include uri="%self%" name=sub d=$d|sub(1)}{/if}{$s}]{/while}{undef $i}',
+            array( 'd' => 1 ),
+            '[a1.1[a0.1a][b0.2b]a][b1.2[a0.1a][b0.2b]b]' );
+
+        $this->assertBothWays( 'do_sequence',
+            '{def $i=0}{do}{set $i=$i|inc}[{$s}{$d}.{$i}{if $d|gt(0)}{include uri="%self%" name=sub d=$d|sub(1)}{/if}{$s}]{/do while $i|lt(2) sequence array(a,b) as $s}{undef $i}',
+            array( 'd' => 1 ),
+            '[a1.1[a0.1a][b0.2b]a][b1.2[a0.1a][b0.2b]b]' );
+    }
+
+    /** LR-06 */
+    public function testSectionContinueSkipAndNestedLoopsInRecursion()
+    {
+        $this->assertBothWays( 'section_tree',
+            '{section var=n loop=$nodes sequence=array(a,b)}({$n.sequence}{$n.item.id}{section show=$n.item.children|count}{include uri="%self%" name=sub nodes=$n.item.children}{/section}){delimiter},{/delimiter}{/section}',
+            array( 'nodes' => self::tree() ),
+            '(a1(a11)),(b2),(a3)' );
+
+        $this->assertBothWays( 'foreach_continue_skip',
+            '{foreach $nodes as $n}{delimiter};{/delimiter}{if $n.id|eq(2)}{skip}{/if}{if $n.id|eq(11)}{continue}{/if}({$n.id}{if $n.children}{include uri="%self%" nodes=$n.children}{/if}){/foreach}',
+            array( 'nodes' => self::tree() ),
+            '(1);(3)' );
+
+        $this->assertBothWays( 'nested_loops',
+            '{foreach $nodes as $n}{for 1 to 2 as $j}<{$n.id}.{$j}{if and( $n.children, $j|eq(1) )}{include uri="%self%" nodes=$n.children}{/if}>{/for}{/foreach}',
+            array( 'nodes' => self::tree() ),
+            '<1.1<11.1><11.2>><11.2><2.1><2.2><3.1><3.2>' );
     }
 }

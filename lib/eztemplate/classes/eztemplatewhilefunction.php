@@ -88,6 +88,8 @@ class eZTemplateWhileFunction
                                             $node, $tpl, $privateData );
 
 
+        // a template that includes itself runs this code again in the same scope: keep the sequence of the loop outside
+        $loop->saveSequenceState();
         $loop->initVars();
 
         // loop header
@@ -103,7 +105,8 @@ class eZTemplateWhileFunction
         $newNodes[] = eZTemplateNodeTool::createSpacingDecreaseNode();
         $newNodes[] = eZTemplateNodeTool::createCodePieceNode( "} // end of while\n" );
         $newNodes[] = eZTemplateNodeTool::createVariableUnsetNode( 'while_cond' );
-        $loop->cleanup();
+        $loop->cleanup( false );
+        $loop->restoreSequenceState();
 
         return $newNodes;
     }
