@@ -28790,7 +28790,7 @@ d82f876705fd85722ea8409d0cd97fe7  tests/tests/kernel/classes/expVelocityStopRest
 805242b566e7eb9a4614ce5c30430c32  tests/tests/kernel/classes/expVelocityWatchdogTest.php
 343c0121d4e5e9a067c7b31b5e462c9c  tests/tests/kernel/classes/expViewAccessTest.php
 0745ffa213053f2a3bc03b9a9fbb664e  tests/tests/kernel/classes/expViewParametersTest.php
-ede6f8e1cfe9c914d8726d33cea69a51  tests/tests/kernel/classes/expWebsiteSidebarMigrationTest.php
+37fac8f6b6a048c837ab0cd2794e4b71  tests/tests/kernel/classes/expWebsiteSidebarMigrationTest.php
 eb6e31ad5a2ad5e5836bdcb781fb7114  tests/tests/kernel/classes/extensions/cycle1/extension.xml
 b03633d619dfa27944eb552972d7f02d  tests/tests/kernel/classes/extensions/cycle2/extension.xml
 d471fa62de2a662dc597fb5efeadea08  tests/tests/kernel/classes/extensions/ezdepextends/extension.xml
@@ -28957,10 +28957,10 @@ dbad215ad097aff57e0bddc36e0c7490  tests/tests/kernel/classes/installationdetails
 8f8998af3c997ce3a3d6aab9b9d34546  tests/tests/kernel/classes/mail/expTipafriendSenderTest.php
 dcf6a5bc8e3672ab612c608c9b5889cd  tests/tests/kernel/classes/mail/ezpMailMessageIdTest.php
 17c6e15eb8a89ffd85735f8869cd3230  tests/tests/kernel/classes/mailpreferences/MailPreferencesBounceListenersTest.php
-5ef8398c5a73166cc9b378939785f767  tests/tests/kernel/classes/mailpreferences/MailPreferencesComplianceTest.php
+625c290c07f00ba4ab6abf1319359699  tests/tests/kernel/classes/mailpreferences/MailPreferencesComplianceTest.php
 2f822c747ee500c52e11a684ba179b93  tests/tests/kernel/classes/mailpreferences/MailPreferencesCoreTest.php
 92bc51bc90e4c48c02a0f44e7ed39967  tests/tests/kernel/classes/mailpreferences/MailPreferencesErasedHookTest.php
-e5746cfd23a62c1e4c51e0251915905f  tests/tests/kernel/classes/mailpreferences/MailPreferencesHardeningTest.php
+65c456df869871f17aa0fbbc5ff7fb4d  tests/tests/kernel/classes/mailpreferences/MailPreferencesHardeningTest.php
 e64dd65b236fc4df743574d9b23c4fbd  tests/tests/kernel/classes/mailpreferences/MailPreferencesIntegrationTest.php
 a2b6b96ff712d7635f41e8bb767ad9fb  tests/tests/kernel/classes/mailpreferences/fixtures/bounces/arf-abuse.eml
 b215629ca5ab35b162179fd00ad103f9  tests/tests/kernel/classes/mailpreferences/fixtures/bounces/arf-headers-only.eml
@@ -29319,7 +29319,7 @@ ba297fd7b466944dcca37e13ae49d2c9  tests/tests/kernel/classes/urlalias/eZURLWildc
 7e8979ec7c2967331ab2ddfc77456f27  tests/tests/kernel/classes/urlaliasml_regression.php
 460ddd4a97aee2a64e9e1f94070a929d  tests/tests/kernel/classes/urlaliasml_test.php
 e3c634109dba0b45dfcd1f31ffb83236  tests/tests/kernel/classes/user/eZForgotPasswordExpiryTest.php
-7f236a736bd9a5bde40e3c0855fa0a78  tests/tests/kernel/classes/user/expDemoModeTest.php
+8cb08e23292a6ce4c3303f96742b2e5c  tests/tests/kernel/classes/user/expDemoModeTest.php
 e7b7cc4719c3f900b5c6b802d9741e3a  tests/tests/kernel/classes/user/expLastSeenWhileDatabaseBusyTest.php
 68d5ee71998ad0e0392789957f1afc1b  tests/tests/kernel/classes/user/expPasswordChangeRequiredTest.php
 ce0dccf22b28774e6e7caacfac27098c  tests/tests/kernel/classes/user/expPasswordPolicyTest.php
@@ -29958,7 +29958,7 @@ cd9b15cbda2d7cf4ab918f89745c1f86  tests/tests/lib/ezutils/eZURITransformURINullT
 d9f91ce895a838c5d845e011fdaf82c7  tests/tests/lib/ezutils/expDebugBarReportPanelHeightTest.php
 38dd51e326a256aba5d8a3f7cbea1eab  tests/tests/lib/ezutils/expDebugBarReportRuntimeChipsTest.php
 e7567a0d6f534116016f9712c33add70  tests/tests/lib/ezutils/expDebugBarReportToolbarThemeTest.php
-837fe39430fd90c8f42800cfe3751a51  tests/tests/lib/ezutils/expDebugOffHeaderTest.php
+cd9240b4ea8d59125f761af07ac41ae5  tests/tests/lib/ezutils/expDebugOffHeaderTest.php
 5c2924a59ad2748766f3ab2a5999fa7b  tests/tests/lib/ezutils/expDebugReportNoInlineCssTest.php
 e81fa7dbd78e2bb8974da3c6c02d5576  tests/tests/lib/ezutils/ezdebug_regression.php
 897872a57e5e48097870daee42b04d7b  tests/tests/lib/ezutils/ezhttptool_regression.php
