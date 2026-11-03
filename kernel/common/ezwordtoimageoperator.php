@@ -265,21 +265,19 @@ class eZWordToImageOperator
                         // overrides of every extension too. One this theme does not have is left out, so the theme's
                         // Default is used instead of an address that is not there (the content tree builds its icon
                         // URLs from this map). Checked once per theme list; the answer is kept below.
+                        // The theme's own mapping of that key, from its icon.ini alone, takes the place of the
+                        // override when the theme has its file, so a class the theme maps keeps its icon.
                         if ( $sizePathList )
                         {
                             $sizePaths = array_unique( $sizePathList );
                             foreach ( $map as $key => $file )
                             {
-                                $found = false;
-                                foreach ( $sizePaths as $sizePath )
-                                {
-                                    if ( is_file( $siteDir . $themePath . '/' . $sizePath . '/' . $file ) )
-                                    {
-                                        $found = true;
-                                        break;
-                                    }
-                                }
-                                if ( !$found )
+                                if ( self::themeHasFile( $siteDir . $themePath, $sizePaths, $file ) )
+                                    continue;
+                                $own = self::themeOwnMap( $themePath, $configGroup, $mapName );
+                                if ( isset( $own[$key] ) && self::themeHasFile( $siteDir . $themePath, $sizePaths, $own[$key] ) )
+                                    $map[$key] = $own[$key];
+                                else
                                     unset( $map[$key] );
                             }
                         }
@@ -558,35 +556,36 @@ class eZWordToImageOperator
                             $height = (int)substr( $size, $xDivider + 1 );
                         }
 
+                        $themePath = $repository . '/' . $theme;
                         if ( $operatorName == 'mimetype_icon' )
                         {
                             $icon = $this->iconGroupMapping( $ini, $themeINI,
                                                              'MimeIcons', 'MimeMap',
-                                                             strtolower( $operatorValue ) );
+                                                             strtolower( $operatorValue ), $siteDir, $themePath, $sizePath );
                         }
                         else if ( $operatorName == 'class_icon' )
                         {
                             $icon = $this->iconDirectMapping( $ini, $themeINI,
                                                               'ClassIcons', 'ClassMap',
-                                                              strtolower( $operatorValue ) );
+                                                              strtolower( $operatorValue ), $siteDir, $themePath, $sizePath );
                         }
                         else if ( $operatorName == 'classgroup_icon' )
                         {
                             $icon = $this->iconDirectMapping( $ini, $themeINI,
                                                               'ClassGroupIcons', 'ClassGroupMap',
-                                                              strtolower( $operatorValue ) );
+                                                              strtolower( $operatorValue ), $siteDir, $themePath, $sizePath );
                         }
                         else if ( $operatorName == 'action_icon' )
                         {
                             $icon = $this->iconDirectMapping( $ini, $themeINI,
                                                               'ActionIcons', 'ActionMap',
-                                                              strtolower( $operatorValue ) );
+                                                              strtolower( $operatorValue ), $siteDir, $themePath, $sizePath );
                         }
                         else if ( $operatorName == 'icon' )
                         {
                             $icon = $this->iconDirectMapping( $ini, $themeINI,
                                                               'Icons', 'IconMap',
-                                                              strtolower( $operatorValue ) );
+                                                              strtolower( $operatorValue ), $siteDir, $themePath, $sizePath );
                         }
 
                         $filesystemIconPath = $siteDir . $repository . '/' . $theme . '/' . $sizePath . '/' . $icon;
@@ -689,7 +688,7 @@ class eZWordToImageOperator
 
      \sa iconGroupMapping
     */
-    function iconDirectMapping( &$ini, &$themeINI, $iniGroup, $mapName, $matchItem )
+    function iconDirectMapping( &$ini, &$themeINI, $iniGroup, $mapName, $matchItem, $siteDir = false, $themePath = false, $sizePath = false )
     {
         $map = array();
 
@@ -710,6 +709,7 @@ class eZWordToImageOperator
         if ( isset( $map[$matchItem] ) )
         {
             $icon = $map[$matchItem];
+            $icon = self::themeOwnIcon( $icon, $siteDir, $themePath, $sizePath, $iniGroup, $mapName, array( $matchItem ) );
         }
         if ( $icon === false )
         {
@@ -738,7 +738,7 @@ class eZWordToImageOperator
 
      \sa iconDirectMapping
     */
-    function iconGroupMapping( &$ini, &$themeINI, $iniGroup, $mapName, $matchItem )
+    function iconGroupMapping( &$ini, &$themeINI, $iniGroup, $mapName, $matchItem, $siteDir = false, $themePath = false, $sizePath = false )
     {
         $map = array();
 
@@ -774,6 +774,14 @@ class eZWordToImageOperator
                 }
             }
         }
+        if ( $icon !== false )
+        {
+            $keys = array( $matchItem );
+            $pos = strpos( $matchItem, '/' );
+            if ( $pos !== false )
+                $keys[] = substr( $matchItem, 0, $pos );
+            $icon = self::themeOwnIcon( $icon, $siteDir, $themePath, $sizePath, $iniGroup, $mapName, $keys );
+        }
 
         // No icon? If so use default
         if ( $icon === false )
@@ -784,6 +792,62 @@ class eZWordToImageOperator
                 $icon = $ini->variable( $iniGroup, 'Default' );
         }
         return $icon;
+    }
+
+    /**
+     * The icon a theme has for one of $keys when the mapped $icon is not a file of that theme. A mapping names a file
+     * of the theme it was written for: an extension's ClassMap[]=filesystems/folder.png is a crystal path and, read as
+     * an override, it replaced the theme's own mapping of that key everywhere. Under another theme (bootstrap-icons
+     * in admin4) the class then lost its icon. Without a theme path (an old caller) $icon is returned as it is.
+     *
+     * @return string|false
+     */
+    static function themeOwnIcon( $icon, $siteDir, $themePath, $sizePath, $iniGroup, $mapName, array $keys )
+    {
+        if ( $themePath === false || $icon === false || self::themeHasFile( $siteDir . $themePath, array( $sizePath ), $icon ) )
+            return $icon;
+        $own = self::themeOwnMap( $themePath, $iniGroup, $mapName );
+        foreach ( $keys as $key )
+        {
+            if ( isset( $own[$key] ) && self::themeHasFile( $siteDir . $themePath, array( $sizePath ), $own[$key] ) )
+                return $own[$key];
+        }
+        return $icon;
+    }
+
+    /**
+     * The map of $iniGroup/$mapName in the theme's own icon.ini, without the icon.ini overrides of the settings and
+     * the extensions that eZINI::instance() adds to it. $themePath is relative to the installation (repository/theme),
+     * as eZINI::instance( 'icon.ini', $themePath ) reads it above: eZINI reads no absolute directory (measured: an
+     * absolute path gives an empty file). Read once per theme and process.
+     *
+     * @return array
+     */
+    static function themeOwnMap( $themePath, $iniGroup, $mapName )
+    {
+        static $inis = array();
+        if ( !isset( $inis[$themePath] ) )
+            $inis[$themePath] = new eZINI( 'icon.ini', $themePath, null, false, false, true );
+        $themeINI = $inis[$themePath];
+        if ( !$themeINI->hasVariable( $iniGroup, $mapName ) )
+            return array();
+        $map = $themeINI->variable( $iniGroup, $mapName );
+        return is_array( $map ) ? $map : array();
+    }
+
+    /**
+     * Whether $file is in one of the size directories of the theme.
+     */
+    static function themeHasFile( $themeDir, array $sizePaths, $file )
+    {
+        if ( !is_string( $file ) || $file === '' )
+            return false;
+        foreach ( $sizePaths as $sizePath )
+        {
+            if ( is_file( $themeDir . '/' . $sizePath . '/' . $file ) )
+                return true;
+        }
+        return false;
     }
 
     /// \privatesection
