@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Wodia nu le axa sia ɖeka dzi ko: %from va se ɖe %to le %count me.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Dzime kple tsɔtsɔkpewo ƒe nyatakaka ƒomevi ɖesiaɖe, kple alesi hatsotsoawo kple nyatia zãnɛ.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Nyatakaka ƒomeviwo</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ Nyabiala: Womaɖe agbawo ɖa le ɖoɖoɖi me o.</translation>
     <message>
         <source>Static publishing</source>
         <translation>Ɖeɖe ɖe dutoƒo si metrɔna o</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Nyatakaka ƒomeviwo</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Dzime kple tsɔtsɔkpewo ƒe nyatakaka ƒomevi ɖesiaɖe, kple alesi hatsotsoawo kple nyatia zãnɛ.</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ be nàna wò akɔnta nawɔ dɔ.</translation>
         <source>Copy of %class_name</source>
         <translation>%class_name ƒe kɔpi</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Nyatakaka ƒomeviwo</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Nyatakaka ƒomevi %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85028,6 +85052,397 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>%site ye ɖo agbalẽ sia ɖe esi migration.ini [RemoteSettings] Notify[] bia be woaɖoe ta.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Nyatakaka ƒomeviwo (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>Woxlẽe le %time, agaxlẽe le aɖabaƒoƒo %minutes megbe</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Nyatakaka ƒomevi dzraa hatsotso ƒe atribiut ƒe asixɔxɔ ƒomevi ɖeka ɖo eye wòtrɔnɛ: nuŋɔŋlɔ fli ɖeka, nɔnɔmetata ɖeka, kadodo ɖeka. Dzime naa wo dometɔ akpa gãtɔ, tsɔtsɔkpewo tsɔa bubuwo kpena ɖe eŋu. Wo katã le afi sia, ame si naa wo kple alesi gbegbe nyatia zãa wo. Nyatakaka ƒomevi si nyatakakadzraɖoƒe zãna gake naneke megaŋlɔa eŋkɔ o la gblẽa nyati si me wòle.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Hatsotso ƒuƒoƒowo</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Gaxlẽe fifia le esi teƒe nàzã aɖabaƒoƒo mamlɛawo ƒe xexlẽme.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Gaxlẽe</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Nuƒoƒo kpuie</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Woŋlɔ ŋkɔ</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>Le dɔ wɔm</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Womezãe o</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Tsɔtsɔkpe siwo naa nyatakaka ƒomeviwo</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Hatsotso ƒe atribiutwo</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Nu ƒe atribiutwo</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Womeŋlɔ eŋkɔ o</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>Ele xexlẽdzesiwo me, faɛl mele eme o</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>Wozãa nyatakaka ƒomevi %count gake womeŋlɔ woƒe ŋkɔ o</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>Hatsotso ƒe atribiut %class_attributes kple nu ƒe atribiut %object_attributes ƒe nyatakaka ƒomevi nye esi tsɔtsɔkpe alo ɖoɖo aɖeke meŋlɔ eŋkɔ o. Womate ŋu aɖe woƒe nuwo afia, atrɔ wo alo aɖe wo ɖe go o. Na tsɔtsɔkpe si naa nyatakaka ƒomevi la nawɔ dɔ, alo trɔ hatsotso la.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Ɖe esiawo ɖeɖe ko fia</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Di nyatakaka ƒomevi</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Dzesi, ŋkɔ, PHP hatsotso alo tsɔtsɔkpe.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Fia</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Wo katã</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Ame si naa</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Ame sia ame</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Dzime</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Nyatakaka ƒomevi aɖeke mewɔ ɖeka kple tiatia sia o.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Fia wo katã</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Tsɔtsɔkpe</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown le nyatakaka ƒomevi %count dome, %used le zãzã me</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>Hatsotso alo nu ƒe atribiut siwo ƒe nyatakaka ƒomevi nye esiawo le nyatakakadzraɖoƒe la me, gake content.ini meŋlɔ wo dometɔ aɖeke o, alo woƒe faɛl mele eme o.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>%provider ƒe nyatakaka ƒomeviwo</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Nyatakaka ƒomevi</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>PHP hatsotso kple faɛl</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Hatsotsowo</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Nuwo</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Dzesiwo</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>naneke</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Nyatakaka ƒomevi aɖeke mewɔ ɖeka kple didi la o. Tutu didi la ɖa.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>Wofia nyatakaka ƒomevi %shown le %count dome</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Nyatakaka ƒomevi siwo wofia: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Ɖo ɖe ɖoɖo nu le %column nu</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>Woxlẽe le %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Nyatakaka ƒomeviwo katã</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Kpekpeɖeŋu axa</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Wozãa nyatakaka ƒomevi sia gake womeŋlɔ eŋkɔ o</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Womate ŋu aɖe hatsotso siwo le ete ƒe nuwo afia, atrɔ wo alo aɖe wo ɖe go o ne tsɔtsɔkpe aɖeke meŋlɔ nyatakaka ƒomevi la ƒe ŋkɔ o. Na tsɔtsɔkpe si naa enae nawɔ dɔ eye nàtsɔe akpe ɖe content.ini [DataTypeSettings] AvailableDataTypes[] ŋu, alo trɔ hatsotsoawo.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini ŋlɔ nyatakaka ƒomevi sia, gake eƒe faɛl mele nyatakaka ƒomevi ƒe agbalẽɖoƒe aɖeke me o. Naneke mezãnɛ o; ɖee ɖa le AvailableDataTypes[] me alo na eƒe tsɔtsɔkpe nawɔ dɔ.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Le nyatakaka ƒomevi sia ŋu</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Dzesidenu</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Ŋkɔ</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Tsɔtsɔkpe %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>ame aɖeke o</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP hatsotso</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Faɛl</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>Le AvailableDataTypes[] me</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ɛ̃</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ao</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Eƒe asixɔxɔ ƒe kɔlɔmwo</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Eƒe hatsotso ƒe atribiut ɖoɖowo ƒe kɔlɔmwo</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Kplɔ̃wo</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Wokpɔ kɔlɔmwo kple taɓlewo to nyatakaka ƒomevi la ƒe kɔd xexlẽ me: mɔfiame, menye ŋugbedodo o.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Kpɔɖeŋuwo</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Nyatakakaɖoƒe ƒe mɔnu</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Kpɔɖeŋu</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Wokpɔe le</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>dɔdzikpɔƒe sia</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>nyatakakaɖoƒe si woɖo ɖi</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Overrides manɔmee: override kpɔɖeŋu si sɔ kple hatsotso alo atribiut la ɖua esiawo dzi.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Hatsotso siwo zãe (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Hatsotso aɖeke mele esi atribiut si ƒe nyatakaka ƒomevi nye esia o.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Hatsotso</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Atribiutwo</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Hatsotso ƒe atribiutwo (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Atribiut</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Ɖoɖowo</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Hiã</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Wodi nu le eme</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Woate ŋu aɖe gbegɔme</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Ƒoa nyatakaka ƒu</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Nyati aɖewo siwo zãe</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Esi wotrɔ mlɔeba gbã</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Wotrɔ asi le eŋu</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Kadodoƒe %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Gɔmeɖeɖe ɖesiaɖe ƒe asixɔxɔ nye eya ŋutɔ tɔ.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>Didi la ŋlɔa eƒe asixɔxɔwo ɖe ɖoɖo me.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Ate ŋu aƒo nyatakakawo nu ƒu tso amedzrowo gbɔ (fɔmwo).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Woate ŋu aɖo xexlẽdzesiwo ɖe ɖoɖo nu le eƒe nu: ɖoɖo ƒe safui %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Woate ŋu aɖo ɖe ɖoɖo nu</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Eƒe asixɔxɔwo fia nu bubuwo.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Ƒomedodowo</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Woate ŋu atsɔ nuŋɔŋlɔ bɔbɔe ayɔe (import, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Tso nuŋɔŋlɔ me</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Woate ŋu atsɔ faɛl ayɔe.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Tso faɛl me</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Eƒe hatsotso ƒe atribiut ɖoɖowo yia agbawo me.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Agbawo</translation>
     </message>
 </context>
 </TS>

@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Hanya halaman ini yang dicari: %from sampai %to dari %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Setiap tipe data dari inti dan ekstensi, serta cara kelas dan konten memakainya.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Tipe data</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ Catatan: Paket tidak akan dicopot.</translation>
     <message>
         <source>Static publishing</source>
         <translation>Penerbitan statis</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Tipe data</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Setiap tipe data dari inti dan ekstensi, serta cara kelas dan konten memakainya.</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ akun Anda.</translation>
         <source>Copy of %class_name</source>
         <translation>Salinan %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Tipe data</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Tipe data %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85028,6 +85052,397 @@ Anda perlu mengubah kelas simpul tersebut menggunakan fungsi tukar.</translation
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Surel ini dikirim oleh %site karena migration.ini [RemoteSettings] Notify[] memintanya.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Tipe data (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>Dihitung %time, lagi setelah %minutes menit</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Tipe data menyimpan dan menyunting satu jenis nilai atribut kelas: baris teks, gambar, relasi. Sebagian besar disediakan oleh inti, ekstensi menambahkan lainnya. Berikut semuanya, siapa yang menyediakannya dan seberapa banyak konten yang memakainya. Tipe data yang dipakai basis data tetapi tidak lagi didaftarkan oleh apa pun merusak konten yang memilikinya.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Grup kelas</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Hitung ulang sekarang alih-alih memakai hitungan beberapa menit terakhir.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Hitung ulang</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Ikhtisar</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Terdaftar</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>Sedang digunakan</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Tidak digunakan</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Ekstensi yang menyediakan tipe data</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Atribut kelas</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Atribut objek</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Tidak terdaftar</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>Tercantum, berkas hilang</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count tipe data dipakai tetapi tidak terdaftar</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes atribut kelas dan %object_attributes atribut objek memiliki tipe data yang tidak didaftarkan oleh ekstensi atau pengaturan mana pun. Objeknya tidak dapat ditampilkan, disunting, atau diterbitkan. Aktifkan ekstensi yang menyediakan tipe data tersebut, atau ubah kelasnya.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Tampilkan hanya ini</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Cari tipe data</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Pengenal, nama, kelas PHP, atau ekstensi.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Tampilkan</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Semua</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Disediakan oleh</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Semua orang</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Inti</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Tidak ada tipe data yang cocok dengan filter ini.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Tampilkan semua</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Ekstensi</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown dari %count tipe data, %used dipakai</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>Basis data memiliki atribut kelas atau objek dengan tipe data ini, tetapi content.ini tidak mencantumkan satu pun, atau berkasnya hilang.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>Tipe data dari %provider</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Tipe data</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>Kelas PHP dan berkas</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Kelas</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Objek</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Penanda sifat</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>tidak ada</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Tidak ada tipe data yang cocok dengan pencarian. Hapus pencarian.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%shown dari %count tipe data ditampilkan</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Tipe data ditampilkan: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Urutkan menurut %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>Dihitung %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Semua tipe data</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Halaman bantuan</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Tipe data ini dipakai tetapi tidak terdaftar</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Objek dari kelas di bawah ini tidak dapat ditampilkan, disunting, atau diterbitkan selama tidak ada ekstensi yang mendaftarkan tipe data tersebut. Aktifkan ekstensi yang menyediakannya dan tambahkan ke content.ini [DataTypeSettings] AvailableDataTypes[], atau ubah kelasnya.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini mencantumkan tipe data ini, tetapi tidak ada direktori tipe data yang memiliki berkasnya. Tidak ada yang memakainya; hapus dari AvailableDataTypes[] atau aktifkan ekstensinya.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Tentang tipe data ini</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Pengenal</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nama</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Ekstensi %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>tidak ada</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>Kelas PHP</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Berkas</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>Di AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ya</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>tidak</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Kolom nilainya</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Kolom pengaturan atribut kelasnya</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Tabel</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Kolom dan tabel ditemukan dengan membaca kode tipe data: sebagai panduan, bukan jaminan.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Templat</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Akses situs</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Templat</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Ditemukan di</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>administrasi ini</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>situs bawaan</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Tanpa override: templat override yang cocok berdasarkan kelas atau atribut lebih diutamakan daripada ini.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Kelas yang memakainya (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Tidak ada kelas yang memiliki atribut dengan tipe data ini.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Kelas</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Atribut</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Atribut kelas (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Atribut</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Pengaturan</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Wajib</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Dapat dicari</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Dapat diterjemahkan</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Mengumpulkan informasi</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Beberapa konten yang memakainya</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Terakhir diubah lebih dulu</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Diubah</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Simpul %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Setiap terjemahan memiliki nilainya sendiri.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>Pencarian mengindeks nilainya.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Dapat mengumpulkan informasi dari pengunjung (formulir).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Daftar dapat diurutkan berdasarkan ini: kunci urut %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Dapat diurutkan</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Nilainya merujuk ke objek lain.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Relasi</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Dapat diisi dari string biasa (impor, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Dari teks</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Dapat diisi dari berkas.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Dari berkas</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Pengaturan atribut kelasnya disertakan dalam paket.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Paket</translation>
     </message>
 </context>
 </TS>

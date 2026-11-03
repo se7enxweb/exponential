@@ -982,6 +982,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15418,6 +15426,14 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Static publishing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -55238,6 +55254,14 @@ your account.</source>
         <source>Copy of %class_name</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -84849,6 +84873,397 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Packages</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

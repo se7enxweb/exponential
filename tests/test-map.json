@@ -3050,6 +3050,30 @@
     ],
     "lib/eztemplate/classes/eztemplateincludefunction.php": [
       "tests/tests/lib/eztemplate/eZTemplateCompiledLoopRecursionTest.php"
+    ],
+    "kernel/classes/expdatatypeinventory.php": [
+      "tests/tests/kernel/classes/expDataTypeInventoryTest.php",
+      "tests/tests/kernel/classes/expDataTypeInventorySqliteTest.php"
+    ],
+    "kernel/private/classes/views/class/datatype.php": [
+      "tests/tests/kernel/classes/expDataTypeInventoryTest.php",
+      "tests/tests/kernel/classes/expDataTypeInventorySqliteTest.php"
+    ],
+    "kernel/class/datatype.php": [
+      "tests/tests/kernel/classes/expDataTypeInventoryTest.php",
+      "tests/tests/kernel/classes/expDataTypeInventorySqliteTest.php"
+    ],
+    "kernel/class/module.php": [
+      "tests/tests/kernel/classes/expDataTypeInventoryTest.php",
+      "tests/tests/kernel/classes/expDataTypeInventorySqliteTest.php"
+    ],
+    "design/admin*/templates/class/datatype_*.tpl": [
+      "tests/tests/design/AdminStylingRulesTest.php",
+      "tests/tests/design/TranslationFilesValidTest.php"
+    ],
+    "design/admin*/javascript/page/class_datatypes.js": [
+      "tests/tests/design/AdminStylingRulesTest.php",
+      "tests/tests/design/TranslationFilesValidTest.php"
     ]
   },
   "generated": {

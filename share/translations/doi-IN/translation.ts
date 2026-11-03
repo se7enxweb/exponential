@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>सिर्फ एह् सफा खोजेआ जंदा ऐ: %count च %from थमां %to तक।</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>कर्नल ते एक्सटेंशनें दा हर डेटा-टाइप, ते क्लासां ते सामग्री इसगी किस चाल्ली बरतदियां न।</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>डेटा-टाइप</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Static publishing</source>
         <translation>स्टैटिक प्रकाशन</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>डेटा-टाइप</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>कर्नल ते एक्सटेंशनें दा हर डेटा-टाइप, ते क्लासां ते सामग्री इसगी किस चाल्ली बरतदियां न।</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ your account.</source>
         <source>Copy of %class_name</source>
         <translation>%class_name दी कापी</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>डेटा-टाइप</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>डेटा-टाइप %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85028,6 +85052,397 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>एह मेल %site ने भेजी ऐ कीजे migration.ini [RemoteSettings] Notify[] इसदी मंग करदा ऐ।</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>डेटा-टाइप (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>%time गी गिनेआ, %minutes मिंटें बाद फ्ही</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>डेटा-टाइप क्लास गुण दी इक किस्म दी वैल्यू गी स्टोर ते एडिट करदा ऐ: इक टैक्स्ट लाइन, इक तस्वीर, इक रिश्ता। कर्नल इंदे चा मते सारे दिंदा ऐ, एक्सटेंशन होर जोड़दे न। इत्थें सारे न, उनेंगी कुन दिंदा ऐ ते कितनी सामग्री उंदा इस्तेमाल करदी ऐ। जेहड़ा डेटा-टाइप डेटाबेस बरतदा ऐ पर उसगी हून कोई रजिस्टर नेईं करदा, ओह् उस सामग्री गी तोड़ी दिंदा ऐ जिस च ओह् ऐ।</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>क्लास समूह</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>पिछले मिंटें दी गिनती बरतने दी बजाए हून फ्ही गिनो।</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>फ्ही गिनो</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>झलक</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>दर्ज होआ</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>इस्तेमाल च</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>बरती नेईं गेई</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>डेटा-टाइप देने आह्ले एक्सटेंशन</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>क्लास गुण</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>ऑब्जेक्ट गुण</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>रजिस्टर नेईं</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>लिस्ट च ऐ, फाइल गायब</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count डेटा-टाइप बरते जंदे न पर रजिस्टर नेईं न</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes क्लास गुणें ते %object_attributes ऑब्जेक्ट गुणें दा इक ऐसा डेटा-टाइप ऐ जिसगी कोई एक्सटेंशन जां सेटिंग रजिस्टर नेईं करदी। उंदे ऑब्जेक्ट दस्से, एडिट जां प्रकाशत नेईं कीते जाई सकदे। डेटा-टाइप देने आह्ला एक्सटेंशन चालू करो, जां क्लास बदलो।</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>सिर्फ एह् दस्सो</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>डेटा-टाइप लब्भो</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>पन्छान, नां, PHP क्लास जां एक्सटेंशन।</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>दस्सो</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>सारे</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>देने आह्ला</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>सारे</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>कर्नल</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>इस फिल्टर कन्नै कोई डेटा-टाइप मेल नेईं खंदा।</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>सारे दस्सो</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>एक्सटेंशन</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%count डेटा-टाइपें चा %shown, %used इस्तेमाल च</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>डेटाबेस च इनें डेटा-टाइपें दे क्लास जां ऑब्जेक्ट गुण न, पर content.ini इंदे चा कुसै गी बी लिस्ट नेईं करदी, जां इसदी फाइल गायब ऐ।</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>%provider दे डेटा-टाइप</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>डेटा-टाइप</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>PHP क्लास ते फाइल</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>क्लासां</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>ऑब्जेक्ट</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>फ्लैग</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>कोई नेईं</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>खोज कन्नै कोई डेटा-टाइप मेल नेईं खंदा। खोज साफ करो।</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%count डेटा-टाइपें चा %shown दस्से गे</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>दस्से गेदे डेटा-टाइप: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>%column दे मताबक छांटो</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>%time गी गिनेआ</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>सारे डेटा-टाइप</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>मदद सफा</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>एह् डेटा-टाइप बरतेआ जंदा ऐ पर रजिस्टर नेईं ऐ</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>जिन्ना चिर कोई एक्सटेंशन डेटा-टाइप गी रजिस्टर नेईं करदा, हेठ दित्तियें क्लासें दे ऑब्जेक्ट दस्से, एडिट जां प्रकाशत नेईं कीते जाई सकदे। इसगी देने आह्ला एक्सटेंशन चालू करो ते इसगी content.ini [DataTypeSettings] AvailableDataTypes[] च जोड़ो, जां क्लासां बदलो।</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini इस डेटा-टाइप गी लिस्ट करदी ऐ, पर कुसै डेटा-टाइप डायरेक्टरी च इसदी फाइल नेईं ऐ। इसगी कोई नेईं बरतदा; इसगी AvailableDataTypes[] चा हटाओ जां इसदा एक्सटेंशन चालू करो।</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>इस डेटा-टाइप बारै</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>पछान</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>नांऽ</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>एक्सटेंशन %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>कोई नेईं</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP क्लास</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>फाइल</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>AvailableDataTypes[] च</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>हां</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>नेईं</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>इसदी वैल्यू दे कॉलम</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>इसदी क्लास गुण सेटिंगें दे कॉलम</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>टेबल</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>कॉलम ते टेबल डेटा-टाइप दा कोड पढ़ियै लब्भे गे न: इक सेध, बचन नेईं।</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>टेंपलेट</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>साइटएक्सेस</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>टेंपलेट</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>इत्थें लब्भेआ</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>एह् प्रशासन</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>डिफॉल्ट साइट</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>ओवरराइड बगैर: क्लास जां गुण कन्नै मेल खाने आह्ला ओवरराइड टेंपलेट इंदे उप्पर भारी पौंदा ऐ।</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>इसगी बरतने आह्लियां क्लासां (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>कुसै क्लास च इस डेटा-टाइप दा गुण नेईं ऐ।</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>क्लास</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>गुण</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>क्लास गुण (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>गुण</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>सेटिंग</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>जरूरी</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>खोजे जाने जोग</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>अनुवाद होई सकने जोग</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>जानकारी कट्ठी करदा ऐ</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>इसगी बरतने आह्ली किश सामग्री</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>सबनें शा पिछला बदलेआ पैह्लें</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>बदलेआ दा</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>नोड %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>हर अनुवाद दी अपनी वैल्यू ऐ।</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>खोज इसदियें वैल्यूएं गी इंडेक्स करदी ऐ।</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>एह् आगंतुकें शा जानकारी किट्ठी करी सकदा ऐ (फार्म)।</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>लिस्टां इसदे मताबक छांटियां जाई सकदियां न: छांटने दी कुंजी %type।</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>छांटने जोग</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>इसदियां वैल्यूआं दूए ऑब्जेक्टें पास्सै इशारा करदियां न।</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>संबंध</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>इसगी सादी स्ट्रिंग शा भरेआ जाई सकदा ऐ (इंपोर्ट, REST)।</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>टैक्स्ट शा</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>इसगी फाइल शा भरेआ जाई सकदा ऐ।</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>फाइल शा</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>इसदियां क्लास गुण सेटिंगां पैकेजें च जंदियां न।</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>पैकेज</translation>
     </message>
 </context>
 </TS>

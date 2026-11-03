@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Ar pajenn-mañ hepken a vez klasket: %from da %to diwar %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Pep rizh roadennoù eus ar galon hag eus an astennoù, ha penaos e vez implijet gant ar c'hlasadoù hag an endalc'had.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Rizhioù roadennoù</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ Notenn: ne vo ket distaliet ar pakadoù.</translation>
     <message>
         <source>Static publishing</source>
         <translation>Embann stadek</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Rizhioù roadennoù</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Pep rizh roadennoù eus ar galon hag eus an astennoù, ha penaos e vez implijet gant ar c'hlasadoù hag an endalc'had.</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ gweredekaat ho kont.</translation>
         <source>Copy of %class_name</source>
         <translation>Eilad eus %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Rizhioù roadennoù</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Rizh roadennoù %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85028,6 +85052,397 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Kaset eo bet ar postel-mañ gant %site abalamour ma c'houlenn migration.ini [RemoteSettings] Notify[] kement-se.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Rizhoù roadennoù (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>Kontet %time, en-dro a-benn %minutes munutenn</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Ur rizh roadennoù a vir hag a aoz ur seurt talvoud eus un doareenn klasad: ul linenn destenn, ur skeudenn, un darempred. Ar galon a zegas al lodenn vrasañ anezho, an astennoù a ouzhpenn re all. Setu an holl anezho, piv a bourchas anezho ha pegement a endalc'had a implij anezho. Ur rizh roadennoù implijet gant an diaz roadennoù met n'eo enrollet gant netra ken a vrev an endalc'had en deus anezhañ.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Strolladoù klasadoù</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Kontañ en-dro bremañ e-lec'h implijout kontoù ar munutennoù diwezhañ.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Kontañ en-dro</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Alberz hollek</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Enskrivet</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>Implijet</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Ket implijet</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Astennoù a bourchas rizhoù roadennoù</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Doareennoù ar c'hlasad</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Doareennoù an objed</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>N'eo ket enrollet</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>Er roll, restr o vankout</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>Rizhoù roadennoù implijet met n'int ket enrollet: %count</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>Doareennoù klasad (%class_attributes) ha doareennoù objed (%object_attributes) o deus ur rizh roadennoù na vez enrollet gant astenn pe arventenn ebet. N'haller ket diskouez, aozañ pe embann o objedoù. Gweredekait an astenn a bourchas ar rizh roadennoù, pe cheñchit ar c'hlasad.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Diskouez ar re-mañ hepken</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Kavout ur rizh roadennoù</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Naoudi, anv, klasad PHP pe astenn.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Diskouez</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>An holl</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Pourchaset gant</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>An holl</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Kalon</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Rizh roadennoù ebet ne glot gant ar sil-mañ.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Diskouez an holl</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Astenn</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown diwar %count rizh roadennoù, %used implijet</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>An diaz roadennoù en deus doareennoù klasad pe objed eus ar rizhoù roadennoù-mañ, met content.ini ne ro hini ebet anezho, pe e vank o restr.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>Rizhoù roadennoù %provider</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Rizh roadennoù</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>Klasad PHP ha restr</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Klasadoù</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Objedoù</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Merkoù</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>hini ebet</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Rizh roadennoù ebet ne glot gant an enklask. Skarzhit an enklask.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%shown diwar %count rizh roadennoù diskouezet</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Rizhoù roadennoù diskouezet: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Rummañ dre %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>Kontet %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>An holl rizhoù roadennoù</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Pajenn skoazell</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Implijet eo ar rizh roadennoù-mañ met n'eo ket enrollet</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>N'haller ket diskouez, aozañ pe embann objedoù ar c'hlasadoù dindan keit ha ma n'enroll astenn ebet ar rizh roadennoù. Gweredekait an astenn a bourchas anezhañ hag ouzhpennit anezhañ e content.ini [DataTypeSettings] AvailableDataTypes[], pe cheñchit ar c'hlasadoù.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini a ro ar rizh roadennoù-mañ, met teuliad rizhoù roadennoù ebet n'en deus e restr. Netra n'eo implijet gantañ; lamit anezhañ eus AvailableDataTypes[] pe gweredekait e astenn.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Diwar-benn ar rizh roadennoù-mañ</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Anaouder</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Anv</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Astenn %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>den ebet</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>Klasad PHP</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Restr</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>E AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ya</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ket</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Bannoù e dalvoud</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Bannoù arventennoù e zoareenn klasad</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Taolennoù</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Kavet eo ar bannoù hag an taolennoù en ur lenn kod ar rizh roadennoù: ur sturlevr, n'eo ket ur bromesa.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Patromoù</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Haeziñ al lec'hienn</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Patrom</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Kavet e</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>ar merañ-mañ</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>lec'hienn dre ziouer</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Hep erlec'hiadur: ur patrom erlec'hiañ a glot dre glasad pe zoareenn a dremen a-raok ar re-mañ.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Klasadoù a implij anezhañ (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Klasad ebet n'en deus un doareenn eus ar rizh roadennoù-mañ.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klasad</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Doareennoù</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Doareennoù ar c'hlasad (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Doareenn</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Arventennoù</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Ret</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Klaskus</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Hegerz da droidigezh</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Dastum a ra titouroù</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Endalc'had a implij anezhañ</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Ar re gemmet da ziwezhañ da gentañ</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Kemmet</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Skoulm %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Pep troidigezh he deus he zalvoud dezhi.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>An enklask a meneger e dalvoudoù.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Gallout a ra dastum titouroù digant ar weladennerien (furmskridoù).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Gallout a reer rummañ ar rolloù drezañ: alc'hwez rummañ %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Rummadus</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>E dalvoudoù a ziskouez objedoù all.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Liammoù</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Gallout a reer e leuniañ gant un hedad testenn eeun (enporzhiañ, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Diwar destenn</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Gallout a reer e leuniañ diwar ur restr.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Diwar restr</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Arventennoù e zoareenn klasad a ya er pakadoù.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Pakadoù</translation>
     </message>
 </context>
 </TS>

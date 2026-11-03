@@ -982,6 +982,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>僅搜尋此頁面：第 %from 至 %to 個，共 %count 個。</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>核心和擴充功能的每個資料類型，以及類別和內容如何使用它。</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>資料類型</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15430,6 +15438,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Static publishing</source>
         <translation>靜態發佈</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>資料類型</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>核心和擴充功能的每個資料類型，以及類別和內容如何使用它。</translation>
     </message>
 </context>
 <context>
@@ -55388,6 +55404,14 @@ your account.</source>
         <source>Copy of %class_name</source>
         <translation>%class_name 的複本</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>資料類型</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>資料類型 %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85026,6 +85050,397 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>此郵件由 %site 寄出，因為 migration.ini [RemoteSettings] Notify[] 要求寄送。</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>資料類型（%count）</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>統計於 %time，%minutes 分鐘後重新統計</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>資料類型儲存並編輯類別屬性的一種值：一行文字、一張圖片、一個關聯。大多數由核心提供，擴充功能再加入更多。這裡列出全部資料類型、提供者，以及有多少內容在使用它們。資料庫仍在使用但已無任何地方註冊的資料類型，會使含有它的內容損壞。</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>類別群組</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>立即重新統計，而不使用最近幾分鐘的統計結果。</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>重新統計</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>概覽</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>註冊時間</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>使用中</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>未使用</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>提供資料類型的擴充功能</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>類別屬性</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>物件屬性</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>未註冊</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>已列出，檔案遺失</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count 個資料類型正在使用但未註冊</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes 個類別屬性和 %object_attributes 個物件屬性的資料類型未被任何擴充功能或設定註冊。它們的物件無法顯示、編輯或發布。請啟用提供該資料類型的擴充功能，或變更該類別。</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>只顯示這些</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>尋找資料類型</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>識別碼、名稱、PHP 類別或擴充功能。</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>顯示</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>全部</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>提供者</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>所有人</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>核心</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>沒有符合此篩選條件的資料類型。</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>顯示全部</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>擴充功能</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%count 個資料類型中的 %shown 個，%used 個使用中</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>資料庫中有這些資料類型的類別屬性或物件屬性，但 content.ini 未列出其中任何一個，或其檔案遺失。</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>%provider 的資料類型</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>資料類型</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>PHP 類別和檔案</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>類別</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>物件</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>旗標</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>無</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>沒有符合搜尋的資料類型。請清除搜尋。</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>已顯示 %count 個資料類型中的 %shown 個</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>已顯示的資料類型：%count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>依 %column 排序</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>統計於 %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>所有資料類型</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>說明頁面</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>此資料類型正在使用但未註冊</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>在沒有擴充功能註冊該資料類型之前，下列類別的物件無法顯示、編輯或發布。請啟用提供它的擴充功能，並將其加入 content.ini [DataTypeSettings] AvailableDataTypes[]，或變更這些類別。</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini 列出了此資料類型，但沒有任何資料類型目錄含有它的檔案。沒有內容使用它；請將其從 AvailableDataTypes[] 中移除，或啟用它的擴充功能。</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>關於此資料類型</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>識別碼</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>名稱</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>擴充功能 %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>無</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP 類別</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>檔案</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>在 AvailableDataTypes[] 中</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>是</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>否</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>其值的欄位</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>其類別屬性設定的欄位</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>資料表</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>這些欄位和資料表是透過讀取資料類型的程式碼得出的：僅供參考，不作保證。</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>範本</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>網站存取</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>範本</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>位於</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>本管理介面</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>預設網站</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>不含覆寫：依類別或屬性比對的覆寫範本優先於這些範本。</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>使用它的類別（%count）</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>沒有類別具有此資料類型的屬性。</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>類別</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>屬性</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>類別屬性（%count）</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>屬性</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>設定</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>必填</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>可搜尋</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>可翻譯</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>收集資訊</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>部分使用它的內容</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>最近修改的在前</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>修改時間</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>節點 %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>每個翻譯都有自己的值。</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>搜尋會為其值建立索引。</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>它可以收集訪客的資訊（表單）。</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>清單可以依它排序：排序鍵 %type。</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>可排序</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>它的值指向其他物件。</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>關聯</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>可以從純文字字串填入（匯入、REST）。</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>來自文字</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>可以從檔案填入。</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>來自檔案</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>其類別屬性設定會包含在套件中。</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>套件</translation>
     </message>
 </context>
 </TS>

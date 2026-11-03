@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>ཤོག་ལེབ་འདི་རྐྱངམ་གཅིག་འཚོལ་ཞིབ་འབད་ཡོདཔ་ཨིན: %count ལས་ %from ལས་ %to ཚུན།</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>ཀེར་ནཱལ་དང་རྒྱ་སྐྱེད་ཚུ་གི་ གནད་སྡུད་རིགས་ཆ་མཉམ་ དེ་ལས་ རིགས་དང་ནང་དོན་ཚུ་གིས་ དེ་ག་དེ་སྦེ་ལག་ལེན་འཐབ་ཨིན་ན།</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>གནད་སྡུད་རིགས།</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Static publishing</source>
         <translation>བརྟན་པའི་དཔེ་སྐྲུན།</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>གནད་སྡུད་རིགས།</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>ཀེར་ནཱལ་དང་རྒྱ་སྐྱེད་ཚུ་གི་ གནད་སྡུད་རིགས་ཆ་མཉམ་ དེ་ལས་ རིགས་དང་ནང་དོན་ཚུ་གིས་ དེ་ག་དེ་སྦེ་ལག་ལེན་འཐབ་ཨིན་ན།</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ your account.</source>
         <source>Copy of %class_name</source>
         <translation>%class_name གི་འདྲ་བཤུས།</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>གནད་སྡུད་རིགས།</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>གནད་སྡུད་རིགས། %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85028,6 +85052,397 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>ཡིག་འཕྲིན་འདི་ %site གིས་ བཏང་ཡི། རྒྱུ་མཚན་ migration.ini [RemoteSettings] Notify[] གིས་ དེ་སྦེ་ ཞུ་ནི་ཨིན།</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>གནད་སྡུད་རིགས། (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>%time ལུ་བརྩིས་ཡོདཔ། སྐར་མ་ %minutes ཤུལ་ལས་ལོག་སྟེ་བརྩི་འོང་།</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>གནད་སྡུད་རིགས་ཅིག་གིས་ རིགས་ཀྱི་ངོ་བོའི་ཁྱད་ཆོས་ཀྱི་གནས་གོང་རིགས་ཅིག་ བསག་འཇོག་དང་ཞུན་དག་འབདཝ་ཨིན། དཔེར་ན་ ཡིག་ཐྲིག་ཅིག་ པར་ཅིག་ འབྲེལ་བ་ཅིག། ཀེར་ནཱལ་གྱིས་ དེ་ཚུ་གི་མང་ཤོས་ཅིག་བྱིནམ་ཨིན། རྒྱ་སྐྱེད་ཚུ་གིས་ ཧེང་བཀལ་ཁ་སྐོང་འབདཝ་ཨིན། ནཱ་ལུ་ དེ་ཚུ་ཆ་མཉམ་ དེ་ཚུ་ག་གིས་བྱིནམ་ཨིན་ན་ དེ་ལས་ ནང་དོན་ག་དེ་ཅིག་གིས་ ལག་ལེན་འཐབ་ཨིན་ན་ཡོདཔ་ཨིན། གནད་སྡུད་གཞི་རྟེན་གྱིས་ལག་ལེན་འཐབ་རུང་ ད་ལས་ཕར་ ག་གིས་ཡང་ཐོ་མ་བཀོད་མི་ གནད་སྡུད་རིགས་ཅིག་གིས་ དེ་ཡོད་པའི་ནང་དོན་ཆ་མེད་བཟོཝ་ཨིན།</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>རིགས་ཚོགས།</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>སྐར་མ་མཇུག་མའི་གྱངས་ཁ་ལག་ལེན་འཐབ་ནི་གི་ཚབ་ལུ་ ད་ལྟོ་ལོག་སྟེ་བརྩི།</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>ལོག་སྟེ་བརྩི།</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>སྤྱིར་བཏང་མཐོང་སྣང་།</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>ཐོ་བཀོད་འབད་ཡོདཔ།</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>ལག་ལེན་འཐབ་དོ།</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>ལག་ལེན་མ་འཐབ་པས།</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>གནད་སྡུད་རིགས་བྱིན་མི་རྒྱ་སྐྱེད།</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>རིགས་ཀྱི་ངོ་བོའི་ཁྱད་ཆོས།</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>དངོས་པོའི་ངོ་བོའི་ཁྱད་ཆོས།</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>ཐོ་མ་བཀོད་པ།</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>ཐོ་ཡོད། ཡིག་སྣོད་མེད།</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>གནད་སྡུད་རིགས་ %count ལག་ལེན་འཐབ་རུང་ ཐོ་མ་བཀོད།</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>རིགས་ཀྱི་ངོ་བོའི་ཁྱད་ཆོས་ %class_attributes དང་ དངོས་པོའི་ཁྱད་ཆོས་ %object_attributes ལུ་ རྒྱ་སྐྱེད་ཡང་ན་སྒྲིག་སྟངས་ག་གིས་ཡང་ཐོ་མ་བཀོད་པའི་ གནད་སྡུད་རིགས་ཅིག་ཡོད། དེ་ཚུ་གི་དངོས་པོ་ཚུ་ སྟོན་ནི་ ཞུན་དག་འབད་ནི་ ཡང་ན་ དཔར་བསྐྲུན་འབད་མི་ཚུགས། གནད་སྡུད་རིགས་བྱིན་མི་རྒྱ་སྐྱེད་ཤུགས་ལྡན་བཟོ་ ཡང་ན་ རིགས་བསྒྱུར།</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>འདི་ཚུ་རྐྱངམ་ཅིག་སྟོན།</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>གནད་སྡུད་རིགས་འཚོལ།</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>ངོས་འཛིན་ མིང་ PHP རིགས་ ཡང་ན་ རྒྱ་སྐྱེད།</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>སྟོན།</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ཆ་མཉམ།</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>བྱིན་མི།</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>ཆ་མཉམ།</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>ཀེར་ནཱལ།</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>ཚགས་མ་འདི་དང་མཐུན་པའི་གནད་སྡུད་རིགས་མེད།</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>ཆ་མཉམ་སྟོན།</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>རྒྱ་སྐྱེད།</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>གནད་སྡུད་རིགས་ %count ལས་ %shown། %used ལག་ལེན་ནང་།</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>གནད་སྡུད་གཞི་རྟེན་ནང་ གནད་སྡུད་རིགས་འདི་ཚུ་གི་ རིགས་ཡང་ན་དངོས་པོའི་ཁྱད་ཆོས་ཚུ་ཡོད་རུང་ content.ini གིས་ དེ་ཚུ་ལས་གཅིག་ཡང་ཐོ་མ་བཀོད་ ཡང་ན་ དེའི་ཡིག་སྣོད་མེད།</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>%provider གི་གནད་སྡུད་རིགས།</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>གནད་སྡུད་རིགས།</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>PHP རིགས་དང་ཡིག་སྣོད།</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>རིགས།</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>དངོས་པོ།</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>རྟགས།</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>མེདཔ།</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>འཚོལ་ཞིབ་དང་མཐུན་པའི་གནད་སྡུད་རིགས་མེད། འཚོལ་ཞིབ་བསལ།</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>གནད་སྡུད་རིགས་ %count ལས་ %shown སྟོན་ཡོད།</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>སྟོན་ཡོད་པའི་གནད་སྡུད་རིགས། %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>%column གིས་གོ་རིམ་སྒྲིག</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>%time ལུ་བརྩིས་ཡོདཔ།</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>གནད་སྡུད་རིགས་ཆ་མཉམ།</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>རོགས་པའི་ཤོག་ལེབ།</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>གནད་སྡུད་རིགས་འདི་ལག་ལེན་འཐབ་རུང་ ཐོ་མ་བཀོད།</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>རྒྱ་སྐྱེད་ག་གིས་ཡང་ གནད་སྡུད་རིགས་ཐོ་མ་བཀོད་ཚུན་ཚོད་ འོག་གི་རིགས་ཚུ་གི་དངོས་པོ་ཚུ་ སྟོན་ནི་ ཞུན་དག་འབད་ནི་ ཡང་ན་ དཔར་བསྐྲུན་འབད་མི་ཚུགས། དེ་བྱིན་མི་རྒྱ་སྐྱེད་ཤུགས་ལྡན་བཟོ་སྟེ་ content.ini [DataTypeSettings] AvailableDataTypes[] ནང་ཁ་སྐོང་རྐྱབ་ ཡང་ན་ རིགས་ཚུ་བསྒྱུར།</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini གིས་ གནད་སྡུད་རིགས་འདི་ཐོ་བཀོད་ཡོད་རུང་ གནད་སྡུད་རིགས་ཀྱི་སྣོད་ཐོ་ག་ནང་ཡང་ དེའི་ཡིག་སྣོད་མེད། དེ་ག་གིས་ཡང་ལག་ལེན་མི་འཐབ། AvailableDataTypes[] ནང་ལས་ རྩ་བསྐྲད་གཏང་ ཡང་ན་ དེའི་རྒྱ་སྐྱེད་ཤུགས་ལྡན་བཟོ།</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>གནད་སྡུད་རིགས་འདི་གི་སྐོར།</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>ངོས་འཛིན་རྟགས།</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>མིང་།</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>རྒྱ་སྐྱེད། %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>ག་ཡང་མེད།</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP རིགས།</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ཡིག་སྣོད།</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>AvailableDataTypes[] ནང་།</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ཨིན།</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>མེན།</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>དེའི་གནས་གོང་གི་ཀེ་ལམ།</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>དེའི་རིགས་ཀྱི་ངོ་བོའི་ཁྱད་ཆོས་སྒྲིག་སྟངས་ཀྱི་ཀེ་ལམ།</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>ཐེམ་ཐོ་ཚུ།</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>ཀེ་ལམ་དང་ཐིག་ཁྲམ་ཚུ་ གནད་སྡུད་རིགས་ཀྱི་ཨང་རྟགས་ལྷག་སྟེ་ཐོབ་ཡོདཔ་ཨིན། ལམ་སྟོན་ཅིག་ཨིན་ ཁས་བླངས་མེན།</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>ཊེམ་པ་ལེཊ་ཚུ།</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>དྲྭ་ཚིགས་འཛུལ་སྒོ།</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>ཊེམ་པ་ལེཊ།</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>ཡོད་སའི་ས།</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>བདག་སྐྱོང་འདི།</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>སྔོན་སྒྲིག་དྲྭ་ཚིགས།</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>ཚབ་བཙུགས་མེད་པར། རིགས་ཡང་ན་ཁྱད་ཆོས་དང་མཐུན་པའི་ ཚབ་བཙུགས་ཊེམ་པ་ལེཊ་ཅིག་ འདི་ཚུ་ལས་གཙོ་རིམ་ཨིན།</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>དེ་ལག་ལེན་འཐབ་མི་རིགས། (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>རིགས་ག་ནང་ཡང་ གནད་སྡུད་རིགས་འདི་གི་ཁྱད་ཆོས་མེད།</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>རིགས།</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>ངོ་བོའི་ཁྱད་ཆོས།</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>རིགས་ཀྱི་ངོ་བོའི་ཁྱད་ཆོས། (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>ངོ་བོའི་ཁྱད་ཆོས།</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>སྒྲིག་བཀོད།</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>ངེས་པར་དགོཔ།</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>འཚོལ་ཚུགསཔ།</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>ཡིག་སྒྱུར་འབད་ཚུགསཔ།</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>བརྡ་དོན་བསྡུ་ཚོགས་འབདཝ་ཨིན།</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>དེ་ལག་ལེན་འཐབ་མི་ནང་དོན་ལ་ལོ།</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>མཇུག་ལུ་བསྒྱུར་བཅོས་འབད་མི་ཧེ་མ།</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>བསྒྱུར་བཅོས་འབད་ཡོདཔ།</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>མདུད་ཚིག %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>སྐད་བསྒྱུར་རེ་རེ་ལུ་ རང་སོའི་གནས་གོང་ཡོད།</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>འཚོལ་ཞིབ་ཀྱིས་ དེའི་གནས་གོང་ཚུ་ཟུར་ཐོ་བཟོཝ་ཨིན།</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>དེ་གིས་ ལྟ་བཤལ་པ་ཚུ་ལས་ བརྡ་དོན་བསྡུ་ལེན་འབད་ཚུགས། (འབྲི་ཤོག)</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>ཐོ་ཡིག་ཚུ་ དེ་ལྟར་དུ་རིམ་སྒྲིག་འབད་ཚུགས། རིམ་སྒྲིག་ལྡེ་མིག་ %type།</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>གོ་རིམ་སྒྲིག་ཚུགསཔ།</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>དེའི་གནས་གོང་ཚུ་གིས་ དངོས་པོ་གཞན་ཚུ་ལུ་སྟོནམ་ཨིན།</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>འབྲེལ་བ།</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>དེ་ ཡིག་རྒྱུན་སྤྱིར་བཏང་ལས་བཀང་ཚུགས། (ནང་འདྲེན། REST)</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>ཡིག་ཆ་ལས།</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>དེ་ ཡིག་སྣོད་ལས་བཀང་ཚུགས།</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>ཡིག་སྣོད་ལས།</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>དེའི་རིགས་ཀྱི་ངོ་བོའི་ཁྱད་ཆོས་སྒྲིག་སྟངས་ཚུ་ ཐུམ་སྒྲིལ་ནང་འགྱོཝ་ཨིན།</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>ཐུམ་སྒྲིལ་ཚུ།</translation>
     </message>
 </context>
 </TS>

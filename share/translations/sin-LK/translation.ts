@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>සොයනු ලබන්නේ මෙම පිටුව පමණි: %count න් %from සිට %to දක්වා.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>හරයේ සහ දිගුවල සෑම දත්ත වර්ගයක්ම, සහ පන්ති සහ අන්තර්ගතය එය භාවිත කරන ආකාරය.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>දත්ත වර්ග</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Static publishing</source>
         <translation>ස්ථිතික ප්‍රකාශනය</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>දත්ත වර්ග</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>හරයේ සහ දිගුවල සෑම දත්ත වර්ගයක්ම, සහ පන්ති සහ අන්තර්ගතය එය භාවිත කරන ආකාරය.</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ your account.</source>
         <source>Copy of %class_name</source>
         <translation>%class_name හි පිටපත</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>දත්ත වර්ග</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>දත්ත වර්ගය %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85028,6 +85052,397 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>migration.ini [RemoteSettings] Notify[] එය ඉල්ලන නිසා මෙම තැපෑල %site විසින් යවන ලදී.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>දත්ත වර්ග (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>%time ගණන් කළා, විනාඩි %minutes කට පසු නැවත</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>දත්ත වර්ගයක් පන්ති ගුණාංගයක එක් ආකාරයක අගයක් ගබඩා කර සංස්කරණය කරයි: පෙළ පේළියක්, රූපයක්, සම්බන්ධතාවක්. බොහොමයක් හරය ගෙන එයි, දිගු තවත් එක් කරයි. මෙහි ඒ සියල්ල, ඒවා සපයන්නේ කවුද සහ අන්තර්ගතයෙන් කොපමණ ප්‍රමාණයක් ඒවා භාවිත කරන්නේද යන්න ඇත. දත්ත සමුදාය භාවිත කරන නමුත් තවදුරටත් කිසිවක් ලියාපදිංචි නොකරන දත්ත වර්ගයක්, එය ඇති අන්තර්ගතය බිඳ දමයි.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>පන්ති සමූහ</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>පසුගිය විනාඩිවල ගණන් භාවිත කරනවා වෙනුවට දැන් නැවත ගණන් කරන්න.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>නැවත ගණන් කරන්න</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>දළ විශ්ලේෂණය</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>ලියාපදිංචි වූ</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>භාවිතයේ ඇත</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>භාවිතා නොකළ</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>දත්ත වර්ග සපයන දිගු</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>පන්ති ගුණාංග</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>වස්තු ගුණාංග</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>ලියාපදිංචි නැත</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>ලැයිස්තුගතයි, ගොනුව නැත</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>දත්ත වර්ග %count ක් භාවිත වන නමුත් ලියාපදිංචි නැත</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>පන්ති ගුණාංග %class_attributes ක් සහ වස්තු ගුණාංග %object_attributes ක් කිසිදු දිගුවක් හෝ සැකසුමක් ලියාපදිංචි නොකරන දත්ත වර්ගයක් දරයි. ඒවායේ වස්තු පෙන්වීමට, සංස්කරණය කිරීමට හෝ ප්‍රකාශනය කිරීමට නොහැක. දත්ත වර්ගය සපයන දිගුව සක්‍රිය කරන්න, නැතහොත් පන්තිය වෙනස් කරන්න.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>මේවා පමණක් පෙන්වන්න</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>දත්ත වර්ගයක් සොයන්න</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>හඳුන්වනය, නම, PHP පන්තිය හෝ දිගුව.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>පෙන්වන්න</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>සියල්ල</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>සපයන්නා</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>සියලු දෙනා</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>හරය</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>මෙම පෙරහනට කිසිදු දත්ත වර්ගයක් නොගැළපේ.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>සියල්ල පෙන්වන්න</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>දිගුව</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>දත්ත වර්ග %count න් %shown, %used භාවිතයේ</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>දත්ත සමුදායේ මෙම දත්ත වර්ගවල පන්ති හෝ වස්තු ගුණාංග ඇත, නමුත් content.ini ඒවායින් එකක්වත් ලැයිස්තුගත නොකරයි, නැතහොත් එහි ගොනුව නැත.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>%provider හි දත්ත වර්ග</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>දත්ත වර්ගය</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>PHP පන්තිය සහ ගොනුව</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>පන්ති</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>වස්තු</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>ධජ</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>කිසිවක් නැත</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>සෙවුමට කිසිදු දත්ත වර්ගයක් නොගැළපේ. සෙවුම හිස් කරන්න.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>දත්ත වර්ග %count න් %shown ක් පෙන්වා ඇත</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>පෙන්වූ දත්ත වර්ග: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>%column අනුව වර්ග කරන්න</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>%time ගණන් කළා</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>සියලු දත්ත වර්ග</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>උදව් පිටුව</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>මෙම දත්ත වර්ගය භාවිත වන නමුත් ලියාපදිංචි නැත</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>කිසිදු දිගුවක් දත්ත වර්ගය ලියාපදිංචි නොකරන තාක් පහත පන්තිවල වස්තු පෙන්වීමට, සංස්කරණය කිරීමට හෝ ප්‍රකාශනය කිරීමට නොහැක. එය සපයන දිගුව සක්‍රිය කර එය content.ini [DataTypeSettings] AvailableDataTypes[] වෙත එක් කරන්න, නැතහොත් පන්ති වෙනස් කරන්න.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini මෙම දත්ත වර්ගය ලැයිස්තුගත කරයි, නමුත් කිසිදු දත්ත වර්ග නාමාවලියක එහි ගොනුව නැත. කිසිවක් එය භාවිත නොකරයි; එය AvailableDataTypes[] වෙතින් ඉවත් කරන්න හෝ එහි දිගුව සක්‍රිය කරන්න.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>මෙම දත්ත වර්ගය ගැන</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>හඳුන්වනය</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>නම</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>දිගුව %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>කිසිවෙක් නැත</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP පන්තිය</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ගොනුව</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>AvailableDataTypes[] තුළ</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ඔව්</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>නැත</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>එහි අගයේ තීරු</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>එහි පන්ති ගුණාංග සැකසුම්වල තීරු</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>වගු</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>තීරු සහ වගු සොයා ගන්නේ දත්ත වර්ගයේ කේතය කියවීමෙනි: මඟපෙන්වීමක් මිස පොරොන්දුවක් නොවේ.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>අච්චු</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>අඩවි ප්‍රවේශය</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>අච්චුව</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>සොයාගත් ස්ථානය</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>මෙම පරිපාලනය</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>පෙරනිමි අඩවිය</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>අභිබවා යාම් නොමැතිව: පන්තිය හෝ ගුණාංගය අනුව ගැළපෙන අභිබවන අච්චුවක් මේවාට වඩා ප්‍රමුඛ වේ.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>එය භාවිත කරන පන්ති (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>කිසිදු පන්තියක මෙම දත්ත වර්ගයේ ගුණාංගයක් නැත.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>පන්තිය</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>ගුණාංග</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>පන්ති ගුණාංග (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>ගුණාංගය</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>සැකසුම්</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>අවශ්‍යයි</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>සෙවිය හැකි</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>පරිවර්තනය කළ හැකි</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>තොරතුරු රැස් කරයි</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>එය භාවිත කරන අන්තර්ගත කිහිපයක්</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>අවසන් වරට වෙනස් කළ ඒවා මුලින්</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>වෙනස් කළ</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>නෝඩය %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>සෑම පරිවර්තනයකටම එහිම අගයක් ඇත.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>සෙවුම එහි අගයන් සුචිගත කරයි.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>එයට අමුත්තන්ගෙන් තොරතුරු එකතු කළ හැක (පෝරම).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>ලැයිස්තු එය අනුව වර්ග කළ හැක: වර්ග කිරීමේ යතුර %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>වර්ග කළ හැක</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>එහි අගයන් වෙනත් වස්තු වෙත යොමු කරයි.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>සම්බන්ධතා</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>එය සරල පෙළකින් පිරවිය හැක (ආයාත කිරීම, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>පෙළෙන්</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>එය ගොනුවකින් පිරවිය හැක.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>ගොනුවෙන්</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>එහි පන්ති ගුණාංග සැකසුම් පැකේජවලට යයි.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>පැකේජ</translation>
     </message>
 </context>
 </TS>

@@ -982,6 +982,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Pytajo se jano na toś tom boku: %from do %to z %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Kuždy datowy typ jědra a rozšyrjenjow a kak klase a wopśimjeśe jen wužywaju.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Datowe typy</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15371,6 +15379,14 @@ Pokazka: pakety se njewótinstalěruju.</translation>
     <message>
         <source>Static publishing</source>
         <translation>Statiske wózjawjanje</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Datowe typy</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Kuždy datowy typ jědra a rozšyrjenjow a kak klase a wopśimjeśe jen wužywaju.</translation>
     </message>
 </context>
 <context>
@@ -55329,6 +55345,14 @@ Wašo konto aktiwěrowali.</translation>
         <source>Copy of %class_name</source>
         <translation>Kopija klase %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Datowe typy</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Datowy typ %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85058,6 +85082,397 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Toś tu e-mailku jo %site pósłał, dokulaž migration.ini [RemoteSettings] Notify[] to žada.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Datowe typy (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>Licone %time, znowego za %minutes minutow</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Datowy typ składujo a wobźěłujo jaden typ gódnoty atributa klase: tekstowu smužku, wobraz, relaciju. Jědro dawa wětšynu z nich, rozšyrjenja pśidawaju dalšne. How su wšykne, chto je dawa a kak wjele wopśimjeśa je wužywa. Datowy typ, kótaryž datowa banka wužywa, ale kótaryž nicht wěcej njeregistrěrujo, kazy wopśimjeśe, kótarež jen ma.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Kupki klasow</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Něnto znowego licyś město togo, aby se wužywali licby slědnych minutow.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Znowego licyś</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Pśeglěd</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Registrěrowany</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>We wužywanju</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Njewužyty</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Rozšyrjenja, kótarež dawaju datowe typy</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Atributy klase</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Atributy objekta</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Njeregistrěrowany</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>Nalicony, dataja felujo</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count datowych typow se wužywa, ale njejsu registrěrowane</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes atributow klase a %object_attributes atributow objekta ma datowy typ, kótaryž žedno rozšyrjenje abo nastajenje njeregistrěrujo. Jich objekty njedaju se pokazaś, wobźěłaś abo wózjawiś. Aktiwěrujśo rozšyrjenje, kótarež datowy typ dawa, abo změńśo klasu.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Jano toś te pokazaś</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Datowy typ pytaś</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Identifikator, mě, PHP-klasa abo rozšyrjenje.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Pokazaś</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Wšykne</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Dawa</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Wšykne</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Jědro</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Žeden datowy typ njewótpowědujo toś tomu filtroju.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Wšykno pokazaś</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Rozšyrjenje</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown z %count datowych typow, %used se wužywa</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>Datowa banka ma atributy klase abo objekta z toś tymi datowymi typami, ale content.ini žeden z nich njenaliconujo, abo jich dataja felujo.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>Datowe typy wót %provider</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Datowy typ</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>PHP-klasa a dataja</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Klase</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Objekty</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Markěrowanja</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>žedne</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Žeden datowy typ njewótpowědujo pytanjeju. Wuprozniśo pytanje.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%shown z %count datowych typow pokazane</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Pokazane datowe typy: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Pó %column sortěrowaś</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>Licone %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Wšykne datowe typy</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Bok pomocy</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Toś ten datowy typ se wužywa, ale njejo registrěrowany</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Objekty slědujucych klasow njedaju se pokazaś, wobźěłaś abo wózjawiś, dokulaž žedno rozšyrjenje datowy typ njeregistrěrujo. Aktiwěrujśo rozšyrjenje, kótarež jen dawa, a pśidajśo jen do content.ini [DataTypeSettings] AvailableDataTypes[], abo změńśo klase.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini naliconujo toś ten datowy typ, ale žeden zapis datowych typow njama jogo dataju. Nicht jen njewužywa; wótpórajśo jen z AvailableDataTypes[] abo aktiwěrujśo jogo rozšyrjenje.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Wó toś tom datowem typje</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Identifikator</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Mě</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Rozšyrjenje %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>nichten</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP-klasa</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Dataja</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>W AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>jo</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ně</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Słupy jogo gódnoty</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Słupy nastajenjow jogo atributa klase</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Tabele</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Słupy a tabele su se namakali pśez cytanje koda datowego typa: orientacija, žedno slubjenje.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Pśedłogi</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Pśistup k sedłu</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Pśedłoga</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Namakany w</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>toś ta administracija</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>standardne sedło</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Bźez pśepisanjow: pśepisujuca pśedłoga, kótaraž wótpowědujo klasy abo atributoju, ma pśednosć pśed toś tymi.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Klase, kótarež jen wužywaju (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Žedna klasa njama atribut toś togo datowego typa.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klasa</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Atributy</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Atributy klase (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Atribut</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Nastajenja</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Trěbny</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Pytajobny</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Pśełožujobny</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Zběra informacije</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Něco wopśimjeśa, kótarež jen wužywa</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Slědnje změnjone ako prědne</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Změnjone</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Suk %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Kuždy pśełožk ma swóju gódnotu.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>Pytanje indeksěrujo jogo gódnoty.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Móžo informacije wót woglědowarjow zběraś (formulary).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Lisćiny daju se pó nim sortěrowaś: sortěrowański kluc %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Sortěrujobny</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Jogo gódnoty pokazuju na druge objekty.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Relacije</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Dajo se z jadnorego teksta wupołniś (import, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Z teksta</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Dajo se z dataje wupołniś.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Z dataje</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Nastajenja jogo atributa klase pśidu do paketow.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Pakety</translation>
     </message>
 </context>
 </TS>

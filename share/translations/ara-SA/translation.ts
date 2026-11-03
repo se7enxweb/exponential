@@ -982,6 +982,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>يتم البحث في هذه الصفحة فقط: %from إلى %to من %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>كل أنواع البيانات في نواة النظام والامتدادات، وكيف تستخدمها الفئات والمحتوى.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>أنواع البيانات</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15371,6 +15379,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Static publishing</source>
         <translation>النشر الثابت</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>أنواع البيانات</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>كل أنواع البيانات في نواة النظام والامتدادات، وكيف تستخدمها الفئات والمحتوى.</translation>
     </message>
 </context>
 <context>
@@ -55329,6 +55345,14 @@ your account.</source>
         <source>Copy of %class_name</source>
         <translation>نسخة من %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>أنواع البيانات</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>نوع البيانات %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85058,6 +85082,397 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>أُرسلت هذه الرسالة من %site لأن migration.ini [RemoteSettings] Notify[] يطلب ذلك.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>أنواع البيانات (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>عُدّت %time، وستُعدّ مجددًا بعد %minutes دقيقة</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>يخزّن نوع البيانات نوعًا واحدًا من قيم سمة الفئة ويحرّره: سطر نص، صورة، علاقة. توفّر نواة النظام معظمها، وتضيف الامتدادات المزيد. هنا جميعها، ومن يوفّرها، وكم من المحتوى يستخدمها. نوع البيانات الذي تستخدمه قاعدة البيانات ولم يعد يسجّله شيء يعطّل المحتوى الذي يحتويه.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>مجموعات الفئات</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>أعد العدّ الآن بدلًا من استخدام أعداد الدقائق الأخيرة.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>أعد العدّ</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>نظرة عامة</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>تاريخ التسجيل</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>قيد الاستخدام</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>غير مستخدم</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>الامتدادات التي توفّر أنواع البيانات</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>سمات الفئة</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>سمات الكائن</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>غير مسجّل</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>مُدرج، الملف مفقود</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count من أنواع البيانات مستخدمة لكنها غير مسجّلة</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>لدى %class_attributes من سمات الفئات و %object_attributes من سمات الكائنات نوع بيانات لا يسجّله أي امتداد أو إعداد. لا يمكن عرض كائناتها أو تحريرها أو نشرها. فعّل الامتداد الذي يوفّر نوع البيانات، أو غيّر الفئة.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>اعرض هذه فقط</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>ابحث عن نوع بيانات</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>المعرّف أو الاسم أو فئة PHP أو الامتداد.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>إظهار</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>الكل</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>يوفّره</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>الجميع</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>نواة النظام</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>لا يطابق أي نوع بيانات هذا المرشّح.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>إظهار الكل</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>الامتداد</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown من %count من أنواع البيانات، %used قيد الاستخدام</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>تحتوي قاعدة البيانات على سمات فئات أو كائنات من أنواع البيانات هذه، لكن content.ini لا يدرج أيًا منها، أو أن ملفها مفقود.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>أنواع بيانات %provider</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>نوع البيانات</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>فئة PHP والملف</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>الفئات</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>الكائنات</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>الخصائص</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>لا شيء</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>لا يطابق أي نوع بيانات البحث. امسح البحث.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>عُرض %shown من %count من أنواع البيانات</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>أنواع البيانات المعروضة: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>الفرز حسب %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>عُدّت %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>كل أنواع البيانات</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>صفحة المساعدة</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>نوع البيانات هذا مستخدم لكنه غير مسجّل</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>لا يمكن عرض كائنات الفئات أدناه أو تحريرها أو نشرها ما دام لا يسجّل أي امتداد نوع البيانات. فعّل الامتداد الذي يوفّره وأضفه إلى content.ini [DataTypeSettings] AvailableDataTypes[]، أو غيّر الفئات.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>يدرج content.ini نوع البيانات هذا، لكن لا يحتوي أي مجلد لأنواع البيانات على ملفه. لا يستخدمه شيء؛ احذفه من AvailableDataTypes[] أو فعّل امتداده.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>حول نوع البيانات هذا</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>المُعرِّف</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>الاسم</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>الامتداد %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>لا أحد</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>صنف PHP</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>الملف</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>في AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>نعم</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>لا</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>أعمدة قيمته</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>أعمدة إعدادات سمة الفئة الخاصة به</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>الجداول</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>تُعرف الأعمدة والجداول بقراءة شيفرة نوع البيانات: دليل وليست وعدًا.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>القوالب</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>siteaccess</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>القالب</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>موجود في</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>هذه الإدارة</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>الموقع الافتراضي</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>من دون تجاوزات: قالب التجاوز المطابق حسب الفئة أو السمة يتقدّم على هذه.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>الفئات التي تستخدمه (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>لا توجد فئة لها سمة من نوع البيانات هذا.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>الفئة</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>السمات</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>سمات الفئة (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>السمة</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>الإعدادات</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>المعرّف %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>مطلوب</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>قابل للبحث</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>قابل للترجمة</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>تجمع المعلومات</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>بعض المحتوى الذي يستخدمه</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>الأحدث تعديلًا أولًا</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>عُدّل</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>العقدة %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>لكل ترجمة قيمتها الخاصة.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>يفهرس البحث قيمه.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>يمكنه جمع المعلومات من الزوار (النماذج).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>يمكن فرز القوائم حسبه: مفتاح الفرز %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>قابل للفرز</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>تشير قيمه إلى كائنات أخرى.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>العلاقات</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>يمكن ملؤه من نص عادي (الاستيراد، REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>من نص</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>يمكن ملؤه من ملف.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>من ملف</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>تدخل إعدادات سمة الفئة الخاصة به في الحزم.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>الحزم</translation>
     </message>
 </context>
 </TS>

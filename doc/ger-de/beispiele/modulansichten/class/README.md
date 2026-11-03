@@ -10,12 +10,13 @@ generated: exp:help:examples
 ---
 # Das Modul class
 
-Name `eZContentClass`, definiert in `kernel/class/module.php`. 11 Ansichten.
+Name `eZContentClass`, definiert in `kernel/class/module.php`. 12 Ansichten.
 
 | Ansicht | Adresse | Richtlinienfunktionen |
 |---|---|---|
 | [classlist](classlist.md) | `/class/classlist/<GroupID>` | (Modul) |
 | [copy](copy.md) | `/class/copy/<ClassID>` | (Modul) |
+| [datatype](datatype.md) | `/class/datatype/<Action>/<DataTypeString>` | (Modul) |
 | [down](down.md) | `/class/down/<ClassID>/<AttributeID>` | (Modul) |
 | [edit](edit.md) | `/class/edit/<ClassID>/<GroupID>/<GroupName>` | (Modul) |
 | [groupedit](groupedit.md) | `/class/groupedit/<GroupID>` | (Modul) |

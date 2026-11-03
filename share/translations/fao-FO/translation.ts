@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Bert hendan síðan verður leitað á: %from til %to av %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Øll dátusløg í kjarnanum og viðbótunum, og hvussu flokkarnir og innihaldið brúka tey.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Dátuslag</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ Ivasamt: Pakkarnir verða ikki avinnlagdir.</translation>
     <message>
         <source>Static publishing</source>
         <translation>Støðug útgáva</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Dátuslag</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Øll dátusløg í kjarnanum og viðbótunum, og hvussu flokkarnir og innihaldið brúka tey.</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ kontu tína.</translation>
         <source>Copy of %class_name</source>
         <translation>Avrit av %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Dátuslag</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Dátuslag %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85028,6 +85052,397 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Hesin teldupósturin varð sendur av %site, tí migration.ini [RemoteSettings] Notify[] biður um tað.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Dátusløg (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>Talt %time, aftur um %minutes minuttir</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Eitt dátuslag goymir og rættar eitt slag av virði í einum flokseginleika: eina tekstlinju, eina mynd, eitt samband. Kjarnin hevur flestu við sær, viðbótir leggja fleiri afturat. Her eru tey øll, hvør veitir tey og hvussu nógv av innihaldinum brúkar tey. Eitt dátuslag, sum dátugrunnurin brúkar, men sum einki skrásetir longur, oyðileggur innihaldið, sum hevur tað.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Flokkabólkar</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Tel aftur nú heldur enn at brúka teljingarnar frá seinastu minuttunum.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Tel aftur</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Yvirlit</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Skrásett</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>Í brúk</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Ikki brúkt</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Viðbótir, sum veita dátusløg</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Eginleikar flokksins</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Lutareginleikar</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Ikki skrásett</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>Nevnt, fíla vantar</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count dátusløg verða brúkt, men eru ikki skrásett</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes flokseginleikar og %object_attributes luteginleikar hava eitt dátuslag, sum eingin viðbót ella stilling skrásetir. Teirra lutir kunnu ikki vísast, rættast ella útgevast. Virkja viðbótina, sum veitir dátuslagið, ella broyt flokkin.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Vís bert hesi</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Finn eitt dátuslag</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Eyðmerki, navn, PHP-flokkur ella viðbót.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Vís</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Øll</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Veitt av</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Øll</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Kjarni</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Einki dátuslag samsvarar við hetta filtrið.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Vís alt</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Viðbót</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown av %count dátusløgum, %used í nýtslu</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>Dátugrunnurin hevur floks- ella luteginleikar við hesum dátusløgum, men content.ini nevnir einki av teimum, ella fílan vantar.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>Dátusløg frá %provider</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Dátuslag</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>PHP-flokkur og fíla</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Flokkar</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Lutir</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Merki</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>eingin</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Einki dátuslag samsvarar við leitingina. Strika leitingina.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%shown av %count dátusløgum víst</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Víst dátusløg: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Rað eftir %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>Talt %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Øll dátusløg</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Hjálparsíða</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Hetta dátuslagið verður brúkt, men er ikki skrásett</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Lutirnir í flokkunum niðanfyri kunnu ikki vísast, rættast ella útgevast, so leingi sum eingin viðbót skrásetir dátuslagið. Virkja viðbótina, sum veitir tað, og legg tað afturat content.ini [DataTypeSettings] AvailableDataTypes[], ella broyt flokkarnar.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini nevnir hetta dátuslagið, men eingin dátuslagsmappa hevur fíluna. Einki brúkar tað; tak tað burtur úr AvailableDataTypes[] ella virkja viðbótina hjá tí.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Um hetta dátuslagið</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Eyðmerki</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Navn</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Viðbót %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>eingin</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP-flokkur</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fíla</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>Í AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ja</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nei</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Teigar til virðið</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Teigar til stillingarnar hjá flokseginleikanum</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Talvur</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Teigarnir og talvurnar verða funnin við at lesa kotuna hjá dátuslagnum: ein vegleiðing, ikki ein lyfti.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Formar</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Atgongd til vevstað</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Formur</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Funnið í</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>henda umsitingin</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>vanligi vevstaðurin</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Uttan yvirskrivingar: ein yvirskrivingarformur, sum samsvarar við flokk ella eginleika, gongur fram um hesar.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Flokkar, sum brúka tað (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Eingin flokkur hevur ein eginleika við hesum dátuslagnum.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Flokkur</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Eginleikar</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Eginleikar flokksins (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Eginleiki</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Stillingar</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Kravt</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Leitibært</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Umsetanligt</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Savnar upplýsingar</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Nakað innihald, sum brúkar tað</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Seinast broytt fyrst</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Broytt</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Knútur %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Hvør umseting hevur sítt egna virði.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>Leitingin indeksar virðini.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Tað kann savna upplýsingar frá vitjandi (oyðublød).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Listar kunnu raðast eftir tí: raðingarlykil %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Kann raðast</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Virðini vísa til aðrar lutir.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Tilknýti</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Tað kann fyllast úr einum vanligum strongi (innflutningur, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Úr teksti</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Tað kann fyllast úr eini fílu.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Úr fílu</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Stillingarnar hjá flokseginleikanum fara við í pakkar.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Pakkar</translation>
     </message>
 </context>
 </TS>

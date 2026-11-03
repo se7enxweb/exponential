@@ -982,6 +982,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>ಈ ಪುಟವನ್ನು ಮಾತ್ರ ಹುಡುಕಲಾಗುತ್ತದೆ: %count ರಲ್ಲಿ %from ರಿಂದ %to.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>ಕರ್ನಲ್ ಮತ್ತು ವಿಸ್ತರಣೆಗಳ ಪ್ರತಿಯೊಂದು ಡೇಟಾ ಪ್ರಕಾರ, ಮತ್ತು ವರ್ಗಗಳು ಹಾಗೂ ವಿಷಯ ಅದನ್ನು ಹೇಗೆ ಬಳಸುತ್ತವೆ.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>ಡೇಟಾಟೈಪ್‌ಗಳು</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15430,6 +15438,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Static publishing</source>
         <translation>ಸ್ಥಿರ ಪ್ರಕಟಣೆ</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>ಡೇಟಾಟೈಪ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>ಕರ್ನಲ್ ಮತ್ತು ವಿಸ್ತರಣೆಗಳ ಪ್ರತಿಯೊಂದು ಡೇಟಾ ಪ್ರಕಾರ, ಮತ್ತು ವರ್ಗಗಳು ಹಾಗೂ ವಿಷಯ ಅದನ್ನು ಹೇಗೆ ಬಳಸುತ್ತವೆ.</translation>
     </message>
 </context>
 <context>
@@ -55388,6 +55404,14 @@ your account.</source>
         <source>Copy of %class_name</source>
         <translation>%class_name ಇದರ ನಕಲು</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>ಡೇಟಾಟೈಪ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>ಡೇಟಾ ಪ್ರಕಾರ %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85026,6 +85050,397 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>ಈ ಮೇಲ್ ಅನ್ನು %site ಕಳುಹಿಸಿದೆ, ಏಕೆಂದರೆ migration.ini [RemoteSettings] Notify[] ಅದನ್ನು ಕೇಳುತ್ತದೆ.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>ಡೇಟಾಟೈಪ್‌ಗಳು (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>%time ರಂದು ಎಣಿಸಲಾಗಿದೆ, %minutes ನಿಮಿಷಗಳ ನಂತರ ಮತ್ತೆ</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>ಡೇಟಾ ಪ್ರಕಾರವು ವರ್ಗದ ಗುಣಲಕ್ಷಣದ ಒಂದು ಬಗೆಯ ಮೌಲ್ಯವನ್ನು ಸಂಗ್ರಹಿಸುತ್ತದೆ ಮತ್ತು ಸಂಪಾದಿಸುತ್ತದೆ: ಪಠ್ಯದ ಸಾಲು, ಚಿತ್ರ, ಸಂಬಂಧ. ಅವುಗಳಲ್ಲಿ ಹೆಚ್ಚಿನವನ್ನು ಕರ್ನಲ್ ಒದಗಿಸುತ್ತದೆ, ವಿಸ್ತರಣೆಗಳು ಇನ್ನಷ್ಟು ಸೇರಿಸುತ್ತವೆ. ಇಲ್ಲಿ ಅವೆಲ್ಲವೂ, ಅವುಗಳನ್ನು ಯಾರು ಒದಗಿಸುತ್ತಾರೆ ಮತ್ತು ವಿಷಯದ ಎಷ್ಟು ಭಾಗ ಅವುಗಳನ್ನು ಬಳಸುತ್ತದೆ ಎಂಬುದು ಇದೆ. ಡೇಟಾಬೇಸ್ ಬಳಸುವ ಆದರೆ ಇನ್ನು ಯಾವುದೂ ನೋಂದಾಯಿಸದ ಡೇಟಾ ಪ್ರಕಾರವು ಅದನ್ನು ಹೊಂದಿರುವ ವಿಷಯವನ್ನು ಹಾಳುಮಾಡುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>ವರ್ಗ ಗುಂಪುಗಳು</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>ಕಳೆದ ನಿಮಿಷಗಳ ಎಣಿಕೆಗಳನ್ನು ಬಳಸುವ ಬದಲು ಈಗಲೇ ಮತ್ತೆ ಎಣಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>ಮತ್ತೆ ಎಣಿಸಿ</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>ಅವಲೋಕನ</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>ನೋಂದಾಯಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>ಬಳಕೆಯಲ್ಲಿದೆ</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>ಬಳಸಲಾಗಿಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>ಡೇಟಾಟೈಪ್‌ಗಳನ್ನು ಒದಗಿಸುವ ವಿಸ್ತರಣೆಗಳು</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>ವರ್ಗದ ಗುಣಲಕ್ಷಣಗಳು</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>ವಸ್ತು ಗುಣಲಕ್ಷಣಗಳು</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>ನೋಂದಾಯಿಸಿಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>ಪಟ್ಟಿಯಲ್ಲಿದೆ, ಫೈಲ್ ಇಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count ಡೇಟಾಟೈಪ್‌ಗಳು ಬಳಕೆಯಲ್ಲಿವೆ ಆದರೆ ನೋಂದಾಯಿಸಿಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes ವರ್ಗದ ಗುಣಲಕ್ಷಣಗಳು ಮತ್ತು %object_attributes ವಸ್ತುವಿನ ಗುಣಲಕ್ಷಣಗಳು ಯಾವುದೇ ವಿಸ್ತರಣೆ ಅಥವಾ ಸೆಟ್ಟಿಂಗ್ ನೋಂದಾಯಿಸದ ಡೇಟಾ ಪ್ರಕಾರವನ್ನು ಹೊಂದಿವೆ. ಅವುಗಳ ವಸ್ತುಗಳನ್ನು ತೋರಿಸಲು, ಸಂಪಾದಿಸಲು ಅಥವಾ ಪ್ರಕಟಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ. ಡೇಟಾ ಪ್ರಕಾರವನ್ನು ಒದಗಿಸುವ ವಿಸ್ತರಣೆಯನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ ಅಥವಾ ವರ್ಗವನ್ನು ಬದಲಾಯಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>ಇವುಗಳನ್ನು ಮಾತ್ರ ತೋರಿಸಿ</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>ಡೇಟಾ ಪ್ರಕಾರವನ್ನು ಹುಡುಕಿ</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>ಗುರುತು, ಹೆಸರು, PHP ವರ್ಗ ಅಥವಾ ವಿಸ್ತರಣೆ.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ತೋರಿಸು</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ಎಲ್ಲಾ</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>ಒದಗಿಸಿದವರು</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>ಎಲ್ಲರೂ</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>ಕರ್ನಲ್</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>ಈ ಫಿಲ್ಟರ್‌ಗೆ ಹೊಂದುವ ಡೇಟಾ ಪ್ರಕಾರ ಇಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>ಎಲ್ಲಾ ತೋರಿಸು</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>ವಿಸ್ತರಣೆ</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%count ಡೇಟಾಟೈಪ್‌ಗಳಲ್ಲಿ %shown, %used ಬಳಕೆಯಲ್ಲಿ</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>ಡೇಟಾಬೇಸ್‌ನಲ್ಲಿ ಈ ಡೇಟಾಟೈಪ್‌ಗಳ ವರ್ಗ ಅಥವಾ ವಸ್ತು ಗುಣಲಕ್ಷಣಗಳಿವೆ, ಆದರೆ content.ini ಅವುಗಳಲ್ಲಿ ಯಾವುದನ್ನೂ ಪಟ್ಟಿ ಮಾಡುವುದಿಲ್ಲ, ಅಥವಾ ಅದರ ಫೈಲ್ ಇಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>%provider ನ ಡೇಟಾಟೈಪ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>ಡೇಟಾ ಪ್ರಕಾರ</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>PHP ವರ್ಗ ಮತ್ತು ಫೈಲ್</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>ವರ್ಗಗಳು</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>ವಸ್ತುಗಳು</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>ಫ್ಲ್ಯಾಗ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>ಯಾವುದೂ ಇಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>ಹುಡುಕಾಟಕ್ಕೆ ಹೊಂದುವ ಡೇಟಾ ಪ್ರಕಾರ ಇಲ್ಲ. ಹುಡುಕಾಟವನ್ನು ತೆರವುಗೊಳಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%count ಡೇಟಾಟೈಪ್‌ಗಳಲ್ಲಿ %shown ತೋರಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>ತೋರಿಸಿದ ಡೇಟಾಟೈಪ್‌ಗಳು: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>%column ಪ್ರಕಾರ ವಿಂಗಡಿಸು</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>%time ರಂದು ಎಣಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>ಎಲ್ಲಾ ಡೇಟಾಟೈಪ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>ಸಹಾಯ ಪುಟ</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>ಈ ಡೇಟಾ ಪ್ರಕಾರ ಬಳಕೆಯಲ್ಲಿದೆ ಆದರೆ ನೋಂದಾಯಿಸಿಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>ಯಾವುದೇ ವಿಸ್ತರಣೆ ಈ ಡೇಟಾ ಪ್ರಕಾರವನ್ನು ನೋಂದಾಯಿಸುವವರೆಗೆ ಕೆಳಗಿನ ವರ್ಗಗಳ ವಸ್ತುಗಳನ್ನು ತೋರಿಸಲು, ಸಂಪಾದಿಸಲು ಅಥವಾ ಪ್ರಕಟಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ. ಅದನ್ನು ಒದಗಿಸುವ ವಿಸ್ತರಣೆಯನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ ಮತ್ತು ಅದನ್ನು content.ini [DataTypeSettings] AvailableDataTypes[] ಗೆ ಸೇರಿಸಿ, ಅಥವಾ ವರ್ಗಗಳನ್ನು ಬದಲಾಯಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini ಈ ಡೇಟಾ ಪ್ರಕಾರವನ್ನು ಪಟ್ಟಿ ಮಾಡುತ್ತದೆ, ಆದರೆ ಯಾವುದೇ ಡೇಟಾಟೈಪ್ ಡೈರೆಕ್ಟರಿಯಲ್ಲಿ ಅದರ ಫೈಲ್ ಇಲ್ಲ. ಯಾವುದೂ ಅದನ್ನು ಬಳಸುವುದಿಲ್ಲ; ಅದನ್ನು AvailableDataTypes[] ನಿಂದ ತೆಗೆದುಹಾಕಿ ಅಥವಾ ಅದರ ವಿಸ್ತರಣೆಯನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>ಈ ಡೇಟಾ ಪ್ರಕಾರದ ಬಗ್ಗೆ</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>ಗುರುತಿಸುವಿಕೆ</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>ಹೆಸರು</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>ವಿಸ್ತರಣೆ %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>ಯಾರೂ ಇಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP ವರ್ಗ</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ಫೈಲ್</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>AvailableDataTypes[] ನಲ್ಲಿ</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ಹೌದು</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ಇಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>ಅದರ ಮೌಲ್ಯದ ಕಾಲಮ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>ಅದರ ವರ್ಗ ಗುಣಲಕ್ಷಣ ಸೆಟ್ಟಿಂಗ್‌ಗಳ ಕಾಲಮ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>ಕೋಷ್ಟಕಗಳು</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>ಕಾಲಮ್‌ಗಳು ಮತ್ತು ಕೋಷ್ಟಕಗಳನ್ನು ಡೇಟಾ ಪ್ರಕಾರದ ಕೋಡ್ ಓದಿ ಕಂಡುಹಿಡಿಯಲಾಗಿದೆ: ಇದು ಮಾರ್ಗದರ್ಶಿ, ಖಾತರಿಯಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>ಟೆಂಪ್ಲೇಟ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>ಸೈಟ್‌ಆಕ್ಸೆಸ್</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>ಟೆಂಪ್ಲೇಟ್</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>ಕಂಡುಬಂದ ಸ್ಥಳ</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>ಈ ಆಡಳಿತ</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>ಡೀಫಾಲ್ಟ್ ಸೈಟ್</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>ಓವರ್‌ರೈಡ್‌ಗಳಿಲ್ಲದೆ: ವರ್ಗ ಅಥವಾ ಗುಣಲಕ್ಷಣದ ಮೂಲಕ ಹೊಂದಿಕೆಯಾದ ಓವರ್‌ರೈಡ್ ಟೆಂಪ್ಲೇಟ್ ಇವುಗಳಿಗಿಂತ ಮೇಲುಗೈ ಪಡೆಯುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>ಇದನ್ನು ಬಳಸುವ ವರ್ಗಗಳು (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>ಯಾವುದೇ ವರ್ಗದಲ್ಲಿ ಈ ಡೇಟಾ ಪ್ರಕಾರದ ಗುಣಲಕ್ಷಣವಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>ವರ್ಗ</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>ಗುಣಲಕ್ಷಣಗಳು</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>ವರ್ಗದ ಗುಣಲಕ್ಷಣಗಳು (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>ಗುಣಲಕ್ಷಣ</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>ಸೆಟ್ಟಿಂಗ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>ಅಗತ್ಯವಿದೆ</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>ಹುಡುಕಬಹುದಾದ</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>ಅನುವಾದಿಸಬಹುದಾದ</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>ಮಾಹಿತಿಯನ್ನು ಸಂಗ್ರಹಿಸುತ್ತದೆ</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>ಇದನ್ನು ಬಳಸುವ ಕೆಲವು ವಿಷಯ</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>ಕೊನೆಯದಾಗಿ ಬದಲಾಯಿಸಿದ್ದು ಮೊದಲು</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>ಮಾರ್ಪಡಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>ನೋಡ್ %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>ಪ್ರತಿಯೊಂದು ಅನುವಾದಕ್ಕೂ ತನ್ನದೇ ಮೌಲ್ಯವಿದೆ.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>ಹುಡುಕಾಟವು ಅದರ ಮೌಲ್ಯಗಳನ್ನು ಸೂಚೀಕರಿಸುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>ಇದು ಸಂದರ್ಶಕರಿಂದ ಮಾಹಿತಿ ಸಂಗ್ರಹಿಸಬಹುದು (ಫಾರ್ಮ್‌ಗಳು).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>ಪಟ್ಟಿಗಳನ್ನು ಇದರ ಪ್ರಕಾರ ವಿಂಗಡಿಸಬಹುದು: ವಿಂಗಡಣೆ ಕೀ %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>ವಿಂಗಡಿಸಬಹುದಾದ</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>ಇದರ ಮೌಲ್ಯಗಳು ಇತರ ವಸ್ತುಗಳನ್ನು ಸೂಚಿಸುತ್ತವೆ.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>ಸಂಬಂಧಗಳು</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>ಇದನ್ನು ಸರಳ ಸ್ಟ್ರಿಂಗ್‌ನಿಂದ ತುಂಬಬಹುದು (ಆಮದು, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>ಪಠ್ಯದಿಂದ</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>ಇದನ್ನು ಫೈಲ್‌ನಿಂದ ತುಂಬಬಹುದು.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>ಫೈಲ್‌ನಿಂದ</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>ಇದರ ವರ್ಗ ಗುಣಲಕ್ಷಣ ಸೆಟ್ಟಿಂಗ್‌ಗಳು ಪ್ಯಾಕೇಜ್‌ಗಳಿಗೆ ಹೋಗುತ್ತವೆ.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>ಪ್ಯಾಕೇಜ್‌ಗಳು</translation>
     </message>
 </context>
 </TS>

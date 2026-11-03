@@ -982,6 +982,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>ఈ పేజీలో మాత్రమే శోధించబడుతుంది: %countలో %from నుండి %to వరకు.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>కెర్నల్ మరియు ఎక్స్‌టెన్షన్‌ల ప్రతి డేటా రకం, మరియు క్లాస్‌లు, కంటెంట్ దానిని ఎలా ఉపయోగిస్తాయి.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>డేటాటైప్‌లు</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15430,6 +15438,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Static publishing</source>
         <translation>స్టాటిక్ ప్రచురణ</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>డేటాటైప్‌లు</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>కెర్నల్ మరియు ఎక్స్‌టెన్షన్‌ల ప్రతి డేటా రకం, మరియు క్లాస్‌లు, కంటెంట్ దానిని ఎలా ఉపయోగిస్తాయి.</translation>
     </message>
 </context>
 <context>
@@ -55388,6 +55404,14 @@ your account.</source>
         <source>Copy of %class_name</source>
         <translation>%class_name యొక్క కాపీ</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>డేటాటైప్‌లు</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>డేటా రకం %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85026,6 +85050,397 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>migration.ini [RemoteSettings] Notify[] కోరుతున్నందున ఈ మెయిల్‌ను %site పంపింది.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>డేటా రకాలు (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>%time న లెక్కించబడింది, %minutes నిమిషాల తర్వాత మళ్లీ</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>డేటా రకం క్లాస్ లక్షణం యొక్క ఒక రకమైన విలువను నిల్వ చేసి సవరిస్తుంది: ఒక టెక్స్ట్ లైన్, ఒక చిత్రం, ఒక సంబంధం. చాలావాటిని కెర్నల్ అందిస్తుంది, ఎక్స్‌టెన్షన్‌లు మరిన్ని జోడిస్తాయి. ఇక్కడ అవన్నీ ఉన్నాయి, వాటిని ఎవరు అందిస్తారు మరియు కంటెంట్‌లో ఎంత వాటిని ఉపయోగిస్తుంది. డేటాబేస్ ఉపయోగించే కానీ ఇకపై ఏదీ నమోదు చేయని డేటా రకం దానిని కలిగిన కంటెంట్‌ను పాడు చేస్తుంది.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>క్లాస్ సమూహాలు</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>గత కొన్ని నిమిషాల లెక్కలను వాడకుండా ఇప్పుడే మళ్లీ లెక్కించు.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>మళ్లీ లెక్కించు</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>అవలోకనం</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>నమోదైన తేదీ</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>ఉపయోగంలో ఉంది</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>ఉపయోగించబడలేదు</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>డేటా రకాలను అందించే ఎక్స్‌టెన్షన్‌లు</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>క్లాస్ లక్షణాలు</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>ఆబ్జెక్ట్ లక్షణాలు</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>నమోదు కాలేదు</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>జాబితాలో ఉంది, ఫైల్ లేదు</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count డేటా రకాలు ఉపయోగంలో ఉన్నాయి కానీ నమోదు కాలేదు</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes క్లాస్ లక్షణాలు మరియు %object_attributes ఆబ్జెక్ట్ లక్షణాలు ఏ ఎక్స్‌టెన్షన్ లేదా సెట్టింగ్ నమోదు చేయని డేటా రకాన్ని కలిగి ఉన్నాయి. వాటి ఆబ్జెక్ట్‌లను చూపించడం, సవరించడం లేదా ప్రచురించడం సాధ్యం కాదు. ఆ డేటా రకాన్ని అందించే ఎక్స్‌టెన్షన్‌ను సక్రియం చేయండి, లేదా క్లాస్‌ను మార్చండి.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>వీటిని మాత్రమే చూపించు</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>డేటా రకాన్ని వెతకండి</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>గుర్తింపు, పేరు, PHP క్లాస్ లేదా ఎక్స్‌టెన్షన్.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>చూపించండి</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>అన్నీ</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>అందించినది</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>అందరూ</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>కెర్నల్</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>ఈ ఫిల్టర్‌కు ఏ డేటా రకమూ సరిపోలలేదు.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>అన్నీ చూపించండి</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>ఎక్స్‌టెన్షన్</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%count డేటా రకాలలో %shown, %used ఉపయోగంలో</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>డేటాబేస్‌లో ఈ డేటా రకాల క్లాస్ లేదా ఆబ్జెక్ట్ లక్షణాలు ఉన్నాయి, కానీ content.ini వాటిలో దేనినీ జాబితా చేయదు, లేదా దాని ఫైల్ లేదు.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>%provider డేటా రకాలు</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>డేటా రకం</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>PHP క్లాస్ మరియు ఫైల్</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>క్లాస్‌లు</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>ఆబ్జెక్ట్‌లు</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>ఫ్లాగ్‌లు</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>ఏదీ లేదు</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>శోధనకు ఏ డేటా రకమూ సరిపోలలేదు. శోధనను తొలగించండి.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%count డేటా రకాలలో %shown చూపబడ్డాయి</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>చూపిన డేటా రకాలు: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>%column ప్రకారం క్రమబద్ధీకరించండి</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>%time న లెక్కించబడింది</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>అన్ని డేటా రకాలు</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>సహాయ పేజీ</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>ఈ డేటా రకం ఉపయోగంలో ఉంది కానీ నమోదు కాలేదు</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>ఏ ఎక్స్‌టెన్షన్ ఈ డేటా రకాన్ని నమోదు చేయనంత వరకు దిగువ క్లాస్‌ల ఆబ్జెక్ట్‌లను చూపించడం, సవరించడం లేదా ప్రచురించడం సాధ్యం కాదు. దానిని అందించే ఎక్స్‌టెన్షన్‌ను సక్రియం చేసి content.ini [DataTypeSettings] AvailableDataTypes[] కు జోడించండి, లేదా క్లాస్‌లను మార్చండి.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini ఈ డేటా రకాన్ని జాబితా చేస్తుంది, కానీ ఏ డేటా రకం డైరెక్టరీలోనూ దాని ఫైల్ లేదు. దీనిని ఏదీ ఉపయోగించదు; దీనిని AvailableDataTypes[] నుండి తీసివేయండి లేదా దాని ఎక్స్‌టెన్షన్‌ను సక్రియం చేయండి.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>ఈ డేటా రకం గురించి</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>ఐడెంటిఫైయర్</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>పేరు</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>ఎక్స్‌టెన్షన్ %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>ఎవరూ లేరు</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP క్లాస్</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ఫైల్</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>AvailableDataTypes[] లో</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>అవును</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>కాదు</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>దీని విలువ యొక్క నిలువు వరుసలు</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>దీని క్లాస్ లక్షణ సెట్టింగ్‌ల నిలువు వరుసలు</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>పట్టికలు</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>డేటా రకం కోడ్‌ను చదివి నిలువు వరుసలు మరియు పట్టికలు కనుగొనబడతాయి: ఇది మార్గదర్శి, హామీ కాదు.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>టెంప్లేట్‌లు</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>సైట్‌యాక్సెస్</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>టెంప్లేట్</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>ఇక్కడ కనుగొనబడింది</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>ఈ నిర్వహణ</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>డిఫాల్ట్ సైట్</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>ఓవర్‌రైడ్‌లు లేకుండా: క్లాస్ లేదా లక్షణం ద్వారా సరిపోలిన ఓవర్‌రైడ్ టెంప్లేట్ వీటికంటే ప్రాధాన్యం పొందుతుంది.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>దీనిని ఉపయోగించే క్లాస్‌లు (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>ఏ క్లాస్‌లోనూ ఈ డేటా రకం లక్షణం లేదు.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>క్లాస్</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>లక్షణాలు</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>క్లాస్ లక్షణాలు (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>లక్షణం</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>సెట్టింగ్‌లు</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>అవసరం</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>శోధించదగినది</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>అనువదించదగినది</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>సమాచారాన్ని సేకరిస్తుంది</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>దీనిని ఉపయోగించే కొంత కంటెంట్</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>చివరిగా మార్చినది ముందు</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>సవరించబడింది</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>నోడ్ %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>ప్రతి అనువాదానికి దాని స్వంత విలువ ఉంటుంది.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>శోధన దీని విలువలను సూచిక చేస్తుంది.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>ఇది సందర్శకుల నుండి సమాచారం సేకరించగలదు (ఫారమ్‌లు).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>జాబితాలను దీని ప్రకారం క్రమబద్ధీకరించవచ్చు: క్రమ కీ %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>క్రమబద్ధీకరించదగినది</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>దీని విలువలు ఇతర ఆబ్జెక్ట్‌లను సూచిస్తాయి.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>సంబంధాలు</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>దీనిని సాధారణ స్ట్రింగ్ నుండి నింపవచ్చు (దిగుమతి, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>టెక్స్ట్ నుండి</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>దీనిని ఫైల్ నుండి నింపవచ్చు.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>ఫైల్ నుండి</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>దీని క్లాస్ లక్షణ సెట్టింగ్‌లు ప్యాకేజీలలోకి వెళ్తాయి.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>ప్యాకేజీలు</translation>
     </message>
 </context>
 </TS>

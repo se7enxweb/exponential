@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Ũrũa ũyũ tu nĩ ũcarĩtwo: %from nginya %to kuuma %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>O mũthemba wa data wa mũthingi na wa ikĩongerereo, na ũrĩa irathi na maũndũ maũhũthagĩra.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Mĩthemba ya data</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ Rũmbũiya: Ikĩohe ndigaruta mũingĩrĩrie.</translation>
     <message>
         <source>Static publishing</source>
         <translation>Gũcabithia gwa tũtũ</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Mĩthemba ya data</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>O mũthemba wa data wa mũthingi na wa ikĩongerereo, na ũrĩa irathi na maũndũ maũhũthagĩra.</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ akaunti yaku.</translation>
         <source>Copy of %class_name</source>
         <translation>Kopi ya %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Mĩthemba ya data</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Mũthemba wa data %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85028,6 +85052,397 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Marũa maya matũmirwo nĩ %site tondũ migration.ini [RemoteSettings] Notify[] nĩ ĩrenda ũguo.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Mĩthemba ya data (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>Ĩtarĩtwo %time, rĩngĩ thuutha wa ndagĩka %minutes</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Mũthemba wa data ũiga na ũkagarũra mũthemba ũmwe wa thogora wa mũhianĩre wa kĩrathi: mũrĩrĩ wa ndemwa, mbica, ũhoro wa ngwatanĩro. Mũthingi nĩ ũrehaga mĩingĩ, ikĩongerereo nĩ ciongagĩrĩra ĩngĩ. Haha nĩ haarĩ yothe, ũrĩa ũmĩheanaga na ũrĩa maũndũ maingĩ mamĩhũthagĩra. Mũthemba wa data ũrĩa database ĩhũthagĩra no gũtirĩ kĩndũ kĩũandĩkithĩtie rĩu nĩ ũthũkagia maũndũ marĩa marĩ naguo.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Ikundi cia irathi</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Tara rĩngĩ rĩu handũ ha kũhũthĩra mĩtaro ya ndagĩka iria ciathira.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Tara rĩngĩ</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Mũcemanio</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Nĩ ehoketie</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>Nĩ ĩrahũthĩrũo</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Ndĩhũthĩtwo</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Ikĩongerereo iria ciheanaga mĩthemba ya data</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Mĩhianĩre ya kĩrathi</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Mĩhianĩre ya kĩndũ</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Ndũandĩkithĩtio</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>Ĩrĩ thĩinĩ wa rũthiomi, faili ndĩrĩo</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>Mĩthemba ya data %count nĩ ĩrahũthĩrwo no ndĩandĩkithĩtio</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>Mĩhianĩre ya kĩrathi %class_attributes na mĩhianĩre ya indo %object_attributes ĩrĩ na mũthemba wa data ũrĩa gũtirĩ kĩongerereo kana mũbango ũũandĩkithĩtie. Indo ciacio itingĩonanio, igarũrwo kana ciumĩrio. Ambĩrĩria kĩongerereo kĩrĩa kĩheanaga mũthemba ũcio wa data, kana ũgarũre kĩrathi.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Onania ici tu</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Caria mũthemba wa data</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Kĩmenyithia, rĩĩtwa, kĩrathi kĩa PHP kana kĩongerereo.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Rora</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Ciothe</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Ĩheanĩtwo nĩ</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Mũndũ o wothe</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Mũthingi</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Gũtirĩ mũthemba wa data ũringaine na gĩthũrani gĩkĩ.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Rora ciothe</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Kĩongerereo</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown kuuma mĩthemba ya data %count, %used nĩ ĩrahũthĩrwo</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>Database ĩrĩ na mĩhianĩre ya kĩrathi kana ya indo ya mĩthemba ĩno ya data, no content.ini ndĩandĩkĩte o na ũmwe, kana faili yaguo ndĩrĩo.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>Mĩthemba ya data ya %provider</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Mũthemba wa data</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>Kĩrathi kĩa PHP na faili</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Irathi</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Indo</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Alama</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>gũtirĩ</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Gũtirĩ mũthemba wa data ũringaine na ũcaria. Theria ũcaria.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%shown kuuma mĩthemba ya data %count nĩ ĩronanio</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Mĩthemba ya data ĩronanio: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Bange na %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>Ĩtarĩtwo %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Mĩthemba yothe ya data</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Ũrata wa ũteithio</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Mũthemba ũyũ wa data nĩ ũrahũthĩrwo no ndũandĩkithĩtio</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Indo cia irathi iria irĩ haha thĩ itingĩonanio, igarũrwo kana ciumĩrio rĩrĩa gũtirĩ kĩongerereo kĩandĩkithĩtie mũthemba ũyũ wa data. Ambĩrĩria kĩongerereo kĩrĩa kĩũheanaga na ũwongerere thĩinĩ wa content.ini [DataTypeSettings] AvailableDataTypes[], kana ũgarũre irathi.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini nĩ ĩandĩkĩte mũthemba ũyũ wa data, no gũtirĩ ndaarĩkitarĩ ya mĩthemba ya data ĩrĩ na faili yaguo. Gũtirĩ kĩndũ kĩũhũthagĩra; ũrute kuuma AvailableDataTypes[] kana ũambĩrĩrie kĩongerereo kĩaguo.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Ũhoro wa mũthemba ũyũ wa data</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Kĩmenyo</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Rĩĩtwa</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Kĩongerereo %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>gũtirĩ mũndũ</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>Kĩrathi kĩa PHP</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Faili</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>Thĩinĩ wa AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ĩĩ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>aca</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Mĩhari ya thogora waguo</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Mĩhari ya mĩbango ya mũhianĩre waguo wa kĩrathi</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Ithandũkũ</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Mĩhari na metha ionekaga na gũthoma code ya mũthemba wa data: nĩ kĩonereria, ti kĩĩranĩro.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Mĩhiano</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Njĩra ya saiti</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Mũhiano</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Gĩkoneka thĩinĩ wa</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>ũthondeki ũyũ</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>saiti ya kawaida</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Hatarĩ ikũrũrania: mũhiano wa gũkũrũrania ũringaine na kĩrathi kana mũhianĩre nĩ ũhootaga ici.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Irathi iria ciũhũthagĩra (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Gũtirĩ kĩrathi kĩrĩ na mũhianĩre wa mũthemba ũyũ wa data.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Kĩrathi</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Mĩhianĩre</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Mĩhianĩre ya kĩrathi (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Mũhianĩre</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Mĩtaratara</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Nĩ bata</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Nĩ kĩcarĩkaga</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Nĩ kĩngĩtaũrwo</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Nĩ ĩkũngania ũhoro</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Maũndũ mamwe marĩa maũhũthagĩra</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Ĩrĩa ĩgarũrĩtwo mũthia mbere</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Nĩ gĩcenjetio</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Nodi %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>O ũtaũrani ũrĩ na thogora waguo.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>Ũcaria nĩ ũandĩkaga mathogora maguo.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Nĩ ũngĩcookereria ũhoro kuuma kũrĩ ageni (fomu).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Mĩandĩko nĩ ĩngĩbangwo naguo: kĩhingũro gĩa kũbanga %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>No ũbangwo</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Mathogora maguo monagia indo ingĩ.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Ũnyitanĩri</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Nĩ ũngĩiyũrwo kuuma ndemwa njerũ (kũrehe, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Kuuma ndemwa</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Nĩ ũngĩiyũrwo kuuma faili.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Kuuma faili</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Mĩbango ya mũhianĩre waguo wa kĩrathi nĩ ĩtoonyaga thĩinĩ wa mĩhaka.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Ikĩohe</translation>
     </message>
 </context>
 </TS>

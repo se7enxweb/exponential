@@ -982,6 +982,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Qupperneq manna kisiat ujarlerfigineqarpoq: %from – %to, katillugit %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Qitiusup ilassutillu paasissutissat suussusii tamarmik, klassillu imarisallu qanoq atortarneraat.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Paasissutissat suussusii</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15371,6 +15379,14 @@ Malugiuk: Poortukkat ikkussinerat piiarneqassanngilaq.</translation>
     <message>
         <source>Static publishing</source>
         <translation>Saqqummiussineq aalaakkaasoq</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Paasissutissat suussusii</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Qitiusup ilassutillu paasissutissat suussusii tamarmik, klassillu imarisallu qanoq atortarneraat.</translation>
     </message>
 </context>
 <context>
@@ -55329,6 +55345,14 @@ ilitsersuutit malikkit.</translation>
         <source>Copy of %class_name</source>
         <translation>Assilinera: %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Paasissutissat suussusii</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Paasissutissap suussusaa %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85058,6 +85082,397 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>E-mail una %site-mit nassiunneqarpoq migration.ini [RemoteSettings] Notify[] piumasaqarmat.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Paasissutissat suussusii (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>%time kisitsineqarpoq, minutsit %minutes qaangiuppata kisitsiqqinneqassaaq</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Paasissutissap suussusaa klassip attributiata naleqarnerata ataatsip toqqortarpaa aaqqissuuttarlugulu: allagaq ataaseq, assiliaq, attaveqaat. Qitiusoq amerlanerit pilersittarpai, ilassutit allanik ilassuteqartarput. Maani tamarmik takuneqarsinnaapput, kikkut pilersitsisuunersut imarisallu qanoq amerlatigisut atortarneraat. Paasissutissap suussusaa paasissutissaateqarfimmit atorneqartoq, kisianni maannakkut sumilluunniit nalunaarsorneqanngitsoq, imarisanik atuisunik aserorterisarpoq.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Klassit eqimattaat</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Minutsini kingullerni kisitsinerit atornagit maanna kisitsiqqigit.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Kisitsiqqigit</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Takussutissiaq</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Nalunaarsorneqarfia</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>Atorneqartoq</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Atorneqanngitsoq</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Ilassutit paasissutissat suussusiinik pilersitsisut</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Klassip attributii</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Objektip attributii</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Nalunaarsorneqanngilaq</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>Allattorsimavoq, fili amigaatigineqarpoq</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>Paasissutissat suussusii %count atorneqarput nalunaarsorneqanngitsut</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>Klassip attributii %class_attributes objektillu attributii %object_attributes paasissutissap suussusaanik ilassummit aaqqissuussinermilluunniit nalunaarsorneqanngitsumik peqarput. Objektii takutinneqarsinnaanngillat, aaqqissuunneqarsinnaanngillat saqqummiunneqarsinnaanatillu. Ilassut paasissutissap suussusaanik pilersitsisoq aallartiguk, imaluunniit klassi allanngortiguk.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Taakku kisiisa takutikkit</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Paasissutissap suussusaa ujaruk</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Kinaassusersiut, ateq, PHP-klassi imaluunniit ilassut.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Takutiguk</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Tamarmik</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Pilersitsisoq</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Tamarmik</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Qitiusoq</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Paasissutissap suussusaa filterimut tulluartoqanngilaq.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Tamaasa takutikkit</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Ilassut</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>Paasissutissat suussusii %count-iusut ilaat %shown, %used atorneqarput</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>Paasissutissaateqarfiup paasissutissat suussusiinik taakkuninnga klassip objektilluunniit attributiinik peqarpoq, kisianni content.ini-p ataasiilluunniit allattorsimanngilaa, imaluunniit fiilia amigaatigineqarpoq.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>%provider-ip paasissutissat suussusii</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Paasissutissap suussusaa</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>PHP-klassi fililu</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Klassit</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Objektit</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Nalunaaqutsiinerit</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>soqanngilaq</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Paasissutissap suussusaa ujarlernermut tulluartoqanngilaq. Ujarlerneq peeruk.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>Paasissutissat suussusii %count-iusut ilaat %shown takutinneqarput</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Paasissutissat suussusii takutinneqartut: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>%column malillugu tulleriiaakkit</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>%time kisitsineqarpoq</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Paasissutissat suussusii tamarmik</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Ikiuutit quppernerat</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Paasissutissap suussusaa una atorneqarpoq nalunaarsorneqanngitsoq</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Klassit ataaniittut objektii takutinneqarsinnaanngillat, aaqqissuunneqarsinnaanngillat saqqummiunneqarsinnaanatillu ilassummit paasissutissap suussusaa nalunaarsorneqanngippat. Ilassut pilersitsisoq aallartiguk content.ini [DataTypeSettings] AvailableDataTypes[]-milu ilanngullugu, imaluunniit klassit allanngortikkit.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini-p paasissutissap suussusaa una allattorsimavaa, kisianni paasissutissat suussusiisa filitaasa ataasiannilluunniit fiilia peqanngilaq. Sumilluunniit atorneqanngilaq; AvailableDataTypes[]-mit peeruk imaluunniit ilassutaa aallartiguk.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Paasissutissap suussusaa una pillugu</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Ilisarnaat</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Ateq</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Ilassut %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>kinaluunniit</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP-klassi</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fiili</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>AvailableDataTypes[]-mi</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>aap</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>naamik</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Naleqarnerata kolonnii</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Klassip attributiata aaqqissuussineri kolonnii</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Tabelit</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Kolonnit tabelillu paasissutissap suussusaata koodia atuarlugu nassaarineqarput: ilitsersuutaapput, qularnaveeqqusiinngillat.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Skabelonit</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Nittartakkamut isaariaq</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Skabeloni</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Nassaarfia</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>aqutsineq una</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>nittartagaq tunngaviusoq</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Taarsiissutaanngitsut: skabeloni taarsiissut klassimut attributimulluunniit tulluartoq taakkunannga salliuvoq.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Klassit atuisut (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Klassimi ataatsimiluunniit paasissutissap suussusaanik taassuminnga attributeqanngilaq.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klassi</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Attributit</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Klassip attributii (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Attributi</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Aaqqissuussinerit</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Pisariaqartoq</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Ujarlerfigineqarsinnaasoq</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Nutserneqarsinnaasoq</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Paasissutissanik katersisoq</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Imarisat ilaat atuisut</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Kingulliullugu allanngortinneqartoq siulliullugu</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Allanngortinneqarfia</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Inissisimaffik %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Nutserinerit tamarmik naleqarnertik nammineq peqarfigaat.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>Ujarlerfik naleqarnerinik indeksiliisarpoq.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Takornarianit paasissutissanik katersisinnaavoq (immersugassat).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Allattorsimaffiit taassumunnga naapertuuttumik aaqqissuunneqarsinnaapput: aaqqissuussinermi kode %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Tulleriiaarneqarsinnaasoq</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Naleqarnerisa objektit allat innersuussutigaat.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Attaveqaatit</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Allagaq nalinginnaasoq atorlugu immerneqarsinnaavoq (eqqussineq, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Allagaq atorlugu</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Fili atorlugu immerneqarsinnaavoq.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Fili atorlugu</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Klassip attributiata aaqqissuussineri poortukkanut ilanngunneqartarput.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Poortukkat</translation>
     </message>
 </context>
 </TS>

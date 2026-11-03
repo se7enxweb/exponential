@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Olupapula luno lwokka lwe lunoonyezebwa: %from okutuuka ku %to ku %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Buli kika kya data eky'omusingi n'eky'ebyongerezo, n'engeri kiraasi n'ebirimu gye bikikozesaamu.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Ebika bya data</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ Jjukira: Pakeeji tezijja kusimbulwa.</translation>
     <message>
         <source>Static publishing</source>
         <translation>Okufulumya okutakyuka</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Ebika bya data</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Buli kika kya data eky'omusingi n'eky'ebyongerezo, n'engeri kiraasi n'ebirimu gye bikikozesaamu.</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ akawunti yo.</translation>
         <source>Copy of %class_name</source>
         <translation>Kkopi ya %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Ebika bya data</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Ekika kya data %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85028,6 +85052,397 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Obubaka buno bwasindikiddwa %site kubanga migration.ini [RemoteSettings] Notify[] bwe kisaba.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Ebika bya data (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>Kibaliddwa %time, nate oluvannyuma lw'eddakiika %minutes</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Ekika kya data kitereka era kikyusa ekika kimu eky'omuwendo gw'ekikula kya kiraasi: olunyiriri lw'ebigambo, ekifaananyi, akakwate. Omusingi guleeta ebisinga, ebyongerezo byongerako ebirala. Wano waliwo byonna, ani abiwa, n'ebirimu bimeka ebibikozesa. Ekika kya data databeesi ky'ekozesa naye nga tewali kikiwandiisa nate kyonoona ebirimu ebikirina.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Ebibinja bya kiraasi</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Bala nate kati mu kifo ky'okukozesa emiwendo gy'eddakiika ezisembyeyo.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Bala nate</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Ebirambikiddwa</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Yeewandiisizza</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>Ekikozesebwa</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Tekozeseddwa</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Ebyongerezo ebiwa ebika bya data</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Ebikula bya kiraasi</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Ebikula by'ekintu</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Tekiwandiisiddwa</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>Kiri ku lukalala, fayiro teriiyo</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>Ebika bya data %count bikozesebwa naye tebiwandiisiddwa</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>Ebikula bya kiraasi %class_attributes n'ebikula by'ebintu %object_attributes birina ekika kya data ekitawandiisibwa kyongerezo kyonna wadde ensengeka. Ebintu byabyo tebiyinza kulagibwa, kukyusibwa wadde kufulumizibwa. Tandika ekyongerezo ekiwa ekika kya data, oba kyusa kiraasi.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Laga bino byokka</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Noonya ekika kya data</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Ekimanyisa, erinnya, kiraasi ya PHP oba ekyongerezo.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Laga</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Byonna</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Kiweebwa</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Buli omu</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Omusingi</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Tewali kika kya data kikwatagana na kusengejja kuno.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Laga byonna</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Ekyongerezo</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown ku %count eby'ebika bya data, %used bikozesebwa</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>Databeesi erina ebikula bya kiraasi oba by'ebintu eby'ebika bino ebya data, naye content.ini tewandiikamu na kimu, oba fayiro yaakyo teriiyo.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>Ebika bya data ebya %provider</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Ekika kya data</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>Kiraasi ya PHP ne fayiro</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Kiraasi</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Ebintu</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Obubonero</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>tewali</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Tewali kika kya data kikwatagana n'okunoonya. Sangula okunoonya.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%shown ku %count eby'ebika bya data biragiddwa</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Ebika bya data ebiragiddwa: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Sengeka ng'oyita mu %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>Kibaliddwa %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Ebika bya data byonna</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Olupapula lw'obuyambi</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Ekika kino ekya data kikozesebwa naye tekiwandiisiddwa</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Ebintu bya kiraasi eziri wansi tebiyinza kulagibwa, kukyusibwa wadde kufulumizibwa nga tewali kyongerezo kiwandiisa kika kya data. Tandika ekyongerezo ekikiwa era okyongere mu content.ini [DataTypeSettings] AvailableDataTypes[], oba kyusa kiraasi.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini ewandiikamu ekika kino ekya data, naye tewali kifo kya bika bya data kirina fayiro yaakyo. Tewali kikikozesa; kiggye mu AvailableDataTypes[] oba tandika ekyongerezo kyakyo.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Ebikwata ku kika kino ekya data</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Ekimanyisa</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Erinnya</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Ekyongerezo %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>tewali</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>Kiraasi ya PHP</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fayiro</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>Mu AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>yee</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nedda</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Empagi z'omuwendo gwakyo</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Empagi z'ensengeka z'ekikula kya kiraasi</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Ebipande</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Empagi n'emmeeza bizuuliddwa nga basoma koodi y'ekika kya data: kulungamya, si kisuubizo.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Tempuleeti</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Omulyango gw'omukutu</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Tempuleeti</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Kisangiddwa mu</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>obuddukanya buno</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>omukutu ogusookerwako</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Awatali kukyusa: tempuleeti ekyusa ekwatagana ne kiraasi oba ekikula ekulembera bino.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Kiraasi ezikikozesa (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Tewali kiraasi erina ekikula ky'ekika kino ekya data.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Kiraasi</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Ebikula</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Ebikula bya kiraasi (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Ekikula</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Entegeka</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Kyetaagisa</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Ekinoonyezebwa</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Kisobola okuvvuunulwa</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Kikunnganya amawulire</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Ebirimu ebimu ebikikozesa</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Ebisembyeyo okukyusibwa bisooka</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Ekyakyusibwa</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Nodi %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Buli nkyusa y'olulimi erina omuwendo gwayo.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>Okunoonya kuwandiika emiwendo gyakyo mu ndagiriro.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Kiyinza okukung'aanya amawulire okuva eri abagenyi (foomu).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Enkalala ziyinza okusengekebwa nakyo: ekisumuluzo ky'okusengeka %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Kisengekeka</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Emiwendo gyakyo gisonga ku bintu ebirala.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Enkolagana</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Kiyinza okujjuzibwa okuva mu bigambo ebya bulijjo (okuyingiza, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Okuva mu bigambo</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Kiyinza okujjuzibwa okuva mu fayiro.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Okuva mu fayiro</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Ensengeka z'ekikula kya kiraasi kyakyo ziyingira mu pakeeji.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Pakeeji</translation>
     </message>
 </context>
 </TS>

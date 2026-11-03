@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>পেজ অসি অমতা সার্চ তৌরি: %count গী মনুংদগী %from দগী %to.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>কর্নেল অমসুং এক্সটেন্সনশিংগী ডেটা মরীক পুম্নমক, অমসুং ক্লাস অমসুং কন্টেন্টনা মদু করম্না শিজিন্নবগে।</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>ডেটা মরীকশিং</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Static publishing</source>
         <translation>স্টেটিক প্রকাশন</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>ডেটা মরীকশিং</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>কর্নেল অমসুং এক্সটেন্সনশিংগী ডেটা মরীক পুম্নমক, অমসুং ক্লাস অমসুং কন্টেন্টনা মদু করম্না শিজিন্নবগে।</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ your account.</source>
         <source>Copy of %class_name</source>
         <translation>%class_name গী কপি</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>ডেটা মরীকশিং</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>ডেটা মরীক %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85028,6 +85052,397 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>মেল অসি %site না থারকনি মরমদি migration.ini [RemoteSettings] Notify[] না মসি হায়জৈ।</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>ডেটা মরীকশিং (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>%time দা মশিং থীখি, মিনিট %minutes তুংদা অমুক হন্না</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>ডেটা মরীক অমনা ক্লাস এট্রিবিউট অমগী ভেল্যু মখল অমা থম্মি অমসুং শেমদোক্নি: টেক্সত লাইন অমা, ইমেজ অমা, রিলেসন অমা। মখোয়গী য়াম্নবা কর্নেলনা পুরকই, এক্সটেন্সনশিংনা হেন্না হাপচিল্লি। মসিদা মখোয় পুম্নমক, মখোয় কনানা পীবগে অমসুং কন্টেন্ট কয়াম মখোয় শিজিন্নবগে উৎলি। ডেটাবেজনা শিজিন্নরিবা অদুবু কনানাসু রেজিস্টর তৌদ্রবা ডেটা মরীক অমনা মদু লৈবা কন্টেন্ট শোক্নহল্লি।</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>ক্লাস মরুপশিং</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>লোইখ্রবা মিনিটশিংগী মশিং শিজিন্নদনা হৌজিক অমুক হন্না মশিং থীউ।</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>অমুক হন্না মশিং থীউ</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>ওভারভিউ</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>রেজিস্টর তৌরে</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>ব্যবহারদা লৈ</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>ব্যবহার তৌরদে</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>ডেটা মরীক পীরিবা এক্সটেন্সনশিং</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>ক্লাস এট্রিবিউটশিং</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>অবজেক্ট এট্রিবিউটশিং</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>রেজিস্টর তৌদ্রি</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>লিস্টতা লৈ, ফাইল লৈতে</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>ডেটা মরীক %count শিজিন্নরি অদুবু রেজিস্টর তৌদ্রি</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>ক্লাস এট্রিবিউট %class_attributes অমসুং অবজেক্ট এট্রিবিউট %object_attributes দা এক্সটেন্সন নত্রগা সেত্তিং অমত্তনা রেজিস্টর তৌদ্রবা ডেটা মরীক অমা লৈ। মখোয়গী অবজেক্টশিং উৎপা, শেমদোকপা নত্রগা পব্লিশ তৌবা ঙম্মে। ডেটা মরীক অদু পীরিবা এক্সটেন্সন অদু এক্তিভ তৌবিয়ু, নত্রগা ক্লাস অদু হোংদোকপিয়ু।</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>মসিশিং খক্তমক উৎপিয়ু</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>ডেটা মরীক অমা থিবিয়ু</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>পরিচয়, মমিং, PHP ক্লাস নত্রগা এক্সটেন্সন।</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ফংবা</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>খুদিংমক</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>পীরিবা</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>মীখুদিংমক</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>কর্</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>ফিল্টর অসিগা চান্নবা ডেটা মরীক অমত্তা লৈতে।</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>খুদিংমক ফংবা</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>এক্সটেন্সন</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>ডেটা মরীক %count গী মনুংদা %shown, %used শিজিন্নরি</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>ডেটাবেজদা ডেটা মরীক অসিশিংগী ক্লাস নত্রগা অবজেক্ট এট্রিবিউটশিং লৈ, অদুবু content.ini না মখোয় অমত্তা লিস্ট তৌদ্রি, নত্রগা মসিগী ফাইল অদু লৈতে।</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>%provider গী ডেটা মরীকশিং</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>ডেটা মরীক</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>PHP ক্লাস অমসুং ফাইল</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>ক্লাসশিং</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>অবজেক্টশিং</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>ফ্ল্যাগশিং</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>অমুক ফংদে</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>সার্চকা চান্নবা ডেটা মরীক অমত্তা লৈতে। সার্চ অদু মুত্থৎপিয়ু।</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>ডেটা মরীক %count গী মনুংদা %shown উৎলি</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>উৎলিবা ডেটা মরীকশিং: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>%column অনুসার সর্ট তৌবা</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>%time দা মশিং থীখি</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>ডেটা মরীক পুম্নমক</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>ফংজেলগী লমাই</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>ডেটা মরীক অসি শিজিন্নরি অদুবু রেজিস্টর তৌদ্রি</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>এক্সটেন্সন অমত্তনা ডেটা মরীক অদু রেজিস্টর তৌদ্রিফাওবা মখাদা লৈবা ক্লাসশিংগী অবজেক্টশিং উৎপা, শেমদোকপা নত্রগা পব্লিশ তৌবা ঙম্মে। মদু পীরিবা এক্সটেন্সন অদু এক্তিভ তৌবিয়ু অমসুং content.ini [DataTypeSettings] AvailableDataTypes[] দা হাপচিনবিয়ু, নত্রগা ক্লাসশিং হোংদোকপিয়ু।</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini না ডেটা মরীক অসি লিস্ট তৌরি, অদুবু ডেটা মরীক ডাইরেক্টরি অমত্তদা মসিগী ফাইল লৈতে। কনানাসু শিজিন্নদে; মসি AvailableDataTypes[] দগী লৌথোকপিয়ু নত্রগা মসিগী এক্সটেন্সন এক্তিভ তৌবিয়ু।</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>ডেটা মরীক অসিগী মরমদা</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>পরিচয়</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>মমিং</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>এক্সটেন্সন %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>কনাসু নত্তে</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP ক্লাস</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ফাইল</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>AvailableDataTypes[] দা লৈ</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>অমুক</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>মতোক</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>মসিগী ভেল্যুগী কলমশিং</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>মসিগী ক্লাস এট্রিবিউট সেত্তিংশিংগী কলমশিং</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>টেবলশিং</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>কলম অমসুং টেবলশিং অসি ডেটা মরীকগী কোড পানা থিল্লকপনি: লম্বী উৎপা, ৱাশক নত্তে।</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>টেম্প্লেটশিং</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>সাইট একসেস</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>টেম্প্লেট</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>ফংখিবা মখোয়</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>এদমিনিস্ট্রেসন অসি</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>দিফোল্ট সাইট</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>ওভররাইড য়াওদনা: ক্লাস নত্রগা এট্রিবিউটকা চান্নবা ওভররাইড টেম্প্লেট অমনা মসিশিংদগী মমাংদা লৈ।</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>মসি শিজিন্নবা ক্লাসশিং (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>ক্লাস অমত্তদা ডেটা মরীক অসিগী এট্রিবিউট লৈতে।</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>ক্লাস</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>এট্রিবিউটশিং</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>ক্লাস এট্রিবিউটশিং (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>এট্রিবিউট</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>সেটিংশিং</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>ঙমবা</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>সার্চ তৌজরবা</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>অনুবাদ তৌজরিবা</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>তথ্য কলেক্ট তৌ</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>মসি শিজিন্নবা কন্টেন্ট খরা</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>অরোইবদা হোংদোকখিবা অহানবদা</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>সুধরবা</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>নোদ %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>ট্রান্সলেসন খুদিংমক্না মশাগী ভেল্যু লৈ।</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>সার্চনা মসিগী ভেল্যুশিং ইন্দেক্স তৌই।</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>মসিনা লাকপা মীশিংদগী ইনফর্মেসন খোমজিনবা ঙম্মি (ফোর্মশিং)।</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>লিস্টশিং মসিনা ময়েক শেংনা থম্বা ঙম্মি: সোর্ট কি %type।</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>সর্ট তৌজরিবা</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>মসিগী ভেল্যুশিংনা অতৈ অবজেক্টশিংদা পোইন্ত তৌই।</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>সম্বন্ধশিং</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>মসি মতিক চাবা স্ট্রিং অমদগী মপুং ফানা হাপপা ঙম্মি (ইম্পোর্ট, REST)।</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>টেক্সতদগী</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>মসি ফাইল অমদগী মপুং ফানা হাপপা ঙম্মি।</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>ফাইলদগী</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>মসিগী ক্লাস এট্রিবিউট সেত্তিংশিং প্যাকেজশিংদা চংই।</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>প্যাকেজশিং</translation>
     </message>
 </context>
 </TS>

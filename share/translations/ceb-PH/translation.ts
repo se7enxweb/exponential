@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Kini nga panid lang ang gipangita: %from hangtod %to sa %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Matag matang sa datos sa kinauyokan ug sa mga extension, ug giunsa kini paggamit sa mga klase ug sulod.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Mga matang sa datos</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ Hinumdomi: Dili i-uninstall ang mga pakete.</translation>
     <message>
         <source>Static publishing</source>
         <translation>Static nga pag-publish</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Mga matang sa datos</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Matag matang sa datos sa kinauyokan ug sa mga extension, ug giunsa kini paggamit sa mga klase ug sulod.</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ ang imong account.</translation>
         <source>Copy of %class_name</source>
         <translation>Kopya sa %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Mga matang sa datos</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Matang sa datos %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85028,6 +85052,397 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Kini nga mail gipadala sa %site kay gipangayo kini sa migration.ini [RemoteSettings] Notify[].</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Mga matang sa datos (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>Giihap %time, usab human sa %minutes ka minuto</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Ang usa ka matang sa datos nagtipig ug nag-usab sa usa ka klase sa bili sa kinaiya sa klase: usa ka linya sa teksto, usa ka hulagway, usa ka relasyon. Ang kinauyokan maghatag sa kadaghanan niini, ang mga extension magdugang pa. Ania silang tanan, kinsa ang naghatag niini ug unsa ka daghan sa sulod ang naggamit niini. Ang matang sa datos nga gigamit sa database apan wala na'y nagrehistro niini makaguba sa sulod nga adunay niini.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Mga grupo sa klase</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Ihap usab karon imbes gamiton ang mga ihap sa miaging mga minuto.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Ihap usab</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Kinatibuk-ang tan-aw</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Narehistro</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>Gigamit</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Wala gamita</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Mga extension nga naghatag og mga matang sa datos</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Mga kinaiya sa klase</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Mga kinaiya sa butang</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Wala marehistro</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>Nalista, nawala ang file</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count ka matang sa datos ang gigamit apan wala marehistro</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>Ang %class_attributes ka kinaiya sa klase ug %object_attributes ka kinaiya sa butang adunay matang sa datos nga walay extension o setting nga nagrehistro. Ang ilang mga butang dili maipakita, ma-edit o mamantala. I-aktibo ang extension nga naghatag sa matang sa datos, o usba ang klase.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Ipakita lang kini</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Pangitaa ang matang sa datos</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Identifier, ngalan, PHP nga klase o extension.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Ipakita</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Tanan</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Gihatag ni</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Tanan</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Kinauyokan</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Walay matang sa datos nga mohaum niini nga filter.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Ipakita tanan</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Extension</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown sa %count ka matang sa datos, %used ang gigamit</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>Ang database adunay mga kinaiya sa klase o butang niini nga mga matang sa datos, apan walay usa niini nga nalista sa content.ini, o nawala ang ilang file.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>Mga matang sa datos sa %provider</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Matang sa datos</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>PHP nga klase ug file</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Mga klase</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Mga butang</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Mga bandila</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>wala</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Walay matang sa datos nga mohaum sa pagpangita. Hawani ang pagpangita.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%shown sa %count ka matang sa datos ang gipakita</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Gipakitang mga matang sa datos: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Han-aya pinaagi sa %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>Giihap %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Tanang matang sa datos</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Panid sa tabang</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Kini nga matang sa datos gigamit apan wala marehistro</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Ang mga butang sa mga klase sa ubos dili maipakita, ma-edit o mamantala samtang walay extension nga nagrehistro sa matang sa datos. I-aktibo ang extension nga naghatag niini ug idugang kini sa content.ini [DataTypeSettings] AvailableDataTypes[], o usba ang mga klase.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>Gilista sa content.ini kini nga matang sa datos, apan walay direktoryo sa matang sa datos nga adunay file niini. Walay naggamit niini; tangtanga kini sa AvailableDataTypes[] o i-aktibo ang extension niini.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Mahitungod niini nga matang sa datos</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Tig-ila</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Ngalan</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Extension %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>walay usa</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>Klase sa PHP</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>File</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>Sa AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>oo</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>dili</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Mga kolum sa bili niini</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Mga kolum sa mga setting sa kinaiya sa klase niini</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Mga table</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Ang mga kolum ug talaan nakit-an pinaagi sa pagbasa sa code sa matang sa datos: giya, dili saad.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Mga template</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Access sa site</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Template</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Makita sa</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>kini nga administrasyon</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>default nga site</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Walay override: ang override nga template nga mohaum sa klase o kinaiya ang mouna kaysa niini.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Mga klase nga naggamit niini (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Walay klase nga adunay kinaiya niini nga matang sa datos.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klase</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Mga kinaiya</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Mga kinaiya sa klase (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Kinaiya</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Mga setting</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Gikinahanglan</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Mapangita</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Mahubad</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Mokolekta ug impormasyon</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Pipila ka sulod nga naggamit niini</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Pinakabag-ong giusab una</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Giusab</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Node %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Ang matag hubad adunay kaugalingong bili.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>Ang pagpangita nag-index sa mga bili niini.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Makakolekta kini og impormasyon gikan sa mga bisita (mga porma).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Ang mga lista mahimong ihan-ay pinaagi niini: yawe sa paghan-ay %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Mahimong han-ayon</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Ang mga bili niini nagtudlo sa ubang mga butang.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Mga relasyon</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Mapuno kini gikan sa yano nga teksto (import, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Gikan sa teksto</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Mapuno kini gikan sa usa ka file.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Gikan sa file</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Ang mga setting sa kinaiya sa klase niini moadto sa mga package.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Mga pakete</translation>
     </message>
 </context>
 </TS>

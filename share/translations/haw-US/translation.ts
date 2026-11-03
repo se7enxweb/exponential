@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>ʻImi ʻia kēia ʻaoʻao wale nō: %from a %to o %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Kēlā me kēia ʻano ʻikepili o ka Kernel a me nā pākuʻi, a me ke ʻano o ka hoʻohana ʻana o nā papa a me ka ʻike iā ia.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Nā ʻano ʻikepili</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ Hoʻomaopopo: ʻAʻole wehe ʻia ka hoʻokomo ʻana o nā pūʻolo.</translation
     <message>
         <source>Static publishing</source>
         <translation>Hoʻopuka paʻa</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Nā ʻano ʻikepili</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Kēlā me kēia ʻano ʻikepili o ka Kernel a me nā pākuʻi, a me ke ʻano o ka hoʻohana ʻana o nā papa a me ka ʻike iā ia.</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ i kāu moʻokāki.</translation>
         <source>Copy of %class_name</source>
         <translation>Kope o %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Nā ʻano ʻikepili</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>ʻAno ʻikepili %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85028,6 +85052,397 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Ua hoʻouna ʻia kēia leka e %site no ka mea ua noi ʻo migration.ini [RemoteSettings] Notify[] iā ia.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Nā ʻano ʻikepili (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>Helu ʻia %time, hou ma hope o %minutes minuke</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Mālama a hoʻoponopono ka ʻano ʻikepili i hoʻokahi ʻano waiwai o kekahi hiʻohiʻona papa: he laina kikokikona, he kiʻi, he pilina. Na ka Kernel ka hapa nui, a hoʻohui nā pākuʻi i nā mea hou aʻe. Eia lākou a pau, ka mea nāna lākou e hāʻawi a me ka nui o ka ʻike e hoʻohana ana iā lākou. ʻO ka ʻano ʻikepili i hoʻohana ʻia e ka waihona ʻikepili akā ʻaʻohe mea e hoʻopaʻa inoa hou iā ia, hōʻino ia i ka ʻike nona ia.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Nā pūʻulu papa</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>E helu hou i kēia manawa ma kahi o ka hoʻohana ʻana i nā helu o nā minuke i hala.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>E helu hou</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Nānā ākea</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Ua kākau inoa ʻia</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>Ke hoʻohana ʻia nei</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Hoʻohana ʻole ʻia</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Nā pākuʻi e hāʻawi ana i nā ʻano ʻikepili</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Nā hiʻohiʻona papa</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Nā hiʻohiʻona o ka mea</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>ʻAʻole i hoʻopaʻa inoa ʻia</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>Ma ka papa inoa, nalo ka faila</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>Hoʻohana ʻia nā ʻano ʻikepili %count akā ʻaʻole i hoʻopaʻa inoa ʻia</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>He ʻano ʻikepili ko %class_attributes hiʻohiʻona papa a me %object_attributes hiʻohiʻona mea i hoʻopaʻa inoa ʻole ʻia e kekahi pākuʻi a hoʻonohonoho paha. ʻAʻole hiki ke hōʻike, hoʻoponopono a hoʻopuka paha i ko lākou mau mea. E hoʻā i ka pākuʻi e hāʻawi ana i ka ʻano ʻikepili, a i ʻole e hoʻololi i ka papa.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>E hōʻike i kēia mau mea wale nō</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>E ʻimi i kekahi ʻano ʻikepili</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Ka mea hōʻike, ka inoa, ka papa PHP a i ʻole ka pākuʻi.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Hōʻike</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>A pau</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Hāʻawi ʻia e</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Nā mea a pau</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Kernel</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>ʻAʻohe ʻano ʻikepili i kūlike me kēia kānana.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Hōʻike i nā mea a pau</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Pākuʻi</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown o nā ʻano ʻikepili %count, %used e hoʻohana ʻia ana</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>Aia i ka waihona ʻikepili nā hiʻohiʻona papa a mea paha o kēia mau ʻano ʻikepili, akā ʻaʻohe o lākou ma ka papa inoa o content.ini, a i ʻole ua nalo kona faila.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>Nā ʻano ʻikepili o %provider</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>ʻAno ʻikepili</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>Papa PHP a me ka faila</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Nā papa</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Nā mea</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Nā hōʻailona</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>ʻaʻohe</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>ʻAʻohe ʻano ʻikepili i kūlike me ka ʻimi. E holoi i ka ʻimi.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>Hōʻike ʻia %shown o nā ʻano ʻikepili %count</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Nā ʻano ʻikepili i hōʻike ʻia: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Hoʻokaʻina ma %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>Helu ʻia %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Nā ʻano ʻikepili a pau</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>ʻAoʻao kōkua</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Hoʻohana ʻia kēia ʻano ʻikepili akā ʻaʻole i hoʻopaʻa inoa ʻia</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>ʻAʻole hiki ke hōʻike, hoʻoponopono a hoʻopuka paha i nā mea o nā papa ma lalo nei inā ʻaʻohe pākuʻi e hoʻopaʻa inoa i ka ʻano ʻikepili. E hoʻā i ka pākuʻi e hāʻawi ana iā ia a e hoʻohui iā ia i content.ini [DataTypeSettings] AvailableDataTypes[], a i ʻole e hoʻololi i nā papa.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>Aia kēia ʻano ʻikepili ma ka papa inoa o content.ini, akā ʻaʻohe waihona ʻano ʻikepili i loaʻa kona faila. ʻAʻohe mea e hoʻohana ana iā ia; e wehe iā ia mai AvailableDataTypes[] a i ʻole e hoʻā i kona pākuʻi.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>No kēia ʻano ʻikepili</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Hōʻailona</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Inoa</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Pākuʻi %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>ʻaʻohe mea</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP class</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Waihona</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>Ma AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ʻae</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ʻaʻole</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Nā kolamu o kona waiwai</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Nā kolamu o nā hoʻonohonoho o kona hiʻohiʻona papa</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Nā pakuhi</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Loaʻa nā kolamu a me nā papa ʻaina ma ka heluhelu ʻana i ke code o ka ʻano ʻikepili: he alakaʻi, ʻaʻole he ʻōlelo hoʻohiki.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Nā anakuhi</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Anakuhi</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Loaʻa ma</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>kēia hoʻokele</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>pūnaewele paʻamau</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Me ka ʻole o nā override: lanakila ka anakuhi override i kūlike me ka papa a i ʻole ka hiʻohiʻona ma luna o kēia mau mea.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Nā papa e hoʻohana ana iā ia (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>ʻAʻohe papa i loaʻa ka hiʻohiʻona o kēia ʻano ʻikepili.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Papa</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Nā hiʻohiʻona</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Nā hiʻohiʻona papa (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Hiʻohiʻona</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Nā hoʻonohonoho</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Koi ʻia</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Hiki ke ʻimi ʻia</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Hiki ke unuhi ʻia</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Hōʻiliʻili i ka ʻike</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Kekahi ʻike e hoʻohana ana iā ia</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Ka mea i hoʻololi hope ʻia ma mua</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Hoʻololi ʻia</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Hīpuʻu %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>He waiwai ponoʻī ko kēlā me kēia unuhina.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>Hoʻokomo ka ʻimi i kona mau waiwai i ka papa kuhikuhi.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Hiki iā ia ke hōʻiliʻili i ka ʻike mai nā malihini (nā palapala).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Hiki ke hoʻokaʻina i nā papa inoa ma o ia: kī hoʻokaʻina %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Hiki ke hoʻokaʻina</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Kuhikuhi kona mau waiwai i nā mea ʻē aʻe.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Nā pilina</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Hiki ke hoʻopiha ʻia mai kahi kikokikona maʻalahi (lawe mai, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Mai ke kikokikona</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Hiki ke hoʻopiha ʻia mai kahi faila.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Mai ka faila</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Komo nā hoʻonohonoho o kona hiʻohiʻona papa i nā pūʻolo.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Nā pūʻolo</translation>
     </message>
 </context>
 </TS>

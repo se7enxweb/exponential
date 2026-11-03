@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Uru rupapuro rwonyine ni rwo rushakishwa: %from kugeza %to muri %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Ubwoko bwose bw'amakuru bw'intangiriro n'imigereka, n'uko ubwoko n'ibikubiyemo bibukoresha.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Ubwoko bw'amakuru</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ Icyitonderwa: Amapaki ntazakurwa muri sisitemu.</translation>
     <message>
         <source>Static publishing</source>
         <translation>Gutangaza bidahinduka</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Ubwoko bw'amakuru</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Ubwoko bwose bw'amakuru bw'intangiriro n'imigereka, n'uko ubwoko n'ibikubiyemo bibukoresha.</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ konti yanyu.</translation>
         <source>Copy of %class_name</source>
         <translation>Kopi ya %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Ubwoko bw'amakuru</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Ubwoko bw'amakuru %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85028,6 +85052,397 @@ Muzakenera guhindura ubwoko bw'ingingo mukoresheje imikorere yo guhinduranya.</t
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Iyi meyili yoherejwe na %site kubera ko migration.ini [RemoteSettings] Notify[] ibisaba.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Ubwoko bw'amakuru (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>Byabazwe %time, bizongera nyuma y'iminota %minutes</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Ubwoko bw'amakuru bubika kandi bugahindura ubwoko bumwe bw'agaciro k'ikiranga cy'ubwoko: umurongo w'inyandiko, ishusho, isano. Intangiriro izana ibyinshi, imigereka ikongeraho ibindi. Dore byose, ababitanga n'ingano y'ibikubiyemo bibikoresha. Ubwoko bw'amakuru ububiko bukoresha ariko ntacyo bukiyandikishijwemo bwangiza ibikubiyemo bifite ubwo bwoko.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Amatsinda y'ubwoko</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Ongera ubare ubu aho gukoresha imibare y'iminota ishize.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Ongera ubare</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Incamake</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Yiyandikishije</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>Ikoreshwa</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Ntibyakoreshejwe</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Imigereka itanga ubwoko bw'amakuru</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Ibiranga by'ubwoko</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Ibiranga by'ikintu</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Ntibwanditswe</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>Biri ku rutonde, dosiye irabura</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>Ubwoko bw'amakuru %count burakoreshwa ariko ntibwanditswe</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>Ibiranga by'ubwoko %class_attributes n'ibiranga by'ibintu %object_attributes bifite ubwoko bw'amakuru nta mugereka cyangwa igenamiterere byanditse. Ibintu byabyo ntibishobora kugaragazwa, guhindurwa cyangwa gutangazwa. Fungura umugereka utanga ubwo bwoko bw'amakuru, cyangwa uhindure ubwoko.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Erekana ibi gusa</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Shaka ubwoko bw'amakuru</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Ikiranga, izina, ishuri rya PHP cyangwa umugereka.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Kwerekana</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Byose</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Bitangwa na</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Bose</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Intangiriro</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Nta bwoko bw'amakuru buhuye n'iyungurura.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Kwerekana byose</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Umugereka</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown muri %count by'ubwoko bw'amakuru, %used burakoreshwa</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>Ububiko bufite ibiranga by'ubwoko cyangwa by'ibintu by'ubu bwoko bw'amakuru, ariko content.ini nta na bumwe ibushyira ku rutonde, cyangwa dosiye yabwo irabura.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>Ubwoko bw'amakuru bwa %provider</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Ubwoko bw'amakuru</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>Ishuri rya PHP na dosiye</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Ubwoko</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Ibintu</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Ibimenyetso</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>nta na kimwe</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Nta bwoko bw'amakuru buhuye n'ishakisha. Siba ishakisha.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%shown muri %count by'ubwoko bw'amakuru byerekanywe</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Ubwoko bw'amakuru bwerekanywe: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Gutondeka ukurikije %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>Byabazwe %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Ubwoko bwose bw'amakuru</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Urupapuro rw'ubufasha</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Ubu bwoko bw'amakuru burakoreshwa ariko ntibwanditswe</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Ibintu by'ubwoko buri hasi ntibishobora kugaragazwa, guhindurwa cyangwa gutangazwa igihe nta mugereka wanditse ubu bwoko bw'amakuru. Fungura umugereka ubutanga maze ubwongere muri content.ini [DataTypeSettings] AvailableDataTypes[], cyangwa uhindure ubwoko.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini ishyira ubu bwoko bw'amakuru ku rutonde, ariko nta bubiko bw'ubwoko bw'amakuru bufite dosiye yabwo. Ntacyo kibukoresha; bukure muri AvailableDataTypes[] cyangwa ufungure umugereka wabwo.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Ibyerekeye ubu bwoko bw'amakuru</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Ikiranga</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Izina</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Umugereka %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>nta n'umwe</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>Kilasi ya PHP</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Ifayili</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>Muri AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>yego</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>oya</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Inkingi z'agaciro kabwo</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Inkingi z'igenamiterere ry'ikiranga cy'ubwoko</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Imbonerahamwe</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Inkingi n'imbonerahamwe biboneka hasomwa kode y'ubwoko bw'amakuru: ni ubuyobozi, si isezerano.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Inyandikorugero</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Uburyo bwo kugera ku rubuga</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Inyandikorugero</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Cyabonetse muri</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>ubu buyobozi</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>urubuga rusanzwe</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Hatabayeho isimbura: inyandikorugero isimbura ihuye n'ubwoko cyangwa ikiranga iruta izi.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Ubwoko buwukoresha (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Nta bwoko bufite ikiranga cy'ubu bwoko bw'amakuru.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Ubwoko</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Ibiranga</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Ibiranga by'ubwoko (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Ikiranga</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Igenamiterere</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Birakenewe</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Gishobora gushakishwa</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Bishobora gusobanurwa</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Gikusanya amakuru</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Ibikubiyemo bimwe bibukoresha</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Ibyahinduwe vuba mbere</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Byahinduwe</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Ingingo %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Buri buhinduzi bufite agaciro kabwo.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>Ishakisha rishyira mu rutonde agaciro kabwo.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Bushobora gukusanya amakuru y'abashyitsi (ifishi).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Intonde zishobora gutondekwa hakurikijwe bwo: urufunguzo rwo gutondeka %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Gishobora gutondekwa</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Agaciro kabwo kerekeza ku bindi bintu.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Isano</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Bushobora kuzuzwa uhereye ku murongo w'inyuguti usanzwe (kwinjiza, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Uhereye ku nyandiko</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Bushobora kuzuzwa uhereye kuri dosiye.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Uhereye kuri dosiye</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Igenamiterere ry'ikiranga cy'ubwoko bwabwo rijya mu mapaki.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Amapaki</translation>
     </message>
 </context>
 </TS>

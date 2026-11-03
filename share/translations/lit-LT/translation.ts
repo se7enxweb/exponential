@@ -982,6 +982,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Ieškoma tik šiame puslapyje: nuo %from iki %to iš %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Visi šerdies ir plėtinių duomenų tipai ir kaip juos naudoja klasės bei turinys.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Duomenų tipai</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15371,6 +15379,14 @@ Pastaba: paketai nebus pašalinti iš įdiegtų (neįdiegiami).</translation>
     <message>
         <source>Static publishing</source>
         <translation>Statinis publikavimas</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Duomenų tipai</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Visi šerdies ir plėtinių duomenų tipai ir kaip juos naudoja klasės bei turinys.</translation>
     </message>
 </context>
 <context>
@@ -55329,6 +55345,14 @@ savo paskyrą.</translation>
         <source>Copy of %class_name</source>
         <translation>%class_name kopija</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Duomenų tipai</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Duomenų tipas %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85058,6 +85082,397 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Šį laišką išsiuntė %site, nes to prašo migration.ini [RemoteSettings] Notify[].</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Duomenų tipai (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>Suskaičiuota %time, vėl po %minutes min.</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Duomenų tipas saugo ir redaguoja vienos rūšies klasės atributo reikšmę: teksto eilutę, paveikslėlį, ryšį. Daugumą jų teikia šerdis, plėtiniai prideda daugiau. Čia yra visi, kas juos teikia ir kiek turinio juos naudoja. Duomenų tipas, kurį naudoja duomenų bazė, bet niekas jo nebeužregistruoja, sugadina turinį, kuriame jis yra.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Klasių grupės</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Suskaičiuoti iš naujo dabar, o ne naudoti paskutinių minučių skaičius.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Suskaičiuoti iš naujo</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Apžvalga</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Užsiregistravo</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>Naudojama</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Nenaudojama</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Plėtiniai, teikiantys duomenų tipus</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Klasės atributai</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Objekto atributai</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Neužregistruotas</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>Sąraše, failo nėra</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>Naudojama, bet neužregistruota duomenų tipų: %count</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>Klasės atributų (%class_attributes) ir objekto atributų (%object_attributes) duomenų tipo neužregistruoja joks plėtinys ar nustatymas. Jų objektų negalima rodyti, redaguoti ar publikuoti. Aktyvuokite plėtinį, teikiantį duomenų tipą, arba pakeiskite klasę.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Rodyti tik šiuos</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Rasti duomenų tipą</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Identifikatorius, pavadinimas, PHP klasė arba plėtinys.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Rodyti</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Visi</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Teikia</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Bet kas</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Šerdis</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Šį filtrą atitinkančių duomenų tipų nėra.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Rodyti visus</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Plėtinys</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown iš %count duomenų tipų, naudojama %used</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>Duomenų bazėje yra šių duomenų tipų klasių ar objektų atributų, bet content.ini nė vieno jų nenurodo arba jo failo nėra.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>%provider duomenų tipai</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Duomenų tipas</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>PHP klasė ir failas</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Klasės</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Objektai</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Požymiai</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>nėra</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Paiešką atitinkančių duomenų tipų nėra. Išvalykite paiešką.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>Rodoma %shown iš %count duomenų tipų</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Rodomi duomenų tipai: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Rūšiuoti pagal %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>Suskaičiuota %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Visi duomenų tipai</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Pagalbos puslapis</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Šis duomenų tipas naudojamas, bet neužregistruotas</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Toliau nurodytų klasių objektų negalima rodyti, redaguoti ar publikuoti, kol joks plėtinys neužregistruoja duomenų tipo. Aktyvuokite jį teikiantį plėtinį ir įtraukite jį į content.ini [DataTypeSettings] AvailableDataTypes[] arba pakeiskite klases.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini nurodo šį duomenų tipą, bet jokiame duomenų tipų kataloge nėra jo failo. Niekas jo nenaudoja; pašalinkite jį iš AvailableDataTypes[] arba aktyvuokite jo plėtinį.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Apie šį duomenų tipą</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Identifikatorius</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Pavadinimas</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Plėtinys %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>niekas</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP klasė</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Failas</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>Yra AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>taip</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ne</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Reikšmės stulpeliai</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Klasės atributo nustatymų stulpeliai</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Lentelės</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Stulpeliai ir lentelės rasti skaitant duomenų tipo kodą: orientyras, ne pažadas.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Šablonai</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Prieiga prie svetainės (siteaccess)</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Šablonas</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Rasta čia</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>ši administravimo sąsaja</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>numatytoji svetainė</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Be perrašymų: pagal klasę ar atributą atitinkantis perrašymo šablonas turi pirmenybę prieš šiuos.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Jį naudojančios klasės (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Jokia klasė neturi šio duomenų tipo atributo.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klasė</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Atributai</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Klasės atributai (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Atributas</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Nustatymai</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Privalomas</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Ieškomas</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Verčiamas</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Renka informaciją</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Dalis jį naudojančio turinio</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Naujausiai pakeisti pirmiau</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Pakeista</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Mazgas %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Kiekvienas vertimas turi savo reikšmę.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>Paieška indeksuoja jo reikšmes.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Jis gali rinkti lankytojų informaciją (formos).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Sąrašus galima rikiuoti pagal jį: rikiavimo raktas %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Rūšiuojamas</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Jo reikšmės nurodo į kitus objektus.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Ryšiai</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Jį galima užpildyti iš paprastos eilutės (importas, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Iš teksto</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Jį galima užpildyti iš failo.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Iš failo</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Jo klasės atributo nustatymai įtraukiami į paketus.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Paketai</translation>
     </message>
 </context>
 </TS>

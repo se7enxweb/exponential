@@ -982,6 +982,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>የሚፈለገው ይህ ገጽ ብቻ ነው፦ ከ%count ውስጥ ከ%from እስከ %to።</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>የkernel እና የቅጥያዎቹ እያንዳንዱ የውሂብ ዓይነት፣ እና ክፍሎቹ እና ይዘቱ እንዴት እንደሚጠቀሙበት።</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>የውሂብ ዓይነቶች</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15430,6 +15438,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Static publishing</source>
         <translation>የማይለዋወጥ ሕትመት</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>የውሂብ ዓይነቶች</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>የkernel እና የቅጥያዎቹ እያንዳንዱ የውሂብ ዓይነት፣ እና ክፍሎቹ እና ይዘቱ እንዴት እንደሚጠቀሙበት።</translation>
     </message>
 </context>
 <context>
@@ -55388,6 +55404,14 @@ your account.</source>
         <source>Copy of %class_name</source>
         <translation>የ%class_name ቅጂ</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>የውሂብ ዓይነቶች</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>የውሂብ ዓይነት %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85026,6 +85050,397 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>ይህ ኢሜይል በ %site የተላከው migration.ini [RemoteSettings] Notify[] ስለሚጠይቀው ነው።</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>የውሂብ ዓይነቶች (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>የተቆጠረው %time፣ እንደገና ከ%minutes ደቂቃ በኋላ</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>የውሂብ ዓይነት የአንድ ክፍል ባህሪ አንድ ዓይነት እሴት ያከማቻል እና ያርትዓል፦ የጽሑፍ መስመር፣ ምስል፣ ግንኙነት። Kernel አብዛኞቹን ያመጣል፣ ቅጥያዎች ተጨማሪ ያክላሉ። እዚህ ሁሉም አሉ፣ ማን እንደሚያቀርባቸው እና ምን ያህል ይዘት እንደሚጠቀማቸው። የውሂብ ጎታው የሚጠቀመው ግን ከዚህ በኋላ ማንም የማያስመዘግበው የውሂብ ዓይነት ያለውን ይዘት ይሰብራል።</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>የክፍል ቡድኖች</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>ያለፉትን ደቂቃዎች ቆጠራ ከመጠቀም ይልቅ አሁን እንደገና ቁጠር።</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>እንደገና ቁጠር</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>አጠቃላይ እይታ</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>የተመዘገቡበት</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>ጥቅም ላይ ያለ</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>ጥቅም ላይ አልዋለም</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>የውሂብ ዓይነቶችን የሚያቀርቡ ቅጥያዎች</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>የክፍል ባህሪያት</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>የነገር ባህሪያት</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>አልተመዘገበም</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>ተዘርዝሯል፣ ፋይሉ የለም</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count የውሂብ ዓይነቶች ጥቅም ላይ ውለዋል ግን አልተመዘገቡም</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes የክፍል ባህሪያት እና %object_attributes የነገር ባህሪያት ምንም ቅጥያ ወይም ቅንብር የማያስመዘግበው የውሂብ ዓይነት አላቸው። ነገሮቻቸው ሊታዩ፣ ሊስተካከሉ ወይም ሊታተሙ አይችሉም። የውሂብ ዓይነቱን የሚያቀርበውን ቅጥያ ያግብሩ፣ ወይም ክፍሉን ይቀይሩ።</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>እነዚህን ብቻ አሳይ</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>የውሂብ ዓይነት ፈልግ</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>መለያ፣ ስም፣ PHP ክፍል ወይም ቅጥያ።</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>አሳይ</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ሁሉም</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>ያቀረበው</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>ሁሉም ሰው</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Kernel</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>ከዚህ ማጣሪያ ጋር የሚዛመድ የውሂብ ዓይነት የለም።</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>ሁሉንም አሳይ</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>ቅጥያ</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>ከ%count የውሂብ ዓይነቶች %shown፣ %used በጥቅም ላይ</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>የውሂብ ጎታው የእነዚህ የውሂብ ዓይነቶች የክፍል ወይም የነገር ባህሪያት አሉት፣ ግን content.ini አንዳቸውንም አይዘረዝርም፣ ወይም ፋይላቸው የለም።</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>የ%provider የውሂብ ዓይነቶች</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>የውሂብ ዓይነት</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>PHP ክፍል እና ፋይል</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>ክፍሎች</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>ነገሮች</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>ባንዲራዎች</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>ምንም</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>ከፍለጋው ጋር የሚዛመድ የውሂብ ዓይነት የለም። ፍለጋውን አጽዳ።</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>ከ%count የውሂብ ዓይነቶች %shown ታይተዋል</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>የታዩ የውሂብ ዓይነቶች፦ %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>በ%column ደርድር</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>የተቆጠረው %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>ሁሉም የውሂብ ዓይነቶች</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>የእገዛ ገጽ</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>ይህ የውሂብ ዓይነት ጥቅም ላይ ውሏል ግን አልተመዘገበም</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>ምንም ቅጥያ የውሂብ ዓይነቱን እስካላስመዘገበ ድረስ ከዚህ በታች ያሉት ክፍሎች ነገሮች ሊታዩ፣ ሊስተካከሉ ወይም ሊታተሙ አይችሉም። የሚያቀርበውን ቅጥያ ያግብሩ እና ወደ content.ini [DataTypeSettings] AvailableDataTypes[] ያክሉት፣ ወይም ክፍሎቹን ይቀይሩ።</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini ይህን የውሂብ ዓይነት ይዘረዝራል፣ ግን የትኛውም የውሂብ ዓይነት ማውጫ ፋይሉን አልያዘም። ምንም አይጠቀመውም፤ ከAvailableDataTypes[] ያስወግዱት ወይም ቅጥያውን ያግብሩ።</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>ስለዚህ የውሂብ ዓይነት</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>መለያ</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>ስም</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>ቅጥያ %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>ማንም</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>የPHP ክፍል</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ፋይል</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>በAvailableDataTypes[] ውስጥ</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>አዎ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>አይ</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>የእሴቱ አምዶች</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>የክፍል ባህሪ ቅንብሮቹ አምዶች</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>ሰንጠረዦች</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>አምዶቹ እና ሰንጠረዦቹ የውሂብ ዓይነቱን ኮድ በማንበብ ይገኛሉ፦ መመሪያ እንጂ ቃል ኪዳን አይደለም።</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>አብነቶች</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>የጣቢያ መዳረሻ</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>አብነት</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>የተገኘው በ</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>ይህ አስተዳደር</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>ነባሪ ጣቢያ</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>ያለ override፦ በክፍል ወይም በባህሪ የሚዛመድ የoverride አብነት ከእነዚህ ይቀድማል።</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>የሚጠቀሙት ክፍሎች (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>የዚህ የውሂብ ዓይነት ባህሪ ያለው ክፍል የለም።</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>ክፍል</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>ባህሪዎች</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>የክፍል ባህሪያት (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>ባህሪ</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>ቅንብሮች</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>መታወቂያ %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>ያስፈልጋል</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>ሊፈለግ የሚችል</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>ሊተረጎም የሚችል</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>መረጃ ይሰበስባል</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>የሚጠቀሙት አንዳንድ ይዘቶች</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>መጨረሻ የተቀየረው መጀመሪያ</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>የተሻሻለ</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>መስቀለኛ ነጥብ %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>እያንዳንዱ ትርጉም የራሱ እሴት አለው።</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>ፍለጋው እሴቶቹን ይጠቁማል።</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>ከጎብኚዎች መረጃ መሰብሰብ ይችላል (ቅጾች)።</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>ዝርዝሮች በእሱ ሊደረደሩ ይችላሉ፦ የመደርደሪያ ቁልፍ %type።</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>ሊደረደር የሚችል</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>እሴቶቹ ወደ ሌሎች ነገሮች ያመለክታሉ።</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>ግንኙነቶች</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>ከቀላል ጽሑፍ ሊሞላ ይችላል (ማስገባት፣ REST)።</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>ከጽሑፍ</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>ከፋይል ሊሞላ ይችላል።</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>ከፋይል</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>የክፍል ባህሪ ቅንብሮቹ ወደ ጥቅሎች ይገባሉ።</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>ጥቅሎች</translation>
     </message>
 </context>
 </TS>

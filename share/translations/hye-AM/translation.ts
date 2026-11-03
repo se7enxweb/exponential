@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Որոնվում է միայն այս էջը: %from - %to, ընդամենը %count։</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Միջուկի և ընդլայնումների բոլոր տվյալների տիպերը, և ինչպես են դասերն ու բովանդակությունն օգտագործում դրանք։</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Տվյալների տիպեր</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Static publishing</source>
         <translation>Ստատիկ հրապարակում</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Տվյալների տիպեր</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Միջուկի և ընդլայնումների բոլոր տվյալների տիպերը, և ինչպես են դասերն ու բովանդակությունն օգտագործում դրանք։</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ your account.</source>
         <source>Copy of %class_name</source>
         <translation>%class_name դասի պատճեն</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Տվյալների տիպեր</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Տվյալների տիպ %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85028,6 +85052,397 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Այս նամակն ուղարկել է %site-ը, որովհետև դա պահանջում է migration.ini [RemoteSettings] Notify[]։</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Տվյալների տիպեր (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>Հաշվված է %time, կրկին %minutes րոպե հետո</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Տվյալների տիպը պահում և խմբագրում է դասի ատրիբուտի մեկ տեսակի արժեք՝ տեքստի տող, պատկեր, կապ։ Դրանց մեծ մասը տրամադրում է միջուկը, ընդլայնումներն ավելացնում են մյուսները։ Այստեղ բոլորն են, թե ով է դրանք տրամադրում և բովանդակության որքան մասն է դրանք օգտագործում։ Տվյալների տիպը, որը տվյալների բազան օգտագործում է, բայց այլևս ոչինչ չի գրանցում, վնասում է այն պարունակող բովանդակությունը։</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Դասերի խմբեր</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Կրկին հաշվել հիմա՝ վերջին րոպեների թվերի փոխարեն։</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Կրկին հաշվել</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Ընդհանուր տեսք</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Գրանցվել է</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>Օգտագործվում է</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Չի օգտագործվել</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Տվյալների տիպեր տրամադրող ընդլայնումներ</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Դասի ատրիբուտներ</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Օբյեկտի ատրիբուտներ</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Գրանցված չէ</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>Նշված է, ֆայլը բացակայում է</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count տվյալների տիպ օգտագործվում է, բայց գրանցված չէ</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes դասի ատրիբուտ և %object_attributes օբյեկտի ատրիբուտ ունեն տվյալների տիպ, որը ոչ մի ընդլայնում կամ կարգավորում չի գրանցում։ Դրանց օբյեկտները չեն կարող ցուցադրվել, խմբագրվել կամ հրապարակվել։ Ակտիվացրեք տվյալների տիպը տրամադրող ընդլայնումը կամ փոխեք դասը։</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Ցույց տալ միայն սրանք</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Գտնել տվյալների տիպ</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Նույնացուցիչ, անուն, PHP դաս կամ ընդլայնում։</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Ցուցադրել</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Բոլորը</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Տրամադրող</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Բոլորը</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Միջուկ</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Ոչ մի տվյալների տիպ չի համապատասխանում այս զտիչին։</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Ցուցադրել բոլորը</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Ընդլայնում</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown՝ %count տվյալների տիպից, %used՝ օգտագործվում են</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>Տվյալների բազայում կան այս տվյալների տիպերի դասի կամ օբյեկտի ատրիբուտներ, բայց content.ini-ն դրանցից ոչ մեկը չի նշում, կամ դրա ֆայլը բացակայում է։</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>%provider-ի տվյալների տիպերը</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Տվյալների տիպ</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>PHP դաս և ֆայլ</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Դասեր</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Օբյեկտներ</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Դրոշակներ</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>ոչ մեկը</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Ոչ մի տվյալների տիպ չի համապատասխանում որոնմանը։ Մաքրեք որոնումը։</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>Ցուցադրված է %shown՝ %count տվյալների տիպից</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Ցուցադրված տվյալների տիպեր՝ %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Դասավորել ըստ %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>Հաշվված է %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Բոլոր տվյալների տիպերը</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Օգնության էջ</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Այս տվյալների տիպը օգտագործվում է, բայց գրանցված չէ</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Ստորև նշված դասերի օբյեկտները չեն կարող ցուցադրվել, խմբագրվել կամ հրապարակվել, քանի դեռ ոչ մի ընդլայնում չի գրանցում տվյալների տիպը։ Ակտիվացրեք այն տրամադրող ընդլայնումը և ավելացրեք այն content.ini [DataTypeSettings] AvailableDataTypes[]-ում, կամ փոխեք դասերը։</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini-ն նշում է այս տվյալների տիպը, բայց ոչ մի տվյալների տիպի պանակում դրա ֆայլը չկա։ Ոչինչ այն չի օգտագործում․ հեռացրեք այն AvailableDataTypes[]-ից կամ ակտիվացրեք դրա ընդլայնումը։</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Այս տվյալների տիպի մասին</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Նույնացուցիչ</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Անուն</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Ընդլայնում՝ %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>ոչ ոք</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP դաս</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Ֆայլ</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>AvailableDataTypes[]-ում</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>այո</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ոչ</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Դրա արժեքի սյունակները</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Դրա դասի ատրիբուտի կարգավորումների սյունակները</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Աղյուսակներ</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Սյունակներն ու աղյուսակները գտնվում են տվյալների տիպի կոդը կարդալով՝ ուղեցույց է, ոչ թե երաշխիք։</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Ձևանմուշներ</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Կայքի մուտքի կետ</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Ձևանմուշ</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Գտնվում է</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>այս կառավարումը</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>լռելյայն կայք</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Առանց վերասահմանումների․ դասով կամ ատրիբուտով համընկնող վերասահմանման ձևանմուշը գերակայում է սրանց նկատմամբ։</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Այն օգտագործող դասեր (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Ոչ մի դաս չունի այս տվյալների տիպի ատրիբուտ։</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Դաս</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Ատրիբուտներ</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Դասի ատրիբուտներ (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Ատրիբուտ</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Կարգավորումներ</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Պարտադիր</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Որոնելի</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Թարգմանվող</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Հավաքում է տեղեկություններ</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Այն օգտագործող որոշ բովանդակություն</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Վերջին փոփոխվածը՝ առաջինը</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Փոփոխված</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Հանգույց %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Յուրաքանչյուր թարգմանություն ունի իր արժեքը։</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>Որոնումը ինդեքսավորում է դրա արժեքները։</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Կարող է տեղեկություններ հավաքել այցելուներից (ձևեր)։</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Ցուցակները կարելի է դասավորել ըստ դրա՝ դասավորման բանալի %type։</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Դասավորվող</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Դրա արժեքները հղում են այլ օբյեկտների։</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Կապեր</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Կարող է լրացվել պարզ տողից (ներմուծում, REST)։</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Տեքստից</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Կարող է լրացվել ֆայլից։</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Ֆայլից</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Դրա դասի ատրիբուտի կարգավորումները ներառվում են փաթեթներում։</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Փաթեթներ</translation>
     </message>
 </context>
 </TS>

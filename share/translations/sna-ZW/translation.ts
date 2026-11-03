@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Papeji ino chete ndiyo inotsvagwa: %from kusvika %to mune %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Rudzi rwese rwedhata rwemusimboti nezviwedzero, uye kuti makirasi nezvirimo zvinorushandisa sei.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Marudzi edhata</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ Chenjerai: Mapakeji acho haazobviswi pakuiswa.</translation>
     <message>
         <source>Static publishing</source>
         <translation>Kuburitsa kwakamira</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Marudzi edhata</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Rudzi rwese rwedhata rwemusimboti nezviwedzero, uye kuti makirasi nezvirimo zvinorushandisa sei.</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ akaundi yenyu.</translation>
         <source>Copy of %class_name</source>
         <translation>Kopi ye %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Marudzi edhata</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Rudzi rwedhata %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85028,6 +85052,397 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Tsamba iri rakatumirwa ne %site nekuti migration.ini [RemoteSettings] Notify[] inozvikumbira.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Marudzi edhata (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>Zvaverengwa %time, zvichaverengwa zvakare mushure memaminitsi %minutes</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Rudzi rwedhata runochengeta nekugadzirisa rudzi rumwe chete rwekukosha kwehunhu hwekirasi: mutsara wemanyorerwo, mufananidzo, hukama. Musimboti unounza mazhinji acho, zviwedzero zvinowedzera mamwe. Heano ese, ndiani anoapa uye zvirimo zvakawanda sei zvinoashandisa. Rudzi rwedhata rwunoshandiswa nedhatabhesi asi pasisina chinorunyoresa runokanganisa zvirimo zvinarwo.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Mapoka emakirasi</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Verenga zvakare izvozvi pane kushandisa zviverengero zvemaminitsi apfuura.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Verenga zvakare</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Muchidimbu</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Vakanyoresa</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>Uri kushandiswa</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Hazvina kushandiswa</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Zviwedzero zvinopa marudzi edhata</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Hunhu hwekirasi</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Hunhu hwechinhu</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Haruna kunyoreswa</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>Iri parondedzero, faira haipo</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>Marudzi edhata %count anoshandiswa asi haana kunyoreswa</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>Hunhu hwekirasi %class_attributes nehunhu hwechinhu %object_attributes zvine rudzi rwedhata rwusina chiwedzero kana chigadziriso chinorunyoresa. Zvinhu zvazvo hazvigoni kuratidzwa, kugadziriswa kana kuburitswa. Batidza chiwedzero chinopa rudzi rwedhata, kana kuti shandura kirasi.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Ratidza izvi chete</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Tsvaga rudzi rwedhata</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Chiziviso, zita, kirasi yePHP kana chiwedzero.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Ratidza</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Zvose</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Rwunopiwa na</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Vose</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Musimboti</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Hapana rudzi rwedhata runoenderana nesefa iyi.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Ratidza zvose</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Chiwedzero</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown pa %count marudzi edhata, %used ari kushandiswa</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>Dhatabhesi rine hunhu hwekirasi kana hwechinhu hwemarudzi edhata aya, asi content.ini haina kunyora kana rimwe racho, kana kuti faira yaro haipo.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>Marudzi edhata kubva ku %provider</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Rudzi rwedhata</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>Kirasi yePHP nefaira</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Makirasi</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Zvinhu</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Zviratidzo</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>hapana</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Hapana rudzi rwedhata runoenderana nekutsvaga. Bvisa kutsvaga.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%shown pa %count marudzi edhata aratidzwa</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Marudzi edhata aratidzwa: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Ronga nekuda kwe %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>Zvaverengwa %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Marudzi ese edhata</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Peji rerubatsiro</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Rudzi rwedhata urwu runoshandiswa asi haruna kunyoreswa</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Zvinhu zvemakirasi ari pazasi hazvigoni kuratidzwa, kugadziriswa kana kuburitswa kana pasina chiwedzero chinonyoresa rudzi rwedhata. Batidza chiwedzero chinorupa uye uruwedzere ku content.ini [DataTypeSettings] AvailableDataTypes[], kana kuti shandura makirasi.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini inonyora rudzi rwedhata urwu, asi hapana dhairekitori remarudzi edhata rine faira yarwo. Hapana chinorushandisa; rubvise mu AvailableDataTypes[] kana kuti batidza chiwedzero charwo.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Nezve rudzi rwedhata urwu</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Chiziviso</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Zita</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Chiwedzero %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>hapana munhu</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>Kirasi ye PHP</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Faira</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>Mu AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>hongu</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>kwete</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Makoramu ekukosha kwarwo</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Makoramu ezvigadziriso zvehunhu hwekirasi hwarwo</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Matafura</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Makoramu nematafura anowanikwa nekuverenga kodhi yerudzi rwedhata: gwara, kwete vimbiso.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Matembureti</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Nzira yekupinda pasaiti</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Tembureti</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Rakawanikwa mu</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>manejimendi iyi</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>saiti yakajairwa</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Pasina maovharaidhi: tembureti yeovharaidhi inoenderana nekirasi kana nehunhu inokunda idzi.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Makirasi anorushandisa (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Hapana kirasi ine hunhu hwerudzi rwedhata urwu.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Kirasi</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Hunhu</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Hunhu hwekirasi (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Hunhu</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Zvigadziriso</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Zvinodiwa</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Inotsvagika</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Inogona kushandurwa</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Hunounganidza ruzivo</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Zvimwe zvirimo zvinorushandisa</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Zvachinjwa pakupedzisira kutanga</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Yakachinjwa</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Nodhi %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Shanduro imwe neimwe ine kukosha kwayo.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>Kutsvaga kunoisa kukosha kwarwo muindekisi.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Runogona kuunganidza ruzivo kubva kuvashanyi (mafomu).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Marondedzero anogona kurongwa narwo: kiyi yekuronga %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Inogona kurongwa</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Kukosha kwarwo kunonongedza kune zvimwe zvinhu.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Hukama</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Runogona kuzadzwa kubva kumanyorerwo akapfava (kupinza, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Kubva kumanyorerwo</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Runogona kuzadzwa kubva kufaira.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Kubva kufaira</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Zvigadziriso zvehunhu hwekirasi hwarwo zvinopinda mumapakeji.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Mapakeji</translation>
     </message>
 </context>
 </TS>

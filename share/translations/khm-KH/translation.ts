@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>ស្វែងរកតែទំព័រនេះប៉ុណ្ណោះ: %from ដល់ %to ក្នុងចំណោម %count។</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>ប្រភេទទិន្នន័យទាំងអស់នៃស្នូល និងផ្នែកបន្ថែម និងរបៀបដែលថ្នាក់ និងមាតិកាប្រើវា។</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>ប្រភេទទិន្នន័យ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Static publishing</source>
         <translation>ការបោះពុម្ពផ្សាយឋិតិវន្ត</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>ប្រភេទទិន្នន័យ</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>ប្រភេទទិន្នន័យទាំងអស់នៃស្នូល និងផ្នែកបន្ថែម និងរបៀបដែលថ្នាក់ និងមាតិកាប្រើវា។</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ your account.</source>
         <source>Copy of %class_name</source>
         <translation>ច្បាប់ចម្លងនៃ %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>ប្រភេទទិន្នន័យ</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>ប្រភេទទិន្នន័យ %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85028,6 +85052,397 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>សំបុត្រនេះត្រូវបានផ្ញើដោយ %site ពីព្រោះ migration.ini [RemoteSettings] Notify[] ស្នើសុំវា។</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>ប្រភេទទិន្នន័យ (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>បានរាប់នៅ %time រាប់ម្តងទៀតក្រោយ %minutes នាទី</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>ប្រភេទទិន្នន័យរក្សាទុក និងកែសម្រួលតម្លៃមួយប្រភេទនៃលក្ខណៈរបស់ថ្នាក់៖ បន្ទាត់អត្ថបទ រូបភាព ទំនាក់ទំនង។ ស្នូលផ្តល់ភាគច្រើន ផ្នែកបន្ថែមបន្ថែមទៀត។ នេះគឺទាំងអស់ អ្នកផ្តល់ និងចំនួនមាតិកាដែលប្រើវា។ ប្រភេទទិន្នន័យដែលមូលដ្ឋានទិន្នន័យប្រើ ប៉ុន្តែគ្មានអ្វីចុះឈ្មោះវាទៀត នឹងធ្វើឱ្យមាតិកាដែលមានវាខូច។</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>ក្រុមថ្នាក់</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>រាប់ម្តងទៀតឥឡូវនេះ ជំនួសឱ្យការប្រើចំនួនពីប៉ុន្មាននាទីមុន។</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>រាប់ម្តងទៀត</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>ទិដ្ឋភាពទូទៅ</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>បានចុះឈ្មោះ</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>កំពុងប្រើ</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>មិនបានប្រើ</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>ផ្នែកបន្ថែមដែលផ្តល់ប្រភេទទិន្នន័យ</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>លក្ខណៈរបស់ថ្នាក់</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>លក្ខណៈរបស់វត្ថុ</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>មិនបានចុះឈ្មោះ</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>មានក្នុងបញ្ជី បាត់ឯកសារ</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>ប្រភេទទិន្នន័យ %count ត្រូវបានប្រើ ប៉ុន្តែមិនបានចុះឈ្មោះ</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>លក្ខណៈរបស់ថ្នាក់ %class_attributes និងលក្ខណៈវត្ថុ %object_attributes មានប្រភេទទិន្នន័យដែលគ្មានផ្នែកបន្ថែម ឬការកំណត់ណាចុះឈ្មោះ។ វត្ថុរបស់វាមិនអាចបង្ហាញ កែសម្រួល ឬផ្សព្វផ្សាយបានទេ។ សូមបើកផ្នែកបន្ថែមដែលផ្តល់ប្រភេទទិន្នន័យនេះ ឬប្តូរថ្នាក់។</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>បង្ហាញតែទាំងនេះ</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>ស្វែងរកប្រភេទទិន្នន័យ</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>អត្តសញ្ញាណ ឈ្មោះ ថ្នាក់ PHP ឬផ្នែកបន្ថែម។</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>បង្ហាញ</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ទាំងអស់</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>ផ្តល់ដោយ</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>មនុស្សគ្រប់គ្នា</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>ស្នូល</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>គ្មានប្រភេទទិន្នន័យត្រូវនឹងតម្រងនេះទេ។</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>បង្ហាញទាំងអស់</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>ផ្នែកបន្ថែម</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown នៃប្រភេទទិន្នន័យ %count, %used កំពុងប្រើ</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>មូលដ្ឋានទិន្នន័យមានលក្ខណៈថ្នាក់ ឬលក្ខណៈវត្ថុនៃប្រភេទទិន្នន័យទាំងនេះ ប៉ុន្តែ content.ini មិនរាយវាទេ ឬឯកសាររបស់វាបាត់។</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>ប្រភេទទិន្នន័យរបស់ %provider</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>ប្រភេទទិន្នន័យ</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>ថ្នាក់ PHP និងឯកសារ</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>ថ្នាក់</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>វត្ថុ</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>ទង់</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>គ្មាន</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>គ្មានប្រភេទទិន្នន័យត្រូវនឹងការស្វែងរកទេ។ សម្អាតការស្វែងរក។</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>បានបង្ហាញ %shown នៃប្រភេទទិន្នន័យ %count</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>ប្រភេទទិន្នន័យដែលបានបង្ហាញ៖ %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>តម្រៀបតាម %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>បានរាប់នៅ %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>ប្រភេទទិន្នន័យទាំងអស់</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>ទំព័រជំនួយ</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>ប្រភេទទិន្នន័យនេះត្រូវបានប្រើ ប៉ុន្តែមិនបានចុះឈ្មោះ</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>វត្ថុនៃថ្នាក់ខាងក្រោមមិនអាចបង្ហាញ កែសម្រួល ឬផ្សព្វផ្សាយបានទេ ដរាបណាគ្មានផ្នែកបន្ថែមណាចុះឈ្មោះប្រភេទទិន្នន័យនេះ។ សូមបើកផ្នែកបន្ថែមដែលផ្តល់វា ហើយបន្ថែមវាទៅ content.ini [DataTypeSettings] AvailableDataTypes[] ឬប្តូរថ្នាក់។</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini រាយប្រភេទទិន្នន័យនេះ ប៉ុន្តែគ្មានថតប្រភេទទិន្នន័យណាមានឯកសាររបស់វាទេ។ គ្មានអ្វីប្រើវាទេ សូមដកវាចេញពី AvailableDataTypes[] ឬបើកផ្នែកបន្ថែមរបស់វា។</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>អំពីប្រភេទទិន្នន័យនេះ</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>អត្តសញ្ញាណ</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>ឈ្មោះ</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>ផ្នែកបន្ថែម %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>គ្មាន</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>ថ្នាក់ PHP</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ឯកសារ</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>នៅក្នុង AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>បាទ/ចាស</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ទេ</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>ជួរឈរនៃតម្លៃរបស់វា</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>ជួរឈរនៃការកំណត់លក្ខណៈថ្នាក់របស់វា</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>តារាង</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>ជួរឈរ និងតារាងត្រូវបានរកឃើញដោយអានកូដរបស់ប្រភេទទិន្នន័យ៖ ជាការណែនាំ មិនមែនជាការធានាទេ។</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>គំរូ</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>ការចូលគេហទំព័រ</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>គំរូ</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>រកឃើញនៅក្នុង</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>ផ្នែករដ្ឋបាលនេះ</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>គេហទំព័រលំនាំដើម</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>ដោយគ្មានការជំនួស៖ គំរូជំនួសដែលត្រូវនឹងថ្នាក់ ឬលក្ខណៈ មានអាទិភាពលើទាំងនេះ។</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>ថ្នាក់ដែលប្រើវា (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>គ្មានថ្នាក់ណាមានលក្ខណៈនៃប្រភេទទិន្នន័យនេះទេ។</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>ថ្នាក់</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>លក្ខណៈ</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>លក្ខណៈរបស់ថ្នាក់ (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>លក្ខណៈ</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>ការកំណត់</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>ចាំបាច់</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>អាចស្វែងរកបាន</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>អាចបកប្រែបាន</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>ប្រមូលព័ត៌មាន</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>មាតិកាខ្លះដែលប្រើវា</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>កែប្រែចុងក្រោយមុនគេ</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>បានកែប្រែ</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>ថ្នាំង %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>ការបកប្រែនីមួយៗមានតម្លៃផ្ទាល់ខ្លួន។</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>ការស្វែងរកធ្វើលិបិក្រមតម្លៃរបស់វា។</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>វាអាចប្រមូលព័ត៌មានពីអ្នកទស្សនា (ទម្រង់)។</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>បញ្ជីអាចតម្រៀបតាមវា៖ សោតម្រៀប %type។</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>អាចតម្រៀបបាន</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>តម្លៃរបស់វាចង្អុលទៅវត្ថុផ្សេងទៀត។</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>ទំនាក់ទំនង</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>វាអាចបំពេញពីខ្សែអក្សរធម្មតា (នាំចូល REST)។</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>ពីអត្ថបទ</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>វាអាចបំពេញពីឯកសារ។</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>ពីឯកសារ</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>ការកំណត់លក្ខណៈថ្នាក់របស់វាត្រូវបានដាក់ក្នុងកញ្ចប់។</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>កញ្ចប់</translation>
     </message>
 </context>
 </TS>

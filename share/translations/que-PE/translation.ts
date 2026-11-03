@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Kay raphillapi maskasqa kachkan: %from manta %to kama, %count manta.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Sunqup yapakuqkunap llapan willay layankuna, t'aqakuna ukhunpas imaynatam llamk'achinku.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Willay layakuna</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ Yuyay: q'ipikunaqa manam churasqata hurqusqa kanqachu.</translation>
     <message>
         <source>Static publishing</source>
         <translation>Sayaq lluqsichiy</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Willay layakuna</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Sunqup yapakuqkunap llapan willay layankuna, t'aqakuna ukhunpas imaynatam llamk'achinku.</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ llamk'achinaykipaq.</translation>
         <source>Copy of %class_name</source>
         <translation>%class_name-pa kikinchasqan</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Willay layakuna</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Willay laya %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85028,6 +85052,397 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Kay willakuyqa %site nisqamanta kachasqa karqan, migration.ini [RemoteSettings] Notify[] mañakusqanrayku.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Willay layakuna (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>%time yupasqa, %minutes minutu qhipaman wakmanta yupakunqa</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Willay layaqa huk t'aqap kaqninpa huk laya chaninta waqaychan, hukchantaq: huk qillqa siq'i, huk rikch'a, huk tinkiy. Sunqum aswan achkata apamun, yapakuqkunataq astawan yapanku. Kaypim llapan kachkan, pikuna quykun, hayk'a ukhuntaq llamk'achin. Willakuna waqaychana llamk'achisqan willay laya, manaña imapas qillqachiptinqa, chay kapuq ukhunta p'akin.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>T'aqakunap huñunkuna</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Kunanpacha wakmanta yupay, qhipa minutukunap yupayninta mana llamk'achispa.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Wakmanta yupay</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Tukuy qhaway</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Qillqakusqa</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>Llamk'achkan</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Mana llamk'achisqa</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Willay layakunata quq yapakuqkuna</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>T'aqap kaqninkuna</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Objetup kaqninkuna</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Mana qillqachisqa</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>Sutisqa, willañiqi manam kanchu</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count willay layakuna llamk'achisqa, ichaqa mana qillqachisqa</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes t'aqap kaqninkuna %object_attributes objetup kaqninkunapiwan huk willay layayuq kanku, mana ima yapakuqpas allichaypas qillqachisqan. Paykunap objetunkunaqa manam rikuchiyta, hukchayta, lluqsichiytapas atikunchu. Willay layata quq yapakuqta kawsachiy, utaq t'aqata hukchay.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Kaykunallata rikuchiy</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Willay layata maskay</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Riqsichiq, suti, PHP t'aqa utaq yapakuq.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Rikuchiy</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Tukuy</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Quq</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Llapa</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Sunqu</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Manam ima willay layapas kay suysuwan tupanchu.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Llapanta rikuchiy</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Yapakuq</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%count willay layakunamanta %shown, %used llamk'achisqa</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>Willakuna waqaychanaqa kay willay layakunap t'aqa utaq objetu kaqninkunayuqmi, ichaqa content.ini manam mayqintapas sutinchu, utaq willañiqin manam kanchu.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>%provider-pa willay layankuna</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Willay laya</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>PHP t'aqa willañiqipiwan</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>T'aqakuna</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Objetukuna</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Unanchakuna</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>manan</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Manam ima willay layapas maskaywan tupanchu. Maskayta pichay.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%count willay layakunamanta %shown rikuchisqa</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Rikuchisqa willay layakuna: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>%column-nisqawan ñiqinchay</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>%time yupasqa</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Llapan willay layakuna</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Yanapay p'anqa</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Kay willay layaqa llamk'achisqam, ichaqa mana qillqachisqa</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Uraypi t'aqakunap objetunkunaqa manam rikuchiyta, hukchayta, lluqsichiytapas atikunchu, mana ima yapakuqpas willay layata qillqachinankama. Quq yapakuqta kawsachiy, content.ini [DataTypeSettings] AvailableDataTypes[] nisqaman yapay, utaq t'aqakunata hukchay.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini kay willay layata sutin, ichaqa manam ima willay laya q'imiripas willañiqinta hap'inchu. Manam imapas llamk'achinchu; AvailableDataTypes[] nisqamanta qichuy utaq yapakuqninta kawsachiy.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Kay willay layamanta</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Riqsichiq</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Suti</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Yapakuq %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>mana pipas</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP t'aqa</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Willañiqi</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>AvailableDataTypes[] nisqapi</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>arí</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>mana</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Chaninpa columnankuna</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>T'aqa kaqninpa allichayninkunap columnankuna</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Tablakuna</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Columnakuna tablakunapas willay layap codigonta ñawinchaspa tarisqa: huk pusaylla, mana rimanakuychu.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Plantillakuna</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Web yaykuna</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Plantilla</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Tarisqa kaypi</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>kay kamachiy</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>ñawpaqmanta web</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Mana override nisqakunawan: t'aqawan utaq kaqninwan tupaq override plantilla kaykunata atipan.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Llamk'achiq t'aqakuna (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Manam ima t'aqapas kay willay layap kaqninta hap'inchu.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>T'aqa</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Kaqninkuna</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>T'aqap kaqninkuna (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Kaqnin</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Allichaykuna</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Mañakusqa</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Maskasqa kayta atiq</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>T'ikrayta atikuq</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Willayta huñun</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Llamk'achiq wakin ukhun</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Qhipa hukchasqa ñawpaqta</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Hukchasqa</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Khipu %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Sapa t'ikraymi kikin chaniyuq.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>Maskayqa chaninkunata indexan.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Watukuqkunamanta willakuyta huñunman (formulariokuna).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Listakunata paywan ñiqinchayta atikun: ñiqinchana llave %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Ñiqinchana</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Chaninkunan huk objetukunaman qhawachin.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>T'inkikuna</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Ch'uya qillqamanta hunt'achiyta atikun (import, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Qillqamanta</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Willañiqimanta hunt'achiyta atikun.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Willañiqimanta</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>T'aqa kaqninpa allichayninkuna q'ipikunaman rinku.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Q'ipikuna</translation>
     </message>
 </context>
 </TS>

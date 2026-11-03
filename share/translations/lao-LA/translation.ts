@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>ຄົ້ນຫາສະເພາະໜ້ານີ້ເທົ່ານັ້ນ: %from ຫາ %to ຈາກ %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>ທຸກປະເພດຂໍ້ມູນຂອງເຄີເນລ ແລະ ສ່ວນຂະຫຍາຍ, ແລະ ວິທີທີ່ຄລາສ ແລະ ເນື້ອຫາໃຊ້ພວກມັນ.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>ປະເພດຂໍ້ມູນ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Static publishing</source>
         <translation>ການເຜີຍແຜ່ແບບສະຖິດ</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>ປະເພດຂໍ້ມູນ</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>ທຸກປະເພດຂໍ້ມູນຂອງເຄີເນລ ແລະ ສ່ວນຂະຫຍາຍ, ແລະ ວິທີທີ່ຄລາສ ແລະ ເນື້ອຫາໃຊ້ພວກມັນ.</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ your account.</source>
         <source>Copy of %class_name</source>
         <translation>ສຳເນົາຂອງ %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>ປະເພດຂໍ້ມູນ</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>ປະເພດຂໍ້ມູນ %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85028,6 +85052,397 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>ອີເມວນີ້ຖືກສົ່ງໂດຍ %site ເພາະວ່າ migration.ini [RemoteSettings] Notify[] ຮ້ອງຂໍ.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>ປະເພດຂໍ້ມູນ (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>ນັບເມື່ອ %time, ນັບໃໝ່ຫຼັງຈາກ %minutes ນາທີ</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>ປະເພດຂໍ້ມູນເກັບ ແລະ ແກ້ໄຂຄ່າປະເພດໜຶ່ງຂອງຄຸນລັກສະນະຄລາສ: ແຖວຂໍ້ຄວາມ, ຮູບພາບ, ຄວາມສຳພັນ. ເຄີເນລໃຫ້ສ່ວນຫຼາຍ, ສ່ວນຂະຫຍາຍເພີ່ມອີກ. ນີ້ແມ່ນທັງໝົດ, ໃຜເປັນຜູ້ໃຫ້ ແລະ ເນື້ອຫາໃຊ້ພວກມັນຫຼາຍປານໃດ. ປະເພດຂໍ້ມູນທີ່ຖານຂໍ້ມູນໃຊ້ ແຕ່ບໍ່ມີສິ່ງໃດລົງທະບຽນອີກແລ້ວ ຈະເຮັດໃຫ້ເນື້ອຫາທີ່ມີມັນເສຍຫາຍ.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>ກຸ່ມຄລາສ</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>ນັບໃໝ່ດຽວນີ້ ແທນການໃຊ້ຜົນນັບຂອງສອງສາມນາທີຜ່ານມາ.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>ນັບໃໝ່</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>ພາບລວມ</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>ລົງທະບຽນເມື່ອ</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>ກຳລັງໃຊ້</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>ບໍ່ໄດ້ໃຊ້</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>ສ່ວນຂະຫຍາຍທີ່ໃຫ້ປະເພດຂໍ້ມູນ</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>ຄຸນລັກສະນະຄລາສ</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>ຄຸນລັກສະນະຂອງອອບເຈັກ</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>ບໍ່ໄດ້ລົງທະບຽນ</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>ມີໃນລາຍການ, ບໍ່ມີໄຟລ໌</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>ປະເພດຂໍ້ມູນ %count ລາຍການຖືກໃຊ້ ແຕ່ບໍ່ໄດ້ລົງທະບຽນ</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>ຄຸນລັກສະນະຄລາສ %class_attributes ລາຍການ ແລະ ຄຸນລັກສະນະອອບເຈັກ %object_attributes ລາຍການ ມີປະເພດຂໍ້ມູນທີ່ບໍ່ມີສ່ວນຂະຫຍາຍ ຫຼື ການຕັ້ງຄ່າໃດລົງທະບຽນ. ອອບເຈັກຂອງພວກມັນບໍ່ສາມາດສະແດງ, ແກ້ໄຂ ຫຼື ເຜີຍແຜ່ໄດ້. ເປີດໃຊ້ສ່ວນຂະຫຍາຍທີ່ໃຫ້ປະເພດຂໍ້ມູນນັ້ນ ຫຼື ປ່ຽນຄລາສ.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>ສະແດງສະເພາະອັນເຫຼົ່ານີ້</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>ຊອກຫາປະເພດຂໍ້ມູນ</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>ຕົວລະບຸ, ຊື່, ຄລາສ PHP ຫຼື ສ່ວນຂະຫຍາຍ.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ສະແດງ</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ທັງໝົດ</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>ໃຫ້ໂດຍ</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>ທຸກຄົນ</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>ເຄີເນລ</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>ບໍ່ມີປະເພດຂໍ້ມູນທີ່ກົງກັບຕົວກັ່ນຕອງນີ້.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>ສະແດງທັງໝົດ</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>ສ່ວນຂະຫຍາຍ</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown ຈາກ %count ປະເພດຂໍ້ມູນ, ໃຊ້ຢູ່ %used</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>ຖານຂໍ້ມູນມີຄຸນລັກສະນະຄລາສ ຫຼື ອອບເຈັກຂອງປະເພດຂໍ້ມູນເຫຼົ່ານີ້ ແຕ່ content.ini ບໍ່ໄດ້ລະບຸອັນໃດເລີຍ ຫຼື ໄຟລ໌ຂອງມັນຫາຍໄປ.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>ປະເພດຂໍ້ມູນຂອງ %provider</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>ປະເພດຂໍ້ມູນ</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>ຄລາສ ແລະ ໄຟລ໌ PHP</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>ຄລາສ</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>ອອບເຈັກ</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>ເຄື່ອງໝາຍ</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>ບໍ່ມີ</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>ບໍ່ມີປະເພດຂໍ້ມູນທີ່ກົງກັບການຊອກຫາ. ລ້າງການຊອກຫາ.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>ສະແດງ %shown ຈາກ %count ປະເພດຂໍ້ມູນ</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>ປະເພດຂໍ້ມູນທີ່ສະແດງ: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>ຮຽງລຳດັບຕາມ %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>ນັບເມື່ອ %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>ປະເພດຂໍ້ມູນທັງໝົດ</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>ໜ້າຊ່ວຍເຫຼືອ</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>ປະເພດຂໍ້ມູນນີ້ຖືກໃຊ້ ແຕ່ບໍ່ໄດ້ລົງທະບຽນ</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>ອອບເຈັກຂອງຄລາສຂ້າງລຸ່ມບໍ່ສາມາດສະແດງ, ແກ້ໄຂ ຫຼື ເຜີຍແຜ່ໄດ້ ຕາບໃດທີ່ບໍ່ມີສ່ວນຂະຫຍາຍໃດລົງທະບຽນປະເພດຂໍ້ມູນນີ້. ເປີດໃຊ້ສ່ວນຂະຫຍາຍທີ່ໃຫ້ມັນ ແລະ ເພີ່ມມັນໃສ່ content.ini [DataTypeSettings] AvailableDataTypes[] ຫຼື ປ່ຽນຄລາສ.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini ລະບຸປະເພດຂໍ້ມູນນີ້ ແຕ່ບໍ່ມີໂຟນເດີປະເພດຂໍ້ມູນໃດມີໄຟລ໌ຂອງມັນ. ບໍ່ມີສິ່ງໃດໃຊ້ມັນ; ລຶບມັນອອກຈາກ AvailableDataTypes[] ຫຼື ເປີດໃຊ້ສ່ວນຂະຫຍາຍຂອງມັນ.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>ກ່ຽວກັບປະເພດຂໍ້ມູນນີ້</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>ຕົວລະບຸ</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>ຊື່</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>ສ່ວນຂະຫຍາຍ %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>ບໍ່ມີໃຜ</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>ຄລາສ PHP</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ໄຟລ໌</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>ຢູ່ໃນ AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ແມ່ນ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ບໍ່</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>ຖັນຂອງຄ່າ</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>ຖັນຂອງການຕັ້ງຄ່າຄຸນລັກສະນະຄລາສ</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>ຕາຕະລາງ</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>ຖັນ ແລະ ຕາຕະລາງພົບໄດ້ໂດຍການອ່ານລະຫັດຂອງປະເພດຂໍ້ມູນ: ເປັນແນວທາງ, ບໍ່ແມ່ນຄຳໝັ້ນສັນຍາ.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>ແມ່ແບບ</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>ການເຂົ້າເຖິງໄຊ</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>ແມ່ແບບ</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>ພົບໃນ</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>ການບໍລິຫານນີ້</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>ເວັບໄຊເລີ່ມຕົ້ນ</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>ບໍ່ລວມການແທນທີ່: ແມ່ແບບແທນທີ່ທີ່ກົງກັບຄລາສ ຫຼື ຄຸນລັກສະນະຈະມີສິດກ່ອນອັນເຫຼົ່ານີ້.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>ຄລາສທີ່ໃຊ້ມັນ (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>ບໍ່ມີຄລາສໃດມີຄຸນລັກສະນະຂອງປະເພດຂໍ້ມູນນີ້.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>ຄລາສ</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>ຄຸນລັກສະນະ</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>ຄຸນລັກສະນະຄລາສ (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>ຄຸນລັກສະນະ</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>ການຕັ້ງຄ່າ</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>ຈຳເປັນ</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>ຄົ້ນຫາໄດ້</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>ແປໄດ້</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>ເກັບກຳຂໍ້ມູນ</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>ເນື້ອຫາບາງສ່ວນທີ່ໃຊ້ມັນ</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>ແກ້ໄຂລ່າສຸດກ່ອນ</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>ແກ້ໄຂເມື່ອ</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>ໂນດ %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>ແຕ່ລະການແປມີຄ່າຂອງຕົນເອງ.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>ການຊອກຫາຈັດດັດຊະນີຄ່າຂອງມັນ.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>ມັນສາມາດເກັບກຳຂໍ້ມູນຈາກຜູ້ເຂົ້າຊົມ (ແບບຟອມ).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>ລາຍການສາມາດຮຽງຕາມມັນໄດ້: ກະແຈຮຽງ %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>ຮຽງລຳດັບໄດ້</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>ຄ່າຂອງມັນຊີ້ໄປຫາອອບເຈັກອື່ນ.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>ຄວາມສຳພັນ</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>ມັນສາມາດຕື່ມຈາກຂໍ້ຄວາມທຳມະດາໄດ້ (ນຳເຂົ້າ, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>ຈາກຂໍ້ຄວາມ</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>ມັນສາມາດຕື່ມຈາກໄຟລ໌ໄດ້.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>ຈາກໄຟລ໌</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>ການຕັ້ງຄ່າຄຸນລັກສະນະຄລາສຂອງມັນຖືກລວມເຂົ້າໃນແພັກເກັດ.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>ແພັກເກດ</translation>
     </message>
 </context>
 </TS>

@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>იძებნება მხოლოდ ეს გვერდი: %from – %to, სულ %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>ბირთვისა და გაფართოებების ყველა მონაცემთა ტიპი და როგორ იყენებენ მათ კლასები და შიგთავსი.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>მონაცემთა ტიპები</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Static publishing</source>
         <translation>სტატიკური გამოქვეყნება</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>მონაცემთა ტიპები</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>ბირთვისა და გაფართოებების ყველა მონაცემთა ტიპი და როგორ იყენებენ მათ კლასები და შიგთავსი.</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ your account.</source>
         <source>Copy of %class_name</source>
         <translation>ასლი: %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>მონაცემთა ტიპები</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>მონაცემთა ტიპი %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85028,6 +85052,397 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>ეს წერილი გამოგზავნილია საიტიდან %site, რადგან ამას ითხოვს migration.ini [RemoteSettings] Notify[].</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>მონაცემთა ტიპები (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>დათვლილია %time, ხელახლა %minutes წუთში</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>მონაცემთა ტიპი ინახავს და არედაქტირებს კლასის ატრიბუტის ერთი სახის მნიშვნელობას: ტექსტის ხაზს, სურათს, კავშირს. მათი უმეტესობა ბირთვს მოაქვს, გაფართოებები კიდევ ამატებენ. აქ არის ყველა მათგანი, ვინ აწვდის მათ და შიგთავსის რა ნაწილი იყენებს მათ. მონაცემთა ტიპი, რომელსაც მონაცემთა ბაზა იყენებს, მაგრამ აღარაფერი არეგისტრირებს, აზიანებს მის შემცველ შიგთავსს.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>კლასების ჯგუფები</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>ახლავე ხელახლა დათვლა ბოლო წუთების მონაცემების ნაცვლად.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>ხელახლა დათვლა</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>მიმოხილვა</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>დარეგისტრირებული</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>გამოიყენება</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>არ გამოიყენება</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>მონაცემთა ტიპების მომწოდებელი გაფართოებები</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>კლასის ატრიბუტები</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>ობიექტის ატრიბუტები</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>არარეგისტრირებული</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>ჩამოთვლილია, ფაილი აკლია</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count მონაცემთა ტიპი გამოიყენება, მაგრამ არ არის რეგისტრირებული</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes კლასის ატრიბუტს და %object_attributes ობიექტის ატრიბუტს აქვს მონაცემთა ტიპი, რომელსაც არცერთი გაფართოება ან პარამეტრი არ არეგისტრირებს. მათი ობიექტების ჩვენება, რედაქტირება ან გამოქვეყნება შეუძლებელია. გაააქტიურეთ გაფართოება, რომელიც ამ მონაცემთა ტიპს აწვდის, ან შეცვალეთ კლასი.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>მხოლოდ ამათი ჩვენება</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>მონაცემთა ტიპის პოვნა</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>იდენტიფიკატორი, სახელი, PHP კლასი ან გაფართოება.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ჩვენება</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ყველა</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>მომწოდებელი</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>ყველა</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>ბირთვი</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>ამ ფილტრს არცერთი მონაცემთა ტიპი არ შეესაბამება.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>ყველას ჩვენება</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>გაფართოება</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown / %count მონაცემთა ტიპი, გამოიყენება %used</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>მონაცემთა ბაზაში არის ამ მონაცემთა ტიპების კლასის ან ობიექტის ატრიბუტები, მაგრამ content.ini არცერთ მათგანს არ ჩამოთვლის, ან მისი ფაილი აკლია.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>%provider-ის მონაცემთა ტიპები</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>მონაცემთა ტიპი</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>PHP კლასი და ფაილი</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>კლასები</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>ობიექტები</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>ალმები</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>არცერთი</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>ძიებას არცერთი მონაცემთა ტიპი არ შეესაბამება. გაასუფთავეთ ძიება.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>ნაჩვენებია %shown / %count მონაცემთა ტიპი</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>ნაჩვენები მონაცემთა ტიპები: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>დალაგება სვეტით: %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>დათვლილია %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>ყველა მონაცემთა ტიპი</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>დახმარების გვერდი</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>ეს მონაცემთა ტიპი გამოიყენება, მაგრამ არ არის რეგისტრირებული</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>ქვემოთ მოცემული კლასების ობიექტების ჩვენება, რედაქტირება ან გამოქვეყნება შეუძლებელია, სანამ არცერთი გაფართოება არ არეგისტრირებს ამ მონაცემთა ტიპს. გაააქტიურეთ მისი მომწოდებელი გაფართოება და დაამატეთ იგი content.ini [DataTypeSettings] AvailableDataTypes[]-ში, ან შეცვალეთ კლასები.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini ჩამოთვლის ამ მონაცემთა ტიპს, მაგრამ მისი ფაილი არცერთ მონაცემთა ტიპის საქაღალდეში არ არის. მას არაფერი იყენებს; ამოიღეთ AvailableDataTypes[]-დან ან გაააქტიურეთ მისი გაფართოება.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>ამ მონაცემთა ტიპის შესახებ</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>იდენტიფიკატორი</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>სახელი</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>გაფართოება %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>არავინ</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP კლასი</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ფაილი</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>AvailableDataTypes[]-ში</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>დიახ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>არა</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>მისი მნიშვნელობის სვეტები</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>მისი კლასის ატრიბუტის პარამეტრების სვეტები</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>ცხრილები</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>სვეტები და ცხრილები ნაპოვნია მონაცემთა ტიპის კოდის წაკითხვით: ეს მინიშნებაა და არა გარანტია.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>შაბლონები</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>საიტზე წვდომა</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>შაბლონი</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>სად მოიძებნა</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>ეს ადმინისტრირება</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>ნაგულისხმევი საიტი</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>გადაფარვების გარეშე: კლასით ან ატრიბუტით შერჩეული გადაფარვის შაბლონი ამათზე უპირატესია.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>მისი გამომყენებელი კლასები (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>არცერთ კლასს არ აქვს ამ მონაცემთა ტიპის ატრიბუტი.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>კლასი</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>ატრიბუტები</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>კლასის ატრიბუტები (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>ატრიბუტი</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>პარამეტრები</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>სავალდებულო</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>საძიებადი</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>თარგმნადი</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>აგროვებს ინფორმაციას</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>მისი გამომყენებელი შიგთავსის ნაწილი</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>ჯერ ბოლოს შეცვლილი</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>შეცვლილი</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>კვანძი %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>ყველა თარგმანს თავისი მნიშვნელობა აქვს.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>ძიება მის მნიშვნელობებს აინდექსებს.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>მას შეუძლია ვიზიტორებისგან ინფორმაციის შეგროვება (ფორმები).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>სიების დალაგება მისით შეიძლება: დალაგების გასაღები %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>დალაგებადი</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>მისი მნიშვნელობები სხვა ობიექტებზე მიუთითებს.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>კავშირები</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>მისი შევსება შესაძლებელია უბრალო სტრიქონიდან (იმპორტი, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>ტექსტიდან</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>მისი შევსება შესაძლებელია ფაილიდან.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>ფაილიდან</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>მისი კლასის ატრიბუტის პარამეტრები პაკეტებში გადადის.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>პაკეტები</translation>
     </message>
 </context>
 </TS>

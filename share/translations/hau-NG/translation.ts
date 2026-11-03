@@ -982,6 +982,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Ana neman a wannan shafi kaɗai: %from zuwa %to daga cikin %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Kowane nau'in bayanai na kernel da na ƙari, da yadda rukunai da abubuwa ke amfani da shi.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Nau'ukan bayanai</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15430,6 +15438,14 @@ Lura: Ba za a cire shigarwar fakitin ba.</translation>
     <message>
         <source>Static publishing</source>
         <translation>Wallafawa ta tsaye</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Nau'ukan bayanai</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Kowane nau'in bayanai na kernel da na ƙari, da yadda rukunai da abubuwa ke amfani da shi.</translation>
     </message>
 </context>
 <context>
@@ -55388,6 +55404,14 @@ asusunka.</translation>
         <source>Copy of %class_name</source>
         <translation>Kwafin %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Nau'ukan bayanai</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Nau'in bayanai %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85026,6 +85050,397 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>%site ne ya aiko da wannan saƙo saboda migration.ini [RemoteSettings] Notify[] ya buƙaci haka.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Nau'ukan bayanai (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>An ƙirga %time, za a sake bayan mintuna %minutes</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Nau'in bayanai yana adanawa da gyara nau'in ƙima ɗaya na sifar rukuni: layin rubutu, hoto, alaƙa. Kernel ne ke kawo yawancinsu, ƙari suna ƙara wasu. Ga dukansu nan, wanda ke samar da su da yawan abubuwan da ke amfani da su. Nau'in bayanai da rumbun bayanai ke amfani da shi amma babu abin da ke yi masa rajista kuma yana lalata abubuwan da ke da shi.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Rukunonin rukuni</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Sake ƙirga yanzu maimakon amfani da ƙirgar mintunan da suka gabata.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Sake ƙirga</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Bayani a taƙaice</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>An yi rajista</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>Ana amfani da shi</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Ba a yi amfani da shi ba</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Ƙari masu samar da nau'ukan bayanai</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Sifofin rukuni</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Sifofin Abu</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Ba a yi rajista ba</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>An lissafa, fayil ya ɓace</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>Ana amfani da nau'ukan bayanai %count amma ba a yi musu rajista ba</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>Sifofin rukuni %class_attributes da sifofin abu %object_attributes suna da nau'in bayanai da babu ƙari ko saiti da ke yi masa rajista. Ba za a iya nuna, gyara ko wallafa abubuwansu ba. Kunna ƙarin da ke samar da nau'in bayanan, ko canza rukunin.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Nuna waɗannan kawai</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Nemo nau'in bayanai</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Mai ganowa, suna, rukunin PHP ko ƙari.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Nuna</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Duka</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Wanda ya samar</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Kowa da kowa</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Kernel</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Babu nau'in bayanai da ya dace da wannan tacewa.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Nuna duka</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Ƙari</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown cikin nau'ukan bayanai %count, %used ana amfani da su</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>Rumbun bayanai yana da sifofin rukuni ko na abu na waɗannan nau'ukan bayanai, amma content.ini bai lissafa ko ɗaya ba, ko fayil ɗinsa ya ɓace.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>Nau'ukan bayanai na %provider</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Nau'in bayanai</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>Rukunin PHP da fayil</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Rukunai</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Abubuwa</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Alamomi</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>babu</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Babu nau'in bayanai da ya dace da binciken. Share binciken.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>An nuna %shown cikin nau'ukan bayanai %count</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Nau'ukan bayanai da aka nuna: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Tsara bisa %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>An ƙirga %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Duk nau'ukan bayanai</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Shafin taimako</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Ana amfani da wannan nau'in bayanai amma ba a yi masa rajista ba</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Ba za a iya nuna, gyara ko wallafa abubuwan rukunan da ke ƙasa ba muddin babu ƙarin da ke yi wa nau'in bayanan rajista. Kunna ƙarin da ke samar da shi kuma ƙara shi a content.ini [DataTypeSettings] AvailableDataTypes[], ko canza rukunan.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini ya lissafa wannan nau'in bayanai, amma babu jakar nau'in bayanai da ke da fayil ɗinsa. Babu abin da ke amfani da shi; cire shi daga AvailableDataTypes[] ko kunna ƙarinsa.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Game da wannan nau'in bayanai</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Mai ganewa</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Suna</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Ƙari %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>babu kowa</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>Rukunin PHP</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fayil</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>A cikin AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>eh</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>a'a</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Ginshiƙan ƙimarsa</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Ginshiƙan saitunan sifar rukuninsa</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Teburori</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Ana samun ginshiƙai da teburori ta hanyar karanta lambar nau'in bayanan: jagora ne, ba alkawari ba.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Samfuran shafi</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Hanyar shiga shafi</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Samfuri</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>An samu a</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>wannan gudanarwa</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>shafin tsoho</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Ba tare da maye gurbi ba: samfurin maye gurbi da ya dace da rukuni ko sifa yana rinjayar waɗannan.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Rukunai masu amfani da shi (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Babu rukunin da ke da sifa ta wannan nau'in bayanai.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Rukuni</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Sifofi</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Sifofin rukuni (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Sifa</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Saituna</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Wajibi</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Mai yiwuwar nema</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Mai yiwuwar fassarawa</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Yana tattara bayanai</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Wasu abubuwan da ke amfani da shi</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Wanda aka gyara ƙarshe a farko</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>An gyara</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Kumburi %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Kowace fassara tana da ƙimarta.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>Bincike yana tsara ƙimominsa a fihirisa.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Yana iya tattara bayanai daga baƙi (fom).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Ana iya jera jerin abubuwa da shi: maɓallin jerawa %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Mai iya jerawa</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Ƙimominsa suna nuni zuwa wasu abubuwa.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Alaƙoƙi</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Ana iya cika shi daga rubutu kawai (shigowa, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Daga rubutu</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Ana iya cika shi daga fayil.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Daga fayil</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Saitunan sifar rukuninsa suna shiga cikin fakiti.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Fakiti</translation>
     </message>
 </context>
 </TS>

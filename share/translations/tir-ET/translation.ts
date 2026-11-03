@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>እዚ ገጽ ጥራይ እዩ ዝድለ: ካብ %from ክሳብ %to ካብ %count።</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>ኩሉ ዓይነት ዳታ ናይ ማእከልን መስፋሕትታትን፡ ከምኡ'ውን ክፍልታትን ትሕዝቶን ብኸመይ ከም ዝጥቀሙሉ።</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>ዓይነት ዳታ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Static publishing</source>
         <translation>ስታቲክ ምሕታም</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>ዓይነት ዳታ</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>ኩሉ ዓይነት ዳታ ናይ ማእከልን መስፋሕትታትን፡ ከምኡ'ውን ክፍልታትን ትሕዝቶን ብኸመይ ከም ዝጥቀሙሉ።</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ your account.</source>
         <source>Copy of %class_name</source>
         <translation>ቅዳሕ ናይ %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>ዓይነት ዳታ</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>ዓይነት ዳታ %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85028,6 +85052,397 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>እዚ ኢመይል ብ %site እዩ ተላኢኹ፡ ምኽንያቱ migration.ini [RemoteSettings] Notify[] ይሓቶ እዩ።</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>ዓይነታት ዳታ (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>%time ተቖጺሩ፡ ድሕሪ %minutes ደቓይቕ ደጊሙ</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>ዓይነት ዳታ ሓደ ዓይነት ዋጋ ናይ ባህሪ ክፍሊ ይዕቅብን የእርምን፦ መስመር ጽሑፍ፡ ስእሊ፡ ርክብ። ማእከል መብዛሕትኦም የምጽእ፡ መስፋሕትታት ተወሰኽቲ ይውስኹ። ኣብዚ ኩሎም ኣለዉ፡ መን ከም ዝህቦም ከምኡ'ውን ክንደይ ካብቲ ትሕዝቶ ከም ዝጥቀመሎም። ዳታቤዝ ዝጥቀመሉ ግን ሕጂ ዋላ ሓደ ዘይምዝግቦ ዓይነት ዳታ ነቲ ዘለዎ ትሕዝቶ የበላሹ።</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>ጉጅለታት ክፍሊ</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>ቁጽርታት ናይ ዝሓለፋ ደቓይቕ ኣብ ክንዲ ምጥቃም ሕጂ ደጊምካ ቁጸር።</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>ደጊምካ ቁጸር</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>ጠቕላላ ርእይቶ</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>ዝተመዝገበ</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>ኣብ ጥቕሚ</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>ኣይተጠቐምን</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>ዓይነታት ዳታ ዝህባ መስፋሕትታት</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>ባህርያት ክፍሊ</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>ባህርያት ኣቕሓ</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>ዘይተመዝገበ</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>ተዘርዚሩ፡ ፋይል የለን</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count ዓይነታት ዳታ ይጥቀሙሎም ኣለዉ ግን ኣይተመዝገቡን</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes ባህርያት ክፍሊ ከምኡ'ውን %object_attributes ባህርያት ኣቕሓ፡ ዋላ ሓደ መስፋሕቲ ወይ ቅጥዒ ዘይመዝገቦ ዓይነት ዳታ ኣለዎም። ኣቕሑኦም ክርአዩ፡ ክእረሙ ወይ ክሕተሙ ኣይክእሉን። ነቲ ዓይነት ዳታ ዝህብ መስፋሕቲ ኣንቅሕ፡ ወይ ነቲ ክፍሊ ቐይሮ።</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>ነዚኦም ጥራይ ኣርኢ</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>ዓይነት ዳታ ድለ</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>መለለዪ፡ ስም፡ ክፍሊ PHP ወይ መስፋሕቲ።</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ኣርኢ</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ኩሉ</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>ዝሃቦ</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>ኩሉ ሰብ</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>ማእከል</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>ምስዚ መጻረዪ ዝሰማማዕ ዓይነት ዳታ የለን።</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>ኩሉ ኣርኢ</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>መስፋሕቲ</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>ካብ %count ዓይነታት ዳታ %shown፡ %used ኣብ ጥቕሚ</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>ዳታቤዝ ባህርያት ክፍሊ ወይ ኣቕሓ ናይዞም ዓይነታት ዳታ ኣለዎ፡ ግን content.ini ሓደ'ኳ ኣይዝርዝሮምን፡ ወይ ፋይሉ የለን።</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>ዓይነታት ዳታ ናይ %provider</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>ዓይነት ዳታ</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>ክፍሊ PHP ከምኡ'ውን ፋይል</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>ክፍልታት</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>ኣቕሑ</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>ምልክታት</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>ዋላ ሓደ</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>ምስቲ ምድላይ ዝሰማማዕ ዓይነት ዳታ የለን። ነቲ ምድላይ ኣጽርዮ።</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>ካብ %count ዓይነታት ዳታ %shown ተራእዮም</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>ዝተራእዩ ዓይነታት ዳታ፦ %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>ብ%column ደርድር</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>%time ተቖጺሩ</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>ኩሎም ዓይነታት ዳታ</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>ገጽ ሓገዝ</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>እዚ ዓይነት ዳታ ይጥቀሙሉ ኣለዉ ግን ኣይተመዝገበን</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>ዋላ ሓደ መስፋሕቲ ነቲ ዓይነት ዳታ ክሳብ ዘይመዝገቦ፡ ኣቕሑ ናይዞም ኣብ ታሕቲ ዘለዉ ክፍልታት ክርአዩ፡ ክእረሙ ወይ ክሕተሙ ኣይክእሉን። ዝህቦ መስፋሕቲ ኣንቅሕ እሞ ናብ content.ini [DataTypeSettings] AvailableDataTypes[] ወስኾ፡ ወይ ነቶም ክፍልታት ቐይሮም።</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini ነዚ ዓይነት ዳታ ይዝርዝሮ፡ ግን ዋላ ሓደ ማህደር ዓይነታት ዳታ ፋይሉ የብሉን። ዋላ ሓደ ኣይጥቀመሉን፤ ካብ AvailableDataTypes[] ኣውጽኦ ወይ መስፋሕቱ ኣንቅሕ።</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>ብዛዕባ እዚ ዓይነት ዳታ</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>መለለዪ</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>ስም</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>መስፋሕቲ %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>ዋላ ሓደ</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>ክፍሊ PHP</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ፋይል</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>ኣብ AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>እወ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ኣይፋል</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>ዓምድታት ናይ ዋጋኡ</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>ዓምድታት ናይ ቅጥዒታት ባህሪ ክፍሉ</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>ሰንጠረዛት</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>ዓምድታትን ሰንጠረዣትን ኮድ ናይቲ ዓይነት ዳታ ብምንባብ ይርከቡ፦ መምርሒ እዩ፡ መብጽዓ ኣይኮነን።</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>ቅጥዒታት</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>ምእታው መርበብ</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>ቅጥዒ</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>ዝተረኽበሉ</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>እዚ ምምሕዳር</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>ነባሪ መርበብ</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>ብዘይ ተኪኣት፦ ብክፍሊ ወይ ብባህሪ ዝሰማማዕ ቅጥዒ ተኪእ ልዕሊ እዚኦም ይዕወት።</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>ዝጥቀሙሉ ክፍልታት (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>ዋላ ሓደ ክፍሊ ባህሪ ናይዚ ዓይነት ዳታ የብሉን።</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>ክፍሊ</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>ባህርያት</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>ባህርያት ክፍሊ (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>ባህርይ</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>ቅጥዕታት</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>ኣድላዪ</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>ክድለ ዝክኣል</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>ክትርጎም ዝኽእል</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>ሓበሬታ ይእክብ</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>ዝጥቀመሉ ገለ ትሕዝቶ</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>ናይ መወዳእታ ዝተቐየረ ቅድም</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>ዝተቐየረ</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>መስቀለኛ %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>ነፍሲ ወከፍ ትርጉም ናይ ገዛእ ርእሱ ዋጋ ኣለዎ።</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>ምድላይ ንዋጋታቱ ይመዝግብ (index)።</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>ካብ በጻሕቲ ሓበሬታ ክእክብ ይኽእል (ቅጥዕታት)።</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>ዝርዝራት ብእኡ ክስርዑ ይኽእሉ፦ መፍትሕ ስርዓት %type።</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>ክድረድር ዝኽእል</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>ዋጋታቱ ናብ ካልኦት ኣቕሑ የመልክቱ።</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>ርክባት</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>ካብ ቀሊል ጽሑፍ ክምላእ ይኽእል (ምእታው፡ REST)።</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>ካብ ጽሑፍ</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>ካብ ፋይል ክምላእ ይኽእል።</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>ካብ ፋይል</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>ቅጥዒታት ባህሪ ክፍሉ ናብ ጥቕላላት ይኣትዉ።</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>ጥቕላላት</translation>
     </message>
 </context>
 </TS>

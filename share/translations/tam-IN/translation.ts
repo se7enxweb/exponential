@@ -982,6 +982,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>இந்தப் பக்கம் மட்டுமே தேடப்படுகிறது: %count இல் %from முதல் %to வரை.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Kernel மற்றும் நீட்சிகளின் ஒவ்வொரு தரவு வகையும், வகுப்புகளும் உள்ளடக்கமும் அதை எவ்வாறு பயன்படுத்துகின்றன என்பதும்.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>தரவு வகைகள்</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15430,6 +15438,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Static publishing</source>
         <translation>நிலையான வெளியீடு</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>தரவு வகைகள்</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Kernel மற்றும் நீட்சிகளின் ஒவ்வொரு தரவு வகையும், வகுப்புகளும் உள்ளடக்கமும் அதை எவ்வாறு பயன்படுத்துகின்றன என்பதும்.</translation>
     </message>
 </context>
 <context>
@@ -55388,6 +55404,14 @@ your account.</source>
         <source>Copy of %class_name</source>
         <translation>%class_name இன் நகல்</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>தரவு வகைகள்</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>தரவு வகை %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85026,6 +85050,397 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>migration.ini [RemoteSettings] Notify[] கேட்பதால் இந்த அஞ்சலை %site அனுப்பியது.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>தரவு வகைகள் (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>%time அன்று எண்ணப்பட்டது, %minutes நிமிடங்களுக்குப் பிறகு மீண்டும்</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>ஒரு தரவு வகை வகுப்புப் பண்பின் ஒரு வகை மதிப்பைச் சேமித்துத் திருத்துகிறது: ஒரு உரை வரி, ஒரு படம், ஒரு தொடர்பு. Kernel பெரும்பாலானவற்றை வழங்குகிறது, நீட்சிகள் மேலும் சேர்க்கின்றன. இங்கே அனைத்தும் உள்ளன, அவற்றை யார் வழங்குகிறார்கள், உள்ளடக்கத்தில் எவ்வளவு அவற்றைப் பயன்படுத்துகிறது என்பதுடன். தரவுத்தளம் பயன்படுத்தும் ஆனால் இனி எதுவும் பதிவு செய்யாத தரவு வகை, அதைக் கொண்ட உள்ளடக்கத்தை உடைக்கிறது.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>வகுப்புக் குழுக்கள்</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>கடந்த சில நிமிடங்களின் எண்ணிக்கைகளைப் பயன்படுத்தாமல் இப்போதே மீண்டும் எண்ணு.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>மீண்டும் எண்ணு</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>மேலோட்டம்</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>பதிவுசெய்த தேதி</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>பயன்பாட்டில் உள்ளது</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>பயன்படுத்தப்படவில்லை</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>தரவு வகைகளை வழங்கும் நீட்சிகள்</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>வகுப்புப் பண்புகள்</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>பொருள் பண்புகள்</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>பதிவு செய்யப்படவில்லை</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>பட்டியலில் உள்ளது, கோப்பு இல்லை</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count தரவு வகைகள் பயன்படுத்தப்படுகின்றன, ஆனால் பதிவு செய்யப்படவில்லை</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes வகுப்புப் பண்புகளும் %object_attributes பொருள் பண்புகளும் எந்த நீட்சியோ அமைப்போ பதிவு செய்யாத தரவு வகையைக் கொண்டுள்ளன. அவற்றின் பொருட்களைக் காட்டவோ திருத்தவோ வெளியிடவோ முடியாது. தரவு வகையை வழங்கும் நீட்சியைச் செயல்படுத்தவும், அல்லது வகுப்பை மாற்றவும்.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>இவற்றை மட்டும் காட்டு</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>தரவு வகையைத் தேடு</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>அடையாளங்காட்டி, பெயர், PHP வகுப்பு அல்லது நீட்சி.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>காட்டு</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>அனைத்தும்</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>வழங்குபவர்</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>அனைவரும்</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Kernel</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>எந்தத் தரவு வகையும் இந்த வடிகட்டியுடன் பொருந்தவில்லை.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>அனைத்தையும் காட்டு</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>நீட்சி</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%count தரவு வகைகளில் %shown, %used பயன்பாட்டில்</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>தரவுத்தளத்தில் இந்தத் தரவு வகைகளின் வகுப்பு அல்லது பொருள் பண்புகள் உள்ளன, ஆனால் content.ini இவற்றில் எதையும் பட்டியலிடவில்லை, அல்லது அதன் கோப்பு இல்லை.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>%provider வழங்கும் தரவு வகைகள்</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>தரவு வகை</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>PHP வகுப்பு மற்றும் கோப்பு</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>வகுப்புகள்</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>பொருள்கள்</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>கொடிகள்</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>எதுவுமில்லை</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>எந்தத் தரவு வகையும் தேடலுடன் பொருந்தவில்லை. தேடலை அழிக்கவும்.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%count தரவு வகைகளில் %shown காட்டப்படுகின்றன</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>காட்டப்படும் தரவு வகைகள்: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>%column அடிப்படையில் வரிசைப்படுத்து</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>%time அன்று எண்ணப்பட்டது</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>அனைத்துத் தரவு வகைகள்</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>உதவிப் பக்கம்</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>இந்தத் தரவு வகை பயன்படுத்தப்படுகிறது, ஆனால் பதிவு செய்யப்படவில்லை</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>எந்த நீட்சியும் தரவு வகையைப் பதிவு செய்யாத வரை கீழே உள்ள வகுப்புகளின் பொருட்களைக் காட்டவோ திருத்தவோ வெளியிடவோ முடியாது. அதை வழங்கும் நீட்சியைச் செயல்படுத்தி content.ini [DataTypeSettings] AvailableDataTypes[] இல் சேர்க்கவும், அல்லது வகுப்புகளை மாற்றவும்.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini இந்தத் தரவு வகையைப் பட்டியலிடுகிறது, ஆனால் எந்தத் தரவு வகை அடைவிலும் அதன் கோப்பு இல்லை. எதுவும் இதைப் பயன்படுத்தவில்லை; இதை AvailableDataTypes[] இலிருந்து நீக்கவும் அல்லது அதன் நீட்சியைச் செயல்படுத்தவும்.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>இந்தத் தரவு வகையைப் பற்றி</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>அடையாளங்காட்டி</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>பெயர்</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>நீட்சி %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>யாருமில்லை</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP வகுப்பு</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>கோப்பு</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>AvailableDataTypes[] இல்</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ஆம்</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>இல்லை</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>இதன் மதிப்பின் நெடுவரிசைகள்</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>இதன் வகுப்புப் பண்பு அமைப்புகளின் நெடுவரிசைகள்</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>அட்டவணைகள்</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>நெடுவரிசைகளும் அட்டவணைகளும் தரவு வகையின் நிரலைப் படித்துக் கண்டறியப்படுகின்றன: இது ஒரு வழிகாட்டி, உத்தரவாதம் அல்ல.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>வார்ப்புருக்கள்</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>தள அணுகல்</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>வார்ப்புரு</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>காணப்படும் இடம்</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>இந்த நிர்வாகம்</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>இயல்புநிலைத் தளம்</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>மேலெழுதல்கள் இல்லாமல்: வகுப்பு அல்லது பண்பால் பொருந்தும் மேலெழுதல் வார்ப்புரு இவற்றை விட முன்னுரிமை பெறும்.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>இதைப் பயன்படுத்தும் வகுப்புகள் (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>எந்த வகுப்பிலும் இந்தத் தரவு வகையின் பண்பு இல்லை.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>வகுப்பு</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>பண்புகள்</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>வகுப்புப் பண்புகள் (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>பண்பு</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>அமைப்புகள்</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ஐடி %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>தேவை</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>தேடக்கூடியது</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>மொழிபெயர்க்கத்தக்கது</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>தகவலைச் சேகரிக்கிறது</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>இதைப் பயன்படுத்தும் சில உள்ளடக்கம்</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>கடைசியாக மாற்றியது முதலில்</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>மாற்றப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>முனை %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>ஒவ்வொரு மொழிபெயர்ப்புக்கும் தனி மதிப்பு உண்டு.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>தேடல் இதன் மதிப்புகளை அட்டவணைப்படுத்துகிறது.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>இது பார்வையாளர்களிடமிருந்து தகவல்களைச் சேகரிக்க முடியும் (படிவங்கள்).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>பட்டியல்களை இதன்படி வரிசைப்படுத்தலாம்: வரிசை விசை %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>வரிசைப்படுத்தக்கூடியது</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>இதன் மதிப்புகள் பிற பொருட்களைச் சுட்டுகின்றன.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>தொடர்புகள்</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>இதை ஒரு சாதாரண சரத்திலிருந்து நிரப்பலாம் (இறக்குமதி, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>உரையிலிருந்து</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>இதை ஒரு கோப்பிலிருந்து நிரப்பலாம்.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>கோப்பிலிருந்து</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>இதன் வகுப்புப் பண்பு அமைப்புகள் தொகுப்புகளில் சேர்க்கப்படும்.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>தொகுப்புகள்</translation>
     </message>
 </context>
 </TS>

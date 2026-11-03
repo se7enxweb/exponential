@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>ဤစာမျက်နှာကိုသာ ရှာဖွေသည် - %count ခုအနက် %from မှ %to အထိ။</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>ကာနယ်နှင့် တိုးချဲ့မှုများ၏ ဒေတာအမျိုးအစား အားလုံးနှင့် အတန်းအစားများနှင့် အကြောင်းအရာက ၎င်းတို့ကို မည်သို့ အသုံးပြုသည်။</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>ဒေတာအမျိုးအစားများ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Static publishing</source>
         <translation>Static ထုတ်ဝေခြင်း</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>ဒေတာအမျိုးအစားများ</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>ကာနယ်နှင့် တိုးချဲ့မှုများ၏ ဒေတာအမျိုးအစား အားလုံးနှင့် အတန်းအစားများနှင့် အကြောင်းအရာက ၎င်းတို့ကို မည်သို့ အသုံးပြုသည်။</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ your account.</source>
         <source>Copy of %class_name</source>
         <translation>%class_name ၏ မိတ္တူ</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>ဒေတာအမျိုးအစားများ</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>ဒေတာအမျိုးအစား %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85028,6 +85052,397 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>migration.ini [RemoteSettings] Notify[] က တောင်းဆိုထားသောကြောင့် ဤမေးလ်ကို %site မှ ပို့ခဲ့သည်။</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>ဒေတာအမျိုးအစားများ (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>%time တွင် ရေတွက်ခဲ့သည်၊ %minutes မိနစ်အကြာတွင် ထပ်မံ</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>ဒေတာအမျိုးအစားသည် အတန်းအစားဂုဏ်ရည်တစ်ခု၏ တန်ဖိုးအမျိုးအစားတစ်ခုကို သိမ်းဆည်းပြီး တည်းဖြတ်သည်- စာသားလိုင်း၊ ပုံ၊ ဆက်နွယ်မှု။ အများစုကို ကာနယ်က ပေးပြီး တိုးချဲ့မှုများက ထပ်ထည့်သည်။ ဤနေရာတွင် အားလုံး၊ မည်သူပေးသည်နှင့် အကြောင်းအရာမည်မျှ အသုံးပြုသည်ကို ပြသည်။ ဒေတာဘေ့စ်က အသုံးပြုသော်လည်း မည်သည့်အရာကမျှ မှတ်ပုံတင်တော့မထားသော ဒေတာအမျိုးအစားသည် ၎င်းပါဝင်သော အကြောင်းအရာကို ပျက်စီးစေသည်။</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>အတန်းအစားအုပ်စုများ</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>နောက်ဆုံးမိနစ်များ၏ အရေအတွက်ကို အသုံးပြုမည့်အစား ယခု ထပ်မံရေတွက်ပါ။</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>ထပ်မံရေတွက်ရန်</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>အကျဉ်းချုပ်</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>မှတ်ပုံတင်ပြီး</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>အသုံးပြုနေသည်</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>မသုံးပါ</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>ဒေတာအမျိုးအစားများ ပေးသော တိုးချဲ့မှုများ</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>အတန်းအစားဂုဏ်ရည်များ</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>အရာဝတ္ထု ဂုဏ်ရည်များ</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>မှတ်ပုံမတင်ရသေး</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>စာရင်းတွင်ပါ၊ ဖိုင်မရှိ</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>ဒေတာအမျိုးအစား %count ခု အသုံးပြုနေသော်လည်း မှတ်ပုံမတင်ရသေးပါ</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>အတန်းအစားဂုဏ်ရည် %class_attributes ခုနှင့် အရာဝတ္ထုဂုဏ်ရည် %object_attributes ခုတွင် မည်သည့်တိုးချဲ့မှု သို့မဟုတ် ဆက်တင်ကမျှ မှတ်ပုံမတင်သော ဒေတာအမျိုးအစား ရှိသည်။ ၎င်းတို့၏ အရာဝတ္ထုများကို ပြသ၊ တည်းဖြတ် သို့မဟုတ် ထုတ်ဝေ၍ မရပါ။ ဒေတာအမျိုးအစားကို ပေးသော တိုးချဲ့မှုကို ဖွင့်ပါ သို့မဟုတ် အတန်းအစားကို ပြောင်းပါ။</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>ဤအရာများကိုသာ ပြရန်</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>ဒေတာအမျိုးအစား ရှာရန်</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>သတ်မှတ်ချက်၊ အမည်၊ PHP အတန်းအစား သို့မဟုတ် တိုးချဲ့မှု။</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ပြရန်</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>အားလုံး</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>ပေးသူ</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>လူတိုင်း</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>ကာနယ်</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>ဤစစ်ထုတ်မှုနှင့် ကိုက်ညီသော ဒေတာအမျိုးအစား မရှိပါ။</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>အားလုံးကို ပြရန်</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>တိုးချဲ့မှု</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>ဒေတာအမျိုးအစား %count ခုအနက် %shown ခု၊ %used ခု အသုံးပြုနေ</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>ဒေတာဘေ့စ်တွင် ဤဒေတာအမျိုးအစားများ၏ အတန်းအစား သို့မဟုတ် အရာဝတ္ထုဂုဏ်ရည်များ ရှိသော်လည်း content.ini တွင် တစ်ခုမျှ မပါ သို့မဟုတ် ၎င်း၏ဖိုင် မရှိပါ။</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>%provider ၏ ဒေတာအမျိုးအစားများ</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>ဒေတာအမျိုးအစား</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>PHP အတန်းအစားနှင့် ဖိုင်</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>အတန်းအစားများ</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>အရာဝတ္ထုများ</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>အလံများ</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>မရှိ</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>ရှာဖွေမှုနှင့် ကိုက်ညီသော ဒေတာအမျိုးအစား မရှိပါ။ ရှာဖွေမှုကို ရှင်းပါ။</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>ဒေတာအမျိုးအစား %count ခုအနက် %shown ခု ပြထား</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>ပြထားသော ဒေတာအမျိုးအစားများ- %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>%column အလိုက် စီရန်</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>%time တွင် ရေတွက်ခဲ့သည်</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>ဒေတာအမျိုးအစား အားလုံး</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>အကူအညီ စာမျက်နှာ</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>ဤဒေတာအမျိုးအစားကို အသုံးပြုနေသော်လည်း မှတ်ပုံမတင်ရသေးပါ</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>မည်သည့်တိုးချဲ့မှုကမျှ ဒေတာအမျိုးအစားကို မှတ်ပုံမတင်သရွေ့ အောက်ပါ အတန်းအစားများ၏ အရာဝတ္ထုများကို ပြသ၊ တည်းဖြတ် သို့မဟုတ် ထုတ်ဝေ၍ မရပါ။ ၎င်းကို ပေးသော တိုးချဲ့မှုကို ဖွင့်ပြီး content.ini [DataTypeSettings] AvailableDataTypes[] တွင် ထည့်ပါ သို့မဟုတ် အတန်းအစားများကို ပြောင်းပါ။</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini တွင် ဤဒေတာအမျိုးအစား ပါသော်လည်း မည်သည့် ဒေတာအမျိုးအစား ဖိုင်တွဲတွင်မျှ ၎င်း၏ဖိုင် မရှိပါ။ မည်သည့်အရာကမျှ အသုံးမပြုပါ၊ AvailableDataTypes[] မှ ဖယ်ရှားပါ သို့မဟုတ် ၎င်း၏ တိုးချဲ့မှုကို ဖွင့်ပါ။</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>ဤဒေတာအမျိုးအစား အကြောင်း</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>ခွဲခြားသတ်မှတ်စနစ်</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>အမည်</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>တိုးချဲ့မှု %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>မည်သူမျှ</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP အတန်းအစား</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ဖိုင်</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>AvailableDataTypes[] တွင်</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ဟုတ်ကဲ့</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>မဟုတ်ပါ</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>၎င်း၏ တန်ဖိုး ကော်လံများ</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>၎င်း၏ အတန်းအစားဂုဏ်ရည် ဆက်တင် ကော်လံများ</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>ဇယားများ</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>ကော်လံများနှင့် ဇယားများကို ဒေတာအမျိုးအစား၏ ကုဒ်ကို ဖတ်၍ ရှာတွေ့ထားသည်- လမ်းညွှန်သာဖြစ်ပြီး ကတိမဟုတ်ပါ။</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>ပုံစံပြားများ</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>ဆိုက်ဝင်ရောက်မှု</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>ပုံစံပြား</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>တွေ့ရှိရာ</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>ဤစီမံခန့်ခွဲမှု</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>မူလ ဆိုက်</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>အစားထိုးမှုများ မပါ- အတန်းအစား သို့မဟုတ် ဂုဏ်ရည်ဖြင့် ကိုက်ညီသော အစားထိုး ပုံစံပြားသည် ဤအရာများထက် ဦးစားပေးသည်။</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>၎င်းကို အသုံးပြုသော အတန်းအစားများ (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>ဤဒေတာအမျိုးအစား၏ ဂုဏ်ရည်ပါသော အတန်းအစား မရှိပါ။</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>အတန်းအစား</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>ဂုဏ်ရည်များ</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>အတန်းအစားဂုဏ်ရည်များ (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>ဂုဏ်ရည်</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>ဆက်တင်များ</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>မဖြစ်မနေလိုအပ်</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>ရှာဖွေနိုင်သော</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>ဘာသာပြန်နိုင်သည်</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>အချက်အလက် စုဆောင်းသည်</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>၎င်းကို အသုံးပြုသော အကြောင်းအရာအချို့</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>နောက်ဆုံး ပြင်ဆင်ထားသည်ကို ဦးစွာ</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>ပြင်ဆင်ပြီး</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>နုဒ် %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>ဘာသာပြန်တစ်ခုစီတွင် ကိုယ်ပိုင်တန်ဖိုး ရှိသည်။</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>ရှာဖွေမှုသည် ၎င်း၏ တန်ဖိုးများကို အညွှန်းပြုလုပ်သည်။</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>၎င်းသည် ဧည့်သည်များထံမှ အချက်အလက် စုဆောင်းနိုင်သည် (ဖောင်များ)။</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>စာရင်းများကို ၎င်းဖြင့် စီနိုင်သည်- စီရန်သော့ %type။</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>စီနိုင်သည်</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>၎င်း၏ တန်ဖိုးများသည် အခြား အရာဝတ္ထုများကို ညွှန်ပြသည်။</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>ဆက်နွယ်မှုများ</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>၎င်းကို ရိုးရိုးစာကြောင်းမှ ဖြည့်နိုင်သည် (တင်သွင်းခြင်း၊ REST)။</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>စာသားမှ</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>၎င်းကို ဖိုင်မှ ဖြည့်နိုင်သည်။</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>ဖိုင်မှ</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>၎င်း၏ အတန်းအစားဂုဏ်ရည် ဆက်တင်များသည် ပက်ကေ့ချ်များထဲ ပါဝင်သည်။</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>ပက်ကေ့ဂျ်များ</translation>
     </message>
 </context>
 </TS>

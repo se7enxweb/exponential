@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>صرف ایہو صفحہ لبھیا جاندا اے: %count وچوں %from توں %to تیکر۔</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>کرنل تے ایکسٹینشناں دی ہر ڈیٹا دی قسم، تے کلاساں تے مواد اوہنوں کیویں ورتدے نیں۔</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>ڈیٹا دیاں قسماں</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Static publishing</source>
         <translation>سٹیٹک اشاعت</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>ڈیٹا دیاں قسماں</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>کرنل تے ایکسٹینشناں دی ہر ڈیٹا دی قسم، تے کلاساں تے مواد اوہنوں کیویں ورتدے نیں۔</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ your account.</source>
         <source>Copy of %class_name</source>
         <translation>%class_name دی نقل</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>ڈیٹا دیاں قسماں</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>ڈیٹا دی قسم %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85028,6 +85052,397 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>ایہہ میل %site نے گھلی اے، کیونجے migration.ini [RemoteSettings] Notify[] ایہدی منگ کردا اے۔</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>ڈیٹا دیاں قسماں (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>%time تے گݨیا، %minutes منٹاں مگروں فیر گݨیا جاوے گا</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>ڈیٹا دی قسم کلاس خاصیت دی اک طرح دی قدر سانبھدی تے بدلدی اے: اک ٹیکسٹ لائن، اک تصویر، اک تعلق۔ بہتیاں کرنل لیاؤندا اے، ایکسٹینشناں ہور جوڑدیاں نیں۔ ایتھے ساریاں نیں، کون اوہناں نوں دیندا اے تے کنا مواد اوہناں نوں ورتدا اے۔ جیہڑی ڈیٹا دی قسم ڈیٹابیس ورتدا اے پر ہݨ کوئی رجسٹر نہیں کردا، اوہ اوس والے مواد نوں توڑ دیندی اے۔</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>کلاس گروپ</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>پچھلے منٹاں دی گݨتی ورتن دی تھاں ہݨے فیر گݨو۔</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>فیر گݨو</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>جائزہ</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>رجسٹر ہویا</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>ورتوں وچ</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>ورتیا نہیں گیا</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>ڈیٹا دیاں قسماں دین والیاں ایکسٹینشناں</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>کلاس خاصیتاں</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>آبجیکٹ خاصیتاں</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>رجسٹر نہیں</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>لسٹ وچ، فائل غائب</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count ڈیٹا دیاں قسماں ورتیاں جاندیاں نیں پر رجسٹر نہیں</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes کلاس خاصیتاں تے %object_attributes آبجیکٹ خاصیتاں دی ڈیٹا دی قسم کوئی ایکسٹینشن یا سیٹنگ رجسٹر نہیں کردی۔ اوہناں دے آبجیکٹ وکھائے، بدلے یا شائع نہیں کیتے جا سکدے۔ ڈیٹا دی قسم دین والی ایکسٹینشن چالو کرو، یا کلاس بدلو۔</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>صرف ایہہ وکھاؤ</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>ڈیٹا دی قسم لبھو</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>شناخت، ناں، PHP کلاس یا ایکسٹینشن۔</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>وکھاؤ</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>سارے</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>دین والا</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>ہر کوئی</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>کرنل</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>کوئی ڈیٹا دی قسم ایس فلٹر نال نہیں ملدی۔</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>سارے وکھاؤ</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>ایکسٹینشن</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%count وچوں %shown ڈیٹا دیاں قسماں، %used ورتوں وچ</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>ڈیٹابیس وچ ایہناں ڈیٹا دیاں قسماں دیاں کلاس یا آبجیکٹ خاصیتاں نیں، پر content.ini ایہناں وچوں کسے نوں لسٹ نہیں کردی، یا اوہدی فائل غائب اے۔</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>%provider دیاں ڈیٹا دیاں قسماں</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>ڈیٹا دی قسم</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>PHP کلاس تے فائل</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>کلاساں</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>آبجیکٹ</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>جھنڈیاں</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>کوئی نہیں</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>کوئی ڈیٹا دی قسم کھوج نال نہیں ملدی۔ کھوج صاف کرو۔</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%count وچوں %shown ڈیٹا دیاں قسماں وکھائیاں</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>وکھائیاں ڈیٹا دیاں قسماں: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>%column دے لحاظ نال ترتیب دیو</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>%time تے گݨیا</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>ساریاں ڈیٹا دیاں قسماں</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>مدد دا صفحہ</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>ایہہ ڈیٹا دی قسم ورتی جاندی اے پر رجسٹر نہیں</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>جد تک کوئی ایکسٹینشن ڈیٹا دی قسم رجسٹر نہیں کردی، تھلے دتیاں کلاساں دے آبجیکٹ وکھائے، بدلے یا شائع نہیں کیتے جا سکدے۔ ایہنوں دین والی ایکسٹینشن چالو کرو تے ایہنوں content.ini [DataTypeSettings] AvailableDataTypes[] وچ جوڑو، یا کلاساں بدلو۔</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini ایس ڈیٹا دی قسم نوں لسٹ کردی اے، پر کسے ڈیٹا ٹائپ ڈائریکٹری وچ اوہدی فائل نہیں۔ ایہنوں کجھ نہیں ورتدا؛ ایہنوں AvailableDataTypes[] وچوں ہٹاؤ یا اوہدی ایکسٹینشن چالو کرو۔</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>ایس ڈیٹا دی قسم بارے</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>شناخت کار</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>ناں</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>ایکسٹینشن %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>کوئی نہیں</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP کلاس</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>فائل</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>AvailableDataTypes[] وچ</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ہاں</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>نہیں</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>اوہدی قدر دے کالم</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>اوہدیاں کلاس خاصیت سیٹنگاں دے کالم</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>ٹیبل</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>کالم تے ٹیبل ڈیٹا دی قسم دا کوڈ پڑھ کے لبھے جاندے نیں: اک رہنمائی، وعدہ نہیں۔</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>ٹیمپلیٹ</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>سائٹ رسائی</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>ٹیمپلیٹ</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>ایتھے ملیا</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>ایہہ انتظامیہ</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>ڈیفالٹ سائٹ</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>اوور رائیڈاں توں بغیر: کلاس یا خاصیت نال ملدا اوور رائیڈ ٹیمپلیٹ ایہناں اتے پہل لیندا اے۔</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>ایہنوں ورتن والیاں کلاساں (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>کسے کلاس وچ ایس ڈیٹا دی قسم دی خاصیت نہیں۔</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>کلاس</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>خاصیتاں</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>کلاس خاصیتاں (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>خاصیت</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>سیٹنگاں</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>لازمی</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>لبھݨ جوگ</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>ترجمے جوگا</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>جاݨکاری جمع کردا اے</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>ایہنوں ورتن والا کجھ مواد</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>آخری بدلی پہلاں</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>بدلیا</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>نوڈ %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>ہر ترجمے دی اپنی قدر ہوندی اے۔</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>کھوج اوہدیاں قدراں نوں انڈیکس کردی اے۔</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>ایہہ آؤݨ والیاں توں جاݨکاری اکٹھی کر سکدی اے (فارم)۔</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>لسٹاں ایہدے نال ترتیب دتیاں جا سکدیاں نیں: ترتیب کنجی %type۔</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>ترتیب دیݨ جوگا</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>اوہدیاں قدراں ہور آبجیکٹاں ول اشارہ کردیاں نیں۔</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>تعلق</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>ایہنوں سادی سٹرنگ توں بھریا جا سکدا اے (امپورٹ، REST)۔</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>ٹیکسٹ توں</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>ایہنوں فائل توں بھریا جا سکدا اے۔</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>فائل توں</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>اوہدیاں کلاس خاصیت سیٹنگاں پیکجاں وچ جاندیاں نیں۔</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>پیکج</translation>
     </message>
 </context>
 </TS>

@@ -49,6 +49,7 @@
         <span class="a4-help">{'Open a group to create classes in it, copy or remove them.'|i18n( 'design/admin/class/grouplist' )}</span>
         <div class="a4-actions">
             <button type="submit" class="a4-btn a4-btn-primary" name="NewGroupButton" value="1" title="{'Create a new class group.'|i18n( 'design/admin/class/grouplist' )|wash}"><span class="a4-icon a4-bi-plus-lg" aria-hidden="true"></span>{'New class group'|i18n( 'design/admin/class/grouplist' )}</button>
+            <a class="a4-btn" href={'class/datatype/list'|ezurl} title="{'Every datatype of the kernel and the extensions, and how the classes and content use it.'|i18n( 'design/admin/class/grouplist' )|wash}">{'Datatypes'|i18n( 'design/admin/class/grouplist' )}</a>
         </div>
     </div>
     <p class="a4-filter-count exp-js-only" id="classgroups-filter-count" aria-live="polite" hidden></p>

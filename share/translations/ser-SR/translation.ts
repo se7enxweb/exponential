@@ -982,6 +982,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Pretražuje se samo ova stranica: od %from do %to od ukupno %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Svaki tip podataka jezgra i proširenja, i kako ga klase i sadržaj koriste.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Tipovi podataka</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15371,6 +15379,14 @@ Napomena: paketi neće biti deinstalirani.</translation>
     <message>
         <source>Static publishing</source>
         <translation>Statičko objavljivanje</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Tipovi podataka</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Svaki tip podataka jezgra i proširenja, i kako ga klase i sadržaj koriste.</translation>
     </message>
 </context>
 <context>
@@ -55329,6 +55345,14 @@ vaš nalog.</translation>
         <source>Copy of %class_name</source>
         <translation>Kopija od %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Tipovi podataka</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Tip podataka %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85058,6 +85082,397 @@ Moraćete da promenite klasu čvora korišćenjem funkcije zamene.</translation>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Ovu poruku je poslao %site jer to zahteva migration.ini [RemoteSettings] Notify[].</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Tipovi podataka (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>Prebrojano %time, ponovo za %minutes min</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Tip podataka čuva i uređuje jednu vrstu vrednosti atributa klase: red teksta, sliku, vezu. Većinu donosi jezgro, proširenja dodaju još. Ovde su svi, ko ih pruža i koliko sadržaja ih koristi. Tip podataka koji baza podataka koristi, ali ga više ništa ne registruje, kvari sadržaj koji ga ima.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Grupe klasa</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Prebroj ponovo sada umesto da se koriste brojevi iz poslednjih minuta.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Prebroj ponovo</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Pregled</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Registrovan</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>U upotrebi</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Ne koristi se</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Proširenja koja pružaju tipove podataka</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Atributi klase</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Atributi objekta</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Nije registrovan</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>Na listi, datoteka nedostaje</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>Tipova podataka koji se koriste, a nisu registrovani: %count</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>Atributi klasa (%class_attributes) i atributi objekata (%object_attributes) imaju tip podataka koji ne registruje nijedna ekstenzija ni podešavanje. Njihovi objekti ne mogu da se prikažu, uređuju ni objave. Aktiviraj ekstenziju koja pruža tip podataka ili promeni klasu.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Prikaži samo ove</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Pronađi tip podataka</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Identifikator, naziv, PHP klasa ili ekstenzija.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Prikaži</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Svi</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Pruža</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Svako</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Jezgro</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Nijedan tip podataka ne odgovara ovom filteru.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Prikaži sve</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Ekstenzija</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown od %count tipova podataka, u upotrebi %used</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>Baza podataka ima atribute klasa ili objekata ovih tipova podataka, ali ih content.ini ne navodi, ili njihova datoteka nedostaje.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>Tipovi podataka: %provider</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Tip podataka</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>PHP klasa i datoteka</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Klase</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Objekti</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Zastavice</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>nijedan</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Nijedan tip podataka ne odgovara pretrazi. Obriši pretragu.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>Prikazano %shown od %count tipova podataka</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Prikazani tipovi podataka: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Sortiraj po %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>Prebrojano %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Svi tipovi podataka</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Stranica pomoći</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Ovaj tip podataka se koristi, ali nije registrovan</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Objekti klasa ispod ne mogu da se prikažu, uređuju ni objave dok nijedna ekstenzija ne registruje tip podataka. Aktiviraj ekstenziju koja ga pruža i dodaj ga u content.ini [DataTypeSettings] AvailableDataTypes[], ili promeni klase.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini navodi ovaj tip podataka, ali nijedan direktorijum tipova podataka nema njegovu datoteku. Ništa ga ne koristi; ukloni ga iz AvailableDataTypes[] ili aktiviraj njegovu ekstenziju.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>O ovom tipu podataka</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Identifikator</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Naziv</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Ekstenzija %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>niko</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP klasa</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Datoteka</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>U AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>da</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ne</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Kolone njegove vrednosti</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Kolone podešavanja njegovog atributa klase</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Tabele</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Kolone i tabele se pronalaze čitanjem koda tipa podataka: smernica, ne obećanje.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Šabloni</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Pristup sajtu</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Šablon</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Pronađeno u</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>ova administracija</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>podrazumevani sajt</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Bez override-a: override šablon pronađen po klasi ili atributu ima prednost nad ovima.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Klase koje ga koriste (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Nijedna klasa nema atribut ovog tipa podataka.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klasa</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Atributi</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Atributi klase (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Atribut</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Podešavanja</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Obavezno</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Može se pretraživati</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Može da se prevodi</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Prikuplja informacije</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Deo sadržaja koji ga koristi</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Poslednje izmenjeno prvo</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Izmenjeno</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Čvor %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Svaki prevod ima svoju vrednost.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>Pretraga indeksira njegove vrednosti.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Može da prikuplja informacije od posetilaca (formulari).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Liste mogu da se sortiraju po njemu: ključ sortiranja %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Može da se sortira</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Njegove vrednosti upućuju na druge objekte.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Veze</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Može da se popuni iz običnog teksta (uvoz, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Iz teksta</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Može da se popuni iz datoteke.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Iz datoteke</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Podešavanja njegovog atributa klase idu u pakete.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Paketi</translation>
     </message>
 </context>
 </TS>

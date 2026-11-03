@@ -982,6 +982,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Ukurasa huu tu ndio unaotafutwa: %from hadi %to kati ya %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Kila aina ya data ya kiini cha mfumo na viendelezi, na jinsi madarasa na maudhui yanavyoitumia.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Aina za data</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15430,6 +15438,14 @@ Kumbuka: Usakinishaji wa vifurushi hautaondolewa.</translation>
     <message>
         <source>Static publishing</source>
         <translation>Uchapishaji tuli</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Aina za data</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Kila aina ya data ya kiini cha mfumo na viendelezi, na jinsi madarasa na maudhui yanavyoitumia.</translation>
     </message>
 </context>
 <context>
@@ -55388,6 +55404,14 @@ akaunti yako.</translation>
         <source>Copy of %class_name</source>
         <translation>Nakala ya %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Aina za data</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Aina ya data %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85026,6 +85050,397 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Barua hii ilitumwa na %site kwa sababu migration.ini [RemoteSettings] Notify[] inaiomba.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Aina za data (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>Imehesabiwa %time, tena baada ya dakika %minutes</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Aina ya data huhifadhi na kuhariri aina moja ya thamani ya sifa ya darasa: mstari wa maandishi, picha, uhusiano. Kiini cha mfumo (kernel) huleta nyingi, viendelezi huongeza zaidi. Hapa ziko zote, nani anazitoa na kiasi gani cha maudhui kinazitumia. Aina ya data ambayo hifadhidata inatumia lakini hakuna kinachoisajili tena huvunja maudhui yaliyo nayo.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Makundi ya madarasa</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Hesabu tena sasa badala ya kutumia hesabu za dakika zilizopita.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Hesabu tena</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Muhtasari</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Amesajiliwa</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>Inatumika</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Haitumiki</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Viendelezi vinavyotoa aina za data</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Sifa za darasa</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Sifa za kitu</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Haijasajiliwa</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>Imeorodheshwa, faili haipo</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>Aina %count za data zinatumika lakini hazijasajiliwa</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>Sifa za darasa %class_attributes na sifa za vitu %object_attributes zina aina ya data ambayo hakuna kiendelezi wala mpangilio unaoisajili. Vitu vyake haviwezi kuonyeshwa, kuhaririwa wala kuchapishwa. Washa kiendelezi kinachotoa aina hiyo ya data, au badilisha darasa.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Onyesha hizi tu</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Tafuta aina ya data</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Kitambulisho, jina, darasa la PHP au kiendelezi.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Onyesha</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Zote</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Imetolewa na</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Kila mtu</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Kiini cha mfumo (kernel)</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Hakuna aina ya data inayolingana na kichujio hiki.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Onyesha zote</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Kiendelezi</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown kati ya aina %count za data, %used zinatumika</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>Hifadhidata ina sifa za darasa au za vitu za aina hizi za data, lakini content.ini haiorodheshi yoyote, au faili yake haipo.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>Aina za data za %provider</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Aina ya data</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>Darasa la PHP na faili</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Madarasa</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Vitu</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Alama</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>hakuna</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Hakuna aina ya data inayolingana na utafutaji. Futa utafutaji.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%shown kati ya aina %count za data zimeonyeshwa</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Aina za data zilizoonyeshwa: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Panga kwa %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>Imehesabiwa %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Aina zote za data</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Ukurasa wa msaada</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Aina hii ya data inatumika lakini haijasajiliwa</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Vitu vya madarasa yaliyo hapa chini haviwezi kuonyeshwa, kuhaririwa wala kuchapishwa wakati hakuna kiendelezi kinachosajili aina hii ya data. Washa kiendelezi kinachoitoa na uiongeze kwenye content.ini [DataTypeSettings] AvailableDataTypes[], au badilisha madarasa.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini inaorodhesha aina hii ya data, lakini hakuna saraka ya aina za data yenye faili yake. Hakuna kinachoitumia; iondoe kwenye AvailableDataTypes[] au washa kiendelezi chake.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Kuhusu aina hii ya data</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Kitambulisho</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Jina</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Kiendelezi %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>hakuna</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>Darasa la PHP</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Faili</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>Katika AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ndiyo</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>hapana</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Safu za thamani yake</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Safu za mipangilio ya sifa yake ya darasa</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Majedwali</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Safu na majedwali hupatikana kwa kusoma msimbo wa aina ya data: ni mwongozo, si ahadi.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Violezo</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Kiolezo</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Imepatikana katika</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>usimamizi huu</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>tovuti chaguo-msingi</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Bila mabadiliko ya kiolezo (override): kiolezo cha override kinacholingana na darasa au sifa hushinda hivi.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Madarasa yanayoitumia (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Hakuna darasa lenye sifa ya aina hii ya data.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Darasa</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Sifa</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Sifa za darasa (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Sifa</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Mipangilio</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Inahitajika</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Inatafutika</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Inaweza kutafsiriwa</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Hukusanya taarifa</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Baadhi ya maudhui yanayoitumia</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Iliyobadilishwa mwisho kwanza</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Imebadilishwa</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Nodi %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Kila tafsiri ina thamani yake.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>Utafutaji huorodhesha thamani zake.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Inaweza kukusanya taarifa kutoka kwa wageni (fomu).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Orodha zinaweza kupangwa kwayo: ufunguo wa kupanga %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Inaweza kupangwa</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Thamani zake zinaelekeza kwa vitu vingine.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Mahusiano</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Inaweza kujazwa kutoka maandishi matupu (uingizaji, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Kutoka maandishi</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Inaweza kujazwa kutoka faili.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Kutoka faili</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Mipangilio ya sifa yake ya darasa huingia kwenye vifurushi.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Vifurushi</translation>
     </message>
 </context>
 </TS>

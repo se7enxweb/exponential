@@ -982,6 +982,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Пошук лише на цій сторінці: з %from по %to із %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Кожен тип даних ядра та розширень і те, як класи та вміст його використовують.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Типи даних</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15371,6 +15379,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Static publishing</source>
         <translation>Статична публікація</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Типи даних</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Кожен тип даних ядра та розширень і те, як класи та вміст його використовують.</translation>
     </message>
 </context>
 <context>
@@ -55329,6 +55345,14 @@ your account.</source>
         <source>Copy of %class_name</source>
         <translation>Копія %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Типи даних</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Тип даних %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85058,6 +85082,397 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Цей лист надіслано сайтом %site, оскільки цього вимагає migration.ini [RemoteSettings] Notify[].</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Типи даних (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>Підраховано %time, знову через %minutes хв</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Тип даних зберігає й редагує один вид значення атрибута класу: рядок тексту, зображення, зв'язок. Більшість із них надає ядро, розширення додають інші. Тут усі вони, хто їх надає і яка частина вмісту їх використовує. Тип даних, який використовує база даних, але вже ніщо не реєструє, ламає вміст, що його має.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Групи класів</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Перерахувати зараз замість використання підрахунків останніх хвилин.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Перерахувати</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Огляд</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Зареєстровано</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>Використовується</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Не використовується</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Розширення, що надають типи даних</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Атрибути класу</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Атрибути об'єкта</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Не зареєстрований</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>У списку, файл відсутній</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count типів даних використовуються, але не зареєстровані</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes атрибутів класу та %object_attributes атрибутів об'єктів мають тип даних, який не реєструє жодне розширення чи налаштування. Їхні об'єкти не можна показати, редагувати чи опублікувати. Увімкніть розширення, яке надає цей тип даних, або змініть клас.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Показати лише ці</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Знайти тип даних</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Ідентифікатор, назва, клас PHP або розширення.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Показати</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Усі</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Надає</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Усі</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Ядро</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Жоден тип даних не відповідає цьому фільтру.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Показати все</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Розширення</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown з %count типів даних, %used використовуються</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>У базі даних є атрибути класів або об'єктів цих типів даних, але content.ini не містить жодного з них, або їхній файл відсутній.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>Типи даних від %provider</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Тип даних</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>Клас PHP і файл</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Класи</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Об'єкти</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Позначки</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>немає</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Жоден тип даних не відповідає пошуку. Очистіть пошук.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>Показано %shown з %count типів даних</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Показано типів даних: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Сортувати за %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>Підраховано %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Усі типи даних</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Сторінка довідки</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Цей тип даних використовується, але не зареєстрований</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Об'єкти наведених нижче класів не можна показати, редагувати чи опублікувати, поки жодне розширення не реєструє цей тип даних. Увімкніть розширення, яке його надає, і додайте його до content.ini [DataTypeSettings] AvailableDataTypes[], або змініть класи.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini містить цей тип даних, але жоден каталог типів даних не має його файлу. Ніщо його не використовує; вилучіть його з AvailableDataTypes[] або увімкніть його розширення.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Про цей тип даних</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Ідентифікатор</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Назва</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Розширення %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>ніхто</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>Клас PHP</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Файл</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>У AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>так</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ні</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Стовпці його значення</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Стовпці його налаштувань атрибута класу</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Таблиці</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Стовпці й таблиці визначено з коду типу даних: це орієнтир, а не гарантія.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Шаблони</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Доступ до сайту</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Шаблон</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Знайдено в</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>це адміністрування</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>типовий сайт</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Без перевизначень: шаблон перевизначення, що збігається за класом або атрибутом, має перевагу над цими.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Класи, що його використовують (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Жоден клас не має атрибута цього типу даних.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Клас</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Атрибути</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Атрибути класу (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Атрибут</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Налаштування</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Обов'язковий</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Доступний для пошуку</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Перекладний</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Збирає інформацію</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Частина вмісту, що його використовує</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Спочатку останні змінені</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Змінено</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Вузол %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Кожен переклад має власне значення.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>Пошук індексує його значення.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Він може збирати інформацію від відвідувачів (форми).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Списки можна сортувати за ним: ключ сортування %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Сортування</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Його значення вказують на інші об'єкти.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Зв'язки</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Його можна заповнити зі звичайного рядка (імпорт, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>З тексту</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Його можна заповнити з файлу.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>З файлу</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Його налаштування атрибута класу потрапляють у пакети.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Пакети</translation>
     </message>
 </context>
 </TS>

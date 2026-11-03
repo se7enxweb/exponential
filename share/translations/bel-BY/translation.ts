@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Пошук выконваецца толькі на гэтай старонцы: ад %from да %to з %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Кожны тып даных ядра і пашырэнняў і тое, як яго выкарыстоўваюць класы і змесціва.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Тыпы даных</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Static publishing</source>
         <translation>Статычная публікацыя</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Тыпы даных</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Кожны тып даных ядра і пашырэнняў і тое, як яго выкарыстоўваюць класы і змесціва.</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ your account.</source>
         <source>Copy of %class_name</source>
         <translation>Копія %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Тыпы даных</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Тып даных %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85028,6 +85052,397 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Гэты ліст адпраўлены з %site, таму што гэтага патрабуе migration.ini [RemoteSettings] Notify[].</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Тыпы даных (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>Падлічана %time, зноў праз %minutes хв</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Тып даных захоўвае і рэдагуе адзін від значэння атрыбута класа: радок тэксту, выяву, сувязь. Большасць з іх дае ядро, пашырэнні дадаюць яшчэ. Тут усе яны, хто іх дае і колькі змесціва іх выкарыстоўвае. Тып даных, які выкарыстоўвае база даных, але які ўжо нішто не рэгіструе, ламае змесціва, у якім ён ёсць.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Групы класаў</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Падлічыць зноў цяпер, а не браць лікі апошніх хвілін.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Падлічыць зноў</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Агляд</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Зарэгістраваны</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>Выкарыстоўваецца</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Не выкарыстоўваецца</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Пашырэнні, якія даюць тыпы даных</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Атрыбуты класа</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Атрыбуты аб'екта</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Не зарэгістраваны</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>У спісе, файла няма</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>Тыпаў даных, якія выкарыстоўваюцца, але не зарэгістраваны: %count</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>Атрыбуты класа (%class_attributes) і атрыбуты аб'екта (%object_attributes) маюць тып даных, які не рэгіструе ні адно пашырэнне ці налада. Іх аб'екты нельга паказаць, рэдагаваць або апублікаваць. Уключыце пашырэнне, якое дае гэты тып даных, або змяніце клас.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Паказаць толькі гэтыя</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Знайсці тып даных</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Ідэнтыфікатар, назва, клас PHP або пашырэнне.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Паказаць</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Усе</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Дае</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Усе</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Ядро</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Ніводны тып даных не адпавядае гэтаму фільтру.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Паказаць усе</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Пашырэнне</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown з %count тыпаў даных, %used выкарыстоўваюцца</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>У базе даных ёсць атрыбуты класаў або аб'ектаў гэтых тыпаў даных, але content.ini не змяшчае ніводнага з іх, або іх файла няма.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>Тыпы даных: %provider</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Тып даных</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>Клас PHP і файл</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Класы</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Аб'екты</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Прыметы</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>няма</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Ніводны тып даных не адпавядае пошуку. Ачысціце пошук.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>Паказана %shown з %count тыпаў даных</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Паказана тыпаў даных: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Сартаваць па %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>Падлічана %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Усе тыпы даных</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Старонка даведкі</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Гэты тып даных выкарыстоўваецца, але не зарэгістраваны</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Аб'екты класаў ніжэй нельга паказаць, рэдагаваць або апублікаваць, пакуль ніводнае пашырэнне не рэгіструе гэты тып даных. Уключыце пашырэнне, якое яго дае, і дадайце яго ў content.ini [DataTypeSettings] AvailableDataTypes[], або змяніце класы.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini змяшчае гэты тып даных, але ні ў адным каталогу тыпаў даных няма яго файла. Яго нішто не выкарыстоўвае; выдаліце яго з AvailableDataTypes[] або ўключыце яго пашырэнне.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Пра гэты тып даных</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Ідэнтыфікатар</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Назва</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Пашырэнне %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>ніхто</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>Клас PHP</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Файл</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>У AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>так</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>не</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Слупкі яго значэння</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Слупкі налад яго атрыбута класа</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Табліцы</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Слупкі і табліцы знойдзены праз чытанне кода тыпу даных: гэта арыенцір, а не гарантыя.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Шаблоны</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Доступ да сайта</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Шаблон</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Знаходзіцца ў</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>гэта адміністраванне</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>сайт па змаўчанні</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Без перавызначэнняў: шаблон перавызначэння, які адпавядае класу або атрыбуту, мае перавагу над гэтымі.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Класы, якія яго выкарыстоўваюць (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Ніводны клас не мае атрыбута гэтага тыпу даных.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Клас</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Атрыбуты</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Атрыбуты класа (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Атрыбут</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Налады</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Абавязковы</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Даступны для пошуку</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Перакладальнае</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Збірае інфармацыю</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Частка змесціва, якое яго выкарыстоўвае</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Спачатку апошнія змененыя</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Зменены</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Вузел %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Кожны пераклад мае сваё значэнне.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>Пошук індэксуе яго значэнні.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Ён можа збіраць звесткі ад наведвальнікаў (формы).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Спісы можна сартаваць па ім: ключ сартавання %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Магчымасць сартавання</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Яго значэнні спасылаюцца на іншыя аб'екты.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Сувязі</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Яго можна запоўніць з простага радка (імпарт, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>З тэксту</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Яго можна запоўніць з файла.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>З файла</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Налады яго атрыбута класа трапляюць у пакеты.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Пакеты</translation>
     </message>
 </context>
 </TS>

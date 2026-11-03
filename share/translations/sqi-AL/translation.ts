@@ -982,6 +982,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Kërkohet vetëm në këtë faqe: %from deri në %to nga %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Çdo tip të dhënash i kernelit dhe i zgjerimeve, dhe si e përdorin klasat dhe përmbajtja.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Tipet e të dhënave</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15371,6 +15379,14 @@ Shënim: paketat nuk do të çinstalohen.</translation>
     <message>
         <source>Static publishing</source>
         <translation>Publikimi statik</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Tipet e të dhënave</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Çdo tip të dhënash i kernelit dhe i zgjerimeve, dhe si e përdorin klasat dhe përmbajtja.</translation>
     </message>
 </context>
 <context>
@@ -55329,6 +55345,14 @@ llogarinë tuaj.</translation>
         <source>Copy of %class_name</source>
         <translation>Kopje e %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Tipet e të dhënave</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Tipi i të dhënave %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85058,6 +85082,397 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Ky email u dërgua nga %site sepse migration.ini [RemoteSettings] Notify[] e kërkon.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Tipet e të dhënave (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>Numëruar %time, sërish pas %minutes minutash</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Një tip i të dhënave ruan dhe redakton një lloj vlere të një atributi të klasës: një rresht teksti, një imazh, një lidhje. Shumicën i sjell kerneli, zgjerimet shtojnë të tjera. Këtu janë të gjitha, kush i ofron dhe sa përmbajtje i përdor. Një tip i të dhënave që baza e të dhënave e përdor, por që asgjë nuk e regjistron më, prish përmbajtjen që e ka.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Grupet e klasave</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Numëro sërish tani në vend që të përdorësh numërimet e minutave të fundit.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Numëro sërish</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Pasqyra</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Regjistruar</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>Në përdorim</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>I papërdorur</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Zgjerimet që ofrojnë tipe të dhënash</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Atributet e klasës</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Atributet e objektit</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>I paregjistruar</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>Në listë, skedari mungon</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count tipe të dhënash përdoren, por nuk janë të regjistruara</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes atribute klase dhe %object_attributes atribute objekti kanë një tip të dhënash që nuk e regjistron asnjë zgjerim apo cilësim. Objektet e tyre nuk mund të shfaqen, redaktohen ose publikohen. Aktivizo zgjerimin që ofron tipin e të dhënave ose ndrysho klasën.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Shfaq vetëm këto</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Gjej një tip të dhënash</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Identifikuesi, emri, klasa PHP ose zgjerimi.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Shfaq</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Të gjitha</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Ofruar nga</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Të gjithë</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Kerneli</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Asnjë tip të dhënash nuk përputhet me këtë filtër.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Shfaqi të gjitha</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Zgjerimi</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown nga %count tipe të dhënash, %used në përdorim</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>Baza e të dhënave ka atribute klase ose objekti të këtyre tipeve të të dhënave, por content.ini nuk liston asnjërin prej tyre, ose skedari i tij mungon.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>Tipet e të dhënave të %provider</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Tipi i të dhënave</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>Klasa PHP dhe skedari</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Klasat</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Objektet</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Shenjat</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>asnjë</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Asnjë tip të dhënash nuk përputhet me kërkimin. Pastro kërkimin.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%shown nga %count tipe të dhënash të shfaqura</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Tipe të dhënash të shfaqura: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Rendit sipas kolonës %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>Numëruar %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Të gjitha tipet e të dhënave</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Faqja e ndihmës</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Ky tip i të dhënave përdoret, por nuk është i regjistruar</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Objektet e klasave më poshtë nuk mund të shfaqen, redaktohen ose publikohen derisa asnjë zgjerim nuk e regjistron tipin e të dhënave. Aktivizo zgjerimin që e ofron dhe shtoje te content.ini [DataTypeSettings] AvailableDataTypes[], ose ndrysho klasat.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini e liston këtë tip të dhënash, por asnjë drejtori tipesh të dhënash nuk ka skedarin e tij. Asgjë nuk e përdor; hiqe nga AvailableDataTypes[] ose aktivizo zgjerimin e tij.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Rreth këtij tipi të dhënash</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Identifikuesi</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Emri</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Zgjerimi %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>askush</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>Klasë PHP</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Skedari</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>Në AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>po</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>jo</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Kolonat e vlerës së tij</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Kolonat e cilësimeve të atributit të tij të klasës</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Tabelat</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Kolonat dhe tabelat gjenden duke lexuar kodin e tipit të të dhënave: një udhëzim, jo një premtim.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Shabllonet</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Qasja në sajt</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Shablloni</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Gjetur në</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>kjo administratë</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>sajti i parazgjedhur</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Pa mbishkrime: një shabllon mbishkrimi i përputhur sipas klasës ose atributit ka përparësi ndaj këtyre.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Klasat që e përdorin (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Asnjë klasë nuk ka atribut të këtij tipi të dhënash.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klasa</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Atributet</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Atributet e klasës (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Atributi</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Cilësimet</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>I detyrueshëm</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>I kërkueshëm</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>I përkthyeshëm</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Mbledh informacion</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Pak përmbajtje që e përdor</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Të ndryshuarat së fundi në fillim</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Modifikuar</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Nyja %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Çdo përkthim ka vlerën e vet.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>Kërkimi indekson vlerat e tij.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Mund të mbledhë informacion nga vizitorët (formularë).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Listat mund të renditen sipas tij: çelësi i renditjes %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>I renditshëm</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Vlerat e tij tregojnë drejt objekteve të tjera.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Ndërlidhjet</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Mund të mbushet nga një tekst i thjeshtë (importim, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Nga teksti</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Mund të mbushet nga një skedar.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Nga skedari</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Cilësimet e atributit të tij të klasës shkojnë në paketa.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Paketat</translation>
     </message>
 </context>
 </TS>

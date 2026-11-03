@@ -632,3 +632,24 @@ a.a4-class-top {
   .a4-package-repo.is-current > a,
   .a4-package-creator-list label:has(input:checked) { outline: 2px solid Highlight; outline-offset: -2px; }
 }
+
+/* ---- class/datatype: the sortable headers of its tables (page/class_datatypes.js) -------------------------- */
+
+.a4-class-datatypes-sort {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-weight: var(--a4-weight-strong);
+  text-align: inherit;
+  cursor: pointer;
+}
+.a4-class-datatypes-sort:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
+.a4-class-datatypes-sort::after {
+  content: "\2195";
+  margin-inline-start: var(--a4-space-1);
+  color: var(--a4-muted);
+}
+[aria-sort="ascending"] > .a4-class-datatypes-sort::after { content: "\2191"; color: var(--a4-ink); }
+[aria-sort="descending"] > .a4-class-datatypes-sort::after { content: "\2193"; color: var(--a4-ink); }

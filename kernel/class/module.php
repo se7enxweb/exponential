@@ -52,6 +52,12 @@ $ViewList["grouplist"] = array(
     "script" => "grouplist.php",
     "default_navigation_part" => 'ezsetupnavigationpart',
     "params" => array() );
+// The datatypes of the installation and how the content model uses them, read only:
+// class/datatype/list[/(filter)/used|unused|orphans][/(group)/<provider>] and class/datatype/view/<datatype string>
+$ViewList["datatype"] = array(
+    "script" => "datatype.php",
+    "default_navigation_part" => 'ezsetupnavigationpart',
+    "params" => array( "Action", "DataTypeString" ) );
 $ViewList["groupedit"] = array(
     "script" => "groupedit.php",
     'ui_context' => 'edit',

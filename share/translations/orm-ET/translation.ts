@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Fuulli kun qofa barbaadama: %from hanga %to, %count keessaa.</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Gosoota deetaa</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Gosoota deetaa handhuuraa fi dabalataalee hunda, akkasumas gitootaa fi qabiyyeen akkamitti akka itti fayyadaman.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ Yaadannoo: Paakeejiiwwan diriirsi isaanii hin haqamu.</translation>
     <message>
         <source>Static publishing</source>
         <translation>Maxxansa dhaabbataa</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Gosoota deetaa</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Gosoota deetaa handhuuraa fi dabalataalee hunda, akkasumas gitootaa fi qabiyyeen akkamitti akka itti fayyadaman.</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ herrega keessan hojii irra oolchaa.</translation>
         <source>Copy of %class_name</source>
         <translation>Garagalcha %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Gosoota deetaa</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Gosa deetaa %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85028,6 +85052,397 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Ergaan kun %site irraa ergame sababni isaas migration.ini [RemoteSettings] Notify[] ni gaafata.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Class groups</source>
+        <translation>Gareewwan gitaa</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Ilaalcha waliigalaa</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Galmaa'e</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>Fayyadamaa jira</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Hin fayyadamamne</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Amaloota gitaa</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Amalawwan wanta</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Agarsiisi</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Hunda</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Nama hundaa</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Handhuura</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Hunda agarsiisi</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Dabalata</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Gosa deetaa</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Gitoota</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Wantoota</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Alaabaalee</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>homaa</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Tartiibessi %column'n</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Eenyummeessaa</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Maqaa</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Dabalata %name</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>Gita PHP</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Faayilii</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>eeyyee</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>lakki</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Gabateewwan</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Unkawwan</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Seensa marsariitii</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Unka</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Kan argame</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Gita</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Amaloota</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Amala</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Qindaa'ina</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Dirqama</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Barbaadamuu danda'u</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Hiikamuu kan danda'u</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Odeeffannoo ni walitti qaba</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Jijjiirame</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Noodii %id</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Tartiibessuu kan danda'u</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Walitti dhufeenyawwan</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Paakeejiiwwan</translation>
+    </message>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Gosoota deetaa (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>%time lakkaa'ame, daqiiqaa %minutes booda irra deebi'ee</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Gosni deetaa gosa gatii tokkoo amala gitaa kuusa, ni gulaalas: sarara barreeffamaa, suuraa, walitti dhufeenya. Handhuurri isaan hedduu fida, dabalataaleen kan biroo dabalu. Asitti hundi isaanii jiru, eenyu akka kennu fi qabiyyeen hammam akka itti fayyadamu. Gosni deetaa kuusaan deetaa itti fayyadamu garuu homtuu kana booda hin galmeessine qabiyyee isa qabu ni balleessa.</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Lakkoofsa daqiiqaawwan darbanii fayyadamuu mannaa amma irra deebi'ii lakkaa'i.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Irra deebi'ii lakkaa'i</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Dabalataalee gosoota deetaa kennan</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Hin galmoofne</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>Tarree keessa jira, faayiliin hin jiru</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>Gosoonni deetaa %count fayyadamaa jiru garuu hin galmoofne</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>Amaloonni gitaa %class_attributes fi amaloonni wantaa %object_attributes gosa deetaa dabalanni ykn qindaa'inni kamiyyuu hin galmeessine qabu. Wantoonni isaanii agarsiifamuu, gulaalamuu ykn maxxanfamuu hin danda'an. Dabalata gosa deetaa kennu hojii irra oolchi, ykn gitaa jijjiiri.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Kana qofa agarsiisi</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Gosa deetaa barbaadi</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Eenyummeessaa, maqaa, gitaa PHP ykn dabalata.</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Kan kenne</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Gosni deetaa calaltuu kana wajjin walsimu hin jiru.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>Gosoota deetaa %count keessaa %shown, %used fayyadamaa jiru</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>Kuusaan deetaa amaloota gitaa ykn wantaa gosoota deetaa kanaa qaba, garuu content.ini isaan keessaa tokkollee hin tarreessu, ykn faayiliin isaa hin jiru.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>Gosoota deetaa %provider</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>Gitaa PHP fi faayilii</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Gosni deetaa barbaacha wajjin walsimu hin jiru. Barbaacha qulqulleessi.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>Gosoota deetaa %count keessaa %shown agarsiifame</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Gosoota deetaa agarsiifaman: %count</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>%time lakkaa'ame</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Gosoota deetaa hunda</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Fuula gargaarsaa</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Gosni deetaa kun fayyadamaa jira garuu hin galmoofne</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Yeroo dabalanni kamiyyuu gosa deetaa hin galmeessinetti, wantoonni gitoota armaan gadii agarsiifamuu, gulaalamuu ykn maxxanfamuu hin danda'an. Dabalata isa kennu hojii irra oolchi, content.ini [DataTypeSettings] AvailableDataTypes[] irratti dabali, ykn gitoota jijjiiri.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini gosa deetaa kana tarreessa, garuu galmeen gosa deetaa kamiyyuu faayilii isaa hin qabu. Homtuu itti hin fayyadamu; AvailableDataTypes[] keessaa baasi ykn dabalata isaa hojii irra oolchi.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Waa'ee gosa deetaa kanaa</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>namni hin jiru</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>AvailableDataTypes[] keessa</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Utuboota gatii isaa</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Utuboota qindaa'ina amala gitaa isaa</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Utubootaa fi gabateewwan koodii gosa deetaa dubbisuun argaman: qajeelfama, waadaa miti.</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>bulchiinsa kana</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>marsariitii durtii</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Bakka buusa malee: unkaan bakka buusaa gitaa ykn amalaan walsimu kanneen kana caala.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Gitoota itti fayyadaman (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Gitaan kamiyyuu amala gosa deetaa kanaa hin qabu.</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Amaloota gitaa (%count)</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Qabiyyee itti fayyadamu tokko tokko</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Kan dhumarratti jijjiirame dura</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Hiikni hundi gatii mataa isaa qaba.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>Barbaachi gatiiwwan isaa ni indeksa.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Daawwattoota irraa odeeffannoo walitti qabuu danda'a (unkaalee).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Tarreewwan isaan tartiibaan qindaa'uu danda'u: furtuu tartiibaa %type.</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Gatiiwwan isaa wantoota biroo agarsiisu.</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Barreeffama salphaa irraa guutamuu danda'a (galchuu, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Barreeffama irraa</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Faayilii irraa guutamuu danda'a.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Faayilii irraa</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Qindaa'inni amala gitaa isaa paakeejiiwwan keessa seena.</translation>
     </message>
 </context>
 </TS>

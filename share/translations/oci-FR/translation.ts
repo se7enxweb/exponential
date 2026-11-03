@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Sonque aquesta pagina es recercada : %from a %to sus %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Totes los tipes de donadas del nuclèu e de las extensions, e cossí las classas e lo contengut los utilizan.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Tipes de donadas</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ Nòta: los paquets seràn pas desinstallats.</translation>
     <message>
         <source>Static publishing</source>
         <translation>Publicacion estatica</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Tipes de donadas</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Totes los tipes de donadas del nuclèu e de las extensions, e cossí las classas e lo contengut los utilizan.</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ vòstre compte.</translation>
         <source>Copy of %class_name</source>
         <translation>Còpia de %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Tipes de donadas</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Tipe de donadas %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85028,6 +85052,397 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Aqueste corrièl es estat mandat per %site perque migration.ini [RemoteSettings] Notify[] o demanda.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Tipes de donadas (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>Comptat %time, de nòu dins %minutes minutas</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Un tipe de donadas enregistra e modifica un sol tipe de valor d'un atribut de classa: una linha de tèxte, un imatge, una relacion. Lo nuclèu ne provesís la màger part, las extensions n'apondon d'autres. Aquí son totes, qual los provesís e quant de contengut los utiliza. Un tipe de donadas que la basa de donadas utiliza mas que pus res enregistra pas copa lo contengut que l'a.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Gropes de classas</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Comptar de nòu ara puslèu que d'utilizar los comptes de las darrièras minutas.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Comptar de nòu</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Vista generala</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Inscrich</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>Utilizada</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Pas utilizat</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Extensions que provesisson de tipes de donadas</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Atributs de la classa</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Atributs de l'objècte</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Pas enregistrat</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>Listat, fichièr mancant</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count tipes de donadas son utilizats mas pas enregistrats</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes atributs de classa e %object_attributes atributs d'objècte an un tipe de donadas que cap d'extension ni de paramètre enregistra pas. Lors objèctes pòdon pas èsser afichats, modificats o publicats. Activatz l'extension que provesís lo tipe de donadas, o cambiatz la classa.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Afichar sonque aquestes</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Trobar un tipe de donadas</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Identificant, nom, classa PHP o extension.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Mostrar</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Tot</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Provesit per</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Tot lo monde</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Nuclèu</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Cap de tipe de donadas correspond pas a aqueste filtre.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Mostrar tot</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Extension</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown de %count tipes de donadas, %used en usatge</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>La basa de donadas a d'atributs de classa o d'objècte d'aquestes tipes de donadas, mas content.ini ne lista pas cap, o son fichièr manca.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>Tipes de donadas de %provider</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Tipe de donadas</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>Classa e fichièr PHP</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Classas</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Objèctes</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Marcas</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>cap</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Cap de tipe de donadas correspond pas a la recèrca. Escafatz la recèrca.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%shown de %count tipes de donadas afichats</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Tipes de donadas afichats: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Triar per %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>Comptat %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Totes los tipes de donadas</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Pagina d'ajuda</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Aqueste tipe de donadas es utilizat mas pas enregistrat</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Los objèctes de las classas çai-jos pòdon pas èsser afichats, modificats o publicats tant que cap d'extension enregistra pas lo tipe de donadas. Activatz l'extension que lo provesís e apondètz-lo a content.ini [DataTypeSettings] AvailableDataTypes[], o cambiatz las classas.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini lista aqueste tipe de donadas, mas cap de repertòri de tipes de donadas a pas son fichièr. Res l'utiliza pas; levatz-lo d'AvailableDataTypes[] o activatz son extension.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>A prepaus d'aqueste tipe de donadas</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Identificant</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nom</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Extension %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>degun</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>Classa PHP</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fichièr</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>Dins AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>òc</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>non</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Colomnas de sa valor</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Colomnas de sos paramètres d'atribut de classa</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Taulas</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Las colomnas e las taulas son trobadas en legissent lo còdi del tipe de donadas: una indicacion, pas una promesa.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Modèls</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Accès al site</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Modèl</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Trobat dins</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>aquesta administracion</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>site per defaut</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Sens subrecargas: un modèl de subrecarga que correspond per classa o atribut passa davant aquestes.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Classas que l'utilizan (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Cap de classa a pas d'atribut d'aqueste tipe de donadas.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Classa</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Atributs</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Atributs de la classa (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Atribut</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Paramètres</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Obligatòri</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Recercable</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Traduisible</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Collècta d'informacions</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Un pauc de contengut que l'utiliza</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Darrièr modificat en primièr</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Modificat</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Nos %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Cada traduccion a sa pròpria valor.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>La recèrca indexa sas valors.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Pòt collectar d'informacions dels visitaires (formularis).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Las listas se pòdon triar per el: clau de triada %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Triable</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Sas valors mènan a d'autres objèctes.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Relacions</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Se pòt emplenar a partir d'una cadena simpla (importacion, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>A partir de tèxte</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Se pòt emplenar a partir d'un fichièr.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>A partir de fichièr</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Sos paramètres d'atribut de classa van dins los paquets.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Paquets</translation>
     </message>
 </context>
 </TS>

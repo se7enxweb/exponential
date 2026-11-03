@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Ngan kaca ieu nu diparaluruh: %from dugi ka %to tina %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Unggal tipe data tina inti jeung éksténsi, sarta kumaha kelas jeung eusi ngagunakeunana.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Tipe data</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ Catetan: Pakét moal dicabut pamasanganana.</translation>
     <message>
         <source>Static publishing</source>
         <translation>Publikasi statis</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Tipe data</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Unggal tipe data tina inti jeung éksténsi, sarta kumaha kelas jeung eusi ngagunakeunana.</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ akun anjeun.</translation>
         <source>Copy of %class_name</source>
         <translation>Salinan %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Tipe data</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Tipe data %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85036,6 +85060,397 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Surélék ieu dikirim ku %site sabab migration.ini [RemoteSettings] Notify[] mundut kitu.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Tipe data (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>Diitung %time, deui sanggeus %minutes menit</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Tipe data nyimpen jeung ngédit hiji jenis nilai tina atribut kelas: hiji baris téks, hiji gambar, hiji hubungan. Lolobana dibawa ku inti, éksténsi nambahan deui. Di dieu aya kabéh, saha nu nyadiakeun jeung sabaraha eusi nu ngagunakeunana. Tipe data nu dipaké ku basis data tapi geus teu aya nu ngadaptarkeun deui bakal ngaruksak eusi nu mibanda éta.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Grup kelas</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Itung deui ayeuna tinimbang ngagunakeun itungan tina sababaraha menit ka tukang.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Itung deui</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Gambaran umum</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Kadaptar</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>Nuju dipaké</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Teu dipaké</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Éksténsi nu nyadiakeun tipe data</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Atribut kelas</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Atribut objék</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Teu kadaptar</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>Aya dina daptar, berkas leungit</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count tipe data dipaké tapi teu kadaptar</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes atribut kelas jeung %object_attributes atribut objék mibanda tipe data nu teu didaptarkeun ku éksténsi atawa setélan mana waé. Objék-objékna teu bisa dipintonkeun, diédit atawa diterbitkeun. Aktipkeun éksténsi nu nyadiakeun tipe data éta, atawa robah kelasna.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Pintonkeun ieu wungkul</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Paluruh tipe data</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Idéntifikasi, ngaran, kelas PHP atawa éksténsi.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Témbongkeun</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Sadayana</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Disadiakeun ku</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Sarerea</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Inti</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Teu aya tipe data nu cocog jeung saringan ieu.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Témbongkeun sadayana</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Éksténsi</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown tina %count tipe data, %used dipaké</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>Basis data mibanda atribut kelas atawa objék tina tipe data ieu, tapi content.ini teu ngadaptarkeun hiji ogé, atawa berkasna leungit.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>Tipe data ti %provider</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Tipe data</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>Kelas PHP jeung berkas</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Kelas</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Objék</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Tanda sifat</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>euweuh</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Teu aya tipe data nu cocog jeung pamaluruhan. Hapus pamaluruhan.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%shown tina %count tipe data dipintonkeun</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Tipe data nu dipintonkeun: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Susun nurutkeun %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>Diitung %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Sadaya tipe data</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Kaca pitulung</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Tipe data ieu dipaké tapi teu kadaptar</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Objék tina kelas di handap teu bisa dipintonkeun, diédit atawa diterbitkeun salila teu aya éksténsi nu ngadaptarkeun tipe data éta. Aktipkeun éksténsi nu nyadiakeunana sarta tambahkeun kana content.ini [DataTypeSettings] AvailableDataTypes[], atawa robah kelas-kelasna.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini ngadaptarkeun tipe data ieu, tapi teu aya diréktori tipe data nu mibanda berkasna. Teu aya nu ngagunakeunana; piceun tina AvailableDataTypes[] atawa aktipkeun éksténsina.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Ngeunaan tipe data ieu</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Idéntifikasi</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Ngaran</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Éksténsi %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>teu aya saha-saha</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>Kelas PHP</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Berkas</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>Dina AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>enya</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>henteu</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Kolom tina nilaina</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Kolom tina setélan atribut kelasna</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Tabel</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Kolom jeung tabel kapanggih ku maca kode tipe data: pituduh, lain jangji.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Citakan</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Aksés situs</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Citakan</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Kapanggih di</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>administrasi ieu</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>situs standar</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Tanpa override: citakan override nu cocog dumasar kelas atawa atribut leuwih diutamakeun tibatan ieu.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Kelas nu ngagunakeunana (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Teu aya kelas nu mibanda atribut tina tipe data ieu.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Kelas</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Atribut</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Atribut kelas (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Atribut</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Setélan</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Wajib</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Tiasa diparaluruh</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Tiasa ditarjamahkeun</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Ngumpulkeun émbaran</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Sababaraha eusi nu ngagunakeunana</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Nu panungtung dirobah heula</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Dirobih</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Simpul %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Unggal tarjamahan mibanda nilai sorangan.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>Pamaluruhan ngindéks nilai-nilaina.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Bisa ngumpulkeun inpormasi ti nu nganjang (formulir).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Daptar bisa diurutkeun dumasar kana ieu: konci urutan %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Tiasa diurutkeun</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Nilai-nilaina nunjuk ka objék séjén.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Hubungan</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Bisa dieusian tina téks basajan (impor, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Tina téks</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Bisa dieusian tina berkas.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Tina berkas</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Setélan atribut kelasna asup kana pakét.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Pakét</translation>
     </message>
 </context>
 </TS>

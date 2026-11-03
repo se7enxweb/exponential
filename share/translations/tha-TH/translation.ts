@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>ค้นหาเฉพาะหน้านี้: %from ถึง %to จาก %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>ชนิดข้อมูลทุกชนิดของเคอร์เนลและส่วนขยาย และวิธีที่คลาสและเนื้อหาใช้งาน</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>ชนิดข้อมูล</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Static publishing</source>
         <translation>การเผยแพร่แบบคงที่</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>ชนิดข้อมูล</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>ชนิดข้อมูลทุกชนิดของเคอร์เนลและส่วนขยาย และวิธีที่คลาสและเนื้อหาใช้งาน</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ your account.</source>
         <source>Copy of %class_name</source>
         <translation>สำเนาของ %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>ชนิดข้อมูล</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>ชนิดข้อมูล %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85028,6 +85052,397 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>อีเมลนี้ส่งโดย %site เนื่องจาก migration.ini [RemoteSettings] Notify[] ร้องขอ</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>ชนิดข้อมูล (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>นับเมื่อ %time นับใหม่หลัง %minutes นาที</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>ชนิดข้อมูลจัดเก็บและแก้ไขค่าหนึ่งประเภทของแอตทริบิวต์ของคลาส เช่น บรรทัดข้อความ รูปภาพ ความสัมพันธ์ เคอร์เนลมีให้เป็นส่วนใหญ่ ส่วนขยายเพิ่มเติมอีก ที่นี่แสดงทั้งหมด ผู้ให้ และปริมาณเนื้อหาที่ใช้ ชนิดข้อมูลที่ฐานข้อมูลใช้อยู่แต่ไม่มีสิ่งใดลงทะเบียนอีกแล้วจะทำให้เนื้อหาที่ใช้ชนิดนั้นเสียหาย</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>กลุ่มคลาส</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>นับใหม่ตอนนี้แทนการใช้ตัวเลขจากไม่กี่นาทีที่ผ่านมา</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>นับใหม่</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>ภาพรวม</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>ลงทะเบียนเมื่อ</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>ใช้งานอยู่</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>ไม่ได้ใช้</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>ส่วนขยายที่ให้ชนิดข้อมูล</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>แอตทริบิวต์ของคลาส</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>แอตทริบิวต์ของออบเจ็กต์</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>ไม่ได้ลงทะเบียน</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>อยู่ในรายการ แต่ไม่มีไฟล์</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>มีชนิดข้อมูล %count ชนิดที่ถูกใช้แต่ไม่ได้ลงทะเบียน</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>แอตทริบิวต์ของคลาส %class_attributes รายการ และแอตทริบิวต์ของออบเจ็กต์ %object_attributes รายการ มีชนิดข้อมูลที่ไม่มีส่วนขยายหรือการตั้งค่าใดลงทะเบียนไว้ ออบเจ็กต์เหล่านั้นจึงแสดง แก้ไข หรือเผยแพร่ไม่ได้ เปิดใช้งานส่วนขยายที่ให้ชนิดข้อมูลนี้ หรือเปลี่ยนคลาส</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>แสดงเฉพาะรายการเหล่านี้</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>ค้นหาชนิดข้อมูล</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>ตัวระบุ ชื่อ คลาส PHP หรือส่วนขยาย</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>แสดง</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ทั้งหมด</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>ให้โดย</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>ทุกคน</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>เคอร์เนล</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>ไม่มีชนิดข้อมูลที่ตรงกับตัวกรองนี้</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>แสดงทั้งหมด</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>ส่วนขยาย</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown จาก %count ชนิดข้อมูล ใช้งานอยู่ %used</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>ฐานข้อมูลมีแอตทริบิวต์ของคลาสหรือออบเจ็กต์ที่เป็นชนิดข้อมูลเหล่านี้ แต่ content.ini ไม่ได้ระบุไว้เลย หรือไม่มีไฟล์ของมัน</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>ชนิดข้อมูลของ %provider</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>ชนิดข้อมูล</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>คลาส PHP และไฟล์</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>คลาส</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>ออบเจ็กต์</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>แฟล็ก</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>ไม่มี</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>ไม่มีชนิดข้อมูลที่ตรงกับการค้นหา ล้างการค้นหา</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>แสดง %shown จาก %count ชนิดข้อมูล</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>ชนิดข้อมูลที่แสดง: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>เรียงลำดับตาม %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>นับเมื่อ %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>ชนิดข้อมูลทั้งหมด</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>หน้าช่วยเหลือ</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>ชนิดข้อมูลนี้ถูกใช้แต่ไม่ได้ลงทะเบียน</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>ออบเจ็กต์ของคลาสด้านล่างแสดง แก้ไข หรือเผยแพร่ไม่ได้ ตราบที่ไม่มีส่วนขยายใดลงทะเบียนชนิดข้อมูลนี้ เปิดใช้งานส่วนขยายที่ให้ชนิดนี้และเพิ่มลงใน content.ini [DataTypeSettings] AvailableDataTypes[] หรือเปลี่ยนคลาส</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini ระบุชนิดข้อมูลนี้ แต่ไม่มีไดเรกทอรีชนิดข้อมูลใดมีไฟล์ของมัน ไม่มีสิ่งใดใช้งาน ให้ลบออกจาก AvailableDataTypes[] หรือเปิดใช้งานส่วนขยายของมัน</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>เกี่ยวกับชนิดข้อมูลนี้</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>ตัวระบุ</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>ชื่อ</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>ส่วนขยาย %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>ไม่มี</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>คลาส PHP</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ไฟล์</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>ใน AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ใช่</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ไม่ใช่</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>คอลัมน์ของค่า</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>คอลัมน์ของการตั้งค่าแอตทริบิวต์ของคลาส</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>ตาราง</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>คอลัมน์และตารางหาได้จากการอ่านโค้ดของชนิดข้อมูล: เป็นแนวทาง ไม่ใช่คำรับประกัน</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>เทมเพลต</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>การเข้าถึงไซต์</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>เทมเพลต</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>พบใน</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>ส่วนผู้ดูแลนี้</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>ไซต์เริ่มต้น</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>ไม่รวมการแทนที่: เทมเพลตแทนที่ที่ตรงตามคลาสหรือแอตทริบิวต์จะมีผลเหนือรายการเหล่านี้</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>คลาสที่ใช้ (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>ไม่มีคลาสใดมีแอตทริบิวต์ชนิดข้อมูลนี้</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>คลาส</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>แอตทริบิวต์</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>แอตทริบิวต์ของคลาส (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>แอตทริบิวต์</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>การตั้งค่า</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>จำเป็น</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>ค้นหาได้</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>แปลได้</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>รวบรวมข้อมูล</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>เนื้อหาบางส่วนที่ใช้</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>แก้ไขล่าสุดก่อน</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>แก้ไขเมื่อ</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>โหนด %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>แต่ละคำแปลมีค่าของตนเอง</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>การค้นหาทำดัชนีค่าของมัน</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>สามารถรวบรวมข้อมูลจากผู้เยี่ยมชมได้ (แบบฟอร์ม)</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>รายการสามารถเรียงตามค่านี้ได้: คีย์การเรียง %type</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>เรียงลำดับได้</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>ค่าของมันชี้ไปยังออบเจ็กต์อื่น</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>ความสัมพันธ์</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>สามารถกรอกจากสตริงธรรมดาได้ (นำเข้า, REST)</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>จากข้อความ</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>สามารถกรอกจากไฟล์ได้</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>จากไฟล์</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>การตั้งค่าแอตทริบิวต์ของคลาสจะรวมอยู่ในแพ็กเกจ</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>แพ็กเกจ</translation>
     </message>
 </context>
 </TS>

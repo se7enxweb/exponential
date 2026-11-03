@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>ⵜⵜⵓⵔⵣⵣⵓ ⴽⴰⵏ ⴳ ⵜⵙⵏⴰ ⴰⴷ: %from ⵖⵔ %to ⵙⴳ %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>ⴽⵓ ⴰⵏⴰⵡ ⵏ ⵉⵙⴼⴽⴰ ⵏ ⵓⵥⴰⵕ ⴷ ⵉⵙⵉⵖⵣⴰⴼ, ⴷ ⵎⴰⵎⴽ ⵜ ⵙⵎⵔⴰⵙⵏ ⵉⵙⵎⵉⵍⵏ ⴷ ⵜⵓⵎⴰⵢⵜ.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>ⵉⵏⴰⵡⵏ ⵏ ⵉⵙⴼⴽⴰ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Static publishing</source>
         <translation>ⴰⵙⵙⵓⴼⵖ ⴰⵏⵙⵙⵓⵏ</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>ⵉⵏⴰⵡⵏ ⵏ ⵉⵙⴼⴽⴰ</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>ⴽⵓ ⴰⵏⴰⵡ ⵏ ⵉⵙⴼⴽⴰ ⵏ ⵓⵥⴰⵕ ⴷ ⵉⵙⵉⵖⵣⴰⴼ, ⴷ ⵎⴰⵎⴽ ⵜ ⵙⵎⵔⴰⵙⵏ ⵉⵙⵎⵉⵍⵏ ⴷ ⵜⵓⵎⴰⵢⵜ.</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ your account.</source>
         <source>Copy of %class_name</source>
         <translation>ⵜⴰⵏⵖⵍⵜ ⵏ %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>ⵉⵏⴰⵡⵏ ⵏ ⵉⵙⴼⴽⴰ</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>ⴰⵏⴰⵡ ⵏ ⵉⵙⴼⴽⴰ %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85028,6 +85052,397 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>ⵜⴰⵣⵔⵉⴳⵜ ⴰⴷ ⵜⵙⵙⵓⴼⵖ ⵜⵜ %site ⴰⵛⴽⵓ ⵉⵙⵓⵜⵔ ⵜⵜ migration.ini [RemoteSettings] Notify[].</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>ⵉⵏⴰⵡⵏ ⵏ ⵉⵙⴼⴽⴰ (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>ⵉⵜⵜⵓⵙⵉⴹⵏ %time, ⴷⴰⵖ ⴷⴼⴼⵉⵔ %minutes ⵏ ⵜⵓⵙⴷⵉⴷⵉⵏ</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>ⴰⵏⴰⵡ ⵏ ⵉⵙⴼⴽⴰ ⵉⵃⴹⵓ ⵉⵙⵏⴼⴰⵍ ⵢⴰⵏ ⵓⵏⴰⵡ ⵏ ⵡⴰⵜⵜⴰⵢ ⵏ ⵢⵉⵍⴰⵢ ⵏ ⵓⵙⵎⵉⵍ: ⵢⴰⵏ ⵓⵣⵔⵉⵔⴳ ⵏ ⵓⴹⵔⵉⵙ, ⵢⴰⵜ ⵜⵡⵍⴰⴼⵜ, ⵢⴰⵏ ⵓⵣⴷⴰⵢ. ⴰⵥⴰⵕ ⴰⵢⴷ ⵢⵓⵡⵉⵏ ⵜⴰⴳⵓⴷⵉ ⵏⵏⵙⵏ, ⵉⵙⵉⵖⵣⴰⴼ ⵔⵏⵏⵓⵏ ⵡⵉⵢⵢⴰⴹ. ⵀⴰ ⵜⵏ ⵎⴰⵕⵕⴰ, ⵎⴰⵏⵉⵡ ⵜⵏ ⵉⴼⴽⴰⵏ ⴷ ⵎⵏⵏⴰⵡ ⵏ ⵜⵓⵎⴰⵢⵜ ⵉⵜⵜⵙⵎⵔⴰⵙⵏ ⵜⵏ. ⴰⵏⴰⵡ ⵏ ⵉⵙⴼⴽⴰ ⵍⵍⵉ ⵜⵙⵎⵔⴰⵙ ⵜⵙⴰⴳⴳⵓⵜ ⵏ ⵉⵙⴼⴽⴰ ⵎⴰⵛ ⵓⵔ ⵜ ⵉⵣⵎⵎⴻⵎ ⴽⵔⴰ ⴷⴰ ⵉⵙⵔⵔⵓⵥ ⵜⵓⵎⴰⵢⵜ ⵍⵍⵉ ⵜ ⵢⵓⵎⵥⵏ.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>ⵜⵔⴰⴱⴱⵉⵜⵉⵏ ⵏ ⵉⵙⵎⵉⵍⵏ</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>ⵙⵙⵉⴹⵏ ⴷⴰⵖ ⴷⵖⵉ ⴳ ⵓⵎⴽⴰⵏ ⵏ ⵓⵙⵎⵔⵙ ⵏ ⵓⵙⵉⴹⵏ ⵏ ⵜⵓⵙⴷⵉⴷⵉⵏ ⵉⵣⵔⵉⵏ.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>ⵙⵙⵉⴹⵏ ⴷⴰⵖ</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>ⴰⵙⴽⴰⵏ ⴰⵎⴰⵜⴰⵢ</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>ⵉⵜⵜⵓⵣⵎⵎⵎ</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>ⵜⵜⵓⵙⵎⵔⵙ</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>ⵓⵔ ⵉⵜⵜⵓⵙⵎⵔⵙ</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>ⵉⵙⵉⵖⵣⴰⴼ ⵍⵍⵉ ⵉⴼⴽⴰⵏ ⵉⵏⴰⵡⵏ ⵏ ⵉⵙⴼⴽⴰ</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>ⵉⵢⵍⴰⵢⵏ ⵏ ⵓⵙⵎⵉⵍ</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>ⵉⵢⵍⴰⵏ ⵏ ⵜⵖⴰⵡⵙⴰ</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>ⵓⵔ ⵉⵜⵜⵓⵣⵎⵎⴻⵎ</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>ⵉⵍⵍⴰ ⴳ ⵜⵍⴳⴰⵎⵜ, ⴰⴼⴰⵢⵍⵓ ⵓⵔ ⵉⵍⵍⵉ</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count ⵏ ⵉⵏⴰⵡⵏ ⵏ ⵉⵙⴼⴽⴰ ⵜⵜⵓⵙⵎⵔⵙⵏ ⵎⴰⵛ ⵓⵔ ⵜⵜⵓⵣⵎⵎⴻⵎⵏ</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes ⵉⵢⵍⴰⵢⵏ ⵏ ⵓⵙⵎⵉⵍ ⴷ %object_attributes ⵉⵢⵍⴰⵢⵏ ⵏ ⵜⵖⴰⵡⵙⴰ ⵖⵓⵔⵙⵏ ⴰⵏⴰⵡ ⵏ ⵉⵙⴼⴽⴰ ⵓⵔ ⵉⵣⵎⵎⴻⵎ ⴽⵔⴰ ⵏ ⵓⵙⵉⵖⵣⴼ ⵏⵖ ⵜⵙⵖⵍ. ⵓⵔ ⵜⵣⵎⵉⵔ ⴰⴷ ⵜⵙⵎⵍⴷ, ⴰⴷ ⵜⵙⵏⴼⵍⴷ ⵏⵖ ⴰⴷ ⵜⵥⵕⵕⵓⴷ ⵜⵉⵖⴰⵡⵙⵉⵡⵉⵏ ⵏⵏⵙⵏ. ⵙⵙⵓⴷⵓ ⴰⵙⵉⵖⵣⴼ ⵍⵍⵉ ⵉⴼⴽⴰⵏ ⴰⵏⴰⵡ ⵏ ⵉⵙⴼⴽⴰ, ⵏⵖ ⵙⵏⴼⵍ ⴰⵙⵎⵉⵍ.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>ⵙⵎⵍ ⵖⴰⵙ ⵉⴳ ⴰ</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>ⴰⴼ ⴰⵏⴰⵡ ⵏ ⵉⵙⴼⴽⴰ</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>ⴰⵎⵙⵓⵖⵍ, ⵉⵙⵎ, ⴰⵙⵎⵉⵍ PHP ⵏⵖ ⴰⵙⵉⵖⵣⴼ.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ⵙⴽⵏ</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ⴰⴽⴽ</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>ⵉⴼⴽⴰ ⵜ</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>ⴰⴽⴽⵯ</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>ⴰⵥⴰⵕ</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>ⵓⵔ ⵉⵍⵍⵉ ⴽⵔⴰ ⵏ ⵓⵏⴰⵡ ⵏ ⵉⵙⴼⴽⴰ ⵉⵎⵙⴰⵙⴰⵏ ⴷ ⵓⵙⵙⵓⴼⵖ ⴰⴷ.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>ⵙⴽⵏ ⴽⵓⵍⵍⵓ</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>ⴰⵙⵉⵖⵣⴼ</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown ⵙⴳ %count ⵏ ⵉⵏⴰⵡⵏ ⵏ ⵉⵙⴼⴽⴰ, %used ⵜⵜⵓⵙⵎⵔⵙⵏ</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>ⵜⴰⵙⴰⴳⴳⵓⵜ ⵏ ⵉⵙⴼⴽⴰ ⵖⵓⵔⵙ ⵉⵢⵍⴰⵢⵏ ⵏ ⵓⵙⵎⵉⵍ ⵏⵖ ⵏ ⵜⵖⴰⵡⵙⴰ ⵏ ⵉⵏⴰⵡⵏ ⴰ ⵏ ⵉⵙⴼⴽⴰ, ⵎⴰⵛ content.ini ⵓⵔ ⴷ ⵉⵙⵎⵍ ⵢⴰⵏ ⵙⴳⵙⵏ, ⵏⵖ ⴰⴼⴰⵢⵍⵓ ⵏⵏⵙ ⵓⵔ ⵉⵍⵍⵉ.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>ⵉⵏⴰⵡⵏ ⵏ ⵉⵙⴼⴽⴰ ⵏ %provider</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>ⴰⵏⴰⵡ ⵏ ⵉⵙⴼⴽⴰ</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>ⴰⵙⵎⵉⵍ PHP ⴷ ⵓⴼⴰⵢⵍⵓ</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>ⵉⵙⵎⵉⵍⵏ</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>ⵜⵉⵖⴰⵡⵙⵉⵡⵉⵏ</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>ⵜⵉⵎⴰⵜⴰⵔⵉⵏ</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>ⵓⵍⴰ ⵢⴰⵏ</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>ⵓⵔ ⵉⵍⵍⵉ ⴽⵔⴰ ⵏ ⵓⵏⴰⵡ ⵏ ⵉⵙⴼⴽⴰ ⵉⵎⵙⴰⵙⴰⵏ ⴷ ⵓⵔⵣⵣⵓ. ⵙⴼⴹ ⴰⵔⵣⵣⵓ.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%shown ⵙⴳ %count ⵏ ⵉⵏⴰⵡⵏ ⵏ ⵉⵙⴼⴽⴰ ⵜⵜⵓⵙⵎⵍⴰⵏ</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>ⵉⵏⴰⵡⵏ ⵏ ⵉⵙⴼⴽⴰ ⵉⵜⵜⵓⵙⵎⵍⴰⵏ: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>ⵙⵎⵣⵡⵔ ⵙ %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>ⵉⵜⵜⵓⵙⵉⴹⵏ %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>ⵎⴰⵕⵕⴰ ⵉⵏⴰⵡⵏ ⵏ ⵉⵙⴼⴽⴰ</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>ⵜⴰⵙⵏⴰ ⵏ ⵜⵡⵉⵙⵉ</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>ⴰⵏⴰⵡ ⴰⴷ ⵏ ⵉⵙⴼⴽⴰ ⵉⵜⵜⵓⵙⵎⵔⵙ ⵎⴰⵛ ⵓⵔ ⵉⵜⵜⵓⵣⵎⵎⴻⵎ</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>ⵜⵉⵖⴰⵡⵙⵉⵡⵉⵏ ⵏ ⵉⵙⵎⵉⵍⵏ ⴷ ⵉⵍⵍⴰⵏ ⴷⴷⴰⵡ ⵓⵔ ⵣⵎⵔⵏⵜ ⴰⴷ ⵜⵜⵓⵙⵎⵍⵏⵜ, ⴰⴷ ⵜⵜⵓⵙⵏⴼⵍⵏⵜ ⵏⵖ ⴰⴷ ⵜⵜⵓⵥⵕⵕⵓⵏⵜ ⴰⴷⴷⴰⴳ ⵓⵔ ⵉⵣⵎⵎⴻⵎ ⴽⵔⴰ ⵏ ⵓⵙⵉⵖⵣⴼ ⴰⵏⴰⵡ ⵏ ⵉⵙⴼⴽⴰ. ⵙⵙⵓⴷⵓ ⴰⵙⵉⵖⵣⴼ ⵍⵍⵉ ⵜ ⵉⴼⴽⴰⵏ ⵜⵔⵏⵓⴷ ⵜ ⵙ content.ini [DataTypeSettings] AvailableDataTypes[], ⵏⵖ ⵙⵏⴼⵍ ⵉⵙⵎⵉⵍⵏ.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini ⵉⵙⵎⵍ ⴰⵏⴰⵡ ⴰⴷ ⵏ ⵉⵙⴼⴽⴰ, ⵎⴰⵛ ⵓⵔ ⵉⵍⵍⵉ ⴽⵔⴰ ⵏ ⵓⵙⴰⵎⴰ ⵏ ⵉⵏⴰⵡⵏ ⵏ ⵉⵙⴼⴽⴰ ⵖⵓⵔ ⵉⵍⵍⴰ ⵓⴼⴰⵢⵍⵓ ⵏⵏⵙ. ⵓⵔ ⵜ ⵉⵙⵎⵔⴰⵙ ⴽⵔⴰ; ⴽⴽⵙ ⵜ ⵙⴳ AvailableDataTypes[] ⵏⵖ ⵙⵙⵓⴷⵓ ⴰⵙⵉⵖⵣⴼ ⵏⵏⵙ.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>ⵅⴼ ⵓⵏⴰⵡ ⴰⴷ ⵏ ⵉⵙⴼⴽⴰ</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>ⴰⵙⵓⵍⴰⵢ</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>ⵉⵙⵎ</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>ⴰⵙⵉⵖⵣⴼ %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>ⵓⵍⴰ ⵢⴰⵏ</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>ⴰⵙⵎⵉⵍ PHP</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ⴰⴼⴰⵢⵍⵓ</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>ⴳ AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ⵢⴰⵀ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ⵓⵀⵓ</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>ⵜⵉⴳⵊⴷⴰ ⵏ ⵡⴰⵜⵜⴰⵢ ⵏⵏⵙ</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>ⵜⵉⴳⵊⴷⴰ ⵏ ⵜⵙⵖⵍⴰ ⵏ ⵢⵉⵍⴰⵢ ⵏ ⵓⵙⵎⵉⵍ ⵏⵏⵙ</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>ⵜⵉⴼⵔⴰⵡⵉⵏ</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>ⵜⵉⴳⵊⴷⴰ ⴷ ⵜⴼⵍⵡⵉⵏ ⵜⵜⵓⴼⴰⵏⵜ ⵙ ⵜⵖⵓⵔⵉ ⵏ ⵜⵏⴳⴰⵍⵜ ⵏ ⵓⵏⴰⵡ ⵏ ⵉⵙⴼⴽⴰ: ⴷ ⴰⵎⵏⴰⴹ, ⵓⵔ ⴷ ⴰⵡⴰⵍ.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>ⵜⵉⵎⵓⴷⵎⵉⵏ</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>ⴰⴽⵛⵛⵓⵎ ⵖⵔ ⵓⵙⵎⵍ</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>ⵜⴰⵎⵓⴷⵎⵜ</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>ⵉⵜⵜⵓⴼⴰ ⴳ</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>ⵜⴰⵏⴱⴰⴹⵜ ⴰ</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>ⴰⵙⵎⵍ ⴰⵏⵎⵏⴷⵓ</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>ⴱⵍⴰ ⵉⵙⵏⴼⴰⵍⵏ: ⵜⴰⵎⵓⴷⵎⵜ ⵏ ⵓⵙⵏⴼⵍ ⵉⵎⵙⴰⵙⴰⵏ ⴷ ⵓⵙⵎⵉⵍ ⵏⵖ ⵢⵉⵍⴰⵢ ⴰⵢⴷ ⵉⵣⵡⴰⵔⵏ ⵅⴼ ⵉⴳ ⴰ.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>ⵉⵙⵎⵉⵍⵏ ⵉⵜⵜⵙⵎⵔⴰⵙⵏ ⵜ (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>ⵓⵔ ⵉⵍⵍⵉ ⴽⵔⴰ ⵏ ⵓⵙⵎⵉⵍ ⵖⵓⵔ ⵉⵍⵍⴰ ⵢⵉⵍⴰⵢ ⵏ ⵓⵏⴰⵡ ⴰⴷ ⵏ ⵉⵙⴼⴽⴰ.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>ⴰⵙⵎⵉⵍ</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>ⵉⵢⵍⴰⵢⵏ</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>ⵉⵢⵍⴰⵢⵏ ⵏ ⵓⵙⵎⵉⵍ (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>ⴰⵢⵍⴰ</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>ⵜⵉⵙⵖⴰⵍ</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>ⵉⵍⵍⵓⵣⵎ</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>ⵉⵣⵎⵔ ⴰⴷ ⵉⵜⵜⵓⵔⵣⵓ</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>ⵉⵣⵎⵔ ⴰⴷ ⵉⵜⵜⵓⵙⵙⵓⵖⵍ</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>ⵉⵙⵎⵓⵔ ⵉⵏⵖⵎⵉⵙⵏ</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>ⴽⵔⴰ ⵏ ⵜⵓⵎⴰⵢⵜ ⵉⵜⵜⵙⵎⵔⴰⵙⵏ ⵜ</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>ⴰⵏⴳⴳⴰⵔⵓ ⵉⵜⵜⵓⵙⵏⴼⵍⵏ ⴷ ⴰⵎⵣⵡⴰⵔⵓ</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>ⵉⵜⵜⵓⵙⵏⴼⵍ</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>ⵜⴰⴽⵔⵔⵉⵙⵜ %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>ⴽⵓ ⵜⴰⵙⵓⵖⵍⵜ ⵖⵓⵔⵙ ⴰⵜⵜⴰⵢ ⵏⵏⵙ.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>ⴰⵔⵣⵣⵓ ⵉⵙⵎⴰⵜⴰⵢ ⵉⵜⵜⴰⵢⵏ ⵏⵏⵙ.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>ⵉⵣⵎⵔ ⴰⴷ ⵉⵙⵎⵓⵏ ⵜⵉⵏⵖⵎⵉⵙⵉⵏ ⵙⴳ ⵉⵎⵔⵣⴰⵢⵏ (ⵜⵉⵍⵖⴰ).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>ⵜⵉⵍⴳⴰⵎⵉⵏ ⵣⵎⵔⵏⵜ ⴰⴷ ⵜⵜⵓⵙⵏⴰⵎⵏⵜ ⵙ ⵓⵏⴰⵡ ⴰⴷ: ⵜⴰⵙⴰⵔⵓⵜ ⵏ ⵓⵙⵏⵎⴰ %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>ⵉⵣⵎⵔ ⴰⴷ ⵉⵜⵜⵓⵙⵎⵣⵡⵔ</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>ⵉⵜⵜⴰⵢⵏ ⵏⵏⵙ ⵎⵎⴰⵍⵏ ⵜⵉⵖⴰⵡⵙⵉⵡⵉⵏ ⵢⴰⴹⵏⵉⵏ.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>ⵉⵙⵖⵏⵏ</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>ⵉⵣⵎⵔ ⴰⴷ ⵉⵜⵜⵓⵄⵎⵎⵕ ⵙⴳ ⵓⴹⵔⵉⵙ ⴰⵏⴼⵍⵓⵙ (ⴰⵙⴽⵛⵎ, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>ⵙⴳ ⵓⴹⵔⵉⵙ</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>ⵉⵣⵎⵔ ⴰⴷ ⵉⵜⵜⵓⵄⵎⵎⵕ ⵙⴳ ⵓⴼⴰⵢⵍⵓ.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>ⵙⴳ ⵓⴼⴰⵢⵍⵓ</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>ⵜⵉⵙⵖⵍⴰ ⵏ ⵢⵉⵍⴰⵢ ⵏ ⵓⵙⵎⵉⵍ ⵏⵏⵙ ⴽⵛⵛⵎⵏⵜ ⵙ ⵉⴽⵔⴰⵙⵏ.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>ⵉⴽⵎⵎⵓⵙⵏ</translation>
     </message>
 </context>
 </TS>

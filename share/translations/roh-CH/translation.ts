@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Tschertgà vegn mo sin questa pagina: %from fin %to da %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Mintga tip da datas dal nucleus e da las extensiuns, e co che las classas ed il cuntegn al dovran.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Tips da datas</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ Avertiment: Ils pachets na vegnan betg deinstallads.</translation>
     <message>
         <source>Static publishing</source>
         <translation>Publicaziun statica</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Tips da datas</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Mintga tip da datas dal nucleus e da las extensiuns, e co che las classas ed il cuntegn al dovran.</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ Voss conto.</translation>
         <source>Copy of %class_name</source>
         <translation>Copia da %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Tips da datas</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Tip da datas %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85028,6 +85052,397 @@ Vus stuais midar la classa dal nod cun la funcziun da barat.</translation>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Quest e-mail è vegnì tramess da %site perquai che migration.ini [RemoteSettings] Notify[] al pretenda.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Tips da datas (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>Dumbrà %time, danovamain suenter %minutes minutas</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>In tip da datas memorisescha e modifitgescha in gener da valur d'in attribut da la classa: ina lingia da text, in maletg, ina relaziun. Il nucleus porta la gronda part, las extensiuns agiuntan ulteriurs. Qua èn els tuts, tgi ch'als metta a disposiziun e quant cuntegn als dovra. In tip da datas che la banca da datas dovra, ma che nagin na registrescha pli, donnegia il cuntegn che l'ha.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Gruppas da classas</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Dumbrar danovamain ussa empè da duvrar ils dumbers da las ultimas minutas.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Dumbrar danovamain</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Survista</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Registrà</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>En diever</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Betg duvrà</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Extensiuns che mettan a disposiziun tips da datas</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Attributs da la classa</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Attributs da l'object</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Betg registrà</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>En la glista, datoteca manca</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count tips da datas vegnan duvrads, ma n'èn betg registrads</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes attributs da classa e %object_attributes attributs d'object han in tip da datas che nagina extensiun u parameter na registrescha. Lur objects na pon betg vegnir mussads, modifitgads u publitgads. Activai l'extensiun che metta a disposiziun il tip da datas u midai la classa.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Mussar mo quests</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Tschertgar in tip da datas</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Identificatur, num, classa PHP u extensiun.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Mussar</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Tut</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Mess a disposiziun da</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Tuts</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Nucleus</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Nagin tip da datas na correspunda a quest filter.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Mussar tut</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Extensiun</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown da %count tips da datas, %used en diever</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>La banca da datas ha attributs da classa u d'object da quests tips da datas, ma content.ini na cuntegna nagin dad els, u lur datoteca manca.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>Tips da datas da %provider</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Tip da datas</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>Classa PHP e datoteca</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Classas</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Objects</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Segnals</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>nagin</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Nagin tip da datas na correspunda a la tschertga. Stizzai la tschertga.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%shown da %count tips da datas mussads</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Tips da datas mussads: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Zavrar tenor %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>Dumbrà %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Tut ils tips da datas</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Pagina d'agid</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Quest tip da datas vegn duvrà, ma n'è betg registrà</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Ils objects da las classas sutvart na pon betg vegnir mussads, modifitgads u publitgads uschè ditg che nagina extensiun na registrescha il tip da datas. Activai l'extensiun che al metta a disposiziun ed agiuntai el a content.ini [DataTypeSettings] AvailableDataTypes[], u midai las classas.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini cuntegna quest tip da datas, ma nagin ordinatur da tips da datas n'ha sia datoteca. Nagut nu al dovra; allontanai el dad AvailableDataTypes[] u activai sia extensiun.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Davart quest tip da datas</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Identificatur</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Num</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Extensiun %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>nagin</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>Classa PHP</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Datoteca</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>En AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>gea</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>na</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Colonnas da sia valur</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Colonnas dals parameters da ses attribut da classa</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Tabellas</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Las colonnas e tabellas vegnan chattadas cun leger il code dal tip da datas: in'orientaziun, betg ina garanzia.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Models</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Access a la website</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Model</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Chattà en</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>questa administraziun</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>website da standard</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Senza overrides: in model d'override che correspunda tenor classa u attribut ha la precedenza envers quests.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Classas che al dovran (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Nagina classa n'ha in attribut da quest tip da datas.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Classa</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Attributs</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Attributs da la classa (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Attribut</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Parameters</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Obligatoric</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Pussaivel da tschertgar</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Translatabel</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Collectescha infurmaziuns</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Insaquant cuntegn che al dovra</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>L'ultim modifitgà l'emprim</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Modifitgà</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Nod %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Mintga translaziun ha sia atgna valur.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>La tschertga indexescha sias valurs.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>El po rimnar infurmaziuns da visitaders (formulars).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Glistas pon vegnir zavradas tenor el: clav da zavrar %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Zavrabel</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Sias valurs mussan sin auters objects.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Relaziuns</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>El po vegnir emplenì cun ina simpla string (import, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Da text</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>El po vegnir emplenì or d'ina datoteca.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Da datoteca</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Ils parameters da ses attribut da classa van en ils pachets.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Pachets</translation>
     </message>
 </context>
 </TS>

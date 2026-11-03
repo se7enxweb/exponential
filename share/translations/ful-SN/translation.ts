@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Hello ndee tan yiylotoo: %from haa %to diga %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Kala sifaa keɓe e ɓernde ndee e ɓeydaaji ɗii, e no sifaaji e loowdi huutortoo mo.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Sifaa keɓe</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ Maandu: Paketji ɗin ittaaka aafugo maɓɓe.</translation>
     <message>
         <source>Static publishing</source>
         <translation>Yaltingol statik</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Sifaa keɓe</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Kala sifaa keɓe e ɓernde ndee e ɓeydaaji ɗii, e no sifaaji e loowdi huutortoo mo.</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ konte maaɗa.</translation>
         <source>Copy of %class_name</source>
         <translation>Natto %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Sifaa keɓe</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Sifaa keɓe %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85028,6 +85052,397 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Ɓataake ndee neldaa ko %site sabu migration.ini [RemoteSettings] Notify[] ina naamnii ɗum.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Sifaaji keɓe (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>Limaama %time, kadi caggal hojomaaji %minutes</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Sifaa keɓe ina mari e waylita ngonka keeri gootal e jikkuuji sifaa: diidol binndi, natal, jokkondiral. Ɓernde ndee addata ɓurɗi heewde, ɓeydaaji ɓeydata goɗɗi. Ɗoo ko ɗi fof, kala addoowo ɗi e no loowdi huutortoo ɗi heewi. Sifaa keɓe mo mooftirde keɓe huutortoo kono hay huunde winndaani mo kadi, ina bonna loowdi mari mo.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Feddeeji sifaaji</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Limtu kadi jooni, ɗo a huutortoo limooje hojomaaji sakkitiiɗi.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Limtu kadi</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Yiyde ɗuuɗɗe</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Winndaama</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>Ina huutinee</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Kuutinaaka</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Ɓeydaaji addooji sifaaji keɓe</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Jikkuuji sifaa</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Jikkuuji huunde</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Winndaaka</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>Ina e doggol, fiile ndee woodaani</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>Sifaaji keɓe %count ina huutoraa kono winndaaka</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>Jikkuuji sifaa %class_attributes e jikkuuji huunde %object_attributes ina keɓi sifaa keɓe mo hay ɓeydaari walla teelte winndaani. Huunde maɓɓe waawaa hollireede, waylteede walla yaltineede. Huurnu ɓeydaari addoori sifaa keɓe oo, walla waylu sifaa oo.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Hollu ɗii tan</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Yiylo sifaa keɓe</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Innde heɓtirde, innde, sifaa PHP walla ɓeydaari.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Hollu</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Fof</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Addoowo</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Fof</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Ɓernde</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Alaa sifaa keɓe jaaɓiiɗo e caccagol ngol.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Hollu fof</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Ɓeydaari</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown e sifaaji keɓe %count, %used ina huutoraa</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>Mooftirde keɓe ndee ina mari jikkuuji sifaa walla huunde e ɗii sifaaji keɓe, kono content.ini winndaani hay gootal e majje, walla fiile mum woodaani.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>Sifaaji keɓe %provider</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Sifaa keɓe</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>Sifaa PHP e fiile</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Sifaaji</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Geɗe</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Maandeeji</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>alaa</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Alaa sifaa keɓe jaaɓiiɗo e njiylaw ndee. Momtu njiylaw ndee.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%shown e sifaaji keɓe %count hollaama</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Sifaaji keɓe hollaaɗi: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Yuɓɓin dow %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>Limaama %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Sifaaji keɓe fof</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Hello ballal</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Sifaa keɓe oo ina huutoraa kono winndaaka</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Huunde sifaaji ɗii les waawaa hollireede, waylteede walla yaltineede tuma nde hay ɓeydaari winndaani sifaa keɓe oo. Huurnu ɓeydaari addoori mo, ɓeydaa mo e content.ini [DataTypeSettings] AvailableDataTypes[], walla waylu sifaaji ɗii.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini ina winndi sifaa keɓe oo, kono hay dossiyee sifaaji keɓe alaa fiile mum. Hay huunde huutortaake mo; momtu mo e AvailableDataTypes[] walla huurnu ɓeydaari mum.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Baɗte sifaa keɓe oo</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Anndinirde</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Innde</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Ɓeydaari %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>hay gooto</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>Sifaa PHP</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fichier</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>Nder AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>eey</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>alaa</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Kolonɗe keeri mum</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Kolonɗe teelte jikkuuji sifaa mum</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Tableau</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Kolonɗe e tabluuji ɗii njiytaa e janngugol kod sifaa keɓe oo: ko ardinoore, wonaa aadi.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Modèle</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Modèle</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Yiyaa e</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>ardorde ndee</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>lowre woowaande</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Tawa alaa lomtinal: modèle lomtinal jaaɓiiɗo e sifaa walla jikku ina ɓuri ɗii.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Sifaaji huutortooɗi mo (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Alaa sifaa mari jikku e sifaa keɓe oo.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Sifaa</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Jikkuuji</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Jikkuuji sifaa (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Jikku</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Teelte</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Ina waɗɗii</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Ina yiylee</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Ina waawi fireede</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Ina munyi anndinol</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Loowdi huutortooɗi mo</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Ɓurɗi sakkitde waylteede adan</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Waylaama</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Nokkuure %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Kala firo ina mari keeri mum.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>Njiylaw ina winndita keeri mum.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Ina waawi rentinde kabaruuji ummoraaɗi e jillotooɓe (fomeeje).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Doggi ina mbaawi yiilteede e mayru: coktirgal yiilto %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Ina yuɓɓinee</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Keeri mum ina holla huunde goɗɗe.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Jokkondiraaji</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Ina waawi hebbinireede e binndi tan (naatnugol, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Ummoraade e binndi</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Ina waawi hebbinireede e fiile.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Ummoraade e fiile</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Teelte jikkuuji sifaa mum ina naata e paketeeji.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Paketji</translation>
     </message>
 </context>
 </TS>

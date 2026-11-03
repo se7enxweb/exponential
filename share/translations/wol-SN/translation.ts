@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Xët wii rekk lañuy seet: %from ba %to ci %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Xeetu done bu nekk ci xol bi ak yokkute yi, ak naka la klaas yi ak ëmbit li koy jëfandikoo.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Xeetu done yi</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ Xamal ne: paket yi dootuñu ñu dindi samp.</translation>
     <message>
         <source>Static publishing</source>
         <translation>Siiwal bu taxaw</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Xeetu done yi</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Xeetu done bu nekk ci xol bi ak yokkute yi, ak naka la klaas yi ak ëmbit li koy jëfandikoo.</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ sa kont.</translation>
         <source>Copy of %class_name</source>
         <translation>Sotti %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Xeetu done yi</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Xeetu done %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85028,6 +85052,397 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Bataaxal bii %site moo ko yónni ndax migration.ini [RemoteSettings] Notify[] moo ko laaj.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Xeeti done (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>Lim nañu ko %time, dinañu ko waat ginnaaw %minutes simili</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Xeetu done dafay denc ak soppi benn xeetu njëgu atribi yu klaas: benn rëddu mbind, benn nataal, benn jokkoo. Xol bi moo leen di indi lu ëpp, yokkute yi di yokk yeneen. Fii la ñépp nekk, ku leen di joxe ak naka la ci ëmbit li di leen jëfandikoo. Xeetu done bu dàttub done bi di jëfandikoo waaye dara bindatu ko, day yàq ëmbit li ko am.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Mbooloou klaas yi</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Waatal limu léegi te bañ a jëfandikoo limi simili yi weesu.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Waatal limu</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Gisaat gu mat</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Bind nañu seen tur</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>Ñu ngi koy jëfandikoo</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Jëfandikoowuñu ko</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Yokkute yi di joxe xeeti done</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Atribi yu klaas bi</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Atribi yu objee bi</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Bindu ñu ko</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>Bind nañu ko, fiise bi amul</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count xeetu done ñoo ngi jëfandikoo waaye bindu ñu leen</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes atribi yu klaas ak %object_attributes atribi yu objee am nañu xeetu done bu benn yokkute walla benn tànnéef bindul. Objee yi mënuñu leen wone, soppi walla siiwal. Doxal yokkute bi joxe xeetu done bi, walla soppil klaas bi.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Wone yii rekk</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Seet benn xeetu done</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Màndarga, tur, klaas PHP walla yokkute.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Wone</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Yépp</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Ki koy joxe</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Ñépp</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Xol</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Amul benn xeetu done bu dëppoo ak segg bii.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Wone yépp</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Yokkute</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown ci %count xeetu done, %used ñoo ngi jëfandikoo</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>Dàttub done bi am na atribi yu klaas walla yu objee yu xeeti done yii, waaye content.ini binduñu benn ci ñoom, walla fiiseem amul.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>Xeeti done yu %provider</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Xeetu done</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>Klaas PHP ak fiise</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Klaas yi</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Objee yi</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Màndarga yi</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>dara</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Amul benn xeetu done bu dëppoo ak seet bi. Far seet bi.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%shown ci %count xeetu done lañu wone</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Xeeti done yi ñu wone: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Toftale ci %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>Lim nañu ko %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Xeeti done yépp</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Xëtu ndimbal</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Xeetu done bii ñoo ngi koy jëfandikoo waaye bindu ñu ko</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Objee yu klaas yi ci suuf mënuñu leen wone, soppi walla siiwal li feek benn yokkute bindul xeetu done bi. Doxal yokkute bi koy joxe te yokk ko ci content.ini [DataTypeSettings] AvailableDataTypes[], walla soppil klaas yi.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini bind na xeetu done bii, waaye amul benn kaa-u xeeti done bu am fiiseem. Dara jëfandikoowul ko; far ko ci AvailableDataTypes[] walla doxal yokkuteem.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Ci mbirum xeetu done bii</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Màndarga xammee</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Tur</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Yokkute %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>kenn</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>Klaas PHP</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fisie</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>Ci AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>waaw</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>déedéet</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Kolon yu njëg li</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Kolon yu tànnéefi atribi yu klaas bi</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Taabal yi</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Kolon yi ak taabal yi dañu leen gis ci jàng kodu xeetu done bi: gindi la, du digé.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Tampale yi</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Buntu sit</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Tampale</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Ñu ko gis ci</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>saytu bii</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>sit bu jëkk</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Bañ a boole wecciku yi: tampale wecciku bu dëppoo ak klaas walla atribi moo gën yii.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Klaas yi koy jëfandikoo (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Amul benn klaas bu am atribi bu xeetu done bii.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klaas</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Atribi yi</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Atribi yu klaas bi (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Atribi</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Tànneef yi</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>War na</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Mën nañu ko seet</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Mën na ñu ko tekki</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Dafay dajale xibaar</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Lenn ci ëmbit li koy jëfandikoo</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Bi ñu mujje soppi jëkk</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Soppi nañu ko</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Noo %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Benn-benn ci tekki yi am na njëgam.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>Seet bi dafay bind njëg yi ci endeks.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Mën na dajale xibaar ci ganaayi yi (formuleer).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Mën nañu ko jëfandikoo ngir toppatoo lim yi: caabiy toppatoo %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Mën na ñu ko toftale</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Njëg yi dañuy jublu ci yeneen objee.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Lëkkalook yi</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Mën nañu ko feesal ci mbind mu yomb (indi, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Ci mbind</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Mën nañu ko feesal ci benn fiise.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Ci fiise</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Tànnéefi atribi yu klaas bi dañuy dugg ci pakk yi.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Paket yi</translation>
     </message>
 </context>
 </TS>

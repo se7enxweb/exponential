@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Chỉ tìm kiếm trên trang này: %from đến %to trên %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Mọi kiểu dữ liệu của lõi và các tiện ích mở rộng, cùng cách các lớp và nội dung sử dụng chúng.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Kiểu dữ liệu</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ Lưu ý: Các gói sẽ không bị gỡ cài đặt.</translation>
     <message>
         <source>Static publishing</source>
         <translation>Xuất bản tĩnh</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Kiểu dữ liệu</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Mọi kiểu dữ liệu của lõi và các tiện ích mở rộng, cùng cách các lớp và nội dung sử dụng chúng.</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ tài khoản của bạn.</translation>
         <source>Copy of %class_name</source>
         <translation>Bản sao của %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Kiểu dữ liệu</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Kiểu dữ liệu %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85028,6 +85052,397 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Thư này được gửi bởi %site vì migration.ini [RemoteSettings] Notify[] yêu cầu.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Kiểu dữ liệu (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>Đã đếm lúc %time, đếm lại sau %minutes phút</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Kiểu dữ liệu lưu trữ và chỉnh sửa một loại giá trị của thuộc tính lớp: một dòng văn bản, một hình ảnh, một quan hệ. Lõi cung cấp phần lớn, các tiện ích mở rộng bổ sung thêm. Đây là tất cả, ai cung cấp chúng và bao nhiêu nội dung đang dùng chúng. Một kiểu dữ liệu mà cơ sở dữ liệu đang dùng nhưng không còn gì đăng ký sẽ làm hỏng nội dung chứa nó.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Nhóm lớp</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Đếm lại ngay thay vì dùng số đếm của vài phút trước.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Đếm lại</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Tổng quan</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Đã đăng ký</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>Đang dùng</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Không được sử dụng</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Tiện ích mở rộng cung cấp kiểu dữ liệu</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Thuộc tính lớp</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Thuộc tính đối tượng</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Chưa đăng ký</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>Có trong danh sách, thiếu tệp</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count kiểu dữ liệu đang được dùng nhưng chưa đăng ký</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes thuộc tính lớp và %object_attributes thuộc tính đối tượng có kiểu dữ liệu mà không tiện ích mở rộng hay thiết lập nào đăng ký. Các đối tượng của chúng không thể hiển thị, chỉnh sửa hoặc xuất bản. Hãy kích hoạt tiện ích mở rộng cung cấp kiểu dữ liệu này, hoặc thay đổi lớp.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Chỉ hiển thị những mục này</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Tìm kiểu dữ liệu</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Định danh, tên, lớp PHP hoặc tiện ích mở rộng.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Hiển thị</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Tất cả</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Cung cấp bởi</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Mọi người</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Lõi</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Không có kiểu dữ liệu nào khớp với bộ lọc này.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Hiển thị tất cả</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Tiện ích mở rộng</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown trên %count kiểu dữ liệu, %used đang dùng</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>Cơ sở dữ liệu có thuộc tính lớp hoặc đối tượng thuộc các kiểu dữ liệu này, nhưng content.ini không liệt kê kiểu nào, hoặc thiếu tệp của nó.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>Kiểu dữ liệu của %provider</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Kiểu dữ liệu</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>Lớp PHP và tệp</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Lớp</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Đối tượng</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Cờ</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>không có</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Không có kiểu dữ liệu nào khớp với tìm kiếm. Xóa tìm kiếm.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>Đang hiển thị %shown trên %count kiểu dữ liệu</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Kiểu dữ liệu đang hiển thị: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Sắp xếp theo %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>Đã đếm lúc %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Tất cả kiểu dữ liệu</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Trang trợ giúp</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Kiểu dữ liệu này đang được dùng nhưng chưa đăng ký</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Các đối tượng của các lớp dưới đây không thể hiển thị, chỉnh sửa hoặc xuất bản khi chưa có tiện ích mở rộng nào đăng ký kiểu dữ liệu. Hãy kích hoạt tiện ích mở rộng cung cấp nó và thêm vào content.ini [DataTypeSettings] AvailableDataTypes[], hoặc thay đổi các lớp.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini liệt kê kiểu dữ liệu này, nhưng không thư mục kiểu dữ liệu nào có tệp của nó. Không có gì sử dụng nó; hãy xóa nó khỏi AvailableDataTypes[] hoặc kích hoạt tiện ích mở rộng của nó.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Về kiểu dữ liệu này</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Mã định danh</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Tên</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Tiện ích mở rộng %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>không ai</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>Lớp PHP</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Tệp</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>Trong AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>có</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>không</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Các cột giá trị của nó</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Các cột thiết lập thuộc tính lớp của nó</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Bảng</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Các cột và bảng được xác định bằng cách đọc mã của kiểu dữ liệu: chỉ để tham khảo, không phải cam kết.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Mẫu</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Điểm truy cập trang</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Mẫu</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Tìm thấy trong</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>khu quản trị này</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>trang mặc định</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Không tính ghi đè: mẫu ghi đè khớp theo lớp hoặc thuộc tính sẽ được ưu tiên hơn các mẫu này.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Các lớp sử dụng (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Không lớp nào có thuộc tính thuộc kiểu dữ liệu này.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Lớp</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Thuộc tính</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Thuộc tính lớp (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Thuộc tính</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Cài đặt</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID: %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Bắt buộc</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Có thể tìm kiếm</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Có thể dịch</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Thu thập thông tin</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Một số nội dung sử dụng nó</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Sửa đổi gần nhất trước</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Đã sửa đổi</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Nút %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Mỗi bản dịch có giá trị riêng.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>Tìm kiếm lập chỉ mục các giá trị của nó.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Có thể thu thập thông tin từ khách truy cập (biểu mẫu).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Có thể sắp xếp danh sách theo nó: khóa sắp xếp %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Có thể sắp xếp</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Giá trị của nó trỏ tới các đối tượng khác.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Quan hệ</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Có thể điền từ một chuỗi văn bản thuần (nhập, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Từ văn bản</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Có thể điền từ một tệp.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Từ tệp</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Thiết lập thuộc tính lớp của nó được đưa vào gói.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Gói</translation>
     </message>
 </context>
 </TS>

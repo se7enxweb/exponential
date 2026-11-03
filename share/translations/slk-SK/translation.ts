@@ -982,6 +982,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Vyhľadáva sa iba na tejto stránke: %from až %to z %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Každý typ údajov jadra systému a rozšírení a ako ho používajú triedy a obsah.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Typy údajov</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15371,6 +15379,14 @@ Poznámka: Balíky sa neodinštalujú.</translation>
     <message>
         <source>Static publishing</source>
         <translation>Statické publikovanie</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Typy údajov</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Každý typ údajov jadra systému a rozšírení a ako ho používajú triedy a obsah.</translation>
     </message>
 </context>
 <context>
@@ -55329,6 +55345,14 @@ svoje konto.</translation>
         <source>Copy of %class_name</source>
         <translation>Kópia triedy %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Typy údajov</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Typ údajov %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85058,6 +85082,397 @@ Triedu uzla budete musieť zmeniť pomocou funkcie výmeny.</translation>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Tento e-mail odoslal %site, pretože to vyžaduje migration.ini [RemoteSettings] Notify[].</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Typy údajov (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>Spočítané %time, znova o %minutes min</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Typ údajov ukladá a upravuje jeden druh hodnoty atribútu triedy: riadok textu, obrázok, reláciu. Väčšinu prináša jadro systému, rozšírenia pridávajú ďalšie. Tu sú všetky, kto ich poskytuje a koľko obsahu ich používa. Typ údajov, ktorý databáza používa, ale už ho nič neregistruje, poškodí obsah, ktorý ho má.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Skupiny tried</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Spočítať znova teraz namiesto použitia počtov z posledných minút.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Spočítať znova</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Prehľad</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Zaregistrované</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>Používané</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Nepoužité</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Rozšírenia poskytujúce typy údajov</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Atribúty triedy</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Atribúty objektu</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Neregistrovaný</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>V zozname, chýba súbor</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>Používané, ale neregistrované typy údajov: %count</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>Atribúty tried (%class_attributes) a atribúty objektov (%object_attributes) majú typ údajov, ktorý neregistruje žiadne rozšírenie ani nastavenie. Ich objekty nemožno zobraziť, upraviť ani publikovať. Aktivujte rozšírenie, ktoré typ údajov poskytuje, alebo zmeňte triedu.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Zobraziť len tieto</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Nájsť typ údajov</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Identifikátor, názov, trieda PHP alebo rozšírenie.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Zobraziť</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Všetko</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Poskytuje</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Všetci</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Jadro systému</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Tomuto filtru nezodpovedá žiadny typ údajov.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Zobraziť všetko</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Rozšírenie</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown z %count typov údajov, používaných: %used</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>Databáza obsahuje atribúty tried alebo objektov týchto typov údajov, ale content.ini neuvádza žiadny z nich alebo chýba ich súbor.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>Typy údajov: %provider</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Typ údajov</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>Trieda PHP a súbor</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Triedy</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Objekty</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Príznaky</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>žiadne</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Vyhľadávaniu nezodpovedá žiadny typ údajov. Vymažte vyhľadávanie.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>Zobrazené %shown z %count typov údajov</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Zobrazené typy údajov: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Zoradiť podľa stĺpca %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>Spočítané %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Všetky typy údajov</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Stránka pomocníka</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Tento typ údajov sa používa, ale nie je registrovaný</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Objekty tried nižšie nemožno zobraziť, upraviť ani publikovať, kým žiadne rozšírenie neregistruje tento typ údajov. Aktivujte rozšírenie, ktoré ho poskytuje, a pridajte ho do content.ini [DataTypeSettings] AvailableDataTypes[], alebo zmeňte triedy.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini uvádza tento typ údajov, ale žiadny adresár typov údajov nemá jeho súbor. Nič ho nepoužíva; odstráňte ho z AvailableDataTypes[] alebo aktivujte jeho rozšírenie.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>O tomto type údajov</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Identifikátor</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Názov</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Rozšírenie %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>nikto</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>Trieda PHP</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Súbor</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>V AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>áno</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nie</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Stĺpce jeho hodnoty</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Stĺpce nastavení jeho atribútu triedy</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Tabuľky</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Stĺpce a tabuľky sa zisťujú čítaním kódu typu údajov: orientácia, nie záruka.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Šablóny</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Prístup k lokalite</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Šablóna</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Nájdené v</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>táto administrácia</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>predvolená lokalita</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Bez prepisov: prepisujúca šablóna vybraná podľa triedy alebo atribútu má prednosť pred týmito.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Triedy, ktoré ho používajú (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Žiadna trieda nemá atribút tohto typu údajov.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Trieda</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Atribúty</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Atribúty triedy (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Atribút</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Nastavenia</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Povinné</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Vyhľadávateľné</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Preložiteľné</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Zbiera informácie</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Časť obsahu, ktorý ho používa</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Najprv naposledy zmenené</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Zmenené</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Uzol %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Každý preklad má vlastnú hodnotu.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>Vyhľadávanie indexuje jeho hodnoty.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Môže zbierať informácie od návštevníkov (formuláre).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Zoznamy sa podľa neho dajú triediť: kľúč triedenia %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Zoraditeľné</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Jeho hodnoty odkazujú na iné objekty.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Väzby</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Dá sa vyplniť z obyčajného textu (import, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Z textu</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Dá sa vyplniť zo súboru.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Zo súboru</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Nastavenia jeho atribútu triedy sa ukladajú do balíkov.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Balíky</translation>
     </message>
 </context>
 </TS>

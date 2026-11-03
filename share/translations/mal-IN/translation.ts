@@ -982,6 +982,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>ഈ പേജിൽ മാത്രമാണ് തിരയുന്നത്: %count ൽ %from മുതൽ %to വരെ.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>കേർണലിന്റെയും എക്സ്റ്റൻഷനുകളുടെയും എല്ലാ ഡാറ്റാടൈപ്പുകളും, ക്ലാസുകളും ഉള്ളടക്കവും അവ എങ്ങനെ ഉപയോഗിക്കുന്നു എന്നും.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>ഡാറ്റാടൈപ്പുകൾ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15430,6 +15438,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Static publishing</source>
         <translation>സ്റ്റാറ്റിക് പ്രസിദ്ധീകരണം</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>ഡാറ്റാടൈപ്പുകൾ</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>കേർണലിന്റെയും എക്സ്റ്റൻഷനുകളുടെയും എല്ലാ ഡാറ്റാടൈപ്പുകളും, ക്ലാസുകളും ഉള്ളടക്കവും അവ എങ്ങനെ ഉപയോഗിക്കുന്നു എന്നും.</translation>
     </message>
 </context>
 <context>
@@ -55388,6 +55404,14 @@ your account.</source>
         <source>Copy of %class_name</source>
         <translation>%class_name ന്റെ പകർപ്പ്</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>ഡാറ്റാടൈപ്പുകൾ</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>ഡാറ്റാടൈപ്പ് %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85026,6 +85050,397 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>migration.ini [RemoteSettings] Notify[] ആവശ്യപ്പെടുന്നതിനാൽ %site ആണ് ഈ മെയിൽ അയച്ചത്.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>ഡാറ്റാടൈപ്പുകൾ (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>%time-ന് എണ്ണി, %minutes മിനിറ്റിന് ശേഷം വീണ്ടും</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>ഒരു ഡാറ്റാടൈപ്പ് ഒരു ക്ലാസ് ആട്രിബ്യൂട്ടിന്റെ ഒരു തരം മൂല്യം സംഭരിക്കുകയും എഡിറ്റ് ചെയ്യുകയും ചെയ്യുന്നു: ഒരു ടെക്സ്റ്റ് വരി, ഒരു ചിത്രം, ഒരു ബന്ധം. മിക്കതും കേർണൽ നൽകുന്നു, എക്സ്റ്റൻഷനുകൾ കൂടുതൽ ചേർക്കുന്നു. എല്ലാം ഇവിടെയുണ്ട്, ആരാണ് അവ നൽകുന്നതെന്നും ഉള്ളടക്കം അവ എത്രത്തോളം ഉപയോഗിക്കുന്നുവെന്നും. ഡാറ്റാബേസ് ഉപയോഗിക്കുന്നതും എന്നാൽ ഇനി ഒന്നും രജിസ്റ്റർ ചെയ്യാത്തതുമായ ഡാറ്റാടൈപ്പ് അത് ഉള്ള ഉള്ളടക്കത്തെ തകരാറിലാക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>ക്ലാസ് ഗ്രൂപ്പുകൾ</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>കഴിഞ്ഞ മിനിറ്റുകളിലെ എണ്ണം ഉപയോഗിക്കുന്നതിന് പകരം ഇപ്പോൾ വീണ്ടും എണ്ണുക.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>വീണ്ടും എണ്ണുക</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>അവലോകനം</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>രജിസ്റ്റർ ചെയ്തത്</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>ഉപയോഗത്തിലുണ്ട്</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>ഉപയോഗിച്ചിട്ടില്ല</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>ഡാറ്റാടൈപ്പുകൾ നൽകുന്ന എക്സ്റ്റൻഷനുകൾ</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>ക്ലാസ് ആട്രിബ്യൂട്ടുകൾ</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>ഒബ്ജക്റ്റ് ആട്രിബ്യൂട്ടുകൾ</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>രജിസ്റ്റർ ചെയ്തിട്ടില്ല</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>പട്ടികയിലുണ്ട്, ഫയൽ ഇല്ല</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count ഡാറ്റാടൈപ്പുകൾ ഉപയോഗത്തിലുണ്ട്, പക്ഷേ രജിസ്റ്റർ ചെയ്തിട്ടില്ല</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes ക്ലാസ് ആട്രിബ്യൂട്ടുകൾക്കും %object_attributes ഒബ്ജക്റ്റ് ആട്രിബ്യൂട്ടുകൾക്കും ഒരു എക്സ്റ്റൻഷനോ ക്രമീകരണമോ രജിസ്റ്റർ ചെയ്യാത്ത ഡാറ്റാടൈപ്പ് ഉണ്ട്. അവയുടെ ഒബ്ജക്റ്റുകൾ കാണിക്കാനോ എഡിറ്റ് ചെയ്യാനോ പ്രസിദ്ധീകരിക്കാനോ കഴിയില്ല. ഡാറ്റാടൈപ്പ് നൽകുന്ന എക്സ്റ്റൻഷൻ സജീവമാക്കുക, അല്ലെങ്കിൽ ക്ലാസ് മാറ്റുക.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>ഇവ മാത്രം കാണിക്കുക</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>ഒരു ഡാറ്റാടൈപ്പ് കണ്ടെത്തുക</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>ഐഡന്റിഫയർ, പേര്, PHP ക്ലാസ് അല്ലെങ്കിൽ എക്സ്റ്റൻഷൻ.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>കാണിക്കുക</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>എല്ലാം</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>നൽകുന്നത്</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>എല്ലാവരും</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>കേർണൽ</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>ഈ ഫിൽട്ടറുമായി ഒരു ഡാറ്റാടൈപ്പും പൊരുത്തപ്പെടുന്നില്ല.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>എല്ലാം കാണിക്കുക</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>എക്സ്റ്റൻഷൻ</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%count ഡാറ്റാടൈപ്പുകളിൽ %shown, %used ഉപയോഗത്തിൽ</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>ഈ ഡാറ്റാടൈപ്പുകളുടെ ക്ലാസ് അല്ലെങ്കിൽ ഒബ്ജക്റ്റ് ആട്രിബ്യൂട്ടുകൾ ഡാറ്റാബേസിൽ ഉണ്ട്, പക്ഷേ content.ini അവയിൽ ഒന്നും പട്ടികപ്പെടുത്തുന്നില്ല, അല്ലെങ്കിൽ അതിന്റെ ഫയൽ ഇല്ല.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>%provider-ന്റെ ഡാറ്റാടൈപ്പുകൾ</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>ഡാറ്റാടൈപ്പ്</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>PHP ക്ലാസും ഫയലും</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>ക്ലാസുകൾ</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>ഒബ്‌ജക്റ്റുകൾ</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>ഫ്ലാഗുകൾ</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>ഒന്നുമില്ല</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>തിരയലുമായി ഒരു ഡാറ്റാടൈപ്പും പൊരുത്തപ്പെടുന്നില്ല. തിരയൽ മായ്ക്കുക.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%count ഡാറ്റാടൈപ്പുകളിൽ %shown കാണിക്കുന്നു</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>കാണിക്കുന്ന ഡാറ്റാടൈപ്പുകൾ: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>%column പ്രകാരം ക്രമീകരിക്കുക</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>%time-ന് എണ്ണി</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>എല്ലാ ഡാറ്റാടൈപ്പുകളും</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>സഹായ പേജ്</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>ഈ ഡാറ്റാടൈപ്പ് ഉപയോഗത്തിലുണ്ട്, പക്ഷേ രജിസ്റ്റർ ചെയ്തിട്ടില്ല</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>ഒരു എക്സ്റ്റൻഷനും ഡാറ്റാടൈപ്പ് രജിസ്റ്റർ ചെയ്യാത്തിടത്തോളം താഴെയുള്ള ക്ലാസുകളുടെ ഒബ്ജക്റ്റുകൾ കാണിക്കാനോ എഡിറ്റ് ചെയ്യാനോ പ്രസിദ്ധീകരിക്കാനോ കഴിയില്ല. അത് നൽകുന്ന എക്സ്റ്റൻഷൻ സജീവമാക്കി content.ini [DataTypeSettings] AvailableDataTypes[]-ൽ ചേർക്കുക, അല്ലെങ്കിൽ ക്ലാസുകൾ മാറ്റുക.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini ഈ ഡാറ്റാടൈപ്പ് പട്ടികപ്പെടുത്തുന്നു, പക്ഷേ ഒരു ഡാറ്റാടൈപ്പ് ഡയറക്ടറിയിലും അതിന്റെ ഫയൽ ഇല്ല. ഒന്നും അത് ഉപയോഗിക്കുന്നില്ല; അത് AvailableDataTypes[]-ൽ നിന്ന് നീക്കം ചെയ്യുക അല്ലെങ്കിൽ അതിന്റെ എക്സ്റ്റൻഷൻ സജീവമാക്കുക.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>ഈ ഡാറ്റാടൈപ്പിനെക്കുറിച്ച്</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>ഐഡന്റിഫയർ</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>പേര്</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>എക്സ്റ്റൻഷൻ %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>ആരുമില്ല</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP ക്ലാസ്</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ഫയൽ</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>AvailableDataTypes[]-ൽ</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>അതെ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ഇല്ല</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>മൂല്യത്തിന്റെ കോളങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>ക്ലാസ് ആട്രിബ്യൂട്ട് ക്രമീകരണങ്ങളുടെ കോളങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>പട്ടികകൾ</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>ഡാറ്റാടൈപ്പിന്റെ കോഡ് വായിച്ചാണ് കോളങ്ങളും പട്ടികകളും കണ്ടെത്തിയത്: ഒരു മാർഗ്ഗനിർദ്ദേശം, ഉറപ്പല്ല.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>ടെംപ്ലേറ്റുകൾ</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>സൈറ്റ്ആക്സസ്</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>ടെംപ്ലേറ്റ്</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>കണ്ടെത്തിയത്</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>ഈ അഡ്മിനിസ്ട്രേഷൻ</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>ഡിഫോൾട്ട് സൈറ്റ്</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>ഓവർറൈഡുകൾ ഇല്ലാതെ: ക്ലാസ് അല്ലെങ്കിൽ ആട്രിബ്യൂട്ട് പ്രകാരം പൊരുത്തപ്പെടുന്ന ഓവർറൈഡ് ടെംപ്ലേറ്റിന് ഇവയെക്കാൾ മുൻഗണനയുണ്ട്.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>ഇത് ഉപയോഗിക്കുന്ന ക്ലാസുകൾ (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>ഒരു ക്ലാസിനും ഈ ഡാറ്റാടൈപ്പിന്റെ ആട്രിബ്യൂട്ട് ഇല്ല.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>ക്ലാസ്</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>ആട്രിബ്യൂട്ടുകൾ</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>ക്ലാസ് ആട്രിബ്യൂട്ടുകൾ (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>ആട്രിബ്യൂട്ട്</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>ക്രമീകരണങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>ആവശ്യമാണ്</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>തിരയാവുന്നത്</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>വിവർത്തനം ചെയ്യാവുന്നത്</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>വിവരങ്ങൾ ശേഖരിക്കുന്നു</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>ഇത് ഉപയോഗിക്കുന്ന ചില ഉള്ളടക്കം</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>അവസാനം മാറ്റിയത് ആദ്യം</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>പരിഷ്കരിച്ചത്</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>നോഡ് %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>ഓരോ വിവർത്തനത്തിനും സ്വന്തം മൂല്യമുണ്ട്.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>തിരയൽ ഇതിന്റെ മൂല്യങ്ങൾ ഇൻഡെക്സ് ചെയ്യുന്നു.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>ഇതിന് സന്ദർശകരിൽ നിന്ന് വിവരങ്ങൾ ശേഖരിക്കാനാകും (ഫോമുകൾ).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>പട്ടികകൾ ഇതനുസരിച്ച് ക്രമീകരിക്കാം: ക്രമീകരണ കീ %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>ക്രമീകരിക്കാവുന്നത്</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>ഇതിന്റെ മൂല്യങ്ങൾ മറ്റ് ഒബ്ജക്റ്റുകളിലേക്ക് ചൂണ്ടുന്നു.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>റിലേഷനുകൾ</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>ഇത് ഒരു സാധാരണ സ്ട്രിംഗിൽ നിന്ന് പൂരിപ്പിക്കാം (ഇംപോർട്ട്, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>ടെക്സ്റ്റിൽ നിന്ന്</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>ഇത് ഒരു ഫയലിൽ നിന്ന് പൂരിപ്പിക്കാം.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>ഫയലിൽ നിന്ന്</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>ഇതിന്റെ ക്ലാസ് ആട്രിബ്യൂട്ട് ക്രമീകരണങ്ങൾ പാക്കേജുകളിൽ ഉൾപ്പെടുന്നു.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>പാക്കേജുകൾ</translation>
     </message>
 </context>
 </TS>

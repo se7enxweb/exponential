@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Serĉata estas nur ĉi tiu paĝo: %from ĝis %to el %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Ĉiu datumtipo de la kerno kaj la etendaĵoj, kaj kiel la klasoj kaj enhavo uzas ĝin.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Datumtipoj</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ Noto: La pakoj ne estos malinstalitaj.</translation>
     <message>
         <source>Static publishing</source>
         <translation>Statika publikigo</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Datumtipoj</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Ĉiu datumtipo de la kerno kaj la etendaĵoj, kaj kiel la klasoj kaj enhavo uzas ĝin.</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ vian konton.</translation>
         <source>Copy of %class_name</source>
         <translation>Kopio de %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Datumtipoj</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Datumtipo %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85028,6 +85052,397 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Ĉi tiun retleteron sendis %site, ĉar migration.ini [RemoteSettings] Notify[] petas ĝin.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Datumtipoj (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>Kalkulita %time, denove post %minutes minutoj</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Datumtipo konservas kaj redaktas unu specon de valoro de klasatributo: tekstlinion, bildon, rilaton. La kerno liveras la plejmulton, etendaĵoj aldonas pliajn. Jen ĉiuj, kiu liveras ilin kaj kiom da enhavo uzas ilin. Datumtipo, kiun la datumbazo uzas sed nenio plu registras, rompas la enhavon, kiu havas ĝin.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Klasgrupoj</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Kalkuli denove nun anstataŭ uzi la kalkulojn de la lastaj minutoj.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Kalkuli denove</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Superrigardo</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Registrita</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>Uzata</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Ne uzita</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Etendaĵoj, kiuj liveras datumtipojn</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Klasatributoj</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Objektaj atributoj</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Ne registrita</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>Listigita, dosiero mankas</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count datumtipoj estas uzataj sed ne registritaj</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes klasatributoj kaj %object_attributes objektatributoj havas datumtipon, kiun neniu etendaĵo aŭ agordo registras. Iliaj objektoj ne povas esti montrataj, redaktataj aŭ publikigataj. Aktivigu la etendaĵon, kiu liveras la datumtipon, aŭ ŝanĝu la klason.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Montri nur tiujn</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Trovi datumtipon</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Identigilo, nomo, PHP-klaso aŭ etendaĵo.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Montri</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Ĉiuj</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Liverata de</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Ĉiuj</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Kerno</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Neniu datumtipo kongruas kun ĉi tiu filtrilo.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Montri ĉion</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Etendaĵo</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown el %count datumtipoj, %used uzataj</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>La datumbazo havas klas- aŭ objektatributojn de ĉi tiuj datumtipoj, sed content.ini listigas neniun el ili, aŭ ĝia dosiero mankas.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>Datumtipoj de %provider</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Datumtipo</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>PHP-klaso kaj dosiero</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Klasoj</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Objektoj</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Flagoj</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>neniu</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Neniu datumtipo kongruas kun la serĉo. Viŝu la serĉon.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%shown el %count datumtipoj montritaj</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Montritaj datumtipoj: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Ordigi laŭ %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>Kalkulita %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Ĉiuj datumtipoj</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Helppaĝo</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Ĉi tiu datumtipo estas uzata sed ne registrita</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>La objektoj de la subaj klasoj ne povas esti montrataj, redaktataj aŭ publikigataj, dum neniu etendaĵo registras la datumtipon. Aktivigu la etendaĵon, kiu liveras ĝin, kaj aldonu ĝin al content.ini [DataTypeSettings] AvailableDataTypes[], aŭ ŝanĝu la klasojn.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini listigas ĉi tiun datumtipon, sed neniu datumtipa dosierujo havas ĝian dosieron. Nenio uzas ĝin; forigu ĝin el AvailableDataTypes[] aŭ aktivigu ĝian etendaĵon.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Pri ĉi tiu datumtipo</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Identigilo</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nomo</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Etendaĵo %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>neniu</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP-klaso</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Dosiero</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>En AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>jes</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ne</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Kolumnoj de ĝia valoro</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Kolumnoj de ĝiaj klasatributaj agordoj</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Tabeloj</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>La kolumnoj kaj tabeloj estas trovitaj per legado de la kodo de la datumtipo: gvidilo, ne promeso.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Ŝablonoj</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Retejaliro</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Ŝablono</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Trovita en</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>ĉi tiu administrado</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>defaŭlta retejo</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Sen anstataŭigoj: anstataŭiga ŝablono, kiu kongruas laŭ klaso aŭ atributo, superas ĉi tiujn.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Klasoj, kiuj uzas ĝin (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Neniu klaso havas atributon de ĉi tiu datumtipo.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klaso</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Atributoj</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Klasatributoj (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Atributo</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Agordoj</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Deviga</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Serĉebla</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Tradukebla</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Kolektas informon</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Iom da enhavo, kiu uzas ĝin</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Laste modifitaj unue</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Modifita</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Nodo %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Ĉiu traduko havas sian propran valoron.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>La serĉo indeksas ĝiajn valorojn.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Ĝi povas kolekti informojn de vizitantoj (formularoj).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Listoj povas esti ordigitaj laŭ ĝi: ordiga ŝlosilo %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Ordigebla</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Ĝiaj valoroj montras al aliaj objektoj.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Rilatoj</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Ĝi povas esti plenigita el simpla ĉeno (importo, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>El teksto</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Ĝi povas esti plenigita el dosiero.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>El dosiero</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Ĝiaj klasatributaj agordoj iras en pakaĵojn.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Pakoj</translation>
     </message>
 </context>
 </TS>

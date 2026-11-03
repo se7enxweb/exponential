@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Wɔrehwehwɛ krataafa yi nko ara mu: %from kɔsi %to wɔ %count mu.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Data su biara a ɛfiri mfitiaseɛ ne ntrɛmu mu, ne sɛdeɛ kuo ne nsɛm de di dwuma.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Data su ahodoɔ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ Makyerɛ: Wɔrenyi boa no afi mu a wɔde ahyɛ mu.</translation>
     <message>
         <source>Static publishing</source>
         <translation>Tintim a ɛgyina</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Data su ahodoɔ</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Data su biara a ɛfiri mfitiaseɛ ne ntrɛmu mu, ne sɛdeɛ kuo ne nsɛm de di dwuma.</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ wo akawnt.</translation>
         <source>Copy of %class_name</source>
         <translation>%class_name ho bi a wɔayɛ</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Data su ahodoɔ</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Data su %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85028,6 +85052,397 @@ Esɛ sɛ wosesa nkɔmmɔbea no kuo de swap dwumadie no di dwuma.</translation>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>%site na ɛsomaa krataa yi, efisɛ migration.ini [RemoteSettings] Notify[] hwehwɛ sɛ wɔsoma.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Data su ahorow (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>Yɛkan no %time, yɛbɛsan akan wɔ simma %minutes akyi</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Data su kora na ɛsesa kuo su bi boɔ ko baako: nkyerɛwee nsensanee, mfonini, abusuabɔ. Mfitiaseɛ no de dodoɔ no ara ba, ntrɛmu de foforɔ ka ho. Wɔn nyinaa ni, wɔn a wɔde wɔn ma ne nsɛm dodoɔ a ɛde wɔn di dwuma. Data su a database no de di dwuma nanso biribiara nkyerɛw ne din bio no sɛe nsɛm a ɛwɔ no.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Kuo akuo</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>San kan seesei na mfa simma a atwam no nkontabuo nni dwuma.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>San kan</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Nsɛm tiawa</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Wɔakyerɛw</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>Ɛreyɛ adwuma</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Wɔansɛ no dwuma</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Ntrɛmu a ɛde data su ma</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Kuo su</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Adeɛ no nsu</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Wɔnkyerɛw ne din</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>Ɛwɔ list no mu, fael no nni hɔ</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>Wɔde data su %count di dwuma nanso wɔnkyerɛw wɔn din</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>Kuo su %class_attributes ne adeɛ su %object_attributes wɔ data su a ntrɛmu anaa nhyehyɛeɛ biara nkyerɛw ne din. Wɔntumi nkyerɛ, nsesa anaa ntintim wɔn adeɛ no. Bue ntrɛmu a ɛde data su no ma, anaa sesa kuo no.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Kyerɛ eyinom nko ara</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Hwehwɛ data su</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Nsɛnkyerɛnne, din, PHP kuo anaa ntrɛmu.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Kyerɛ</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Nyinaa</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Nea ɔde ma</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Obiara</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Mfitiaseɛ</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Data su biara nhyia saa filter yi.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Kyerɛ nyinaa</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Ntrɛmu</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>Data su %count mu %shown, wɔde %used di dwuma</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>Database no wɔ kuo anaa adeɛ su a ɛyɛ saa data su yi, nanso content.ini nkyerɛ emu biara, anaa ne fael no nni hɔ.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>%provider data su ahorow</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Data su</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>PHP kuo ne fael</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Kuo</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Nneɛma</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Frɛ</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>biribiara nni hɔ</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Data su biara nhyia nhwehwɛmu no. Pepa nhwehwɛmu no.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>Wɔakyerɛ data su %count mu %shown</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Data su a wɔakyerɛ: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Hyehyɛ sɛ %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>Yɛkan no %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Data su nyinaa</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Mmoa krataafa</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Wɔde saa data su yi di dwuma nanso wɔnkyerɛw ne din</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Wɔntumi nkyerɛ, nsesa anaa ntintim kuo a ɛwɔ aseɛ ha no adeɛ bere a ntrɛmu biara nkyerɛw data su no din. Bue ntrɛmu a ɛde ma no na fa ka content.ini [DataTypeSettings] AvailableDataTypes[] ho, anaa sesa kuo no.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini kyerɛ saa data su yi, nanso data su folda biara nni ne fael. Biribiara mfa nni dwuma; yi firi AvailableDataTypes[] mu anaa bue ne ntrɛmu.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Fa saa data su yi ho</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Nsɛnkyerɛnne</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Din</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Ntrɛmu %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>obiara nni hɔ</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP kuo</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fael</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>Ɛwɔ AvailableDataTypes[] mu</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>aane</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>daabi</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Ne boɔ afama</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Ne kuo su nhyehyɛeɛ afama</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Ɛpono</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Wɔhunu afama ne pon no denam data su no kood a wɔkenkan so: akwankyerɛ, ɛnyɛ bɔhyɛ.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Nhwɛsoɔ</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Wɛbsaet kwan</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Nhwɛsoɔ</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Wɔhunuu no wɔ</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>saa ahwɛsoɔ yi</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>wɛbsaet a ɛdi kan</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Override biara nka ho: override nhwɛsoɔ a ɛne kuo anaa su hyia no di kan sen eyinom.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Kuo a ɛde di dwuma (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Kuo biara nni saa data su yi su.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Kuo</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Nsu</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Kuo su (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Su</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Nhyehyɛeɛ</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Ɛhia</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Wobetumi ahwehwɛ</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Wobetumi akyerɛ aseɛ</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Ɛboaboa nsɛm ano</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Nsɛm bi a ɛde di dwuma</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Nea wɔsesaa no akyire koraa di kan</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Wɔasesa</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Nkɔmmɔbea %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Nkyerɛaseɛ biara wɔ ne boɔ.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>Nhwehwɛmu no hyehyɛ ne boɔ.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Ɛtumi boaboa nsɛm firi ahɔhoɔ hɔ (nkrataa).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Wɔtumi de hyehyɛ list ahorow: nhyehyɛeɛ safoa %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Wobetumi ahyehyɛ</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Ne boɔ kyerɛ adeɛ foforɔ.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Abusuabɔ</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Wɔtumi de nkyerɛwee kwa hyɛ mu (import, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Firi nkyerɛwee mu</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Wɔtumi de fael hyɛ mu.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Firi fael mu</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Ne kuo su nhyehyɛeɛ kɔ packages mu.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Boa</translation>
     </message>
 </context>
 </TS>

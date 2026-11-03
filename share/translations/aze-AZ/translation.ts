@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Yalnız bu səhifədə axtarılır: %count içindən %from - %to.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Nüvənin və genişlənmələrin hər verilən tipi, siniflərin və məzmunun ondan necə istifadə etdiyi.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Verilən tipləri</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ Qeyd: Paketlərin quraşdırılması silinməyəcək.</translation>
     <message>
         <source>Static publishing</source>
         <translation>Statik dərc</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Verilən tipləri</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Nüvənin və genişlənmələrin hər verilən tipi, siniflərin və məzmunun ondan necə istifadə etdiyi.</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ həmin məktubdakı göstərişlərə əməl edin.</translation>
         <source>Copy of %class_name</source>
         <translation>%class_name nüsxəsi</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Verilən tipləri</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Verilən tipi %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85028,6 +85052,397 @@ Düyünün sinfini dəyişdirmə funksiyasından istifadə edərək dəyişməli
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Bu məktub %site tərəfindən göndərildi, çünki migration.ini [RemoteSettings] Notify[] bunu tələb edir.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Verilən tipləri (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>%time sayıldı, %minutes dəqiqədən sonra yenidən</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Verilən tipi sinif atributunun bir növ dəyərini saxlayır və redaktə edir: mətn sətri, şəkil, əlaqə. Onların çoxunu nüvə gətirir, genişlənmələr daha çoxunu əlavə edir. Burada hamısı, onları kimin təqdim etdiyi və məzmunun nə qədərinin onlardan istifadə etdiyi var. Verilənlər bazasının istifadə etdiyi, lakin artıq heç nəyin qeydiyyata almadığı verilən tipi onu daşıyan məzmunu pozur.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Sinif qrupları</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Son dəqiqələrin saylarından istifadə etmək əvəzinə indi yenidən sayın.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Yenidən say</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>İcmal</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Qeydiyyatdan keçib</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>İstifadədədir</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>İstifadə edilmir</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Verilən tipləri təqdim edən genişlənmələr</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Sinif atributları</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Obyekt atributları</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Qeydiyyatda deyil</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>Siyahıdadır, fayl yoxdur</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count verilən tipi istifadə olunur, lakin qeydiyyatda deyil</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes sinif atributu və %object_attributes obyekt atributu heç bir genişlənmənin və ya ayarın qeydiyyata almadığı verilən tipinə malikdir. Onların obyektləri göstərilə, redaktə edilə və ya dərc edilə bilməz. Verilən tipini təqdim edən genişlənməni aktivləşdirin və ya sinfi dəyişin.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Yalnız bunları göstər</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Verilən tipi tap</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>İdentifikator, ad, PHP sinfi və ya genişlənmə.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Göstər</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Hamısı</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Təqdim edən</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Hamı</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Nüvə</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Bu filtrə uyğun verilən tipi yoxdur.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Hamısını göstər</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Genişlənmə</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%count verilən tipindən %shown, %used istifadədə</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>Verilənlər bazasında bu verilən tiplərinin sinif və ya obyekt atributları var, lakin content.ini onların heç birini sadalamır və ya faylı yoxdur.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>%provider verilən tipləri</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Verilən tipi</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>PHP sinfi və fayl</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Siniflər</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Obyektlər</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Bayraqlar</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>heç biri</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Axtarışa uyğun verilən tipi yoxdur. Axtarışı təmizləyin.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%count verilən tipindən %shown göstərilir</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Göstərilən verilən tipləri: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>%column üzrə sırala</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>%time sayıldı</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Bütün verilən tipləri</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Kömək səhifəsi</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Bu verilən tipi istifadə olunur, lakin qeydiyyatda deyil</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Heç bir genişlənmə verilən tipini qeydiyyata almadıqca aşağıdakı siniflərin obyektləri göstərilə, redaktə edilə və ya dərc edilə bilməz. Onu təqdim edən genişlənməni aktivləşdirin və onu content.ini [DataTypeSettings] AvailableDataTypes[] siyahısına əlavə edin və ya sinifləri dəyişin.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini bu verilən tipini sadalayır, lakin heç bir verilən tipi qovluğunda onun faylı yoxdur. Heç nə ondan istifadə etmir; onu AvailableDataTypes[] siyahısından silin və ya genişlənməsini aktivləşdirin.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Bu verilən tipi haqqında</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>İdentifikator</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Ad</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>%name genişlənməsi</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>heç kim</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP sinfi</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fayl</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>AvailableDataTypes[] daxilində</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>bəli</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>xeyr</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Dəyərinin sütunları</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Sinif atributu ayarlarının sütunları</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Cədvəllər</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Sütunlar və cədvəllər verilən tipinin kodunu oxumaqla tapılır: bələdçidir, vəd deyil.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Şablonlar</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Sayt girişi</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Şablon</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Tapıldığı yer</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>bu idarəetmə</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>standart sayt</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Əvəzləmələr olmadan: sinif və ya atributa görə uyğun gələn əvəzləmə şablonu bunlardan üstündür.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Ondan istifadə edən siniflər (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Heç bir sinifdə bu verilən tipinin atributu yoxdur.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Sinif</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Atributlar</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Sinif atributları (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Atribut</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Parametrlər</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Məcburi</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Axtarıla bilən</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Tərcümə edilə bilən</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Məlumat toplayır</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Ondan istifadə edən bəzi məzmun</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Son dəyişdirilən əvvəl</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Dəyişdirilib</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Düyün %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Hər tərcümənin öz dəyəri var.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>Axtarış onun dəyərlərini indeksləyir.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Ziyarətçilərdən məlumat toplaya bilər (formlar).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Siyahılar ona görə çeşidlənə bilər: çeşidləmə açarı %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Sıralana bilən</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Onun dəyərləri başqa obyektlərə işarə edir.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Əlaqələr</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Sadə mətn sətrindən doldurula bilər (idxal, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Mətndən</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Fayldan doldurula bilər.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Fayldan</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Sinif atributu ayarları paketlərə daxil olur.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Paketlər</translation>
     </message>
 </context>
 </TS>

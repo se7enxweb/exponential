@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>מען זוכט נאָר אויף דעם בלאַט: %from ביז %to פֿון %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>יעדער דאַטן־טיפּ פֿונעם קערן און די פֿאַרברייטערונגען, און ווי די קלאַסן און דער אינהאַלט נוצן אים.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>דאַטן־טיפּן</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Static publishing</source>
         <translation>סטאַטיש פֿאַרעפֿנטלעכן</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>דאַטן־טיפּן</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>יעדער דאַטן־טיפּ פֿונעם קערן און די פֿאַרברייטערונגען, און ווי די קלאַסן און דער אינהאַלט נוצן אים.</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ your account.</source>
         <source>Copy of %class_name</source>
         <translation>קאָפּיע פֿון %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>דאַטן־טיפּן</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>דאַטן־טיפּ %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85028,6 +85052,397 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>דער בריוו איז געשיקט געוואָרן פֿון %site, ווײַל migration.ini [RemoteSettings] Notify[] פֿאָדערט עס.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>דאַטן־טיפּן (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>געציילט %time, ווידער נאָך %minutes מינוט</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>אַ דאַטן־טיפּ היט און רעדאַקטירט איין מין ווערט פֿון אַ קלאַס־אַטריבוט: אַ שורה טעקסט, אַ בילד, אַ פֿאַרבינדונג. דער קערן ברענגט רובֿ פֿון זיי, פֿאַרברייטערונגען לייגן צו מער. דאָ זענען אַלע, ווער עס גיט זיי און וויפֿל פֿונעם אינהאַלט נוצט זיי. אַ דאַטן־טיפּ וואָס די דאַטנבאַזע נוצט אָבער גאָרנישט רעגיסטרירט אים מער, צעברעכט דעם אינהאַלט וואָס האָט אים.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>קלאַסן־גרופּעס</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>ציילן ווידער איצט אַנשטאָט נוצן די ציילונגען פֿון די לעצטע מינוט.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>ציילן ווידער</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>איבערבליק</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>פֿאַרשריבן</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>אין באַנוץ</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>ניט געניצט</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>פֿאַרברייטערונגען וואָס געבן דאַטן־טיפּן</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>קלאַס־אַטריבוטן</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>אָביעקט־אַטריבוטן</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>נישט רעגיסטרירט</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>אויף דער רשימה, טעקע פֿעלט</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count דאַטן־טיפּן ווערן גענוצט אָבער זענען נישט רעגיסטרירט</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes קלאַס־אַטריבוטן און %object_attributes אָביעקט־אַטריבוטן האָבן אַ דאַטן־טיפּ וואָס קיין פֿאַרברייטערונג אָדער באַשטעלונג רעגיסטרירט נישט. זייערע אָביעקטן קען מען נישט ווייַזן, רעדאַקטירן אָדער פּובליקירן. אַקטיווירט די פֿאַרברייטערונג וואָס גיט דעם דאַטן־טיפּ, אָדער ענדערט דעם קלאַס.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>ווייַזן נאָר די</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>געפֿינען אַ דאַטן־טיפּ</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>אידענטיפֿיקאַטאָר, נאָמען, PHP קלאַס אָדער פֿאַרברייטערונג.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ווייַזן</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>אַלע</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>געגעבן פֿון</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>יעדער איינער</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>קערן</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>קיין דאַטן־טיפּ פּאַסט נישט צו דעם פֿילטער.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>ווייַזן אַלץ</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>פֿאַרברייטערונג</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown פֿון %count דאַטן־טיפּן, %used אין באַנוץ</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>די דאַטנבאַזע האָט קלאַס־ אָדער אָביעקט־אַטריבוטן פֿון די דאַטן־טיפּן, אָבער content.ini רעכנט נישט אויס קיין איינעם פֿון זיי, אָדער זייַן טעקע פֿעלט.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>דאַטן־טיפּן פֿון %provider</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>דאַטן־טיפּ</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>PHP קלאַס און טעקע</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>קלאַסן</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>אָביעקטן</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>סימנים</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>קיינער</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>קיין דאַטן־טיפּ פּאַסט נישט צום זוכן. מעקט אויס דאָס זוכן.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%shown פֿון %count דאַטן־טיפּן געוויזן</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>געוויזענע דאַטן־טיפּן: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>סאָרטירן לויט %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>געציילט %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>אַלע דאַטן־טיפּן</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>הילף־בלאַט</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>דער דאַטן־טיפּ ווערט גענוצט אָבער איז נישט רעגיסטרירט</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>די אָביעקטן פֿון די קלאַסן אונטן קען מען נישט ווייַזן, רעדאַקטירן אָדער פּובליקירן ווי לאַנג קיין פֿאַרברייטערונג רעגיסטרירט נישט דעם דאַטן־טיפּ. אַקטיווירט די פֿאַרברייטערונג וואָס גיט אים און לייגט אים צו צו content.ini [DataTypeSettings] AvailableDataTypes[], אָדער ענדערט די קלאַסן.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini רעכנט אויס דעם דאַטן־טיפּ, אָבער קיין דאַטן־טיפּ־טעקע־אָרדנער האָט נישט זייַן טעקע. גאָרנישט נוצט אים; נעמט אים אַראָפּ פֿון AvailableDataTypes[] אָדער אַקטיווירט זייַן פֿאַרברייטערונג.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>וועגן דעם דאַטן־טיפּ</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>אידענטיפֿיקאַטאָר</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>נאָמען</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>פֿאַרברייטערונג %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>קיינער</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP־קלאַס</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>טעקע</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>אין AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>יאָ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ניין</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>שפּאַלטן פֿון זייַן ווערט</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>שפּאַלטן פֿון זייַנע קלאַס־אַטריבוט באַשטעלונגען</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>טאַבעלעס</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>די שפּאַלטן און טאַבעלעס געפֿינט מען דורכן לייענען דעם קאָד פֿונעם דאַטן־טיפּ: אַ אָנווייַזער, נישט קיין צוזאָג.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>מוסטערן</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>וועבזייַטל־צוטריט</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>מוסטער</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>געפֿונען אין</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>די דאָזיקע אַדמיניסטראַציע</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>גרונט־וועבזייַטל</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>אָן איבערשרייבונגען: אַ איבערשרייב־מוסטער וואָס פּאַסט לויט קלאַס אָדער אַטריבוט גייט פֿאָר די.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>קלאַסן וואָס נוצן אים (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>קיין קלאַס האָט נישט קיין אַטריבוט פֿון דעם דאַטן־טיפּ.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>קלאַס</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>אַטריבוטן</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>קלאַס־אַטריבוטן (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>אַטריבוט</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>באַשטימונגען</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>פֿאַרלאַנגט</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>זוכעוודיק</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>איבערזעצבאַר</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>זאַמלט אינפֿאָרמאַציע</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>אַ ביסל אינהאַלט וואָס נוצט אים</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>לעצט געענדערט ערשט</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>געענדערט</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>קנופּ %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>יעדע איבערזעצונג האָט איר אייגענעם ווערט.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>דאָס זוכן אינדעקסירט זייַנע ווערטן.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>ער קען זאַמלען אינפֿאָרמאַציע פֿון באַזוכער (פֿאָרמען).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>רשימות קען מען סאָרטירן לויט אים: סאָרטיר־שליסל %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>סאָרטירבאַר</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>זייַנע ווערטן ווייַזן אויף אַנדערע אָביעקטן.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>פֿאַרבינדונגען</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>מען קען אים אָנפֿילן פֿון אַ פּשוטן טעקסט (אימפּאָרט, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>פֿון טעקסט</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>מען קען אים אָנפֿילן פֿון אַ טעקע.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>פֿון טעקע</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>זייַנע קלאַס־אַטריבוט באַשטעלונגען גייען אַרייַן אין פּעקלעך.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>פּעקלעך</translation>
     </message>
 </context>
 </TS>

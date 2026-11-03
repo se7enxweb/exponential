@@ -982,6 +982,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Bogan oo keliya ayaa la raadinayaa: %from ilaa %to ee %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Nooc kasta oo xog ah oo kernel-ka iyo kordhinnada, iyo sida fasallada iyo nuxurku u isticmaalaan.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Noocyada xogta</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15430,6 +15438,14 @@ Fiiro gaar ah: Xirmooyinka lama saari doono rakibaaddooda.</translation>
     <message>
         <source>Static publishing</source>
         <translation>Daabacaadda taagan</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Noocyada xogta</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Nooc kasta oo xog ah oo kernel-ka iyo kordhinnada, iyo sida fasallada iyo nuxurku u isticmaalaan.</translation>
     </message>
 </context>
 <context>
@@ -55388,6 +55404,14 @@ hawlgeliso akoonkaaga.</translation>
         <source>Copy of %class_name</source>
         <translation>Koobi ka mid ah %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Noocyada xogta</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Nooca xogta %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85026,6 +85050,397 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Fariintan waxaa soo diray %site maxaa yeelay migration.ini [RemoteSettings] Notify[] ayaa codsada.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Noocyada xogta (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>La tiriyey %time, mar kale %minutes daqiiqo kadib</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Nooca xogtu wuxuu kaydiyaa oo wax ka beddelaa hal nooc oo qiimo ah oo sifo fasal leedahay: sadar qoraal ah, sawir, xiriir. Kernel-ka ayaa keena intooda badan, kordhinnaduna waxay ku daraan kuwo kale. Halkan waa dhammaan, cidda bixisa iyo inta nuxur ah ee isticmaasha. Nooc xog ah oo kaydka xogtu isticmaalo laakiin aan waxba diiwaangelin mar dambe wuxuu jebiyaa nuxurka leh.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Kooxaha fasalka</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Hadda mar kale tiri halkii aad isticmaali lahayd tirooyinka daqiiqadihii u dambeeyey.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Mar kale tiri</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Guudmar</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>La diiwaangeliyay</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>La isticmaalayo</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Lama isticmaalin</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Kordhinnada bixiya noocyada xogta</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Sifooyinka fasalka</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Sifooyinka shayga</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Lama diiwaangelin</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>Liiska ku jira, faylku waa maqan yahay</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count nooc oo xog ah ayaa la isticmaalaa laakiin lama diiwaangelin</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes sifo fasal iyo %object_attributes sifo shay ayaa leh nooc xog ah oo aan kordhin ama dejin midna diiwaangelin. Walxahooda lama tusi karo, wax lagama beddeli karo, lamana daabici karo. Daar kordhinta bixisa nooca xogta, ama beddel fasalka.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Kaliya tus kuwan</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Raadi nooc xog ah</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Aqoonsi, magac, fasal PHP ama kordhin.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Muuji</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Dhammaan</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Waxaa bixiya</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Qof kasta</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Kernel</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Ma jiro nooc xog ah oo ku habboon shaandhadan.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Muuji dhammaan</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Kordhin</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown ka mid ah %count nooc oo xog ah, %used la isticmaalo</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>Kaydka xogtu wuxuu leeyahay sifooyin fasal ama shay oo noocyadan xogta ah, laakiin midkoodna kuma qorna content.ini, ama faylkiisu waa maqan yahay.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>Noocyada xogta ee %provider</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Nooca xogta</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>Fasalka PHP iyo faylka</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Fasallada</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Walxaha</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Calamado</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>midna</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Ma jiro nooc xog ah oo ku habboon raadinta. Nadiifi raadinta.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%shown ka mid ah %count nooc oo xog ah ayaa la muujiyey</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Noocyada xogta la muujiyey: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Kala sooc iyadoo loo eegayo %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>La tiriyey %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Dhammaan noocyada xogta</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Bogga caawimaadda</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Nooca xogtan waa la isticmaalaa laakiin lama diiwaangelin</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Walxaha fasallada hoose lama tusi karo, wax lagama beddeli karo, lamana daabici karo inta aan kordhin diiwaangelin nooca xogta. Daar kordhinta bixisa oo ku dar content.ini [DataTypeSettings] AvailableDataTypes[], ama beddel fasallada.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini wuxuu ku qoran yahay nooca xogtan, laakiin ma jiro gal noocyada xogta oo haya faylkiisa. Waxba ma isticmaalaan; ka saar AvailableDataTypes[] ama daar kordhintiisa.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Ku saabsan nooca xogtan</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Aqoonsi</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Magac</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Kordhin %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>cidna</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>Fasalka PHP</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fayl</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>Ku jira AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>haa</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>maya</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Tiirarka qiimihiisa</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Tiirarka dejinta sifada fasalkiisa</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Shaxanno</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Tiirarka iyo jadwallada waxaa laga helaa akhrinta koodka nooca xogta: hage, ma aha ballan.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Qaabab</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Gelitaanka goobta</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Template</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Waxaa laga helay</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>maamulkan</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>goobta caadiga ah</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Override la'aan: template override ah oo ku habboon fasal ama sifo ayaa ka mudnaan badan kuwan.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Fasallada isticmaala (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Ma jiro fasal leh sifo nooca xogtan ah.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Fasal</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Sifooyin</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Sifooyinka fasalka (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Sifo</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Dejinta</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Waa loo baahan yahay</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>La raadin karo</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>La tarjumi karo</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Waxay ururisaa macluumaad</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Nuxur isticmaala qaarkood</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Kuwa ugu dambeeyay ee la beddelay marka hore</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>La beddelay</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Node %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Tarjumaad kastaa waxay leedahay qiimo u gaar ah.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>Raadintu waxay tusmaysaa qiimayaashiisa.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Wuxuu ka ururin karaa macluumaad booqdayaasha (foomam).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Liisaska waa lagu kala sooci karaa: furaha kala soocidda %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>La kala saari karo</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Qiimayaashiisu waxay tilmaamaan walxo kale.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Xiriirro</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Waxaa laga buuxin karaa qoraal fudud (soo dejin, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Ka qoraal</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Waxaa laga buuxin karaa fayl.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Ka fayl</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Dejinta sifada fasalkiisa waxay gashaa xirmooyinka.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Xirmooyin</translation>
     </message>
 </context>
 </TS>

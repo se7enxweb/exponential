@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Namás se guetra nesta páxina: %from a %to de %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Cada tipu de datos del nucleu y de les estensiones, y cómo lu usen les clases y el conteníu.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Tipos de datos</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ Nota: los paquetes nun se desinstalarán.</translation>
     <message>
         <source>Static publishing</source>
         <translation>Espublización estática</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Tipos de datos</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Cada tipu de datos del nucleu y de les estensiones, y cómo lu usen les clases y el conteníu.</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ la to cuenta.</translation>
         <source>Copy of %class_name</source>
         <translation>Copia de %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Tipos de datos</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Tipu de datos %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85028,6 +85052,397 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Esti corréu unviólu %site porque migration.ini [RemoteSettings] Notify[] lo pide.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Tipos de datos (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>Contao %time, de nuevu en %minutes minutos</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Un tipu de datos guarda y edita una triba de valor d'un atributu de la clas: una llinia de testu, una imaxe, una rellación. El nucleu trai la mayoría, les estensiones amiesten más. Equí tán toos, quién los ufre y cuánto conteníu los usa. Un tipu de datos que la base de datos usa pero que yá nada rexistra estropia'l conteníu que lu tien.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Grupos de clases</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Cuntar de nuevu agora en cuenta d'usar les cuentes de los últimos minutos.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Cuntar de nuevu</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Vista xeneral</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Rexistráu</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>N'usu</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Nun s'usa</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Estensiones qu'ufren tipos de datos</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Atributos de la clas</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Atributos del oxetu</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Ensin rexistrar</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>Na llista, falta'l ficheru</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count tipos de datos úsense pero nun tán rexistraos</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes atributos de clas y %object_attributes atributos d'oxetu tienen un tipu de datos que nenguna estensión nin axuste rexistra. Los sos oxetos nun se puen amosar, editar nin espublizar. Activa la estensión qu'ufre'l tipu de datos, o camuda la clas.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Amosar namái estos</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Atopar un tipu de datos</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Identificador, nome, clas PHP o estensión.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Amosar</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Too</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Ufríu por</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Toos</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Nucleu</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Nengún tipu de datos concasa con esta peñera.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Amosar too</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Estensión</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown de %count tipos de datos, %used n'usu</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>La base de datos tien atributos de clas o d'oxetu d'estos tipos de datos, pero content.ini nun llista nengún, o falta'l so ficheru.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>Tipos de datos de %provider</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Tipu de datos</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>Clas PHP y ficheru</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Clases</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Oxetos</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Banderes</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>nengún</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Nengún tipu de datos concasa cola gueta. Llimpia la gueta.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>Amosaos %shown de %count tipos de datos</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Tipos de datos amosaos: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Ordenar por %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>Contao %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Tolos tipos de datos</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Páxina d'ayuda</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Esti tipu de datos úsase pero nun ta rexistráu</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Los oxetos de les clases d'embaxo nun se puen amosar, editar nin espublizar mentanto nenguna estensión rexistre'l tipu de datos. Activa la estensión que lu ufre y amiéstalu a content.ini [DataTypeSettings] AvailableDataTypes[], o camuda les clases.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini llista esti tipu de datos, pero nengún direutoriu de tipos de datos tien el so ficheru. Nada lu usa; desanícialu d'AvailableDataTypes[] o activa la so estensión.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Tocante a esti tipu de datos</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Identificador</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nome</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Estensión %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>naide</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>Clas PHP</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Ficheru</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>N'AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>sí</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>non</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Columnes del so valor</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Columnes de los axustes del so atributu de clas</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Tables</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Les columnes y tables atópense lleendo'l códigu del tipu de datos: una guía, non una promesa.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Plantíes</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Accesu al sitiu</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Plantía</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Alcontráu en</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>esta alministración</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>sitiu predetermináu</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Ensin sobrescrituras: una plantía de sobrescritura que concase por clas o atributu gana sobre estes.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Clases que lu usen (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Nenguna clas tien un atributu d'esti tipu de datos.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Clas</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Atributos</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Atributos de la clas (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Atributu</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Axustes</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Obligatoriu</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Pue guetase</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Traducible</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Recueye información</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Dalgún conteníu que lu usa</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Lo últimu modificao primero</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Modificáu</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Nodu %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Cada traducción tien el so propiu valor.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>La gueta indexa los sos valores.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Pue recoyer información de los visitantes (formularios).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Les llistes puen ordenase por él: clave d'orde %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Ordenable</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Los sos valores apunten a otros oxetos.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Rellaciones</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Pue enllenase dende una cadena de testu simple (importación, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Dende testu</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Pue enllenase dende un ficheru.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Dende ficheru</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Los axustes del so atributu de clas van nos paquetes.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Paquetes</translation>
     </message>
 </context>
 </TS>

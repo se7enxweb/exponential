@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Nin ɲɛ dɔrɔn de bɛ ɲini: %from ka se %to ma, %count na.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Kisɛ ni farafɛnw ka kunnafoni suguya bɛɛ, ani kilasiw ni kɔnɔkow b'a kɛ baara la cogo min.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Kunnafoni suguyaw</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ Ko: pakew tɛna sigili bɔ.</translation>
     <message>
         <source>Static publishing</source>
         <translation>Bilali jɔlen</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Kunnafoni suguyaw</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Kisɛ ni farafɛnw ka kunnafoni suguya bɛɛ, ani kilasiw ni kɔnɔkow b'a kɛ baara la cogo min.</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ konti da bila baara la.</translation>
         <source>Copy of %class_name</source>
         <translation>%class_name kopi</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Kunnafoni suguyaw</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Kunnafoni suguya %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85028,6 +85052,397 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Nin bataki ci bɔra %site fɛ bawo migration.ini [RemoteSettings] Notify[] b'a ɲini.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Kunnafoni suguyaw (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>A jatera %time, a bɛ jate kokura miniti %minutes kɔfɛ</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Kunnafoni suguya bɛ kilasi atiribi ka nafa suguya kelen mara ani k'a yɛlɛma: sɛbɛnni sira, ja, jɛɲɔgɔnya. Kisɛ de bɛ u fanba lase, farafɛnw bɛ dɔw fara u kan. U bɛɛ filɛ nin ye, minnu b'u di ani kɔnɔkow hakɛ min b'u kɛ baara la. Kunnafoni suguya min bɛ kɛ baara la kunnafoni marayɔrɔ la nka foyi t'a sɛbɛn tun, o bɛ kɔnɔko tiɲɛ min b'a la.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Kilasi jɛkuluw</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Jate kokura sisan, i kana miniti laban ninnu jatew kɛ baara la.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Jate kokura</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Lajɛ kunba</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Tɔgɔsɛbɛnnen</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>A bɛ baara la</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>A ma baara</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Farafɛn minnu bɛ kunnafoni suguyaw di</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Kilasi atiribiw</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Objɛ atiribiw</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>A ma sɛbɛn</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>A bɛ lisi la, filiye tɛ yen</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>Kunnafoni suguya %count bɛ kɛ baara la nka u ma sɛbɛn</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>Kilasi atiribi %class_attributes ani objɛ atiribi %object_attributes ka kunnafoni suguya ye farafɛn walima labɛn si t'o sɛbɛn. U ka objɛw tɛ se ka jira, ka yɛlɛma walima ka bɔ kɛnɛ kan. Farafɛn min bɛ kunnafoni suguya di, o lakunun, walima kilasi yɛlɛma.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Ninnu dɔrɔn jira</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Kunnafoni suguya ɲini</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Taamasiyɛn, tɔgɔ, PHP kilasi walima farafɛn.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Jira</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Bɛɛ</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>A dibaga</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Mɔgɔ bɛɛ</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Kisɛ</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Kunnafoni suguya si tɛ bɛn nin sɛgɛsɛgɛli ma.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Bɛɛ jira</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Farafɛn</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown kunnafoni suguya %count la, %used bɛ kɛ baara la</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>Kunnafoni marayɔrɔ ka kilasi walima objɛ atiribiw bɛ nin kunnafoni suguyaw la, nka content.ini ma u si sɛbɛn, walima u ka filiye tɛ yen.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>%provider ka kunnafoni suguyaw</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Kunnafoni suguya</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>PHP kilasi ani filiye</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Kilasiw</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Objɛw</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Taamasiyɛnw</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>foyi</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Kunnafoni suguya si tɛ bɛn ɲinini ma. Ɲinini jɔsi.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>Kunnafoni suguya %count la, %shown jirala</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Kunnafoni suguya jiralenw: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Bolo da %column ye</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>A jatera %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Kunnafoni suguyaw bɛɛ</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Dɛmɛ ɲɛ</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Nin kunnafoni suguya bɛ kɛ baara la nka a ma sɛbɛn</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Kilasi minnu bɛ duguma, olu ka objɛw tɛ se ka jira, ka yɛlɛma walima ka bɔ kɛnɛ kan ni farafɛn si ma kunnafoni suguya sɛbɛn. Farafɛn min b'a di, o lakunun ani k'a fara content.ini [DataTypeSettings] AvailableDataTypes[] kan, walima kilasiw yɛlɛma.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini ye nin kunnafoni suguya sɛbɛn, nka kunnafoni suguya furancɛ si t'a ka filiye ye. Foyi t'a kɛ baara la; a bɔ AvailableDataTypes[] la walima a ka farafɛn lakunun.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Nin kunnafoni suguya ko la</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Taamasere</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Tɔgɔ</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Farafɛn %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>mɔgɔ si</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP kilasi</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fisiye</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>AvailableDataTypes[] kɔnɔ</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ɔwɔ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ayi</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>A nafa kolonw</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>A ka kilasi atiribi labɛnw kolonw</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Tabliw</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Kolonw ni tabaliw sɔrɔla kunnafoni suguya ka kode kalanni fɛ: ɲɛminɛni don, layidu tɛ.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Modɛliw</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Siti donda</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Modɛli</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>A sɔrɔla yan</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>nin ɲɛmɔgɔya</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>siti fɔlɔ</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Override tɛ: override modɛli min bɛ bɛn kilasi walima atiribi ma, o bɛ ninnu kunna.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Kilasi minnu b'a kɛ baara la (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Kilasi si tɛ nin kunnafoni suguya atiribi ye.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Kilasi</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Atiribiw</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Kilasi atiribiw (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Atiribi</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Labɛnw</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>A ka kan</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>A bɛ se ka ɲini</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>A bɛ se ka bayɛlɛma</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>A bɛ kunnafoni lajɛ</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Kɔnɔko dɔw minnu b'a kɛ baara la</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Laban yɛlɛmalen fɔlɔ</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Yɛlɛmana</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Nɔdi %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Bayɛlɛmani kelen kelen bɛɛ n'a yɛrɛ nafa don.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>Ɲinini b'a nafaw sɛbɛn.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>A bɛ se ka kunnafoni lajɛ ka bɔ lajɛlikɛlaw fɛ (formiw).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Lisiw bɛ se ka labɛn a fɛ: labɛnni kile %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>A bɛ se ka bolo da</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>A nafaw bɛ objɛ wɛrɛw jira.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Jɛɲɔgɔnyaw</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>A bɛ se ka fa ni sɛbɛnni gansan ye (import, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Ka bɔ sɛbɛnni na</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>A bɛ se ka fa ni filiye ye.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Ka bɔ filiye la</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>A ka kilasi atiribi labɛnw bɛ don pakɛw la.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Pakew</translation>
     </message>
 </context>
 </TS>

@@ -1002,6 +1002,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Bare denne siden gjennomsøkes: %from til %to av %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Alle datatyper fra kjernen og utvidelsene, og hvordan klassene og innholdet bruker dem.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Datatyper</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -16151,6 +16159,14 @@ Merk: Pakkene blir ikke avinstallert.</translation>
     <message>
         <source>Static publishing</source>
         <translation>Statisk publisering</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Datatyper</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Alle datatyper fra kjernen og utvidelsene, og hvordan klassene og innholdet bruker dem.</translation>
     </message>
 </context>
 <context>
@@ -56610,6 +56626,14 @@ kontoen din.</translation>
         <source>Remove classes</source>
         <translation>Fjern klasser</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Datatyper</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Datatype %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -86286,6 +86310,397 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Denne e-posten ble sendt av %site fordi migration.ini [RemoteSettings] Notify[] ber om det.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Datatyper (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>Talt %time, på nytt om %minutes minutter</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>En datatype lagrer og redigerer én type verdi i et klasseattributt: en tekstlinje, et bilde, en relasjon. Kjernen leverer de fleste, utvidelser legger til flere. Her er alle, hvem som leverer dem og hvor mye av innholdet som bruker dem. En datatype som databasen bruker, men som ingenting lenger registrerer, ødelegger innholdet som har den.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Klassegrupper</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Tell på nytt nå i stedet for å bruke tallene fra de siste minuttene.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Tell på nytt</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Oversikt</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Registrert</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>I bruk</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Ikke brukt</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Utvidelser som leverer datatyper</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Klasseattributter</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Objektattributter</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Ikke registrert</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>Oppført, fil mangler</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count datatyper er i bruk, men ikke registrert</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes klasseattributter og %object_attributes objektattributter har en datatype som ingen utvidelse eller innstilling registrerer. Objektene deres kan ikke vises, redigeres eller publiseres. Aktiver utvidelsen som leverer datatypen, eller endre klassen.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Vis bare disse</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Finn en datatype</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Identifikator, navn, PHP-klasse eller utvidelse.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Vis</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Alle</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Levert av</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Alle</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Kjerne</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Ingen datatype samsvarer med dette filteret.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Vis alle</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Utvidelse</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown av %count datatyper, %used i bruk</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>Databasen har klasse- eller objektattributter av disse datatypene, men content.ini oppfører ingen av dem, eller filen mangler.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>Datatyper fra %provider</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Datatype</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>PHP-klasse og fil</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Klasser</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Objekter</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Flagg</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>ingen</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Ingen datatype samsvarer med søket. Tøm søket.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%shown av %count datatyper vises</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Viste datatyper: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Sorter etter %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>Talt %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Alle datatyper</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Hjelpeside</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Denne datatypen er i bruk, men ikke registrert</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Objektene i klassene nedenfor kan ikke vises, redigeres eller publiseres så lenge ingen utvidelse registrerer datatypen. Aktiver utvidelsen som leverer den, og legg den til i content.ini [DataTypeSettings] AvailableDataTypes[], eller endre klassene.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini oppfører denne datatypen, men ingen datatypekatalog har filen. Ingenting bruker den; fjern den fra AvailableDataTypes[] eller aktiver utvidelsen dens.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Om denne datatypen</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Identifikator</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Navn</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Utvidelsen %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>ingen</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP-klasse</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fil</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>I AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ja</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nei</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Kolonner for verdien</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Kolonner for klasseattributtinnstillingene</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Tabeller</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Kolonnene og tabellene er funnet ved å lese koden til datatypen: en veiledning, ikke et løfte.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Maler</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Nettstedstilgang</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Mal</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Funnet i</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>denne administrasjonen</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>standardnettsted</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Uten overstyringer: en overstyringsmal som samsvarer med klasse eller attributt, går foran disse.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Klasser som bruker den (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Ingen klasse har et attributt av denne datatypen.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klasse</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Attributter</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Klasseattributter (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Attributt</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Innstillinger</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Påkrevet</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Søkbar</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Kan oversettes</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Innhenter informasjon</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Noe innhold som bruker den</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Sist endret først</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Endringstidspunkt</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Node %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Hver oversettelse har sin egen verdi.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>Søket indekserer verdiene.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Den kan samle inn informasjon fra besøkende (skjemaer).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Lister kan sorteres etter den: sorteringsnøkkel %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Sorterbar</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Verdiene peker til andre objekter.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Relasjoner</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Den kan fylles fra en vanlig streng (import, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Fra tekst</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Den kan fylles fra en fil.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Fra fil</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Klasseattributtinnstillingene tas med i pakker.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Pakker</translation>
     </message>
 </context>
 </TS>

@@ -982,6 +982,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Otsitakse ainult sellelt lehelt: %from–%to / %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Kõik kerneli ja laienduste andmetüübid ning see, kuidas klassid ja sisu neid kasutavad.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Andmetüübid</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15371,6 +15379,14 @@ Märkus: pakette ei desinstallita.</translation>
     <message>
         <source>Static publishing</source>
         <translation>Staatiline avaldamine</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Andmetüübid</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Kõik kerneli ja laienduste andmetüübid ning see, kuidas klassid ja sisu neid kasutavad.</translation>
     </message>
 </context>
 <context>
@@ -55329,6 +55345,14 @@ juhiseid.</translation>
         <source>Copy of %class_name</source>
         <translation>Klassi „%class_name“ koopia</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Andmetüübid</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Andmetüüp %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85058,6 +85082,397 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Selle kirja saatis %site, sest migration.ini [RemoteSettings] Notify[] nõuab seda.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Andmetüübid (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>Loendatud %time, uuesti %minutes minuti pärast</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Andmetüüp salvestab ja muudab klassi atribuudi ühte liiki väärtust: tekstirida, pilti, seost. Enamiku neist toob kernel, laiendused lisavad veel. Siin on need kõik, kes neid pakub ja kui palju sisu neid kasutab. Andmetüüp, mida andmebaas kasutab, kuid mida enam miski ei registreeri, rikub sisu, millel see on.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Klassirühmad</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Loenda kohe uuesti, selle asemel et kasutada viimaste minutite loendust.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Loenda uuesti</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Ülevaade</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Registreeritud</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>Kasutusel</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Pole kasutatud</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Andmetüüpe pakkuvad laiendused</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Klassi atribuudid</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Objekti atribuudid</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Registreerimata</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>Loetletud, fail puudub</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count andmetüüpi on kasutusel, kuid registreerimata</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes klassi atribuudil ja %object_attributes objekti atribuudil on andmetüüp, mida ükski laiendus ega seade ei registreeri. Nende objekte ei saa kuvada, muuta ega avaldada. Aktiveerige andmetüüpi pakkuv laiendus või muutke klassi.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Näita ainult neid</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Otsi andmetüüpi</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Identifikaator, nimi, PHP-klass või laiendus.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Kuva</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Kõik</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Pakkuja</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Kõik</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Kernel</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Selle filtriga ei sobi ükski andmetüüp.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Kuva kõik</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Laiendus</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown / %count andmetüüpi, %used kasutusel</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>Andmebaasis on nende andmetüüpidega klassi- või objektiatribuute, kuid content.ini ei loetle ühtegi neist või nende fail puudub.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>Pakkuja %provider andmetüübid</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Andmetüüp</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>PHP-klass ja fail</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Klassid</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Objektid</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Lipud</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>puudub</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Otsinguga ei sobi ükski andmetüüp. Tühjendage otsing.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>Kuvatud %shown / %count andmetüüpi</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Kuvatud andmetüübid: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Sordi veeru „%column“ järgi</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>Loendatud %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Kõik andmetüübid</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Abileht</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Seda andmetüüpi kasutatakse, kuid see on registreerimata</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Allpool olevate klasside objekte ei saa kuvada, muuta ega avaldada, kuni ükski laiendus andmetüüpi ei registreeri. Aktiveerige seda pakkuv laiendus ja lisage see sättesse content.ini [DataTypeSettings] AvailableDataTypes[] või muutke klasse.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini loetleb selle andmetüübi, kuid ühelgi andmetüüpide kataloogil pole selle faili. Miski ei kasuta seda; eemaldage see loendist AvailableDataTypes[] või aktiveerige selle laiendus.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Andmetüübi teave</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Identifikaator</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nimi</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Laiendus %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>mitte keegi</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP-klass</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fail</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>Loendis AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>jah</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ei</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Väärtuse veerud</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Klassi atribuudi seadete veerud</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Tabelid</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Veerud ja tabelid leitakse andmetüübi koodi lugedes: juhis, mitte lubadus.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Mallid</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Saidi juurdepääs</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Mall</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Leitud asukohast</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>see haldusliides</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>vaikesait</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Ilma ülekirjutusteta: klassi või atribuudi järgi sobiv ülekirjutav mall on nende ees eelisjärjekorras.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Seda kasutavad klassid (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Ühelgi klassil pole selle andmetüübiga atribuuti.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klass</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Atribuudid</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Klassi atribuudid (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Atribuut</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Sätted</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Kohustuslik</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Otsitav</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Tõlgitav</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Kogub teavet</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Osa seda kasutavast sisust</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Viimati muudetud eespool</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Muudetud</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Sõlm %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Igal tõlkel on oma väärtus.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>Otsing indekseerib selle väärtused.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>See saab koguda külastajatelt teavet (vormid).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Loendeid saab selle järgi sortida: sortimisvõti %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Sorditav</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Selle väärtused viitavad teistele objektidele.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Seosed</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Selle saab täita lihtsast stringist (import, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Tekstist</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Selle saab täita failist.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Failist</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Selle klassi atribuudi seaded lähevad pakettidesse.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Paketid</translation>
     </message>
 </context>
 </TS>

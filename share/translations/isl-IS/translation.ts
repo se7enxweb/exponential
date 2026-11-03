@@ -982,6 +982,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Aðeins er leitað á þessari síðu: %from til %to af %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Allar gagnagerðir kerfiskjarnans og viðbótanna, og hvernig klasarnir og efnið nota þær.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Gagnagerðir</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15371,6 +15379,14 @@ Athugaðu: uppsetning pakkanna verður ekki fjarlægð.</translation>
     <message>
         <source>Static publishing</source>
         <translation>Kyrrstæð birting</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Gagnagerðir</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Allar gagnagerðir kerfiskjarnans og viðbótanna, og hvernig klasarnir og efnið nota þær.</translation>
     </message>
 </context>
 <context>
@@ -55329,6 +55345,14 @@ reikninginn þinn.</translation>
         <source>Copy of %class_name</source>
         <translation>Afrit af %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Gagnagerðir</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Gagnagerð %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85058,6 +85082,397 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Þessi póstur var sendur af %site vegna þess að migration.ini [RemoteSettings] Notify[] biður um hann.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Gagnagerðir (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>Talið %time, aftur eftir %minutes mínútur</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Gagnagerð geymir og breytir einni tegund gilda í eigind klasa: textalínu, mynd, tengingu. Kerfiskjarninn leggur til flestar þeirra og viðbætur bæta fleiri við. Hér eru þær allar, hver leggur þær til og hversu mikið af efninu notar þær. Gagnagerð sem gagnagrunnurinn notar en ekkert skráir lengur brýtur efnið sem hefur hana.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Klasahópar</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Telja aftur núna í stað þess að nota talningu síðustu mínútna.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Telja aftur</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Yfirlit</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Skráð</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>Í notkun</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Ekki notað</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Viðbætur sem leggja til gagnagerðir</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Eigindir klasa</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Eigindir hlutar</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Ekki skráð</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>Skráð, skrá vantar</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count gagnagerðir eru notaðar en ekki skráðar</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes eigindir klasa og %object_attributes eigindir hluta hafa gagnagerð sem engin viðbót eða stilling skráir. Ekki er hægt að sýna, breyta eða birta hluti þeirra. Virkjaðu viðbótina sem leggur til gagnagerðina, eða breyttu klasanum.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Sýna aðeins þessar</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Finna gagnagerð</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Auðkenni, heiti, PHP-klasi eða viðbót.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Sýna</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Allt</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Lagt til af</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Allir</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Kerfiskjarni</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Engin gagnagerð passar við þessa síu.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Sýna allt</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Viðbót</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown af %count gagnagerðum, %used í notkun</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>Gagnagrunnurinn hefur eigindir klasa eða hluta af þessum gagnagerðum, en content.ini telur enga þeirra upp, eða skrána vantar.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>Gagnagerðir frá %provider</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Gagnagerð</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>PHP-klasi og skrá</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Klasar</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Hlutir</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Flögg</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>ekkert</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Engin gagnagerð passar við leitina. Hreinsaðu leitina.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%shown af %count gagnagerðum sýndar</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Gagnagerðir sýndar: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Raða eftir %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>Talið %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Allar gagnagerðir</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Hjálparsíða</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Þessi gagnagerð er notuð en ekki skráð</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Ekki er hægt að sýna, breyta eða birta hluti klasanna hér fyrir neðan meðan engin viðbót skráir gagnagerðina. Virkjaðu viðbótina sem leggur hana til og bættu henni við content.ini [DataTypeSettings] AvailableDataTypes[], eða breyttu klösunum.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini telur þessa gagnagerð upp, en engin gagnagerðamappa hefur skrána hennar. Ekkert notar hana; fjarlægðu hana úr AvailableDataTypes[] eða virkjaðu viðbót hennar.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Um þessa gagnagerð</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Auðkenni</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Heiti</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Viðbót: %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>enginn</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP-klasi</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Skrá</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>Í AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>já</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nei</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Dálkar gildis hennar</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Dálkar stillinga eigindar klasa</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Töflur</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Dálkarnir og töflurnar finnast með því að lesa kóða gagnagerðarinnar: til leiðbeiningar, ekki loforð.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Sniðmát</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Vefaðgangur</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Sniðmát</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Fannst í</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>þessi stjórnun</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>sjálfgefinn vefur</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Án yfirskrifta: yfirskriftarsniðmát sem passar við klasa eða eigind gengur framar þessum.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Klasar sem nota hana (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Enginn klasi hefur eigind af þessari gagnagerð.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klasi</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Eigindir</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Eigindir klasa (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Eigind</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Stillingar</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>Kenni %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Áskilið</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Leitarhæft</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Þýðanlegt</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Safnar upplýsingum</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Nokkuð af efni sem notar hana</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Síðast breytt fyrst</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Breytt</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Hnútur %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Hver þýðing hefur sitt eigið gildi.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>Leitin skráir gildi hennar í atriðaskrá.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Hún getur safnað upplýsingum frá gestum (eyðublöð).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Hægt er að raða listum eftir henni: röðunarlykill %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Raðanlegt</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Gildi hennar vísa á aðra hluti.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Tengsl</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Hægt er að fylla hana úr venjulegum texta (innflutningur, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Úr texta</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Hægt er að fylla hana úr skrá.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Úr skrá</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Stillingar eigindar klasa hennar fara í pakka.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Pakkar</translation>
     </message>
 </context>
 </TS>

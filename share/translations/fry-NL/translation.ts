@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Allinnich dizze side wurdt trochsocht: %from oant %to fan %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Elk gegevenstype fan de kearn en de útwreidingen, en hoe't de klassen en de ynhâld it brûke.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Gegevenstypen</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ Let op: de pakketten wurde net de-ynstallearre.</translation>
     <message>
         <source>Static publishing</source>
         <translation>Statysk publisearjen</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Gegevenstypen</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Elk gegevenstype fan de kearn en de útwreidingen, en hoe't de klassen en de ynhâld it brûke.</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ te aktivearjen.</translation>
         <source>Copy of %class_name</source>
         <translation>Kopy fan %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Gegevenstypen</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Gegevenstype %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85028,6 +85052,397 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Dizze e-mail is ferstjoerd troch %site, om't migration.ini [RemoteSettings] Notify[] dêrom freget.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Gegevenstypen (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>Teld %time, opnij oer %minutes minuten</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>In gegevenstype bewarret en bewurket ien soarte wearde fan in klasseattribút: in tekstrigel, in ôfbylding, in relaasje. De kearn leveret de measten, útwreidingen foegje der mear ta. Hjir steane se allegear, wa't se leveret en hoefolle fan de ynhâld se brûkt. In gegevenstype dat de databank brûkt, mar dat neat mear registrearret, makket de ynhâld dy't it hat stikken.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Klassegroepen</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>No opnij telle yn stee fan de tellingen fan de lêste minuten te brûken.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Opnij telle</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Oersjoch</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Registrearre</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>Yn gebrûk</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Net brûkt</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Útwreidingen dy't gegevenstypen leverje</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Klasseattributen</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Objektattributen</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Net registrearre</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>Neamd, triem ûntbrekt</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count gegevenstypen wurde brûkt mar binne net registrearre</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes klasseattributen en %object_attributes objektattributen hawwe in gegevenstype dat gjin útwreiding of ynstelling registrearret. Harren objekten kinne net toand, bewurke of publisearre wurde. Aktivearje de útwreiding dy't it gegevenstype leveret, of feroarje de klasse.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Allinnich dizze toane</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>In gegevenstype sykje</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Identifier, namme, PHP-klasse of útwreiding.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Toane</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Alle</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Levere troch</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Elkenien</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Kearn</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Gjin gegevenstype past by dit filter.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Alles toane</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Útwreiding</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown fan %count gegevenstypen, %used yn gebrûk</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>De databank hat klasse- of objektattributen fan dizze gegevenstypen, mar content.ini neamt der net ien fan, of de triem ûntbrekt.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>Gegevenstypen fan %provider</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Gegevenstype</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>PHP-klasse en triem</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Klassen</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Objekten</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Flaggen</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>gjin</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Gjin gegevenstype past by de sykopdracht. Wiskje de sykopdracht.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%shown fan %count gegevenstypen toand</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Toande gegevenstypen: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Sortearje op %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>Teld %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Alle gegevenstypen</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Helpside</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Dit gegevenstype wurdt brûkt mar is net registrearre</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>De objekten fan de klassen hjirûnder kinne net toand, bewurke of publisearre wurde salang't gjin útwreiding it gegevenstype registrearret. Aktivearje de útwreiding dy't it leveret en foegje it ta oan content.ini [DataTypeSettings] AvailableDataTypes[], of feroarje de klassen.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini neamt dit gegevenstype, mar gjin gegevenstypemap hat de triem derfan. Neat brûkt it; helje it út AvailableDataTypes[] of aktivearje de útwreiding derfan.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Oer dit gegevenstype</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Identifikaasje</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Namme</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Útwreiding %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>net ien</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP-klasse</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Bestân</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>Yn AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ja</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nee</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Kolommen fan de wearde</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Kolommen fan de ynstellingen fan it klasseattribút</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Tabellen</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>De kolommen en tabellen binne fûn troch de koade fan it gegevenstype te lêzen: in rjochtline, gjin tasizzing.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Sjabloanen</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Websidetagong</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Sjabloan</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Fûn yn</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>dit behear</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>standertwebside</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Sûnder overrides: in override-sjabloan dat op klasse of attribút oerienkomt, giet foar dizze.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Klassen dy't it brûke (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Gjin inkele klasse hat in attribút fan dit gegevenstype.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klasse</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Attributen</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Klasseattributen (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Attribút</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Ynstellingen</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Ferplicht</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Trochsykber</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Oersetber</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Sammelt ynformaasje</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Wat ynhâld dy't it brûkt</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Lêst feroare earst</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Wizige</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Knooppunt %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Elke oersetting hat in eigen wearde.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>It sykjen yndeksearret de wearden.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>It kin ynformaasje fan besikers sammelje (formulieren).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Listen kinne derop sortearre wurde: sortearkaai %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Sortearber</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>De wearden ferwize nei oare objekten.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Relaasjes</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>It kin fol makke wurde út in gewoane string (ymport, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Út tekst</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>It kin fol makke wurde út in triem.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Út triem</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>De ynstellingen fan it klasseattribút geane mei yn pakketten.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Pakketten</translation>
     </message>
 </context>
 </TS>

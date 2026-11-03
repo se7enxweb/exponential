@@ -982,6 +982,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Γίνεται αναζήτηση μόνο σε αυτή τη σελίδα: %from έως %to από %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Κάθε τύπος δεδομένων του πυρήνα και των επεκτάσεων, και πώς τον χρησιμοποιούν οι κλάσεις και το περιεχόμενο.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Τύποι δεδομένων</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15371,6 +15379,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Static publishing</source>
         <translation>Στατική δημοσίευση</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Τύποι δεδομένων</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Κάθε τύπος δεδομένων του πυρήνα και των επεκτάσεων, και πώς τον χρησιμοποιούν οι κλάσεις και το περιεχόμενο.</translation>
     </message>
 </context>
 <context>
@@ -55329,6 +55345,14 @@ your account.</source>
         <source>Copy of %class_name</source>
         <translation>Αντίγραφο της κλάσης %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Τύποι δεδομένων</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Τύπος δεδομένων %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85058,6 +85082,397 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Αυτό το μήνυμα στάλθηκε από το %site επειδή το ζητά το migration.ini [RemoteSettings] Notify[].</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Τύποι δεδομένων (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>Καταμετρήθηκε %time, ξανά σε %minutes λεπτά</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Ένας τύπος δεδομένων αποθηκεύει και επεξεργάζεται ένα είδος τιμής ενός χαρακτηριστικού κλάσης: μια γραμμή κειμένου, μια εικόνα, μια συσχέτιση. Ο πυρήνας παρέχει τους περισσότερους, οι επεκτάσεις προσθέτουν κι άλλους. Εδώ βρίσκονται όλοι, ποιος τους παρέχει και πόσο περιεχόμενο τους χρησιμοποιεί. Ένας τύπος δεδομένων που χρησιμοποιεί η βάση δεδομένων αλλά δεν τον καταχωρίζει πλέον τίποτα χαλάει το περιεχόμενο που τον έχει.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Ομάδες κλάσεων</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Νέα καταμέτρηση τώρα αντί για τις μετρήσεις των τελευταίων λεπτών.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Νέα καταμέτρηση</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Επισκόπηση</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Εγγράφηκε</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>Σε χρήση</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Δεν χρησιμοποιείται</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Επεκτάσεις που παρέχουν τύπους δεδομένων</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Χαρακτηριστικά κλάσης</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Χαρακτηριστικά αντικειμένου</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Μη καταχωρισμένος</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>Στη λίστα, λείπει το αρχείο</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count τύποι δεδομένων χρησιμοποιούνται αλλά δεν είναι καταχωρισμένοι</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes χαρακτηριστικά κλάσης και %object_attributes χαρακτηριστικά αντικειμένων έχουν τύπο δεδομένων που δεν καταχωρίζει καμία επέκταση ή ρύθμιση. Τα αντικείμενά τους δεν μπορούν να εμφανιστούν, να επεξεργαστούν ή να δημοσιευτούν. Ενεργοποιήστε την επέκταση που παρέχει τον τύπο δεδομένων ή αλλάξτε την κλάση.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Εμφάνιση μόνο αυτών</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Εύρεση τύπου δεδομένων</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Αναγνωριστικό, όνομα, κλάση PHP ή επέκταση.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Εμφάνιση</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Όλα</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Παρέχεται από</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Όλοι</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Πυρήνας</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Κανένας τύπος δεδομένων δεν ταιριάζει με αυτό το φίλτρο.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Εμφάνιση όλων</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Επέκταση</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown από %count τύπους δεδομένων, %used σε χρήση</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>Η βάση δεδομένων έχει χαρακτηριστικά κλάσεων ή αντικειμένων αυτών των τύπων δεδομένων, αλλά το content.ini δεν αναφέρει κανέναν από αυτούς ή λείπει το αρχείο τους.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>Τύποι δεδομένων από %provider</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Τύπος δεδομένων</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>Κλάση PHP και αρχείο</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Κλάσεις</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Αντικείμενα</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Σημαίες</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>κανένα</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Κανένας τύπος δεδομένων δεν ταιριάζει με την αναζήτηση. Καθαρίστε την αναζήτηση.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>Εμφανίζονται %shown από %count τύπους δεδομένων</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Τύποι δεδομένων που εμφανίζονται: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Ταξινόμηση κατά %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>Καταμετρήθηκε %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Όλοι οι τύποι δεδομένων</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Σελίδα βοήθειας</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Αυτός ο τύπος δεδομένων χρησιμοποιείται αλλά δεν είναι καταχωρισμένος</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Τα αντικείμενα των παρακάτω κλάσεων δεν μπορούν να εμφανιστούν, να επεξεργαστούν ή να δημοσιευτούν όσο καμία επέκταση δεν καταχωρίζει τον τύπο δεδομένων. Ενεργοποιήστε την επέκταση που τον παρέχει και προσθέστε τον στο content.ini [DataTypeSettings] AvailableDataTypes[] ή αλλάξτε τις κλάσεις.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>Το content.ini αναφέρει αυτόν τον τύπο δεδομένων, αλλά κανένας κατάλογος τύπων δεδομένων δεν έχει το αρχείο του. Τίποτα δεν τον χρησιμοποιεί· αφαιρέστε τον από το AvailableDataTypes[] ή ενεργοποιήστε την επέκτασή του.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Σχετικά με αυτόν τον τύπο δεδομένων</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Αναγνωριστικό</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Όνομα</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Επέκταση %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>κανείς</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>Κλάση PHP</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Αρχείο</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>Στο AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ναι</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>όχι</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Στήλες της τιμής του</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Στήλες των ρυθμίσεων του χαρακτηριστικού κλάσης</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Πίνακες</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Οι στήλες και οι πίνακες βρέθηκαν διαβάζοντας τον κώδικα του τύπου δεδομένων: οδηγός, όχι υπόσχεση.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Πρότυπα</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Πρόσβαση ιστότοπου</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Πρότυπο</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Βρέθηκε στο</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>αυτή η διαχείριση</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>προεπιλεγμένος ιστότοπος</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Χωρίς παρακάμψεις: ένα πρότυπο παράκαμψης που ταιριάζει με κλάση ή χαρακτηριστικό υπερισχύει αυτών.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Κλάσεις που τον χρησιμοποιούν (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Καμία κλάση δεν έχει χαρακτηριστικό αυτού του τύπου δεδομένων.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Κλάση</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Χαρακτηριστικά</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Χαρακτηριστικά κλάσης (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Χαρακτηριστικό</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Ρυθμίσεις</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>Αναγνωριστικό %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Υποχρεωτικό</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Με δυνατότητα αναζήτησης</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Με δυνατότητα μετάφρασης</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Συλλέγει πληροφορίες</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Περιεχόμενο που τον χρησιμοποιεί</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Τελευταία τροποποίηση πρώτα</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Τροποποιήθηκε</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Κόμβος %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Κάθε μετάφραση έχει τη δική της τιμή.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>Η αναζήτηση ευρετηριάζει τις τιμές του.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Μπορεί να συλλέγει πληροφορίες από επισκέπτες (φόρμες).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Οι λίστες μπορούν να ταξινομηθούν με βάση αυτόν: κλειδί ταξινόμησης %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Δυνατότητα ταξινόμησης</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Οι τιμές του παραπέμπουν σε άλλα αντικείμενα.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Συσχετίσεις</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Μπορεί να συμπληρωθεί από απλή συμβολοσειρά (εισαγωγή, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Από κείμενο</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Μπορεί να συμπληρωθεί από αρχείο.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Από αρχείο</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Οι ρυθμίσεις του χαρακτηριστικού κλάσης περιλαμβάνονται στα πακέτα.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Πακέτα</translation>
     </message>
 </context>
 </TS>

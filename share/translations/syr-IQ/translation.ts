@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>ܗܕܐ ܦܐܬܐ ܒܠܚܘܕ ܡܬܒܨܝܐ: %from ܥܕܡܐ %to ܡܢ %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>ܟܠ ܓܢܣܐ ܕܝܕ̈ܥܬܐ ܕܥܩܪܐ ܘܕܬܘ̈ܣܦܬܐ، ܘܐܝܟܢܐ ܙܢ̈ܐ ܘܬܚܘܝܬܐ ܡܦܠܚܝܢ ܠܗ.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>ܓܢ̈ܣܐ ܕܝܕ̈ܥܬܐ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Static publishing</source>
         <translation>ܦܪܣܐ ܩܒܝܥܐ</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>ܓܢ̈ܣܐ ܕܝܕ̈ܥܬܐ</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>ܟܠ ܓܢܣܐ ܕܝܕ̈ܥܬܐ ܕܥܩܪܐ ܘܕܬܘ̈ܣܦܬܐ، ܘܐܝܟܢܐ ܙܢ̈ܐ ܘܬܚܘܝܬܐ ܡܦܠܚܝܢ ܠܗ.</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ your account.</source>
         <source>Copy of %class_name</source>
         <translation>ܢܘܣܚܐ ܕ %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>ܓܢ̈ܣܐ ܕܝܕ̈ܥܬܐ</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>ܓܢܣܐ ܕܝܕ̈ܥܬܐ %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85036,6 +85060,397 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>ܗܕܐ ܐܓܪܬܐ ܐܫܬܕܪܬ ܡܢ %site ܡܛܠ ܕܒܥܐ ܠܗ migration.ini [RemoteSettings] Notify[].</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>ܓܢ̈ܣܐ ܕܝܕ̈ܥܬܐ (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>ܡܢܝܐ %time، ܬܘܒ ܒܬܪ %minutes ܩܛܝ̈ܢܬܐ</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>ܓܢܣܐ ܕܝܕ̈ܥܬܐ ܢܛܪ ܘܡܬܩܢ ܙܢܐ ܚܕ ܕܛܝܡܐ ܕܕܝܠܝܘܬܐ ܕܙܢܐ: ܣܪܛܐ ܕܟܬܒܐ، ܨܘܪܬܐ، ܐܣܘܪܐ. ܥܩܪܐ ܡܝܬܐ ܠܣܓܝܐܐ ܡܢܗܘܢ، ܘܬܘ̈ܣܦܬܐ ܡܘܣܦܢ ܝܬܝܪ. ܗܪܟܐ ܐܝܬܝܗܘܢ ܟܠܗܘܢ، ܡܢܘ ܝܗܒ ܠܗܘܢ ܘܟܡܐ ܡܢ ܬܚܘܝܬܐ ܡܦܠܚ ܠܗܘܢ. ܓܢܣܐ ܕܝܕ̈ܥܬܐ ܕܒܣܝܣ ܝܕ̈ܥܬܐ ܡܦܠܚ ܠܗ ܘܡܕܡ ܠܐ ܟܬܒ ܠܗ ܬܘܒ، ܬܒܪ ܠܬܚܘܝܬܐ ܕܐܝܬ ܠܗ.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>ܟܢ̈ܫܐ ܕܙ̈ܢܝܐ</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>ܡܢܝ ܙܒܢܐ ܐܚܪܢܐ ܗܫܐ ܚܠܦ ܡܦܠܚܢܘܬܐ ܕܡܢܝ̈ܢܐ ܕܩܛܝ̈ܢܬܐ ܐܚܪ̈ܝܬܐ.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>ܡܢܝ ܙܒܢܐ ܐܚܪܢܐ</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>ܚܙܝܐ ܟܠܢܝܐ</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>ܐܬܟܬܒ</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>ܡܬܦܠܚܐ</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>ܠܐ ܐܫܬܡܫ</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>ܬܘ̈ܣܦܬܐ ܕܝܗ̈ܒܢ ܓܢ̈ܣܐ ܕܝܕ̈ܥܬܐ</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>ܕܝ̈ܠܝܘܬܐ ܕܙܢܐ</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>ܕܝ̈ܠܝܘܬܐ ܕܨܒܘܬܐ</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>ܠܐ ܟܬܝܒ</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>ܟܬܝܒ ܒܪܫܝܡܐ، ܠܦܦܐ ܚܣܝܪ</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count ܓܢ̈ܣܐ ܕܝܕ̈ܥܬܐ ܡܬܦܠܚܝܢ ܐܠܐ ܠܐ ܟܬܝܒܝܢ</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes ܕܝ̈ܠܝܘܬܐ ܕܙܢܐ ܘ%object_attributes ܕܝ̈ܠܝܘܬܐ ܕܨܒܘܬܐ ܐܝܬ ܠܗܝܢ ܓܢܣܐ ܕܝܕ̈ܥܬܐ ܕܠܐ ܬܘܣܦܬܐ ܘܠܐ ܛܘܝܒܐ ܟܬܒ ܠܗ. ܨܒܘ̈ܬܐ ܕܝܠܗܝܢ ܠܐ ܡܫܟܚܢ ܠܡܬܚܙܝܘ ܐܘ ܠܡܬܬܩܢܘ ܐܘ ܠܡܬܦܪܣܘ. ܐܦܥܠ ܠܬܘܣܦܬܐ ܕܝܗܒܐ ܠܓܢܣܐ ܕܝܕ̈ܥܬܐ، ܐܘ ܫܚܠܦ ܠܙܢܐ.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>ܚܘܝ ܗܠܝܢ ܒܠܚܘܕ</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>ܒܨܝ ܓܢܣܐ ܕܝܕ̈ܥܬܐ</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>ܡܫܘܕܥܢܐ، ܫܡܐ، ܙܢܐ ܕPHP ܐܘ ܬܘܣܦܬܐ.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ܡܚܘܝܐ</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ܟܠ</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>ܝܗܝܒ ܡܢ</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>ܟܠܢܫ</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>ܥܩܪܐ</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>ܠܐ ܐܝܬ ܓܢܣܐ ܕܝܕ̈ܥܬܐ ܕܫܘܐ ܠܗܢܐ ܡܨܠܠܢܐ.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>ܡܚܘܝܐ ܕܟܠ</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>ܬܘܣܦܬܐ</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown ܡܢ %count ܓܢ̈ܣܐ ܕܝܕ̈ܥܬܐ، %used ܡܬܦܠܚܝܢ</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>ܒܣܝܣ ܝܕ̈ܥܬܐ ܐܝܬ ܠܗ ܕܝ̈ܠܝܘܬܐ ܕܙܢܐ ܐܘ ܕܨܒܘܬܐ ܕܗܠܝܢ ܓܢ̈ܣܐ ܕܝܕ̈ܥܬܐ، ܐܠܐ content.ini ܠܐ ܟܬܒ ܠܚܕ ܡܢܗܘܢ، ܐܘ ܠܦܦܐ ܕܝܠܗ ܚܣܝܪ.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>ܓܢ̈ܣܐ ܕܝܕ̈ܥܬܐ ܕ%provider</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>ܓܢܣܐ ܕܝܕ̈ܥܬܐ</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>ܙܢܐ ܕPHP ܘܠܦܦܐ</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>ܙ̈ܢܝܐ</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>ܨܒ̈ܘܬܐ</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>ܐܬܘ̈ܬܐ ܕܣܘܡܢܐ</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>ܠܐ ܚܕ</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>ܠܐ ܐܝܬ ܓܢܣܐ ܕܝܕ̈ܥܬܐ ܕܫܘܐ ܠܒܨܝܐ. ܕܟܝ ܠܒܨܝܐ.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%shown ܡܢ %count ܓܢ̈ܣܐ ܕܝܕ̈ܥܬܐ ܡܬܚܙܝܢ</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>ܓܢ̈ܣܐ ܕܝܕ̈ܥܬܐ ܡܬܚܙܝܢܐ: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>ܣܕܪܐ ܠܦܘܬ %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>ܡܢܝܐ %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>ܟܠ ܓܢ̈ܣܐ ܕܝܕ̈ܥܬܐ</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>ܦܐܬܐ ܕܥܘܕܪܢܐ</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>ܗܢܐ ܓܢܣܐ ܕܝܕ̈ܥܬܐ ܡܬܦܠܚ ܐܠܐ ܠܐ ܟܬܝܒ</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>ܨܒܘ̈ܬܐ ܕܙܢ̈ܐ ܕܠܬܚܬ ܠܐ ܡܫܟܚܢ ܠܡܬܚܙܝܘ ܐܘ ܠܡܬܬܩܢܘ ܐܘ ܠܡܬܦܪܣܘ ܥܕܡܐ ܕܠܐ ܬܘܣܦܬܐ ܟܬܒܐ ܠܓܢܣܐ ܕܝܕ̈ܥܬܐ. ܐܦܥܠ ܠܬܘܣܦܬܐ ܕܝܗܒܐ ܠܗ ܘܐܘܣܦ ܠܗ ܠcontent.ini [DataTypeSettings] AvailableDataTypes[]، ܐܘ ܫܚܠܦ ܠܙܢ̈ܐ.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini ܟܬܒ ܠܗܢܐ ܓܢܣܐ ܕܝܕ̈ܥܬܐ، ܐܠܐ ܠܐ ܐܝܬ ܬܝܩܐ ܕܓܢ̈ܣܐ ܕܝܕ̈ܥܬܐ ܕܐܝܬ ܠܗ ܠܦܦܐ ܕܝܠܗ. ܡܕܡ ܠܐ ܡܦܠܚ ܠܗ؛ ܫܩܘܠ ܠܗ ܡܢ AvailableDataTypes[] ܐܘ ܐܦܥܠ ܠܬܘܣܦܬܐ ܕܝܠܗ.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>ܥܠ ܗܢܐ ܓܢܣܐ ܕܝܕ̈ܥܬܐ</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>ܡܫܘܕܥܢܐ</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>ܫܡܐ</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>ܬܘܣܦܬܐ %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>ܠܐ ܐܢܫ</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>ܙܢܐ ܕ PHP</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ܦܢܩܝܬܐ</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>ܒAvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ܐܝܢ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ܠܐ</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>ܥܡܘ̈ܕܐ ܕܛܝܡܐ ܕܝܠܗ</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>ܥܡܘ̈ܕܐ ܕܛܘܝܒ̈ܐ ܕܕܝܠܝܘܬܐ ܕܙܢܐ ܕܝܠܗ</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>ܦܢܩ̈ܝܬܐ</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>ܥܡܘ̈ܕܐ ܘܠܘ̈ܚܐ ܡܫܬܟܚܝܢ ܒܩܪܝܢܐ ܕܩܘܕܐ ܕܓܢܣܐ ܕܝܕ̈ܥܬܐ: ܡܕܒܪܢܘܬܐ، ܠܐ ܫܘܘܕܝܐ.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>ܛܘ̈ܦܣܐ</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>ܡܥܠܢܐ ܕܐܬܪܐ</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>ܛܘܦܣܐ</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>ܡܫܬܟܚ ܒ</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>ܗܕܐ ܡܕܒܪܢܘܬܐ</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>ܐܬܪܐ ܡܥܡܕܐ</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>ܕܠܐ ܚܘ̈ܠܦܐ: ܛܘܦܣܐ ܕܚܘܠܦܐ ܕܫܘܐ ܠܙܢܐ ܐܘ ܠܕܝܠܝܘܬܐ ܙܟܐ ܥܠ ܗܠܝܢ.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>ܙܢ̈ܐ ܕܡܦܠܚܝܢ ܠܗ (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>ܠܐ ܐܝܬ ܙܢܐ ܕܐܝܬ ܠܗ ܕܝܠܝܘܬܐ ܕܗܢܐ ܓܢܣܐ ܕܝܕ̈ܥܬܐ.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>ܙܢܐ</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>ܕܝ̈ܠܝܘܬܐ</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>ܕܝ̈ܠܝܘܬܐ ܕܙܢܐ (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>ܕܝܠܝܘܬܐ</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>ܛܘܝ̈ܒܐ</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>ܐܠܨܝܐ</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>ܡܬܒܨܝܢܐ</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>ܡܬܬܪܓܡܢܐ</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>ܟܢܫ ܝܕ̈ܥܬܐ</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>ܩܠܝܠ ܬܚܘܝܬܐ ܕܡܦܠܚܐ ܠܗ</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>ܐܚܪܝܐ ܕܐܫܬܚܠܦ ܩܕܡܝܐ</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>ܡܫܘܚܠܦܐ</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>ܩܛܪܐ %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>ܟܠ ܬܘܪܓܡܐ ܐܝܬ ܠܗ ܛܝܡܐ ܕܝܠܗ.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>ܒܨܝܐ ܡܫܪܐ ܠܛܝܡ̈ܐ ܕܝܠܗ ܒܦܗܪܣܬܐ.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>ܡܫܟܚ ܠܡܟܢܫ ܝܕ̈ܥܬܐ ܡܢ ܣܥܘ̈ܪܐ (ܛܘܦ̈ܣܐ ܕܡܠܝܐ).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>ܪ̈ܫܝܡܐ ܡܫܟܚܝܢ ܠܡܬܛܟܣܘ ܒܗ: ܩܠܝܕܐ ܕܛܟܣܐ %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>ܡܬܣܕܪܢܐ</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>ܛܝܡ̈ܐ ܕܝܠܗ ܡܚܘܝܢ ܠܨܒܘ̈ܬܐ ܐܚܪ̈ܢܝܬܐ.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>ܐܚܝ̈ܢܘܬܐ</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>ܡܫܟܚ ܠܡܬܡܠܝܘ ܡܢ ܣܪܛܐ ܦܫܝܛܐ ܕܟܬܒܐ (ܡܥܠܢܘܬܐ، REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>ܡܢ ܟܬܒܐ</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>ܡܫܟܚ ܠܡܬܡܠܝܘ ܡܢ ܠܦܦܐ.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>ܡܢ ܠܦܦܐ</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>ܛܘܝܒ̈ܐ ܕܕܝܠܝܘܬܐ ܕܙܢܐ ܕܝܠܗ ܥܐܠܝܢ ܠܓܘ ܨܪ̈ܘܪܐ.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>ܨܪ̈ܪܐ</translation>
     </message>
 </context>
 </TS>

@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Lokasa oyo kaka elukami: %from tii %to na %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Malolenge nyonso ya ba-données ya motema mpe ya ba-extension, mpe ndenge bakalasi mpe makambo esalelaka yango.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Bidatatype</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ Nkomba: Ba-paquet ekolongolama na système te.</translation>
     <message>
         <source>Static publishing</source>
         <translation>Bobimisi ya static</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Bidatatype</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Malolenge nyonso ya ba-données ya motema mpe ya ba-extension, mpe ndenge bakalasi mpe makambo esalelaka yango.</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ compte na yo.</translation>
         <source>Copy of %class_name</source>
         <translation>Kopí ya %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Bidatatype</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Lolenge ya ba-données %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85028,6 +85052,397 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Mokanda oyo etindamaki na %site mpo ete migration.ini [RemoteSettings] Notify[] esengi yango.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Malolenge ya ba-données (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>Etángami na %time, lisusu nsima ya miniti %minutes</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Lolenge ya ba-données ebombaka mpe ebongisaka motindo moko ya motuya ya ezaleli ya kalasi: molongo ya makomi, elilingi, boyokani. Motema ememaka mingi na yango, ba-extension ebakisaka mosusu. Awa ezali yango nyonso, nani apesaka yango mpe makambo boni esalelaka yango. Lolenge ya ba-données oyo base de données esalelaka kasi eloko moko te ekomisaka lisusu, ebebisaka makambo oyo ezali na yango.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Bisanga ya bakalasi</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Tánga lisusu sikoyo na esika ya kosalela mitango ya miniti ya nsuka.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Tánga lisusu</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Botali ya nyɔ́nsɔ</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Akomisami</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>Ezali kosalelama</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Esalelami te</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Ba-extension oyo epesaka malolenge ya ba-données</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Bizaleli ya kalasi</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Bizaleli ya eloko</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Ekomami te</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>Ezali na liste, fichier ezali te</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>Malolenge ya ba-données %count esalelami kasi ekomami te</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>Bizaleli ya kalasi %class_attributes mpe bizaleli ya eloko %object_attributes ezali na lolenge ya ba-données oyo extension to réglage moko te ekomisaka. Biloko na yango ekoki komonisama, kobongisama to kobimisama te. Pelisá extension oyo epesaka lolenge ya ba-données, to bongolá kalasi.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Monisá kaka oyo</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Lukà lolenge ya ba-données</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Elembo ya koyeba, nkómbó, kalasi PHP to extension.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Lakisá</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Nyɔ́nsɔ</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Epesami na</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Moto nyɔ́nsɔ</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Motema</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Lolenge ya ba-données moko te ekokani na filtre oyo.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Lakisá nyɔ́nsɔ</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Extension</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown na %count malolenge ya ba-données, %used esalelami</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>Base de données ezali na bizaleli ya kalasi to ya biloko ya malolenge oyo, kasi content.ini ekomi ata moko te, to fichier na yango ezali te.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>Malolenge ya ba-données ya %provider</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Lolenge ya ba-données</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>Kalasi PHP mpe fichier</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Bakalasi</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Biloko</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Bilembo</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>eloko te</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Lolenge ya ba-données moko te ekokani na boluki. Pupolá boluki.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%shown na %count malolenge ya ba-données emonisami</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Malolenge ya ba-données emonisami: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Tyá na molongo na %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>Etángami na %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Malolenge nyonso ya ba-données</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Lokasa ya lisálisi</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Lolenge oyo ya ba-données esalelami kasi ekomami te</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Biloko ya bakalasi oyo ezali awa na nse ekoki komonisama, kobongisama to kobimisama te soki extension moko te ekomisi lolenge ya ba-données. Pelisá extension oyo epesaka yango mpe bakisá yango na content.ini [DataTypeSettings] AvailableDataTypes[], to bongolá bakalasi.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini ekomi lolenge oyo ya ba-données, kasi dossier moko te ya malolenge ya ba-données ezali na fichier na yango. Eloko moko te esalelaka yango; longolá yango na AvailableDataTypes[] to pelisá extension na yango.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Na ntina na lolenge oyo ya ba-données</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Elembo ya koyeba</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nkómbó</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Extension %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>moto moko te</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>Kalasi ya PHP</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fichier</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>Na AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ɛɛ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>te</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Ba-colonne ya motuya na yango</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Ba-colonne ya ba-réglage ya ezaleli ya kalasi</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Ba-table</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Ba-colonne mpe ba-tableau emonani na kotánga code ya lolenge ya ba-données: litambwisi, elaka te.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Ba-modèles</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Modèle</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Emonani na</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>boyangeli oyo</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>site ya liboso</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Kozanga ba-override: modèle ya override oyo ekokani na kalasi to ezaleli eleki oyo.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Bakalasi oyo esalelaka yango (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Kalasi moko te ezali na ezaleli ya lolenge oyo ya ba-données.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Kalasi</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Bizaleli</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Bizaleli ya kalasi (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Ezaleli</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Bibongiseli</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Esengeli</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Ekoki koluka</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Ekoki kobongolama na lokóta</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Ekɔtisaka mateya</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Makambo mosusu oyo esalelaka yango</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Oyo ebongisami nsuka liboso</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Ebongolami</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Nœud %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Libongoli moko na moko ezali na motuya na yango.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>Boluki ekomaka ba-motuya na yango na index.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Ekoki koyanganisa ba-sango epai ya bapaya (ba-formulaire).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Ba-liste ekoki kotiama na molongo na yango: fungola ya molongo %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Ekoki kotyama na molongo</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Ba-motuya na yango elakisaka biloko mosusu.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Boyokani</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Ekoki kotondisama na makomi ya pamba (import, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Uta na makomi</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Ekoki kotondisama na fichier.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Uta na fichier</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Ba-réglage ya ezaleli ya kalasi na yango ekotaka na ba-paquet.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Ba-paquet</translation>
     </message>
 </context>
 </TS>

@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>केवलम् इदं पृष्ठम् अन्विष्यते: %count मध्ये %from तः %to पर्यन्तम्।</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>अन्तःसारस्य विस्ताराणां च प्रत्येकः दत्तांशप्रकारः, वर्गाः विषयवस्तु च तं कथम् उपयुञ्जते।</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>दत्तांशप्रकाराः</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Static publishing</source>
         <translation>स्थिरप्रकाशनम्</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>दत्तांशप्रकाराः</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>अन्तःसारस्य विस्ताराणां च प्रत्येकः दत्तांशप्रकारः, वर्गाः विषयवस्तु च तं कथम् उपयुञ्जते।</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ your account.</source>
         <source>Copy of %class_name</source>
         <translation>%class_name इत्यस्य प्रतिलिपिः</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>दत्तांशप्रकाराः</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>दत्तांशप्रकारः %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85028,6 +85052,397 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>इदं पत्रं %site इत्यनेन प्रेषितम्, यतः migration.ini [RemoteSettings] Notify[] तत् याचते।</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>दत्तांशप्रकाराः (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>%time गणितम्, %minutes निमेषेभ्यः अनन्तरं पुनः</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>दत्तांशप्रकारः वर्गगुणधर्मस्य एकविधं मूल्यं रक्षति सम्पादयति च: पाठपङ्क्तिः, चित्रम्, सम्बन्धः। अन्तःसारः अधिकांशान् आनयति, विस्ताराः अन्यान् योजयन्ति। अत्र सर्वे सन्ति, के तान् प्रयच्छन्ति, कियत् विषयवस्तु तान् उपयुङ्क्ते च। यं दत्तांशप्रकारं दत्तांशकोशः उपयुङ्क्ते किन्तु इदानीं किमपि न पञ्जीकरोति, सः तद्युक्तं विषयवस्तु भनक्ति।</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>वर्गसमूहाः</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>गतनिमेषाणां गणनाः न उपयुज्य इदानीमेव पुनः गणयतु।</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>पुनः गणयतु</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>अवलोकनम्</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>पञ्जीकृतः</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>उपयोगे</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>नोपयुक्तम्</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>दत्तांशप्रकारान् प्रयच्छन्तः विस्ताराः</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>वर्गगुणधर्माः</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>पदार्थगुणधर्माः</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>अपञ्जीकृतः</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>सूच्याम् अस्ति, सञ्चिका नास्ति</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count दत्तांशप्रकाराः उपयुज्यन्ते किन्तु अपञ्जीकृताः</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes वर्गगुणधर्माणां %object_attributes पदार्थगुणधर्माणां च दत्तांशप्रकारं कोऽपि विस्तारः विन्यासः वा न पञ्जीकरोति। तेषां पदार्थाः दर्शयितुं, सम्पादयितुं, प्रकाशयितुं वा न शक्यन्ते। दत्तांशप्रकारं प्रयच्छन्तं विस्तारं सक्रियं करोतु, अथवा वर्गं परिवर्तयतु।</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>एतान् एव दर्शयतु</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>दत्तांशप्रकारम् अन्विष्यतु</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>अभिज्ञापकम्, नाम, PHP वर्गः विस्तारः वा।</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>दर्शनम्</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>सर्वम्</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>प्रदाता</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>सर्वे</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>अन्तःसारः</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>अनेन छन्नेन कोऽपि दत्तांशप्रकारः न मेलति।</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>सर्वं दर्शयतु</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>विस्तारः</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%count दत्तांशप्रकारेषु %shown, %used उपयोगे</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>दत्तांशकोशे एतेषां दत्तांशप्रकाराणां वर्गगुणधर्माः पदार्थगुणधर्माः वा सन्ति, किन्तु content.ini तेषु एकमपि न सूचयति, अथवा तस्य सञ्चिका नास्ति।</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>%provider इत्यस्य दत्तांशप्रकाराः</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>दत्तांशप्रकारः</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>PHP वर्गः सञ्चिका च</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>वर्गाः</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>पदार्थाः</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>ध्वजाः</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>नास्ति</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>अन्वेषणेन कोऽपि दत्तांशप्रकारः न मेलति। अन्वेषणं निष्कासयतु।</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%count दत्तांशप्रकारेषु %shown दर्शिताः</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>दर्शिताः दत्तांशप्रकाराः: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>%column इत्यनुसारं क्रमणम्</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>%time गणितम्</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>सर्वे दत्तांशप्रकाराः</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>साहाय्यपृष्ठम्</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>अयं दत्तांशप्रकारः उपयुज्यते किन्तु अपञ्जीकृतः</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>यावत् कोऽपि विस्तारः दत्तांशप्रकारं न पञ्जीकरोति, तावत् अधः स्थितानां वर्गाणां पदार्थाः दर्शयितुं, सम्पादयितुं, प्रकाशयितुं वा न शक्यन्ते। तं प्रयच्छन्तं विस्तारं सक्रियं करोतु, तं content.ini [DataTypeSettings] AvailableDataTypes[] इत्यत्र योजयतु च, अथवा वर्गान् परिवर्तयतु।</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini इमं दत्तांशप्रकारं सूचयति, किन्तु कस्याम् अपि दत्तांशप्रकारनिर्देशिकायां तस्य सञ्चिका नास्ति। किमपि तं न उपयुङ्क्ते; तं AvailableDataTypes[] इत्यस्मात् अपसारयतु अथवा तस्य विस्तारं सक्रियं करोतु।</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>अस्य दत्तांशप्रकारस्य विषये</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>अभिज्ञापकम्</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>नाम</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>विस्तारः %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>न कोऽपि</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP वर्गः</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>सञ्चिका</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>AvailableDataTypes[] इत्यस्मिन्</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>आम्</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>न</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>तस्य मूल्यस्य स्तम्भाः</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>तस्य वर्गगुणधर्मविन्यासस्य स्तम्भाः</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>तालिकाः</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>स्तम्भाः सारण्यः च दत्तांशप्रकारस्य कूटं पठित्वा लभ्यन्ते: मार्गदर्शनम्, न तु प्रतिज्ञा।</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>प्रतिमानानि</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>जालस्थलप्रवेशः</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>प्रतिमानम्</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>प्राप्तिस्थानम्</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>इदं प्रशासनम्</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>पूर्वनिर्धारितं जालस्थलम्</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>अधिलेखनं विना: वर्गेण गुणधर्मेण वा मेलितम् अधिलेखनप्रतिमानम् एतेभ्यः प्राधान्यं लभते।</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>तम् उपयुञ्जानाः वर्गाः (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>कस्यापि वर्गस्य अस्य दत्तांशप्रकारस्य गुणधर्मः नास्ति।</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>वर्गः</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>गुणधर्माः</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>वर्गगुणधर्माः (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>गुणधर्मः</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>विन्यासः</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>आवश्यकम्</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>अन्वेषणीयम्</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>अनुवादयोग्यम्</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>सूचनां सङ्गृह्णाति</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>तम् उपयुञ्जानं किञ्चित् विषयवस्तु</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>अन्तिमपरिवर्तितं प्रथमम्</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>परिवर्तितम्</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>ग्रन्थिः %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>प्रत्येकस्य अनुवादस्य स्वकीयं मूल्यम् अस्ति।</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>अन्वेषणं तस्य मूल्यानि अनुक्रमयति।</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>सः आगन्तुकेभ्यः सूचनाः सङ्ग्रहीतुं शक्नोति (प्रपत्राणि)।</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>सूच्यः तेन क्रमयितुं शक्यन्ते: क्रमकुञ्जी %type।</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>क्रमणीयम्</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>तस्य मूल्यानि अन्यपदार्थान् निर्दिशन्ति।</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>सम्बन्धाः</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>सः सरलपाठात् पूरयितुं शक्यते (आयातः, REST)।</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>पाठात्</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>सः सञ्चिकायाः पूरयितुं शक्यते।</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>सञ्चिकायाः</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>तस्य वर्गगुणधर्मविन्यासाः सङ्कुलेषु गच्छन्ति।</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>सङ्कुलानि</translation>
     </message>
 </context>
 </TS>

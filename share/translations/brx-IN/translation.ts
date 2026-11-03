@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>बे फोथाखौसे नायनाय जायो: %count निफ्राय %from निफ्राय %to फिन.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>कर्नेल आरो एक्सटेनसनफोरनि गासै डेटा रोखोम, आरो क्लास आरो आयदाफोरा बेखौ माबोरै बाहायो।</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>डेटा रोखोम</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Static publishing</source>
         <translation>स्टेटिक फोरमायनाय</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>डेटा रोखोम</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>कर्नेल आरो एक्सटेनसनफोरनि गासै डेटा रोखोम, आरो क्लास आरो आयदाफोरा बेखौ माबोरै बाहायो।</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ your account.</source>
         <source>Copy of %class_name</source>
         <translation>%class_name नि कपि</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>डेटा रोखोम</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>डेटा रोखोम %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85028,6 +85052,397 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>बे मेलखौ %site आ दैथायनाय, मानोना migration.ini [RemoteSettings] Notify[] आ बेखौ बिनायो।</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>डेटा रोखोमफोर (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>%time आव हिसाब खालामनाय, %minutes मिनिट उनाव फिन</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>मोनसे डेटा रोखोमआ क्लास गुनफोरनि मोनसे रोखोमनि बेसेनखौ थिना दोनो आरो सुदेरो: टेक्स्टनि मोनसे सारि, मोनसे सावगारि, मोनसे सोमोन्दो। कर्नेलआ बेफोरनि गोबांसिनखौ लाबोयो, एक्सटेनसनफोरा गोबां बाहायो। बेयाव बेफोर गासैबो दं, बेफोरखौ सोर होयो आरो आयदानि बेसेबां बेफोरखौ बाहायो। डाटाबेसआ बाहायो नाथाय जेबो रेजिस्टार खालामा, अब्ला बे डेटा रोखोमआ गोनां आयदाखौ सिफायो।</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>क्लास हुदाफोर</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>जोबनाय मिनिटफोरनि हिसाबखौ बाहायनाय नङाब्ला दानोसो फिन हिसाब खालाम।</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>फिन हिसाब खालाम</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>जोबोद नायनाय</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>रजिस्टार जादों</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>बेहेनाय दंमोन</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>बेबहार खालामयाखै</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>डेटा रोखोम होग्रा एक्सटेनसनफोर</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>क्लास गुनफोर</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>बस्तुनि गुनफोर</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>रेजिस्टार खालामनाय नङा</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>फारिआव दं, फाइल गैया</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count डेटा रोखोम बाहायनाय जादों नाथाय रेजिस्टार खालामनाय नङा</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes क्लास गुनफोर आरो %object_attributes बस्तु गुनफोरनि मोनसे डेटा रोखोम दं जायखौ जेबो एक्सटेनसन एबा सेटिंआ रेजिस्टार खालामा। बेफोरनि बस्तुखौ दिन्थिनो, सुदेरनो एबा फोसावनो हाया। डेटा रोखोमखौ होग्रा एक्सटेनसनखौ सावरि, एबा क्लासखौ सोलाय।</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>बेफोरखौल' दिन्थि</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>मोनसे डेटा रोखोम नागिर</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>सिनायथि, मुं, PHP क्लास एबा एक्सटेनसन।</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>नायनो हो</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>जोबोद</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>होग्रा</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>जोबोदजों</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>कर्नेल</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>बे फिल्टारजों जेबो डेटा रोखोम गोरोबा।</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>जोबोद नायनो हो</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>एक्सटेनसन</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%count डेटा रोखोमनि %shown, %used बाहायनायाव</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>डाटाबेसआव बे डेटा रोखोमफोरनि क्लास एबा बस्तु गुनफोर दं, नाथाय content.ini आव बेफोरनि जेबो गैया, एबा बेनि फाइल गैया।</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>%provider नि डेटा रोखोमफोर</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>डेटा रोखोम</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>PHP क्लास आरो फाइल</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>क्लासफोर</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>बस्तु</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>फ्लेग</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>मुं</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>नागिरनायजों जेबो डेटा रोखोम गोरोबा। नागिरनायखौ सिमा।</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%count डेटा रोखोमनि %shown दिन्थिनाय जादों</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>दिन्थिनाय डेटा रोखोम: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>%column जों क्रम खालाम</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>%time आव हिसाब खालामनाय</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>गासै डेटा रोखोमफोर</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>मदद बिलाइ</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>बे डेटा रोखोमआ बाहायनाय जादों नाथाय रेजिस्टार खालामनाय नङा</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>जेबो एक्सटेनसनआ डेटा रोखोमखौ रेजिस्टार खालामा सिम, गाहायनि क्लासफोरनि बस्तुखौ दिन्थिनो, सुदेरनो एबा फोसावनो हाया। बेखौ होग्रा एक्सटेनसनखौ सावरि आरो बेखौ content.ini [DataTypeSettings] AvailableDataTypes[] आव दाजाब, एबा क्लासफोरखौ सोलाय।</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini आव बे डेटा रोखोमआ दं, नाथाय जेबो डेटा रोखोम डाइरेक्टरिआव बेनि फाइल गैया। जेबो बेखौ बाहाया; बेखौ AvailableDataTypes[] निफ्राय बोखार एबा बेनि एक्सटेनसनखौ सावरि।</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>बे डेटा रोखोमनि सोमोन्दै</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>चिन्हा</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>मुं</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>एक्सटेनसन %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>जेबो गैया</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP क्लास</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>फाइल</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>AvailableDataTypes[] आव</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>होय</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>नङा</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>बेनि बेसेननि खाम्फाफोर</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>बेनि क्लास गुनफोर सेटिंनि खाम्फाफोर</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>तालिकाफोर</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>खाम्फा आरो टेबुलफोरखौ डेटा रोखोमनि कड फरायनानै मोनदों: मोनसे लामा दिन्थिग्रा, राव होनाय नङा।</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>टेम्पलेटफोर</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>साइट-प्रबेश</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>टेम्पलेट</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>बेआव लाबोनाय</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>बे सासनथि</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>डिफल्ट साइट</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>ओभाराइड गैयाब्ला: क्लास एबा गुनफोरजों गोरोबनाय ओभाराइड टेम्पलेटआ बेफोरनिख्राय गिबि जायो।</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>बेखौ बाहायग्रा क्लासफोर (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>जेबो क्लासआव बे डेटा रोखोमनि गुनफोर गैया।</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>क्लास</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>गुनफोर</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>क्लास गुनफोर (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>गुन</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>सेटिं</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>गोनांनो</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>नायनो हायो</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>अनुबाद खालामनो हायो</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>खौसिनाय मोन</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>बेखौ बाहायग्रा खायसे आयदा</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>जोबथा सोलायनायखौ गिबियाव</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>सोलोंथायनाय</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>नोड %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>मोनफ्रोम राव सोलायनायनि गावनि बेसेन दं।</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>नागिरनायआ बेनि बेसेनफोरखौ इन्डेक्स खालामो।</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>बेयो नुथाङारिफोरनिफ्राय खौरां बुथुम हायो (फर्म)।</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>बेजों फारिफोरखौ थाखो खालामनो हायो: थाखो सावि %type।</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>क्रम खालामनो हायो</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>बेनि बेसेनफोरा गुबुन बस्तुफोरखौ दिन्थियो।</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>सोमोन्धो</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>बेखौ सरासरि टेक्स्टनिफ्राय आबुं खालामनो हायो (इम्पर्ट, REST)।</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>टेक्स्टनिफ्राय</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>बेखौ मोनसे फाइलनिफ्राय आबुं खालामनो हायो।</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>फाइलनिफ्राय</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>बेनि क्लास गुनफोर सेटिंफोरा पेकेजफोराव थाङो।</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>प्याकेजफोर</translation>
     </message>
 </context>
 </TS>

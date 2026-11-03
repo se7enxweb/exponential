@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Anadi yettwaxdem kan deg usebter-a: %from ar %to ɣef %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Yal anaw n yisefka n uẓar d yisiɣzaf, d wamek i t-seqdacen yismilen d ugbur.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Anawen n yisefka</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ Azen: ikemmusen ur ttwakksen ara asebded-nsen.</translation>
     <message>
         <source>Static publishing</source>
         <translation>Asiẓreg armid</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Anawen n yisefka</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Yal anaw n yisefka n uẓar d yisiɣzaf, d wamek i t-seqdacen yismilen d ugbur.</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ amiḍan-ik.</translation>
         <source>Copy of %class_name</source>
         <translation>Anɣal n %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Anawen n yisefka</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Anaw n yisefka %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85028,6 +85052,397 @@ Yessefk ad tbeddleḍ asmil n tkerrist s useqdec n tawuri n ubeddel.</translatio
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Izen-a yettwazen sɣur %site acku migration.ini [RemoteSettings] Notify[] yesra-t.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Anawen n yisefka (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>Yettwasiden %time, tikkelt-nniḍen deffir %minutes n tesdatin</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Anaw n yisefka yettḥerriz yerna yettẓerrig yiwen n wanaw n wazal n yiwet n tɣara n usmil: izirig n uḍris, tugna, assaɣ. Aẓar d netta i d-yettawin tuget-nsen, isiɣzaf rnan-d wiyaḍ. Ha-ten-id akk dagi, anwa i ten-id-yettaken d acḥal seg ugbur i ten-iseqdacen. Anaw n yisefka i tseqdac taffa n yisefka maca yiwen ur t-yettjerrid ara, ad yerreẓ agbur i t-yesεan.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Igrawen n yismilen</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Ales asiḍen tura deg wadeg n useqdec n yisiḍen n tesdatin tineggura.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Ales asiḍen</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Tamuɣli tamatut</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Yettwajerred</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>Tettwaseqdac</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Ur yettwaseqdac ara</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Isiɣzaf i d-yettaken anawen n yisefka</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Iyla n usmil</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Iyalen n tɣawsa</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Ur yettwajerred ara</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>Yettwabder, afaylu ulac-it</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count n wanawen n yisefka ttwasqedcen maca ur ttwajerden ara</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes n tɣarac n usmil d %object_attributes n tɣarac n tɣawsiwin sεan anaw n yisefka ur yettjerrid ula d yiwen n usiɣzef neɣ n uɣewwar. Tiɣawsiwin-nsen ur zmirent ara ad ttwaskanent, ad ttwaẓergent neɣ ad ttwasuffɣent. Rmed asiɣzef i d-yettaken anaw n yisefka, neɣ beddel asmil.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Sken-d kan wigi</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Af-d anaw n yisefka</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Asulay, isem, asmil PHP neɣ asiɣzef.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Sken</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Akk</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Yettunefk-d sɣur</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Meṛṛa</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Aẓar</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Ulac anaw n yisefka yemṣadan d imsizdeg-a.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Sken akk</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Asiɣzef</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown seg %count n wanawen n yisefka, %used ttwasqedcen</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>Taffa n yisefka tesεa tiɣarac n usmil neɣ n tɣawsa seg wanawen-a n yisefka, maca content.ini ur yebder ula d yiwen seg-sen, neɣ afaylu-ines ulac-it.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>Anawen n yisefka n %provider</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Anaw n yisefka</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>Asmil PHP d ufaylu</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Ismilen</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Tiɣawsiwin</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Tibzimin</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>ulac</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Ulac anaw n yisefka yemṣadan d unadi. Sfeḍ anadi.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%shown seg %count n wanawen n yisefka ttwaskanen</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Anawen n yisefka yettwaskanen: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Smizzwer s %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>Yettwasiden %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Akk anawen n yisefka</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Asebter n tallalt</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Anaw-a n yisefka yettwaseqdac maca ur yettwajerred ara</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Tiɣawsiwin n ismilen-a ddaw ur zmirent ara ad ttwaskanent, ad ttwaẓergent neɣ ad ttwasuffɣent alamma yella usiɣzef i yettjerriden anaw-a n yisefka. Rmed asiɣzef i t-id-yettaken, rnu-t ɣer content.ini [DataTypeSettings] AvailableDataTypes[], neɣ beddel ismilen.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini yebder anaw-a n yisefka, maca ulac akaram n wanawen n yisefka i yesεan afaylu-ines. Yiwen ur t-iseqdac; kkes-it seg AvailableDataTypes[] neɣ rmed asiɣzef-ines.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Ɣef wanaw-a n yisefka</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Asulay</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Isem</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Asiɣzef %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>ula d yiwen</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>Asmil PHP</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Afaylu</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>Deg AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ih</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ala</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Ijga n wazal-is</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Ijga n yiɣewwaren n tɣara-ines n usmil</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Tifelwin</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Ijga d tfelwiyin ttwafen-d s tɣuri n tengalt n wanaw n yisefka: d amnir, mačči d tamuli.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Timudmiyin</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Anekcum ɣer usmel</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Tamudemt</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Yettwaf deg</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>anedbal-a</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>asmel amezwer</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>War asemselsi: tamudemt n usemselsi yemṣadan s usmil neɣ s tɣara tezwar wigi.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Ismilen i t-iseqdacen (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Ulac asmil i yesεan tɣara n wanaw-a n yisefka.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Asmil</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Iyla</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Iyla n usmil (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Ayla</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Iɣewwaren</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Yettwasra</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Yezmer ad yettwanadi</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Yezmer ad yettwasuqqel</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Yelqeḍ isallen</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Kra n ugbur i t-iseqdacen</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Aneggaru yettwabeddlen d amezwaru</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Yettwabeddel</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Takerrist %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Yal tasuqilt tesεa azal-is.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>Anadi yettsemmar azalen-is.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Yezmer ad d-yejmeε talɣut sɣur yimerza (tiferkiwin).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Tibdarin zemrent ad ttwasmizzwent yis-s: tasarut n usmizzwer %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Izmer ad yettwasmizzwer</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Azalen-is ttwehhin ɣer tɣawsiwin-nniḍen.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Isaɣen</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Yezmer ad yettwačar seg uḍris aḥerfi (aktar, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Seg uḍris</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Yezmer ad yettwačar seg ufaylu.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Seg ufaylu</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Iɣewwaren n tɣara-ines n usmil ttekcamen ɣer ikemmusen.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Ikemmusen</translation>
     </message>
 </context>
 </TS>

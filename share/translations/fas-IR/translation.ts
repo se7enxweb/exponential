@@ -982,6 +982,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>فقط در این صفحه جستجو می‌شود: %from تا %to از %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>همه انواع داده هسته و افزونه‌ها، و اینکه کلاس‌ها و محتوا چگونه از آن‌ها استفاده می‌کنند.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>انواع داده</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15430,6 +15438,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Static publishing</source>
         <translation>انتشار ایستا</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>انواع داده</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>همه انواع داده هسته و افزونه‌ها، و اینکه کلاس‌ها و محتوا چگونه از آن‌ها استفاده می‌کنند.</translation>
     </message>
 </context>
 <context>
@@ -55388,6 +55404,14 @@ your account.</source>
         <source>Copy of %class_name</source>
         <translation>کپی %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>انواع داده</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>نوع داده %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85026,6 +85050,397 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>این ایمیل را %site فرستاده است، زیرا migration.ini [RemoteSettings] Notify[] آن را درخواست می‌کند.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>انواع داده (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>شمارش در %time، دوباره پس از %minutes دقیقه</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>یک نوع داده یک نوع مقدار از یک ویژگی کلاس را ذخیره و ویرایش می‌کند: یک خط متن، یک تصویر، یک ارتباط. هسته بیشتر آن‌ها را فراهم می‌کند و افزونه‌ها موارد بیشتری اضافه می‌کنند. اینجا همه آن‌ها آمده‌اند، اینکه چه کسی آن‌ها را فراهم می‌کند و چه مقدار از محتوا از آن‌ها استفاده می‌کند. نوع داده‌ای که پایگاه داده از آن استفاده می‌کند اما دیگر هیچ چیز آن را ثبت نمی‌کند، محتوایی را که آن را دارد خراب می‌کند.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>گروه‌های کلاس</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>اکنون دوباره بشمارید، به جای استفاده از شمارش دقیقه‌های اخیر.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>شمارش دوباره</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>نمای کلی</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>تاریخ ثبت‌نام</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>در حال استفاده</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>استفاده‌نشده</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>افزونه‌های فراهم‌کننده نوع داده</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>ویژگی‌های کلاس</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>ویژگی‌های شیء</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>ثبت‌نشده</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>فهرست شده، فایل موجود نیست</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count نوع داده استفاده می‌شوند اما ثبت نشده‌اند</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes ویژگی کلاس و %object_attributes ویژگی شیء نوع داده‌ای دارند که هیچ افزونه یا تنظیمی آن را ثبت نمی‌کند. اشیای آن‌ها را نمی‌توان نمایش داد، ویرایش یا منتشر کرد. افزونه‌ای را که این نوع داده را فراهم می‌کند فعال کنید، یا کلاس را تغییر دهید.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>فقط این‌ها را نشان بده</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>یافتن نوع داده</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>شناسه، نام، کلاس PHP یا افزونه.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>نمایش</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>همه</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>فراهم‌شده توسط</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>همه</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>هسته</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>هیچ نوع داده‌ای با این فیلتر مطابقت ندارد.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>نمایش همه</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>افزونه</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown از %count نوع داده، %used در حال استفاده</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>پایگاه داده ویژگی‌های کلاس یا شیء از این انواع داده دارد، اما content.ini هیچ‌کدام از آن‌ها را فهرست نمی‌کند، یا فایل آن موجود نیست.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>انواع داده %provider</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>نوع داده</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>کلاس PHP و فایل</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>کلاس‌ها</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>اشیا</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>مشخصه‌ها</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>هیچ</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>هیچ نوع داده‌ای با جستجو مطابقت ندارد. جستجو را پاک کنید.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%shown از %count نوع داده نمایش داده شد</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>انواع داده نمایش‌داده‌شده: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>مرتب‌سازی بر اساس %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>شمارش در %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>همه انواع داده</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>صفحه راهنما</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>این نوع داده استفاده می‌شود اما ثبت نشده است</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>تا زمانی که هیچ افزونه‌ای این نوع داده را ثبت نکند، اشیای کلاس‌های زیر را نمی‌توان نمایش داد، ویرایش یا منتشر کرد. افزونه‌ای را که آن را فراهم می‌کند فعال کنید و آن را به content.ini [DataTypeSettings] AvailableDataTypes[] اضافه کنید، یا کلاس‌ها را تغییر دهید.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini این نوع داده را فهرست می‌کند، اما هیچ پوشه نوع داده‌ای فایل آن را ندارد. هیچ چیز از آن استفاده نمی‌کند؛ آن را از AvailableDataTypes[] حذف کنید یا افزونه آن را فعال کنید.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>درباره این نوع داده</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>شناسه</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>نام</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>افزونهٔ %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>هیچ‌کس</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>کلاس PHP</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>فایل</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>در AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>بله</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>خیر</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>ستون‌های مقدار آن</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>ستون‌های تنظیمات ویژگی کلاس آن</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>جدول‌ها</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>ستون‌ها و جدول‌ها با خواندن کد نوع داده یافت می‌شوند: یک راهنما، نه یک تضمین.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>قالب‌ها</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>دسترسی سایت</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>قالب</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>یافت‌شده در</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>این بخش مدیریت</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>سایت پیش‌فرض</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>بدون override: قالب override که بر اساس کلاس یا ویژگی مطابقت دارد بر این‌ها مقدم است.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>کلاس‌هایی که از آن استفاده می‌کنند (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>هیچ کلاسی ویژگی‌ای از این نوع داده ندارد.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>کلاس</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>ویژگی‌ها</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>ویژگی‌های کلاس (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>ویژگی</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>تنظیمات</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>شناسه %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>الزامی</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>قابل جستجو</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>قابل ترجمه</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>اطلاعات گردآوری می‌کند</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>برخی محتواهایی که از آن استفاده می‌کنند</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>آخرین تغییرات اول</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>تاریخ تغییر</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>گره %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>هر ترجمه مقدار خودش را دارد.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>جستجو مقادیر آن را نمایه می‌کند.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>می‌تواند از بازدیدکنندگان اطلاعات جمع‌آوری کند (فرم‌ها).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>فهرست‌ها را می‌توان بر اساس آن مرتب کرد: کلید مرتب‌سازی %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>قابل مرتب‌سازی</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>مقادیر آن به اشیای دیگر اشاره می‌کنند.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>ارتباط‌ها</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>می‌توان آن را از یک رشته ساده پر کرد (درون‌ریزی، REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>از متن</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>می‌توان آن را از یک فایل پر کرد.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>از فایل</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>تنظیمات ویژگی کلاس آن در بسته‌ها قرار می‌گیرد.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>بسته‌ها</translation>
     </message>
 </context>
 </TS>

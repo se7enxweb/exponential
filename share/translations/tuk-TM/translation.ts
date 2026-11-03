@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Diňe şu sahypa gözlenýär: %from – %to, jemi %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Ýadronyň we giňeltmeleriň her maglumat görnüşi, we klaslaryň hem-de mazmunyň ony nähili ulanýandygy.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Maglumat görnüşleri</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ bellik: Paketler gurnamadan aýrylmaz.</translation>
     <message>
         <source>Static publishing</source>
         <translation>Statik neşir</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Maglumat görnüşleri</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Ýadronyň we giňeltmeleriň her maglumat görnüşi, we klaslaryň hem-de mazmunyň ony nähili ulanýandygy.</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ salgysyna hat iberiler. Hasabyňyzy işjeňleşdirmek üçin
         <source>Copy of %class_name</source>
         <translation>%class_name nusgasy</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Maglumat görnüşleri</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Maglumat görnüşi %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85028,6 +85052,397 @@ Düwüniň klasyny çalyşmak funksiýasy bilen üýtgetmeli bolarsyňyz.</trans
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Bu hat %site tarapyndan iberildi, sebäbi migration.ini [RemoteSettings] Notify[] muny talap edýär.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Maglumat görnüşleri (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>%time sanaldy, %minutes minutdan soň täzeden</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Maglumat görnüşi klas atributynyň bir görnüşli bahasyny saklaýar we redaktirleýär: tekst setiri, surat, baglanyşyk. Olaryň köpüsini ýadro berýär, giňeltmeler ýene goşýar. Bu ýerde olaryň hemmesi, olary kimiň berýändigi we mazmunyň näçesiniň ulanýandygy. Maglumat bazasynyň ulanýan, ýöne indi hiç zadyň hasaba almaýan maglumat görnüşi ony saklaýan mazmuny bozýar.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Klas toparlary</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Soňky minutlaryň sanlaryny ulanmagyň ýerine häzir täzeden sana.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Täzeden sana</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Syn</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Hasaba alnan</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>Ulanylýar</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Ulanylmady</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Maglumat görnüşlerini berýän giňeltmeler</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Klas atributlary</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Obýekt atributlary</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Hasaba alynmadyk</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>Sanawda bar, faýl ýok</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count maglumat görnüşi ulanylýar, ýöne hasaba alynmadyk</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes klas atributy we %object_attributes obýekt atributy hiç bir giňeltmäniň ýa-da sazlamanyň hasaba almaýan maglumat görnüşine eýe. Olaryň obýektlerini görkezip, redaktirläp ýa-da neşir edip bolmaýar. Maglumat görnüşini berýän giňeltmäni işjeňleşdiriň ýa-da klasy üýtgediň.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Diňe şulary görkez</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Maglumat görnüşini tap</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Identifikator, at, PHP klasy ýa-da giňeltme.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Görkez</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Ählisi</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Berýän</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Hemmeler</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Ýadro</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Bu süzgüje laýyk maglumat görnüşi ýok.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Hemmesini görkez</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Giňeltme</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%count maglumat görnüşinden %shown, %used ulanylýar</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>Maglumat bazasynda bu maglumat görnüşleriniň klas ýa-da obýekt atributlary bar, ýöne content.ini olaryň hiç birini sanamaýar ýa-da onuň faýly ýok.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>%provider maglumat görnüşleri</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Maglumat görnüşi</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>PHP klasy we faýl</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Klaslar</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Obýektler</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Nyşanlar</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>ýok</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Gözlege laýyk maglumat görnüşi ýok. Gözlegi arassalaň.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%count maglumat görnüşinden %shown görkezildi</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Görkezilen maglumat görnüşleri: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>%column boýunça tertiple</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>%time sanaldy</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Ähli maglumat görnüşleri</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Kömek sahypasy</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Bu maglumat görnüşi ulanylýar, ýöne hasaba alynmadyk</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Hiç bir giňeltme maglumat görnüşini hasaba almaýança, aşakdaky klaslaryň obýektlerini görkezip, redaktirläp ýa-da neşir edip bolmaýar. Ony berýän giňeltmäni işjeňleşdiriň we ony content.ini [DataTypeSettings] AvailableDataTypes[] içine goşuň ýa-da klaslary üýtgediň.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini bu maglumat görnüşini sanaýar, ýöne hiç bir maglumat görnüşi katalogynda onuň faýly ýok. Ony hiç zat ulanmaýar; ony AvailableDataTypes[] içinden aýyryň ýa-da onuň giňeltmesini işjeňleşdiriň.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Bu maglumat görnüşi barada</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Identifikator</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Ady</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Giňeltme %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>hiç kim</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP klasy</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Faýl</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>AvailableDataTypes[] içinde</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>hawa</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ýok</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Onuň bahasynyň sütünleri</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Onuň klas atributy sazlamalarynyň sütünleri</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Tablisalar</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Sütünler we tablisalar maglumat görnüşiniň kodyny okamak arkaly tapylýar: bu ugrukdyryjy, wada däl.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Şablonlar</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Saýta giriş nokady</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Şablon</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Ýerleşýän ýeri</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>bu dolandyryş</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>esasy saýt</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Çalyşmalarsyz: klas ýa-da atribut boýunça gabat gelýän çalyşma şablony bulardan öňde durýar.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Ony ulanýan klaslar (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Hiç bir klasda bu maglumat görnüşiniň atributy ýok.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klas</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Atributlar</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Klas atributlary (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Atribut</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Sazlamalar</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Hökmany</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Gözlenip bilinýän</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Terjime edilýän</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Maglumat ýygnaýar</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Ony ulanýan käbir mazmun</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Iň soňky üýtgedilen birinji</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Üýtgedilen</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Düwün %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Her terjimäniň öz bahasy bar.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>Gözleg onuň bahalaryny indeksleýär.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Ol myhmanlardan maglumat ýygnap bilýär (formalar).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Sanawlary onuň boýunça tertipläp bolýar: tertip açary %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Tertiplenýän</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Onuň bahalary başga obýektlere salgylanýar.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Baglanyşyklar</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Ony ýönekeý setirden doldurmak bolýar (import, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Tekstden</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Ony faýldan doldurmak bolýar.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Faýldan</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Onuň klas atributy sazlamalary paketlere girýär.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Paketler</translation>
     </message>
 </context>
 </TS>

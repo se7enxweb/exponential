@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Фақат ин саҳифа ҷустуҷӯ мешавад: %from то %to аз %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Ҳар навъи додаҳои ҳаста ва васеъкуниҳо, ва чӣ тавр синфҳо ва мундариҷа онро истифода мебаранд.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Навъҳои додаҳо</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Static publishing</source>
         <translation>Нашри статикӣ</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Навъҳои додаҳо</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Ҳар навъи додаҳои ҳаста ва васеъкуниҳо, ва чӣ тавр синфҳо ва мундариҷа онро истифода мебаранд.</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ your account.</source>
         <source>Copy of %class_name</source>
         <translation>Нусхаи %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Навъҳои додаҳо</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Навъи додаҳо %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85028,6 +85052,397 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Ин мактубро %site фиристод, зеро migration.ini [RemoteSettings] Notify[] инро талаб мекунад.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Навъҳои додаҳо (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>%time шумурда шуд, баъди %minutes дақиқа аз нав</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Навъи додаҳо як навъи қимати хосияти синфро нигоҳ медорад ва таҳрир мекунад: сатри матн, тасвир, робита. Аксарияти онҳоро ҳаста медиҳад, васеъкуниҳо боз илова мекунанд. Дар ин ҷо ҳамаи онҳо ҳастанд, кӣ онҳоро медиҳад ва чӣ қадар аз мундариҷа онҳоро истифода мебарад. Навъи додаҳое, ки пойгоҳи додаҳо истифода мебарад, вале дигар ҳеҷ чиз онро сабт намекунад, мундариҷаи дорои онро вайрон мекунад.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Гурӯҳҳои синфҳо</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Ба ҷои истифодаи шумораҳои дақиқаҳои охир ҳозир аз нав шумурдан.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Аз нав шумурдан</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Тасвири умумӣ</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Сабти ном шудааст</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>Истифода мешавад</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Истифода намешавад</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Васеъкуниҳое, ки навъҳои додаҳо медиҳанд</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Хосиятҳои синф</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Хосиятҳои объект</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Сабт нашудааст</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>Дар рӯйхат ҳаст, файл нест</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count навъи додаҳо истифода мешаванд, вале сабт нашудаанд</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes хосияти синф ва %object_attributes хосияти объект навъи додаҳое доранд, ки ҳеҷ васеъкунӣ ё танзиме онро сабт намекунад. Объектҳои онҳоро нишон додан, таҳрир кардан ё нашр кардан мумкин нест. Васеъкунии навъи додаҳоро фаъол кунед ё синфро тағйир диҳед.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Танҳо инҳоро нишон диҳед</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Ёфтани навъи додаҳо</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Идентификатор, ном, синфи PHP ё васеъкунӣ.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Нишон додан</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Ҳама</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Таъминкунанда</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Ҳама</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Ҳаста</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Ҳеҷ навъи додаҳо ба ин филтр мувофиқ нест.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Нишон додани ҳама</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Васеъкунӣ</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown аз %count навъи додаҳо, %used дар истифода</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>Пойгоҳи додаҳо хосиятҳои синф ё объекти ин навъҳои додаҳоро дорад, вале content.ini ҳеҷ кадоми онҳоро номбар намекунад, ё файли он нест.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>Навъҳои додаҳои %provider</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Навъи додаҳо</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>Синфи PHP ва файл</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Синфҳо</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Объектҳо</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Нишонаҳо</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>ҳеҷ</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Ҳеҷ навъи додаҳо ба ҷустуҷӯ мувофиқ нест. Ҷустуҷӯро тоза кунед.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%shown аз %count навъи додаҳо нишон дода шудаанд</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Навъҳои додаҳои нишондодашуда: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Мураттаб кардан аз рӯи %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>%time шумурда шуд</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Ҳамаи навъҳои додаҳо</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Саҳифаи кумак</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Ин навъи додаҳо истифода мешавад, вале сабт нашудааст</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>То даме ки ҳеҷ васеъкунӣ навъи додаҳоро сабт накунад, объектҳои синфҳои зеринро нишон додан, таҳрир кардан ё нашр кардан мумкин нест. Васеъкунии онро фаъол кунед ва онро ба content.ini [DataTypeSettings] AvailableDataTypes[] илова кунед, ё синфҳоро тағйир диҳед.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini ин навъи додаҳоро номбар мекунад, вале ҳеҷ феҳристи навъҳои додаҳо файли онро надорад. Ҳеҷ чиз онро истифода намебарад; онро аз AvailableDataTypes[] хориҷ кунед ё васеъкунии онро фаъол кунед.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Дар бораи ин навъи додаҳо</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Муайянкунанда</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Ном</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Васеъкунии %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>ҳеҷ кас</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>Синфи PHP</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Файл</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>Дар AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ҳа</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>не</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Сутунҳои қимати он</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Сутунҳои танзимоти хосияти синфи он</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Ҷадвалҳо</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Сутунҳо ва ҷадвалҳо бо хондани коди навъи додаҳо ёфта мешаванд: ин роҳнамо аст, на ваъда.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Қолибҳо</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Дастрасии сомона</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Қолиб</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Ёфт шуд дар</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>ин маъмурият</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>сомонаи пешфарз</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Бе ивазкуниҳо: қолиби ивазкунандае, ки аз рӯи синф ё хосият мувофиқ аст, аз инҳо бартарӣ дорад.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Синфҳое, ки онро истифода мебаранд (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Ҳеҷ синф хосияти ин навъи додаҳоро надорад.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Синф</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Хосиятҳо</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Хосиятҳои синф (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Хосият</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Танзимот</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Ҳатмӣ</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Қобили ҷустуҷӯ</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Тарҷумашаванда</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Маълумот ҷамъ мекунад</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Баъзе мундариҷае, ки онро истифода мебарад</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Охирин тағйирёфта аввал</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Тағйирёфта</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Гиреҳи %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Ҳар тарҷума қимати худро дорад.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>Ҷустуҷӯ қиматҳои онро индекс мекунад.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Он метавонад аз меҳмонон маълумот ҷамъ кунад (шаклҳо).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Рӯйхатҳоро аз рӯи он мураттаб кардан мумкин аст: калиди тартиб %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Мураттабшаванда</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Қиматҳои он ба объектҳои дигар ишора мекунанд.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Алоқаҳо</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Онро аз сатри оддӣ пур кардан мумкин аст (воридот, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Аз матн</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Онро аз файл пур кардан мумкин аст.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Аз файл</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Танзимоти хосияти синфи он ба бастаҳо дохил мешавад.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Бастаҳо</translation>
     </message>
 </context>
 </TS>

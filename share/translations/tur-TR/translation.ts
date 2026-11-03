@@ -982,6 +982,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Yalnızca bu sayfada aranır: %count sınıftan %from - %to arası.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Çekirdeğin ve uzantıların her veri türü ve sınıfların ile içeriğin onu nasıl kullandığı.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Veri türleri</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15430,6 +15438,14 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
     <message>
         <source>Static publishing</source>
         <translation>Statik yayımlama</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Veri türleri</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Çekirdeğin ve uzantıların her veri türü ve sınıfların ile içeriğin onu nasıl kullandığı.</translation>
     </message>
 </context>
 <context>
@@ -55388,6 +55404,14 @@ o e-postadaki yönergeleri izleyin.</translation>
         <source>Copy of %class_name</source>
         <translation>%class_name kopyası</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Veri türleri</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Veri türü %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85033,6 +85057,397 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Bu e-posta, migration.ini [RemoteSettings] Notify[] bunu istediği için %site tarafından gönderildi.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Veri türleri (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>%time sayıldı, %minutes dakika sonra yeniden</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Veri türü, bir sınıf özniteliğinin tek bir değer türünü saklar ve düzenler: bir metin satırı, bir görsel, bir ilişki. Çoğunu çekirdek getirir, uzantılar daha fazlasını ekler. Burada hepsi, onları kimin sağladığı ve içeriğin ne kadarının kullandığı yer alıyor. Veritabanının kullandığı ama artık hiçbir şeyin kaydetmediği bir veri türü, onu içeren içeriği bozar.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Sınıf grupları</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Son dakikaların sayılarını kullanmak yerine şimdi yeniden say.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Yeniden say</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Genel bakış</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Kayıt tarihi</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>Kullanımda</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Kullanılmıyor</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Veri türü sağlayan uzantılar</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Sınıf öznitelikleri</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Nesne öznitelikleri</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Kayıtlı değil</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>Listelenmiş, dosya eksik</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count veri türü kullanılıyor ancak kayıtlı değil</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes sınıf özniteliği ve %object_attributes nesne özniteliği, hiçbir uzantının veya ayarın kaydetmediği bir veri türüne sahip. Bunların nesneleri gösterilemez, düzenlenemez veya yayımlanamaz. Veri türünü sağlayan uzantıyı etkinleştirin veya sınıfı değiştirin.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Yalnızca bunları göster</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Veri türü bul</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Tanımlayıcı, ad, PHP sınıfı veya uzantı.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Göster</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Tümü</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Sağlayan</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Herkes</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Çekirdek</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Bu filtreyle eşleşen veri türü yok.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Tümünü göster</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Uzantı</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%count veri türünden %shown, %used kullanımda</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>Veritabanında bu veri türlerinde sınıf veya nesne öznitelikleri var, ancak content.ini bunların hiçbirini listelemiyor ya da dosyası eksik.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>%provider veri türleri</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Veri türü</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>PHP sınıfı ve dosyası</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Sınıflar</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Nesneler</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Bayraklar</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>yok</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Aramayla eşleşen veri türü yok. Aramayı temizleyin.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%count veri türünden %shown tanesi gösteriliyor</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Gösterilen veri türleri: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Sırala: %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>%time sayıldı</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Tüm veri türleri</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Yardım sayfası</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Bu veri türü kullanılıyor ancak kayıtlı değil</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Hiçbir uzantı veri türünü kaydetmediği sürece aşağıdaki sınıfların nesneleri gösterilemez, düzenlenemez veya yayımlanamaz. Onu sağlayan uzantıyı etkinleştirip content.ini [DataTypeSettings] AvailableDataTypes[] içine ekleyin veya sınıfları değiştirin.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini bu veri türünü listeliyor, ancak hiçbir veri türü dizininde dosyası yok. Hiçbir şey onu kullanmıyor; AvailableDataTypes[] içinden kaldırın veya uzantısını etkinleştirin.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Bu veri türü hakkında</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Tanımlayıcı</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Ad</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>%name uzantısı</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>hiç kimse</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP sınıfı</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Dosya</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>AvailableDataTypes[] içinde</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>evet</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>hayır</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Değerinin sütunları</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Sınıf özniteliği ayarlarının sütunları</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Tablolar</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Sütunlar ve tablolar veri türünün kodu okunarak bulunur: bir rehberdir, garanti değildir.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Şablonlar</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Site erişimi</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Şablon</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Bulunduğu yer</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>bu yönetim</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>varsayılan site</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Geçersiz kılmalar hariç: sınıfa veya özniteliğe göre eşleşen bir geçersiz kılma şablonu bunlardan önce gelir.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Bunu kullanan sınıflar (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Hiçbir sınıfta bu veri türünde bir öznitelik yok.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Sınıf</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Öznitelikler</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Sınıf öznitelikleri (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Öznitelik</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Ayarlar</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>Kimlik %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Gerekli</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Aranabilir</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Çevrilebilir</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Bilgi toplar</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Bunu kullanan bazı içerikler</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Son değiştirilen önce</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Değiştirilme</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Düğüm %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Her çevirinin kendi değeri vardır.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>Arama değerlerini dizinler.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Ziyaretçilerden bilgi toplayabilir (formlar).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Listeler buna göre sıralanabilir: sıralama anahtarı %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Sıralanabilir</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Değerleri başka nesnelere işaret eder.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>İlişkiler</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Düz bir metinden doldurulabilir (içe aktarma, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Metinden</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Bir dosyadan doldurulabilir.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Dosyadan</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Sınıf özniteliği ayarları paketlere aktarılır.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Paketler</translation>
     </message>
 </context>
 </TS>

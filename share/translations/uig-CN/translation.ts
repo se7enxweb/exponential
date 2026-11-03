@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>پەقەت بۇ بەتتىلا ئىزدىنىدۇ: %count نىڭ ئىچىدە %from دىن %to غىچە.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>يادرو ۋە كېڭەيتىلمىلەرنىڭ ھەر بىر سانلىق مەلۇمات تىپى، شۇنداقلا تىپلار ۋە مەزمۇننىڭ ئۇنى قانداق ئىشلىتىدىغانلىقى.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>سانلىق مەلۇمات تىپلىرى</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Static publishing</source>
         <translation>ستاتىك ئېلان قىلىش</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>سانلىق مەلۇمات تىپلىرى</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>يادرو ۋە كېڭەيتىلمىلەرنىڭ ھەر بىر سانلىق مەلۇمات تىپى، شۇنداقلا تىپلار ۋە مەزمۇننىڭ ئۇنى قانداق ئىشلىتىدىغانلىقى.</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ your account.</source>
         <source>Copy of %class_name</source>
         <translation>%class_name نىڭ كۆچۈرمىسى</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>سانلىق مەلۇمات تىپلىرى</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>سانلىق مەلۇمات تىپى %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85028,6 +85052,397 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>بۇ خەتنى %site ئەۋەتتى، چۈنكى migration.ini [RemoteSettings] Notify[] شۇنى تەلەپ قىلىدۇ.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>سانلىق مەلۇمات تىپلىرى (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>%time سانالدى، %minutes مىنۇتتىن كېيىن قايتا</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>سانلىق مەلۇمات تىپى تىپ خاسلىقىنىڭ بىر خىل قىممىتىنى ساقلايدۇ ۋە تەھرىرلەيدۇ: بىر قۇر تېكىست، رەسىم، مۇناسىۋەت. كۆپىنچىسىنى يادرو بېرىدۇ، كېڭەيتىلمىلەر يەنە قوشىدۇ. بۇ يەردە ھەممىسى، ئۇلارنى كىم تەمىنلەيدىغانلىقى ۋە مەزمۇننىڭ قانچىلىكى ئىشلىتىدىغانلىقى بار. سانلىق مەلۇمات ئامبىرى ئىشلىتىدىغان، ئەمما ئەمدى ھېچنېمە تىزىملىمايدىغان سانلىق مەلۇمات تىپى ئۇنى ئۆز ئىچىگە ئالغان مەزمۇننى بۇزىدۇ.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>تىپ گۇرۇپپىلىرى</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>ئالدىنقى بىر نەچچە مىنۇتنىڭ سانلىرىنى ئىشلەتمەي، ھازىر قايتا ساناش.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>قايتا ساناش</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>ئومۇمىي كۆرۈنۈش</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>تىزىملاتقان</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>ئىشلىتىلىۋاتىدۇ</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>ئىشلىتىلمىدى</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>سانلىق مەلۇمات تىپى تەمىنلەيدىغان كېڭەيتىلمىلەر</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>تىپ خاسلىقلىرى</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>ئوبيېكت خاسلىقلىرى</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>تىزىملانمىغان</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>تىزىملىكتە بار، ھۆججەت يوق</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count سانلىق مەلۇمات تىپى ئىشلىتىلىۋاتىدۇ، ئەمما تىزىملانمىغان</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes تىپ خاسلىقى ۋە %object_attributes ئوبيېكت خاسلىقىنىڭ سانلىق مەلۇمات تىپىنى ھېچقانداق كېڭەيتىلمە ياكى تەڭشەك تىزىملىمىغان. ئۇلارنىڭ ئوبيېكتلىرىنى كۆرسىتىش، تەھرىرلەش ياكى ئېلان قىلىش مۇمكىن ئەمەس. سانلىق مەلۇمات تىپىنى تەمىنلەيدىغان كېڭەيتىلمىنى قوزغىتىڭ ياكى تىپنى ئۆزگەرتىڭ.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>پەقەت بۇلارنىلا كۆرسەت</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>سانلىق مەلۇمات تىپى ئىزدەش</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>بەلگە، ئىسىم، PHP تىپى ياكى كېڭەيتىلمە.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>كۆرسەت</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ھەممىسى</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>تەمىنلىگۈچى</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>ھەممەيلەن</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>يادرو</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>بۇ سۈزگۈچكە ماس كېلىدىغان سانلىق مەلۇمات تىپى يوق.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>ھەممىنى كۆرسەت</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>كېڭەيتىلمە</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%count سانلىق مەلۇمات تىپىدىن %shown، %used ئىشلىتىلىۋاتىدۇ</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>سانلىق مەلۇمات ئامبىرىدا بۇ سانلىق مەلۇمات تىپلىرىدىكى تىپ ياكى ئوبيېكت خاسلىقلىرى بار، ئەمما content.ini ئۇلارنىڭ ھېچبىرىنى كۆرسەتمەيدۇ، ياكى ئۇنىڭ ھۆججىتى يوق.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>%provider نىڭ سانلىق مەلۇمات تىپلىرى</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>سانلىق مەلۇمات تىپى</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>PHP تىپى ۋە ھۆججەت</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>تىپلار</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>ئوبيېكتلار</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>بەلگىلەر</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>يوق</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>ئىزدەشكە ماس كېلىدىغان سانلىق مەلۇمات تىپى يوق. ئىزدەشنى تازىلاڭ.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%count سانلىق مەلۇمات تىپىدىن %shown كۆرسىتىلدى</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>كۆرسىتىلگەن سانلىق مەلۇمات تىپلىرى: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>%column بويىچە تىزىڭ</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>%time سانالدى</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>بارلىق سانلىق مەلۇمات تىپلىرى</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>ياردەم بېتى</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>بۇ سانلىق مەلۇمات تىپى ئىشلىتىلىۋاتىدۇ، ئەمما تىزىملانمىغان</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>ھېچقانداق كېڭەيتىلمە سانلىق مەلۇمات تىپىنى تىزىملىمىغۇچە، تۆۋەندىكى تىپلارنىڭ ئوبيېكتلىرىنى كۆرسىتىش، تەھرىرلەش ياكى ئېلان قىلىش مۇمكىن ئەمەس. ئۇنى تەمىنلەيدىغان كېڭەيتىلمىنى قوزغىتىپ content.ini [DataTypeSettings] AvailableDataTypes[] غا قوشۇڭ، ياكى تىپلارنى ئۆزگەرتىڭ.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini بۇ سانلىق مەلۇمات تىپىنى كۆرسىتىدۇ، ئەمما ھېچقانداق سانلىق مەلۇمات تىپى مۇندەرىجىسىدە ئۇنىڭ ھۆججىتى يوق. ئۇنى ھېچنېمە ئىشلەتمەيدۇ؛ ئۇنى AvailableDataTypes[] دىن ئۆچۈرۈڭ ياكى ئۇنىڭ كېڭەيتىلمىسىنى قوزغىتىڭ.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>بۇ سانلىق مەلۇمات تىپى ھەققىدە</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>بەلگىلىگۈچ</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>ئىسىم</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>كېڭەيتىلمە %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>ھېچكىم</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP تىپى</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ھۆججەت</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>AvailableDataTypes[] دا</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ھەئە</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ياق</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>ئۇنىڭ قىممىتىنىڭ ستونلىرى</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>ئۇنىڭ تىپ خاسلىق تەڭشەكلىرىنىڭ ستونلىرى</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>جەدۋەللەر</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>ستون ۋە جەدۋەللەر سانلىق مەلۇمات تىپىنىڭ كودىنى ئوقۇش ئارقىلىق تېپىلىدۇ: بۇ يېتەكچى، كاپالەت ئەمەس.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>قېلىپلار</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>تور بېكەت زىيارىتى</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>قېلىپ</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>ئورنى</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>بۇ باشقۇرۇش</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>كۆڭۈلدىكى تور بېكەت</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>ئالماشتۇرۇشلارسىز: تىپ ياكى خاسلىق بويىچە ماس كەلگەن ئالماشتۇرۇش قېلىپى بۇلاردىن ئۈستۈن تۇرىدۇ.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>ئۇنى ئىشلىتىدىغان تىپلار (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>ھېچقانداق تىپتا بۇ سانلىق مەلۇمات تىپىدىكى خاسلىق يوق.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>تىپ</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>خاسلىقلار</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>تىپ خاسلىقلىرى (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>خاسلىق</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>تەڭشەكلەر</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>زۆرۈر</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>ئىزدىگىلى بولىدىغان</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>تەرجىمە قىلىنىدىغان</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>ئۇچۇر توپلايدۇ</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>ئۇنى ئىشلىتىدىغان بەزى مەزمۇنلار</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>ئەڭ ئاخىرقى ئۆزگەرتىلگىنى ئالدىدا</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>ئۆزگەرتىلگەن</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>تۈگۈن %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>ھەر بىر تەرجىمىنىڭ ئۆز قىممىتى بار.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>ئىزدەش ئۇنىڭ قىممەتلىرىنى ئىندېكسلايدۇ.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>ئۇ زىيارەتچىلەردىن ئۇچۇر توپلىيالايدۇ (جەدۋەللەر).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>تىزىملىكلەرنى ئۇنىڭ بويىچە تەرتىپلىگىلى بولىدۇ: تەرتىپ ئاچقۇچى %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>تىزىشقا بولىدىغان</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>ئۇنىڭ قىممەتلىرى باشقا ئوبيېكتلارنى كۆرسىتىدۇ.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>مۇناسىۋەتلەر</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>ئۇنى ئاددىي تېكىستتىن تولدۇرغىلى بولىدۇ (ئەكىرىش، REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>تېكىستتىن</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>ئۇنى ھۆججەتتىن تولدۇرغىلى بولىدۇ.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>ھۆججەتتىن</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>ئۇنىڭ تىپ خاسلىق تەڭشەكلىرى بوغچىلارغا كىرىدۇ.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>بوغچىلار</translation>
     </message>
 </context>
 </TS>

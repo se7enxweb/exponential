@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Na only dis page dem search: %from to %to of %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Every datatype of di kernel and di extensions, and how di classes and content dey use am.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Datatypes</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ Note: Dem no go uninstall di packages.</translation>
     <message>
         <source>Static publishing</source>
         <translation>Di static publishing</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Datatypes</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Every datatype of di kernel and di extensions, and how di classes and content dey use am.</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ your account.</translation>
         <source>Copy of %class_name</source>
         <translation>Copy of %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Datatypes</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Datatype %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85036,6 +85060,397 @@ You go need change di class of di node wit di swap functionality.</translation>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>%site send dis mail because migration.ini [RemoteSettings] Notify[] talk say make e send am.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Datatype dem (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>We count am %time, we go count again after %minutes minutes</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Datatype na di tin wey dey keep and edit one kain value for class attribute: text line, picture, relation. Di kernel bring most of dem, extensions dey add more. All of dem dey here, who dey provide dem and how much content dey use dem. If di database dey use one datatype but nothing register am again, e go spoil di content wey get am.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Class groups</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Count again now, no use di count of di last few minutes.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Count am again</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Overview</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Registered</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>Dem dey use am</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>No use</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Extensions wey dey provide datatypes</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Class attributes</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Object attributes</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Dem no register am</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>E dey for list, file no dey</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count datatypes dey in use but dem no register dem</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes class attributes and %object_attributes object attributes get datatype wey no extension or setting register. Dem no fit show, edit or publish their objects. Activate di extension wey provide di datatype, or change di class.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Show only dis ones</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Find datatype</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Identifier, name, PHP class or extension.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Show</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>All</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Who provide am</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Everyone</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Kernel</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>No datatype match dis filter.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Show all</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Extension</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown out of %count datatypes, %used dey in use</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>Di database get class or object attributes of dis datatypes, but content.ini no list any of dem, or their file no dey.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>Datatypes from %provider</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Datatype</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>PHP class and file</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Classes</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Objects</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Flags</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>nothing</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>No datatype match di search. Clear di search.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%shown out of %count datatypes dey show</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Datatypes wey dey show: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Sort by %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>We count am %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>All di datatypes</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Help page</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Dem dey use dis datatype but nobody register am</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Dem no fit show, edit or publish di objects of di classes wey dey below as long as no extension register di datatype. Activate di extension wey provide am and add am to content.ini [DataTypeSettings] AvailableDataTypes[], or change di classes.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini list dis datatype, but no datatype directory get im file. Nothing dey use am; remove am from AvailableDataTypes[] or activate im extension.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>About dis datatype</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Identifier</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Name</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Extension %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>nobody at all</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP class</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>File</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>Inside AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>yes</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>no</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Columns of im value</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Columns of im class attribute settings</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Tables</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>We find di columns and tables by reading di code of di datatype: na guide, no be promise.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Templates</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Template</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Wia dem find am</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>dis administration</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>default site wey dem set</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Without overrides: override template wey match by class or attribute go win over dis ones.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Classes wey dey use am (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>No class get attribute of dis datatype.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Class</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Attributes</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Class attributes (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Attribute</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Settings</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Required</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Fit search</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Translatable</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>E dey collect information</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Some content wey dey use am</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Di one wey dem change last go first</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Changed</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Node %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Each translation get im own value.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>Di search dey index im values.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>E fit collect information from visitors (forms).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>You fit sort lists by am: sort key %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Sortable</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Im values dey point to other objects.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Relations</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>You fit fill am from plain string (import, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>From text</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>You fit fill am from file.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>From file</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Im class attribute settings dey enter packages.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Packages</translation>
     </message>
 </context>
 </TS>

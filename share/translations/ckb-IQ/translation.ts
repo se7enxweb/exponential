@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>تەنها ئەم پەڕەیە دەگەڕێت: %from تا %to لە %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>هەموو جۆرێکی داتای ناوک و پێوەکراوەکان، و پۆل و ناوەڕۆک چۆن بەکاری دەهێنن.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>جۆرەکانی داتا</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Static publishing</source>
         <translation>بڵاوکردنەوەی چەسپاو</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>جۆرەکانی داتا</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>هەموو جۆرێکی داتای ناوک و پێوەکراوەکان، و پۆل و ناوەڕۆک چۆن بەکاری دەهێنن.</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ your account.</source>
         <source>Copy of %class_name</source>
         <translation>لەبەرگیراوەی %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>جۆرەکانی داتا</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>جۆری داتا %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85028,6 +85052,397 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>ئەم نامەیە لەلایەن %site نێردرا چونکە migration.ini [RemoteSettings] Notify[] داوای دەکات.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>جۆرەکانی داتا (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>ژمێردرا %time، دووبارە دوای %minutes خولەک</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>جۆری داتا یەک جۆر بەهای تایبەتمەندییەکی پۆل هەڵدەگرێت و دەستکاری دەکات: دێڕێکی دەق، وێنەیەک، پەیوەندییەک. ناوک زۆربەیان دەهێنێت، پێوەکراوەکان زیاتر زیاد دەکەن. لێرەدا هەموویان هەن، کێ دابینیان دەکات و چەندی ناوەڕۆک بەکاریان دەهێنێت. جۆری داتایەک کە بنکەدراوە بەکاری دەهێنێت بەڵام چیتر هیچ شتێک تۆماری ناکات، ئەو ناوەڕۆکە تێک دەدات کە هەیەتی.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>کۆمەڵەکانی پۆل</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>ئێستا دووبارە بژمێرە لە جیاتی بەکارهێنانی ژمارەکانی خولەکەکانی پێشوو.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>دووبارە بژمێرە</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>پوختە</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>تۆمارکراو</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>بەکاردێت</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>بەکارنەهاتووە</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>پێوەکراوەکانی دابینکەری جۆری داتا</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>تایبەتمەندییەکانی پۆل</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>تایبەتمەندییەکانی ئۆبجێکت</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>تۆمار نەکراوە</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>لە لیستدایە، پەڕگە نییە</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count جۆری داتا بەکاردێن بەڵام تۆمار نەکراون</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes تایبەتمەندیی پۆل و %object_attributes تایبەتمەندیی ئۆبجێکت جۆری داتایەکیان هەیە کە هیچ پێوەکراو یان ڕێکخستنێک تۆماری ناکات. ئۆبجێکتەکانیان ناتوانرێن پیشان بدرێن، دەستکاری بکرێن یان بڵاو بکرێنەوە. ئەو پێوەکراوە چالاک بکە کە جۆری داتاکە دابین دەکات، یان پۆلەکە بگۆڕە.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>تەنها ئەمانە پیشان بدە</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>جۆری داتا بدۆزەرەوە</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>ناسێنەر، ناو، پۆلی PHP یان پێوەکراو.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>پیشاندان</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>هەموو</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>دابینکراوە لەلایەن</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>هەمووان</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>ناوک</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>هیچ جۆری داتایەک لەگەڵ ئەم فلتەرە ناگونجێت.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>پیشاندانی هەمووی</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>پێوەکراو</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown لە %count جۆری داتا، %used لە بەکارهێناندا</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>بنکەدراوە تایبەتمەندیی پۆل یان ئۆبجێکتی ئەم جۆرانەی داتای تێدایە، بەڵام content.ini هیچیان لیست ناکات، یان پەڕگەکەیان نییە.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>جۆرەکانی داتای %provider</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>جۆری داتا</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>پۆلی PHP و پەڕگە</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>پۆلەکان</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>ئۆبجێکتەکان</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>ئاڵاکان</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>هیچ</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>هیچ جۆری داتایەک لەگەڵ گەڕانەکە ناگونجێت. گەڕانەکە پاک بکەرەوە.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%shown لە %count جۆری داتا پیشان دراون</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>جۆرە پیشاندراوەکانی داتا: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>ڕیزکردن بەپێی %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>ژمێردرا %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>هەموو جۆرەکانی داتا</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>پەڕەی یارمەتی</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>ئەم جۆری داتایە بەکاردێت بەڵام تۆمار نەکراوە</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>تا هیچ پێوەکراوێک جۆری داتاکە تۆمار نەکات، ئۆبجێکتەکانی ئەم پۆلانەی خوارەوە ناتوانرێن پیشان بدرێن، دەستکاری بکرێن یان بڵاو بکرێنەوە. ئەو پێوەکراوە چالاک بکە کە دابینی دەکات و زیادی بکە بۆ content.ini [DataTypeSettings] AvailableDataTypes[]، یان پۆلەکان بگۆڕە.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini ئەم جۆری داتایە لیست دەکات، بەڵام هیچ بوخچەیەکی جۆری داتا پەڕگەکەی تێدا نییە. هیچ شتێک بەکاری ناهێنێت؛ لە AvailableDataTypes[] لای ببە یان پێوەکراوەکەی چالاک بکە.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>دەربارەی ئەم جۆری داتایە</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>ناسێنەر</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>ناو</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>پێوەکراوی %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>هیچ کەس</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>پۆلی PHP</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>فایل</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>لە AvailableDataTypes[] دا</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>بەڵێ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>نەخێر</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>ستوونەکانی بەهاکەی</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>ستوونەکانی ڕێکخستنەکانی تایبەتمەندیی پۆلەکەی</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>خشتەکان</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>ستوون و خشتەکان بە خوێندنەوەی کۆدی جۆری داتاکە دۆزراونەتەوە: ڕێنماییە، نەک بەڵێن.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>قاڵبەکان</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>دەستگەیشتنی ماڵپەڕ</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>قاڵب</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>دۆزرایەوە لە</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>ئەم بەڕێوەبردنە</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>ماڵپەڕی بنەڕەت</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>بەبێ overrides: قاڵبێکی override کە بەپێی پۆل یان تایبەتمەندی دەگونجێت پێش ئەمانە دەکەوێت.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>ئەو پۆلانەی بەکاری دەهێنن (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>هیچ پۆلێک تایبەتمەندییەکی ئەم جۆری داتایەی نییە.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>پۆل</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>تایبەتمەندییەکان</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>تایبەتمەندییەکانی پۆل (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>تایبەتمەندی</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>ڕێکخستنەکان</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>پێویست</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>گەڕانپێکراو</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>وەرگێڕدراو</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>زانیاری کۆدەکاتەوە</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>هەندێک ناوەڕۆک کە بەکاری دەهێنێت</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>دوایین گۆڕدراو یەکەم</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>گۆڕدراو</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>گرێی %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>هەر وەرگێڕانێک بەهای خۆی هەیە.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>گەڕان بەهاکانی پێڕست دەکات.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>دەتوانێت زانیاری لە سەردانکەران کۆ بکاتەوە (فۆرمەکان).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>لیستەکان دەتوانرێن بەپێی ئەم ڕیز بکرێن: کلیلی ڕیزکردن %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>ڕیزکراو</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>بەهاکانی ئاماژە بۆ ئۆبجێکتی تر دەکەن.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>پەیوەندییەکان</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>دەتوانرێت لە دەقێکی سادە پڕ بکرێتەوە (هاوردە، REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>لە دەقەوە</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>دەتوانرێت لە پەڕگەیەکەوە پڕ بکرێتەوە.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>لە پەڕگەوە</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>ڕێکخستنەکانی تایبەتمەندیی پۆلەکەی دەچنە ناو پاکێجەکان.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>پاکێجەکان</translation>
     </message>
 </context>
 </TS>

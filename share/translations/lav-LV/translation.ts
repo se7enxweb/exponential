@@ -982,6 +982,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Tiek meklēts tikai šajā lapā: %from–%to no %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Visi kodola un paplašinājumu datu tipi, un kā klases un saturs tos izmanto.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Datu tipi</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15371,6 +15379,14 @@ Piezīme: pakotnes netiks atinstalētas.</translation>
     <message>
         <source>Static publishing</source>
         <translation>Statiskā publicēšana</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Datu tipi</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Visi kodola un paplašinājumu datu tipi, un kā klases un saturs tos izmanto.</translation>
     </message>
 </context>
 <context>
@@ -55329,6 +55345,14 @@ tajā sniegtos norādījumus.</translation>
         <source>Copy of %class_name</source>
         <translation>Kopija: %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Datu tipi</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Datu tips %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85058,6 +85082,397 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Šo vēstuli nosūtīja %site, jo to pieprasa migration.ini [RemoteSettings] Notify[].</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Datu tipi (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>Saskaitīts %time, atkārtoti pēc %minutes minūtēm</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Datu tips glabā un rediģē viena veida klases atribūta vērtību: teksta rindu, attēlu, relāciju. Lielāko daļu nodrošina kodols, paplašinājumi pievieno vēl. Šeit ir visi datu tipi, kas tos nodrošina un cik daudz satura tos izmanto. Datu tips, ko datubāze izmanto, bet neviens vairs nereģistrē, sabojā saturu, kurā tas ir.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Klašu grupas</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Saskaitīt atkārtoti tagad, nevis izmantot pēdējo minūšu skaitus.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Saskaitīt atkārtoti</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Pārskats</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Reģistrēts</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>Tiek izmantota</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Netiek izmantots</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Paplašinājumi, kas nodrošina datu tipus</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Klases atribūti</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Objekta atribūti</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Nav reģistrēts</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>Sarakstā, fails trūkst</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count datu tipi tiek izmantoti, bet nav reģistrēti</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes klases atribūtiem un %object_attributes objekta atribūtiem ir datu tips, ko nereģistrē neviens paplašinājums vai iestatījums. To objektus nevar parādīt, rediģēt vai publicēt. Aktivizējiet paplašinājumu, kas nodrošina datu tipu, vai mainiet klasi.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Rādīt tikai šos</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Meklēt datu tipu</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Identifikators, nosaukums, PHP klase vai paplašinājums.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Rādīt</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Visi</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Nodrošina</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Visi</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Kodols</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Neviens datu tips neatbilst šim filtram.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Rādīt visu</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Paplašinājums</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown no %count datu tipiem, %used tiek izmantoti</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>Datubāzē ir šo datu tipu klašu vai objektu atribūti, bet content.ini neviens no tiem nav uzskaitīts, vai tā fails trūkst.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>%provider datu tipi</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Datu tips</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>PHP klase un fails</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Klases</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Objekti</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Karodziņi</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>nav</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Neviens datu tips neatbilst meklēšanai. Notīriet meklēšanu.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>Parādīti %shown no %count datu tipiem</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Parādītie datu tipi: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Kārtot pēc kolonnas %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>Saskaitīts %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Visi datu tipi</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Palīdzības lapa</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Šis datu tips tiek izmantots, bet nav reģistrēts</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Tālāk norādīto klašu objektus nevar parādīt, rediģēt vai publicēt, kamēr neviens paplašinājums nereģistrē šo datu tipu. Aktivizējiet paplašinājumu, kas to nodrošina, un pievienojiet to content.ini [DataTypeSettings] AvailableDataTypes[], vai mainiet klases.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini uzskaita šo datu tipu, bet nevienā datu tipu direktorijā nav tā faila. To neviens neizmanto; noņemiet to no AvailableDataTypes[] vai aktivizējiet tā paplašinājumu.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Par šo datu tipu</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Identifikators</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nosaukums</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Paplašinājums %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>neviens</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP klase</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fails</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>Ir AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>jā</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nē</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Vērtības kolonnas</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Klases atribūta iestatījumu kolonnas</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Tabulas</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Kolonnas un tabulas ir atrastas, lasot datu tipa kodu: norāde, nevis garantija.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Veidnes</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Vietnes piekļuve</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Veidne</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Atrasts</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>šī administrācija</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>noklusējuma vietne</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Bez pārrakstījumiem: pārrakstīšanas veidne, kas atbilst klasei vai atribūtam, ir prioritāra pār šīm.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Klases, kas to izmanto (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Nevienai klasei nav šī datu tipa atribūta.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klase</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Atribūti</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Klases atribūti (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Atribūts</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Iestatījumi</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Obligāts</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Meklējams</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Tulkojams</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Vāc informāciju</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Daļa satura, kas to izmanto</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Pēdējie mainītie vispirms</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Modificēts</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Mezgls %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Katram tulkojumam ir sava vērtība.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>Meklēšana indeksē tā vērtības.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Tas var vākt informāciju no apmeklētājiem (veidlapas).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Sarakstus var kārtot pēc tā: kārtošanas atslēga %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Kārtojams</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Tā vērtības norāda uz citiem objektiem.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Relācijas</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>To var aizpildīt no vienkāršas virknes (imports, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>No teksta</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>To var aizpildīt no faila.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>No faila</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Tā klases atribūta iestatījumi tiek iekļauti pakotnēs.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Pakotnes</translation>
     </message>
 </context>
 </TS>

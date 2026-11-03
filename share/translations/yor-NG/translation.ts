@@ -982,6 +982,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Ojú ìwé yìí nìkan ni a wá: %from sí %to nínú %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Gbogbo irú dátà ti kẹ̀rnẹ́ẹ̀lì àti àwọn àfikún, àti bí àwọn kíláàsì àti àkóónú ṣe ń lò ó.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Àwọn irú dátà</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15430,6 +15438,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Static publishing</source>
         <translation>Ìtẹ̀jáde aláìyípadà</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Àwọn irú dátà</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Gbogbo irú dátà ti kẹ̀rnẹ́ẹ̀lì àti àwọn àfikún, àti bí àwọn kíláàsì àti àkóónú ṣe ń lò ó.</translation>
     </message>
 </context>
 <context>
@@ -55388,6 +55404,14 @@ your account.</source>
         <source>Copy of %class_name</source>
         <translation>Ẹ̀dà %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Àwọn irú dátà</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Irú dátà %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85026,6 +85050,397 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>%site ló fi lẹ́tà yìí ránṣẹ́ nítorí pé migration.ini [RemoteSettings] Notify[] béèrè fún un.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Irú dátà (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>A kà á ní %time, a ó tún kà á lẹ́yìn ìṣẹ́jú %minutes</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Irú dátà kan ń tọ́jú, ó sì ń ṣàtúnṣe irú iye kan ti ìhùwà kíláàsì: ìlà ọ̀rọ̀ kan, àwòrán kan, ìbáṣepọ̀ kan. Kẹ̀rnẹ́ẹ̀lì ló ń mú èyí tó pọ̀ jù wá, àwọn àfikún ń fi òmíràn kún un. Gbogbo wọn nìyí, ẹni tí ó ń pèsè wọn àti iye àkóónú tí ó ń lò wọ́n. Irú dátà tí ibi ìpamọ́ dátà ń lò ṣùgbọ́n tí kò sí ohun tí ó ń forúkọ rẹ̀ sílẹ̀ mọ́ máa ń ba àkóónú tí ó ní in jẹ́.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Àwọn ẹgbẹ́ kíláàsì</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Kà á lẹ́ẹ̀kan sí i báyìí dípò lílo iye tí a kà ní ìṣẹ́jú díẹ̀ sẹ́yìn.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Kà á lẹ́ẹ̀kan sí i</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Àkópọ̀</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Ti forúkọ sílẹ̀</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>Ń lò ó</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>A kò lò ó</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Àwọn àfikún tí ó ń pèsè irú dátà</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Àwọn ìhùwà kíláàsì</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Àwọn ìhùwà ohun</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>A kò forúkọ rẹ̀ sílẹ̀</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>Wà nínú àkójọ, fáìlì kò sí</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>Irú dátà %count ni a ń lò ṣùgbọ́n a kò forúkọ wọn sílẹ̀</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>Àwọn ìhùwà kíláàsì %class_attributes àti àwọn ìhùwà ohun %object_attributes ní irú dátà tí kò sí àfikún tàbí ètò kankan tí ó forúkọ rẹ̀ sílẹ̀. A kò lè fi àwọn ohun wọn hàn, ṣàtúnṣe wọn tàbí tẹ̀ wọ́n jáde. Mú àfikún tí ó pèsè irú dátà náà ṣiṣẹ́, tàbí yí kíláàsì náà padà.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Fi àwọn wọ̀nyí nìkan hàn</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Wá irú dátà kan</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Ìdánimọ̀, orúkọ, kíláàsì PHP tàbí àfikún.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Fihàn</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Gbogbo</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Ẹni tí ó pèsè</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Gbogbo èèyàn</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Kẹ̀rnẹ́ẹ̀lì</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Kò sí irú dátà tí ó bá àlẹ̀mọ́ yìí mu.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Fihàn gbogbo rẹ̀</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Àfikún</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown nínú irú dátà %count, %used ni a ń lò</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>Ibi ìpamọ́ dátà ní àwọn ìhùwà kíláàsì tàbí ohun ti àwọn irú dátà wọ̀nyí, ṣùgbọ́n content.ini kò ṣe àkójọ èyíkéyìí nínú wọn, tàbí fáìlì rẹ̀ kò sí.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>Irú dátà ti %provider</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Irú dátà</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>Kíláàsì PHP àti fáìlì</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Àwọn kíláàsì</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Àwọn ohun èlò</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Àwọn àmì</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>kò sí</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Kò sí irú dátà tí ó bá ìwádìí mu. Pa ìwádìí rẹ́.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>A fi %shown hàn nínú irú dátà %count</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Irú dátà tí a fi hàn: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Tò nípasẹ̀ %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>A kà á ní %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Gbogbo irú dátà</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Ojú-ìwé ìrànlọ́wọ́</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>A ń lo irú dátà yìí ṣùgbọ́n a kò forúkọ rẹ̀ sílẹ̀</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>A kò lè fi àwọn ohun ti àwọn kíláàsì ìsàlẹ̀ yìí hàn, ṣàtúnṣe wọn tàbí tẹ̀ wọ́n jáde níwọ̀n ìgbà tí kò sí àfikún tí ó forúkọ irú dátà náà sílẹ̀. Mú àfikún tí ó pèsè rẹ̀ ṣiṣẹ́ kí o sì fi kún content.ini [DataTypeSettings] AvailableDataTypes[], tàbí yí àwọn kíláàsì náà padà.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini ṣe àkójọ irú dátà yìí, ṣùgbọ́n kò sí àpò-ìwé irú dátà tí ó ní fáìlì rẹ̀. Kò sí ohun tí ó ń lò ó; yọ ọ́ kúrò nínú AvailableDataTypes[] tàbí mú àfikún rẹ̀ ṣiṣẹ́.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Nípa irú dátà yìí</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Atọ́ka ìdánimọ̀</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Orúkọ</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Àfikún %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>kò sí ẹnikẹ́ni</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>Kíláàsì PHP</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fáìlì</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>Nínú AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>bẹ́ẹ̀ ni</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>rárá</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Àwọn ọwọ̀n iye rẹ̀</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Àwọn ọwọ̀n ètò ìhùwà kíláàsì rẹ̀</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Àwọn tábìlì</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>A ń rí àwọn ọwọ̀n àti tábìlì nípa kíka kóòdù irú dátà náà: ìtọ́sọ́nà ni, kì í ṣe ìlérí.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Àwọn àwòṣe</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Ìwọlé sáìtì</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Àpẹẹrẹ</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>A rí i nínú</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>ìṣàkóso yìí</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>sáìtì àkọ́kọ́</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Láìsí àwọn ìfirọ́pò: àpẹẹrẹ ìfirọ́pò tí ó bá kíláàsì tàbí ìhùwà mu ló borí àwọn wọ̀nyí.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Àwọn kíláàsì tí ó ń lò ó (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Kò sí kíláàsì tí ó ní ìhùwà irú dátà yìí.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Kíláàsì</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Àwọn ìhùwà</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Àwọn ìhùwà kíláàsì (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Ìhùwà</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Ètò</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Ó pọn dandan</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Ó ṣeé wá</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Ó ṣeé túmọ̀</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Ó ń gba ìwífún</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Àwọn àkóónú díẹ̀ tí ó ń lò ó</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Èyí tí a yípadà kẹ́yìn ní àkọ́kọ́</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Ti yípadà</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Ọ̀pá ìsopọ̀ %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Ìtumọ̀ kọ̀ọ̀kan ní iye tirẹ̀.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>Ìwádìí máa ń ṣe atọ́ka àwọn iye rẹ̀.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Ó lè kó ìwífún jọ láti ọ̀dọ̀ àwọn àlejò (fọ́ọ̀mù).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>A lè to àwọn àkójọ lẹ́sẹẹsẹ pẹ̀lú rẹ̀: kọ́kọ́rọ́ ètò %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Ó ṣe é tò lẹ́sẹẹsẹ</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Àwọn iye rẹ̀ ń tọ́ka sí àwọn ohun mìíràn.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Àwọn ìbáṣepọ̀</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>A lè kún un láti ọ̀rọ̀ lásán (gbígbé wọlé, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Láti ọ̀rọ̀</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>A lè kún un láti fáìlì.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Láti fáìlì</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Àwọn ètò ìhùwà kíláàsì rẹ̀ máa ń wọ inú àwọn àpò.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Àwọn Àpò</translation>
     </message>
 </context>
 </TS>

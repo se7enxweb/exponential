@@ -982,6 +982,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>یوازې دغه پاڼه لټول کېږي: %from تر %to له %count څخه.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>د کرنل او غځونو هر د ډېټا ډول، او کلاسونه او منځپانګه یې څنګه کاروي.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>د ډېټا ډولونه</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15430,6 +15438,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Static publishing</source>
         <translation>ثابته خپرونه</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>د ډېټا ډولونه</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>د کرنل او غځونو هر د ډېټا ډول، او کلاسونه او منځپانګه یې څنګه کاروي.</translation>
     </message>
 </context>
 <context>
@@ -55388,6 +55404,14 @@ your account.</source>
         <source>Copy of %class_name</source>
         <translation>د %class_name کاپي</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>د ډېټا ډولونه</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>د ډېټا ډول %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85026,6 +85050,397 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>دا برېښلیک %site لېږلی دی، ځکه چې migration.ini [RemoteSettings] Notify[] یې غوښتنه کوي.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>د ډېټا ډولونه (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>په %time وشمېرل شول، له %minutes دقیقو وروسته بیا</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>د ډېټا ډول د کلاس د ځانګړنې یو ډول ارزښت ساتي او سموي: د متن یوه کرښه، یو انځور، یوه اړیکه. ډېری یې کرنل راوړي، غځونې نور ورزیاتوي. دلته ټول دي، څوک یې برابروي او څومره منځپانګه یې کاروي. هغه د ډېټا ډول چې ډېټابیس یې کاروي خو نور یې هیڅ شی نه ثبتوي، هغه منځپانګه ماتوي چې دا لري.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>د کلاسونو ډلې</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>د تېرو دقیقو د شمېرو پر ځای همدا اوس بیا وشمېره.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>بیا وشمېره</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>عمومي کتنه</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>نوم لیکل شوی</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>کارول کېږي</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>نه دی کارول شوی</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>هغه غځونې چې د ډېټا ډولونه برابروي</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>د کلاس ځانګړنې</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>د څیز ځانګړنې</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>نه دی ثبت شوی</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>په لېست کې، دوتنه نشته</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count د ډېټا ډولونه کارول کېږي خو ثبت شوي نه دي</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes د کلاس ځانګړنې او %object_attributes د څیز ځانګړنې داسې د ډېټا ډول لري چې هیڅ غځونه یا امستنه یې نه ثبتوي. د دوی څیزونه نه ښودل کېدای، نه سمېدای او نه خپرېدای شي. هغه غځونه فعاله کړئ چې د ډېټا ډول برابروي، یا کلاس بدل کړئ.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>یوازې دا وښایه</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>د ډېټا ډول ولټوه</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>پېژند، نوم، PHP کلاس یا غځونه.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ښودل</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ټول</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>برابروونکی</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>هرڅوک</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>کرنل</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>هیڅ د ډېټا ډول له دې چاڼ سره سمون نه خوري.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>ټول ښودل</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>غځونه</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>له %count د ډېټا ډولونو %shown، %used کارېږي</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>ډېټابیس د دې ډېټا ډولونو د کلاس یا څیز ځانګړنې لري، خو content.ini یو هم نه لېست کوي، یا یې دوتنه نشته.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>د %provider د ډېټا ډولونه</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>د ډېټا ډول</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>PHP کلاس او دوتنه</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>کلاسونه</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>څیزونه</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>نښانونه</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>هېڅ</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>هیڅ د ډېټا ډول له لټون سره سمون نه خوري. لټون پاک کړئ.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>له %count د ډېټا ډولونو %shown ښودل شوي</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>ښودل شوي د ډېټا ډولونه: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>د %column له مخې اوډل</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>په %time وشمېرل شول</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>ټول د ډېټا ډولونه</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>د مرستې پاڼه</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>دا د ډېټا ډول کارېږي خو ثبت شوی نه دی</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>تر هغه چې هیڅ غځونه دا د ډېټا ډول نه ثبتوي، د لاندې کلاسونو څیزونه نه ښودل کېدای، نه سمېدای او نه خپرېدای شي. هغه غځونه فعاله کړئ چې دا برابروي او content.ini [DataTypeSettings] AvailableDataTypes[] ته یې ور زیات کړئ، یا کلاسونه بدل کړئ.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini دا د ډېټا ډول لېست کوي، خو د ډېټا ډول په هیڅ پوښۍ کې یې دوتنه نشته. هیڅ شی یې نه کاروي؛ له AvailableDataTypes[] څخه یې لرې کړئ یا یې غځونه فعاله کړئ.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>د دې ډېټا ډول په اړه</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>پېژندونکی</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>نوم</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>غځونه %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>هیڅوک</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP کلاس</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>دوتنه</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>په AvailableDataTypes[] کې</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>هو</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>نه</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>د ارزښت یې ستنې</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>د کلاس ځانګړنې د امستنو یې ستنې</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>جدولونه</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>ستنې او جدولونه د ډېټا ډول د کوډ په لوستلو موندل کېږي: لارښود، نه ژمنه.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>کېنډۍ</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>د سایټ لاسرسی</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>کېنډۍ</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>موندل شوی په</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>دا اداره</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>تلواله سایټ</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>له override پرته: هغه override کېنډۍ چې د کلاس یا ځانګړنې له مخې سمون خوري، پر دې غوره ده.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>هغه کلاسونه چې دا کاروي (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>هیڅ کلاس د دې ډېټا ډول ځانګړنه نه لري.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>کلاس</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>ځانګړنې</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>د کلاس ځانګړنې (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>ځانګړنه</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>امستنې</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>پېژند %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>اړین</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>د لټون وړ</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>د ژباړې وړ</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>معلومات راټولوي</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>ځینې منځپانګه چې دا کاروي</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>وروستي بدل شوي لومړی</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>بدل شوی</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>غوټه %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>هره ژباړه خپل ارزښت لري.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>لټون یې ارزښتونه فهرست کوي.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>دا کولی شي له لیدونکو معلومات راټول کړي (فورمې).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>لېستونه یې پر بنسټ ترتیبېدای شي: د ترتیب کیلي %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>د اوډلو وړ</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>ارزښتونه یې نورو څیزونو ته اشاره کوي.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>اړیکې</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>له ساده متن څخه ډکېدای شي (واردول، REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>له متن څخه</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>له دوتنې څخه ډکېدای شي.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>له دوتنې څخه</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>د کلاس ځانګړنې امستنې یې په کڅوړو کې ځي.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>بستې</translation>
     </message>
 </context>
 </TS>

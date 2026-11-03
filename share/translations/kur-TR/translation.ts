@@ -982,6 +982,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Tenê li vê rûpelê tê lêgerîn: %from heta %to ji %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Hemû cureyên daneyê yên Kernel û pêvekan, û çîn û naverok çawa wan bi kar tînin.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Cureyên daneyê</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15430,6 +15438,14 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
     <message>
         <source>Static publishing</source>
         <translation>Weşandina statîk</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Cureyên daneyê</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Hemû cureyên daneyê yên Kernel û pêvekan, û çîn û naverok çawa wan bi kar tînin.</translation>
     </message>
 </context>
 <context>
@@ -55388,6 +55404,14 @@ bişopînin.</translation>
         <source>Copy of %class_name</source>
         <translation>Kopiya %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Cureyên daneyê</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Cureyê daneyê %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85026,6 +85050,397 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Ev e-name ji aliyê %site ve hat şandin ji ber ku migration.ini [RemoteSettings] Notify[] wê dixwaze.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Cureyên daneyê (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>Di %time de hate jimartin, piştî %minutes deqîqeyan dîsa</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Cureyekî daneyê celebek nirxê taybetmendiyeke çînê tomar dike û sererast dike: rêzeke nivîsê, wêneyek, têkiliyek. Piraniya wan ji Kernel tên, pêvek yên din lê zêde dikin. Li vir hemû hene, kî wan pêşkêş dike û çiqas naverok wan bi kar tîne. Cureyekî daneyê ku databas bi kar tîne lê êdî tiştek qeyd nake, naveroka ku wî heye xera dike.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Komên çînan</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Niha dîsa bijmêre li şûna jimartinên van çend deqîqeyên dawî.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Dîsa bijmêre</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Nêrîna giştî</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Tomarkirî</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>Tê bikaranîn</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Nehatiye bikaranîn</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Pêvekên ku cureyên daneyê pêşkêş dikin</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Taybetmendiyên çînê</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Taybetmendiyên heyberê</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Qeydkirî nîne</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>Di lîsteyê de ye, pel tune</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count cureyên daneyê tên bikaranîn lê qeydkirî nînin</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes taybetmendiyên çînê û %object_attributes taybetmendiyên heyberê xwedî cureyekî daneyê ne ku tu pêvek an mîheng qeyd nake. Heyberên wan nayên nîşandan, sererastkirin an weşandin. Pêveka ku cureyê daneyê pêşkêş dike çalak bike, an çînê biguherîne.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Tenê van nîşan bide</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Cureyekî daneyê bibîne</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Nasname, nav, çîna PHP an pêvek.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Nîşandan</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Hemû</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Pêşkêşkirî ji aliyê</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Her kes</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Kernel</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Tu cureyê daneyê bi vê parzûnê re li hev nayê.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Hemûyan nîşan dan</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Pêvek</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown ji %count cureyên daneyê, %used têne bikaranîn</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>Di databasê de taybetmendiyên çîn an heyberan ên van cureyên daneyê hene, lê content.ini tu yekê ji wan rêz nake, an pela wê tune ye.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>Cureyên daneyê yên %provider</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Cureyê daneyê</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>Çîn û pela PHP</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Çîn</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Heyber</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Nîşane</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>tune</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Tu cureyê daneyê bi lêgerînê re li hev nayê. Lêgerînê paqij bike.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%shown ji %count cureyên daneyê têne nîşandan</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Cureyên daneyê yên nîşandayî: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Li gorî %column rêzkirin</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>Di %time de hate jimartin</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Hemû cureyên daneyê</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Rûpela alîkariyê</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Ev cureyê daneyê tê bikaranîn lê qeydkirî nîne</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Heta ku tu pêvek cureyê daneyê qeyd neke, heyberên çînên jêrîn nayên nîşandan, sererastkirin an weşandin. Pêveka ku wî pêşkêş dike çalak bike û wî li content.ini [DataTypeSettings] AvailableDataTypes[] zêde bike, an çînan biguherîne.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini vî cureyê daneyê rêz dike, lê di tu peldanka cureyên daneyê de pela wî tune ye. Tiştek wî bi kar nayîne; wî ji AvailableDataTypes[] rake an pêveka wî çalak bike.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Derbarê vî cureyê daneyê de</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Nasker</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nav</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Pêveka %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>kes</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>Çîna PHP</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Pel</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>Di AvailableDataTypes[] de</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>erê</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>na</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Stûnên nirxa wî</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Stûnên mîhengên taybetmendiya çînê</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Tablo</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Stûn û tablo bi xwendina koda cureyê daneyê hatin dîtin: rêber e, ne soz e.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Şablon</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Gihîştina malperê</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Şablon</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Hate dîtin di</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>ev rêveberî</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>malpera standard</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Bê serdestkirin: şablonek serdestkirinê ku li gorî çîn an taybetmendiyê li hev tê, ji van pêştir e.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Çînên ku wî bi kar tînin (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Tu çîn xwedî taybetmendiyeke vî cureyê daneyê nîne.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Çîn</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Taybetmendî</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Taybetmendiyên çînê (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Taybetmendî</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Mîheng</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Pêwîst</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Lêgerbar</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Wergerbar</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Agahiyan berhev dike</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Hin naverokên ku wî bi kar tînin</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Ya herî dawî hatî guhertin pêşî</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Dîroka guhertinê</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Girêk %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Her werger xwedî nirxa xwe ye.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>Lêgerîn nirxên wî îndeks dike.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Dikare agahiyan ji serdanvanan berhev bike (form).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Lîste dikarin li gorî wî bên rêzkirin: mifteya rêzkirinê %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Rêzkirinbar</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Nirxên wî nîşanî heyberên din didin.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Têkilî</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Dikare ji rêzeke nivîsê ya sade bê dagirtin (import, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Ji nivîsê</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Dikare ji pelekê bê dagirtin.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Ji pelê</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Mîhengên taybetmendiya çînê dikevin nav pakêtan.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Pakêt</translation>
     </message>
 </context>
 </TS>

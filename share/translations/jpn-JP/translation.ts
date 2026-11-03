@@ -982,6 +982,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>検索対象はこのページのみです: %count 件中 %from - %to 件。</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>カーネルと拡張機能のすべてのデータ型と、クラスやコンテンツでの使われ方。</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>データ型</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15371,6 +15379,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Static publishing</source>
         <translation>静的公開</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>データ型</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>カーネルと拡張機能のすべてのデータ型と、クラスやコンテンツでの使われ方。</translation>
     </message>
 </context>
 <context>
@@ -55329,6 +55345,14 @@ your account.</source>
         <source>Copy of %class_name</source>
         <translation>%class_name のコピー</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>データ型</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>データ型 %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85058,6 +85082,397 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>このメールは migration.ini [RemoteSettings] Notify[] の設定により %site から送信されました。</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>データ型 (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>%time に集計、%minutes 分後に再集計</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>データ型は、クラス属性の値の種類(テキスト行、画像、関連など)を1つ保存・編集します。ほとんどはカーネルが提供し、拡張機能がさらに追加します。ここではすべてのデータ型と、その提供元、コンテンツでの使用量を表示します。データベースで使われているのにどこにも登録されていないデータ型があると、それを持つコンテンツは壊れます。</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>クラスグループ</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>直近数分の集計を使わずに、今すぐ再集計します。</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>再集計</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>概要</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>登録日時</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>使用中</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>未使用</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>データ型を提供する拡張機能</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>クラス属性</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>オブジェクトの属性</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>未登録</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>登録済み、ファイルなし</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count 個のデータ型が使用されていますが、登録されていません</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes 個のクラス属性と %object_attributes 個のオブジェクト属性が、どの拡張機能や設定にも登録されていないデータ型を持っています。そのオブジェクトは表示・編集・公開できません。データ型を提供する拡張機能を有効にするか、クラスを変更してください。</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>これらのみ表示</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>データ型を検索</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>識別子、名前、PHP クラス、または拡張機能。</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>表示</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>すべて</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>提供元</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>すべてのユーザー</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>カーネル</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>このフィルターに一致するデータ型はありません。</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>すべて表示</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>拡張機能</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%count 個中 %shown 個のデータ型、%used 個が使用中</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>データベースにはこれらのデータ型のクラス属性またはオブジェクト属性がありますが、content.ini にはどれも記載されていないか、そのファイルがありません。</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>%provider のデータ型</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>データ型</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>PHP クラスとファイル</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>クラス</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>オブジェクト数</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>フラグ</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>なし</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>検索に一致するデータ型はありません。検索をクリアしてください。</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%count 個中 %shown 個のデータ型を表示</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>表示中のデータ型: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>%column で並べ替え</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>%time に集計</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>すべてのデータ型</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>ヘルプページ</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>このデータ型は使用されていますが、登録されていません</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>どの拡張機能もこのデータ型を登録していない間は、以下のクラスのオブジェクトを表示・編集・公開できません。提供する拡張機能を有効にして content.ini [DataTypeSettings] AvailableDataTypes[] に追加するか、クラスを変更してください。</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini にはこのデータ型が記載されていますが、どのデータ型ディレクトリにもそのファイルがありません。使用されていないので、AvailableDataTypes[] から削除するか、その拡張機能を有効にしてください。</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>このデータ型について</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>識別子</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>名前</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>拡張機能 %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>なし</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHPクラス</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ファイル</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>AvailableDataTypes[] に記載</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>はい</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>いいえ</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>値の列</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>クラス属性設定の列</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>テーブル</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>列とテーブルはデータ型のコードを読み取って求めたもので、目安であり保証ではありません。</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>テンプレート</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>サイトアクセス</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>テンプレート</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>検出場所</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>この管理画面</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>デフォルトサイト</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>オーバーライドなし: クラスまたは属性で一致するオーバーライドテンプレートがこれらより優先されます。</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>使用しているクラス (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>このデータ型の属性を持つクラスはありません。</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>クラス</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>属性</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>クラス属性 (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>属性</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>設定</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>必須</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>検索対象</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>翻訳可能</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>情報を収集する</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>使用しているコンテンツの一部</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>最終更新順</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>更新日時</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>ノード %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>翻訳ごとに個別の値を持ちます。</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>検索で値がインデックスされます。</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>訪問者から情報を収集できます(フォーム)。</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>リストをこれで並べ替えられます: ソートキー %type。</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>並べ替え可能</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>値は他のオブジェクトを参照します。</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>関連</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>プレーンな文字列から値を設定できます(インポート、REST)。</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>テキストから</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>ファイルから値を設定できます。</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>ファイルから</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>クラス属性の設定はパッケージに含まれます。</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>パッケージ</translation>
     </message>
 </context>
 </TS>

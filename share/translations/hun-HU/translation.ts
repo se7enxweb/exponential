@@ -982,6 +982,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Csak ez az oldal kerül keresésre: %from–%to / %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>A kernel és a bővítmények minden adattípusa, és hogyan használják az osztályok és a tartalom.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Adattípusok</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15371,6 +15379,14 @@ Megjegyzés: a csomagok telepítése nem lesz visszavonva.</translation>
     <message>
         <source>Static publishing</source>
         <translation>Statikus közzététel</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Adattípusok</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>A kernel és a bővítmények minden adattípusa, és hogyan használják az osztályok és a tartalom.</translation>
     </message>
 </context>
 <context>
@@ -55329,6 +55345,14 @@ a fiókja aktiválásához.</translation>
         <source>Copy of %class_name</source>
         <translation>Másolat – %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Adattípusok</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>%string adattípus</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85058,6 +85082,397 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Ezt a levelet a(z) %site küldte, mert a migration.ini [RemoteSettings] Notify[] ezt kéri.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Adattípusok (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>Megszámolva: %time, újra %minutes perc múlva</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Egy adattípus egy osztályattribútum egyféle értékét tárolja és szerkeszti: egy szövegsort, egy képet, egy kapcsolatot. A legtöbbet a kernel adja, a bővítmények továbbiakat adnak hozzá. Itt látható mindegyik, ki biztosítja őket, és a tartalom mekkora része használja őket. Az az adattípus, amelyet az adatbázis használ, de már semmi sem regisztrál, tönkreteszi az azt tartalmazó tartalmat.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Osztálycsoportok</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Újraszámolás most az elmúlt percek számai helyett.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Újraszámolás</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Áttekintés</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Regisztrálva</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>Használatban</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Nincs használatban</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Adattípusokat biztosító bővítmények</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Osztályattribútumok</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Objektumattribútumok</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Nincs regisztrálva</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>Felsorolva, a fájl hiányzik</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count adattípus használatban van, de nincs regisztrálva</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes osztályattribútum és %object_attributes objektumattribútum olyan adattípusú, amelyet egyetlen bővítmény vagy beállítás sem regisztrál. Az objektumaik nem jeleníthetők meg, nem szerkeszthetők és nem tehetők közzé. Aktiválja az adattípust biztosító bővítményt, vagy módosítsa az osztályt.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Csak ezek megjelenítése</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Adattípus keresése</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Azonosító, név, PHP-osztály vagy bővítmény.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Megjelenítés</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Összes</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Biztosítja</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Mindenki</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Kernel</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Egyetlen adattípus sem felel meg ennek a szűrőnek.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Az összes megjelenítése</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Bővítmény</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown / %count adattípus, %used használatban</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>Az adatbázisban vannak ilyen adattípusú osztály- vagy objektumattribútumok, de a content.ini egyiket sem sorolja fel, vagy a fájljuk hiányzik.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>%provider adattípusai</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Adattípus</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>PHP-osztály és fájl</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Osztályok</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Objektumok</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Jelzők</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>nincs</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Egyetlen adattípus sem felel meg a keresésnek. Törölje a keresést.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%shown / %count adattípus látható</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Megjelenített adattípusok: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Rendezés ez alapján: %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>Megszámolva: %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Minden adattípus</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Súgóoldal</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Ez az adattípus használatban van, de nincs regisztrálva</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Az alábbi osztályok objektumai nem jeleníthetők meg, nem szerkeszthetők és nem tehetők közzé, amíg egyetlen bővítmény sem regisztrálja az adattípust. Aktiválja az azt biztosító bővítményt, és vegye fel a content.ini [DataTypeSettings] AvailableDataTypes[] listájába, vagy módosítsa az osztályokat.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>A content.ini felsorolja ezt az adattípust, de egyik adattípus-könyvtárban sincs meg a fájlja. Semmi sem használja; távolítsa el az AvailableDataTypes[] listából, vagy aktiválja a bővítményét.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Az adattípusról</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Azonosító</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Név</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Bővítmény: %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>senki</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP-osztály</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fájl</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>Az AvailableDataTypes[] listában</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>igen</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nem</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Az értékének oszlopai</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Az osztályattribútum-beállításainak oszlopai</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Táblák</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Az oszlopokat és táblákat az adattípus kódjának beolvasásával találjuk meg: tájékoztatás, nem garancia.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Sablonok</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Webhely-hozzáférés</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Sablon</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Hely</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>ez az adminisztráció</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>alapértelmezett webhely</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Felülírások nélkül: az osztály vagy attribútum alapján illeszkedő felülíró sablon elsőbbséget élvez ezekkel szemben.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Ezt használó osztályok (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Egyetlen osztálynak sincs ilyen adattípusú attribútuma.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Osztály</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Attribútumok</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Osztályattribútumok (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Attribútum</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Beállítások</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>Azonosító: %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Kötelező</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Kereshető</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Fordítható</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Információt gyűjt</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Néhány ezt használó tartalom</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Legutóbb módosított elöl</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Módosítva</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Csomópont: %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Minden fordításnak saját értéke van.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>A keresés indexeli az értékeit.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Információt gyűjthet a látogatóktól (űrlapok).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>A listák rendezhetők szerinte: rendezési kulcs %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Rendezhető</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Az értékei más objektumokra mutatnak.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Kapcsolatok</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Kitölthető egyszerű karakterláncból (importálás, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Szövegből</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Kitölthető fájlból.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Fájlból</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Az osztályattribútum-beállításai bekerülnek a csomagokba.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Csomagok</translation>
     </message>
 </context>
 </TS>

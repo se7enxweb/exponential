@@ -982,6 +982,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Se caută doar în această pagină: %from - %to din %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Fiecare tip de date al nucleului și al extensiilor și cum îl folosesc clasele și conținutul.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Tipuri de date</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15371,6 +15379,14 @@ Notă: pachetele nu vor fi dezinstalate.</translation>
     <message>
         <source>Static publishing</source>
         <translation>Publicare statică</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Tipuri de date</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Fiecare tip de date al nucleului și al extensiilor și cum îl folosesc clasele și conținutul.</translation>
     </message>
 </context>
 <context>
@@ -55329,6 +55345,14 @@ activa contul.</translation>
         <source>Copy of %class_name</source>
         <translation>Copie a clasei %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Tipuri de date</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Tip de date %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85058,6 +85082,397 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Acest mesaj a fost trimis de %site deoarece migration.ini [RemoteSettings] Notify[] îl solicită.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Tipuri de date (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>Numărate la %time, din nou peste %minutes minute</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Un tip de date stochează și editează un fel de valoare a unui atribut al clasei: o linie de text, o imagine, o relație. Nucleul aduce majoritatea, extensiile adaugă altele. Aici sunt toate, cine le furnizează și cât din conținut le folosește. Un tip de date pe care baza de date îl folosește, dar pe care nimic nu-l mai înregistrează, strică conținutul care îl are.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Grupuri de clase</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Numără din nou acum în loc să folosești numărătorile din ultimele minute.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Numără din nou</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Prezentare generală</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Înregistrat</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>În uz</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Neutilizat</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Extensii care furnizează tipuri de date</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Atributele clasei</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Atribute obiect</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Neînregistrat</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>Listat, fișier lipsă</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count tipuri de date sunt folosite, dar neînregistrate</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes atribute de clasă și %object_attributes atribute de obiect au un tip de date pe care nicio extensie sau setare nu îl înregistrează. Obiectele lor nu pot fi afișate, editate sau publicate. Activează extensia care furnizează tipul de date sau modifică clasa.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Arată doar acestea</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Caută un tip de date</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Identificator, nume, clasă PHP sau extensie.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Afișare</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Toate</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Furnizat de</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Toată lumea</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Nucleu</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Niciun tip de date nu corespunde acestui filtru.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Afișare toate</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Extensie</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown din %count tipuri de date, %used în uz</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>Baza de date are atribute de clasă sau de obiect ale acestor tipuri de date, dar content.ini nu listează niciunul dintre ele sau fișierul lor lipsește.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>Tipuri de date de la %provider</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Tip de date</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>Clasă PHP și fișier</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Clase</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Obiecte</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Indicatori</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>niciunul</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Niciun tip de date nu corespunde căutării. Golește căutarea.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%shown din %count tipuri de date afișate</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Tipuri de date afișate: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Sortare după %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>Numărate la %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Toate tipurile de date</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Pagină de ajutor</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Acest tip de date este folosit, dar nu este înregistrat</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Obiectele claselor de mai jos nu pot fi afișate, editate sau publicate cât timp nicio extensie nu înregistrează tipul de date. Activează extensia care îl furnizează și adaugă-l în content.ini [DataTypeSettings] AvailableDataTypes[] sau modifică clasele.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini listează acest tip de date, dar niciun director de tipuri de date nu are fișierul lui. Nimic nu îl folosește; elimină-l din AvailableDataTypes[] sau activează-i extensia.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Despre acest tip de date</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Identificator</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nume</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Extensia %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>nimeni</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>Clasă PHP</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fișier</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>În AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>da</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nu</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Coloanele valorii sale</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Coloanele setărilor atributului său de clasă</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Tabele</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Coloanele și tabelele sunt găsite citind codul tipului de date: un ghid, nu o garanție.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Șabloane</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Acces la site</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Șablon</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Găsit în</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>această administrare</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>site-ul implicit</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Fără suprascrieri: un șablon de suprascriere potrivit după clasă sau atribut are prioritate față de acestea.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Clase care îl folosesc (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Nicio clasă nu are un atribut de acest tip de date.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Clasă</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Atribute</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Atributele clasei (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Atribut</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Setări</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Obligatoriu</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Căutabil</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Traductibil</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Colectează informații</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Conținut care îl folosește</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Cele mai recent modificate întâi</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Modificat</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Nodul %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Fiecare traducere are propria valoare.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>Căutarea îi indexează valorile.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Poate colecta informații de la vizitatori (formulare).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Listele pot fi sortate după el: cheia de sortare %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Sortabil</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Valorile sale indică alte obiecte.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Relații</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Poate fi completat dintr-un șir simplu (import, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Din text</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Poate fi completat dintr-un fișier.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Din fișier</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Setările atributului său de clasă intră în pachete.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Pachete</translation>
     </message>
 </context>
 </TS>

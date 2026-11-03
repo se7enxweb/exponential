@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Ko tēnei whārangi anake e rapua ana: %from ki %to o %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Ia momo raraunga o te iho me ngā toronga, me te āhua o te whakamahi a ngā karaehe me te ihirangi.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Ngā momo raraunga</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ Kia mōhio: kāore e tangohia te tāutanga o ngā mōkihi.</translation>
     <message>
         <source>Static publishing</source>
         <translation>Whakaputanga pūmau</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Ngā momo raraunga</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Ia momo raraunga o te iho me ngā toronga, me te āhua o te whakamahi a ngā karaehe me te ihirangi.</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ i tō pūkete.</translation>
         <source>Copy of %class_name</source>
         <translation>Tārua o %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Ngā momo raraunga</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Momo raraunga %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85028,6 +85052,397 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>I tukuna tēnei īmēra e %site nā te mea e tono ana a migration.ini [RemoteSettings] Notify[].</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Ngā momo raraunga (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>I tatauria %time, anō ā muri i te %minutes meneti</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Ka penapena, ka whakatika te momo raraunga i tētahi momo uara o tētahi āhuatanga karaehe: he rārangi kuputuhi, he atahanga, he hononga. Nā te iho te nuinga, ka tāpiri ngā toronga i ētahi atu. Anei katoa, ko wai e tuku ana, ā, e hia te ihirangi e whakamahi ana. Ko te momo raraunga e whakamahia ana e te pātengi raraunga engari kāore he mea e rēhita ana i a ia, ka pakaru i a ia te ihirangi kei a ia.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Ngā rōpū karaehe</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Tatau anō ināianei, kaua e whakamahi i ngā tatau o ngā meneti whakamutunga.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Tatau anō</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Tirohanga whānui</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Kua rēhitatia</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>E whakamahia ana</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Kāore i whakamahia</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Ngā toronga e tuku ana i ngā momo raraunga</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Ngā āhuatanga karaehe</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Ngā āhuatanga ahanoa</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Kāore i rēhitatia</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>Kei te rārangi, kāore te kōnae</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>E %count ngā momo raraunga e whakamahia ana engari kāore i rēhitatia</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>E %class_attributes ngā āhuatanga karaehe me ngā āhuatanga ahanoa e %object_attributes he momo raraunga kāore e rēhitatia e tētahi toronga, tautuhinga rānei. Kāore e taea ō rātou ahanoa te whakaatu, te whakatika, te whakaputa rānei. Whakahohea te toronga e tuku ana i te momo raraunga, panonitia rānei te karaehe.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Whakaatuhia ēnei anake</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Kimihia he momo raraunga</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Pūtohu, ingoa, karaehe PHP, toronga rānei.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Whakaatu</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Katoa</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Nā</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Te tokomaha katoa</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Iho</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Kāore he momo raraunga e ōrite ana ki tēnei tātari.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Whakaatu katoa</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Toronga</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown o %count momo raraunga, %used e whakamahia ana</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>He āhuatanga karaehe, ahanoa rānei o ēnei momo raraunga kei te pātengi raraunga, engari kāore te content.ini e whakarārangi i tētahi, kua ngaro rānei tōna kōnae.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>Ngā momo raraunga a %provider</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Momo raraunga</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>Karaehe PHP me te kōnae</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Ngā karaehe</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Ahanoa</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Ngā haki</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>kore</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Kāore he momo raraunga e ōrite ana ki te rapu. Ūkuia te rapu.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%shown o %count momo raraunga e whakaaturia ana</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Ngā momo raraunga e whakaaturia ana: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Kōmaka mā %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>I tatauria %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Ngā momo raraunga katoa</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Whārangi āwhina</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>E whakamahia ana tēnei momo raraunga engari kāore i rēhitatia</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Kāore e taea ngā ahanoa o ngā karaehe i raro nei te whakaatu, te whakatika, te whakaputa rānei, i te mea kāore he toronga e rēhita ana i te momo raraunga. Whakahohea te toronga e tuku ana, ā, tāpirihia ki content.ini [DataTypeSettings] AvailableDataTypes[], panonitia rānei ngā karaehe.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>Kei te whakarārangi te content.ini i tēnei momo raraunga, engari kāore he whaiaronga momo raraunga e mau ana i tōna kōnae. Kāore he mea e whakamahi ana; tangohia mai i AvailableDataTypes[], whakahohea rānei tōna toronga.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Mō tēnei momo raraunga</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Pūtohu</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Ingoa</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Toronga %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>kāore tētahi</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>Karaehe PHP</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Kōnae</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>Kei AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>āe</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>kāo</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Ngā tīwae o tōna uara</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Ngā tīwae o ōna tautuhinga āhuatanga karaehe</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Ngā ripanga</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>I kitea ngā tīwae me ngā ripanga mā te pānui i te waehere o te momo raraunga: he aratohu, ehara i te kupu taurangi.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Ngā tātauira</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Urunga pae</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Tātauira</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Kei</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>tēnei whakahaeretanga</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>pae taunoa</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Kāore he whakakapi: ka toa te tātauira whakakapi e ōrite ana ki te karaehe, ki te āhuatanga rānei i ēnei.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Ngā karaehe e whakamahi ana (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Kāore he karaehe he āhuatanga o tēnei momo raraunga.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Karaehe</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Ngā āhuatanga</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Ngā āhuatanga karaehe (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Āhuatanga</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Tautuhinga</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Me whakakī</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Ka taea te rapu</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Ka taea te whakamāori</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Ka kohi mōhiohio</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Ētahi ihirangi e whakamahi ana</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Te mea i whakarerekē whakamutunga i te tuatahi</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Kua whakarerekētia</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Pona %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>He uara anō tō ia whakamāoritanga.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>Ka tūtohi te rapu i ōna uara.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Ka taea e ia te kohikohi mōhiohio mai i ngā manuhiri (puka).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Ka taea ngā rārangi te kōmaka mā tēnei: kī kōmaka %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Ka taea te kōmaka</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>E tohu ana ōna uara ki ētahi atu ahanoa.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Ngā hononga</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Ka taea te whakakī mai i tētahi aho māmā (kawemai, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Mai i te kuputuhi</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Ka taea te whakakī mai i tētahi kōnae.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Mai i te kōnae</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Ka uru ōna tautuhinga āhuatanga karaehe ki ngā mōkihi.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Ngā mōkihi</translation>
     </message>
 </context>
 </TS>

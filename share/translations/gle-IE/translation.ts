@@ -982,6 +982,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Ní dhéantar cuardach ach ar an leathanach seo: %from go %to as %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Gach cineál sonraí den eithne agus de na heisínteachtaí, agus conas a úsáideann na haicmí agus an t-ábhar é.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Cineálacha sonraí</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15371,6 +15379,14 @@ Nóta: Ní dhíshuiteálfar na pacáistí.</translation>
     <message>
         <source>Static publishing</source>
         <translation>Foilsiú statach</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Cineálacha sonraí</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Gach cineál sonraí den eithne agus de na heisínteachtaí, agus conas a úsáideann na haicmí agus an t-ábhar é.</translation>
     </message>
 </context>
 <context>
@@ -55329,6 +55345,14 @@ do chuntas a ghníomhachtú.</translation>
         <source>Copy of %class_name</source>
         <translation>Cóip de %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Cineálacha sonraí</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Cineál sonraí %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85058,6 +85082,397 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Sheol %site an ríomhphost seo mar go n-iarrann migration.ini [RemoteSettings] Notify[] é.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Cineálacha sonraí (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>Comhairthe %time, arís i gceann %minutes nóiméad</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Stórálann cineál sonraí cineál amháin luacha d'aitreabúid aicme agus cuireann sé in eagar é: líne téacs, íomhá, gaol. Soláthraíonn an eithne a bhformhór, cuireann eisínteachtaí tuilleadh leo. Seo iad go léir, cé a sholáthraíonn iad agus cé mhéad den ábhar a úsáideann iad. Briseann cineál sonraí a úsáideann an bunachar sonraí ach nach gcláraíonn aon rud a thuilleadh an t-ábhar ina bhfuil sé.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Grúpaí aicmí</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Comhair arís anois in ionad comhaireamh na nóiméad deireanach a úsáid.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Comhair arís</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Forbhreathnú</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Cláraithe</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>In úsáid</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Gan úsáid</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Eisínteachtaí a sholáthraíonn cineálacha sonraí</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Aitreabúidí na haicme</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Aitreabúidí na hoibiachta</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Gan chlárú</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>Liostaithe, comhad ar iarraidh</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>Tá %count cineál sonraí in úsáid ach gan chlárú</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>Tá cineál sonraí ag %class_attributes aitreabúid aicme agus %object_attributes aitreabúid oibiachta nach gcláraíonn aon eisínteacht ná socrú. Ní féidir a n-oibiachtaí a thaispeáint, a chur in eagar ná a fhoilsiú. Gníomhachtaigh an eisínteacht a sholáthraíonn an cineál sonraí, nó athraigh an aicme.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Taispeáin iad seo amháin</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Aimsigh cineál sonraí</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Aitheantóir, ainm, aicme PHP nó eisínteacht.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Taispeáin</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Gach rud</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Soláthraithe ag</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Gach duine</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Eithne</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Níl aon chineál sonraí ag teacht leis an scagaire seo.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Taispeáin gach rud</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Eisínteacht</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown as %count cineál sonraí, %used in úsáid</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>Tá aitreabúidí aicme nó oibiachta de na cineálacha sonraí seo sa bhunachar sonraí, ach ní liostaíonn content.ini aon cheann acu, nó tá a gcomhad ar iarraidh.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>Cineálacha sonraí ó %provider</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Cineál sonraí</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>Aicme PHP agus comhad</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Aicmí</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Oibiachtaí</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Bratacha</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>dada</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Níl aon chineál sonraí ag teacht leis an gcuardach. Glan an cuardach.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%shown as %count cineál sonraí á dtaispeáint</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Cineálacha sonraí á dtaispeáint: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Sórtáil de réir %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>Comhairthe %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Gach cineál sonraí</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Leathanach cabhrach</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Tá an cineál sonraí seo in úsáid ach gan chlárú</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Ní féidir oibiachtaí na n-aicmí thíos a thaispeáint, a chur in eagar ná a fhoilsiú fad nach gcláraíonn aon eisínteacht an cineál sonraí. Gníomhachtaigh an eisínteacht a sholáthraíonn é agus cuir le content.ini [DataTypeSettings] AvailableDataTypes[] é, nó athraigh na haicmí.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>Liostaíonn content.ini an cineál sonraí seo, ach níl a chomhad in aon chomhadlann cineálacha sonraí. Ní úsáideann aon rud é; bain as AvailableDataTypes[] é nó gníomhachtaigh a eisínteacht.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Faoin gcineál sonraí seo</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Aitheantóir</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Ainm</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Eisínteacht %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>gan soláthraí</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>Aicme PHP</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Comhad</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>In AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>tá</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>níl</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Colúin a luacha</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Colúin shocruithe a aitreabúide aicme</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Táblaí</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Aimsítear na colúin agus na táblaí trí chód an chineáil sonraí a léamh: treoir, ní gealltanas.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Teimpléid</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Rochtain suímh</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Teimpléad</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Aimsithe i</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>an riarachán seo</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>suíomh réamhshocraithe</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Gan sáruithe: bíonn tosaíocht ag teimpléad sáraithe a mheaitseálann de réir aicme nó aitreabúide orthu seo.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Aicmí a úsáideann é (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Níl aitreabúid den chineál sonraí seo ag aicme ar bith.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Aicme</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Aitreabúidí</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Aitreabúidí na haicme (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Aitreabúid</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Socruithe</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Riachtanach</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Inchuardaithe</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>In-aistrithe</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Bailíonn sé faisnéis</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Roinnt ábhair a úsáideann é</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>An ceann is déanaí a athraíodh ar dtús</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Athraithe</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Nód %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Tá a luach féin ag gach aistriúchán.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>Innéacsaíonn an cuardach a luachanna.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Is féidir leis faisnéis a bhailiú ó chuairteoirí (foirmeacha).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Is féidir liostaí a shórtáil dá réir: eochair shórtála %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>In-sórtáilte</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Tagraíonn a luachanna d'oibiachtaí eile.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Gaolta</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Is féidir é a líonadh ó theaghrán simplí (iompórtáil, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Ó théacs</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Is féidir é a líonadh ó chomhad.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Ó chomhad</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Téann socruithe a aitreabúide aicme isteach i bpacáistí.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Pacáistí</translation>
     </message>
 </context>
 </TS>

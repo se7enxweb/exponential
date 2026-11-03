@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Dušše dát siidu ohccojuvvo: %from rádjai %to, buohkaid lohku %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Juohke dáhtašládja váimmus ja lasáhusain, ja mo luohkát ja sisdoallu dan geavahit.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Dáhtašládjjat</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ Muitte: Páhkaid sajáiduhttin ii sihkkojuvvo.</translation>
     <message>
         <source>Static publishing</source>
         <translation>Stáhtalaš almmuheapmi</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Dáhtašládjjat</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Juohke dáhtašládja váimmus ja lasáhusain, ja mo luohkát ja sisdoallu dan geavahit.</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ du konto.</translation>
         <source>Copy of %class_name</source>
         <translation>Máŋggus: %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Dáhtašládjjat</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Dáhtašládja %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85028,6 +85052,397 @@ Don fertet rievdadit čuolmma luohká molsunfunkšuvnna bokte.</translation>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Dán e-poastta sáddii %site, danin go migration.ini [RemoteSettings] Notify[] dan gáibida.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Dáhtašlájat (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>Rehkenastojuvvon %time, ođđasit %minutes minuhta geažes</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Dáhtašládja vurke ja rievdada ovtta lágan árvvu luohká attribuhtas: teakstalinnjá, gova, oktavuođa. Váibmu buktá eanaš daid, lasáhusat lasihit eanet. Dás leat buot, gii daid fállá ja man ollu sisdoalus daid geavaha. Dáhtašládja maid diehtovuođđu geavaha muhto maid ii mihkkege šat registrere, billista sisdoalu mas dat lea.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Luohkkájoavkkut</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Rehkenastte ođđasit dál iige geavat maŋimuš minuhtaid loguid.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Rehkenastte ođđasit</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Čoahkkáigeassu</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Registrerejuvvon</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>Geavahusas</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Ii geavahuvvon</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Lasáhusat mat fállet dáhtašlájaid</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Luohká attribuhtat</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Objeavtta attribuhtat</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Ii registrerejuvvon</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>Listtus, fiila váilu</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count dáhtašlája geavahuvvojit muhto eai leat registrerejuvvon</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes luohká attribuhtas ja %object_attributes objeakta attribuhtas lea dáhtašládja maid ii oktage lasáhus dahje heivehus registrere. Daid objeavttaid ii sáhte čájehit, rievdadit dahje almmuhit. Aktivere lasáhusa mii fállá dáhtašlája, dahje rievdat luohká.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Čájet dušše dáid</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Oza dáhtašlája</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Identifiseaddji, namma, PHP-luohkká dahje lasáhus.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Čájet</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Buot</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Fállá</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Juohke</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Váibmu</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Ii oktage dáhtašládja heive dán filtarii.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Čájet buot</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Lasáhus</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown %count dáhtašlájas, %used geavahusas</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>Diehtovuođus leat dáid dáhtašlájaid luohká- dahje objeaktaattribuhtat, muhto content.ini ii listte ii ovttage dain, dahje dan fiila váilu.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>%provider dáhtašlájat</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Dáhtašládja</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>PHP-luohkká ja fiila</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Luohkát</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Objeavttat</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Mearkkat</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>ii oktage</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Ii oktage dáhtašládja heive ohcamii. Sihko ohcama.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%shown %count dáhtašlájas čájehuvvon</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Čájehuvvon dáhtašlájat: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Sorteret: %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>Rehkenastojuvvon %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Buot dáhtašlájat</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Veahkkesiidu</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Dát dáhtašládja geavahuvvo muhto ii leat registrerejuvvon</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Vuolábeale luohkáid objeavttaid ii sáhte čájehit, rievdadit dahje almmuhit nu guhká go ii oktage lasáhus registrere dáhtašlája. Aktivere lasáhusa mii dan fállá ja lasit dan content.ini [DataTypeSettings] AvailableDataTypes[], dahje rievdat luohkáid.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini listte dán dáhtašlája, muhto ii oktage dáhtašládjamáhppa sisttisdoala dan fiilla. Ii mihkkege geavat dan; sihko dan AvailableDataTypes[] listtus dahje aktivere dan lasáhusa.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Dán dáhtašlája birra</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Identifiseaddji</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Namma</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Lasáhus %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>ii oktage</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP-luohkká</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fiila</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>AvailableDataTypes[] listtus</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>juo</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ii</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Dan árvvu čuolddat</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Dan luohká attribuhta heivehusaid čuolddat</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Tabeallat</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Čuolddat ja tabeallat gávdnojit go lohká dáhtašlája koda: bagadus, ii lohpádus.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Mállet</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Neahttabáikebeassan</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Málle</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Gávdnui dáppe:</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>dát hálddašeapmi</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>standárda neahttabáiki</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Overrides haga: override-málle mii heive luohká dahje attribuhta mielde vuoitá dáid.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Luohkát mat dan geavahit (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Ii ovttage luohkás leat dán dáhtašlája attribuhtta.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Luohkká</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Attribuhtat</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Luohká attribuhtat (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Attribuhtta</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Heivehusat</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Bákkolaš</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Ohcamis</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Jorgaluvvon vejolaš</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Čohkke dieđuid</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Muhtun sisdoallu mii dan geavaha</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Maŋimužžan rievdaduvvon vuosttažin</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Rievdaduvvon</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Čuolbma %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Juohke jorgalusas lea iežas árvu.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>Ohcan indeksere dan árvvuid.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Dat sáhttá čoaggit dieđuid gallededdjiin (skovit).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Listtuid sáhttá sorteret dan mielde: sorterenčoavdda %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Sorterehahtti</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Dan árvvut čujuhit eará objeavttaide.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Oktavuođat</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Dan sáhttá deavdit čielga teavsttas (import, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Teavsttas</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Dan sáhttá deavdit fiillas.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Fiillas</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Dan luohká attribuhta heivehusat mannet páhkkaide.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Páhkat</translation>
     </message>
 </context>
 </TS>

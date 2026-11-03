@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>यही पृष्ठमा मात्र खोजिन्छ: %count मध्ये %from देखि %to सम्म।</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>कर्नेल र एक्सटेन्सनहरूका सबै डाटा प्रकार, र वर्ग तथा सामग्रीले तिनलाई कसरी प्रयोग गर्छन्।</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>डाटा प्रकारहरू</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Static publishing</source>
         <translation>स्टेटिक प्रकाशन</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>डाटा प्रकारहरू</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>कर्नेल र एक्सटेन्सनहरूका सबै डाटा प्रकार, र वर्ग तथा सामग्रीले तिनलाई कसरी प्रयोग गर्छन्।</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ your account.</source>
         <source>Copy of %class_name</source>
         <translation>%class_name को प्रतिलिपि</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>डाटा प्रकारहरू</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>डाटा प्रकार %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85036,6 +85060,397 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>यो मेल %site ले पठाएको हो, किनभने migration.ini [RemoteSettings] Notify[] ले यो माग्छ।</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>डाटा प्रकारहरू (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>%time मा गनियो, %minutes मिनेटपछि फेरि</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>डाटा प्रकारले वर्ग विशेषताको एक प्रकारको मान भण्डारण र सम्पादन गर्छ: पाठ पङ्क्ति, छवि, सम्बन्ध। धेरैजसो कर्नेलले ल्याउँछ, एक्सटेन्सनहरूले थप जोड्छन्। यहाँ ती सबै छन्, कसले उपलब्ध गराउँछ र कति सामग्रीले प्रयोग गर्छ। डाटाबेसले प्रयोग गर्ने तर अब कसैले दर्ता नगर्ने डाटा प्रकारले त्यो भएको सामग्री बिगार्छ।</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>वर्ग समूहहरू</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>पछिल्ला मिनेटहरूको गणना प्रयोग गर्नुको सट्टा अहिले फेरि गन्नुहोस्।</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>फेरि गन्नुहोस्</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>सिंहावलोकन</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>दर्ता भएको</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>प्रयोगमा</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>प्रयोग गरिएन</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>डाटा प्रकार उपलब्ध गराउने एक्सटेन्सनहरू</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>वर्ग विशेषताहरू</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>वस्तु विशेषताहरू</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>दर्ता गरिएको छैन</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>सूचीमा छ, फाइल छैन</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count डाटा प्रकारहरू प्रयोगमा छन् तर दर्ता गरिएका छैनन्</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes वर्ग विशेषता र %object_attributes वस्तु विशेषताहरूमा कुनै एक्सटेन्सन वा सेटिङले दर्ता नगरेको डाटा प्रकार छ। तिनका वस्तुहरू देखाउन, सम्पादन गर्न वा प्रकाशित गर्न सकिँदैन। डाटा प्रकार उपलब्ध गराउने एक्सटेन्सन सक्रिय गर्नुहोस्, वा वर्ग परिवर्तन गर्नुहोस्।</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>यी मात्र देखाउनुहोस्</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>डाटा प्रकार खोज्नुहोस्</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>पहिचानकर्ता, नाम, PHP वर्ग वा एक्सटेन्सन।</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>देखाउनुहोस्</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>सबै</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>उपलब्धकर्ता</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>सबै</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>कर्नेल</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>यो फिल्टरसँग कुनै डाटा प्रकार मेल खाँदैन।</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>सबै देखाउनुहोस्</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>एक्सटेन्सन</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%count मध्ये %shown डाटा प्रकार, %used प्रयोगमा</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>डाटाबेसमा यी डाटा प्रकारका वर्ग वा वस्तु विशेषताहरू छन्, तर content.ini ले तीमध्ये कुनै पनि सूचीबद्ध गर्दैन, वा यसको फाइल छैन।</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>%provider का डाटा प्रकारहरू</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>डाटा प्रकार</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>PHP वर्ग र फाइल</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>वर्गहरू</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>वस्तुहरू</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>फ्ल्यागहरू</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>कुनै पनि छैन</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>खोजसँग कुनै डाटा प्रकार मेल खाँदैन। खोज खाली गर्नुहोस्।</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%count मध्ये %shown डाटा प्रकार देखाइयो</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>देखाइएका डाटा प्रकारहरू: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>%column अनुसार क्रमबद्ध गर्नुहोस्</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>%time मा गनियो</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>सबै डाटा प्रकारहरू</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>मद्दत पृष्ठ</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>यो डाटा प्रकार प्रयोगमा छ तर दर्ता गरिएको छैन</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>कुनै एक्सटेन्सनले डाटा प्रकार दर्ता नगरेसम्म तलका वर्गहरूका वस्तुहरू देखाउन, सम्पादन गर्न वा प्रकाशित गर्न सकिँदैन। यसलाई उपलब्ध गराउने एक्सटेन्सन सक्रिय गर्नुहोस् र यसलाई content.ini [DataTypeSettings] AvailableDataTypes[] मा थप्नुहोस्, वा वर्गहरू परिवर्तन गर्नुहोस्।</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini ले यो डाटा प्रकार सूचीबद्ध गर्छ, तर कुनै पनि डाटा प्रकार निर्देशिकामा यसको फाइल छैन। यसलाई कसैले प्रयोग गर्दैन; यसलाई AvailableDataTypes[] बाट हटाउनुहोस् वा यसको एक्सटेन्सन सक्रिय गर्नुहोस्।</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>यो डाटा प्रकारको बारेमा</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>पहिचानकर्ता</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>नाम</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>एक्सटेन्सन %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>कोही पनि होइन</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP क्लास</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>फाइल</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>AvailableDataTypes[] मा</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>हो</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>होइन</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>यसको मानका स्तम्भहरू</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>यसको वर्ग विशेषता सेटिङका स्तम्भहरू</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>तालिकाहरू</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>स्तम्भ र तालिकाहरू डाटा प्रकारको कोड पढेर फेला पारिएका हुन्: मार्गदर्शन, प्रतिज्ञा होइन।</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>टेम्प्लेटहरू</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>साइट पहुँच</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>टेम्प्लेट</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>फेला परेको स्थान</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>यो प्रशासन</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>पूर्वनिर्धारित साइट</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>ओभरराइड बिना: वर्ग वा विशेषतासँग मेल खाने ओभरराइड टेम्प्लेटले यिनलाई जित्छ।</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>यसलाई प्रयोग गर्ने वर्गहरू (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>कुनै पनि वर्गमा यो डाटा प्रकारको विशेषता छैन।</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>वर्ग</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>विशेषताहरू</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>वर्ग विशेषताहरू (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>विशेषता</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>सेटिङहरू</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>आवश्यक</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>खोजी गर्न मिल्ने</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>अनुवाद गर्न मिल्ने</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>जानकारी सङ्कलन गर्छ</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>यसलाई प्रयोग गर्ने केही सामग्री</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>पछिल्लो परिमार्जित पहिले</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>परिमार्जित</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>नोड %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>प्रत्येक अनुवादको आफ्नै मान हुन्छ।</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>खोजले यसका मानहरू अनुक्रमित गर्छ।</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>यसले आगन्तुकहरूबाट जानकारी सङ्कलन गर्न सक्छ (फारमहरू)।</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>सूचीहरूलाई यसद्वारा क्रमबद्ध गर्न सकिन्छ: क्रम कुञ्जी %type।</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>क्रमबद्ध गर्न मिल्ने</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>यसका मानहरूले अन्य वस्तुहरूलाई संकेत गर्छन्।</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>सम्बन्धहरू</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>यसलाई सादा स्ट्रिङबाट भर्न सकिन्छ (आयात, REST)।</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>पाठबाट</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>यसलाई फाइलबाट भर्न सकिन्छ।</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>फाइलबाट</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>यसको वर्ग विशेषता सेटिङहरू प्याकेजहरूमा जान्छन्।</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>प्याकेजहरू</translation>
     </message>
 </context>
 </TS>

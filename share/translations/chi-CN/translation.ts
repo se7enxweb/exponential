@@ -982,6 +982,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>仅搜索此页：第 %from 至 %to 项，共 %count 项。</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>内核和扩展的每个数据类型，以及类和内容如何使用它。</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>数据类型</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15430,6 +15438,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Static publishing</source>
         <translation>静态发布</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>数据类型</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>内核和扩展的每个数据类型，以及类和内容如何使用它。</translation>
     </message>
 </context>
 <context>
@@ -55388,6 +55404,14 @@ your account.</source>
         <source>Copy of %class_name</source>
         <translation>%class_name 的副本</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>数据类型</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>数据类型 %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85026,6 +85050,397 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>此邮件由 %site 发送，因为 migration.ini [RemoteSettings] Notify[] 要求发送。</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>数据类型（%count）</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>统计于 %time，%minutes 分钟后重新统计</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>数据类型保存并编辑类属性的一种值：一行文本、一张图片、一个关联。大多数由内核提供，扩展再添加更多。这里列出全部数据类型、提供者以及有多少内容在使用它们。数据库仍在使用但已无任何地方注册的数据类型，会使包含它的内容损坏。</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>类组</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>立即重新统计，而不使用最近几分钟的统计结果。</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>重新统计</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>概览</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>注册时间</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>使用中</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>未使用</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>提供数据类型的扩展</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>类属性</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>对象属性</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>未注册</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>已列出，文件缺失</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count 个数据类型正在使用但未注册</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes 个类属性和 %object_attributes 个对象属性的数据类型未被任何扩展或设置注册。它们的对象无法显示、编辑或发布。请启用提供该数据类型的扩展，或更改该类。</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>只显示这些</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>查找数据类型</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>标识符、名称、PHP 类或扩展。</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>显示</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>全部</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>提供者</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>所有人</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>内核</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>没有符合此筛选条件的数据类型。</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>显示全部</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>扩展</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%count 个数据类型中的 %shown 个，%used 个在使用</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>数据库中有这些数据类型的类属性或对象属性，但 content.ini 未列出其中任何一个，或其文件缺失。</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>%provider 的数据类型</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>数据类型</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>PHP 类和文件</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>类</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>对象</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>标志</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>无</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>没有符合搜索的数据类型。请清除搜索。</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>已显示 %count 个数据类型中的 %shown 个</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>已显示的数据类型：%count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>按 %column 排序</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>统计于 %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>所有数据类型</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>帮助页面</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>此数据类型正在使用但未注册</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>在没有扩展注册该数据类型之前，下列类的对象无法显示、编辑或发布。请启用提供它的扩展，并将其添加到 content.ini [DataTypeSettings] AvailableDataTypes[]，或更改这些类。</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini 列出了此数据类型，但没有任何数据类型目录包含它的文件。没有内容使用它；请将其从 AvailableDataTypes[] 中移除，或启用它的扩展。</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>关于此数据类型</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>标识符</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>名称</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>扩展 %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>无</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP 类</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>文件</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>在 AvailableDataTypes[] 中</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>是</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>否</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>其值的列</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>其类属性设置的列</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>数据表</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>这些列和表是通过读取数据类型的代码得出的：仅供参考，不作保证。</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>模板</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>站点访问</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>模板</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>位置</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>本管理界面</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>默认站点</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>不含覆盖：按类或属性匹配的覆盖模板优先于这些模板。</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>使用它的类（%count）</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>没有类具有此数据类型的属性。</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>类</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>属性</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>类属性（%count）</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>属性</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>设置</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>必填</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>可搜索</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>可翻译</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>收集信息</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>部分使用它的内容</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>最近修改的在前</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>修改时间</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>节点 %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>每个翻译都有自己的值。</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>搜索会为其值建立索引。</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>它可以收集访客的信息（表单）。</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>列表可以按它排序：排序键 %type。</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>可排序</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>它的值指向其他对象。</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>关联</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>可以从纯文本字符串填充（导入、REST）。</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>来自文本</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>可以从文件填充。</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>来自文件</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>其类属性设置会包含在包中。</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>软件包</translation>
     </message>
 </context>
 </TS>

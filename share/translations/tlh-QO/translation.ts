@@ -985,6 +985,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>navvam neH nejlu&apos;: %from - %to, %count Doch.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>ngoq botlh chelwI'mey je Hoch tlhegh Segh, 'ej chay' lo' buvmey ngaSwI' je.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>tlhegh Seghmey</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15374,6 +15382,14 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
     <message>
         <source>Static publishing</source>
         <translation>choHbe&apos;bogh HochvaD &apos;angghach</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>tlhegh Seghmey</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>ngoq botlh chelwI'mey je Hoch tlhegh Segh, 'ej chay' lo' buvmey ngaSwI' je.</translation>
     </message>
 </context>
 <context>
@@ -55332,6 +55348,14 @@ yIlob.</translation>
         <source>Copy of %class_name</source>
         <translation>%class_name qonqa&apos;ghach</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>tlhegh Seghmey</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>tlhegh Segh %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85061,6 +85085,397 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>QIn'vam ngeH %site, migration.ini [RemoteSettings] Notify[] poQmo'.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>tlhegh Segh (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>%time toghlu', %minutes tup pIq toghlu'qa'</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>buv tlhegh lo'laHghach wa' Segh pol 'ej choH tlhegh Segh: ghItlh tlhegh, mIllogh, rar. law'chaj qem ngoq botlh, latlh chel chelwI'mey. naDev Hoch chaH tu'lu', 'Iv chaH nob, 'ej 'ar ngaSwI' chaH lo'. tlhegh Segh'e' lo' De'wI' De' ta' 'ach DaH qonbe' vay', ghaHbogh ngaSwI' ghor.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>buv ghommey</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>tup Hopmey toghmey yIlo'Qo'; DaH yItogh qaSDI'.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>yItogh qaSDI'</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>naQ leghghach</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>muvta'</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>lo'lu'</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>lo'lu'be'</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>tlhegh Segh nobbogh chelwI'mey</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>buv tlheghmey</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Doch buv tlheghmey</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>qonlu'be'</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>tetlhDaq tu'lu', De'wI' teywI' tu'lu'be'</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count tlhegh Segh lo'lu' 'ach qonlu'be'</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes buv tlheghmey %object_attributes Doch tlheghmey je ghaj tlhegh Segh'e' qonbe' chelwI' pagh choHmeH ghItlh. Dochmeychaj 'aghlu' laHbe', choHlu' laHbe', ngablu' laHbe'. tlhegh Segh nobbogh chelwI' yItlhe', pagh buv yIchoH.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>vam neH yI'agh</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>tlhegh Segh yInej</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>ngu'wI', pong, PHP buv pagh chelwI'.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>yI'ang</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Hoch</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>nobwI'</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Hoch</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>ngoq botlh</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>SaywI' vam rapbogh tlhegh Segh tu'lu'be'.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Hoch yI'ang</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>chelwI'</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%count tlhegh Segh vo' %shown, %used lo'lu'</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>tlhegh Segh vammey buv tlheghmey pagh Doch tlheghmey ghaj De'wI' De' ta', 'ach pagh tetlh content.ini, pagh De'wI' teywI'Daj tu'lu'be'.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>%provider tlhegh Segh</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>tlhegh Segh</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>PHP buv De'wI' teywI' je</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>buvmey</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Dochmey</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Dotlh permey</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>pagh</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>nejmeH mu' rapbogh tlhegh Segh tu'lu'be'. nejmeH mu' yIteq.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%count tlhegh Segh vo' %shown 'aghlu'</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>'aghlu'bogh tlhegh Segh: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>tetlh mIw yIchoH: %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>%time toghlu'</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Hoch tlhegh Segh</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>QaH nav</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>tlhegh Segh vam lo'lu' 'ach qonlu'be'</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>tlhegh Segh qonbe'taHvIS Hoch chelwI', bIng buvmey Dochmey 'aghlu' laHbe', choHlu' laHbe', ngablu' laHbe'. nobbogh chelwI' yItlhe' 'ej content.ini [DataTypeSettings] AvailableDataTypes[] Daq yIchel, pagh buvmey yIchoH.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>tlhegh Segh vam tetlh content.ini, 'ach De'wI' teywI'Daj ghajbogh tlhegh Segh qawHaq tu'lu'be'. lo'be' vay'; AvailableDataTypes[] vo' yIteq pagh chelwI'Daj yItlhe'.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>tlhegh Segh vam bopbogh</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>ngu'wI'</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>pong</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>%name chelwI'</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>pagh</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP buv</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ghItlh</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>AvailableDataTypes[] Daq</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>HISlaH</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ghobe'</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>lo'laHghachDaj tut</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>buv tlheghDaj choHmeH ghItlh tut</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>SomHommey</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>tlhegh Segh ngoq laDlu'DI' tutmey ta'mey je tu'lu': ghojmoHwI' ghaH, lay' ghaHbe'.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>mIw 'echletmey</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>yoS lojmIt</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>mIw 'echlet</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>tu'lu'bogh Daq</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>loH vam</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>motlh Daq</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>tamwI'mey Hutlh: buv pagh tlhegh rapbogh tamwI' mIw 'echlet vammey Qaw'.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>lo'bogh buvmey (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>tlhegh Segh vam tlhegh ghajbogh buv tu'lu'be'.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>buv</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>buv tlheghmey</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>buv tlheghmey (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>buv tlhegh</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>DuHmey</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ngu'meH mI' %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>poQlu'</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>nejmeH</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>mughlaH vay'</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>De' boS</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>lo'bogh ngaSwI' puS</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Qav choHlu'bogh wa'DIch</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>choHlu'ta'</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Sor Daq %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Hoch mughmey ghaj lo'laHghach nIteb.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>lo'laHghachmeyDaj tetlh nejwI'.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Suchbogh nuvpu' vo' De' boS laH (ghItlh nav).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>tetlhmey nIS laH: nISmeH ngaQHa'moHwI' %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>tetlh mIw lo'laH</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>latlh Dochmey 'ang lo'laHghachmeyDaj.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>rarghachmey</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>ghItlh tlhegh nap vo' teblu' laH (qemlu', REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>ghItlh vo'</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>De'wI' teywI' vo' teblu' laH.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>De'wI' teywI' vo'</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>buv tlheghDaj choHmeH ghItlh 'el ngaSwI'meyDaq.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>'aplo'mey</translation>
     </message>
 </context>
 </TS>

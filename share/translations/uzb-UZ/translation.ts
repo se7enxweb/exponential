@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Faqat shu sahifadan qidiriladi: %count tadan %from–%to.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Yadro va kengaytmalarning har bir maʼlumot turi hamda sinflar va kontent undan qanday foydalanishi.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Maʼlumot turlari</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ Eslatma: paketlar oʻchirib tashlanmaydi.</translation>
     <message>
         <source>Static publishing</source>
         <translation>Statik nashr qilish</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Maʼlumot turlari</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Yadro va kengaytmalarning har bir maʼlumot turi hamda sinflar va kontent undan qanday foydalanishi.</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ shu xatdagi yoʻriqnomaga amal qiling.</translation>
         <source>Copy of %class_name</source>
         <translation>%class_name nusxasi</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Maʼlumot turlari</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Maʼlumot turi %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85028,6 +85052,397 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Bu xat %site tomonidan yuborildi, chunki migration.ini [RemoteSettings] Notify[] buni talab qiladi.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Maʼlumot turlari (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>%time sanaldi, %minutes daqiqadan keyin yana</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Maʼlumot turi sinf atributining bir xil qiymatini saqlaydi va tahrirlaydi: matn qatori, rasm, bogʻlanish. Ularning aksariyatini yadro beradi, kengaytmalar yana qoʻshadi. Bu yerda ularning hammasi, ularni kim taqdim etishi va kontentning qanchasi ularni ishlatishi bor. Maʼlumotlar bazasi ishlatadigan, lekin endi hech narsa roʻyxatdan oʻtkazmaydigan maʼlumot turi uni oʻz ichiga olgan kontentni buzadi.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Sinflar guruhlari</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Oxirgi daqiqalar sonlaridan foydalanish oʻrniga hozir qayta sanash.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Qayta sanash</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Umumiy koʻrinish</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Roʻyxatdan oʻtgan</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>Ishlatilmoqda</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Ishlatilmagan</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Maʼlumot turlarini taqdim etuvchi kengaytmalar</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Sinf atributlari</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Obyekt atributlari</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Roʻyxatdan oʻtmagan</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>Roʻyxatda bor, fayl yoʻq</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count ta maʼlumot turi ishlatilmoqda, lekin roʻyxatdan oʻtmagan</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes ta sinf atributi va %object_attributes ta obyekt atributi hech bir kengaytma yoki sozlama roʻyxatdan oʻtkazmagan maʼlumot turiga ega. Ularning obyektlarini koʻrsatib, tahrirlab yoki nashr qilib boʻlmaydi. Maʼlumot turini taqdim etuvchi kengaytmani yoqing yoki sinfni oʻzgartiring.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Faqat shularni koʻrsatish</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Maʼlumot turini topish</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Identifikator, nom, PHP sinfi yoki kengaytma.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Koʻrsatish</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Hammasi</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Taqdim etuvchi</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Hamma</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Yadro</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Bu filtrga mos maʼlumot turi yoʻq.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Hammasini koʻrsatish</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Kengaytma</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%count ta maʼlumot turidan %shown, %used tasi ishlatilmoqda</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>Maʼlumotlar bazasida bu maʼlumot turlaridagi sinf yoki obyekt atributlari bor, lekin content.ini ularning hech birini koʻrsatmaydi yoki uning fayli yoʻq.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>%provider maʼlumot turlari</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Maʼlumot turi</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>PHP sinfi va fayl</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Sinflar</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Obyektlar</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Bayroqlar</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>yoʻq</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Qidiruvga mos maʼlumot turi yoʻq. Qidiruvni tozalang.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%count ta maʼlumot turidan %shown tasi koʻrsatildi</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Koʻrsatilgan maʼlumot turlari: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>%column boʻyicha saralash</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>%time sanaldi</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Barcha maʼlumot turlari</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Yordam sahifasi</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Bu maʼlumot turi ishlatilmoqda, lekin roʻyxatdan oʻtmagan</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Hech bir kengaytma maʼlumot turini roʻyxatdan oʻtkazmaguncha quyidagi sinflarning obyektlarini koʻrsatib, tahrirlab yoki nashr qilib boʻlmaydi. Uni taqdim etuvchi kengaytmani yoqing va uni content.ini [DataTypeSettings] AvailableDataTypes[] ga qoʻshing yoki sinflarni oʻzgartiring.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini bu maʼlumot turini koʻrsatadi, lekin hech bir maʼlumot turlari katalogida uning fayli yoʻq. Uni hech narsa ishlatmaydi; uni AvailableDataTypes[] dan olib tashlang yoki uning kengaytmasini yoqing.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Bu maʼlumot turi haqida</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Identifikator</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nom</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>%name kengaytmasi</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>hech kim</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP klassi</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fayl</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>AvailableDataTypes[] ichida</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ha</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>yoʻq</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Uning qiymati ustunlari</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Uning sinf atributi sozlamalari ustunlari</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Jadvallar</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Ustunlar va jadvallar maʼlumot turining kodini oʻqish orqali topiladi: bu yoʻl-yoʻriq, vaʼda emas.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Shablonlar</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Sayt kirish nuqtasi</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Shablon</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Joylashgan joyi</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>bu boshqaruv</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>standart sayt</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Almashtirishlarsiz: sinf yoki atribut boʻyicha mos kelgan almashtirish shabloni bulardan ustun turadi.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Uni ishlatadigan sinflar (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Hech bir sinfda bu maʼlumot turidagi atribut yoʻq.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Sinf</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Atributlar</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Sinf atributlari (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Atribut</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Sozlamalar</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Majburiy</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Qidiriladigan</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Tarjima qilinadigan</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Maʼlumot yigʻadi</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Uni ishlatadigan baʼzi kontent</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Oxirgi oʻzgartirilgani birinchi</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Oʻzgartirilgan</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Tugun %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Har bir tarjimaning oʻz qiymati bor.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>Qidiruv uning qiymatlarini indekslaydi.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>U tashrif buyuruvchilardan maʼlumot toʻplashi mumkin (formalar).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Roʻyxatlarni u boʻyicha saralash mumkin: saralash kaliti %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Saralanadigan</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Uning qiymatlari boshqa obyektlarga ishora qiladi.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Bogʻliqliklar</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Uni oddiy satrdan toʻldirish mumkin (import, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Matndan</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Uni fayldan toʻldirish mumkin.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Fayldan</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Uning sinf atributi sozlamalari paketlarga kiradi.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Paketlar</translation>
     </message>
 </context>
 </TS>

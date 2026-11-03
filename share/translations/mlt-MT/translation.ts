@@ -982,6 +982,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Qed titfittex din il-paġna biss: %from sa %to minn %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Kull tip ta' dejta tal-Kernel u tal-estensjonijiet, u kif il-klassijiet u l-kontenut jużawh.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Tipi ta' dejta</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15371,6 +15379,14 @@ Nota: il-pakketti mhux se jiġu ddiżinstallati.</translation>
     <message>
         <source>Static publishing</source>
         <translation>Pubblikazzjoni statika</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Tipi ta' dejta</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Kull tip ta' dejta tal-Kernel u tal-estensjonijiet, u kif il-klassijiet u l-kontenut jużawh.</translation>
     </message>
 </context>
 <context>
@@ -55329,6 +55345,14 @@ il-kont tiegħek.</translation>
         <source>Copy of %class_name</source>
         <translation>Kopja ta&apos; %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Tipi ta' dejta</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Tip ta' dejta %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85058,6 +85082,397 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Din il-posta ntbagħtet minn %site għax migration.ini [RemoteSettings] Notify[] jitlobha.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Tipi ta' dejta (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>Magħdud %time, mill-ġdid wara %minutes minuti</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Tip ta' dejta jaħżen u jeditja tip wieħed ta' valur ta' attribut tal-klassi: linja ta' test, immaġni, relazzjoni. Il-Kernel iġib il-biċċa l-kbira, l-estensjonijiet iżidu oħrajn. Hawn huma kollha, min jipprovdihom u kemm kontenut jużahom. Tip ta' dejta li l-bażi tad-dejta tuża iżda li xejn ma jirreġistrah aktar, jikser il-kontenut li għandu.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Gruppi ta' klassijiet</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Għodd mill-ġdid issa minflok tuża l-għadd tal-aħħar minuti.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Għodd mill-ġdid</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Ħarsa ġenerali</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Irreġistrat</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>Qed tintuża</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Mhux użat</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Estensjonijiet li jipprovdu tipi ta' dejta</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Attributi tal-klassi</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Attributi tal-oġġett</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Mhux irreġistrat</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>Elenkat, il-fajl nieqes</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count tipi ta' dejta huma użati iżda mhux irreġistrati</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes attributi tal-klassi u %object_attributes attributi tal-oġġett għandhom tip ta' dejta li l-ebda estensjoni jew issettjar ma jirreġistrah. L-oġġetti tagħhom ma jistgħux jintwerew, jiġu editjati jew ippubblikati. Attiva l-estensjoni li tipprovdi t-tip ta' dejta, jew ibdel il-klassi.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Uri dawn biss</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Sib tip ta' dejta</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Identifikatur, isem, klassi PHP jew estensjoni.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Uri</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Kollha</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Ipprovdut minn</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Kulħadd</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Kernel</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>L-ebda tip ta' dejta ma jaqbel ma' dan il-filtru.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Uri kollox</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Estensjoni</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown minn %count tipi ta' dejta, %used qed jintużaw</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>Il-bażi tad-dejta għandha attributi ta' klassijiet jew oġġetti ta' dawn it-tipi ta' dejta, iżda content.ini ma jelenka l-ebda wieħed minnhom, jew il-fajl tiegħu huwa nieqes.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>Tipi ta' dejta ta' %provider</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Tip ta' dejta</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>Klassi u fajl PHP</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Klassijiet</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Oġġetti</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Indikaturi</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>xejn</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>L-ebda tip ta' dejta ma jaqbel mat-tfittxija. Neħħi t-tfittxija.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%shown minn %count tipi ta' dejta murija</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Tipi ta' dejta murija: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Issortja skont %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>Magħdud %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>It-tipi ta' dejta kollha</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Paġna tal-għajnuna</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Dan it-tip ta' dejta huwa użat iżda mhux irreġistrat</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>L-oġġetti tal-klassijiet hawn taħt ma jistgħux jintwerew, jiġu editjati jew ippubblikati sakemm l-ebda estensjoni ma tirreġistra t-tip ta' dejta. Attiva l-estensjoni li tipprovdih u żidu f'content.ini [DataTypeSettings] AvailableDataTypes[], jew ibdel il-klassijiet.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini jelenka dan it-tip ta' dejta, iżda l-ebda direttorju tat-tipi ta' dejta ma għandu l-fajl tiegħu. Xejn ma jużah; neħħih minn AvailableDataTypes[] jew attiva l-estensjoni tiegħu.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Dwar dan it-tip ta' dejta</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Identifikatur</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Isem</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Estensjoni %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>ħadd</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>Klassi PHP</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fajl</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>F'AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>iva</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>le</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Kolonni tal-valur tiegħu</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Kolonni tal-issettjar tal-attribut tal-klassi</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Tabelli</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Il-kolonni u t-tabelli jinstabu billi jinqara l-kodiċi tat-tip ta' dejta: gwida, mhux wegħda.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Mudelli</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Aċċess għas-sit</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Mudell</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Misjub fi</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>din l-amministrazzjoni</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>sit predefinit</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Mingħajr overrides: mudell override li jaqbel skont il-klassi jew l-attribut jirbaħ fuq dawn.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Klassijiet li jużawh (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>L-ebda klassi m'għandha attribut ta' dan it-tip ta' dejta.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klassi</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Attributi</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Attributi tal-klassi (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Attribut</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Issettjar</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Meħtieġ</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Jista' jitfittex</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Traduċibbli</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Jiġbor informazzjoni</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Xi kontenut li jużah</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>L-aħħar modifikat l-ewwel</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Immodifikat</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Nodu %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Kull traduzzjoni għandha l-valur tagħha.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>It-tfittxija tindiċizza l-valuri tiegħu.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Jista' jiġbor informazzjoni mill-viżitaturi (formoli).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Il-listi jistgħu jiġu ordnati skontu: ċavetta tal-ordni %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Jista' jiġi ssortjat</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Il-valuri tiegħu jindikaw oġġetti oħra.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Relazzjonijiet</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Jista' jimtela minn string sempliċi (importazzjoni, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Minn test</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Jista' jimtela minn fajl.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Minn fajl</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>L-issettjar tal-attribut tal-klassi tiegħu jidħol fil-pakketti.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Pakketti</translation>
     </message>
 </context>
 </TS>

@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>이 페지만 검색합니다: %count개 중 %from-%to.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>커널과 확장의 모든 자료형, 그리고 클라스와 내용이 그것을 어떻게 리용하는지.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>자료형</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Static publishing</source>
         <translation>정적 게시</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>자료형</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>커널과 확장의 모든 자료형, 그리고 클라스와 내용이 그것을 어떻게 리용하는지.</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ your account.</source>
         <source>Copy of %class_name</source>
         <translation>%class_name 복사본</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>자료형</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>자료형 %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85028,6 +85052,397 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>이 편지는 migration.ini [RemoteSettings] Notify[] 의 요구에 따라 %site 에서 보냈습니다.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>자료형 (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>%time에 셈, %minutes분 후에 다시</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>자료형은 클라스 속성의 한가지 값을 보관하고 편집합니다: 본문 한줄, 화상, 련관. 대부분은 커널이 주고 확장이 더 보탭니다. 여기에 모든 자료형과 그것을 주는 곳, 내용이 얼마나 리용하는지가 있습니다. 자료기지가 리용하지만 더는 아무것도 등록하지 않는 자료형은 그것을 가진 내용을 망가뜨립니다.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>클라스그루빠</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>지난 몇분동안의 수를 쓰지 않고 지금 다시 셉니다.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>다시 세기</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>개요</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>등록일</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>사용 중</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>사용되지 않음</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>자료형을 주는 확장</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>클라스 속성</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>객체 속성</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>등록되지 않음</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>목록에 있음, 파일 없음</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>자료형 %count개가 리용되지만 등록되지 않았습니다</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>클라스 속성 %class_attributes개와 객체 속성 %object_attributes개가 어떤 확장이나 설정도 등록하지 않은 자료형을 가지고 있습니다. 그 객체들은 보여주거나 편집하거나 발표할수 없습니다. 그 자료형을 주는 확장을 활성화하거나 클라스를 바꾸십시오.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>이것만 보기</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>자료형 찾기</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>식별자, 이름, PHP 클라스 또는 확장.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>표시</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>모두</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>주는 곳</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>모든 사용자</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>커널</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>이 려과기에 맞는 자료형이 없습니다.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>모두 표시</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>확장</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>자료형 %count개중 %shown개, %used개 리용중</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>자료기지에 이 자료형들의 클라스 또는 객체 속성이 있지만 content.ini에는 하나도 없거나 그 파일이 없습니다.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>%provider의 자료형</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>자료형</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>PHP 클라스와 파일</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>클라스</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>객체</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>플래그</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>없음</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>검색에 맞는 자료형이 없습니다. 검색을 지우십시오.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>자료형 %count개중 %shown개 보임</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>보인 자료형: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>%column 기준 정렬</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>%time에 셈</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>모든 자료형</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>도움말 페지</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>이 자료형은 리용되지만 등록되지 않았습니다</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>어떤 확장도 이 자료형을 등록하지 않는 동안 아래 클라스들의 객체는 보여주거나 편집하거나 발표할수 없습니다. 그것을 주는 확장을 활성화하고 content.ini [DataTypeSettings] AvailableDataTypes[]에 추가하거나 클라스들을 바꾸십시오.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini에 이 자료형이 있지만 어느 자료형 등록부에도 그 파일이 없습니다. 아무것도 리용하지 않으므로 AvailableDataTypes[]에서 없애거나 그 확장을 활성화하십시오.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>이 자료형에 대하여</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>식별자</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>이름</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>%name 확장</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>없음</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP 클라스</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>화일</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>AvailableDataTypes[]에 있음</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>예</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>아니요</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>값의 렬</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>클라스 속성 설정의 렬</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>표</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>렬과 표는 자료형의 코드를 읽어 찾은것입니다: 담보가 아니라 안내입니다.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>템플릿</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>싸이트접근</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>템플릿</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>위치</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>이 관리부분</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>기본 싸이트</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>재정의 없이: 클라스나 속성에 맞는 재정의 템플릿이 이것들보다 우선합니다.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>이것을 리용하는 클라스 (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>이 자료형의 속성을 가진 클라스가 없습니다.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>클라스</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>속성</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>클라스 속성 (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>속성</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>설정</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>필수</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>검색 가능</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>번역 가능</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>정보 수집함</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>이것을 리용하는 일부 내용</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>마지막 수정순</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>수정일</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>노드 %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>번역마다 자기 값이 있습니다.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>검색이 그 값들을 색인합니다.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>방문자로부터 정보를 모을수 있습니다 (양식).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>목록을 이것으로 정렬할수 있습니다: 정렬열쇠 %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>정렬 가능</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>그 값들은 다른 객체를 가리킵니다.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>관계</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>일반 문자렬로 채울수 있습니다 (가져오기, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>본문으로</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>파일로 채울수 있습니다.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>파일로</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>클라스 속성 설정이 묶음에 들어갑니다.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>패키지</translation>
     </message>
 </context>
 </TS>

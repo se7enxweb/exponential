@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Зөвхөн энэ хуудаснаас хайна: нийт %count, %from гэснээс %to хүртэл.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Цөм болон өргөтгөлүүдийн бүх өгөгдлийн төрөл, ангиуд болон агуулга тэдгээрийг хэрхэн ашигладаг нь.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Өгөгдлийн төрлүүд</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Static publishing</source>
         <translation>Статик нийтлэлт</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Өгөгдлийн төрлүүд</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Цөм болон өргөтгөлүүдийн бүх өгөгдлийн төрөл, ангиуд болон агуулга тэдгээрийг хэрхэн ашигладаг нь.</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ your account.</source>
         <source>Copy of %class_name</source>
         <translation>%class_name-ийн хуулбар</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Өгөгдлийн төрлүүд</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Өгөгдлийн төрөл %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85028,6 +85052,397 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Энэ захидлыг %site илгээсэн, учир нь migration.ini [RemoteSettings] Notify[] үүнийг шаарддаг.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Өгөгдлийн төрлүүд (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>%time-д тоолсон, %minutes минутын дараа дахин</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Өгөгдлийн төрөл нь ангийн атрибутын нэг төрлийн утгыг хадгалж, засварладаг: текстийн мөр, зураг, холбоос. Ихэнхийг нь цөм өгдөг, өргөтгөлүүд нэмдэг. Энд бүгд байна, хэн өгдөг, агуулга хэр их ашигладаг нь. Өгөгдлийн сан ашигладаг ч өөр юу ч бүртгэхээ больсон өгөгдлийн төрөл түүнийг агуулсан агуулгыг эвддэг.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Ангийн бүлгүүд</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Сүүлийн минутуудын тоог ашиглахын оронд одоо дахин тоолох.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Дахин тоолох</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Тойм</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Бүртгүүлсэн</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>Ашиглагдаж байна</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Ашиглаагүй</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Өгөгдлийн төрөл өгдөг өргөтгөлүүд</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Ангийн атрибутууд</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Объектын атрибутууд</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Бүртгэгдээгүй</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>Жагсаалтад байгаа, файл алга</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count өгөгдлийн төрөл ашиглагдаж байгаа ч бүртгэгдээгүй</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes ангийн атрибут болон %object_attributes объектын атрибут нь ямар ч өргөтгөл, тохиргоо бүртгэдэггүй өгөгдлийн төрөлтэй. Тэдгээрийн объектыг харуулах, засах, нийтлэх боломжгүй. Өгөгдлийн төрлийг өгдөг өргөтгөлийг идэвхжүүлэх эсвэл ангийг өөрчил.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Зөвхөн эдгээрийг харуулах</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Өгөгдлийн төрөл хайх</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Танигч, нэр, PHP анги эсвэл өргөтгөл.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Харуулах</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Бүгд</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Өгсөн</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Бүгд</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Цөм</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Энэ шүүлтүүрт тохирох өгөгдлийн төрөл алга.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Бүгдийг харуулах</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Өргөтгөл</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%count өгөгдлийн төрлөөс %shown, %used ашиглагдаж байна</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>Өгөгдлийн санд эдгээр өгөгдлийн төрлийн анги эсвэл объектын атрибутууд байгаа ч content.ini тэдгээрийн аль нэгийг ч жагсаагаагүй, эсвэл файл нь алга.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>%provider-ийн өгөгдлийн төрлүүд</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Өгөгдлийн төрөл</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>PHP анги ба файл</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Ангиуд</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Объектууд</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Тугнууд</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>байхгүй</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Хайлтад тохирох өгөгдлийн төрөл алга. Хайлтыг цэвэрлэ.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%count өгөгдлийн төрлөөс %shown харуулж байна</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Харуулсан өгөгдлийн төрлүүд: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Эрэмбэлэх: %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>%time-д тоолсон</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Бүх өгөгдлийн төрөл</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Тусламжийн хуудас</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Энэ өгөгдлийн төрөл ашиглагдаж байгаа ч бүртгэгдээгүй</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Ямар ч өргөтгөл өгөгдлийн төрлийг бүртгээгүй байхад доорх ангиудын объектыг харуулах, засах, нийтлэх боломжгүй. Түүнийг өгдөг өргөтгөлийг идэвхжүүлээд content.ini [DataTypeSettings] AvailableDataTypes[]-д нэмэх, эсвэл ангиудыг өөрчил.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini энэ өгөгдлийн төрлийг жагсаасан ч ямар ч өгөгдлийн төрлийн хавтаст түүний файл алга. Үүнийг юу ч ашигладаггүй; AvailableDataTypes[]-ээс хасах эсвэл өргөтгөлийг нь идэвхжүүл.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Энэ өгөгдлийн төрлийн тухай</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Танигч</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Нэр</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Өргөтгөл %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>хэн ч биш</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP класс</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Файл</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>AvailableDataTypes[]-д</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>тийм</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>үгүй</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Утгын баганууд</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Ангийн атрибутын тохиргооны баганууд</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Хүснэгтүүд</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Багана, хүснэгтийг өгөгдлийн төрлийн кодыг уншиж олсон: баримжаа, амлалт биш.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Загварууд</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Сайтын хандалт</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Загвар</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Байгаа газар</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>энэ удирдлага</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>үндсэн сайт</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Дарж бичихгүйгээр: анги эсвэл атрибутаар тохирох дарж бичих загвар эдгээрээс давуу.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Үүнийг ашигладаг ангиуд (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Энэ өгөгдлийн төрлийн атрибуттай анги алга.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Анги</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Атрибутууд</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Ангийн атрибутууд (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Атрибут</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Тохиргоо</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Шаардлагатай</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Хайх боломжтой</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Орчуулах боломжтой</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Мэдээлэл цуглуулдаг</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Үүнийг ашигладаг зарим агуулга</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Сүүлд өөрчлөгдсөн нь эхэнд</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Өөрчилсөн</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Зангилаа %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Орчуулга бүр өөрийн утгатай.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>Хайлт түүний утгуудыг индексжүүлдэг.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Зочдоос мэдээлэл цуглуулж чадна (маягт).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Жагсаалтыг үүгээр эрэмбэлж болно: эрэмбийн түлхүүр %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Эрэмбэлэгдэх</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Түүний утгууд бусад объект руу заадаг.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Холбоод</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Энгийн текстээс бөглөж болно (импорт, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Текстээс</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Файлаас бөглөж болно.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Файлаас</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Ангийн атрибутын тохиргоо нь багцад ордог.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Багцууд</translation>
     </message>
 </context>
 </TS>

@@ -982,6 +982,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Eli phepha kuphela likhangelwayo: %from ukuya ku-%to kwii-%count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Lonke uhlobo lwedatha lwekernel nezandiso, nendlela iiklasi nemixholo ezilusebenzisa ngayo.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Iindidi zedatha</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15430,6 +15438,14 @@ Qaphela: Amapakethe akazi kukhutshwa.</translation>
     <message>
         <source>Static publishing</source>
         <translation>Ukushicilela okumileyo</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Iindidi zedatha</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Lonke uhlobo lwedatha lwekernel nezandiso, nendlela iiklasi nemixholo ezilusebenzisa ngayo.</translation>
     </message>
 </context>
 <context>
@@ -55388,6 +55404,14 @@ iakhawunti yenu isebenze.</translation>
         <source>Copy of %class_name</source>
         <translation>Ikopi ye-%class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Iindidi zedatha</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Uhlobo lwedatha %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85026,6 +85050,397 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Le meyile ithunyelwe ngu %site kuba migration.ini [RemoteSettings] Notify[] iyayicela.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Iintlobo zedatha (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>Kubalwe ngo-%time, kwakhona emva kwemizuzu eyi-%minutes</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Uhlobo lwedatha lugcina kwaye luhlela uhlobo olunye lwexabiso lophawu lweklasi: umgca wombhalo, umfanekiso, unxulumano. Ikernel izisa uninzi lwazo, izandiso zongeza ezinye. Nazi zonke, ngubani obonelela ngazo kwaye ingakanani imixholo ezisebenzisayo. Uhlobo lwedatha olusetyenziswa yidatabheyisi kodwa lungasabhaliswa nanto lwaphula imixholo enalo.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Amaqela eeklasi</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Bala kwakhona ngoku endaweni yokusebenzisa amanani emizuzu edlulileyo.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Bala kwakhona</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Isishwankathelo</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Kubhalisiwe</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>Iyasetyenziswa</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Ayisetyenziswa</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Izandiso ezibonelela ngeentlobo zedatha</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Iiphawu zeklasi</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Iiphawu zeento</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Alubhaliswanga</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>Kudweliswe, ifayile ayikho</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>Iintlobo zedatha ezi-%count ziyasetyenziswa kodwa azibhaliswanga</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>Iiphawu zeklasi ezi-%class_attributes kunye neempawu zento ezi-%object_attributes zinohlobo lwedatha olungabhaliswanga sisandiso okanye ulungiselelo. Izinto zazo azinakuboniswa, zihlelwe okanye zipapashwe. Vula isandiso esibonelela ngolu hlobo lwedatha, okanye utshintshe iklasi.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Bonisa ezi kuphela</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Fumana uhlobo lwedatha</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Isichongi, igama, iklasi yePHP okanye isandiso.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Bonisa</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Zonke</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Inikezwe ngu</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Wonke umntu</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Ikernel</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Akukho hlobo lwedatha luhambelana nesi sihluzi.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Bonisa zonke</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Isandiso</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>Ezi-%shown kwiintlobo zedatha ezi-%count, ezi-%used ziyasetyenziswa</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>Idatabheyisi ineempawu zeklasi okanye zento zezi ntlobo zedatha, kodwa i-content.ini ayidwelisi nanye kuzo, okanye ifayile yayo ayikho.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>Iintlobo zedatha zika-%provider</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Uhlobo lwedatha</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>Iklasi yePHP nefayile</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Iiklasi</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Izinto</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Iiflegi</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>akukho</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Akukho hlobo lwedatha luhambelana nokukhangela. Cima ukukhangela.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>Kuboniswa ezi-%shown kwiintlobo zedatha ezi-%count</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Iintlobo zedatha eziboniswayo: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Hlela ngokwe-%column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>Kubalwe ngo-%time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Zonke iintlobo zedatha</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Iphepha loncedo</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Olu hlobo lwedatha luyasetyenziswa kodwa alubhaliswanga</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Izinto zeeklasi ezingezantsi azinakuboniswa, zihlelwe okanye zipapashwe ngoxa kungekho sandiso sibhalisa olu hlobo lwedatha. Vula isandiso esibonelela ngalo uze ulongeze ku-content.ini [DataTypeSettings] AvailableDataTypes[], okanye utshintshe iiklasi.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>I-content.ini idwelisa olu hlobo lwedatha, kodwa akukho lawula lweentlobo zedatha linefayile yalo. Akukho nto ilusebenzisayo; lususe ku-AvailableDataTypes[] okanye uvule isandiso salo.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Malunga nolu hlobo lwedatha</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Isihlonziphi</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Igama</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Isandiso %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>akukho mntu</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>Iklasi ye-PHP</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Ifayile</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>Ku-AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ewe</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>hayi</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Iikholamu zexabiso lalo</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Iikholamu zolungiselelo lophawu lweklasi yalo</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Iitheyibhile</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Iikholamu neetafile zifunyanwa ngokufunda ikhowudi yohlobo lwedatha: sisikhokelo, asisosithembiso.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Iithemplethi</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Ukufikelela kwisayithi</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Itemplethi</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Ifumaneka kwi</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>olu lawulo</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>isayithi engagqibekanga</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Ngaphandle kokubhala ngaphezulu: itemplethi yokubhala ngaphezulu ehambelana neklasi okanye uphawu iphumelela kunezi.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Iiklasi eziwusebenzisayo (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Akukho klasi inophawu lolu hlobo lwedatha.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Iklasi</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Uphawu</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Iiphawu zeklasi (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Uphawu</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Izicwangciso</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Iyafuneka</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Iyakhangeleka</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Iyaguqulelwa</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Iqokelela ulwazi</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Eminye imixholo elusebenzisayo</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Olutshintshwe mva kuqala</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Kuguqulwe</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Indawo yomthi %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Inguqulelo nganye inexabiso layo.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>Ukukhangela kufaka amaxabiso alo kwisalathiso.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Lungaqokelela ulwazi kubandwendweli (iifom).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Uluhlu lungacwangciswa ngalo: isitshixo sokucwangcisa %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Okunokucwangciswa</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Amaxabiso alo akhomba kwezinye izinto.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Ulwalamano</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Lungazaliswa ukusuka kumbhalo olula (ukungenisa, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Ukusuka kumbhalo</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Lungazaliswa ukusuka kwifayile.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Ukusuka kwifayile</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Ulungiselelo lophawu lweklasi yalo lungena kwiipakethe.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Iipakethe</translation>
     </message>
 </context>
 </TS>

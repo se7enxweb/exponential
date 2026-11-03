@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Жалан ушул барак боюнча издөө жүрөт: %count ичинен %from - %to.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Ядронун жана кеңейтүүлөрдүн ар бир маалымат түрү жана класстар менен мазмун аны кантип колдонору.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Маалымат түрлөрү</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Static publishing</source>
         <translation>Статикалык жарыялоо</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Маалымат түрлөрү</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Ядронун жана кеңейтүүлөрдүн ар бир маалымат түрү жана класстар менен мазмун аны кантип колдонору.</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ your account.</source>
         <source>Copy of %class_name</source>
         <translation>%class_name көчүрмөсү</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Маалымат түрлөрү</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Маалымат түрү %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85028,6 +85052,397 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Бул кат %site тарабынан жөнөтүлдү, анткени migration.ini [RemoteSettings] Notify[] ушуну талап кылат.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Маалымат түрлөрү (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>%time эсептелди, %minutes мүнөттөн кийин кайра</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Маалымат түрү класстын атрибутунун бир түрдөгү маанисин сактап, түзөтөт: текст сабы, сүрөт, байланыш. Алардын көбүн ядро берет, кеңейтүүлөр дагы кошот. Бул жерде алардын баары, аларды ким берери жана мазмундун канчасы аларды колдонору көрсөтүлгөн. Маалымат базасы колдонгон, бирок аны эч нерсе каттабаган маалымат түрү аны камтыган мазмунду бузат.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Класстар топтору</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Акыркы мүнөттөрдүн эсебин колдонбой, азыр кайра эсептөө.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Кайра эсептөө</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Серептөө</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Катталган</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>Колдонулууда</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Колдонулган жок</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Маалымат түрлөрүн берген кеңейтүүлөр</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Класстын атрибуттары</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Объект атрибуттары</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Катталган эмес</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>Тизмеде бар, файл жок</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count маалымат түрү колдонулат, бирок катталган эмес</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes класстын атрибуту жана %object_attributes объекттин атрибуту эч бир кеңейтүү же жөндөө каттабаган маалымат түрүнө ээ. Алардын объекттерин көрсөтүүгө, түзөтүүгө же жарыялоого болбойт. Маалымат түрүн берген кеңейтүүнү иштетиңиз же классты өзгөртүңүз.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Ушуларды гана көрсөтүү</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Маалымат түрүн табуу</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Идентификатор, аталыш, PHP классы же кеңейтүү.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Көрсөтүү</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Баары</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Берген</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Баары</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Ядро</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Бул чыпкага дал келген маалымат түрү жок.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Баарын көрсөтүү</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Кеңейтүү</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%count маалымат түрүнөн %shown, %used колдонулууда</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>Маалымат базасында ушул маалымат түрлөрүндөгү класс же объект атрибуттары бар, бирок content.ini алардын бирин да тизмелебейт же анын файлы жок.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>%provider маалымат түрлөрү</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Маалымат түрү</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>PHP классы жана файл</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Класстар</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Объекттер</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Желектер</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>жок</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Издөөгө дал келген маалымат түрү жок. Издөөнү тазалаңыз.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%count маалымат түрүнөн %shown көрсөтүлдү</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Көрсөтүлгөн маалымат түрлөрү: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>%column боюнча иреттөө</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>%time эсептелди</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Бардык маалымат түрлөрү</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Жардам барагы</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Бул маалымат түрү колдонулат, бирок катталган эмес</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Эч бир кеңейтүү бул маалымат түрүн каттабаганча, төмөнкү класстардын объекттерин көрсөтүүгө, түзөтүүгө же жарыялоого болбойт. Аны берген кеңейтүүнү иштетип, content.ini [DataTypeSettings] AvailableDataTypes[] ичине кошуңуз же класстарды өзгөртүңүз.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini бул маалымат түрүн тизмелейт, бирок эч бир маалымат түрлөрүнүн папкасында анын файлы жок. Аны эч нерсе колдонбойт; аны AvailableDataTypes[] ичинен алып салыңыз же анын кеңейтүүсүн иштетиңиз.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Бул маалымат түрү жөнүндө</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Идентификатор</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Аты</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Кеңейтүү %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>эч ким</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP классы</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Файл</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>AvailableDataTypes[] ичинде</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ооба</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>жок</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Анын маанисинин мамычалары</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Анын класс атрибутунун жөндөөлөрүнүн мамычалары</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Таблицалар</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Мамычалар жана таблицалар маалымат түрүнүн кодун окуу аркылуу табылат: бул убада эмес, багыт.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Шаблондор</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Сайтка кирүү чекити</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Шаблон</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Табылган жери</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>бул администрация</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>демейки сайт</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Алмаштыруусуз: класс же атрибут боюнча дал келген алмаштыруучу шаблон булардан артык.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Аны колдонгон класстар (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Эч бир класста бул маалымат түрүндөгү атрибут жок.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Класс</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Атрибуттар</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Класстын атрибуттары (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Атрибут</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Жөндөөлөр</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Милдеттүү</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Издөөгө болот</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Которула турган</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Маалымат чогултат</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Аны колдонгон айрым мазмун</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Акыркы өзгөртүлгөнү биринчи</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Өзгөртүлгөн</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Түйүн %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Ар бир котормонун өз мааниси бар.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>Издөө анын маанилерин индекстейт.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Ал келүүчүлөрдөн маалымат чогулта алат (формалар).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Тизмелерди ал боюнча иреттөөгө болот: иреттөө ачкычы %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Иреттелүүчү</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Анын маанилери башка объекттерге шилтейт.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Байланыштар</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Аны жөнөкөй саптан толтурууга болот (импорт, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Тексттен</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Аны файлдан толтурууга болот.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Файлдан</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Анын класс атрибутунун жөндөөлөрү пакеттерге кирет.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Пакеттер</translation>
     </message>
 </context>
 </TS>

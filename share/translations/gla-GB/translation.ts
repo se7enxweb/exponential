@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Chan eil ach an duilleag seo ga lorg: %from gu %to à %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Gach seòrsa dàta aig an eitean is aig na leudachain, agus mar a chleachdas na clasaichean is an t-susbaint e.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Seòrsachan dàta</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ An aire: Cha tèid na pacaidean a dhì-stàladh.</translation>
     <message>
         <source>Static publishing</source>
         <translation>Foillseachadh stataigeach</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Seòrsachan dàta</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Gach seòrsa dàta aig an eitean is aig na leudachain, agus mar a chleachdas na clasaichean is an t-susbaint e.</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ ur cunntas a ghnìomhachadh.</translation>
         <source>Copy of %class_name</source>
         <translation>Lethbhreac de %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Seòrsachan dàta</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Seòrsa dàta %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85028,6 +85052,397 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Chaidh am post-d seo a chur le %site a chionn 's gu bheil migration.ini [RemoteSettings] Notify[] ga iarraidh.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Seòrsachan dàta (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>Air a chunntadh %time, a-rithist an ceann %minutes mionaid</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Stòraichidh is deasaichidh seòrsa dàta aon seòrsa luach de bhuadh clas: loidhne teacsa, dealbh, dàimh. Bheir an t-eitean a' mhòr-chuid dhiubh, cuiridh leudachain barrachd ris. Seo iad uile, cò a bheir seachad iad agus dè na tha den t-susbaint gan cleachdadh. Brisidh seòrsa dàta a tha an stòr-dàta a' cleachdadh ach nach eil dad a' clàradh tuilleadh an t-susbaint aig a bheil e.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Buidhnean chlasaichean</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Cunnt a-rithist an-dràsta seach na cunntasan aig na mionaidean mu dheireadh a chleachdadh.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Cunnt a-rithist</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Foir-shealladh</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Clàraichte</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>Ga chleachdadh</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Gun chleachdadh</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Leudachain a bheir seachad seòrsachan dàta</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Buadhan a' chlas</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Buadhan an oibseict</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Gun chlàradh</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>Air an liosta, faidhle a dhìth</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>Tha %count seòrsachan dàta gan cleachdadh ach gun chlàradh</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>Tha seòrsa dàta aig %class_attributes buadhan clas agus %object_attributes buadhan oibseict nach eil leudachan no roghainn sam bith a' clàradh. Chan urrainnear na h-oibseactan aca a shealltainn, a dheasachadh no fhoillseachadh. Cuir an comas an leudachan a bheir seachad an seòrsa dàta, no atharraich an clas.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Seall iad seo a-mhàin</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Lorg seòrsa dàta</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Aithnichear, ainm, clas PHP no leudachan.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Seall</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Na h-uile</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Air a thoirt seachad le</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>A h-uile duine</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Eitean</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Chan eil seòrsa dàta sam bith a' freagairt ris a' chriathrag seo.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Seall na h-uile</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Leudachan</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown à %count seòrsachan dàta, %used gan cleachdadh</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>Tha buadhan clas no oibseict de na seòrsachan dàta seo san stòr-dàta, ach chan eil content.ini a' liostadh gin dhiubh, no tha am faidhle aca a dhìth.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>Seòrsachan dàta o %provider</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Seòrsa dàta</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>Clas PHP agus faidhle</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Clasaichean</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Oibseactan</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Brataichean</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>chan eil gin</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Chan eil seòrsa dàta sam bith a' freagairt ris an lorg. Falamhaich an lorg.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%shown à %count seòrsachan dàta gan sealltainn</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Seòrsachan dàta gan sealltainn: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Seòrsaich a rèir %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>Air a chunntadh %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Gach seòrsa dàta</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Duilleag cobharach</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Tha an seòrsa dàta seo ga chleachdadh ach gun chlàradh</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Chan urrainnear oibseactan nan clasaichean gu h-ìosal a shealltainn, a dheasachadh no fhoillseachadh fhad 's nach eil leudachan sam bith a' clàradh an t-seòrsa dàta. Cuir an comas an leudachan a bheir seachad e agus cuir ri content.ini [DataTypeSettings] AvailableDataTypes[] e, no atharraich na clasaichean.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>Tha content.ini a' liostadh an t-seòrsa dàta seo, ach chan eil am faidhle aige ann am pasgan seòrsa dàta sam bith. Chan eil dad ga chleachdadh; thoir air falbh e o AvailableDataTypes[] no cuir an comas an leudachan aige.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Mun t-seòrsa dàta seo</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Aithnichear</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Ainm</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Leudachan %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>gun duine</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>Clas PHP</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Faidhle</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>Ann an AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>tha</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>chan eil</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Colbhan an luach aige</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Colbhan roghainnean a' bhuaidh clas aige</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Clàran</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Lorgar na colbhan is na clàran le bhith a' leughadh còd an t-seòrsa dàta: stiùireadh, chan e gealladh.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Teamplaidean</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Inntrigeadh làraich</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Teamplaid</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Air a lorg ann an</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>an rianachd seo</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>an làrach bhunaiteach</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Gun tar-àitheantan: buadhaichidh teamplaid tar-àithne a fhreagras ri clas no buadh air an fheadhainn seo.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Clasaichean ga chleachdadh (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Chan eil buadh den t-seòrsa dàta seo aig clas sam bith.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Clas</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Buadhan</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Buadhan a' chlas (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Buadh</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Roghainnean</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Riatanach</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Gabhaidh a lorg</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>So-eadar-theangachadh</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Cruinnichidh e fiosrachadh</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Beagan susbainte ga chleachdadh</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Na h-atharraichean as ùire an toiseach</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Atharraichte</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Nòd %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Tha a luach fhèin aig gach eadar-theangachadh.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>Cuiridh an lorg na luachan aige ann an clàr-amais.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>'S urrainn dha fiosrachadh a chruinneachadh o thadhalaichean (foirmean).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Gabhaidh liostaichean an seòrsachadh a rèir seo: iuchair seòrsachaidh %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Ri sheòrsachadh</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Tha na luachan aige a' comharrachadh oibseactan eile.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Ceanglaichean</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Gabhaidh a lìonadh o shreang shìmplidh (ion-phortadh, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>O theacsa</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Gabhaidh a lìonadh o fhaidhle.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>O fhaidhle</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Thèid roghainnean a' bhuaidh clas aige ann am pacaidean.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Pacaidean</translation>
     </message>
 </context>
 </TS>

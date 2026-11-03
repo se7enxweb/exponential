@@ -982,6 +982,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Naanị ibe a ka a na-achọ: %from ruo %to n&apos;ime %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Ụdị data niile nke kernel na ndọtị, na otu klasị na ọdịnaya si eji ha.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Ụdị data</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15430,6 +15438,14 @@ Nzòpụta: Agaghị ewepụ nwụnye mpakị ndị a.</translation>
     <message>
         <source>Static publishing</source>
         <translation>Mbipụta nkwụsi ike</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Ụdị data</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Ụdị data niile nke kernel na ndọtị, na otu klasị na ọdịnaya si eji ha.</translation>
     </message>
 </context>
 <context>
@@ -55388,6 +55404,14 @@ akaụntụ gị rụọ ọrụ.</translation>
         <source>Copy of %class_name</source>
         <translation>Nkeji %class_name e detuo</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Ụdị data</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Ụdị data %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85026,6 +85050,397 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>%site zitere ozi a n'ihi na migration.ini [RemoteSettings] Notify[] chọrọ ya.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Ụdị data (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>Agụrụ na %time, ọzọ mgbe nkeji %minutes gachara</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Ụdị data na-echekwa ma na-edezi otu ụdị uru nke njirimara klasị: ahịrị ederede, onyonyo, njikọ. Kernel na-ewetara ọtụtụ n'ime ha, ndọtị na-agbakwunye ndị ọzọ. Lee ha niile, onye na-enye ha na ole ọdịnaya ji ha eme ihe. Ụdị data nke ebe nchekwa data ji eme ihe ma ọ dịghị ihe na-edebanye ya aha ọzọ na-emebi ọdịnaya nwere ya.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Otu klasị</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Gụọ ọzọ ugbu a kama iji ọnụ ọgụgụ nke nkeji ole na ole gara aga.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Gụọ ọzọ</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Nchịkọta</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Edebanyere aha</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>Na-eji eji</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Ejighị ya</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Ndọtị na-enye ụdị data</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Njirimara klasị</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Njirimara Ihe</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Edebanyeghị aha</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>Edepụtara, faịlụ efuola</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>A na-eji ụdị data %count mana edebanyeghị ha aha</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>Njirimara klasị %class_attributes na njirimara ihe %object_attributes nwere ụdị data nke ọ dịghị ndọtị ma ọ bụ ntọala na-edebanye aha. Enweghị ike igosi, idezi ma ọ bụ ibipụta ihe ha. Mee ka ndọtị na-enye ụdị data ahụ rụọ ọrụ, ma ọ bụ gbanwee klasị ahụ.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Gosi naanị ndị a</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Chọta ụdị data</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Njirimara, aha, klasị PHP ma ọ bụ ndọtị.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Gosi</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Ha niile</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Onye nyere ya</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Onye ọ bụla</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Kernel</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Ọ dịghị ụdị data dabara na nzacha a.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Gosi ha niile</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Mgbatị</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown n'ime ụdị data %count, a na-eji %used</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>Ebe nchekwa data nwere njirimara klasị ma ọ bụ nke ihe nke ụdị data ndị a, mana content.ini edepụtaghị nke ọ bụla n'ime ha, ma ọ bụ faịlụ ya efuola.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>Ụdị data nke %provider</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Ụdị data</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>Klasị PHP na faịlụ</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Klasị</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Ihe</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Ọkọlọtọ</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>enweghị</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Ọ dịghị ụdị data dabara na nchọ ahụ. Kpochapụ nchọ ahụ.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>E gosiri %shown n'ime ụdị data %count</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Ụdị data e gosiri: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Hazie site na %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>Agụrụ na %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Ụdị data niile</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Ibe enyemaka</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>A na-eji ụdị data a mana edebanyeghị ya aha</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Enweghị ike igosi, idezi ma ọ bụ ibipụta ihe nke klasị ndị dị n'okpuru ma ọ bụrụ na ọ dịghị ndọtị na-edebanye ụdị data ahụ aha. Mee ka ndọtị na-enye ya rụọ ọrụ ma tinye ya na content.ini [DataTypeSettings] AvailableDataTypes[], ma ọ bụ gbanwee klasị ndị ahụ.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini depụtara ụdị data a, mana ọ dịghị nchekwa ụdị data nwere faịlụ ya. Ọ dịghị ihe na-eji ya; wepụ ya na AvailableDataTypes[] ma ọ bụ mee ka ndọtị ya rụọ ọrụ.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Banyere ụdị data a</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Njirimara</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Aha</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Mgbatị %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>ọ dịghị onye</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>Klasị PHP</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Faịlụ</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>Na AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ee</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>mba</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Kọlụm nke uru ya</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Kọlụm nke ntọala njirimara klasị ya</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Tebụl</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>A na-achọta kọlụm na tebụl site n'ịgụ koodu nke ụdị data ahụ: ntụziaka, ọ bụghị nkwa.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Àkụkụ ndebiri</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Nnweta saịtị</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Ndebiri</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Achọtara na</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>nchịkwa a</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>saịtị ndabara</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Na-enweghị ndochi: ndebiri ndochi dabara site na klasị ma ọ bụ njirimara na-akarị ndị a.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Klasị na-eji ya (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Ọ dịghị klasị nwere njirimara nke ụdị data a.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klasị</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Njirimara</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Njirimara klasị (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Njirimara</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Ntọala</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Chọrọ</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Enwere ike ịchọ ya</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Nke enwere ike ịtụgharị</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Na-anakọta Ozi</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Ụfọdụ ọdịnaya na-eji ya</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Nke e mezigharịrị ikpeazụ na mbụ</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Gbanwere</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Nọdụ %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Ntụgharị ọ bụla nwere uru nke ya.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>Nchọ na-edepụta uru ya n'indeksi.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Ọ nwere ike ịnakọta ozi n'aka ndị ọbịa (fọm).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Enwere ike ịhazi ndepụta site na ya: igodo nhazi %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Enwere ike ịhazi ya</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Uru ya na-atụ aka n'ihe ndị ọzọ.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Mmekọrịta</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Enwere ike ijupụta ya site na ederede nkịtị (mbubata, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Site na ederede</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Enwere ike ijupụta ya site na faịlụ.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Site na faịlụ</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Ntọala njirimara klasị ya na-abanye n'ime ngwugwu.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Mpakị</translation>
     </message>
 </context>
 </TS>

@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Orri hau bakarrik bilatzen da: %from - %to, guztira %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Nukleoaren eta hedapenen datu-mota guztiak, eta klaseek eta edukiak nola erabiltzen dituzten.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Datu-motak</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ Oharra: paketeak ez dira desinstalatuko.</translation>
     <message>
         <source>Static publishing</source>
         <translation>Argitalpen estatikoa</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Datu-motak</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Nukleoaren eta hedapenen datu-mota guztiak, eta klaseek eta edukiak nola erabiltzen dituzten.</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ aktibatzeko.</translation>
         <source>Copy of %class_name</source>
         <translation>%class_name klasearen kopia</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Datu-motak</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>%string datu-mota</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85028,6 +85052,397 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Mezu hau %site guneak bidali du, migration.ini [RemoteSettings] Notify[] ezarpenak eskatzen duelako.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Datu-motak (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>%time zenbatua, berriro %minutes minutu barru</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Datu-mota batek klase-atributu baten balio mota bat gordetzen eta editatzen du: testu-lerro bat, irudi bat, erlazio bat. Nukleoak gehienak ematen ditu, eta hedapenek gehiago gehitzen dituzte. Hemen daude guztiak, nork ematen dituen eta edukiaren zenbat zatik erabiltzen dituen. Datu-baseak erabiltzen duen baina jada ezerk erregistratzen ez duen datu-motak hura duen edukia hausten du.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Klase-taldeak</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Zenbatu berriro orain, azken minutuetako zenbaketak erabili beharrean.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Zenbatu berriro</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Ikuspegi orokorra</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Erregistratua</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>Erabiltzen ari da</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Ez da erabili</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Datu-motak ematen dituzten hedapenak</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Klasearen atributuak</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Objektuaren atributuak</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Erregistratu gabe</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>Zerrendan, fitxategia falta da</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count datu-mota erabiltzen dira, baina ez daude erregistratuta</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes klase-atributuk eta %object_attributes objektu-atributuk inongo hedapenek edo ezarpenek erregistratzen ez duten datu-mota dute. Haien objektuak ezin dira erakutsi, editatu edo argitaratu. Aktibatu datu-mota ematen duen hedapena, edo aldatu klasea.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Erakutsi hauek bakarrik</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Bilatu datu-mota bat</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Identifikatzailea, izena, PHP klasea edo hedapena.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Erakutsi</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Guztiak</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Hornitzailea</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Guztiak</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Nukleoa</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Ez dago iragazki honekin bat datorren datu-motarik.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Erakutsi guztiak</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Hedapena</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%count datu-motatik %shown, %used erabiltzen</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>Datu-baseak datu-mota hauetako klase- edo objektu-atributuak ditu, baina content.ini-k ez du horietako bat ere zerrendatzen, edo haren fitxategia falta da.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>%provider hornitzailearen datu-motak</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Datu-mota</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>PHP klasea eta fitxategia</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Klaseak</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Objektuak</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Bandera</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>bat ere ez</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Ez dago bilaketarekin bat datorren datu-motarik. Garbitu bilaketa.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%count datu-motatik %shown erakutsita</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Erakutsitako datu-motak: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Ordenatu %column arabera</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>%time zenbatua</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Datu-mota guztiak</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Laguntza-orria</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Datu-mota hau erabiltzen da, baina ez dago erregistratuta</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Beheko klaseetako objektuak ezin dira erakutsi, editatu edo argitaratu hedapenik datu-mota erregistratzen ez duen bitartean. Aktibatu hura ematen duen hedapena eta gehitu content.ini [DataTypeSettings] AvailableDataTypes[] ezarpenera, edo aldatu klaseak.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini-k datu-mota hau zerrendatzen du, baina datu-moten direktorio batek ere ez du haren fitxategia. Ezerk ez du erabiltzen; kendu AvailableDataTypes[] ezarpenetik edo aktibatu haren hedapena.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Datu-mota honi buruz</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Identifikatzailea</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Izena</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>%name hedapena</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>inor ez</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP klasea</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fitxategia</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>AvailableDataTypes[] ezarpenean</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>bai</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ez</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Haren balioaren zutabeak</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Haren klase-atributuaren ezarpenen zutabeak</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Taulak</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Zutabeak eta taulak datu-motaren kodea irakurriz aurkitzen dira: gida bat, ez promesa bat.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Txantiloiak</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Gune-sarbidea</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Txantiloia</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Hemen aurkitua</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>administrazio hau</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>gune lehenetsia</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Gainidazketarik gabe: klasearen edo atributuaren arabera bat datorren gainidazketa-txantiloiak hauen gainetik du lehentasuna.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Erabiltzen duten klaseak (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Ez dago datu-mota honetako atributua duen klaserik.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klasea</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Atributuak</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Klasearen atributuak (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Atributua</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Ezarpenak</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>IDa: %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Derrigorrezkoa</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Bilagarria</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Itzulgarria</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Informazioa biltzen du</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Erabiltzen duen eduki batzuk</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Azken aldatuak lehenik</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Aldatua</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>%id nodoa</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Itzulpen bakoitzak bere balioa du.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>Bilaketak haren balioak indexatzen ditu.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Bisitarien informazioa bil dezake (inprimakiak).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Zerrendak haren arabera ordena daitezke: ordenatze-gakoa %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Ordenagarria</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Haren balioek beste objektu batzuetara seinalatzen dute.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Erlazioak</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Kate arrunt batetik bete daiteke (inportazioa, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Testutik</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Fitxategi batetik bete daiteke.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Fitxategitik</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Haren klase-atributuaren ezarpenak paketeetan sartzen dira.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Paketeak</translation>
     </message>
 </context>
 </TS>

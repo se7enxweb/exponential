@@ -985,6 +985,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Haec sola pagina quaeritur: %from ad %to ex %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Omnia genera datorum nuclei et extensionum, et quomodo classes et contenta ea adhibeant.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Genera datorum</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15374,6 +15382,14 @@ Nota: institutio sarcinarum non revocabitur.</translation>
     <message>
         <source>Static publishing</source>
         <translation>Publicatio statica</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Genera datorum</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Omnia genera datorum nuclei et extensionum, et quomodo classes et contenta ea adhibeant.</translation>
     </message>
 </context>
 <context>
@@ -55332,6 +55348,14 @@ rationem tuam activeres.</translation>
         <source>Copy of %class_name</source>
         <translation>Exemplar classis %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Genera datorum</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Genus datorum %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85061,6 +85085,397 @@ Classem nodi functione permutandi mutare debebis.</translation>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Hae litterae a %site missae sunt quia migration.ini [RemoteSettings] Notify[] eas postulat.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Genera datorum (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>Numeratum %time, iterum post %minutes minuta</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Genus datorum unum genus valoris attributi classis servat et emendat: lineam textus, imaginem, relationem. Nucleus plurima affert, extensiones alia addunt. Hic sunt omnia, qui ea praebeant et quantum contentorum ea adhibeat. Genus datorum quod basis datorum adhibet sed nihil iam inscribit, contenta quae id habent frangit.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Greges classium</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Nunc iterum numera pro numeris ultimorum minutorum.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Iterum numera</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Conspectus</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Inscriptum</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>In usu</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Non adhibitum</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Extensiones quae genera datorum praebent</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Attributa classis</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Attributa rei</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Non inscriptum</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>In indice, fasciculus deest</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count genera datorum adhibentur sed non inscripta sunt</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes attributa classis et %object_attributes attributa rerum genus datorum habent quod nulla extensio neque optio inscribit. Res eorum ostendi, emendari aut edi non possunt. Extensionem quae genus datorum praebet activa, aut classem muta.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Haec sola ostende</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Genus datorum quaere</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Identificator, nomen, classis PHP aut extensio.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Ostendere</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Omnia</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Praebetur a</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Omnes</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Nucleus</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Nullum genus datorum huic filtro congruit.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Omnia ostendere</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Extensio</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown ex %count generibus datorum, %used in usu</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>Basis datorum attributa classium aut rerum horum generum datorum habet, sed content.ini nullum eorum enumerat, aut fasciculus eius deest.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>Genera datorum %provider</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Genus datorum</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>Classis et fasciculus PHP</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Classes</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Res</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Notae</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>nullum</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Nullum genus datorum quaestioni congruit. Quaestionem purga.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%shown ex %count generibus datorum ostensa</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Genera datorum ostensa: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Secundum %column ordinare</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>Numeratum %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Omnia genera datorum</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Pagina auxilii</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Hoc genus datorum adhibetur sed non inscriptum est</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Res classium infra ostendi, emendari aut edi non possunt dum nulla extensio genus datorum inscribit. Extensionem quae id praebet activa et id adde ad content.ini [DataTypeSettings] AvailableDataTypes[], aut classes muta.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini hoc genus datorum enumerat, sed nullum directorium generum datorum fasciculum eius habet. Nihil id adhibet; remove id ex AvailableDataTypes[] aut extensionem eius activa.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>De hoc genere datorum</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Identificator</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nomen</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Extensio %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>nemo</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>Classis PHP</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fasciculus</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>In AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ita</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>non</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Columnae valoris eius</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Columnae optionum attributi classis</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Tabulae</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Columnae et tabulae inveniuntur legendo codicem generis datorum: dux, non promissum.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Formulae</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Aditus situs</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Formula</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Inventum in</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>haec administratio</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>situs praefinitus</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Sine substitutionibus: formula substituta quae classi aut attributo congruit his praevalet.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Classes quae id adhibent (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Nulla classis attributum huius generis datorum habet.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Classis</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Attributa</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Attributa classis (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Attributum</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Optiones</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Necessarium</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Investigabile</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Vertibile</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Notitiam colligit</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Aliqua contenta quae id adhibent</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Novissime mutata primum</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Mutatum</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Nodus %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Quaeque translatio suum valorem habet.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>Quaestio valores eius in indicem refert.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Informationem a visitatoribus colligere potest (formulae).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Indices secundum id ordinari possunt: clavis ordinis %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Ordinabile</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Valores eius ad alias res monstrant.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Relationes</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Ex simplici catena textus impleri potest (importatio, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Ex textu</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Ex fasciculo impleri potest.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Ex fasciculo</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Optiones attributi classis eius in sarcinas includuntur.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Sarcinae</translation>
     </message>
 </context>
 </TS>

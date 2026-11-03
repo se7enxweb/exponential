@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>কেৱল এই পৃষ্ঠাত সন্ধান কৰা হয়: %count ৰ ভিতৰত %from ৰ পৰা %to লৈ।</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>কেন্দ্ৰ আৰু এক্সটেনচনবোৰৰ প্ৰতিটো ডাটাৰ প্ৰকাৰ, আৰু শ্ৰেণী আৰু বিষয়বস্তুৱে ইয়াক কেনেকৈ ব্যৱহাৰ কৰে।</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>ডাটাৰ প্ৰকাৰসমূহ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15432,6 +15440,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Static publishing</source>
         <translation>স্থিতিশীল প্ৰকাশন</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>ডাটাৰ প্ৰকাৰসমূহ</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>কেন্দ্ৰ আৰু এক্সটেনচনবোৰৰ প্ৰতিটো ডাটাৰ প্ৰকাৰ, আৰু শ্ৰেণী আৰু বিষয়বস্তুৱে ইয়াক কেনেকৈ ব্যৱহাৰ কৰে।</translation>
     </message>
 </context>
 <context>
@@ -55390,6 +55406,14 @@ your account.</source>
         <source>Copy of %class_name</source>
         <translation>%class_name ৰ প্ৰতিলিপি</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>ডাটাৰ প্ৰকাৰসমূহ</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>ডাটাৰ প্ৰকাৰ %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85028,6 +85052,397 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>এই মেইলটো %site এ পঠিয়াইছে, কাৰণ migration.ini [RemoteSettings] Notify[] এ ইয়াক বিচাৰে।</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>ডাটাৰ প্ৰকাৰ (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>%time ত গণনা কৰা হৈছে, %minutes মিনিটৰ পিছত পুনৰ</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>এটা ডাটাৰ প্ৰকাৰে শ্ৰেণীৰ বৈশিষ্ট্যৰ এক প্ৰকাৰৰ মান সংৰক্ষণ আৰু সম্পাদনা কৰে: এটা লিখনিৰ শাৰী, এখন ছবি, এটা সম্পৰ্ক। কেন্দ্ৰই সৰহভাগ আনে, এক্সটেনচনে আৰু যোগ কৰে। ইয়াত সকলোবোৰ আছে, কোনে সেইবোৰ দিয়ে আৰু বিষয়বস্তুৰ কিমান অংশই সেইবোৰ ব্যৱহাৰ কৰে। ডাটাবেছে ব্যৱহাৰ কৰা কিন্তু এতিয়া কোনেও পঞ্জীয়ন নকৰা ডাটাৰ প্ৰকাৰে সেই বিষয়বস্তু ভাঙি পেলায় যাৰ সেইটো আছে।</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>শ্ৰেণী গোটসমূহ</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>যোৱা কেইমিনিটৰ গণনা ব্যৱহাৰ নকৰি এতিয়াই পুনৰ গণনা কৰক।</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>পুনৰ গণনা কৰক</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>অৱলোকন</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>পঞ্জীয়ন কৰা</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>ব্যৱহাৰত আছে</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>ব্যৱহাৰ কৰা হোৱা নাই</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>ডাটাৰ প্ৰকাৰ দিয়া এক্সটেনচনসমূহ</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>শ্ৰেণীৰ বৈশিষ্ট্যসমূহ</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>বস্তুৰ বৈশিষ্ট্য</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>পঞ্জীয়ন কৰা হোৱা নাই</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>তালিকাভুক্ত, ফাইল নাই</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count টা ডাটাৰ প্ৰকাৰ ব্যৱহৃত কিন্তু পঞ্জীয়ন কৰা হোৱা নাই</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes টা শ্ৰেণীৰ বৈশিষ্ট্য আৰু %object_attributes টা বস্তুৰ বৈশিষ্ট্যৰ এনে এটা ডাটাৰ প্ৰকাৰ আছে যাক কোনো এক্সটেনচন বা ছেটিঙে পঞ্জীয়ন নকৰে। সেইবোৰৰ বস্তু দেখুৱাব, সম্পাদনা কৰিব বা প্ৰকাশ কৰিব নোৱাৰি। ডাটাৰ প্ৰকাৰটো দিয়া এক্সটেনচনটো সক্ৰিয় কৰক, বা শ্ৰেণীটো সলনি কৰক।</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>কেৱল এইবোৰ দেখুৱাওক</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>ডাটাৰ প্ৰকাৰ বিচাৰক</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>চিনাক্তকাৰী, নাম, PHP শ্ৰেণী বা এক্সটেনচন।</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>দেখুৱাওক</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>সকলো</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>যোগান ধৰোঁতা</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>সকলো</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>কেন্দ্ৰ</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>এই ফিল্টাৰৰ সৈতে কোনো ডাটাৰ প্ৰকাৰ মিল নাখায়।</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>সকলো দেখুৱাওক</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>এক্সটেনচন</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%count টা ডাটাৰ প্ৰকাৰৰ %shown টা, %used টা ব্যৱহাৰত</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>ডাটাবেছত এই ডাটাৰ প্ৰকাৰবোৰৰ শ্ৰেণী বা বস্তুৰ বৈশিষ্ট্য আছে, কিন্তু content.ini ত ইয়াৰ এটাও তালিকাভুক্ত নাই, বা ইয়াৰ ফাইল নাই।</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>%provider ৰ ডাটাৰ প্ৰকাৰ</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>ডাটাৰ প্ৰকাৰ</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>PHP শ্ৰেণী আৰু ফাইল</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>শ্ৰেণীসমূহ</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>বস্তু</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>পতাকা</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>একো নাই</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>সন্ধানৰ সৈতে কোনো ডাটাৰ প্ৰকাৰ মিল নাখায়। সন্ধান আঁতৰাওক।</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%count টা ডাটাৰ প্ৰকাৰৰ %shown টা দেখুওৱা হৈছে</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>দেখুওৱা ডাটাৰ প্ৰকাৰ: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>%column অনুসৰি সজাওক</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>%time ত গণনা কৰা হৈছে</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>সকলো ডাটাৰ প্ৰকাৰ</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>সহায় পৃষ্ঠা</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>এই ডাটাৰ প্ৰকাৰ ব্যৱহৃত কিন্তু পঞ্জীয়ন কৰা হোৱা নাই</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>যেতিয়ালৈকে কোনো এক্সটেনচনে ডাটাৰ প্ৰকাৰটো পঞ্জীয়ন নকৰে, তলৰ শ্ৰেণীবোৰৰ বস্তু দেখুৱাব, সম্পাদনা কৰিব বা প্ৰকাশ কৰিব নোৱাৰি। ইয়াক দিয়া এক্সটেনচনটো সক্ৰিয় কৰক আৰু ইয়াক content.ini [DataTypeSettings] AvailableDataTypes[] ত যোগ কৰক, বা শ্ৰেণীবোৰ সলনি কৰক।</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini ত এই ডাটাৰ প্ৰকাৰ তালিকাভুক্ত, কিন্তু কোনো ডাটাৰ প্ৰকাৰৰ ডিৰেক্টৰীত ইয়াৰ ফাইল নাই। একোৱেই ইয়াক ব্যৱহাৰ নকৰে; ইয়াক AvailableDataTypes[] ৰ পৰা আঁতৰাওক বা ইয়াৰ এক্সটেনচন সক্ৰিয় কৰক।</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>এই ডাটাৰ প্ৰকাৰৰ বিষয়ে</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>চিনাক্তকাৰী</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>নাম</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>এক্সটেনচন %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>কোনো নাই</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP শ্ৰেণী</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ফাইল</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>AvailableDataTypes[] ত</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>হয়</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>নহয়</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>ইয়াৰ মানৰ স্তম্ভ</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>ইয়াৰ শ্ৰেণীৰ বৈশিষ্ট্যৰ ছেটিঙৰ স্তম্ভ</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>টেবুলসমূহ</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>স্তম্ভ আৰু তালিকাবোৰ ডাটাৰ প্ৰকাৰৰ ক'ড পঢ়ি পোৱা যায়: এটা দিশনিৰ্দেশনা, প্ৰতিশ্ৰুতি নহয়।</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>টেমপ্লেট</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>ছাইট প্ৰৱেশ</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>টেমপ্লেট</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>ইয়াত পোৱা গ'ল</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>এই প্ৰশাসন</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>ডিফল্ট ছাইট</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>অভাৰৰাইড অবিহনে: শ্ৰেণী বা বৈশিষ্ট্য অনুসৰি মিলা অভাৰৰাইড টেমপ্লেটে এইবোৰক অগ্ৰাধিকাৰ পায়।</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>ইয়াক ব্যৱহাৰ কৰা শ্ৰেণী (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>কোনো শ্ৰেণীৰ এই ডাটাৰ প্ৰকাৰৰ বৈশিষ্ট্য নাই।</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>শ্ৰেণী</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>বৈশিষ্ট্যসমূহ</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>শ্ৰেণীৰ বৈশিষ্ট্যসমূহ (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>বৈশিষ্ট্য</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>ছেটিংছ</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>আৱশ্যকীয়</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>সন্ধানযোগ্য</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>অনুবাদযোগ্য</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>তথ্য সংগ্ৰহ কৰে</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>ইয়াক ব্যৱহাৰ কৰা কিছু বিষয়বস্তু</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>শেষত সলনি কৰাটো প্ৰথমে</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>সলনি কৰা</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>নোড %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>প্ৰতিটো অনুবাদৰ নিজা মান আছে।</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>সন্ধানে ইয়াৰ মানবোৰ সূচীভুক্ত কৰে।</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>ই দৰ্শকৰ পৰা তথ্য সংগ্ৰহ কৰিব পাৰে (ফৰ্ম)।</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>ইয়াৰ দ্বাৰা তালিকা সজাব পাৰি: সজোৱা চাবি %type।</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>সজাব পৰা</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>ইয়াৰ মানবোৰে আন বস্তুলৈ আঙুলিয়াই দিয়ে।</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>সম্পৰ্ক</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>ইয়াক সাধাৰণ লিখনিৰ পৰা পূৰণ কৰিব পাৰি (আমদানি, REST)।</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>লিখনিৰ পৰা</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>ইয়াক এটা ফাইলৰ পৰা পূৰণ কৰিব পাৰি।</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>ফাইলৰ পৰা</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>ইয়াৰ শ্ৰেণীৰ বৈশিষ্ট্যৰ ছেটিং পেকেজলৈ যায়।</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>পেকেজ</translation>
     </message>
 </context>
 </TS>

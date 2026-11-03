@@ -982,6 +982,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Haku koskee vain tätä sivua: %from–%to / %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Järjestelmäytimen ja laajennusten kaikki tietotyypit sekä se, miten luokat ja sisältö käyttävät niitä.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Tietotyypit</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15371,6 +15379,14 @@ Huomautus: pakettien asennusta ei poisteta.</translation>
     <message>
         <source>Static publishing</source>
         <translation>Staattinen julkaisu</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Tietotyypit</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Järjestelmäytimen ja laajennusten kaikki tietotyypit sekä se, miten luokat ja sisältö käyttävät niitä.</translation>
     </message>
 </context>
 <context>
@@ -55329,6 +55345,14 @@ ohjeita.</translation>
         <source>Copy of %class_name</source>
         <translation>Kopio: %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Tietotyypit</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Tietotyyppi %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85058,6 +85082,397 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Tämän viestin lähetti %site, koska migration.ini [RemoteSettings] Notify[] pyytää sitä.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Tietotyypit (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>Laskettu %time, uudelleen %minutes minuutin kuluttua</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Tietotyyppi tallentaa ja muokkaa luokan määritteen yhtä arvotyyppiä: tekstiriviä, kuvaa, suhdetta. Järjestelmäydin tuo suurimman osan niistä, laajennukset lisäävät muita. Tässä ovat ne kaikki, kuka ne tarjoaa ja kuinka paljon sisältöä niitä käyttää. Tietotyyppi, jota tietokanta käyttää mutta jota mikään ei enää rekisteröi, rikkoo sisällön, jossa sitä on.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Luokkaryhmät</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Laske uudelleen nyt viimeisten minuuttien laskentojen sijaan.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Laske uudelleen</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Yleiskatsaus</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Rekisteröity</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>Käytössä</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Ei käytetty</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Tietotyyppejä tarjoavat laajennukset</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Luokan määritteet</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Objektin määritteet</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Ei rekisteröity</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>Luettelossa, tiedosto puuttuu</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count tietotyyppiä on käytössä mutta ei rekisteröity</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes luokan määritteellä ja %object_attributes objektin määritteellä on tietotyyppi, jota mikään laajennus tai asetus ei rekisteröi. Niiden objekteja ei voi näyttää, muokata eikä julkaista. Ota käyttöön tietotyypin tarjoava laajennus tai muuta luokkaa.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Näytä vain nämä</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Etsi tietotyyppiä</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Tunniste, nimi, PHP-luokka tai laajennus.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Näytä</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Kaikki</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Tarjoaja</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Kaikki</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Järjestelmäydin</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Mikään tietotyyppi ei vastaa tätä suodatinta.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Näytä kaikki</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Laajennus</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown / %count tietotyyppiä, %used käytössä</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>Tietokannassa on näiden tietotyyppien luokan tai objektin määritteitä, mutta content.ini ei luettele niistä yhtäkään, tai niiden tiedosto puuttuu.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>Tarjoajan %provider tietotyypit</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Tietotyyppi</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>PHP-luokka ja tiedosto</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Luokat</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Objektit</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Merkinnät</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>ei mitään</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Mikään tietotyyppi ei vastaa hakua. Tyhjennä haku.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%shown / %count tietotyyppiä näytetään</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Näytetyt tietotyypit: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Lajittele sarakkeen %column mukaan</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>Laskettu %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Kaikki tietotyypit</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Ohjesivu</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Tätä tietotyyppiä käytetään, mutta sitä ei ole rekisteröity</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Alla olevien luokkien objekteja ei voi näyttää, muokata eikä julkaista niin kauan kuin mikään laajennus ei rekisteröi tietotyyppiä. Ota käyttöön sen tarjoava laajennus ja lisää se asetukseen content.ini [DataTypeSettings] AvailableDataTypes[], tai muuta luokkia.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini luettelee tämän tietotyypin, mutta missään tietotyyppihakemistossa ei ole sen tiedostoa. Mikään ei käytä sitä; poista se asetuksesta AvailableDataTypes[] tai ota sen laajennus käyttöön.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Tietoja tästä tietotyypistä</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Tunniste</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nimi</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Laajennus %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>ei kukaan</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP-luokka</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Tiedosto</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>Asetuksessa AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>kyllä</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ei</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Sen arvon sarakkeet</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Sen luokan määritteen asetusten sarakkeet</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Taulut</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Sarakkeet ja taulut on löydetty lukemalla tietotyypin koodia: suuntaa antava, ei lupaus.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Mallit</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Sivustoyhteys</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Malli</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Löytyi kohteesta</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>tämä hallinta</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>oletussivusto</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Ilman ohituksia: luokan tai määritteen mukaan osuva ohitusmalli menee näiden edelle.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Sitä käyttävät luokat (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Millään luokalla ei ole tämän tietotyypin määritettä.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Luokka</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Määritteet</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Luokan määritteet (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Määrite</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Asetukset</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>Tunnus %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Pakollinen</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Haettavissa</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Käännettävissä</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Kerää tietoja</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Sitä käyttävää sisältöä</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Viimeksi muokatut ensin</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Muokattu</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Solmu %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Jokaisella käännöksellä on oma arvonsa.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>Haku indeksoi sen arvot.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Se voi kerätä tietoja kävijöiltä (lomakkeet).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Luetteloita voi lajitella sen mukaan: lajitteluavain %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Lajiteltava</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Sen arvot viittaavat muihin objekteihin.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Suhteet</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Sen voi täyttää tavallisesta merkkijonosta (tuonti, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Tekstistä</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Sen voi täyttää tiedostosta.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Tiedostosta</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Sen luokan määritteen asetukset tulevat mukaan paketteihin.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Paketit</translation>
     </message>
 </context>
 </TS>

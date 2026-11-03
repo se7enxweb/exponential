@@ -982,6 +982,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>Només se cerca en aquesta pàgina: de %from a %to de %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Cada tipus de dades del nucli i de les extensions, i com l'utilitzen les classes i el contingut.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Tipus de dades</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15371,6 +15379,14 @@ Nota: els paquets no es desinstal·laran.</translation>
     <message>
         <source>Static publishing</source>
         <translation>Publicació estàtica</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Tipus de dades</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Cada tipus de dades del nucli i de les extensions, i com l'utilitzen les classes i el contingut.</translation>
     </message>
 </context>
 <context>
@@ -55329,6 +55345,14 @@ el teu compte.</translation>
         <source>Copy of %class_name</source>
         <translation>Còpia de %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Tipus de dades</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Tipus de dades %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85058,6 +85082,397 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Aquest correu l'ha enviat %site perquè ho demana migration.ini [RemoteSettings] Notify[].</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Tipus de dades (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>Comptat %time, de nou d'aquí a %minutes minuts</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Un tipus de dades desa i edita una mena de valor d'un atribut de la classe: una línia de text, una imatge, una relació. El nucli n'aporta la majoria i les extensions n'afegeixen més. Aquí hi són tots, qui els proporciona i quant contingut els fa servir. Un tipus de dades que la base de dades fa servir però que ja res no registra trenca el contingut que el té.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Grups de classes</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Torna a comptar ara en lloc de fer servir els recomptes dels darrers minuts.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Torna a comptar</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Visió general</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Registrat</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>S'utilitza</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>No s'ha utilitzat</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Extensions que proporcionen tipus de dades</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Atributs de la classe</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Atributs de l'objecte</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>No registrat</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>A la llista, falta el fitxer</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count tipus de dades s'utilitzen però no estan registrats</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes atributs de classe i %object_attributes atributs d'objecte tenen un tipus de dades que cap extensió ni paràmetre registra. Els seus objectes no es poden mostrar, editar ni publicar. Activeu l'extensió que proporciona el tipus de dades o canvieu la classe.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Mostra només aquests</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Cerca un tipus de dades</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Identificador, nom, classe PHP o extensió.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Mostra</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Tots</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Proporcionat per</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Tothom</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Nucli</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Cap tipus de dades coincideix amb aquest filtre.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Mostra-ho tot</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Extensió</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown de %count tipus de dades, %used en ús</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>La base de dades té atributs de classe o d'objecte d'aquests tipus de dades, però content.ini no en llista cap, o en falta el fitxer.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>Tipus de dades de %provider</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Tipus de dades</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>Classe PHP i fitxer</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Classes</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Objectes</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Característiques</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>cap</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Cap tipus de dades coincideix amb la cerca. Esborreu la cerca.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>Es mostren %shown de %count tipus de dades</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Tipus de dades mostrats: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Ordena per %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>Comptat %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Tots els tipus de dades</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Pàgina d'ajuda</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Aquest tipus de dades s'utilitza però no està registrat</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Els objectes de les classes següents no es poden mostrar, editar ni publicar mentre cap extensió no registri el tipus de dades. Activeu l'extensió que el proporciona i afegiu-lo a content.ini [DataTypeSettings] AvailableDataTypes[], o canvieu les classes.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini llista aquest tipus de dades, però cap directori de tipus de dades no en té el fitxer. Res no l'utilitza; traieu-lo d'AvailableDataTypes[] o activeu-ne l'extensió.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Quant a aquest tipus de dades</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Identificador</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nom</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Extensió %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>ningú</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>Classe PHP</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fitxer</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>A AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>sí</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>no</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Columnes del seu valor</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Columnes de la configuració del seu atribut de classe</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Taules</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Les columnes i les taules es troben llegint el codi del tipus de dades: una guia, no una promesa.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Plantilles</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Accés al lloc</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Plantilla</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Trobat a</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>aquesta administració</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>lloc per defecte</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Sense sobreescriptures: una plantilla de sobreescriptura que coincideixi per classe o atribut té prioritat sobre aquestes.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Classes que l'utilitzen (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Cap classe té un atribut d'aquest tipus de dades.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Classe</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Atributs</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Atributs de la classe (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Atribut</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Paràmetres</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Obligatori</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Permet la cerca</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Traduïble</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Recull informació</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Part del contingut que l'utilitza</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Darrer modificat primer</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Modificat</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Node %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Cada traducció té el seu propi valor.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>La cerca n'indexa els valors.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Pot recollir informació dels visitants (formularis).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Les llistes es poden ordenar per ell: clau d'ordenació %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Ordenable</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Els seus valors apunten a altres objectes.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Relacions</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Es pot omplir a partir d'una cadena de text simple (importació, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Des de text</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Es pot omplir a partir d'un fitxer.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Des de fitxer</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>La configuració del seu atribut de classe va als paquets.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Paquets</translation>
     </message>
 </context>
 </TS>

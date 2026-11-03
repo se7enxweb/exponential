@@ -984,6 +984,14 @@
         <source>Only this page is searched: %from to %to of %count.</source>
         <translation>החיפוש מתבצע בעמוד זה בלבד: %from עד %to מתוך %count.</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>כל סוגי הנתונים של הליבה וההרחבות, וכיצד המחלקות והתוכן משתמשים בהם.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>סוגי נתונים</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/removeclass</name>
@@ -15373,6 +15381,14 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Static publishing</source>
         <translation>פרסום סטטי</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>סוגי נתונים</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>כל סוגי הנתונים של הליבה וההרחבות, וכיצד המחלקות והתוכן משתמשים בהם.</translation>
     </message>
 </context>
 <context>
@@ -55331,6 +55347,14 @@ your account.</source>
         <source>Copy of %class_name</source>
         <translation>עותק של %class_name</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>סוגי נתונים</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>סוג נתונים %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -85060,6 +85084,397 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>הודעה זו נשלחה על ידי %site כי migration.ini [RemoteSettings] Notify[] מבקש זאת.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>סוגי נתונים (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>נספר ב-%time, שוב בעוד %minutes דקות</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>סוג נתונים שומר ועורך סוג אחד של ערך של מאפיין מחלקה: שורת טקסט, תמונה, קשר. הליבה מספקת את רובם, והרחבות מוסיפות עוד. כאן מופיעים כולם, מי מספק אותם וכמה מהתוכן משתמש בהם. סוג נתונים שמסד הנתונים משתמש בו אך דבר אינו רושם אותו עוד שובר את התוכן שמכיל אותו.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>קבוצות מחלקות</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>לספור שוב עכשיו במקום להשתמש בספירות של הדקות האחרונות.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>לספור שוב</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>סקירה</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>נרשם</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>בשימוש</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>לא בשימוש</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>הרחבות שמספקות סוגי נתונים</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>מאפייני מחלקה</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>מאפייני אובייקט</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>לא רשום</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>רשום, הקובץ חסר</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count סוגי נתונים נמצאים בשימוש אך אינם רשומים</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>ל-%class_attributes מאפייני מחלקה ול-%object_attributes מאפייני אובייקט יש סוג נתונים שאף הרחבה או הגדרה אינה רושמת. לא ניתן להציג, לערוך או לפרסם את האובייקטים שלהם. יש להפעיל את ההרחבה שמספקת את סוג הנתונים, או לשנות את המחלקה.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>להציג רק את אלה</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>חיפוש סוג נתונים</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>מזהה, שם, מחלקת PHP או הרחבה.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>הצגה</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>הכול</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>מסופק על ידי</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>כולם</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>ליבה</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>אין סוג נתונים שמתאים למסנן זה.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>הצגת הכול</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>הרחבה</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown מתוך %count סוגי נתונים, %used בשימוש</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>במסד הנתונים יש מאפייני מחלקה או אובייקט מסוגי נתונים אלה, אך content.ini אינו מפרט אף אחד מהם, או שהקובץ שלהם חסר.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>סוגי הנתונים של %provider</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>סוג נתונים</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>מחלקת PHP וקובץ</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>מחלקות</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>אובייקטים</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>דגלים</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>ללא</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>אין סוג נתונים שמתאים לחיפוש. נקו את החיפוש.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>מוצגים %shown מתוך %count סוגי נתונים</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>סוגי נתונים מוצגים: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>מיון לפי %column</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>נספר ב-%time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>כל סוגי הנתונים</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>דף עזרה</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>סוג נתונים זה נמצא בשימוש אך אינו רשום</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>לא ניתן להציג, לערוך או לפרסם את האובייקטים של המחלקות שלהלן כל עוד אף הרחבה אינה רושמת את סוג הנתונים. יש להפעיל את ההרחבה שמספקת אותו ולהוסיף אותו ל-content.ini [DataTypeSettings] AvailableDataTypes[], או לשנות את המחלקות.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini מפרט את סוג הנתונים הזה, אך באף תיקיית סוגי נתונים אין את הקובץ שלו. דבר אינו משתמש בו; יש להסיר אותו מ-AvailableDataTypes[] או להפעיל את ההרחבה שלו.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>אודות סוג נתונים זה</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>מזהה</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>שם</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>הרחבה %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>אף אחד</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>מחלקת PHP</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>קובץ</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>ב-AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>כן</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>לא</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>עמודות הערך שלו</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>עמודות הגדרות מאפיין המחלקה שלו</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>טבלאות</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>העמודות והטבלאות נמצאות על ידי קריאת הקוד של סוג הנתונים: הנחיה, לא הבטחה.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>תבניות</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>גישת אתר</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>תבנית</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>נמצא ב</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>ממשק ניהול זה</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>אתר ברירת מחדל</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>ללא דריסות: תבנית דריסה שמתאימה לפי מחלקה או מאפיין גוברת על אלה.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>מחלקות שמשתמשות בו (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>לאף מחלקה אין מאפיין מסוג נתונים זה.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>מחלקה</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>מאפיינים</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>מאפייני מחלקה (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>מאפיין</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>הגדרות</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>מזהה %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>חובה</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>ניתן לחיפוש</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>ניתן לתרגום</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>אוסף מידע</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>חלק מהתוכן שמשתמש בו</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>שונה לאחרונה ראשון</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>שונה</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>צומת %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>לכל תרגום יש ערך משלו.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>החיפוש מאנדקס את ערכיו.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>הוא יכול לאסוף מידע ממבקרים (טפסים).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>ניתן למיין רשימות לפיו: מפתח מיון %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>ניתן למיון</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>ערכיו מצביעים על אובייקטים אחרים.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>קשרים</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>ניתן למלא אותו ממחרוזת פשוטה (ייבוא, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>מטקסט</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>ניתן למלא אותו מקובץ.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>מקובץ</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>הגדרות מאפיין המחלקה שלו נכללות בחבילות.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>חבילות</translation>
     </message>
 </context>
 </TS>

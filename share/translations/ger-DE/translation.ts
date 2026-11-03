@@ -1075,6 +1075,14 @@
         <source>Groups on this page: %count</source>
         <translation>Gruppen auf dieser Seite: %count</translation>
     </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Jeder Datentyp des Kerns und der Extensions, und wie Klassen und Inhalte ihn verwenden.</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Datentypen</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/class/list</name>
@@ -18161,6 +18169,14 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Static publishing</source>
         <translation>Statisches Veröffentlichen</translation>
+    </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Datentypen</translation>
+    </message>
+    <message>
+        <source>Every datatype of the kernel and the extensions, and how the classes and content use it.</source>
+        <translation>Jeder Datentyp des Kerns und der Extensions, und wie Klassen und Inhalte ihn verwenden.</translation>
     </message>
 </context>
 <context>
@@ -62824,6 +62840,14 @@ Bitte folgen Sie den Hinweisen in der Email, um Ihr Konto zu aktivieren.</transl
         <source>Class groups</source>
         <translation>Klassengruppen</translation>
     </message>
+    <message>
+        <source>Datatypes</source>
+        <translation>Datentypen</translation>
+    </message>
+    <message>
+        <source>Datatype %string</source>
+        <translation>Datentyp %string</translation>
+    </message>
 </context>
 <context>
     <name>kernel/class/edit</name>
@@ -91998,6 +92022,397 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
         <translation>Diese E-Mail wurde von %site gesendet, weil migration.ini [RemoteSettings] Notify[] sie verlangt.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/class/datatype</name>
+    <message>
+        <source>Datatypes (%count)</source>
+        <translation>Datentypen (%count)</translation>
+    </message>
+    <message>
+        <source>Counted %time, again after %minutes minutes</source>
+        <translation>Gezählt %time, erneut in %minutes Minuten</translation>
+    </message>
+    <message>
+        <source>A datatype stores and edits one kind of value of a class attribute: a text line, an image, a relation. The kernel brings most of them, extensions add more. Here are all of them, who provides them and how much of the content uses them. A datatype that the database uses but nothing registers any more breaks the content that has it.</source>
+        <translation>Ein Datentyp speichert und bearbeitet eine Art von Wert eines Klassenattributs: eine Textzeile, ein Bild, eine Relation. Die meisten bringt der Kern mit, Extensions fügen weitere hinzu. Hier stehen alle, wer sie bereitstellt und wie viel Inhalt sie verwendet. Ein Datentyp, den die Datenbank verwendet, den aber nichts mehr registriert, beschädigt den Inhalt, der ihn enthält.</translation>
+    </message>
+    <message>
+        <source>Class groups</source>
+        <translation>Klassengruppen</translation>
+    </message>
+    <message>
+        <source>Count again now instead of using the counts of the last minutes.</source>
+        <translation>Jetzt neu zählen, statt die Zählung der letzten Minuten zu verwenden.</translation>
+    </message>
+    <message>
+        <source>Count again</source>
+        <translation>Neu zählen</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Übersicht</translation>
+    </message>
+    <message>
+        <source>Registered</source>
+        <translation>Registriert</translation>
+    </message>
+    <message>
+        <source>In use</source>
+        <translation>In Gebrauch</translation>
+    </message>
+    <message>
+        <source>Not used</source>
+        <translation>Nicht verwendet</translation>
+    </message>
+    <message>
+        <source>Extensions providing datatypes</source>
+        <translation>Extensions mit Datentypen</translation>
+    </message>
+    <message>
+        <source>Class attributes</source>
+        <translation>Klassen Attribute</translation>
+    </message>
+    <message>
+        <source>Object attributes</source>
+        <translation>Objekt Attribute</translation>
+    </message>
+    <message>
+        <source>Not registered</source>
+        <translation>Nicht registriert</translation>
+    </message>
+    <message>
+        <source>Listed, file missing</source>
+        <translation>Eingetragen, Datei fehlt</translation>
+    </message>
+    <message>
+        <source>%count datatypes are used but not registered</source>
+        <translation>%count Datentypen werden verwendet, sind aber nicht registriert</translation>
+    </message>
+    <message>
+        <source>%class_attributes class attributes and %object_attributes object attributes have a datatype that no extension or setting registers. Their objects cannot be shown, edited or published. Activate the extension that provides the datatype, or change the class.</source>
+        <translation>%class_attributes Klassenattribute und %object_attributes Objektattribute haben einen Datentyp, den keine Extension und keine Einstellung registriert. Ihre Objekte können nicht angezeigt, bearbeitet oder veröffentlicht werden. Aktivieren Sie die Extension, die den Datentyp bereitstellt, oder ändern Sie die Klasse.</translation>
+    </message>
+    <message>
+        <source>Show only these</source>
+        <translation>Nur diese anzeigen</translation>
+    </message>
+    <message>
+        <source>Find a datatype</source>
+        <translation>Datentyp suchen</translation>
+    </message>
+    <message>
+        <source>Identifier, name, PHP class or extension.</source>
+        <translation>Bezeichner, Name, PHP-Klasse oder Extension.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Zeigen</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Alle</translation>
+    </message>
+    <message>
+        <source>Provided by</source>
+        <translation>Bereitgestellt von</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Alle Anbieter</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Kern</translation>
+    </message>
+    <message>
+        <source>No datatype matches this filter.</source>
+        <translation>Kein Datentyp passt zu diesem Filter.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Alle zeigen</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Extension</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes, %used in use</source>
+        <translation>%shown von %count Datentypen, %used in Verwendung</translation>
+    </message>
+    <message>
+        <source>The database has class or object attributes of these datatypes, but content.ini lists none of them, or its file is missing.</source>
+        <translation>Die Datenbank hat Klassen- oder Objektattribute dieser Datentypen, aber content.ini führt keinen davon auf, oder seine Datei fehlt.</translation>
+    </message>
+    <message>
+        <source>Datatypes of %provider</source>
+        <translation>Datentypen von %provider</translation>
+    </message>
+    <message>
+        <source>Datatype</source>
+        <translation>Datentyp</translation>
+    </message>
+    <message>
+        <source>PHP class and file</source>
+        <translation>PHP-Klasse und Datei</translation>
+    </message>
+    <message>
+        <source>Classes</source>
+        <translation>Klassen</translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation>Objekte</translation>
+    </message>
+    <message>
+        <source>Flags</source>
+        <translation>Merkmale</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>keine</translation>
+    </message>
+    <message>
+        <source>No datatype matches the search. Clear the search.</source>
+        <translation>Kein Datentyp passt zur Suche. Suche leeren.</translation>
+    </message>
+    <message>
+        <source>%shown of %count datatypes shown</source>
+        <translation>%shown von %count Datentypen angezeigt</translation>
+    </message>
+    <message>
+        <source>Datatypes shown: %count</source>
+        <translation>Angezeigte Datentypen: %count</translation>
+    </message>
+    <message>
+        <source>Sort by %column</source>
+        <translation>Nach %column sortieren</translation>
+    </message>
+    <message>
+        <source>Counted %time</source>
+        <translation>Gezählt %time</translation>
+    </message>
+    <message>
+        <source>All datatypes</source>
+        <translation>Alle Datentypen</translation>
+    </message>
+    <message>
+        <source>Help page</source>
+        <translation>Hilfeseite</translation>
+    </message>
+    <message>
+        <source>This datatype is used but not registered</source>
+        <translation>Dieser Datentyp wird verwendet, ist aber nicht registriert</translation>
+    </message>
+    <message>
+        <source>The objects of the classes below cannot be shown, edited or published while no extension registers the datatype. Activate the extension that provides it and add it to content.ini [DataTypeSettings] AvailableDataTypes[], or change the classes.</source>
+        <translation>Die Objekte der folgenden Klassen können nicht angezeigt, bearbeitet oder veröffentlicht werden, solange keine Extension den Datentyp registriert. Aktivieren Sie die Extension, die ihn bereitstellt, und tragen Sie ihn in content.ini [DataTypeSettings] AvailableDataTypes[] ein, oder ändern Sie die Klassen.</translation>
+    </message>
+    <message>
+        <source>content.ini lists this datatype, but no datatype directory has its file. Nothing uses it; remove it from AvailableDataTypes[] or activate its extension.</source>
+        <translation>content.ini führt diesen Datentyp auf, aber kein Datentyp-Verzeichnis enthält seine Datei. Nichts verwendet ihn; entfernen Sie ihn aus AvailableDataTypes[] oder aktivieren Sie seine Extension.</translation>
+    </message>
+    <message>
+        <source>About this datatype</source>
+        <translation>Über diesen Datentyp</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Bezeichner</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Name</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Extension %name</translation>
+    </message>
+    <message>
+        <source>nobody</source>
+        <translation>niemand</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP-Klasse</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Datei</translation>
+    </message>
+    <message>
+        <source>In AvailableDataTypes[]</source>
+        <translation>In AvailableDataTypes[]</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ja</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nein</translation>
+    </message>
+    <message>
+        <source>Columns of its value</source>
+        <translation>Spalten seines Werts</translation>
+    </message>
+    <message>
+        <source>Columns of its class attribute settings</source>
+        <translation>Spalten seiner Klassenattribut-Einstellungen</translation>
+    </message>
+    <message>
+        <source>Tables</source>
+        <translation>Tabellen</translation>
+    </message>
+    <message>
+        <source>The columns and tables are found by reading the code of the datatype: a guide, not a promise.</source>
+        <translation>Die Spalten und Tabellen werden durch Lesen des Codes des Datentyps ermittelt: ein Anhaltspunkt, keine Zusage.</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation>Templates</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>Template</source>
+        <translation>Template</translation>
+    </message>
+    <message>
+        <source>Found in</source>
+        <translation>Gefunden in</translation>
+    </message>
+    <message>
+        <source>this administration</source>
+        <translation>diese Administration</translation>
+    </message>
+    <message>
+        <source>default site</source>
+        <translation>Standard-Site</translation>
+    </message>
+    <message>
+        <source>Without overrides: an override template matched by class or attribute wins over these.</source>
+        <translation>Ohne Overrides: Ein Override-Template, das nach Klasse oder Attribut greift, hat Vorrang vor diesen.</translation>
+    </message>
+    <message>
+        <source>Classes using it (%count)</source>
+        <translation>Klassen, die ihn verwenden (%count)</translation>
+    </message>
+    <message>
+        <source>No class has an attribute of this datatype.</source>
+        <translation>Keine Klasse hat ein Attribut dieses Datentyps.</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klasse</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation>Attribute</translation>
+    </message>
+    <message>
+        <source>Class attributes (%count)</source>
+        <translation>Klassenattribute (%count)</translation>
+    </message>
+    <message>
+        <source>Attribute</source>
+        <translation>Attribut</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Einstellungen</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Erforderlich</translation>
+    </message>
+    <message>
+        <source>Searchable</source>
+        <translation>Durchsuchbar</translation>
+    </message>
+    <message>
+        <source>Translatable</source>
+        <translation>Übersetzbar</translation>
+    </message>
+    <message>
+        <source>Collects information</source>
+        <translation>Sammelt Informationen</translation>
+    </message>
+    <message>
+        <source>Some content using it</source>
+        <translation>Einige Inhalte, die ihn verwenden</translation>
+    </message>
+    <message>
+        <source>Last modified first</source>
+        <translation>Zuletzt geändert zuerst</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Geändert</translation>
+    </message>
+    <message>
+        <source>Node %id</source>
+        <translation>Knoten %id</translation>
+    </message>
+    <message>
+        <source>Each translation has its own value.</source>
+        <translation>Jede Übersetzung hat ihren eigenen Wert.</translation>
+    </message>
+    <message>
+        <source>The search indexes its values.</source>
+        <translation>Die Suche indiziert seine Werte.</translation>
+    </message>
+    <message>
+        <source>It can collect information from visitors (forms).</source>
+        <translation>Er kann Informationen von Besuchern sammeln (Formulare).</translation>
+    </message>
+    <message>
+        <source>Lists can be sorted by it: sort key %type.</source>
+        <translation>Listen können danach sortiert werden: Sortierschlüssel %type.</translation>
+    </message>
+    <message>
+        <source>Sortable</source>
+        <translation>Sortierbar</translation>
+    </message>
+    <message>
+        <source>Its values point to other objects.</source>
+        <translation>Seine Werte verweisen auf andere Objekte.</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Verknüpfungen</translation>
+    </message>
+    <message>
+        <source>It can be filled from a plain string (import, REST).</source>
+        <translation>Er kann aus einer einfachen Zeichenkette befüllt werden (Import, REST).</translation>
+    </message>
+    <message>
+        <source>From text</source>
+        <translation>Aus Text</translation>
+    </message>
+    <message>
+        <source>It can be filled from a file.</source>
+        <translation>Er kann aus einer Datei befüllt werden.</translation>
+    </message>
+    <message>
+        <source>From file</source>
+        <translation>Aus Datei</translation>
+    </message>
+    <message>
+        <source>Its class attribute settings go into packages.</source>
+        <translation>Seine Klassenattribut-Einstellungen werden in Pakete übernommen.</translation>
+    </message>
+    <message>
+        <source>Packages</source>
+        <translation>Pakete</translation>
     </message>
 </context>
 </TS>
