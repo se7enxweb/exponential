@@ -3649,7 +3649,7 @@ f0b57cd68a5b41cc14ca22727186740c  doc/eng-us/bc/6.0/api-keys.md
 41b5bdd9a600e99203e97c58f9fb160d  doc/eng-us/bc/6.0/behaviour-changes-2026-09b.md
 34dc9ac582951a50f20f4af3b12a69ae  doc/eng-us/bc/6.0/behaviour-changes-2026-10.md
 634c9b738dac08042ef4b52dee1d3212  doc/eng-us/bc/6.0/bookmark-folders.md
-bfbd22d130a8ec900e95798ec69cbb69  doc/eng-us/bc/6.0/bookmarks-of-system-pages.md
+262f5d2f4bb5d5e20915eb16f5ce7fea  doc/eng-us/bc/6.0/bookmarks-of-system-pages.md
 103eb43b7b3b7a7162e0a1cc7d050273  doc/eng-us/bc/6.0/cache-console.md
 a4728bf2db13d48f57e43d6418d4a08f  doc/eng-us/bc/6.0/ci.md
 20ce9d5335e19c7a69aae9cdaf03daed  doc/eng-us/bc/6.0/cleanuprss.md
@@ -3730,6 +3730,7 @@ fe76752d44638f44f345857617e38f5f  doc/eng-us/bc/6.0/php8.md
 496a8d633ba028dbf89d6c64fc2386b3  doc/eng-us/bc/6.0/response-cache-and-navigation.md
 32fecff4dc4fca7d6cd3480e44f1b157  doc/eng-us/bc/6.0/rest-cors.md
 0785742cb6ad30c25657d8d3a4363ac9  doc/eng-us/bc/6.0/role-policy-paging.md
+c418d47a0244a80e9498e192d9572f52  doc/eng-us/bc/6.0/search-links-with-view-parameters.md
 981cb46d02cc504b4d483962e3e5f0ed  doc/eng-us/bc/6.0/shop-basket-view-name.md
 1bb2ec9b10e67e5c692f4140f388681a  doc/eng-us/bc/6.0/soap-entry-script-index-soap.md
 1b035a77f2a56fa9b0225c8aca76b934  doc/eng-us/bc/6.0/sql-query-cache.md
@@ -13469,7 +13470,7 @@ f56beaea3e5d700ac7442b6a68d85cc2  doc/ger-de/.examples/descriptions/35-user-mana
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 84ecf8b47bf44a9a3d53d86b719e8e1b  doc/ger-de/.examples/strings.json
-cd45d90ca6166ffdb80ce1b53d127b6f  doc/ger-de/.paths.json
+38097e8e75424907e7e4a7ef5acd7212  doc/ger-de/.paths.json
 67005421d98c3fbcfd623d4fb8063ece  doc/ger-de/INSTALL.md
 d4444f60d9f3f6fd7dc43dc6edac7e39  doc/ger-de/README-LIZENZ.md
 35f2e2b3176ed05cb4e6cd1a8e7adf0f  doc/ger-de/UNINSTALL.md
@@ -13662,7 +13663,7 @@ f7afe9eda5b02d1cb4e810857a818dd0  doc/ger-de/bc/6.0/inhaltsjobs.md
 6eb74a075ecaeb09a213b3adc9e697e8  doc/ger-de/bc/6.0/konsole.md
 ff3ac9f50c3e4b1237a93c4431b08964  doc/ger-de/bc/6.0/korrekturen-aus-den-legacy-forks.md
 979fddf6ff7f1e318735008a12c2afbd  doc/ger-de/bc/6.0/layouts.md
-e701feff32d7e37a85a19231c4799fe1  doc/ger-de/bc/6.0/lesezeichen-fuer-systemseiten.md
+89ec6350004fba95381f74d795542bec  doc/ger-de/bc/6.0/lesezeichen-fuer-systemseiten.md
 a004e13c4ed73564f977fa433d7563da  doc/ger-de/bc/6.0/lesezeichenordner.md
 7a9b3db4c6b1d9ad3130eca883ff93a7  doc/ger-de/bc/6.0/love/README.md
 53d864812901942975deaa4e6b771765  doc/ger-de/bc/6.0/love/api.md
@@ -13715,6 +13716,7 @@ b6f5671a6d8c8c99ad7a188252af1387  doc/ger-de/bc/6.0/sql-abfrage-cache.md
 18a8a897af6e9f4e71e174f2b2423e5d  doc/ger-de/bc/6.0/sqlite-transaktionen.md
 ed99f303639d301e1bf5ddb4e8c4facc  doc/ger-de/bc/6.0/standardwerte-des-statischen-caches.md
 f16f5e23b0a3ebfd383e1385efc1d390  doc/ger-de/bc/6.0/statisches-veroeffentlichen.md
+7a45e2508aeba6955cd3c0aa45fb6e56  doc/ger-de/bc/6.0/suchlinks-mit-view-parametern.md
 4d00c3e39c2236e5bb40312a2a0d2a12  doc/ger-de/bc/6.0/svg-bilder.md
 499335a7f7db9207c3e139c29af80c4a  doc/ger-de/bc/6.0/symbole.md
 21bfeea0b8bc4040a92b663f15947183  doc/ger-de/bc/6.0/tab-orte-blaettern-und-sortieren.md
@@ -26761,7 +26763,7 @@ c981f3e6ff32017cd87f4b02adc3dfa9  robots.txt
 f51119798b587a9318fc43b18aeec244  settings/admininterface.ini
 42a15a6b4357ea5a832a1a3cb04ee1d5  settings/audit.ini
 1b4240b9c4d8b7cfa57f7c76b8e2d1a7  settings/binaryfile.ini
-d907d9b953748fe4b792931bf477a890  settings/bookmark.ini
+5cbf86de4c0657325adbc4d8b7fd2d7b  settings/bookmark.ini
 81da50b81b54d740603e97a9591443ff  settings/browse.ini
 69b7abd76c6aad8b54776c6f2b9bb65e  settings/codetemplate.ini
 de45042ac0530e8a52e3a2ac0e519d8a  settings/collaboration.ini
