@@ -391,7 +391,7 @@ repository before writing its importer; the formats above are from their READMEs
 
 ### 7.3 Prior art (ideas taken, no code copied)
 
-| Repository (se7enxweb fork) | Licence in the fork | Taken |
+| Repository (se7enxweb fork) | License in the fork | Taken |
 |---|---|---|
 | `ezapprove2` | GPL-2.0 | quorum, author-selected reviewers, reviewers may edit |
 | `OWEditorial` | none stated | the INI model `<from>[<to>]=<title>`, import format |
@@ -401,7 +401,7 @@ repository before writing its importer; the formats above are from their READMEs
 | `xrowworkflow`, `hideuntildate` | none stated | online/offline by date with states and cron |
 | `IbexaLegacyWorkflow` | none stated | the trigger × operation matrix as a model for the overview |
 
-Where a fork states no licence, read it for the idea and the settings format only; write the code anew.
+Where a fork states no license, read it for the idea and the settings format only; write the code anew.
 
 ### 7.4 Action registry
 
@@ -436,7 +436,7 @@ See the mockup.
 - **Saving**: convert the export to the definition JSON (positions go to `layout`), validate on the
   server, and show errors at nodes and edges.
 - **Drawflow**: vendor 0.0.60 under `extension/expworkflow/design/admin4/javascript/vendor/drawflow/`,
-  with its MIT licence in `design/admin4/javascript/licenses/`. Load it from `'self'` only.
+  with its MIT license in `design/admin4/javascript/licenses/`. Load it from `'self'` only.
 - **CSP** (`script-src 'self'; style-src 'self'`; measured on the image editor `extension/expimageeditor`): no
   inline script or style, no `innerHTML` with markup, no `style.cssText`, no `setAttribute('style')`;
   set styles via `element.style.setProperty()`; configuration via `data-*` or

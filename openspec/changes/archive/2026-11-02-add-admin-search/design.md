@@ -15,7 +15,7 @@ PDF page index (extension `ezfindpdfdeepsearch`, fetch `pdfdeepsearch/page_hits`
 **Goals:**
 - Suggestions and a filtered search page in admin and admin4, the same templates, scripts and styles in both.
 - One code path per search engine with no feature faked: built-in engine, upstream eZ Find 3.x, eZ Find with more filters.
-- No change for other designs (admin3, exp_adminui, frontends): the views keep their behaviour for them.
+- No change for other designs (admin3, exp_adminui, frontends): the views keep their behavior for them.
 - No inline script or style (the admin runs under a Content Security Policy), no jQuery or YUI.
 
 **Non-Goals:**

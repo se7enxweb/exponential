@@ -21,7 +21,7 @@ the bindings above the canvas.
 
 #### Scenario: Add a transition
 - **WHEN** an administrator adds a timer transition from "Approved" to "Published"
-- **THEN** an arrow appears in the timer colour and the side panel asks for the date attribute
+- **THEN** an arrow appears in the timer color and the side panel asks for the date attribute
 
 ### Requirement: Saving a new version
 Saving SHALL store the drawing as a new definition version in the stored format, with the positions of the boxes,

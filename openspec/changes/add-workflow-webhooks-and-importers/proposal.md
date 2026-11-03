@@ -35,7 +35,7 @@ setups over without rebuilding them by hand.
 
 ## Impact
 
-Prior art read for ideas only where the fork states no licence (section 7.3); code is written anew.
+Prior art read for ideas only where the fork states no license (section 7.3); code is written anew.
 
 ## Out of scope
 

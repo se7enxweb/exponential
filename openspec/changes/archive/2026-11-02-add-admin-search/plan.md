@@ -12,7 +12,7 @@ Written after the implementation (02.11.2026); every step below was done. Test r
 - admin and admin4 carry identical search templates, scripts and the stylesheet `modules/search.css`.
 - No inline script or style, no jQuery or YUI; server text into the DOM only as text.
 - Only the upstream eZ Find 3.x API; extended filters only when registered and present.
-- Other designs keep the views' behaviour; the views change only for a template that is the filtered page.
+- Other designs keep the views' behavior; the views change only for a template that is the filtered page.
 - English comments without ticket numbers (upstream); tests in the root suites `design` and `kernel-classes`.
 
 ---

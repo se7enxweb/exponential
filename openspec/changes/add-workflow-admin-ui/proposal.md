@@ -12,7 +12,7 @@ happens around publishing. Without the UI the extension is usable only from the 
 
 ## What Changes
 
-- Drawflow 0.0.60 (MIT) vendored under `design/admin4/javascript/vendor/drawflow/`, its licence next
+- Drawflow 0.0.60 (MIT) vendored under `design/admin4/javascript/vendor/drawflow/`, its license next
   to it. **First task: measure Drawflow under the admin CSP** in Chrome, Firefox and Safari; a needed
   patch stays small, documented and guarded by a test.
 - Converter Drawflow export ↔ definition JSON (positions to `layout`); nodes built with
