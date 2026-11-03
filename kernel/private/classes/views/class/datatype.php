@@ -171,3 +171,10 @@ class Datatype extends \Exponential\Runnable\ModuleView
 }
 
 }
+
+// The other class views were Exponential\View\Kernel\Class\* until 6.0.15 and keep that name; this one answers to it
+// as well, so every view of the module can be reached by the same prefix.
+namespace
+{
+    class_alias( 'Exponential\\View\\Kernel\\ContentClass\\Datatype', 'Exponential\\View\\Kernel\\Class\\Datatype' );
+}
