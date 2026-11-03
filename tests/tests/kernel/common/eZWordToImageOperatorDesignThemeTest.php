@@ -185,6 +185,56 @@ class eZWordToImageOperatorDesignThemeTest extends PHPUnit\Framework\TestCase
         }
     }
 
+    /**
+     * An extension's crystal path for a class the theme maps itself (cjw_newsletter: ClassMap[cjw_newsletter_list]=
+     * actions/view_tree.png) used to replace the theme's mapping: icon_info left the class out (Default in the content
+     * tree), class_icon went on to crystal-admin and drew the PNG in admin4. Now the theme's own mapping stays where
+     * the override names a file the theme does not have; crystal-admin, which has the file, keeps the override.
+     * Checked with the site directory a CLI script has (empty) and the absolute one a web request has: eZINI reads
+     * no absolute directory, and a first version of the fix that read the theme's icon.ini that way passed here and
+     * drew the PNG under Apache.
+     */
+    #[PHPUnit\Framework\Attributes\DataProvider( 'siteDirs' )]
+    public function testAnOverrideTheThemeHasNoFileForKeepsTheThemesOwnIcon( $absolute )
+    {
+        $sys = eZSys::instance();
+        $savedSiteDir = $sys->SiteDir;
+        if ( $absolute )
+            $sys->SiteDir = getcwd() . '/';
+        $icon = eZINI::instance( 'icon.ini' );
+        $hadMap = $icon->hasVariable( 'ClassIcons', 'ClassMap' );
+        $savedMap = $hadMap ? $icon->variable( 'ClassIcons', 'ClassMap' ) : null;
+        $icon->setVariable( 'ClassIcons', 'ClassMap', array( 'cjw_newsletter_list' => 'actions/view_tree.png' ) );
+        try
+        {
+            $file = $this->dir . '/icon_own.tpl';
+            file_put_contents( $file, "{def \$i = icon_info( 'class' )}{\$i.theme}:{cond( is_set( \$i.icons.cjw_newsletter_list ), \$i.icons.cjw_newsletter_list, 'none' )}|{'cjw_newsletter_list'|class_icon( normal, '', true() )}" );
+
+            $this->design( 'admin4' );
+            eZTemplate::resetInstance();
+            $this->assertSame( 'bootstrap-icons:envelope-paper.svg|/share/icons/bootstrap-icons/svg/envelope-paper.svg',
+                               eZTemplate::factory()->fetch( $file ) );
+
+            $this->design( 'admin3' );
+            eZTemplate::resetInstance();
+            $this->assertSame( 'crystal-admin:actions/view_tree.png|/share/icons/crystal-admin/32x32/actions/view_tree.png',
+                               eZTemplate::factory()->fetch( $file ) );
+        }
+        finally
+        {
+            $sys->SiteDir = $savedSiteDir;
+            if ( $hadMap )
+                $icon->setVariable( 'ClassIcons', 'ClassMap', $savedMap );
+            else
+                $this->removeVariable( $icon, 'ClassIcons', 'ClassMap' );
+        }
+    }
+
+    public static function siteDirs()
+    {
+        return array( 'CLI, empty site directory' => array( false ), 'web request, absolute site directory' => array( true ) );
+    }
+
     private function design( $design )
     {
         eZINI::instance()->setVariable( 'DesignSettings', 'SiteDesign', $design );
