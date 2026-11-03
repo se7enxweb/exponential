@@ -69,7 +69,23 @@ class Search extends \Exponential\Runnable\ModuleView
         $searchPageLimit = 2;
         $tpl = \eZTemplate::factory();
         $ini = \eZINI::instance();
-        $useSearchCode = $ini->variable( 'SearchSettings', 'SearchViewHandling' ) == 'default';
+        // default: the view searches and hands the result to the template. A template that is the administration's
+        // filtered search page searches itself (fetch content/filtered_search): the view's own search would only
+        // run the same query a second time
+        $filteredPage = self::templateSearchesItself( 'content/search.tpl' );
+        if ( $filteredPage )
+        {
+            // The page takes its search as view parameters only (/(text)/easter/(class)/2,16, see
+            // expContentSearchFilters::viewSuffix()), never as a query string. Its filter bar and the header search
+            // field are posted and answered with a 303 to that address; a search of the browse window
+            // (Mode=browse) is not the page and keeps its own handling below.
+            if ( \expViewParameters::posted( $_POST, 'Mode' ) !== 'browse'
+                 && \expViewParameters::redirectsPost( $_POST, \expContentSearchFilters::FORM_FIELDS ) )
+                \expViewParameters::redirect( 'content/search' . \expContentSearchFilters::fromRequest( $_POST )->viewSuffix() );
+            \expContentSearchFilters::useViewParameters( $scope['Params'] );
+        }
+        $useSearchCode = $ini->variable( 'SearchSettings', 'SearchViewHandling' ) == 'default'
+                         && !$filteredPage;
         $logSearchStats = $ini->variable( 'SearchSettings', 'LogSearchStats' ) == 'enabled';
 
         if ( $http->hasVariable( 'BrowsePageLimit' ) )
@@ -104,6 +120,9 @@ class Search extends \Exponential\Runnable\ModuleView
         $requestedSearchText = $searchText;
         $searchText = self::limitSearchText( $searchText, $maximumWords, $maximumLength );
         $searchTextShortened = $searchText !== $requestedSearchText;
+        // the filtered search page: its text is the view parameter (text), for the statistics and the audit
+        if ( $filteredPage )
+            $searchText = self::limitSearchText( (string)\expViewParameters::get( $scope['Params'], 'text' ), $maximumWords, $maximumLength );
 
         // A section that does not exist is no section: the search is not limited to it
         $searchSectionID = -1;
@@ -254,15 +273,11 @@ class Search extends \Exponential\Runnable\ModuleView
         $Result['path'] = array( array( 'text' => \ezpI18n::tr( 'kernel/content', 'Search' ),
                                         'url' => false ) );
 
-        $searchData = false;
-        if ( !$useSearchCode )
-        {
-            if ( $tpl->hasVariable( "search_data" ) )
-            {
-                $searchData = $tpl->variable( "search_data" );
-            }
-        }
-        else
+        // The statistics count what the page showed: a template that searches itself (the administration's
+        // filtered search page) leaves its result in search_data, also with SearchViewHandling=default, where the
+        // view's own, unfiltered search would give another count.
+        $searchData = $tpl->hasVariable( "search_data" ) ? $tpl->variable( "search_data" ) : false;
+        if ( $useSearchCode && !is_array( $searchData ) )
         {
             $searchData = $searchResult;
         }
@@ -359,6 +374,26 @@ class Search extends \Exponential\Runnable\ModuleView
     public static function emptySearchResult()
     {
         return array( 'SearchResult' => array(), 'SearchCount' => 0, 'StopWordArray' => array() );
+    }
+
+    /**
+     * Whether the template the view renders is the administration's filtered search page, which searches itself:
+     * the design's content/search.tpl (or content/advancedsearch.tpl) includes design:content/search_page.tpl.
+     * Looked up along the design bases of the siteaccess as the template resource does (without override rules).
+     *
+     * @param string $template the template path below templates/, e.g. 'content/search.tpl'
+     * @param array|null $bases design bases (tests); null: eZTemplateDesignResource::allDesignBases()
+     * @return bool
+     */
+    public static function templateSearchesItself( $template, $bases = null )
+    {
+        $tried = array();
+        $match = \eZTemplateDesignResource::fileMatch( $bases === null ? \eZTemplateDesignResource::allDesignBases() : $bases,
+                                                       'templates', $template, $tried );
+        if ( !is_array( $match ) || !is_readable( $match['path'] ) )
+            return false;
+        $text = file_get_contents( $match['path'], false, null, 0, 16384 );
+        return is_string( $text ) && strpos( $text, "{include uri='design:content/search_page.tpl'}" ) !== false;
     }
 
     /**

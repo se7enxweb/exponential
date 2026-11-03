@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>Эхний хуудас руу очих</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Бусад</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>Сүүлийн 7 хоног</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Тохируулсан хугацаа</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Бүх үг</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Аль ч үг</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Яг тохирох хэллэг</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Хамааралтай байдал</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Нэр А–Я</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Нэр Я–А</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Өөрчилсөн, шинэ нь эхэндээ</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Өөрчилсөн, хуучин нь эхэндээ</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Нийтэлсэн, шинэ нь эхэндээ</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Нийтэлсэн, хуучин нь эхэндээ</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Өөрчилсөн</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Шүүлтүүрүүд</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Шүүлтүүрүүдийг харуулах</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Шүүлтүүрүүдийг нуух</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Тэглэх</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Хэрэгжүүлэх</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Үгс</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Агуулгын төрөл</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Илүү харуулах (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Аттрибутуудын аль нэгээр нь хайхын тулд нэг агуулгын төрөл сонгоно уу.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Хэсэг</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Эх сурвалж</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Хүртэл</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Эхлэх огноо нь хүчинтэй огноо биш байна.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Дуусах огноо нь хүчинтэй огноо биш байна.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Эзэмшигч</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>Хэрэглэгчийн ID, нэвтрэх нэр эсвэл и-мэйл хаяг.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>«%input»-д тохирох хэрэглэгч олдсонгүй.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Хэл</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Аль ч хэл</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Байршил</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count байршил</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Хуудас бүрийн үр дүн</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>«%text»-ийн үр дүн (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Үр дүн (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Эрэмбэлэх үндэс</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Эрэмбэ</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Идэвхтэй шүүлтүүрүүд</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Энэ шүүлтүүрийг хасах</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Эсвэл шүүлтүүр сонгож хэрэгжүүлэн тохирох агуулгыг жагсаана уу.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Үг бичсний дараа шүүлтүүрүүд хайлтыг нарийсгана.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>«%text»-д үр дүн олдсонгүй.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Үр дүн олдсонгүй.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Дээрх шүүлтүүрээс нэгийг хасна уу.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Орчуулгууд</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Үйлдлүүд</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>%name засах</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Засах</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Help center</source>
         <translation>Тусламжийн төв</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Агуулга</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Баримт бичгийн хуудсууд</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Хэрэглэгчид</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Агуулгын ангиуд</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Удирдлага</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Хуудас %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Бүх үр дүнг харах</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count үр дүн</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Нэг үр дүн</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count санал</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Санал алга</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Саналуудыг ачаалж чадсангүй.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Саналууд</translation>
     </message>
 </context>
 <context>

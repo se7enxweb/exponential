@@ -5167,6 +5167,210 @@
         <source>Go to the first page</source>
         <translation>Téigh go dtí an chéad leathanach</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Eile</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>Na 7 lá deireanacha</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Raon saincheaptha</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Na focail go léir</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Focal ar bith</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Frása cruinn</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Ábharthacht</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Ainm A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Ainm Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Athraithe, is nuaí ar dtús</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Athraithe, is sine ar dtús</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Foilsithe, is nuaí ar dtús</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Foilsithe, is sine ar dtús</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Athraithe</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Scagairí</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Taispeáin na scagairí</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Folaigh na scagairí</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Athshocraigh</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Cuir i bhfeidhm</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Focail</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Cineál ábhair</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Taispeáin tuilleadh (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Roghnaigh cineál ábhair amháin chun cuardach a dhéanamh i gceann dá aitreabúidí.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Rannán</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Ó</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Go dtí</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Ní dáta bailí é an dáta tosaigh.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Ní dáta bailí é an dáta deiridh.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Úinéir</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>Aitheantas úsáideora, ainm logála isteach nó seoladh ríomhphoist.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>Níor aimsíodh úsáideoir ar bith do “%input”.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Teanga</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Teanga ar bith</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Láthair</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count láthair</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Torthaí in aghaidh an leathanaigh</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Torthaí do “%text” (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Torthaí (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Sórtáil de réir</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Sórtáil</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Scagairí gníomhacha</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Bain an scagaire seo</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Nó roghnaigh scagairí agus cuir i bhfeidhm iad chun an t-ábhar a mheaitseálann leo a liostú.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Cúngaíonn na scagairí an cuardach nuair a bheidh focail clóscríofa agat.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>Níor aimsíodh torthaí do “%text”.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Níor aimsíodh torthaí.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Bain scagaire thuas.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Aistriúcháin</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Gníomhartha</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>Cuir %name in eagar</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Cuir in eagar</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13850,6 +14054,61 @@ Nóta: Ní dhíshuiteálfar na pacáistí.</translation>
     <message>
         <source>Help center</source>
         <translation>Ionad cabhrach</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Ábhar</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Leathanaigh doiciméid</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Úsáideoirí</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Aicmí ábhair</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Riarachán</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Leathanach %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Féach ar gach toradh</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>Torthaí: %count</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Toradh amháin</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count moladh</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Gan mholtaí</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Níorbh fhéidir na moltaí a lódáil.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Moltaí</translation>
     </message>
 </context>
 <context>

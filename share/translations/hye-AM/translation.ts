@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>Անցնել առաջին էջ</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Այլ</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>Վերջին 7 օրը</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Հատուկ ժամանակահատված</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Բոլոր բառերը</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Ցանկացած բառ</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Ճշգրիտ արտահայտություն</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Համապատասխանություն</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Անուն Ա–Ֆ</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Անուն Ֆ–Ա</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Փոփոխված, նորագույնը՝ առաջինը</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Փոփոխված, ամենահինը՝ առաջինը</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Հրապարակված, նորագույնը՝ առաջինը</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Հրապարակված, ամենահինը՝ առաջինը</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Փոփոխված</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Զտիչներ</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Ցուցադրել զտիչները</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Թաքցնել զտիչները</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Զրոյացնել</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Կիրառել</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Բառեր</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Բովանդակության տեսակ</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Ցույց տալ ավելին (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Ընտրեք բովանդակության մեկ տեսակ՝ դրա ատրիբուտներից մեկում որոնելու համար։</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Բաժին</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Ումից</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Ում</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Սկզբի ամսաթիվը վավեր ամսաթիվ չէ։</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Ավարտի ամսաթիվը վավեր ամսաթիվ չէ։</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Սեփականատեր</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>Օգտատիրոջ ID, մուտքանուն կամ էլ. փոստի հասցե։</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>«%input»-ի համար օգտատեր չի գտնվել։</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Լեզու</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Ցանկացած լեզու</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Տեղ</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count տեղ</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Արդյունքներ մեկ էջում</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Արդյունքներ «%text»-ի համար (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Արդյունքներ (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Դասավորել ըստ</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Դասավորել</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Ակտիվ զտիչներ</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Հեռացնել այս զտիչը</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Կամ ընտրեք զտիչներ և կիրառեք դրանք՝ համապատասխան բովանդակությունը ցուցակագրելու համար։</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Բառեր մուտքագրելուց հետո զտիչները նեղացնում են որոնումը։</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>«%text»-ի համար արդյունքներ չեն գտնվել։</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Արդյունքներ չեն գտնվել։</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Հեռացրեք վերևում գտնվող զտիչներից մեկը։</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Թարգմանություններ</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Գործողություններ</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>Խմբագրել %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Խմբագրել</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Help center</source>
         <translation>Օգնության կենտրոն</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Բովանդակություն</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Փաստաթղթի էջեր</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Օգտատերեր</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Բովանդակության դասեր</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Կառավարում</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Էջ %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Դիտել բոլոր արդյունքները</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count արդյունք</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Մեկ արդյունք</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count առաջարկ</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Առաջարկներ չկան</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Առաջարկները հնարավոր չեղավ բեռնել։</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Առաջարկներ</translation>
     </message>
 </context>
 <context>

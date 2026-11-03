@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>პირველ გვერდზე გადასვლა</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>სხვა</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>ბოლო 7 დღე</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>მორგებული პერიოდი</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>ყველა სიტყვა</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>ნებისმიერი სიტყვა</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>ზუსტი ფრაზა</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>შესაბამისობა</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>სახელი ა–ჰ</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>სახელი ჰ–ა</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>შეცვლილი, ჯერ უახლესი</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>შეცვლილი, ჯერ უძველესი</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>გამოქვეყნებული, ჯერ უახლესი</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>გამოქვეყნებული, ჯერ უძველესი</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>შეცვლილი</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>ფილტრები</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>ფილტრების ჩვენება</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>ფილტრების დამალვა</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>განულება</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>გამოყენება</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>სიტყვები</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>შიგთავსის ტიპი</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>მეტის ჩვენება (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>აირჩიეთ შიგთავსის ერთი ტიპი, რათა მოძებნოთ მის ერთ-ერთ ატრიბუტში.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>სექცია</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>საიდან</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>მიმღები</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>საწყისი თარიღი არასწორი თარიღია.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>საბოლოო თარიღი არასწორი თარიღია.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>მფლობელი</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>მომხმარებლის ID, მომხმარებლის სახელი ან ელფოსტის მისამართი.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>„%input“-ისთვის მომხმარებელი ვერ მოიძებნა.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>ენა</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>ნებისმიერი ენა</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>მდებარეობა</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count მდებარეობა</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>შედეგები გვერდზე</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>შედეგები „%text“-ისთვის (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>შედეგები (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>დალაგება</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>დალაგება</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>აქტიური ფილტრები</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>ამ ფილტრის მოცილება</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>ან აირჩიეთ ფილტრები და გამოიყენეთ ისინი შესაბამისი შიგთავსის სიის სანახავად.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>სიტყვების აკრეფის შემდეგ ფილტრები ავიწროებს ძიებას.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>„%text“-ისთვის შედეგები ვერ მოიძებნა.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>შედეგები ვერ მოიძებნა.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>მოხსენით ზემოთ მოცემული ერთ-ერთი ფილტრი.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>თარგმანები</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>მოქმედებები</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>%name-ის რედაქტირება</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>რედაქტირება</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Help center</source>
         <translation>დახმარების ცენტრი</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>შიგთავსი</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>დოკუმენტის გვერდები</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>მომხმარებლები</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>შიგთავსის კლასები</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>ადმინისტრირება</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>გვერდი %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>ყველა შედეგის ნახვა</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count შედეგი</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>ერთი შედეგი</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count შეთავაზება</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>შეთავაზებები არ არის</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>შეთავაზებების ჩატვირთვა ვერ მოხერხდა.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>შეთავაზებები</translation>
     </message>
 </context>
 <context>

@@ -37,7 +37,7 @@ After this lesson, learners can:
 
 ### How to present it
 
-Source: [The advanced search](../../../searching.md#the-advanced-search).
+Source: [The advanced search](../../../searching.md#the-search-page-and-its-filters).
 
 1. **Opening it** (1 minute). **Advanced search** in **Search scope**, or *For more options try the Advanced search*
    under the search form on the results page.
@@ -106,7 +106,7 @@ Use the training installation and the items you created in this course.
 <summary>Answers</summary>
 
 1. All the words must appear, in any order, versus the words together in this order.
-2. **Update attributes** ([Searching](../../../searching.md#the-advanced-search)).
+2. **Update attributes** ([Searching](../../../searching.md#the-search-page-and-its-filters)).
 3. Any three of **Any time**, **Last day**, **Last week**, **Last month**, **Last three months**, **Last year**.
 4. **False.** It finds published content you may read.
 5. Remove limits and add them back one at a time.
@@ -115,7 +115,7 @@ Use the training installation and the items you created in this course.
 
 ## Further reading
 
-- [Searching](../../../searching.md#the-advanced-search): the advanced form.
+- [Searching](../../../searching.md#the-search-page-and-its-filters): the advanced form.
 - [Sections](../../../../guides/sections.md): what the sections in **In:** are.
 
 ## Related pages

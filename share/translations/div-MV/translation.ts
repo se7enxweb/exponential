@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>ފުރަތަމަ ޞަފްޙާއަށް ދާ</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>އެހެނިހެން</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>ފަހުގެ 7 ދުވަސް</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>ޚާއްޞަ މުއްދަތެއް</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>ހުރިހާ ލަފުޒެއް</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>ކޮންމެ ލަފުޒެއް</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>ހަމަ އެ ޖުމްލަ</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>ގުޅުން</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>ނަން A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>ނަން Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>ބަދަލުކުރެވިފައި، އާ އެއްޗެހި ފުރަތަމަ</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>ބަދަލުކުރެވިފައި، ބާ އެއްޗެހި ފުރަތަމަ</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>ޝާއިޢުކުރެވިފައި، އާ އެއްޗެހި ފުރަތަމަ</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>ޝާއިޢުކުރެވިފައި، ބާ އެއްޗެހި ފުރަތަމަ</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>ބަދަލުކުރެވިފައި</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>ފިލްޓަރުތައް</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>ފިލްޓަރުތައް ދައްކާ</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>ފިލްޓަރުތައް ފޮރުވާ</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>ރީސެޓްކުރޭ</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>ހިންގާ</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>ލަފުޒުތައް</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>ކޮންޓެންޓްގެ ބާވަތް</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>އިތުރަށް ދައްކާ (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>އޭގެ އެއްވެސް ސިފައެއްގައި ހޯދުމަށް ކޮންޓެންޓްގެ އެއް ބާވަތެއް ޚިޔާރުކުރޭ.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>ސެކްޝަން</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>އިން</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>އަށް</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>ފެށޭ ތާރީޚަކީ ޞައްޙަ ތާރީޚެއް ނޫން.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>ނިމޭ ތާރީޚަކީ ޞައްޙަ ތާރީޚެއް ނޫން.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>ވެރިފަރާތް</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>ޔޫޒަރ ID، ލޮގިން ނުވަތަ އީމެއިލް އެޑްރެސް.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>“%input” އަށް އެއްވެސް ޔޫޒަރެއް ނުފެނުނު.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>ބަސް</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>ކޮންމެ ބަހެއް</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>ތަން</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count ތަން</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>ކޮންމެ ޞަފްޙާއެއްގައި ނަތީޖާ</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>“%text” ގެ ނަތީޖާ (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>ނަތީޖާ (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>ތަރުތީބުކުރޭ</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>ތަރުތީބުކުރޭ</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>އެކްޓިވް ފިލްޓަރުތައް</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>މި ފިލްޓަރު ނަގާ</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>ނުވަތަ ގުޅޭ ކޮންޓެންޓް ލިސްޓުކުރުމަށް ފިލްޓަރުތައް ޚިޔާރުކޮށް ހިންގާ.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>ލަފުޒުތައް ލިޔުމަށްފަހު ފިލްޓަރުތަކުން ހޯދުން ކުޑަކޮށްދޭ.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>“%text” އަށް އެއްވެސް ނަތީޖާއެއް ނުފެނުނު.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>އެއްވެސް ނަތީޖާއެއް ނުފެނުނު.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>މަތީގައިވާ ފިލްޓަރެއް ނަގާލާ.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>ތަރުޖަމާތައް</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>އަމަލުތައް</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>%name އެޑިޓްކުރޭ</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>އެޑިޓްކުރޭ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Help center</source>
         <translation>އެހީގެ މަރުކަޒު</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>ކޮންޓެންޓް</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>ޑޮކިއުމެންޓްގެ ޞަފްޙާތައް</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>ޔޫޒަރުން</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>ކޮންޓެންޓް ކްލާސްތައް</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>އެޑްމިނިސްޓްރޭޝަން</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>ޞަފްޙާ %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>ހުރިހާ ނަތީޖާއެއް ބަލާ</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count ނަތީޖާ</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>އެއް ނަތީޖާ</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count ހުށަހެޅުން</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>އެއްވެސް ހުށަހެޅުމެއް ނެތް</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>ހުށަހެޅުންތައް ލޯޑް ނުކުރެވުނު.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>ހުށަހެޅުންތައް</translation>
     </message>
 </context>
 <context>

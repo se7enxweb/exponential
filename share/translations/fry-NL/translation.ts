@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>Nei de earste side</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Oars</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>Lêste 7 dagen</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Eigen perioade</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Alle wurden</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Elk wurd</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Krekte sin</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Relevânsje</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Namme A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Namme Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Wizige, nijste earst</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Wizige, âldste earst</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Publisearre, nijste earst</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Publisearre, âldste earst</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Wizige</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Filters</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Filters sjen litte</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Filters ferbergje</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Weromsette</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Tapasse</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Wurden</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Ynhâldstype</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Mear sjen litte (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Kies ien ynhâldstype om yn ien fan syn attributen te sykjen.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Seksje</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Fan</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Oant</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>De begjindatum is gjin jildige datum.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>De eindatum is gjin jildige datum.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Eigner</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>Brûkers-ID, oanmeldnamme of e-mailadres.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>Gjin brûker fûn foar “%input”.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Taal</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Elke taal</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Lokaasje</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count lokaasjes</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Resultaten per side</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Resultaten foar “%text” (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Resultaten (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Sortearje op</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Sortearring</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Aktive filters</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Dit filter fuorthelje</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Of kies filters en tapasse se om de oerienkommende ynhâld te sjen.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>De filters ferfine it sykjen sadree't jo wurden yntypt hawwe.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>Gjin resultaten fûn foar “%text”.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Gjin resultaten fûn.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Smyt hjirboppe in filter fuort.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Oersettingen</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Aksjes</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>%name bewurkje</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Bewurkje</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Let op: de pakketten wurde net de-ynstallearre.</translation>
     <message>
         <source>Help center</source>
         <translation>Helpsintrum</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Ynhâld</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Dokumintsiden</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Brûkers</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Ynhâldsklassen</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Behear</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Side %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Alle resultaten besjen</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count resultaten</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Ien resultaat</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count suggestjes</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Gjin suggestjes</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>De suggestjes koene net laden wurde.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Suggestjes</translation>
     </message>
 </context>
 <context>

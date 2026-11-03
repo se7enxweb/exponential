@@ -5145,6 +5145,210 @@
         <source>Go to the first page</source>
         <translation>Přejít na první stránku</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Ostatní</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>Posledních 7 dní</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Vlastní rozsah</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Všechna slova</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Kterékoli slovo</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Přesná fráze</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Relevance</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Název A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Název Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Změněno, nejnovější první</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Změněno, nejstarší první</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Publikováno, nejnovější první</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Publikováno, nejstarší první</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Změněno</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Filtry</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Zobrazit filtry</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Skrýt filtry</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Vynulovat</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Použít</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Slova</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Typ obsahu</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Zobrazit více (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Vyberte jeden typ obsahu, abyste mohli hledat v některém z jeho atributů.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Sekce</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Z</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Do</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Počáteční datum není platné datum.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Koncové datum není platné datum.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Vlastník</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>ID uživatele, přihlašovací jméno nebo e-mailová adresa.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>Pro „%input“ nebyl nalezen žádný uživatel.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Jazyk</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Jakýkoli jazyk</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Umístění</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>Počet umístění: %count</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Výsledků na stránku</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Výsledky pro „%text“ (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Výsledky (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Řadit podle</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Řadit</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Aktivní filtry</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Odebrat tento filtr</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Nebo vyberte filtry a použijte je, aby se vypsal odpovídající obsah.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Filtry zúží hledání, jakmile zadáte slova.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>Pro „%text“ nebyly nalezeny žádné výsledky.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Nebyly nalezeny žádné výsledky.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Odeberte některý z filtrů výše.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Překlady</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Akce</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>Upravit %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Upravit</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -14268,6 +14472,61 @@ Poznámka: Balíčky nebudou odinstalovány.</translation>
     <message>
         <source>Help center</source>
         <translation>Centrum nápovědy</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Obsah</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Stránky dokumentů</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Uživatelé</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Třídy obsahu</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Administrace</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Strana %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Zobrazit všechny výsledky</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>Počet výsledků: %count</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Jeden výsledek</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>Počet návrhů: %count</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Žádné návrhy</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Návrhy se nepodařilo načíst.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Návrhy</translation>
     </message>
 </context>
 <context>

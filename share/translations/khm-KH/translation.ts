@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>ទៅកាន់ទំព័រទីមួយ</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>ផ្សេងៗ</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>7 ថ្ងៃចុងក្រោយ</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>ចន្លោះកំណត់ផ្ទាល់ខ្លួន</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>ពាក្យទាំងអស់</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>ពាក្យណាមួយ</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>ឃ្លាពិតប្រាកដ</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>ភាពពាក់ព័ន្ធ</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>ឈ្មោះ ក–អ</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>ឈ្មោះ អ–ក</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>បានកែប្រែ ថ្មីបំផុតមុន</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>បានកែប្រែ ចាស់បំផុតមុន</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>បានផ្សាយ ថ្មីបំផុតមុន</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>បានផ្សាយ ចាស់បំផុតមុន</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>បានកែប្រែ</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>តម្រង</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>បង្ហាញតម្រង</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>លាក់តម្រង</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>កំណត់ឡើងវិញ</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>អនុវត្ត</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>ពាក្យ</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>ប្រភេទមាតិកា</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>បង្ហាញបន្ថែម (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>ជ្រើសរើសប្រភេទមាតិកាមួយ ដើម្បីស្វែងរកក្នុងលក្ខណៈមួយរបស់វា។</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>ផ្នែក</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>ពី</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>ទៅ</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>កាលបរិច្ឆេទចាប់ផ្ដើមមិនមែនជាកាលបរិច្ឆេទត្រឹមត្រូវទេ។</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>កាលបរិច្ឆេទបញ្ចប់មិនមែនជាកាលបរិច្ឆេទត្រឹមត្រូវទេ។</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>ម្ចាស់</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>ID អ្នកប្រើ ឈ្មោះចូល ឬអាសយដ្ឋានអ៊ីមែល។</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>រកមិនឃើញអ្នកប្រើសម្រាប់ “%input” ទេ។</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>ភាសា</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>ភាសាណាមួយ</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>ទីតាំង</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>ទីតាំង %count</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>លទ្ធផលក្នុងមួយទំព័រ</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>លទ្ធផលសម្រាប់ “%text” (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>លទ្ធផល (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>តម្រៀបតាម</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>តម្រៀប</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>តម្រងដែលកំពុងប្រើ</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>ដកតម្រងនេះចេញ</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>ឬជ្រើសរើសតម្រង ហើយអនុវត្តវា ដើម្បីរាយមាតិកាដែលត្រូវគ្នា។</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>តម្រងបង្រួមការស្វែងរក នៅពេលអ្នកបានវាយពាក្យរួច។</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>រកមិនឃើញលទ្ធផលសម្រាប់ “%text” ទេ។</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>រកមិនឃើញលទ្ធផលទេ។</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>ដកតម្រងមួយនៅខាងលើចេញ។</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>ការបកប្រែ</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>សកម្មភាព</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>កែសម្រួល %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>កែសម្រួល</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Help center</source>
         <translation>មជ្ឈមណ្ឌលជំនួយ</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>មាតិកា</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>ទំព័រឯកសារ</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>អ្នកប្រើ</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>ថ្នាក់មាតិកា</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>ការគ្រប់គ្រង</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>ទំព័រ %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>មើលលទ្ធផលទាំងអស់</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>លទ្ធផល %count</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>លទ្ធផលមួយ</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>សំណើ %count</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>គ្មានសំណើ</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>មិនអាចផ្ទុកសំណើបានទេ។</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>សំណើ</translation>
     </message>
 </context>
 <context>

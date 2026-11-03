@@ -116,13 +116,27 @@ prefix), as the search was before.
 - **THEN** only results inside that subtree are listed
 
 ### Requirement: Advanced search in the page
-The former advanced search addresses SHALL show the search page with the equivalent search: its class, class
-attribute, section, publication date, phrase and page size parameters SHALL become the page's filters, and every
-link and form of the page SHALL lead to the search page.
+The former advanced search SHALL lead to the search page: a posted advanced search form SHALL show the search page
+with the equivalent search (its class, class attribute, section, publication date, phrase and page size become the
+page's filters), an old advanced search address SHALL open the search page, and every link and form of the page
+SHALL lead to the search page.
 
-#### Scenario: Old address
-- **WHEN** an editor opens an old advanced search address with a class identifier and a phrase
+#### Scenario: Posted advanced search form
+- **WHEN** an advanced search form is posted with a class identifier and a phrase
 - **THEN** the search page opens with that class chosen and the phrase searched
+
+### Requirement: The search in the address
+The search page SHALL keep its search in the address as view parameters (`/(name)/value`), so that a search can be
+bookmarked and shared, and SHALL never write or read a query string (`?name=value`). Its forms SHALL be posted and
+answered with a redirect to that address.
+
+#### Scenario: Filters in the address
+- **WHEN** an editor applies the words "easter" and two content types
+- **THEN** the address is the search page followed by `/(text)/easter/(class)/` and the two type ids joined by a comma
+
+#### Scenario: Query string
+- **WHEN** an editor opens the search page with `?SearchText=easter`
+- **THEN** the query string is ignored and no search runs
 
 ### Requirement: One search per page
 A search page SHALL run its search once. The search statistics SHALL record the words with the number of results

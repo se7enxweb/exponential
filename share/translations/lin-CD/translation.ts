@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>Kende na lokasa ya liboso</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Mosusu</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>Mikolo 7 ya nsuka</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Ntango oyo opono</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Maloba nyonso</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Liloba moko boye</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Maloba ndenge ekomami</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Boyokani</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Nkombo A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Nkombo Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Ebongolami, ya sika liboso</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Ebongolami, ya kala liboso</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Ebimisami, ya sika liboso</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Ebimisami, ya kala liboso</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Ebongolami</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Ba-filtre</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Lakisá ba-filtre</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Bomba ba-filtre</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Zongisá</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Salelá</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Maloba</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Lolenge ya makambo</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Lakisá mingi (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Poná lolenge moko ya makambo mpo na koluka na moko ya bizaleli na yango.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Eteni</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Euti na</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Epai ya</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Mokolo ya ebandeli ezali mokolo ya malamu te.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Mokolo ya nsuka ezali mokolo ya malamu te.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Nkolo</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>ID ya mosaleli, nkombo ya kokota to adrési ya e-mail.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>Mosaleli moko te amonani mpo na “%input”.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Lokóta</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Lokóta nyonso</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Esika</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>Bisika %count</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Mbuma na lokasa moko</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Mbuma mpo na “%text” (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Mbuma (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Tyá na molongo na</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Tyá na molongo</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Ba-filtre ezali kosala</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Longolá filtre oyo</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>To poná ba-filtre mpe salelá yango mpo na kolakisa makambo oyo ekokani.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Ba-filtre ekokitisa boluki soki okomi maloba.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>Mbuma moko te emonani mpo na “%text”.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Mbuma moko te emonani.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Longolá filtre moko awa likoló.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Mabongoli</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Misala</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>Bongisá %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Bongisá</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Nkomba: Ba-paquet ekolongolama na système te.</translation>
     <message>
         <source>Help center</source>
         <translation>Esika ya lisálisi</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Makambo</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Nkasa ya mikanda</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Basaleli</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Bakalasi ya makambo</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Bokambi</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Lokasa %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Talá mbuma nyonso</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>Mbuma %count</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Mbuma moko</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>Makanisi %count</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Makanisi te</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Makanisi ekokaki kozwama te.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Makanisi</translation>
     </message>
 </context>
 <context>

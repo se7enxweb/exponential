@@ -5383,6 +5383,210 @@
         <source>Go to the first page</source>
         <translation>Gå til første side</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Annet</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>Siste 7 dager</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Egendefinert periode</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Alle ord</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Hvilket som helst ord</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Eksakt frase</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Relevans</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Navn A–Å</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Navn Å–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Endret, nyeste først</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Endret, eldste først</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Publisert, nyeste først</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Publisert, eldste først</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Endringstidspunkt</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Filtre</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Vis filtre</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Skjul filtre</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Nullstill</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Bruk</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Ord</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Innholdstype</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Vis flere (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Velg én innholdstype for å søke i ett av attributtene dens.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Seksjon</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Fra</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Til</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Fra-datoen er ikke en gyldig dato.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Til-datoen er ikke en gyldig dato.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Eier</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>Bruker-ID, brukernavn eller e-postadresse.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>Fant ingen bruker for «%input».</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Språk</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Alle språk</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Plassering</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count plasseringer</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Resultater per side</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Resultater for «%text» (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Resultater (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Sorter etter</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Sorter</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Aktive filtre</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Fjern dette filteret</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Eller velg filtre og bruk dem for å liste innholdet som samsvarer.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Filtrene snevrer inn søket når du har skrevet inn ord.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>Fant ingen resultater for «%text».</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Fant ingen resultater.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Fjern et filter ovenfor.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Oversettelser</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Handlinger</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>Rediger %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Rediger</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -14538,6 +14742,61 @@ Merk: Pakkene blir ikke avinstallert.</translation>
     <message>
         <source>Help center</source>
         <translation>Hjelpesenter</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Innhold</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Dokumentsider</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Brukere</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Innholdsklasser</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Administrasjon</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Side %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Vis alle resultater</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count resultater</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Ett resultat</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count forslag</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Ingen forslag</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Forslagene kunne ikke lastes inn.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Forslag</translation>
     </message>
 </context>
 <context>

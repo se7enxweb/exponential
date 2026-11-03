@@ -5167,6 +5167,210 @@
         <source>Go to the first page</source>
         <translation>Pāriet uz pirmo lapu</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Cits</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>Pēdējās 7 dienas</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Pielāgots periods</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Visi vārdi</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Jebkurš vārds</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Precīza frāze</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Atbilstība</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Nosaukums A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Nosaukums Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Modificēts, jaunākie vispirms</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Modificēts, vecākie vispirms</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Publicēts, jaunākie vispirms</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Publicēts, vecākie vispirms</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Modificēts</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Filtri</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Rādīt filtrus</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Slēpt filtrus</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Atiestatīt</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Lietot</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Vārdi</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Satura tips</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Rādīt vairāk (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Izvēlieties vienu satura tipu, lai meklētu kādā no tā atribūtiem.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Sadaļa</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>No</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Līdz</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Sākuma datums nav derīgs datums.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Beigu datums nav derīgs datums.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Īpašnieks</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>Lietotāja ID, pieteikšanās vārds vai e-pasta adrese.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>Vaicājumam „%input” netika atrasts neviens lietotājs.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Valoda</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Jebkura valoda</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Atrašanās vieta</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>Atrašanās vietas: %count</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Rezultāti lapā</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Rezultāti vaicājumam „%text” (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Rezultāti (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Kārtot pēc</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Kārtošana</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Aktīvie filtri</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Noņemt šo filtru</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Vai arī izvēlieties un lietojiet filtrus, lai parādītu atbilstošo saturu.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Kad esat ievadījis vārdus, filtri sašaurina meklēšanu.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>Vaicājumam „%text” netika atrasts neviens rezultāts.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Netika atrasts neviens rezultāts.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Noņemiet kādu no augstāk esošajiem filtriem.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Tulkojumi</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Darbības</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>Rediģēt %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Rediģēt</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13850,6 +14054,61 @@ Piezīme: pakotnes netiks atinstalētas.</translation>
     <message>
         <source>Help center</source>
         <translation>Palīdzības centrs</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Saturs</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Dokumentu lapas</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Lietotāji</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Satura klases</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Administrēšana</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Lapa %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Skatīt visus rezultātus</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>Rezultāti: %count</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Viens rezultāts</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>Ieteikumi: %count</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Nav ieteikumu</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Ieteikumus neizdevās ielādēt.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Ieteikumi</translation>
     </message>
 </context>
 <context>

@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>גיין צום ערשטן בלאַט</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>אַנדערע</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>לעצטע 7 טעג</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>אייגענער צייטראַם</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>אַלע ווערטער</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>סײַ וועלכע וואָרט</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>גענויע פֿראַזע</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>רעלעוואַנץ</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>נאָמען א–ת</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>נאָמען ת–א</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>געענדערט, נײַסטע ערשט</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>געענדערט, עלטסטע ערשט</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>פֿאַרעפֿנטלעכט, נײַסטע ערשט</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>פֿאַרעפֿנטלעכט, עלטסטע ערשט</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>געענדערט</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>פֿילטערס</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>ווײַזן פֿילטערס</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>באַהאַלטן פֿילטערס</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>צוריקשטעלן</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>צולייגן</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>ווערטער</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>אינהאַלט־טיפּ</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>ווײַזן מער (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>קלײַבט אויס איין אינהאַלט־טיפּ כּדי צו זוכן אין איינעם פֿון זײַנע אַטריבוטן.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>אָפּטייל</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>פֿון</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>ביז</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>די אָנהייב־דאַטע איז נישט קיין גילטיקע דאַטע.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>די סוף־דאַטע איז נישט קיין גילטיקע דאַטע.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>באַזיצער</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>באַניצער־ID, לאָגין אָדער בליצפּאָסט־אַדרעס.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>קיין באַניצער נישט געפֿונען פֿאַר „%input“.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>שפּראַך</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>סײַ וועלכע שפּראַך</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>אָרט</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count ערטער</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>רעזולטאַטן פּער זײַט</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>רעזולטאַטן פֿאַר „%text“ (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>רעזולטאַטן (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>סאָרטירן לויט</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>סאָרטירן</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>אַקטיווע פֿילטערס</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>אַוועקנעמען דעם פֿילטער</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>אָדער קלײַבט אויס פֿילטערס און לייגט זיי צו כּדי צו ווײַזן דעם פּאַסיקן אינהאַלט.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>די פֿילטערס פֿאַרשמעלערן דאָס זוכן ווען איר האָט אַרײַנגעשריבן ווערטער.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>קיין רעזולטאַטן נישט געפֿונען פֿאַר „%text“.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>קיין רעזולטאַטן נישט געפֿונען.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>נעמט אַוועק אַ פֿילטער אויבן.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>איבערזעצונגען</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>אַקציעס</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>רעדאַגירן %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>רעדאַגירן</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Help center</source>
         <translation>הילף־צענטער</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>אינהאַלט</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>דאָקומענט־זײַטן</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>באַניצער</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>אינהאַלט־קלאַסן</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>אַדמיניסטראַציע</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>זײַט %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>זען אַלע רעזולטאַטן</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count רעזולטאַטן</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>איין רעזולטאַט</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count פֿאָרשלאָגן</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>קיין פֿאָרשלאָגן</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>מען האָט נישט געקענט לאָדן די פֿאָרשלאָגן.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>פֿאָרשלאָגן</translation>
     </message>
 </context>
 <context>

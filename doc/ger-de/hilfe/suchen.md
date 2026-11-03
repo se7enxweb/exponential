@@ -3,7 +3,7 @@ title: Suchen
 audience: editor, user
 category: search
 order: 10
-summary: Inhalte in der Administration mit der Schnellsuche, dem Suchbereich und der erweiterten Suche finden, ein Objekt über seine Nummer oder Adresse öffnen und die Site durchsuchen.
+summary: Inhalte in der Administration mit der Schnellsuche, dem Suchbereich und den Filtern der Suchseite finden, ein Objekt über seine Nummer oder Adresse öffnen und die Site durchsuchen.
 keywords: Suche, suchen, finden, erweiterte Suche, Suchbereich, Sektion, Inhaltsfinder, Knoten-ID, Filter, Schnellsuche, search, find, advanced search, search scope, section, content finder, node id, filter, quick search
 context: content/search, content/advancedsearch
 type: help
@@ -28,6 +28,34 @@ davon in einem Formular zu bearbeiten.
 
 ![Die Suchseite mit einem Treffer](bilder/search.webp)
 
+### Vorschläge beim Tippen
+
+Ab dem dritten Zeichen öffnet sich beim Tippen eine Liste unter dem Feld. Sie zeigt in Gruppen:
+
+- **Inhalte**: Objekte, deren Text passt, jedes mit seinem Typ und seinem Platz im Baum.
+- **Dokumentseiten**: die Seiten einer PDF-Datei, die die Wörter enthalten, mit einem Link, der das Dokument auf
+  dieser Seite öffnet (nur auf Sites, die PDF-Seiten indexieren; sonst wird ein Dokument als Ganzes unter **Inhalte**
+  gefunden).
+- **Benutzer**: Benutzerkonten nach Login, E-Mail-Adresse oder Name.
+- **Inhaltsklassen**: Klassen nach Name oder Bezeichner, wenn Sie die Klassenliste öffnen dürfen.
+- **Administration**: Seiten aus den Menüs der Administration, etwa *Setup › Cache-Verwaltung*.
+
+Sie sehen nur, was Sie öffnen dürfen. Die eingegebenen Wörter sind hervorgehoben. **Alle Ergebnisse anzeigen** am Ende
+öffnet die vollständige Ergebnisseite mit der Zahl der Treffer.
+
+- `↓` / `↑` bewegen sich durch die Liste, die Eingabetaste öffnet den gewählten Eintrag (oder sucht, wenn keiner
+  gewählt ist).
+- `Esc` oder ein Klick außerhalb schließt die Liste.
+- `Strg` + `/` (`Cmd` + `/` auf einem Mac) springt von überall in das Feld, auch aus einem anderen Feld heraus.
+
+Für Administratoren: Die Gruppen, ihre Reihenfolge, wie viele Einträge jede zeigt und die Zahl der Zeichen, bevor sich
+die Liste öffnet, stehen in `admininterface.ini` `[SearchSuggestSettings]`; `Enabled=false` schaltet die Vorschläge
+ab. Die Liste füllt die Ansicht `content/suggest`, die die Suchmaschine der Site verwendet (eZ Find, wenn es
+installiert und aktiv ist, sonst die eingebaute Suche). Sie braucht die Richtlinie `content/read`: Eine Rolle ohne sie
+erhält keine Vorschläge, auch nicht die Seiten der Administration. Ein Wort wird schon gefunden, während es noch
+getippt wird („Oste“ findet „Ostern“), nur mit `site.ini` `[SearchSettings] EnableWildcard=true` (oder
+`Wildcard=enabled` in `[SearchSuggestSettings]`); sonst passt die Liste auf ganze Wörter.
+
 ### Die Suche eingrenzen
 
 Die Trichter-Schaltfläche im Suchfeld öffnet den **Suchbereich**:
@@ -36,22 +64,48 @@ Die Trichter-Schaltfläche im Suchfeld öffnet den **Suchbereich**:
 
 - **Sektion**: nur in einer Sektion der Site suchen, etwa *Media* oder *Users*.
 - **Wo**: überall suchen oder nur unterhalb des Orts, den Sie gerade ansehen (**Aktueller Ort**).
-- **Erweiterte Suche** öffnet das erweiterte Formular.
+- **Erweiterte Suche** öffnet die Suchseite mit ihren Filtern.
 
-Auf der Ergebnisseite grenzt auch die Liste **In:** die Suche auf eine Sektion ein.
+## Die Suchseite und ihre Filter
 
-## Die erweiterte Suche
+Die Suchseite (**Suchen** in der Kopfzeile oder `content/search`) hat das Suchfeld oben, die **Filter** neben den
+Treffern (auf einem schmalen Bildschirm darüber, eingeklappt unter **Filter anzeigen**) und die Treffer in einer
+Tabelle. Sie hat auch die frühere erweiterte Suche aufgenommen: Ein alter Link auf `content/advancedsearch` öffnet
+diese Seite. Die Adresse einer Suche enthält jeden Filter (`content/search/(text)/ostern/(class)/2,16`), sodass Sie sie
+als Lesezeichen speichern oder einer Kollegin schicken können.
 
-Die **Erweiterte Suche** (im Suchbereich oder über den Link unter dem Suchformular) bietet weitere Felder:
+- **Wörter**: **Alle Wörter** (die Voreinstellung), **Eines der Wörter** oder **Genaue Wortfolge**;
+- **Inhaltstyp**: ein oder mehrere Typen, nach Klassengruppe geordnet; die seltener genutzten stehen unter **Mehr
+  anzeigen**. Ist genau ein Typ gewählt, sucht **Klassenattribut** nur in einem Feld dieses Typs;
+- **Sektion**: eine oder mehrere Sektionen;
+- **Geändert** und **Veröffentlicht**: beliebig, der letzte Tag, 7 Tage, Monat oder Jahr, oder ein **Eigener
+  Zeitraum** mit einem Von- und einem Bis-Datum;
+- **Eigentümer**: die ID, das Login oder die E-Mail-Adresse eines Benutzers;
+- **Sprache**: nur die Übersetzungen in einer Sprache;
+- **Ort**: alle Inhalte oder der Ort, von dem die Suche ausging (**Aktueller Ort** der Kopfzeile);
+- **Treffer pro Seite**.
 
-![Die erweiterte Suche: alle folgenden Wörter, ein genauer Ausdruck, Klasse und Klassenattribut, Sektion und Veröffentlichungszeitraum](bilder/search/advanced-search.webp)
+Wählen Sie Filter und klicken Sie auf **Anwenden** (aktiv, sobald sich etwas geändert hat); **Zurücksetzen** behält die
+Wörter und entfernt jeden Filter. Die Seite funktioniert auch ohne JavaScript: Dann wird jedes Feld mit **Anwenden**
+gesendet.
 
-- **Nach allen folgenden Worten suchen** und **Genau nach einem Ausdruck suchen**;
-- **Klasse**: nur Objekte eines Typs, etwa *Article* oder *Image*; mit **Klassen Attribut** nur ein Feld dieses Typs
-  (klicken Sie nach der Wahl der Klasse auf **Attribute aktualisieren**);
-- **In**: eine Sektion;
-- **Veröffentlicht**: beliebig, oder der letzte Tag, die letzte Woche, der letzte Monat, die letzten drei Monate oder
-  das letzte Jahr.
+Über den Treffern:
+
+- die Überschrift **Treffer für „Wörter“ (Anzahl)**;
+- jeder aktive Filter als Chip: Klicken Sie ihn an, um ohne diesen Filter erneut zu suchen;
+- **Sortieren nach**: Relevanz, Name A–Z oder Z–A, geändert oder veröffentlicht, neueste oder älteste zuerst. Die
+  Seiten behalten die Sortierung und alle Filter;
+- **Meinten Sie:** mit einem Schreibvorschlag, wenn die Suchmaschine einen anbietet.
+
+Jeder Treffer zeigt seinen Typ, seinen Namen mit seinem Platz im Baum und den gefundenen Wörtern, wann er geändert
+wurde, seinen Inhaltstyp, seine Übersetzungen (jede ein Link auf das Objekt in dieser Sprache) und **Bearbeiten**.
+Markieren Sie Treffer und klicken Sie auf **Ausgewählte bearbeiten**, um mehrere davon in einem Formular zu
+bearbeiten. Eine PDF-Datei listet die Seiten auf, die die Wörter enthalten, wenn die Tiefensuche für Dokumente
+installiert ist.
+
+Was die Filter können, hängt von der Suchmaschine ab. Mit eZ Find sind alle da, mit Zahlen neben den Inhaltstypen,
+Sektionen und Sprachen. Mit der eingebauten Suche gibt es kein **Eines der Wörter**, kein **Geändert**, keinen
+**Eigentümer**, keine **Sprache**, keine Zahlen und keine Sortierung nach Relevanz, und eine Suche braucht Wörter.
 
 ## Ein Objekt über seine Nummer oder Adresse öffnen
 

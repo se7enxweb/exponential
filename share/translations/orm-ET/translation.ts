@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>Gara fuula jalqabaa deemi</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Kan biraa</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>Guyyoota 7 darban</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Yeroo filatame</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Jechoota hunda</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Jecha kamiyyuu</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Gaalee sirrii</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Walitti dhufeenya</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Maqaa A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Maqaa Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Jijjiirame, haaraan dura</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Jijjiirame, moofaan dura</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Maxxanfame, haaraan dura</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Maxxanfame, moofaan dura</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Jijjiirame</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Calaqqisoota</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Calaqqisoota agarsiisi</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Calaqqisoota dhoksi</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Deebisii kaa'i</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Hojiirra oolchi</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Jechoota</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Gosa qabiyyee</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Dabalataan agarsiisi (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Amaloota isaa keessaa tokko keessatti barbaaduuf gosa qabiyyee tokko filadhu.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Kutaa</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Irraa</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Hanga</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Guyyaan jalqabaa guyyaa sirrii miti.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Guyyaan xumuraa guyyaa sirrii miti.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Abbaa</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>ID fayyadamaa, maqaa seensaa ykn teessoo imeelii.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>“%input”-f fayyadamaan hin argamne.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Afaan</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Afaan kamiyyuu</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Bakka</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>Bakkeewwan %count</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Bu'aawwan fuula tokkotti</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Bu'aawwan “%text”-f (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Bu'aawwan (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Akka kanaan tartiibessi</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Tartiibessi</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Calaqqisoota hojii irra jiran</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Calaqqisa kana baasi</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Ykn qabiyyee walsimu tarreessuuf calaqqisoota filadhuu hojiirra oolchi.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Erga jechoota barreessitee booda calaqqisoonni barbaacha ni dhiphisu.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>“%text”-f bu'aan hin argamne.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Bu'aan hin argamne.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Calaqqisa gubbaa jiru tokko baasi.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Hiikkaawwan</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Gocawwan</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>%name gulaali</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Gulaali</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Yaadannoo: Paakeejiiwwan diriirsi isaanii hin haqamu.</translation>
     <message>
         <source>Help center</source>
         <translation>Giddugala gargaarsaa</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Qabiyyee</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Fuulota sanadaa</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Fayyadamtoota</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Gitoota qabiyyee</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Bulchiinsa</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Fuula %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Bu'aawwan hunda ilaali</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>bu'aawwan %count</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Bu'aa tokko</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>Yaada %count</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Yaadni hin jiru</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Yaadawwan fe'amuu hin dandeenye.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Yaadawwan</translation>
     </message>
 </context>
 <context>

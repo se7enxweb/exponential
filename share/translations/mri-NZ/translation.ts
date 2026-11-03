@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>Haere ki te whārangi tuatahi</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Ētahi atu</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>7 rā kua pahure</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Awhe ritenga</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Ngā kupu katoa</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Tētahi kupu</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Kīanga tōtika</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Hāngaitanga</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Ingoa A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Ingoa Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Kua whakarerekētia, te hōu tuatahi</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Kua whakarerekētia, te tawhito tuatahi</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Kua whakaputaina, te hōu tuatahi</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Kua whakaputaina, te tawhito tuatahi</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Kua whakarerekētia</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Ngā tātari</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Whakaatu tātari</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Huna tātari</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Tautuhi anō</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Whakahāngai</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Ngā kupu</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Momo ihirangi</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Whakaatu atu anō (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Kōwhiria tētahi momo ihirangi kia rapu ai i tētahi o ōna āhuatanga.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Wāhanga</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Mai i</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Ki</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Ehara te rā tīmata i te rā tika.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Ehara te rā mutunga i te rā tika.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Kaipupuri</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>ID kaiwhakamahi, ingoa takiuru, wāhitau īmēra rānei.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>Kāore he kaiwhakamahi i kitea mō “%input”.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Reo</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Tētahi reo</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Tauwāhi</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count tauwāhi</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Ngā hua ia whārangi</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Ngā hua mō “%text” (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Ngā hua (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Kōmaka mā</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Kōmaka</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Ngā tātari hohe</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Tango i tēnei tātari</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Kōwhiria rānei ētahi tātari, ka whakahāngai kia rārangitia te ihirangi e ōrite ana.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Ka whāiti ngā tātari i te rapu ina oti ngā kupu te pato.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>Kāore he hua i kitea mō “%text”.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Kāore he hua i kitea.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Tangohia tētahi tātari i runga ake.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Ngā whakamāoritanga</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Ngā mahi</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>Whakatika %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Whakatika</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Kia mōhio: kāore e tangohia te tāutanga o ngā mōkihi.</translation>
     <message>
         <source>Help center</source>
         <translation>Pokapū āwhina</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Ihirangi</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Ngā whārangi tuhinga</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Ngā kaiwhakamahi</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Ngā karaehe ihirangi</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Whakahaere</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Whārangi %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Tirohia ngā hua katoa</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count ngā hua</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Kotahi te hua</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count ngā marohi</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Kāore he marohi</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Kāore i taea te uta ngā marohi.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Ngā marohi</translation>
     </message>
 </context>
 <context>

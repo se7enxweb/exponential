@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>Enda kupeji rekutanga</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Zvimwe</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>Mazuva 7 apfuura</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Nguva yawasarudza</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Mazwi ose</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Chero izwi</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Mutsara chaiwo</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Kukodzera</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Zita A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Zita Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Yakachinjwa, itsva pakutanga</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Yakachinjwa, yekare pakutanga</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Yakabudiswa, itsva pakutanga</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Yakabudiswa, yekare pakutanga</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Yakachinjwa</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Masefa</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Ratidza masefa</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Viga masefa</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Tangazve</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Shandisa</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Mazwi</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Rudzi rwezvirimo</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Ratidza zvimwe (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Sarudza rudzi rumwe chete rwezvirimo kuti utsvage mune chimwe chezvinhu zvarwo.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Chikamu</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Kubva</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Kuenda ku</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Zuva rekutanga harisi zuva rakakodzera.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Zuva rekupedzisira harisi zuva rakakodzera.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Muridzi</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>ID yemushandisi, zita rekupinda kana kero ye-email.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>Hapana mushandisi akawanikwa we “%input”.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Mutauro</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Chero mutauro</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Nzvimbo</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>Nzvimbo %count</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Mhedzisiro papeji</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Mhedzisiro ye “%text” (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Mhedzisiro (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Ronga ne</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Ronga</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Masefa ari kushanda</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Bvisa sefa iyi</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Kana kuti sarudza masefa uye uashandise kuti uratidze zvirimo zvinoenderana nawo.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Masefa anoderedza kutsvaga kana wanyora mazwi.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>Hapana mhedzisiro yawanikwa ye “%text”.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Hapana mhedzisiro yawanikwa.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Bvisa sefa iri pamusoro.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Shanduro</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Zviito</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>Gadzirisa %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Gadzirisa</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Chenjerai: Mapakeji acho haazobviswi pakuiswa.</translation>
     <message>
         <source>Help center</source>
         <translation>Nzvimbo yerubatsiro</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Zvirimo</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Mapeji emagwaro</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Vashandisi</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Makirasi ezvirimo</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Nzvimbo yekutungamira</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Peji %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Ona mhedzisiro yese</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>Mhedzisiro %count</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Mhedzisiro imwe</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>Mazano %count</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Hapana mazano</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Mazano haana kukwanisa kurodhwa.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Mazano</translation>
     </message>
 </context>
 <context>

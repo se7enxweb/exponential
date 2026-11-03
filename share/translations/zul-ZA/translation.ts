@@ -5167,6 +5167,210 @@
         <source>Go to the first page</source>
         <translation>Iya ekhasini lokuqala</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Okunye</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>Izinsuku eziyi-7 zokugcina</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Isikhathi esikhethiwe</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Wonke amagama</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Noma yiliphi igama</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Umusho oqondile</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Ukuhambisana</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Igama A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Igama Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Kushintshiwe, ezintsha kuqala</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Kushintshiwe, ezindala kuqala</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Kushicilelwe, ezintsha kuqala</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Kushicilelwe, ezindala kuqala</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Kushintshiwe</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Izihlungi</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Bonisa izihlungi</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Fihla izihlungi</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Setha kabusha</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Faka</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Amagama</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Uhlobo lokuqukethwe</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Bonisa okuningi (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Khetha uhlobo olulodwa lokuqukethwe ukuze usesha kwesinye sezici zalo.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Isigaba</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Kusuka ku-</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Ku</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Usuku lokuqala alulona usuku oluvumelekile.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Usuku lokugcina alulona usuku oluvumelekile.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Umnikazi</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>I-ID yomsebenzisi, igama lokungena noma ikheli le-imeyili.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>Akekho umsebenzisi otholakele we-“%input”.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Ulimi</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Noma yiluphi ulimi</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Indawo</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>Izindawo ezingu-%count</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Imiphumela ekhasini ngalinye</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Imiphumela ye-“%text” (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Imiphumela (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Hlela ngokuhleleka kwe-</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Hlela</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Izihlungi ezisebenzayo</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Susa lesi sihlungi</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Noma khetha izihlungi bese uzifaka ukuze ubonise okuqukethwe okuhambisana nazo.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Izihlungi zinciphisa usesho uma usuthayiphe amagama.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>Ayikho imiphumela etholakele ye-“%text”.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Ayikho imiphumela etholakele.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Susa isihlungi esingenhla.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Izinguqulelo</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Izenzo</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>Hlela %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Hlela</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13909,6 +14113,61 @@ Isaziso: Amaphakheji ngeke akhishwe.</translation>
     <message>
         <source>Help center</source>
         <translation>Isikhungo losizo</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Okuqukethwe</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Amakhasi amadokhumenti</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Abasebenzisi</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Amakilasi okuqukethwe</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Ukuphatha</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Ikhasi %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Buka yonke imiphumela</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>Imiphumela engu-%count</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Umphumela owodwa</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>Iziphakamiso ezingu-%count</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Azikho iziphakamiso</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Iziphakamiso azikwazanga ukulayishwa.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Iziphakamiso</translation>
     </message>
 </context>
 <context>

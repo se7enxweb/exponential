@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>Ба саҳифаи аввал гузаштан</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Дигар</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>7 рӯзи охир</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Давраи интихобӣ</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Ҳамаи калимаҳо</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Ҳар калима</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Ибораи дақиқ</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Мутобиқат</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Ном А–Я</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Ном Я–А</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Тағйирёфта, аввал навтаринҳо</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Тағйирёфта, аввал кӯҳнатаринҳо</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Нашршуда, аввал навтаринҳо</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Нашршуда, аввал кӯҳнатаринҳо</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Тағйирёфта</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Филтрҳо</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Нишон додани филтрҳо</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Пинҳон кардани филтрҳо</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Аз нав танзим кардан</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Татбиқ кардан</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Калимаҳо</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Навъи мундариҷа</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Бештар нишон додан (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Барои ҷустуҷӯ дар яке аз атрибутҳояш як навъи мундариҷаро интихоб кунед.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Бахш</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Аз</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Ба</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Санаи оғоз санаи дуруст нест.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Санаи анҷом санаи дуруст нест.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Соҳиб</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>ID-и корбар, логин ё суроғаи почтаи электронӣ.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>Барои «%input» ягон корбар ёфт нашуд.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Забон</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Ҳар забон</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Ҷойгиршавӣ</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count ҷойгиршавӣ</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Натиҷаҳо дар як саҳифа</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Натиҷаҳо барои «%text» (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Натиҷаҳо (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Мураттаб кардан аз рӯи</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Мураттабсозӣ</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Филтрҳои фаъол</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Хориҷ кардани ин филтр</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Ё филтрҳоро интихоб ва татбиқ кунед, то мундариҷаи мувофиқ нишон дода шавад.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Пас аз ворид кардани калимаҳо филтрҳо ҷустуҷӯро маҳдуд мекунанд.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>Барои «%text» ягон натиҷа ёфт нашуд.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Ягон натиҷа ёфт нашуд.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Яке аз филтрҳои болоро хориҷ кунед.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Тарҷумаҳо</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Амалҳо</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>Таҳрир кардани %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Таҳрир кардан</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Help center</source>
         <translation>Маркази кӯмак</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Мундариҷа</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Саҳифаҳои ҳуҷҷатҳо</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Корбарон</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Синфҳои мундариҷа</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Идоракунӣ</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Саҳифаи %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Дидани ҳамаи натиҷаҳо</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count натиҷа</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Як натиҷа</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count пешниҳод</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Пешниҳод нест</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Пешниҳодҳо бор карда нашуданд.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Пешниҳодҳо</translation>
     </message>
 </context>
 <context>

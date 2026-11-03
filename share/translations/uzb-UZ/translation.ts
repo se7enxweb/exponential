@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>Birinchi sahifaga oʻtish</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Boshqa</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>Oxirgi 7 kun</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Maxsus davr</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Barcha soʻzlar</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Istalgan soʻz</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Aniq ibora</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Moslik</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Nomi A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Nomi Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Oʻzgartirilgan, avval yangilari</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Oʻzgartirilgan, avval eskilari</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Eʼlon qilingan, avval yangilari</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Eʼlon qilingan, avval eskilari</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Oʻzgartirilgan</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Filtrlar</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Filtrlarni koʻrsatish</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Filtrlarni yashirish</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Nolga tushirish</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Qoʻllash</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Soʻzlar</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Kontent turi</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Yana koʻrsatish (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Uning atributlaridan birida qidirish uchun bitta kontent turini tanlang.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Boʻlim</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Manba</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Gacha</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Boshlanish sanasi toʻgʻri sana emas.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Tugash sanasi toʻgʻri sana emas.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Egasi</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>Foydalanuvchi ID, login yoki e-mail manzili.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>«%input» uchun foydalanuvchi topilmadi.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Til</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Istalgan til</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Joylashuv</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count ta joylashuv</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Sahifadagi natijalar</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>«%text» boʻyicha natijalar (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Natijalar (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Saralash mezoni</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Saralash</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Faol filtrlar</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Bu filtrni olib tashlash</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Yoki filtrlarni tanlab qoʻllang, shunda mos kontent roʻyxati chiqadi.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Soʻzlarni kiritganingizdan soʻng filtrlar qidiruvni toraytiradi.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>«%text» boʻyicha natija topilmadi.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Natija topilmadi.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Yuqoridagi filtrlardan birini olib tashlang.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Tarjimalar</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Amallar</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>%name ni tahrirlash</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Tahrirlash</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Eslatma: paketlar oʻchirib tashlanmaydi.</translation>
     <message>
         <source>Help center</source>
         <translation>Yordam markazi</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Kontent</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Hujjat sahifalari</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Foydalanuvchilar</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Kontent sinflari</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Boshqaruv</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>%number-sahifa</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Barcha natijalarni koʻrish</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count ta natija</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Bitta natija</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count ta taklif</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Takliflar yoʻq</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Takliflarni yuklab boʻlmadi.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Takliflar</translation>
     </message>
 </context>
 <context>

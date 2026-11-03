@@ -5167,6 +5167,210 @@
         <source>Go to the first page</source>
         <translation>Ugrás az első oldalra</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Egyéb</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>Utolsó 7 nap</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Egyéni időszak</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Minden szó</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Bármely szó</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Pontos kifejezés</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Relevancia</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Név A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Név Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Módosítva, legújabb elöl</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Módosítva, legrégebbi elöl</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Közzétéve, legújabb elöl</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Közzétéve, legrégebbi elöl</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Módosítva</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Szűrők</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Szűrők megjelenítése</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Szűrők elrejtése</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Alaphelyzetbe állítás</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Alkalmazás</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Szavak</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Tartalomtípus</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Több megjelenítése (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Válasszon ki egy tartalomtípust, hogy annak egyik attribútumában keressen.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Szakasz</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Ettől</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Eddig</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>A kezdő dátum nem érvényes dátum.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>A záró dátum nem érvényes dátum.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Tulajdonos</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>Felhasználói azonosító, bejelentkezési név vagy e-mail-cím.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>Nem található felhasználó a következőhöz: „%input”.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Nyelv</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Bármely nyelv</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Hely</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count hely</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Találat oldalanként</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Találatok erre: „%text” (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Találatok (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Rendezés:</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Rendezés</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Aktív szűrők</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>A szűrő eltávolítása</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Vagy válasszon szűrőket, és alkalmazza őket az egyező tartalom listázásához.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>A szűrők a szavak beírása után szűkítik a keresést.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>Nincs találat erre: „%text”.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Nincs találat.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Távolítson el egy szűrőt fent.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Fordítások</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Műveletek</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>%name szerkesztése</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Szerkesztés</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13850,6 +14054,61 @@ Megjegyzés: a csomagok telepítése nem lesz visszavonva.</translation>
     <message>
         <source>Help center</source>
         <translation>Súgóközpont</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Tartalom</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Dokumentumoldalak</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Felhasználók</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Tartalomosztályok</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Adminisztráció</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>%number. oldal</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Összes találat megtekintése</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count találat</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Egy találat</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count javaslat</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Nincsenek javaslatok</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>A javaslatokat nem sikerült betölteni.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Javaslatok</translation>
     </message>
 </context>
 <context>

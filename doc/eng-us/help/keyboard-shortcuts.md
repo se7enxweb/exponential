@@ -21,6 +21,8 @@ On a Mac, **Alt** is the **Option** key.
 | Key | What it does |
 |---|---|
 | `/` | Jumps to the **Search...** field in the header (not while you type in another field). |
+| `Ctrl` + `/` (`Cmd` + `/` on a Mac) | Jumps to the **Search...** field in the header, also from inside another field. |
+| `↓` / `↑`, `Enter` (in the search field) | Move through the suggestions under the field and open the chosen one ([Searching](searching.md#suggestions-while-typing)). |
 | `Esc` | Closes the open menu, list or pop-up, and returns the focus to its button. |
 | `Tab` (first press on a page) | Shows **Skip to main content**; press `Enter` to jump past the header and the left column. |
 

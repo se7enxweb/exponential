@@ -541,6 +541,19 @@ $FunctionList['search'] = array( 'name' => 'search',
                                                                'required' => false,
                                                                'default' => false ) ) );
 
+// The search of the administration's search page with its filter bar: reads the filters from the request (also
+// the parameters of the former advanced search), runs the search with eZ Find or the built-in engine and returns
+// the results with the filters, facets and active filter chips (expContentSearchFilters).
+$FunctionList['filtered_search'] = array( 'name' => 'filtered_search',
+                                          'operation_types' => array( 'read' ),
+                                          'call_method' => array( 'class' => 'eZContentFunctionCollection',
+                                                                  'method' => 'fetchFilteredSearch' ),
+                                          'parameter_type' => 'standard',
+                                          'parameters' => array( array( 'name' => 'offset',
+                                                                        'type' => 'integer',
+                                                                        'required' => false,
+                                                                        'default' => 0 ) ) );
+
 $FunctionList['trash_count'] = array( 'name' => 'trash_count',
                                       'operation_types' => array( 'read' ),
                                       'call_method' => array( 'class' => 'eZContentFunctionCollection',

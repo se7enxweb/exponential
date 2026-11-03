@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>Dir a la primer páxina</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Otru</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>Postreros 7 díes</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Rangu personalizáu</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Toles pallabres</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Cualquier pallabra</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Frase exacta</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Relevancia</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Nome A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Nome Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Modificáu, más recientes primero</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Modificáu, más antiguos primero</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Espublizáu, más recientes primero</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Espublizáu, más antiguos primero</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Modificáu</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Filtros</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Amosar filtros</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Anubrir filtros</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Reaniciar</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Aplicar</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Pallabres</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Triba de conteníu</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Amosar más (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Escueyi una triba de conteníu pa buscar nún de los sos atributos.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Seición</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>De</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Pa</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>La data d'aniciu nun ye una data válida.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>La data de fin nun ye una data válida.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Propietariu</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>ID d'usuariu, nome d'aniciu de sesión o direición de corréu electrónicu.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>Nun s'atopó nengún usuariu pa «%input».</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Llingua</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Cualquier llingua</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Allugamientu</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count allugamientos</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Resultaos per páxina</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Resultaos pa «%text» (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Resultaos (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Ordenar por</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Ordenar</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Filtros activos</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Quitar esti filtru</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>O escueyi filtros y aplícalos pa llistar el conteníu que concasa con ellos.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Los filtros acoten la gueta una vegada qu'escribas pallabres.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>Nun s'atoparon resultaos pa «%text».</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Nun s'atoparon resultaos.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Quita un filtru d'enriba.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Traducciones</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Aiciones</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>Editar %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Editar</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Nota: los paquetes nun se desinstalarán.</translation>
     <message>
         <source>Help center</source>
         <translation>Centru d'ayuda</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Conteníu</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Páxines de documentos</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Usuarios</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Clases de conteníu</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Alministración</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Páxina %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Ver tolos resultaos</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count resultaos</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Un resultáu</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count suxerencies</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Nun hai suxerencies</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Nun pudieron cargase les suxerencies.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Suxerencies</translation>
     </message>
 </context>
 <context>

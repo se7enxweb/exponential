@@ -4971,6 +4971,210 @@
 <context>
     <name>design/admin/content/search</name>
     <message>
+        <source>Other</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Update attributes</source>
         <translation type="unfinished"></translation>
     </message>
@@ -13897,6 +14101,61 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Help center</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

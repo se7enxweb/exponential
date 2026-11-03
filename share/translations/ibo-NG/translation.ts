@@ -5167,6 +5167,210 @@
         <source>Go to the first page</source>
         <translation>Gaa n&apos;ibe mbụ</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Ndị ọzọ</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>Ụbọchị 7 gara aga</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Oge ahọpụtara</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Okwu niile</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Okwu ọ bụla</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Nkebiokwu kpọmkwem</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Mkpa</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Aha A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Aha Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Gbanwere, nke kachasị ọhụrụ na mbụ</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Gbanwere, nke kachasị ochie na mbụ</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Ebipụtara, nke kachasị ọhụrụ na mbụ</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Ebipụtara, nke kachasị ochie na mbụ</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Gbanwere</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Nzacha</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Gosi nzacha</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Zoo nzacha</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Tọgharịa</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Tinye</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Okwu</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Ụdị ọdịnaya</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Gosikwuo (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Họrọ otu ụdị ọdịnaya iji chọọ n'otu n'ime njirimara ya.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Ngalaba</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Site na</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Ruo</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Ụbọchị mmalite abụghị ụbọchị ziri ezi.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Ụbọchị njedebe abụghị ụbọchị ziri ezi.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Onye nwe</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>ID onye ọrụ, aha nbanye ma ọ bụ adreesị e-mail.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>Achọtaghị onye ọrụ ọ bụla maka “%input”.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Asụsụ</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Asụsụ ọ bụla</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Ebe</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>Ebe %count</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Nsonaazụ kwa peeji</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Nsonaazụ maka “%text” (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Nsonaazụ (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Hazie site na</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Hazie</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Nzacha ndị dị ọrụ</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Wepụ nzacha a</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Ma ọ bụ họrọ nzacha ma tinye ha iji depụta ọdịnaya dakọrọ na ha.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Nzacha na-ebelata nchọta ozugbo ị pịnyere okwu.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>Achọtaghị nsonaazụ ọ bụla maka “%text”.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Achọtaghị nsonaazụ ọ bụla.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Wepụ otu nzacha dị n'elu.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Ntụgharị asụsụ</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Omume</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>Dezie %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Dezie</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13909,6 +14113,61 @@ Nzòpụta: Agaghị ewepụ nwụnye mpakị ndị a.</translation>
     <message>
         <source>Help center</source>
         <translation>Ebe Enyemaka</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Ọdịnaya</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Peeji akwụkwọ</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Ndị ọrụ</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Klaasị ọdịnaya</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Nchịkwa</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Peeji %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Lee nsonaazụ niile</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>Nsonaazụ %count</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Otu nsonaazụ</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>Ntụnye aro %count</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Enweghị ntụnye aro</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Enweghị ike ibunye ntụnye aro.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Ntụnye aro</translation>
     </message>
 </context>
 <context>

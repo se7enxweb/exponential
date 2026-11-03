@@ -5167,6 +5167,210 @@
         <source>Go to the first page</source>
         <translation>Qupperneq siulleq ammaruk</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Allat</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>Ullut 7 kingulliit</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Piffissaq namminersorlugu toqqakkat</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Oqaatsit tamarmik</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Oqaaseq sunaluunniit</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Oqaaseqatigiit eqqortut</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Attuumassuteqarneq</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Ateq A–Å</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Ateq Å–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Allanngortinneqarfia, nutaaneq siulleq</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Allanngortinneqarfia, pisoqaaneq siulleq</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Saqqummersinneqarfia, nutaaneq siulleq</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Saqqummersinneqarfia, pisoqaaneq siulleq</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Allanngortinneqarfia</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Filterit</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Filterit takutikkit</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Filterit tarrisikkit</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Aallaqqaataanut utertiguk</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Atuutsiguk</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Oqaatsit</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Imarisat suussusaat</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Amerlanerusut takutikkit (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Imarisat suussusaat ataaseq toqqaruk, pissusaasa ilaanni ujarlerniaruit.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Immikkoortoq</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Pissarfia</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Unga</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Ulloq aallarnerfik ulluliussatut atuuttuunngilaq.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Ulloq naggataa ulluliussatut atuuttuunngilaq.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Piginnittoq</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>Atuisup ID-ia, iserfissaq imaluunniit e-mailip najugaa.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>»%input« pillugu atuisoqanngilaq.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Oqaatsit</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Oqaatsit sunaluunniit</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Inissisimaffik</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>Inissisimaffiit %count</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Quppernermut inernerit</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>»%text« pillugu inernerit (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Inernerit (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Tulleriiaakkit uuma malillugu</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Tulleriiaarneq</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Filterit atuuttut</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Filteri una piiaruk</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Imaluunniit filterit toqqarlugit atuutsikkit imarisat naapertuuttut takuniarlugit.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Oqaatsit allanneqareerpata filterit ujarlerneq killilersortarpaat.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>»%text« pillugu inernertaqanngilaq.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Inernertaqanngilaq.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Qulaani filterit ilaat peeruk.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Nutserinerit</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Iliuusissat</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>%name aaqqissoruk</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Aaqqissoruk</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13850,6 +14054,61 @@ Malugiuk: Poortukkat ikkussinerat piiarneqassanngilaq.</translation>
     <message>
         <source>Help center</source>
         <translation>Ikiorfik</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Imarisat</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Allakkiap quppernerii</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Atuisut</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Imarisat klassii</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Aqutsineq</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Qupperneq %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Inernerit tamaasa takukkit</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>Inernerit: %count</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Inerneq ataaseq</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>Siunnersuutit %count</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Siunnersuuteqanngilaq</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Siunnersuutit aallerneqarsinnaanngillat.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Siunnersuutit</translation>
     </message>
 </context>
 <context>

@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>Mont d'ar bajenn gentañ</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>All</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>7 devezh diwezhañ</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Mare personelaet</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>An holl gerioù</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Forzh peseurt ger</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Frazenn resis</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Dereadegezh</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Anv A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Anv Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Kemmet, ar re nevesañ da gentañ</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Kemmet, ar re goshañ da gentañ</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Embannet, ar re nevesañ da gentañ</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Embannet, ar re goshañ da gentañ</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Kemmet</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Siloù</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Diskouez ar siloù</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Kuzhat ar siloù</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Adderaouekaat</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Arloañ</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Gerioù</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Seurt endalc'had</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Diskouez muioc'h (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Dibabit ur seurt endalc'had hepken evit klask en unan eus e berzhioù.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Rann</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Eus</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Da</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>An deiziad kregiñ n'eo ket un deiziad reizh.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>An deiziad echuiñ n'eo ket un deiziad reizh.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Perc'henn</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>ID an implijer, anv kevreañ pe chomlec'h postel.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>N'eus bet kavet implijer ebet evit « %input ».</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Yezh</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Forzh peseurt yezh</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Lec'hiadur</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count lec'hiadur</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Disoc'hoù dre bajenn</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Disoc'hoù evit « %text » (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Disoc'hoù (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Rummañ dre</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Rummañ</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Siloù oberiant</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Lemel ar sil-mañ kuit</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Pe dibabit siloù hag arloit anezho evit rollañ an endalc'had a glot ganto.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Ar siloù a strizh an enklask kerkent ha ma vez bet skrivet gerioù.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>Disoc'h ebet evit « %text ».</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Disoc'h ebet.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Lamit ur sil a-us.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Troidigezhioù</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Obererezhioù</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>Kemmañ %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Kemmañ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Notenn: ne vo ket distaliet ar pakadoù.</translation>
     <message>
         <source>Help center</source>
         <translation>Kreizenn skoazell</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Endalc'had</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Pajennoù teulioù</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Implijerien</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Klasadoù endalc'had</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Merañ</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Pajenn %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Gwelet an holl zisoc'hoù</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count disoc'h</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Un disoc'h</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count kinnig</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Kinnig ebet</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>N'eus ket bet gallet kargañ ar c'hinnigoù.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Kinnigoù</translation>
     </message>
 </context>
 <context>

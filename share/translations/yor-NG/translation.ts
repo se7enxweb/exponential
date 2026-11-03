@@ -5167,6 +5167,210 @@
         <source>Go to the first page</source>
         <translation>Lọ sí ojú ìwé àkọ́kọ́</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Òmíràn</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>Ọjọ́ 7 tó kọjá</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Àkókò àṣàyàn</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Gbogbo ọ̀rọ̀</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Ọ̀rọ̀ èyíkéyìí</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Gbólóhùn gangan</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Ìbámu</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Orúkọ A–Y</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Orúkọ Y–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Ti yípadà, tuntun jùlọ kọ́kọ́</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Ti yípadà, àtijọ́ jùlọ kọ́kọ́</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Ti tẹ̀jáde, tuntun jùlọ kọ́kọ́</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Ti tẹ̀jáde, àtijọ́ jùlọ kọ́kọ́</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Ti yípadà</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Àwọn àlẹ̀mọ́</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Fi àwọn àlẹ̀mọ́ hàn</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Fi àwọn àlẹ̀mọ́ pamọ́</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Tún ṣe</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Lò</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Àwọn ọ̀rọ̀</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Irú àkóónú</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Fi púpọ̀ sí i hàn (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Yan irú àkóónú kan láti wá nínú ọ̀kan lára àwọn àbùdá rẹ̀.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Abala</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Láti</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Sí</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Ọjọ́ ìbẹ̀rẹ̀ kì í ṣe ọjọ́ tó tọ́.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Ọjọ́ ìparí kì í ṣe ọjọ́ tó tọ́.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Olùní</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>ID olùlò, orúkọ ìwọlé tàbí àdírẹ́sì í-meèlì.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>A kò rí olùlò kankan fún “%input”.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Èdè</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Èdè èyíkéyìí</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Ibùdó</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>Ibùdó %count</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Àbájáde fún ojú-ìwé kọ̀ọ̀kan</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Àbájáde fún “%text” (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Àbájáde (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Tò nípasẹ̀</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Tò</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Àwọn àlẹ̀mọ́ tí ń ṣiṣẹ́</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Yọ àlẹ̀mọ́ yìí kúrò</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Tàbí yan àwọn àlẹ̀mọ́ kí o sì lò wọ́n láti ṣe àkójọ àkóónú tó bá wọn mu.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Àwọn àlẹ̀mọ́ máa ń dín ìwádìí kù lẹ́yìn tí o bá ti tẹ ọ̀rọ̀.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>A kò rí àbájáde kankan fún “%text”.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>A kò rí àbájáde kankan.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Yọ àlẹ̀mọ́ kan kúrò lókè.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Àwọn ìtumọ̀</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Àwọn ìṣe</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>Ṣàtúnṣe %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Ṣàtúnṣe</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13909,6 +14113,61 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Help center</source>
         <translation>Ibùdó Ìrànlọ́wọ́</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Àkóónú</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Àwọn ojú-ìwé ìwé-àkọsílẹ̀</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Àwọn olùlò</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Àwọn kíláàsì àkóónú</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Ìṣàkóso</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Ojú-ìwé %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Wo gbogbo àbájáde</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>Àbájáde %count</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Àbájáde kan</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>Àbá %count</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Kò sí àbá</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>A kò lè gbé àwọn àbá wọlé.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Àwọn àbá</translation>
     </message>
 </context>
 <context>

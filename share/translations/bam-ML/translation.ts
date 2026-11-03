@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>Taa ɲɛ fɔlɔ la</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Wɛrɛ</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>Don 7 tɛmɛnenw</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Waati min sugandira</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Daɲɛ bɛɛ</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Daɲɛ o daɲɛ</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Kumasen kɛrɛnkɛrɛnnen</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Nafa</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Tɔgɔ A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Tɔgɔ Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Yɛlɛmana, kuraw fɔlɔ</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Yɛlɛmana, kɔrɔw fɔlɔ</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Bɔra kɛnɛ kan, kuraw fɔlɔ</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Bɔra kɛnɛ kan, kɔrɔw fɔlɔ</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Yɛlɛmana</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Sɛnsɛnw</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Sɛnsɛnw jira</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Sɛnsɛnw dogo</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Segin fɔlɔ</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Waleya</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Daɲɛw</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Kɔnɔko suguya</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Jira ka caya (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Kɔnɔko suguya kelen sugandi walasa ka ɲinini kɛ a jogo dɔ kɔnɔ.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Sekisiyɔn</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Ka bɔ</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Ka taa</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Daminɛ don tɛ don ɲuman ye.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Laban don tɛ don ɲuman ye.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Tigi</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>Baarakɛla ID, donni tɔgɔ walima e-mail adrɛsi.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>Baarakɛla si ma sɔrɔ «%input» kama.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Kan</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Kan o kan</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Yɔrɔ</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>Yɔrɔ %count</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Jaabiw ɲɛ kelen kan</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Jaabiw «%text» kama (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Jaabiw (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Bolo da ni</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Bolo da</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Sɛnsɛn bɛ baara la</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Nin sɛnsɛn bɔsi</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Walima sɛnsɛnw sugandi ka u waleya walasa ka kɔnɔko minnu bɛ bɛn u ma, olu jira.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Ni i ye daɲɛw sɛbɛn, sɛnsɛnw bɛ ɲinini dɔgɔya.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>Jaabi si ma sɔrɔ «%text» kama.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Jaabi si ma sɔrɔ.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Sɛnsɛn dɔ bɔ sanfɛ.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Bayɛlɛmaliw</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Walew</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>%name yɛlɛma</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Yɛlɛma</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Ko: pakew tɛna sigili bɔ.</translation>
     <message>
         <source>Help center</source>
         <translation>Dɛmɛ yɔrɔ</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Kɔnɔkow</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Sɛbɛn ɲɛw</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Baarakɛlaw</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Kɔnɔkow kilasiw</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Marali</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Ɲɛ %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Jaabiw bɛɛ lajɛ</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>Bɔnɛ %count</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Jaabi kelen</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>Laadilikan %count</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Laadilikan si tɛ</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Laadilikanw ma se ka doni.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Laadilikanw</translation>
     </message>
 </context>
 <context>

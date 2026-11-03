@@ -5167,6 +5167,210 @@
         <source>Go to the first page</source>
         <translation>最初のページへ移動</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>その他</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>過去 7 日間</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>期間を指定</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>すべての語句</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>いずれかの語句</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>完全一致</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>関連度</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>名前 (昇順)</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>名前 (降順)</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>更新日時 (新しい順)</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>更新日時 (古い順)</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>公開日時 (新しい順)</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>公開日時 (古い順)</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>更新日時</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>フィルター</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>フィルターを表示</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>フィルターを非表示</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>リセット</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>適用</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>語句</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>コンテンツタイプ</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>さらに表示 (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>コンテンツタイプを 1 つ選択すると、その属性の 1 つを対象に検索できます。</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>セクション</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>開始日時</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>まで</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>開始日が有効な日付ではありません。</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>終了日が有効な日付ではありません。</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>所有者</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>ユーザー ID、ログイン名またはメールアドレス。</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>「%input」に該当するユーザーが見つかりませんでした。</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>言語</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>すべての言語</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>配置先</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count 件の配置先</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>1 ページあたりの件数</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>「%text」の検索結果 (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>検索結果 (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>並べ替え</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>並べ替え</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>適用中のフィルター</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>このフィルターの削除</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>またはフィルターを選択して適用すると、一致するコンテンツが一覧表示されます。</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>語句を入力すると、フィルターで検索結果を絞り込めます。</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>「%text」に一致する結果は見つかりませんでした。</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>結果が見つかりませんでした。</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>上のフィルターを 1 つ解除してください。</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>翻訳</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>操作</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>%name を編集</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>編集</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13850,6 +14054,61 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Help center</source>
         <translation>ヘルプセンター</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>コンテンツ</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>ドキュメントのページ</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>ユーザー</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>コンテンツクラス</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>管理</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>%number ページ</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>すべての結果を表示</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count 件の結果</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>1 件の結果</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count 件の候補</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>候補はありません</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>候補を読み込めませんでした。</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>候補</translation>
     </message>
 </context>
 <context>

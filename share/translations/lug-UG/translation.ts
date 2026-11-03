@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>Genda ku lupapula olusooka</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Ebirala</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>Ennaku 7 ezisembyeyo</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Ebbanga ly'olonze</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Ebigambo byonna</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Ekigambo kyonna</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Ebigambo nga bwe biri</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Okukwatagana</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Erinnya A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Erinnya Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Ebyakyusibwa, ebipya okusooka</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Ebyakyusibwa, ebikadde okusooka</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Ebyafulumizibwa, ebipya okusooka</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Ebyafulumizibwa, ebikadde okusooka</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Ekyakyusibwa</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Ebisengejja</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Laga ebisengejja</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Kweka ebisengejja</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Zzaawo</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Kozesa</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Ebigambo</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Ekika ky'ebirimu</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Laga ebisingawo (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Londa ekika ky'ebirimu kimu okunoonya mu kimu ku bintu byakyo.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Ekitundu</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Okuva ku</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Ku</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Olunaku olw'okutandika si lunaku lutuufu.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Olunaku olw'okumaliriza si lunaku lutuufu.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Nnannyini</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>ID y'omukozesa, erinnya ly'okuyingira oba endagiriro ya email.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>Tewali mukozesa yazuuliddwa ku “%input”.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Olulimi</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Olulimi lwonna</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Ekifo</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>Ebifo %count</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Ebivuddemu ku buli lupapula</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Ebivuddemu ku “%text” (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Ebivuddemu (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Sengeka nga ku</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Sengeka</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Ebisengejja ebikola</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Ggyamu ekisengejja kino</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Oba londa ebisengejja obikozese okulaga ebirimu ebikwatagana.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Ebisengejja bifunza okunoonya ng'omaze okuwandiika ebigambo.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>Tewali bivuddemu bizuuliddwa ku “%text”.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Tewali bivuddemu bizuuliddwa.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Ggyamu ekisengejja waggulu.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Enzivuunula</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Ebikolebwa</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>Longoosa %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Longoosa</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Jjukira: Pakeeji tezijja kusimbulwa.</translation>
     <message>
         <source>Help center</source>
         <translation>Ekifo ky'obuyambi</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Ebirimu</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Empapula z'ebiwandiiko</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Abakozesa</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Kiraasi z'ebirimu</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Okuddukanya</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Olupapula %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Laba ebivuddemu byonna</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>Ebivuddemu %count</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Ekivuddemu kimu</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>Ebiteeso %count</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Tewali biteeso</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Ebiteeso tebisobodde kutikkibwa.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Ebiteeso</translation>
     </message>
 </context>
 <context>

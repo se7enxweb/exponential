@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>מעבר לעמוד הראשון</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>אחר</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>7 הימים האחרונים</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>טווח מותאם אישית</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>כל המילים</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>מילה כלשהי</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>ביטוי מדויק</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>רלוונטיות</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>שם א–ת</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>שם ת–א</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>שונה, החדש ביותר תחילה</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>שונה, הישן ביותר תחילה</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>פורסם, החדש ביותר תחילה</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>פורסם, הישן ביותר תחילה</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>שונה</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>מסננים</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>הצגת מסננים</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>הסתרת מסננים</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>איפוס</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>החלה</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>מילים</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>סוג תוכן</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>הצגת עוד (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>יש לבחור סוג תוכן אחד כדי לחפש באחת מהתכונות שלו.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>מדור</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>מקור</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>עד</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>תאריך ההתחלה אינו תאריך תקין.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>תאריך הסיום אינו תאריך תקין.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>בעלים</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>מזהה משתמש, שם כניסה או כתובת דוא״ל.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>לא נמצא משתמש עבור “%input”.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>שפה</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>כל שפה</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>מיקום</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count מיקומים</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>תוצאות בעמוד</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>תוצאות עבור “%text” (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>תוצאות (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>מיון לפי</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>מיון</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>מסננים פעילים</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>הסרת מסנן זה</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>לחלופין, יש לבחור מסננים ולהחיל אותם כדי להציג את התוכן התואם להם.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>המסננים מצמצמים את החיפוש לאחר הקלדת מילים.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>לא נמצאו תוצאות עבור “%text”.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>לא נמצאו תוצאות.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>יש להסיר אחד מהמסננים שלמעלה.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>תרגומים</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>פעולות</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>עריכת %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>עריכה</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13852,6 +14056,61 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Help center</source>
         <translation>מרכז העזרה</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>תוכן</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>עמודי מסמכים</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>משתמשים</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>מחלקות תוכן</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>ניהול</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>עמוד %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>הצגת כל התוצאות</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count תוצאות</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>תוצאה אחת</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count הצעות</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>אין הצעות</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>לא ניתן היה לטעון את ההצעות.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>הצעות</translation>
     </message>
 </context>
 <context>

@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>İlk səhifəyə get</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Digər</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>Son 7 gün</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Fərdi aralıq</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Bütün sözlər</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>İstənilən söz</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Dəqiq ifadə</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Uyğunluq</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Ad A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Ad Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Dəyişdirilib, əvvəlcə ən yeniləri</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Dəyişdirilib, əvvəlcə ən köhnələri</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Dərc olunub, əvvəlcə ən yeniləri</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Dərc olunub, əvvəlcə ən köhnələri</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Dəyişdirilib</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Filtrlər</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Filtrləri göstər</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Filtrləri gizlət</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Sıfırla</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Tətbiq et</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Sözlər</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Məzmun növü</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Daha çox göstər (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Atributlarından birində axtarmaq üçün bir məzmun növü seçin.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Bölmə</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Haradan</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Nə vaxtadək</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Başlanğıc tarixi etibarlı tarix deyil.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Son tarix etibarlı tarix deyil.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Sahib</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>İstifadəçi ID-si, giriş adı və ya e-poçt ünvanı.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>«%input» üçün istifadəçi tapılmadı.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Dil</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>İstənilən dil</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Yer</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count yer</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Səhifədə nəticə sayı</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>«%text» üçün nəticələr (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Nəticələr (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Sıralama meyarı</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Sırala</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Aktiv filtrlər</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Bu filtri çıxar</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Və ya filtrləri seçib tətbiq edin ki, onlara uyğun məzmun siyahılansın.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Sözləri yazdıqdan sonra filtrlər axtarışı daraldır.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>«%text» üçün heç bir nəticə tapılmadı.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Heç bir nəticə tapılmadı.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Yuxarıdakı filtrlərdən birini silin.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Tərcümələr</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Əməliyyatlar</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>%name redaktə et</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Redaktə et</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Qeyd: Paketlərin quraşdırılması silinməyəcək.</translation>
     <message>
         <source>Help center</source>
         <translation>Kömək mərkəzi</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Məzmun</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Sənəd səhifələri</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>İstifadəçilər</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Məzmun sinifləri</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>İdarəetmə</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Səhifə %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Bütün nəticələrə bax</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count nəticə</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Bir nəticə</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count təklif</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Təklif yoxdur</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Təkliflər yüklənə bilmədi.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Təkliflər</translation>
     </message>
 </context>
 <context>

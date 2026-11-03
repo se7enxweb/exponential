@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>Birinji sahypa geç</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Başga</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>Soňky 7 gün</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Saýlanan döwür</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Ähli sözler</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Islendik söz</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Takyk söz düzümi</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Laýyklyk</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Ady A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Ady Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Üýtgedilen, iň täzeler ilki</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Üýtgedilen, iň köneler ilki</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Çap edilen, iň täzeler ilki</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Çap edilen, iň köneler ilki</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Üýtgedilen</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Süzgüçler</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Süzgüçleri görkez</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Süzgüçleri gizle</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Nolla</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Ulan</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Sözler</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Mazmun görnüşi</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Has köp görkez (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Onuň atributlarynyň birinde gözlemek üçin bir mazmun görnüşini saýlaň.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Bölüm</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Nireden</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Çenli</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Başlangyç senesi dogry sene däl.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Ahyrky sene dogry sene däl.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Eýesi</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>Ulanyjy ID-si, login ýa-da e-poçta salgysy.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>“%input” üçin ulanyjy tapylmady.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Dil</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Islendik dil</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Ýerleşiş</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count ýerleşiş</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Sahypadaky netijeler</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>“%text” üçin netijeler (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Netijeler (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Tertiplemek ölçegi</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Tertiple</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Işjeň süzgüçler</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Bu süzgüji aýyr</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Ýa-da süzgüçleri saýlaň we laýyk gelýän mazmuny görkezmek üçin ulanyň.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Sözleri ýazanyňyzdan soň süzgüçler gözlegi daraldýar.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>“%text” üçin netije tapylmady.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Netije tapylmady.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Ýokardaky süzgüçleriň birini aýyryň.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Terjimeler</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Hereketler</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>%name redaktirle</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Redaktirle</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ bellik: Paketler gurnamadan aýrylmaz.</translation>
     <message>
         <source>Help center</source>
         <translation>Kömek merkezi</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Mazmun</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Resminama sahypalary</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Ulanyjylar</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Mazmun klaslary</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Dolandyryş</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Sahypa %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Ähli netijeleri gör</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count netije</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Bir netije</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count teklip</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Teklip ýok</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Teklipleri ýükläp bolmady.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Teklipler</translation>
     </message>
 </context>
 <context>

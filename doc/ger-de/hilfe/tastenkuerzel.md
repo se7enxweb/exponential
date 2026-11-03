@@ -21,6 +21,8 @@ Auf einem Mac ist **Alt** die **Wahltaste** (Option).
 | Taste | Was sie bewirkt |
 |---|---|
 | `/` | Springt in das Feld **Suchen...** in der Kopfzeile (nicht, während Sie in einem anderen Feld tippen). |
+| `Strg` + `/` (`Cmd` + `/` auf einem Mac) | Springt in das Feld **Suchen...** in der Kopfzeile, auch aus einem anderen Feld heraus. |
+| `↓` / `↑`, Eingabetaste (im Suchfeld) | Bewegen sich durch die Vorschläge unter dem Feld und öffnen den gewählten ([Suchen](suchen.md#vorschläge-beim-tippen)). |
 | `Esc` | Schließt das geöffnete Menü, die Liste oder das Pop-up und gibt den Fokus an deren Schaltfläche zurück. |
 | `Tab` (erster Druck auf einer Seite) | Zeigt **Zum Hauptinhalt springen**; drücken Sie `Enter`, um an der Kopfzeile und der linken Spalte vorbeizuspringen. |
 

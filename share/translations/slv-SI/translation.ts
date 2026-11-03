@@ -5167,6 +5167,210 @@
         <source>Go to the first page</source>
         <translation>Pojdi na prvo stran</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Drugo</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>Zadnjih 7 dni</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Poljubno obdobje</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Vse besede</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Katera koli beseda</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Natančna fraza</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Ustreznost</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Ime A–Ž</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Ime Ž–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Spremenjeno, najprej najnovejše</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Spremenjeno, najprej najstarejše</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Objavljeno, najprej najnovejše</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Objavljeno, najprej najstarejše</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Spremenjeno</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Filtri</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Prikaži filtre</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Skrij filtre</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Ponastavi</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Uporabi</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Besede</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Vrsta vsebine</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Prikaži več (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Izberite eno vrsto vsebine, da iščete v enem od njenih atributov.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Sekcija</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Iz</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Do</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Začetni datum ni veljaven datum.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Končni datum ni veljaven datum.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Lastnik</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>ID uporabnika, uporabniško ime ali e-poštni naslov.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>Za „%input“ ni bilo najdenega uporabnika.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Jezik</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Kateri koli jezik</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Lokacija</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>Lokacije: %count</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Zadetkov na stran</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Zadetki za „%text“ (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Zadetki (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Razvrsti po</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Razvrščanje</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Aktivni filtri</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Odstrani ta filter</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Ali izberite filtre in jih uporabite, da prikažete vsebino, ki jim ustreza.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Filtri zožijo iskanje, ko vnesete besede.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>Za „%text“ ni bilo najdenih zadetkov.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Ni bilo najdenih zadetkov.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Odstranite enega od filtrov zgoraj.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Prevodi</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Dejanja</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>Uredi %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Uredi</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13850,6 +14054,61 @@ Opomba: namestitev paketov ne bo odstranjena.</translation>
     <message>
         <source>Help center</source>
         <translation>Središče za pomoč</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Vsebina</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Strani dokumentov</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Uporabniki</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Razredi vsebine</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Skrbništvo</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Stran %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Prikaži vse zadetke</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>Zadetki: %count</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>En zadetek</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>Predlogi: %count</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Ni predlogov</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Predlogov ni bilo mogoče naložiti.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Predlogi</translation>
     </message>
 </context>
 <context>

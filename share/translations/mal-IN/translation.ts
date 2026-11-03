@@ -5167,6 +5167,210 @@
         <source>Go to the first page</source>
         <translation>ആദ്യ പേജിലേക്ക് പോകുക</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>മറ്റുള്ളവ</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>കഴിഞ്ഞ 7 ദിവസം</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>ഇഷ്ടാനുസൃത കാലയളവ്</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>എല്ലാ വാക്കുകളും</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>ഏതെങ്കിലും വാക്ക്</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>കൃത്യമായ വാചകം</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>പ്രസക്തി</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>പേര് A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>പേര് Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>പരിഷ്കരിച്ചത്, പുതിയത് ആദ്യം</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>പരിഷ്കരിച്ചത്, പഴയത് ആദ്യം</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>പ്രസിദ്ധീകരിച്ചത്, പുതിയത് ആദ്യം</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>പ്രസിദ്ധീകരിച്ചത്, പഴയത് ആദ്യം</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>പരിഷ്കരിച്ചത്</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>ഫിൽട്ടറുകൾ</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>ഫിൽട്ടറുകൾ കാണിക്കുക</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>ഫിൽട്ടറുകൾ മറയ്ക്കുക</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>പുനഃസജ്ജമാക്കുക</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>പ്രയോഗിക്കുക</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>വാക്കുകൾ</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>ഉള്ളടക്ക തരം</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>കൂടുതൽ കാണിക്കുക (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>ഒരു ഉള്ളടക്ക തരത്തിന്റെ ആട്രിബ്യൂട്ടുകളിൽ ഒന്നിൽ തിരയാൻ ആ ഉള്ളടക്ക തരം തിരഞ്ഞെടുക്കുക.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>വിഭാഗം</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>അയച്ചത്</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>സ്വീകർത്താവ്</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>ആരംഭ തീയതി സാധുവായ തീയതിയല്ല.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>അവസാന തീയതി സാധുവായ തീയതിയല്ല.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>ഉടമ</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>ഉപയോക്തൃ ID, ലോഗിൻ അല്ലെങ്കിൽ ഇ-മെയിൽ വിലാസം.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>“%input” എന്നതിന് ഉപയോക്താവിനെ കണ്ടെത്തിയില്ല.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>ഭാഷ</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>ഏത് ഭാഷയും</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>ലൊക്കേഷൻ</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count ലൊക്കേഷനുകൾ</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>ഓരോ പേജിലെയും ഫലങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>“%text” എന്നതിനുള്ള ഫലങ്ങൾ (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>ഫലങ്ങൾ (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>ക്രമീകരിക്കേണ്ട മാനദണ്ഡം</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>ക്രമീകരിക്കുക</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>സജീവ ഫിൽട്ടറുകൾ</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>ഈ ഫിൽട്ടർ നീക്കം ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>അല്ലെങ്കിൽ പൊരുത്തപ്പെടുന്ന ഉള്ളടക്കം പട്ടികപ്പെടുത്താൻ ഫിൽട്ടറുകൾ തിരഞ്ഞെടുത്ത് പ്രയോഗിക്കുക.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>വാക്കുകൾ ടൈപ്പ് ചെയ്തുകഴിഞ്ഞാൽ ഫിൽട്ടറുകൾ തിരയൽ ചുരുക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>“%text” എന്നതിന് ഫലങ്ങളൊന്നും കണ്ടെത്തിയില്ല.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>ഫലങ്ങളൊന്നും കണ്ടെത്തിയില്ല.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>മുകളിലുള്ള ഒരു ഫിൽട്ടർ നീക്കം ചെയ്യുക.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>വിവർത്തനങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>പ്രവർത്തനങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>%name എഡിറ്റ് ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>എഡിറ്റ് ചെയ്യുക</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13909,6 +14113,61 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Help center</source>
         <translation>സഹായ കേന്ദ്രം</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>ഉള്ളടക്കം</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>ഡോക്യുമെന്റ് പേജുകൾ</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>ഉപയോക്താക്കൾ</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>ഉള്ളടക്ക ക്ലാസുകൾ</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>അഡ്മിനിസ്ട്രേഷൻ</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>പേജ് %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>എല്ലാ ഫലങ്ങളും കാണുക</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count ഫലങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>ഒരു ഫലം</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count നിർദ്ദേശങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>നിർദ്ദേശങ്ങളൊന്നുമില്ല</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>നിർദ്ദേശങ്ങൾ ലോഡ് ചെയ്യാനായില്ല.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>നിർദ്ദേശങ്ങൾ</translation>
     </message>
 </context>
 <context>

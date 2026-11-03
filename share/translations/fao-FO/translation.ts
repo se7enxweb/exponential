@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>Far til fyrstu síðu</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Annað</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>Seinastu 7 dagar</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Sjálvvalt tíðarskeið</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Øll orð</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Hvørt sum helst orð</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Neyv orðing</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Viðkomandi</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Navn A–Ø</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Navn Ø–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Broytt, nýggjasta fyrst</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Broytt, elsta fyrst</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Útgivið, nýggjasta fyrst</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Útgivið, elsta fyrst</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Broytt</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Filtrar</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Vís filtrar</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Fjal filtrar</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Nullstilla</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Nýta</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Orð</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Innihaldsslag</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Vís fleiri (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Vel eitt innihaldsslag fyri at leita í einum av eginleikum tess.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Deild</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Úr</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Til</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Frá-dagfestingin er ikki gyldug.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Til-dagfestingin er ikki gyldug.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Eigari</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>Brúkara-ID, innritanarnavn ella teldupostadressa.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>Eingin brúkari funnin fyri „%input“.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Mál</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Hvørt sum helst mál</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Staðseting</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count staðsetingar</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Úrslit fyri hvørja síðu</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Úrslit fyri „%text“ (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Úrslit (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Raða eftir</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Raða</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Virknir filtrar</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Taka hetta filtrið burtur</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Ella vel filtrar og nýt tey fyri at vísa innihaldið, sum samsvarar.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Filtrini avmarka leitingina, tá ið tú hevur skrivað orð.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>Eingi úrslit funnin fyri „%text“.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Eingi úrslit funnin.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Tak eitt filtur burtur omanfyri.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Umsetingar</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Gerðir</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>Rætta %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Rætta</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Ivasamt: Pakkarnir verða ikki avinnlagdir.</translation>
     <message>
         <source>Help center</source>
         <translation>Hjálparmiðstøð</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Innihald</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Skjalasíður</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Brúkarar</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Innihaldsflokkar</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Umsiting</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Síða %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Vís øll úrslit</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count úrslit</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Eitt úrslit</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count uppskot</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Eingi uppskot</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Uppskotini kundu ikki innlesast.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Uppskot</translation>
     </message>
 </context>
 <context>

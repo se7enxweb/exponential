@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>Ddu ɣer usebter amezwaru</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Wiyaḍ</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>7 n wussan ineggura</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Azilal udmawan</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Akk awalen</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Yal awal</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Tafyirt tusdidt</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Assaɣ</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Isem A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Isem Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Yettwabeddel, amaynut d amezwaru</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Yettwabeddel, aqbur d amezwaru</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Yettwasuffeɣ, amaynut d amezwaru</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Yettwasuffeɣ, aqbur d amezwaru</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Yettwabeddel</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Imsizdegen</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Sken imsizdegen</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Ffer imsizdegen</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Ales asbadu</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Snes</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Awalen</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Anaw n ugbur</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Sken ugar (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Fren yiwen n wanaw n ugbur akken ad tnadiḍ deg yiwet seg teɣbula-ines.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Tigezmi</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Seg</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Ɣer</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Azemz n tazwara mačči d azemz ameɣtu.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Azemz n taggara mačči d azemz ameɣtu.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Bab</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>Asulay n useqdac, isem n tuqqna neɣ tansa n imayl.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>Ulac aseqdac i yettwafen i «%input».</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Tutlayt</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Yal tutlayt</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Adeg</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count n yidgan</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Igmaḍ s usebter</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Igmaḍ i «%text» (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Igmaḍ (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Smizzwer s</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Asmizzwer</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Imsizdegen urmiden</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Ssuffeɣ amsizdeg-a</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Neɣ fren imsizdegen, snes-iten akken ad d-tbedreḍ agbur yemṣadan yid-sen.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Imsizdegen ssenqasen anadi mi ara tettaruḍ awalen.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>Ulac igmaḍ i yettwafen i «%text».</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Ulac igmaḍ i yettwafen.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Kkes yiwen n umsizdeg nnig.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Tisuqilin</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Tigawin</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>Ẓreg %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Ẓreg</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Azen: ikemmusen ur ttwakksen ara asebded-nsen.</translation>
     <message>
         <source>Help center</source>
         <translation>Tarakalt n tallalt</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Agbur</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Isebtar n isemliyen</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Iseqdacen</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Ismilen n ugbur</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Tadbelt</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Asebter %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Wali akk igmaḍ</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count n yigmaḍ</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Yiwen n ugmuḍ</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count n yisumar</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Ulac isumar</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Isumar ur d-ttwasalyen ara.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Isumar</translation>
     </message>
 </context>
 <context>

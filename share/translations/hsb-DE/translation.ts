@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>K prěnjej stronje</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Druhe</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>Poslednje 7 dnjow</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Swójski čas</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Wšě słowa</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Někajke słowo</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Eksaktna fraza</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Relewanca</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Mjeno A–Ž</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Mjeno Ž–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Změnjeny, najnowše najprjedy</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Změnjeny, najstarše najprjedy</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Wozjewjeny, najnowše najprjedy</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Wozjewjeny, najstarše najprjedy</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Změnjeny</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Filtry</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Filtry pokazać</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Filtry schować</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Wróćo stajić</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Nałožić</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Słowa</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Typ wobsaha</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Wjace pokazać (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Wubjerće jedyn typ wobsaha, zo byšće w jednym z jeho atributow pytał.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Wotrězk</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Z</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Do</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Spočatny datum płaćiwy datum njeje.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Kónčny datum płaćiwy datum njeje.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Wobsedźer</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>Wužiwarski ID, přizjewjenske mjeno abo e-mejlowa adresa.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>Za „%input“ so žadyn wužiwar namakał njeje.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Rěč</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Někajka rěč</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Městno</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count městnow</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Wuslědki na stronu</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Wuslědki za „%text“ (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Wuslědki (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Sortěrować po</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Sortěrowanje</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Aktiwne filtry</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Tutón filter wotstronić</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Abo wubjerće filtry a nałožće je, zo byšće wotpowědny wobsah nalistował.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Filtry pytanje wobmjezuja, hdyž sće słowa zapodał.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>Za „%text“ so žane wuslědki namakali njejsu.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Žane wuslědki namakane.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Wotstrońće horjeka filter.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Přełožki</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Akcije</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>%name wobdźěłać</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Wobdźěłać</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Pokazka: pakety so njewotinstaluja.</translation>
     <message>
         <source>Help center</source>
         <translation>Centrum pomocy</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Wobsah</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Strony dokumentow</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Wužiwarjo</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Klasy wobsaha</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Administracija</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Strona %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Wšě wuslědki pokazać</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>Wuslědki: %count</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Jedyn wuslědk</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count namjetow</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Žane namjety</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Namjety njedachu so začitać.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Namjety</translation>
     </message>
 </context>
 <context>

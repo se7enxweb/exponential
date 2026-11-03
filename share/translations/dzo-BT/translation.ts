@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>ཤོག་ལེབ་དང་པོ་ལུ་འགྱོ།</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>གཞན།</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>ཉིན་ ༧ ཧེ་མམ།</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>རང་གིས་གདམ་ཁ་རྐྱབ་མི་དུས་ཚོད།</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>ཚིག་ཆ་མཉམ།</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>ཚིག་ག་ཅི་རང་།</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>ཚིག་ཚོགས་ཏག་ཏག</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>འབྲེལ་བ་ཡོད་མི།</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>མིང་ A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>མིང་ Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>བསྒྱུར་བཅོས་འབད་ཡོདཔ། གསརཔ་ཧེ་མ།</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>བསྒྱུར་བཅོས་འབད་ཡོདཔ། རྙིངམ་ཧེ་མ།</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>དཔར་བསྐྲུན་འབད་ཡོདཔ། གསརཔ་ཧེ་མ།</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>དཔར་བསྐྲུན་འབད་ཡོདཔ། རྙིངམ་ཧེ་མ།</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>བསྒྱུར་བཅོས་འབད་ཡོདཔ།</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>འཚག་འདེམས་ཚུ།</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>འཚག་འདེམས་ཚུ་སྟོན།</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>འཚག་འདེམས་ཚུ་སྦ།</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>ལོག་སྒྲིག</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>ལག་ལེན་འཐབ།</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>ཚིག་ཚུ།</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>ནང་དོན་གྱི་དབྱེ་བ།</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>ཧེ་བངས་སྟོན། (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>དེའི་ཁྱད་ཆོས་གཅིག་ནང་འཚོལ་ནིའི་དོན་ལུ་ ནང་དོན་དབྱེ་བ་གཅིག་གདམ་ཁ་རྐྱབ།</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>སྡེ་ཚན།</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>ག་ལས།</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>ལུ།</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>འགོ་བཙུགས་ཚེས་གྲངས་འདི་ ཚེས་གྲངས་ནུས་ཅན་མེན།</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>མཇུག་གི་ཚེས་གྲངས་འདི་ ཚེས་གྲངས་ནུས་ཅན་མེན།</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>བདག་པོ།</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>ལག་ལེན་པའི་ ID ནང་བསྐྱོད་མིང་ ཡང་ན་ གློག་འཕྲིན་ཁ་བྱང་།</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>“%input” གི་དོན་ལུ་ ལག་ལེན་པ་མ་ཐོབ།</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>སྐད་ཡིག</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>སྐད་ཡིག་ག་ཅི་རང་།</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>གནས་ཁོངས།</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>གནས་ཁོངས་ %count</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>ཤོག་ལེབ་རེ་ལུ་གྲུབ་འབྲས།</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>“%text” གི་གྲུབ་འབྲས། (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>གྲུབ་འབྲས། (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>འདི་ལྟར་གོ་རིམ་སྒྲིག</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>གོ་རིམ་སྒྲིག</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>ཤུགས་ཅན་གྱི་འཚག་འདེམས།</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>འཚག་འདེམས་འདི་བཏོན་གཏང་།</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>ཡང་ན་ འཚག་འདེམས་གདམ་ཁ་རྐྱབ་སྟེ་ ལག་ལེན་འཐབ་ཞིནམ་ལས་ མཐུན་པའི་ནང་དོན་ཐོ་བཀོད།</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>ཚིག་ཡིག་དཔར་རྐྱབ་ཞིནམ་ལས་ འཚག་འདེམས་ཚུ་གིས་ འཚོལ་ཞིབ་ཀྱི་ཁྱབ་ཚད་ཆུང་ཀུ་བཟོཝ་ཨིན།</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>“%text” གི་དོན་ལུ་ གྲུབ་འབྲས་མ་ཐོབ།</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>གྲུབ་འབྲས་མ་ཐོབ།</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>གོང་གི་འཚག་འདེམས་གཅིག་རྩ་བསྐྲད་གཏང་།</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>ཡིག་སྒྱུར།</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>བྱ་བའི་ཐོ།</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>%name ཞུན་དག</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>ཞུན་དག</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Help center</source>
         <translation>རོགས་པའི་ལྟེ་གནས།</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>ནང་དོན།</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>ཡིག་ཆའི་ཤོག་ལེབ་ཚུ།</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>ལག་ལེན་པ།</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>ནང་དོན་རིགས་ཚུ།</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>འཛིན་སྐྱོང་།</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>ཤོག་ལེབ་ %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>གྲུབ་འབྲས་ཆ་མཉམ་བལྟ།</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>འབྲས་བུ་ %count</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>གྲུབ་འབྲས་གཅིག</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>བསམ་འཆར་ %count</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>བསམ་འཆར་མེད།</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>བསམ་འཆར་ཚུ་མངོན་གསལ་འབད་མ་ཚུགས།</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>བསམ་འཆར་ཚུ།</translation>
     </message>
 </context>
 <context>

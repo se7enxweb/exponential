@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>Go to di first page</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Other ones</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>Di last 7 days</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Di time wey you choose</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>All di words</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Any one word</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Di exact words</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>How e match</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Name from A reach Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Name from Z reach A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Changed, di new ones first</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Changed, di old ones first</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Published, di new ones first</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Published, di old ones first</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Changed</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Filter dem</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Show di filter dem</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Hide di filter dem</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Start am again</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Use am</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Di words</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Kind of content</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Show more again (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Choose one kind of content make you fit search inside one of en attributes.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Part</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Start from</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Reach</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Di start date no be correct date.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Di end date no be correct date.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Di owner</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>User ID, login abi e-mail address.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>We no see any user for “%input”.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Di language</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Any language at all</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Wia e dey</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count places</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Wetin we find for one page</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Wetin we find for “%text” (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Wetin we find (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Arrange am by</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Arrange</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Filter dem wey dey work</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Comot dis filter</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Or choose filter dem and use dem to show di content wey match.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Di filter dem go make di search small once you don type words.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>We no find anything for “%text”.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>We no find anything.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Comot one filter for up.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Di translations</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Wetin you fit do</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>Change %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Change am</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Note: Dem no go uninstall di packages.</translation>
     <message>
         <source>Help center</source>
         <translation>Help center</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Di content</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Di document pages</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Di users</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Content class dem</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Admin side</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Page number %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>See all wetin we find</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count tins wey we find</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>One thing wey we find</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count ideas wey we get</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>No ideas</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>We no fit load di ideas.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Ideas</translation>
     </message>
 </context>
 <context>

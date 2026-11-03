@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>E hele i ka ʻaoʻao mua</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>ʻĒ aʻe</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>7 lā i hala</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Kaulana i koho ʻia</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Nā hua ʻōlelo a pau</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Kekahi hua ʻōlelo</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Māmalaʻōlelo pololei</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Pili</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Inoa A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Inoa Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Hoʻololi ʻia, ka hou loa ma mua</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Hoʻololi ʻia, ka kahiko loa ma mua</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Paʻi ʻia, ka hou loa ma mua</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Paʻi ʻia, ka kahiko loa ma mua</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Hoʻololi ʻia</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Nā kānana</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Hōʻike i nā kānana</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Hūnā i nā kānana</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Hoʻokumu hou</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Hoʻohana</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Nā hua ʻōlelo</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>ʻAno ʻike</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Hōʻike hou aku (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>E koho i hoʻokahi ʻano ʻike e huli ai i loko o kekahi o kona mau ʻano.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Māhele</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Mai</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>I</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>ʻAʻole he lā kūpono ka lā hoʻomaka.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>ʻAʻole he lā kūpono ka lā hope.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Kahu</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>ID mea hoʻohana, inoa komo a i ʻole leka uila.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>ʻAʻohe mea hoʻohana i loaʻa no “%input”.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>ʻŌlelo</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Kekahi ʻōlelo</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Wahi</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count wahi</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Nā hopena o kēlā me kēia ʻaoʻao</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Nā hopena no “%text” (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Nā hopena (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Hoʻokaʻina e</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Hoʻokaʻina</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Nā kānana hana</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Wehe i kēia kānana</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>A i ʻole e koho i nā kānana a hoʻohana iā lākou e papa inoa i ka ʻike i kūlike.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Hoʻoliʻiliʻi nā kānana i ka huli ʻana ke kikokiko ʻoe i nā hua ʻōlelo.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>ʻAʻohe hopena i loaʻa no “%text”.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>ʻAʻohe hopena i loaʻa.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>E wehe i kekahi kānana ma luna.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Nā unuhi</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Nā hana</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>Hoʻoponopono iā %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Hoʻoponopono</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Hoʻomaopopo: ʻAʻole wehe ʻia ka hoʻokomo ʻana o nā pūʻolo.</translation
     <message>
         <source>Help center</source>
         <translation>Kikowaena kōkua</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>ʻIke</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Nā ʻaoʻao palapala</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Nā mea hoʻohana</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Nā papa ʻike</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Hoʻomalu</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>ʻAoʻao %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Nānā i nā hopena a pau</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count hopena</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Hoʻokahi hopena</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count manaʻo paipai</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>ʻAʻohe manaʻo paipai</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>ʻAʻole hiki ke hoʻouka i nā manaʻo paipai.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Nā manaʻo paipai</translation>
     </message>
 </context>
 <context>

@@ -5167,6 +5167,210 @@
         <source>Go to the first page</source>
         <translation>మొదటి పేజీకి వెళ్లండి</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>ఇతర</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>గత 7 రోజులు</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>అనుకూల పరిధి</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>అన్ని పదాలు</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>ఏదైనా పదం</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>ఖచ్చితమైన పదబంధం</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>సంబంధితత</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>పేరు A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>పేరు Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>సవరించబడింది, కొత్తవి ముందు</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>సవరించబడింది, పాతవి ముందు</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>ప్రచురించబడింది, కొత్తవి ముందు</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>ప్రచురించబడింది, పాతవి ముందు</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>సవరించబడింది</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>ఫిల్టర్‌లు</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>ఫిల్టర్‌లను చూపించు</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>ఫిల్టర్‌లను దాచు</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>రీసెట్ చేయండి</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>వర్తింపజేయండి</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>పదాలు</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>కంటెంట్ రకం</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>మరిన్ని చూపించు (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>దాని లక్షణాలలో ఒకదానిలో వెతకడానికి ఒక కంటెంట్ రకాన్ని ఎంచుకోండి.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>విభాగం</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>నుండి</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>వరకు</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>ప్రారంభ తేదీ చెల్లుబాటు అయ్యే తేదీ కాదు.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>ముగింపు తేదీ చెల్లుబాటు అయ్యే తేదీ కాదు.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>యజమాని</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>వినియోగదారు ID, లాగిన్ లేదా ఇ-మెయిల్ చిరునామా.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>“%input” కోసం వినియోగదారు ఎవరూ కనుగొనబడలేదు.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>భాష</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>ఏదైనా భాష</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>స్థానం</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count స్థానాలు</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>పేజీకి ఫలితాలు</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>“%text” కోసం ఫలితాలు (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>ఫలితాలు (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>దీని ప్రకారం క్రమబద్ధీకరించండి</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>క్రమబద్ధీకరించండి</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>క్రియాశీల ఫిల్టర్‌లు</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>ఈ ఫిల్టర్‌ను తీసివేయండి</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>లేదా ఫిల్టర్‌లను ఎంచుకుని, వాటికి సరిపోయే కంటెంట్‌ను జాబితా చేయడానికి వాటిని వర్తింపజేయండి.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>మీరు పదాలు టైప్ చేసిన తర్వాత ఫిల్టర్‌లు శోధనను కుదిస్తాయి.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>“%text” కోసం ఫలితాలు ఏవీ కనుగొనబడలేదు.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>ఫలితాలు ఏవీ కనుగొనబడలేదు.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>పైన ఉన్న ఒక ఫిల్టర్‌ను తీసివేయండి.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>అనువాదాలు</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>చర్యలు</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>%name ను సవరించండి</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>సవరించండి</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13909,6 +14113,61 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Help center</source>
         <translation>సహాయ కేంద్రం</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>కంటెంట్</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>పత్రం పేజీలు</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>వినియోగదారులు</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>కంటెంట్ క్లాస్‌లు</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>అడ్మినిస్ట్రేషన్</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>పేజీ %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>అన్ని ఫలితాలను చూడండి</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count ఫలితాలు</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>ఒక ఫలితం</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count సూచనలు</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>సూచనలు లేవు</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>సూచనలను లోడ్ చేయడం సాధ్యం కాలేదు.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>సూచనలు</translation>
     </message>
 </context>
 <context>

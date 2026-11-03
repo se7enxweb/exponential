@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>आगान फोथाआव थां</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>उनाव</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>उननि 7 सान</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>गावनि सायखनाय सम</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>गासै सोदोब</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>जायखिजाया सोदोब</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>थार फ्रेज</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>सोमोन्दो</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>मुं A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>मुं Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>सोलोंथायनाय, गोदानफोरखौ गिबियाव</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>सोलोंथायनाय, गोजामफोरखौ गिबियाव</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>सिफायनाय, गोदानफोरखौ गिबियाव</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>सिफायनाय, गोजामफोरखौ गिबियाव</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>सोलोंथायनाय</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>फिल्टारफोर</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>फिल्टारफोर दिन्थि</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>फिल्टारफोर दोनथुं</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>फिन्से सुरु</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>लागाव</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>सोदोबफोर</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>बिषयबस्तुनि रोखोम</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>बांसिन दिन्थि (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>बेनि मोनसे गुणआव नागिरनो मोनसे बिषयबस्तुनि रोखोम सायख।</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>सेक्सन</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>निफ्राय</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>सिम</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>जागायनाय तारिखआ थार तारिख नङा।</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>जोबनाय तारिखआ थार तारिख नङा।</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>मालिक</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>बेबहार खालामग्रा ID, लगइन एबा ई-मेइल ठिकाना।</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>“%input” नि थाखाय बेबहार खालामग्रा मोनाखै।</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>राव</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>जायखिजाया राव</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>थान</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count थान</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>बिलाइ गोनसेयाव फलाफल</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>“%text” नि फलाफल (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>फलाफल (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>बेनि बादि क्रम खालाम</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>क्रम खालाम</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>सक्रिय फिल्टारफोर</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>बे फिल्टारखौ आगाय</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>एबा फिल्टारफोर सायख आरो बेखौ लागाव, जाहाथे गोरोबनाय बिषयबस्तुनि फारिलाइ नुनो।</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>सोदोब लिरनायनि उनाव फिल्टारफोरा नागिरनायखौ खुथिया खालामो।</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>“%text” नि थाखाय जेबो फलाफल मोनाखै।</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>जेबो फलाफल मोनाखै।</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>सायाव थानाय मोनसे फिल्टार हुखुमोर।</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>अनुबादफोर</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>खामानि</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>%name सोलोंथाय</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>सोलोंथाय</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Help center</source>
         <translation>मदद सेन्टार</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>बिषयबस्तु</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>फोरमान बिलाइनि बिलाइफोर</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>बेबहार खालामग्रा</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>बिषयबस्तु क्लासफोर</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>प्रशासन</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>बिलाइ %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>गासै फलाफल नाय</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count फल</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>मोनसे फलाफल</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count बाथ्रा होनाय</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>जेबो बाथ्रा होनाय गैया</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>बाथ्रा होनायफोरखौ लड खालामनो हायाखै।</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>बाथ्रा होनायफोर</translation>
     </message>
 </context>
 <context>

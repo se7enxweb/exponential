@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>ܐܙܠܬܐ ܠܦܐܬܐ ܩܕܡܝܬܐ</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>ܐܚܪܢܐ</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>7 ܝܘܡ̈ܬܐ ܐܚܪ̈ܝܐ</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>ܡܫܘܚܬܐ ܓܒܝܬܐ</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>ܟܠܗܝܢ ܡ̈ܠܐ</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>ܐܝܕܐ ܕܗܘ ܡܠܬܐ</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>ܦܣܘܩܐ ܚܬܝܬܐ</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>ܐܚܝܕܘܬܐ</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>ܫܡܐ ܐ–ܬ</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>ܫܡܐ ܬ–ܐ</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>ܡܫܘܚܠܦܐ، ܚ̈ܕܬܐ ܠܘܩܕܡ</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>ܡܫܘܚܠܦܐ، ܥ̈ܬܝܩܐ ܠܘܩܕܡ</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>ܦܪܝܣܐ، ܚ̈ܕܬܐ ܠܘܩܕܡ</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>ܦܪܝܣܐ، ܥ̈ܬܝܩܐ ܠܘܩܕܡ</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>ܡܫܘܚܠܦܐ</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>ܡܨܠܠ̈ܢܐ</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>ܚܘܝ ܡܨܠܠ̈ܢܐ</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>ܛܫܝ ܡܨܠܠ̈ܢܐ</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>ܐܦܣܝܐ</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>ܡܦܠܚܐ</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>ܡ̈ܠܐ</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>ܙܢܐ ܕܡܠܝܘܬܐ</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>ܚܘܝ ܝܬܝܪ (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>ܓܒܝ ܙܢܐ ܚܕ ܕܡܠܝܘܬܐ ܠܡܒܥܐ ܒܚܕ ܡܢ ܕܝ̈ܠܝܬܗ.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>ܦܠܓܘܬܐ</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>ܡܢ</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>ܥܕ</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>ܣܝܩܘܡܐ ܕܫܘܪܝܐ ܠܐ ܗܘܐ ܣܝܩܘܡܐ ܬܪܝܨܐ.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>ܣܝܩܘܡܐ ܕܫܘܠܡܐ ܠܐ ܗܘܐ ܣܝܩܘܡܐ ܬܪܝܨܐ.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>ܡܪܐ</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>ID ܕܡܦܠܚܢܐ، ܫܡܐ ܕܡܥܠܬܐ ܐܘ ܡܘܢܥܐ ܕܒܝܠܕܪܐ ܐܠܩܛܪܘܢܝܐ.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>ܠܐ ܐܫܬܟܚ ܡܦܠܚܢܐ ܠ“%input”.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>ܠܫܢܐ</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>ܐܝܕܐ ܕܗܘ ܠܫܢܐ</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>ܕܘܟܬܐ</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count ܕܘܟ̈ܝܬܐ</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>ܦܬܘܪ̈ܐ ܒܟܠ ܦܐܬܐ</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>ܦܬܘܪ̈ܐ ܠ“%text” (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>ܦܬܘܪ̈ܐ (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>ܣܕܪܐ ܐܝܟ</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>ܣܕܪܐ</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>ܡܨܠܠ̈ܢܐ ܦܥܝܠܐ</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>ܫܩܠܐ ܕܗܢܐ ܡܨܠܠܢܐ</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>ܐܘ ܓܒܝ ܡܨܠܠ̈ܢܐ ܘܡܦܠܚ ܠܗܘܢ ܠܡܚܘܝܘ ܡܠܝܘܬܐ ܕܡܫܬܘܝܐ ܠܗܘܢ.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>ܡܨܠܠ̈ܢܐ ܡܥܨܪܝܢ ܠܒܥܬܐ ܡܐ ܕܟܬܒܬ ܡ̈ܠܐ.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>ܠܐ ܐܫܬܟܚܘ ܦܬܘܪ̈ܐ ܠ“%text”.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>ܠܐ ܐܫܬܟܚܘ ܦܬܘܪ̈ܐ.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>ܫܩܘܠ ܚܕ ܡܨܠܠܢܐ ܠܥܠ.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>ܬܘܪ̈ܓܡܐ</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>ܣܘܥܪ̈ܢܐ</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>ܬܩܢ %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>ܬܘܩܢܐ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Help center</source>
         <translation>ܡܪܟܙܐ ܕܥܘܕܪܢܐ</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>ܡܠܝܘܬܐ</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>ܦܐܬ̈ܐ ܕܟܬܒ̈ܐ</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>ܡܦܠ̈ܚܢܐ</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>ܙ̈ܢܝܐ ܕܡܠܝܘܬܐ</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>ܕܘܒܪܐ</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>ܦܐܬܐ %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>ܚܙܝ ܟܠܗܘܢ ܦܬܘܪ̈ܐ</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count ܦܬܘܪ̈ܐ</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>ܦܬܘܪܐ ܚܕ</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count ܡܚܫܒ̈ܬܐ</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>ܠܝܬ ܡܚܫܒ̈ܬܐ</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>ܠܐ ܐܫܬܟܚ ܠܡܛܥܢܘ ܡܚܫܒ̈ܬܐ.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>ܡܚܫܒ̈ܬܐ</translation>
     </message>
 </context>
 <context>

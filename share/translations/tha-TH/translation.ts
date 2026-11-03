@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>ไปยังหน้าแรก</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>อื่น ๆ</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>7 วันที่ผ่านมา</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>ช่วงเวลาที่กำหนดเอง</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>ทุกคำ</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>คำใดก็ได้</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>วลีที่ตรงกันทุกคำ</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>ความเกี่ยวข้อง</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>ชื่อ ก–ฮ</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>ชื่อ ฮ–ก</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>แก้ไขเมื่อ ใหม่สุดก่อน</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>แก้ไขเมื่อ เก่าสุดก่อน</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>เผยแพร่เมื่อ ใหม่สุดก่อน</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>เผยแพร่เมื่อ เก่าสุดก่อน</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>แก้ไขเมื่อ</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>ตัวกรอง</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>แสดงตัวกรอง</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>ซ่อนตัวกรอง</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>รีเซ็ต</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>ใช้</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>คำ</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>ประเภทเนื้อหา</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>แสดงเพิ่มเติม (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>เลือกประเภทเนื้อหาหนึ่งประเภทเพื่อค้นหาในแอตทริบิวต์หนึ่งของประเภทนั้น</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>ส่วน</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>จาก</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>ถึง</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>วันที่เริ่มต้นไม่ใช่วันที่ที่ถูกต้อง</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>วันที่สิ้นสุดไม่ใช่วันที่ที่ถูกต้อง</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>เจ้าของ</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>ID ผู้ใช้ ชื่อเข้าสู่ระบบ หรือที่อยู่อีเมล</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>ไม่พบผู้ใช้สำหรับ “%input”</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>ภาษา</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>ภาษาใดก็ได้</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>ตำแหน่ง</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count ตำแหน่ง</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>ผลลัพธ์ต่อหน้า</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>ผลลัพธ์สำหรับ “%text” (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>ผลลัพธ์ (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>เรียงลำดับตาม</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>เรียงลำดับ</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>ตัวกรองที่ใช้งานอยู่</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>นำตัวกรองนี้ออก</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>หรือเลือกตัวกรองแล้วใช้เพื่อแสดงรายการเนื้อหาที่ตรงกัน</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>ตัวกรองจะจำกัดการค้นหาให้แคบลงเมื่อคุณพิมพ์คำแล้ว</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>ไม่พบผลลัพธ์สำหรับ “%text”</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>ไม่พบผลลัพธ์</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>นำตัวกรองด้านบนออกหนึ่งรายการ</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>คำแปล</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>การดำเนินการ</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>แก้ไข %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>แก้ไข</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Help center</source>
         <translation>ศูนย์วิธีใช้</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>เนื้อหา</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>หน้าเอกสาร</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>ผู้ใช้</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>คลาสเนื้อหา</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>ส่วนผู้ดูแลระบบ</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>หน้า %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>ดูผลลัพธ์ทั้งหมด</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count ผลลัพธ์</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>หนึ่งผลลัพธ์</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count คำแนะนำ</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>ไม่มีคำแนะนำ</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>ไม่สามารถโหลดคำแนะนำได้</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>คำแนะนำ</translation>
     </message>
 </context>
 <context>

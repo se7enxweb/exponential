@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>ʻAlu ki he peesi ʻuluaki</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Kehe</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>ʻAho ʻe 7 kuo ʻosi</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Vahaʻa taimi fili pē</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Ngaahi foʻi lea kotoa</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Ha foʻi lea pē</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Kupuʻi lea tonu</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Felāveʻi</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Hingoa A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Hingoa Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Kuo fakatonutonu, foʻou taha ʻuluaki</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Kuo fakatonutonu, motuʻa taha ʻuluaki</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Kuo pulusi, foʻou taha ʻuluaki</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Kuo pulusi, motuʻa taha ʻuluaki</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Kuo fakatonutonu</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Ngaahi sivi</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Fakahā ʻa e ngaahi sivi</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Fufuuʻi ʻa e ngaahi sivi</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Toe fokotuʻu</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Fakahoko</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Ngaahi foʻi lea</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Faʻahinga meʻa ʻi loto</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Fakahā lahi ange (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Fili ha faʻahinga meʻa ʻi loto ʻe taha ke kumi ʻi hano ʻulungaanga ʻe taha.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Konga</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Mei he</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Ki</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>ʻOku ʻikai ko ha ʻaho totonu ʻa e ʻaho kamataʻanga.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>ʻOku ʻikai ko ha ʻaho totonu ʻa e ʻaho ngataʻanga.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>ʻOnā</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>ID ʻo e tokotaha fakaʻaongaʻi, hingoa hū pe tuʻasila ʻīmeili.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>Naʻe ʻikai ha tokotaha fakaʻaongaʻi naʻe maʻu ki he “%input”.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Lea</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Ha lea pē</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Feituʻu</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>Feituʻu ʻe %count</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Ngaahi ola ʻi he peesi takitaha</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Ngaahi ola ki he “%text” (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Ngaahi ola (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Fokotuʻu hokohoko ʻi he</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Fokotuʻu hokohoko</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Ngaahi sivi ʻoku ngāue</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Toʻo ʻa e sivi ni</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Pe fili ha ngaahi sivi pea fakahoko ke lisi ʻa e meʻa ʻi loto ʻoku nau hoa mo ia.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>ʻOku fakasiʻisiʻi ʻe he ngaahi sivi ʻa e kumi hili hoʻo tohi ha ngaahi foʻi lea.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>Naʻe ʻikai ha ola naʻe maʻu ki he “%text”.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Naʻe ʻikai ha ola naʻe maʻu.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Toʻo ha sivi ʻi ʻolunga.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Ngaahi liliu lea</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Ngaahi ngāue</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>Fakatonutonu %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Fakatonutonu</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Fakatokanga: ʻE ʻikai toʻo ʻa e fokotuʻu ʻo e ngaahi pēkeisi.</translatio
     <message>
         <source>Help center</source>
         <translation>Senita tokoni</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Meʻa ʻi loto</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Ngaahi peesi ʻo e tohi</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Kau fakaʻaongaʻi</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Ngaahi kalasi meʻa ʻi loto</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Pule</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Peesi %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Vakai ki he ngaahi ola kotoa</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>Ngaahi ola ʻe %count</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Ola ʻe taha</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>Fokotuʻu ʻe %count</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>ʻIkai ha fokotuʻu</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Naʻe ʻikai lava ke fakahū mai ʻa e ngaahi fokotuʻu.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Ngaahi fokotuʻu</translation>
     </message>
 </context>
 <context>

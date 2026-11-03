@@ -280,6 +280,7 @@
         "Webhook": "Croatian IT usage keeps the English term Webhook"
     },
     "cze-CZ": {
+        "Relevance": "Relevance is the Czech word for relevance, spelled the same",
         "#level1 - #level2": "code, unit, key name or product name",
         "#levelIndex1:#levelIndex2": "code, unit, key name or product name",
         "%count h": "code, unit, key name or product name",
@@ -673,6 +674,7 @@
         "Webhook": "Danish uses the English term Webhook"
     },
     "dut-NL": {
+        "Filters": "Filters is the Dutch plural of filter, spelled the same (catalogue already uses 'Actieve filters')",
         "Minify": "technical term kept in English",
         "#level1 - #level2": "code, file or setting name",
         "#levelIndex1:#levelIndex2": "code, file or setting name",
@@ -1480,6 +1482,9 @@
         "WebDAV": "protocol name"
     },
     "fre-FR": {
+        "Page %number": "Page is spelled the same in French",
+        "%count suggestions": "suggestions is spelled the same in French",
+        "Suggestions": "Suggestions is spelled the same in French",
         "Phase": "the same word in French (a phase of a deploy)",
         "Phases": "the same word in French, plural",
         "Migration %id": "migration is the same word in French",
@@ -1784,6 +1789,8 @@
         "public": "French adjective public is spelled the same as English"
     },
     "ger-DE": {
+        "Name A–Z": "Name is spelled the same in German; A–Z is the same alphabet range",
+        "Name Z–A": "Name is spelled the same in German; Z–A is the same alphabet range",
         "Migration": "German word spelled the same",
         "Commit": "the same word in German (a git commit)",
         "Push": "the same word in German (a git push)",
@@ -6525,6 +6532,7 @@
         "Webhook": "Portuguese uses the English technical term webhook"
     },
     "afr-ZA": {
+        "Filters": "Filters is the Afrikaans plural of filter, spelled the same (catalogue already uses 'Aktiewe filters')",
         "Sepia": "Afrikaans word spelled the same",
         "#level1 - #level2": "placeholders only",
         "#levelIndex1:#levelIndex2": "placeholders only",
@@ -22098,6 +22106,8 @@
         "Webhook": "Breton uses the English technical term Webhook; there is no established Breton word"
     },
     "oci-FR": {
+        "%count suggestions": "Suggestions (plural of suggestion) is spelled the same in Occitan",
+        "Suggestions": "Suggestions (plural of suggestion) is spelled the same in Occitan",
         "Rectangle": "Occitan word spelled the same",
         "Contrast": "Occitan word spelled the same",
         "ID %id": "acronym and placeholder",
@@ -22709,6 +22719,7 @@
         "Div": "HTML element name (div), code"
     },
     "roh-CH": {
+        "Filters": "Filters (plural of filter) is spelled the same in Romansh",
         "Login": "same word used in Romansh",
         "%1 × %2 pixels": "Romansh plural spelled the same",
         "%1 objects": "Romansh plural spelled the same",
@@ -23066,6 +23077,7 @@
         "Webhook": "Upper Sorbian uses the English term Webhook"
     },
     "fry-NL": {
+        "Filters": "Filters is the West Frisian plural of filter, spelled the same as English",
         "GitHub Actions workflow": "the name of the GitHub product, kept in English",
         "Type": "Frisian spells type the same",
         "OK": "OK button label",

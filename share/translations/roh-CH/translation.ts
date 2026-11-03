@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>Ir a l'emprima pagina</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Auter</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>Ultims 7 dis</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Perioda definida</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Tut ils pleds</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>In pled qualunque</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Expressiun exacta</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Relevanza</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Num A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Num Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Modifitgà, ils pli novs l'emprim</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Modifitgà, ils pli vegls l'emprim</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Publitgà, ils pli novs l'emprim</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Publitgà, ils pli vegls l'emprim</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Modifitgà</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Filters</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Mussar ils filters</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Zuppentar ils filters</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Returnar</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Applitgar</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Pleds</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Tip da cuntegn</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Mussar dapli (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Tschernai in tip da cuntegn per tschertgar en in da ses attributs.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Secziun</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Da</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Fin</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>La data da cumenzament n'è betg ina data valaivla.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>La data da la fin n'è betg ina data valaivla.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Possessur</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>ID da l'utilisader, num d'annunzia u adressa dad e-mail.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>Nagin utilisader chattà per «%input».</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Lingua</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Ina lingua qualunque</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Lieu</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count lieus</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Resultats per pagina</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Resultats per «%text» (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Resultats (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Zavrar tenor</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Zavrar</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Filters activs</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Allontanar quest filter</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>U tschernai filters ed applitgai quels per enumerar il cuntegn correspundent.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Ils filters restrenschan la tschertga, uschespert che Vus avais endatà pleds.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>Nagins resultats chattads per «%text».</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Nagins resultats chattads.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Allontanai in filter survart.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Translaziuns</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Acziuns</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>Modifitgar %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Modifitgar</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Avertiment: Ils pachets na vegnan betg deinstallads.</translation>
     <message>
         <source>Help center</source>
         <translation>Center d'agid</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Cuntegn</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Paginas da documents</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Utilisaders</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Classas da cuntegn</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Administraziun</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Pagina %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Mussar tut ils resultats</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count resultats</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>In resultat</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count propostas</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Naginas propostas</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Las propostas n'han betg pudì vegnir chargiadas.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Propostas</translation>
     </message>
 </context>
 <context>

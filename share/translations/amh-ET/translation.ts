@@ -5167,6 +5167,210 @@
         <source>Go to the first page</source>
         <translation>ወደ መጀመሪያው ገጽ ሂድ</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>ሌላ</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>ባለፉት 7 ቀናት</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>ብጁ የጊዜ ክልል</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>ሁሉም ቃላት</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>ማንኛውም ቃል</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>ትክክለኛ ሐረግ</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>ተገቢነት</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>ስም A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>ስም Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>የተሻሻለ፣ አዲሱ መጀመሪያ</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>የተሻሻለ፣ የቆየው መጀመሪያ</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>የታተመ፣ አዲሱ መጀመሪያ</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>የታተመ፣ የቆየው መጀመሪያ</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>የተሻሻለ</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>ማጣሪያዎች</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>ማጣሪያዎችን አሳይ</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>ማጣሪያዎችን ደብቅ</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>እንደገና አስጀምር</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>ተግብር</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>ቃላት</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>የይዘት አይነት</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>ተጨማሪ አሳይ (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>ከባህሪያቱ በአንዱ ውስጥ ለመፈለግ አንድ የይዘት አይነት ይምረጡ።</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>ክፍል</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>ከ</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>እስከ</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>የመጀመሪያው ቀን ትክክለኛ ቀን አይደለም።</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>የመጨረሻው ቀን ትክክለኛ ቀን አይደለም።</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>ባለቤት</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>የተጠቃሚ መለያ፣ የመግቢያ ስም ወይም የኢሜይል አድራሻ።</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>ለ«%input» ምንም ተጠቃሚ አልተገኘም።</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>ቋንቋ</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>ማንኛውም ቋንቋ</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>አካባቢ</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count አካባቢዎች</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>ውጤቶች በገጽ</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>ለ«%text» ውጤቶች (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>ውጤቶች (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>ደርድር በ</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>ደርድር</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>ንቁ ማጣሪያዎች</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>ይህን ማጣሪያ አስወግድ</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>ወይም ማጣሪያዎችን ይምረጡ እና የሚዛመደውን ይዘት ለመዘርዘር ይተግብሯቸው።</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>ቃላትን ከተየቡ በኋላ ማጣሪያዎቹ ፍለጋውን ያጠባሉ።</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>ለ«%text» ምንም ውጤት አልተገኘም።</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>ምንም ውጤት አልተገኘም።</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>ከላይ ያለ አንድ ማጣሪያ ያስወግዱ።</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>ትርጉሞች</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>እርምጃዎች</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>%name አርትዕ</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>አርትዕ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13909,6 +14113,61 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Help center</source>
         <translation>የእገዛ ማዕከል</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>ይዘት</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>የሰነድ ገጾች</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>ተጠቃሚዎች</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>የይዘት ክፍሎች</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>አስተዳደር</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>ገጽ %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>ሁሉንም ውጤቶች ይመልከቱ</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count ውጤቶች</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>አንድ ውጤት</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count ጥቆማዎች</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>ምንም ጥቆማ የለም</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>ጥቆማዎቹን መጫን አልተቻለም።</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>ጥቆማዎች</translation>
     </message>
 </context>
 <context>

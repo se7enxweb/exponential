@@ -5167,6 +5167,210 @@
         <source>Go to the first page</source>
         <translation>Siirry ensimmäiselle sivulle</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Muut</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>Viimeiset 7 päivää</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Mukautettu aikaväli</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Kaikki sanat</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Mikä tahansa sana</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Tarkka ilmaus</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Osuvuus</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Nimi A–Ö</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Nimi Ö–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Muokattu, uusin ensin</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Muokattu, vanhin ensin</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Julkaistu, uusin ensin</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Julkaistu, vanhin ensin</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Muokattu</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Suodattimet</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Näytä suodattimet</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Piilota suodattimet</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Nollaa</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Käytä</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Sanat</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Sisältötyyppi</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Näytä lisää (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Valitse yksi sisältötyyppi, jotta voit hakea sen yhdestä attribuutista.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Osio</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Alkaen</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Mihin</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Alkupäivämäärä ei ole kelvollinen päivämäärä.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Loppupäivämäärä ei ole kelvollinen päivämäärä.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Omistaja</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>Käyttäjän ID, kirjautumisnimi tai sähköpostiosoite.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>Käyttäjää ei löytynyt haulla ”%input”.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Kieli</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Mikä tahansa kieli</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Sijainti</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count sijaintia</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Tuloksia sivulla</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Tulokset haulle ”%text” (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Tulokset (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Lajitteluperuste</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Lajittelu</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Aktiiviset suodattimet</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Poista tämä suodatin</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Tai valitse suodattimet ja käytä niitä, niin näet niitä vastaavan sisällön.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Suodattimet rajaavat hakua, kun olet kirjoittanut hakusanoja.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>Haulla ”%text” ei löytynyt tuloksia.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Tuloksia ei löytynyt.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Poista jokin yllä olevista suodattimista.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Käännökset</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Toiminnot</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>Muokkaa: %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Muokkaa</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13850,6 +14054,61 @@ Huomautus: pakettien asennusta ei poisteta.</translation>
     <message>
         <source>Help center</source>
         <translation>Ohjekeskus</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Sisältö</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Asiakirjasivut</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Käyttäjät</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Sisältöluokat</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Hallinta</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Sivu %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Näytä kaikki tulokset</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>Tuloksia: %count</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Yksi tulos</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count ehdotusta</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Ei ehdotuksia</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Ehdotuksia ei voitu ladata.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Ehdotukset</translation>
     </message>
 </context>
 <context>

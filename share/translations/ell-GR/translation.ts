@@ -5167,6 +5167,210 @@
         <source>Go to the first page</source>
         <translation>Μετάβαση στην πρώτη σελίδα</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Άλλο</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>Τελευταίες 7 ημέρες</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Προσαρμοσμένο διάστημα</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Όλες οι λέξεις</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Οποιαδήποτε λέξη</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Ακριβής φράση</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Συνάφεια</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Όνομα Α–Ω</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Όνομα Ω–Α</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Τροποποίηση, πρώτα τα νεότερα</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Τροποποίηση, πρώτα τα παλαιότερα</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Δημοσίευση, πρώτα τα νεότερα</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Δημοσίευση, πρώτα τα παλαιότερα</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Τροποποιήθηκε</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Φίλτρα</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Εμφάνιση φίλτρων</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Απόκρυψη φίλτρων</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Επαναφορά</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Εφαρμογή</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Λέξεις</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Τύπος περιεχομένου</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Εμφάνιση περισσότερων (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Επιλέξτε έναν τύπο περιεχομένου για να κάνετε αναζήτηση σε ένα από τα χαρακτηριστικά του.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Ενότητα</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Από</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Έως</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Η ημερομηνία έναρξης δεν είναι έγκυρη.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Η ημερομηνία λήξης δεν είναι έγκυρη.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Κάτοχος</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>ID χρήστη, όνομα σύνδεσης ή διεύθυνση email.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>Δεν βρέθηκε χρήστης για «%input».</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Γλώσσα</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Οποιαδήποτε γλώσσα</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Τοποθεσία</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count τοποθεσίες</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Αποτελέσματα ανά σελίδα</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Αποτελέσματα για «%text» (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Αποτελέσματα (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Ταξινόμηση κατά</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Ταξινόμηση</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Ενεργά φίλτρα</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Αφαίρεση αυτού του φίλτρου</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Ή επιλέξτε φίλτρα και εφαρμόστε τα για να εμφανιστεί το περιεχόμενο που αντιστοιχεί σε αυτά.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Τα φίλτρα περιορίζουν την αναζήτηση μόλις πληκτρολογήσετε λέξεις.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>Δεν βρέθηκαν αποτελέσματα για «%text».</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Δεν βρέθηκαν αποτελέσματα.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Αφαιρέστε ένα από τα παραπάνω φίλτρα.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Μεταφράσεις</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Ενέργειες</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>Επεξεργασία %name</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Επεξεργασία</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13850,6 +14054,61 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Help center</source>
         <translation>Κέντρο βοήθειας</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Περιεχόμενο</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Σελίδες εγγράφων</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Χρήστες</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Κλάσεις περιεχομένου</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Διαχείριση</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Σελίδα %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Προβολή όλων των αποτελεσμάτων</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>Αποτελέσματα: %count</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Ένα αποτέλεσμα</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count προτάσεις</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Καμία πρόταση</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Δεν ήταν δυνατή η φόρτωση των προτάσεων.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Προτάσεις</translation>
     </message>
 </context>
 <context>

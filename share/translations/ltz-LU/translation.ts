@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>Op déi éischt Säit goen</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>Anerer</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>Lescht 7 Deeg</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Eegene Zäitraum</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>All Wierder</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Iergendee Wuert</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Exakt Ausdrock</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Relevanz</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Numm A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Numm Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Geännert, neiste fir d'éischt</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Geännert, eelst fir d'éischt</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Publizéiert, neiste fir d'éischt</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Publizéiert, eelst fir d'éischt</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Geännert</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Filteren</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Filteren weisen</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Filteren verstoppen</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Zrécksetzen</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Uwenden</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Wierder</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Inhaltstyp</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Méi weisen (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Wielt een Inhaltstyp, fir an engem vu sengen Attributer ze sichen.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Sektioun</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Vun</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Bis</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Den Ufanksdatum ass keen gültegen Datum.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Den Enddatum ass keen gültegen Datum.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Besëtzer</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>Benotzer-ID, Login oder E-Mail-Adress.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>Fir „%input“ gouf kee Benotzer fonnt.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Sprooch</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>All Sprooch</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Plaz</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count Plazen</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Treffer pro Säit</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Treffer fir „%text“ (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Treffer (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Sortéieren no</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Sortéierung</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Aktiv Filteren</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Dëse Filter ewechhuelen</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Oder wielt Filteren a wendt se un, fir de passenden Inhalt opzelëschten.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>D'Filteren schränken d'Sich an, soubal Dir Wierder aginn hutt.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>Fir „%text“ goufe keng Treffer fonnt.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Et goufe keng Treffer fonnt.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Huelt e Filter uewen ewech.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Iwwersetzungen</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Aktiounen</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>%name änneren</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Änneren</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Hiweis: D'Packagen ginn net desinstalléiert.</translation>
     <message>
         <source>Help center</source>
         <translation>Hëllefszenter</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Inhalter</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Dokumentsäiten</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Benotzer</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Inhaltsklassen</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Administratioun</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Säit %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>All Treffer weisen</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count Treffer</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Een Treffer</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count Virschléi</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Keng Virschléi</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>D'Virschléi konnten net geluede ginn.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Virschléi</translation>
     </message>
 </context>
 <context>

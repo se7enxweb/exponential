@@ -5169,6 +5169,210 @@
         <source>Go to the first page</source>
         <translation>پہلے صفحے تے جاؤ</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>ہور</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>پچھلے 7 دن</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>اپنی مرضی دا عرصہ</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>سارے لفظ</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>کوئی وی لفظ</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>ہوبہو فقرہ</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>مطابقت</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>ناں A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>ناں Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>بدلیا، نویں پہلاں</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>بدلیا، پرانے پہلاں</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>چھپیا، نویں پہلاں</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>چھپیا، پرانے پہلاں</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>بدلیا</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>فلٹر</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>فلٹر وکھاؤ</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>فلٹر لکاؤ</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>ری سیٹ کرو</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>لاگو کرو</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>لفظ</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>مواد دی قسم</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>ہور وکھاؤ (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>ایہدی کسے اک خصوصیت وچ لبھن لئی مواد دی اک قسم چنو۔</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>سیکشن</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>توں</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>ول</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>شروع دی تاریخ صحیح تاریخ نہیں اے۔</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>اخیر دی تاریخ صحیح تاریخ نہیں اے۔</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>مالک</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>ورتݨ والے دی ID، لاگ ان یا ای میل پتہ۔</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>“%input” لئی کوئی ورتݨ والا نہیں لبھیا۔</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>بولی</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>کوئی وی بولی</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>تھاں</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count تھاواں</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>ہر صفحے تے نتیجے</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>“%text” دے نتیجے (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>نتیجے (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>ایس مطابق ترتیب دیو</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>ترتیب دیو</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>سرگرم فلٹر</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>ایہہ فلٹر ہٹاؤ</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>یا فلٹر چن کے لاگو کرو تاں جے رلدا مواد وکھایا جاوے۔</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>لفظ لکھن مگروں فلٹر کھوج نوں سوڑا کردے نیں۔</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>“%text” لئی کوئی نتیجہ نہیں لبھیا۔</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>کوئی نتیجہ نہیں لبھیا۔</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>اتوں اک فلٹر ہٹاؤ۔</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>ترجمے</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>کارروائیاں</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>%name سودھو</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>سودھو</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13911,6 +14115,61 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Help center</source>
         <translation>مدد دا مرکز</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>مواد</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>دستاویز دے صفحے</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>ورتݨ والے</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>مواد کلاساں</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>انتظامیہ</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>صفحہ %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>سارے نتیجے ویکھو</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count نتیجے</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>اک نتیجہ</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count صلاحاں</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>کوئی صلاح نہیں</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>صلاحاں لوڈ نہیں ہو سکیاں۔</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>صلاحاں</translation>
     </message>
 </context>
 <context>

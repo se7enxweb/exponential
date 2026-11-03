@@ -5167,6 +5167,210 @@
         <source>Go to the first page</source>
         <translation>முதல் பக்கத்திற்குச் செல்லுங்கள்</translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation>மற்றவை</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>கடந்த 7 நாட்கள்</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>தனிப்பயன் வரம்பு</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>அனைத்து சொற்களும்</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>ஏதேனும் ஒரு சொல்</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>சரியான சொற்றொடர்</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>பொருத்தம்</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>பெயர் A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>பெயர் Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>மாற்றப்பட்டது, புதியவை முதலில்</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>மாற்றப்பட்டது, பழையவை முதலில்</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>வெளியிடப்பட்டது, புதியவை முதலில்</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>வெளியிடப்பட்டது, பழையவை முதலில்</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>மாற்றப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>வடிகட்டிகள்</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>வடிகட்டிகளைக் காட்டு</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>வடிகட்டிகளை மறை</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>மீட்டமை</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>பயன்படுத்து</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>சொற்கள்</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>உள்ளடக்க வகை</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>மேலும் காட்டு (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>அதன் பண்புகளில் ஒன்றில் தேட ஒரு உள்ளடக்க வகையைத் தேர்ந்தெடுக்கவும்.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>பிரிவு</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>அனுப்புநர்</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>பெறுநர்</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>தொடக்கத் தேதி சரியான தேதி அல்ல.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>முடிவுத் தேதி சரியான தேதி அல்ல.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>உரிமையாளர்</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>பயனர் ID, உள்நுழைவுப் பெயர் அல்லது மின்னஞ்சல் முகவரி.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>“%input” க்கு பயனர் எவரும் கிடைக்கவில்லை.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>மொழி</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>எந்த மொழியும்</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>இடம்</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count இடங்கள்</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>பக்கத்திற்கு முடிவுகள்</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>“%text” க்கான முடிவுகள் (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>முடிவுகள் (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>வரிசைப்படுத்து</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>வரிசைப்படுத்து</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>செயலில் உள்ள வடிகட்டிகள்</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>இந்த வடிகட்டியை அகற்று</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>அல்லது வடிகட்டிகளைத் தேர்ந்தெடுத்து, அவற்றுடன் பொருந்தும் உள்ளடக்கத்தைப் பட்டியலிட அவற்றைப் பயன்படுத்தவும்.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>நீங்கள் சொற்களைத் தட்டச்சு செய்ததும் வடிகட்டிகள் தேடலைக் குறுக்குகின்றன.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>“%text” க்கு முடிவுகள் எதுவும் கிடைக்கவில்லை.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>முடிவுகள் எதுவும் கிடைக்கவில்லை.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>மேலே உள்ள ஒரு வடிகட்டியை அகற்றவும்.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>மொழிபெயர்ப்புகள்</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>செயல்கள்</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>%name ஐத் திருத்து</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>திருத்து</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/translationnew</name>
@@ -13909,6 +14113,61 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Help center</source>
         <translation>உதவி மையம்</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>உள்ளடக்கம்</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>ஆவணப் பக்கங்கள்</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>பயனர்கள்</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>உள்ளடக்க வகுப்புகள்</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>நிர்வாகம்</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>பக்கம் %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>அனைத்து முடிவுகளையும் காண்க</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count முடிவுகள்</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>ஒரு முடிவு</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count பரிந்துரைகள்</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>பரிந்துரைகள் இல்லை</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>பரிந்துரைகளை ஏற்ற முடியவில்லை.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>பரிந்துரைகள்</translation>
     </message>
 </context>
 <context>
