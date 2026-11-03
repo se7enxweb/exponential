@@ -29,12 +29,31 @@ class expDebugBarSession
     /** A string value longer than this many characters is cut (the length is given) */
     const VALUE_MAX = 300;
 
-    /** A session larger than this many bytes (serialized) is marked */
+    /** A session larger than this many bytes (serialized) is marked, unless debugbar.ini SessionWarnBytes says otherwise */
     const LARGE_BYTES = 65536;
 
     /** Masks when debugbar.ini [DebugBarSettings] SessionMask[] is empty: parts of key names, case-insensitive */
     const DEFAULT_MASKS = array( 'token', 'csrf', 'nonce', 'secret', 'passw', 'hash', 'key$', 'credential', 'auth',
                                  'jwt', 'bearer', 'otp', 'saml', 'assertion', 'ticket', 'sid$' );
+
+    /**
+     * Values that are secrets whatever their key is called (always on; debugbar.ini SessionValueMask[] adds more):
+     * a JSON Web Token anywhere in the text, an Authorization header's credentials, a PEM private key, and texts that
+     * are a token as a whole: well-known API key prefixes, 32 or more hex digits.
+     */
+    const SECRET_VALUE_PATTERNS = array(
+        'jwt'    => '~eyJ[A-Za-z0-9_-]{5,}\.[A-Za-z0-9_-]{5,}\.[A-Za-z0-9_-]*~',
+        'bearer' => '~\b(?:bearer|basic|digest)\s+(?=[A-Za-z0-9._+/=-]*[0-9])[A-Za-z0-9._+/=-]{12,}~i',
+        'pem'    => '~-----BEGIN [A-Z ]*PRIVATE KEY-----~',
+        'prefix' => '~^(?:sk|pk|rk)_(?:live|test)_[A-Za-z0-9]{10,}$|^gh[pousr]_[A-Za-z0-9]{20,}$|^github_pat_[A-Za-z0-9_]{20,}$|^xox[abprs]-[A-Za-z0-9-]{10,}$|^glpat-[A-Za-z0-9_-]{16,}$|^AKIA[0-9A-Z]{16}$|^sk-[A-Za-z0-9_-]{20,}$~',
+        'hex'    => '~^[A-Fa-f0-9]{32,}$~',
+    );
+
+    /** A text without spaces at least this long, of base64 characters with digits and both cases, is a random token */
+    const RANDOM_TOKEN_LENGTH = 32;
+
+    /** ... when its characters are this varied (Shannon entropy, bits per character); words and slugs stay below */
+    const RANDOM_TOKEN_ENTROPY = 4.1;
 
     /**
      * The section's data for the current request: its own session, nothing else.
@@ -54,6 +73,7 @@ class expDebugBarSession
 
         $barIni = eZINI::instance( 'debugbar.ini' );
         $masks = $barIni->hasVariable( 'DebugBarSettings', 'SessionMask' ) ? (array)$barIni->variable( 'DebugBarSettings', 'SessionMask' ) : array();
+        $valueMasks = $barIni->hasVariable( 'DebugBarSettings', 'SessionValueMask' ) ? (array)$barIni->variable( 'DebugBarSettings', 'SessionValueMask' ) : array();
 
         $handler = '';
         if ( $privileged && class_exists( 'eZSession', false ) && method_exists( 'eZSession', 'getHandlerInstance' ) )
@@ -80,7 +100,29 @@ class expDebugBarSession
             ),
             'settings'       => $settings,
         );
-        return self::forSession( $session, $frame, eZExtension::activeExtensions(), $masks );
+        return self::forSession( $session, $frame, eZExtension::activeExtensions(), $masks,
+                                 array( 'value_masks' => $valueMasks, 'warn_bytes' => self::warnBytes() ) );
+    }
+
+    /**
+     * The size from which a session is marked as large: debugbar.ini [DebugBarSettings] SessionWarnBytes, LARGE_BYTES
+     * when it is not set or not a positive number. Every request of the user reads (and may write) the whole session.
+     *
+     * @return int
+     */
+    public static function warnBytes()
+    {
+        if ( class_exists( 'eZINI' ) )
+        {
+            $ini = eZINI::instance( 'debugbar.ini' );
+            if ( $ini->hasVariable( 'DebugBarSettings', 'SessionWarnBytes' ) )
+            {
+                $value = trim( (string)$ini->variable( 'DebugBarSettings', 'SessionWarnBytes' ) );
+                if ( ctype_digit( $value ) && (int)$value > 0 )
+                    return (int)$value;
+            }
+        }
+        return self::LARGE_BYTES;
     }
 
     /**
@@ -89,12 +131,18 @@ class expDebugBarSession
      * @param string[] $extensions the active extensions, to group keys by their prefix
      * @param string[] $masks      parts of key names whose values are masked (regular expressions without delimiters,
      *                             case-insensitive); empty for DEFAULT_MASKS
-     * @return array count, bytes, large, truncated, left (keys not shown once the budget was used up), groups
-     *               (extension, keys, bytes, entries), frame
+     * @param array    $options    value_masks: more patterns of secret values (regular expressions without delimiters,
+     *                             case-sensitive; SECRET_VALUE_PATTERNS always apply), warn_bytes: the size from which
+     *                             the session is large (LARGE_BYTES)
+     * @return array count, bytes, large, warn_bytes, warnings (codes: large, file_lock), truncated, left (keys not
+     *               shown once the budget was used up), groups (extension, keys, bytes, entries), frame, text (the
+     *               masked session as plain text, asText())
      */
-    public static function forSession( array $session, array $frame, array $extensions = array(), array $masks = array() )
+    public static function forSession( array $session, array $frame, array $extensions = array(), array $masks = array(), array $options = array() )
     {
         $masks = self::masks( $masks );
+        $valueMasks = self::valueMasks( isset( $options['value_masks'] ) ? (array)$options['value_masks'] : array() );
+        $warnBytes = isset( $options['warn_bytes'] ) && (int)$options['warn_bytes'] > 0 ? (int)$options['warn_bytes'] : self::LARGE_BYTES;
         $budget = self::MAX_NODES;
         $groups = array();
         $bytes = 0;
@@ -109,7 +157,7 @@ class expDebugBarSession
                 $bytes += self::bytes( $value );
                 continue;
             }
-            $node = self::node( (string)$key, $value, 0, $budget, $masks, false );
+            $node = self::node( (string)$key, $value, 0, $budget, $masks, false, $valueMasks );
             $extension = self::extensionOf( (string)$key, $extensions );
             $id = $extension === null ? '' : $extension;
             if ( !isset( $groups[$id] ) )
@@ -126,15 +174,68 @@ class expDebugBarSession
             return strcmp( $a, $b );
         } );
         $frame['id'] = self::shortId( isset( $frame['id'] ) ? (string)$frame['id'] : '' );
-        return array(
-            'count'     => count( $session ),
-            'bytes'     => $bytes,
-            'large'     => $bytes > self::LARGE_BYTES,
-            'truncated' => $left > 0 || self::cut( $groups ),
-            'left'      => $left,
-            'groups'    => array_values( $groups ),
-            'frame'     => $frame,
+        $warnings = array();
+        if ( $bytes > $warnBytes )
+            $warnings[] = 'large';
+        // PHP's file handler locks the session file for the whole request: a user's requests run one after another
+        if ( count( $session ) && isset( $frame['save_handler'] ) && $frame['save_handler'] === 'files' )
+            $warnings[] = 'file_lock';
+        $answer = array(
+            'count'      => count( $session ),
+            'bytes'      => $bytes,
+            'large'      => $bytes > $warnBytes,
+            'warn_bytes' => $warnBytes,
+            'warnings'   => $warnings,
+            'truncated'  => $left > 0 || self::cut( $groups ),
+            'left'       => $left,
+            'groups'     => array_values( $groups ),
+            'frame'      => $frame,
         );
+        $answer['text'] = self::asText( $answer );
+        return $answer;
+    }
+
+    /**
+     * The session as plain text for "Copy as text", from the answer's nodes only, so it is masked exactly like the
+     * table: one "path = value" per line, grouped like the table; masked values as ***, the session id shortened.
+     *
+     * @param array $answer forSession() without text
+     * @return string
+     */
+    public static function asText( array $answer )
+    {
+        $lines = array( '# session: ' . (int)$answer['count'] . ' keys, ' . (int)$answer['bytes'] . ' bytes'
+                        . ( isset( $answer['frame']['id'] ) && $answer['frame']['id'] !== '' ? ', id ' . $answer['frame']['id'] : '' ) );
+        $walk = function ( array $node, $path ) use ( &$walk, &$lines ) {
+            $path = $path === '' ? $node['key'] : $path . '.' . $node['key'];
+            $type = $node['type'];
+            if ( $node['masked'] )
+                $lines[] = $path . ' = *** (' . $type . ( $node['length'] !== null ? ', ' . $node['length'] : '' ) . ')';
+            elseif ( is_array( $node['children'] ) )
+            {
+                if ( !$node['children'] && !$node['more'] )
+                    $lines[] = $path . ' = (' . $type . ', empty)';
+                foreach ( $node['children'] as $child )
+                    $walk( $child, $path );
+                if ( $node['more'] )
+                    $lines[] = $path . '.… = (' . (int)$node['more'] . ' more)';
+            }
+            elseif ( $node['depth_cut'] )
+                $lines[] = $path . ' = (' . $type . ', ' . (int)$node['length'] . ', nested too deep)';
+            elseif ( $type === 'string' )
+                $lines[] = $path . ' = ' . json_encode( (string)$node['value'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES ) . ( $node['cut'] ? ' … (' . (int)$node['length'] . ')' : '' );
+            else
+                $lines[] = $path . ' = ' . $node['value'] . ' (' . $type . ')' . ( $node['cut'] ? ' …' : '' );
+        };
+        foreach ( isset( $answer['groups'] ) ? $answer['groups'] : array() as $group )
+        {
+            $lines[] = '[' . ( $group['extension'] === null ? 'kernel' : $group['extension'] ) . ']';
+            foreach ( $group['entries'] as $node )
+                $walk( $node, '' );
+        }
+        if ( !empty( $answer['left'] ) )
+            $lines[] = '# ' . (int)$answer['left'] . ' keys not listed';
+        return implode( "\n", $lines ) . "\n";
     }
 
     /** Whether a node of the groups lists fewer children than it has (the budget or MAX_CHILDREN). */
@@ -161,14 +262,30 @@ class expDebugBarSession
      *
      * @param int  $budget nodes still allowed in this answer (counted down)
      * @param bool $masked a parent key matched a mask: everything below is masked too
-     * @return array key, type, bytes, masked, value, length, cut, children, more, depth_cut
+     * @param string[]|null $valueMasks valueMasks(): patterns of secret values; null for the defaults
+     * @return array key, type, bytes, masked, mask (why: key, value or parent; null when not masked), value, length,
+     *               cut, children, more, depth_cut
      */
-    public static function node( $key, $value, $depth, &$budget, array $masks, $masked )
+    public static function node( $key, $value, $depth, &$budget, array $masks, $masked, $valueMasks = null )
     {
         $budget--;
-        $masked = $masked || self::isMasked( $key, $masks );
-        $node = array( 'key' => self::text( $key ), 'type' => self::text( self::type( $value ) ), 'bytes' => self::bytes( $value ), 'masked' => $masked,
-                       'value' => null, 'length' => null, 'cut' => false, 'children' => null, 'more' => 0, 'depth_cut' => false );
+        if ( $valueMasks === null )
+            $valueMasks = self::valueMasks( array() );
+        $reason = $masked ? 'parent' : null;
+        $keyText = self::text( $key );
+        if ( $reason === null && self::looksSecret( (string)$key, $valueMasks ) )
+        {
+            // a secret used as a key (a token as an array index): neither the key nor what is below it is shown
+            $keyText = self::shortId( $keyText );
+            $reason = 'value';
+        }
+        if ( $reason === null && self::isMasked( (string)$key, $masks ) )
+            $reason = 'key';
+        if ( $reason === null && is_string( $value ) && self::looksSecret( $value, $valueMasks ) )
+            $reason = 'value';
+        $masked = $reason !== null;
+        $node = array( 'key' => $keyText, 'type' => self::text( self::type( $value ) ), 'bytes' => self::bytes( $value ), 'masked' => $masked,
+                       'mask' => $reason, 'value' => null, 'length' => null, 'cut' => false, 'children' => null, 'more' => 0, 'depth_cut' => false );
         if ( is_array( $value ) || is_object( $value ) )
         {
             $items = is_array( $value ) ? $value : self::objectVars( $value );
@@ -189,7 +306,7 @@ class expDebugBarSession
                     $node['more'] = $node['length'] - $shown;
                     break;
                 }
-                $node['children'][] = self::node( (string)$childKey, $childValue, $depth + 1, $budget, $masks, false );
+                $node['children'][] = self::node( (string)$childKey, $childValue, $depth + 1, $budget, $masks, false, $valueMasks );
                 $shown++;
             }
             return $node;
@@ -234,6 +351,74 @@ class expDebugBarSession
                 return true;
         }
         return false;
+    }
+
+    /**
+     * The patterns of secret values in effect: SECRET_VALUE_PATTERNS and the configured ones (debugbar.ini
+     * SessionValueMask[], regular expressions without delimiters, case-sensitive; an invalid one is taken as text).
+     *
+     * @return string[] complete regular expressions
+     */
+    public static function valueMasks( array $configured )
+    {
+        $patterns = array_values( self::SECRET_VALUE_PATTERNS );
+        foreach ( $configured as $mask )
+        {
+            $mask = trim( (string)$mask );
+            if ( $mask === '' )
+                continue;
+            $pattern = '~' . str_replace( '~', '\~', $mask ) . '~';
+            $patterns[] = @preg_match( $pattern, '' ) === false ? '~' . preg_quote( $mask, '~' ) . '~' : $pattern;
+        }
+        return $patterns;
+    }
+
+    /**
+     * Whether a text is or holds a secret, whatever its key is called: one of the patterns (valueMasks()) matches, or
+     * the text as a whole is a random token (isRandomToken()). Only the first 4096 bytes are looked at.
+     *
+     * @param string[] $valueMasks valueMasks()
+     */
+    public static function looksSecret( $text, array $valueMasks )
+    {
+        $text = (string)$text;
+        if ( strlen( $text ) < 12 )
+            return false;
+        $head = substr( $text, 0, 4096 );
+        foreach ( $valueMasks as $pattern )
+        {
+            if ( @preg_match( $pattern, $head ) === 1 )
+                return true;
+        }
+        return self::isRandomToken( trim( $head ) );
+    }
+
+    /**
+     * A text that is a random token as a whole: RANDOM_TOKEN_LENGTH or more base64 or base64url characters, no space,
+     * two or more digits and upper and lower case letters, no run of seven lower case letters (a word), at most two "/"
+     * (not a path), and varied enough (entropy) not to be a
+     * word or a slug.
+     */
+    public static function isRandomToken( $text )
+    {
+        $text = (string)$text;
+        $length = strlen( $text );
+        if ( $length < self::RANDOM_TOKEN_LENGTH || $length > 4096 || !preg_match( '~^[A-Za-z0-9+/_.-]+={0,2}$~', $text ) )
+            return false;
+        if ( !preg_match( '~[0-9]~', $text ) || !preg_match( '~[a-z]~', $text ) || !preg_match( '~[A-Z]~', $text ) )
+            return false;
+        if ( substr_count( $text, '/' ) > 2 || $text[0] === '/' || substr_count( $text, '-' ) > 4 || substr_count( $text, '.' ) > 2 )
+            return false;
+        // words: a run of seven lower case letters, or fewer than two digits (identifiers like ListOfItems2)
+        if ( preg_match( '~[a-z]{7,}~', $text ) || preg_match_all( '~[0-9]~', $text ) < 2 )
+            return false;
+        $entropy = 0.0;
+        foreach ( count_chars( $text, 1 ) as $count )
+        {
+            $p = $count / $length;
+            $entropy -= $p * log( $p, 2 );
+        }
+        return $entropy >= self::RANDOM_TOKEN_ENTROPY;
     }
 
     /**

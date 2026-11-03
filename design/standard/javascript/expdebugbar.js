@@ -413,7 +413,8 @@
       const nested = Array.isArray(n.children) && !short && (n.children.length || n.more);
       const toggle = nested ? el('button', { type: 'button', class: 'exp-debug-session-toggle', 'aria-expanded': 'false', 'aria-label': n.key, title: t('Open') }, '▸') : el('span', { class: 'exp-debug-session-toggle-space' });
       let valueCell;
-      if (n.masked) valueCell = el('span', { class: 'exp-debug-badge exp-debug-session-masked', 'data-level': 'warn' }, t('masked'));
+      const maskReason = { key: 'The key looks like a secret (debugbar.ini SessionMask[]).', value: 'The value looks like a token.', parent: 'Below a masked key.' };
+      if (n.masked) valueCell = el('span', { class: 'exp-debug-badge exp-debug-session-masked', 'data-level': 'warn', title: maskReason[n.mask] ? t(maskReason[n.mask]) : null }, t('masked'));
       else if (short) valueCell = el('code', {}, short);
       else if (nested) valueCell = el('em', { class: 'exp-debug-session-soft' }, t('%count entries', { '%count': n.length }));
       else if (Array.isArray(n.children)) valueCell = el('em', { class: 'exp-debug-session-soft' }, t('empty'));
@@ -475,9 +476,24 @@
       return el('table', { class: 'exp-debug-facts exp-debug-session-frame' }, ...rows.map((r) => el('tr', {}, el('th', {}, r[0]), el('td', {}, String(r[1])))));
     };
     const render = (a) => {
-      const parts = [el('p', { class: 'exp-debug-hint exp-debug-render-explain' }, t('Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.'))];
+      const parts = [el('p', { class: 'exp-debug-hint exp-debug-render-explain' }, t('Your own PHP session, as it was when the section was opened, never another one. Values of keys that look like secrets (tokens, hashes, passwords) are masked (debugbar.ini SessionMask[]); everything else is shown as stored, personal data too.')),
+        el('p', { class: 'exp-debug-hint exp-debug-render-explain' }, t('Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).'))];
+      // "Copy as text": the server's text of the answer, built from the masked nodes only
+      let copy = null;
+      if (a.count && typeof a.text === 'string') {
+        const status = el('span', { class: 'exp-debug-copy-status', role: 'status' });
+        const button = el('button', { type: 'button', class: 'exp-debug-button exp-debug-copy-session', title: t('The session as text, masked like the table.') }, t('Copy as text'));
+        button.addEventListener('click', () => copyText(a.text).then((ok) => {
+          status.textContent = ok ? t('Copied') : t('Could not copy.');
+          status.className = 'exp-debug-copy-status exp-debug-' + (ok ? 'ok' : 'high');
+        }));
+        copy = el('span', {}, button, ' ', status);
+      }
       parts.push(el('p', {}, el('strong', {}, t('%count keys, %size', { '%count': a.count, '%size': size(a.bytes) })), ' ',
-        a.large ? el('span', { class: 'exp-debug-badge', 'data-level': 'warn' }, t('large')) : null));
+        a.large ? el('span', { class: 'exp-debug-badge', 'data-level': 'warn' }, t('large')) : null, copy ? ' ' : null, copy));
+      const warnings = a.warnings || [];
+      if (warnings.indexOf('large') !== -1) parts.push(hint(t('The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.', { '%size': size(a.warn_bytes || 0) }), 'warn'));
+      if (warnings.indexOf('file_lock') !== -1) parts.push(hint(t('PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.'), 'warn'));
       if (!a.count) parts.push(hint(a.frame && a.frame.started ? t('The session is empty.') : t('No session was started for this request.')));
       const tables = [];
       if (a.count) {
@@ -525,7 +541,8 @@
     };
     const load = () => {
       body.replaceChildren(el('p', { class: 'exp-debug-hint', role: 'status' }, t('Loading...')));
-      call('session', {}).then((answer) => {
+      // POST with the form token: never cached, and not to be asked for by another site
+      call('session', {}, true).then((answer) => {
         if (!answer || !Array.isArray(answer.groups)) throw new Error(t('No answer'));
         render(answer);
       }).catch((err) => failure(body, err, load));

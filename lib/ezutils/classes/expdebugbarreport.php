@@ -207,6 +207,11 @@ class expDebugBarReport
             'Extension %name', 'Kernel and others',
             'Not every entry is shown: the session has more than can be listed here.',
             '%count keys are not listed.', 'Frame',
+            'Values that look like a token (a JSON Web Token, the credentials of an Authorization header, a private key, a long hex or random text) are masked too, whatever their key is called (debugbar.ini SessionValueMask[]).',
+            'The key looks like a secret (debugbar.ini SessionMask[]).', 'The value looks like a token.', 'Below a masked key.',
+            'Copy as text', 'The session as text, masked like the table.',
+            'The session is larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session, and writes it when it changed.',
+            'PHP keeps this session in files and locks the file for the whole request: requests of the same user (several tabs, AJAX calls) wait for each other.',
             'Sign in with a user who may change settings (setup/setup) to change them here.', 'Sign in with setup access to change debug settings', 'Sign in with cache access to manage caches',
             'The settings service is not available yet. The classic controls below still work.',
             'Effective value', 'Comes from', 'Write to', 'Apply', 'Applied', 'Not changed', 'Reset', 'Help',
@@ -1613,7 +1618,12 @@ class expDebugBarReport
         $html .= $item( 'Siteaccess', self::renderingValue( $u['siteaccess'] ) );
         $session = $yes( $u['session'] );
         if ( !empty( $u['session'] ) && isset( $u['session_keys'] ) )
+        {
             $session = self::h( '%count keys, %size', array( '%count' => (int)$u['session_keys'], '%size' => $size( isset( $u['session_bytes'] ) ? (int)$u['session_bytes'] : 0 ) ) );
+            // every request of the user reads the whole session (and writes it when it changed)
+            if ( !empty( $u['session_large'] ) )
+                $session .= ' <span class="exp-debug-badge" data-level="warn" title="' . self::h( 'Larger than %size (debugbar.ini SessionWarnBytes): every request of this user reads the whole session.', array( '%size' => $size( isset( $u['session_warn_bytes'] ) ? (int)$u['session_warn_bytes'] : 0 ) ) ) . '">' . self::h( 'large' ) . '</span>';
+        }
         $html .= $item( 'Session', $session );
         $profile = '<code>' . self::a( $u['profile'] ) . '</code>';
         if ( isset( $u['anonymous_profile'] ) && $u['anonymous_profile'] !== null )
@@ -1751,7 +1761,7 @@ class expDebugBarReport
     /** The start of a sub-tab's panel (subtabsHtml()); the caller closes the section. */
     protected static function subpanelStart( $scope, $id )
     {
-        return '<section class="exp-debug-subpanel" id="exp-debug-' . $scope . '-' . $id . '" role="tabpanel" aria-labelledby="exp-debug-' . $scope . '-tab-' . $id . '">';
+        return '<section class="exp-debug-subpanel" id="exp-debug-' . $scope . '-' . $id . '" role="tabpanel" tabindex="0" aria-labelledby="exp-debug-' . $scope . '-tab-' . $id . '">';
     }
 
     /** The content view cache's state as a sentence, with its reason. */

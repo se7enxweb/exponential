@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # debugbar.ini
 
-The shipped settings of `settings/debugbar.ini`: 42 blocks, 288 settings.
+The shipped settings of `settings/debugbar.ini`: 42 blocks, 291 settings.
 
 > The registry of the Exp Debug bar (the pinned bar at the bottom of a page with debug output).  
 > Guide: doc/eng-us/bc/6.0/debug-bar.md  
@@ -40,7 +40,7 @@ The shipped settings of `settings/debugbar.ini`: 42 blocks, 288 settings.
 
 | Block | Settings |
 |---|---|
-| [DebugBarSettings](DebugBarSettings.md) | 14 |
+| [DebugBarSettings](DebugBarSettings.md) | 17 |
 | [Setting_debug_output](Setting_debug_output.md) | 7 |
 | [Setting_debug_mode](Setting_debug_mode.md) | 8 |
 | [Setting_debug_redirection](Setting_debug_redirection.md) | 7 |

@@ -735,6 +735,27 @@ Registerkarte Benutzer sieht, `setup/setup` und ein anonymer Besucher, der die D
 die Session des anfragenden Requests, eine andere lässt sich nicht lesen, und nichts darin ändert die Session
 (`expDebugBarSession`, `kernel/classes/debugbar/expdebugbarsession.php`).
 
+**Maskierte Werte, der Text und die Warnungen.** Werte werden auch danach maskiert, wie sie aussehen, gleich wie ihr
+Schlüssel heißt: ein JSON Web Token irgendwo in einem Text, die Zugangsdaten eines `Authorization`-Headers
+(`Bearer …`, `Basic …`), ein privater PEM-Schlüssel, bekannte Präfixe von API-Schlüsseln (`sk_live_…`, `ghp_…`,
+`xoxb-…`, `AKIA…`), 32 oder mehr Hex-Ziffern und ein zufälliger Text aus 32 oder mehr Base64-Zeichen (Ziffern sowie
+Groß- und Kleinbuchstaben, so abwechslungsreich, dass er kein Wort und kein Slug ist). Ein Schlüssel, der selbst wie
+ein Token aussieht (ein Token als Array-Index), wird auf vier Zeichen gekürzt und mit allem darunter maskiert. Das
+Abzeichen *maskiert* nennt im Tooltip den Grund: den Namen des Schlüssels, den Wert oder einen maskierten Schlüssel
+darüber. Weitere Muster stehen in `debugbar.ini [DebugBarSettings] SessionValueMask[]` (reguläre Ausdrücke ohne
+Begrenzer, mit Rücksicht auf Groß- und Kleinschreibung; `(?i)` am Anfang für ohne), geprüft an den ersten 4096 Bytes
+jedes Textes und jedes Schlüssels; die eingebauten gelten immer. **Als Text kopieren** kopiert die Session als eine
+Zeile `Pfad = Wert` je Eintrag, gruppiert wie die Tabelle und auf dem Server aus denselben maskierten Einträgen gebaut
+(maskierte Werte als `***`, die Session-ID gekürzt), um zwei Sessions nebeneinanderzulegen oder sie einem Ticket
+beizufügen. Eine Session über `SessionWarnBytes` (65536 Bytes) ist in der Übersicht und im Unter-Reiter als *groß*
+markiert, mit dem Grund: Jeder Request des Benutzers liest die ganze Session und schreibt sie, wenn sie sich geändert
+hat. Hält PHP die Session in Dateien (`session.save_handler=files`), sagt ein Hinweis, dass die Datei für den ganzen
+Request gesperrt ist, sodass die Requests eines Benutzers (mehrere Tabs, AJAX-Aufrufe) aufeinander warten. Die Session
+wird mit POST abgefragt, angemeldet mit dem Formular-Token; eine Anfrage, die der Browser als von einer anderen Website
+gesendet markiert, wird abgelehnt (`Sec-Fetch-Site`), und die Antwort, auch eine Ablehnung, trägt `Cache-Control:
+private, no-store, max-age=0`, sodass weder der Browser noch ein Proxy noch der Antwort-Cache von Velocity sie behält.
+Tests: `expDebugBarSessionTest` (ohne Datenbank).
+
 ### Panels von Erweiterungen
 
 Eine Erweiterung kann der Leiste eine eigene Registerkarte hinzufügen, mit einem Chip in der Übersicht und Daten im

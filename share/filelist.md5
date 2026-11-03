@@ -2351,7 +2351,7 @@ ff23b2b1387845ae5f541b38a7951963  design/standard/javascript/exp_bookmarks.js
 2740d834e1c8ecb2a05b6ce65ea4ca3d  design/standard/javascript/exp_passkey.js
 3e27389cb0e9b7fcbc78aa9f77b83e9f  design/standard/javascript/exp_password_field.js
 b8c91691f6f4c2a012fac6884a2523b7  design/standard/javascript/expdebugbar-head.js
-f28da1f696135e7f43d2d9407ace62c0  design/standard/javascript/expdebugbar.js
+f88b57fd022fb3ec2d189fff84d55c0b  design/standard/javascript/expdebugbar.js
 603cddcdfbe3f90ca4c42bd0a0b2eca4  design/standard/javascript/expimagepick.js
 c9d4a91276689383a1be79bb68937c1d  design/standard/javascript/ezasynchronouspublishing.js
 c1f77f113c9e98c8d69676a294815077  design/standard/javascript/ezmedia_silverlight.js
@@ -3514,7 +3514,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-defe4a1f87f4d5998c9ac67ce634b4e7  doc/changelogs/6.0/6.0.15.md
+672e2e8f3438aadef0704240b11245df  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -3659,7 +3659,7 @@ f8dec2dfb81fbb16a107d0bde08c230b  doc/eng-us/bc/6.0/cli_cronjob_view_abstraction
 f504dbb0bd1d30709cde9b7def0b1c52  doc/eng-us/bc/6.0/content-export-menu.md
 cc90672fddc8e975d7107993d9b1cb59  doc/eng-us/bc/6.0/content-jobs.md
 ec94f35b9c29418f1c35fe46d54a157f  doc/eng-us/bc/6.0/content-object-fallback-locale.md
-72a2aebba8305a5f9cbc2e0523c9a6b9  doc/eng-us/bc/6.0/debug-bar.md
+e51b0e2dc96d3b1daa2ed2ca5282aa34  doc/eng-us/bc/6.0/debug-bar.md
 dd5a75132053a4ed2a80e386eebe7f04  doc/eng-us/bc/6.0/demo-mode.md
 68ca2915c347f13a647afb19d14748d0  doc/eng-us/bc/6.0/draft-edit-access.md
 b0fbba2abe4abadee42e57cebb5388fd  doc/eng-us/bc/6.0/eZINI_PRESERVES_COMMENTS.md
@@ -4799,12 +4799,12 @@ e4e3e5791a70691e53af802dfff23759  doc/eng-us/examples/ini-settings/dbschema/post
 ad08646bc6e997ce6796fa7d030d855d  doc/eng-us/examples/ini-settings/debug/DebugSettings.md
 578edb0b04e6e514891dec8f1c4b9e1e  doc/eng-us/examples/ini-settings/debug/GeneralCondition.md
 eb47a83bc4a42a81b7f503670a142114  doc/eng-us/examples/ini-settings/debug/README.md
-af77ae11a0e14aa605d9b7af910f936b  doc/eng-us/examples/ini-settings/debugbar/DebugBarSettings.md
+71242a2dc487186198bdd6a03e701c45  doc/eng-us/examples/ini-settings/debugbar/DebugBarSettings.md
 6e7f6cf8b13a71531053622a88d303ea  doc/eng-us/examples/ini-settings/debugbar/Preset_everything.md
 e38f45542cb8386642172412ebdfe417  doc/eng-us/examples/ini-settings/debugbar/Preset_off.md
 5efe79484121f67510be0d560f738bfc  doc/eng-us/examples/ini-settings/debugbar/Preset_sql_tuning.md
 965d7cad61cd778a8fba21977f3b5a93  doc/eng-us/examples/ini-settings/debugbar/Preset_template_work.md
-39805ad5ad56c83feefa45f5f015f414  doc/eng-us/examples/ini-settings/debugbar/README.md
+fdbf0dc3a495a5ea0a10b95ca5d012fd  doc/eng-us/examples/ini-settings/debugbar/README.md
 91769bfd728f0fd0b604d4d889ed7b65  doc/eng-us/examples/ini-settings/debugbar/Setting_always_log.md
 b904b058d2a1e42e4006b6a494b01bcc  doc/eng-us/examples/ini-settings/debugbar/Setting_condition_debug.md
 5347fe0acf6944a612b64683d98296b9  doc/eng-us/examples/ini-settings/debugbar/Setting_content_view_caching.md
@@ -4942,7 +4942,7 @@ cbea13c3582defea216d9a15b7099c12  doc/eng-us/examples/ini-settings/ezjscore-ezjs
 a3feeb41067b4f7c778c11ddf26f5597  doc/eng-us/examples/ini-settings/ezjscore-ezjscore/README.md
 357ce0b8d5486d0ecaa5aba843497a9c  doc/eng-us/examples/ini-settings/ezjscore-ezjscore/eZJSCore.md
 16f6c18459e4e7762a02b24d59774589  doc/eng-us/examples/ini-settings/ezjscore-ezjscore/ezjscServer.md
-306dcb6bc54473fd853bf43802b353d3  doc/eng-us/examples/ini-settings/ezjscore-ezjscore/ezjscServer_expdebugbar.md
+acb0d1e05ee16a3bba16c8e2978c1df4  doc/eng-us/examples/ini-settings/ezjscore-ezjscore/ezjscServer_expdebugbar.md
 3a141d7897f326ceed2bc54119e7931c  doc/eng-us/examples/ini-settings/ezjscore-ezjscore/ezjscServer_expsubitems.md
 f60c2fb6dc4c457eff39b48bd99188b1  doc/eng-us/examples/ini-settings/ezjscore-ezjscore/ezjscServer_ezajaxuploader.md
 37c89b0d49ef65557ebd1890b1268155  doc/eng-us/examples/ini-settings/ezjscore-ezjscore/ezjscServer_ezjsc.md
@@ -13417,10 +13417,10 @@ d540df62aa49e479062d2e4c943f13b8  doc/eng-us/standards/web-platform.md
 3c8a3d79f60b6093c9dfec548dd48c84  doc/ger-de/.dirnames.json
 25867792cc1baa4f05cba3bbd13a860f  doc/ger-de/.examples/descriptions/01-command-accesscheck.json
 0e81113b726d51b19af7e2cfe986c37e  doc/ger-de/.examples/descriptions/02-command-explogs-file.json
-3bb3f9ae4492b561de268b3694fb52da  doc/ger-de/.examples/descriptions/03-command-mailconsent-email.json
+066552f31c2d02e0ef4c19fb6ec49204  doc/ger-de/.examples/descriptions/03-command-mailconsent-email.json
 8d4edb28f11abb9d3e8b38917ba13fbf  doc/ger-de/.examples/descriptions/04-ini-settings-admininterface-ini-additionalmenusettings-.json
 63c0f7fffee43e3ec958b79d13d8aa59  doc/ger-de/.examples/descriptions/05-ini-settings-content-ini.json
-7efd2032e4d9ce390413dcd56a78dfba  doc/ger-de/.examples/descriptions/06-ini-settings-debugbar-ini.json
+bc5a644bae8d8d0d1737e99d4136bc7f  doc/ger-de/.examples/descriptions/06-ini-settings-debugbar-ini.json
 bd5b0554139589f14c2401226da23c27  doc/ger-de/.examples/descriptions/07-ini-settings-image-ini.json
 0044cf4bb2bff28955dc4a787bbfa02c  doc/ger-de/.examples/descriptions/08-ini-settings-package-ini.json
 00c407fcd647ee5a959e55f7a7658e10  doc/ger-de/.examples/descriptions/09-ini-settings-site-ini.json
@@ -13636,7 +13636,7 @@ db7eda525294b18a40ac90327cdfc4a9  doc/ger-de/bc/6.0/cache-konsole.md
 22387ed0bedfdd9b421e473547a4c3c1  doc/ger-de/bc/6.0/crontab-bei-der-installation.md
 ea07b67ad11528eeabcfb2c593d40818  doc/ger-de/bc/6.0/dateimodi.md
 82dae10ac5fe0c63f5922ecbf3165b4f  doc/ger-de/bc/6.0/dateirechte-beim-speichern-von-ini-dateien.md
-20e1521503e2eb203e49c2894c835d15  doc/ger-de/bc/6.0/debug-leiste.md
+a04662fdd46b72168a8bca83a0320c35  doc/ger-de/bc/6.0/debug-leiste.md
 1ca93780e39ff386b13ea6f6a76267b9  doc/ger-de/bc/6.0/demomodus.md
 639639dd0808e7a81326655b6b971a60  doc/ger-de/bc/6.0/e-mail-einstellungen.md
 c837b1b052fefd9478c4cb6452f2a62a  doc/ger-de/bc/6.0/einstellungen-fuer-seitengroessen.md
@@ -14753,12 +14753,12 @@ affdacd517aa307fea55df5c5f877157  doc/ger-de/beispiele/ini-einstellungen/dbschem
 cf1c94adcfaa645c9f6bfc7c12a6e46b  doc/ger-de/beispiele/ini-einstellungen/debug/DebugSettings.md
 18bb9968ba042a566a62be1f76d34791  doc/ger-de/beispiele/ini-einstellungen/debug/GeneralCondition.md
 f3097b09c474a4931e936a35fabbbbaf  doc/ger-de/beispiele/ini-einstellungen/debug/README.md
-43981c747a7f6d0a6fd8950693a53dc6  doc/ger-de/beispiele/ini-einstellungen/debugbar/DebugBarSettings.md
+4deed044e813937617e1788245173f1a  doc/ger-de/beispiele/ini-einstellungen/debugbar/DebugBarSettings.md
 e518502a34c06ee784ff9d9da59ef087  doc/ger-de/beispiele/ini-einstellungen/debugbar/Preset_everything.md
 ef3429601318e1c24cbcdeb98375b663  doc/ger-de/beispiele/ini-einstellungen/debugbar/Preset_off.md
 a291ddf99bc6a932e5f54c43db9b1ec8  doc/ger-de/beispiele/ini-einstellungen/debugbar/Preset_sql_tuning.md
 51d82732c868a4f7c24ad5cf281b3234  doc/ger-de/beispiele/ini-einstellungen/debugbar/Preset_template_work.md
-38eda5485b5318648763e3128aa2f59a  doc/ger-de/beispiele/ini-einstellungen/debugbar/README.md
+2334b96959692e44cb640ddbf81f7eab  doc/ger-de/beispiele/ini-einstellungen/debugbar/README.md
 6e6209eea764068970ce401128682caf  doc/ger-de/beispiele/ini-einstellungen/debugbar/Setting_always_log.md
 a25b6b979220c3f719641177768d6cab  doc/ger-de/beispiele/ini-einstellungen/debugbar/Setting_condition_debug.md
 93a4f22b07a6b7230940f6aaea075f55  doc/ger-de/beispiele/ini-einstellungen/debugbar/Setting_content_view_caching.md
@@ -14896,7 +14896,7 @@ feb1c4c20551accac65625abbe0630fd  doc/ger-de/beispiele/ini-einstellungen/extende
 2e5d89b982b247f88bae397ae7a85224  doc/ger-de/beispiele/ini-einstellungen/ezjscore-ezjscore/README.md
 a92d3e0362f0ea8a2363a5ebbf742953  doc/ger-de/beispiele/ini-einstellungen/ezjscore-ezjscore/eZJSCore.md
 f07d483b99e4cf2d715ef278e75b3f8d  doc/ger-de/beispiele/ini-einstellungen/ezjscore-ezjscore/ezjscServer.md
-fad63839fe0476f6b3212ecd7e128582  doc/ger-de/beispiele/ini-einstellungen/ezjscore-ezjscore/ezjscServer_expdebugbar.md
+0e301e921371c64be600d0e4181cfbac  doc/ger-de/beispiele/ini-einstellungen/ezjscore-ezjscore/ezjscServer_expdebugbar.md
 938cbc138399371d82ac3acc89d57a74  doc/ger-de/beispiele/ini-einstellungen/ezjscore-ezjscore/ezjscServer_expsubitems.md
 163e7faea7cee4df60d5f819a7815c63  doc/ger-de/beispiele/ini-einstellungen/ezjscore-ezjscore/ezjscServer_ezajaxuploader.md
 6c2dc67dde520d5c5f95b8c58f12eff4  doc/ger-de/beispiele/ini-einstellungen/ezjscore-ezjscore/ezjscServer_ezjsc.md
@@ -23351,7 +23351,7 @@ cb1f0862f4c6ea0793348c45f1e89806  extension/ezjscore/ezinfo.php
 eebabdb564222de9447a3200209a41fd  extension/ezjscore/modules/ezjscore/run.php
 cd79b07cce2bbd4e295736ff7c4d9bea  extension/ezjscore/settings/design.ini.append.php
 8db36481e5d6f0b49507c6531cc3639c  extension/ezjscore/settings/ezfind.ini.append.php
-05d932033938fc5ed2488e06cada2eb6  extension/ezjscore/settings/ezjscore.ini
+ca7877041d9186a495ab1e870952e1c8  extension/ezjscore/settings/ezjscore.ini
 a13eb1cb59361c9f259aa92f7a3b995b  extension/ezjscore/settings/module.ini.append.php
 6e26cbc62f8879008cd08f31618c3043  extension/ezjscore/settings/rad.ini.append.php
 b67e983627ca245b51be9f0bcf9e5a80  extension/ezjscore/settings/site.ini.append.php
@@ -24320,11 +24320,11 @@ f8f9e20684840145d6fed82d211d7d4e  kernel/classes/datatypes/ezxmltext/handlers/ou
 65e55936aafbeefca1835ecb7fa8f827  kernel/classes/debugbar/expdebugbarpanelinterface.php
 aec100be3f51b8ac680edb98e86a7125  kernel/classes/debugbar/expdebugbarpolicies.php
 e65e5cf2758771560e63ed95a0b41c9b  kernel/classes/debugbar/expdebugbarregistry.php
-63dbe84dee0aa6c7ba643566f47df08a  kernel/classes/debugbar/expdebugbarserverfunctions.php
-67aedb78e783e994b00d7add97423eb2  kernel/classes/debugbar/expdebugbarsession.php
+94d8d81c4bdbcf990377eefd101970ee  kernel/classes/debugbar/expdebugbarserverfunctions.php
+7d78edfc1759a97043d0ffe5b802677f  kernel/classes/debugbar/expdebugbarsession.php
 da343c61d8fc793d750c8ef727afe8ba  kernel/classes/debugbar/expdebugbarsettings.php
 bd109a993ddd142e8f2017620dbdb4df  kernel/classes/debugbar/expdebugbarsummary.php
-b6105dee1c157222e62f26334417d57b  kernel/classes/debugbar/expdebugbaruser.php
+978a5e4873095df2ff0a7c68b744030c  kernel/classes/debugbar/expdebugbaruser.php
 717cd5319155a524b29de28659444487  kernel/classes/debugbar/exprenderstats.php
 a59e7722d7d542f3fd37517175faf889  kernel/classes/expadminpagination.php
 b98d6d508d9e1ad1f595ec2d5a4622cb  kernel/classes/expanonymouspublicpolicies.php
@@ -26584,7 +26584,7 @@ fecb5bd298387ea48398d60640158ab3  lib/eztemplate/classes/eztemplatetypeoperator.
 0bf7054981a58617d93a74c829b2663d  lib/eztemplate/classes/eztemplateunitoperator.php
 b5a1eb2005674c257dff73cc772b37fa  lib/eztemplate/classes/eztemplatevariableelement.php
 dbb08bb0e7dd7f3871eccab2fe96c691  lib/eztemplate/classes/eztemplatewhilefunction.php
-ba77595f28a5fa60c176bc1e729d4dda  lib/ezutils/classes/expdebugbarreport.php
+41a0240bbd4f77541d27e6af38499ade  lib/ezutils/classes/expdebugbarreport.php
 85ec8b5baf7762c9e1788c1806fd1955  lib/ezutils/classes/expinfo.php
 6b10748123dbb1ee64e43d89ca7962a4  lib/ezutils/classes/ezcachehelper.php
 ec0113527fb59183b48344a81e9e5e62  lib/ezutils/classes/ezcli.php
@@ -26780,7 +26780,7 @@ d5020c505e699f2d0f7606e505c9a8d2  settings/datatype.ini
 ea68c5ba8eb753c5292a1c4dd3a5b2bc  settings/datetime.ini
 9197ab21aa5e2f4e44eb3950d1753461  settings/dbschema.ini
 0c09e0bf093c0f1f18f97705355d487c  settings/debug.ini
-f37f4a4fd852432ebbe05e4707dbdf2f  settings/debugbar.ini
+5661e1e102365af5b244d15ea96174af  settings/debugbar.ini
 b0c004af769060ac23ef847a4250a782  settings/design.ini
 b244336d7be89b1697f8232f4f0fe201  settings/editorpolicies.ini
 32345e49a48d1f9bf1251ad9dde479b7  settings/error.ini
@@ -28624,7 +28624,7 @@ e7046a7b2fa81a816312f355e49bc12f  tests/tests/kernel/classes/debugbar/expDebugBa
 1daa6d693229e9f1fbe0fd369a0b459c  tests/tests/kernel/classes/debugbar/expDebugBarPanelsTest.php
 670403b1ee71aa1a4cdf79abf1489903  tests/tests/kernel/classes/debugbar/expDebugBarPoliciesTest.php
 c2015e9a7c16465a385e07c0b2d5f198  tests/tests/kernel/classes/debugbar/expDebugBarQueryCacheTest.php
-a4e461515e7ddd51e00c776ae9ce1650  tests/tests/kernel/classes/debugbar/expDebugBarSessionTest.php
+2b8fcf8bfcc01416fc7ace195c3a703a  tests/tests/kernel/classes/debugbar/expDebugBarSessionTest.php
 913d53b83bc4e3183a697a34ce72292c  tests/tests/kernel/classes/debugbar/expDebugBarSettingsTest.php
 3a346f5a7b9d4a168c7e1aa1b488f325  tests/tests/kernel/classes/debugbar/expDebugBarSummaryPhpVersionTest.php
 0f1d0455b140eb33cbe14e800a400538  tests/tests/kernel/classes/debugbar/expDebugBarUserPoliciesTest.php

@@ -670,6 +670,24 @@ whoever sees the User tab, `setup/setup` and an anonymous visitor who gets the d
 session of the request that asks, there is no way to read another one, and nothing in it can change the session
 (`expDebugBarSession`, `kernel/classes/debugbar/expdebugbarsession.php`).
 
+**Masked values, the text and the warnings.** Values are also masked by what they look like, whatever their key is
+called: a JSON Web Token anywhere in a text, the credentials of an `Authorization` header (`Bearer …`, `Basic …`), a PEM
+private key, well-known API key prefixes (`sk_live_…`, `ghp_…`, `xoxb-…`, `AKIA…`), 32 or more hex digits, and a random
+text of 32 or more base64 characters (digits and both cases, varied enough not to be a word or a slug). A key that looks
+like a token itself (a token used as an array index) is shortened to four characters and masked with everything below
+it. The badge *masked* says in its tooltip why: the key's name, the value, or a masked key above it. More patterns go in
+`debugbar.ini [DebugBarSettings] SessionValueMask[]` (regular expressions without delimiters, case-sensitive; `(?i)` at
+the start for case-insensitive), matched against the first 4096 bytes of every text and every key; the built-in ones
+always apply. **Copy as text** copies the session as one `path = value` per line, grouped like the table and built on
+the server from the same masked entries (masked values as `***`, the session id shortened), to set two sessions side by
+side or to attach to an issue. A session larger than `SessionWarnBytes` (65536 bytes) is marked *large* in the overview
+and in the sub-tab, with the reason: every request of the user reads the whole session, and writes it when it changed.
+When PHP keeps the session in files (`session.save_handler=files`), a hint says that the file is locked for the whole
+request, so the requests of one user (several tabs, AJAX calls) wait for each other. The session is asked for with
+POST, with the form token when signed in; a request that the browser marks as sent by another site is refused
+(`Sec-Fetch-Site`), and the answer, a refusal included, carries `Cache-Control: private, no-store, max-age=0`, so
+neither the browser nor a proxy nor Velocity's response cache keeps it. Tests: `expDebugBarSessionTest` (no database).
+
 ### Panels of extensions
 
 An extension can add its own tab to the bar, with a chip in the summary and data in the page's JSON - for example

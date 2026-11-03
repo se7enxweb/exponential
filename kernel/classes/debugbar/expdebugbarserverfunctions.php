@@ -15,7 +15,8 @@
  *   expdebugbar::policies[::<role>[::<offset>[::<search>]]]
  *                                           a page of the policies of the user's roles (User tab); "-" for no role
  *                                           or search, the search as base64url
- *   expdebugbar::session                    the request's own PHP session (User tab, section Session)
+ *   expdebugbar::session                    POST (form token when signed in): the request's own PHP session (User
+ *                                           tab, section Session), never cached
  *   expdebugbar::panelheight                POST height: the open panel's height, kept in the user preference
  *                                           expdebugbar_panel_height
  *
@@ -463,12 +464,42 @@ class expDebugBarServerFunctions extends ezjscServerFunctions
     {
         $user = eZUser::currentUser();
         $loggedIn = $user instanceof eZUser && $user->isRegistered();
+        // the answer holds the user's own session: no cache or proxy may keep it, the refusal included
+        self::noStore();
         if ( !expDebugBarUser::mayView( self::canWrite(), $loggedIn, eZDebug::isDebugEnabled() ) )
             throw new InvalidArgumentException( 'The session is shown to users with setup/setup, or to an anonymous visitor who gets the debug output' );
-        // the answer holds the user's own session: no cache or proxy may keep it
-        if ( !headers_sent() )
-            header( 'Cache-Control: private, no-store' );
+        self::requireSessionRequest( $loggedIn );
         return expDebugBarSession::current( self::canWrite() );
+    }
+
+    /** Headers that keep an answer out of every cache: the browser's, a proxy's, Velocity's response cache. */
+    protected static function noStore()
+    {
+        if ( headers_sent() )
+            return;
+        header( 'Cache-Control: private, no-store, max-age=0' );
+        header( 'Pragma: no-cache' );
+        header( 'Expires: 0' );
+        header( 'X-Robots-Tag: noindex' );
+    }
+
+    /**
+     * The session is asked for with POST from the page itself: a signed-in user's request carries the form token
+     * (requirePost()); an anonymous visitor has none, so a request the browser marks as sent by another site is refused.
+     *
+     * @throws InvalidArgumentException
+     */
+    public static function requireSessionRequest( $loggedIn, $server = null )
+    {
+        if ( self::$trustRequest === true )
+            return;
+        $server = is_array( $server ) ? $server : $_SERVER;
+        if ( !isset( $server['REQUEST_METHOD'] ) || $server['REQUEST_METHOD'] !== 'POST' )
+            throw new InvalidArgumentException( 'The session is asked for with POST' );
+        if ( isset( $server['HTTP_SEC_FETCH_SITE'] ) && !in_array( strtolower( (string)$server['HTTP_SEC_FETCH_SITE'] ), array( 'same-origin', 'none' ), true ) )
+            throw new InvalidArgumentException( 'The session is only given to the page of this site' );
+        if ( $loggedIn )
+            self::requirePost();
     }
 
     /**
