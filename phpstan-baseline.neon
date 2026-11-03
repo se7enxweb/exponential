@@ -1423,12 +1423,6 @@ parameters:
 			path: kernel/private/classes/clusterfilehandlers/dfsbackends/mysqli.php
 
 		-
-			message: '#^Function mysqli_error invoked with 0 parameters, 1 required\.$#'
-			identifier: arguments.count
-			count: 1
-			path: kernel/private/classes/clusterfilehandlers/dfsbackends/mysqli.php
-
-		-
 			message: '#^Variable \$files might not be defined\.$#'
 			identifier: variable.undefined
 			count: 1
@@ -6619,12 +6613,6 @@ parameters:
 			path: kernel/shop/classes/ezsimpleprice.php
 
 		-
-			message: '#^Method eZShopOperationCollection\:\:addToBasket\(\) invoked with 2 parameters, 3 required\.$#'
-			identifier: arguments.count
-			count: 1
-			path: kernel/shop/ezshopoperationcollection.php
-
-		-
 			message: '#^Variable \$priceObj might not be defined\.$#'
 			identifier: variable.undefined
 			count: 4
@@ -6707,12 +6695,6 @@ parameters:
 			identifier: return.missing
 			count: 1
 			path: lib/ezdb/classes/ezdbinterface.php
-
-		-
-			message: '#^Function mysqli_real_escape_string invoked with 1 parameter, 2 required\.$#'
-			identifier: arguments.count
-			count: 1
-			path: lib/ezdb/classes/ezmysqlidb.php
 
 		-
 			message: '#^Method eZMySQLiDB\:\:relationList\(\) should return array but return statement is missing\.$#'
@@ -6833,12 +6815,6 @@ parameters:
 			identifier: unset.variable
 			count: 1
 			path: lib/ezi18n/classes/ezcodepage.php
-
-		-
-			message: '#^Method eZTextCodec\:\:__construct\(\) invoked with 1 parameter, 6 required\.$#'
-			identifier: arguments.count
-			count: 1
-			path: lib/ezi18n/classes/ezcodepagecodec.php
 
 		-
 			message: '#^Call to function unset\(\) contains undefined variable \$eZCodePageMapperCacheCodeDate\.$#'

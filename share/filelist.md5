@@ -25357,7 +25357,7 @@ a7b6a49383e0515be436a358acf0b05f  kernel/private/classes/asynchronouspublisherou
 63e7e6eb16bb58010107995fc0d1fcd7  kernel/private/classes/clusterfilehandlers/dfsbackends/ezdfsfilehandlerdfsbackendfactoryinterface.php
 a496bdee551b730a1a55e842899922aa  kernel/private/classes/clusterfilehandlers/dfsbackends/ezdfsfilehandlerdfsbackendinterface.php
 8046e205e0899cd793f7cdcab1bf5879  kernel/private/classes/clusterfilehandlers/dfsbackends/mysqlbackenderror.php
-92460b9bfe62fcb3b6927a3606f7784a  kernel/private/classes/clusterfilehandlers/dfsbackends/mysqli.php
+4bf292967672354cf9e58d462c74a716  kernel/private/classes/clusterfilehandlers/dfsbackends/mysqli.php
 34cef25ac2ac630af8126e12ea1f1c0f  kernel/private/classes/clusterfilehandlers/ezclustereventloggerezdebug.php
 57ba3858454b447a3ca5cff0affca3c6  kernel/private/classes/clusterfilehandlers/ezclustereventloggerphp.php
 8698335dff7c842a8251bd50413cfed9  kernel/private/classes/clusterfilehandlers/ezdfsfilehandler.php
@@ -26289,7 +26289,7 @@ fd0aec831d3c48833cebad94875b0db8  kernel/shop/editcurrency.php
 4ecc08948a810408bf0d88b2ceb7eb95  kernel/shop/editvatrule.php
 3a877cf9040fc031400b4a2ae2aa04ce  kernel/shop/errors.php
 bd0da59e39c29a94f28ef8cf6d038296  kernel/shop/ezshopfunctioncollection.php
-7b3aaa677ecf56ea15d01ff556bda824  kernel/shop/ezshopoperationcollection.php
+e9c3dd3231fe7d19e3c660f41358e360  kernel/shop/ezshopoperationcollection.php
 2e9df2fd7bfd44da7bb63bbc883c647b  kernel/shop/function_definition.php
 9d8462371921609d7473b0168e723b44  kernel/shop/module.php
 6c09adc1975cf969d95fe1e15249c736  kernel/shop/operation_definition.php
@@ -26408,7 +26408,7 @@ dbeb177b9f0f19b9931a36f338e15216  lib/ezdb/classes/ezdb.php
 b66248e35051b10fab37396107632d39  lib/ezdb/classes/ezdbquerycache.php
 5d130fa0386f0a1810c63282941ab4aa  lib/ezdb/classes/ezdbtool.php
 7ef8186a613986a90636b30fac85b4f9  lib/ezdb/classes/ezmysqlcharset.php
-6fcbf61fd8586aefce6b28a6ef386d4a  lib/ezdb/classes/ezmysqlidb.php
+30844fe013028638ef2816877e83baa5  lib/ezdb/classes/ezmysqlidb.php
 ec6538c99af5eb7c84f089898a6907d2  lib/ezdb/classes/eznulldb.php
 d2b9ad028227c37896ac352d2c697f71  lib/ezdb/classes/ezpostgresqldb.php
 4ecb51070d9a7ae2190148823ebbc4f7  lib/ezdb/classes/ezsqlite3db.php
@@ -26453,7 +26453,7 @@ cb6cdc59c329525a50d22e7ca6fcd7c4  lib/ezi18n/classes/expi18nfallbacksamelanguage
 ef099111c8e9d96ee802158105b38879  lib/ezi18n/classes/ezchartransform.php
 cfb80834e9fae3f82a86924f058c1e1b  lib/ezi18n/classes/ezcodemapper.php
 2bcc767ddb147bb85838489633c24392  lib/ezi18n/classes/ezcodepage.php
-8491e466d760e554c52d87982d5e68d5  lib/ezi18n/classes/ezcodepagecodec.php
+c10adf68bb5a67ae32e1074c3fe84a35  lib/ezi18n/classes/ezcodepagecodec.php
 e90756ddad11b827fa27287c862102f7  lib/ezi18n/classes/ezcodepagemapper.php
 b57fe186bce08e16c7b372a5cc98347c  lib/ezi18n/classes/ezmbstringmapper.php
 24ab9cf55fd681240d5290300d4fd7ff  lib/ezi18n/classes/ezrandomtranslator.php
@@ -26752,7 +26752,7 @@ d41d8cd98f00b204e9800998ecf8427e  openspec/specs/.gitkeep
 40c7a22b435e0cc56484e4822baa854b  openspec/specs/admin/search-page/spec.md
 cff22610bddd02e8cf7795f65a6e682f  openspec/specs/admin/search-suggestions/spec.md
 b30a45607707aac28b209398030287b4  phpcs.xml.dist
-d75f9c86a66f0ee1b7d3208547666681  phpstan-baseline.neon
+68174ab434c414999078f7ff1daa07f2  phpstan-baseline.neon
 1f1afac4ef3101d57248f02c262ad6d1  phpstan.neon.dist
 6c6e982564dd33e20b29beaf7e5f4330  phpunit.xml
 c981f3e6ff32017cd87f4b02adc3dfa9  robots.txt
@@ -29768,6 +29768,7 @@ db6c4a8ca3c8ccf2ed6fcbbdd2c0b803  tests/tests/kernel/requestlog/fixtures/request
 b60dc460fe5444f72a0e09fc1305a105  tests/tests/lib/ezdb/eZDBInterfaceHelpersTest.php
 8f01078350da067cc0f5ac5ca3e493fa  tests/tests/lib/ezdb/eZDBInterfaceTest.php
 ef5fbe2c38e40f6b928b749e9d1c394b  tests/tests/lib/ezdb/eZDBQueryCacheTest.php
+7314bda5496532621a536f8ad2818a57  tests/tests/lib/ezdb/eZMySQLiDBEscapeStringWithoutConnectionTest.php
 41ad6b0de2479238f509f8e4d61298ce  tests/tests/lib/ezdb/eZMySQLiDBFKTest.php
 595e7ab1cedd85478942a82e6a062c97  tests/tests/lib/ezdb/eZPostgreSQLDBEscapeStringNullTest.php
 98ac0a85b24dddc04a8ff6b0e7156c2a  tests/tests/lib/ezdb/eZPostgreSQLDBTest.php
