@@ -68,11 +68,11 @@ class Expuserexport extends ExpuserBase
                 $this->error( 'FAIL: ' . $result['error'] );
             $this->shutdown( $result['error'] !== '' ? \expUpgrade::EXIT_FAILED : \expUpgrade::EXIT_OK );
         }
-        $old = umask( 0077 );
+        // a new file, readable by its owner only before anything is written to it (personal data)
         $handle = fopen( $output, 'x' );
-        umask( $old );
         if ( !$handle )
             $this->usage( "--output: $output cannot be created" );
+        chmod( $output, \eZFile::fileMode( 0600 ) );
         $result = \expUserBulk::export( $handle, $checked['filters'], $type );
         fclose( $handle );
         $this->finish( array( 'mode' => 'export', 'type' => $type, 'output' => $output, 'count' => $result['count'],
