@@ -65,18 +65,26 @@ view cache, cache blocks and templates.
 The **User** tab (chip `<login> · VC <profile>`, with a person icon) opens with an overview of the user and has four
 sub-tabs (cache profile, preferences, roles and policies, session). It shows the user's cache profile, the fingerprint of the parts of the content view
 cache key that depend on the user, so two users can tell whether they share the cached views; their preferences and
-role assignments with links to the roles; and, for `setup/setup`, in a section loaded only when it is opened, the
+role assignments with links to the roles; and, in a section loaded only when it is opened, the
 policies of those roles, a page at a time, by role and by search (`content/read` also finds the wildcards that grant
 it), with classes, sections, siteaccesses and nodes by name; and the user's own PHP session as a table, loaded when
-its sub-tab is shown, secrets masked, grouped by extension, searchable. The tab is for `setup/setup`, and for an anonymous visitor
-who gets the debug output
+its sub-tab is shown, secrets masked, grouped by extension, searchable. The tab, as the Rendering tab, is for whoever gets the
+debug output, logged in or not, and for `setup/setup`; whoever gets the debug output also reads the settings, the
+cache list, OPcache and APCu, but changes nothing without the policies (`debugbar.ini ReadAccess`, `privileged` for
+the stricter rule)
 ([details](../../bc/6.0/debug-bar.md#user-roles-and-cache-profile)).
 
 ## Who may use it
 
-Visitors who get the debug report can see the page summary, but the settings, change log, IP test and cache list
-need the policies `setup/setup` (settings, log, IP test) or `setup/managecache` (cache list). Before this was
-tightened on the same day, any visitor shown the report could read every debug setting, with file paths.
+Whoever gets the debug report reads everything the bar shows, by default: the settings with file paths, the change
+log, the IP test, the cache list, the policies of their roles, OPcache and APCu. Changing a setting needs the policy
+`setup/setup`, clearing a cache `setup/managecache`, both with the form token. `debugbar.ini [DebugBarSettings]
+ReadAccess=privileged` keeps the reading to those policies too, the stricter rule; a site that gives
+the debug report to visitors it does not trust with its configuration sets it
+([details](../../bc/6.0/debug-bar.md#who-reads-what-readaccess)). Nobody reads other people's data: the session is
+always the visitor's own, the change log comes without who made each change and the IP and user lists are masked for
+a reader without `setup/setup`. Debug output on a public address shows every visitor their own session: set
+`ReadAccess=privileged` in production.
 
 ## Settings
 

@@ -20,9 +20,11 @@
  *   expdebugbar::panelheight                POST height: the open panel's height, kept in the user preference
  *                                           expdebugbar_panel_height
  *
- * Only summary needs debug output for this request (the people who see the report). settings, log and iptest need
- * setup/setup, the cache list and clearing caches need setup/managecache, and nothing about the configuration (values,
- * file paths, IP and user lists, the change log) goes to anybody else. Every write is a POST with the form token.
+ * Reading: summary needs debug output for this request (the people who see the report) or a policy below. settings,
+ * log, iptest and policies need setup/setup, the cache list setup/managecache; with debugbar.ini ReadAccess=debug,
+ * the default, the debug output reads them too (readsAll()), with ReadAccess=privileged nothing about the
+ * configuration (values, file paths, IP and user lists, the change log) goes to anybody else. Changing: set, undo and
+ * preset need setup/setup, clearing caches setup/managecache, always, each a POST with the form token.
  * Guide: doc/eng-us/bc/6.0/debug-bar.md
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
@@ -74,20 +76,131 @@ class expDebugBarServerFunctions extends ezjscServerFunctions
         throw new InvalidArgumentException( 'The debug bar needs debug output for this request, or the policy setup/setup or setup/managecache' );
     }
 
-    /** @throws InvalidArgumentException unless the user has setup/setup (settings, log, IP test) */
+    /**
+     * Whether this request reads everything the bar shows without the policies: it gets the debug output and
+     * debugbar.ini ReadAccess is debug, the default (expDebugBarRegistry::readsAll()). Never for a change.
+     */
+    public static function readsAll()
+    {
+        return expDebugBarRegistry::readsAll( eZDebug::isDebugEnabled() );
+    }
+
+    /** Whether the user may read what setup/setup reads (settings, log, IP test, policies, session frame). */
+    public static function canReadSetup()
+    {
+        return self::canWrite() || self::readsAll();
+    }
+
+    /** Whether the user may read the cache list. */
+    public static function canReadCache()
+    {
+        return self::canCache() || self::readsAll();
+    }
+
+    /** @throws InvalidArgumentException unless the user may read the settings, the log and the IP test (canReadSetup()) */
     public static function requireSetup()
     {
-        if ( self::canWrite() )
+        if ( self::canReadSetup() )
             return;
         throw new InvalidArgumentException( 'Sign in with setup access to change debug settings (policy setup/setup)' );
     }
 
-    /** @throws InvalidArgumentException unless the user has setup/managecache (the cache list) */
+    /** @throws InvalidArgumentException unless the user may read the cache list (canReadCache()) */
     public static function requireCache()
     {
-        if ( self::canCache() )
+        if ( self::canReadCache() )
             return;
         throw new InvalidArgumentException( 'Sign in with cache access to manage caches (policy setup/managecache)' );
+    }
+
+    /**
+     * Whether this request reads the settings, the log and the IP test without setup/setup, only because it gets the
+     * debug output (ReadAccess=debug, readsAll()). Such a reader gets nobody else's data: the change log without who
+     * made each change (forReader()), the IP and the user list masked (listsMasked()), the IP test only for the
+     * reader's own address (ownIpAnswer()). With DebugByIP disabled that reader can be every visitor of the site.
+     */
+    public static function readsWithoutPolicy()
+    {
+        return !self::canWrite() && self::readsAll();
+    }
+
+    /**
+     * Change log entries without the user id, the login and the address of whoever made each change: those are other
+     * people's data. What changed, where and when stays.
+     *
+     * @param array[] $entries expDebugBarLog::recent()
+     * @return array[]
+     */
+    public static function forReader( array $entries )
+    {
+        foreach ( $entries as $i => $entry )
+        {
+            if ( !is_array( $entry ) )
+                continue;
+            foreach ( array( 'user_id', 'user', 'ip' ) as $key )
+            {
+                if ( array_key_exists( $key, $entry ) )
+                    $entries[$i][$key] = null;
+            }
+        }
+        return $entries;
+    }
+
+    /**
+     * Settings (expDebugBarSettings::describeAll()) with the values of the IP list and the user list masked, as a
+     * secret is: their lines are the addresses and user ids of other people.
+     *
+     * @param array[] $settings
+     * @return array[]
+     */
+    public static function listsMasked( array $settings )
+    {
+        foreach ( $settings as $i => $s )
+        {
+            if ( !is_array( $s ) || !isset( $s['type'] ) || !in_array( $s['type'], array( 'iplist', 'userlist' ), true ) )
+                continue;
+            $s['secret'] = true;
+            foreach ( array( 'effective', 'default' ) as $key )
+            {
+                if ( array_key_exists( $key, $s ) )
+                    $s[$key] = expIniEditor::maskValue( $s[$key] );
+            }
+            if ( isset( $s['files'] ) && is_array( $s['files'] ) )
+            {
+                foreach ( $s['files'] as $f => $file )
+                {
+                    if ( is_array( $file ) && array_key_exists( 'value', $file ) )
+                        $s['files'][$f]['value'] = expIniEditor::maskValue( $file['value'] );
+                }
+            }
+            if ( isset( $s['scopes'] ) && is_array( $s['scopes'] ) )
+                $s['scopes'] = expIniEditor::maskValue( $s['scopes'] );
+            unset( $s['entries'] );
+            $settings[$i] = $s;
+        }
+        return $settings;
+    }
+
+    /**
+     * An IP test answer (ipAnswer()) for a reader without setup/setup: whether the reader's own address is allowed,
+     * without the lines of the list, the line that matched or the warnings that quote a line.
+     *
+     * @param array $answer
+     * @return array
+     */
+    public static function ownIpAnswer( array $answer )
+    {
+        $answer['entries'] = array();
+        $answer['matched'] = null;
+        if ( isset( $answer['request_match'] ) )
+            $answer['request_match'] = true;
+        if ( isset( $answer['warnings'] ) && is_array( $answer['warnings'] ) )
+        {
+            $answer['warnings'] = array_values( array_filter( $answer['warnings'], function ( $w ) {
+                return is_array( $w ) && isset( $w['code'] ) && in_array( $w['code'], array( 'expired', 'empty', 'lockout' ), true );
+            } ) );
+        }
+        return $answer;
     }
 
     /** @throws InvalidArgumentException unless the user has setup/setup or setup/managecache */
@@ -176,6 +289,14 @@ class expDebugBarServerFunctions extends ezjscServerFunctions
         $registry = $service->registry();
         $settings = $service->describeAll();
         $ip = self::ipAnswer( null, null, $service );
+        $log = $service->log()->recent( (int)$registry->option( 'LogListLimit', 20 ) );
+        // a reader without setup/setup (ReadAccess=debug) gets nobody else's data
+        if ( self::readsWithoutPolicy() )
+        {
+            $settings = self::listsMasked( $settings );
+            $ip = self::ownIpAnswer( $ip );
+            $log = self::forReader( $log );
+        }
         return array(
             'siteaccess' => $service->siteAccess(),
             'siteaccesses' => expIniEditor::knownSiteAccesses(),
@@ -190,7 +311,7 @@ class expDebugBarServerFunctions extends ezjscServerFunctions
             'settings' => $settings,
             'presets' => $service->presets(),
             'ip' => $ip,
-            'log' => $service->log()->recent( (int)$registry->option( 'LogListLimit', 20 ) ),
+            'log' => $log,
             'problems' => $registry->problems(),
         );
     }
@@ -378,6 +499,10 @@ class expDebugBarServerFunctions extends ezjscServerFunctions
             if ( !is_array( $list ) )
                 throw new InvalidArgumentException( 'list must be a JSON array of lines' );
         }
+        // a reader without setup/setup tests only their own address against the list in effect: another address
+        // would tell whether it is in the list
+        if ( self::readsWithoutPolicy() )
+            return self::ownIpAnswer( self::ipAnswer( null, null, self::service( self::siteAccessParam() ) ) );
         $answer = self::ipAnswer( $address !== null && $address !== '' ? (string)$address : null, is_array( $list ) ? $list : null, self::service( self::siteAccessParam() ) );
         return $answer;
     }
@@ -433,7 +558,8 @@ class expDebugBarServerFunctions extends ezjscServerFunctions
     {
         self::requireSetup();
         $limit = isset( $args[0] ) && ctype_digit( (string)$args[0] ) ? (int)$args[0] : 50;
-        return array( 'entries' => self::service()->log()->recent( min( 500, max( 1, $limit ) ) ) );
+        $entries = self::service()->log()->recent( min( 500, max( 1, $limit ) ) );
+        return array( 'entries' => self::readsWithoutPolicy() ? self::forReader( $entries ) : $entries );
     }
 
     /**
@@ -441,7 +567,7 @@ class expDebugBarServerFunctions extends ezjscServerFunctions
      * tab, a page at a time (expDebugBarPolicies::PAGE rows), with the roles and their number of policies. Everything
      * is in the path, nothing in the query string (policyArgs()): role, one of the user's role ids or "-" for all; the
      * offset of the page; the search as base64url of its UTF-8 text (it may hold "/" and "::"), "-" for none.
-     * setup/setup only, as the section.
+     * For who may read what setup/setup reads (canReadSetup()), as the section.
      *
      * @return array expDebugBarPolicies::forUser()
      */
@@ -455,8 +581,8 @@ class expDebugBarServerFunctions extends ezjscServerFunctions
     /**
      * expdebugbar::session: the PHP session of this very request for the User tab (section "Session", loaded when
      * opened): its keys as a tree, grouped by extension, values of secrets masked, and its frame. Never another
-     * session. Who sees the User tab may open it (expDebugBarUser::mayView()): setup/setup, or an anonymous visitor
-     * who gets the debug output; the save path and the handler class only with setup/setup.
+     * session. Who sees the User tab may open it (expDebugBarUser::mayView()); the save path and the handler class
+     * for who may read what setup/setup reads (canReadSetup()).
      *
      * @return array expDebugBarSession::forSession()
      */
@@ -467,9 +593,9 @@ class expDebugBarServerFunctions extends ezjscServerFunctions
         // the answer holds the user's own session: no cache or proxy may keep it, the refusal included
         self::noStore();
         if ( !expDebugBarUser::mayView( self::canWrite(), $loggedIn, eZDebug::isDebugEnabled() ) )
-            throw new InvalidArgumentException( 'The session is shown to users with setup/setup, or to an anonymous visitor who gets the debug output' );
+            throw new InvalidArgumentException( 'The session is shown to who sees the User tab (setup/setup, or the debug output under debugbar.ini ReadAccess)' );
         self::requireSessionRequest( $loggedIn );
-        return expDebugBarSession::current( self::canWrite() );
+        return expDebugBarSession::current( self::canReadSetup() );
     }
 
     /** Headers that keep an answer out of every cache: the browser's, a proxy's, Velocity's response cache. */
