@@ -3514,7 +3514,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-89fb2259f81df5a3dbab284f91b3f3c2  doc/changelogs/6.0/6.0.15.md
+3ce0299a18ab6b233b62bc2e01105219  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -4766,7 +4766,7 @@ b1f673056948bb0d843a086f10fd10c5  doc/eng-us/examples/ini-settings/cronjob/Cronj
 9c6d78f34677e9f3222a67cdac15ca34  doc/eng-us/examples/ini-settings/cronjob/PauseSettings.md
 94f338e3f61643ae434fdc8242070b40  doc/eng-us/examples/ini-settings/cronjob/README.md
 c51dc5ef2e976eb21f45099f0476b1b0  doc/eng-us/examples/ini-settings/cronjob/ScriptDocumentation.md
-9d982e789a162727c090ccad0c41fc08  doc/eng-us/examples/ini-settings/cronjob/linkCheckSettings.md
+96004d842caaccab0c37c3bc9b2755ef  doc/eng-us/examples/ini-settings/cronjob/linkCheckSettings.md
 3e8012935d68e29961356e00e3bcd156  doc/eng-us/examples/ini-settings/dashboard/DashboardBlock_all_latest_content.md
 7272c67140a11d0c7df6065bc1288156  doc/eng-us/examples/ini-settings/dashboard/DashboardBlock_audit.md
 bbb0137fa6d35b8c260c29eaf519b619  doc/eng-us/examples/ini-settings/dashboard/DashboardBlock_community_activity.md
@@ -7193,7 +7193,7 @@ fbd762b7a0907f18bac2dcccd44b49ab  doc/eng-us/guides/upgrade-check.md
 13001b8adc7ccfd3fc7f112f8aa78686  doc/eng-us/guides/upgrade-steps-for-extensions.md
 7802e3129c7532aaeee4930f967dd90d  doc/eng-us/guides/upgrading-with-the-console.md
 2a5ac35e669d76be35672a824a24ccc8  doc/eng-us/guides/upgrading.md
-5393f8cc19fb69291dad3ea780d08d8e  doc/eng-us/guides/urls-and-aliases.md
+f668db27cb3444f6364a9cfbb6fc5b51  doc/eng-us/guides/urls-and-aliases.md
 c0ef983a2b3afe72eea1bf3e56b186a3  doc/eng-us/guides/user-management-from-the-console.md
 3606b85d04c493d11cd7be6e8fe8b999  doc/eng-us/guides/verify-its-you.md
 952b7b28226e6eff085df210c88d6b08  doc/eng-us/guides/workflows.md
@@ -13419,7 +13419,7 @@ d540df62aa49e479062d2e4c943f13b8  doc/eng-us/standards/web-platform.md
 0e81113b726d51b19af7e2cfe986c37e  doc/ger-de/.examples/descriptions/02-command-explogs-file.json
 3bb3f9ae4492b561de268b3694fb52da  doc/ger-de/.examples/descriptions/03-command-mailconsent-email.json
 8d4edb28f11abb9d3e8b38917ba13fbf  doc/ger-de/.examples/descriptions/04-ini-settings-admininterface-ini-additionalmenusettings-.json
-37ce091c6d6540fd6587386c87562cbe  doc/ger-de/.examples/descriptions/05-ini-settings-content-ini.json
+63c0f7fffee43e3ec958b79d13d8aa59  doc/ger-de/.examples/descriptions/05-ini-settings-content-ini.json
 7efd2032e4d9ce390413dcd56a78dfba  doc/ger-de/.examples/descriptions/06-ini-settings-debugbar-ini.json
 bd5b0554139589f14c2401226da23c27  doc/ger-de/.examples/descriptions/07-ini-settings-image-ini.json
 0044cf4bb2bff28955dc4a787bbfa02c  doc/ger-de/.examples/descriptions/08-ini-settings-package-ini.json
@@ -13607,7 +13607,7 @@ d0f3ff1fc81771c32b16742e54f7ec95  doc/ger-de/anleitungen/twig-templates-rezepte.
 96c7e7570232e91c8971eb947b341ba1  doc/ger-de/anleitungen/umgebungsvariablen.md
 58ef9ee1db2c783c9a482cfa4b020230  doc/ger-de/anleitungen/upgrade-pruefung.md
 56e698d0f903cd6c6bcffc9ed8a67faa  doc/ger-de/anleitungen/upgrade-schritte-fuer-erweiterungen.md
-8d5e959f90212c55a89c8d9a3166c3a2  doc/ger-de/anleitungen/urls-und-aliase.md
+b11a22225b42ccc4c1ab499f48114605  doc/ger-de/anleitungen/urls-und-aliase.md
 1daf6e6c7cb5c69aa8b955e48c7d1846  doc/ger-de/anleitungen/vom-statischen-cache-zum-statischen-veroeffentlichen.md
 e3df8372cd5e4c7aa625e0fab21222ad  doc/ger-de/anleitungen/von-statischem-html-zu-exponential-und-zurueck.md
 b055f7da6714bbbb0030b07eb7b6615c  doc/ger-de/anleitungen/wartungsmodus.md
@@ -14720,7 +14720,7 @@ e40bbe46d3b4b6a00f10d05186795ac8  doc/ger-de/beispiele/ini-einstellungen/cronjob
 88bd2fc942cedb63af0e763a5ccf9b7d  doc/ger-de/beispiele/ini-einstellungen/cronjob/PauseSettings.md
 41e95d1f1ea49f094fe0fe4038aba695  doc/ger-de/beispiele/ini-einstellungen/cronjob/README.md
 b084e45e9a1a3dfdc503efcea81bb852  doc/ger-de/beispiele/ini-einstellungen/cronjob/ScriptDocumentation.md
-ca55de8d2ad5e781c4fda60a1ec433d7  doc/ger-de/beispiele/ini-einstellungen/cronjob/linkCheckSettings.md
+73979d43d14e3e075eb9592074b2242e  doc/ger-de/beispiele/ini-einstellungen/cronjob/linkCheckSettings.md
 11fcb186f658c74a11cfe1da27dc2e55  doc/ger-de/beispiele/ini-einstellungen/dashboard/DashboardBlock_all_latest_content.md
 60d6907b41d0e214113ef00d59429c86  doc/ger-de/beispiele/ini-einstellungen/dashboard/DashboardBlock_audit.md
 1a33c0c08e468f9b8dc97cf47f55657c  doc/ger-de/beispiele/ini-einstellungen/dashboard/DashboardBlock_community_activity.md
@@ -24157,7 +24157,7 @@ a225cd9252777670a7817706c7381e2e  kernel/classes/audit/index/expauditindexer.php
 aaaf00d47034b628bdbfae683d0889af  kernel/classes/audit/index/expauditindexrow.php
 a2dc36d3452ebe4d00de421884802f30  kernel/classes/audit/index/expauditindexschema.php
 4347aee266cecfbc53b8a3900ec33b64  kernel/classes/audit/index/expauditindexsettings.php
-39a3da8151ed8045a16385b607bb9dff  kernel/classes/audit/index/expauditquery.php
+71753b324871a147c26fdf7d326a0ca5  kernel/classes/audit/index/expauditquery.php
 d1225186b7113aedc4a6eb617f99f8cc  kernel/classes/audit/sinks/expauditmailrecipients.php
 e6bd8999d2acc1f9dccf7781566c8910  kernel/classes/audit/sinks/expauditmailsink.php
 1867143d708c564fca7bedc007711800  kernel/classes/audit/sinks/expauditsinkbase.php
@@ -24373,7 +24373,7 @@ e28d493c473360f6987268aad63af821  kernel/classes/expkernelservicecompiler.php
 f79bf7b16c9a294ccb4b3f401e737f55  kernel/classes/expkernelservicescope.php
 a02c47d7c7720aff231314766e7d3a64  kernel/classes/expkickstarter.php
 adec1f2bf88d5775fb39c94260f850b7  kernel/classes/expkickstarterini.php
-d8e0b1e51f5c5f56dc3982174516eb40  kernel/classes/explinkcheck.php
+4c3efce95489a61f22bdb9f9b1416d40  kernel/classes/explinkcheck.php
 30cddc09f8bfe239c9af3677ba13f8f5  kernel/classes/explovestack.php
 b236a7f128c1ec033d1905b967e9e651  kernel/classes/expmaintenance.php
 e3e7e1100de9f111a4b1001e68bd7f83  kernel/classes/expmanagedconfiguration.php
@@ -24635,7 +24635,7 @@ c03309656d9713504603a92d383af836  kernel/classes/help/content/exphelpmanualsourc
 23d8d28def612f9f13c11e7f74800151  kernel/classes/help/content/rest/exphelprestprovider.php
 bdd022a78ded90fa2ef96ce71a1bfeb3  kernel/classes/help/content/rest/exphelprestviewcontroller.php
 87426f43762967b08e1326eeecfd935a  kernel/classes/help/exphelp.php
-ff10e3cc062369710e8eb082ef7497f1  kernel/classes/help/exphelpallowlist.php
+a63ff9934a8519aa4b506d0e5cfebfee  kernel/classes/help/exphelpallowlist.php
 71dfaed2a071a130b74655f79139f7ef  kernel/classes/help/exphelpaudience.php
 0a220545866ed07af78d148550f03023  kernel/classes/help/exphelpcommitfeed.php
 5378d01788118723dc59f7347128b4cd  kernel/classes/help/exphelpcontextpageinterface.php
@@ -25581,7 +25581,7 @@ b4e438d889c9b76ff605201076b3775a  kernel/private/classes/cronjobs/contentcheck.p
 7072a4c924167fdaf87d78b378e70f08  kernel/private/classes/cronjobs/httpcache_cleanup.php
 80886fb681c768195194dfb34b03fe40  kernel/private/classes/cronjobs/indexcontent.php
 353f5f009dfa16160261b9ad3e6c4380  kernel/private/classes/cronjobs/internal_drafts_cleanup.php
-38b18a63e9ccef20a51a628f409c0911  kernel/private/classes/cronjobs/linkcheck.php
+a9f4c877d8a7e36dcddd3f034fda11e7  kernel/private/classes/cronjobs/linkcheck.php
 564ffc5ca105136bdc049a68329df0aa  kernel/private/classes/cronjobs/mailbounces.php
 97c55904085e1d1e9c764368590ead56  kernel/private/classes/cronjobs/mailpreferences.php
 5c95de7e672fc24db1e5fb9ecb400b8d  kernel/private/classes/cronjobs/migrationpush.php
@@ -25688,7 +25688,7 @@ df551836af41067da7f26ba749f2d625  kernel/private/classes/services/trashrecord.ph
 b4082711df77b72fd738d844a65feaf8  kernel/private/classes/views/audit/archives.php
 e28fc45670613a4332414abd14202ada  kernel/private/classes/views/audit/charts.php
 a1fc64c44e72681dd8fc8d78c3960b44  kernel/private/classes/views/audit/console.php
-73f3b8f3a2317b176d778e4ed5e3e7db  kernel/private/classes/views/audit/dashboard.php
+f745314ffe86de257271f5492c49d6c5  kernel/private/classes/views/audit/dashboard.php
 4157b432d6d9a5d8eaaf916f23d1e545  kernel/private/classes/views/audit/event.php
 9241358f80015adbd7bae2cea19fd3f1  kernel/private/classes/views/audit/export.php
 3f88f8fabc6f79a3cc2790eecb167c49  kernel/private/classes/views/audit/recent.php
@@ -26772,7 +26772,7 @@ de45042ac0530e8a52e3a2ac0e519d8a  settings/collaboration.ini
 1dbcfc8da1b2cb204ea10c28c2caec6b  settings/contentstructuremenu.ini
 93a7d156b36f22f7daa9640f36e8f569  settings/country.ini
 ee38fe027250131e8952f8dacf0f18c9  settings/countrygroups.ini
-91f2026ad20e70fd289f3a55c8b91fea  settings/cronjob.ini
+840f6f121943c0a444213652f2a4257d  settings/cronjob.ini
 bd5b3823ca4e81603f9fc446e6ab4e66  settings/dashboard.ini
 1dc1ef94d1fa90f311786af722de75af  settings/datatable.ini
 d5020c505e699f2d0f7606e505c9a8d2  settings/datatype.ini
@@ -28750,7 +28750,7 @@ bd8d5281bb788338a12315d0bc4eeea3  tests/tests/kernel/classes/expInstallDefaultEx
 23d42dee9d8fc4eff7348c313b71544a  tests/tests/kernel/classes/expKernelServicesTest.php
 cdc3a84370d7973c391aa502601fc541  tests/tests/kernel/classes/expKernelTransferRegistryTest.php
 3b2b910bb1e42b0e3f7b92b6a5940a16  tests/tests/kernel/classes/expLegacyForkFixesTest.php
-448f58b85fd061fe10776ed7828bb7f0  tests/tests/kernel/classes/expLinkCheckTest.php
+e2d49a13d3ace90fa9eb9d1fa6fe2190  tests/tests/kernel/classes/expLinkCheckTest.php
 3e50c9be12a35dbb019b3378de3d7236  tests/tests/kernel/classes/expLoveStackCheckTest.php
 be0d9664a26c04457647f96100bb1fa9  tests/tests/kernel/classes/expLoveStackFixture.php
 72f6ec4b6c8bf1004221b625978d8d94  tests/tests/kernel/classes/expLoveStackMigrateTest.php
