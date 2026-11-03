@@ -34,7 +34,8 @@ class expDebugOffHeaderTest extends PHPUnit\Framework\TestCase
     private function allowed( array $list )
     {
         $check = new ReflectionMethod( 'eZDebug', 'isAllowedByCurrentIP' );
-        $check->setAccessible( true );
+        if ( PHP_VERSION_ID < 80100 )
+            $check->setAccessible( true );
         return $check->invoke( null, $list );
     }
 
@@ -60,7 +61,8 @@ class expDebugOffHeaderTest extends PHPUnit\Framework\TestCase
     public function testBenchmarkSendsTheHeader()
     {
         $lines = new ReflectionMethod( 'expBenchmarkHttp', 'headerLines' );
-        $lines->setAccessible( true );
+        if ( PHP_VERSION_ID < 80100 )
+            $lines->setAccessible( true );
         $this->assertContains( 'X-Exp-Debug: off', $lines->invoke( null, array( 'headers' => array(), 'encoding' => '' ) ) );
     }
 }

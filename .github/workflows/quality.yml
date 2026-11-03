@@ -41,7 +41,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
@@ -76,7 +76,7 @@ jobs:
 
       # Node 22 or later: it reads the syntax of an ES module in a .js file without a package.json
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: '22'
 
@@ -141,7 +141,7 @@ jobs:
         run: TMPDIR="$RUNNER_TEMP" sh .githooks/check-commit-range --github ${{ steps.range.outputs.base }} ${{ steps.range.outputs.head }}
 
       - name: Cache development tools
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: .devtools/vendor
           key: ${{ runner.os }}-devtools-${{ hashFiles('composer.dev.lock') }}
@@ -166,7 +166,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -177,7 +177,7 @@ jobs:
           tools: composer:v2
 
       - name: Cache development tools
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: .devtools/vendor
           key: ${{ runner.os }}-devtools-${{ hashFiles('composer.dev.lock') }}
@@ -187,7 +187,7 @@ jobs:
         run: echo "dir=$(composer config cache-files-dir)" >> "$GITHUB_OUTPUT"
 
       - name: Cache Composer downloads
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
           key: ${{ runner.os }}-composer-phpstan-${{ hashFiles('composer.json') }}
@@ -212,7 +212,7 @@ jobs:
           COMPOSER=composer.dev.json retry composer install --no-interaction --no-progress
 
       - name: Generate autoloads
-        run: php bin/php/ezpgenerateautoloads.php -s -e || true
+        run: php bin/php/ezpgenerateautoloads.php -s -e
 
       - name: PHPStan (only findings missing from phpstan-baseline.neon fail)
         run: .devtools/vendor/bin/phpstan analyse -c phpstan.neon.dist --memory-limit=4G --no-progress
@@ -224,7 +224,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       # The project's PHPUnit needs PHP 8.4.1 or later
       - name: Setup PHP
@@ -236,7 +236,7 @@ jobs:
           tools: composer:v2
 
       - name: Cache development tools
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: .devtools/vendor
           key: ${{ runner.os }}-devtools-${{ hashFiles('composer.dev.lock') }}
@@ -246,7 +246,7 @@ jobs:
         run: echo "dir=$(composer config cache-files-dir)" >> "$GITHUB_OUTPUT"
 
       - name: Cache Composer downloads
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
           key: ${{ runner.os }}-composer-sniffs-${{ hashFiles('composer.json') }}
@@ -275,7 +275,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Setup PHP 8.0, the oldest supported version (the stock PHP of RHEL 9)
         uses: shivammathur/setup-php@v2
@@ -298,7 +298,7 @@ jobs:
         run: echo "dir=$(composer config cache-files-dir)" >> "$GITHUB_OUTPUT"
 
       - name: Cache Composer downloads
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
           key: ${{ runner.os }}-composer-php80-${{ hashFiles('composer.json') }}
@@ -330,7 +330,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Setup PHP 7.4, for sites that cannot move to PHP 8 yet
         uses: shivammathur/setup-php@v2
@@ -351,7 +351,7 @@ jobs:
         run: echo "dir=$(composer config cache-files-dir)" >> "$GITHUB_OUTPUT"
 
       - name: Cache Composer downloads
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
           key: ${{ runner.os }}-composer-php74-${{ hashFiles('composer.json') }}

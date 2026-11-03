@@ -584,7 +584,8 @@ class MailPreferencesHardeningTest extends PHPUnit\Framework\TestCase
             $opts['http']['content'] = $body;
         $started = microtime( true );
         $answer = @file_get_contents( $url, false, stream_context_create( $opts ) );
-        $headers = isset( $http_response_header ) ? $http_response_header : array();
+        // PHP 8.4 reads the headers with http_get_last_response_headers(); 8.5 deprecates $http_response_header
+        $headers = function_exists( 'http_get_last_response_headers' ) ? (array)http_get_last_response_headers() : ( get_defined_vars()['http_response_header'] ?? array() );
         $status = $headers && preg_match( '#^HTTP/\S+ (\d{3})#', $headers[0], $m ) ? (int)$m[1] : 0;
         return array( 'status' => $status, 'headers' => implode( "\n", $headers ), 'body' => $answer === false ? '' : $answer,
                       'seconds' => microtime( true ) - $started );

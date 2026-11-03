@@ -33,7 +33,6 @@
  */
 if ( interface_exists( 'expQueueHandler' ) && class_exists( 'expQueueHandlerBase' ) )
 {
-    // @phpstan-ignore-next-line expqueue is an extension: its classes exist only where it is active
     class expKernelTransferQueueHandler extends expQueueHandlerBase
     {
         public function validate( array $payload )

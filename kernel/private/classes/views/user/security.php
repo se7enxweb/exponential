@@ -112,8 +112,10 @@ class Security extends \Exponential\Runnable\ModuleView
             $http->removeSessionVariable( self::MESSAGE_SESSION );
         }
 
-        $filter = isset( $_GET['filter'] ) && is_string( $_GET['filter'] ) && in_array( $_GET['filter'], \expUserSecurityActivity::FILTERS, true )
-            ? $_GET['filter'] : 'all';
+        // the view parameter (filter); never the query string
+        $filter = (string)\expViewParameters::get( $Params, 'filter' );
+        if ( !in_array( $filter, \expUserSecurityActivity::FILTERS, true ) )
+            $filter = 'all';
         $available = \expUserSecurityActivity::available();
         $offset = isset( $Params['Offset'] ) ? max( 0, (int)$Params['Offset'] ) : 0;
         $count = $available ? \expUserSecurityActivity::count( $userID, $filter ) : 0;

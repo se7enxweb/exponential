@@ -12,7 +12,8 @@ namespace Exponential\View\Kernel\User
 
 /**
  * user/hygiene, "Check user accounts": the user accounts of the installation, or those below a user group, narrowed
- * by one filter and a search (GET filter, days, group, q), ordered (sort, order) and paged (limit, (offset)); see
+ * by one filter and a search (view parameters (filter), (days), (group), (q); the filter form is posted and answered
+ * with a 303 to them), ordered ((sort), (order)) and paged ((limit), (offset)); see
  * expUserHygiene. Three bulk actions on the ticked accounts (UserIDArray[]): DisableButton, EnableButton and
  * UnlockButton show a confirmation page with the counts, whose ConfirmButton (HygieneAction) does the action, each
  * account decided again just before (expUserHygiene::decide()). ExportButton sends the CSV of the whole filtered list.
@@ -45,7 +46,18 @@ class Hygiene extends \Exponential\Runnable\ModuleView
         $currentUser = \eZUser::currentUser();
         $canSeeEmail = self::canSeeEmail( $currentUser );
 
-        $filters = \expUserHygiene::normaliseFilters( $_GET, $canSeeEmail );
+        // the filter form (POST): answered with a 303 to the same filters as view parameters, from the first page;
+        // a filter is never read from the query string
+        if ( $http->hasPostVariable( 'FilterButton' ) )
+        {
+            $posted = array();
+            foreach ( array( 'filter', 'days', 'group', 'q', 'sort', 'order', 'limit' ) as $name )
+                $posted[$name] = \expViewParameters::posted( $_POST, $name );
+            $posted = \expUserHygiene::normaliseFilters( $posted, $canSeeEmail );
+            return \expViewParameters::redirect( 'user/hygiene' . \expUserHygiene::viewParameters( $posted ) );
+        }
+
+        $filters = \expUserHygiene::normaliseFilters( \expUserHygiene::viewParameterInput( $Params ), $canSeeEmail );
         $groupPath = null;
         if ( $filters['group'] > 0 )
         {
@@ -54,7 +66,7 @@ class Hygiene extends \Exponential\Runnable\ModuleView
             if ( $groupPath === null )
                 $filters['group'] = 0;
         }
-        $query = \expUserHygiene::queryString( $filters );
+        $query = \expUserHygiene::viewParameters( $filters );
         $hygiene = \expUserHygiene::fromDatabase();
 
         $isPost = \eZSys::serverVariable( 'REQUEST_METHOD', true ) === 'POST';

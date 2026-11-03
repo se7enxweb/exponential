@@ -45,13 +45,13 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       # The design tests run admin4 JavaScript in node and FAIL without it where CI is set
       # (tests/tests/design/AdminNodeBinary.php), so node is installed here instead of relying on the image.
       # Node 22 or later, as the JavaScript syntax check of quality.yml.
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: '22'
 
@@ -73,7 +73,7 @@ jobs:
         run: echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
 
       - name: Cache Composer dependencies
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
           key: ${{ runner.os }}-composer-php${{ matrix.php }}-${{ hashFiles('composer.json', '.github/workflows/phpunit.yml') }}
@@ -114,7 +114,7 @@ jobs:
 
       # Optional but recommended – regenerates autoloads the same way the project does
       - name: Generate autoloads
-        run: php bin/php/ezpgenerateautoloads.php -s -e || true
+        run: php bin/php/ezpgenerateautoloads.php -s -e
 
       # The run below takes every suite of phpunit.xml. The live-installation suites (expservices, ezoe,
       # cjw_newsletter, explayouts_admin, ...) find no installed site here and skip each class with the reason
@@ -205,13 +205,13 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       # The design tests run admin4 JavaScript in node and FAIL without it where CI is set
       # (tests/tests/design/AdminNodeBinary.php), so node is installed here instead of relying on the image.
       # Node 22 or later, as the JavaScript syntax check of quality.yml.
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: '22'
 
@@ -233,7 +233,7 @@ jobs:
         run: echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
 
       - name: Cache Composer dependencies
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: ${{ steps.composer-cache-db.outputs.dir }}
           key: ${{ runner.os }}-composer-db-php${{ matrix.php }}-${{ hashFiles('composer.json', '.github/workflows/phpunit.yml') }}
@@ -264,7 +264,7 @@ jobs:
           test -x vendor/bin/phpunit
 
       - name: Generate autoloads
-        run: php bin/php/ezpgenerateautoloads.php -s -e || true
+        run: php bin/php/ezpgenerateautoloads.php -s -e
 
       - name: Prepare database
         run: |

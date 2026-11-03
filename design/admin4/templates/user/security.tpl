@@ -121,7 +121,7 @@
         <nav aria-label="{'Show'|i18n( 'design/admin/user/security' )|wash}">
         <ul class="a4-tabs">
         {foreach $security_filters as $f}
-            <li>{if eq( $f, $security_filter )}<span class="is-current" aria-current="true">{$filter_names[$f]|wash}</span>{else}<a href={concat( $security_action, cond( eq( $f, 'all' ), '', concat( '?filter=', $f ) ) )|ezurl}>{$filter_names[$f]|wash}</a>{/if}</li>
+            <li>{if eq( $f, $security_filter )}<span class="is-current" aria-current="true">{$filter_names[$f]|wash}</span>{else}<a href={concat( $security_action, cond( eq( $f, 'all' ), '', concat( '/(filter)/', $f ) ) )|ezurl}>{$filter_names[$f]|wash}</a>{/if}</li>
         {/foreach}
         </ul>
         </nav>
@@ -160,7 +160,7 @@
         {include name=navigator
                  uri='design:navigator/google.tpl'
                  page_uri=concat( '/', $security_action )
-                 page_uri_suffix=cond( eq( $security_filter, 'all' ), '', concat( '?filter=', $security_filter ) )
+                 page_uri_suffix=cond( eq( $security_filter, 'all' ), '', concat( '/(filter)/', $security_filter ) )
                  item_count=$security_count
                  view_parameters=$view_parameters
                  item_limit=$security_limit}
