@@ -5,6 +5,8 @@
  *
  *  US-1 UE-1 create        US-2 UE-2 edit           US-3 UE-3 disable and enable   US-4 UE-4 reset the password
  *  US-5 UE-5 registration  US-6 UE-6 delete, find   US-7 UE-7 list and show
+ *  US-8 to US-14: UE-8 to UE-14 of expUserGroupsBulkEngineChecks (groups, roles, unlock, check-login, import and
+ *  export, bulk, the read-only tools)
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -13,11 +15,13 @@
 
 require_once dirname( __DIR__ ) . '/migration/expMigrationRunnerEngineChecks.php';
 require_once __DIR__ . '/expUserManagerEngineChecks.php';
+require_once __DIR__ . '/expUserGroupsBulkEngineChecks.php';
 
 class expUserManagerSqliteTest extends PHPUnit\Framework\TestCase
 {
     use expMigrationRunnerEngineChecks;
     use expUserManagerEngineChecks;
+    use expUserGroupsBulkEngineChecks;
 
     /** @var eZSQLite3DB|null */
     private $db;
@@ -85,5 +89,47 @@ class expUserManagerSqliteTest extends PHPUnit\Framework\TestCase
     public function testList()
     {
         $this->checkList();
+    }
+
+    /** US-8 UE-8 */
+    public function testGroups()
+    {
+        $this->checkGroups();
+    }
+
+    /** US-9 UE-9 */
+    public function testRoles()
+    {
+        $this->checkRoles();
+    }
+
+    /** US-10 UE-10 */
+    public function testUnlockAndMark()
+    {
+        $this->checkUnlockAndMark();
+    }
+
+    /** US-11 UE-11 */
+    public function testCheckLogin()
+    {
+        $this->checkCheckLogin();
+    }
+
+    /** US-12 UE-12 */
+    public function testImportExport()
+    {
+        $this->checkImportExport();
+    }
+
+    /** US-13 UE-13 */
+    public function testBulk()
+    {
+        $this->checkBulk();
+    }
+
+    /** US-14 UE-14 */
+    public function testReadOnlyTools()
+    {
+        $this->checkReadOnlyTools();
     }
 }

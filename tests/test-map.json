@@ -2971,6 +2971,20 @@
     "tests/tests/kernel/classes/user/expUserManagerEngineChecks.php": [
       "tests/tests/kernel/classes/user/expUserManagerSqliteTest.php",
       "tests/tests/kernel/classes/user/expUserManagerDatabaseTest.php"
+    ],
+    "kernel/classes/user/expusergroupmanager.php": [
+      "tests/tests/kernel/classes/user/expUserCommandContractTest.php",
+      "tests/tests/kernel/classes/user/expUserManagerSqliteTest.php",
+      "tests/tests/kernel/classes/user/expUserManagerDatabaseTest.php"
+    ],
+    "kernel/classes/user/expuserbulk.php": [
+      "tests/tests/kernel/classes/user/expUserCommandContractTest.php",
+      "tests/tests/kernel/classes/user/expUserManagerSqliteTest.php",
+      "tests/tests/kernel/classes/user/expUserManagerDatabaseTest.php"
+    ],
+    "tests/tests/kernel/classes/user/expUserGroupsBulkEngineChecks.php": [
+      "tests/tests/kernel/classes/user/expUserManagerSqliteTest.php",
+      "tests/tests/kernel/classes/user/expUserManagerDatabaseTest.php"
     ]
   },
   "generated": {
