@@ -27,7 +27,7 @@ schemes. Getting the order wrong is one of the easiest mistakes to make in relea
 |---|---|---|
 | `v6.0.14` | The Git tag of a release | "Exponential 6.0.14" (no `v` in running text) |
 | `6.0.14` | Changelogs, Packagist | "Exponential 6.0.14" |
-| `6.0.15stable` | `lib/version.php` on the `main` branch | "the 6.0.15 development line", never "6.0.15 stable" |
+| `6.0.15stable` | `lib/version.php` on the `main` branch | "the 6.0.15 line", never "6.0.15 stable" |
 | `dev-main`, `6.0.x-dev` | Composer names for the `main` branch | "the development branch" |
 | `v0.0.4.50` | A Velocity release tag | "Exponential Velocity 0.0.4.50" |
 

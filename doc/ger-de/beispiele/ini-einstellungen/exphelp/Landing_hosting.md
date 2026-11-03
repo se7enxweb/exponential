@@ -31,7 +31,7 @@ StartPage=help/hosting/hosting-companies-start-here.md
 
 ## InfoPages
 
-Standard: eine Liste mit 10: `help/hosting/operations/migrations-on-hosted-sites.md`, `help/migrations/README.md`, `help/migrations/migrations-versus-migrating-a-site.md`, `help/migrations/recipes/deploying-with-migrations.md`, `help/migrations/recipes/engine-notes.md`, `help/migrations/recipes/captions-and-rollback-in-practice.md`, `help/hosting/static-publishing-and-your-hosting.md`, `guides/host-static-sites-on-github-pages.md`, `help/static-publishing/github-pages-limits-and-terms.md`, `help/static-publishing/keep-private-content-private.md`.
+Standard: eine Liste mit 11: `help/hosting/operations/migrations-on-hosted-sites.md`, `help/migrations/README.md`, `help/migrations/migrations-versus-migrating-a-site.md`, `help/migrations/recipes/deploying-with-migrations.md`, `help/migrations/add-a-remote-step-by-step.md`, `help/migrations/recipes/engine-notes.md`, `help/migrations/recipes/captions-and-rollback-in-practice.md`, `help/hosting/static-publishing-and-your-hosting.md`, `guides/host-static-sites-on-github-pages.md`, `help/static-publishing/github-pages-limits-and-terms.md`, `help/static-publishing/keep-private-content-private.md`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -43,6 +43,7 @@ InfoPages[]=help/hosting/operations/migrations-on-hosted-sites.md
 InfoPages[]=help/migrations/README.md
 InfoPages[]=help/migrations/migrations-versus-migrating-a-site.md
 InfoPages[]=help/migrations/recipes/deploying-with-migrations.md
+InfoPages[]=help/migrations/add-a-remote-step-by-step.md
 InfoPages[]=help/migrations/recipes/engine-notes.md
 InfoPages[]=help/migrations/recipes/captions-and-rollback-in-practice.md
 InfoPages[]=help/hosting/static-publishing-and-your-hosting.md

@@ -37,8 +37,8 @@ Ein Mensch ist verantwortlich für das, was online geht.
 
 ## Was neu ist, und seit wann
 
-Der Assistent kam am 12. Oktober 2026 in die Distribution von Exponential, in der Entwicklungslinie 6.0.15, die nicht
-erschienen ist ([Changelog von 6.0.15](../../../changelogs/6.0/6.0.15.md#12-october-2026-exponential-intelligence-in-the-distribution)).
+Der Assistent kam am 12. Oktober 2026 in die Distribution von Exponential, in der Linie 6.0.15
+([Changelog von 6.0.15](../../../changelogs/6.0/6.0.15.md#12-october-2026-exponential-intelligence-in-the-distribution)).
 Die Regel „nur Entwürfe“ ist ab diesem Zeitpunkt auf der Funktionsseite der Erweiterung und in der README beschrieben.
 
 ## Die Schutzmechanismen, einer nach dem anderen

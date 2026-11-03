@@ -31,7 +31,8 @@ settings writes, cache clears, deploys, orders and VAT changes. The log is on by
 read from the admin interface or the command line" ([The audit trail](../../features/6.0/audit-trail.md)). "Every
 record carries the hash of the record before it (a hash chain)", and a `verify` command tells whether anything was
 edited or cut. The trail is also careful about the people it records: addresses are truncated and passwords are never
-written down. (6.0.15 is in development and not released; the feature was added on 2 October 2026.)
+written down. (The feature belongs to the 6.0.15 line and was added on 2 October 2026; that is the date of the change, not a
+release date.)
 
 ## What is new, and when
 

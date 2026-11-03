@@ -42,7 +42,7 @@ $result = eZFunctionHandler::execute( 'content', 'class_list', array( 'as_object
 
 ## In einem ausgelieferten Template
 
-Die erste Verwendung in den Templates dieser Installation, `design/admin/templates/visual/templatecreate.tpl` Zeile 136:
+Die erste Verwendung in den Templates dieser Installation, `design/admin/templates/visual/templatecreate.tpl` Zeile 110:
 
 ```tpl
 {section name=Class loop=fetch('content', 'class_list', hash('sorts', array()))}

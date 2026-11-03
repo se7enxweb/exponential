@@ -29,10 +29,10 @@ Aus der Parameterliste oben gebildet; die Werte sind Platzhalter (die Template-H
 
 ## In einem ausgelieferten Template
 
-Die erste Verwendung in den Templates dieser Installation, `design/admin/templates/content/search.tpl` Zeile 48:
+Die erste Verwendung in den Templates dieser Installation, `design/admin/templates/exphelp/search.tpl` Zeile 193:
 
 ```tpl
-{let adv_url=concat( '/content/advancedsearch/', $search_text|count|gt( 0 )|choose('', concat( '?SearchText=', $search_text|urlencode ) ) )|ezurl}
+{foreach $help_search.suggest as $word}<a class="a4-tag" href={concat( '/exphelp/search/(q)/', $word|urlencode )|ezurl}>{$word|wash}</a>{delimiter} {/delimiter}{/foreach}
 ```
 
 ## Siehe auch

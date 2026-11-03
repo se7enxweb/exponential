@@ -134,7 +134,7 @@ class expUserHygiene
     }
 
     /**
-     * The filters of a request (its GET variables), each normalised: filter (one of filters()), days (1 to MAX_DAYS),
+     * The filters of a request (its view parameters, see viewParameterInput()), each normalised: filter (one of filters()), days (1 to MAX_DAYS),
      * group (a node id or 0), q (the search), sort (one of SORTS; email only for a viewer who may see e-mail
      * addresses), order (asc, desc), limit (one of LIMITS).
      *
@@ -163,14 +163,15 @@ class expUserHygiene
     }
 
     /**
-     * The query string of a set of filters, for links and forms: only the values that differ from the defaults,
-     * with an optional change (e.g. array( 'sort' => 'login' )). Starts with "?" unless empty.
+     * The view parameters of a set of filters, /(name)/value, for links, the pager and the redirect of the filter
+     * form: only the values that differ from the defaults, with an optional change (e.g. array( 'sort' => 'login' )).
+     * '' when none differs.
      *
      * @param array $filters see normaliseFilters()
      * @param array $change
      * @return string
      */
-    public static function queryString( array $filters, array $change = array() )
+    public static function viewParameters( array $filters, array $change = array() )
     {
         $filters = $change + $filters;
         $defaults = array( 'filter' => self::FILTERS[0], 'days' => self::DEFAULT_DAYS, 'group' => 0, 'q' => '',
@@ -184,11 +185,29 @@ class expUserHygiene
                 continue;
             $parts[$name] = (string)$filters[$name];
         }
-        return $parts ? '?' . http_build_query( $parts, '', '&', PHP_QUERY_RFC3986 ) : '';
+        return expViewParameters::suffix( $parts );
     }
 
     /**
-     * The query strings of the page's links (see queryString()): filters (filter => the list with that filter, from
+     * The filter fields of a request's view parameters (see viewParameters()), for normaliseFilters().
+     *
+     * @param array $params the view's $Params
+     * @return array
+     */
+    public static function viewParameterInput( array $params )
+    {
+        $input = array();
+        foreach ( array( 'filter', 'days', 'group', 'q', 'sort', 'order', 'limit' ) as $name )
+        {
+            $value = expViewParameters::get( $params, $name );
+            if ( $value !== false )
+                $input[$name] = $value;
+        }
+        return $input;
+    }
+
+    /**
+     * The view parameters of the page's links (see viewParameters()): filters (filter => the list with that filter, from
      * its first page; shared e-mail addresses ordered by address), sorts (column => that order; the current column reversed; a new column descending for the
      * last visit and the sign-ins, ascending for the rest; email only with $canSeeEmail) and clear (no search, every
      * group).
@@ -200,7 +219,7 @@ class expUserHygiene
     public static function links( array $filters, $canSeeEmail )
     {
         $links = array( 'filters' => array(), 'sorts' => array(),
-                        'clear' => self::queryString( $filters, array( 'q' => '', 'group' => 0 ) ) );
+                        'clear' => self::viewParameters( $filters, array( 'q' => '', 'group' => 0 ) ) );
         foreach ( self::filters( $canSeeEmail ) as $filter )
         {
             $change = array( 'filter' => $filter );
@@ -209,7 +228,7 @@ class expUserHygiene
                 $change += array( 'sort' => 'email', 'order' => 'asc' );
             elseif ( $filter === 'duplicate_login' )
                 $change += array( 'sort' => 'login', 'order' => 'asc' );
-            $links['filters'][$filter] = self::queryString( $filters, $change );
+            $links['filters'][$filter] = self::viewParameters( $filters, $change );
         }
         foreach ( array( 'name', 'login', 'email', 'last_visit', 'login_count' ) as $column )
         {
@@ -219,7 +238,7 @@ class expUserHygiene
                 $order = $filters['order'] === 'asc' ? 'desc' : 'asc';
             else
                 $order = in_array( $column, array( 'last_visit', 'login_count' ), true ) ? 'desc' : 'asc';
-            $links['sorts'][$column] = self::queryString( $filters, array( 'sort' => $column, 'order' => $order ) );
+            $links['sorts'][$column] = self::viewParameters( $filters, array( 'sort' => $column, 'order' => $order ) );
         }
         return $links;
     }

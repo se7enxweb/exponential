@@ -42,7 +42,7 @@ git fetch --tags
 git tag -l 'v*' --sort=version:refname | tail -5
 ```
 
-- Veröffentlichte Tags `v6.0.0` bis `v6.0.14` existieren; 6.0.15 ist in Entwicklung
+- Veröffentlichte Tags ab `v6.0.0` (bis `v6.0.14` am 7. Juni 2026) existieren; 6.0.15 ist die aktuelle Linie
   ([Quellcodeverwaltung und Releases](../../../../standards/versionsverwaltung-und-releases.md#die-versionen-des-kernels)).
 - Die Veröffentlichungsdaten der jüngsten Tags stehen in
   [Die Roadmap](../../../projekt/roadmap.md#was-bereits-geliefert-wurde).

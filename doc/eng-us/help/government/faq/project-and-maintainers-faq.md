@@ -42,7 +42,7 @@ after almost eighteen years; the project is not associated with eZ Systems or Ib
 ## How active is the project?
 
 Check it yourself rather than relying on claims: releases `v6.0.11` to `v6.0.14` were tagged between December 2025
-and June 2026, and 6.0.15 is in development ([The roadmap](../../project/roadmap.md#what-has-already-been-delivered));
+and June 2026, and 6.0.15 is the current line after them ([The roadmap](../../project/roadmap.md#what-has-already-been-delivered));
 every version has a changelog ([6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md)); the history records changes since
 December 2023 ([the history](../../../history/README.md)). The evaluation part of the procurement section has a method
 for judging project health.

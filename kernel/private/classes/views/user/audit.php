@@ -12,9 +12,10 @@ namespace Exponential\View\Kernel\User
 
 /**
  * user/audit, "User audit log": the security events about user accounts and user groups (expUserAudit, the table
- * expuser_audit), newest first, narrowed by a GET form (user: an id or a login, matching the account or the user who
- * acted; action: an event name or its start, e.g. access.user; result; from and to as Y-m-d), paged ((offset),
- * limit). ExportButton (a POST, with the form token where ezformtoken is active) sends the CSV of the whole filtered
+ * expuser_audit), newest first, narrowed by a form that is posted and answered with a 303 to its view parameters
+ * (user: an id or a login, matching the account or the user who acted; action: an event name or its start, e.g.
+ * access.user; result; from and to as Y-m-d), paged ((offset), (limit)); no filter is read from the query string.
+ * ExportButton (a POST, with the form token where ezformtoken is active) sends the CSV of the whole filtered
  * list and records data.export.csv with the number of rows, never the values.
  *
  * The view opens with the policy user/audit; whoever holds it sees the events of every account, so grant it only to
@@ -31,8 +32,18 @@ class Audit extends \Exponential\Runnable\ModuleView
         $tpl = \eZTemplate::factory();
         $db = \eZDB::instance();
 
-        $filters = \expUserAudit::normaliseFilters( $_GET );
-        $query = \expUserAudit::queryString( $filters );
+        // the filter form (POST): answered with a 303 to the same filters as view parameters, from the first page;
+        // a filter is never read from the query string
+        if ( $http->hasPostVariable( 'FilterButton' ) )
+        {
+            $posted = array();
+            foreach ( array( 'user', 'action', 'result', 'from', 'to', 'limit' ) as $key )
+                $posted[$key] = \expViewParameters::posted( $_POST, $key );
+            return \expViewParameters::redirect( 'user/audit' . \expUserAudit::viewParameters( \expUserAudit::normaliseFilters( $posted ) ) );
+        }
+
+        $filters = \expUserAudit::normaliseFilters( \expUserAudit::viewParameterInput( $Params ) );
+        $query = \expUserAudit::viewParameters( $filters );
         $supported = $db->databaseName() !== 'mongo';
         $installed = $supported && \expUserAudit::exists( $db ) === true;
 

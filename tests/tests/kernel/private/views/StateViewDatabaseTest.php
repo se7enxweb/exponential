@@ -8,7 +8,7 @@
  * one write is a test group without states (so no object is touched), removed in the test.
  * Skipped without a database or without ez_lock.
  *
- * Run through the queue: bash ai/bin/one/run_alpha_db_heavy_command_one_at_a_time.sh <label>
+ * It writes to the installation's database: run it alone, not beside other database-heavy jobs on the same host:
  *     php vendor/bin/phpunit --testsuite kernel-private --filter StateViewDatabaseTest
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.

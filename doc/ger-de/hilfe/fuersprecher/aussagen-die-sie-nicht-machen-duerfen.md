@@ -66,7 +66,7 @@ Datum; Zahlen ändern sich, also zitieren Sie die Seite, nicht Ihr Gedächtnis (
 
 | Sagen Sie nicht | Sagen Sie stattdessen |
 |---|---|
-| „6.0.15 erscheint am Datum X.“ | „6.0.15 ist in Entwicklung; Releases werden angekündigt, wenn sie getaggt sind.“ |
+| „6.0.15 erscheint am Datum X.“ | „6.0.15 ist die aktuelle Linie von Exponential 6.0; Releases werden angekündigt, wenn sie getaggt sind.“ |
 | „Funktion Y kommt.“ | „Ich habe sie nicht dokumentiert gesehen. Prüfen Sie das Änderungsprotokoll und den Issue-Tracker.“ |
 | „Es wird N Jahre unterstützt.“ | „Hier ist die Support-Zusage, wie sie dokumentiert ist“ ([Die Support-Zusage](../wer-ist-die-exponential-foundation.md#die-zusage-zur-unterstützung)) |
 | „Es wird nie verschwinden.“ | „Die Lizenz erlaubt jedem, den Code zu behalten und zu pflegen.“ |

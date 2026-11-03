@@ -40,7 +40,7 @@ Quelle: [Regeln für Marke und Namen](../geschaeft/marken-und-namensregeln.md#da
 | Exponential 6 | Die Hauptlinie |
 | 6.0.x | Alle Releases der Linie, Stand 18. Oktober 2026 6.0.0 bis 6.0.14 |
 | 6.0.14 | Ein Release, ein Git-Tag `v6.0.14` |
-| 6.0.15 | Das Release in Entwicklung |
+| 6.0.15 | Die aktuelle Linie, die auf 6.0.14 folgt; als Release der Git-Tag `v6.0.15`, sobald er veröffentlicht ist |
 
 Alle Releases stehen unter [Die 6.0.x-Releases auf einen Blick](die-6-0-x-releases-auf-einen-blick.md).
 
@@ -48,10 +48,10 @@ Alle Releases stehen unter [Die 6.0.x-Releases auf einen Blick](die-6-0-x-releas
 
 Eine Version ist veröffentlicht, wenn ihr Git-Tag veröffentlicht ist. Bis dahin:
 
-- schreiben Sie „6.0.15, das in Entwicklung ist“ oder „das nächste Release“;
+- schreiben Sie „<Version>, das in Entwicklung ist“ oder „das nächste Release“;
 - nennen Sie kein Datum, sofern das Projekt keines veröffentlicht hat;
-- beschreiben Sie Funktionen als „im Changelog von 6.0.15“, nicht als in einem Release verfügbar
-  ([Über 6.0.15 berichten, solange es in Entwicklung ist](ueber-6-0-15-in-entwicklung-berichten.md)).
+- beschreiben Sie Funktionen als „im Changelog von <Version>“, nicht als in einem Release verfügbar
+  ([Über 6.0.15 berichten: vor und nach dem Tag](ueber-6-0-15-in-entwicklung-berichten.md)).
 
 Einmal veröffentlicht, wird eine Version nie geändert: „a fix for a problem in `v6.0.14` or an earlier tag reaches you
 as the next release, not as a corrected copy of the old one“ ([SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md);
@@ -86,7 +86,7 @@ git tag -l 'v6.0.*' | tail -1                  # WRONG: alphabetical, may not be
 | Fehler | Richtig |
 |---|---|
 | „Exponential 7“ | Eine solche Version gibt es nicht |
-| „6.0.15 (veröffentlicht im Oktober 2026)“ | 6.0.15 ist in Entwicklung |
+| „6.0.15 (veröffentlicht im Oktober 2026)“ | Das Datum eines Release ist das Datum seines Tags (`git tag -l 'v6.0.*'`); die Daten im Changelog 6.0.15 sind Daten der Änderungen |
 | „Velocity 0.0.5“ als nächste nach 0.0.4.9 | Die nächste nach 0.0.4.9 ist 0.0.4.10 |
 | „die neueste Version, 6.0.9“ | Prüfen Sie die Tags; 6.0.14 ist am 18. Oktober 2026 die neueste |
 | „eZ Publish 6.0“ für das Release von 2024 | „6.0.0, veröffentlicht im Januar 2024, als die Software noch eZ Publish hieß“ |

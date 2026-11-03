@@ -60,7 +60,7 @@ tests check for contrast in light and dark mode.
 |---|---|
 | "WCAG certified" | "Follows WCAG rules that tests check" |
 | "The only admin" | One of several designs; others remain (classic admin, admin3, AdminUI) |
-| "Released" | In the 6.0.15 line, in development |
+| "Released in 6.0.14" or a release date | In the 6.0.15 line; "released" only once the tag `v6.0.15` exists |
 
 ## Angles and headline ideas
 

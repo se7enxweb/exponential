@@ -70,12 +70,13 @@ composer install
 Für Weg B auf einem Produktivserver fügen Sie `--no-dev` hinzu, das die Testwerkzeuge weglässt:
 
 ```bash
-composer create-project se7enxweb/exponential:v6.0.14 exponential --no-dev
+composer create-project se7enxweb/exponential:~6.0.15 exponential --no-dev
 ```
 
 > **Hinweis**
-> Auf PHP 8.0 lässt sich kein veröffentlichtes Tag installieren: Die Tags `v6.0.8` bis `v6.0.14` verlangen PHP 8.1.
-> Nehmen Sie die Linie 6.0.15 (`dev-main`), bis ihr Tag veröffentlicht ist. Die Tags `v6.0.13` und `v6.0.14` brauchen
+> Auf PHP 8.0 lässt sich keiner der Tags `v6.0.8` bis `v6.0.14` installieren: Sie verlangen PHP 8.1.
+> Nehmen Sie die Linie 6.0.15 (`~6.0.15`: den Tag `v6.0.15`, sobald er veröffentlicht ist, oder den Branch `main`, der
+> diese Linie trägt, als `dev-main`). Die Tags `v6.0.13` und `v6.0.14` brauchen
 > auf PHP 8.1 bis 8.3 außerdem zusätzliche Schritte wegen ihrer PHPUnit-Anforderung
 > ([Kapitel 3.3](../../../installation/03-den-code-beschaffen.md#33-installation-unter-php-80-bis-83)).
 

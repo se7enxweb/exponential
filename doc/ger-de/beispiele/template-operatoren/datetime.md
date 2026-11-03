@@ -31,10 +31,10 @@ Aus der Parameterliste oben gebildet; die Werte sind Platzhalter (die Template-H
 
 ## In einem ausgelieferten Template
 
-Die erste Verwendung in den Templates dieser Installation, `design/admin/templates/exphelp/audience.tpl` Zeile 127:
+Die erste Verwendung in den Templates dieser Installation, `design/admin/templates/content/searchresult.tpl` Zeile 53:
 
 ```tpl
-{if and( is_set( $change.time ), $change.time|gt( 0 ) )}<time datetime="{$change.time|datetime( 'custom', '%Y-%m-%dT%H:%i:%s' )}">{$change.time|l10n( 'shortdate' )}</time>{/if}
+<td class="a4-search-date"><time datetime="{$result_object.modified|datetime( 'custom', '%Y-%m-%dT%H:%i' )}">{$result_object.modified|l10n( shortdatetime )}</time></td>
 ```
 
 ## Siehe auch

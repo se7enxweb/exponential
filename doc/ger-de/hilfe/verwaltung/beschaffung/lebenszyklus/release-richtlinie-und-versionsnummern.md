@@ -54,8 +54,8 @@ Für eine öffentliche Stelle heißt das:
 
 Die letzte Stelle zählt weiter: Nach `.9` kommt `.10`, nie ein Sprung einer höheren Stelle; das Anheben einer höheren
 Stelle ist eine eigene Entscheidung darüber, was das Release bedeutet ([Quellcodeverwaltung und Releases](../../../../standards/versionsverwaltung-und-releases.md#die-nächste-versionsnummer-wählen)).
-Die Version des Kernels steht in `lib/version.php`. Veröffentlichte Kernel-Tags reichen von `v6.0.0` bis `v6.0.14`, und
-6.0.15 ist in Entwicklung ([Quellcodeverwaltung und Releases](../../../../standards/versionsverwaltung-und-releases.md#die-versionen-des-kernels)).
+Die Version des Kernels steht in `lib/version.php`. Veröffentlichte Kernel-Tags beginnen bei `v6.0.0`; auf
+`v6.0.14` folgt die aktuelle Linie 6.0.15 ([Quellcodeverwaltung und Releases](../../../../standards/versionsverwaltung-und-releases.md#die-versionen-des-kernels)).
 
 Welche Version eine Website betreibt, sehen Sie unter **Setup > Systeminformationen** (`/setup/info`)
 ([Systeminformationen](../../../../anleitungen/systeminformationen.md)) oder auf der About-Seite, die auch die Version jeder

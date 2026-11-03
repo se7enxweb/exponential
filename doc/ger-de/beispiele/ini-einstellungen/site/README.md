@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # site.ini
 
-Die ausgelieferten Einstellungen von `settings/site.ini`: 65 Blöcke, 504 Einstellungen.
+Die ausgelieferten Einstellungen von `settings/site.ini`: 66 Blöcke, 509 Einstellungen.
 
 > Exponential-Konfigurationsdatei.  
 >
@@ -30,6 +30,7 @@ Die ausgelieferten Einstellungen von `settings/site.ini`: 65 Blöcke, 504 Einste
 | [Cache_exphelpcontent](Cache_exphelpcontent.md) | 5 |
 | [Cache_smarty](Cache_smarty.md) | 4 |
 | [Cache_twig](Cache_twig.md) | 4 |
+| [Cache_searchsuggest](Cache_searchsuggest.md) | 5 |
 | [DatabaseSettings](DatabaseSettings.md) | 20 |
 | [Event](Event.md) | 1 |
 | [RunnableSettings](RunnableSettings.md) | 2 |

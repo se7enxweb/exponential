@@ -26,9 +26,9 @@ every step. Adapt the order to your audience; keep the rule of one task per epis
 ## Decide the version once
 
 A series must show one version throughout, or say clearly when it changes. Most screens in the help belong to the
-6.0.15 development line, which has no release date; the newest release is 6.0.14 (7 June 2026). State the version in
-the series title or the first episode, and in every description. When 6.0.15 is tagged, check each episode against
-its final changelog ([6.0.15 changelog](../../../changelogs/6.0/6.0.15.md)).
+6.0.15 line, the current release line of Exponential 6.0, which follows 6.0.14 (7 June 2026). State the version in
+the series title or the first episode, and in every description. If you recorded from the `main` branch, check each
+episode against the changelog of the tag `v6.0.15` once it is published ([6.0.15 changelog](../../../changelogs/6.0/6.0.15.md)).
 
 ## Track A: editors
 

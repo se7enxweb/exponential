@@ -30,7 +30,7 @@ Exponential kernel: a **layout** is a saved arrangement of **blocks** in **zones
 get it, so editors rearrange pages without touching templates" ([README, Exponential Layouts](https://github.com/se7enxweb/exponential/blob/main/README.md#exponential-layouts-revolutionary)).
 Layouts have drafts like content does, a header or footer can be built once in a shared layout and linked from every
 other layout, and layouts move between installations by export and import. The suite is required by the kernel's
-`composer.json` in the 6.0.15 development line, so every new installation has it
+`composer.json` in the 6.0.15 line, so every new installation has it
 ([Exponential Layouts](../who-is-the-exponential-foundation.md#exponential-layouts)).
 
 ## What is new, and when
@@ -43,7 +43,8 @@ other layout, and layouts move between installations by export and import. The s
 | Export and import of layouts | 17 October 2026 | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#17-october-2026-export-and-import-of-layouts) |
 | The layout editor page meets WCAG 2 AA (as the changelog states it) | 17 October 2026 | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#17-october-2026-the-layout-editor-page-meets-wcag-2-aa) |
 
-The 6.0.15 line is in development and not released.
+The 6.0.15 line is the current release line of Exponential 6.0; the dates are dates of the changes, not a release
+date.
 
 ## Facts you can print
 

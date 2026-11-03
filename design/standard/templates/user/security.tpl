@@ -77,7 +77,7 @@
     <li><strong>{$security_summary.changes}</strong> {'Account changes'|i18n( 'design/standard/user/security' )}</li>
 </ul>
 
-<p class="us-filter">{foreach $security_filters as $f}{if eq( $f, $security_filter )}<strong aria-current="true">{$filter_names[$f]|wash}</strong>{else}<a href={concat( $security_action, cond( eq( $f, 'all' ), '', concat( '?filter=', $f ) ) )|ezurl}>{$filter_names[$f]|wash}</a>{/if}{delimiter} &middot; {/delimiter}{/foreach}</p>
+<p class="us-filter">{foreach $security_filters as $f}{if eq( $f, $security_filter )}<strong aria-current="true">{$filter_names[$f]|wash}</strong>{else}<a href={concat( $security_action, cond( eq( $f, 'all' ), '', concat( '/(filter)/', $f ) ) )|ezurl}>{$filter_names[$f]|wash}</a>{/if}{delimiter} &middot; {/delimiter}{/foreach}</p>
 
 {if $security_events|count}
 <ol class="us-events">
@@ -100,7 +100,7 @@
 {/foreach}
 </ol>
 {include name=navigator uri='design:navigator/google.tpl' page_uri=concat( '/', $security_action )
-         page_uri_suffix=cond( eq( $security_filter, 'all' ), '', concat( '?filter=', $security_filter ) )
+         page_uri_suffix=cond( eq( $security_filter, 'all' ), '', concat( '/(filter)/', $security_filter ) )
          item_count=$security_count view_parameters=$view_parameters item_limit=$security_limit}
 {else}
 <p class="us-meta">{'No security activity recorded yet.'|i18n( 'design/standard/user/security' )}</p>

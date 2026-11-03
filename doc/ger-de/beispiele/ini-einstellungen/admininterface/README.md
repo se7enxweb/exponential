@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # admininterface.ini
 
-Die ausgelieferten Einstellungen von `settings/admininterface.ini`: 10 Blöcke, 47 Einstellungen.
+Die ausgelieferten Einstellungen von `settings/admininterface.ini`: 11 Blöcke, 56 Einstellungen.
 
 | Block | Einstellungen |
 |---|---|
@@ -24,6 +24,7 @@ Die ausgelieferten Einstellungen von `settings/admininterface.ini`: 10 Blöcke, 
 | [ContentEditSettings](ContentEditSettings.md) | 1 |
 | [ContentEditAttributeSettings](ContentEditAttributeSettings.md) | 6 |
 | [PaginationSettings](PaginationSettings.md) | 8 |
+| [SearchSuggestSettings](SearchSuggestSettings.md) | 9 |
 
 - [Alle Beispiele](../../README.md)
 

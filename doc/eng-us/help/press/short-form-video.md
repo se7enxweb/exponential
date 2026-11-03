@@ -28,7 +28,7 @@ clip, one idea, one source.
    carry the facts.
 3. **Disclose inside the clip** if anyone paid or gave you something: on screen at the start, and in the caption
    ([Disclosure and sponsorship ethics](disclosure-and-sponsorship-ethics.md#where-to-put-the-disclosure)).
-4. **Name the version** on screen when you show a feature of the 6.0.15 development line.
+4. **Name the version** on screen when you show a feature of the 6.0.15 line.
 5. **Captions burned in or added**, because most short videos are watched without sound
    ([Captions and accessible video](captions-and-accessible-video.md)).
 6. **Link the help page** in the caption or your profile.

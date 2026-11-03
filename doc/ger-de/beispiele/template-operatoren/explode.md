@@ -30,10 +30,10 @@ Aus der Parameterliste oben gebildet; die Werte sind Platzhalter (die Template-H
 
 ## In einem ausgelieferten Template
 
-Die erste Verwendung in den Templates dieser Installation, `design/admin/templates/contentcheck/pager.tpl` Zeile 21:
+Die erste Verwendung in den Templates dieser Installation, `design/admin/templates/content/searchresult.tpl` Zeile 46:
 
 ```tpl
-<a href={concat( '/user/preferences/set/', $limit_preference, '/', $limit_index|inc )|ezurl} title="{$size_title|wash|explode( '%count' )|implode( $limit_option )}">{$limit_option}</a>
+<div class="a4-meta a4-search-snippet">{$result.highlight|wash|explode( '&lt;em&gt;' )|implode( '<mark>' )|explode( '&lt;/em&gt;' )|implode( '</mark>' )}</div>
 ```
 
 ## Siehe auch

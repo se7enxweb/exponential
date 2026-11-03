@@ -16,7 +16,7 @@ script names those screens and says how to film them. It follows parts 3, 7 and 
 
 Sign in as the administrator of a demo installation with invented content and invented accounts only
 ([Setting up a demo installation](setting-up-a-demo-installation.md)). The menu names below are those of the admin4
-design of the 6.0.15 development line; say which version you show.
+design of the 6.0.15 line; say which version you show.
 
 ## Contents
 

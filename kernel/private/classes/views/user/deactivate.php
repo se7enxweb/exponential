@@ -212,7 +212,7 @@ class Deactivate extends \Exponential\Runnable\ModuleView
     }
 
     /**
-     * The page to go back to: user/hygiene (with its query string) or content/view/full/<node>; '' for anything
+     * The page to go back to: user/hygiene (with its view parameters) or content/view/full/<node>; '' for anything
      * else, so the link never leaves the site.
      *
      * @param mixed $uri
@@ -225,7 +225,7 @@ class Deactivate extends \Exponential\Runnable\ModuleView
         $uri = ltrim( trim( $uri ), '/' );
         if ( preg_match( '#^content/view/full/[0-9]+$#', $uri ) )
             return $uri;
-        if ( preg_match( '#^user/hygiene(\?[A-Za-z0-9_=&%.+\-]*)?$#', $uri ) )
+        if ( preg_match( '#^user/hygiene(/\([a-z_]+\)/(?!\.\.?(?:/|$))[A-Za-z0-9_.%~,:@=!*+\-]+)*$#', $uri ) )
             return $uri;
         return '';
     }

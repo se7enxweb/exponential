@@ -33,7 +33,7 @@ designs, the bundled extensions (`ezjscore`, `ezoe`, `ezformtoken`, `expservices
 
 ### main, the only long-lived branch
 
-`main` is the default branch and the development line of 6.0. It identifies itself as 6.0.15 (`lib/version.php`) and
+`main` is the default branch of 6.0, where all work lands. It identifies itself as 6.0.15 (`lib/version.php`) and
 carries the changes of [Changelog 6.0.15](../changelogs/6.0/6.0.15.md). For Composer it is `dev-main`, with the branch
 alias `6.0.x-dev`, so packages that require the kernel with a version constraint such as `^6.0.14` resolve against it.
 
@@ -69,7 +69,7 @@ that run the blocking checks locally.
 ### Release tags
 
 A release is a tag on a commit of `main`, named `v6.0.<n>`. Each one has a changelog page in `doc/changelogs/6.0`
-(the newest: [Changelog 6.0.14](../changelogs/6.0/6.0.14.md)) and a release on
+(for example [Changelog 6.0.14](../changelogs/6.0/6.0.14.md)) and a release on
 [GitHub Releases](https://github.com/se7enxweb/exponential/releases):
 
 | Tags | Count | Notes |
@@ -103,7 +103,7 @@ git ls-remote --heads https://github.com/se7enxweb/exponential.git
 
 | Line | Status | Where |
 |---|---|---|
-| 6.0.x | Maintained: development on `main`, releases `v6.0.0` to `v6.0.14` | se7enxweb/exponential |
+| 6.0.x | Maintained: work lands on `main`, which carries the current 6.0.15 line; releases from `v6.0.0` on | se7enxweb/exponential |
 | 5.x (5.0 to 5.4, the 5.90 line of 2017.08 to 2019.03) | Not maintained. 6.0 continues this code base: 6.0.0 started from the last open source release of the legacy kernel | The archived upstream repository; [Changelog 6.0.0](../changelogs/6.0/6.0.0.md) explains the move |
 | 4.x | Not maintained. Its tags up to `4.4.0` are in the kernel repository | se7enxweb/exponential (tags) |
 | 3.x | Not maintained. Its tags and the SVN branches below are kept as history | se7enxweb/exponential (tags) |
@@ -157,7 +157,8 @@ gh release list -R se7enxweb/exponential-platform-nexus --limit 5
 | You want | Use |
 |---|---|
 | A production site that stays the same until you decide to update | A release: Composer version `~6.0.14`, or the tag `v6.0.14` in a clone |
-| The newest fixes before they are released, or PHP 8.0 | `main` (`dev-main` for Composer). No published tag accepts PHP 8.0 yet |
+| The newest fixes before a tag contains them | `main` (`dev-main` for Composer) |
+| PHP 8.0 | The 6.0.15 line: `~6.0.15` (the tag `v6.0.15` once it is published) or `main`. The tags `v6.0.8` to `v6.0.14` need PHP 8.1 |
 | A fix of one extension before its release | That extension's default branch, or a branch with the fix, in a clone |
 | Your own changes to the kernel or an extension | Your own branch on top of a tag or of `main`, so updates merge with your work |
 

@@ -42,7 +42,8 @@ improvement to the kernel" ([README, Recent improvements](https://github.com/se7
 | SQLite is the setup wizard's default; one-command install on SQLite | 16 to 30 September 2026 | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#16-to-30-september-2026) |
 | A write queue: concurrent publishes wait their turn instead of failing with "database is locked" | 1 and 2 October 2026 | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#1-and-2-october-2026) |
 
-The 2026 changes are in the 6.0.15 development line, which is not released.
+The 2026 changes are in the 6.0.15 line, the current release line of Exponential 6.0; their dates are dates of the
+changes, not a release date.
 
 ## Facts you can print
 

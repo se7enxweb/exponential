@@ -76,9 +76,11 @@ Hinzugekommen mit den gespeicherten Suchen und den ausgegrauten Lesezeichen:
 | `expBookmarkPage::viewItem()` | Einträge haben auch `icon`, `reason` und `reason_text`; der Typ (`class_name`) ist die Bezeichnung der Art der Zeile, wenn sie eine hat |
 | Templates | `bookmark_tree.tpl` und die Karten von `bookmark.tpl` zeichnen `a4-bi-<icon>` statt des Zahnrads und zeigen `reason_text`; `design/admin3/templates/pagelayout.tpl` bindet die Schaltfläche auch ein |
 
-Eine gespeicherte Adresse kann jetzt auf einen Query-String enden (`content/search?SearchText=news`); Code, der
-`module_uri` direkt liest und an `/` trennt, sollte `expBookmarkView::parts()` oder `pathOf()` verwenden oder
-`module_name` und `view_name` lesen.
+Eine gespeicherte Adresse kann jetzt eine Suche tragen, als View-Parameter (`content/search/(text)/news`, die Form
+der Suche der Administration seit dem 2026-11-02, siehe
+[Suchlinks mit View-Parametern](suchlinks-mit-view-parametern.md)) oder als Query-String bei einer Ansicht, die
+einen liest; Code, der `module_uri` direkt liest und an `/` trennt, sollte `expBookmarkView::parts()` oder
+`pathOf()` verwenden oder `module_name` und `view_name` lesen.
 
 ## Zerlegte Adresse und Umbenennen
 

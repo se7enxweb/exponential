@@ -35,8 +35,8 @@ The same holds for extensions released by the project, which carry their version
 
 ## How versions are numbered
 
-- The core line is 6.0.x; the published tags run from `v6.0.0` to `v6.0.14`, and 6.0.15 is in development on `main`
-  (`6.0.x-dev`) ([standard, "Releases"](../../../../standards/source-control-and-releases.md#releases)).
+- The core line is 6.0.x; its tags start at `v6.0.0`, and the current line, 6.0.15, follows `v6.0.14` and is carried
+  by `main` (`6.0.x-dev`) ([standard, "Releases"](../../../../standards/source-control-and-releases.md#releases)).
 - The last position keeps counting: after `.9` comes `.10`. Composer and Packagist compare each position as a number.
   A plain alphabetical sort gets this wrong; use `--sort=version:refname` or `sort -V` in scripts.
 - The root `composer.json` has no `version` field; Composer takes the version from the tag.

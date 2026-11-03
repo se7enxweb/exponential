@@ -75,7 +75,7 @@ Where it does matter:
   as functions: `first_set($a, 'default')`, `cond($test, 'yes', 'no')`. The converter keeps the `.tpl` behavior by
   leaving the input out (see [what to check after converting](smarty-templates-converter.md#3-its-notes-and-what-to-check-after-converting)).
 
-## The exp_ prefix
+## The exp prefix
 
 Smarty's own modifiers come first. Where Smarty has a modifier of the same name as an Exponential operator, the
 operator is called with the prefix `exp_`; `exp_<name>` always calls the Exponential operator `<name>`:

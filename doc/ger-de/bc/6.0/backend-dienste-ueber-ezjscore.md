@@ -200,7 +200,7 @@ Registrieren Sie die Klasse in `ezjscore.ini.append.php` und führen Sie `php bi
 ### Eine Deklaration, drei Kanäle
 
 Dieselbe Deklaration bedient HTTP (`ezjscore/call/exp<domain>::<method>`), MCP (die Werkzeuge
-`exp_svc_<domain>_<method>`, die expmcp aus dem Katalog erzeugt) und, wenn der Dienst sich dafür entscheidet, den
+`exp_svc_<domain>_<method>`, die ein MCP-Server aus dem Katalog erzeugt) und, wenn der Dienst sich dafür entscheidet, den
 Assistenten der Erweiterung expai. Ein lesender Dienst entscheidet sich mit `'ai' => true` dafür, oder mit
 `'ai' => array( 'summary' => '...' )`, um dem Modell eine eigene Beschreibung zu geben; standardmäßig sind Dienste für
 den Assistenten privat, und ein Dienst mit `'write' => true` wird nie angeboten. Der Katalog meldet das Flag als `ai`.

@@ -51,7 +51,7 @@ und [Der Layout-Editor](../layout-editor.md).
 WALKTHROUGH SCRIPT
 Title:        <the task, as a viewer would search it>
 Promise:      After this video you can <task>.
-Version:      Exponential <6.0.14 | 6.0.15 development line, checked on <date>>, design admin4
+Version:      Exponential <release tag, e.g. 6.0.14 | 6.0.15 line on main, checked on <date>>, design admin4
 Disclosure:   <line from the disclosure page>
 Help page:    <link>
 

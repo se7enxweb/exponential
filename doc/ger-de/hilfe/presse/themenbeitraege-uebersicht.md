@@ -28,8 +28,8 @@ interessiert.
 
 ## Die wichtigsten Funktionen der Linie 6.0.15
 
-6.0.15 ist in Entwicklung; schreiben Sie über diese Funktionen als „im nächsten Release“ oder „in der
-Entwicklungsversion“ ([Über 6.0.15 berichten, solange es in Entwicklung ist](ueber-6-0-15-in-entwicklung-berichten.md)).
+6.0.15 ist die aktuelle Linie von Exponential 6.0; schreiben Sie über diese Funktionen als „in der Linie 6.0.15“ und
+nennen Sie ein Erscheinungsdatum nur mit dem Tag `v6.0.15` ([Über 6.0.15 berichten: vor und nach dem Tag](ueber-6-0-15-in-entwicklung-berichten.md)).
 
 | Thema | In einer Zeile |
 |---|---|

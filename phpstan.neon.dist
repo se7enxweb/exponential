@@ -29,5 +29,17 @@ parameters:
     bootstrapFiles:
         - autoload.php
     tmpDir: .devtools/phpstan
-    reportUnmatchedIgnoredErrors: false
+    # a baseline entry the code no longer needs fails the check, so the baseline only shrinks; entries that depend
+    # on what is installed (the MongoDB library, which CI does not install) say reportUnmatched: false
+    reportUnmatchedIgnoredErrors: true
     treatPhpDocTypesAsCertain: false
+    ignoreErrors:
+        # expqueue is an extension: its classes exist only where it is active. Where it is installed (as in CI) these
+        # errors do not occur, so the entry may match nothing
+        -
+            message: '#expQueue#'
+            paths:
+                - kernel/classes/migration/expmigrationjob.php
+                - kernel/classes/migration/expmigrationqueuehandler.php
+                - kernel/classes/transfer/expkerneltransferqueuehandler.php
+            reportUnmatched: false

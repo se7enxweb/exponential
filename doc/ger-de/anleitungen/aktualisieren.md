@@ -1,8 +1,8 @@
 # Upgrade: von 4.x, 5.x oder einer früheren 6.0.x auf den aktuellen Stand
 
 Diese Anleitung richtet sich an alle, die eine bestehende Installation betreiben und sie auf die aktuelle Linie
-Exponential 6.0 bringen möchten. Diese Linie ist 6.0.15, noch in Entwicklung; der neueste Release-Tag zum Zeitpunkt
-des Schreibens ist `v6.0.14` (siehe [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)). Ermitteln Sie Ihre Version,
+Exponential 6.0 bringen möchten. Diese Linie ist 6.0.15; sie folgt auf `v6.0.14` (siehe
+[Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)). Ermitteln Sie Ihre Version,
 folgen Sie dem Teil dafür und schließen Sie mit den Prüfungen am Ende ab. Sie zeigen Ihnen, dass das Ergebnis in
 Ordnung ist.
 

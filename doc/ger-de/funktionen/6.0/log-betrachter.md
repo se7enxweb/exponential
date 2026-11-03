@@ -14,7 +14,7 @@ Verwandt: [Einen Fehler über seine Referenz finden](../../anleitungen/fehler-an
   die Logdateien der Installation: `var/log/error.log`, `warning.log`, `notice.log`, `debug.log`, `strict.log`,
   `deprecated.log`, `auth.log`, die Anfrage-Logs `404.log` und `security.log` ([Anfrage-Logs](anfrageprotokolle.md)), die
   Cronjob-Logs, die Logs jeder Site (`var/<site>/log/*.log`), die Logs, die Extensions
-  schreiben (`expmcp.log`, die `expai`-Logs ...), und deren Rotationen `.1` .. `.N` sowie komprimierte Rotationen
+  schreiben (die `expai`-Logs ...), und deren Rotationen `.1` .. `.N` sowie komprimierte Rotationen
   (`.gz`, nur lesbar).
 - Das linke Menü enthält das Setup-Menü und einen **Navigator** über alle Dateien, gruppiert nach **Kernel**, **Site**,
   **Extensions**, **Webserver** und **Rotierte Archive**, jeweils mit Größe, dem Zeitpunkt des letzten Schreibens und
@@ -82,7 +82,7 @@ Jede Datei der erlaubten Verzeichnisse (siehe [Welche Dateien](#welche-dateien))
   deprecated, auth, cronjob, storage, setup, mail, trash purge, die Anfrage-Logs 404 und security) im globalen
   Log-Verzeichnis oder in dem von eZDebug; ein Log mit einem `LogLabel[<key>]` wird unter seiner Bezeichnung angezeigt.
 - **Site**: die Logs im eigenen Log-Verzeichnis einer Site (`var/<site>/log`).
-- **Extensions**: jede andere Datei, etwa `expmcp.log` oder `expai-models.log`.
+- **Extensions**: jede andere Datei, etwa `expai-models.log`.
 - **Webserver**: die über einen Schlüssel in `LogList[]` konfigurierten Logs (siehe [Webserver-Logs](#webserver-logs)),
   angezeigt mit ihrer Bezeichnung (`LogLabel[]`) und dem Dateinamen daneben.
 - **Rotierte Archive**: `.1` .. `.N` und `.gz`, nach ihrer Datei, nach Nummer.
@@ -108,7 +108,7 @@ Lesezeichen oder zum Versenden:
 
 | Log | Schlüssel | Permalink |
 | --- | --- | --- |
-| `var/log/<name>.log` | `<name>` | `/setup/logs/view/error`, `/setup/logs/view/debug`, `/setup/logs/view/expmcp` |
+| `var/log/<name>.log` | `<name>` | `/setup/logs/view/error`, `/setup/logs/view/debug`, `/setup/logs/view/expai-models` |
 | `var/<site>/log/<name>.log` | `<site>-<name>` | `/setup/logs/view/site-storage` |
 | eine Datei in einem anderen Verzeichnis aus `Directories[]` | das Verzeichnis mit `-` statt `/`, dann `-<name>` | `/setup/logs/view/var-other-logs-app` |
 | ein in `LogList[]` konfiguriertes Log | sein Schlüssel | `/setup/logs/view/webserver-access` |

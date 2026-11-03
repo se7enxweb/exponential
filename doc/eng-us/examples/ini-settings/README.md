@@ -19,11 +19,11 @@ Every shipped INI file of the kernel and the bundled extensions, one page per bl
 | [ezjscore.ini](ezjscore-ezjscore/README.md) | ezjscore | 11 |
 | [ezoe.ini](ezoe-ezoe/README.md) | ezoe | 6 |
 | [ezoe_attributes.ini](ezoe-ezoe_attributes/README.md) | ezoe | 0 |
-| [admininterface.ini](admininterface/README.md) | kernel | 10 |
+| [admininterface.ini](admininterface/README.md) | kernel | 11 |
 | [audit.ini](audit/README.md) | kernel | 34 |
 | [binaryfile.ini](binaryfile/README.md) | kernel | 3 |
 | [bookmark.ini](bookmark/README.md) | kernel | 2 |
-| [browse.ini](browse/README.md) | kernel | 34 |
+| [browse.ini](browse/README.md) | kernel | 35 |
 | [codetemplate.ini](codetemplate/README.md) | kernel | 1 |
 | [collaboration.ini](collaboration/README.md) | kernel | 4 |
 | [collect.ini](collect/README.md) | kernel | 4 |
@@ -80,7 +80,7 @@ Every shipped INI file of the kernel and the bundled extensions, one page per bl
 | [setup.ini](setup/README.md) | kernel | 24 |
 | [shop.ini](shop/README.md) | kernel | 10 |
 | [shopaccount.ini](shopaccount/README.md) | kernel | 3 |
-| [site.ini](site/README.md) | kernel | 65 |
+| [site.ini](site/README.md) | kernel | 66 |
 | [smarty.ini](smarty/README.md) | kernel | 1 |
 | [soap.ini](soap/README.md) | kernel | 2 |
 | [solr.ini](solr/README.md) | kernel | 1 |

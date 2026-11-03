@@ -29,7 +29,7 @@ wenn sein Tag existiert, und eine veröffentlichte Version wird danach nie verä
 Eine Version von Exponential ist veröffentlicht, wenn ihr Git-Tag (zum Beispiel `v6.0.14`) im Repository
 [github.com/se7enxweb/exponential](https://github.com/se7enxweb/exponential) veröffentlicht ist. Das Tag ist auch die
 Version, die Composer von Packagist installiert. Arbeit, die übernommen, aber nicht getaggt ist, gehört zur
-**Entwicklungslinie**, über die Sie nur berichten dürfen, wenn Sie das klar sagen ([Über 6.0.15 berichten, solange es in Entwicklung ist](ueber-6-0-15-in-entwicklung-berichten.md)).
+**Entwicklungslinie**, über die Sie nur berichten dürfen, wenn Sie das klar sagen ([Über 6.0.15 berichten: vor und nach dem Tag](ueber-6-0-15-in-entwicklung-berichten.md)).
 
 Das Projekt erklärt: "A published tag is never changed: a fix for a problem in `v6.0.14` or an earlier tag
 reaches you as the next release, not as a corrected copy of the old one"
@@ -43,7 +43,7 @@ Versionsnummer ändern sich nicht, nachdem Sie darüber geschrieben haben ([Ver�
 | Neueste veröffentlichte Version von Exponential | 6.0.14, Tag `v6.0.14`, 7. Juni 2026 | [Changelog 6.0.14](../../../changelogs/6.0/6.0.14.md), [Release-Übersicht](../../../eng-us/release-overview) |
 | Erstes Release der Linie 6.0 | 6.0.0, 1. Januar 2024 | [Changelog 6.0.0](../../../changelogs/6.0/6.0.0.md) |
 | Zahl der 6.0.x-Releases | 15 (6.0.0 bis 6.0.14) | [Wer ist 7x?, Die Releases 6.0.x](../wer-ist-7x.md#die-releases-60x) |
-| Die Entwicklungslinie | 6.0.15, nicht veröffentlicht, kein Datum | [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md) |
+| Die aktuelle Linie | 6.0.15, folgt auf 6.0.14; ein Datum hat sie erst mit dem Tag `v6.0.15` | [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md) |
 
 Prüfen Sie diese Angaben am Tag der Veröffentlichung erneut; bis dahin kann ein neueres Tag existieren
 ([Ein Release selbst prüfen](ein-release-selbst-pruefen.md)).
@@ -77,7 +77,7 @@ Beitrag stehen unter [Vorlagen für Release-Beiträge](vorlagen-fuer-release-bei
 
 | Schreiben Sie nicht | Schreiben Sie stattdessen |
 |---|---|
-| „6.0.15 erscheint am ...“ | „6.0.15 ist in Entwicklung; das Projekt hat kein Datum angekündigt.“ |
+| „6.0.15 erscheint am ...“ | „6.0.15 ist die aktuelle Linie von Exponential 6.0.“ Ein Datum nennen Sie nur mit dem Tag `v6.0.15`, aus `git tag`. |
 | „Version 6.0.14 wurde aktualisiert, um ... zu beheben“ | „Die Korrektur ist in der nächsten Version“ (veröffentlichte Versionen ändern sich nie) |
 | „eZ Publish 6.0.14“ | „Exponential 6.0.14“ ([Marken- und Namensregeln](../geschaeft/marken-und-namensregeln.md#das-produkt-exponential)) |
 | Eine Nutzerzahl, einen Marktanteil oder ein Vielfaches an Geschwindigkeit | Lassen Sie es weg; die Quellen nennen keine ([Aussagen, die Sie nicht machen dürfen](../fuersprecher/aussagen-die-sie-nicht-machen-duerfen.md#zahlen)) |

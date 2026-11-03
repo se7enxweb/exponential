@@ -31,14 +31,15 @@ als CMS ist seine bemerkenswerteste Eigenschaft also sein vollständig anpassbar
 Redakteure ändern die Live-Seite nie direkt. Jede Bearbeitung ist ein Entwurf, eine Kopie der veröffentlichten Version,
 und die Website zeigt weiter die veröffentlichte Version, bis der Redakteur auf **Zur Veröffentlichung schicken**
 drückt; ältere Versionen bleiben erhalten und lassen sich wiederherstellen
-([Veröffentlichen, Versionen und der Papierkorb](../veroeffentlichen-und-versionen.md)). Die Entwicklungslinie 6.0.15 bringt eine
+([Veröffentlichen, Versionen und der Papierkorb](../veroeffentlichen-und-versionen.md)). Die Linie 6.0.15 bringt eine
 Vorschau in Telefon-, Tablet- und Desktop-Breite, Hintergrundjobs für sehr große Verschiebe- und Löschvorgänge,
 Lesezeichenordner und eine neu gestaltete Administration ([Changelog von 6.0.15](../../../changelogs/6.0/6.0.15.md)).
 
 ## Was neu ist, und seit wann
 
-Alle Daten unten sind Daten von Änderungen in der Produktlinie 6.0.15, die **in Entwicklung und nicht erschienen** ist.
-Schreiben Sie „in der Entwicklungslinie“, nie „erschienen am“.
+Alle Daten unten sind Daten von Änderungen in der Produktlinie 6.0.15, **keine Veröffentlichungsdaten**. Schreiben Sie
+„in der Linie 6.0.15“, nie „erschienen am“ mit einem dieser Daten; ein Erscheinungsdatum hat nur ein Tag
+(`git tag -l 'v6.0.*' --sort=version:refname`).
 
 | Was | Wann es hinzugefügt wurde | Quelle |
 |---|---|---|
@@ -66,7 +67,8 @@ Schreiben Sie „in der Entwicklungslinie“, nie „erschienen am“.
 
 - „Redakteure können nichts kaputtmachen.“ Sagen Sie stattdessen: Jede Änderung ist zuerst ein Entwurf, und ältere
   Versionen bleiben erhalten.
-- „6.0.15 bringt X am Datum Y.“ 6.0.15 hat kein Erscheinungsdatum; beschreiben Sie die Entwicklungslinie.
+- „6.0.15 bringt X am Datum Y.“ Die Daten im Changelog sind Daten der Änderungen; ein
+  Erscheinungsdatum nennen Sie nur mit dem Tag `v6.0.15`, aus `git tag`.
 - „Gemeinsames Bearbeiten in Echtzeit.“ Die Quellen beschreiben Entwürfe und eine Seite für Bearbeitungskonflikte,
   kein gleichzeitiges Bearbeiten.
 - Jede Zahl von Benutzern, Websites oder Redakteuren, die damit arbeiten: Die Quellen zählen sie nicht.

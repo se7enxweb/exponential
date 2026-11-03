@@ -341,7 +341,7 @@ class expModuleTableCode
     {
         $c = $s['class'];
         return "<?php\n/**\n * {$s['module']}/json: the REST/JSON endpoint of {$s['table']}.\n *\n"
-             . " *   GET    {$s['module']}/json                    the rows: ?offset=0&limit=50 (at most 500), ?<field>=<value> filters\n"
+             . " *   GET    {$s['module']}/json                    the rows: /(offset)/0/(limit)/50 (at most 500), /(<field>)/<value> filters\n"
              . " *   GET    {$s['module']}/json/<id>               one row\n"
              . " *   POST   {$s['module']}/json                    a new row from a JSON object (or form fields)\n"
              . " *   PUT    {$s['module']}/json/<id>               a change (also POST with _method=PUT)\n"
@@ -368,9 +368,10 @@ class expModuleTableCode
              . "    \$row ? \$answer( 200, array( 'data' => \$row->toArray() ) ) : \$answer( 404, array( 'error' => 'There is no such row.' ) );\n}\n"
              . "if ( \$method === 'GET' )\n{\n"
              . "    \$conditions = array();\n"
-             . "    foreach ( $c::fields() as \$name => \$field )\n        if ( isset( \$_GET[\$name] ) && is_scalar( \$_GET[\$name] ) )\n            \$conditions[\$name] = (string)\$_GET[\$name];\n"
-             . "    \$offset = isset( \$_GET['offset'] ) ? max( 0, (int)\$_GET['offset'] ) : 0;\n"
-             . "    \$limit = isset( \$_GET['limit'] ) ? max( 1, min( 500, (int)\$_GET['limit'] ) ) : 50;\n"
+             . "    // the view parameters /(offset)/0/(limit)/50/(<field>)/<value>; never the query string\n"
+             . "    foreach ( $c::fields() as \$name => \$field )\n        if ( ( \$value = expViewParameters::get( \$Params, \$name ) ) !== false )\n            \$conditions[\$name] = \$value;\n"
+             . "    \$offset = max( 0, (int)expViewParameters::get( \$Params, 'offset' ) );\n"
+             . "    \$limit = expViewParameters::get( \$Params, 'limit' ) !== false ? max( 1, min( 500, (int)expViewParameters::get( \$Params, 'limit' ) ) ) : 50;\n"
              . "    \$rows = array();\n    foreach ( $c::fetchList( \$conditions ?: null, \$offset, \$limit ) as \$row )\n        \$rows[] = \$row->toArray();\n"
              . "    \$answer( 200, array( 'data' => \$rows, 'total' => $c::fetchListCount( \$conditions ?: null ), 'offset' => \$offset, 'limit' => \$limit ) );\n}\n"
              . "if ( \$method === 'DELETE' )\n{\n    \$row = \$id ? $c::fetch( \$id ) : null;\n"

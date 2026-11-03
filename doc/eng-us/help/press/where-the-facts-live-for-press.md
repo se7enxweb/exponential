@@ -37,7 +37,7 @@ source wins when two disagree.
 |---|---|
 | What Exponential is | [README.md](https://github.com/se7enxweb/exponential/blob/main/README.md), "What is Exponential?" |
 | Release numbers and dates | Git tags (`git tag -l 'v6.0.*' --sort=version:refname`); [release overview](../../release-overview) |
-| What changed in a release | [Changelogs](../../../changelogs/README.md); the 6.0.15 changelog for the line in development |
+| What changed in a release | [Changelogs](../../../changelogs/README.md); the 6.0.15 changelog for the current line |
 | The month-by-month story | [The history](../../history/README.md) |
 | Copyright holders | [COPYRIGHT.md](https://github.com/se7enxweb/exponential/blob/main/COPYRIGHT.md) |
 | License | [LICENSE](https://github.com/se7enxweb/exponential/blob/main/LICENSE); [The license of this documentation](../../README-LICENSE.md) |

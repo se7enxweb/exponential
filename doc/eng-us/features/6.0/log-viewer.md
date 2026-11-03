@@ -14,7 +14,7 @@ Related: [Finding an error by its reference](../../guides/finding-an-error-by-it
   the log files of the installation: `var/log/error.log`, `warning.log`, `notice.log`, `debug.log`, `strict.log`,
   `deprecated.log`, `auth.log`, the request logs `404.log` and `security.log` ([Request logs](request-logs.md)), the
   cronjob logs, the logs of every site (`var/<site>/log/*.log`), the logs extensions
-  write (`expmcp.log`, the `expai` logs ...) and their rotations `.1` .. `.N`, and compressed rotations (`.gz`, read only).
+  write (the `expai` logs ...) and their rotations `.1` .. `.N`, and compressed rotations (`.gz`, read only).
 - The left menu holds the Setup menu and a **navigator** of every file, grouped **Kernel**, **Site**, **Extensions**,
   **Web server** and **Rotated archives**, with its size, the time it was last written and how many lines a minute it
   gains.
@@ -79,7 +79,7 @@ Every file of the allowed directories (see [Which files](#which-files)), grouped
   auth, cronjob, storage, setup, mail, trash purge, the request logs 404 and security) in the global log directory or
   eZDebug's; a log with a `LogLabel[<key>]` is shown by its label.
 - **Site**: the logs of a site's own log directory (`var/<site>/log`).
-- **Extensions**: any other file, such as `expmcp.log` or `expai-models.log`.
+- **Extensions**: any other file, such as `expai-models.log`.
 - **Web server**: the logs configured by key in `LogList[]` (see [Web server logs](#web-server-logs)), shown by their
   label (`LogLabel[]`), with the file name beside it.
 - **Rotated archives**: `.1` .. `.N` and `.gz`, after their file, by number.
@@ -103,7 +103,7 @@ Every view of a log has an address without a query string, short enough to type 
 
 | Log | Key | Permalink |
 | --- | --- | --- |
-| `var/log/<name>.log` | `<name>` | `/setup/logs/view/error`, `/setup/logs/view/debug`, `/setup/logs/view/expmcp` |
+| `var/log/<name>.log` | `<name>` | `/setup/logs/view/error`, `/setup/logs/view/debug`, `/setup/logs/view/expai-models` |
 | `var/<site>/log/<name>.log` | `<site>-<name>` | `/setup/logs/view/site-storage` |
 | a file in another directory of `Directories[]` | the directory with `-` for `/`, then `-<name>` | `/setup/logs/view/var-other-logs-app` |
 | a log configured in `LogList[]` | its key | `/setup/logs/view/webserver-access` |

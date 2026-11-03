@@ -44,7 +44,7 @@ aufgehört hat, sogar nach einem `kill -9`“ ([Inhaltsjobs](../../funktionen/6.
 | Sagen Sie nicht | Sagen Sie stattdessen |
 |---|---|
 | „Vorgänge jeder Größe sind sofort fertig“ | Sie laufen im Hintergrund, in Stapeln |
-| „Erschienen“ | In der Produktlinie 6.0.15, in Entwicklung |
+| „Erschienen“ | In der Produktlinie 6.0.15; „erschienen“ nur, wenn der Tag `v6.0.15` existiert (`git tag -l 'v6.0.*'`) |
 
 ## Blickwinkel und Ideen für Überschriften
 

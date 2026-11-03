@@ -35,7 +35,7 @@ Exponential Foundation needs to approve your review, and nothing on this page as
 ## State your setup
 
 ```text
-Tested: Exponential <6.0.14 | 6.0.15 development line, commit or date>
+Tested: Exponential <6.0.14 | 6.0.15 | main branch, commit or date>
 Installed with: <exp:install | setup wizard | kickstarter>, database <SQLite | ...>
 Served by: <Apache + PHP-FPM | nginx | Velocity, engine qbix | FrankenPHP>, PHP <version>
 Design: <admin4 | ...>; extensions switched on: <list>
@@ -76,8 +76,8 @@ come with their method; quote them as the README's, and if you measure, publish 
 
 A fair review reports what the sources themselves admit, with the source:
 
-- 6.0.15 is in development and has no release date; much of what the help describes belongs to it
-  ([6.0.15 changelog](../../../changelogs/6.0/6.0.15.md)).
+- Much of what the help describes belongs to the 6.0.15 line, not to 6.0.14 or earlier; say which version you tested
+  and check its tag with `git tag -l 'v6.0.*' --sort=version:refname` ([6.0.15 changelog](../../../changelogs/6.0/6.0.15.md)).
 - All administration translations (the current totals are at the top of [Languages in Exponential](../../languages.md)) are complete (26 October 2026); texts added later show in English until they are translated
   ([Languages in Exponential](../../languages.md)).
 - Velocity's shipped default engine is PHP's built-in server, for development only; the recommended engine must be

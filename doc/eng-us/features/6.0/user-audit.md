@@ -124,6 +124,6 @@ says how to create it. MongoDB keeps no user audit table; the audit files hold t
 ## Example
 
 On a development installation at `https://www.example.com`, an administrator opens
-`https://www.example.com/admin/user/audit?user=member1&from=2026-10-01` and sees that an editor changed the member's
+`https://www.example.com/admin/user/audit/(user)/member1/(from)/2026-10-01` and sees that an editor changed the member's
 e-mail address on the editor siteaccess, that the member signed in twice from the same network, and that the same
 editor was refused when trying to edit an administrator account.
