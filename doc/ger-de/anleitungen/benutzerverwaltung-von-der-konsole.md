@@ -226,6 +226,62 @@ Workflow sofort fort. `--reject` verweigert den Freigabeeintrag und entfernt das
 Ablehnungslink der Registrierungsmail tut; ein aktives Konto entfernt `--reject` nie. Das Audit hält
 `access.registration.approve` oder `access.registration.reject` fest.
 
+## Gruppen, Rollen, Anmeldesicherheit und viele Konten auf einmal
+
+| Befehl | Was er tut | Ändert etwas |
+|---|---|---|
+| `exp:user:groups [list\|create\|rename\|move\|delete] [group]` | Der Baum der Benutzergruppen mit Mitgliedern; eine Gruppe angelegt (`--name`, `--parent`), umbenannt, verschoben (`--to`) oder, wenn sie leer ist, in den Papierkorb gelegt | ja, außer `list` |
+| `exp:user:roles list <target>` | Die Rollen, die einen Benutzer oder eine Gruppe erreichen, mit Herkunft und Einschränkung | nein |
+| `exp:user:roles assign\|unassign <role> <target>` | Eine Rolle zugewiesen oder entzogen, auf Wunsch eingeschränkt mit `--subtree=<Knoten>` oder `--section=<ID>`; `<target>` ist ein Benutzer oder `group:<Knoten-ID oder Name>` | ja |
+| `exp:user:whoami` | Das Konto, als das die Konsole handelt, seine Rollen, ob es alle Rechte hat | nein |
+| `exp:user:sessions <user>` | Die laufenden Sitzungen (Ihre Geräte); `--end` beendet alle, `--session=<ID>` eine | mit `--end` oder `--session` |
+| `exp:user:unlock <user>` | Die fehlgeschlagenen Anmeldungen eines gesperrten Kontos zurück auf 0 | ja |
+| `exp:user:2fa <user>` | Anmeldung in zwei Schritten und Passkeys; `--reset` bei einem verlorenen Telefon, `--remove-passkeys` bei einem verlorenen Gerät | mit `--reset` oder `--remove-passkeys` |
+| `exp:user:require-password-change <user>` | Bei der nächsten Anmeldung ein neues Passwort verlangen; `--clear` entfernt die Markierung | ja |
+| `exp:user:resend-activation <user>` | Die Aktivierungsmail erneut, mit einem neuen Schlüssel | ja |
+| `exp:user:check-login <user> --password-stdin` | Ob ein Passwort das Konto anmeldet; nie eine fehlgeschlagene Anmeldung | nein |
+| `exp:user:export` | Die Konten, die die Listenfilter auswählen, als CSV oder JSON (`--type`, `--output`); nie ein Passwort oder Hash | nein |
+| `exp:user:import <file>` | Konten aus einer CSV- oder JSON-Datei, jedes angelegt wie mit `exp:user:create`; `--send-activation` oder `--disabled`; eine Passwortspalte wird verweigert | ja |
+| `exp:user:bulk <action>` | `disable`, `enable`, `delete`, `approve`, `reject` oder `unlock` für jedes Konto, das die Filter auswählen; `--apply` braucht `--confirm=<Anzahl>` | ja |
+| `exp:user:audit <user>` | Das Benutzer-Auditprotokoll des Kontos, gefiltert mit `--event`, `--result`, `--from`, `--to` | nein |
+| `exp:user:hygiene` | Die Zahl der Konten in jedem Zustand, mit dem Befehl, der sie auflistet | nein |
+
+```bash
+# eine Gruppe für eine Partneragentur, mit der Rolle Editor in einem Teilbaum
+./console exp:user:groups create --name=Partners --parent=Editors --apply
+./console exp:user:roles assign Editor group:Partners --subtree=2 --apply
+
+# jemand geht: deaktivieren, jede Sitzung beenden, dann das Audit prüfen
+./console exp:user:disable jane --apply
+./console exp:user:audit jane --from=2026-10-01
+
+# ein ausgesperrter Administrator, aus der Shell des Servers
+./console exp:user:unlock admin --apply
+./console exp:user:reset-password admin --generate --apply
+
+# Mitglieder aus einer Tabelle, jedes mit der Aktivierungsmail
+./console exp:user:import members.csv --group=Members --send-activation           # prüft jede Zeile
+./console exp:user:import members.csv --group=Members --send-activation --apply
+
+# seit zwei Jahren ungenutzte Konten deaktiviert, nach einem Blick auf die Liste
+./console exp:user:bulk disable --state=inactive --days=730 --group=Members
+./console exp:user:bulk disable --state=inactive --days=730 --group=Members --apply --confirm=42
+```
+
+`exp:user:bulk` behandelt jedes Konto wie der einzelne Befehl: geschützte Konten und der letzte Administrator werden
+als verweigert aufgeführt und nie geändert. `--confirm` muss die Zahl sein, die der Probelauf gezeigt hat; hat sich
+die Auswahl inzwischen geändert, wird der Lauf verweigert und ändert nichts. Ein `delete` in großer Zahl braucht einen
+Filter: es entfernt nie jedes Konto.
+
+Eine Importdatei hat die Spalten `login`, `email`, `first_name`, `last_name` und `groups` (Knoten-IDs oder Namen,
+getrennt durch `|`). Sie enthält nie ein Passwort: eine Datei mit einer Passwortspalte wird als Ganzes verweigert. Ein
+vorhandener Anmeldename wird übersprungen, deshalb kann eine korrigierte Datei erneut importiert werden.
+`exp:user:export` schreibt dieselben Spalten und mehr; ein Export enthält personenbezogene Daten, behandeln Sie ihn
+entsprechend (`--output` legt die Datei mit Modus 0600 an).
+
+Bewusst nicht angeboten: zwei Konten zusammenführen (der Kernel hat keinen sicheren Weg, Eigentum und Verlauf eines
+Kontos auf ein anderes zu übertragen), Passwörter in Importdateien und eine Option `--password`.
+
 ## In Skripten und CI
 
 Jeder Befehl nimmt `--format=json` und gibt ein JSON-Objekt mit `schema` (`exp-user/1`), `command`, `mode`, `errors`,
