@@ -76,7 +76,7 @@ class CheckDbFilesVersionListTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * The SVN export directory is a new one inside the export path; removing it leaves everything that was there.
+     * The export directory is a new one inside the export path; removing it leaves everything that was there.
      */
     public function testTheExportDirectoryIsNewAndOnlyItIsRemoved()
     {
@@ -120,6 +120,56 @@ class CheckDbFilesVersionListTest extends PHPUnit\Framework\TestCase
         $this->assertStringNotContainsString( 'recursiveDelete', $source );
         $this->assertStringNotContainsString( "'/tmp/'", $source );
     }
+
+    /**
+     * The released files come from the kernel's own git repository (git archive of a tag or commit), not from the
+     * svn repository the command used to export from, which is gone.
+     */
+    public function testTheReleaseComesFromGitNotSvn()
+    {
+        $source = file_get_contents( self::$root . '/kernel/private/classes/commands/checkdbfiles.php' );
+        $this->assertStringNotContainsString( 'svn export', $source );
+        $this->assertStringNotContainsString( 'http://svn.ez.no', $source );
+        $this->assertStringContainsString( '[compare-with:]', $source );
+        foreach ( array( 'bin/shell/checkdbupdate.sh', 'bin/shell/checkdbschema.sh' ) as $script )
+        {
+            $text = file_get_contents( self::$root . '/' . $script );
+            $this->assertStringNotContainsString( 'svn export', $text, $script );
+            $this->assertStringNotContainsString( 'http://svn.ez.no', $text, $script );
+        }
+        $this->assertStringContainsString( 'git archive', file_get_contents( self::$root . '/bin/shell/checkdbupdate.sh' ) );
+    }
+
+    /**
+     * exportGitRelease() extracts update/database of a commit into the export directory; an unknown ref is refused.
+     */
+    public function testExportGitReleaseExtractsUpdateDatabase()
+    {
+        if ( !is_dir( self::$root . '/.git' ) && !is_file( self::$root . '/.git' ) )
+            $this->markTestSkipped( 'not a git checkout' );
+        $cwd = getcwd();
+        chdir( self::$root );
+        try
+        {
+            $dir = \Exponential\Command\Kernel\Checkdbfiles::createExportDirectory( $this->scratchDirectory() );
+            ob_start();
+            $release = exportGitRelease( 'HEAD', $dir );
+            ob_end_clean();
+            $this->assertSame( $dir . '/release', $release );
+            $this->assertFileExists( $release . '/update/database/mysql/6.0/dbupdate-6.0.0-6.0.15.sql' );
+            $this->assertFileDoesNotExist( $dir . '/release.tar', 'the archive is removed' );
+
+            $other = \Exponential\Command\Kernel\Checkdbfiles::createExportDirectory( $this->scratchDirectory() );
+            ob_start();
+            $this->assertFalse( exportGitRelease( 'no-such-ref-' . bin2hex( random_bytes( 4 ) ), $other ) );
+            ob_end_clean();
+        }
+        finally
+        {
+            chdir( $cwd );
+        }
+    }
+
 
     /** @var string[] the directories this test made, removed in tearDown */
     private $scratch = array();

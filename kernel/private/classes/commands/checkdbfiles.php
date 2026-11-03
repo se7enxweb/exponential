@@ -126,20 +126,55 @@ function handleExportVersionList( $basePath, $exportBasePath, $subdir,
     }
 }
 
-function exportSVNVersion( $version, $exportPath )
+/**
+ * The newest release tag of the kernel's git repository (v<major>.<minor>.<patch>), or false when the installation
+ * is not a git checkout or has no such tag.
+ *
+ * @return string|false
+ */
+function newestReleaseTag()
 {
-    $versionPath = $exportPath . '/' . $version;
-    if ( file_exists( $versionPath ) )
-        return true;
-
-    $svn = "svn export http://svn.ez.no/svn/Exponential/stable/$version/update/database \"$versionPath\"";
-    exec( $svn, $output, $code );
+    exec( 'git tag -l ' . escapeshellarg( 'v*' ) . ' --sort=-version:refname 2>/dev/null', $tags, $code );
     if ( $code != 0 )
-    {
-        print( "Failed to export using:\n$svn\n" );
         return false;
+    foreach ( $tags as $tag )
+    {
+        if ( preg_match( '/^v\d+\.\d+\.\d+$/', trim( $tag ) ) )
+            return trim( $tag );
     }
-    return file_exists( $versionPath );
+    return false;
+}
+
+/**
+ * Extracts update/database of the release $ref (a tag or commit of the kernel's git repository) into
+ * <$exportPath>/release with git archive. The svn repository the files were once compared with (svn.ez.no) is gone.
+ *
+ * @param string $ref
+ * @param string $exportPath a directory createExportDirectory() made
+ * @return string|false the directory that holds update/database of the release, or false
+ */
+function exportGitRelease( $ref, $exportPath )
+{
+    $releasePath = $exportPath . '/release';
+    if ( is_dir( $releasePath . '/update/database' ) )
+        return $releasePath;
+    if ( !is_dir( $releasePath ) && !@mkdir( $releasePath, 0700 ) )
+        return false;
+    $archive = $exportPath . '/release.tar';
+    $commands = array( 'git archive --format=tar -o ' . escapeshellarg( $archive ) . ' ' . escapeshellarg( $ref ) . ' update/database',
+                       'tar -x -f ' . escapeshellarg( $archive ) . ' -C ' . escapeshellarg( $releasePath ) );
+    foreach ( $commands as $command )
+    {
+        $output = array();
+        exec( $command . ' 2>&1', $output, $code );
+        if ( $code != 0 )
+        {
+            print( "Failed to export using:\n$command\n" . implode( "\n", $output ) . "\n" );
+            return false;
+        }
+    }
+    unlink( $archive );
+    return is_dir( $releasePath . '/update/database' ) ? $releasePath : false;
 }
 }
 
@@ -421,7 +456,7 @@ class Checkdbfiles extends \Exponential\Runnable\Command
     private static $createdExportDirectories = array();
 
     /**
-     * Creates a new, empty directory for the SVN exports inside $base, named checkdbfiles-export-<pid>-<random>.
+     * Creates a new, empty directory for the release's files inside $base, named checkdbfiles-export-<pid>-<random>.
      * $base is created when it does not exist, but nothing in it is touched.
      *
      * @param string $base
@@ -489,8 +524,12 @@ class Checkdbfiles extends \Exponential\Runnable\Command
                                                                 "The status will be one of these:\n" .
                                                                 " '?' file is not defined in upgrade path\n" .
                                                                 " '!' file defined in upgrade path but missing on filesystem\n" .
-                                                                " 'A' file is present in working copy but not in the original stable branch\n" .
-                                                                " 'C' file data conflicts with the original stable branch\n" .
+                                                                " 'A' file is present in working copy but not in the release compared with\n" .
+                                                                " 'C' file data conflicts with the release compared with\n" .
+                                                                "\n" .
+                                                                "The files of the released branches (4.3 up to the current branch) are\n" .
+                                                                "compared with a release of the kernel's git repository: --compare-with,\n" .
+                                                                "by default the newest tag v<major>.<minor>.<patch>.\n" .
                                                                 "\n" .
                                                                 "Example output:\n" .
                                                                 "  checkdbfiles.php\n" .
@@ -499,10 +538,11 @@ class Checkdbfiles extends \Exponential\Runnable\Command
                                              'use-modules' => false,
                                              'use-extensions' => true ) );
 
-        $options = $this->startup( "[no-verify-branches][export-path:]",
+        $options = $this->startup( "[no-verify-branches][export-path:][compare-with:]",
                                         "",
-                                        array( 'no-verify-branches' => "Do not verify the content of the files with previous branches (To avoid SVN usage)",
-                                               'export-path' => "Directory in which a new directory for the SVN exports is made and removed again (default var/tmp)"
+                                        array( 'no-verify-branches' => "Do not compare the files with a release (needs no git checkout)",
+                                               'export-path' => "Directory in which a new directory for the release's files is made and removed again (default var/tmp)",
+                                               'compare-with' => "The release to compare with: a tag or commit of the kernel's git repository (default: the newest tag v<major>.<minor>.<patch>)"
                                                ) );
 
         $dbTypes = self::databaseTypes();
@@ -536,9 +576,19 @@ class Checkdbfiles extends \Exponential\Runnable\Command
             $exportPath = self::createExportDirectory( $exportBase );
             if ( $exportPath === false )
             {
-                $cli->error( "Could not create a directory for the SVN exports in $exportBase" );
+                $cli->error( "Could not create a directory for the release's files in $exportBase" );
                 $script->shutdown( 1 );
             }
+            $compareWith = $options['compare-with'] ? $options['compare-with'] : newestReleaseTag();
+            if ( $compareWith === false )
+            {
+                self::removeExportDirectory( $exportPath );
+                $cli->error( "No release tag v<major>.<minor>.<patch> found: the installation is not a git checkout, or has no tags. " .
+                             "Give one with --compare-with=<tag>, or skip the comparison with --no-verify-branches" );
+                $script->shutdown( 1 );
+            }
+            $cli->output( "Comparing with the release $compareWith" );
+            $releasePath = null;
 
             // Figure out the current branch, we do not want to export it
             $currentBranch = \ExponentialSDK::VERSION_MAJOR . '.' . \ExponentialSDK::VERSION_MINOR;
@@ -556,13 +606,15 @@ class Checkdbfiles extends \Exponential\Runnable\Command
                         continue;
                     $basePath = 'update/database/' . $dbType . '/' . $branch;
                     $useInfoFiles = isset( $versionList['info_files'] ) ? $versionList['info_files'] : false;
-                    if ( !exportSVNVersion( $branch, $exportPath ) )
+                    if ( $releasePath === null )
+                        $releasePath = exportGitRelease( $compareWith, $exportPath );
+                    if ( $releasePath === false )
                     {
                         $conflictFileList[] = $basePath;
                         $exportFailed = true;
                         continue;
                     }
-                    $exportBasePath = $exportPath . '/' . $branch . '/' . $dbType . '/' . $branch;
+                    $exportBasePath = $releasePath . '/' . $basePath;
                     foreach ( array( 'unstable', 'stable' ) as $state )
                     {
                         $entries = self::entriesFor( $versionList, $state, $dbType );
