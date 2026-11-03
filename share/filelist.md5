@@ -28663,7 +28663,7 @@ c45426834ca56e946c9342138531d1f9  tests/tests/kernel/classes/eZContentObjectVers
 34481a9dcc01d1b2fcb5a283ce263bb2  tests/tests/kernel/classes/eZDBGarbageCollectorBasketQueryTest.php
 1710a9ddc6dbbe09aba9c5cfde5f89f7  tests/tests/kernel/classes/eZDynamicPropertiesPHP82Test.php
 f76340e47c0568cd5f15fe7463316b54  tests/tests/kernel/classes/eZExtensionAdditionalDirectoriesTest.php
-7c3f878c972cbedf40afa19f14401e57  tests/tests/kernel/classes/eZExtensionWithOrderingTest.php
+91973f38fff17eb092d52acf2726ab8c  tests/tests/kernel/classes/eZExtensionWithOrderingTest.php
 cdfc78618c247c1e65da3263ac0c35f9  tests/tests/kernel/classes/eZExtensionWithoutOrderingTest.php
 bbd6b992cb24cd615325c5595bfde1d9  tests/tests/kernel/classes/eZNamePatternResolverClassTest.php
 155e358b2e66927edd5a60ed6077bd32  tests/tests/kernel/classes/eZNamePatternResolverLimitTest.php
@@ -29758,7 +29758,7 @@ ea78290da17011e1c5e5fa5c26e2f812  tests/tests/kernel/private/webdav/regression/P
 4185881066df2e75da35d4a0a5c2444a  tests/tests/kernel/requestclassifier/expRequestClassifierRulesTest.php
 d5a5d57ef47b9b57f9871a2fbbf5b752  tests/tests/kernel/requestclassifier/expRequestClassifierTest.php
 a17689ffdad3de141a54df0be36b5b8e  tests/tests/kernel/requestclassifier/expRequestClassifierThresholdTest.php
-1dc8d6668d2678f1dd63d4cf8925d9b2  tests/tests/kernel/requestlog/expRequestLogRequestEndTest.php
+39abb422a69acfab626c6cd3d0dc708a  tests/tests/kernel/requestlog/expRequestLogRequestEndTest.php
 5c3e599565541838e599260a4fe75ac5  tests/tests/kernel/requestlog/expRequestLogTest.php
 db6c4a8ca3c8ccf2ed6fcbbdd2c0b803  tests/tests/kernel/requestlog/fixtures/request_ending_in_clean_exit.php
 1e9e7547b8ae5731de34a3aa97cb10de  tests/tests/kernel/search/eZSearchEngineIdsTest.php
@@ -29913,7 +29913,7 @@ b7c2dc8342b926cdba3613d617be0a30  tests/tests/lib/ezutils/eZDebugMessagesTest.ph
 b546c9416ca9da71a60a8ad05659692c  tests/tests/lib/ezutils/eZDebugTimingPointLogTest.php
 58f090824e5e444bd3fff74c2e636447  tests/tests/lib/ezutils/eZExecutionDatabaseUnavailableTest.php
 53ed3290820610c58e3bd501c8f0225a  tests/tests/lib/ezutils/eZExecutionExceptionHandlerTest.php
-a82daaecec93ea49f766c63ac748fef3  tests/tests/lib/ezutils/eZExecutionPerRequestRegistrationTest.php
+44aa8714832b3cdbe312908c2b02f3c8  tests/tests/lib/ezutils/eZExecutionPerRequestRegistrationTest.php
 636ac69b1bf4b6447d7735ad49c54014  tests/tests/lib/ezutils/eZExpiryHandlerCacheDirectoryTest.php
 132f7e532009881ce6f5b110860f5038  tests/tests/lib/ezutils/eZExtensionCountsTest.php
 fabbb46c57b757029b8cc4c8e7dc2a74  tests/tests/lib/ezutils/eZExtensionNewestFileTimeTest.php

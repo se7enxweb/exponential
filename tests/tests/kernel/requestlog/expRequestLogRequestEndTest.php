@@ -52,7 +52,7 @@ class expRequestLogRequestEndTest extends PHPUnit\Framework\TestCase
         foreach ( array( 'REQUEST_TIME_FLOAT', 'REQUEST_METHOD', 'REQUEST_URI', 'REMOTE_ADDR', 'HTTP_USER_AGENT', 'HTTP_REFERER' ) as $key )
             $this->server[$key] = array_key_exists( $key, $_SERVER ) ? array( $_SERVER[$key] ) : null;
         $this->access = array_key_exists( 'eZCurrentAccess', $GLOBALS ) ? array( $GLOBALS['eZCurrentAccess'] ) : null;
-        $this->exceptionHandler = set_exception_handler( null );
+        $this->pushExceptionHandlerMarker();
 
         chdir( dirname( __DIR__, 4 ) );
         $this->dir = getcwd() . '/var/tmp/requestend_test_' . bin2hex( random_bytes( 6 ) );
@@ -80,7 +80,7 @@ class expRequestLogRequestEndTest extends PHPUnit\Framework\TestCase
             unset( $GLOBALS['eZCurrentAccess'] );
         else
             $GLOBALS['eZCurrentAccess'] = $this->access[0];
-        set_exception_handler( $this->exceptionHandler );
+        $this->popExceptionHandlersToMarker();
 
         expRequestLog::reset();
         expRequestLog::setLogDirectory( null );
@@ -88,6 +88,32 @@ class expRequestLogRequestEndTest extends PHPUnit\Framework\TestCase
         expRequestLog::setLegacyWriter( null );
         expRequestClassifier::reset( true );
         self::remove( $this->dir );
+    }
+
+    /**
+     * Starts the test without an exception handler: pushes a marker of its own and then null onto PHP's stack of
+     * exception handlers. Paired with popExceptionHandlersToMarker(), which leaves the stack as it was, so PHPUnit
+     * sees neither a handler left behind nor one of its own removed (a set_exception_handler( $saved ) in tearDown()
+     * pushed one more instead, and the test was risky).
+     */
+    private function pushExceptionHandlerMarker()
+    {
+        $this->exceptionHandler = static function ( $e ) {};
+        set_exception_handler( $this->exceptionHandler );
+        set_exception_handler( null );
+    }
+
+    /** Pops every exception handler the test and the tested code pushed, the marker included. */
+    private function popExceptionHandlersToMarker()
+    {
+        for ( $i = 0; $i < 100; $i++ )
+        {
+            $current = set_exception_handler( null );
+            restore_exception_handler();
+            restore_exception_handler();
+            if ( $current === $this->exceptionHandler )
+                return;
+        }
     }
 
     private static function remove( $dir )

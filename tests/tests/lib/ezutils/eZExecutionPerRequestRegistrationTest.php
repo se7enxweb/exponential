@@ -48,7 +48,7 @@ class eZExecutionPerRequestRegistrationTest extends PHPUnit\Framework\TestCase
         }
         $this->hadRequestTime = array_key_exists( 'REQUEST_TIME_FLOAT', $_SERVER );
         $this->requestTime = $this->hadRequestTime ? $_SERVER['REQUEST_TIME_FLOAT'] : null;
-        $this->exceptionHandler = set_exception_handler( null );
+        $this->pushExceptionHandlerMarker();
     }
 
     protected function tearDown(): void
@@ -59,7 +59,33 @@ class eZExecutionPerRequestRegistrationTest extends PHPUnit\Framework\TestCase
             $_SERVER['REQUEST_TIME_FLOAT'] = $this->requestTime;
         else
             unset( $_SERVER['REQUEST_TIME_FLOAT'] );
+        $this->popExceptionHandlersToMarker();
+    }
+
+    /**
+     * Starts the test without an exception handler: pushes a marker of its own and then null onto PHP's stack of
+     * exception handlers. Paired with popExceptionHandlersToMarker(), which leaves the stack as it was, so PHPUnit
+     * sees neither a handler left behind nor one of its own removed (a set_exception_handler( $saved ) in tearDown()
+     * pushed one more instead, and the test was risky).
+     */
+    private function pushExceptionHandlerMarker()
+    {
+        $this->exceptionHandler = static function ( $e ) {};
         set_exception_handler( $this->exceptionHandler );
+        set_exception_handler( null );
+    }
+
+    /** Pops every exception handler the test and the tested code pushed, the marker included. */
+    private function popExceptionHandlersToMarker()
+    {
+        for ( $i = 0; $i < 100; $i++ )
+        {
+            $current = set_exception_handler( null );
+            restore_exception_handler();
+            restore_exception_handler();
+            if ( $current === $this->exceptionHandler )
+                return;
+        }
     }
 
     /** The statics as a worker puts them back before each request: the warm-up's. */
