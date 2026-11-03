@@ -182,6 +182,18 @@ $ViewList['search'] = array(
     'params' => array( ),
     'unordered_params' => array( 'offset' => 'Offset' ) );
 
+// The suggestions of the administration's header search field as JSON, asked for while the user types
+// (content/suggest/(text)/<text>, javascript/page/search_suggest.js): content, PDF pages, users, classes and the
+// administration's pages, each only as far as the user may see it (expSearchSuggest). Read only; ajax, so the
+// address is not kept as the last page seen. Settings: admininterface.ini [SearchSuggestSettings].
+$ViewList['suggest'] = array(
+    'functions' => array( 'read' ),
+    'default_navigation_part' => 'ezcontentnavigationpart',
+    'ui_context' => 'ajax',
+    'script' => 'suggest.php',
+    'params' => array( ),
+    'unordered_params' => array( 'text' => 'Text' ) );
+
 $ViewList['urlalias'] = array(
     'functions' => array( 'edit' ),
     'default_navigation_part' => 'ezcontentnavigationpart',

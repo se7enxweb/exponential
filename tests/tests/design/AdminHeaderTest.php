@@ -342,7 +342,7 @@ class AdminHeaderTest extends PHPUnit\Framework\TestCase
     public function testTheSlashKeyFocusesTheHeaderSearch()
     {
         $search = self::file( 'design/admin4/templates/page_search.tpl' );
-        $this->assertStringContainsString( '{if $box|eq( \'\' )} aria-keyshortcuts="/" data-short-placeholder="1"{/if}', $search );
+        $this->assertStringContainsString( '{if $box|eq( \'\' )} aria-keyshortcuts="/ Control+/ Meta+/" data-short-placeholder="1"{/if}', $search );
         // the narrow header field: a short placeholder; the scope ("Search in all content") stays its name and title
         $this->assertStringContainsString( 'placeholder="{if $box|eq( \'\' )}{\'Search...\'|i18n( \'design/admin/pagelayout\' )|wash}{else}{$search_title|wash}{/if}" aria-label="{$search_title|wash}"', $search );
         // the scope popup's script is a file of its own (no inline script, doc/eng-us/features/6.0/content-security-policy.md)

@@ -6000,6 +6000,210 @@
 <context>
     <name>design/admin/content/search</name>
     <message>
+        <source>Other</source>
+        <translation>Sonstige</translation>
+    </message>
+    <message>
+        <source>Show filters</source>
+        <translation>Filter anzeigen</translation>
+    </message>
+    <message>
+        <source>Hide filters</source>
+        <translation>Filter ausblenden</translation>
+    </message>
+    <message>
+        <source>Last 7 days</source>
+        <translation>Letzte 7 Tage</translation>
+    </message>
+    <message>
+        <source>Custom range</source>
+        <translation>Eigener Zeitraum</translation>
+    </message>
+    <message>
+        <source>All words</source>
+        <translation>Alle Wörter</translation>
+    </message>
+    <message>
+        <source>Any word</source>
+        <translation>Eines der Wörter</translation>
+    </message>
+    <message>
+        <source>Exact phrase</source>
+        <translation>Genaue Wortfolge</translation>
+    </message>
+    <message>
+        <source>Relevance</source>
+        <translation>Relevanz</translation>
+    </message>
+    <message>
+        <source>Name A–Z</source>
+        <translation>Name A–Z</translation>
+    </message>
+    <message>
+        <source>Name Z–A</source>
+        <translation>Name Z–A</translation>
+    </message>
+    <message>
+        <source>Modified, newest first</source>
+        <translation>Geändert, neueste zuerst</translation>
+    </message>
+    <message>
+        <source>Modified, oldest first</source>
+        <translation>Geändert, älteste zuerst</translation>
+    </message>
+    <message>
+        <source>Published, newest first</source>
+        <translation>Veröffentlicht, neueste zuerst</translation>
+    </message>
+    <message>
+        <source>Published, oldest first</source>
+        <translation>Veröffentlicht, älteste zuerst</translation>
+    </message>
+    <message>
+        <source>Modified</source>
+        <translation>Geändert</translation>
+    </message>
+    <message>
+        <source>Filters</source>
+        <translation>Filter</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation>Zurücksetzen</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Anwenden</translation>
+    </message>
+    <message>
+        <source>Words</source>
+        <translation>Wörter</translation>
+    </message>
+    <message>
+        <source>Content type</source>
+        <translation>Inhaltstyp</translation>
+    </message>
+    <message>
+        <source>Show more (%count)</source>
+        <translation>Mehr anzeigen (%count)</translation>
+    </message>
+    <message>
+        <source>Choose one content type to search in one of its attributes.</source>
+        <translation>Wählen Sie einen einzigen Inhaltstyp, um in einem seiner Attribute zu suchen.</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Sektion</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Von</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Bis</translation>
+    </message>
+    <message>
+        <source>The from date is not a valid date.</source>
+        <translation>Das Von-Datum ist kein gültiges Datum.</translation>
+    </message>
+    <message>
+        <source>The to date is not a valid date.</source>
+        <translation>Das Bis-Datum ist kein gültiges Datum.</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Eigentümer</translation>
+    </message>
+    <message>
+        <source>User ID, login or e-mail address.</source>
+        <translation>Benutzer-ID, Login oder E-Mail-Adresse.</translation>
+    </message>
+    <message>
+        <source>No user was found for “%input”.</source>
+        <translation>Für „%input“ wurde kein Benutzer gefunden.</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Sprache</translation>
+    </message>
+    <message>
+        <source>Any language</source>
+        <translation>Beliebige Sprache</translation>
+    </message>
+    <message>
+        <source>Location</source>
+        <translation>Ort</translation>
+    </message>
+    <message>
+        <source>%count locations</source>
+        <translation>%count Orte</translation>
+    </message>
+    <message>
+        <source>Results per page</source>
+        <translation>Treffer pro Seite</translation>
+    </message>
+    <message>
+        <source>Results for “%text” (%count)</source>
+        <translation>Treffer für „%text“ (%count)</translation>
+    </message>
+    <message>
+        <source>Results (%count)</source>
+        <translation>Treffer (%count)</translation>
+    </message>
+    <message>
+        <source>Sort by</source>
+        <translation>Sortieren nach</translation>
+    </message>
+    <message>
+        <source>Sort</source>
+        <translation>Sortieren</translation>
+    </message>
+    <message>
+        <source>Active filters</source>
+        <translation>Aktive Filter</translation>
+    </message>
+    <message>
+        <source>Remove this filter</source>
+        <translation>Diesen Filter entfernen</translation>
+    </message>
+    <message>
+        <source>Or choose filters and apply them to list the content they match.</source>
+        <translation>Oder wählen Sie Filter und wenden Sie sie an, um die passenden Inhalte aufzulisten.</translation>
+    </message>
+    <message>
+        <source>The filters narrow the search down once you have typed words.</source>
+        <translation>Die Filter grenzen die Suche ein, sobald Sie Wörter eingegeben haben.</translation>
+    </message>
+    <message>
+        <source>No results were found for “%text”.</source>
+        <translation>Für „%text“ wurden keine Treffer gefunden.</translation>
+    </message>
+    <message>
+        <source>No results were found.</source>
+        <translation>Es wurden keine Treffer gefunden.</translation>
+    </message>
+    <message>
+        <source>Remove a filter above.</source>
+        <translation>Entfernen Sie oben einen Filter.</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Übersetzungen</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Aktionen</translation>
+    </message>
+    <message>
+        <source>Edit %name</source>
+        <translation>%name bearbeiten</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Bearbeiten</translation>
+    </message>
+    <message>
         <source>Search for</source>
         <translation>Suchen nach</translation>
     </message>
@@ -16462,6 +16666,61 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     <message>
         <source>Help center</source>
         <translation>Hilfe-Center</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/search/suggest</name>
+    <message>
+        <source>Content</source>
+        <translation>Inhalte</translation>
+    </message>
+    <message>
+        <source>Document pages</source>
+        <translation>Dokumentseiten</translation>
+    </message>
+    <message>
+        <source>Users</source>
+        <translation>Benutzer</translation>
+    </message>
+    <message>
+        <source>Content classes</source>
+        <translation>Inhaltsklassen</translation>
+    </message>
+    <message>
+        <source>Administration</source>
+        <translation>Administration</translation>
+    </message>
+    <message>
+        <source>Page %number</source>
+        <translation>Seite %number</translation>
+    </message>
+    <message>
+        <source>View all results</source>
+        <translation>Alle Ergebnisse anzeigen</translation>
+    </message>
+    <message>
+        <source>%count results</source>
+        <translation>%count Ergebnisse</translation>
+    </message>
+    <message>
+        <source>One result</source>
+        <translation>Ein Ergebnis</translation>
+    </message>
+    <message>
+        <source>%count suggestions</source>
+        <translation>%count Vorschläge</translation>
+    </message>
+    <message>
+        <source>No suggestions</source>
+        <translation>Keine Vorschläge</translation>
+    </message>
+    <message>
+        <source>The suggestions could not be loaded.</source>
+        <translation>Die Vorschläge konnten nicht geladen werden.</translation>
+    </message>
+    <message>
+        <source>Suggestions</source>
+        <translation>Vorschläge</translation>
     </message>
 </context>
 <context>

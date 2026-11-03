@@ -69,7 +69,11 @@ class Search extends \Exponential\Runnable\ModuleView
         $searchPageLimit = 2;
         $tpl = \eZTemplate::factory();
         $ini = \eZINI::instance();
-        $useSearchCode = $ini->variable( 'SearchSettings', 'SearchViewHandling' ) == 'default';
+        // default: the view searches and hands the result to the template. A template that is the administration's
+        // filtered search page searches itself (fetch content/filtered_search): the view's own search would only
+        // run the same query a second time
+        $useSearchCode = $ini->variable( 'SearchSettings', 'SearchViewHandling' ) == 'default'
+                         && !self::templateSearchesItself( 'content/search.tpl' );
         $logSearchStats = $ini->variable( 'SearchSettings', 'LogSearchStats' ) == 'enabled';
 
         if ( $http->hasVariable( 'BrowsePageLimit' ) )
@@ -254,15 +258,11 @@ class Search extends \Exponential\Runnable\ModuleView
         $Result['path'] = array( array( 'text' => \ezpI18n::tr( 'kernel/content', 'Search' ),
                                         'url' => false ) );
 
-        $searchData = false;
-        if ( !$useSearchCode )
-        {
-            if ( $tpl->hasVariable( "search_data" ) )
-            {
-                $searchData = $tpl->variable( "search_data" );
-            }
-        }
-        else
+        // The statistics count what the page showed: a template that searches itself (the administration's
+        // filtered search page) leaves its result in search_data, also with SearchViewHandling=default, where the
+        // view's own, unfiltered search would give another count.
+        $searchData = $tpl->hasVariable( "search_data" ) ? $tpl->variable( "search_data" ) : false;
+        if ( $useSearchCode && !is_array( $searchData ) )
         {
             $searchData = $searchResult;
         }
@@ -359,6 +359,26 @@ class Search extends \Exponential\Runnable\ModuleView
     public static function emptySearchResult()
     {
         return array( 'SearchResult' => array(), 'SearchCount' => 0, 'StopWordArray' => array() );
+    }
+
+    /**
+     * Whether the template the view renders is the administration's filtered search page, which searches itself:
+     * the design's content/search.tpl (or content/advancedsearch.tpl) includes design:content/search_page.tpl.
+     * Looked up along the design bases of the siteaccess as the template resource does (without override rules).
+     *
+     * @param string $template the template path below templates/, e.g. 'content/search.tpl'
+     * @param array|null $bases design bases (tests); null: eZTemplateDesignResource::allDesignBases()
+     * @return bool
+     */
+    public static function templateSearchesItself( $template, $bases = null )
+    {
+        $tried = array();
+        $match = \eZTemplateDesignResource::fileMatch( $bases === null ? \eZTemplateDesignResource::allDesignBases() : $bases,
+                                                       'templates', $template, $tried );
+        if ( !is_array( $match ) || !is_readable( $match['path'] ) )
+            return false;
+        $text = file_get_contents( $match['path'], false, null, 0, 16384 );
+        return is_string( $text ) && strpos( $text, "{include uri='design:content/search_page.tpl'}" ) !== false;
     }
 
     /**

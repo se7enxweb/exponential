@@ -459,6 +459,17 @@ class eZContentFunctionCollection
         return array( 'result' => $searchResult );
     }
 
+    /**
+     * fetch( 'content', 'filtered_search' ): the search of the administration's search page, see expContentSearchFilters
+     *
+     * @param int $offset
+     * @return array
+     */
+    static public function fetchFilteredSearch( $offset )
+    {
+        return array( 'result' => expContentSearchFilters::fromCurrentRequest( $offset ) );
+    }
+
     static public function fetchTrashObjectCount( $objectNameFilter, $attributeFilter = false )
     {
         $params = array();

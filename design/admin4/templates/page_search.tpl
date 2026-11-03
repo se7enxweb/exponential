@@ -3,11 +3,16 @@
    keeps the ids of the two copies apart, and the script works on the copy it belongs to, never on an id.
    $search_sections: the sections of the popup, fetched once by page_topmenu.tpl before both copies; a page that
    includes this template without it gets them fetched here. The header's field answers the "/" key (admin4.js) and
-   has the short placeholder "Search..." (it is narrow from 1280px); where it searches is in its title and name. *}
+   has the short placeholder "Search..." (it is narrow from 1280px); where it searches is in its title and name.
+   While the user types, each copy suggests content, users, classes and admin pages under the field (a combobox;
+   parts/search_suggest.tpl, javascript/page/search_suggest.js, content/suggest; admininterface.ini
+   [SearchSuggestSettings]); Ctrl+/ or Cmd+/ focuses the field from anywhere. Not in the browse mode, and not
+   for a user who may not open content/suggest (no combobox that only gets an error page). *}
 {def $search_node_id = first_set( $search_subtree_array[0], $module_result.path[0].node_id, 1 )
      $search_title = "Search in all content"|i18n( 'design/admin/pagelayout' )
      $section_id = -1
-     $box = first_set( $search_box, '' )}
+     $box = first_set( $search_box, '' )
+     $search_suggest = and( ezini( 'SearchSuggestSettings', 'Enabled', 'admininterface.ini' )|eq( 'true' ), $ui_context|ne( 'browse' ), fetch( 'user', 'can_open', hash( 'uri', 'content/suggest' ) ) )}
 {if ezhttp_hasvariable( 'SectionID', 'get' )}
     {set $section_id = ezhttp( 'SectionID', 'get' )}
 {/if}
@@ -60,8 +65,9 @@
         {/if}
         <div class="searchtextwrapper">
             <button type="button" class="searchscope" id="searchscope{$box}" aria-haspopup="dialog" aria-expanded="false" aria-controls="searchscope-pane{$box}" title="{'Search scope'|i18n( 'design/admin/pagelayout' )}"><span class="hide">{'Search scope'|i18n( 'design/admin/pagelayout' )}</span></button>
-            <input id="searchtext{$box}" class="form-control searchtext" name="SearchText" type="search" size="20" value="{if is_set( $search_text )}{$search_text|wash}{/if}" title="{$search_title|wash}" placeholder="{if $box|eq( '' )}{'Search...'|i18n( 'design/admin/pagelayout' )|wash}{else}{$search_title|wash}{/if}" aria-label="{$search_title|wash}"{if $box|eq( '' )} aria-keyshortcuts="/" data-short-placeholder="1"{/if} />
+            <input id="searchtext{$box}" class="form-control searchtext" name="SearchText" type="search" size="20" value="{if is_set( $search_text )}{$search_text|wash}{/if}" title="{$search_title|wash}" placeholder="{if $box|eq( '' )}{'Search...'|i18n( 'design/admin/pagelayout' )|wash}{else}{$search_title|wash}{/if}" aria-label="{$search_title|wash}"{if $box|eq( '' )} aria-keyshortcuts="/ Control+/ Meta+/" data-short-placeholder="1"{/if}{if $search_suggest} role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="searchsuggest{$box}-list" autocomplete="off" data-suggest-url={'content/suggest'|ezurl} data-suggest-min="{ezini( 'SearchSuggestSettings', 'MinLength', 'admininterface.ini' )|int}"{/if} />
         </div>
+        {if $search_suggest}{include uri='design:parts/search_suggest.tpl' suggest_id=concat( 'searchsuggest', $box )}{/if}
         <button id="searchbutton{$box}" class="searchbuttonfield" name="SearchButton" type="submit" value="{'Search'|i18n( 'design/admin/pagelayout' )}" title="{'Search'|i18n( 'design/admin/pagelayout' )}"><span class="hide">{'Search'|i18n( 'design/admin/pagelayout' )}</span></button>
         {if eq( $ui_context, 'browse' )}
             <input name="Mode" type="hidden" value="browse" />
@@ -96,7 +102,7 @@
                     {/if}
                 </fieldset>
                 {if ne( $ui_context, 'browse' )}
-                <p class="searchscope-advanced"><a href={'/content/advancedsearch'|ezurl} title="{'Advanced search.'|i18n( 'design/admin/pagelayout' )}">{'Advanced search'|i18n( 'design/admin/pagelayout' )}</a></p>
+                <p class="searchscope-advanced"><a href="{'/content/search'|ezurl( 'no' )}#search-filters" title="{'Advanced search.'|i18n( 'design/admin/pagelayout' )}">{'Advanced search'|i18n( 'design/admin/pagelayout' )}</a></p>
                 {/if}
             </div>
         </div>
@@ -107,5 +113,6 @@
 
 {if $box|eq( '' )}
 {ezscript( array( 'page/page_search.js' ) )}
+{if $search_suggest}{ezscript( array( 'page/search_suggest.js' ) )}{/if}
 {/if}
-{undef $search_node_id $section_id $box}
+{undef $search_node_id $section_id $box $search_suggest}
