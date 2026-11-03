@@ -47,9 +47,9 @@ printf '%s\n' "$PASSWORD" | ./console exp:user:create --login=ci-bot --email=ci@
 | `--email` | erforderlich | Die E-Mail-Adresse (create: des neuen Kontos; edit: die neue Adresse) |
 | `--first-name` | erforderlich | Der Vorname (das Attribut first_name der Benutzerklasse) |
 | `--last-name` | erforderlich | Der Nachname (das Attribut last_name der Benutzerklasse) |
-| `--group` | erforderlich | Eine Benutzergruppe per Knoten-ID oder Name: nur ihre Mitglieder auflisten (unter ihr, in jeder Tiefe); create: die Gruppe des neuen Kontos (für mehrere wiederholen, die erste ist die Hauptgruppe; Vorgabe [UserSettings] DefaultUserPlacement) |
+| `--group` | erforderlich | Eine Benutzergruppe per Knoten-ID oder Name: list, export und bulk nehmen nur ihre Mitglieder (unter ihr, in jeder Tiefe); create und import: die Gruppe der neuen Konten (für mehrere wiederholen, die erste ist die Hauptgruppe; Vorgabe [UserSettings] DefaultUserPlacement) |
 | `--class` | erforderlich | Die Benutzerklasse des neuen Kontos (Vorgabe die Klasse aus [UserSettings] UserClassID) |
-| `--password-stdin` |  | Das Passwort von der Standardeingabe lesen (eine Zeile), nie von der Befehlszeile; es muss die Passwortregeln erfüllen |
+| `--password-stdin` |  | Das Passwort von der Standardeingabe lesen (eine Zeile), nie von der Befehlszeile (create und reset-password: es muss die Passwortregeln erfüllen) |
 | `--generate-password` |  | Ein Passwort erzeugen, das die Passwortregeln erfüllt, und es einmal ausgeben |
 | `--send-activation` |  | Das Konto deaktiviert anlegen und die Aktivierungsmail senden; die Person setzt ihr Passwort mit „Passwort vergessen“ |
 | `--disabled` |  | Das Konto deaktiviert anlegen (später mit exp:user:enable aktivieren) |

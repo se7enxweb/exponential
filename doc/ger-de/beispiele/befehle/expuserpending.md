@@ -39,8 +39,8 @@ nothing; the same as exp:user:list --state=pending.
 | Option | Wert | Hilfe |
 |---|---|---|
 | `--search` | erforderlich | Nur Konten, deren Anmeldename, Name oder E-Mail-Adresse diesen Text enthält |
-| `--limit` | erforderlich | Wie viele Konten aufgelistet werden (Vorgabe 25, höchstens 500) |
-| `--offset` | erforderlich | Zuerst so viele Konten überspringen (die nächste Seite: --offset=25) |
+| `--limit` | erforderlich | Wie viele aufgelistet werden (Vorgabe 25, höchstens 500); bulk: wie viele Konten ein Lauf höchstens ändern darf (Vorgabe 500, höchstens 5000) |
+| `--offset` | erforderlich | Zuerst so viele überspringen (die nächste Seite: --offset=25) |
 | `--format` | erforderlich | text (Vorgabe) oder json (die maschinenlesbare Ausgabe exp-user/1) |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).

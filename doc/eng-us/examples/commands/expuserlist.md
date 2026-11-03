@@ -39,13 +39,13 @@ Changes nothing.
 | Option | Value | Help |
 |---|---|---|
 | `--state` | required | Only accounts in this state: all (default), enabled, disabled, unactivated, pending, locked, never, inactive, orphaned, duplicate_login or duplicate_email |
-| `--group` | required | A user group by node id or name: list only its members (below it, at any depth); create: the group of the new account (repeat for more, the first is the main group; default [UserSettings] DefaultUserPlacement) |
+| `--group` | required | A user group by node id or name: list, export and bulk take only its members (below it, at any depth); create and import: the group of the new accounts (repeat for more, the first is the main group; default [UserSettings] DefaultUserPlacement) |
 | `--search` | required | Only accounts whose login, name or e-mail address contains this text |
 | `--days` | required | With --state=inactive: not signed in for this many days (default 180) |
 | `--sort` | required | The order: name (default), login, email, last_visit, login_count or id |
 | `--order` | required | asc (default) or desc |
-| `--limit` | required | How many accounts to list (default 25, at most 500) |
-| `--offset` | required | Skip this many accounts first (the next page: --offset=25) |
+| `--limit` | required | How many to list (default 25, at most 500); bulk: the most accounts one run may change (default 500, at most 5000) |
+| `--offset` | required | Skip this many first (the next page: --offset=25) |
 | `--format` | required | text (default) or json (the machine output exp-user/1) |
 
 Read from the option definitions in the code (`startup()`, `getOptions()`, `options()` or `ezcConsoleOption`). Every script also takes the standard options of the script framework (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).

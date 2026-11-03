@@ -41,13 +41,13 @@ Changes nothing.
 | Option | Wert | Hilfe |
 |---|---|---|
 | `--state` | erforderlich | Nur Konten in diesem Zustand: all (Vorgabe), enabled, disabled, unactivated, pending, locked, never, inactive, orphaned, duplicate_login oder duplicate_email |
-| `--group` | erforderlich | Eine Benutzergruppe per Knoten-ID oder Name: nur ihre Mitglieder auflisten (unter ihr, in jeder Tiefe); create: die Gruppe des neuen Kontos (für mehrere wiederholen, die erste ist die Hauptgruppe; Vorgabe [UserSettings] DefaultUserPlacement) |
+| `--group` | erforderlich | Eine Benutzergruppe per Knoten-ID oder Name: list, export und bulk nehmen nur ihre Mitglieder (unter ihr, in jeder Tiefe); create und import: die Gruppe der neuen Konten (für mehrere wiederholen, die erste ist die Hauptgruppe; Vorgabe [UserSettings] DefaultUserPlacement) |
 | `--search` | erforderlich | Nur Konten, deren Anmeldename, Name oder E-Mail-Adresse diesen Text enthält |
 | `--days` | erforderlich | Mit --state=inactive: seit so vielen Tagen nicht angemeldet (Vorgabe 180) |
 | `--sort` | erforderlich | Die Reihenfolge: name (Vorgabe), login, email, last_visit, login_count oder id |
 | `--order` | erforderlich | asc (Vorgabe) oder desc |
-| `--limit` | erforderlich | Wie viele Konten aufgelistet werden (Vorgabe 25, höchstens 500) |
-| `--offset` | erforderlich | Zuerst so viele Konten überspringen (die nächste Seite: --offset=25) |
+| `--limit` | erforderlich | Wie viele aufgelistet werden (Vorgabe 25, höchstens 500); bulk: wie viele Konten ein Lauf höchstens ändern darf (Vorgabe 500, höchstens 5000) |
+| `--offset` | erforderlich | Zuerst so viele überspringen (die nächste Seite: --offset=25) |
 | `--format` | erforderlich | text (Vorgabe) oder json (die maschinenlesbare Ausgabe exp-user/1) |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
