@@ -57,28 +57,38 @@ class Currencylist extends \Exponential\Runnable\ModuleView
             $currencyList = \eZCurrencyData::fetchList();
             $db = \eZDB::instance();
             $db->begin();
-            foreach ( $currencyList as $currency )
+            try
             {
-                $currencyCode = $currency->attribute( 'code' );
-                if ( isset( $updateDataList[$currencyCode] ) )
+                foreach ( $currencyList as $currency )
                 {
-                    $updateData = $updateDataList[$currencyCode];
+                    $currencyCode = $currency->attribute( 'code' );
+                    if ( isset( $updateDataList[$currencyCode] ) )
+                    {
+                        $updateData = $updateDataList[$currencyCode];
 
-                    if ( isset( $updateData['status'] ) )
-                        $currency->setStatus( $updateData['status'] );
+                        if ( isset( $updateData['status'] ) )
+                            $currency->setStatus( $updateData['status'] );
 
-                    if ( is_numeric( $updateData['custom_rate_value'] ) )
-                        $currency->setAttribute( 'custom_rate_value', $updateData['custom_rate_value'] );
-                    else if ( $updateData['custom_rate_value'] == '' )
-                        $currency->setAttribute( 'custom_rate_value', 0 );
+                        if ( is_numeric( $updateData['custom_rate_value'] ) )
+                            $currency->setAttribute( 'custom_rate_value', $updateData['custom_rate_value'] );
+                        else if ( $updateData['custom_rate_value'] == '' )
+                            $currency->setAttribute( 'custom_rate_value', 0 );
 
-                    if ( is_numeric( $updateData['rate_factor'] ) )
-                        $currency->setAttribute( 'rate_factor', $updateData['rate_factor'] );
-                    else if ( $updateData['rate_factor'] == '' )
-                        $currency->setAttribute( 'rate_factor', 0 );
+                        if ( is_numeric( $updateData['rate_factor'] ) )
+                            $currency->setAttribute( 'rate_factor', $updateData['rate_factor'] );
+                        else if ( $updateData['rate_factor'] == '' )
+                            $currency->setAttribute( 'rate_factor', 0 );
 
-                    $currency->sync();
+                        $currency->sync();
+                    }
                 }
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
             }
             $db->commit();
 

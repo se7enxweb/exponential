@@ -279,16 +279,26 @@ class expUserAudit
         if ( !$rows )
             return count( $records );
         $db->begin();
-        foreach ( $rows as $row )
+        try
         {
-            $columns = array();
-            $values = array();
-            foreach ( $row as $column => $value )
+            foreach ( $rows as $row )
             {
-                $columns[] = $column;
-                $values[] = is_int( $value ) ? (string)$value : "'" . $db->escapeString( (string)$value ) . "'";
+                $columns = array();
+                $values = array();
+                foreach ( $row as $column => $value )
+                {
+                    $columns[] = $column;
+                    $values[] = is_int( $value ) ? (string)$value : "'" . $db->escapeString( (string)$value ) . "'";
+                }
+                $db->query( 'INSERT INTO ' . self::TABLE . ' ( ' . implode( ', ', $columns ) . ' ) VALUES ( ' . implode( ', ', $values ) . ' )' );
             }
-            $db->query( 'INSERT INTO ' . self::TABLE . ' ( ' . implode( ', ', $columns ) . ' ) VALUES ( ' . implode( ', ', $values ) . ' )' );
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
         // the security alerts of the rows stored for the first time (two-step sign-in changed, recovery code used,
@@ -545,7 +555,17 @@ class expUserAudit
         if ( $n > 0 )
         {
             $db->begin();
-            $db->query( 'DELETE FROM ' . self::TABLE . ' WHERE created < ' . (int)$limit );
+            try
+            {
+                $db->query( 'DELETE FROM ' . self::TABLE . ' WHERE created < ' . (int)$limit );
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
             $db->commit();
         }
         return $n;

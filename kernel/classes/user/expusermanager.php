@@ -926,11 +926,21 @@ class expUserManager
         if ( $email !== null || $login !== null )
         {
             $db->begin();
-            if ( $email !== null )
-                $user->setAttribute( 'email', $email );
-            if ( $login !== null )
-                $user->setAttribute( 'login', $login );
-            $user->store();
+            try
+            {
+                if ( $email !== null )
+                    $user->setAttribute( 'email', $email );
+                if ( $login !== null )
+                    $user->setAttribute( 'login', $login );
+                $user->store();
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
             $db->commit();
         }
         if ( $fields && !eZContentFunctions::updateAndPublishObject( $object, array( 'attributes' => $fields ) ) )

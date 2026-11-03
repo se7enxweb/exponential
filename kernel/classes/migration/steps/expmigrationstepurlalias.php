@@ -326,8 +326,18 @@ class expMigrationStepUrlAlias extends expMigrationStepTypeBase implements expMi
         $path = trim( eZURLAliasML::cleanURL( (string)$step['path'] ), '/' );
         $db = eZDB::instance();
         $db->begin();
-        $result = eZURLAliasML::storePath( $path, $target['action'], $language, $target['link'], !empty( $step['always_available'] ), $target['root'],
-                                           true, false, false, !empty( $step['redirect'] ) );
+        try
+        {
+            $result = eZURLAliasML::storePath( $path, $target['action'], $language, $target['link'], !empty( $step['always_available'] ), $target['root'],
+                                               true, false, false, !empty( $step['redirect'] ) );
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
         if ( !isset( $result['status'] ) || $result['status'] !== true )
             throw new RuntimeException( "the address $full was not stored (" . self::statusText( isset( $result['status'] ) ? $result['status'] : null ) . ')' );
@@ -369,8 +379,18 @@ class expMigrationStepUrlAlias extends expMigrationStepTypeBase implements expMi
                     $languages[] = $language;
         $db = eZDB::instance();
         $db->begin();
-        foreach ( $languages as $language )
-            eZURLAliasML::removeSingleEntry( (int)$element->attribute( 'parent' ), (string)$element->attribute( 'text_md5' ), $language );
+        try
+        {
+            foreach ( $languages as $language )
+                eZURLAliasML::removeSingleEntry( (int)$element->attribute( 'parent' ), (string)$element->attribute( 'text_md5' ), $language );
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
         $left = self::elementAt( $path );
         if ( $left !== null && (string)$left->attribute( 'action' ) === $action && !isset( $step['language'] ) )
@@ -421,8 +441,18 @@ class expMigrationStepUrlAlias extends expMigrationStepTypeBase implements expMi
         }
         $db = eZDB::instance();
         $db->begin();
-        foreach ( $entries as $entry )
-            eZURLAliasML::removeSingleEntry( $entry[0], $entry[1], $entry[2] );
+        try
+        {
+            foreach ( $entries as $entry )
+                eZURLAliasML::removeSingleEntry( $entry[0], $entry[1], $entry[2] );
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
         $removed = count( $addresses );
         if ( $query()->count() > 0 )

@@ -1659,55 +1659,65 @@ class Ezconvertdbcharset extends \Exponential\Runnable\Command
 
 
         $db->begin();
-
-
-        /**************************************************************
-        * convert extra serialized data                               *
-        ***************************************************************/
-        if ( is_array( $serializedDataInfo ) )
+        try
         {
-            showMessage( "Converting extra serialized data" );
-            convertSerializedData( $serializedDataInfo );
+
+
+            /**************************************************************
+            * convert extra serialized data                               *
+            ***************************************************************/
+            if ( is_array( $serializedDataInfo ) )
+            {
+                showMessage( "Converting extra serialized data" );
+                convertSerializedData( $serializedDataInfo );
+            }
+
+
+            /**************************************************************
+            * backup content class serialized names                       *
+            ***************************************************************/
+
+            // do nothing, cause class names are stored in ezcontentclass_name table,
+            // so, it's possible to restore converted names from this table.
+
+
+            /**************************************************************
+            * backup content class attribute serialized names             *
+            ***************************************************************/
+            if ( !$skipClassTranslations )
+            {
+                showMessage( "Unserializing content class attributes names..." );
+                createContentClassAttributeTempTable();
+                unserializeContentClassAttributeNames();
+            }
+
+
+
+            /**************************************************************
+            * convert xml datatypes to db's charset                       *
+            ***************************************************************/
+            showMessage( "Converting xml datatypes..." );
+            convertXMLDatatypes( $xmlAttributesInfo );
+
+
+            /**************************************************************
+            * convert custom xml data                                     *
+            ***************************************************************/
+            if ( is_array( $xmlCustomDataInfo ) )
+            {
+                showMessage( "Converting custom xml data..." );
+                convertCustomXMLData( $xmlCustomDataInfo );
+            }
+
+            showMessage( "Commiting..." );
         }
-
-
-        /**************************************************************
-        * backup content class serialized names                       *
-        ***************************************************************/
-
-        // do nothing, cause class names are stored in ezcontentclass_name table,
-        // so, it's possible to restore converted names from this table.
-
-
-        /**************************************************************
-        * backup content class attribute serialized names             *
-        ***************************************************************/
-        if ( !$skipClassTranslations )
+        catch ( Throwable $e )
         {
-            showMessage( "Unserializing content class attributes names..." );
-            createContentClassAttributeTempTable();
-            unserializeContentClassAttributeNames();
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
-
-
-
-        /**************************************************************
-        * convert xml datatypes to db's charset                       *
-        ***************************************************************/
-        showMessage( "Converting xml datatypes..." );
-        convertXMLDatatypes( $xmlAttributesInfo );
-
-
-        /**************************************************************
-        * convert custom xml data                                     *
-        ***************************************************************/
-        if ( is_array( $xmlCustomDataInfo ) )
-        {
-            showMessage( "Converting custom xml data..." );
-            convertCustomXMLData( $xmlCustomDataInfo );
-        }
-
-        showMessage( "Commiting..." );
         $db->commit();
 
         /**************************************************************
@@ -1717,37 +1727,47 @@ class Ezconvertdbcharset extends \Exponential\Runnable\Command
         changeDBCharset( 'utf8', $collation );
 
         $db->begin();
-
-        /**************************************************************
-        * restore class serialized names                              *
-        ***************************************************************/
-        if ( !$skipClassTranslations )
+        try
         {
-            showMessage( "Serializing content class names..." );
-            serializeContentClassNames();
+
+            /**************************************************************
+            * restore class serialized names                              *
+            ***************************************************************/
+            if ( !$skipClassTranslations )
+            {
+                showMessage( "Serializing content class names..." );
+                serializeContentClassNames();
+            }
+
+
+            /**************************************************************
+            * restore class_attributes serialized names                   *
+            ***************************************************************/
+            if ( !$skipClassTranslations )
+            {
+                showMessage( "Serializing content class attributes names..." );
+                serializeContentClassAttributeNames();
+            }
+
+
+            /**************************************************************
+            * restore extra serialized data                               *
+            ***************************************************************/
+            if ( is_array( $serializedDataInfo ) )
+            {
+                showMessage( "Restoring extra serialized data" );
+                restoreSerializedData( $serializedDataInfo );
+            }
+
+            showMessage( "Commiting..." );
         }
-
-
-        /**************************************************************
-        * restore class_attributes serialized names                   *
-        ***************************************************************/
-        if ( !$skipClassTranslations )
+        catch ( Throwable $e )
         {
-            showMessage( "Serializing content class attributes names..." );
-            serializeContentClassAttributeNames();
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
-
-
-        /**************************************************************
-        * restore extra serialized data                               *
-        ***************************************************************/
-        if ( is_array( $serializedDataInfo ) )
-        {
-            showMessage( "Restoring extra serialized data" );
-            restoreSerializedData( $serializedDataInfo );
-        }
-
-        showMessage( "Commiting..." );
         $db->commit();
 
         /**************************************************************

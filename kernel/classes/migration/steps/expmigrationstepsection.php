@@ -156,10 +156,20 @@ class expMigrationStepSection extends expMigrationStepStructureBase implements e
                 return $this->update( $section, $step );
             $db = eZDB::instance();
             $db->begin();
-            $section = self::installer()->createContentSection( array( 'name' => (string)$step['name'],
-                                                                       'navigation_part_identifier' => isset( $step['navigation_part'] ) ? (string)$step['navigation_part'] : 'ezcontentnavigationpart' ) );
-            $section->setAttribute( 'identifier', (string)$step['identifier'] );
-            $section->store();
+            try
+            {
+                $section = self::installer()->createContentSection( array( 'name' => (string)$step['name'],
+                                                                           'navigation_part_identifier' => isset( $step['navigation_part'] ) ? (string)$step['navigation_part'] : 'ezcontentnavigationpart' ) );
+                $section->setAttribute( 'identifier', (string)$step['identifier'] );
+                $section->store();
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
             $db->commit();
             return self::result( array( 'created the section ' . $step['identifier'] . ' "' . $step['name'] . '" (' . $section->attribute( 'id' ) . ')' ),
                                  self::values( $section ) + array( 'created' => true, 'changed' => true ) );
@@ -240,7 +250,17 @@ class expMigrationStepSection extends expMigrationStepStructureBase implements e
             throw new RuntimeException( 'the section ' . $values['identifier'] . ' is in use (by objects, role assignments or policies): it is not deleted' );
         $db = eZDB::instance();
         $db->begin();
-        $section->removeThis();
+        try
+        {
+            $section->removeThis();
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
         return self::result( array( 'deleted the section ' . $values['identifier'] . ' (' . $values['section_id'] . ')' ), $values + array( 'created' => false, 'changed' => true ) );
     }
@@ -270,10 +290,20 @@ class expMigrationStepSection extends expMigrationStepStructureBase implements e
         $scope = isset( $step['scope'] ) ? (string)$step['scope'] : eZSection::SCOPE_SUBTREE;
         $db = eZDB::instance();
         $db->begin();
-        if ( expKernelTableSchema::type( $db ) === 'mongodb' )
-            self::assignOneByOne( $node, $sectionId, $scope );
-        else
-            eZContentObjectTreeNode::assignSectionToSubTree( $nodeId, $sectionId, false, true, $scope, false );
+        try
+        {
+            if ( expKernelTableSchema::type( $db ) === 'mongodb' )
+                self::assignOneByOne( $node, $sectionId, $scope );
+            else
+                eZContentObjectTreeNode::assignSectionToSubTree( $nodeId, $sectionId, false, true, $scope, false );
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
         eZContentObject::clearCache();
         $object = eZContentObject::fetch( (int)$node->attribute( 'contentobject_id' ) );

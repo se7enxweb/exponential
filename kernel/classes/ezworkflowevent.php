@@ -256,16 +256,26 @@ class eZWorkflowEvent extends eZPersistentObject
     {
         $db = eZDB::instance();
         $db->begin();
-        $stored = parent::store( $fieldFilters );
+        try
+        {
+            $stored = parent::store( $fieldFilters );
 
-        $eventType = $this->eventType();
-        if ( $eventType instanceof eZWorkflowEventType )
-        {
-            $eventType->storeEventData( $this, $this->attribute( 'version' ) );
+            $eventType = $this->eventType();
+            if ( $eventType instanceof eZWorkflowEventType )
+            {
+                $eventType->storeEventData( $this, $this->attribute( 'version' ) );
+            }
+            else // Can't find eventype. Most likely deactivated while workflow has not been cleaneds up
+            {
+                eZDebug::writeError( "Couldn't load eventype '{$this->attribute( 'workflow_type_string' )}' for workflow. Is it activated ?", __METHOD__ );
+            }
         }
-        else // Can't find eventype. Most likely deactivated while workflow has not been cleaneds up
+        catch ( Throwable $e )
         {
-            eZDebug::writeError( "Couldn't load eventype '{$this->attribute( 'workflow_type_string' )}' for workflow. Is it activated ?", __METHOD__ );
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
 
@@ -280,18 +290,28 @@ class eZWorkflowEvent extends eZPersistentObject
     {
         $db = eZDB::instance();
         $db->begin();
-        $stored = parent::store( $fieldFilters );
-
-        $eventType = $this->eventType();
-        if ( $eventType instanceof eZWorkflowEventType )
+        try
         {
-            $eventType->storeDefinedEventData( $this );
-        }
-        else // Can't find eventype. Most likely deactivated while workflow has not been cleaned up
-        {
-            eZDebug::writeError( "Couldn't load eventype '{$this->attribute( 'workflow_type_string' )}' for workflow. Is it activated ?", __METHOD__ );
-        }
+            $stored = parent::store( $fieldFilters );
 
+            $eventType = $this->eventType();
+            if ( $eventType instanceof eZWorkflowEventType )
+            {
+                $eventType->storeDefinedEventData( $this );
+            }
+            else // Can't find eventype. Most likely deactivated while workflow has not been cleaned up
+            {
+                eZDebug::writeError( "Couldn't load eventype '{$this->attribute( 'workflow_type_string' )}' for workflow. Is it activated ?", __METHOD__ );
+            }
+
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
 
         return $stored;

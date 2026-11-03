@@ -634,14 +634,24 @@ class eZCollaborationItem extends eZPersistentObject
     {
         $db = eZDB::instance();
         $db->begin();
-        $db->query( "DELETE FROM ezcollab_item" );
-        $db->query( "DELETE FROM ezcollab_item_group_link" );
-        $db->query( "DELETE FROM ezcollab_item_message_link" );
-        $db->query( "DELETE FROM ezcollab_item_participant_link" );
-        $db->query( "DELETE FROM ezcollab_item_status" );
-        $db->query( "DELETE FROM ezcollab_notification_rule" );
-        $db->query( "DELETE FROM ezcollab_profile" );
-        $db->query( "DELETE FROM ezcollab_simple_message" );
+        try
+        {
+            $db->query( "DELETE FROM ezcollab_item" );
+            $db->query( "DELETE FROM ezcollab_item_group_link" );
+            $db->query( "DELETE FROM ezcollab_item_message_link" );
+            $db->query( "DELETE FROM ezcollab_item_participant_link" );
+            $db->query( "DELETE FROM ezcollab_item_status" );
+            $db->query( "DELETE FROM ezcollab_notification_rule" );
+            $db->query( "DELETE FROM ezcollab_profile" );
+            $db->query( "DELETE FROM ezcollab_simple_message" );
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
     }
 

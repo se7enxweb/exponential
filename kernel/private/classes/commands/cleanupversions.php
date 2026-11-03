@@ -137,11 +137,21 @@ class Cleanupversions extends \Exponential\Runnable\Command
                         break;
 
                     $db->begin();
-                    foreach( $versions as $version )
+                    try
                     {
-                        if ( !$dryRun )
-                            $version->removeThis();
-                        $removedVersions++;
+                        foreach( $versions as $version )
+                        {
+                            if ( !$dryRun )
+                                $version->removeThis();
+                            $removedVersions++;
+                        }
+                    }
+                    catch ( Throwable $e )
+                    {
+                        // nothing of a transaction that failed half way is committed by a later commit()
+                        if ( $db->transactionCounter() > 0 )
+                            $db->rollback();
+                        throw $e;
                     }
                     $db->commit();
                 }

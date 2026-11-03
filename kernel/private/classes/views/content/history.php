@@ -273,24 +273,34 @@ class History extends \Exponential\Runnable\ModuleView
         $objectID = (int)$this->object->attribute( 'id' );
         $db = \eZDB::instance();
         $db->begin();
-        $deleteIDArray = $http->postVariable( 'DeleteIDArray' );
-        $auditRemoved = array();
-        $refusedRemove = array();
-        foreach ( is_array( $deleteIDArray ) ? $deleteIDArray : array() as $deleteID )
+        try
         {
-            if ( !is_numeric( $deleteID ) )
-                continue;
-            $version = \eZContentObjectVersion::fetch( (int)$deleteID );
-            if ( !$version instanceof \eZContentObjectVersion || (int)$version->attribute( 'contentobject_id' ) !== $objectID )
-                continue;
-            if ( !self::isRemovableStatus( $version->attribute( 'status' ) ) || !$version->attribute( 'can_remove' ) )
+            $deleteIDArray = $http->postVariable( 'DeleteIDArray' );
+            $auditRemoved = array();
+            $refusedRemove = array();
+            foreach ( is_array( $deleteIDArray ) ? $deleteIDArray : array() as $deleteID )
             {
-                $refusedRemove[] = (int)$version->attribute( 'version' );
-                continue;
+                if ( !is_numeric( $deleteID ) )
+                    continue;
+                $version = \eZContentObjectVersion::fetch( (int)$deleteID );
+                if ( !$version instanceof \eZContentObjectVersion || (int)$version->attribute( 'contentobject_id' ) !== $objectID )
+                    continue;
+                if ( !self::isRemovableStatus( $version->attribute( 'status' ) ) || !$version->attribute( 'can_remove' ) )
+                {
+                    $refusedRemove[] = (int)$version->attribute( 'version' );
+                    continue;
+                }
+                $auditRemoved[] = array( 'version' => (int)$version->attribute( 'version' ), 'status' => (int)$version->attribute( 'status' ),
+                                         'language' => (string)$version->initialLanguageCode() );
+                $version->removeThis();
             }
-            $auditRemoved[] = array( 'version' => (int)$version->attribute( 'version' ), 'status' => (int)$version->attribute( 'status' ),
-                                     'language' => (string)$version->initialLanguageCode() );
-            $version->removeThis();
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
 
@@ -407,7 +417,17 @@ class History extends \Exponential\Runnable\ModuleView
         // Copying version (versionHistoryLimit is done in eZContentObject createNewVersion() )
         $db = \eZDB::instance();
         $db->begin();
-        $newVersionID = $object->copyRevertTo( $versionID, $language );
+        try
+        {
+            $newVersionID = $object->copyRevertTo( $versionID, $language );
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
 
         if ( !$this->http->hasPostVariable( 'DoNotEditAfterCopy' ) )

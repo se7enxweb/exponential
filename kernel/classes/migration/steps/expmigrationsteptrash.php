@@ -234,14 +234,24 @@ class expMigrationStepTrash extends expMigrationStepContentBase implements expMi
             throw new RuntimeException( "the object $id has no current version to restore" );
         $db = eZDB::instance();
         $db->begin();
-        foreach ( (array)$version->attribute( 'node_assignments' ) as $assignment )
-            $assignment->purge();
-        $version->assignToNode( $parentId, 1 );
-        $object->setAttribute( 'status', eZContentObject::STATUS_DRAFT );
-        $object->store();
-        $version->setAttribute( 'status', eZContentObjectVersion::STATUS_DRAFT );
-        $version->store();
-        $object->restoreObjectAttributes();
+        try
+        {
+            foreach ( (array)$version->attribute( 'node_assignments' ) as $assignment )
+                $assignment->purge();
+            $version->assignToNode( $parentId, 1 );
+            $object->setAttribute( 'status', eZContentObject::STATUS_DRAFT );
+            $object->store();
+            $version->setAttribute( 'status', eZContentObjectVersion::STATUS_DRAFT );
+            $version->store();
+            $object->restoreObjectAttributes();
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
         // the publish of a restore is the restore, as content/restore audits it
         $publish = function () use ( $id, $version, $step ) {
@@ -252,8 +262,18 @@ class expMigrationStepTrash extends expMigrationStepContentBase implements expMi
         else
             $publish();
         $db->begin();
-        eZContentObjectTrashNode::purgeForObject( $id );
-        eZContentObject::fixReverseRelations( $id, 'restore', false );
+        try
+        {
+            eZContentObjectTrashNode::purgeForObject( $id );
+            eZContentObject::fixReverseRelations( $id, 'restore', false );
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
         eZContentObject::clearCache( array( $id ) );
         $object = eZContentObject::fetch( $id );

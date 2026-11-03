@@ -97,8 +97,18 @@ class expCollaborationGroupManager
         $in = implode( ',', $doomed );
         $db = eZDB::instance();
         $db->begin();
-        $db->query( "UPDATE ezcollab_item_group_link SET group_id=" . (int)$main . " WHERE user_id=$userID AND group_id IN ($in)" );
-        $db->query( "DELETE FROM ezcollab_group WHERE user_id=$userID AND id IN ($in)" );
+        try
+        {
+            $db->query( "UPDATE ezcollab_item_group_link SET group_id=" . (int)$main . " WHERE user_id=$userID AND group_id IN ($in)" );
+            $db->query( "DELETE FROM ezcollab_group WHERE user_id=$userID AND id IN ($in)" );
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
         return self::result( true, ezpI18n::tr( 'kernel/collaboration', 'The group "%1" was deleted. Its items are in the main group now.', null,
                                                 array( $groups[$groupID]['title'] ) ) );

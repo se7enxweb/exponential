@@ -188,19 +188,29 @@ class eZPolicyLimitation extends eZPersistentObject
 
         $idString = $db->escapeString( $id );
         $db->begin();
+        try
+        {
 
-        if ( $db->databaseName() === 'mongo' )
-        {
-            $db->deleteWhere( 'ezpolicy_limitation_value', [ 'limitation_id' => (int)$id ] );
-            $db->deleteWhere( 'ezpolicy_limitation', [ 'id' => (int)$id ] );
-        }
-        else
-        {
-            $db->query( "DELETE FROM ezpolicy_limitation_value
+            if ( $db->databaseName() === 'mongo' )
+            {
+                $db->deleteWhere( 'ezpolicy_limitation_value', [ 'limitation_id' => (int)$id ] );
+                $db->deleteWhere( 'ezpolicy_limitation', [ 'id' => (int)$id ] );
+            }
+            else
+            {
+                $db->query( "DELETE FROM ezpolicy_limitation_value
                          WHERE ezpolicy_limitation_value.limitation_id = '$idString'" );
 
-            $db->query( "DELETE FROM ezpolicy_limitation
+                $db->query( "DELETE FROM ezpolicy_limitation
                          WHERE ezpolicy_limitation.id = '$idString' " );
+            }
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
     }

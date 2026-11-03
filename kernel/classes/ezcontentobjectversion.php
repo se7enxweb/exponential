@@ -930,13 +930,33 @@ class eZContentObjectVersion extends eZPersistentObject
         $nodeAssignmentList = $this->attribute( 'node_assignments' );
         $db = eZDB::instance();
         $db->begin();
-
-        foreach ( $nodeAssignmentList as $nodeAssignment )
+        try
         {
-            if ( $nodeAssignment->attribute( 'parent_node' ) == $nodeID )
+            try
             {
-                $nodeAssignment->remove();
+
+                foreach ( $nodeAssignmentList as $nodeAssignment )
+                {
+                    if ( $nodeAssignment->attribute( 'parent_node' ) == $nodeID )
+                    {
+                        $nodeAssignment->remove();
+                    }
+                }
             }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
     }
@@ -1032,123 +1052,143 @@ class eZContentObjectVersion extends eZPersistentObject
 
         $db = eZDB::instance();
         $db->begin();
-
-        if ( $db->databaseName() === 'mongo' )
+        try
         {
-            // Delete attributes for this version
-            $db->deleteWhere( 'ezcontentobject_attribute', [
-                'contentobject_id' => (int)$contentobjectID,
-                'version'          => (int)$versionNum,
-            ] );
-            // Delete content links from this version
-            $db->deleteWhere( 'ezcontentobject_link', [
-                'from_contentobject_id'      => (int)$contentobjectID,
-                'from_contentobject_version' => (int)$versionNum,
-            ] );
-            // Delete node assignments for this version
-            $db->deleteWhere( 'eznode_assignment', [
-                'contentobject_id'      => (int)$contentobjectID,
-                'contentobject_version' => (int)$versionNum,
-            ] );
-            // Delete the version document
-            $db->deleteWhere( 'ezcontentobject_version', [
-                'id' => (int)$this->attribute( 'id' ),
-            ] );
-            // Reassign current_version if this was the current one
-            $contentobject = $this->attribute( 'contentobject' );
-            if ( is_object( $contentobject ) )
+            try
             {
-                if ( !$contentobject->hasRemainingVersions() )
+
+                if ( $db->databaseName() === 'mongo' )
                 {
-                    $contentobject->purge();
-                }
-                elseif ( $contentobject->CurrentVersion == $versionNum )
-                {
-                    $candidates = $db->aggregate( 'ezcontentobject_version', [
-                        [ '$match'   => [ 'contentobject_id' => (int)$contentobject->ID,
-                                          'version'          => [ '$ne' => (int)$contentobject->CurrentVersion ] ] ],
-                        [ '$sort'    => [ 'modified' => -1 ] ],
-                        [ '$limit'   => 1 ],
-                        [ '$project' => [ '_id' => 0, 'version' => 1 ] ],
+                    // Delete attributes for this version
+                    $db->deleteWhere( 'ezcontentobject_attribute', [
+                        'contentobject_id' => (int)$contentobjectID,
+                        'version'          => (int)$versionNum,
                     ] );
-                    if ( !empty( $candidates ) && isset( $candidates[0]['version'] ) )
+                    // Delete content links from this version
+                    $db->deleteWhere( 'ezcontentobject_link', [
+                        'from_contentobject_id'      => (int)$contentobjectID,
+                        'from_contentobject_version' => (int)$versionNum,
+                    ] );
+                    // Delete node assignments for this version
+                    $db->deleteWhere( 'eznode_assignment', [
+                        'contentobject_id'      => (int)$contentobjectID,
+                        'contentobject_version' => (int)$versionNum,
+                    ] );
+                    // Delete the version document
+                    $db->deleteWhere( 'ezcontentobject_version', [
+                        'id' => (int)$this->attribute( 'id' ),
+                    ] );
+                    // Reassign current_version if this was the current one
+                    $contentobject = $this->attribute( 'contentobject' );
+                    if ( is_object( $contentobject ) )
                     {
-                        $contentobject->CurrentVersion = (int)$candidates[0]['version'];
-                        $contentobject->store();
+                        if ( !$contentobject->hasRemainingVersions() )
+                        {
+                            $contentobject->purge();
+                        }
+                        elseif ( $contentobject->CurrentVersion == $versionNum )
+                        {
+                            $candidates = $db->aggregate( 'ezcontentobject_version', [
+                                [ '$match'   => [ 'contentobject_id' => (int)$contentobject->ID,
+                                                  'version'          => [ '$ne' => (int)$contentobject->CurrentVersion ] ] ],
+                                [ '$sort'    => [ 'modified' => -1 ] ],
+                                [ '$limit'   => 1 ],
+                                [ '$project' => [ '_id' => 0, 'version' => 1 ] ],
+                            ] );
+                            if ( !empty( $candidates ) && isset( $candidates[0]['version'] ) )
+                            {
+                                $contentobject->CurrentVersion = (int)$candidates[0]['version'];
+                                $contentobject->store();
+                            }
+                        }
+                    }
+                    // Delete name records for this version
+                    $db->deleteWhere( 'ezcontentobject_name', [
+                        'contentobject_id' => (int)$contentobjectID,
+                        'content_version'  => (int)$versionNum,
+                    ] );
+                    $db->commit();
+                    return;
+                }
+
+                if ( $db->DatabaseName() === 'sqlite' )
+                {
+                    // Ensure no one else deletes this version while we are doing it.
+                    $db->query( 'SELECT * FROM ezcontentobject_version
+                         WHERE id=' . $this->attribute( 'id' ) );
+                }
+                else
+                {
+                    // Ensure no one else deletes this version while we are doing it.
+                    $db->query( 'SELECT * FROM ezcontentobject_version
+                         WHERE id=' . $this->attribute( 'id' ) . ' FOR UPDATE' );
+                }
+
+                $contentObjectTranslations = $this->translations();
+
+                foreach ( $contentObjectTranslations as $contentObjectTranslation )
+                {
+                    /** @var eZContentObjectAttribute $attribute */
+                    foreach ( $contentObjectTranslation->objectAttributes() as $attribute )
+                    {
+                        $attribute->removeThis( $attribute->attribute( 'id' ), $versionNum );
                     }
                 }
-            }
-            // Delete name records for this version
-            $db->deleteWhere( 'ezcontentobject_name', [
-                'contentobject_id' => (int)$contentobjectID,
-                'content_version'  => (int)$versionNum,
-            ] );
-            $db->commit();
-            return;
-        }
-
-        if ( $db->DatabaseName() === 'sqlite' )
-        {
-            // Ensure no one else deletes this version while we are doing it.
-            $db->query( 'SELECT * FROM ezcontentobject_version
-                         WHERE id=' . $this->attribute( 'id' ) );
-        }
-        else
-        {
-            // Ensure no one else deletes this version while we are doing it.
-            $db->query( 'SELECT * FROM ezcontentobject_version
-                         WHERE id=' . $this->attribute( 'id' ) . ' FOR UPDATE' );
-        }
-
-        $contentObjectTranslations = $this->translations();
-
-        foreach ( $contentObjectTranslations as $contentObjectTranslation )
-        {
-            /** @var eZContentObjectAttribute $attribute */
-            foreach ( $contentObjectTranslation->objectAttributes() as $attribute )
-            {
-                $attribute->removeThis( $attribute->attribute( 'id' ), $versionNum );
-            }
-        }
-        $db->query( "DELETE FROM ezcontentobject_link
+                $db->query( "DELETE FROM ezcontentobject_link
                          WHERE from_contentobject_id=$contentobjectID AND from_contentobject_version=$versionNum" );
-        $db->query( "DELETE FROM eznode_assignment
+                $db->query( "DELETE FROM eznode_assignment
                          WHERE contentobject_id=$contentobjectID AND contentobject_version=$versionNum" );
 
-        $db->query( 'DELETE FROM ezcontentobject_version
+                $db->query( 'DELETE FROM ezcontentobject_version
                          WHERE id=' . $this->attribute( 'id' ) );
 
-        $contentobject = $this->attribute( 'contentobject' );
-        if ( is_object( $contentobject ) )
-        {
-            if ( !$contentobject->hasRemainingVersions() )
-            {
-                $contentobject->purge();
-            }
-            else
-            {
-                $version = $contentobject->CurrentVersion;
-                if ( $contentobject->CurrentVersion == $versionNum ) //will assign another current_version in contentObject.
+                $contentobject = $this->attribute( 'contentobject' );
+                if ( is_object( $contentobject ) )
                 {
-                   //search for version that will be current after removing of this one.
-                   $candidateToBeCurrent = $db->arrayQuery( "SELECT version
+                    if ( !$contentobject->hasRemainingVersions() )
+                    {
+                        $contentobject->purge();
+                    }
+                    else
+                    {
+                        $version = $contentobject->CurrentVersion;
+                        if ( $contentobject->CurrentVersion == $versionNum ) //will assign another current_version in contentObject.
+                        {
+                           //search for version that will be current after removing of this one.
+                           $candidateToBeCurrent = $db->arrayQuery( "SELECT version
                                                      FROM ezcontentobject_version
                                                      WHERE contentobject_id={$contentobject->ID} AND
                                                            version!={$contentobject->CurrentVersion}
                                                      ORDER BY modified DESC",
-                                                 array( 'offset' => 0, 'limit' => 1 ) );
+                                                         array( 'offset' => 0, 'limit' => 1 ) );
 
-                   if ( isset($candidateToBeCurrent[0]['version']) && is_numeric($candidateToBeCurrent[0]['version']) )
-                   {
-                       $contentobject->CurrentVersion = $candidateToBeCurrent[0]['version'];
-                       $contentobject->store();
-                   }
-               }
-            }
-        }
-        $db->query( "DELETE FROM ezcontentobject_name
+                           if ( isset($candidateToBeCurrent[0]['version']) && is_numeric($candidateToBeCurrent[0]['version']) )
+                           {
+                               $contentobject->CurrentVersion = $candidateToBeCurrent[0]['version'];
+                               $contentobject->store();
+                           }
+                       }
+                    }
+                }
+                $db->query( "DELETE FROM ezcontentobject_name
                          WHERE contentobject_id=$contentobjectID AND content_version=$versionNum" );
 
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
     }
 
@@ -1165,9 +1205,29 @@ class eZContentObjectVersion extends eZPersistentObject
 
         $db = eZDB::instance();
         $db->begin();
-        foreach ( $contentObjectAttributes as $attribute )
+        try
         {
-            $attribute->removeThis( $attribute->attribute( 'id' ), $versionNum );
+            try
+            {
+                foreach ( $contentObjectAttributes as $attribute )
+                {
+                    $attribute->removeThis( $attribute->attribute( 'id' ), $versionNum );
+                }
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
 
@@ -1237,7 +1297,27 @@ class eZContentObjectVersion extends eZPersistentObject
             foreach ( $versions as $version )
             {
                 $db->begin();
-                $version->removeThis();
+                try
+                {
+                    try
+                    {
+                        $version->removeThis();
+                    }
+                    catch ( Throwable $e )
+                    {
+                        // nothing of a transaction that failed half way is committed by a later commit()
+                        if ( $db->transactionCounter() > 0 )
+                            $db->rollback();
+                        throw $e;
+                    }
+                }
+                catch ( Throwable $e )
+                {
+                    // nothing of a transaction that failed half way is committed by a later commit()
+                    if ( $db->transactionCounter() > 0 )
+                        $db->rollback();
+                    throw $e;
+                }
                 $db->commit();
             }
             $processedCount += count( $versions );
@@ -1587,129 +1667,149 @@ class eZContentObjectVersion extends eZPersistentObject
 
         $db = eZDB::instance();
         $db->begin();
-        foreach( $languageNodeArray as $languageNode )
+        try
         {
-            $language = eZContentObjectVersion::mapLanguage( $languageNode->getAttribute( 'language' ), $options );
-            // Only import allowed languages.
-            if ( !in_array( $language, $importedLanguages ) )
+            try
             {
-                continue;
-            }
-
-            $attributeArray = $contentObjectVersion->contentObjectAttributes( $language );
-            if ( count( $attributeArray ) == 0)
-            {
-                $hasTranslation = eZContentLanguage::fetchByLocale( $language );
-
-                if ( !$hasTranslation )
+                foreach( $languageNodeArray as $languageNode )
                 {
-                    // if there is no needed translation in system then add it
-                    $locale = eZLocale::instance( $language );
-
-                    if ( $locale->isValid() )
+                    $language = eZContentObjectVersion::mapLanguage( $languageNode->getAttribute( 'language' ), $options );
+                    // Only import allowed languages.
+                    if ( !in_array( $language, $importedLanguages ) )
                     {
-                        eZContentLanguage::addLanguage( $locale->localeCode(), $locale->internationalLanguageName() );
-                        $hasTranslation = true;
+                        continue;
                     }
-                    else
-                        $hasTranslation = false;
-                }
 
-                if ( $hasTranslation )
-                {
-                    // Add translated attributes for the translation
-                    $originalContentAttributes = $contentObjectVersion->contentObjectAttributes( $initialLanguage );
-                    foreach ( $originalContentAttributes as $originalContentAttribute )
+                    $attributeArray = $contentObjectVersion->contentObjectAttributes( $language );
+                    if ( count( $attributeArray ) == 0)
                     {
-                        $contentAttribute = $originalContentAttribute->translateTo( $language );
-                        $contentAttribute->sync();
-                        $attributeArray[] = $contentAttribute;
-                    }
-                }
+                        $hasTranslation = eZContentLanguage::fetchByLocale( $language );
 
-                // unserialize object name in current version-translation
-                $objectName = $languageNode->getAttribute( 'object_name' );
-                if ( $objectName )
-                    $contentObject->setName( $objectName, $contentObjectVersion->attribute( 'version' ), $language );
-            }
-
-            $xpath = new DOMXPath( $domNode->ownerDocument );
-            $xpath->registerNamespace( 'ezobject', 'http://ez.no/object/' );
-            $xpath->registerNamespace( 'ezremote', 'http://ez.no/ezobject' );
-
-            foreach( $attributeArray as $attribute )
-            {
-                $attributeIdentifier = $attribute->attribute( 'contentclass_attribute_identifier' );
-                $xpathQuery = "ezobject:attribute[@ezremote:identifier='$attributeIdentifier']";
-                $attributeDomNodes = $xpath->query( $xpathQuery, $languageNode );
-                $attributeDomNode = $attributeDomNodes->item( 0 );
-                if ( !$attributeDomNode )
-                {
-                    continue;
-                }
-                $attribute->unserialize( $package, $attributeDomNode );
-                $attribute->store();
-            }
-        }
-
-        // The version's language mask names every translation it now has values in. A new version of
-        // an existing object is created in one language and the others are added above; unless the
-        // mask says so, publishing copies the published version's own values of those languages in
-        // again (eZContentOperationCollection::copyTranslations() goes by this mask), and the version
-        // ends up with every such value twice.
-        $contentObjectVersion->updateLanguageMask();
-
-        $objectRelationList = $domNode->getElementsByTagName( 'object-relation-list' )->item( 0 );
-        if ( $objectRelationList )
-        {
-            $objectRelationArray = $objectRelationList->getElementsByTagName( 'related-object-remote-id' );
-            foreach( $objectRelationArray as $objectRelation )
-            {
-                $relatedObjectRemoteID = $objectRelation->textContent;
-                if ( $relatedObjectRemoteID )
-                {
-                    $object = eZContentObject::fetchByRemoteID( $relatedObjectRemoteID );
-                    $relatedObjectID = ( $object !== null ) ? $object->attribute( 'id' ) : null;
-
-                    if ( $relatedObjectID )
-                    {
-                        $contentObject->addContentObjectRelation( $relatedObjectID, $contentObjectVersion->attribute( 'version' ) );
-                    }
-                    else
-                    {
-                        if ( !isset( $options['suspended-relations'] ) )
+                        if ( !$hasTranslation )
                         {
-                            $options['suspended-relations'] = array();
+                            // if there is no needed translation in system then add it
+                            $locale = eZLocale::instance( $language );
+
+                            if ( $locale->isValid() )
+                            {
+                                eZContentLanguage::addLanguage( $locale->localeCode(), $locale->internationalLanguageName() );
+                                $hasTranslation = true;
+                            }
+                            else
+                                $hasTranslation = false;
                         }
 
-                        $options['suspended-relations'][] = array( 'related-object-remote-id' => $relatedObjectRemoteID,
-                                                                   'contentobject-id'         => $contentObject->attribute( 'id' ),
-                                                                   'contentobject-version'    => $contentObjectVersion->attribute( 'version' ) );
+                        if ( $hasTranslation )
+                        {
+                            // Add translated attributes for the translation
+                            $originalContentAttributes = $contentObjectVersion->contentObjectAttributes( $initialLanguage );
+                            foreach ( $originalContentAttributes as $originalContentAttribute )
+                            {
+                                $contentAttribute = $originalContentAttribute->translateTo( $language );
+                                $contentAttribute->sync();
+                                $attributeArray[] = $contentAttribute;
+                            }
+                        }
+
+                        // unserialize object name in current version-translation
+                        $objectName = $languageNode->getAttribute( 'object_name' );
+                        if ( $objectName )
+                            $contentObject->setName( $objectName, $contentObjectVersion->attribute( 'version' ), $language );
+                    }
+
+                    $xpath = new DOMXPath( $domNode->ownerDocument );
+                    $xpath->registerNamespace( 'ezobject', 'http://ez.no/object/' );
+                    $xpath->registerNamespace( 'ezremote', 'http://ez.no/ezobject' );
+
+                    foreach( $attributeArray as $attribute )
+                    {
+                        $attributeIdentifier = $attribute->attribute( 'contentclass_attribute_identifier' );
+                        $xpathQuery = "ezobject:attribute[@ezremote:identifier='$attributeIdentifier']";
+                        $attributeDomNodes = $xpath->query( $xpathQuery, $languageNode );
+                        $attributeDomNode = $attributeDomNodes->item( 0 );
+                        if ( !$attributeDomNode )
+                        {
+                            continue;
+                        }
+                        $attribute->unserialize( $package, $attributeDomNode );
+                        $attribute->store();
                     }
                 }
-            }
-        }
 
-        $nodeAssignmentNodeList = $domNode->getElementsByTagName( 'node-assignment-list' )->item( 0 );
-        $nodeAssignmentNodeArray = $nodeAssignmentNodeList->getElementsByTagName( 'node-assignment' );
-        foreach( $nodeAssignmentNodeArray as $nodeAssignmentNode )
-        {
-            $result = eZContentObjectTreeNode::unserialize( $nodeAssignmentNode,
-                                                            $contentObject,
-                                                            $contentObjectVersion->attribute( 'version' ),
-                                                            ( $oldVersion == $activeVersion ? 1 : 0 ),
-                                                            $nodeList,
-                                                            $options,
-                                                            $handlerType );
-            if ( $result === false )
+                // The version's language mask names every translation it now has values in. A new version of
+                // an existing object is created in one language and the others are added above; unless the
+                // mask says so, publishing copies the published version's own values of those languages in
+                // again (eZContentOperationCollection::copyTranslations() goes by this mask), and the version
+                // ends up with every such value twice.
+                $contentObjectVersion->updateLanguageMask();
+
+                $objectRelationList = $domNode->getElementsByTagName( 'object-relation-list' )->item( 0 );
+                if ( $objectRelationList )
+                {
+                    $objectRelationArray = $objectRelationList->getElementsByTagName( 'related-object-remote-id' );
+                    foreach( $objectRelationArray as $objectRelation )
+                    {
+                        $relatedObjectRemoteID = $objectRelation->textContent;
+                        if ( $relatedObjectRemoteID )
+                        {
+                            $object = eZContentObject::fetchByRemoteID( $relatedObjectRemoteID );
+                            $relatedObjectID = ( $object !== null ) ? $object->attribute( 'id' ) : null;
+
+                            if ( $relatedObjectID )
+                            {
+                                $contentObject->addContentObjectRelation( $relatedObjectID, $contentObjectVersion->attribute( 'version' ) );
+                            }
+                            else
+                            {
+                                if ( !isset( $options['suspended-relations'] ) )
+                                {
+                                    $options['suspended-relations'] = array();
+                                }
+
+                                $options['suspended-relations'][] = array( 'related-object-remote-id' => $relatedObjectRemoteID,
+                                                                           'contentobject-id'         => $contentObject->attribute( 'id' ),
+                                                                           'contentobject-version'    => $contentObjectVersion->attribute( 'version' ) );
+                            }
+                        }
+                    }
+                }
+
+                $nodeAssignmentNodeList = $domNode->getElementsByTagName( 'node-assignment-list' )->item( 0 );
+                $nodeAssignmentNodeArray = $nodeAssignmentNodeList->getElementsByTagName( 'node-assignment' );
+                foreach( $nodeAssignmentNodeArray as $nodeAssignmentNode )
+                {
+                    $result = eZContentObjectTreeNode::unserialize( $nodeAssignmentNode,
+                                                                    $contentObject,
+                                                                    $contentObjectVersion->attribute( 'version' ),
+                                                                    ( $oldVersion == $activeVersion ? 1 : 0 ),
+                                                                    $nodeList,
+                                                                    $options,
+                                                                    $handlerType );
+                    if ( $result === false )
+                    {
+                        $db->commit();
+                        $retValue = false;
+                        return $retValue;
+                    }
+                }
+
+                $contentObjectVersion->store();
+            }
+            catch ( Throwable $e )
             {
-                $db->commit();
-                $retValue = false;
-                return $retValue;
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
             }
         }
-
-        $contentObjectVersion->store();
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
 
         return $contentObjectVersion;
@@ -1753,104 +1853,124 @@ class eZContentObjectVersion extends eZPersistentObject
 
         $db = eZDB::instance();
         $db->begin();
-        $allowedLanguages = $options['language_array'];
-        if ( $options['only_initial_language'] )
+        try
         {
-            $initialLanguageCode = $this->initialLanguageCode();
-            if ( !in_array( $initialLanguageCode, $allowedLanguages ) )
+            try
             {
-                // We can only export initial language but is not in the allowed
-                // language list so we return false, ie. no export of this version.
-                return false;
-            }
-            // Make sure only the initial language is exported
-            $allowedLanguages = array( $initialLanguageCode );
-        }
-        $exportedLanguages = array();
-        foreach ( $translationList as $translationItem )
-        {
-            $language = $translationItem;
-            if ( !in_array( $language, $allowedLanguages ) )
-            {
-                continue;
-            }
-
-            $translationNode = $dom->createElementNS( 'http://ez.no/object/', 'ezobject:object-translation' );
-            $translationNode->setAttribute( 'language', $language );
-
-            // serialize object name in current version-translation
-            $objectName = $contentObject->name( $this->Version, $language );
-            if ( $objectName )
-            {
-                $translationNode->setAttribute( 'object_name', $objectName );
-            }
-            else
-            {
-                eZDebug::writeWarning( sprintf( "Name for object %s of version %s in translation %s not found",
-                                                $contentObject->attribute( 'id' ),
-                                                $this->Version,
-                                                $language ) );
-            }
-
-            $attributes = $this->contentObjectAttributes( $language );
-            foreach ( $attributes as $attribute )
-            {
-                $serializedAttributeNode = $attribute->serialize( $package );
-                if ( is_object( $serializedAttributeNode ) )
+                $allowedLanguages = $options['language_array'];
+                if ( $options['only_initial_language'] )
                 {
-                    $importedSerializedAttributeNode = $dom->importNode( $serializedAttributeNode, true );
-                    $translationNode->appendChild( $importedSerializedAttributeNode );
+                    $initialLanguageCode = $this->initialLanguageCode();
+                    if ( !in_array( $initialLanguageCode, $allowedLanguages ) )
+                    {
+                        // We can only export initial language but is not in the allowed
+                        // language list so we return false, ie. no export of this version.
+                        return false;
+                    }
+                    // Make sure only the initial language is exported
+                    $allowedLanguages = array( $initialLanguageCode );
                 }
-            }
-
-            $versionNode->appendChild( $translationNode );
-            $exportedLanguages[] = $language;
-        }
-
-        $nodeAssignmentListNode = $dom->createElementNS( 'http://ez.no/object/', 'ezobject:node-assignment-list' );
-        $versionNode->appendChild( $nodeAssignmentListNode );
-
-        $contentNodeArray = eZContentObjectTreeNode::fetchByContentObjectID( $this->ContentObjectID, true, $this->Version );
-        foreach( $contentNodeArray as $contentNode )
-        {
-            $contentNodeDOMNode = $contentNode->serialize( $options, $contentNodeIDArray, $topNodeIDArray );
-            if ( $contentNodeDOMNode !== false )
-            {
-                $importedContentDOMNode = $dom->importNode( $contentNodeDOMNode, true );
-                $nodeAssignmentListNode->appendChild( $importedContentDOMNode );
-            }
-        }
-        $initialLanguage = $this->attribute( 'initial_language' );
-        if ( is_object( $initialLanguage ) )
-        {
-            $initialLanguageCode = $initialLanguage->attribute( 'locale' );
-            if ( in_array( $initialLanguageCode, $exportedLanguages ) )
-            {
-                $versionNode->setAttribute( 'initial_language', $initialLanguageCode );
-            }
-        }
-
-        if ( $options['related_objects'] === 'selected' )
-        {
-            $relatedObjectArray = $contentObject->relatedContentObjectList( $this->Version, $contentObject->ID, 0, false,
-                                                                             array( 'AllRelations' => eZContentObject::RELATION_COMMON ) );
-            if ( count( $relatedObjectArray ) )
-            {
-                $relationListNode = $dom->createElementNS( 'http://ez.no/object/', 'ezobject:object-relation-list' );
-
-                foreach( $relatedObjectArray as $relatedObject )
+                $exportedLanguages = array();
+                foreach ( $translationList as $translationItem )
                 {
-                    $relatedObjectRemoteID = $relatedObject->attribute( 'remote_id' );
+                    $language = $translationItem;
+                    if ( !in_array( $language, $allowedLanguages ) )
+                    {
+                        continue;
+                    }
 
-                    $relationNode = $dom->createElement( 'related-object-remote-id' );
-                    $relationNode->appendChild( $dom->createTextNode( $relatedObjectRemoteID ) );
+                    $translationNode = $dom->createElementNS( 'http://ez.no/object/', 'ezobject:object-translation' );
+                    $translationNode->setAttribute( 'language', $language );
 
-                    $relationListNode->appendChild( $relationNode );
+                    // serialize object name in current version-translation
+                    $objectName = $contentObject->name( $this->Version, $language );
+                    if ( $objectName )
+                    {
+                        $translationNode->setAttribute( 'object_name', $objectName );
+                    }
+                    else
+                    {
+                        eZDebug::writeWarning( sprintf( "Name for object %s of version %s in translation %s not found",
+                                                        $contentObject->attribute( 'id' ),
+                                                        $this->Version,
+                                                        $language ) );
+                    }
+
+                    $attributes = $this->contentObjectAttributes( $language );
+                    foreach ( $attributes as $attribute )
+                    {
+                        $serializedAttributeNode = $attribute->serialize( $package );
+                        if ( is_object( $serializedAttributeNode ) )
+                        {
+                            $importedSerializedAttributeNode = $dom->importNode( $serializedAttributeNode, true );
+                            $translationNode->appendChild( $importedSerializedAttributeNode );
+                        }
+                    }
+
+                    $versionNode->appendChild( $translationNode );
+                    $exportedLanguages[] = $language;
                 }
-                $versionNode->appendChild( $relationListNode );
+
+                $nodeAssignmentListNode = $dom->createElementNS( 'http://ez.no/object/', 'ezobject:node-assignment-list' );
+                $versionNode->appendChild( $nodeAssignmentListNode );
+
+                $contentNodeArray = eZContentObjectTreeNode::fetchByContentObjectID( $this->ContentObjectID, true, $this->Version );
+                foreach( $contentNodeArray as $contentNode )
+                {
+                    $contentNodeDOMNode = $contentNode->serialize( $options, $contentNodeIDArray, $topNodeIDArray );
+                    if ( $contentNodeDOMNode !== false )
+                    {
+                        $importedContentDOMNode = $dom->importNode( $contentNodeDOMNode, true );
+                        $nodeAssignmentListNode->appendChild( $importedContentDOMNode );
+                    }
+                }
+                $initialLanguage = $this->attribute( 'initial_language' );
+                if ( is_object( $initialLanguage ) )
+                {
+                    $initialLanguageCode = $initialLanguage->attribute( 'locale' );
+                    if ( in_array( $initialLanguageCode, $exportedLanguages ) )
+                    {
+                        $versionNode->setAttribute( 'initial_language', $initialLanguageCode );
+                    }
+                }
+
+                if ( $options['related_objects'] === 'selected' )
+                {
+                    $relatedObjectArray = $contentObject->relatedContentObjectList( $this->Version, $contentObject->ID, 0, false,
+                                                                                     array( 'AllRelations' => eZContentObject::RELATION_COMMON ) );
+                    if ( count( $relatedObjectArray ) )
+                    {
+                        $relationListNode = $dom->createElementNS( 'http://ez.no/object/', 'ezobject:object-relation-list' );
+
+                        foreach( $relatedObjectArray as $relatedObject )
+                        {
+                            $relatedObjectRemoteID = $relatedObject->attribute( 'remote_id' );
+
+                            $relationNode = $dom->createElement( 'related-object-remote-id' );
+                            $relationNode->appendChild( $dom->createTextNode( $relatedObjectRemoteID ) );
+
+                            $relationListNode->appendChild( $relationNode );
+                        }
+                        $versionNode->appendChild( $relationListNode );
+                    }
+                }
+
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
             }
         }
-
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
         return $versionNode;
     }
@@ -2053,33 +2173,53 @@ class eZContentObjectVersion extends eZPersistentObject
     {
         $db = eZDB::instance();
         $db->begin();
-
-        $objectID = $this->attribute( 'contentobject_id' );
-        $version = $this->attribute( 'version' );
-
-        // reset 'always available' flag
-        $sql = "UPDATE ezcontentobject_attribute SET language_id=";
-        if ( $db->databaseName() == 'oracle' )
+        try
         {
-            $sql .= "bitand( language_id, -2 )";
-        }
-        else
-        {
-            $sql .= "language_id & ~1";
-        }
-        $sql .= " WHERE contentobject_id = '$objectID' AND version = '$version'";
-        $db->query( $sql );
+            try
+            {
 
-        if ( $languageID != false )
-        {
-            $newLanguageID = $languageID | 1;
+                $objectID = $this->attribute( 'contentobject_id' );
+                $version = $this->attribute( 'version' );
 
-            $sql = "UPDATE ezcontentobject_attribute
+                // reset 'always available' flag
+                $sql = "UPDATE ezcontentobject_attribute SET language_id=";
+                if ( $db->databaseName() == 'oracle' )
+                {
+                    $sql .= "bitand( language_id, -2 )";
+                }
+                else
+                {
+                    $sql .= "language_id & ~1";
+                }
+                $sql .= " WHERE contentobject_id = '$objectID' AND version = '$version'";
+                $db->query( $sql );
+
+                if ( $languageID != false )
+                {
+                    $newLanguageID = $languageID | 1;
+
+                    $sql = "UPDATE ezcontentobject_attribute
                     SET language_id='$newLanguageID'
                 WHERE language_id='$languageID' AND contentobject_id = '$objectID' AND version = '$version'";
-            $db->query( $sql );
-        }
+                    $db->query( $sql );
+                }
 
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
     }
 

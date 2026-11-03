@@ -92,40 +92,50 @@ class Basket extends \Exponential\Runnable\ModuleView
 
                 $db = \eZDB::instance();
                 $db->begin();
-                $itemCountError = false;
-                foreach ( $itemIDList as $id )
+                try
                 {
-                    $item = \eZProductCollectionItem::fetch( $id );
-                    if ( is_object( $item ) && $item->attribute( 'productcollection_id' ) == $productCollectionID )
+                    $itemCountError = false;
+                    foreach ( $itemIDList as $id )
                     {
-                        if ( is_numeric( $itemCountList[$i] ) and $itemCountList[$i] > 0 )
+                        $item = \eZProductCollectionItem::fetch( $id );
+                        if ( is_object( $item ) && $item->attribute( 'productcollection_id' ) == $productCollectionID )
                         {
-                            $item->setAttribute( "item_count", $itemCountList[$i] );
-                            $item->store();
+                            if ( is_numeric( $itemCountList[$i] ) and $itemCountList[$i] > 0 )
+                            {
+                                $item->setAttribute( "item_count", $itemCountList[$i] );
+                                $item->store();
+                            }
+                            else
+                            {
+                                if ( ( is_numeric( $removeItem ) and $id != $removeItem ) or ( is_array( $itemList ) and !in_array( $id, $itemList ) ) )
+                                    $itemCountError = true;
+                            }
                         }
-                        else
+                        $i++;
+                    }
+                    if ( is_numeric( $removeItem )  )
+                    {
+                        $basket->removeItem( $removeItem );
+                    }
+                    else
+                    {
+                        foreach ( $itemList as $item )
                         {
-                            if ( ( is_numeric( $removeItem ) and $id != $removeItem ) or ( is_array( $itemList ) and !in_array( $id, $itemList ) ) )
-                                $itemCountError = true;
+                            $basket->removeItem( $item );
                         }
                     }
-                    $i++;
-                }
-                if ( is_numeric( $removeItem )  )
-                {
-                    $basket->removeItem( $removeItem );
-                }
-                else
-                {
-                    foreach ( $itemList as $item )
-                    {
-                        $basket->removeItem( $item );
-                    }
-                }
 
-                // Update shipping info after removing an item from the basket.
-                \eZShippingManager::updateShippingInfo( $basket->attribute( 'productcollection_id' ) );
+                    // Update shipping info after removing an item from the basket.
+                    \eZShippingManager::updateShippingInfo( $basket->attribute( 'productcollection_id' ) );
 
+                }
+                catch ( Throwable $e )
+                {
+                    // nothing of a transaction that failed half way is committed by a later commit()
+                    if ( $db->transactionCounter() > 0 )
+                        $db->rollback();
+                    throw $e;
+                }
                 $db->commit();
 
                 if ( $itemCountError )
@@ -175,23 +185,33 @@ class Basket extends \Exponential\Runnable\ModuleView
 
                 $db = \eZDB::instance();
                 $db->begin();
-                $itemCountError = false;
-                foreach ( $itemIDList as $id )
+                try
                 {
-                    if ( !is_numeric( $itemCountList[$i] ) or $itemCountList[$i] <= 0 )
+                    $itemCountError = false;
+                    foreach ( $itemIDList as $id )
                     {
-                        $itemCountError = true;
-                    }
-                    else
-                    {
-                        $item = \eZProductCollectionItem::fetch( $id );
-                        if ( is_object( $item ) && $item->attribute( 'productcollection_id' ) == $productCollectionID )
+                        if ( !is_numeric( $itemCountList[$i] ) or $itemCountList[$i] <= 0 )
                         {
-                            $item->setAttribute( "item_count", $itemCountList[$i] );
-                            $item->store();
+                            $itemCountError = true;
                         }
+                        else
+                        {
+                            $item = \eZProductCollectionItem::fetch( $id );
+                            if ( is_object( $item ) && $item->attribute( 'productcollection_id' ) == $productCollectionID )
+                            {
+                                $item->setAttribute( "item_count", $itemCountList[$i] );
+                                $item->store();
+                            }
+                        }
+                        $i++;
                     }
-                    $i++;
+                }
+                catch ( Throwable $e )
+                {
+                    // nothing of a transaction that failed half way is committed by a later commit()
+                    if ( $db->transactionCounter() > 0 )
+                        $db->rollback();
+                    throw $e;
                 }
                 $db->commit();
                 if ( $itemCountError )
@@ -244,21 +264,31 @@ class Basket extends \Exponential\Runnable\ModuleView
                     $productCollectionID = $basket->attribute( 'productcollection_id' );
                     $db = \eZDB::instance();
                     $db->begin();
-
-                    for ( $i = 0, $itemCountError = false; $i < count( $itemIDList ); ++$i )
+                    try
                     {
-                        // If item count of product <= 0 we should show the error
-                        if ( !is_numeric( $itemCountList[$i] ) or $itemCountList[$i] <= 0 )
+
+                        for ( $i = 0, $itemCountError = false; $i < count( $itemIDList ); ++$i )
                         {
-                            $itemCountError = true;
-                            continue;
+                            // If item count of product <= 0 we should show the error
+                            if ( !is_numeric( $itemCountList[$i] ) or $itemCountList[$i] <= 0 )
+                            {
+                                $itemCountError = true;
+                                continue;
+                            }
+                            $item = \eZProductCollectionItem::fetch( $itemIDList[$i] );
+                            if ( is_object( $item ) && $item->attribute( 'productcollection_id' ) == $productCollectionID )
+                            {
+                                $item->setAttribute( "item_count", $itemCountList[$i] );
+                                $item->store();
+                            }
                         }
-                        $item = \eZProductCollectionItem::fetch( $itemIDList[$i] );
-                        if ( is_object( $item ) && $item->attribute( 'productcollection_id' ) == $productCollectionID )
-                        {
-                            $item->setAttribute( "item_count", $itemCountList[$i] );
-                            $item->store();
-                        }
+                    }
+                    catch ( Throwable $e )
+                    {
+                        // nothing of a transaction that failed half way is committed by a later commit()
+                        if ( $db->transactionCounter() > 0 )
+                            $db->rollback();
+                        throw $e;
                     }
                     $db->commit();
                     if ( $itemCountError )
@@ -290,29 +320,39 @@ class Basket extends \Exponential\Runnable\ModuleView
 
                 $db = \eZDB::instance();
                 $db->begin();
-                $basket->updatePrices();
-
-                if ( $verifyResult === true )
+                try
                 {
-                    $order = $basket->createOrder();
-                    $order->setAttribute( 'account_identifier', "default" );
-                    $order->store();
+                    $basket->updatePrices();
 
-                    $http->setSessionVariable( 'MyTemporaryOrderID', $order->attribute( 'id' ) );
-
-                    $db->commit();
-                    $module->redirectTo( '/shop/confirmorder/' );
-                    return $this->viewResult( isset( $Result ) ? $Result : null, null );
-                }
-                else
-                {
-                    $basket = \eZBasket::currentBasket();
-                    $removedItems = array();
-                    foreach ( $itemList as $item )
+                    if ( $verifyResult === true )
                     {
-                        $removedItems[] = $item;
-                        $basket->removeItem( $item->attribute( 'id' ) );
+                        $order = $basket->createOrder();
+                        $order->setAttribute( 'account_identifier', "default" );
+                        $order->store();
+
+                        $http->setSessionVariable( 'MyTemporaryOrderID', $order->attribute( 'id' ) );
+
+                        $db->commit();
+                        $module->redirectTo( '/shop/confirmorder/' );
+                        return $this->viewResult( isset( $Result ) ? $Result : null, null );
                     }
+                    else
+                    {
+                        $basket = \eZBasket::currentBasket();
+                        $removedItems = array();
+                        foreach ( $itemList as $item )
+                        {
+                            $removedItems[] = $item;
+                            $basket->removeItem( $item->attribute( 'id' ) );
+                        }
+                    }
+                }
+                catch ( Throwable $e )
+                {
+                    // nothing of a transaction that failed half way is committed by a later commit()
+                    if ( $db->transactionCounter() > 0 )
+                        $db->rollback();
+                    throw $e;
                 }
                 $db->commit();
             }

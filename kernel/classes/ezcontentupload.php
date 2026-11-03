@@ -685,122 +685,132 @@ class eZContentUpload
 
         $db = eZDB::instance();
         $db->begin();
-
-        // If we have an existing node we need to create
-        // a new version in it.
-        // If we don't we have to make a new object
-        if ( is_object( $existingNode ) )
+        try
         {
-            if ( $existingNode->canEdit( ) != '1' )
+
+            // If we have an existing node we need to create
+            // a new version in it.
+            // If we don't we have to make a new object
+            if ( is_object( $existingNode ) )
             {
-                $result['status'] = eZContentUpload::STATUS_PERMISSION_DENIED;
+                if ( $existingNode->canEdit( ) != '1' )
+                {
+                    $result['status'] = eZContentUpload::STATUS_PERMISSION_DENIED;
+                    $result['errors'][] =
+                        array( 'description' => ezpI18n::tr( 'kernel/content/upload',
+                                                        'Permission denied' ) );
+
+                    $db->commit();
+                    return false;
+                }
+                $version = $object->createNewVersion( false, true, $localeCode );
+                unset( $dataMap );
+                $dataMap = $version->dataMap();
+                $publishVersion = $version->attribute( 'version' );
+            }
+            else
+            {
+                $object = $class->instantiateIn( $localeCode );
+                unset( $dataMap );
+                $dataMap = $object->dataMap();
+                $publishVersion = $object->attribute( 'current_version' );
+            }
+
+            unset( $dataMap );
+            $dataMap = $object->dataMap();
+
+            if ( $localeCode === false )
+            {
+                $localeCode = eZContentObject::defaultLanguage();
+            }
+            $status = $dataMap[$fileAttribute]->insertHTTPFile( $object, $publishVersion, $localeCode,
+                                                                $file, $mimeData,
+                                                                $storeResult );
+            if ( $status === null )
+            {
                 $result['errors'][] =
                     array( 'description' => ezpI18n::tr( 'kernel/content/upload',
-                                                    'Permission denied' ) );
-
+                                                    'The attribute %class_identifier does not support HTTP file storage.', null,
+                                                            array( '%class_identifier' => $classIdentifier ) ) );
                 $db->commit();
                 return false;
             }
-            $version = $object->createNewVersion( false, true, $localeCode );
-            unset( $dataMap );
-            $dataMap = $version->dataMap();
-            $publishVersion = $version->attribute( 'version' );
-        }
-        else
-        {
-            $object = $class->instantiateIn( $localeCode );
-            unset( $dataMap );
-            $dataMap = $object->dataMap();
-            $publishVersion = $object->attribute( 'current_version' );
-        }
-
-        unset( $dataMap );
-        $dataMap = $object->dataMap();
-
-        if ( $localeCode === false )
-        {
-            $localeCode = eZContentObject::defaultLanguage();
-        }
-        $status = $dataMap[$fileAttribute]->insertHTTPFile( $object, $publishVersion, $localeCode,
-                                                            $file, $mimeData,
-                                                            $storeResult );
-        if ( $status === null )
-        {
-            $result['errors'][] =
-                array( 'description' => ezpI18n::tr( 'kernel/content/upload',
-                                                'The attribute %class_identifier does not support HTTP file storage.', null,
-                                                        array( '%class_identifier' => $classIdentifier ) ) );
-            $db->commit();
-            return false;
-        }
-        else if ( !$status )
-        {
-            $result['errors'] = array_merge( $result['errors'], $storeResult['errors'] );
-            $db->commit();
-            return false;
-        }
-        if ( $storeResult['require_storage'] )
-            $dataMap[$fileAttribute]->store();
-
-        $status = $dataMap[$nameAttribute]->insertSimpleString( $object, $publishVersion, $localeCode,
-                                                                $nameString,
-                                                                $storeResult );
-        if ( $status === null )
-        {
-            $result['errors'][] =
-                array( 'description' => ezpI18n::tr( 'kernel/content/upload',
-                                                'The attribute %class_identifier does not support simple string storage.', null,
-                                                array( '%class_identifier' => $classIdentifier ) ) );
-            $db->commit();
-            return false;
-        }
-        else if ( !$status )
-        {
-            $result['errors'] = array_merge( $result['errors'], $storeResult['errors'] );
-            $db->commit();
-            return false;
-        }
-        if ( $storeResult['require_storage'] )
-            $dataMap[$nameAttribute]->store();
-
-        if ( is_array( $parentNodes ) )
-        {
-            foreach ( $parentNodes as $key => $parentNode )
+            else if ( !$status )
             {
-                $object->createNodeAssignment(
-                    $parentNode,
-                    $parentNode == $parentMainNode
+                $result['errors'] = array_merge( $result['errors'], $storeResult['errors'] );
+                $db->commit();
+                return false;
+            }
+            if ( $storeResult['require_storage'] )
+                $dataMap[$fileAttribute]->store();
+
+            $status = $dataMap[$nameAttribute]->insertSimpleString( $object, $publishVersion, $localeCode,
+                                                                    $nameString,
+                                                                    $storeResult );
+            if ( $status === null )
+            {
+                $result['errors'][] =
+                    array( 'description' => ezpI18n::tr( 'kernel/content/upload',
+                                                    'The attribute %class_identifier does not support simple string storage.', null,
+                                                    array( '%class_identifier' => $classIdentifier ) ) );
+                $db->commit();
+                return false;
+            }
+            else if ( !$status )
+            {
+                $result['errors'] = array_merge( $result['errors'], $storeResult['errors'] );
+                $db->commit();
+                return false;
+            }
+            if ( $storeResult['require_storage'] )
+                $dataMap[$nameAttribute]->store();
+
+            if ( is_array( $parentNodes ) )
+            {
+                foreach ( $parentNodes as $key => $parentNode )
+                {
+                    $object->createNodeAssignment(
+                        $parentNode,
+                        $parentNode == $parentMainNode
+                    );
+                }
+            }
+
+            $object->setName( $class->contentObjectName( $object ) );
+            $object->store();
+
+            if ( $publish )
+            {
+                $tmpresult = $this->publishObject(
+                    $result, $result['errors'], $result['notices'],
+                    $object, $publishVersion, $class, $parentNodes, $parentMainNode
                 );
             }
+            else
+            {
+                $tmpresult = $result;
+                $tmpresult['contentobject'] = $object;
+                $tmpresult['contentobject_id'] = $object->attribute( 'id' );
+                $tmpresult['contentobject_version'] = $publishVersion;
+                $tmpresult['contentobject_main_node'] = false;
+                $tmpresult['contentobject_main_node_id'] = false;
+                $this->setResult(
+                    array(
+                        'node_id' => 0,
+                        'object_id' => $object->attribute( 'id' ),
+                        'object_version' => $publishVersion
+                    )
+                );
+            }
+
         }
-
-        $object->setName( $class->contentObjectName( $object ) );
-        $object->store();
-
-        if ( $publish )
+        catch ( Throwable $e )
         {
-            $tmpresult = $this->publishObject(
-                $result, $result['errors'], $result['notices'],
-                $object, $publishVersion, $class, $parentNodes, $parentMainNode
-            );
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
-        else
-        {
-            $tmpresult = $result;
-            $tmpresult['contentobject'] = $object;
-            $tmpresult['contentobject_id'] = $object->attribute( 'id' );
-            $tmpresult['contentobject_version'] = $publishVersion;
-            $tmpresult['contentobject_main_node'] = false;
-            $tmpresult['contentobject_main_node_id'] = false;
-            $this->setResult(
-                array(
-                    'node_id' => 0,
-                    'object_id' => $object->attribute( 'id' ),
-                    'object_version' => $publishVersion
-                )
-            );
-        }
-
         $db->commit();
         return $tmpresult;
     }

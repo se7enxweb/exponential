@@ -297,34 +297,44 @@ class expAuditIndexer
                 } ) );
             }
             $db->begin();
-            foreach ( $rows as $row )
-                $db->query( $this->insertSQL( $row ) );
-            if ( $rows && $this->fts5 )
+            try
             {
-                $ids = array_map( function ( $r ) use ( $db ) { return "'" . $db->escapeString( $r['id'] ) . "'"; }, $rows );
-                foreach ( array_chunk( $ids, 500 ) as $chunk )
-                    $db->query( 'INSERT INTO ' . expAuditIndexSchema::FTS . ' (rowid, search_text) SELECT rowid, search_text FROM '
-                                . expAuditIndexSchema::EVENT . ' WHERE id IN (' . implode( ',', $chunk ) . ')' );
+                foreach ( $rows as $row )
+                    $db->query( $this->insertSQL( $row ) );
+                if ( $rows && $this->fts5 )
+                {
+                    $ids = array_map( function ( $r ) use ( $db ) { return "'" . $db->escapeString( $r['id'] ) . "'"; }, $rows );
+                    foreach ( array_chunk( $ids, 500 ) as $chunk )
+                        $db->query( 'INSERT INTO ' . expAuditIndexSchema::FTS . ' (rowid, search_text) SELECT rowid, search_text FROM '
+                                    . expAuditIndexSchema::EVENT . ' WHERE id IN (' . implode( ',', $chunk ) . ')' );
+                }
+                $now = (int)round( microtime( true ) * 1000 );
+                $ch = "'" . $db->escapeString( $src['channel'] ) . "'";
+                $fn = "'" . $db->escapeString( $src['file'] ) . "'";
+                $hash = $lastHash === '' ? 'NULL' : "'" . $db->escapeString( $lastHash ) . "'";
+                if ( $hasCursor )
+                    $db->query( 'UPDATE ' . expAuditIndexSchema::CURSOR . ' SET byte_offset = ' . (int)$offset . ', last_seq = ' . (int)$lastSeq
+                                . ", last_hash = $hash, updated_ms = $now WHERE channel = $ch AND file_name = $fn" );
+                else
+                    $db->query( 'INSERT INTO ' . expAuditIndexSchema::CURSOR . ' (channel, file_name, byte_offset, last_seq, last_hash, updated_ms) VALUES ('
+                                . "$ch, $fn, " . (int)$offset . ', ' . (int)$lastSeq . ", $hash, $now)" );
+                $verified = $broken ? "'broken'" : null;
+                if ( $hasState )
+                    $db->query( 'UPDATE ' . expAuditIndexSchema::FILE . ' SET records = ' . (int)$lastSeq . ", state = 'live'"
+                                . ( $verified ? ", verified = $verified, verified_ms = $now, break_line = " . (int)$breakLine : '' )
+                                . " WHERE channel = $ch AND file_name = $fn" );
+                else
+                    $db->query( 'INSERT INTO ' . expAuditIndexSchema::FILE . ' (channel, file_name, state, records, verified, verified_ms, break_line) VALUES ('
+                                . "$ch, $fn, 'live', " . (int)$lastSeq . ', ' . ( $verified ?: "'unchecked'" ) . ', ' . ( $verified ? $now : 0 )
+                                . ', ' . ( $verified ? (int)$breakLine : 0 ) . ')' );
             }
-            $now = (int)round( microtime( true ) * 1000 );
-            $ch = "'" . $db->escapeString( $src['channel'] ) . "'";
-            $fn = "'" . $db->escapeString( $src['file'] ) . "'";
-            $hash = $lastHash === '' ? 'NULL' : "'" . $db->escapeString( $lastHash ) . "'";
-            if ( $hasCursor )
-                $db->query( 'UPDATE ' . expAuditIndexSchema::CURSOR . ' SET byte_offset = ' . (int)$offset . ', last_seq = ' . (int)$lastSeq
-                            . ", last_hash = $hash, updated_ms = $now WHERE channel = $ch AND file_name = $fn" );
-            else
-                $db->query( 'INSERT INTO ' . expAuditIndexSchema::CURSOR . ' (channel, file_name, byte_offset, last_seq, last_hash, updated_ms) VALUES ('
-                            . "$ch, $fn, " . (int)$offset . ', ' . (int)$lastSeq . ", $hash, $now)" );
-            $verified = $broken ? "'broken'" : null;
-            if ( $hasState )
-                $db->query( 'UPDATE ' . expAuditIndexSchema::FILE . ' SET records = ' . (int)$lastSeq . ", state = 'live'"
-                            . ( $verified ? ", verified = $verified, verified_ms = $now, break_line = " . (int)$breakLine : '' )
-                            . " WHERE channel = $ch AND file_name = $fn" );
-            else
-                $db->query( 'INSERT INTO ' . expAuditIndexSchema::FILE . ' (channel, file_name, state, records, verified, verified_ms, break_line) VALUES ('
-                            . "$ch, $fn, 'live', " . (int)$lastSeq . ', ' . ( $verified ?: "'unchecked'" ) . ', ' . ( $verified ? $now : 0 )
-                            . ', ' . ( $verified ? (int)$breakLine : 0 ) . ')' );
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
             $db->commit();
         }
         catch ( Throwable $e )
@@ -498,15 +508,25 @@ class expAuditIndexer
         try
         {
             $db->begin();
-            if ( $this->fts5 )
+            try
             {
-                if ( $channel === null )
-                    $db->query( 'INSERT INTO ' . expAuditIndexSchema::FTS . ' (' . expAuditIndexSchema::FTS . ") VALUES ('delete-all')" );
-                else
-                    $db->query( 'DELETE FROM ' . expAuditIndexSchema::FTS . ' WHERE rowid IN (SELECT rowid FROM ' . expAuditIndexSchema::EVENT . $where . ')' );
+                if ( $this->fts5 )
+                {
+                    if ( $channel === null )
+                        $db->query( 'INSERT INTO ' . expAuditIndexSchema::FTS . ' (' . expAuditIndexSchema::FTS . ") VALUES ('delete-all')" );
+                    else
+                        $db->query( 'DELETE FROM ' . expAuditIndexSchema::FTS . ' WHERE rowid IN (SELECT rowid FROM ' . expAuditIndexSchema::EVENT . $where . ')' );
+                }
+                foreach ( array( expAuditIndexSchema::EVENT, expAuditIndexSchema::CURSOR, expAuditIndexSchema::FILE ) as $t )
+                    $db->query( 'DELETE FROM ' . $t . $where );
             }
-            foreach ( array( expAuditIndexSchema::EVENT, expAuditIndexSchema::CURSOR, expAuditIndexSchema::FILE ) as $t )
-                $db->query( 'DELETE FROM ' . $t . $where );
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
             $db->commit();
         }
         catch ( Throwable $e )
@@ -563,29 +583,39 @@ class expAuditIndexer
                 if ( !$rows )
                     break;
                 $db->begin();
-                foreach ( $rows as $r )
+                try
                 {
-                    $id = "'" . $db->escapeString( $r['id'] ) . "'";
-                    $set = array( 'pseudonymised = 1' );
-                    foreach ( array( 'login', 'ip', 'ua', 'session_h' ) as $col )
-                        if ( $r[$col] !== null && $r[$col] !== '' && strpos( $r[$col], 'h:' ) !== 0 )
-                            $set[] = "$col = '" . $db->escapeString( (string)$privacy->hash( $r[$col] ) ) . "'";
-                    $rec = json_decode( (string)$r['record'], true );
-                    if ( is_array( $rec ) )
+                    foreach ( $rows as $r )
                     {
-                        $rec = $this->pseudonymiseRecord( $rec, $privacy );
-                        $set[] = 'record = ' . $this->literal( json_encode( $rec, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE ) );
-                        $set[] = 'search_text = ' . $this->literal( expAuditIndexRow::searchText( $rec ) );
-                        $set[] = 'object_name = ' . $this->literal( isset( $rec['object']['name'] ) && is_scalar( $rec['object']['name'] )
-                                                                    ? expAuditIndexRow::cut( (string)$rec['object']['name'], 255 ) : null );
+                        $id = "'" . $db->escapeString( $r['id'] ) . "'";
+                        $set = array( 'pseudonymised = 1' );
+                        foreach ( array( 'login', 'ip', 'ua', 'session_h' ) as $col )
+                            if ( $r[$col] !== null && $r[$col] !== '' && strpos( $r[$col], 'h:' ) !== 0 )
+                                $set[] = "$col = '" . $db->escapeString( (string)$privacy->hash( $r[$col] ) ) . "'";
+                        $rec = json_decode( (string)$r['record'], true );
+                        if ( is_array( $rec ) )
+                        {
+                            $rec = $this->pseudonymiseRecord( $rec, $privacy );
+                            $set[] = 'record = ' . $this->literal( json_encode( $rec, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE ) );
+                            $set[] = 'search_text = ' . $this->literal( expAuditIndexRow::searchText( $rec ) );
+                            $set[] = 'object_name = ' . $this->literal( isset( $rec['object']['name'] ) && is_scalar( $rec['object']['name'] )
+                                                                        ? expAuditIndexRow::cut( (string)$rec['object']['name'], 255 ) : null );
+                        }
+                        if ( $this->fts5 )
+                            $db->query( 'DELETE FROM ' . expAuditIndexSchema::FTS . ' WHERE rowid = (SELECT rowid FROM ' . expAuditIndexSchema::EVENT . " WHERE id = $id)" );
+                        $db->query( 'UPDATE ' . expAuditIndexSchema::EVENT . ' SET ' . implode( ', ', $set ) . " WHERE id = $id" );
+                        if ( $this->fts5 )
+                            $db->query( 'INSERT INTO ' . expAuditIndexSchema::FTS . ' (rowid, search_text) SELECT rowid, search_text FROM '
+                                        . expAuditIndexSchema::EVENT . " WHERE id = $id" );
+                        $out['rows']++;
                     }
-                    if ( $this->fts5 )
-                        $db->query( 'DELETE FROM ' . expAuditIndexSchema::FTS . ' WHERE rowid = (SELECT rowid FROM ' . expAuditIndexSchema::EVENT . " WHERE id = $id)" );
-                    $db->query( 'UPDATE ' . expAuditIndexSchema::EVENT . ' SET ' . implode( ', ', $set ) . " WHERE id = $id" );
-                    if ( $this->fts5 )
-                        $db->query( 'INSERT INTO ' . expAuditIndexSchema::FTS . ' (rowid, search_text) SELECT rowid, search_text FROM '
-                                    . expAuditIndexSchema::EVENT . " WHERE id = $id" );
-                    $out['rows']++;
+                }
+                catch ( Throwable $e )
+                {
+                    // nothing of a transaction that failed half way is committed by a later commit()
+                    if ( $db->transactionCounter() > 0 )
+                        $db->rollback();
+                    throw $e;
                 }
                 $db->commit();
             }
@@ -672,9 +702,19 @@ class expAuditIndexer
         try
         {
             $db->begin();
-            if ( $this->fts5 )
-                $db->query( 'DELETE FROM ' . expAuditIndexSchema::FTS . ' WHERE rowid IN (SELECT rowid FROM ' . expAuditIndexSchema::EVENT . $where . ')' );
-            $db->query( 'DELETE FROM ' . expAuditIndexSchema::EVENT . $where );
+            try
+            {
+                if ( $this->fts5 )
+                    $db->query( 'DELETE FROM ' . expAuditIndexSchema::FTS . ' WHERE rowid IN (SELECT rowid FROM ' . expAuditIndexSchema::EVENT . $where . ')' );
+                $db->query( 'DELETE FROM ' . expAuditIndexSchema::EVENT . $where );
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
             $db->commit();
         }
         catch ( Throwable $e )

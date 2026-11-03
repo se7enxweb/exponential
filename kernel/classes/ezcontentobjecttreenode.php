@@ -3527,13 +3527,33 @@ class eZContentObjectTreeNode extends eZPersistentObject
         }
 
         $db->begin();
-        foreach ( array_chunk( $objectSimpleIDArray, 100 ) as $pagedObjectIDs )
+        try
         {
-            $db->query( "UPDATE ezcontentobject SET section_id='$sectionID' WHERE $filterPart " . $db->generateSQLINStatement( $pagedObjectIDs, 'id', false, true, 'int' ) );
-            if ( $updateSearchIndexes )
+            try
             {
-                eZSearch::updateObjectsSection( $pagedObjectIDs, $sectionID );
+                foreach ( array_chunk( $objectSimpleIDArray, 100 ) as $pagedObjectIDs )
+                {
+                    $db->query( "UPDATE ezcontentobject SET section_id='$sectionID' WHERE $filterPart " . $db->generateSQLINStatement( $pagedObjectIDs, 'id', false, true, 'int' ) );
+                    if ( $updateSearchIndexes )
+                    {
+                        eZSearch::updateObjectsSection( $pagedObjectIDs, $sectionID );
+                    }
+                }
             }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
 
@@ -3598,32 +3618,52 @@ class eZContentObjectTreeNode extends eZPersistentObject
 
         $db = eZDB::instance();
         $db->begin();
-        $db->query( "UPDATE ezcontentobject_tree SET main_node_id=$mainNodeID WHERE contentobject_id=$objectID" );
-        if ( !$version )
+        try
         {
-            $rows = $db->arrayQuery( "SELECT current_version FROM ezcontentobject WHERE id=$objectID" );
-            $version = $rows[0]['current_version'];
-        }
-        $db->query( "UPDATE eznode_assignment SET is_main=1 WHERE contentobject_id=$objectID AND contentobject_version=$version AND parent_node=$parentMainNodeID" );
-        $db->query( "UPDATE eznode_assignment SET is_main=0 WHERE contentobject_id=$objectID AND contentobject_version=$version AND parent_node!=$parentMainNodeID" );
+            try
+            {
+                $db->query( "UPDATE ezcontentobject_tree SET main_node_id=$mainNodeID WHERE contentobject_id=$objectID" );
+                if ( !$version )
+                {
+                    $rows = $db->arrayQuery( "SELECT current_version FROM ezcontentobject WHERE id=$objectID" );
+                    $version = $rows[0]['current_version'];
+                }
+                $db->query( "UPDATE eznode_assignment SET is_main=1 WHERE contentobject_id=$objectID AND contentobject_version=$version AND parent_node=$parentMainNodeID" );
+                $db->query( "UPDATE eznode_assignment SET is_main=0 WHERE contentobject_id=$objectID AND contentobject_version=$version AND parent_node!=$parentMainNodeID" );
 
-        $contentObject = eZContentObject::fetch( $objectID );
-        // The parent's object by id: fetchByNodeID() filters by language, and while
-        // an installation runs the base data is not yet in the site's language
-        $parentNode = eZContentObjectTreeNode::fetchStructural( $parentMainNodeID );
-        $parentContentObject = $parentNode ? eZContentObject::fetch( $parentNode->attribute( 'contentobject_id' ) ) : null;
-        if ( $updateSection && $contentObject && $parentContentObject && $contentObject->attribute( 'section_id' ) != $parentContentObject->attribute( 'section_id' ) )
+                $contentObject = eZContentObject::fetch( $objectID );
+                // The parent's object by id: fetchByNodeID() filters by language, and while
+                // an installation runs the base data is not yet in the site's language
+                $parentNode = eZContentObjectTreeNode::fetchStructural( $parentMainNodeID );
+                $parentContentObject = $parentNode ? eZContentObject::fetch( $parentNode->attribute( 'contentobject_id' ) ) : null;
+                if ( $updateSection && $contentObject && $parentContentObject && $contentObject->attribute( 'section_id' ) != $parentContentObject->attribute( 'section_id' ) )
+                {
+                    $newSectionID = $parentContentObject->attribute( 'section_id' );
+                    // the section follows the main location: part of that change, not an assignment of its own (audit)
+                    if ( class_exists( 'expAuditHook' ) )
+                        expAuditHook::muted( 'content.node.section', function () use ( $mainNodeID, $newSectionID ) {
+                            eZContentObjectTreeNode::assignSectionToSubTree( $mainNodeID, $newSectionID );
+                        } );
+                    else
+                        eZContentObjectTreeNode::assignSectionToSubTree( $mainNodeID, $newSectionID );
+                }
+
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
+        }
+        catch ( Throwable $e )
         {
-            $newSectionID = $parentContentObject->attribute( 'section_id' );
-            // the section follows the main location: part of that change, not an assignment of its own (audit)
-            if ( class_exists( 'expAuditHook' ) )
-                expAuditHook::muted( 'content.node.section', function () use ( $mainNodeID, $newSectionID ) {
-                    eZContentObjectTreeNode::assignSectionToSubTree( $mainNodeID, $newSectionID );
-                } );
-            else
-                eZContentObjectTreeNode::assignSectionToSubTree( $mainNodeID, $newSectionID );
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
-
         $db->commit();
 
     }
@@ -4325,11 +4365,31 @@ class eZContentObjectTreeNode extends eZPersistentObject
         $insertedNode->setAttribute( 'is_invisible', $isInvinsible );
 
         $db->begin();
-        $insertedNode->store();
-        $insertedID = $insertedNode->attribute( 'node_id' );
-        $newNodePath = $parentPath . $insertedID . '/';
-        $insertedNode->setAttribute( 'path_string', $newNodePath );
-        $insertedNode->store();
+        try
+        {
+            try
+            {
+                $insertedNode->store();
+                $insertedID = $insertedNode->attribute( 'node_id' );
+                $newNodePath = $parentPath . $insertedID . '/';
+                $insertedNode->setAttribute( 'path_string', $newNodePath );
+                $insertedNode->store();
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
 
         if ( $asObject )
@@ -4726,80 +4786,100 @@ class eZContentObjectTreeNode extends eZPersistentObject
 
         $db = eZDB::instance();
         $db->begin();
-
-        $nodePath = $this->attribute( 'path_string' );
-        $childrensPath = $nodePath ;
-
-        $pathString = " path_string like '$childrensPath%' ";
-
-        $urlAlias = $this->attribute( 'url_alias' );
-
-        // Remove static cache
-        if ( $ini->variable( 'ContentSettings', 'StaticCache' ) == 'enabled' )
+        try
         {
-            $optionArray = array( 'iniFile'      => 'site.ini',
-                                  'iniSection'   => 'ContentSettings',
-                                  'iniVariable'  => 'StaticCacheHandler' );
+            try
+            {
 
-            $options = new ezpExtensionOptions( $optionArray );
+                $nodePath = $this->attribute( 'path_string' );
+                $childrensPath = $nodePath ;
 
-            $staticCacheHandler = eZExtension::getHandlerClass( $options );
+                $pathString = " path_string like '$childrensPath%' ";
 
-            $staticCacheHandler->removeURL( "/" . $urlAlias );
-            $staticCacheHandler->generateAlwaysUpdatedCache();
+                $urlAlias = $this->attribute( 'url_alias' );
 
-            $parent = $this->fetchParent();
-        }
+                // Remove static cache
+                if ( $ini->variable( 'ContentSettings', 'StaticCache' ) == 'enabled' )
+                {
+                    $optionArray = array( 'iniFile'      => 'site.ini',
+                                          'iniSection'   => 'ContentSettings',
+                                          'iniVariable'  => 'StaticCacheHandler' );
 
-        $db->query( "DELETE FROM ezcontentobject_tree
+                    $options = new ezpExtensionOptions( $optionArray );
+
+                    $staticCacheHandler = eZExtension::getHandlerClass( $options );
+
+                    $staticCacheHandler->removeURL( "/" . $urlAlias );
+                    $staticCacheHandler->generateAlwaysUpdatedCache();
+
+                    $parent = $this->fetchParent();
+                }
+
+                $db->query( "DELETE FROM ezcontentobject_tree
                             WHERE $pathString OR
                             path_string = '$nodePath'" );
 
-        // Re-cache parent node
-        if ( $ini->variable( 'ContentSettings', 'StaticCache' ) == 'enabled' )
-        {
-            if ( $parent )
+                // Re-cache parent node
+                if ( $ini->variable( 'ContentSettings', 'StaticCache' ) == 'enabled' )
+                {
+                    if ( $parent )
+                    {
+                        $staticCacheHandler->cacheURL( "/" . $parent->urlAlias() );
+                    }
+                }
+
+                // Clean up URL alias entries
+                eZURLAliasML::removeByAction( 'eznode', $nodeID );
+
+                // Clean up content cache
+                eZContentCacheManager::clearContentCacheIfNeeded( $this->attribute( 'contentobject_id' ) );
+
+                // clean up user cache
+                if ( in_array( $object->attribute( 'contentclass_id' ), eZUser::contentClassIDs() ) )
+                {
+                    eZUser::removeSessionData( $objectID );
+                    eZUser::purgeUserCacheByUserId( $objectID );
+                }
+
+                $parentNode = $this->attribute( 'parent' );
+                if ( is_object( $parentNode ) )
+                {
+                    eZContentCacheManager::clearContentCacheIfNeeded( $parentNode->attribute( 'contentobject_id' ) );
+                    $parentNode->updateAndStoreModified();
+                    eZNodeAssignment::purgeByParentAndContentObjectID( $parentNode->attribute( 'node_id' ), $objectID );
+                }
+
+                // Clean up policies and limitations
+                eZRole::cleanupByNode( $this );
+
+                // Clean up recent items
+                eZContentBrowseRecent::removeRecentByNodeID( $nodeID );
+
+                // Clean up bookmarks
+                eZContentBrowseBookmark::removeByNodeID( $nodeID );
+
+                // Clean up tip-a-friend counter
+                eZTipafriendCounter::removeForNode( $nodeID );
+
+                // Clean up view counter
+                eZViewCounter::removeCounter( $nodeID );
+
+            }
+            catch ( Throwable $e )
             {
-                $staticCacheHandler->cacheURL( "/" . $parent->urlAlias() );
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
             }
         }
-
-        // Clean up URL alias entries
-        eZURLAliasML::removeByAction( 'eznode', $nodeID );
-
-        // Clean up content cache
-        eZContentCacheManager::clearContentCacheIfNeeded( $this->attribute( 'contentobject_id' ) );
-
-        // clean up user cache
-        if ( in_array( $object->attribute( 'contentclass_id' ), eZUser::contentClassIDs() ) )
+        catch ( Throwable $e )
         {
-            eZUser::removeSessionData( $objectID );
-            eZUser::purgeUserCacheByUserId( $objectID );
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
-
-        $parentNode = $this->attribute( 'parent' );
-        if ( is_object( $parentNode ) )
-        {
-            eZContentCacheManager::clearContentCacheIfNeeded( $parentNode->attribute( 'contentobject_id' ) );
-            $parentNode->updateAndStoreModified();
-            eZNodeAssignment::purgeByParentAndContentObjectID( $parentNode->attribute( 'node_id' ), $objectID );
-        }
-
-        // Clean up policies and limitations
-        eZRole::cleanupByNode( $this );
-
-        // Clean up recent items
-        eZContentBrowseRecent::removeRecentByNodeID( $nodeID );
-
-        // Clean up bookmarks
-        eZContentBrowseBookmark::removeByNodeID( $nodeID );
-
-        // Clean up tip-a-friend counter
-        eZTipafriendCounter::removeForNode( $nodeID );
-
-        // Clean up view counter
-        eZViewCounter::removeCounter( $nodeID );
-
         $db->commit();
     }
 
@@ -4859,206 +4939,226 @@ class eZContentObjectTreeNode extends eZPersistentObject
 
         $db = eZDB::instance();
         $db->begin();
-
-        foreach ( $deleteIDArray as $deleteID )
+        try
         {
-            $node = eZContentObjectTreeNode::fetch( $deleteID );
-            if ( $node === null )
-                continue;
-
-            $object = $node->attribute( 'object' );
-            if ( $object === null )
-                continue;
-
-            $class = $object->attribute( 'content_class' );
-            $canRemove = $node->attribute( 'can_remove' );
-            $canRemoveSubtree = true;
-
-            $nodeID = $node->attribute( 'node_id' );
-            $nodeName = $object->attribute( 'name' );
-
-            $childCount = 0;
-            $newMainNodeID = false;
-            $objectNodeCount = 0;
-            $readableChildCount = 0;
-
-            if ( $canRemove )
+            try
             {
-                $moveToTrashAllowed = $node->isNodeTrashAllowed();
 
-                $readableChildCount = $node->subTreeCount( array( 'Limitation' => array() ) );
-                $childCount = $node->subTreeCount( array( 'IgnoreVisibility' => true ) );
-                $totalChildCount += $childCount;
-
-                $allAssignedNodes = $object->attribute( 'assigned_nodes' );
-                $objectNodeCount = count( $allAssignedNodes );
-                // We need to find a new main node ID if we are trying
-                // to remove the current main node.
-                if ( $node->attribute( 'main_node_id' ) == $nodeID )
+                foreach ( $deleteIDArray as $deleteID )
                 {
-                    if ( count( $allAssignedNodes ) > 1 )
+                    $node = eZContentObjectTreeNode::fetch( $deleteID );
+                    if ( $node === null )
+                        continue;
+
+                    $object = $node->attribute( 'object' );
+                    if ( $object === null )
+                        continue;
+
+                    $class = $object->attribute( 'content_class' );
+                    $canRemove = $node->attribute( 'can_remove' );
+                    $canRemoveSubtree = true;
+
+                    $nodeID = $node->attribute( 'node_id' );
+                    $nodeName = $object->attribute( 'name' );
+
+                    $childCount = 0;
+                    $newMainNodeID = false;
+                    $objectNodeCount = 0;
+                    $readableChildCount = 0;
+
+                    if ( $canRemove )
                     {
-                        foreach( $allAssignedNodes as $assignedNode )
-                        {
-                            $assignedNodeID = $assignedNode->attribute( 'node_id' );
-                            if ( $assignedNodeID == $nodeID )
-                                continue;
-                            $newMainNodeID = $assignedNodeID;
-                            break;
-                        }
-                    }
-                }
+                        $moveToTrashAllowed = $node->isNodeTrashAllowed();
 
-                if ( $infoOnly )
-                {
-                    // Find the number of items in the subtree we are allowed to remove
-                    // if this differs from the total count it means we have items we cannot remove
-                    // We do this by fetching the limitation list for content/remove
-                    // and passing it to the subtree count function.
-                    $currentUser = eZUser::currentUser();
-                    $accessResult = $currentUser->hasAccessTo( 'content', 'remove' );
-                    if ( $accessResult['accessWord'] == 'limited' )
-                    {
-                        $limitationList = $accessResult['policies'];
-                        $removeableChildCount = $node->subTreeCount( array( 'Limitation' => $limitationList, 'IgnoreVisibility' => true ) );
-                        $canRemoveSubtree = ( $removeableChildCount == $childCount );
-                        $canRemove = $canRemoveSubtree;
-                    }
-                    //check if there is sub object in pending status
-                    $limitCount = 100;
-                    $offset = 0;
-                    while( 1 )
-                    {
-                        $children = $node->subTree( array( 'Limitation' => array(),
-                                                            'SortBy' => array( 'path' , false ),
-                                                            'Offset' => $offset,
-                                                            'Limit' => $limitCount,
-                                                            'IgnoreVisibility' => true,
-                                                            'AsObject' => false ) );
-                        // fetch pending node assignment(pending object)
-                        $idList = array();
-                        //add node itself into idList
-                        if( $offset === 0 )
-                        {
-                            $idList[] = $nodeID;
-                        }
-                        foreach( $children as $child )
-                        {
-                            $idList[] = $child['node_id'];
-                        }
+                        $readableChildCount = $node->subTreeCount( array( 'Limitation' => array() ) );
+                        $childCount = $node->subTreeCount( array( 'IgnoreVisibility' => true ) );
+                        $totalChildCount += $childCount;
 
-                        if( count( $idList ) === 0 )
+                        $allAssignedNodes = $object->attribute( 'assigned_nodes' );
+                        $objectNodeCount = count( $allAssignedNodes );
+                        // We need to find a new main node ID if we are trying
+                        // to remove the current main node.
+                        if ( $node->attribute( 'main_node_id' ) == $nodeID )
                         {
-                            break;
-                        }
-                        $pendingChildCount = eZNodeAssignment::fetchChildCountByVersionStatus( $idList,
-                                                                                       eZContentObjectVersion::STATUS_PENDING );
-                        if( $pendingChildCount !== 0 )
-                        {
-                            // there is pending object
-                            $hasPendingObject = true;
-                            break;
-                        }
-                        $offset += $limitCount;
-                    }
-                }
-
-                // We will only remove the subtree if are allowed
-                // and are told to do so.
-                if ( $canRemove and !$infoOnly )
-                {
-                    $moveToTrashTemp = $moveToTrash;
-                    if ( !$moveToTrashAllowed )
-                        $moveToTrashTemp = false;
-
-                    // Audit (doc/eng-us/bc/6.0/audit.md, F2): the subtree's root is the parent event, every node removed
-                    // below it a child event of the same kind
-                    $auditParent = null;
-                    if ( class_exists( 'expAuditHook' ) )
-                    {
-                        $rootLast = $node->attribute( 'main_node_id' ) == $nodeID && $objectNodeCount <= 1;
-                        $auditName = !$rootLast ? 'content.node.remove' : ( $moveToTrashTemp ? 'content.node.remove.trash' : 'content.object.remove' );
-                        if ( expAuditHook::on( $auditName ) )
-                        {
-                            $auditParent = expAuditHook::begin( $auditName, self::auditRemovalData( $node, $object, $auditName, $allAssignedNodes ) );
-                            if ( $auditParent !== null )
-                                expAuditHook::subtreeRoot( $nodeID );
-                        }
-                    }
-
-                    $removeSubtree = function () use ( $node, $moveToTrashTemp )
-                    {
-                        // Remove children, fetching them by 100 to avoid memory overflow.
-                        // removeNodeFromTree -> removeThis handles cache clearing
-                        while ( 1 )
-                        {
-                            // We should remove the latest subitems first,
-                            // so we should fetch subitems sorted by 'path_string' DESC
-                            $children = $node->subTree( array( 'Limitation' => array(),
-                                                               'SortBy' => array( 'path' , false ),
-                                                               'Limit' => 100,
-                                                               'IgnoreVisibility' => true ) );
-                            if ( !$children )
-                                break;
-
-                            foreach ( $children as $child )
+                            if ( count( $allAssignedNodes ) > 1 )
                             {
-                                $child->removeNodeFromTree( $moveToTrashTemp );
-                                eZContentObject::clearCache();
+                                foreach( $allAssignedNodes as $assignedNode )
+                                {
+                                    $assignedNodeID = $assignedNode->attribute( 'node_id' );
+                                    if ( $assignedNodeID == $nodeID )
+                                        continue;
+                                    $newMainNodeID = $assignedNodeID;
+                                    break;
+                                }
                             }
                         }
 
-                        $node->removeNodeFromTree( $moveToTrashTemp );
-                    };
-                    if ( $auditParent !== null )
-                    {
-                        try
+                        if ( $infoOnly )
                         {
-                            expAuditHook::withParent( $auditParent, $removeSubtree );
+                            // Find the number of items in the subtree we are allowed to remove
+                            // if this differs from the total count it means we have items we cannot remove
+                            // We do this by fetching the limitation list for content/remove
+                            // and passing it to the subtree count function.
+                            $currentUser = eZUser::currentUser();
+                            $accessResult = $currentUser->hasAccessTo( 'content', 'remove' );
+                            if ( $accessResult['accessWord'] == 'limited' )
+                            {
+                                $limitationList = $accessResult['policies'];
+                                $removeableChildCount = $node->subTreeCount( array( 'Limitation' => $limitationList, 'IgnoreVisibility' => true ) );
+                                $canRemoveSubtree = ( $removeableChildCount == $childCount );
+                                $canRemove = $canRemoveSubtree;
+                            }
+                            //check if there is sub object in pending status
+                            $limitCount = 100;
+                            $offset = 0;
+                            while( 1 )
+                            {
+                                $children = $node->subTree( array( 'Limitation' => array(),
+                                                                    'SortBy' => array( 'path' , false ),
+                                                                    'Offset' => $offset,
+                                                                    'Limit' => $limitCount,
+                                                                    'IgnoreVisibility' => true,
+                                                                    'AsObject' => false ) );
+                                // fetch pending node assignment(pending object)
+                                $idList = array();
+                                //add node itself into idList
+                                if( $offset === 0 )
+                                {
+                                    $idList[] = $nodeID;
+                                }
+                                foreach( $children as $child )
+                                {
+                                    $idList[] = $child['node_id'];
+                                }
+
+                                if( count( $idList ) === 0 )
+                                {
+                                    break;
+                                }
+                                $pendingChildCount = eZNodeAssignment::fetchChildCountByVersionStatus( $idList,
+                                                                                               eZContentObjectVersion::STATUS_PENDING );
+                                if( $pendingChildCount !== 0 )
+                                {
+                                    // there is pending object
+                                    $hasPendingObject = true;
+                                    break;
+                                }
+                                $offset += $limitCount;
+                            }
                         }
-                        catch ( Throwable $e )
+
+                        // We will only remove the subtree if are allowed
+                        // and are told to do so.
+                        if ( $canRemove and !$infoOnly )
                         {
-                            expAuditHook::subtreeRoot( $nodeID, false );
-                            expAuditHook::end( $auditParent, array( 'result' => 'failed', 'reason' => 'error',
-                                                                    'error' => array( 'message' => get_class( $e ) ) ) );
-                            throw $e;
+                            $moveToTrashTemp = $moveToTrash;
+                            if ( !$moveToTrashAllowed )
+                                $moveToTrashTemp = false;
+
+                            // Audit (doc/eng-us/bc/6.0/audit.md, F2): the subtree's root is the parent event, every node removed
+                            // below it a child event of the same kind
+                            $auditParent = null;
+                            if ( class_exists( 'expAuditHook' ) )
+                            {
+                                $rootLast = $node->attribute( 'main_node_id' ) == $nodeID && $objectNodeCount <= 1;
+                                $auditName = !$rootLast ? 'content.node.remove' : ( $moveToTrashTemp ? 'content.node.remove.trash' : 'content.object.remove' );
+                                if ( expAuditHook::on( $auditName ) )
+                                {
+                                    $auditParent = expAuditHook::begin( $auditName, self::auditRemovalData( $node, $object, $auditName, $allAssignedNodes ) );
+                                    if ( $auditParent !== null )
+                                        expAuditHook::subtreeRoot( $nodeID );
+                                }
+                            }
+
+                            $removeSubtree = function () use ( $node, $moveToTrashTemp )
+                            {
+                                // Remove children, fetching them by 100 to avoid memory overflow.
+                                // removeNodeFromTree -> removeThis handles cache clearing
+                                while ( 1 )
+                                {
+                                    // We should remove the latest subitems first,
+                                    // so we should fetch subitems sorted by 'path_string' DESC
+                                    $children = $node->subTree( array( 'Limitation' => array(),
+                                                                       'SortBy' => array( 'path' , false ),
+                                                                       'Limit' => 100,
+                                                                       'IgnoreVisibility' => true ) );
+                                    if ( !$children )
+                                        break;
+
+                                    foreach ( $children as $child )
+                                    {
+                                        $child->removeNodeFromTree( $moveToTrashTemp );
+                                        eZContentObject::clearCache();
+                                    }
+                                }
+
+                                $node->removeNodeFromTree( $moveToTrashTemp );
+                            };
+                            if ( $auditParent !== null )
+                            {
+                                try
+                                {
+                                    expAuditHook::withParent( $auditParent, $removeSubtree );
+                                }
+                                catch ( Throwable $e )
+                                {
+                                    expAuditHook::subtreeRoot( $nodeID, false );
+                                    expAuditHook::end( $auditParent, array( 'result' => 'failed', 'reason' => 'error',
+                                                                            'error' => array( 'message' => get_class( $e ) ) ) );
+                                    throw $e;
+                                }
+                                expAuditHook::subtreeRoot( $nodeID, false );
+                                expAuditHook::end( $auditParent, array( 'after' => array( 'subtree_nodes' => (int)$childCount ) ) );
+                            }
+                            else
+                                $removeSubtree();
                         }
-                        expAuditHook::subtreeRoot( $nodeID, false );
-                        expAuditHook::end( $auditParent, array( 'after' => array( 'subtree_nodes' => (int)$childCount ) ) );
                     }
-                    else
-                        $removeSubtree();
+                    if ( !$canRemove )
+                        $canRemoveAll = false;
+
+                    // Do not create info list if we are removing subtrees
+                    if ( !$infoOnly )
+                        continue;
+
+                    $soleNodeCount = $node->subtreeSoleNodeCount();
+                    $totalLoneNodeCount += $soleNodeCount;
+                    if ( $objectNodeCount <= 1 )
+                        ++$totalLoneNodeCount;
+
+                    $item = array( "nodeName" => $nodeName, // Backwards compatibility
+                                   "childCount" => $childCount, // Backwards compatibility
+                                   "additionalWarning" => '', // Backwards compatibility, this will always be empty
+                                   'node' => $node,
+                                   'object' => $object,
+                                   'class' => $class,
+                                   'node_name' => $nodeName,
+                                   'child_count' => $childCount,
+                                   'object_node_count' => $objectNodeCount,
+                                   'sole_node_count' => $soleNodeCount,
+                                   'can_remove' => $canRemove,
+                                   'can_remove_subtree' => $canRemoveSubtree,
+                                   'real_child_count' => $readableChildCount,
+                                   'new_main_node_id' => $newMainNodeID );
+                    $deleteResult[] = $item;
                 }
+
             }
-            if ( !$canRemove )
-                $canRemoveAll = false;
-
-            // Do not create info list if we are removing subtrees
-            if ( !$infoOnly )
-                continue;
-
-            $soleNodeCount = $node->subtreeSoleNodeCount();
-            $totalLoneNodeCount += $soleNodeCount;
-            if ( $objectNodeCount <= 1 )
-                ++$totalLoneNodeCount;
-
-            $item = array( "nodeName" => $nodeName, // Backwards compatibility
-                           "childCount" => $childCount, // Backwards compatibility
-                           "additionalWarning" => '', // Backwards compatibility, this will always be empty
-                           'node' => $node,
-                           'object' => $object,
-                           'class' => $class,
-                           'node_name' => $nodeName,
-                           'child_count' => $childCount,
-                           'object_node_count' => $objectNodeCount,
-                           'sole_node_count' => $soleNodeCount,
-                           'can_remove' => $canRemove,
-                           'can_remove_subtree' => $canRemoveSubtree,
-                           'real_child_count' => $readableChildCount,
-                           'new_main_node_id' => $newMainNodeID );
-            $deleteResult[] = $item;
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
         }
-
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
 
         if ( !$infoOnly )
@@ -5229,12 +5329,32 @@ class eZContentObjectTreeNode extends eZPersistentObject
                 // We need to change the main node ID before we remove the current node
                 $db = eZDB::instance();
                 $db->begin();
-                eZContentObjectTreeNode::updateMainNodeID( $newMainNode->attribute( 'node_id' ),
-                                                           $object->attribute( 'id' ),
-                                                           $object->attribute( 'current_version' ),
-                                                           $newMainNode->attribute( 'parent_node_id' ) );
-                $this->removeThis();
-                eZSearch::addObject( $object );
+                try
+                {
+                    try
+                    {
+                        eZContentObjectTreeNode::updateMainNodeID( $newMainNode->attribute( 'node_id' ),
+                                                                   $object->attribute( 'id' ),
+                                                                   $object->attribute( 'current_version' ),
+                                                                   $newMainNode->attribute( 'parent_node_id' ) );
+                        $this->removeThis();
+                        eZSearch::addObject( $object );
+                    }
+                    catch ( Throwable $e )
+                    {
+                        // nothing of a transaction that failed half way is committed by a later commit()
+                        if ( $db->transactionCounter() > 0 )
+                            $db->rollback();
+                        throw $e;
+                    }
+                }
+                catch ( Throwable $e )
+                {
+                    // nothing of a transaction that failed half way is committed by a later commit()
+                    if ( $db->transactionCounter() > 0 )
+                        $db->rollback();
+                    throw $e;
+                }
                 $db->commit();
             }
             else
@@ -5242,21 +5362,41 @@ class eZContentObjectTreeNode extends eZPersistentObject
                 // This is the last assignment so we remove the object too
                 $db = eZDB::instance();
                 $db->begin();
-                $this->removeThis();
+                try
+                {
+                    try
+                    {
+                        $this->removeThis();
 
-                if ( $moveToTrash )
-                {
-                    // saving information about this node in ..trash_node table
-                    $trashNode = eZContentObjectTrashNode::createFromNode( $this );
-                    $db = eZDB::instance();
-                    $db->begin();
-                    $trashNode->storeToTrash();
-                    $db->commit();
-                    $object->removeThis();
+                        if ( $moveToTrash )
+                        {
+                            // saving information about this node in ..trash_node table
+                            $trashNode = eZContentObjectTrashNode::createFromNode( $this );
+                            $db = eZDB::instance();
+                            $db->begin();
+                            $trashNode->storeToTrash();
+                            $db->commit();
+                            $object->removeThis();
+                        }
+                        else
+                        {
+                            $object->purge();
+                        }
+                    }
+                    catch ( Throwable $e )
+                    {
+                        // nothing of a transaction that failed half way is committed by a later commit()
+                        if ( $db->transactionCounter() > 0 )
+                            $db->rollback();
+                        throw $e;
+                    }
                 }
-                else
+                catch ( Throwable $e )
                 {
-                    $object->purge();
+                    // nothing of a transaction that failed half way is committed by a later commit()
+                    if ( $db->transactionCounter() > 0 )
+                        $db->rollback();
+                    throw $e;
                 }
                 $db->commit();
             }
@@ -7126,8 +7266,28 @@ class eZContentObjectTreeNode extends eZPersistentObject
         $db = eZDB::instance();
 
         $db->begin();
-        parent::store( $fieldFilters );
-        $this->updateAndStoreModified();
+        try
+        {
+            try
+            {
+                parent::store( $fieldFilters );
+                $this->updateAndStoreModified();
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
     }
 
@@ -7387,26 +7547,46 @@ class eZContentObjectTreeNode extends eZPersistentObject
             expGraphQLEventListener::hidden( $node, true );
 
         $db->begin();
-
-        if ( !$node->attribute( 'is_invisible' ) ) // if root node is visible
+        try
         {
-            // 1) Mark root node as hidden and invisible.
-            if ( $modifyRootNode )
-                $db->query( "UPDATE ezcontentobject_tree SET is_hidden=1, is_invisible=1, modified_subnode=$time WHERE node_id=$nodeID" );
+            try
+            {
 
-            // 2) Recursively mark child nodes as invisible, except for ones which have been previously marked as invisible.
-            $nodePath = $node->attribute( 'path_string' );
-            $db->query( "UPDATE ezcontentobject_tree SET is_invisible=1, modified_subnode=$time WHERE is_invisible=0 AND path_string LIKE '$nodePath%'" );
+                if ( !$node->attribute( 'is_invisible' ) ) // if root node is visible
+                {
+                    // 1) Mark root node as hidden and invisible.
+                    if ( $modifyRootNode )
+                        $db->query( "UPDATE ezcontentobject_tree SET is_hidden=1, is_invisible=1, modified_subnode=$time WHERE node_id=$nodeID" );
+
+                    // 2) Recursively mark child nodes as invisible, except for ones which have been previously marked as invisible.
+                    $nodePath = $node->attribute( 'path_string' );
+                    $db->query( "UPDATE ezcontentobject_tree SET is_invisible=1, modified_subnode=$time WHERE is_invisible=0 AND path_string LIKE '$nodePath%'" );
+                }
+                else
+                {
+                    // Mark root node as hidden
+                    if ( $modifyRootNode )
+                        $db->query( "UPDATE ezcontentobject_tree SET is_hidden=1, modified_subnode=$time WHERE node_id=$nodeID" );
+                }
+
+                $node->updateAndStoreModified();
+
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
         }
-        else
+        catch ( Throwable $e )
         {
-            // Mark root node as hidden
-            if ( $modifyRootNode )
-                $db->query( "UPDATE ezcontentobject_tree SET is_hidden=1, modified_subnode=$time WHERE node_id=$nodeID" );
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
-
-        $node->updateAndStoreModified();
-
         $db->commit();
 
         eZContentObjectTreeNode::clearViewCacheForSubtree( $node, $modifyRootNode );
@@ -7460,34 +7640,54 @@ class eZContentObjectTreeNode extends eZPersistentObject
         $db = eZDB::instance();
 
         $db->begin();
-
-        if ( ! $parentNode->attribute( 'is_invisible' ) ) // if parent node is visible
+        try
         {
-            // 1) Mark root node as not hidden and visible.
-            if ( $modifyRootNode )
-                $db->query( "UPDATE ezcontentobject_tree SET is_invisible=0, is_hidden=0, modified_subnode=$time WHERE node_id=$nodeID" );
+            try
+            {
 
-            // 2) Recursively mark child nodes as visible (except for nodes previosly marked as hidden, and all their children).
+                if ( ! $parentNode->attribute( 'is_invisible' ) ) // if parent node is visible
+                {
+                    // 1) Mark root node as not hidden and visible.
+                    if ( $modifyRootNode )
+                        $db->query( "UPDATE ezcontentobject_tree SET is_invisible=0, is_hidden=0, modified_subnode=$time WHERE node_id=$nodeID" );
 
-            // 2.1) $hiddenChildren = Fetch all hidden children for the root node
-            $hiddenChildren = $db->arrayQuery( "SELECT path_string FROM ezcontentobject_tree " .
-                                                "WHERE node_id <> $nodeID AND is_hidden=1 AND path_string LIKE '$nodePath%'" );
-            $skipSubtreesString = '';
-            foreach ( $hiddenChildren as $i )
-                $skipSubtreesString .= " AND path_string NOT LIKE '" . $i['path_string'] . "%'";
+                    // 2) Recursively mark child nodes as visible (except for nodes previosly marked as hidden, and all their children).
 
-            // 2.2) Mark those children as visible which are not under nodes in $hiddenChildren
-            $db->query( "UPDATE ezcontentobject_tree SET is_invisible=0, modified_subnode=$time WHERE path_string LIKE '$nodePath%' $skipSubtreesString" );
+                    // 2.1) $hiddenChildren = Fetch all hidden children for the root node
+                    $hiddenChildren = $db->arrayQuery( "SELECT path_string FROM ezcontentobject_tree " .
+                                                        "WHERE node_id <> $nodeID AND is_hidden=1 AND path_string LIKE '$nodePath%'" );
+                    $skipSubtreesString = '';
+                    foreach ( $hiddenChildren as $i )
+                        $skipSubtreesString .= " AND path_string NOT LIKE '" . $i['path_string'] . "%'";
+
+                    // 2.2) Mark those children as visible which are not under nodes in $hiddenChildren
+                    $db->query( "UPDATE ezcontentobject_tree SET is_invisible=0, modified_subnode=$time WHERE path_string LIKE '$nodePath%' $skipSubtreesString" );
+                }
+                else
+                {
+                    // Mark root node as not hidden.
+                    if ( $modifyRootNode )
+                        $db->query( "UPDATE ezcontentobject_tree SET is_hidden=0, modified_subnode=$time WHERE node_id=$nodeID" );
+                }
+
+                $node->updateAndStoreModified();
+
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
         }
-        else
+        catch ( Throwable $e )
         {
-            // Mark root node as not hidden.
-            if ( $modifyRootNode )
-                $db->query( "UPDATE ezcontentobject_tree SET is_hidden=0, modified_subnode=$time WHERE node_id=$nodeID" );
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
-
-        $node->updateAndStoreModified();
-
         $db->commit();
 
         eZContentObjectTreeNode::clearViewCacheForSubtree( $node, $modifyRootNode );
@@ -7522,15 +7722,35 @@ class eZContentObjectTreeNode extends eZPersistentObject
             $nodeID                 = $node->attribute( 'node_id' );
             $db                     = eZDB::instance();
             $db->begin();
-            $db->query( "UPDATE ezcontentobject_tree SET is_invisible=$parentNodeIsVisible WHERE node_id=$nodeID" );
-
-            if ( $recursive )
+            try
             {
-                // update visibility for children of the node
-                if( $parentNodeIsVisible )
-                    eZContentObjectTreeNode::hideSubTree( $node, $modifyRootNode = false );
-                else
-                    eZContentObjectTreeNode::unhideSubTree( $node, $modifyRootNode = false );
+                try
+                {
+                    $db->query( "UPDATE ezcontentobject_tree SET is_invisible=$parentNodeIsVisible WHERE node_id=$nodeID" );
+
+                    if ( $recursive )
+                    {
+                        // update visibility for children of the node
+                        if( $parentNodeIsVisible )
+                            eZContentObjectTreeNode::hideSubTree( $node, $modifyRootNode = false );
+                        else
+                            eZContentObjectTreeNode::unhideSubTree( $node, $modifyRootNode = false );
+                    }
+                }
+                catch ( Throwable $e )
+                {
+                    // nothing of a transaction that failed half way is committed by a later commit()
+                    if ( $db->transactionCounter() > 0 )
+                        $db->rollback();
+                    throw $e;
+                }
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
             }
             $db->commit();
         }

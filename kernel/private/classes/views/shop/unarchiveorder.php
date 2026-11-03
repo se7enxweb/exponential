@@ -34,9 +34,19 @@ class Unarchiveorder extends \Exponential\Runnable\ModuleView
 
         $db = \eZDB::instance();
         $db->begin();
-        foreach ( $orderIDArray as $archiveID )
+        try
         {
-            \eZOrder::unarchiveOrder( $archiveID );
+            foreach ( $orderIDArray as $archiveID )
+            {
+                \eZOrder::unarchiveOrder( $archiveID );
+            }
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
         $Module->redirectTo( '/shop/archivelist/' );

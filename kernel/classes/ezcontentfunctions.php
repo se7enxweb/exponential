@@ -110,57 +110,67 @@ class eZContentFunctions
             {
                 $db = eZDB::instance();
                 $db->begin();
-
-                $languageCode = isset( $params['language'] ) ? $params['language'] : false;
-                $sectionID = isset( $params['section_id'] ) ? $params['section_id'] : 0;
-                $contentObject = $contentClass->instantiate( $creatorID , $sectionID, false, $languageCode );
-
-                if ( array_key_exists( 'remote_id', $params ) )
-                    $contentObject->setAttribute( 'remote_id', $params['remote_id'] );
-
-                $contentObject->store();
-
-                $nodeAssignment = eZNodeAssignment::create( array( 'contentobject_id' => $contentObject->attribute( 'id' ),
-                                                                   'contentobject_version' => $contentObject->attribute( 'current_version' ),
-                                                                   'parent_node' => $parentNodeID,
-                                                                   'is_main' => 1,
-                                                                   'sort_field' => $contentClass->attribute( 'sort_field' ),
-                                                                   'sort_order' => $contentClass->attribute( 'sort_order' ) ) );
-                $nodeAssignment->store();
-
-                $version = $contentObject->version( 1 );
-                $version->setAttribute( 'modified', eZDateTime::currentTimeStamp() );
-                $version->setAttribute( 'status', eZContentObjectVersion::STATUS_DRAFT );
-                $version->store();
-
-                if ( is_array( $attributesData ) && !empty( $attributesData ) )
+                try
                 {
-                    $attributes = $contentObject->attribute( 'contentobject_attributes' );
 
-                    foreach( $attributes as $attribute )
+                    $languageCode = isset( $params['language'] ) ? $params['language'] : false;
+                    $sectionID = isset( $params['section_id'] ) ? $params['section_id'] : 0;
+                    $contentObject = $contentClass->instantiate( $creatorID , $sectionID, false, $languageCode );
+
+                    if ( array_key_exists( 'remote_id', $params ) )
+                        $contentObject->setAttribute( 'remote_id', $params['remote_id'] );
+
+                    $contentObject->store();
+
+                    $nodeAssignment = eZNodeAssignment::create( array( 'contentobject_id' => $contentObject->attribute( 'id' ),
+                                                                       'contentobject_version' => $contentObject->attribute( 'current_version' ),
+                                                                       'parent_node' => $parentNodeID,
+                                                                       'is_main' => 1,
+                                                                       'sort_field' => $contentClass->attribute( 'sort_field' ),
+                                                                       'sort_order' => $contentClass->attribute( 'sort_order' ) ) );
+                    $nodeAssignment->store();
+
+                    $version = $contentObject->version( 1 );
+                    $version->setAttribute( 'modified', eZDateTime::currentTimeStamp() );
+                    $version->setAttribute( 'status', eZContentObjectVersion::STATUS_DRAFT );
+                    $version->store();
+
+                    if ( is_array( $attributesData ) && !empty( $attributesData ) )
                     {
-                        $attributeIdentifier = $attribute->attribute( 'contentclass_attribute_identifier' );
-                        if ( isset( $attributesData[$attributeIdentifier] ) )
-                        {
-                            $dataString = $attributesData[$attributeIdentifier];
-                            switch ( $datatypeString = $attribute->attribute( 'data_type_string' ) )
-                            {
-                                case 'ezimage':
-                                case 'ezbinaryfile':
-                                case 'ezmedia':
-                                {
-                                    $dataString = $storageDir . $dataString;
-                                    break;
-                                }
-                                default:
-                            }
+                        $attributes = $contentObject->attribute( 'contentobject_attributes' );
 
-                            $attribute->fromString( $dataString );
-                            $attribute->store();
+                        foreach( $attributes as $attribute )
+                        {
+                            $attributeIdentifier = $attribute->attribute( 'contentclass_attribute_identifier' );
+                            if ( isset( $attributesData[$attributeIdentifier] ) )
+                            {
+                                $dataString = $attributesData[$attributeIdentifier];
+                                switch ( $datatypeString = $attribute->attribute( 'data_type_string' ) )
+                                {
+                                    case 'ezimage':
+                                    case 'ezbinaryfile':
+                                    case 'ezmedia':
+                                    {
+                                        $dataString = $storageDir . $dataString;
+                                        break;
+                                    }
+                                    default:
+                                }
+
+                                $attribute->fromString( $dataString );
+                                $attribute->store();
+                            }
                         }
                     }
-                }
 
+                }
+                catch ( Throwable $e )
+                {
+                    // nothing of a transaction that failed half way is committed by a later commit()
+                    if ( $db->transactionCounter() > 0 )
+                        $db->rollback();
+                    throw $e;
+                }
                 $db->commit();
 
                 $operationResult = eZOperationHandler::execute( 'content', 'publish', array( 'object_id' => $contentObject->attribute( 'id' ),
@@ -288,48 +298,58 @@ class eZContentFunctions
 
         $db = eZDB::instance();
         $db->begin();
-
-        $newVersion = $object->createNewVersion( false, true, $languageCode );
-
-        if ( !$newVersion instanceof eZContentObjectVersion )
+        try
         {
-            eZDebug::writeError( 'Unable to create a new version for object ' . $object->attribute( 'id' ), __METHOD__ );
 
-            $db->rollback();
+            $newVersion = $object->createNewVersion( false, true, $languageCode );
 
-            return false;
-        }
-
-        $newVersion->setAttribute( 'modified', time() );
-        $newVersion->store();
-
-        $attributeList = $newVersion->attribute( 'contentobject_attributes' );
-
-        $attributesData = $params['attributes'];
-
-        foreach( $attributeList as $attribute )
-        {
-            $attributeIdentifier = $attribute->attribute( 'contentclass_attribute_identifier' );
-            if ( array_key_exists( $attributeIdentifier, $attributesData ) )
+            if ( !$newVersion instanceof eZContentObjectVersion )
             {
-                $dataString = $attributesData[$attributeIdentifier];
-                switch ( $datatypeString = $attribute->attribute( 'data_type_string' ) )
-                {
-                    case 'ezimage':
-                    case 'ezbinaryfile':
-                    case 'ezmedia':
-                    {
-                        $dataString = $storageDir . $dataString;
-                        break;
-                    }
-                    default:
-                }
+                eZDebug::writeError( 'Unable to create a new version for object ' . $object->attribute( 'id' ), __METHOD__ );
 
-                $attribute->fromString( $dataString );
-                $attribute->store();
+                $db->rollback();
+
+                return false;
             }
-        }
 
+            $newVersion->setAttribute( 'modified', time() );
+            $newVersion->store();
+
+            $attributeList = $newVersion->attribute( 'contentobject_attributes' );
+
+            $attributesData = $params['attributes'];
+
+            foreach( $attributeList as $attribute )
+            {
+                $attributeIdentifier = $attribute->attribute( 'contentclass_attribute_identifier' );
+                if ( array_key_exists( $attributeIdentifier, $attributesData ) )
+                {
+                    $dataString = $attributesData[$attributeIdentifier];
+                    switch ( $datatypeString = $attribute->attribute( 'data_type_string' ) )
+                    {
+                        case 'ezimage':
+                        case 'ezbinaryfile':
+                        case 'ezmedia':
+                        {
+                            $dataString = $storageDir . $dataString;
+                            break;
+                        }
+                        default:
+                    }
+
+                    $attribute->fromString( $dataString );
+                    $attribute->store();
+                }
+            }
+
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
 
         $operationResult = eZOperationHandler::execute( 'content', 'publish', array( 'object_id' => $newVersion->attribute( 'contentobject_id' ),

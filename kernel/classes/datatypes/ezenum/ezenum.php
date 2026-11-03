@@ -130,25 +130,35 @@ class eZEnum
         $values = array_values( $array_enumvalue );
         $db = eZDB::instance();
         $db->begin();
-
-        $changed = false;
-        foreach ( array_values( $array_enumid ) as $i => $enumID )
+        try
         {
-            if ( !is_scalar( $enumID ) or !isset( $own[(int)$enumID] ) )
-                continue;
-            $element = $elements[$i] ?? null;
-            $value = $values[$i] ?? null;
-            if ( !is_scalar( $element ) or !is_scalar( $value ) )
-                continue;
-            $enumvalue = $own[(int)$enumID];
-            // The form limits both to 255 characters, as wide as the columns
-            $enumvalue->setAttribute( "enumelement", mb_substr( (string)$element, 0, 255 ) );
-            $enumvalue->setAttribute( "enumvalue", mb_substr( (string)$value, 0, 255 ) );
-            $enumvalue->store();
-            $changed = true;
+
+            $changed = false;
+            foreach ( array_values( $array_enumid ) as $i => $enumID )
+            {
+                if ( !is_scalar( $enumID ) or !isset( $own[(int)$enumID] ) )
+                    continue;
+                $element = $elements[$i] ?? null;
+                $value = $values[$i] ?? null;
+                if ( !is_scalar( $element ) or !is_scalar( $value ) )
+                    continue;
+                $enumvalue = $own[(int)$enumID];
+                // The form limits both to 255 characters, as wide as the columns
+                $enumvalue->setAttribute( "enumelement", mb_substr( (string)$element, 0, 255 ) );
+                $enumvalue->setAttribute( "enumvalue", mb_substr( (string)$value, 0, 255 ) );
+                $enumvalue->store();
+                $changed = true;
+            }
+            if ( $changed )
+                $this->Enumerations = eZEnumValue::fetchAllElements( $this->ClassAttributeID, $this->ClassAttributeVersion );
         }
-        if ( $changed )
-            $this->Enumerations = eZEnumValue::fetchAllElements( $this->ClassAttributeID, $this->ClassAttributeVersion );
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
     }
 
@@ -159,32 +169,42 @@ class eZEnum
 
         $db = eZDB::instance();
         $db->begin();
-
-        eZEnumValue::removeAllElements( $this->ClassAttributeID, 0 );
-        foreach( $this->Enumerations as $enum )
+        try
         {
-            $oldversion = $enum->attribute ( "contentclass_attribute_version" );
-            $id = $enum->attribute( "id" );
-            $contentClassAttributeID = $enum->attribute( "contentclass_attribute_id" );
-            $element = $enum->attribute( "enumelement" );
-            $value = $enum->attribute( "enumvalue" );
-            $placement = $enum->attribute( "placement" );
-            $enumCopy = eZEnumValue::createCopy( $id,
-                                                 $contentClassAttributeID,
-                                                 0,
-                                                 $element,
-                                                 $value,
-                                                 $placement );
-            $enumCopy->store();
-            if ( $oldversion != $version )
+
+            eZEnumValue::removeAllElements( $this->ClassAttributeID, 0 );
+            foreach( $this->Enumerations as $enum )
             {
-                $enum->setAttribute("contentclass_attribute_version", $version );
-                $enum->store();
+                $oldversion = $enum->attribute ( "contentclass_attribute_version" );
+                $id = $enum->attribute( "id" );
+                $contentClassAttributeID = $enum->attribute( "contentclass_attribute_id" );
+                $element = $enum->attribute( "enumelement" );
+                $value = $enum->attribute( "enumvalue" );
+                $placement = $enum->attribute( "placement" );
+                $enumCopy = eZEnumValue::createCopy( $id,
+                                                     $contentClassAttributeID,
+                                                     0,
+                                                     $element,
+                                                     $value,
+                                                     $placement );
+                $enumCopy->store();
+                if ( $oldversion != $version )
+                {
+                    $enum->setAttribute("contentclass_attribute_version", $version );
+                    $enum->store();
+                }
             }
+
+            $this->Enumerations = eZEnumValue::fetchAllElements( $this->ClassAttributeID, $this->ClassAttributeVersion );
+
         }
-
-        $this->Enumerations = eZEnumValue::fetchAllElements( $this->ClassAttributeID, $this->ClassAttributeVersion );
-
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
     }
 

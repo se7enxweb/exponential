@@ -31,23 +31,33 @@ function expModuleViewShopProductCategoriesApplyChanges( $module, $http, $produc
 
     $db = eZDB::instance();
     $db->begin();
-    foreach ( $productCategories as $cat )
+    try
     {
-        $id = $cat->attribute( 'id' );
-
-        if ( !$http->hasPostVariable( "category_name_" . $id ) )
-            continue;
-
-        $name = $http->postVariable( "category_name_" . $id );
-
-        if ( !$name )
+        foreach ( $productCategories as $cat )
         {
-            $errors[] = ezpI18n::tr( 'kernel/shop/productcategories', 'Empty category names are not allowed (corrected).' );
-            continue;
-        }
+            $id = $cat->attribute( 'id' );
 
-        $cat->setAttribute( 'name', $name );
-        $cat->store();
+            if ( !$http->hasPostVariable( "category_name_" . $id ) )
+                continue;
+
+            $name = $http->postVariable( "category_name_" . $id );
+
+            if ( !$name )
+            {
+                $errors[] = ezpI18n::tr( 'kernel/shop/productcategories', 'Empty category names are not allowed (corrected).' );
+                continue;
+            }
+
+            $cat->setAttribute( 'name', $name );
+            $cat->store();
+        }
+    }
+    catch ( Throwable $e )
+    {
+        // nothing of a transaction that failed half way is committed by a later commit()
+        if ( $db->transactionCounter() > 0 )
+            $db->rollback();
+        throw $e;
     }
     $db->commit();
 
@@ -179,8 +189,18 @@ class Productcategories extends \Exponential\Runnable\ModuleView
 
             $db = \eZDB::instance();
             $db->begin();
-            foreach ( $catIDList as $catID )
-                \eZProductCategory::removeByID( (int) $catID );
+            try
+            {
+                foreach ( $catIDList as $catID )
+                    \eZProductCategory::removeByID( (int) $catID );
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
             $db->commit();
         }
         // Add new category.

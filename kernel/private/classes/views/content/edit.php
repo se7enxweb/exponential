@@ -119,7 +119,17 @@ if ( !function_exists( 'expContentEditCheckContentActions' ) )
                 $parentObject = eZContentObject::fetch( $parentArray[0] );
                 $db = eZDB::instance();
                 $db->begin();
-                $parentObject->addContentObjectRelation( $object->attribute( 'id' ), $parentArray[1] );
+                try
+                {
+                    $parentObject->addContentObjectRelation( $object->attribute( 'id' ), $parentArray[1] );
+                }
+                catch ( Throwable $e )
+                {
+                    // nothing of a transaction that failed half way is committed by a later commit()
+                    if ( $db->transactionCounter() > 0 )
+                        $db->rollback();
+                    throw $e;
+                }
                 $db->commit();
                 $http->removeSessionVariable( 'ParentObject' );
                 $http->removeSessionVariable( 'NewObjectID' );
@@ -342,14 +352,24 @@ if ( !function_exists( 'expContentEditCheckContentActions' ) )
                     $futureNodeHiddenState = $http->postVariable( $postVarName );
                     $db = eZDB::instance();
                     $db->begin();
-                    if ( $futureNodeHiddenState == 'hidden' )
-                        eZContentObjectTreeNode::hideSubTree( $node );
-                    else if ( $futureNodeHiddenState == 'visible' )
-                        eZContentObjectTreeNode::unhideSubTree( $node );
-                    else if ( $futureNodeHiddenState == 'unchanged' )
-                        $updateNodeVisibility = true;
-                    else
-                        eZDebug::writeWarning( "Unknown value for the future node hidden state: '$futureNodeHiddenState'" );
+                    try
+                    {
+                        if ( $futureNodeHiddenState == 'hidden' )
+                            eZContentObjectTreeNode::hideSubTree( $node );
+                        else if ( $futureNodeHiddenState == 'visible' )
+                            eZContentObjectTreeNode::unhideSubTree( $node );
+                        else if ( $futureNodeHiddenState == 'unchanged' )
+                            $updateNodeVisibility = true;
+                        else
+                            eZDebug::writeWarning( "Unknown value for the future node hidden state: '$futureNodeHiddenState'" );
+                    }
+                    catch ( Throwable $e )
+                    {
+                        // nothing of a transaction that failed half way is committed by a later commit()
+                        if ( $db->transactionCounter() > 0 )
+                            $db->rollback();
+                        throw $e;
+                    }
                     $db->commit();
                 }
 
@@ -358,8 +378,18 @@ if ( !function_exists( 'expContentEditCheckContentActions' ) )
                     // this might be redundant
                     $db = eZDB::instance();
                     $db->begin();
-                    $parentNode = eZContentObjectTreeNode::fetch( $parentNodeID );
-                    eZContentObjectTreeNode::updateNodeVisibility( $node, $parentNode, /* $recursive = */ false );
+                    try
+                    {
+                        $parentNode = eZContentObjectTreeNode::fetch( $parentNodeID );
+                        eZContentObjectTreeNode::updateNodeVisibility( $node, $parentNode, /* $recursive = */ false );
+                    }
+                    catch ( Throwable $e )
+                    {
+                        // nothing of a transaction that failed half way is committed by a later commit()
+                        if ( $db->transactionCounter() > 0 )
+                            $db->rollback();
+                        throw $e;
+                    }
                     $db->commit();
                     unset( $node, $parentNode );
                 }
@@ -661,8 +691,18 @@ class Edit extends \Exponential\Runnable\ModuleView
 
                     $db = \eZDB::instance();
                     $db->begin();
-                    $removeVersion->removeThis();
-                    $version = $obj->createNewVersionIn( $EditLanguage, false, false, true, \eZContentObjectVersion::STATUS_INTERNAL_DRAFT );
+                    try
+                    {
+                        $removeVersion->removeThis();
+                        $version = $obj->createNewVersionIn( $EditLanguage, false, false, true, \eZContentObjectVersion::STATUS_INTERNAL_DRAFT );
+                    }
+                    catch ( Throwable $e )
+                    {
+                        // nothing of a transaction that failed half way is committed by a later commit()
+                        if ( $db->transactionCounter() > 0 )
+                            $db->rollback();
+                        throw $e;
+                    }
                     $db->commit();
 
                     if( !$http->hasPostVariable( 'DoNotEditAfterNewDraft' ) )

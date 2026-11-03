@@ -260,11 +260,21 @@ class expMigrationStepFile extends expMigrationStepContentBase
             $versionNumber = (int)$object->attribute( 'current_version' );
             $version = $object->version( $versionNumber );
             $db->begin();
-            $write( $this->attributeOf( $version, $language, $step ) );
-            $version->resetDataMap();
-            $object->resetDataMap();
-            $object->setName( $object->contentClass()->contentObjectName( $object, $versionNumber, $language ), $versionNumber, $language );
-            $object->store();
+            try
+            {
+                $write( $this->attributeOf( $version, $language, $step ) );
+                $version->resetDataMap();
+                $object->resetDataMap();
+                $object->setName( $object->contentClass()->contentObjectName( $object, $versionNumber, $language ), $versionNumber, $language );
+                $object->store();
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
             $db->commit();
             eZContentCacheManager::clearContentCacheIfNeeded( $id );
             eZContentOperationCollection::registerSearchObject( $id );
@@ -272,16 +282,26 @@ class expMigrationStepFile extends expMigrationStepContentBase
             return eZContentObject::fetch( $id );
         }
         $db->begin();
-        $version = $object->createNewVersionIn( $language, $has ? false : $object->initialLanguageCode() );
-        if ( !$version instanceof eZContentObjectVersion )
+        try
         {
-            $db->rollback();
-            throw new RuntimeException( "no new version of the object $id in $language could be made" );
+            $version = $object->createNewVersionIn( $language, $has ? false : $object->initialLanguageCode() );
+            if ( !$version instanceof eZContentObjectVersion )
+            {
+                $db->rollback();
+                throw new RuntimeException( "no new version of the object $id in $language could be made" );
+            }
+            $version->setAttribute( 'modified', time() );
+            $version->store();
+            // a failure leaves the transaction to the run, which rolls the migration back
+            $write( $this->attributeOf( $version, $language, $step ) );
         }
-        $version->setAttribute( 'modified', time() );
-        $version->store();
-        // a failure leaves the transaction to the run, which rolls the migration back
-        $write( $this->attributeOf( $version, $language, $step ) );
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
         return self::publish( $id, (int)$version->attribute( 'version' ), $step );
     }

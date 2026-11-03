@@ -192,38 +192,48 @@ class eZVatType extends eZPersistentObject
     {
         $db = eZDB::instance();
         $db->begin();
-
-        $selectProductsQuery =
-            "SELECT coa.id, data_text, cca.data_float1 AS default_vat " .
-            "FROM ezcontentclass cc, ezcontentclass_attribute cca, ezcontentobject_attribute coa, ezcontentobject co " .
-            "WHERE " .
-            "cc.id=cca.contentclass_id AND " .
-            "cca.id=coa.contentclassattribute_id AND " .
-            "coa.contentobject_id=co.id AND  " .
-            "coa.version=co.current_version AND " .
-            "cca.data_type_string IN ('ezprice', 'ezmultiprice') " .
-            "AND data_text LIKE '$oldVAT,%'";
-
-        // Fetch the attributes by small portions to avoid memory overflow.
-        for ( $offset = 0; true; $offset += 50 )
+        try
         {
-            $rows = $db->arrayQuery( $selectProductsQuery, array( 'offset' => $offset, 'limit' => 50 ) );
-            if ( !$rows )
-                break;
 
-            foreach ( $rows as $row )
+            $selectProductsQuery =
+                "SELECT coa.id, data_text, cca.data_float1 AS default_vat " .
+                "FROM ezcontentclass cc, ezcontentclass_attribute cca, ezcontentobject_attribute coa, ezcontentobject co " .
+                "WHERE " .
+                "cc.id=cca.contentclass_id AND " .
+                "cca.id=coa.contentclassattribute_id AND " .
+                "coa.contentobject_id=co.id AND  " .
+                "coa.version=co.current_version AND " .
+                "cca.data_type_string IN ('ezprice', 'ezmultiprice') " .
+                "AND data_text LIKE '$oldVAT,%'";
+
+            // Fetch the attributes by small portions to avoid memory overflow.
+            for ( $offset = 0; true; $offset += 50 )
             {
-                list( $oldVatType, $vatExInc ) = explode( ',', $row['data_text'], 2 );
-                $updateQuery = "UPDATE ezcontentobject_attribute " .
-                               "SET data_text = '" . $row['default_vat'] . ",$vatExInc' " .
-                               "WHERE id=" . $row['id'];
-                $db->query( $updateQuery );
+                $rows = $db->arrayQuery( $selectProductsQuery, array( 'offset' => $offset, 'limit' => 50 ) );
+                if ( !$rows )
+                    break;
+
+                foreach ( $rows as $row )
+                {
+                    list( $oldVatType, $vatExInc ) = explode( ',', $row['data_text'], 2 );
+                    $updateQuery = "UPDATE ezcontentobject_attribute " .
+                                   "SET data_text = '" . $row['default_vat'] . ",$vatExInc' " .
+                                   "WHERE id=" . $row['id'];
+                    $db->query( $updateQuery );
+                }
+
+                if ( count( $rows ) < 50 )
+                    break;
             }
 
-            if ( count( $rows ) < 50 )
-                break;
         }
-
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
     }
 
@@ -254,29 +264,39 @@ class eZVatType extends eZPersistentObject
         $vatID = $this->ID;
         $db = eZDB::instance();
         $db->begin();
-        // Audit (doc/eng-us/bc/6.0/audit.md, commerce.vat.change): the row removed
-        if ( class_exists( 'expAuditHook' ) && expAuditHook::on( 'commerce.vat.change' ) )
+        try
         {
-            $auditRow = eZPersistentObject::fetchObject( self::definition(), null, array( 'id' => (int)$vatID ), false );
-            if ( is_array( $auditRow ) )
-                expAuditHook::emit( 'commerce.vat.change', array( 'object' => array( 'type' => 'vat_type', 'id' => (int)$vatID ), 'verb' => 'remove',
-                                                 'before' => array_intersect_key( $auditRow, array_flip( array( 'name', 'percentage' ) ) ) ) );
-        }
+            // Audit (doc/eng-us/bc/6.0/audit.md, commerce.vat.change): the row removed
+            if ( class_exists( 'expAuditHook' ) && expAuditHook::on( 'commerce.vat.change' ) )
+            {
+                $auditRow = eZPersistentObject::fetchObject( self::definition(), null, array( 'id' => (int)$vatID ), false );
+                if ( is_array( $auditRow ) )
+                    expAuditHook::emit( 'commerce.vat.change', array( 'object' => array( 'type' => 'vat_type', 'id' => (int)$vatID ), 'verb' => 'remove',
+                                                     'before' => array_intersect_key( $auditRow, array_flip( array( 'name', 'percentage' ) ) ) ) );
+            }
 
-        // remove dependent VAT rules
-        $dependentRules = eZVatRule::fetchByVatType( $vatID );
-        foreach ( $dependentRules as $rule )
+            // remove dependent VAT rules
+            $dependentRules = eZVatRule::fetchByVatType( $vatID );
+            foreach ( $dependentRules as $rule )
+            {
+                eZVatRule::removeVatRule( $rule->attribute( 'id' ) );
+            }
+
+            // replace VAT type in dependent products.
+            eZVatType::resetToDefaultInProducts( $vatID );
+
+            // Remove the VAT type itself.
+            eZPersistentObject::removeObject( eZVatType::definition(),
+                                              array( "id" => $vatID ) );
+
+        }
+        catch ( Throwable $e )
         {
-            eZVatRule::removeVatRule( $rule->attribute( 'id' ) );
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
-
-        // replace VAT type in dependent products.
-        eZVatType::resetToDefaultInProducts( $vatID );
-
-        // Remove the VAT type itself.
-        eZPersistentObject::removeObject( eZVatType::definition(),
-                                          array( "id" => $vatID ) );
-
         $db->commit();
     }
 

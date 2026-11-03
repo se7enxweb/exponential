@@ -251,8 +251,18 @@ class eZCurrencyData extends eZPersistentObject
         {
             $db = eZDB::instance();
             $db->begin();
-                eZPersistentObject::removeObject( eZCurrencyData::definition(),
-                                                  array( 'code' => array( $currencyCodeList ) ) );
+            try
+            {
+                    eZPersistentObject::removeObject( eZCurrencyData::definition(),
+                                                      array( 'code' => array( $currencyCodeList ) ) );
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
             $db->commit();
             // Audit (doc/eng-us/bc/6.0/audit.md, commerce.currency.change)
             if ( class_exists( 'expAuditHook' ) )

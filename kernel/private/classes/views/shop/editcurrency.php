@@ -123,7 +123,17 @@ class Editcurrency extends \Exponential\Runnable\ModuleView
 
                         $db = \eZDB::instance();
                         $db->begin();
-                        $currency->sync();
+                        try
+                        {
+                            $currency->sync();
+                        }
+                        catch ( Throwable $e )
+                        {
+                            // nothing of a transaction that failed half way is committed by a later commit()
+                            if ( $db->transactionCounter() > 0 )
+                                $db->rollback();
+                            throw $e;
+                        }
                         $db->commit();
 
                         \eZContentCacheManager::clearAllContentCache();

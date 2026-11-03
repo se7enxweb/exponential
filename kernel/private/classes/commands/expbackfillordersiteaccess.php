@@ -108,8 +108,18 @@ class Expbackfillordersiteaccess extends \Exponential\Runnable\Command
                 if ( $apply )
                 {
                     $db->begin();
-                    $order->setAttribute( 'siteaccess', $result['siteaccess'] );
-                    $order->store();
+                    try
+                    {
+                        $order->setAttribute( 'siteaccess', $result['siteaccess'] );
+                        $order->store();
+                    }
+                    catch ( Throwable $e )
+                    {
+                        // nothing of a transaction that failed half way is committed by a later commit()
+                        if ( $db->transactionCounter() > 0 )
+                            $db->rollback();
+                        throw $e;
+                    }
                     $db->commit();
                 }
             }

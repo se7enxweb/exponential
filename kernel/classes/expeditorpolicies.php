@@ -236,14 +236,24 @@ class expEditorPolicies
             return false;
         $db = eZDB::instance();
         $db->begin();
-        foreach ( $role->policyList() as $policy )
+        try
         {
-            if ( $policy->attribute( 'module_name' ) === 'content' && $policy->attribute( 'function_name' ) === '*'
-                 && count( (array)$policy->limitationList( false, true ) ) === 0 )
-                $policy->removeThis();
+            foreach ( $role->policyList() as $policy )
+            {
+                if ( $policy->attribute( 'module_name' ) === 'content' && $policy->attribute( 'function_name' ) === '*'
+                     && count( (array)$policy->limitationList( false, true ) ) === 0 )
+                    $policy->removeThis();
+            }
+            foreach ( $plan['add'] as $function )
+                $role->appendPolicy( 'content', $function );
         }
-        foreach ( $plan['add'] as $function )
-            $role->appendPolicy( 'content', $function );
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
         // the role's policy list is read again on the next use
         $role->Policies = null;

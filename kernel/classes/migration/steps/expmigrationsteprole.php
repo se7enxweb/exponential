@@ -283,9 +283,19 @@ class expMigrationStepRole extends expMigrationStepStructureBase implements expM
         $policies = isset( $step['policies'] ) ? (array)$step['policies'] : array();
         $db = eZDB::instance();
         $db->begin();
-        $installer = self::installer();
-        $installer->addPoliciesForRole( array( 'role_name' => (string)$step['name'], 'create_role' => true, 'policies' => self::policyDefinitions( $policies ) ) );
-        self::checkInstaller( $installer, 'creating the role "' . $step['name'] . '"' );
+        try
+        {
+            $installer = self::installer();
+            $installer->addPoliciesForRole( array( 'role_name' => (string)$step['name'], 'create_role' => true, 'policies' => self::policyDefinitions( $policies ) ) );
+            self::checkInstaller( $installer, 'creating the role "' . $step['name'] . '"' );
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
         self::expire();
         $role = eZRole::fetchByName( (string)$step['name'] );
@@ -323,27 +333,37 @@ class expMigrationStepRole extends expMigrationStepStructureBase implements expM
         $lines = array();
         $db = eZDB::instance();
         $db->begin();
-        if ( isset( $step['name'] ) && (string)$role->attribute( 'name' ) !== (string)$step['name'] )
+        try
         {
-            if ( eZRole::fetchByName( (string)$step['name'] ) instanceof eZRole )
-                throw new RuntimeException( 'another role has the name "' . $step['name'] . '"' );
-            $old = (string)$role->attribute( 'name' );
-            $role->setAttribute( 'name', (string)$step['name'] );
-            $role->store();
-            $lines[] = "renamed the role \"$old\" to \"" . $step['name'] . '"';
-        }
-        if ( isset( $step['remove_policies'] ) )
-        {
-            foreach ( (array)$step['remove_policies'] as $policy )
+            if ( isset( $step['name'] ) && (string)$role->attribute( 'name' ) !== (string)$step['name'] )
             {
-                $function = isset( $policy['function'] ) && $policy['function'] !== '*' ? (string)$policy['function'] : false;
-                $before = count( $role->policyList() );
-                $role->removePolicy( (string)$policy['module'], $function );
-                unset( $role->Policies );
-                $removed = $before - count( $role->policyList() );
-                $lines[] = "removed $removed polic" . ( $removed === 1 ? 'y' : 'ies' ) . ' ' . $policy['module'] . '/' . ( $function === false ? '*' : $function )
-                         . ' from the role "' . $role->attribute( 'name' ) . '"';
+                if ( eZRole::fetchByName( (string)$step['name'] ) instanceof eZRole )
+                    throw new RuntimeException( 'another role has the name "' . $step['name'] . '"' );
+                $old = (string)$role->attribute( 'name' );
+                $role->setAttribute( 'name', (string)$step['name'] );
+                $role->store();
+                $lines[] = "renamed the role \"$old\" to \"" . $step['name'] . '"';
             }
+            if ( isset( $step['remove_policies'] ) )
+            {
+                foreach ( (array)$step['remove_policies'] as $policy )
+                {
+                    $function = isset( $policy['function'] ) && $policy['function'] !== '*' ? (string)$policy['function'] : false;
+                    $before = count( $role->policyList() );
+                    $role->removePolicy( (string)$policy['module'], $function );
+                    unset( $role->Policies );
+                    $removed = $before - count( $role->policyList() );
+                    $lines[] = "removed $removed polic" . ( $removed === 1 ? 'y' : 'ies' ) . ' ' . $policy['module'] . '/' . ( $function === false ? '*' : $function )
+                             . ' from the role "' . $role->attribute( 'name' ) . '"';
+                }
+            }
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
         if ( isset( $step['add_policies'] ) && $step['add_policies'] )
@@ -367,7 +387,17 @@ class expMigrationStepRole extends expMigrationStepStructureBase implements expM
         $values = self::values( $role );
         $db = eZDB::instance();
         $db->begin();
-        $role->removeThis();
+        try
+        {
+            $role->removeThis();
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
         self::expire();
         return self::result( array( 'deleted the role "' . $values['name'] . '" (' . $values['role_id'] . ')' ), $values + array( 'created' => false, 'changed' => true ) );
@@ -399,19 +429,29 @@ class expMigrationStepRole extends expMigrationStepStructureBase implements expM
         $lines = array();
         $db = eZDB::instance();
         $db->begin();
-        foreach ( array_unique( $ids ) as $id )
+        try
         {
-            $label = 'the role "' . $role->attribute( 'name' ) . '"' . ( $assign ? ' to ' : ' from ' ) . "object $id" . self::limitText( $step );
-            if ( $assign === isset( $existing[$id] ) )
+            foreach ( array_unique( $ids ) as $id )
             {
-                $lines[] = ( $assign ? 'assigned ' : 'not assigned ' ) . $label . ' already';
-                continue;
+                $label = 'the role "' . $role->attribute( 'name' ) . '"' . ( $assign ? ' to ' : ' from ' ) . "object $id" . self::limitText( $step );
+                if ( $assign === isset( $existing[$id] ) )
+                {
+                    $lines[] = ( $assign ? 'assigned ' : 'not assigned ' ) . $label . ' already';
+                    continue;
+                }
+                if ( $assign )
+                    $role->assignToUser( $id, $ident, $value );
+                else
+                    $role->removeUserAssignmentByID( $existing[$id] );
+                $lines[] = ( $assign ? 'assigned ' : 'unassigned ' ) . $label;
             }
-            if ( $assign )
-                $role->assignToUser( $id, $ident, $value );
-            else
-                $role->removeUserAssignmentByID( $existing[$id] );
-            $lines[] = ( $assign ? 'assigned ' : 'unassigned ' ) . $label;
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
         self::expire();
@@ -449,9 +489,19 @@ class expMigrationStepRole extends expMigrationStepStructureBase implements expM
     {
         $db = eZDB::instance();
         $db->begin();
-        $installer = self::installer();
-        $installer->addPoliciesForRole( array( 'role_name' => (string)$role->attribute( 'name' ), 'create_role' => false, 'policies' => self::policyDefinitions( $policies ) ) );
-        self::checkInstaller( $installer, 'adding policies to the role "' . $role->attribute( 'name' ) . '"' );
+        try
+        {
+            $installer = self::installer();
+            $installer->addPoliciesForRole( array( 'role_name' => (string)$role->attribute( 'name' ), 'create_role' => false, 'policies' => self::policyDefinitions( $policies ) ) );
+            self::checkInstaller( $installer, 'adding policies to the role "' . $role->attribute( 'name' ) . '"' );
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
         self::expire();
     }

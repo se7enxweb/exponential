@@ -253,35 +253,45 @@ class EditExport extends \Exponential\Runnable\ModuleView
 
             $db = \eZDB::instance();
             $db->begin();
-            for ( $itemCount = 0; $itemCount < $http->postVariable( 'Item_Count' ); $itemCount++ )
+            try
             {
-                if ( $http->hasPostVariable( 'SourceBrowse_'.$itemCount ) )
+                for ( $itemCount = 0; $itemCount < $http->postVariable( 'Item_Count' ); $itemCount++ )
                 {
-                    $skipValues = $http->hasPostVariable( 'Ignore_Values_On_Browse_' . $itemCount ) && $http->postVariable( 'Ignore_Values_On_Browse_' . $itemCount );
-                    \eZRSSEditFunction::storeRSSExport( $Module, $http, false, $skipValues ? $http->postVariable( 'Item_ID_'.$itemCount ) : null );//
-                    \eZContentBrowse::browse( array( 'action_name' => 'RSSObjectBrowse',
-                                                    'description_template' => 'design:rss/browse_source.tpl',
-                                                    'from_page' => '/rss/edit_export/'. $RSSExportID .'/'. $http->postVariable( 'Item_ID_'.$itemCount ) .'/NodeSource' ),
-                                             $Module );
-                    break;
-                }
-
-                // remove selected source (if any)
-                if ( $http->hasPostVariable( 'RemoveSource_'.$itemCount ) )
-                {
-                    $itemID = $http->postVariable( 'Item_ID_'.$itemCount );
-                    if ( ( $rssExportItem = \eZRSSExportItem::fetch( $itemID, true, \eZRSSExport::STATUS_DRAFT ) ) )
+                    if ( $http->hasPostVariable( 'SourceBrowse_'.$itemCount ) )
                     {
-                        // remove the draft version
-                        $rssExportItem->remove();
-                        // remove the published version
-                        $rssExportItem->setAttribute( 'status', \eZRSSExport::STATUS_VALID );
-                        $rssExportItem->remove();
-                        \eZRSSEditFunction::storeRSSExport( $Module, $http );
+                        $skipValues = $http->hasPostVariable( 'Ignore_Values_On_Browse_' . $itemCount ) && $http->postVariable( 'Ignore_Values_On_Browse_' . $itemCount );
+                        \eZRSSEditFunction::storeRSSExport( $Module, $http, false, $skipValues ? $http->postVariable( 'Item_ID_'.$itemCount ) : null );//
+                        \eZContentBrowse::browse( array( 'action_name' => 'RSSObjectBrowse',
+                                                        'description_template' => 'design:rss/browse_source.tpl',
+                                                        'from_page' => '/rss/edit_export/'. $RSSExportID .'/'. $http->postVariable( 'Item_ID_'.$itemCount ) .'/NodeSource' ),
+                                                 $Module );
+                        break;
                     }
 
-                    break;
+                    // remove selected source (if any)
+                    if ( $http->hasPostVariable( 'RemoveSource_'.$itemCount ) )
+                    {
+                        $itemID = $http->postVariable( 'Item_ID_'.$itemCount );
+                        if ( ( $rssExportItem = \eZRSSExportItem::fetch( $itemID, true, \eZRSSExport::STATUS_DRAFT ) ) )
+                        {
+                            // remove the draft version
+                            $rssExportItem->remove();
+                            // remove the published version
+                            $rssExportItem->setAttribute( 'status', \eZRSSExport::STATUS_VALID );
+                            $rssExportItem->remove();
+                            \eZRSSEditFunction::storeRSSExport( $Module, $http );
+                        }
+
+                        break;
+                    }
                 }
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
             }
             $db->commit();
         }
@@ -333,19 +343,29 @@ class EditExport extends \Exponential\Runnable\ModuleView
                 {
                     $db = \eZDB::instance();
                     $db->begin();
-                    $rssItems = $rssExport->fetchItems();
-                    $rssExport->setAttribute( 'status', \eZRSSExport::STATUS_DRAFT );
-                    $rssExport->store();
-                    foreach( $rssItems as $rssItem )
+                    try
                     {
-                        $rssItem->setAttribute( 'status', \eZRSSExport::STATUS_DRAFT );
-                        $rssItem->store();
+                        $rssItems = $rssExport->fetchItems();
+                        $rssExport->setAttribute( 'status', \eZRSSExport::STATUS_DRAFT );
+                        $rssExport->store();
+                        foreach( $rssItems as $rssItem )
+                        {
+                            $rssItem->setAttribute( 'status', \eZRSSExport::STATUS_DRAFT );
+                            $rssItem->store();
+                        }
+                        // An OPML export's outlines are copied rather than moved, so the
+                        // published document keeps working while the draft is edited.
+                        \eZRSSExportOPMLItem::copyStatus( $RSSExportID,
+                                                         \eZRSSExport::STATUS_VALID,
+                                                         \eZRSSExport::STATUS_DRAFT );
                     }
-                    // An OPML export's outlines are copied rather than moved, so the
-                    // published document keeps working while the draft is edited.
-                    \eZRSSExportOPMLItem::copyStatus( $RSSExportID,
-                                                     \eZRSSExport::STATUS_VALID,
-                                                     \eZRSSExport::STATUS_DRAFT );
+                    catch ( Throwable $e )
+                    {
+                        // nothing of a transaction that failed half way is committed by a later commit()
+                        if ( $db->transactionCounter() > 0 )
+                            $db->rollback();
+                        throw $e;
+                    }
                     $db->commit();
                 }
                 else
@@ -410,16 +430,26 @@ class EditExport extends \Exponential\Runnable\ModuleView
 
             $db = \eZDB::instance();
             $db->begin();
+            try
+            {
 
-            // Create default rssExport object to use
-            $rssExport = \eZRSSExport::create( $user_id );
-            $rssExport->store();
-            $rssExportID = $rssExport->attribute( 'id' );
+                // Create default rssExport object to use
+                $rssExport = \eZRSSExport::create( $user_id );
+                $rssExport->store();
+                $rssExportID = $rssExport->attribute( 'id' );
 
-            // Create One empty export item
-            $rssExportItem = \eZRSSExportItem::create( $rssExportID );
-            $rssExportItem->store();
+                // Create One empty export item
+                $rssExportItem = \eZRSSExportItem::create( $rssExportID );
+                $rssExportItem->store();
 
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
             $db->commit();
         }
 

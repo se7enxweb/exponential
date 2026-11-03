@@ -99,7 +99,17 @@ class Bookmark extends \Exponential\Runnable\ModuleView
             $request = \expBookmarkPage::shiftRequest( $http->postVariable( 'BookmarkShiftButton' ) );
             $db = \eZDB::instance();
             $db->begin();
-            $moved = $request && \eZContentBrowseBookmarkFolder::shift( $userID, $request['type'], $request['id'], $request['direction'] );
+            try
+            {
+                $moved = $request && \eZContentBrowseBookmarkFolder::shift( $userID, $request['type'], $request['id'], $request['direction'] );
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
             $db->commit();
             $http->setSessionVariable( 'BookmarkNotice', $moved
                 ? array( 'level' => 'feedback', 'text' => \ezpI18n::tr( 'kernel/content', 'The order was saved.' ) )
@@ -112,8 +122,18 @@ class Bookmark extends \Exponential\Runnable\ModuleView
         {
             $db = \eZDB::instance();
             $db->begin();
-            $saved = \eZContentBrowseBookmarkFolder::setOrder( $userID, $http->postVariable( 'OrderType', 'bookmark' ),
-                                                              (int) $http->postVariable( 'OrderFolderID', 0 ), $http->postVariable( 'OrderIDs', '' ) );
+            try
+            {
+                $saved = \eZContentBrowseBookmarkFolder::setOrder( $userID, $http->postVariable( 'OrderType', 'bookmark' ),
+                                                                  (int) $http->postVariable( 'OrderFolderID', 0 ), $http->postVariable( 'OrderIDs', '' ) );
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
             $db->commit();
             $http->setSessionVariable( 'BookmarkNotice', $saved
                 ? array( 'level' => 'feedback', 'text' => \ezpI18n::tr( 'kernel/content', 'The order was saved.' ) )
@@ -164,7 +184,17 @@ class Bookmark extends \Exponential\Runnable\ModuleView
                         ? (int) $positions[$id] : 0;
             $db = \eZDB::instance();
             $db->begin();
-            $now = $position > 0 ? \eZContentBrowseBookmarkFolder::moveToPosition( $userID, 'bookmark', $id, $position ) : false;
+            try
+            {
+                $now = $position > 0 ? \eZContentBrowseBookmarkFolder::moveToPosition( $userID, 'bookmark', $id, $position ) : false;
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
             $db->commit();
             $http->setSessionVariable( 'BookmarkNotice', $now
                 ? array( 'level' => 'feedback', 'text' => \ezpI18n::tr( 'kernel/content', 'The bookmark is now at position %position of its folder.', null, array( '%position' => $now ) ) )
@@ -179,14 +209,24 @@ class Bookmark extends \Exponential\Runnable\ModuleView
             {
                 $db = \eZDB::instance();
                 $db->begin();
-                foreach ( \expBookmarkPage::selectedIDs( $Module->actionParameter( 'DeleteIDArray' ) ) as $deleteID )
+                try
                 {
-                    $bookmark = \eZContentBrowseBookmark::fetch( $deleteID );
-                    if ( $bookmark !== null && (int) $bookmark->attribute( 'user_id' ) === $userID )
+                    foreach ( \expBookmarkPage::selectedIDs( $Module->actionParameter( 'DeleteIDArray' ) ) as $deleteID )
                     {
-                        $bookmark->remove();
-                        ++$removed;
+                        $bookmark = \eZContentBrowseBookmark::fetch( $deleteID );
+                        if ( $bookmark !== null && (int) $bookmark->attribute( 'user_id' ) === $userID )
+                        {
+                            $bookmark->remove();
+                            ++$removed;
+                        }
                     }
+                }
+                catch ( Throwable $e )
+                {
+                    // nothing of a transaction that failed half way is committed by a later commit()
+                    if ( $db->transactionCounter() > 0 )
+                        $db->rollback();
+                    throw $e;
                 }
                 $db->commit();
             }
@@ -218,14 +258,24 @@ class Bookmark extends \Exponential\Runnable\ModuleView
                 $folderID = $scopeFolder >= 0 ? $scopeFolder : false;
                 $db = \eZDB::instance();
                 $db->begin();
-                foreach ( $nodeList as $nodeID )
+                try
                 {
-                    $node = \eZContentObjectTreeNode::fetch( (int) $nodeID );
-                    if ( $node && $node->canRead() )
+                    foreach ( $nodeList as $nodeID )
                     {
-                        \eZContentBrowseBookmark::createNew( $userID, (int) $nodeID, $node->attribute( 'name' ), $folderID );
-                        ++$added;
+                        $node = \eZContentObjectTreeNode::fetch( (int) $nodeID );
+                        if ( $node && $node->canRead() )
+                        {
+                            \eZContentBrowseBookmark::createNew( $userID, (int) $nodeID, $node->attribute( 'name' ), $folderID );
+                            ++$added;
+                        }
                     }
+                }
+                catch ( Throwable $e )
+                {
+                    // nothing of a transaction that failed half way is committed by a later commit()
+                    if ( $db->transactionCounter() > 0 )
+                        $db->rollback();
+                    throw $e;
                 }
                 $db->commit();
             }

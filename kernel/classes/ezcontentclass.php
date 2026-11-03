@@ -310,46 +310,56 @@ class eZContentClass extends eZPersistentObject
 
         $db = eZDB::instance();
         $db->begin();
-
-        $object->store();
-        $object->assignDefaultStates();
-        $object->setName( ezpI18n::tr( "kernel/contentclass", "New %1", null, array( $className ) ), false, $languageCode );
-
-        if ( !$versionNumber )
+        try
         {
-            $version = $object->createInitialVersion( $userID, $languageCode );
-        }
-        else
-        {
-            $version = eZContentObjectVersion::create( $object->attribute( "id" ), $userID, $versionNumber, $languageCode );
-        }
-        if ( $versionStatus !== false )
-        {
-            $version->setAttribute( 'status', $versionStatus );
-        }
 
-        $version->store();
+            $object->store();
+            $object->assignDefaultStates();
+            $object->setName( ezpI18n::tr( "kernel/contentclass", "New %1", null, array( $className ) ), false, $languageCode );
 
-        foreach ( $attributes as $attribute )
-        {
-            $attribute->instantiate( $object->attribute( 'id' ), $languageCode );
-        }
-
-        if ( isset( $user ) && $user instanceof eZUser && $user->isAnonymous() )
-        {
-            $createdObjectIDList = eZPreferences::value( 'ObjectCreationIDList' );
-            if ( !$createdObjectIDList )
+            if ( !$versionNumber )
             {
-                $createdObjectIDList = array( $object->attribute( 'id' ) );
+                $version = $object->createInitialVersion( $userID, $languageCode );
             }
             else
             {
-                $createdObjectIDList = unserialize( $createdObjectIDList );
-                $createdObjectIDList[] = $object->attribute( 'id' );
+                $version = eZContentObjectVersion::create( $object->attribute( "id" ), $userID, $versionNumber, $languageCode );
             }
-            eZPreferences::setValue( 'ObjectCreationIDList', serialize( $createdObjectIDList ) );
-        }
+            if ( $versionStatus !== false )
+            {
+                $version->setAttribute( 'status', $versionStatus );
+            }
 
+            $version->store();
+
+            foreach ( $attributes as $attribute )
+            {
+                $attribute->instantiate( $object->attribute( 'id' ), $languageCode );
+            }
+
+            if ( isset( $user ) && $user instanceof eZUser && $user->isAnonymous() )
+            {
+                $createdObjectIDList = eZPreferences::value( 'ObjectCreationIDList' );
+                if ( !$createdObjectIDList )
+                {
+                    $createdObjectIDList = array( $object->attribute( 'id' ) );
+                }
+                else
+                {
+                    $createdObjectIDList = unserialize( $createdObjectIDList );
+                    $createdObjectIDList[] = $object->attribute( 'id' );
+                }
+                eZPreferences::setValue( 'ObjectCreationIDList', serialize( $createdObjectIDList ) );
+            }
+
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
         return $object;
     }
@@ -821,13 +831,23 @@ class eZContentClass extends eZPersistentObject
         $temporaryClasses = eZContentClass::fetchList( $version, true );
         $db = eZDB::instance();
         $db->begin();
-        foreach ( $temporaryClasses as $class )
+        try
         {
-            $class->remove( true, $version );
-        }
-        eZPersistentObject::removeObject( eZContentClassAttribute::definition(),
-                                          array( 'version' => $version ) );
+            foreach ( $temporaryClasses as $class )
+            {
+                $class->remove( true, $version );
+            }
+            eZPersistentObject::removeObject( eZContentClassAttribute::definition(),
+                                              array( 'version' => $version ) );
 
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
     }
 
@@ -963,9 +983,19 @@ You will need to change the class of the node by using the swap functionality.' 
         {
             $db = eZDB::instance();
             $db->begin();
-            foreach( $removeAttributes as $attribute )
+            try
             {
-                $attribute->removeThis();
+                foreach( $removeAttributes as $attribute )
+                {
+                    $attribute->removeThis();
+                }
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
             }
             $db->commit();
         }
@@ -981,22 +1011,32 @@ You will need to change the class of the node by using the swap functionality.' 
 
             $db = eZDB::instance();
             $db->begin();
-            foreach ( $classAttributes as $classAttribute )
+            try
             {
-                $dataType = $classAttribute->dataType();
-                if ( $dataType === null )
+                foreach ( $classAttributes as $classAttribute )
                 {
-                    eZDebug::writeError(
-                        "Skipping removal of class attribute for non-existent datatype " . $classAttribute->DataTypeString,
-                        __METHOD__
-                    );
-                    continue;
+                    $dataType = $classAttribute->dataType();
+                    if ( $dataType === null )
+                    {
+                        eZDebug::writeError(
+                            "Skipping removal of class attribute for non-existent datatype " . $classAttribute->DataTypeString,
+                            __METHOD__
+                        );
+                        continue;
+                    }
+                    $dataType->deleteStoredClassAttribute( $classAttribute, $version );
                 }
-                $dataType->deleteStoredClassAttribute( $classAttribute, $version );
+                eZPersistentObject::removeObject( eZContentClassAttribute::definition(),
+                                                  array( 'contentclass_id' => $contentClassID,
+                                                         'version' => $version ) );
             }
-            eZPersistentObject::removeObject( eZContentClassAttribute::definition(),
-                                              array( 'contentclass_id' => $contentClassID,
-                                                     'version' => $version ) );
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
             $db->commit();
         }
     }
@@ -1025,37 +1065,47 @@ You will need to change the class of the node by using the swap functionality.' 
 
         $db = eZDB::instance();
         $db->begin();
-
-        if ( is_array( $store_childs ) ||
-             $store_childs )
+        try
         {
-            if ( is_array( $store_childs ) )
+
+            if ( is_array( $store_childs ) ||
+                 $store_childs )
             {
-                $attributes = $store_childs;
-            }
-            else
-            {
-                $attributes = $this->fetchAttributes();
+                if ( is_array( $store_childs ) )
+                {
+                    $attributes = $store_childs;
+                }
+                else
+                {
+                    $attributes = $this->fetchAttributes();
+                }
+
+               foreach( $attributes as $attribute )
+               {
+                   if ( is_object ( $attribute ) )
+                       $attribute->store();
+               }
             }
 
-           foreach( $attributes as $attribute )
-           {
-               if ( is_object ( $attribute ) )
-                   $attribute->store();
-           }
+            $handler = eZExpiryHandler::instance();
+            $handler->setTimestamp( 'user-class-cache', time() );
+            $handler->store();
+
+            $this->setAttribute( 'serialized_name_list', $this->NameList->serializeNames() );
+            $this->setAttribute( 'serialized_description_list', $this->DescriptionList->serializeNames() );
+
+            parent::store( $fieldFilters );
+
+            $this->NameList->store( $this );
+
         }
-
-        $handler = eZExpiryHandler::instance();
-        $handler->setTimestamp( 'user-class-cache', time() );
-        $handler->store();
-
-        $this->setAttribute( 'serialized_name_list', $this->NameList->serializeNames() );
-        $this->setAttribute( 'serialized_description_list', $this->DescriptionList->serializeNames() );
-
-        parent::store( $fieldFilters );
-
-        $this->NameList->store( $this );
-
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
     }
 
@@ -1135,55 +1185,65 @@ You will need to change the class of the node by using the swap functionality.' 
 
         $db = eZDB::instance();
         $db->begin();
-
-        // Before removing anything from the attributes, load attribute information
-        // which might otherwise not accessible when recreating them below.
-        // See issue #18164
-        foreach ( $attributes as $attribute )
+        try
         {
-            $attribute->content();
-        }
 
-        $this->removeAttributes( false, $version );
-        $this->removeAttributes( false, $previousVersion );
-        $this->remove( false );
-        $this->setVersion( $version, $attributes );
-        $this->setAttribute( "modifier_id", eZUser::currentUser()->attribute( "contentobject_id" ) );
-        $this->setAttribute( "modified", time() );
-        $this->adjustAttributePlacements( $attributes );
-        foreach( $attributes as $attribute )
+            // Before removing anything from the attributes, load attribute information
+            // which might otherwise not accessible when recreating them below.
+            // See issue #18164
+            foreach ( $attributes as $attribute )
+            {
+                $attribute->content();
+            }
+
+            $this->removeAttributes( false, $version );
+            $this->removeAttributes( false, $previousVersion );
+            $this->remove( false );
+            $this->setVersion( $version, $attributes );
+            $this->setAttribute( "modifier_id", eZUser::currentUser()->attribute( "contentobject_id" ) );
+            $this->setAttribute( "modified", time() );
+            $this->adjustAttributePlacements( $attributes );
+            foreach( $attributes as $attribute )
+            {
+                $attribute->storeVersioned( $version );
+            }
+
+            // Set contentobject_name to something sensible if it is missing
+            if ( count( $attributes ) > 0 && trim( $this->attribute( 'contentobject_name' ) ) == '' )
+            {
+                $this->setAttribute( 'contentobject_name', '<' . $attributes[0]->attribute( 'identifier' ) . '>' );
+            }
+
+            // Recreate class member entries
+            eZContentClassClassGroup::removeClassMembers( $this->ID, $version );
+
+            foreach( eZContentClassClassGroup::fetchGroupList( $this->ID, $previousVersion ) as $classgroup )
+            {
+                $classgroup->setAttribute( 'contentclass_version', $version );
+                $classgroup->store();
+            }
+            eZContentClassClassGroup::removeClassMembers( $this->ID, $previousVersion );
+
+            $handler = eZExpiryHandler::instance();
+            $time = time();
+            $handler->setTimestamp( 'user-class-cache', $time );
+            $handler->setTimestamp( 'class-identifier-cache', $time );
+            $handler->setTimestamp( 'sort-key-cache', $time );
+            $handler->store();
+
+            $this->setAttribute( 'serialized_name_list', $this->NameList->serializeNames() );
+            $this->setAttribute( 'serialized_description_list', $this->DescriptionList->serializeNames() );
+            parent::store();
+            $this->NameList->store( $this );
+
+        }
+        catch ( Throwable $e )
         {
-            $attribute->storeVersioned( $version );
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
-
-        // Set contentobject_name to something sensible if it is missing
-        if ( count( $attributes ) > 0 && trim( $this->attribute( 'contentobject_name' ) ) == '' )
-        {
-            $this->setAttribute( 'contentobject_name', '<' . $attributes[0]->attribute( 'identifier' ) . '>' );
-        }
-
-        // Recreate class member entries
-        eZContentClassClassGroup::removeClassMembers( $this->ID, $version );
-
-        foreach( eZContentClassClassGroup::fetchGroupList( $this->ID, $previousVersion ) as $classgroup )
-        {
-            $classgroup->setAttribute( 'contentclass_version', $version );
-            $classgroup->store();
-        }
-        eZContentClassClassGroup::removeClassMembers( $this->ID, $previousVersion );
-
-        $handler = eZExpiryHandler::instance();
-        $time = time();
-        $handler->setTimestamp( 'user-class-cache', $time );
-        $handler->setTimestamp( 'class-identifier-cache', $time );
-        $handler->setTimestamp( 'sort-key-cache', $time );
-        $handler->store();
-
-        $this->setAttribute( 'serialized_name_list', $this->NameList->serializeNames() );
-        $this->setAttribute( 'serialized_description_list', $this->DescriptionList->serializeNames() );
-        parent::store();
-        $this->NameList->store( $this );
-
         $db->commit();
 
         eZContentCacheManager::clearAllContentCache();
@@ -1769,61 +1829,71 @@ You will need to change the class of the node by using the swap functionality.' 
     {
         $db = eZDB::instance();
         $db->begin();
-
-        $languageLocale = false;
-        if ( $languageID )
+        try
         {
-            $language = eZContentLanguage::fetch( $languageID );
-            $languageLocale = $language->attribute( 'locale' );
-        }
 
-        if ( $languageID )
-        {
-            $this->setAttribute( 'language_mask', (int)$this->attribute( 'language_mask' ) | 1 );
-            $this->NameList->setAlwaysAvailableLanguage( $languageLocale );
-            $this->DescriptionList->setAlwaysAvailableLanguage( $languageLocale );
-        }
-        else
-        {
-            $this->setAttribute( 'language_mask', (int)$this->attribute( 'language_mask' ) & ~1 );
-            $this->NameList->setAlwaysAvailableLanguage( false );
-            $this->DescriptionList->setAlwaysAvailableLanguage( false );
-        }
-        $this->store();
+            $languageLocale = false;
+            if ( $languageID )
+            {
+                $language = eZContentLanguage::fetch( $languageID );
+                $languageLocale = $language->attribute( 'locale' );
+            }
 
-        $classID = $this->attribute( 'id' );
-        $version = $this->attribute( 'version' );
+            if ( $languageID )
+            {
+                $this->setAttribute( 'language_mask', (int)$this->attribute( 'language_mask' ) | 1 );
+                $this->NameList->setAlwaysAvailableLanguage( $languageLocale );
+                $this->DescriptionList->setAlwaysAvailableLanguage( $languageLocale );
+            }
+            else
+            {
+                $this->setAttribute( 'language_mask', (int)$this->attribute( 'language_mask' ) & ~1 );
+                $this->NameList->setAlwaysAvailableLanguage( false );
+                $this->DescriptionList->setAlwaysAvailableLanguage( false );
+            }
+            $this->store();
 
-        $attributes = $this->fetchAttributes();
-        foreach( $attributes as $attribute )
-        {
-            $attribute->setAlwaysAvailableLanguage( $languageLocale );
-            $attribute->store();
-        }
+            $classID = $this->attribute( 'id' );
+            $version = $this->attribute( 'version' );
 
-        // reset 'always available' flag
-        $sql = "UPDATE ezcontentclass_name SET language_id=";
-        if ( $db->databaseName() == 'oracle' )
-        {
-            $sql .= "bitand( language_id, -2 )";
-        }
-        else
-        {
-            $sql .= "language_id & ~1";
-        }
-        $sql .= " WHERE contentclass_id = '$classID' AND contentclass_version = '$version'";
-        $db->query( $sql );
+            $attributes = $this->fetchAttributes();
+            foreach( $attributes as $attribute )
+            {
+                $attribute->setAlwaysAvailableLanguage( $languageLocale );
+                $attribute->store();
+            }
 
-        if ( $languageID != false )
-        {
-            $newLanguageID = $languageID | 1;
+            // reset 'always available' flag
+            $sql = "UPDATE ezcontentclass_name SET language_id=";
+            if ( $db->databaseName() == 'oracle' )
+            {
+                $sql .= "bitand( language_id, -2 )";
+            }
+            else
+            {
+                $sql .= "language_id & ~1";
+            }
+            $sql .= " WHERE contentclass_id = '$classID' AND contentclass_version = '$version'";
+            $db->query( $sql );
 
-            $sql = "UPDATE ezcontentclass_name
+            if ( $languageID != false )
+            {
+                $newLanguageID = $languageID | 1;
+
+                $sql = "UPDATE ezcontentclass_name
                     SET language_id='$newLanguageID'
                 WHERE language_id='$languageID' AND contentclass_id = '$classID' AND contentclass_version = '$version'";
-            $db->query( $sql );
-        }
+                $db->query( $sql );
+            }
 
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
     }
 
@@ -1911,34 +1981,44 @@ You will need to change the class of the node by using the swap functionality.' 
 
         $db = eZDB::instance();
         $db->begin();
+        try
+        {
 
-        $classID = $this->attribute( 'id' );
-        $languageID = $language->attribute( 'id' );
+            $classID = $this->attribute( 'id' );
+            $languageID = $language->attribute( 'id' );
 
-        // change language_mask of the object
-        $languageMask = (int) $this->attribute( 'language_mask' );
-        $languageMask = (int) $languageMask & ~ (int) $languageID;
-        $this->setAttribute( 'language_mask', $languageMask );
+            // change language_mask of the object
+            $languageMask = (int) $this->attribute( 'language_mask' );
+            $languageMask = (int) $languageMask & ~ (int) $languageID;
+            $this->setAttribute( 'language_mask', $languageMask );
 
-        // Remove all names in the language
-        $db->query( "DELETE FROM ezcontentclass_name
+            // Remove all names in the language
+            $db->query( "DELETE FROM ezcontentclass_name
                      WHERE contentclass_id='$classID'
                        AND language_id='$languageID'" );
 
-        $languageLocale = $language->attribute( 'locale' );
-        $this->NameList->removeName( $languageLocale );
-        $this->DescriptionList->removeName( $languageLocale );
+            $languageLocale = $language->attribute( 'locale' );
+            $this->NameList->removeName( $languageLocale );
+            $this->DescriptionList->removeName( $languageLocale );
 
-        $this->store();
+            $this->store();
 
-        // Remove names for attributes in the language
-        $attributes = $this->fetchAttributes();
-        foreach ( $attributes as $attribute )
-        {
-            $attribute->removeTranslation( $languageLocale );
-            $attribute->store();
+            // Remove names for attributes in the language
+            $attributes = $this->fetchAttributes();
+            foreach ( $attributes as $attribute )
+            {
+                $attribute->removeTranslation( $languageLocale );
+                $attribute->store();
+            }
+
         }
-
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
 
         return true;

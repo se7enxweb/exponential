@@ -315,45 +315,55 @@ class ListView extends \Exponential\Runnable\ModuleView
             $auditBefore = $auditTriggers();
             $db = \eZDB::instance();
             $db->begin();
-            foreach ( $possibleTriggers as $trigger )
+            try
             {
-                if ( $http->hasPostVariable( 'WorkflowID_' . $trigger['key'] ) )
+                foreach ( $possibleTriggers as $trigger )
                 {
-                    $workflowID = $http->postVariable( 'WorkflowID_' . $trigger['key'] );
-                    if( $workflowID != -1 )
+                    if ( $http->hasPostVariable( 'WorkflowID_' . $trigger['key'] ) )
                     {
-                        if ( !array_key_exists( $trigger['key'], $triggers ) )
+                        $workflowID = $http->postVariable( 'WorkflowID_' . $trigger['key'] );
+                        if( $workflowID != -1 )
                         {
-                            //create trigger
-                            if ( $trigger['connect_type'] == 'before' )
+                            if ( !array_key_exists( $trigger['key'], $triggers ) )
                             {
-                                $connectType = 'b';
+                                //create trigger
+                                if ( $trigger['connect_type'] == 'before' )
+                                {
+                                    $connectType = 'b';
+                                }
+                                else
+                                {
+                                    $connectType = 'a';
+                                }
+                                $newTrigger = \eZTrigger::createNew( $trigger['module'], $trigger['operation'], $connectType, $workflowID );
                             }
                             else
                             {
-                                $connectType = 'a';
+                                $existendTrigger = $triggers[$trigger['key']];
+                                if ( $existendTrigger->attribute( 'workflow_id' ) != $workflowID )
+                                {
+                                    $existendTrigger = $triggers[$trigger['key']];
+                                    $existendTrigger->setAttribute( 'workflow_id', $workflowID );
+                                    $existendTrigger->store();
+                                }
+                                // update trigger
                             }
-                            $newTrigger = \eZTrigger::createNew( $trigger['module'], $trigger['operation'], $connectType, $workflowID );
                         }
-                        else
+                        else if ( array_key_exists( $trigger['key'], $triggers ) )
                         {
                             $existendTrigger = $triggers[$trigger['key']];
-                            if ( $existendTrigger->attribute( 'workflow_id' ) != $workflowID )
-                            {
-                                $existendTrigger = $triggers[$trigger['key']];
-                                $existendTrigger->setAttribute( 'workflow_id', $workflowID );
-                                $existendTrigger->store();
-                            }
-                            // update trigger
+                            $existendTrigger->remove();
+                            //remove trigger
                         }
                     }
-                    else if ( array_key_exists( $trigger['key'], $triggers ) )
-                    {
-                        $existendTrigger = $triggers[$trigger['key']];
-                        $existendTrigger->remove();
-                        //remove trigger
-                    }
                 }
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
             }
             $db->commit();
             $auditAfter = $auditTriggers();
@@ -382,9 +392,19 @@ class ListView extends \Exponential\Runnable\ModuleView
                 $auditBefore = $auditTriggers();
                 $db = \eZDB::instance();
                 $db->begin();
-                foreach ( $deleteIDArray as $deleteID )
+                try
                 {
-                    \eZPersistentObject::removeObject( \eZTrigger::definition(), array( 'id' => (int)$deleteID ) );
+                    foreach ( $deleteIDArray as $deleteID )
+                    {
+                        \eZPersistentObject::removeObject( \eZTrigger::definition(), array( 'id' => (int)$deleteID ) );
+                    }
+                }
+                catch ( Throwable $e )
+                {
+                    // nothing of a transaction that failed half way is committed by a later commit()
+                    if ( $db->transactionCounter() > 0 )
+                        $db->rollback();
+                    throw $e;
                 }
                 $db->commit();
                 $auditAfter = $auditTriggers();

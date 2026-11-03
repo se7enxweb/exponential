@@ -90,9 +90,19 @@ class eZCollaborationItemGroupLink extends eZPersistentObject
 
         $db = eZDB::instance();
         $db->begin();
-        $groupLink->store();
-        $itemStatus = eZCollaborationItemStatus::create( $collaborationID, $userID );
-        $itemStatus->store();
+        try
+        {
+            $groupLink->store();
+            $itemStatus = eZCollaborationItemStatus::create( $collaborationID, $userID );
+            $itemStatus->store();
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
 
         return $groupLink;

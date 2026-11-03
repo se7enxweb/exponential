@@ -243,56 +243,66 @@ class eZTextFileUser extends eZUser
                             $remoteID = "TextFile_" . $login;
 
                             $db->begin();
-
-                            // The content object may already exist if this process has failed once before, before the eZUser object was created.
-                            // Therefore we try to fetch the eZContentObject before instantiating it.
-                            $contentObject = eZContentObject::fetchByRemoteID( $remoteID );
-                            if ( !is_object( $contentObject ) )
+                            try
                             {
-                                $class = eZContentClass::fetch( $userClassID );
-                                $contentObject = $class->instantiate( $userCreatorID, $defaultSectionID );
+
+                                // The content object may already exist if this process has failed once before, before the eZUser object was created.
+                                // Therefore we try to fetch the eZContentObject before instantiating it.
+                                $contentObject = eZContentObject::fetchByRemoteID( $remoteID );
+                                if ( !is_object( $contentObject ) )
+                                {
+                                    $class = eZContentClass::fetch( $userClassID );
+                                    $contentObject = $class->instantiate( $userCreatorID, $defaultSectionID );
+                                }
+
+                                $contentObject->setAttribute( 'remote_id', $remoteID );
+                                $contentObject->store();
+
+                                $contentObjectID = $contentObject->attribute( 'id' );
+                                $userID = $contentObjectID;
+                                $nodeAssignment = eZNodeAssignment::create( array( 'contentobject_id' => $contentObjectID,
+                                                                                   'contentobject_version' => 1,
+                                                                                   'parent_node' => $defaultUserPlacement,
+                                                                                   'is_main' => 1 ) );
+                                $nodeAssignment->store();
+                                $version = $contentObject->version( 1 );
+                                $version->setAttribute( 'modified', time() );
+                                $version->setAttribute( 'status', eZContentObjectVersion::STATUS_DRAFT );
+                                $version->store();
+
+                                $contentObjectID = $contentObject->attribute( 'id' );
+                                $contentObjectAttributes = $version->contentObjectAttributes();
+
+                                $contentObjectAttributes[0]->setAttribute( 'data_text', $firstName );
+                                $contentObjectAttributes[0]->store();
+
+                                $contentObjectAttributes[1]->setAttribute( 'data_text', $lastName );
+                                $contentObjectAttributes[1]->store();
+
+                                $user = eZUser::create( $userID );
+                                $user->setAttribute( 'login', $login );
+                                $user->setAttribute( 'email', $email );
+                                $user->setAttribute( 'password_hash', "" );
+                                $user->setAttribute( 'password_hash_type', self::PASSWORD_HASH_EMPTY );
+                                $user->store();
+
+                                eZUser::updateLastVisit( $userID );
+                                eZUser::setCurrentlyLoggedInUser( $user, $userID );
+
+                                // Reset number of failed login attempts
+                                eZUser::setFailedLoginAttempts( $userID, 0 );
+
+                                $operationResult = eZOperationHandler::execute( 'content', 'publish', array( 'object_id' => $contentObjectID,
+                                                                                                             'version' => 1 ) );
+
                             }
-
-                            $contentObject->setAttribute( 'remote_id', $remoteID );
-                            $contentObject->store();
-
-                            $contentObjectID = $contentObject->attribute( 'id' );
-                            $userID = $contentObjectID;
-                            $nodeAssignment = eZNodeAssignment::create( array( 'contentobject_id' => $contentObjectID,
-                                                                               'contentobject_version' => 1,
-                                                                               'parent_node' => $defaultUserPlacement,
-                                                                               'is_main' => 1 ) );
-                            $nodeAssignment->store();
-                            $version = $contentObject->version( 1 );
-                            $version->setAttribute( 'modified', time() );
-                            $version->setAttribute( 'status', eZContentObjectVersion::STATUS_DRAFT );
-                            $version->store();
-
-                            $contentObjectID = $contentObject->attribute( 'id' );
-                            $contentObjectAttributes = $version->contentObjectAttributes();
-
-                            $contentObjectAttributes[0]->setAttribute( 'data_text', $firstName );
-                            $contentObjectAttributes[0]->store();
-
-                            $contentObjectAttributes[1]->setAttribute( 'data_text', $lastName );
-                            $contentObjectAttributes[1]->store();
-
-                            $user = eZUser::create( $userID );
-                            $user->setAttribute( 'login', $login );
-                            $user->setAttribute( 'email', $email );
-                            $user->setAttribute( 'password_hash', "" );
-                            $user->setAttribute( 'password_hash_type', self::PASSWORD_HASH_EMPTY );
-                            $user->store();
-
-                            eZUser::updateLastVisit( $userID );
-                            eZUser::setCurrentlyLoggedInUser( $user, $userID );
-
-                            // Reset number of failed login attempts
-                            eZUser::setFailedLoginAttempts( $userID, 0 );
-
-                            $operationResult = eZOperationHandler::execute( 'content', 'publish', array( 'object_id' => $contentObjectID,
-                                                                                                         'version' => 1 ) );
-
+                            catch ( Throwable $e )
+                            {
+                                // nothing of a transaction that failed half way is committed by a later commit()
+                                if ( $db->transactionCounter() > 0 )
+                                    $db->rollback();
+                                throw $e;
+                            }
                             $db->commit();
 
                             return $user;
@@ -300,45 +310,55 @@ class eZTextFileUser extends eZUser
                         else
                         {
                             $db->begin();
-
-                            // Update user information
-                            $userID = $existUser->attribute( 'contentobject_id' );
-                            $contentObject = eZContentObject::fetch( $userID );
-
-                            $parentNodeID = $contentObject->attribute( 'main_parent_node_id' );
-                            $currentVersion = $contentObject->attribute( 'current_version' );
-
-                            $version = $contentObject->attribute( 'current' );
-                            $contentObjectAttributes = $version->contentObjectAttributes();
-
-                            $contentObjectAttributes[0]->setAttribute( 'data_text', $firstName );
-                            $contentObjectAttributes[0]->store();
-
-                            $contentObjectAttributes[1]->setAttribute( 'data_text', $lastName );
-                            $contentObjectAttributes[1]->store();
-
-                            $existUser = eZUser::fetch(  $userID );
-                            $existUser->setAttribute('email', $email );
-                            $existUser->setAttribute('password_hash', "" );
-                            $existUser->setAttribute('password_hash_type', self::PASSWORD_HASH_EMPTY );
-                            $existUser->store();
-
-                            if ( $defaultUserPlacement != $parentNodeID )
+                            try
                             {
-                                $newVersion = $contentObject->createNewVersion();
-                                $newVersion->assignToNode( $defaultUserPlacement, 1 );
-                                $newVersion->removeAssignment( $parentNodeID );
-                                $newVersionNr = $newVersion->attribute( 'version' );
-                                $operationResult = eZOperationHandler::execute( 'content', 'publish', array( 'object_id' => $userID,
-                                                                                                             'version' => $newVersionNr ) );
+
+                                // Update user information
+                                $userID = $existUser->attribute( 'contentobject_id' );
+                                $contentObject = eZContentObject::fetch( $userID );
+
+                                $parentNodeID = $contentObject->attribute( 'main_parent_node_id' );
+                                $currentVersion = $contentObject->attribute( 'current_version' );
+
+                                $version = $contentObject->attribute( 'current' );
+                                $contentObjectAttributes = $version->contentObjectAttributes();
+
+                                $contentObjectAttributes[0]->setAttribute( 'data_text', $firstName );
+                                $contentObjectAttributes[0]->store();
+
+                                $contentObjectAttributes[1]->setAttribute( 'data_text', $lastName );
+                                $contentObjectAttributes[1]->store();
+
+                                $existUser = eZUser::fetch(  $userID );
+                                $existUser->setAttribute('email', $email );
+                                $existUser->setAttribute('password_hash', "" );
+                                $existUser->setAttribute('password_hash_type', self::PASSWORD_HASH_EMPTY );
+                                $existUser->store();
+
+                                if ( $defaultUserPlacement != $parentNodeID )
+                                {
+                                    $newVersion = $contentObject->createNewVersion();
+                                    $newVersion->assignToNode( $defaultUserPlacement, 1 );
+                                    $newVersion->removeAssignment( $parentNodeID );
+                                    $newVersionNr = $newVersion->attribute( 'version' );
+                                    $operationResult = eZOperationHandler::execute( 'content', 'publish', array( 'object_id' => $userID,
+                                                                                                                 'version' => $newVersionNr ) );
+                                }
+
+                                eZUser::updateLastVisit( $userID );
+                                eZUser::setCurrentlyLoggedInUser( $existUser, $userID );
+
+                                // Reset number of failed login attempts
+                                eZUser::setFailedLoginAttempts( $userID, 0 );
+
                             }
-
-                            eZUser::updateLastVisit( $userID );
-                            eZUser::setCurrentlyLoggedInUser( $existUser, $userID );
-
-                            // Reset number of failed login attempts
-                            eZUser::setFailedLoginAttempts( $userID, 0 );
-
+                            catch ( Throwable $e )
+                            {
+                                // nothing of a transaction that failed half way is committed by a later commit()
+                                if ( $db->transactionCounter() > 0 )
+                                    $db->rollback();
+                                throw $e;
+                            }
                             $db->commit();
 
                             return $existUser;

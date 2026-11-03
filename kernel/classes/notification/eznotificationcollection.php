@@ -134,9 +134,19 @@ class eZNotificationCollection extends eZPersistentObject
         $idArray = $db->arrayQuery( $query );
 
         $db->begin();
-        foreach ( $idArray as $id )
+        try
         {
-            eZPersistentObject::removeObject( eZNotificationCollection::definition(), array( 'id' => $id['id'] ) );
+            foreach ( $idArray as $id )
+            {
+                eZPersistentObject::removeObject( eZNotificationCollection::definition(), array( 'id' => $id['id'] ) );
+            }
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
     }
@@ -151,8 +161,18 @@ class eZNotificationCollection extends eZPersistentObject
     {
         $db = eZDB::instance();
         $db->begin();
-        eZNotificationCollectionItem::cleanup();
-        $db->query( "DELETE FROM eznotificationcollection" );
+        try
+        {
+            eZNotificationCollectionItem::cleanup();
+            $db->query( "DELETE FROM eznotificationcollection" );
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
     }
 }

@@ -79,24 +79,34 @@ class Settings extends \Exponential\Runnable\ModuleView
 
         $db = \eZDB::instance();
         $db->begin();
-        $stored = false;
-        if ( $http->hasPostVariable( 'Store' ) )
+        try
         {
-            foreach ( $availableHandlers as $handler )
+            $stored = false;
+            if ( $http->hasPostVariable( 'Store' ) )
             {
-                $handler->storeSettings( $http, $Module );
+                foreach ( $availableHandlers as $handler )
+                {
+                    $handler->storeSettings( $http, $Module );
+                }
+                $stored = true;
             }
-            $stored = true;
-        }
 
-        foreach ( $availableHandlers as $key => $handler )
+            foreach ( $availableHandlers as $key => $handler )
+            {
+                // the confirmation step has not been answered: the subtree handler must not remove yet
+                if ( $key === $subtreeID && $post && !$removeConfirmed )
+                    continue;
+                if ( $cancelled && $key === $subtreeID )
+                    continue;
+                $handler->fetchHttpInput( $http, $Module );
+            }
+        }
+        catch ( Throwable $e )
         {
-            // the confirmation step has not been answered: the subtree handler must not remove yet
-            if ( $key === $subtreeID && $post && !$removeConfirmed )
-                continue;
-            if ( $cancelled && $key === $subtreeID )
-                continue;
-            $handler->fetchHttpInput( $http, $Module );
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
 

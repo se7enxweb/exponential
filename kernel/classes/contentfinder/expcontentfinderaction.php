@@ -479,7 +479,17 @@ class expContentFinderAction
                                   'language' => (string)$version->initialLanguageCode() );
                 $db = eZDB::instance();
                 $db->begin();
-                $version->removeThis();
+                try
+                {
+                    $version->removeThis();
+                }
+                catch ( Throwable $e )
+                {
+                    // nothing of a transaction that failed half way is committed by a later commit()
+                    if ( $db->transactionCounter() > 0 )
+                        $db->rollback();
+                    throw $e;
+                }
                 $db->commit();
                 // as content/history records it (doc/eng-us/bc/6.0/audit.md, content.version.remove)
                 if ( class_exists( 'expAuditHook' ) )

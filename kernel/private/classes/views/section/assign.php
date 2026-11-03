@@ -118,10 +118,20 @@ class Assign extends \Exponential\Runnable\ModuleView
                             {
                                 $db = \eZDB::instance();
                                 $db->begin();
-                                foreach ( $allowedNodeIDList as $nodeID )
+                                try
                                 {
-                                    // as the content job: objects below the item the user may not assign the section to keep theirs
-                                    \eZContentObjectTreeNode::assignSectionToSubTree( $nodeID, $SectionID, false, true, $sectionScope, true );
+                                    foreach ( $allowedNodeIDList as $nodeID )
+                                    {
+                                        // as the content job: objects below the item the user may not assign the section to keep theirs
+                                        \eZContentObjectTreeNode::assignSectionToSubTree( $nodeID, $SectionID, false, true, $sectionScope, true );
+                                    }
+                                }
+                                catch ( Throwable $e )
+                                {
+                                    // nothing of a transaction that failed half way is committed by a later commit()
+                                    if ( $db->transactionCounter() > 0 )
+                                        $db->rollback();
+                                    throw $e;
                                 }
                                 $db->commit();
 
