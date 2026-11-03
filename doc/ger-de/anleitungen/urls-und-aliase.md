@@ -143,6 +143,7 @@ Die Einstellungen in `cronjob.ini [linkCheckSettings]` (überschreiben Sie sie i
 | `HostDelay` | `1000` | Millisekunden zwischen zwei Anfragen an denselben Host |
 | `RecheckInterval` | `72000` | Sekunden, bevor ein geprüfter Link erneut geprüft wird; `0` prüft bei jedem Lauf jeden Link |
 | `MaxURLsPerRun` | `0` | in einem Lauf geprüfte Links (die am längsten nicht geprüften zuerst); `0` prüft alle |
+| `MaxRunTime` | `900` | Sekunden, die ein Lauf Links prüfen darf; der Rest folgt im nächsten Lauf; `0` ohne Grenze |
 | `UserAgent` | `Exponential Link Validator (+https://exponential.earth)` | der User-Agent der Anfragen |
 | `AllowedPrivateHosts[]` | leer | Hosts, Adressen oder IPv4-Bereiche (`10.1.0.0/16`) in einem privaten Netz, die getestet werden dürfen |
 | `SiteURL[]` | leer | die eigenen Adressen der Site, versucht für einen Pfad, der kein Alias ist |
@@ -293,7 +294,7 @@ Formular-Token.
 | Ein Link auf eine Intranet-Seite wird nie getestet | sein Host liegt in einem privaten Netz; tragen Sie ihn in `AllowedPrivateHosts[]` ein |
 | Ein Link auf Inhalt ist **Ungültig** | sein Knoten oder Objekt wurde entfernt, ist verborgen oder nicht veröffentlicht; die Zeile des Laufs nennt den Knoten oder das Objekt |
 | Ein Link auf `/admin/...` oder das Modul einer Extension ist **Ungültig** | das Modul ist nur in diesem Siteaccess aktiv: Führen Sie den Teil mit `-s` dieses Siteaccess aus oder ignorieren Sie den Zustand |
-| Ein Lauf dauert lange | der größte Teil ist `HostDelay` zwischen Links auf denselben Host; senken Sie den Wert vorsichtig, oder setzen Sie `MaxURLsPerRun`, um die Links auf mehrere Läufe zu verteilen |
+| Ein Lauf dauert lange | der größte Teil ist `HostDelay` zwischen Links auf denselben Host; senken Sie den Wert vorsichtig, oder setzen Sie `MaxURLsPerRun`; ein Lauf endet nach `MaxRunTime` (15 Minuten), und der nächste macht weiter |
 | Die Suchstatistiken bleiben leer | kein Siteaccess hat `LogSearchStats=enabled`; die Seite sagt das oben |
 | Ein neuer Alias „wurde vom System geändert“ | in einer Adresse unzulässige Zeichen wurden ersetzt; die Meldung zeigt das Ergebnis |
 | Ein neuer Alias auf einen Knoten erscheint nicht in der Liste | Aliase von Knoten stehen auf dem Reiter URL-Aliase des Knotens |

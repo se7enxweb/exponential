@@ -217,7 +217,9 @@ class expHelpAllowlist
         $lists = array();
         foreach ( $files as $siteAccess => $file )
         {
-            $ini = new eZINI( $file[0], dirname( $file[1] ), null, false, null, true );
+            // relative to the installation: eZINI puts its root (EXP_ROOT_DIR) in front of the directory it is given,
+            // so the absolute path read nothing, and the access extensions (expai, sqliimport ...) had no help pages
+            $ini = new eZINI( $file[0], 'settings/siteaccess/' . $siteAccess, null, false, null, true );
             $lists[$siteAccess] = $ini->hasVariable( 'ExtensionSettings', 'ActiveAccessExtensions' )
                 ? array_values( array_filter( array_map( 'strval', (array)$ini->variable( 'ExtensionSettings', 'ActiveAccessExtensions' ) ), 'strlen' ) )
                 : array();

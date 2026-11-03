@@ -530,10 +530,32 @@ class expAuditQuery
         if ( !$columns )
             return array();
         $cols = implode( ', ', $columns );
-        $sql = "SELECT $cols, COUNT(*) AS n FROM " . expAuditIndexSchema::EVENT . ' WHERE ' . $this->where( $f, $channels )
-             . " GROUP BY $cols ORDER BY n DESC";
-        $rows = expAuditIndexSchema::tryArrayQuery( $this->db, $sql, array( 'limit' => max( 1, (int)$limit ) ) );
+        $tail = ' WHERE ' . $this->where( $f, $channels ) . " GROUP BY $cols ORDER BY n DESC";
+        $params = array( 'limit' => max( 1, (int)$limit ) );
+        $rows = null;
+        // the records of the last day or two by the time index, named: without statistics SQLite reads the whole
+        // covering index of the grouped columns instead (800 000 entries, 4.5 s, for the 20 000 records of today).
+        // A database without that index refuses the query and the plain one runs.
+        if ( $this->type === 'sqlite' && self::isRecentRangeOnly( $f, time() ) )
+            $rows = expAuditIndexSchema::tryArrayQuery( $this->db, "SELECT $cols, COUNT(*) AS n FROM " . expAuditIndexSchema::EVENT
+                                                        . ' INDEXED BY expaudit_event_time' . $tail, $params );
+        if ( $rows === null )
+            $rows = expAuditIndexSchema::tryArrayQuery( $this->db, "SELECT $cols, COUNT(*) AS n FROM " . expAuditIndexSchema::EVENT . $tail, $params );
         return $rows === null ? array() : $rows;
+    }
+
+    /**
+     * Whether a filter is a time range starting less than two days ago and nothing else (the dashboard's "today"),
+     * which the time index answers best.
+     *
+     * @param array $f
+     * @param int $now Unix time
+     * @return bool
+     */
+    public static function isRecentRangeOnly( array $f, $now )
+    {
+        $rest = array_diff_key( $f, array( 'from_ms' => true, 'to_ms' => true ) );
+        return isset( $f['from_ms'] ) && !$rest && (int)$f['from_ms'] >= ( (int)$now - 2 * 86400 ) * 1000;
     }
 
     /**
