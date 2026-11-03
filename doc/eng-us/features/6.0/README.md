@@ -228,6 +228,7 @@ nginx with PHP-FPM keep working as before.
 - [Change password at next sign-in](password-change-at-next-sign-in.md)
 - [Second step on the other sign-in paths: REST, WebDAV, SOAP, expservices; app passwords](second-factor-on-other-sign-in-paths.md)
 - [Reset a user password from the command line](reset-user-password.md)
+- [User management from the console: the exp:user commands for accounts, groups, roles, sessions, import and export](user-management-from-the-console.md)
 - [Check user accounts](user-hygiene.md)
 - [User audit log: who changed, signed in or was refused, per account](user-audit.md)
 - [Your devices: signed-in sessions per user, signed out for good, an e-mail about a new device](user-sessions.md)

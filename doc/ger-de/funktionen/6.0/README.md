@@ -195,6 +195,7 @@ nginx mit PHP-FPM funktionieren weiter wie bisher.
 - [Passwort bei der nächsten Anmeldung ändern](passwort-bei-naechster-anmeldung-aendern.md)
 - [Zweiter Schritt auf den anderen Anmeldewegen: REST, WebDAV, SOAP, expservices; App-Passwörter](zweiter-schritt-auf-anderen-anmeldewegen.md)
 - [Das Passwort eines Benutzers auf der Kommandozeile zurücksetzen](benutzerpasswort-zuruecksetzen.md)
+- [Benutzerverwaltung von der Konsole: die Befehle exp:user für Konten, Gruppen, Rollen, Sitzungen, Import und Export](benutzerverwaltung-von-der-konsole.md)
 - [Benutzerkonten prüfen](benutzerpflege.md)
 - [Benutzer-Auditprotokoll: wer was an einem Konto geändert hat, Anmeldungen und Ablehnungen](benutzer-auditprotokoll.md)
 - [Ihre Geräte: angemeldete Sitzungen je Benutzer, endgültig abgemeldet, eine E-Mail über ein neues Gerät](benutzersitzungen.md)

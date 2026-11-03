@@ -6809,7 +6809,7 @@ f5132156a14ca2bfc828685864f93610  doc/eng-us/features/5.4/configurable_dfs_clust
 c1e6f7140df76368c9e37c8e9cd04636  doc/eng-us/features/5.4/event.txt
 f419d28c3a4373456e07228fe7a92255  doc/eng-us/features/5.90/README.md
 79726a141ab55b1f07b48c692d681dd3  doc/eng-us/features/5.90/event.md
-6063e95d1aa4ef2f1d92f1d4ca2ddbce  doc/eng-us/features/6.0/README.md
+47e28bac53b2e8c1c85a24d08796fa51  doc/eng-us/features/6.0/README.md
 f55de11d14ed02bbc6737bf957afba48  doc/eng-us/features/6.0/about-and-package-pages.md
 36a71395fa49ed9a5d57c795b275c841  doc/eng-us/features/6.0/access-and-cache-filters.md
 c8c82226e2ad84aaddb04a5964a53c40  doc/eng-us/features/6.0/access-array-prefetch.md
@@ -7003,6 +7003,7 @@ d3145c14972f62fc3e55bd0ddb7339f3  doc/eng-us/features/6.0/twig-templates.md
 dddc25f5090a5e0f97d83e3714f992fd  doc/eng-us/features/6.0/ui-switch.md
 e4ef7f86ac46e99ef7922dd6e0715833  doc/eng-us/features/6.0/user-audit.md
 86e455aa2147f5763a183b396caab8c7  doc/eng-us/features/6.0/user-hygiene.md
+a89198e7aad1fb1b1406e0781775eac4  doc/eng-us/features/6.0/user-management-from-the-console.md
 9749ecae563d5c9083aae9f62fef8635  doc/eng-us/features/6.0/user-sessions.md
 1c8d79710d70799c57b2d0ad69b30bd7  doc/eng-us/features/6.0/valkey-cache-hooks.md
 aeab614b104ddc5b03384aa3e24a56d5  doc/eng-us/features/6.0/velocity-control-panel.md
@@ -7021,7 +7022,7 @@ a6804237b42b490f18b7266b7f276e2a  doc/eng-us/features/6.0/velocity-uwebserver.md
 732b0806269c31cc1c081b166d7a7662  doc/eng-us/features/6.0/version-preview-view-modes.md
 e8e271a078b41c7c877fad14d5156f2e  doc/eng-us/features/6.0/web-server-and-solr-commands.md
 9a239d46246c4ca0e1d8f6ddd3bf6a24  doc/eng-us/features/6.0/website-sidebar.md
-3e7ec8a6e94f07b8109ffff887640b40  doc/eng-us/glossary.md
+a5621820f4516cedaa2b79e888328b30  doc/eng-us/glossary.md
 e3e117bf283a09a375595e52cb21f59d  doc/eng-us/goals.md
 a545eefcee0a6f9d17371b09162f059f  doc/eng-us/guides/README.md
 c3cd4759e8cbd9569458f6ad5c01021a  doc/eng-us/guides/a-static-blog-with-exponential.md
@@ -13152,7 +13153,7 @@ f9f738c497f745bb5e02d68375b9f630  doc/eng-us/specifications/4.3/admin_refresh/fu
 e14335da02fc54b98c731ab8152fbda6  doc/eng-us/specifications/4.3/comment_system/functional_requirements.txt
 13e5ff5275d9513182c2d9f8b64059e0  doc/eng-us/specifications/4.4/extension_ordering/extensionordering_design.rst
 37bdde9f4ce498fd035d13e1631bbbfb  doc/eng-us/specifications/4.5/asynchronous_publishing.txt
-47ecf5e0f238144fd9a735958faccfad  doc/eng-us/specifications/6.0/README.md
+41f7aabf3f3cfbab3582cfb1fb169fea  doc/eng-us/specifications/6.0/README.md
 eda0b07008cb76a441bdf3174151403c  doc/eng-us/specifications/6.0/audit-event-model.md
 abe08b4c1433579efbb54605157734a1  doc/eng-us/specifications/6.0/bccie.md
 3b236abbadda99711e6f6484b0ba2d48  doc/eng-us/specifications/6.0/cjw_newsletter.md
@@ -13160,6 +13161,7 @@ abe08b4c1433579efbb54605157734a1  doc/eng-us/specifications/6.0/bccie.md
 ed4655b6f42ce8207a9f65b3b9eda5d9  doc/eng-us/specifications/6.0/database-drivers-2026-09.md
 72a569391bfcbb9dc2ccdb0075ff3fee  doc/eng-us/specifications/6.0/database-drivers-sqlite-oracle.md
 bf49bf4081ca354836b5074963f34999  doc/eng-us/specifications/6.0/datatype-input-hardening.md
+e40168fd7aa13b5a20ea6ae3b72e1911  doc/eng-us/specifications/6.0/exp-user-json-output.md
 d4319a4e3b09997677c74dae68fe6136  doc/eng-us/specifications/6.0/explayouts-ui-api.md
 5194bdcdc9b5b72e5e15c20105edea83  doc/eng-us/specifications/6.0/expservices.md
 8840a174e80b3ca4c75f98eaf9210eb2  doc/eng-us/specifications/6.0/extension-metadata.md
@@ -16545,7 +16547,7 @@ e047509c0aac6b93a84a01e2e559d4b3  doc/ger-de/funktionen/4.7/cluster-index.md
 81a06529aa5a114c917bea48b5ff371a  doc/ger-de/funktionen/5.4/konfigurierbares-dfs-cluster-backend.md
 9b3af7c6cb2607f23f4c8b1838cc9833  doc/ger-de/funktionen/5.90/README.md
 7ca840569dd5972d84638922dc92a457  doc/ger-de/funktionen/5.90/ereignis.md
-0c3a565beb41cf198e89a5096ac79dec  doc/ger-de/funktionen/6.0/README.md
+276bc4b43ef9c5c18a17e2978a94df45  doc/ger-de/funktionen/6.0/README.md
 2d9cc7c3abc590659a8e6237312d408e  doc/ger-de/funktionen/6.0/admin-links-der-registrierung.md
 c42f6063193b16db2d02b1241393196b  doc/ger-de/funktionen/6.0/admin-links-folgen-den-berechtigungen.md
 bb1cb6cf268ab524e4a3ea1fd0eef9f6  doc/ger-de/funktionen/6.0/admin3-responsives-admin.md
@@ -16566,6 +16568,7 @@ abb2b2111b6defef4f3bac9141768035  doc/ger-de/funktionen/6.0/befehle-fuer-htacces
 2cd14aa43f6df51b06e567996df18b8e  doc/ger-de/funktionen/6.0/benutzerpasswort-zuruecksetzen.md
 6acd0f6b0631a8ac42b4a3aa53b7d50e  doc/ger-de/funktionen/6.0/benutzerpflege.md
 8a1a62bed2113e8c2b2774cced0d1f62  doc/ger-de/funktionen/6.0/benutzersitzungen.md
+03a9ec4161870e9d2fcec1565216bdd2  doc/ger-de/funktionen/6.0/benutzerverwaltung-von-der-konsole.md
 01bdf1a7b634a65d50398bd9afe37d36  doc/ger-de/funktionen/6.0/berechtigungspruefung-bei-vielen-zuweisungen.md
 1bba785c9852e2e139030b7f31d9182a  doc/ger-de/funktionen/6.0/bestellbelege.md
 dcb3a9249b7895ce43a2fc239356fe22  doc/ger-de/funktionen/6.0/bestellungen-nach-siteaccess.md
@@ -17087,7 +17090,7 @@ dfce835ea41187dc08f7603fdbc6630e  doc/ger-de/geschichte/velocity/2026-09d.md
 b24fea4973006b0896c1709f46c42007  doc/ger-de/geschichte/velocity/2026-10.md
 1549837b01e8d4331951a6ab40a67e4c  doc/ger-de/geschichte/velocity/README.md
 e462cda8d5b6e1e0d0d0185eecad9e94  doc/ger-de/geschichte/velocity/installer-und-pakete.md
-e9533888a72db8dae4b0e08382534d66  doc/ger-de/glossar.md
+1e0475115e2815ba1a8cec3b2d31249f  doc/ger-de/glossar.md
 394932ed045bb76e3f2852067aec99e2  doc/ger-de/hilfe/README.md
 184a29662c44eee5ace950f8eff0cd18  doc/ger-de/hilfe/administratorpasswort-aendern.md
 9d80999100f6fc01d6769705d3ac7e48  doc/ger-de/hilfe/anmelden-im-editor.md
@@ -22647,7 +22650,7 @@ c74c61782aae1da372a0885d9225ed72  doc/ger-de/installation/migration/shopify.md
 370891338e6b7eecbc0ccf974791157b  doc/ger-de/installation/migration/symfony-anwendungen.md
 7afe7da9a50da9a5b91d6b6f220248fb  doc/ger-de/installation/migration/website-baukaesten.md
 f4364e8ca67a26c8ba3463b279f83d39  doc/ger-de/installation/migration/wordpress.md
-d5ae2ad812688ea3e85cb3acb52e7c98  doc/ger-de/spezifikationen/6.0/README.md
+c11956be0a4eef566851512bd30051a7  doc/ger-de/spezifikationen/6.0/README.md
 cb14f86e781d2b9b69cfc504606c22ea  doc/ger-de/spezifikationen/6.0/audit-ereignismodell.md
 46a672ef5e561501db056a629bf555ff  doc/ger-de/spezifikationen/6.0/ausfuehrbare-befehle-cronjobs-ansichten.md
 c48e255150e2911443c00aa09df401b3  doc/ger-de/spezifikationen/6.0/bccie.md
@@ -22658,6 +22661,7 @@ a48c5e82768427127dddc8781c2a8b69  doc/ger-de/spezifikationen/6.0/cjw_newsletter.
 6b4de505e0586130053ba881b8585df0  doc/ger-de/spezifikationen/6.0/datenbanktreiber-2026-09.md
 8260c08fc420ce1b250fd94dbd979f5c  doc/ger-de/spezifikationen/6.0/datenbanktreiber-sqlite-oracle.md
 f62c06e4d47ed65828a7100fb6249882  doc/ger-de/spezifikationen/6.0/datentyp-eingabehaertung.md
+353c3f1dcfd33bf17a0dd034eaec3cb6  doc/ger-de/spezifikationen/6.0/exp-user-json-ausgabe.md
 f88e8ef0cfdc14aa84bc239512586eab  doc/ger-de/spezifikationen/6.0/explayouts-ui-api.md
 8ab206556fe45ca48cb6f6c7cca67831  doc/ger-de/spezifikationen/6.0/expservices.md
 a2dd0d48d159efa131973c4a856043da  doc/ger-de/spezifikationen/6.0/extension-metadaten.md
