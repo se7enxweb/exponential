@@ -117,8 +117,9 @@
                 {* siteaccess_url(): the header links to the site with the scheme, host and port
                    of the request, and Apache and Velocity share this cache. The user's object id: the header's
                    user menu and logout button name the signed-in user (parts/a4_header_user.tpl). siteaccess_menu_key(): the
-       site menu lists the siteaccesses of the settings at the addresses of the request (parts/a4_header_site.tpl). *}
-                {cache-block keys=array( $ui_context, $ui_component, $user_hash, $current_user.contentobject_id, $access_type, first_set( $module_result.navigation_part, $navigation_part.identifier ), siteaccess_url(), siteaccess_menu_key(), $admin_layout_id, $env_badge.key, $a4_help_key ) ignore_content_expiry}
+       site menu lists the siteaccesses of the settings at the addresses of the request (parts/a4_header_site.tpl).
+       $search_hash: the search popup preselects the section of the search (page_search.tpl). *}
+                {cache-block keys=array( $ui_context, $ui_component, $user_hash, $current_user.contentobject_id, $access_type, first_set( $module_result.navigation_part, $navigation_part.identifier ), siteaccess_url(), siteaccess_menu_key(), $admin_layout_id, $env_badge.key, $a4_help_key, $search_hash ) ignore_content_expiry}
 
                 {* HEADER ( SEARCH, LOGO AND USERMENU ): the navbar. The header zone fills it with the logo, the menu
                    button, search, theme switch and sidebar controls, the topmenu zone with the tab menu. Either zone

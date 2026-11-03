@@ -46,6 +46,7 @@ class Admin4lReviewTest extends PHPUnit\Framework\TestCase
         $page = self::read( 'design/admin4l/templates/pagelayout.tpl' );
         $this->assertStringContainsString( '$search_hash          = array( first_set( $search_section_id, -1 )|int )', $page );
         $this->assertStringNotContainsString( "'SectionID', 'get'", $page, 'never the query string' );
+        $this->assertStringContainsString( '$env_badge.key, $a4_help_key, $search_hash ) ignore_content_expiry}', $page, 'the header block with the search popup keys on the section' );
     }
 
     /** AL-R2 */

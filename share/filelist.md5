@@ -1901,7 +1901,7 @@ ac760fb7abe0c74c082db3e09d724006  design/admin4l/templates/explayouts/block/admi
 00dc6fc9a64cbb17ffcdd7be6133b9a8  design/admin4l/templates/explayouts/block/admin_toolbar_developer.tpl
 435fa478e336ab853226197df0b70fc2  design/admin4l/templates/explayouts/block/admin_toolbar_right.tpl
 006a94cb403062f61b9ed5592ea9f6ae  design/admin4l/templates/explayouts/block/admin_ui_switch.tpl
-81b7e7c42c10ecd461daeaf7eeb50508  design/admin4l/templates/pagelayout.tpl
+4a5711bba453ab55b083f7cea9fa393b  design/admin4l/templates/pagelayout.tpl
 e07ee98bdbd9a6b7b1224004fff07513  design/base/images/bin.gif
 86fff651cfbbcf360ef78737c6523d64  design/base/images/button.gif
 7ae68b7e4d3ceed5ac652b11f20face6  design/base/images/quote-down.gif
@@ -28169,7 +28169,7 @@ cf640022325724fc8a061137bbc5045e  tests/tests/bin/CopyrightNoticeTest.php
 ed0528c8354aa4f54271ca7e27161186  tests/tests/bin/githooks/CheckCommitRangeTest.php
 735d550178cf4be356e271b8fb236b6f  tests/tests/bin/phpcs/NoTypeDeclarationsSniffTest.php
 4e3eeb18c2ea423afb62388e5e3dcafc  tests/tests/bin/phpcs/fixtures/typedeclarations.inc
-eee82979055f723bffdb019024ca907d  tests/tests/design/Admin4lReviewTest.php
+f8b67fc1f6cc4160094491edcbab70a4  tests/tests/design/Admin4lReviewTest.php
 7540cc7d5347598b6d8a2617bfc6e3d6  tests/tests/design/AdminBaseStylesheetsTest.php
 3fc25e943b9b1a0de995c4331b00f103  tests/tests/design/AdminBookmarkPageButtonFlowTest.php
 2aaffc4ae8a8c94b7c87b23d7a501174  tests/tests/design/AdminBrowseCurrentNodeTest.php
