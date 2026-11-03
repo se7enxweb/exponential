@@ -92,6 +92,11 @@ day.
 | *Recording is switched off* | `[UserAuditSettings] UserAudit=disabled`; the list shows what was recorded before. |
 | *This page needs an SQL database* | On MongoDB the audit files keep the events; there is no table. |
 
+## From the console
+
+`./console exp:user:audit <user>` lists the same rows for one account, filtered by event, result and dates, also as
+JSON for scripts. See [Audit and hygiene](user-management-from-the-console/audit-and-hygiene.md).
+
 ## Related pages
 
 - [Managing members](managing-members.md)

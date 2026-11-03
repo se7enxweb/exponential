@@ -148,6 +148,12 @@ first sign-in.
 
 **On a public demo** (a **Demo mode** banner in the administration) the passwords of administrator accounts cannot be changed or reset; other accounts work as usual. [Demo mode](demo-mode.md).
 
+## From the console
+
+Administrators can help with your account from the server as well: reset a forgotten password, unlock an account
+after too many wrong passwords, or reset two-step sign-in after a lost phone. See
+[Sessions and sign-in security](user-management-from-the-console/sessions-and-sign-in-security.md).
+
 ## Learn more
 
 - [Two-step sign-in](../guides/two-factor-login.md), for administrators who set it up.

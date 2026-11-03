@@ -7002,7 +7002,7 @@ d3145c14972f62fc3e55bd0ddb7339f3  doc/eng-us/features/6.0/twig-templates.md
 8b06af1fe3206dcb8524386def7ef35f  doc/eng-us/features/6.0/ui-switch-languages.md
 dddc25f5090a5e0f97d83e3714f992fd  doc/eng-us/features/6.0/ui-switch.md
 e4ef7f86ac46e99ef7922dd6e0715833  doc/eng-us/features/6.0/user-audit.md
-86e455aa2147f5763a183b396caab8c7  doc/eng-us/features/6.0/user-hygiene.md
+c0e09b5d8b7bb4e8b9c51429f8396694  doc/eng-us/features/6.0/user-hygiene.md
 a89198e7aad1fb1b1406e0781775eac4  doc/eng-us/features/6.0/user-management-from-the-console.md
 9749ecae563d5c9083aae9f62fef8635  doc/eng-us/features/6.0/user-sessions.md
 1c8d79710d70799c57b2d0ad69b30bd7  doc/eng-us/features/6.0/valkey-cache-hooks.md
@@ -7189,7 +7189,7 @@ c0ef983a2b3afe72eea1bf3e56b186a3  doc/eng-us/guides/user-management-from-the-con
 952b7b28226e6eff085df210c88d6b08  doc/eng-us/guides/workflows.md
 ba6c6e3806e95b1fc79ffa6020f4bac3  doc/eng-us/guides/your-devices-and-sessions.md
 1ba5ebfde9579e699f5bb0b7c109f23f  doc/eng-us/help/README.md
-f3a6eb643757b14f92dc0cede99d6396  doc/eng-us/help/accounts-and-sign-in.md
+c0dbadb03afd2d838c4286bd16213561  doc/eng-us/help/accounts-and-sign-in.md
 d01718b937d8c4a62ee8bfdc16551093  doc/eng-us/help/admin-tour.md
 7f1138a79b4899b1a89537b328971761  doc/eng-us/help/adopters/adopters-checklists.md
 343049d14d1e2c4513fc60df674ab3c5  doc/eng-us/help/adopters/adopters-faq.md
@@ -10994,7 +10994,7 @@ c329d580bc7a32af9f83029d40467528  doc/eng-us/help/local-businesses/simple-shop/v
 a5de3f3c4526b8985edb72c22a685c83  doc/eng-us/help/logging-into-the-admin.md
 93ddf18928befaa8d29b6bb64b5100d7  doc/eng-us/help/logging-into-the-editor.md
 c1c1bf79b69c184639b2131f844eac8a  doc/eng-us/help/maintaining-help-topics.md
-88b764804ce5ac738f88b9fe1d3a5713  doc/eng-us/help/managing-members.md
+159bcbf78df72225eec660959e823bf5  doc/eng-us/help/managing-members.md
 b6f53929208624cdd2030096b8bfd298  doc/eng-us/help/manual/README.md
 748035c032cc85c5d75213012c1177da  doc/eng-us/help/manual/a-user-lost-their-phone-how-do-they-sign-in.md
 90c576b3e72c30a505c0e99bb4a7d7ed  doc/eng-us/help/manual/how-do-i-add-a-content-language.md
@@ -11716,7 +11716,7 @@ b00714130b76fb0c884c9dc788b5f665  doc/eng-us/help/resellers/sales/pre-sales-ques
 a420b17ab5dabd8778223cc4aae2b073  doc/eng-us/help/resellers/sales/sales-process.md
 8b79d549bbcc4c9c865b32c20613b8be  doc/eng-us/help/searching.md
 a5c7ce5b15c58ce20085b4f8951ef35b  doc/eng-us/help/security-hardening.md
-667c277cee294d069affee6d78b8ad88  doc/eng-us/help/setting-up-editor-and-admin-accounts.md
+0e664fa25d750b89071708b2406b538c  doc/eng-us/help/setting-up-editor-and-admin-accounts.md
 633930576e562b5c2200cd0a1ae93a7c  doc/eng-us/help/site-packages/README.md
 91942493ef5ce934473bb7e67e280b77  doc/eng-us/help/site-packages/admin-gui/README.md
 53fda2b01b4bdec5230c80e6a4ea403d  doc/eng-us/help/site-packages/admin-gui/fetching-packages-with-ezupdate.md
@@ -12038,7 +12038,7 @@ a18b797467860c1c0889a6247eea4857  doc/eng-us/help/template-operators/swark-opera
 709f9c6832b7e9614b4e2f51b5b88f6a  doc/eng-us/help/template-operators/type-operators.md
 67c7e847852f066d02d9e3fa8714e57f  doc/eng-us/help/template-operators/unit-operator.md
 00c3630018b1ee588e957fae37c47366  doc/eng-us/help/template-operators/url-operators.md
-54006d912b8a5ed55bcc98eb78e07385  doc/eng-us/help/the-user-audit-log.md
+ba7ecd83ffafc07fc606ae81bbf2eba9  doc/eng-us/help/the-user-audit-log.md
 d64281b64281c097936783839131a7d7  doc/eng-us/help/theme-designers/building-a-portfolio-and-getting-work.md
 9d230def8a34f5d866180ee3d8ac4dd0  doc/eng-us/help/theme-designers/building-a-style-guide-page.md
 be52d9563d088b89a044a81f2afd67d8  doc/eng-us/help/theme-designers/color-palettes-and-ramps.md
@@ -16566,7 +16566,7 @@ abb2b2111b6defef4f3bac9141768035  doc/ger-de/funktionen/6.0/befehle-fuer-htacces
 6a30d34cce1f16401f0dd9e98039d160  doc/ger-de/funktionen/6.0/benchmark.md
 692555817d40569b86bb87ae26b6d746  doc/ger-de/funktionen/6.0/benutzer-auditprotokoll.md
 2cd14aa43f6df51b06e567996df18b8e  doc/ger-de/funktionen/6.0/benutzerpasswort-zuruecksetzen.md
-6acd0f6b0631a8ac42b4a3aa53b7d50e  doc/ger-de/funktionen/6.0/benutzerpflege.md
+4040a3e35ab6f52338a0648dcd0c6d84  doc/ger-de/funktionen/6.0/benutzerpflege.md
 8a1a62bed2113e8c2b2774cced0d1f62  doc/ger-de/funktionen/6.0/benutzersitzungen.md
 03a9ec4161870e9d2fcec1565216bdd2  doc/ger-de/funktionen/6.0/benutzerverwaltung-von-der-konsole.md
 01bdf1a7b634a65d50398bd9afe37d36  doc/ger-de/funktionen/6.0/berechtigungspruefung-bei-vielen-zuweisungen.md
@@ -17883,7 +17883,7 @@ a006c16efec268bb2bcd620a9b237fb9  doc/ger-de/hilfe/cms-entwickler/umstieg-von-ty
 4a7ee49f0cb3229adfb5a83c0bb6651f  doc/ger-de/hilfe/cms-entwickler/url-aliase-und-routing.md
 9864b91414734c9054a5e35f3a3b2c36  doc/ger-de/hilfe/cms-entwickler/versionen-entwuerfe-und-veroeffentlichen.md
 a50e7721d5d5f8bace14d842bf9e1e26  doc/ger-de/hilfe/cms-entwickler/workflows-und-ausloeser.md
-de0839eec1c86fa4ba9b7706ca43d37a  doc/ger-de/hilfe/das-benutzer-auditprotokoll.md
+f5be1f862dc084f747a2aec672a8f29e  doc/ger-de/hilfe/das-benutzer-auditprotokoll.md
 f8df156201423662ba55ba15167cb35b  doc/ger-de/hilfe/datenbankadministratoren/aufraeumen-cronjobs-und-warteschlangen.md
 eb6be18722835ab6b749dbacaba6c2a6  doc/ger-de/hilfe/datenbankadministratoren/checklisten-fuer-datenbankadministratoren.md
 f2377cdd6a1c01761d1aec48fe1e8385  doc/ger-de/hilfe/datenbankadministratoren/clustering-dfs-und-die-datenbank.md
@@ -19314,8 +19314,8 @@ c821ae403ac57746c7394b449baeaa50  doc/ger-de/hilfe/ki-agenten/steuerung/rollen-u
 30431e3986e4a3887b6bf31aba726efe  doc/ger-de/hilfe/ki-agenten/was-es-heute-gibt.md
 e08a29aaa847e7fa336e587d563e56d8  doc/ger-de/hilfe/ki-agenten/was-ki-in-exponential-nicht-tut.md
 5ec5de2fce836e60148280c377f564b1  doc/ger-de/hilfe/ki-agenten/welcher-weg-zu-ihrer-aufgabe-passt.md
-2d64c2a86b88ab95dbf1a237dfaa765c  doc/ger-de/hilfe/konten-fuer-redakteure-und-administratoren-einrichten.md
-24a251ee89b4f4e7af9d0d589d733bc0  doc/ger-de/hilfe/konten-und-anmeldung.md
+93574ba27668bf213f542de4240c371f  doc/ger-de/hilfe/konten-fuer-redakteure-und-administratoren-einrichten.md
+8a93098128ee167711a24d6ea24c4423  doc/ger-de/hilfe/konten-und-anmeldung.md
 b2a462db3e08f1a65deb6568f512bed6  doc/ger-de/hilfe/kunden/alltag/README.md
 b23b797b741bb507146f3fcd4da9d811  doc/ger-de/hilfe/kunden/alltag/analyse-und-was-sie-messen-sollten.md
 53aeb9f49f96ff9801161fe9da9dbbb5  doc/ger-de/hilfe/kunden/alltag/arbeitsblatt-teamrollen.md
@@ -19628,7 +19628,7 @@ face1e803af7262f0958ef0a42dd79d6  doc/ger-de/hilfe/migrationen/status-und-verlau
 afd08b2467ebcf265ae6a4468bc7e9c0  doc/ger-de/hilfe/migrationen/wenn-eine-migration-scheitert.md
 5fb7f02546ca1addb410af99a1da5926  doc/ger-de/hilfe/mit-git-aktualisieren.md
 ad46416c47821f60a5aea404b2126623  doc/ger-de/hilfe/mit-git-entwickeln.md
-be7c5512bc75d60889faeb2117ad9874  doc/ger-de/hilfe/mitglieder-verwalten.md
+047be6e320d8576ee39dc23490f0319f  doc/ger-de/hilfe/mitglieder-verwalten.md
 d68df7d91cd2e0698d0449fe4100aa2d  doc/ger-de/hilfe/mobile-app-entwickler/anmeldung/README.md
 35e379a9c9d3bb5abb4f6603698dd8ee  doc/ger-de/hilfe/mobile-app-entwickler/anmeldung/der-authorization-header-und-proxys.md
 08be1c77b39349f67196e4f7490b0f3b  doc/ger-de/hilfe/mobile-app-entwickler/anmeldung/ein-backend-fuer-ihre-app.md

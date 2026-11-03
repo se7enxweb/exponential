@@ -161,6 +161,12 @@ dem Passwort aufgefordert, sie einzurichten.
 
 **Auf einer öffentlichen Demo** (ein Hinweisbalken **Demo-Modus** in der Administration) lassen sich die Passwörter von Administratorkonten weder ändern noch zurücksetzen; andere Konten funktionieren wie gewohnt. [Demo-Modus](demomodus.md).
 
+## Von der Konsole
+
+Administratoren können Ihnen auch vom Server aus helfen: ein vergessenes Passwort zurücksetzen, ein Konto nach zu
+vielen falschen Passwörtern entsperren oder die zweistufige Anmeldung nach einem verlorenen Telefon zurücksetzen.
+Siehe [Sitzungen und Anmeldesicherheit](benutzerverwaltung-von-der-konsole/sitzungen-und-anmeldesicherheit.md).
+
 ## Mehr erfahren
 
 - [Zweistufige Anmeldung](../anleitungen/zwei-faktor-anmeldung.md), für Administratoren, die sie einrichten.

@@ -112,6 +112,13 @@ Verwalter erhält. Auf einer bestehenden Installation zeigt `php bin/php/addmemb
 hinzufügen würde. Einzelheiten, und wie eine andere Gruppe Mitglieder verwalten kann (etwa ein Support-Team):
 [Mitgliederverwaltung](../bc/6.0/mitgliederverwaltung.md).
 
+## Von der Konsole
+
+Administratoren können dasselbe auf dem Server mit den Befehlen `exp:user` tun: `exp:user:list --group=Members`
+findet die Mitglieder, `exp:user:disable` und `exp:user:enable` stoppen und starten ein Konto, und
+`exp:user:edit --add-group --remove-group` verschiebt es. Siehe
+[Benutzerverwaltung von der Konsole](benutzerverwaltung-von-der-konsole/README.md).
+
 ## Verwandte Seiten
 
 - [Was die Redakteursrolle erlaubt](was-die-redakteursrolle-erlaubt.md)

@@ -264,6 +264,13 @@ Both use the link key `user_hygiene`, so a menu that lists links by key can name
 | `bin/php/ezcreatedeactivatedusergroup.php`, `kernel/private/classes/commands/ezcreatedeactivatedusergroup.php` | creates the group beforehand |
 | `tests/tests/kernel/classes/user/expUserDeactivationTest.php`, `expUserDeactivationLiveTest.php` | the decisions, the plan of the way back, the page and its entry points; the kernel paths against the installation's database, each test rolled back |
 
+## From the console
+
+`./console exp:user:hygiene` prints the counts of this page, each with the `exp:user:list --state=...` command that
+lists the accounts, and `exp:user:bulk` disables, enables or unlocks them with a confirmed count. The console
+disables; it never moves an account into the group for deactivated accounts. See
+[Audit and hygiene](../../help/user-management-from-the-console/audit-and-hygiene.md).
+
 ## Related pages
 
 - [Roles, policies and unactivated users](../../guides/roles-and-policies.md)

@@ -95,6 +95,11 @@ eine Suche nach dem Benutzernamen dieses Redakteurs zeigt dann, was er an diesem
 | *Die Aufzeichnung ist in audit.ini ausgeschaltet* | `[UserAuditSettings] UserAudit=disabled`; die Liste zeigt, was vorher aufgezeichnet wurde. |
 | *Diese Seite braucht eine SQL-Datenbank* | Unter MongoDB behalten die Audit-Dateien die Ereignisse; eine Tabelle gibt es nicht. |
 
+## Von der Konsole
+
+`./console exp:user:audit <user>` listet dieselben Zeilen für ein Konto auf, gefiltert nach Ereignis, Ergebnis und
+Datum, auch als JSON für Skripte. Siehe [Audit und Kontenpflege](benutzerverwaltung-von-der-konsole/audit-und-kontenpflege.md).
+
 ## Verwandte Seiten
 
 - [Mitglieder verwalten](mitglieder-verwalten.md)
