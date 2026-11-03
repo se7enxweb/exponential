@@ -81,6 +81,7 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 - **digest (notification)**: one e-mail that collects the notification messages of a day, a week or a month instead of one mail per change. [Notifications](features/6.0/notifications.md), [specification](specifications/6.0/notifications.md).
 - **double opt-in**: switching a kind of e-mail on (newsletters, offers) or using a new address only after the link sent to the address is confirmed. [E-mail preferences](features/6.0/mail-preferences.md).
 - **down() (migration)**: the method of a PHP **migration** that undoes its `up()`, run by `exp:migration:rollback <migration-id>`; a migration without one is taken back by its run's **caption**. [Writing a reversible down()](help/migrations/recipes/writing-a-reversible-down.md).
+- **dry run (console)**: a run of a changing `exp:user` command without `--apply`: it lists what it would change and which checks fail, and changes nothing; `--dry-run` means the same. [User management from the console](help/user-management-from-the-console/README.md#three-rules-every-command-follows).
 - **dry run (migration)**: `exp:migration:migrate` without `--apply`: every pending **migration** with what its `plan()` says it would change, nothing written. [Migrations](help/migrations/README.md).
 - **DSE** (`sevenx_dse`): the Database Source Editor, which embeds **adminneo** in the admin. [sevenx_dse](features/6.0/extensions/sevenx_dse.md).
 - **DXP skeleton**: a starter project for the Symfony based platform. [Platform DXP skeleton](features/6.0/platform-dxp-skeleton.md).
@@ -93,11 +94,13 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 - **environment (migration)**: the name of an installation's stage (`development`, `test`, `staging`, `production`) from `site.ini [AdminEnvironment] Level` or `EXP_ENV`; a **migration**'s header line `environments:` limits it to some. [Per-environment migrations](help/migrations/recipes/per-environment-migrations.md).
 - **Exp Debug bar**: a bar on pages that shows queries, time and template information to administrators. [Exp Debug bar](features/6.0/exp-debug-bar.md).
 - **exp (prefix)**: a code prefix 7x uses strategically, with intent, to build the Exponential brand and to assign ownership of an extension or solution to the Exponential project and the Exponential Foundation (`explayouts`, `expai`, `expHelpAudience`); new kernel code uses it. [Naming prefixes: sevenx and exp](standards/naming-prefixes-sevenx-and-exp.md).
+- **exp-user/1**: the schema of the JSON output (`--format=json`) of the `exp:user` commands; keys are only ever added. [exp:user JSON output](specifications/6.0/exp-user-json-output.md).
 - **exp:** the prefix of the console commands that run `bin/php/*.php` scripts. [Console](bc/6.0/console.md).
 - **exp:about**: the **system card** plus the project: what Exponential is, the license, links, how to contribute. [The system card](features/6.0/system-card.md#expabout-the-card-and-the-project).
 - **exp:expfetch**: the console command that draws the **system card**: the Exponential "e" next to the facts of the installation, its engine and its machine, with health hints. [The system card](features/6.0/system-card.md).
 - **exp:info**: the **system card** plus an inventory: extensions and versions, siteaccesses, settings, cronjobs, caches, help coverage. [The system card](features/6.0/system-card.md#expinfo-the-card-and-an-inventory).
 - **exp:ini**: the command that reads and writes **INI** settings in every scope. [exp:ini](features/6.0/exp-ini-command.md).
+- **exp:user**: the console commands that manage user accounts, groups, roles, sessions and two-step sign-in, as the administration does. [User management from the console](help/user-management-from-the-console/README.md).
 - **exp_enhanced_link**: the extension that provides the enhanced link field type. [exp_enhanced_link](features/6.0/extensions/exp_enhanced_link.md).
 - **explayouts**: the extensions that bring layouts, blocks, zones and rules to the admin. [Exponential Layouts](bc/6.0/LAYOUTS.md), [explayouts_ui](features/6.0/extensions/explayouts_ui.md), [API specification](specifications/6.0/explayouts-ui-api.md).
 - **Exponential Intelligence** (expai): the writing assistant of the administration interface; it writes drafts as the editor, with the editor's permissions, and never publishes on its own. [expai](features/6.0/extensions/expai.md), [README](../README.md#exponential-intelligence-new).
@@ -214,12 +217,14 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 
 - **package**: a set of content, classes and design that can be exported and installed, in the classic XML or the JSON format, validated on upload and installable in the background or as drafts; also a Composer package. [Packages](guides/packages.md), [JSON package format](bc/6.0/package-json-format.md), [ezpm](features/6.0/ezpm-package-manager-cli.md), [Platform package map](specifications/6.0/platform-package-map.md).
 - **page layout** (`pagelayout.tpl`): the outer template that wraps every page. [Templates and design](guides/templates-and-design.md).
+- **pending registration**: an account whose registration is not finished: it waits for the e-mail address to be confirmed, for an administrator, or for an approval item (`exp:user:pending`). [Approve registrations](help/user-management-from-the-console/approve-registrations.md).
 - **phar**: see **engine.phar**.
 - **PHP-FPM**: the PHP process manager that serves the site behind **Apache**. Reload the one that serves your site after a PHP change. [Deploying](guides/deploying.md).
 - **placement (INI)**: the name of the place a setting's value came from (`default`, `override`, `extension:<ext>`, `siteaccess`, ...). [INI override placements](specifications/6.0/ini-override-placements.md).
 - **policy**: one permission (module, function, limitation) inside a **role**. [Roles and policies in order](features/6.0/role-policy-order.md).
 - **PostgreSQL**: a supported database. [Install in one command](features/6.0/install-in-one-command.md).
 - **preload**: requesting every published page so no visitor pays for a render (`exp:preload`, `exp:warm`, Setup > Preload). [Preload view](features/6.0/preload-sites-view.md), [Preloader](bc/6.0/preload.md).
+- **protected account**: an account the `exp:user` commands never disable or remove: the anonymous user, the `UserCreatorID` user, the administrator account (id 14 or the login `admin`), the user who acts and the last enabled administrator. [Protected accounts](help/user-management-from-the-console/disable-enable-and-remove-accounts.md#protected-accounts).
 
 ## Q
 

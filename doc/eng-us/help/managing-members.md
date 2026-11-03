@@ -106,6 +106,12 @@ which groups are protected (by default Administrator users and Editors) and whic
 installation that exists, `php bin/php/addmembermanagement.php --dry-run` shows what it would add. Details, and how
 to let another group manage members (a support desk, for example): [Member management](../bc/6.0/member-management.md).
 
+## From the console
+
+Administrators can do the same on the server with the `exp:user` commands: `exp:user:list --group=Members` finds the
+members, `exp:user:disable` and `exp:user:enable` stop and start an account, and `exp:user:edit --add-group
+--remove-group` moves it. See [User management from the console](user-management-from-the-console/README.md).
+
 ## Related pages
 
 - [What the Editor role allows](what-the-editor-role-allows.md)

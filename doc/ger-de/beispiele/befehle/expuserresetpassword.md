@@ -44,7 +44,7 @@ Without --apply nothing is changed and no mail is sent.
 |---|---|---|
 | `--send-link` |  | Die Mail „Passwort zurücksetzen“ mit ihrem Einmal-Link senden (das Passwort bleibt, bis der Link benutzt wird) |
 | `--generate` |  | Ein erzeugtes Passwort setzen, das die Passwortregeln erfüllt, es einmal ausgeben und die Sitzungen des Kontos beenden |
-| `--password-stdin` |  | Das Passwort von der Standardeingabe lesen (eine Zeile), nie von der Befehlszeile; es muss die Passwortregeln erfüllen |
+| `--password-stdin` |  | Das Passwort von der Standardeingabe lesen (eine Zeile), nie von der Befehlszeile (create und reset-password: es muss die Passwortregeln erfüllen) |
 | `--require-change` |  | Das Konto muss bei seiner nächsten Anmeldung ein neues Passwort wählen |
 | `--apply` |  | Die Änderung vornehmen; ohne die Option listet der Befehl nur auf, was er ändern würde (ein Probelauf) |
 | `--dry-run` |  | Die Vorgabe, beibehalten für Skripte, die sie übergeben: auflisten, was sich ändern würde, nichts ändern |

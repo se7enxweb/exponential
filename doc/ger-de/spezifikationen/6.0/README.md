@@ -26,6 +26,7 @@ Block, Schlüssel, Standard, Geltungsbereich) und endet mit „Verwandte Seiten�
 | [Benachrichtigungsbefehle](benachrichtigungen-cli.md) | `exp:notification:status`, `run`, `events`, `subscriptions`: Optionen, Exit-Codes, Beispielausgaben |
 | [E-Mail-Einstellungen und Einwilligung](mail-einstellungen.md) | Kategorien, Einstellungen, das Einwilligungsprotokoll, Sperrung, das Mail-Gate, Links, Tabellen, Abläufe, Einstellungen |
 | [Befehle für die E-Mail-Einstellungen](mail-einstellungen-cli.md) | `exp:mail:status`, `preferences`, `suppression`, `consent`, `gate`: Aktionen, Optionen, Exit-Codes, Beispielausgaben |
+| [JSON-Ausgabe und Exit-Codes von exp:user](exp-user-json-ausgabe.md) | Das Schema `exp-user/1` der Befehle der Benutzerverwaltung: gemeinsame Schlüssel, die Schlüssel jedes Befehls, die Exit-Codes, der dauerhafte Vertrag |
 | [E-Mail-Einstellungen: die Checkliste zu den Gesetzen](mail-einstellungen-compliance.md) | CAN-SPAM, DSGVO und ePrivacy, CCPA/CPRA, CASL, RFC 8058, abgebildet auf Code und Tests; die Lücken |
 | [Hilfesystem](hilfesystem.md) | Hilfe und Handbücher als Inhalte: DITA-Themenklassen, Sektionen, Objektzustände, Rollen, Validator, Web, Kontexthilfe und Auslieferung als E-Book |
 | [Leitfaden für Hilfethemen](hilfe-stilrichtlinien.md) | Redaktionelle Regeln für Hilfethemen: Thementypen mit Vorlagen, Schritte, Hinweise, Abbildungen, `help_id`, Felder, Terminologie |

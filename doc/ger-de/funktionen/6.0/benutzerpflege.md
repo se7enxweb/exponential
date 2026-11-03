@@ -280,6 +280,13 @@ nennen kann.
 | `bin/php/ezcreatedeactivatedusergroup.php`, `kernel/private/classes/commands/ezcreatedeactivatedusergroup.php` | legt die Gruppe vorab an |
 | `tests/tests/kernel/classes/user/expUserDeactivationTest.php`, `expUserDeactivationLiveTest.php` | die Entscheidungen, der Plan für den Rückweg, die Seite und ihre Einstiegspunkte; die Kernel-Pfade gegen die Datenbank der Installation, jeder Test wird zurückgerollt |
 
+## Von der Konsole
+
+`./console exp:user:hygiene` gibt die Zahlen dieser Seite aus, jeweils mit dem Befehl `exp:user:list --state=...`,
+der die Konten auflistet, und `exp:user:bulk` deaktiviert, aktiviert oder entsperrt sie mit einer bestätigten Anzahl.
+Die Konsole deaktiviert; sie verschiebt nie ein Konto in die Gruppe für deaktivierte Konten. Siehe
+[Audit und Kontenpflege](../../hilfe/benutzerverwaltung-von-der-konsole/audit-und-kontenpflege.md).
+
 ## Verwandte Seiten
 
 - [Rollen, Richtlinien und nicht aktivierte Benutzer](../../anleitungen/rollen-und-richtlinien.md)

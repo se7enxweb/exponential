@@ -199,29 +199,71 @@ class expUserManager
      */
     public static function listAccounts( array $filters )
     {
-        $hygiene = expUserHygiene::fromDatabase();
-        if ( !$hygiene )
-            return array( 'total' => 0, 'accounts' => array(), 'error' => 'the list is read with SQL, which this database (MongoDB) does not offer' );
-        $groupPath = null;
-        if ( $filters['group'] !== '' )
-        {
-            $group = self::findGroup( $filters['group'] );
-            if ( !$group['node'] )
-                return array( 'total' => 0, 'accounts' => array(), 'error' => '--group: ' . $group['error'] );
-            $groupPath = (string)$group['node']->attribute( 'path_string' );
-        }
-        if ( $filters['state'] === 'pending' )
-        {
-            $ids = self::pendingIDs();
-            $filters['ids'] = $ids ? $ids : array( 0 );
-            $filters['filter'] = 'all';
-        }
-        $total = $hygiene->count( $filters, true, $groupPath );
-        $accounts = $total > (int)$filters['offset'] ? $hygiene->page( $filters, true, $groupPath, (int)$filters['offset'] ) : array();
+        $selected = self::selection( $filters );
+        if ( $selected['error'] !== '' )
+            return array( 'total' => 0, 'accounts' => array(), 'error' => $selected['error'] );
+        $hygiene = $selected['hygiene'];
+        $filters = $selected['filters'];
+        $total = $hygiene->count( $filters, true, $selected['group_path'] );
+        $accounts = $total > (int)$filters['offset'] ? $hygiene->page( $filters, true, $selected['group_path'], (int)$filters['offset'] ) : array();
         if ( $filters['state'] === 'pending' )
             foreach ( $accounts as $i => $account )
                 $accounts[$i]['registration'] = expRegistrationAdminAction::state( $account['id'] );
         return array( 'total' => $total, 'accounts' => $accounts, 'error' => '' );
+    }
+
+    /**
+     * What the list filters select, ready for expUserHygiene: the list (null on MongoDB), the filters with the
+     * waiting registrations as ids for the state pending, and the path of --group.
+     *
+     * @param array $filters see listFilters()
+     * @return array hygiene (expUserHygiene|null), filters, group_path (string|null), error
+     */
+    public static function selection( array $filters )
+    {
+        $out = array( 'hygiene' => expUserHygiene::fromDatabase(), 'filters' => $filters, 'group_path' => null, 'error' => '' );
+        if ( !$out['hygiene'] )
+        {
+            $out['error'] = 'the list is read with SQL, which this database (MongoDB) does not offer';
+            return $out;
+        }
+        if ( $filters['group'] !== '' )
+        {
+            $group = self::findGroup( $filters['group'] );
+            if ( !$group['node'] )
+            {
+                $out['error'] = '--group: ' . $group['error'];
+                return $out;
+            }
+            $out['group_path'] = (string)$group['node']->attribute( 'path_string' );
+        }
+        if ( $filters['state'] === 'pending' )
+        {
+            $ids = self::pendingIDs();
+            $out['filters']['ids'] = $ids ? $ids : array( 0 );
+            $out['filters']['filter'] = 'all';
+        }
+        return $out;
+    }
+
+    /**
+     * How many accounts are in each state (STATES; inactive for $days days). One count query per state.
+     *
+     * @param int $days
+     * @return array counts (state => n), error
+     */
+    public static function hygieneCounts( $days )
+    {
+        $counts = array();
+        foreach ( self::STATES as $state )
+        {
+            $checked = self::listFilters( array( 'state' => $state, 'days' => (string)(int)$days ) );
+            $selected = self::selection( $checked['filters'] );
+            if ( $selected['error'] !== '' )
+                return array( 'counts' => array(), 'error' => $selected['error'] );
+            $counts[$state] = $selected['hygiene']->count( $selected['filters'], true, null );
+        }
+        return array( 'counts' => $counts, 'error' => '' );
     }
 
     /**
@@ -1209,6 +1251,353 @@ class expUserManager
         else
             $r['applied'] = true;
         return $r;
+    }
+
+    // ---- sign-in security ---------------------------------------------------------------------------------------
+
+    /**
+     * Unlocks an account: its failed sign-ins back to 0 (eZUser::setFailedLoginAttempts(), audited as
+     * access.user.unlock), as Users > Hygiene does. The password stays.
+     *
+     * @param eZUser $user
+     * @param bool $apply
+     * @return array
+     */
+    public static function unlock( eZUser $user, $apply )
+    {
+        $r = self::result();
+        $id = (int)$user->attribute( 'contentobject_id' );
+        $failed = (int)eZUser::failedLoginAttemptsByUserID( $id );
+        if ( $failed <= 0 )
+        {
+            $r['warnings'][] = 'the account has no failed sign-ins: nothing to do';
+            return $r;
+        }
+        $max = (int)eZUser::maxNumberOfFailedLogin();
+        $r['changes'][] = sprintf( 'reset the %d failed sign-in(s) of %s to 0%s', $failed, $user->attribute( 'login' ),
+                                   $max > 0 && $failed > $max ? ' (it is locked: more than MaxNumberOfFailedLogin=' . $max . ')' : '' );
+        if ( !$apply )
+            return $r;
+        eZUser::setFailedLoginAttempts( $id, 0, true );
+        $r['applied'] = (int)eZUser::failedLoginAttemptsByUserID( $id ) === 0;
+        if ( !$r['applied'] )
+            $r['errors'][] = 'the failed sign-ins could not be reset (see the debug log)';
+        return $r;
+    }
+
+    /** @return bool the sessions are tracked here (expUserSessionTracker: switched on, the table there) */
+    public static function sessionsTracked()
+    {
+        return class_exists( 'expUserSessionTracker' ) && expUserSessionTracker::enabled() && expUserSessionTracker::available();
+    }
+
+    /**
+     * The running sessions of an account as Your devices shows them.
+     *
+     * @param eZUser $user
+     * @return array tracking (bool), sessions (id, method, device, browser, label, ip, siteaccess, created, last_active, current)
+     */
+    public static function sessions( eZUser $user )
+    {
+        if ( !self::sessionsTracked() )
+            return array( 'tracking' => false, 'sessions' => array() );
+        $list = expUserSessionTracker::listForUser( (int)$user->attribute( 'contentobject_id' ), false );
+        $out = array();
+        foreach ( $list['active'] as $s )
+            $out[] = array( 'id' => (int)$s['id'], 'method' => (string)$s['method'], 'device' => (string)$s['device'], 'browser' => (string)$s['browser'],
+                            'label' => (string)$s['label'], 'ip' => (string)$s['ip'], 'siteaccess' => (string)$s['siteaccess'],
+                            'created' => (int)$s['created'], 'last_active' => (int)$s['last_active'], 'current' => !empty( $s['current'] ) );
+        return array( 'tracking' => true, 'sessions' => $out );
+    }
+
+    /**
+     * Ends the sessions of an account: one tracked session (expUserSessionTracker::revoke()), or all of them
+     * (endSessions(): the tracked ones and the session handler's), as an administrator does on user/sessions.
+     *
+     * @param eZUser $user
+     * @param int|null $sessionID null for all
+     * @param int $actorID
+     * @param bool $apply
+     * @return array changes, applied, errors, warnings, sessions_ended
+     */
+    public static function endSessionsOf( eZUser $user, $sessionID, $actorID, $apply )
+    {
+        $r = self::result();
+        $id = (int)$user->attribute( 'contentobject_id' );
+        $list = self::sessions( $user );
+        if ( $sessionID !== null )
+        {
+            if ( !$list['tracking'] )
+                $r['errors'][] = 'sessions are not tracked here ([UserSessionSettings] Tracking, or the table expuser_session is missing): --end ends them all';
+            else if ( !in_array( (int)$sessionID, array_column( $list['sessions'], 'id' ), true ) )
+                $r['errors'][] = "the account has no running session $sessionID (the list shows the running ones)";
+            if ( $r['errors'] )
+                return $r;
+            $r['changes'][] = "end the session $sessionID of " . $user->attribute( 'login' );
+            if ( !$apply )
+                return $r;
+            $r['applied'] = expUserSessionTracker::revoke( $id, (int)$sessionID, (int)$actorID );
+            $r['sessions_ended'] = $r['applied'] ? 1 : 0;
+            if ( !$r['applied'] )
+                $r['errors'][] = 'the session had ended already';
+            return $r;
+        }
+        $r['changes'][] = $list['tracking'] ? sprintf( 'end the %d running session(s) of %s', count( $list['sessions'] ), $user->attribute( 'login' ) )
+                                            : 'end every session of ' . $user->attribute( 'login' ) . ' the session handler has';
+        if ( !$apply )
+            return $r;
+        $r['sessions_ended'] = self::endSessions( $id, $actorID );
+        $r['applied'] = true;
+        return $r;
+    }
+
+    /**
+     * The two-step sign-in of an account: whether it can have one (the extension's field on its class), whether it
+     * is on and its method, and how many passkeys it has (null where passkeys cannot be used).
+     *
+     * @param eZUser $user
+     * @return array available, active, method, passkeys
+     */
+    public static function twoFactor( eZUser $user )
+    {
+        $state = expUserAccountOverview::twoFactorOf( $user->contentObject() );
+        $passkeys = null;
+        try
+        {
+            if ( class_exists( 'expPasskeySchema' ) && expPasskeySchema::exists() === true )
+                $passkeys = expPasskey::countByUser( (int)$user->attribute( 'contentobject_id' ) );
+        }
+        catch ( Throwable $e )
+        {
+            $passkeys = null;
+        }
+        return array( 'available' => is_array( $state ), 'active' => is_array( $state ) && !empty( $state['active'] ),
+                      'method' => is_array( $state ) ? (string)$state['method'] : '', 'passkeys' => $passkeys );
+    }
+
+    /**
+     * Removes the second sign-in step of an account (the extension sevenx_authentication_2fa: its stored setup
+     * emptied and the failed sign-ins reset, as its console script does; audited as access.user.two_factor.remove)
+     * and/or every passkey (expPasskeyService::revoke(), audited as access.passkey.revoke).
+     *
+     * @param eZUser $user
+     * @param bool $reset
+     * @param bool $removePasskeys
+     * @param bool $apply
+     * @return array
+     */
+    public static function resetTwoFactor( eZUser $user, $reset, $removePasskeys, $apply )
+    {
+        $r = self::result();
+        $id = (int)$user->attribute( 'contentobject_id' );
+        $state = self::twoFactor( $user );
+        $helper = null;
+        // the classes of the extension sevenx_authentication_2fa, named as strings: the kernel does not need it
+        $helperClass = 'sevenxAuthentication2faHelper';
+        $dataClass = 'sevenxAuthentication2fa';
+        if ( $reset )
+        {
+            if ( !class_exists( $helperClass ) || !class_exists( $dataClass ) )
+                $r['errors'][] = '--reset needs the two-step sign-in extension sevenx_authentication_2fa, which is not active';
+            else
+            {
+                $helper = call_user_func( array( $helperClass, 'instance' ) );
+                if ( !$helper->canStore( $id ) )
+                    $r['errors'][] = 'the class of the account has no two-step sign-in field: there is nothing to reset';
+                else if ( !$state['active'] )
+                    $r['warnings'][] = 'the account has no second sign-in step: nothing to reset';
+                else
+                    $r['changes'][] = 'remove the second sign-in step (' . $state['method'] . ') of ' . $user->attribute( 'login' ) . ' and reset its failed sign-ins';
+            }
+        }
+        if ( $removePasskeys )
+        {
+            if ( $state['passkeys'] === null )
+                $r['warnings'][] = 'passkeys cannot be used here (no table expuser_passkey): nothing to remove';
+            else if ( $state['passkeys'] === 0 )
+                $r['warnings'][] = 'the account has no passkeys: nothing to remove';
+            else
+                $r['changes'][] = sprintf( 'remove the %d passkey(s) of %s', $state['passkeys'], $user->attribute( 'login' ) );
+        }
+        if ( $r['errors'] || !$apply || !$r['changes'] )
+            return $r;
+        if ( $reset && $helper && $state['active'] )
+        {
+            $helper->saveUserData( $id, new $dataClass() );
+            eZUser::setFailedLoginAttempts( $id, 0, true );
+            eZContentCacheManager::clearContentCacheIfNeeded( $id );
+            if ( method_exists( $helperClass, 'authLog' ) )
+                call_user_func( array( $helperClass, 'authLog' ), '2fa_reset_console', 'second step removed and failed logins reset from the console (exp:user:2fa)', $id );
+            expSignInSecondFactor::audit( expSignInSecondFactor::AUDIT_2FA_REMOVE, $user, array( 'method' => $state['method'], 'by' => 'console' ) );
+        }
+        if ( $removePasskeys && $state['passkeys'] )
+        {
+            $service = new expPasskeyService();
+            foreach ( expPasskey::fetchByUser( $id ) as $passkey )
+                if ( !$service->revoke( $user, (int)$passkey->attribute( 'id' ) ) )
+                    $r['errors'][] = 'the passkey ' . (int)$passkey->attribute( 'id' ) . ' could not be removed';
+        }
+        $r['applied'] = !$r['errors'];
+        return $r;
+    }
+
+    /**
+     * Sets or clears the mark "change password at next sign-in" (expPasswordChangeRequired, audited as
+     * access.user.password.change_required.set and .clear).
+     *
+     * @param eZUser $user
+     * @param bool $set
+     * @param bool $apply
+     * @return array
+     */
+    public static function markPasswordChange( eZUser $user, $set, $apply )
+    {
+        $r = self::result();
+        if ( $user->isAnonymous() )
+        {
+            $r['errors'][] = self::refusalText( 'anonymous' );
+            return $r;
+        }
+        $marked = expPasswordChangeRequired::isMarked( $user );
+        if ( $marked === (bool)$set )
+        {
+            $r['warnings'][] = $set ? 'a new password is required at the next sign-in already: nothing to do' : 'no new password is required: nothing to do';
+            return $r;
+        }
+        $r['changes'][] = $set ? 'require a new password at the next sign-in of ' . $user->attribute( 'login' )
+                                : 'no longer require a new password at the next sign-in of ' . $user->attribute( 'login' );
+        if ( !$apply )
+            return $r;
+        $r['applied'] = $set ? expPasswordChangeRequired::set( $user, 'console' ) : expPasswordChangeRequired::clear( $user, 'console' );
+        if ( !$r['applied'] )
+            $r['errors'][] = 'the mark could not be changed (see the debug log)';
+        return $r;
+    }
+
+    /**
+     * Sends the activation mail again, with a new key, to an account that never activated
+     * (expUnactivatedUsers::resend(), as Resend in Users > Unactivated).
+     *
+     * @param eZUser $user
+     * @param bool $apply
+     * @return array
+     */
+    public static function resendActivation( eZUser $user, $apply )
+    {
+        $r = self::result();
+        $id = (int)$user->attribute( 'contentobject_id' );
+        if ( !expUnactivatedUsers::isUnactivated( $id ) )
+            $r['errors'][] = 'the account does not wait for its activation (registration state ' . expRegistrationAdminAction::state( $id ) . ')';
+        else if ( !eZMail::validate( trim( (string)$user->attribute( 'email' ) ) ) )
+            $r['errors'][] = 'the account has no valid e-mail address: ./console exp:user:approve ' . $user->attribute( 'login' ) . ' activates it without a mail';
+        if ( $r['errors'] )
+            return $r;
+        $r['changes'][] = 'send the activation mail again to ' . $user->attribute( 'email' ) . ' with a new key (the link of an older mail stops working)';
+        if ( !$apply )
+            return $r;
+        $sent = expUnactivatedUsers::resend( $id, self::$mailSender );
+        $r['applied'] = $sent === 'sent';
+        if ( !$r['applied'] )
+            $r['errors'][] = "the mail was not sent ($sent)";
+        return $r;
+    }
+
+    /**
+     * Whether a password signs an account in: the right password (the stored hash compared), the account enabled,
+     * not locked and with its object. Never signs in, opens no session, counts no failed sign-in, records nothing.
+     *
+     * @param eZUser $user
+     * @param string $password
+     * @return array valid, reason (ok, wrong_password, no_object, disabled, locked)
+     */
+    public static function checkLogin( eZUser $user, $password )
+    {
+        $right = eZUser::authenticateHash( (string)$user->attribute( 'login' ), (string)$password, eZUser::site(),
+                                           $user->attribute( 'password_hash_type' ), $user->attribute( 'password_hash' ) );
+        $reason = 'ok';
+        if ( !$right )
+            $reason = 'wrong_password';
+        else if ( !$user->contentObject() instanceof eZContentObject )
+            $reason = 'no_object';
+        else if ( !$user->isEnabled( false ) )
+            $reason = 'disabled';
+        else if ( $user->isLocked() )
+            $reason = 'locked';
+        return array( 'valid' => $reason === 'ok', 'reason' => $reason );
+    }
+
+    // ---- the user audit -------------------------------------------------------------------------------------------
+
+    /**
+     * The filters of exp:user:audit, checked: event (a name or prefix), result, from and to (YYYY-MM-DD), limit (1 to
+     * MAX_LIMIT, default 25), offset. Pure.
+     *
+     * @param array $input
+     * @return array filters, errors
+     */
+    public static function auditFilters( array $input )
+    {
+        $get = function ( $name, $default = '' ) use ( $input ) {
+            return isset( $input[$name] ) && is_scalar( $input[$name] ) && (string)$input[$name] !== '' ? trim( (string)$input[$name] ) : $default;
+        };
+        $errors = array();
+        $event = strtolower( $get( 'event' ) );
+        if ( $event !== '' && !preg_match( '/^[a-z0-9_.]+\*?$/', $event ) )
+            $errors[] = "--event takes an event name or prefix (letters, digits, _ and .), not $event";
+        $result = $get( 'result' );
+        if ( $result !== '' && !in_array( $result, array( 'success', 'refused', 'failed' ), true ) )
+            $errors[] = "--result must be success, refused or failed, not $result";
+        $days = array();
+        foreach ( array( 'from', 'to' ) as $name )
+        {
+            $d = $get( $name );
+            if ( $d !== '' && !( preg_match( '/^\d{4}-\d{2}-\d{2}$/', $d ) && checkdate( (int)substr( $d, 5, 2 ), (int)substr( $d, 8, 2 ), (int)substr( $d, 0, 4 ) ) ) )
+            {
+                $errors[] = "--$name must be a day YYYY-MM-DD, not $d";
+                $d = '';
+            }
+            $days[$name] = $d;
+        }
+        $limit = $get( 'limit', '25' );
+        if ( !ctype_digit( $limit ) || (int)$limit < 1 || (int)$limit > self::MAX_LIMIT )
+        {
+            $errors[] = '--limit must be a whole number from 1 to ' . self::MAX_LIMIT . ", not $limit";
+            $limit = '25';
+        }
+        $offset = $get( 'offset', '0' );
+        if ( !ctype_digit( $offset ) )
+        {
+            $errors[] = "--offset must be a whole number, not $offset";
+            $offset = '0';
+        }
+        return array( 'filters' => array( 'action' => rtrim( rtrim( $event, '*' ), '.' ), 'result' => $result, 'from' => $days['from'], 'to' => $days['to'],
+                                          'limit' => (int)$limit, 'offset' => (int)$offset ),
+                      'errors' => $errors );
+    }
+
+    /**
+     * The rows of the user audit log (expuser_audit) about an account or by it, newest first.
+     *
+     * @param eZUser $user
+     * @param array $filters see auditFilters()
+     * @return array total, rows (time, event, result, reason, actor_login, target_login, siteaccess, before, after), error
+     */
+    public static function auditRows( eZUser $user, array $filters )
+    {
+        if ( expUserAudit::exists() !== true )
+            return array( 'total' => 0, 'rows' => array(),
+                          'error' => 'the user audit table expuser_audit does not exist (update/common/scripts/6.0/createuseraudittable.php adds it)' );
+        $f = array( 'user' => (string)(int)$user->attribute( 'contentobject_id' ), 'action' => $filters['action'], 'result' => $filters['result'],
+                    'from' => $filters['from'], 'to' => $filters['to'] );
+        $rows = array();
+        foreach ( expUserAudit::fetch( $f, $filters['offset'], $filters['limit'] ) as $row )
+            $rows[] = array( 'time' => gmdate( 'Y-m-d\TH:i:s\Z', (int)$row['created'] ), 'event' => (string)$row['event_name'],
+                             'result' => (string)$row['result'], 'reason' => isset( $row['reason'] ) ? (string)$row['reason'] : '',
+                             'actor_login' => isset( $row['actor_login'] ) ? (string)$row['actor_login'] : '',
+                             'target_login' => isset( $row['target_login'] ) ? (string)$row['target_login'] : '',
+                             'siteaccess' => isset( $row['siteaccess'] ) ? (string)$row['siteaccess'] : '',
+                             'before' => $row['before'], 'after' => $row['after'] );
+        return array( 'total' => expUserAudit::count( $f ), 'rows' => $rows, 'error' => '' );
     }
 
     /**

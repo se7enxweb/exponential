@@ -240,6 +240,12 @@ mit dem Konto geschah und was es getan hat.
 **Datenschutz:** Ein Konto enthält personenbezogene Daten (Name, E-Mail-Adresse). Speichern Sie nur, was die Arbeit
 braucht, halten Sie das vorläufige Passwort aus E-Mails heraus und deaktivieren Sie das Konto, wenn die Person geht.
 
+## Von der Konsole
+
+Dasselbe Konto lässt sich auch vom Server anlegen, zum Beispiel in einem Deploy-Skript, mit einem Passwort, das
+niemand auf einer Befehlszeile tippt: [Einen neuen Redakteur einrichten](benutzerverwaltung-von-der-konsole/einen-neuen-redakteur-einrichten.md).
+Wenn jemand geht: [Den Zugang beim Ausscheiden schließen](benutzerverwaltung-von-der-konsole/den-zugang-beim-ausscheiden-schliessen.md).
+
 ## Verwandte Seiten
 
 - [Was die Redakteursrolle erlaubt](was-die-redakteursrolle-erlaubt.md)

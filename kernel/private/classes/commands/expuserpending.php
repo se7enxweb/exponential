@@ -34,8 +34,8 @@ class Expuserpending extends ExpuserBase
         ) + self::SCRIPT );
         return (array)$this->startup( '[search:][limit:][offset:][format:]', '', array(
             'search' => 'Only accounts whose login, name or e-mail address contains this text',
-            'limit' => 'How many accounts to list (default 25, at most 500)',
-            'offset' => 'Skip this many accounts first (the next page: --offset=25)',
+            'limit' => 'How many to list (default 25, at most 500); bulk: the most accounts one run may change (default 500, at most 5000)',
+            'offset' => 'Skip this many first (the next page: --offset=25)',
             'format' => 'text (default) or json (the machine output exp-user/1)',
         ) );
     }

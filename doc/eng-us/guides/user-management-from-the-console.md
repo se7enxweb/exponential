@@ -5,7 +5,8 @@ a shell, a deploy script or a CI job: list and inspect accounts, create and chan
 them, reset passwords and approve registrations. The `exp:user` commands do each of these the way the administration
 does, so workflows, the approval of new accounts, the audit and the user audit behave exactly as when you click.
 
-[Guides](README.md) · Related: [Security and audit](security-and-audit.md),
+[Guides](README.md) · Related: [The help manual User management from the console](../help/user-management-from-the-console/README.md),
+[Security and audit](security-and-audit.md),
 [The user audit log](../help/the-user-audit-log.md), [Setting up editor and administrator accounts](../help/setting-up-editor-and-admin-accounts.md),
 [Managing members](../help/managing-members.md), [Console commands](../examples/commands/README.md)
 
@@ -219,6 +220,60 @@ published and the welcome mail sent), or accepts the approval item and continues
 denies the approval item and removes the account for good, as the reject link of the registration mail does; an
 active account is never removed by `--reject`. The audit records `access.registration.approve` or
 `access.registration.reject`.
+
+## Groups, roles, sign-in security and many accounts at once
+
+| Command | What it does | Changes something |
+|---|---|---|
+| `exp:user:groups [list\|create\|rename\|move\|delete] [group]` | The user group tree with members; a group created (`--name`, `--parent`), renamed, moved (`--to`), or removed to the trash once empty | yes, except `list` |
+| `exp:user:roles list <target>` | The roles that reach a user or a group, with where they come from and their limitation | no |
+| `exp:user:roles assign\|unassign <role> <target>` | A role assigned or removed, optionally limited by `--subtree=<node>` or `--section=<id>`; `<target>` is a user or `group:<node id or name>` | yes |
+| `exp:user:whoami` | The account the console acts as, its roles, whether it has every right | no |
+| `exp:user:sessions <user>` | The running sessions (Your devices); `--end` ends all, `--session=<id>` one | with `--end` or `--session` |
+| `exp:user:unlock <user>` | The failed sign-ins back to 0 for a locked account | yes |
+| `exp:user:2fa <user>` | Two-step sign-in and passkeys; `--reset` for a lost phone, `--remove-passkeys` for a lost device | with `--reset` or `--remove-passkeys` |
+| `exp:user:require-password-change <user>` | A new password required at the next sign-in; `--clear` removes the mark | yes |
+| `exp:user:resend-activation <user>` | The activation mail again, with a new key | yes |
+| `exp:user:check-login <user> --password-stdin` | Whether a password signs the account in; never a failed sign-in | no |
+| `exp:user:export` | The accounts the list filters select, as CSV or JSON (`--type`, `--output`); never a password or hash | no |
+| `exp:user:import <file>` | Accounts from a CSV or JSON file, each created as `exp:user:create` does; `--send-activation` or `--disabled`; a password column is refused | yes |
+| `exp:user:bulk <action>` | `disable`, `enable`, `delete`, `approve`, `reject` or `unlock` for every account the filters select; `--apply` needs `--confirm=<count>` | yes |
+| `exp:user:audit <user>` | The user audit log of the account, filtered by `--event`, `--result`, `--from`, `--to` | no |
+| `exp:user:hygiene` | The number of accounts in each state, with the command that lists them | no |
+
+```bash
+# a group for a partner agency, with the Editor role in one subtree
+./console exp:user:groups create --name=Partners --parent=Editors --apply
+./console exp:user:roles assign Editor group:Partners --subtree=2 --apply
+
+# someone leaves: disable, end every session, then check the audit
+./console exp:user:disable jane --apply
+./console exp:user:audit jane --from=2026-10-01
+
+# a locked-out administrator, from the server's shell
+./console exp:user:unlock admin --apply
+./console exp:user:reset-password admin --generate --apply
+
+# members from a spreadsheet, each with the activation mail
+./console exp:user:import members.csv --group=Members --send-activation           # checks every row
+./console exp:user:import members.csv --group=Members --send-activation --apply
+
+# accounts unused for two years disabled, after a look at the list
+./console exp:user:bulk disable --state=inactive --days=730 --group=Members
+./console exp:user:bulk disable --state=inactive --days=730 --group=Members --apply --confirm=42
+```
+
+`exp:user:bulk` treats every account as the single command does: protected accounts and the last administrator are
+listed as refused and never changed. `--confirm` must be the number the dry run showed; when the selection changed in
+between, the run is refused and changes nothing. A bulk `delete` needs a filter: it never removes every account.
+
+An import file has the columns `login`, `email`, `first_name`, `last_name` and `groups` (node ids or names separated by
+`|`). It never holds a password: a file with a password column is refused as a whole. A login that exists is skipped,
+so a corrected file can be imported again. `exp:user:export` writes the same columns and more; an export holds personal
+data, so keep it as such (`--output` creates the file with mode 0600).
+
+Not offered on purpose: merging two accounts (the kernel has no safe way to move the ownership and history of one
+account to another), passwords in import files, and a `--password` option.
 
 ## In scripts and CI
 

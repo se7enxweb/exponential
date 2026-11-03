@@ -37,8 +37,8 @@ nothing; the same as exp:user:list --state=pending.
 | Option | Value | Help |
 |---|---|---|
 | `--search` | required | Only accounts whose login, name or e-mail address contains this text |
-| `--limit` | required | How many accounts to list (default 25, at most 500) |
-| `--offset` | required | Skip this many accounts first (the next page: --offset=25) |
+| `--limit` | required | How many to list (default 25, at most 500); bulk: the most accounts one run may change (default 500, at most 5000) |
+| `--offset` | required | Skip this many first (the next page: --offset=25) |
 | `--format` | required | text (default) or json (the machine output exp-user/1) |
 
 Read from the option definitions in the code (`startup()`, `getOptions()`, `options()` or `ezcConsoleOption`). Every script also takes the standard options of the script framework (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).

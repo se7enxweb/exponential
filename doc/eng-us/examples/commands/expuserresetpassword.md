@@ -42,7 +42,7 @@ Without --apply nothing is changed and no mail is sent.
 |---|---|---|
 | `--send-link` |  | Send the "reset your password" mail with its one-time link (the password stays until the link is used) |
 | `--generate` |  | Set a generated password that passes the password rules, print it once and end the account's sessions |
-| `--password-stdin` |  | Read the password from standard input (one line), never from the command line; it must pass the password rules |
+| `--password-stdin` |  | Read the password from standard input (one line), never from the command line (create and reset-password: it must pass the password rules) |
 | `--require-change` |  | The account must choose a new password at its next sign-in |
 | `--apply` |  | Make the change; without it the command only lists what it would change (a dry run) |
 | `--dry-run` |  | The default, kept for scripts that pass it: list what would change, change nothing |

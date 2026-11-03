@@ -227,6 +227,12 @@ it any more. The [user audit log](the-user-audit-log.md) shows what happened to 
 **Data protection:** an account holds personal data (name, e-mail address). Store only what the work needs, keep the
 temporary password out of e-mail, and disable the account when the person leaves.
 
+## From the console
+
+The same account can be created from the server, for example in a deploy script, with a password nobody types on a
+command line: [Onboard a new editor](user-management-from-the-console/onboard-a-new-editor.md). When someone leaves:
+[Offboard someone who leaves](user-management-from-the-console/offboard-someone-who-leaves.md).
+
 ## Related pages
 
 - [What the Editor role allows](what-the-editor-role-allows.md)

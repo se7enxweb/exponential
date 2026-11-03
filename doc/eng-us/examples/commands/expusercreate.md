@@ -45,9 +45,9 @@ printf '%s\n' "$PASSWORD" | ./console exp:user:create --login=ci-bot --email=ci@
 | `--email` | required | The e-mail address (create: of the new account; edit: the new address) |
 | `--first-name` | required | The first name (the attribute first_name of the user class) |
 | `--last-name` | required | The last name (the attribute last_name of the user class) |
-| `--group` | required | A user group by node id or name: list only its members (below it, at any depth); create: the group of the new account (repeat for more, the first is the main group; default [UserSettings] DefaultUserPlacement) |
+| `--group` | required | A user group by node id or name: list, export and bulk take only its members (below it, at any depth); create and import: the group of the new accounts (repeat for more, the first is the main group; default [UserSettings] DefaultUserPlacement) |
 | `--class` | required | The user class of the new account (default the class of [UserSettings] UserClassID) |
-| `--password-stdin` |  | Read the password from standard input (one line), never from the command line; it must pass the password rules |
+| `--password-stdin` |  | Read the password from standard input (one line), never from the command line (create and reset-password: it must pass the password rules) |
 | `--generate-password` |  | Generate a password that passes the password rules and print it once |
 | `--send-activation` |  | Create the account disabled and send the activation mail; the person sets a password with "Forgot password" |
 | `--disabled` |  | Create the account disabled (enable it later with exp:user:enable) |

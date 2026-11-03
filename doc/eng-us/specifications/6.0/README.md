@@ -26,6 +26,7 @@ default, scope) and ends with "Related pages".
 | [Notification commands](notifications-cli.md) | `exp:notification:status`, `run`, `events`, `subscriptions`: options, exit codes, sample output |
 | [E-mail preferences and consent](mail-preferences.md) | Categories, preferences, the consent log, suppression, the mail gate, links, tables, flows, settings |
 | [E-mail preference commands](mail-preferences-cli.md) | `exp:mail:status`, `preferences`, `suppression`, `consent`, `gate`: actions, options, exit codes, sample output |
+| [exp:user JSON output and exit codes](exp-user-json-output.md) | The schema `exp-user/1` of the user management commands: common keys, the keys of each command, the exit codes, the permanent contract |
 | [E-mail preferences: the law checklist](mail-preferences-compliance.md) | CAN-SPAM, GDPR and ePrivacy, CCPA/CPRA, CASL, RFC 8058 mapped to code and tests; the gaps |
 | [Help system](help-system.md) | Help and manuals as content: DITA topic classes, sections, object states, roles, validator, web, context help and e-book delivery |
 | [Help style guide](help-style-guide.md) | Editorial rules for help topics: topic types with templates, steps, notices, figures, `help_id`, fields, terminology |

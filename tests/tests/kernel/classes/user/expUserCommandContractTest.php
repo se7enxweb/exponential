@@ -17,6 +17,8 @@
  *  UC-08 isLastAdministrator()
  *  UC-09 generatePassword(): long enough, all four kinds of characters, none that can be misread, never twice the same
  *  UC-10 the text output: actionLines() of a dry run and of a change with a generated password, listLines(), showLines()
+ *  UC-11 the pure parts of the second commands: the import file read (formula cells, a password column refused), an
+ *        export row (never a hash), the --confirm check of bulk, a role target, the audit filters
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -38,6 +40,20 @@ class expUserCommandContractTest extends PHPUnit\Framework\TestCase
         'exp:user:reset-password' => '[send-link][generate][password-stdin][require-change][apply][dry-run][as:][format:]',
         'exp:user:approve' => '[reject][apply][dry-run][as:][format:]',
         'exp:user:pending' => '[search:][limit:][offset:][format:]',
+        'exp:user:groups' => '[parent:][name:][to:][apply][dry-run][as:][format:]',
+        'exp:user:roles' => '[subtree:][section:][apply][dry-run][as:][format:]',
+        'exp:user:sessions' => '[end][session:][apply][dry-run][as:][format:]',
+        'exp:user:unlock' => '[apply][dry-run][as:][format:]',
+        'exp:user:2fa' => '[reset][remove-passkeys][apply][dry-run][as:][format:]',
+        'exp:user:require-password-change' => '[clear][apply][dry-run][as:][format:]',
+        'exp:user:resend-activation' => '[apply][dry-run][as:][format:]',
+        'exp:user:export' => '[state:][group:][search:][days:][type:][output:][format:]',
+        'exp:user:import' => '[type:][group:*][send-activation][disabled][apply][dry-run][as:][format:]',
+        'exp:user:bulk' => '[state:][group:][search:][days:][limit:][confirm:][apply][dry-run][as:][format:]',
+        'exp:user:audit' => '[event:][result:][from:][to:][limit:][offset:][format:]',
+        'exp:user:hygiene' => '[days:][format:]',
+        'exp:user:whoami' => '[as:][format:]',
+        'exp:user:check-login' => '[password-stdin][format:]',
     );
 
     /** The arguments. Add, never change or remove. */
@@ -49,6 +65,17 @@ class expUserCommandContractTest extends PHPUnit\Framework\TestCase
         'exp:user:enable' => '[user]',
         'exp:user:reset-password' => '[user]',
         'exp:user:approve' => '[user]',
+        'exp:user:groups' => '[action][group]',
+        'exp:user:roles' => '[action][role][target]',
+        'exp:user:sessions' => '[user]',
+        'exp:user:unlock' => '[user]',
+        'exp:user:2fa' => '[user]',
+        'exp:user:require-password-change' => '[user]',
+        'exp:user:resend-activation' => '[user]',
+        'exp:user:import' => '[file]',
+        'exp:user:bulk' => '[action]',
+        'exp:user:audit' => '[user]',
+        'exp:user:check-login' => '[user]',
     );
 
     /** command => entry point in bin/php */
@@ -63,11 +90,27 @@ class expUserCommandContractTest extends PHPUnit\Framework\TestCase
         'exp:user:reset-password' => 'expuserresetpassword',
         'exp:user:approve' => 'expuserapprove',
         'exp:user:pending' => 'expuserpending',
+        'exp:user:groups' => 'expusergroups',
+        'exp:user:roles' => 'expuserroles',
+        'exp:user:sessions' => 'expusersessions',
+        'exp:user:unlock' => 'expuserunlock',
+        'exp:user:2fa' => 'expuser2fa',
+        'exp:user:require-password-change' => 'expuserrequirepasswordchange',
+        'exp:user:resend-activation' => 'expuserresendactivation',
+        'exp:user:export' => 'expuserexport',
+        'exp:user:import' => 'expuserimport',
+        'exp:user:bulk' => 'expuserbulk',
+        'exp:user:audit' => 'expuseraudit',
+        'exp:user:hygiene' => 'expuserhygiene',
+        'exp:user:whoami' => 'expuserwhoami',
+        'exp:user:check-login' => 'expuserchecklogin',
     );
 
     /** The commands that change something (a dry run unless --apply). Add only. */
     const CHANGING = array( 'exp:user:create', 'exp:user:edit', 'exp:user:delete', 'exp:user:disable', 'exp:user:enable', 'exp:user:reset-password',
-                            'exp:user:approve' );
+                            'exp:user:approve', 'exp:user:groups', 'exp:user:roles', 'exp:user:sessions', 'exp:user:unlock',
+                            'exp:user:2fa', 'exp:user:require-password-change', 'exp:user:resend-activation', 'exp:user:import',
+                            'exp:user:bulk' );
 
     public static function setUpBeforeClass(): void
     {
@@ -289,5 +332,48 @@ class expUserCommandContractTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( 'Members (node 12), main', $show );
         $this->assertStringContainsString( 'Member (Section:1), via Members (object 11)', $show );
         $this->assertStringNotContainsString( 'hash', strtolower( $show ) );
+    }
+
+    /** UC-11 */
+    public function testImportExportBulkAndFilters()
+    {
+        $this->assertSame( 'csv', expUserBulk::typeOf( 'members.CSV' ) );
+        $this->assertSame( 'json', expUserBulk::typeOf( 'var/x.json' ) );
+        $this->assertSame( '', expUserBulk::typeOf( 'members.xlsx' ) );
+
+        $parsed = expUserBulk::parse( "\xEF\xBB\xBFLogin,Email,first_name\njane,jane@example.com,'=Jane\n\n,bob@example.com,Bob\n", 'csv' );
+        $this->assertSame( '', $parsed['error'] );
+        $this->assertSame( array( 'line' => 2, 'login' => 'jane', 'email' => 'jane@example.com', 'first_name' => '=Jane', 'last_name' => '', 'groups' => '' ),
+                           $parsed['rows'][0], 'a protected formula cell gets its text back; missing columns are empty' );
+        $this->assertSame( 4, $parsed['rows'][1]['line'] );
+        foreach ( array( "login,email,password\n" => 'password', "login,email,password_hash\n" => 'password', "login,email,hash\n" => 'password',
+                         "login,email,phone\n" => 'unknown column', "login\nx\n" => 'login and email', '' => 'empty' ) as $text => $error )
+            $this->assertStringContainsString( $error, expUserBulk::parse( $text, 'csv' )['error'], json_encode( $text ) );
+        $this->assertStringContainsString( 'array of objects', expUserBulk::parse( '{"login":"x"}', 'json' )['error'] );
+        $this->assertSame( 'x', expUserBulk::parse( '[{"login":"x","email":"x@example.com"}]', 'json' )['rows'][0]['login'] );
+
+        $row = expUserBulk::exportRow( array( 'id' => 9, 'login' => 'jane', 'email' => 'jane@example.com', 'name' => 'Jane Doe', 'enabled' => true,
+                                              'states' => array( 'never' ), 'groups' => array( array( 'node_id' => 12 ), array( 'node_id' => 13 ) ),
+                                              'last_visit' => false, 'login_count' => 0, 'password_hash' => 'secret' ), array( 'first_name' => 'Jane' ) );
+        $this->assertSame( expUserBulk::EXPORT_COLUMNS, array_keys( $row ) );
+        $this->assertSame( array( '12|13', 12, 'never', '' ), array( $row['groups'], $row['main_group'], $row['states'], $row['last_visit'] ) );
+        $this->assertNotContains( 'secret', $row, 'never a hash' );
+
+        $this->assertSame( '', expUserBulk::confirmProblem( 42, '42' ) );
+        $this->assertStringContainsString( '--confirm=42', expUserBulk::confirmProblem( 42, null ) );
+        $this->assertStringContainsString( 'does not match', expUserBulk::confirmProblem( 42, '41' ) );
+        $this->assertStringContainsString( 'does not match', expUserBulk::confirmProblem( 42, 'all' ) );
+
+        $this->assertSame( array( 'user', 'group', 'group', '' ), array( expUserGroupManager::targetKind( 'jane' ), expUserGroupManager::targetKind( 'group:12' ),
+                                                                       expUserGroupManager::targetKind( 'GROUP:Editors' ), expUserGroupManager::targetKind( ' ' ) ) );
+        $this->assertSame( array( 'list', 'create', 'rename', 'move', 'delete' ), expUserGroupManager::GROUP_ACTIONS );
+        $this->assertSame( array( 'list', 'assign', 'unassign' ), expUserGroupManager::ROLE_ACTIONS );
+        $this->assertSame( array( 'disable', 'enable', 'delete', 'approve', 'reject', 'unlock' ), expUserBulk::ACTIONS );
+
+        $audit = expUserManager::auditFilters( array( 'event' => 'access.user.password.*', 'result' => 'refused', 'from' => '2026-10-01', 'limit' => '100' ) );
+        $this->assertSame( array(), $audit['errors'] );
+        $this->assertSame( array( 'action' => 'access.user.password', 'result' => 'refused', 'from' => '2026-10-01', 'to' => '', 'limit' => 100, 'offset' => 0 ),
+                           $audit['filters'] );
+        $this->assertCount( 5, expUserManager::auditFilters( array( 'event' => 'a b', 'result' => 'ok', 'from' => '2026-02-30', 'to' => 'today', 'limit' => '0' ) )['errors'] );
     }
 }
