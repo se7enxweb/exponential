@@ -44,8 +44,7 @@ abstract class expContentServicesTestCase extends PHPUnit\Framework\TestCase
             $script->setUseSiteAccess( 'admin' );
             $script->initialize();
             eZExecution::setCleanExit();
-            if ( !eZDB::instance()->isConnected() )
-                throw new RuntimeException( 'no database connection' );
+            ezpLiveInstallation::installedSiteDatabase();
             if ( !class_exists( 'expServiceBase' ) || !class_exists( 'expNodeServices' ) )
                 throw new RuntimeException( 'expservices is not active' );
             self::$script = $script;
