@@ -130,7 +130,10 @@ class eZSection extends eZPersistentObject
             {
                 // the section identifier index refers to the id index object
                 $sectionID = $sectionFetched->attribute( 'id' );
-                if( !isset( $eZContentSectionObjectCache[$sectionID] ) )
+                // the id slot may hold an older row under that id (the identifier changed, or the section
+                // was removed and the id given again): the row just read is the section of this identifier
+                if( !isset( $eZContentSectionObjectCache[$sectionID] )
+                    || (string)$eZContentSectionObjectCache[$sectionID]->attribute( 'identifier' ) !== (string)$sectionIdentifier )
                 {
                     $eZContentSectionObjectCache[$sectionID] = $sectionFetched;
                 }
