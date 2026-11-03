@@ -103,7 +103,7 @@ bevor es die Server-Konfiguration erstellt, sodass eine Änderung beim nächsten
 | `[ServerSettings]` | `HTTP2` | `enabled` | HTTP/2 für HTTPS-Verbindungen. |
 | `[ServerSettings]` | `ResponseHeaders[]` | vier Sicherheits-Header | Header, die statischen Dateien, Fehlerseiten, Weiterleitungen und 304-Antworten hinzugefügt werden. |
 | `[ServerSettings]` | `ResponseHeadersOnScripts` | `enabled` | Dieselben Header bei Antworten von `index.php`, `index_rest.php` und `index_treemenu.php`, nur wo das Skript sie nicht gesendet hat. |
-| `[HTTPSSettings]` | `HSTSMaxAge`, `HSTSIncludeSubDomains`, `HSTSPreload` | `300`, `disabled`, `disabled` | `Strict-Transport-Security` bei jeder HTTPS-Antwort, nie bei einfachem HTTP. `0` schreibt nichts. |
+| `[HTTPSSettings]` | `HSTSMaxAge`, `HSTSIncludeSubDomains`, `HSTSPreload` | `0`, `disabled`, `disabled` | `Strict-Transport-Security` bei jeder HTTPS-Antwort, nie bei einfachem HTTP. `0` schreibt nichts. |
 | `[CacheSettings]` | `Enabled` | `enabled` | Der eigene Antwort-Cache des Servers. `disabled` schaltet ihn wirklich aus (seit dem 28. September; vorher fiel ein deaktivierter Wert auf den Standard des Servers zurück). |
 | `[PHPSettings]` | `IniOptions[]` | Optionen für opcache und APCu | PHP-Optionen, die an den Serverprozess übergeben werden, eine pro Zeile, wie nach `-d`. Ausgeliefert: `opcache.enable_cli=1`, `opcache.memory_consumption=256`, `opcache.max_accelerated_files=20000`, `opcache.interned_strings_buffer=32`, `opcache.revalidate_freq=0`, `opcache.file_update_protection=0`, `apc.shm_size=256M` (die vollständige Liste und die Gründe stehen in `settings/velocity.ini`). |
 

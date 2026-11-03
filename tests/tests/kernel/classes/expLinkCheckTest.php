@@ -209,6 +209,10 @@ class expLinkCheckTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 5, $defaults['MaxRedirects'] );
         $this->assertSame( 1000, $defaults['HostDelay'] );
         $this->assertSame( 72000, $defaults['RecheckInterval'] );
+        $this->assertSame( 900, $defaults['MaxRunTime'] );
+        $this->assertTrue( \Exponential\Cronjob\Kernel\Linkcheck::overTime( 100.0, 1000.0, 900 ) );
+        $this->assertFalse( \Exponential\Cronjob\Kernel\Linkcheck::overTime( 100.0, 999.0, 900 ) );
+        $this->assertFalse( \Exponential\Cronjob\Kernel\Linkcheck::overTime( 100.0, 99999.0, 0 ) );
         $this->assertTrue( \Exponential\Cronjob\Kernel\Linkcheck::isRecent( 990, 1000, 100 ) );
         $this->assertFalse( \Exponential\Cronjob\Kernel\Linkcheck::isRecent( 800, 1000, 100 ) );
         $this->assertFalse( \Exponential\Cronjob\Kernel\Linkcheck::isRecent( 0, 1000, 100 ) );

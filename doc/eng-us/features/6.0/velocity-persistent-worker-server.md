@@ -102,7 +102,7 @@ before it builds the server configuration, so a change is read at the next
 | `[ServerSettings]` | `HTTP2` | `enabled` | HTTP/2 for HTTPS connections. |
 | `[ServerSettings]` | `ResponseHeaders[]` | four security headers | Headers added to static files, error pages, redirects and 304 answers. |
 | `[ServerSettings]` | `ResponseHeadersOnScripts` | `enabled` | Same headers on answers of `index.php`, `index_rest.php` and `index_treemenu.php`, only where the script did not send them. |
-| `[HTTPSSettings]` | `HSTSMaxAge`, `HSTSIncludeSubDomains`, `HSTSPreload` | `300`, `disabled`, `disabled` | `Strict-Transport-Security` on every HTTPS answer, never on plain HTTP. `0` writes nothing. |
+| `[HTTPSSettings]` | `HSTSMaxAge`, `HSTSIncludeSubDomains`, `HSTSPreload` | `0`, `disabled`, `disabled` | `Strict-Transport-Security` on every HTTPS answer, never on plain HTTP. `0` writes nothing. |
 | `[CacheSettings]` | `Enabled` | `enabled` | The server's own response cache. `disabled` really switches it off (since 28 September; before, a disabled value fell back to the server default). |
 | `[PHPSettings]` | `IniOptions[]` | opcache and APCu options | PHP options handed to the server process, one per line, as after `-d`. Shipped: `opcache.enable_cli=1`, `opcache.memory_consumption=256`, `opcache.max_accelerated_files=20000`, `opcache.interned_strings_buffer=32`, `opcache.revalidate_freq=0`, `opcache.file_update_protection=0`, `apc.shm_size=256M` (read the full list and the reasons in `settings/velocity.ini`). |
 

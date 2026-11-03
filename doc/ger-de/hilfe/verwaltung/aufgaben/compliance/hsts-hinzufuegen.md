@@ -39,8 +39,8 @@ php bin/php/ezcache.php --clear-tag=ini --allow-root-user
 
 dann laden Sie PHP-FPM neu.
 
-**Velocity**: `settings/override/velocity.ini.append.php`, `[HTTPSSettings] HSTSMaxAge=300` (300 ist der
-mitgelieferte Wert; außerdem `HSTSIncludeSubDomains`, `HSTSPreload`), dann
+**Velocity**: `settings/override/velocity.ini.append.php`, `[HTTPSSettings] HSTSMaxAge=300` (mitgeliefert
+ist 0, also keiner; außerdem `HSTSIncludeSubDomains`, `HSTSPreload`), dann
 `./console exp:velocity deploy --allow-root-user`.
 
 Heben Sie den Wert in Stufen an: 300 Sekunden, ein Tag (86400), 30 Tage (2592000), ein Jahr (31536000), jeweils nach

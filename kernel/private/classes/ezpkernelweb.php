@@ -352,8 +352,17 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
                 {
                     // The site's own error page, with a reference that is
                     // also written to the error log beside the fatal error.
-                    $reference = eZExecution::errorReference();
                     $last = error_get_last();
+                    // The browser went away (a closed tab during a server-sent event stream or a long
+                    // download) and PHP ended the script there: nothing failed, and there is nobody left
+                    // to show an error page to. Only a notice, no "Fatal error" line without a cause.
+                    $fatal = E_ERROR | E_PARSE | E_CORE_ERROR | E_COMPILE_ERROR | E_USER_ERROR | E_RECOVERABLE_ERROR;
+                    if ( connection_aborted() && !( $last && ( $last['type'] & $fatal ) ) )
+                    {
+                        eZDebug::writeNotice( 'The client closed the connection before the request ended', 'ezpKernelWeb' );
+                        return;
+                    }
+                    $reference = eZExecution::errorReference();
                     eZLog::write( 'Fatal error ' . $reference . ( $last ? ': ' . $last['message'] . ' in ' . $last['file'] . ' on line ' . $last['line'] : '' ), 'error.log' );
                     eZExecution::renderErrorPage( 500, $reference,
                         ( eZDebug::isDebugEnabled() && $last ) ? $last['message'] . ' in ' . $last['file'] . ' on line ' . $last['line'] : '' );

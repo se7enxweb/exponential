@@ -134,7 +134,7 @@ Hinweise:
   erneuertes Zertifikat wird innerhalb einer Minute übernommen, ohne Neustart. Für Let's Encrypt, betrieben von
   Velocity selbst, siehe `exp:velocity ssl` in
   [Kapitel 8, Abschnitt 8.3.9](../../installation/08-die-website-ausliefern.md#839-https-direkt-von-velocity).
-- **HSTS** beginnt mit 300 Sekunden; erhöhen Sie `HSTSMaxAge` erst dann auf ein Jahr, wenn jeder Name dauerhaft über
+- **HSTS** ist ausgeliefert aus (`HSTSMaxAge=0`); beginnen Sie wie oben mit 300 Sekunden und erhöhen Sie `HSTSMaxAge` erst dann auf ein Jahr, wenn jeder Name dauerhaft über
   HTTPS ausgeliefert wird.
 - **Header.** `[ServerSettings] ResponseHeaders[]` bringt die Standard-Sicherheits-Header des Kernels für das mit, was
   Velocity selbst beantwortet, und `ResponseHeadersOnScripts` ergänzt sie bei Seiten, denen sie fehlen: Es gibt nichts

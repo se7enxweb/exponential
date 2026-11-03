@@ -1010,6 +1010,12 @@ class eZSQLite3DB extends eZDBInterface
      * every edit in the legacy admin lost the published content. Where this is false the kernel
      * inserts without REPLACE, so a collision fails with an error instead of deleting a row.
      *
+     * A key that the shipped schema (share/db_schema.dba) gives the table itself, such as the
+     * unique remote_id of ezcontentobject or the primary key (id, version) of
+     * ezcontentobject_attribute, also makes REPLACE unsafe, but there is nothing to rebuild:
+     * the kernel just inserts without REPLACE, quietly. Only a key the shipped schema does not
+     * have is reported, once per table and connection.
+     *
      * @param string $table
      * @param string[] $keys
      * @return bool
@@ -1023,15 +1029,59 @@ class eZSQLite3DB extends eZDBInterface
                 if ( !isset( $this->UnsafeReplaceReported[$table] ) )
                 {
                     $this->UnsafeReplaceReported[$table] = true;
-                    eZDebug::writeWarning( "Table $table has the unique key (" . implode( ', ', $columns )
-                        . ") without all of (" . implode( ', ', $keys ) . "), the key its rows are stored by:"
-                        . " inserting without REPLACE. Rebuild the table with the key of the legacy schema.",
-                        __METHOD__ );
+                    if ( !in_array( $columns, self::shippedUniqueKeys( $table ) ) )
+                        eZDebug::writeWarning( "Table $table has the unique key (" . implode( ', ', $columns )
+                            . ") without all of (" . implode( ', ', $keys ) . "), the key its rows are stored by,"
+                            . " and the shipped schema (share/db_schema.dba) does not have that key: inserting without"
+                            . " REPLACE. Rebuild the table with the keys of the shipped schema.",
+                            __METHOD__ );
                 }
                 return false;
             }
         }
         return true;
+    }
+
+    /**
+     * The primary and unique keys the shipped schema gives a table.
+     *
+     * @param string $table
+     * @return array[] one list of column names per key; empty when the table or the schema file is not there
+     */
+    static function shippedUniqueKeys( $table )
+    {
+        static $schema = null;
+        if ( $schema === null )
+        {
+            $schema = array();
+            $root = class_exists( 'eZSys', false ) ? eZSys::rootDir() : getcwd();
+            $file = rtrim( (string)$root, '/' ) . '/share/db_schema.dba';
+            if ( is_file( $file ) )
+            {
+                $loaded = ( static function ( $file ) {
+                    $schema = null;
+                    include $file;
+                    return $schema;
+                } )( $file );
+                if ( is_array( $loaded ) )
+                    $schema = $loaded;
+            }
+        }
+        $keys = array();
+        if ( isset( $schema[$table]['indexes'] ) && is_array( $schema[$table]['indexes'] ) )
+        {
+            foreach ( $schema[$table]['indexes'] as $index )
+            {
+                if ( isset( $index['type'], $index['fields'] ) && in_array( $index['type'], array( 'primary', 'unique' ), true ) )
+                {
+                    $fields = array();
+                    foreach ( (array)$index['fields'] as $field )
+                        $fields[] = is_array( $field ) ? (string)( $field['name'] ?? '' ) : (string)$field;
+                    $keys[] = $fields;
+                }
+            }
+        }
+        return $keys;
     }
 
     /*!
