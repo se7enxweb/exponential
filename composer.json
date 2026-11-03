@@ -87,7 +87,7 @@
         "symfony/polyfill-php81": "^1.27",
         "symfony/yaml": "^5.4 || ^6.4 || ^7.0",
         "smarty/smarty": "^5",
-        "zetacomponents/archive": "~1.5.1",
+        "se7enxweb/expcomponents-archive": "~1.5.2",
         "zetacomponents/authentication": "~1.4.1",
         "zetacomponents/cache": "~1.6.3",
         "zetacomponents/configuration": "~1.4",

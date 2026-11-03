@@ -291,8 +291,8 @@ bbaf8a3648252c445900da0976d68858  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
 b974dde24700fd18ba9d30714509893a  composer.dev.json
 7e531407fc8efd6cf497d4260dd8897c  composer.dev.lock
-05605bd7af82b4ffb464af154713fe85  composer.json
-e9264ecfdf16598f8b69c0ec301251ac  composer.json.dist
+e407b69894f30258e579d5e3652f1ff0  composer.json
+865d26e026c157c7975535547539df4b  composer.json.dist
 493b236b88d569268b7381a695b9b22a  config.env.php.example
 b226014797143b612684b0aacc22d64c  config.php-RECOMMENDED
 3be3d7ac52263ec84d8a70dfa1f7821e  cronjobs/audit.php
@@ -3514,7 +3514,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-3ce0299a18ab6b233b62bc2e01105219  doc/changelogs/6.0/6.0.15.md
+0b326a34d7f5727e4369feb745ab8e3e  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -24384,7 +24384,7 @@ dc4036a221a29ce297ce8e1529d0bb61  kernel/classes/expnamepatternresolverinterface
 7dd3c7bec3d0961bb904612232686198  kernel/classes/expnotificationservice.php
 c03cf766c96b1f7d1f7101279117856b  kernel/classes/expordersiteaccess.php
 801a6a96b99dedae67d39de7345ab37e  kernel/classes/expordersiteaccessbackfill.php
-fe60fe7756ce4fc83e3be16b477b20a3  kernel/classes/exppackagearchive.php
+554b0768cbb3fe1db2387dbc51561ed6  kernel/classes/exppackagearchive.php
 ff21db9e62979a47ec36d34ca3d7a32e  kernel/classes/exppackagearchivemodes.php
 221ef1f3f95999d2fdd9cec49feaabcb  kernel/classes/exppackageconflictreport.php
 3bd220cca431e7905abbf8b142afcfa2  kernel/classes/exppackagejson.php
@@ -29113,7 +29113,7 @@ d9adcdab7f6d19d12d6c2d0cb709a661  tests/tests/kernel/classes/packages/eZPackageT
 6ad17145c224d066cf6d06b45a404b08  tests/tests/kernel/classes/packages/eZPackageXMLNoNetworkTest.php
 2446efd09f3dbed59b4097e99d6ddef6  tests/tests/kernel/classes/packages/eZStylePackageCreatorTest.php
 cbf6b9af92bf0076fb1191949e822bca  tests/tests/kernel/classes/packages/expPackageArchiveLegacyFormatsTest.php
-9b3ad062e6fa4025b729b78dc3c4d2bb  tests/tests/kernel/classes/packages/expPackageArchiveTest.php
+358e24c7b3f059bcb0922520b9297bb8  tests/tests/kernel/classes/packages/expPackageArchiveTest.php
 d5765ecae8fce7191512c1e6533d411d  tests/tests/kernel/classes/packages/expPackageJsonTest.php
 4760d244cf27fef4cb7b77f2035c5a31  tests/tests/kernel/classes/packages/fixtures/build-legacy-package-fixtures.php
 bd68328f1799790292de4ffcb2d7dd04  tests/tests/kernel/classes/packages/fixtures/legacy/bsdtar-macos-pax.ezpkg
