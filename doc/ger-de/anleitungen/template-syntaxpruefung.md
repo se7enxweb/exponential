@@ -20,7 +20,7 @@ für den Root-Benutzer; die Zeiten unterscheiden sich von Rechner zu Rechner. Di
 
 Verwandte Seiten:
 
-- [Regel-Referenz](template-syntaxpruefung-regeln.md): jede Regel-ID mit Erklärung und Beispielen
+- [Regel-Referenz](../referenz/template-syntaxpruefung-regeln.md): jede Regel-ID mit Erklärung und Beispielen
 - [Schema der maschinellen Ausgabe](../../eng-us/reference/template-check-schema.json) (Englisch): das JSON Schema von `exp-template-check/1`
 - [Templates zwischen Template-Engines konvertieren](template-konvertierung.md): erst konvertieren, dann prüfen
 - Die erzeugten Befehlsseiten: [exp:template:check](../beispiele/befehle/exptemplatecheck.md),
@@ -408,7 +408,7 @@ TWIG-STRICT-UNKNOWN-OPERATOR (WARN): exp_<name> names no template operator: it p
 Examples: doc/eng-us/reference/template-check-rules.md#twig-strict-unknown-operator
 ```
 
-Die [Regel-Referenz](template-syntaxpruefung-regeln.md) erklärt jede Regel mit einem schlechten und einem guten Beispiel.
+Die [Regel-Referenz](../referenz/template-syntaxpruefung-regeln.md) erklärt jede Regel mit einem schlechten und einem guten Beispiel.
 
 `--fail-on=error|warn|note` (Standard `error`) legt fest, ab welchem Schweregrad ein Befund den Lauf scheitern lässt.
 Eine Warnung allein besteht standardmäßig und scheitert mit `--fail-on=warn`:

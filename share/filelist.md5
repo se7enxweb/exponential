@@ -7145,13 +7145,13 @@ ee611ae868bab0755ccaf719a285f4d3  doc/eng-us/guides/settings-page.md
 1e298104acd8abec1411d23dd30ac358  doc/eng-us/guides/smarty-templates-functions.md
 70d04d7717b38c02d30c022dbdb23bbe  doc/eng-us/guides/smarty-templates-migrating.md
 95880d899fc5e97d917e4cb31868d31d  doc/eng-us/guides/smarty-templates-operator-reference.md
-53a45334d6a8a1e603a2dd6f2cf54af0  doc/eng-us/guides/smarty-templates-operators.md
+2256960c779ab841e7d304205f7476bb  doc/eng-us/guides/smarty-templates-operators.md
 d2cf6e2e50284bdc29c43fe2e2d82dba  doc/eng-us/guides/smarty-templates-performance.md
-c800585e0fd30f5d01763018c7092979  doc/eng-us/guides/smarty-templates-plugins.md
+a921284476ab331819f63e9f46cc0dda  doc/eng-us/guides/smarty-templates-plugins.md
 d4dbea52097a5db3012531c9e7aa662f  doc/eng-us/guides/smarty-templates-security.md
 cacbe6383326b6771b72d2dbf36ba63a  doc/eng-us/guides/smarty-templates-troubleshooting.md
 3decd09d352cb3f0562225fc3293ce9a  doc/eng-us/guides/smarty-templates-tutorial.md
-92f6df3058686a857a9d44516611ea05  doc/eng-us/guides/smarty-templates.md
+93b67bde3ce2dc60edc2bd4d4258617b  doc/eng-us/guides/smarty-templates.md
 0ea11cb00a8f8328134dc9570a018867  doc/eng-us/guides/static-publishing-ci-and-github-actions.md
 db841cc634480c49b7b618fd04db8d69  doc/eng-us/guides/static-publishing-custom-domains-and-dns.md
 569d6daa6eee147300e288b42a976f3a  doc/eng-us/guides/static-publishing-deploy-keys.md
@@ -13415,7 +13415,7 @@ bad2519096e06e1dde4533665f591654  doc/eng-us/standards/php-and-composer.md
 6076499d7dc68d5e1fb7dae4e8a7c41c  doc/eng-us/standards/testing-and-ci.md
 d540df62aa49e479062d2e4c943f13b8  doc/eng-us/standards/web-platform.md
 22ef1e8c8074bccf41a6f2474f3b80f4  doc/eng-us/translation-waves.md
-3c8a3d79f60b6093c9dfec548dd48c84  doc/ger-de/.dirnames.json
+89ccdfe7e882533060c6c3639a2f8f47  doc/ger-de/.dirnames.json
 25867792cc1baa4f05cba3bbd13a860f  doc/ger-de/.examples/descriptions/01-command-accesscheck.json
 0e81113b726d51b19af7e2cfe986c37e  doc/ger-de/.examples/descriptions/02-command-explogs-file.json
 3bb3f9ae4492b561de268b3694fb52da  doc/ger-de/.examples/descriptions/03-command-mailconsent-email.json
@@ -13475,7 +13475,7 @@ d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-eve
 d4444f60d9f3f6fd7dc43dc6edac7e39  doc/ger-de/README-LIZENZ.md
 35f2e2b3176ed05cb4e6cd1a8e7adf0f  doc/ger-de/UNINSTALL.md
 0babcec812761514c679795187d034c5  doc/ger-de/UPDATE.md
-fb0c1275afea89e727ee2cb01b2001d2  doc/ger-de/anleitungen/README.md
+19a748e594c9d373e64a2cdb33c89352  doc/ger-de/anleitungen/README.md
 3c28da16cfa703ea0ae165009d3fed45  doc/ger-de/anleitungen/aktualisieren-mit-der-konsole.md
 277fc76f4ca9f5a9a7987b4c7c862311  doc/ger-de/anleitungen/aktualisieren.md
 00b768f89ffba00f97d83b38c9fb6a5d  doc/ger-de/anleitungen/api-schluessel.md
@@ -13593,11 +13593,10 @@ e0ae991ca3d22de9371e2f23ca4e32c1  doc/ger-de/anleitungen/statisches-veroeffentli
 5cde673181ca9270862809be220cfb98  doc/ger-de/anleitungen/systeminformationen.md
 e2353a9acc40010bfb026b399ea3a82d  doc/ger-de/anleitungen/template-engines-geschwindigkeit.md
 e7be92b09a1fa57489bf3f6b2642ba21  doc/ger-de/anleitungen/template-konvertierung.md
-84208edb9fb32db033cb908ddb0f8101  doc/ger-de/anleitungen/template-syntaxpruefung-regeln.md
-fce77d6ae7ad544aa85dd29030d164a0  doc/ger-de/anleitungen/template-syntaxpruefung.md
+3dd63aebb6f3556a27d6237120178680  doc/ger-de/anleitungen/template-syntaxpruefung.md
 e4973164f23eded49f23e96f6b2e8fa1  doc/ger-de/anleitungen/templates-und-design.md
 bf2eb155c1e2781d0f0215f5b0cbe8ee  doc/ger-de/anleitungen/testsprache-lorem-ipsum.md
-f26bc1e8c98d6a7126d599ede1eb9a92  doc/ger-de/anleitungen/twig-templates-fehlersuche.md
+ae16879b95b1569317dbcb76a91106e7  doc/ger-de/anleitungen/twig-templates-fehlersuche.md
 c8639029dd7b640cb74fb6702cafbc8e  doc/ger-de/anleitungen/twig-templates-im-editor.md
 e8572b617b8eddb34206464efe0a1880  doc/ger-de/anleitungen/twig-templates-leistung.md
 1ad570d35262225e0b6efaf700408cf4  doc/ger-de/anleitungen/twig-templates-nativ-schreiben.md
@@ -22676,6 +22675,7 @@ c74c61782aae1da372a0885d9225ed72  doc/ger-de/installation/migration/shopify.md
 370891338e6b7eecbc0ccf974791157b  doc/ger-de/installation/migration/symfony-anwendungen.md
 7afe7da9a50da9a5b91d6b6f220248fb  doc/ger-de/installation/migration/website-baukaesten.md
 f4364e8ca67a26c8ba3463b279f83d39  doc/ger-de/installation/migration/wordpress.md
+f5a0ec96388ed0733fe5ee82e29a7dc0  doc/ger-de/referenz/template-syntaxpruefung-regeln.md
 c11956be0a4eef566851512bd30051a7  doc/ger-de/spezifikationen/6.0/README.md
 cb14f86e781d2b9b69cfc504606c22ea  doc/ger-de/spezifikationen/6.0/audit-ereignismodell.md
 46a672ef5e561501db056a629bf555ff  doc/ger-de/spezifikationen/6.0/ausfuehrbare-befehle-cronjobs-ansichten.md
