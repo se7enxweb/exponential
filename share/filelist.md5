@@ -8,10 +8,10 @@ e399d1ae8564340ae3012f346d90bfa0  .githooks/pre-push
 a65c763ef0340e232cfe8c274f56fca0  .github/FUNDING.yml
 7b502a7347b204c809b1a9c75e77651c  .github/PULL_REQUEST_TEMPLATE.md
 615b46b2d4c1115974bae173147c099f  .github/scripts/ci_health_report.py
-67b401e57b0a4810a357a89f9be50f6e  .github/workflows/ci-health.yml
-378597fd0fc9177b823abe4038ae1d7b  .github/workflows/performance.yml
-9596b0ea64cb19c8a77508f7fdfd7632  .github/workflows/phpunit.yml
-09157718f04a33993f564a2a79c1233c  .github/workflows/quality.yml
+83ebb7a0d04f421bdff8ef89b268e003  .github/workflows/ci-health.yml
+ae7e2ed631182f7180278f4953795ccb  .github/workflows/performance.yml
+bbdc3057add897036ec822f5e1786b6a  .github/workflows/phpunit.yml
+3a78993c3989bbdf75b2fd1e608397f7  .github/workflows/quality.yml
 1378291033e16daa1ef6e265447a2201  .gitignore
 a02b026231759460d414688412edd1dd  .htaccess_root
 e9a221cfefd482545e28180305af7f54  .htaccess_root_static
