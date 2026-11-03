@@ -3515,7 +3515,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-6e972a211900bd153ef44bc615212600  doc/changelogs/6.0/6.0.15.md
+653a5b014b68e72a0f42b78efa594afe  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -26605,7 +26605,7 @@ cec7bd47afdf599a4e1a46499a830cee  lib/ezsoap/classes/ezsoapheader.php
 52f507feeacafb8476198dd20e499c41  lib/eztemplate/classes/eztemplateblockfunction.php
 d3e633d1d2f63fba8e8b7abb64ddbd82  lib/eztemplate/classes/eztemplatecacheblock.php
 c076958b5e74122ad926927049c19582  lib/eztemplate/classes/eztemplatecachefunction.php
-dfefe96252b36f50979d0da6f7dad5f5  lib/eztemplate/classes/eztemplatecompiledloop.php
+39f1c9db9f3056e791e94b1e3b46c69a  lib/eztemplate/classes/eztemplatecompiledloop.php
 03f8c39006c33d4af2bb605c5527f4fe  lib/eztemplate/classes/eztemplatecompiler.php
 aeeac874e149fe1afe1c8e79b205d856  lib/eztemplate/classes/eztemplatecontroloperator.php
 c26dbec4684104037b6b62edc581dde1  lib/eztemplate/classes/eztemplatedebugfunction.php
@@ -26617,8 +26617,8 @@ c26dbec4684104037b6b62edc581dde1  lib/eztemplate/classes/eztemplatedebugfunction
 9b7d2fe1ccdd1e70cee5b5bbff8658e0  lib/eztemplate/classes/eztemplateexecuteoperator.php
 494a00dfd43ef938d00619798185d899  lib/eztemplate/classes/eztemplateexpinfooperator.php
 6b0d654041f9c7b766c83b5a05a26425  lib/eztemplate/classes/eztemplatefileresource.php
-8cba2802ccd730df4d786b89a7383159  lib/eztemplate/classes/eztemplateforeachfunction.php
-ad2874ee4a139d460d9ee6e73d0a7eab  lib/eztemplate/classes/eztemplateforfunction.php
+e8058f3a9523549e3c4c71d518ab00f2  lib/eztemplate/classes/eztemplateforeachfunction.php
+d11edac516e16dd0bf3231a554ede27c  lib/eztemplate/classes/eztemplateforfunction.php
 04805fd78bcfa73f0337ce6e236960ef  lib/eztemplate/classes/eztemplatefunctionelement.php
 655803ad0d246fb1952eec4febeb910d  lib/eztemplate/classes/eztemplateiffunction.php
 1d35e68fbffb343c601f64e054f2fd88  lib/eztemplate/classes/eztemplateimageoperator.php
@@ -28230,7 +28230,7 @@ ad3ef84f9d21cd4076b60e33034063b0  tests/bootstrap.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 1b7dcb4dde933b1ebf8f8f93f3df7d55  tests/suite.php
-db0067c5b31f668f64ac5da78c6b6d0e  tests/test-map.json
+cb8c2bce53e336167709ebf2ae659b9a  tests/test-map.json
 4f2af04e2bf61d9e7bfbba8181fc08c0  tests/tests/bin/CiWorkflowPullRequestTest.php
 b152194c06e5b05fb18f088d0afd219c  tests/tests/bin/ConsoleExtensionAliasTest.php
 cf640022325724fc8a061137bbc5045e  tests/tests/bin/CopyrightNoticeTest.php
@@ -29961,6 +29961,7 @@ ae6e64544e6fb939af59a865ecb7aa1c  tests/tests/lib/ezsoap/eZSOAPMessageTest.php
 1048c0d6dab52f2435fd8f4089917bdd  tests/tests/lib/eztemplate/eZTemplateAttributeOperatorTest.php
 1f2cbf344c90e060d7673cd5391360d7  tests/tests/lib/eztemplate/eZTemplateCacheBlockAccessPathTest.php
 11571a2592ed97415cadf3cd3b52271d  tests/tests/lib/eztemplate/eZTemplateCompiledInterpretedParityTest.php
+dbf1bd4e21b9aadf0840dd029acc3e06  tests/tests/lib/eztemplate/eZTemplateCompiledLoopRecursionTest.php
 86d5b7b448c070f3cdd141677761852b  tests/tests/lib/eztemplate/eZTemplateDebugCommentsTest.php
 84fef831b52a8ff43677450e02f16e4c  tests/tests/lib/eztemplate/eZTemplateEngineRenderTest.php
 9fea99cd4200b0e6d17e900009c341eb  tests/tests/lib/eztemplate/eZTemplateFetchOperatorTest.php
