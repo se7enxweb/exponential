@@ -76506,6 +76506,82 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
         <source>Static publishing</source>
         <translation>Yaltingol statik</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>E ndaarngo</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Jaŋŋooɓe ina ndaara ngoo hello.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Suuɗaama jaŋŋooɓe haa goɗɗo yaltina ɗum.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Hello ngoo ina e ndaarngo jooni. Ina suuɗaa jaŋŋooɓe haa yaltinee.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Hello ngoo yaltinaama: jaŋŋooɓe ina ndaara ɗum jooni.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Hello ngoo ko daartol kadi. Ina suuɗaa jaŋŋooɓe haa ndaaree, yaltinee.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Yaltin jooni</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Kuutoro jogiiɗo darnde %role mo winndaani yamre ndee tan ina waawi yaltinde ɗum.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Sooynde ballal sabbiiɗe yaltingol</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Ina suuɗa ɗum jaŋŋooɓe haa yaltinee kadi.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Ndaarotooɗo ina ndaara ɗum caggal. Jaŋŋooɓe yiyataa ɗum tawo.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Jaŋŋooɓe ina ndaara ɗum ɗoon e ɗoon.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Ina yaltina ɗum e ndaarngo ngam golle goɗɗe. Jaŋŋooɓe yiyataa ɗum.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Suuɗ hello ngoo jaŋŋooɓe?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Rutto hello ngoo e daartol?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Jaŋŋooɓe yiyataa %title kadi haa goɗɗo yaltina ɗum kadi.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title ina rutto e daartol ngam golle goɗɗe. Jaŋŋooɓe yiyataa ɗum tawo, ina sokli ndaarngo kesngo hade mum yaltineede.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Haaytu</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Sooynde ɗee ina e ndaarngo. Jaŋŋooɓe ina ndaara ɗe so goɗɗo mo winndaani yamre jooni ndee yaltinii ɗe.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

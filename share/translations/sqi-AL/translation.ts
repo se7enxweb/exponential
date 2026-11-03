@@ -76445,6 +76445,82 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <source>Static publishing</source>
         <translation>Publikimi statik</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>Në rishikim</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Lexuesit e shohin këtë faqe.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>E fshehur nga lexuesit derisa dikush ta publikojë.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Faqja është tani në Rishikim. Është e fshehur nga lexuesit derisa të publikohet.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Faqja është Publikuar: lexuesit e shohin tani.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Faqja është sërish Skicë. Është e fshehur nga lexuesit derisa të rishikohet dhe të publikohet.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Publiko tani</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Vetëm një përdorues me rolin %role që nuk e ka shkruar këtë version mund ta publikojë.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Temat e ndihmës në pritje të publikimit</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>E fsheh nga lexuesit derisa të publikohet sërish.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Më pas e kontrollon një rishikues. Lexuesit ende nuk e shohin.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Lexuesit e shohin menjëherë.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>E nxjerr nga rishikimi për punë të mëtejshme. Lexuesit nuk e shohin.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Ta fsheh këtë faqe nga lexuesit?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Ta kthej këtë faqe në Skicë?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Lexuesit nuk e shohin më %title derisa dikush ta publikojë sërish.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title kthehet në Skicë për punë të mëtejshme. Lexuesit ende nuk e shohin dhe i duhet një rishikim i ri para se të publikohet.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Anulo</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Këto tema janë në Rishikim. Lexuesit i shohin sapo t’i publikojë dikush që nuk e ka shkruar versionin aktual.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

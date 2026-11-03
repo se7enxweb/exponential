@@ -76506,6 +76506,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Static publishing</source>
         <translation>Статикалық жариялау</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>Тексеруде</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Оқырмандар бұл бетті көреді.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Біреу шығармайынша оқырмандардан жасырылған.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Бет қазір тексеруде. Шығарылғанша ол оқырмандардан жасырылған.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Бет шығарылған: оқырмандар оны қазір көреді.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Бет қайтадан жоба болды. Тексеріліп, шығарылғанша ол оқырмандардан жасырылған.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Қазір шығару</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Оны осы нұсқаны жазбаған, %role рөлі бар пайдаланушы ғана шығара алады.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Шығаруды күтіп тұрған анықтама тақырыптары</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Қайта шығарылғанша оны оқырмандардан жасырады.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Келесі кезекте оны тексеруші қарайды. Оқырмандар оны әлі көрмейді.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Оқырмандар оны бірден көреді.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Қосымша жұмыс үшін оны тексеруден алып шығады. Оқырмандар оны көрмейді.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Бұл бетті оқырмандардан жасыру керек пе?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Бұл бетті жобаға қайтару керек пе?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Біреу қайта шығармайынша оқырмандар %title көрмейді.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title қосымша жұмыс үшін жобаға қайтады. Оқырмандар оны әлі де көрмейді және шығармас бұрын оған жаңа тексеру қажет.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Бас тарту</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Бұл тақырыптар тексеруде. Ағымдағы нұсқаны жазбаған біреу оларды шығарғанда, оқырмандар оларды көреді.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

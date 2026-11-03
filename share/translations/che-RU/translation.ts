@@ -76506,6 +76506,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Static publishing</source>
         <translation>Статикан арахецар</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>Талламехь</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Ешархошна хӀара агӀо гуш ю.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Цхьаммо арахецалц ешархошна къайлах ю.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>АгӀо хӀинца Талламехь ю. Иза арахецалц ешархошна къайлах ю.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>АгӀо Арахецна ю: ешархошна иза хӀинца гуш ю.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>АгӀо юха Черновик ю. Талла а, арахеца а йиллалц иза ешархошна къайлах ю.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>ХӀинца арахеца</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>%role роль йолчу, хӀара верси ца язйинчу декъашхочо бен иза арахеца ца йиш.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Арахецаре хьоьжуш йолу гӀоьнан темаш</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Юха арахецалц иза ешархошна къайла йо.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>ТӀаккха иза талламхочо толлу. Ешархошна иза хӀинца а ца го.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Ешархошна иза сихха го.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Кхин болх бан иза талламера дӀайоккху. Ешархошна иза ца го.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>ХӀара агӀо ешархошна къайла йо?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>ХӀара агӀо Черновике юхайерзо?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Цхьаммо юха арахецалц ешархошна %title кхин ца го.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title кхин болх бан Черновике юхайоьрзу. Ешархошна иза хӀинца а ца го, арахецале керла таллам оьшу.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Юхадаккха</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>ХӀара темаш Талламехь ю. ХӀинцалера верси ца язйинчо уьш арахецча, ешархошна уьш го.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

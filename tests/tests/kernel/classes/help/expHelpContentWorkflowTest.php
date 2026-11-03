@@ -20,6 +20,10 @@
  *          refuses the author's release and records released help_ids
  *  HWF-11  the REST provider: routes, scope, never cached
  *  HWF-12  the templates: admin and admin4 alike, no inline CSS; the extension exphelpsite's rules name its templates
+ *  HWF-13  a step back (Review from Released, Draft from Review) asks first; exphelp/state shows the confirmation until
+ *          it is confirmed, Cancel changes nothing; the topics waiting for release, the longest waiting first
+ *  HWF-14  the status box, the steps with what they do, the confirmation page (POST, no script) and the waiting list;
+ *          a refused author is told who releases and where the waiting topics are listed
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -415,6 +419,74 @@ class expHelpContentWorkflowTest extends PHPUnit\Framework\TestCase
             if ( strpos( $text, '<form' ) !== false )
                 $this->assertStringContainsString( 'exphelp/feedback/', $text );
         }
+    }
+
+    /** HWF-13 */
+    public function testStepsBackAskFirst()
+    {
+        $this->assertTrue( expHelpContentWorkflow::needsConfirmation( 'released', 'review' ), 'back to Review hides the page' );
+        $this->assertTrue( expHelpContentWorkflow::needsConfirmation( 'review', 'draft' ) );
+        $this->assertFalse( expHelpContentWorkflow::needsConfirmation( 'draft', 'review' ) );
+        $this->assertFalse( expHelpContentWorkflow::needsConfirmation( 'review', 'released' ) );
+        $this->assertFalse( expHelpContentWorkflow::needsConfirmation( 'released', 'draft' ), 'not a step of the workflow' );
+        $this->assertFalse( expHelpContentWorkflow::needsConfirmation( '', 'draft' ) );
+        $this->assertTrue( expHelpContentWorkflow::hidesFromReaders( 'released', 'review' ) );
+        $this->assertFalse( expHelpContentWorkflow::hidesFromReaders( 'review', 'draft' ) );
+
+        $decide = array( 'Exponential\View\Kernel\Exphelp\State', 'decide' );
+        $this->assertSame( 'back', $decide( 'GET', 'review', 'released', false, false ) );
+        $this->assertSame( 'back', $decide( 'POST', '', 'released', false, false ) );
+        $this->assertSame( 'confirm', $decide( 'POST', 'review', 'released', false, false ), 'no step back without a confirmation' );
+        $this->assertSame( 'confirm', $decide( 'POST', 'draft', 'review', false, false ) );
+        $this->assertSame( 'assign', $decide( 'POST', 'review', 'released', true, false ) );
+        $this->assertSame( 'back', $decide( 'POST', 'review', 'released', true, true ), 'Cancel changes nothing' );
+        $this->assertSame( 'assign', $decide( 'POST', 'released', 'review', false, false ), 'a release needs no confirmation' );
+        $this->assertSame( 'assign', $decide( 'POST', 'review', 'draft', false, false ) );
+
+        $topics = array(
+            array( 'help_id' => 'b', 'title' => 'B', 'state' => 'review', 'object_id' => 2, 'modified' => 200 ),
+            array( 'help_id' => 'a', 'title' => '', 'state' => 'review', 'object_id' => 1, 'modified' => 100 ),
+            array( 'help_id' => 'c', 'title' => 'C', 'state' => 'released', 'object_id' => 3, 'modified' => 50 ),
+            array( 'help_id' => 'd', 'title' => 'D', 'state' => 'draft', 'object_id' => 4, 'modified' => 10 ),
+        );
+        $waiting = expHelpContentReview::waiting( $topics );
+        $this->assertSame( array( 'a', 'b' ), array_column( $waiting, 'help_id' ), 'in Review only, the longest waiting first' );
+        $this->assertSame( 'a', $waiting[0]['title'], 'no title: the help_id' );
+    }
+
+    /** HWF-14 */
+    public function testReviewControlsExplained()
+    {
+        $root = self::root();
+        foreach ( array( 'exphelp/state_confirm.tpl', 'exphelp/parts/dashboard_waiting.tpl', 'exphelp/manual.tpl', 'exphelp/dashboard.tpl' ) as $template )
+        {
+            $admin4 = (string)file_get_contents( "$root/design/admin4/templates/$template" );
+            $this->assertSame( $admin4, (string)file_get_contents( "$root/design/admin/templates/$template" ), "$template is the same in admin and admin4" );
+            $this->assertDoesNotMatchRegularExpression( '/<style|\sstyle="|<script|\son[a-z]+="/i', $admin4, $template );
+        }
+        $workflow = (string)file_get_contents( "$root/design/admin4/templates/exphelp/parts/topic_workflow.tpl" );
+        // the status box: the state as a badge and what it means for readers
+        foreach ( array( 'a4-help-wf-status', "'In review'", "'Readers see this page.'", "'Hidden from readers until someone releases it.'" ) as $needle )
+            $this->assertStringContainsString( $needle, $workflow );
+        // every step says what it does
+        foreach ( array( "'Hides it from readers until it is released again.'", "'Readers see it at once.'",
+                         "'A reviewer checks it next. Readers do not see it yet.'", "'Takes it out of review for more work. Readers do not see it.'" ) as $needle )
+            $this->assertStringContainsString( $needle, $workflow );
+        // the refused author (and who may not release) is told who can, and where the waiting topics are
+        $refused = substr( $workflow, (int)strpos( $workflow, "{case match='refused-author'}" ) );
+        $this->assertStringContainsString( "'Only a user with the role %role who did not write this version can release it.'", $refused );
+        $this->assertStringContainsString( "hash( '%role', '" . expHelpContentSchema::ROLE_RELEASE . "' )", $workflow );
+        $this->assertStringContainsString( "'exphelp/dashboard#help-dash-waiting'", $workflow );
+        $this->assertStringContainsString( "'Release now'", $workflow );
+        $this->assertStringContainsString( 'id="help-dash-waiting"', (string)file_get_contents( "$root/design/admin4/templates/exphelp/parts/dashboard_waiting.tpl" ) );
+        // the confirmation: the same HelpState posted again, confirmed or cancelled
+        $confirm = (string)file_get_contents( "$root/design/admin4/templates/exphelp/state_confirm.tpl" );
+        $this->assertStringContainsString( 'method="post"', $confirm );
+        foreach ( array( 'name="HelpState"', 'name="HelpStateConfirm"', 'name="HelpStateCancel"' ) as $needle )
+            $this->assertStringContainsString( $needle, $confirm );
+        $state = (string)file_get_contents( "$root/kernel/private/classes/views/exphelp/state.php" );
+        $this->assertStringContainsString( "design:exphelp/state_confirm.tpl", $state );
+        $this->assertStringNotContainsString( '$_GET', $state );
     }
 }
 

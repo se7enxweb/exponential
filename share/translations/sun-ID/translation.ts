@@ -76514,6 +76514,82 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
         <source>Static publishing</source>
         <translation>Publikasi statis</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>Dina pamariksaan</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Pamaca tiasa ningali kaca ieu.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Disumputkeun ti pamaca dugi ka aya nu ngarilis.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Kaca ayeuna nuju dina Pamariksaan. Disumputkeun ti pamaca dugi ka dirilis.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Kaca parantos Dirilis: pamaca ayeuna tiasa ningalina.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Kaca janten Draf deui. Disumputkeun ti pamaca dugi ka dipariksa sareng dirilis.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Rilis ayeuna</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Ngan pamaké nu boga peran %role sarta henteu nyerat vérsi ieu nu tiasa ngarilisna.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Topik pitulung nu ngantosan dirilis</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Nyumputkeun ti pamaca dugi ka dirilis deui.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Saterusna pamariksa bakal mariksa. Pamaca can tiasa ningali.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Pamaca langsung tiasa ningali.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Ngaluarkeun tina pamariksaan pikeun digarap deui. Pamaca henteu tiasa ningali.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Sumputkeun kaca ieu ti pamaca?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Balikkeun kaca ieu ka Draf?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Pamaca henteu tiasa deui ningali %title dugi ka aya nu ngarilis deui.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title balik deui ka Draf pikeun digarap deui. Pamaca tetep henteu tiasa ningali, sarta peryogi pamariksaan anyar saméméh dirilis.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Bolaykeun</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Topik-topik ieu nuju dina Pamariksaan. Pamaca tiasa ningali saparantos aya nu henteu nyerat vérsi ayeuna ngarilisna.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

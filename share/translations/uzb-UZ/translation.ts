@@ -76506,6 +76506,82 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
         <source>Static publishing</source>
         <translation>Statik nashr qilish</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>Koʻrib chiqilmoqda</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Oʻquvchilar bu sahifani koʻradi.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Kimdir nashr qilmaguncha oʻquvchilardan yashirin.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Sahifa hozir koʻrib chiqishda. Nashr qilinmaguncha oʻquvchilardan yashirin.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Sahifa nashr qilindi: oʻquvchilar endi uni koʻradi.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Sahifa yana qoralama boʻldi. Koʻrib chiqilib, nashr qilinmaguncha oʻquvchilardan yashirin.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Hozir nashr qilish</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Bu versiyani faqat %role roliga ega va uni yozmagan foydalanuvchi nashr qila oladi.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Nashrni kutayotgan yordam mavzulari</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Qayta nashr qilinmaguncha uni oʻquvchilardan yashiradi.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Keyin uni koʻrib chiquvchi tekshiradi. Oʻquvchilar uni hali koʻrmaydi.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Oʻquvchilar uni darhol koʻradi.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Qoʻshimcha ish uchun uni koʻrib chiqishdan oladi. Oʻquvchilar uni koʻrmaydi.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Bu sahifa oʻquvchilardan yashirilsinmi?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Bu sahifa qoralamaga qaytarilsinmi?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Kimdir qayta nashr qilmaguncha oʻquvchilar %title sahifasini endi koʻrmaydi.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title qoʻshimcha ish uchun qoralamaga qaytadi. Oʻquvchilar uni hali ham koʻrmaydi va nashrdan oldin yangi koʻrib chiqish kerak.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Bekor qilish</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Bu mavzular koʻrib chiqishda. Joriy versiyani yozmagan kishi ularni nashr qilgach, oʻquvchilar ularni koʻradi.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

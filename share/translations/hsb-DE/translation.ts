@@ -76506,6 +76506,82 @@ Musyće klasu suka z funkciju wuměny změnić.</translation>
         <source>Static publishing</source>
         <translation>Statiske wozjewjenje</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>W přepruwowanju</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Čitarjo tutu stronu widźa.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Za čitarjow schowana, doniž ju něchtó njewuda.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Strona je nětko w přepruwowanju. Je za čitarjow schowana, doniž so njewuda.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Strona je wudata: čitarjo ju nětko widźa.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Strona je zaso naćisk. Je za čitarjow schowana, doniž so njepřepruwuje a njewuda.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Nětko wudać</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Jenož wužiwar z rólu %role, kotryž tutu wersiju njeje napisał, móže ju wudać.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Temy pomocy, kotrež na wudaće čakaja</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Schowa ju před čitarjemi, doniž so znowa njewuda.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Jako přichodne ju přepruwowar kontroluje. Čitarjo ju hišće njewidźa.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Čitarjo ju hnydom widźa.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Wozmje ju z přepruwowanja za dalše dźěło. Čitarjo ju njewidźa.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Tutu stronu před čitarjemi schować?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Tutu stronu wróćo k naćiskej pósłać?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Čitarjo %title wjace njewidźa, doniž to něchtó znowa njewuda.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title dźe wróćo k naćiskej za dalše dźěło. Čitarjo to hišće njewidźa, a před wudaćom je nowe přepruwowanje trěbne.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Přetorhnyć</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Tute temy su w přepruwowanju. Čitarjo je widźa, hdyž je něchtó wuda, kiž aktualnu wersiju njeje napisał.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

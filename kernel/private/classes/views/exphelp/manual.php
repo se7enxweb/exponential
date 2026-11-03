@@ -61,6 +61,24 @@ class Manual extends \Exponential\Runnable\ModuleView
         // the e-books stored as file objects below E-books (rebuilt on release), those the user may read
         $tpl->setVariable( 'help_ebooks_stored', $manual && class_exists( 'expHelpContentEbooks' ) ? \expHelpContentEbooks::stored( $manual['remote_id'] ) : array() );
         $tpl->setVariable( 'help_json_url', $manual ? ltrim( \expHelp::url( 'context', 'manual/' . $manual['remote_id'] ), '/' ) : '' );
+        // the review workflow of the manual, as on a topic: for who may edit it or assign its state
+        $workflow = array( 'state' => '', 'steps' => array() );
+        $canEdit = false;
+        if ( $manual && class_exists( 'expHelpContentWorkflow' ) )
+        {
+            $object = $provider->repository()->object( (int)$manual['object_id'] );
+            if ( $object instanceof \eZContentObject )
+            {
+                $workflow = \expHelpContentWorkflow::transitions( $object );
+                $canEdit = (bool)$object->canEdit();
+            }
+        }
+        $userParameters = isset( $Params['UserParameters'] ) && is_array( $Params['UserParameters'] ) ? $Params['UserParameters'] : array();
+        $step = isset( $userParameters['step'] ) && is_string( $userParameters['step'] )
+                && preg_match( '/^(draft|review|released|refused|refused-author)$/', $userParameters['step'] ) ? $userParameters['step'] : '';
+        $tpl->setVariable( 'help_workflow', $workflow );
+        $tpl->setVariable( 'help_step', $step );
+        $tpl->setVariable( 'help_workflow_shown', $manual && ( $workflow['steps'] || $canEdit || $step !== '' ) );
 
         $path = array( array( 'url' => 'exphelp/dashboard', 'text' => \ezpI18n::tr( 'kernel/exphelp', 'Help' ) ),
                        array( 'url' => $manual ? 'exphelp/manual' : false, 'text' => \ezpI18n::tr( 'kernel/exphelp', 'Manuals' ) ) );

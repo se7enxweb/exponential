@@ -76506,6 +76506,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Static publishing</source>
         <translation>स्थिरप्रकाशनम्</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>समीक्षायाम्</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>पाठकाः इदं पृष्ठं पश्यन्ति।</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>यावत् कश्चित् विमोचयति तावत् पाठकेभ्यः गुप्तम्।</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>पृष्ठम् इदानीं समीक्षायाम् अस्ति। यावत् विमोच्यते तावत् पाठकेभ्यः गुप्तम्।</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>पृष्ठं प्रकाशितम् अस्ति: पाठकाः इदानीं तत् पश्यन्ति।</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>पृष्ठं पुनः प्रारूपम् अस्ति। यावत् समीक्ष्य विमोच्यते तावत् पाठकेभ्यः गुप्तम्।</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>इदानीं विमोचयतु</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>%role इति भूमिकायुक्तः यः उपयोक्ता इदं संस्करणं न अलिखत्, सः एव तत् विमोचयितुं शक्नोति।</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>विमोचनं प्रतीक्षमाणाः साहाय्यविषयाः</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>यावत् पुनः विमोच्यते तावत् पाठकेभ्यः गोपयति।</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>अनन्तरं समीक्षकः तत् परीक्षते। पाठकाः अद्यापि तत् न पश्यन्ति।</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>पाठकाः तत् सद्यः पश्यन्ति।</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>अधिककार्याय समीक्षायाः निष्कासयति। पाठकाः तत् न पश्यन्ति।</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>इदं पृष्ठं पाठकेभ्यः गोपयितव्यं किम्?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>इदं पृष्ठं पुनः प्रारूपे प्रेषयितव्यं किम्?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>यावत् कश्चित् पुनः विमोचयति तावत् पाठकाः %title न पश्यन्ति।</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title अधिककार्याय पुनः प्रारूपं गच्छति। पाठकाः अद्यापि तत् न पश्यन्ति, विमोचनात् पूर्वं च नूतना समीक्षा आवश्यकी।</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>रद्दीकरणम्</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>एते विषयाः समीक्षायां सन्ति। यः वर्तमानसंस्करणं न अलिखत् सः यदा तान् विमोचयति तदा पाठकाः तान् पश्यन्ति।</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

@@ -76445,6 +76445,82 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
         <source>Static publishing</source>
         <translation>Saqqummiussineq aalaakkaasoq</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>Misissorneqarpoq</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Atuartut quppernera una takusinnaavaat.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Atuartunit isertorneqarpoq allap saqqummiunnissaata tungaanut.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Quppernera maannakkut misissuinermiippoq. Saqqummiunneqarnissami tungaanut atuartunit isertorneqarpoq.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Quppernera saqqummersinneqarpoq: atuartut maannakkut takusinnaavaat.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Quppernera missingiutinngoqqippoq. Misissorneqarlunilu saqqummiunneqarnissami tungaanut atuartunit isertorneqarpoq.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Maannakkut saqqummiuguk</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Atuisoq %role-mik atuuffilik versionimik una allanngitsoq kisimi saqqummiussisinnaavoq.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Ikiuutini sammisat saqqummiunneqarnissamik utaqqisut</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Saqqummiunneqaqqinnissami tungaanut atuartunit isertorpaa.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Tulliani misissuisup misissussavaa. Atuartut suli takusinnaanngilaat.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Atuartut erniinnaq takusinnaavaat.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Suliarineqarnerunissaanut misissuinermit peerpaa. Atuartut takusinnaanngilaat.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Quppernera una atuartunit isertussaviuk?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Quppernera una missingiummut uterteqqissaviuk?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Atuartut %title takusinnaajunnaarpaat allap saqqummiuteqqinnissaata tungaanut.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title suliarineqarnerunissaanut missingiummut uterpoq. Atuartut suli takusinnaanngilaat, saqqummiunneqannginnermilu misissorneqaqqittariaqarpoq.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Taamaatiguk</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Sammisat uku misissuinermiipput. Atuartut takusinnaalissavaat versionimik maannakkut atuuttumik allanngitsup saqqummiukkaangagit.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

@@ -76506,6 +76506,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Static publishing</source>
         <translation>Pulusi tuʻumaʻu</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>ʻI he sivi</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>ʻOku vakai ʻa e kau lau ki he peesi ni.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Fakafufū mei he kau lau kae ʻoua ke tukuange ʻe ha taha.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>ʻOku ʻi he sivi ʻa e peesi he taimi ni. ʻOku fakafufū mei he kau lau kae ʻoua ke tukuange.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Kuo tukuange ʻa e peesi: ʻoku vakai ki ai ʻa e kau lau he taimi ni.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Kuo toe hoko ʻa e peesi ko e tohi fakataimi. ʻOku fakafufū mei he kau lau kae ʻoua ke sivi mo tukuange.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Tukuange he taimi ni</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Ko e tokotaha ngāue pē ʻoku ʻi ai hono fatongia %role pea naʻe ʻikai te ne tohi ʻa e paaki ni ʻe lava ke ne tukuange ia.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Ngaahi kaveinga tokoni ʻoku tatali ke tukuange</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>ʻOku fakafufū ia mei he kau lau kae ʻoua ke toe tukuange.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>ʻE sivi ia ʻe ha tokotaha sivi hoko. ʻOku teʻeki ke vakai ki ai ʻa e kau lau.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>ʻOku vakai leva ki ai ʻa e kau lau.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>ʻOku toʻo ia mei he sivi ke toe ngāueʻi. ʻOku ʻikai vakai ki ai ʻa e kau lau.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Fakafufū ʻa e peesi ni mei he kau lau?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Fakafoki ʻa e peesi ni ki he tohi fakataimi?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>ʻOku ʻikai toe vakai ʻa e kau lau ki he %title kae ʻoua ke toe tukuange ia ʻe ha taha.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>ʻOku foki ʻa e %title ki he tohi fakataimi ke toe ngāueʻi. ʻOku teʻeki ai ke vakai ki ai ʻa e kau lau, pea ʻoku fiemaʻu ha sivi foʻou kimuʻa pea tukuange.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Kaniseli</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>ʻOku ʻi he sivi ʻa e ngaahi kaveinga ni. ʻE vakai ki ai ʻa e kau lau ʻi he taimi ʻe tukuange ai ʻe ha taha naʻe ʻikai ke ne tohi ʻa e paaki lolotongá.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

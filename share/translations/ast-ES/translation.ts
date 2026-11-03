@@ -76506,6 +76506,82 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
         <source>Static publishing</source>
         <translation>Espublización estática</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>En revisión</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Los llectores ven esta páxina.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Anubrida a los llectores hasta que daquién la espublice.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>La páxina ta agora en revisión. Ta anubrida a los llectores hasta que s'espublice.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>La páxina ta espublizada: los llectores yá la ven.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>La páxina vuelve ser un borrador. Ta anubrida a los llectores hasta que se revise y s'espublice.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Espublizar agora</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Namás un usuariu col rol %role que nun escribiere esta versión pue espublizala.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Temes d'ayuda que tán esperando pola espublización</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Anúbrela a los llectores hasta que s'espublice otra vegada.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Darréu revísala un revisor. Los llectores entá nun la ven.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Los llectores vénla darréu.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Sácala de la revisión pa más trabayu. Los llectores nun la ven.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>¿Anubrir esta páxina a los llectores?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>¿Devolver esta páxina a borrador?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Los llectores yá nun ven %title hasta que daquién la espublice otra vegada.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title vuelve a borrador pa más trabayu. Los llectores siguen ensin vela y precisa una revisión nueva enantes d'espublizase.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Encaboxar</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Estos temes tán en revisión. Los llectores vénlos en cuantes que los espublice daquién que nun escribiere la versión actual.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

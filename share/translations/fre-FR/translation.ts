@@ -76186,6 +76186,82 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <source>Static publishing</source>
         <translation>Publication statique</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>En relecture</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Les lecteurs voient cette page.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Masquée aux lecteurs jusqu'à ce que quelqu'un la publie.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>La page est maintenant en relecture. Elle est masquée aux lecteurs jusqu'à sa publication.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>La page est publiée : les lecteurs la voient maintenant.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>La page est de nouveau un brouillon. Elle est masquée aux lecteurs jusqu'à sa relecture et sa publication.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Publier maintenant</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Seul un utilisateur ayant le rôle %role qui n'a pas écrit cette version peut la publier.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Rubriques d'aide en attente de publication</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>La masque aux lecteurs jusqu'à sa nouvelle publication.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Un relecteur la vérifie ensuite. Les lecteurs ne la voient pas encore.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Les lecteurs la voient immédiatement.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>La retire de la relecture pour la retravailler. Les lecteurs ne la voient pas.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Masquer cette page aux lecteurs ?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Renvoyer cette page au brouillon ?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Les lecteurs ne voient plus %title jusqu'à une nouvelle publication.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title retourne au brouillon pour être retravaillé. Les lecteurs ne le voient toujours pas, et une nouvelle relecture est nécessaire avant sa publication.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Annuler</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Ces rubriques sont en relecture. Les lecteurs les voient dès qu'une personne qui n'a pas écrit la version actuelle les publie.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

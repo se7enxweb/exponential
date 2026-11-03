@@ -76506,6 +76506,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Static publishing</source>
         <translation>བརྟན་པའི་དཔེ་སྐྲུན།</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>ཞིབ་བཤེར་ནང་ཡོད།</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>ཀློག་མི་ཚུ་གིས་ཤོག་ལེབ་འདི་མཐོང་ཚུགས།</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>མི་ཅིག་གིས་དཔེ་སྐྲུན་མ་འབད་ཚུན་ཚོད་ཀློག་མི་ཚུ་ལས་སྦ་བཞག་ཡོད།</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>ཤོག་ལེབ་དེ་ད་ལྟོ་ཞིབ་བཤེར་ནང་ཡོད། དཔེ་སྐྲུན་མ་འབད་ཚུན་ཚོད་ཀློག་མི་ཚུ་ལས་སྦ་བཞག་ཡོད།</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>ཤོག་ལེབ་དེ་དཔེ་སྐྲུན་འབད་ཡོདཔ་ཨིན། ཀློག་མི་ཚུ་གིས་ད་ལྟོ་མཐོང་ཚུགས།</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>ཤོག་ལེབ་དེ་ལོག་ཟིན་བྲིས་ཅིག་ཨིན། ཞིབ་བཤེར་དང་དཔེ་སྐྲུན་མ་འབད་ཚུན་ཚོད་ཀློག་མི་ཚུ་ལས་སྦ་བཞག་ཡོད།</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>ད་ལྟོ་དཔེ་སྐྲུན་འབད།</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>འགན་ཁུར་ %role ཡོད་མི་དང་ཐོན་རིམ་འདི་མ་འབྲིས་མི་ལག་ལེན་པ་རྐྱངམ་ཅིག་གིས་དཔེ་སྐྲུན་འབད་ཚུགས།</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>དཔེ་སྐྲུན་ལུ་སྒུག་སྡོད་པའི་རོགས་པའི་བརྗོད་དོན།</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>ལོག་དཔེ་སྐྲུན་མ་འབད་ཚུན་ཚོད་ཀློག་མི་ཚུ་ལས་སྦ་བཞགཔ་ཨིན།</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>དེ་ལས་ཞིབ་བཤེར་པ་ཅིག་གིས་བརྟག་ཞིབ་འབདཝ་ཨིན། ཀློག་མི་ཚུ་གིས་ད་ཚུན་མཐོང་མི་ཚུགས།</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>ཀློག་མི་ཚུ་གིས་དེ་འཕྲོ་ལས་མཐོང་ཚུགས།</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>ལཱ་ཧེང་བཀལ་འབད་ནིའི་དོན་ལུ་ཞིབ་བཤེར་ལས་ཕྱིར་བཏོནམ་ཨིན། ཀློག་མི་ཚུ་གིས་མཐོང་མི་ཚུགས།</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>ཤོག་ལེབ་འདི་ཀློག་མི་ཚུ་ལས་སྦ་ནི་ཨིན་ན?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>ཤོག་ལེབ་འདི་ཟིན་བྲིས་ལུ་ལོག་གཏང་ནི་ཨིན་ན?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>མི་ཅིག་གིས་ལོག་དཔེ་སྐྲུན་མ་འབད་ཚུན་ཚོད་ཀློག་མི་ཚུ་གིས་ %title མཐོང་མི་ཚུགས།</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title ལཱ་ཧེང་བཀལ་འབད་ནིའི་དོན་ལུ་ཟིན་བྲིས་ལུ་ཕྱིར་ལོག་འགྱོཝ་ཨིན། ཀློག་མི་ཚུ་གིས་ད་ལྟོ་ཡང་མཐོང་མི་ཚུགས། དཔེ་སྐྲུན་མ་འབད་བའི་ཧེ་མ་ཞིབ་བཤེར་གསརཔ་ཅིག་དགོཔ་ཨིན།</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ཆ་མེད་གཏང་།</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>བརྗོད་དོན་འདི་ཚུ་ཞིབ་བཤེར་ནང་ཡོད། ད་ལྟོའི་ཐོན་རིམ་མ་འབྲིས་མི་ཅིག་གིས་དཔེ་སྐྲུན་འབད་ཚར་བའི་ཤུལ་ལས་ཀློག་མི་ཚུ་གིས་མཐོང་ཚུགས།</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

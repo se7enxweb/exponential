@@ -76506,6 +76506,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Static publishing</source>
         <translation>ስታቲክ ምሕታም</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>ኣብ ግምገማ</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>ኣንበብቲ ነዚ ገጽ ይርእይዎ።</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>ሓደ ሰብ ክሳብ ዝለቕቖ ካብ ኣንበብቲ ሕቡእ እዩ።</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>እቲ ገጽ ሕጂ ኣብ ግምገማ እዩ። ክሳብ ዝልቀቕ ካብ ኣንበብቲ ሕቡእ እዩ።</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>እቲ ገጽ ተለቒቑ፦ ኣንበብቲ ሕጂ ይርእይዎ።</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>እቲ ገጽ ደጊሙ ንድፊ እዩ። ክሳብ ዝግምገምን ዝልቀቕን ካብ ኣንበብቲ ሕቡእ እዩ።</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>ሕጂ ልቐቕ</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>ነዚ ስሪት ክለቕቖ ዝኽእል፡ ተራ %role ዘለዎን ነዚ ስሪት ዘይጸሓፎን ተጠቃሚ ጥራይ እዩ።</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>ምልቃቕ ዝጽበዩ ርእስታት ሓገዝ</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>ደጊሙ ክሳብ ዝልቀቕ ካብ ኣንበብቲ ይሓብኦ።</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>ቀጺሉ ገምጋሚ ይፍትሾ። ኣንበብቲ ገና ኣይርእይዎን።</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>ኣንበብቲ ብቕጽበት ይርእይዎ።</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>ንተወሳኺ ስራሕ ካብ ግምገማ የውጽኦ። ኣንበብቲ ኣይርእይዎን።</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>ነዚ ገጽ ካብ ኣንበብቲ ክሕባእ ድዩ?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>ነዚ ገጽ ናብ ንድፊ ክምለስ ድዩ?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>ሓደ ሰብ ደጊሙ ክሳብ ዝለቕቖ ኣንበብቲ %title ኣይርእይዎን።</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title ንተወሳኺ ስራሕ ናብ ንድፊ ይምለስ። ኣንበብቲ ገና ኣይርእይዎን፡ ቅድሚ ምልቃቑ ድማ ሓድሽ ግምገማ የድልዮ።</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ሰርዝ</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>እዞም ርእስታት ኣብ ግምገማ እዮም። ነቲ ህሉው ስሪት ዘይጸሓፈ ሰብ ምስ ለቐቖም ኣንበብቲ ይርእይዎም።</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

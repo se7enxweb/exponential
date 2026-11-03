@@ -170,7 +170,9 @@ $ViewList['manual'] = array(
     'script' => 'manual.php',
     'functions' => array( 'read' ),
     'params' => array(),
-    'unordered_params' => array( 'format' => 'Format' ) );
+    // (step)/<state>: the result of a step of the review workflow, as on exphelp/topic
+    'unordered_params' => array( 'format' => 'Format',
+                                 'step' => 'Step' ) );
 
 // Context help as JSON for other clients: exphelp/context/<help_id> and exphelp/context/manual/<remote_id>, with
 // an ETag. Its own function, so a site can give it to readers without giving them the help of the administration

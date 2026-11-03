@@ -76506,6 +76506,82 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
         <source>Static publishing</source>
         <translation>Foillseachadh stataigeach</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>Ann an ath-sgrùdadh</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Chì luchd-leughaidh an duilleag seo.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Falaichte on luchd-leughaidh gus an sgaoil cuideigin i.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Tha an duilleag ann an Ath-sgrùdadh a-nis. Tha i falaichte on luchd-leughaidh gus an tèid a sgaoileadh.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Tha an duilleag air a sgaoileadh: chì luchd-leughaidh i a-nis.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Tha an duilleag na Dreachd a-rithist. Tha i falaichte on luchd-leughaidh gus an tèid a h-ath-sgrùdadh agus a sgaoileadh.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Sgaoil an-dràsta</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Chan fhaod ach cleachdaiche aig a bheil an dreuchd %role nach do sgrìobh an tionndadh seo a sgaoileadh.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Cuspairean cobhrach a’ feitheamh ri sgaoileadh</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Falaichidh seo on luchd-leughaidh e gus an tèid a sgaoileadh a-rithist.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Sgrùdaidh ath-sgrùdaire e an ath-thuras. Chan fhaic luchd-leughaidh e fhathast.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Chì luchd-leughaidh e sa bhad.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Bheir seo a-mach à ath-sgrùdadh e airson tuilleadh obrach. Chan fhaic luchd-leughaidh e.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>A bheil thu airson an duilleag seo fhalach on luchd-leughaidh?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>A bheil thu airson an duilleag seo a chur air ais gu Dreachd?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Chan fhaic luchd-leughaidh %title tuilleadh gus an sgaoil cuideigin e a-rithist.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>Thèid %title air ais gu Dreachd airson tuilleadh obrach. Chan fhaic luchd-leughaidh e fhathast, agus feumaidh e ath-sgrùdadh ùr mus tèid a sgaoileadh.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Sguir dheth</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Tha na cuspairean seo ann an Ath-sgrùdadh. Chì luchd-leughaidh iad nuair a sgaoileas cuideigin nach do sgrìobh an tionndadh làithreach iad.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

@@ -76506,6 +76506,82 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
         <source>Static publishing</source>
         <translation>Bilali jɔlen</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>Lajɛli la</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Kalandenw bɛ nin ɲɛ ye.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>A dogolen don kalandenw ma fo mɔgɔ dɔ k'a bila kɛnɛ kan.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Ɲɛ in bɛ lajɛli na sisan. A dogolen don kalandenw ma fo a ka bila kɛnɛ kan.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Ɲɛ in bilalen bɛ kɛnɛ kan: kalandenw bɛ a ye sisan.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Ɲɛ in ye bruyɔn ye tuma were. A dogolen don kalandenw ma fo a ka lajɛ ka bila kɛnɛ kan.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>A bila kɛnɛ kan sisan</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Baarakɛla min bolo %role jɔyɔrɔ bɛ, n'a ma nin wɛrisiyɔn sɛbɛn, o dɔrɔn de bɛ se k'a bila kɛnɛ kan.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Dɛmɛ kow minnu bɛ bila kɛnɛ kan makɔnɔ</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>A b'a dogo kalandenw ma fo a ka bila kɛnɛ kan tuma were.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Lajɛbaga dɔ b'a lajɛ o kɔfɛ. Kalandenw t'a ye fɔlɔ.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Kalandenw b'a ye o yɔrɔnin bɛɛ.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>A b'a bɔ lajɛli la ka baara wɛrɛ kɛ a la. Kalandenw t'a ye.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Nin ɲɛ dogo kalandenw ma wa?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Nin ɲɛ segin bruyɔn na wa?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Kalandenw tɛ %title ye tun fo mɔgɔ dɔ k'a bila kɛnɛ kan tuma were.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title bɛ segin bruyɔn na ka baara wɛrɛ kɛ a la. Kalandenw t'a ye hali sisan, wa lajɛli kura ka kan ka kɛ sani a ka bila kɛnɛ kan.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Dabila</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Nin kow bɛ lajɛli na. Kalandenw b'u ye ni mɔgɔ min ma sisan wɛrisiyɔn sɛbɛn y'u bila kɛnɛ kan.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

@@ -76463,6 +76463,82 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <source>Static publishing</source>
         <translation>Pubblicazione statica</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>In revisione</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>I lettori vedono questa pagina.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Nascosta ai lettori finché qualcuno non la rilascia.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>La pagina è ora in revisione. È nascosta ai lettori finché non viene rilasciata.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>La pagina è rilasciata: i lettori la vedono ora.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>La pagina è di nuovo una bozza. È nascosta ai lettori finché non viene revisionata e rilasciata.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Rilascia ora</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Solo un utente con il ruolo %role che non ha scritto questa versione può rilasciarla.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Argomenti della guida in attesa di rilascio</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>La nasconde ai lettori finché non viene rilasciata di nuovo.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Poi la controlla un revisore. I lettori non la vedono ancora.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>I lettori la vedono subito.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>La toglie dalla revisione per altre modifiche. I lettori non la vedono.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Nascondere questa pagina ai lettori?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Riportare questa pagina in bozza?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>I lettori non vedono più %title finché qualcuno non lo rilascia di nuovo.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title torna in bozza per altre modifiche. I lettori continuano a non vederlo e serve una nuova revisione prima del rilascio.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Annulla</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Questi argomenti sono in revisione. I lettori li vedono non appena qualcuno che non ha scritto la versione attuale li rilascia.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/secrets</name>

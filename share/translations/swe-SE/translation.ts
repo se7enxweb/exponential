@@ -76359,6 +76359,82 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <source>Static publishing</source>
         <translation>Statisk publicering</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>Granskas</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Läsarna ser den här sidan.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Dold för läsarna tills någon släpper den.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Sidan granskas nu. Den är dold för läsarna tills den släpps.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Sidan är släppt: läsarna ser den nu.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Sidan är ett utkast igen. Den är dold för läsarna tills den har granskats och släppts.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Släpp nu</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Bara en användare med rollen %role som inte skrev den här versionen kan släppa den.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Hjälpämnen som väntar på att släppas</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Döljer den för läsarna tills den släpps igen.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>En granskare kontrollerar den härnäst. Läsarna ser den inte än.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Läsarna ser den direkt.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Tar den ur granskning för mer arbete. Läsarna ser den inte.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Dölja den här sidan för läsarna?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Skicka tillbaka den här sidan till utkast?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Läsarna ser inte längre %title förrän någon släpper den igen.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title går tillbaka till utkast för mer arbete. Läsarna ser den fortfarande inte, och den behöver granskas på nytt innan den släpps.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Avbryt</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>De här ämnena granskas. Läsarna ser dem så snart någon som inte skrev den aktuella versionen släpper dem.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/secrets</name>

@@ -76506,6 +76506,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Static publishing</source>
         <translation>ⴰⵙⵙⵓⴼⵖ ⴰⵏⵙⵙⵓⵏ</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>ⴷⴳ ⵓⵙⵏⵇⴷ</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>ⵉⵎⵖⵔⴰⵏ ⵜⵜⵥⵕⵏ ⵜⴰⵙⵏⴰ ⴰ.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>ⵜⵏⵜⵍ ⵅⴼ ⵉⵎⵖⵔⴰⵏ ⴰⵔ ⵜⵜ ⵉⵙⵙⵓⴼⵖ ⵢⴰⵏ.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>ⵜⴰⵙⵏⴰ ⵜⵍⵍⴰ ⵜⵓⵔⴰ ⴷⴳ ⵓⵙⵏⵇⴷ. ⵜⵏⵜⵍ ⵅⴼ ⵉⵎⵖⵔⴰⵏ ⴰⵔ ⴷ ⵜⵜⵓⵙⵙⵓⴼⵖ.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>ⵜⴰⵙⵏⴰ ⵜⵜⵓⵙⵙⵓⴼⵖ: ⵉⵎⵖⵔⴰⵏ ⵜⵜⵥⵕⵏ ⵜⵜ ⵜⵓⵔⴰ.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>ⵜⴰⵙⵏⴰ ⵜⵓⵖⵓⵍ ⴷⴰⵖ ⴷ ⴰⵔⵡⵡⴰⵢ. ⵜⵏⵜⵍ ⵅⴼ ⵉⵎⵖⵔⴰⵏ ⴰⵔ ⴷ ⵜⵜⵓⵙⵏⵇⴷ ⵜⵜⵓⵙⵙⵓⴼⵖ.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>ⵙⵙⵓⴼⵖ ⵜⵓⵔⴰ</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>ⵖⴰⵙ ⴰⵏⵙⵙⵎⵔⵙ ⵖⵓⵔ ⵉⵍⵍⴰ ⵓⵎⵔⵙⵓ %role ⵓⵔ ⵢⵓⵔⵉ ⵜⵓⵏⵖⵉⵍⵜ ⴰ ⴰⵢ ⵉⵣⵎⵔⵏ ⴰⴷ ⵜⵜ ⵉⵙⵙⵓⴼⵖ.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>ⵉⵙⵏⵜⵍⵏ ⵏ ⵜⵡⵉⵙⵉ ⵍⵍⵉ ⵉⵜⵜⵔⴰⵊⵓⵏ ⴰⵙⵙⵓⴼⵖ</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>ⵜⵙⵏⵜⴰⵍ ⵜⵜ ⵅⴼ ⵉⵎⵖⵔⴰⵏ ⴰⵔ ⴷ ⵜⵜⵓⵙⵙⵓⴼⵖ ⴷⴰⵖ.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>ⴰⵙⵏⵇⴷⴰⵢ ⴰⴷ ⵜⵜ ⵉⵙⵏⵇⴷ ⴷⴼⴼⵉⵔ ⴰⵢⴰ. ⵉⵎⵖⵔⴰⵏ ⵓⵔ ⵜⵜ ⵥⵕⵉⵏ ⴰⵔ ⵜⵓⵔⴰ.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>ⵉⵎⵖⵔⴰⵏ ⴰⴷ ⵜⵜ ⵥⵕⵏ ⵖⵉⵍⴰ ⵖⵉⵍⴰ.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>ⵜⵙⵙⵓⴼⵓⵖ ⵜⵜ ⵙⴳ ⵓⵙⵏⵇⴷ ⵉ ⵓⵙⵡⵓⵔⵉ ⵏⵏⵉⴹⵏ. ⵉⵎⵖⵔⴰⵏ ⵓⵔ ⵜⵜ ⵜⵜⵥⵕⴰⵏ.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>ⴰⴷ ⵜⵙⵏⵜⵍⴷ ⵜⴰⵙⵏⴰ ⴰ ⵅⴼ ⵉⵎⵖⵔⴰⵏ?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>ⴰⴷ ⵜⵔⵔⴷ ⵜⴰⵙⵏⴰ ⴰ ⵖⵔ ⵓⵔⵡⵡⴰⵢ?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>ⵉⵎⵖⵔⴰⵏ ⵓⵔ ⵙⵓⵍ ⵜⵜⵥⵕⴰⵏ %title ⴰⵔ ⵜⵜ ⵉⵙⵙⵓⴼⵖ ⵢⴰⵏ ⴷⴰⵖ.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title ⵜⵓⵖⵓⵍ ⵖⵔ ⵓⵔⵡⵡⴰⵢ ⵉ ⵓⵙⵡⵓⵔⵉ ⵏⵏⵉⴹⵏ. ⵉⵎⵖⵔⴰⵏ ⵓⵔ ⵜⵜ ⵙⵓⵍ ⵜⵜⵥⵕⴰⵏ, ⵜⵔⴰ ⴰⵙⵏⵇⴷ ⴰⵎⴰⵢⵏⵓ ⵇⴱⵍ ⴰⴷ ⵜⵜⵓⵙⵙⵓⴼⵖ.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ⵙⵔ</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>ⵉⵙⵏⵜⵍⵏ ⴰ ⵍⵍⴰⵏ ⴷⴳ ⵓⵙⵏⵇⴷ. ⵉⵎⵖⵔⴰⵏ ⴰⴷ ⵜⵏ ⵥⵕⵏ ⵎⵍⵉ ⵜⵏ ⵉⵙⵙⵓⴼⵖ ⵢⴰⵏ ⵓⵔ ⵢⵓⵔⵉ ⵜⵓⵏⵖⵉⵍⵜ ⵜⴰⵎⵉⵔⴰⵏⵜ.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

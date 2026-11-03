@@ -76506,6 +76506,82 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
         <source>Static publishing</source>
         <translation>Whakaputanga pūmau</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>Kei te arotakehia</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Ka kite ngā kaipānui i tēnei whārangi.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Ka hunaia i ngā kaipānui kia tukuna rā anō e tētahi.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Kei te Arotake te whārangi ināianei. Ka hunaia i ngā kaipānui kia tukuna rā anō.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Kua Tukuna te whārangi: ka kite ngā kaipānui ināianei.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>He Hukihuki anō te whārangi. Ka hunaia i ngā kaipānui kia arotakehia, kia tukuna rā anō.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Tukuna ināianei</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Ko te kaiwhakamahi anake he tūranga %role tōna, kāore nāna i tuhi tēnei putanga, ka āhei ki te tuku.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Ngā kaupapa āwhina e tatari ana kia tukuna</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Ka huna i ngā kaipānui kia tukuna anō rā anō.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Ka tirohia e tētahi kaiarotake ā muri ake. Kāore anō ngā kaipānui kia kite.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Ka kite tonu ngā kaipānui.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Ka tangohia i te arotake kia mahia anō. Kāore ngā kaipānui e kite.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Me huna tēnei whārangi i ngā kaipānui?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Me whakahoki tēnei whārangi ki te Hukihuki?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Kāore ngā kaipānui e kite anō i a %title kia tukuna anō rā anō e tētahi.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>Ka hoki a %title ki te Hukihuki kia mahia anō. Kāore tonu ngā kaipānui e kite, ā, me arotake anō i mua i te tukunga.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Whakakore</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Kei te Arotake ēnei kaupapa. Ka kite ngā kaipānui ina tukuna e tētahi kāore nāna i tuhi te putanga o nāianei.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

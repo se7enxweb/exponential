@@ -76506,6 +76506,82 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
         <source>Static publishing</source>
         <translation>Argitalpen estatikoa</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>Berrikuspenean</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Irakurleek orri hau ikusten dute.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Irakurleentzat ezkutatuta norbaitek argitaratu arte.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Orria berrikuspenean dago orain. Irakurleentzat ezkutatuta dago argitaratu arte.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Orria argitaratuta dago: irakurleek orain ikusten dute.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Orria berriro zirriborroa da. Irakurleentzat ezkutatuta dago berrikusi eta argitaratu arte.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Argitaratu orain</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>%role rola duen eta bertsio hau idatzi ez duen erabiltzaile batek bakarrik argitara dezake.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Argitaratzeko zain dauden laguntza-gaiak</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Irakurleei ezkutatzen die berriro argitaratu arte.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Ondoren berrikusle batek egiaztatuko du. Irakurleek oraindik ez dute ikusten.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Irakurleek berehala ikusten dute.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Berrikuspenetik ateratzen du lan gehiago egiteko. Irakurleek ez dute ikusten.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Orri hau irakurleei ezkutatu?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Orri hau zirriborrora itzuli?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Irakurleek ez dute gehiago %title ikusten norbaitek berriro argitaratu arte.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title zirriborrora itzultzen da lan gehiago egiteko. Irakurleek oraindik ez dute ikusten, eta berrikuspen berri bat behar du argitaratu aurretik.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Utzi</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Gai hauek berrikuspenean daude. Irakurleek ikusiko dituzte uneko bertsioa idatzi ez duen norbaitek argitaratzen dituenean.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

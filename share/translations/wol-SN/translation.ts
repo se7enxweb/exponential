@@ -76506,6 +76506,82 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
         <source>Static publishing</source>
         <translation>Siiwal bu taxaw</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>Ci seetlu</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Jàngkat yi gis nañu xët wii.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Dañu ko nëbb jàngkat yi ba keneen siiwal ko.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Xët wi nekk na ci seetlu léegi. Dañu ko nëbb jàngkat yi ba ñu siiwal ko.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Xët wi siiwalees na: jàngkat yi ñuy gis léegi.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Xët wi dellu na brouyoŋ. Dañu ko nëbb jàngkat yi ba ñu seetlu ko te siiwal ko.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Siiwal léegi</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Jëfandikukat bu am wàll %role te bindul sumb bii rekk moo man koo siiwal.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Mbir yu ndimbal yuy xaar ñu siiwal leen</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Dafay ko nëbb jàngkat yi ba ñu siiwaalaat ko.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Ab seetkat dina ko seet ci topp. Jàngkat yi gisaguñu ko.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Jàngkat yi dinañu ko gis ci saa si.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Dafay génne ko ci seetlu ngir liggéey ko ba gën. Jàngkat yi gisuñu ko.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Nëbb xët wii jàngkat yi?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Delloo xët wii ci brouyoŋ?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Jàngkat yi gisatuñu %title ba keneen siiwaalaat ko.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title dellu na ci brouyoŋ ngir liggéey ko ba gën. Jàngkat yi gisaguñu ko, te dafa soxla seetlu bu bees laata ñu koy siiwal.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Neenal</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Mbir yii nekk nañu ci seetlu. Jàngkat yi dinañu leen gis bu keneen ku bindul sumb bii siiwalee leen.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

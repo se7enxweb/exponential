@@ -75061,6 +75061,82 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <source>Static publishing</source>
         <translation>Statik yayımlama</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>İncelemede</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Okuyucular bu sayfayı görüyor.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Biri yayımlayana kadar okuyuculardan gizli.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Sayfa şimdi incelemede. Yayımlanana kadar okuyuculardan gizli.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Sayfa yayımlandı: okuyucular artık görüyor.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Sayfa yeniden taslak. İncelenip yayımlanana kadar okuyuculardan gizli.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Şimdi yayımla</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Bu sürümü yalnızca %role rolüne sahip ve sürümü yazmamış bir kullanıcı yayımlayabilir.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Yayımlanmayı bekleyen yardım konuları</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Yeniden yayımlanana kadar okuyuculardan gizler.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Ardından bir inceleyici kontrol eder. Okuyucular henüz görmüyor.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Okuyucular hemen görür.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Daha fazla çalışma için incelemeden çıkarır. Okuyucular görmez.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Bu sayfa okuyuculardan gizlensin mi?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Bu sayfa taslağa geri gönderilsin mi?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Biri yeniden yayımlayana kadar okuyucular %title sayfasını artık görmüyor.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title daha fazla çalışma için taslağa geri dönüyor. Okuyucular hâlâ görmüyor ve yayımlanmadan önce yeni bir incelemeden geçmesi gerekiyor.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>İptal</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Bu konular incelemede. Geçerli sürümü yazmamış biri yayımladığında okuyucular bunları görür.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/secrets</name>

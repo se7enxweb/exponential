@@ -76506,6 +76506,82 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
         <source>Static publishing</source>
         <translation>Gũcabithia gwa tũtũ</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>Thĩinĩ wa Kũrora</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Athomi nĩmaroraga ũrũpa ũyũ.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Nĩ ũhithĩtwo athomi nginya mũndũ aũrekererie.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Ũrũpa ũyũ ũrĩ thĩinĩ wa Kũrora rĩu. Nĩ ũhithĩtwo athomi nginya ũrekererio.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Ũrũpa ũyũ nĩ ũrekereirio: athomi nĩmaũrora rĩu.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Ũrũpa ũyũ nĩ ndrafti rĩngĩ. Nĩ ũhithĩtwo athomi nginya ũrorwo na ũrekererio.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Rekereria rĩu</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>No mũhũthiri ũrĩ na rolo ya %role ũtaandĩkire ũrutwo ũyũ wiki ũngĩũrekereria.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Mathĩna ma ũteithio marĩa merigĩrĩire kũrekererio</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Nĩ ũũhitha athomi nginya ũrekererio rĩngĩ.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Mũrori nĩwe ũkaũrora thutha. Athomi matiraũrora.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Athomi nĩmaũrora o rĩmwe.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Nĩ ũũruta kũrora nĩ ũndũ wa wĩra ũngĩ. Athomi matiũroraga.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Hitha ũrũpa ũyũ athomi?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Cookia ũrũpa ũyũ kũrĩ Ndrafti?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Athomi matikũrora %title rĩngĩ nginya mũndũ aũrekererie rĩngĩ.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title nĩ kĩracooka kũrĩ Ndrafti nĩ ũndũ wa wĩra ũngĩ. Athomi o na rĩu matikĩroraga, na nĩ kĩbatarĩte kũrorwo kwerũ mbere ya kũrekererio.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Tiga</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Mathĩna maya marĩ thĩinĩ wa Kũrora. Athomi nĩmakamarora o rĩrĩa mũndũ ũtaandĩkire ũrutwo wa rĩu amarekereria.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

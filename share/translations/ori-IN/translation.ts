@@ -76504,6 +76504,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Static publishing</source>
         <translation>ଷ୍ଟାଟିକ୍ ପ୍ରକାଶନ</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>ସମୀକ୍ଷାରେ</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>ପାଠକମାନେ ଏହି ପୃଷ୍ଠା ଦେଖନ୍ତି।</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>କେହି ରିଲିଜ୍ କରିବା ପର୍ଯ୍ୟନ୍ତ ପାଠକମାନଙ୍କଠାରୁ ଲୁଚାଯାଇଛି।</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>ପୃଷ୍ଠାଟି ବର୍ତ୍ତମାନ ସମୀକ୍ଷାରେ ଅଛି। ରିଲିଜ୍ ହେବା ପର୍ଯ୍ୟନ୍ତ ଏହା ପାଠକମାନଙ୍କଠାରୁ ଲୁଚାଯାଇଛି।</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>ପୃଷ୍ଠାଟି ରିଲିଜ୍ ହୋଇଛି: ପାଠକମାନେ ଏହାକୁ ବର୍ତ୍ତମାନ ଦେଖନ୍ତି।</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>ପୃଷ୍ଠାଟି ପୁଣି ଏକ ଖସଡ଼ା। ସମୀକ୍ଷା ଓ ରିଲିଜ୍ ହେବା ପର୍ଯ୍ୟନ୍ତ ଏହା ପାଠକମାନଙ୍କଠାରୁ ଲୁଚାଯାଇଛି।</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>ବର୍ତ୍ତମାନ ରିଲିଜ୍ କରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>କେବଳ %role ଭୂମିକା ଥିବା ଏବଂ ଏହି ସଂସ୍କରଣ ଲେଖିନଥିବା ଜଣେ ଉପଯୋଗକର୍ତ୍ତା ଏହାକୁ ରିଲିଜ୍ କରିପାରିବେ।</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>ରିଲିଜ୍ ପାଇଁ ଅପେକ୍ଷାରତ ସାହାଯ୍ୟ ବିଷୟ</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>ପୁଣି ରିଲିଜ୍ ହେବା ପର୍ଯ୍ୟନ୍ତ ଏହାକୁ ପାଠକମାନଙ୍କଠାରୁ ଲୁଚାଏ।</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>ପରବର୍ତ୍ତୀ ସମୟରେ ଜଣେ ସମୀକ୍ଷକ ଏହାକୁ ଯାଞ୍ଚ କରିବେ। ପାଠକମାନେ ଏହାକୁ ଏପର୍ଯ୍ୟନ୍ତ ଦେଖନ୍ତି ନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>ପାଠକମାନେ ଏହାକୁ ତୁରନ୍ତ ଦେଖନ୍ତି।</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>ଅଧିକ କାମ ପାଇଁ ଏହାକୁ ସମୀକ୍ଷାରୁ ବାହାର କରେ। ପାଠକମାନେ ଏହାକୁ ଦେଖନ୍ତି ନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>ଏହି ପୃଷ୍ଠାକୁ ପାଠକମାନଙ୍କଠାରୁ ଲୁଚାଇବେ କି?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>ଏହି ପୃଷ୍ଠାକୁ ପୁଣି ଖସଡ଼ାକୁ ପଠାଇବେ କି?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>କେହି ପୁଣି ରିଲିଜ୍ କରିବା ପର୍ଯ୍ୟନ୍ତ ପାଠକମାନେ %title ଆଉ ଦେଖିବେ ନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>ଅଧିକ କାମ ପାଇଁ %title ପୁଣି ଖସଡ଼ାକୁ ଫେରିଯାଏ। ପାଠକମାନେ ଏହାକୁ ଏବେ ବି ଦେଖନ୍ତି ନାହିଁ, ଏବଂ ରିଲିଜ୍ ପୂର୍ବରୁ ଏହାର ନୂଆ ସମୀକ୍ଷା ଆବଶ୍ୟକ।</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ବାତିଲ କରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>ଏହି ବିଷୟଗୁଡ଼ିକ ସମୀକ୍ଷାରେ ଅଛି। ବର୍ତ୍ତମାନର ସଂସ୍କରଣ ଲେଖିନଥିବା କେହି ରିଲିଜ୍ କଲେ ପାଠକମାନେ ସେଗୁଡ଼ିକୁ ଦେଖନ୍ତି।</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

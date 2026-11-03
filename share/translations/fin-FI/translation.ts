@@ -76445,6 +76445,82 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
         <source>Static publishing</source>
         <translation>Staattinen julkaisu</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>Tarkistuksessa</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Lukijat näkevät tämän sivun.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Piilotettu lukijoilta, kunnes joku julkaisee sen.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Sivu on nyt tarkistuksessa. Se on piilotettu lukijoilta, kunnes se julkaistaan.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Sivu on julkaistu: lukijat näkevät sen nyt.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Sivu on taas luonnos. Se on piilotettu lukijoilta, kunnes se tarkistetaan ja julkaistaan.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Julkaise nyt</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Vain käyttäjä, jolla on rooli %role ja joka ei kirjoittanut tätä versiota, voi julkaista sen.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Julkaisua odottavat ohjeaiheet</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Piilottaa sen lukijoilta, kunnes se julkaistaan uudelleen.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Seuraavaksi tarkistaja käy sen läpi. Lukijat eivät vielä näe sitä.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Lukijat näkevät sen heti.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Poistaa sen tarkistuksesta lisätyötä varten. Lukijat eivät näe sitä.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Piilotetaanko tämä sivu lukijoilta?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Palautetaanko tämä sivu luonnokseksi?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Lukijat eivät enää näe sivua %title, ennen kuin joku julkaisee sen uudelleen.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title palaa luonnokseksi lisätyötä varten. Lukijat eivät vieläkään näe sitä, ja se tarvitsee uuden tarkistuksen ennen julkaisua.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Peruuta</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Nämä aiheet ovat tarkistuksessa. Lukijat näkevät ne, kun joku, joka ei kirjoittanut nykyistä versiota, julkaisee ne.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

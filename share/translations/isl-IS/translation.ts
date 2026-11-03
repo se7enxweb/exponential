@@ -76445,6 +76445,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Static publishing</source>
         <translation>Kyrrstæð birting</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>Í yfirferð</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Lesendur sjá þessa síðu.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Falin lesendum þar til einhver gefur hana út.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Síðan er nú í Yfirferð. Hún er falin lesendum þar til hún er gefin út.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Síðan er Gefin út: lesendur sjá hana núna.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Síðan er aftur Drög. Hún er falin lesendum þar til hún hefur verið yfirfarin og gefin út.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Gefa út núna</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Aðeins notandi með hlutverkið %role sem skrifaði ekki þessa útgáfu getur gefið hana út.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Hjálparefni sem bíða útgáfu</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Felur hana fyrir lesendum þar til hún er gefin út aftur.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Yfirlesari fer næst yfir hana. Lesendur sjá hana ekki enn.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Lesendur sjá hana strax.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Tekur hana úr yfirferð til frekari vinnslu. Lesendur sjá hana ekki.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Fela þessa síðu fyrir lesendum?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Senda þessa síðu aftur í Drög?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Lesendur sjá %title ekki lengur fyrr en einhver gefur það út aftur.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title fer aftur í Drög til frekari vinnslu. Lesendur sjá það enn ekki og það þarf nýja yfirferð áður en það er gefið út.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Hætta við</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Þessi efni eru í Yfirferð. Lesendur sjá þau um leið og einhver sem skrifaði ekki núverandi útgáfu gefur þau út.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

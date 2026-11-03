@@ -76504,6 +76504,82 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
         <source>Static publishing</source>
         <translation>Wallafawa ta tsaye</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>A cikin Bita</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Masu karatu suna ganin wannan shafi.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>An ɓoye shi daga masu karatu har sai wani ya sake shi.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Shafin yana cikin Bita yanzu. An ɓoye shi daga masu karatu har sai an sake shi.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>An saki shafin: masu karatu suna ganinsa yanzu.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Shafin ya sake zama Daftari. An ɓoye shi daga masu karatu har sai an yi masa bita kuma an sake shi.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Saki yanzu</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Mai amfani mai aikin %role wanda bai rubuta wannan sigar ba ne kaɗai zai iya sakin ta.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Batutuwan taimako da ke jiran saki</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Yana ɓoye shi daga masu karatu har sai an sake sakin sa.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Mai bita zai duba shi na gaba. Masu karatu ba sa ganinsa tukuna.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Masu karatu suna ganinsa nan take.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Yana cire shi daga bita don ƙarin aiki. Masu karatu ba sa ganinsa.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>A ɓoye wannan shafi daga masu karatu?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>A mayar da wannan shafi zuwa Daftari?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Masu karatu ba sa ganin %title kuma har sai wani ya sake sakin sa.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title yana komawa zuwa Daftari don ƙarin aiki. Masu karatu har yanzu ba sa ganinsa, kuma yana buƙatar sabuwar bita kafin a sake shi.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Soke</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Waɗannan batutuwa suna cikin Bita. Masu karatu za su gan su da zarar wani wanda bai rubuta sigar yanzu ba ya sake su.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

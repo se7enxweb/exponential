@@ -76504,6 +76504,82 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
         <source>Static publishing</source>
         <translation>Uchapishaji tuli</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>Kwenye ukaguzi</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Wasomaji wanaona ukurasa huu.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Umefichwa kwa wasomaji hadi mtu autoe.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Ukurasa sasa uko kwenye ukaguzi. Umefichwa kwa wasomaji hadi utolewe.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Ukurasa umetolewa: wasomaji wanauona sasa.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Ukurasa ni rasimu tena. Umefichwa kwa wasomaji hadi ukaguliwe na utolewe.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Toa sasa</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Ni mtumiaji mwenye jukumu la %role ambaye hakuandika toleo hili pekee anayeweza kulitoa.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Mada za msaada zinazosubiri kutolewa</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Huuficha kwa wasomaji hadi utolewe tena.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Mkaguzi ataukagua baadaye. Wasomaji bado hawauoni.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Wasomaji wanauona mara moja.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Huuondoa kwenye ukaguzi kwa kazi zaidi. Wasomaji hawauoni.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Ficha ukurasa huu kwa wasomaji?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Rudisha ukurasa huu kwenye rasimu?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Wasomaji hawaoni tena %title hadi mtu autoe tena.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title unarudi kwenye rasimu kwa kazi zaidi. Wasomaji bado hawauoni, na unahitaji ukaguzi mpya kabla ya kutolewa.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Ghairi</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Mada hizi ziko kwenye ukaguzi. Wasomaji wanaziona mara tu mtu ambaye hakuandika toleo la sasa anapozitoa.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

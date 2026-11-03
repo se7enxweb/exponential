@@ -76506,6 +76506,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Static publishing</source>
         <translation>ස්ථිතික ප්‍රකාශනය</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>සමාලෝචනයේ</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>පාඨකයින්ට මෙම පිටුව පෙනේ.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>යමෙකු නිකුත් කරන තුරු පාඨකයින්ගෙන් සඟවා ඇත.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>පිටුව දැන් සමාලෝචනයේ පවතී. එය නිකුත් කරන තුරු පාඨකයින්ගෙන් සඟවා ඇත.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>පිටුව නිකුත් කර ඇත: පාඨකයින්ට දැන් එය පෙනේ.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>පිටුව නැවතත් කෙටුම්පතකි. එය සමාලෝචනය කර නිකුත් කරන තුරු පාඨකයින්ගෙන් සඟවා ඇත.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>දැන් නිකුත් කරන්න</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>මෙම අනුවාදය නිකුත් කළ හැක්කේ %role භූමිකාව ඇති, එය නොලියූ පරිශීලකයෙකුට පමණි.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>නිකුත් කිරීම සඳහා රැඳී සිටින උදව් මාතෘකා</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>නැවත නිකුත් කරන තුරු එය පාඨකයින්ගෙන් සඟවයි.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>ඊළඟට සමාලෝචකයෙකු එය පරීක්ෂා කරයි. පාඨකයින්ට තවම එය නොපෙනේ.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>පාඨකයින්ට එය වහාම පෙනේ.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>තවත් වැඩ සඳහා එය සමාලෝචනයෙන් ඉවත් කරයි. පාඨකයින්ට එය නොපෙනේ.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>මෙම පිටුව පාඨකයින්ගෙන් සඟවන්නද?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>මෙම පිටුව කෙටුම්පතට ආපසු යවන්නද?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>යමෙකු නැවත නිකුත් කරන තුරු පාඨකයින්ට %title තවදුරටත් නොපෙනේ.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title තවත් වැඩ සඳහා කෙටුම්පතට ආපසු යයි. පාඨකයින්ට තවමත් එය නොපෙනේ, නිකුත් කිරීමට පෙර නව සමාලෝචනයක් අවශ්‍යයි.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>අවලංගු කරන්න</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>මෙම මාතෘකා සමාලෝචනයේ ඇත. වත්මන් අනුවාදය නොලියූ අයෙකු ඒවා නිකුත් කළ විගස පාඨකයින්ට ඒවා පෙනේ.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

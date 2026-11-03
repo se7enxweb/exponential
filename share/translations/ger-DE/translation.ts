@@ -83452,6 +83452,82 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Static publishing</source>
         <translation>Statisches Veröffentlichen</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>In Prüfung</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Leser sehen diese Seite.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Für Leser verborgen, bis jemand sie freigibt.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Die Seite ist jetzt in Prüfung. Sie ist für Leser verborgen, bis sie freigegeben ist.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Die Seite ist freigegeben: Leser sehen sie jetzt.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Die Seite ist wieder ein Entwurf. Sie ist für Leser verborgen, bis sie geprüft und freigegeben ist.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Jetzt freigeben</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Nur ein Benutzer mit der Rolle %role, der diese Version nicht geschrieben hat, kann sie freigeben.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Hilfethemen, die auf Freigabe warten</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Verbirgt sie vor Lesern, bis sie wieder freigegeben ist.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Als Nächstes prüft sie jemand. Leser sehen sie noch nicht.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Leser sehen sie sofort.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Nimmt sie zur weiteren Arbeit aus der Prüfung. Leser sehen sie nicht.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Diese Seite vor Lesern verbergen?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Diese Seite zurück zum Entwurf geben?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Leser sehen %title nicht mehr, bis jemand die Seite wieder freigibt.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title geht zur weiteren Arbeit zurück zum Entwurf. Leser sehen die Seite weiterhin nicht, und sie braucht eine neue Prüfung, bevor sie freigegeben wird.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Abbrechen</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Diese Themen sind in Prüfung. Leser sehen sie, sobald jemand sie freigibt, der die aktuelle Version nicht geschrieben hat.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

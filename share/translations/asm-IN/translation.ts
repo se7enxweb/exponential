@@ -76506,6 +76506,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Static publishing</source>
         <translation>স্থিতিশীল প্ৰকাশন</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>পৰ্যালোচনাত</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>পাঠকে এই পৃষ্ঠাটো দেখে।</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>কোনোবাই ৰিলিজ নকৰালৈকে পাঠকৰ পৰা লুকুৱাই ৰখা হৈছে।</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>পৃষ্ঠাটো এতিয়া পৰ্যালোচনাত আছে। ৰিলিজ নকৰালৈকে ই পাঠকৰ পৰা লুকুৱাই ৰখা হৈছে।</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>পৃষ্ঠাটো ৰিলিজ কৰা হৈছে: পাঠকে এতিয়া ইয়াক দেখে।</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>পৃষ্ঠাটো পুনৰ খচৰা হৈছে। পৰ্যালোচনা আৰু ৰিলিজ নকৰালৈকে ই পাঠকৰ পৰা লুকুৱাই ৰখা হৈছে।</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>এতিয়াই ৰিলিজ কৰক</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>কেৱল %role ভূমিকা থকা আৰু এই সংস্কৰণটো নিলিখা ব্যৱহাৰকাৰীয়েহে ইয়াক ৰিলিজ কৰিব পাৰে।</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>ৰিলিজৰ অপেক্ষাত থকা সহায় বিষয়সমূহ</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>পুনৰ ৰিলিজ নকৰালৈকে ইয়াক পাঠকৰ পৰা লুকুৱাই ৰাখে।</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>ইয়াৰ পিছত এজন পৰ্যালোচকে ইয়াক পৰীক্ষা কৰে। পাঠকে এতিয়াও ইয়াক নেদেখে।</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>পাঠকে লগে লগে ইয়াক দেখে।</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>অধিক কামৰ বাবে ইয়াক পৰ্যালোচনাৰ পৰা উলিয়াই আনে। পাঠকে ইয়াক নেদেখে।</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>এই পৃষ্ঠাটো পাঠকৰ পৰা লুকুৱাব নেকি?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>এই পৃষ্ঠাটো খচৰালৈ ঘূৰাই পঠিয়াব নেকি?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>কোনোবাই পুনৰ ৰিলিজ নকৰালৈকে পাঠকে %title আৰু নেদেখে।</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title অধিক কামৰ বাবে খচৰালৈ উভতি যায়। পাঠকে এতিয়াও ইয়াক নেদেখে, আৰু ৰিলিজৰ আগতে ইয়াৰ নতুন পৰ্যালোচনাৰ প্ৰয়োজন।</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>বাতিল কৰক</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>এই বিষয়সমূহ পৰ্যালোচনাত আছে। বৰ্তমানৰ সংস্কৰণটো নিলিখা কোনোবাই ৰিলিজ কৰাৰ পিছত পাঠকে সেইবোৰ দেখে।</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

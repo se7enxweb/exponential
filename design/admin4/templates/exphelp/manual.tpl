@@ -7,7 +7,7 @@
    url, preview, children), help_manuals (title, subtitle, shortdesc, remote_id, edition, preview), help_ebook_formats (epub, pdf), help_dita (the DITA download), help_ebooks_stored (format, name, url, size, modified,
    version, node_url: the e-books stored as file objects), help_manuals_build (null, or manuals, total while the
    background job builds the manuals from the Markdown help), help_json_url,
-   help_i18n_json.
+   help_i18n_json; help_workflow, help_step, help_workflow_shown (the review workflow, parts/topic_workflow.tpl).
 
    The same file is in design/admin and design/admin4. *}
 <div class="a4-page a4-help-frame a4-help-manual" data-exphelp data-exphelp-i18n="{$help_i18n_json|wash}">
@@ -100,6 +100,11 @@
         <p class="a4-meta">{'This manual has no topics you can read yet.'|i18n( 'kernel/exphelp' )}</p>
         {/if}
     </section>
+
+    {if and( is_set( $help_workflow_shown ), $help_workflow_shown )}
+    {include uri='design:exphelp/parts/topic_workflow.tpl' workflow=$help_workflow step=$help_step state_url=concat( 'exphelp/state/manual/', $help_manual.remote_id )
+             findings=false() findings_counts=false() feedback=false() prefix='exphelp-manual'}
+    {/if}
     {else}
     <header class="a4-help-pagehead">
         <h1 class="a4-help-title">{'Manuals'|i18n( 'kernel/exphelp' )}</h1>

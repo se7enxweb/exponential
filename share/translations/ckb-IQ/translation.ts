@@ -76506,6 +76506,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Static publishing</source>
         <translation>بڵاوکردنەوەی چەسپاو</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>لە پێداچوونەوەدا</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>خوێنەران ئەم پەڕەیە دەبینن.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>لە خوێنەران شاردراوەتەوە تا کەسێک بڵاوی دەکاتەوە.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>پەڕەکە ئێستا لە پێداچوونەوەدایە. تا بڵاو نەکرێتەوە لە خوێنەران شاردراوەتەوە.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>پەڕەکە بڵاوکراوەتەوە: خوێنەران ئێستا دەیبینن.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>پەڕەکە دووبارە ڕەشنووسە. تا پێداچوونەوەی بۆ نەکرێت و بڵاو نەکرێتەوە لە خوێنەران شاردراوەتەوە.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>ئێستا بڵاوی بکەرەوە</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>تەنها بەکارهێنەرێک کە ڕۆڵی %role ی هەیە و ئەم وەشانەی نەنووسیوە دەتوانێت بڵاوی بکاتەوە.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>بابەتەکانی یارمەتی کە چاوەڕێی بڵاوکردنەوەن</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>لە خوێنەرانی دەشارێتەوە تا دووبارە بڵاو دەکرێتەوە.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>دواتر پێداچوونەوەکارێک پشکنینی بۆ دەکات. خوێنەران هێشتا نایبینن.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>خوێنەران دەستبەجێ دەیبینن.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>بۆ کاری زیاتر لە پێداچوونەوە دەری دەهێنێت. خوێنەران نایبینن.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>ئەم پەڕەیە لە خوێنەران بشاردرێتەوە؟</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>ئەم پەڕەیە بگەڕێنرێتەوە بۆ ڕەشنووس؟</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>خوێنەران چیتر %title نابینن تا کەسێک دووبارە بڵاوی دەکاتەوە.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title بۆ کاری زیاتر دەگەڕێتەوە بۆ ڕەشنووس. خوێنەران هێشتا نایبینن، و پێش بڵاوکردنەوە پێداچوونەوەیەکی نوێی پێویستە.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>هەڵوەشاندنەوە</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>ئەم بابەتانە لە پێداچوونەوەدان. هەر کە کەسێک کە وەشانی ئێستای نەنووسیوە بڵاویان بکاتەوە، خوێنەران دەیانبینن.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

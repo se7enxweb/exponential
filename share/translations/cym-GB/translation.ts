@@ -76506,6 +76506,82 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
         <source>Static publishing</source>
         <translation>Cyhoeddi statig</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>Yn yr adolygiad</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Mae darllenwyr yn gweld y dudalen hon.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Wedi'i chuddio rhag darllenwyr nes bod rhywun yn ei rhyddhau.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Mae'r dudalen yn yr adolygiad nawr. Mae wedi'i chuddio rhag darllenwyr nes iddi gael ei rhyddhau.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Mae'r dudalen wedi'i rhyddhau: mae darllenwyr yn ei gweld nawr.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Mae'r dudalen yn ddrafft eto. Mae wedi'i chuddio rhag darllenwyr nes iddi gael ei hadolygu a'i rhyddhau.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Rhyddhau nawr</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Dim ond defnyddiwr sydd â'r rôl %role ac na ysgrifennodd y fersiwn hon all ei rhyddhau.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Pynciau cymorth sy'n aros i gael eu rhyddhau</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Mae'n ei chuddio rhag darllenwyr nes iddi gael ei rhyddhau eto.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Bydd adolygydd yn ei gwirio nesaf. Nid yw darllenwyr yn ei gweld eto.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Mae darllenwyr yn ei gweld ar unwaith.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Mae'n ei thynnu allan o'r adolygiad ar gyfer rhagor o waith. Nid yw darllenwyr yn ei gweld.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Cuddio'r dudalen hon rhag darllenwyr?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Anfon y dudalen hon yn ôl i'r drafft?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Nid yw darllenwyr yn gweld %title mwyach nes bod rhywun yn ei rhyddhau eto.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>Mae %title yn mynd yn ôl i'r drafft ar gyfer rhagor o waith. Nid yw darllenwyr yn ei gweld o hyd, ac mae angen adolygiad newydd arni cyn iddi gael ei rhyddhau.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Canslo</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Mae'r pynciau hyn yn yr adolygiad. Mae darllenwyr yn eu gweld cyn gynted ag y bydd rhywun na ysgrifennodd y fersiwn gyfredol yn eu rhyddhau.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

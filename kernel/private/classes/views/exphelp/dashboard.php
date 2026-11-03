@@ -6,7 +6,8 @@
  * help_featured (documents), help_recent (id, title, time, subject), help_tree, help_trackers (expHelpIssueReport),
  * help_search_url, help_report_url, help_reading (expHelp::reading(): the reader's language, the switch, the translated share),
  * help_content (manuals and topics of help maintained as content), help_review (the topics overdue for review the user
- * can act on, reviewSummary()).
+ * can act on, reviewSummary()), help_waiting (the topics waiting for release the user may release, waitingSummary();
+ * paged by the view parameter (offset), view_parameters).
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -53,6 +54,11 @@ class Dashboard extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'help_content', self::contentSummary() );
         // the topics overdue for review, for help editors and release managers (those who can act on them)
         $tpl->setVariable( 'help_review', self::reviewSummary() );
+        // the topics waiting for release, for who may release them; paged by the view parameter (offset)
+        $userParameters = isset( $scope['Params']['UserParameters'] ) && is_array( $scope['Params']['UserParameters'] ) ? $scope['Params']['UserParameters'] : array();
+        $offset = isset( $userParameters['offset'] ) && is_scalar( $userParameters['offset'] ) ? max( 0, (int)$userParameters['offset'] ) : 0;
+        $tpl->setVariable( 'help_waiting', self::waitingSummary( $offset ) );
+        $tpl->setVariable( 'view_parameters', array( 'offset' => $offset ) );
         // the fifth step of the grow band, only when its page is in the help (it never links a missing page)
         $tpl->setVariable( 'help_grow_extensions_page', $index->document( 'help/contribute-extensions-back.md' ) !== null ? 'help/contribute-extensions-back.md' : '' );
         // the Support Exponential block at the bottom ([SupportSettings]); a worker started before the class existed skips it
@@ -150,6 +156,34 @@ class Dashboard extends \Exponential\Runnable\ModuleView
         catch ( \Exception $e )
         {
             \eZDebug::writeWarning( 'Overdue help reviews could not be read: ' . $e->getMessage(), __METHOD__ );
+            return false;
+        }
+    }
+
+    /**
+     * One page of the topics waiting for release (in Review) that the user may release, false when there are none
+     * (doc/eng-us/features/6.0/help-content.md, "Waiting for release")
+     *
+     * @param int $offset the view parameter (offset)
+     * @return array|false expHelpContentReview::waitingForCurrentUser(), each item with url
+     */
+    public static function waitingSummary( $offset )
+    {
+        // a server process started before the method existed (a Velocity worker) shows no list
+        if ( !class_exists( 'expHelpContentReview' ) || !method_exists( 'expHelpContentReview', 'waitingForCurrentUser' ) )
+            return false;
+        try
+        {
+            $waiting = \expHelpContentReview::waitingForCurrentUser( $offset, (int)\expHelpContentSchema::setting( 'ReviewListLimit', \expHelpContentReview::DEFAULT_LIMIT ) );
+            if ( !$waiting )
+                return false;
+            foreach ( $waiting['items'] as $i => $item )
+                $waiting['items'][$i]['url'] = \expHelp::url( 'topic', $item['help_id'] );
+            return $waiting;
+        }
+        catch ( \Exception $e )
+        {
+            \eZDebug::writeWarning( 'Help topics waiting for release could not be read: ' . $e->getMessage(), __METHOD__ );
             return false;
         }
     }

@@ -76506,6 +76506,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Static publishing</source>
         <translation>سٹیٹِک اِشاعت</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>جایزَس منز</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>قارِیٖن چھِ یہ صَفہٕ وُچھان۔</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>یوٚت تام نہٕ کانٛہہ اَتھ شایع کرِ، قارِیٖن نِشہِ چھُ چھوٗپتھ۔</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>صَفہٕ چھُ ووٚنۍ جایزَس منز۔ شایع گژھنَس تام چھُ یہ قارِیٖن نِشہِ چھوٗپتھ۔</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>صَفہٕ چھُ شایع کرنہٕ آمُت: قارِیٖن چھِ اَتھ ووٚنۍ وُچھان۔</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>صَفہٕ چھُ دوبارہ مَسوٗدہٕ۔ جایزہ تہٕ شایع گژھنَس تام چھُ یہ قارِیٖن نِشہِ چھوٗپتھ۔</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>ووٚنۍ شایع کٔرِو</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>صرف %role کردارہٕ والُک سُہ یوٗزَر ہیٚکہِ اَتھ شایع کٔرِتھ یَمۍ یہ ؤرژَن نہٕ لیوٚکھ۔</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>شایع گژھنُک انتظار کران مَدَد موضوع</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>دوبارہ شایع گژھنَس تام چھُ اَتھ قارِیٖن نِشہِ چھوٗپراوان۔</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>پَتہٕ کرِ کانٛہہ جایزہٕ نِگار اَتھ چیک۔ قارِیٖن چھِ نہٕ اَتھ وُنہِ وُچھان۔</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>قارِیٖن چھِ اَتھ فوراً وُچھان۔</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>مزید کامہِ خاطرٕ چھُ اَتھ جایزَس منزٕ نیبر کڈان۔ قارِیٖن چھِ نہٕ اَتھ وُچھان۔</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>کیا یہ صَفہٕ قارِیٖن نِشہِ چھوٗپراوُن؟</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>کیا یہ صَفہٕ واپَس مَسوٗدَس منز سوزُن؟</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>یوٚت تام نہٕ کانٛہہ اَتھ دوبارہ شایع کرِ، قارِیٖن چھِ نہٕ %title وُچھان۔</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title چھُ مزید کامہِ خاطرٕ واپَس مَسوٗدَس منز گژھان۔ قارِیٖن چھِ نہٕ اَتھ وُنہِ تہِ وُچھان، تہٕ شایع گژھنہٕ برونٛہہ چھُ نوٚو جایزہ ضروری۔</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>منسوٗخ کٔرِو</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>یم موضوع چھِ جایزَس منز۔ ییلہِ کانٛہہ، یَمۍ موجوٗدٕ ؤرژَن نہٕ لیوٚکھ، یِمن شایع کرِ، قارِیٖن چھِ یِم وُچھان۔</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

@@ -76504,6 +76504,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Static publishing</source>
         <translation>اسٹیٹک اشاعت</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>جائزے میں</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>قارئین یہ صفحہ دیکھتے ہیں۔</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>جب تک کوئی اسے جاری نہ کرے، قارئین سے پوشیدہ ہے۔</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>صفحہ اب جائزے میں ہے۔ جب تک جاری نہ ہو، قارئین سے پوشیدہ ہے۔</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>صفحہ جاری کر دیا گیا ہے: قارئین اب اسے دیکھتے ہیں۔</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>صفحہ دوبارہ مسودہ ہے۔ جب تک اس کا جائزہ لے کر جاری نہ کیا جائے، قارئین سے پوشیدہ ہے۔</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>ابھی جاری کریں</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>اس ورژن کو صرف %role کردار والا وہ صارف جاری کر سکتا ہے جس نے اسے نہیں لکھا۔</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>اجرا کے منتظر مدد کے موضوعات</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>دوبارہ جاری ہونے تک اسے قارئین سے چھپاتا ہے۔</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>اس کے بعد ایک جائزہ کار اسے جانچتا ہے۔ قارئین ابھی اسے نہیں دیکھتے۔</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>قارئین اسے فوراً دیکھتے ہیں۔</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>مزید کام کے لیے اسے جائزے سے نکالتا ہے۔ قارئین اسے نہیں دیکھتے۔</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>یہ صفحہ قارئین سے چھپائیں؟</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>یہ صفحہ واپس مسودے میں بھیجیں؟</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>جب تک کوئی اسے دوبارہ جاری نہ کرے، قارئین اب %title نہیں دیکھتے۔</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title مزید کام کے لیے واپس مسودے میں جاتا ہے۔ قارئین اب بھی اسے نہیں دیکھتے، اور جاری ہونے سے پہلے اسے نئے جائزے کی ضرورت ہے۔</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>منسوخ کریں</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>یہ موضوعات جائزے میں ہیں۔ جب موجودہ ورژن نہ لکھنے والا کوئی انہیں جاری کرے گا تو قارئین انہیں دیکھیں گے۔</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

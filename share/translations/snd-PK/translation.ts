@@ -76506,6 +76506,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Static publishing</source>
         <translation>اسٽيٽڪ اشاعت</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>جاچ ۾</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>پڙهندڙ هي صفحو ڏسن ٿا.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>جيستائين ڪو ان کي جاري نه ڪري، پڙهندڙن کان لڪيل آهي.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>صفحو هاڻي جاچ ۾ آهي. جيستائين جاري نه ٿئي، پڙهندڙن کان لڪيل آهي.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>صفحو جاري ٿي ويو آهي: پڙهندڙ هاڻي ان کي ڏسن ٿا.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>صفحو وري مسودو آهي. جيستائين ان جي جاچ ٿي جاري نه ٿئي، پڙهندڙن کان لڪيل آهي.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>هاڻي جاري ڪريو</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>رڳو %role ڪردار وارو اهو استعمال ڪندڙ هن ورزن کي جاري ڪري سگهي ٿو جنهن اهو نه لکيو هجي.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>جاري ٿيڻ جي انتظار ۾ مدد جا موضوع</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>جيستائين وري جاري نه ٿئي، ان کي پڙهندڙن کان لڪائي ٿو.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>اڳيان هڪ جائزو وٺندڙ ان کي جاچيندو. پڙهندڙ اڃا ان کي نه ٿا ڏسن.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>پڙهندڙ ان کي فوري ڏسن ٿا.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>وڌيڪ ڪم لاءِ ان کي جاچ مان ڪڍي ٿو. پڙهندڙ ان کي نه ٿا ڏسن.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>هي صفحو پڙهندڙن کان لڪايو؟</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>هي صفحو واپس مسودي ۾ موڪليو؟</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>جيستائين ڪو وري جاري نه ڪري، پڙهندڙ %title وڌيڪ نه ٿا ڏسن.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title وڌيڪ ڪم لاءِ واپس مسودي ۾ وڃي ٿو. پڙهندڙ اڃا به ان کي نه ٿا ڏسن، ۽ جاري ٿيڻ کان اڳ ان کي نئين جاچ گهرجي.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>رد ڪريو</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>اهي موضوع جاچ ۾ آهن. موجوده ورزن نه لکڻ وارو ڪو ماڻهو جڏهن انهن کي جاري ڪندو ته پڙهندڙ انهن کي ڏسندا.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

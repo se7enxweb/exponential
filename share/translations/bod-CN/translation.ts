@@ -76506,6 +76506,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Static publishing</source>
         <translation>ཁ་བརྟན་འགྲེམས་སྤེལ།</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>ཞིབ་བཤེར་ནང་ཡོད།</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>ཀློག་པ་པོས་ཤོག་ངོས་འདི་མཐོང་ཐུབ།</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>མི་ཞིག་གིས་འགྲེམས་སྤེལ་མ་བྱས་བར་ཀློག་པ་པོ་ལ་སྦས་ཡོད།</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>ཤོག་ངོས་དེ་ད་ལྟ་ཞིབ་བཤེར་ནང་ཡོད། འགྲེམས་སྤེལ་མ་བྱས་བར་ཀློག་པ་པོ་ལ་སྦས་ཡོད།</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>ཤོག་ངོས་དེ་འགྲེམས་སྤེལ་བྱས་ཟིན། ཀློག་པ་པོས་ད་ལྟ་མཐོང་ཐུབ།</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>ཤོག་ངོས་དེ་ཡང་བསྐྱར་ཟིན་བྲིས་སུ་གྱུར། ཞིབ་བཤེར་དང་འགྲེམས་སྤེལ་མ་བྱས་བར་ཀློག་པ་པོ་ལ་སྦས་ཡོད།</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>ད་ལྟ་འགྲེམས་སྤེལ།</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>འགན་ཁུར་ %role ཡོད་པ་དང་པར་གཞི་འདི་མ་བྲིས་པའི་སྤྱོད་མཁན་ཁོ་ནས་དེ་འགྲེམས་སྤེལ་བྱེད་ཐུབ།</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>འགྲེམས་སྤེལ་ལ་སྒུག་བཞིན་པའི་རོགས་རམ་བརྗོད་གཞི།</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>ཡང་བསྐྱར་འགྲེམས་སྤེལ་མ་བྱས་བར་ཀློག་པ་པོ་ལ་སྦས་འཇོག་བྱེད།</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>རྗེས་སུ་ཞིབ་བཤེར་བ་ཞིག་གིས་བརྟག་དཔྱད་བྱེད། ཀློག་པ་པོས་ད་དུང་མཐོང་མི་ཐུབ།</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>ཀློག་པ་པོས་འཕྲལ་དུ་མཐོང་ཐུབ།</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>ལས་ཀ་མང་བ་བྱེད་ཆེད་ཞིབ་བཤེར་ནས་ཕྱིར་འདོན། ཀློག་པ་པོས་མཐོང་མི་ཐུབ།</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>ཤོག་ངོས་འདི་ཀློག་པ་པོ་ལ་སྦས་སམ?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>ཤོག་ངོས་འདི་ཟིན་བྲིས་ལ་ཕྱིར་སློག་གམ?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>མི་ཞིག་གིས་ཡང་བསྐྱར་འགྲེམས་སྤེལ་མ་བྱས་བར་ཀློག་པ་པོས་ %title མཐོང་མི་ཐུབ།</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title ལས་ཀ་མང་བ་བྱེད་ཆེད་ཟིན་བྲིས་ལ་ཕྱིར་ལོག ཀློག་པ་པོས་ད་དུང་མཐོང་མི་ཐུབ། འགྲེམས་སྤེལ་མ་བྱས་གོང་ཞིབ་བཤེར་གསར་པ་ཞིག་དགོས།</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ཕྱིར་འཐེན།</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>བརྗོད་གཞི་འདི་དག་ཞིབ་བཤེར་ནང་ཡོད། པར་གཞི་ད་ལྟའི་དེ་མ་བྲིས་པའི་མི་ཞིག་གིས་འགྲེམས་སྤེལ་བྱས་མ་ཐག་ཀློག་པ་པོས་མཐོང་ཐུབ།</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

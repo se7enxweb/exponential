@@ -76506,6 +76506,82 @@ Vus stuais midar la classa dal nod cun la funcziun da barat.</translation>
         <source>Static publishing</source>
         <translation>Publicaziun statica</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>En controlla</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Ils lecturs vesan questa pagina.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Zuppada als lecturs, fin che insatgi la publitgescha.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>La pagina è ussa en controlla. Ella è zuppada als lecturs, fin ch'ella vegn publitgada.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>La pagina è publitgada: ils lecturs la vesan ussa.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>La pagina è puspè in sboz. Ella è zuppada als lecturs, fin ch'ella vegn controllada e publitgada.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Publitgar ussa</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Mo in utilisader cun la rolla %role che n'ha betg scrit questa versiun la po publitgar.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Temas d'agid che spetgan sin la publicaziun</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>La zuppa als lecturs, fin ch'ella vegn publitgada danovamain.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Sco proxim la controllescha in controllader. Ils lecturs na la vesan anc betg.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Ils lecturs la vesan immediat.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>La prenda ord la controlla per ulteriuras lavurs. Ils lecturs na la vesan betg.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Zuppentar questa pagina als lecturs?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Trametter questa pagina enavos al sboz?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Ils lecturs na vesan betg pli %title, fin che insatgi al publitgescha danovamain.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title va enavos al sboz per ulteriuras lavurs. Ils lecturs na al vesan anc adina betg, ed el dovra ina nova controlla avant ch'el vegn publitgà.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Interrumper</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Quests temas èn en controlla. Ils lecturs als vesan uschespert che insatgi che n'ha betg scrit la versiun actuala als publitgescha.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

@@ -76504,6 +76504,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Static publishing</source>
         <translation>የማይለዋወጥ ሕትመት</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>በግምገማ ላይ</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>አንባቢዎች ይህን ገጽ ያያሉ።</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>አንድ ሰው እስኪለቀው ድረስ ከአንባቢዎች ተደብቋል።</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>ገጹ አሁን በግምገማ ላይ ነው። እስኪለቀቅ ድረስ ከአንባቢዎች ተደብቋል።</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>ገጹ ተለቋል፦ አንባቢዎች አሁን ያዩታል።</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>ገጹ እንደገና ረቂቅ ሆኗል። ተገምግሞ እስኪለቀቅ ድረስ ከአንባቢዎች ተደብቋል።</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>አሁን ልቀቅ</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>ይህን ስሪት ያልጻፈ እና የ%role ሚና ያለው ተጠቃሚ ብቻ ሊለቀው ይችላል።</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>ለመለቀቅ የሚጠባበቁ የእገዛ ርዕሶች</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>እንደገና እስኪለቀቅ ድረስ ከአንባቢዎች ይደብቀዋል።</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>በመቀጠል ገምጋሚ ይፈትሸዋል። አንባቢዎች ገና አያዩትም።</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>አንባቢዎች ወዲያውኑ ያዩታል።</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>ለተጨማሪ ስራ ከግምገማ ያወጣዋል። አንባቢዎች አያዩትም።</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>ይህን ገጽ ከአንባቢዎች ይደብቁ?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>ይህን ገጽ ወደ ረቂቅ ይመልሱ?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>አንድ ሰው እንደገና እስኪለቀው ድረስ አንባቢዎች %title አያዩም።</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title ለተጨማሪ ስራ ወደ ረቂቅ ይመለሳል። አንባቢዎች አሁንም አያዩትም፣ እና ከመለቀቁ በፊት አዲስ ግምገማ ያስፈልገዋል።</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ሰርዝ</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>እነዚህ ርዕሶች በግምገማ ላይ ናቸው። የአሁኑን ስሪት ያልጻፈ ሰው ሲለቃቸው አንባቢዎች ያዩአቸዋል።</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

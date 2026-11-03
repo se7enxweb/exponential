@@ -76506,6 +76506,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Static publishing</source>
         <translation>ການເຜີຍແຜ່ແບບສະຖິດ</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>ກຳລັງກວດທານ</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>ຜູ້ອ່ານເຫັນໜ້ານີ້.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>ເຊື່ອງໄວ້ຈາກຜູ້ອ່ານຈົນກວ່າຈະມີຄົນອອກມັນ.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>ໜ້ານີ້ຢູ່ໃນສະພາວະກວດທານແລ້ວ. ມັນຖືກເຊື່ອງໄວ້ຈາກຜູ້ອ່ານຈົນກວ່າຈະຖືກອອກ.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>ໜ້ານີ້ຖືກອອກແລ້ວ: ຜູ້ອ່ານເຫັນມັນແລ້ວ.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>ໜ້ານີ້ກັບເປັນສະບັບຮ່າງອີກຄັ້ງ. ມັນຖືກເຊື່ອງໄວ້ຈາກຜູ້ອ່ານຈົນກວ່າຈະຖືກກວດທານ ແລະອອກ.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>ອອກດຽວນີ້</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>ມີແຕ່ຜູ້ໃຊ້ທີ່ມີບົດບາດ %role ແລະບໍ່ໄດ້ຂຽນເວີຊັນນີ້ເທົ່ານັ້ນທີ່ສາມາດອອກມັນໄດ້.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>ຫົວຂໍ້ຊ່ວຍເຫຼືອທີ່ລໍຖ້າການອອກ</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>ເຊື່ອງມັນຈາກຜູ້ອ່ານຈົນກວ່າຈະຖືກອອກອີກຄັ້ງ.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>ຕໍ່ໄປຜູ້ກວດທານຈະກວດມັນ. ຜູ້ອ່ານຍັງບໍ່ເຫັນມັນ.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>ຜູ້ອ່ານເຫັນມັນທັນທີ.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>ເອົາມັນອອກຈາກການກວດທານເພື່ອແກ້ໄຂຕື່ມ. ຜູ້ອ່ານບໍ່ເຫັນມັນ.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>ເຊື່ອງໜ້ານີ້ຈາກຜູ້ອ່ານບໍ?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>ສົ່ງໜ້ານີ້ກັບເປັນສະບັບຮ່າງບໍ?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>ຜູ້ອ່ານຈະບໍ່ເຫັນ %title ອີກຈົນກວ່າຈະມີຄົນອອກມັນອີກຄັ້ງ.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title ກັບເປັນສະບັບຮ່າງເພື່ອແກ້ໄຂຕື່ມ. ຜູ້ອ່ານຍັງບໍ່ເຫັນມັນ, ແລະມັນຕ້ອງໄດ້ກວດທານໃໝ່ກ່ອນຈະຖືກອອກ.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ຍົກເລີກ</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>ຫົວຂໍ້ເຫຼົ່ານີ້ຢູ່ໃນສະພາວະກວດທານ. ຜູ້ອ່ານຈະເຫັນພວກມັນເມື່ອມີຄົນທີ່ບໍ່ໄດ້ຂຽນເວີຊັນປັດຈຸບັນອອກພວກມັນ.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

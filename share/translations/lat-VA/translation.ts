@@ -74779,6 +74779,82 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>Static publishing</source>
         <translation>Publicatio statica</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>In recognitione</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Lectores hanc paginam vident.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Lectoribus occultatur donec aliquis eam edat.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Pagina nunc recognoscitur. Lectoribus occultatur donec edatur.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Pagina edita est: lectores eam nunc vident.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Pagina iterum adumbratio est. Lectoribus occultatur donec recognita et edita sit.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Nunc ede</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Solus usor cum munere %role qui hanc versionem non scripsit eam edere potest.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Argumenta auxilii quae editionem exspectant</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Eam lectoribus occultat donec iterum edatur.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Deinde recognitor eam inspicit. Lectores eam nondum vident.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Lectores eam statim vident.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Eam ex recognitione removet ut amplius elaboretur. Lectores eam non vident.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Hancne paginam lectoribus occultare?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Hancne paginam ad adumbrationem remittere?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Lectores %title non iam vident donec aliquis id iterum edat.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title ad adumbrationem redit ut amplius elaboretur. Lectores id adhuc non vident, et novam recognitionem requirit antequam edatur.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Abrogare</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Haec argumenta recognoscuntur. Lectores ea vident simul ac aliquis qui versionem hodiernam non scripsit ea edit.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>
