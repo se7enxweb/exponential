@@ -131,9 +131,8 @@ abstract class expUsersBase extends expServiceBase
      */
     protected static function passwordErrors( $password, $user = null, $login = null )
     {
-        if ( class_exists( 'expPasswordPolicy' ) )
-            return expPasswordPolicy::instance()->accountErrors( (string)$password, $user instanceof eZUser ? $user : null, $login );
-        return eZUser::validatePassword( $password ) ? array() : array( 'The password is too short' );
+        // the rules the console applies too (exp:user:create, exp:user:reset-password)
+        return expUserManager::passwordProblems( $password, $user, $login );
     }
 
     /**
@@ -156,20 +155,9 @@ abstract class expUsersBase extends expServiceBase
     /** @throws expServiceException 422 when login, e-mail or password are not acceptable or taken */
     protected static function validateNewAccount( $login, $email, $password, $exceptId = 0 )
     {
-        $error = '';
-        if ( $login === '' || !eZUser::validateLoginName( $login, $error ) )
-            throw new expServiceException( 'The login name is not valid' . ( $error ? ": $error" : '' ), 422 );
-        $existing = eZUser::fetchByName( $login );
-        if ( $existing instanceof eZUser && (int)$existing->attribute( 'contentobject_id' ) !== (int)$exceptId )
-            throw new expServiceException( 'The login name is already taken', 409 );
-        if ( !eZMail::validate( $email ) )
-            throw new expServiceException( 'The e-mail address is not valid', 422 );
-        if ( eZUser::requireUniqueEmail() )
-        {
-            $other = eZUser::fetchByEmail( $email );
-            if ( $other instanceof eZUser && (int)$other->attribute( 'contentobject_id' ) !== (int)$exceptId )
-                throw new expServiceException( 'The e-mail address is already in use', 409 );
-        }
+        // the checks the console makes too (expUserManager: exp:user:create, exp:user:edit); the first problem answers
+        foreach ( expUserManager::accountProblems( $login, $email, null, $exceptId ) as $problem )
+            throw new expServiceException( $problem['message'], $problem['code'] === 'taken' ? 409 : 422 );
         if ( $password !== null )
             self::requireAcceptablePassword( $password, $exceptId ? eZUser::fetch( (int)$exceptId ) : null, $login );
     }
