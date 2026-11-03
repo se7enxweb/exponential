@@ -659,9 +659,13 @@ class expDebugBarSettingsTest extends PHPUnit\Framework\TestCase
         eZUser::setCurrentlyLoggedInUser( $anon, $anon->attribute( 'contentobject_id' ) );
         $savedEnabled = isset( $GLOBALS['eZDebugEnabled'] ) ? $GLOBALS['eZDebugEnabled'] : null;
         $savedMatch = isset( $GLOBALS['eZDebugIPMatch'] ) ? $GLOBALS['eZDebugIPMatch'] : null;
+        $barIni = eZINI::instance( 'debugbar.ini' );
+        $savedAccess = $barIni->hasVariable( 'DebugBarSettings', 'ReadAccess' ) ? $barIni->variable( 'DebugBarSettings', 'ReadAccess' ) : null;
+        $barIni->setVariable( 'DebugBarSettings', 'ReadAccess', 'privileged' );
         try
         {
-            // with and without debug output for this request: settings, log, iptest and the cache list are refused
+            // ReadAccess=privileged, with and without debug output for this request: settings, log, iptest and the
+            // cache list are refused
             foreach ( array( false, true ) as $debugOutput )
             {
                 $GLOBALS['eZDebugEnabled'] = $debugOutput;
@@ -680,6 +684,47 @@ class expDebugBarSettingsTest extends PHPUnit\Framework\TestCase
             }
             $this->assertFalse( expDebugBarServerFunctions::canWrite() );
             $this->assertFalse( expDebugBarServerFunctions::canCache() );
+
+            // ReadAccess=debug, the default: with debug output everything is read, nothing is changed
+            $barIni->setVariable( 'DebugBarSettings', 'ReadAccess', 'debug' );
+            $GLOBALS['eZDebugEnabled'] = false;
+            $this->assertFalse( expDebugBarServerFunctions::canReadSetup(), 'no debug output: nothing to read' );
+            $this->assertFalse( expDebugBarServerFunctions::canReadCache() );
+            $GLOBALS['eZDebugEnabled'] = true;
+            $this->assertTrue( expDebugBarServerFunctions::canReadSetup() );
+            $this->assertTrue( expDebugBarServerFunctions::canReadCache() );
+            $a = expDebugBarServerFunctions::settings( array() );
+            $this->assertFalse( $a['can_write'], 'the settings to read, not to change' );
+            $this->assertFalse( $a['can_cache'] );
+            $this->assertArrayHasKey( 'entries', expDebugBarServerFunctions::log( array() ) );
+            $this->assertFalse( expDebugBarServerFunctions::cache( array( 'list' ) )['can_cache'], 'the cache list without clearing' );
+            foreach ( array( 'set', 'undo', 'preset' ) as $fn )
+            {
+                try
+                {
+                    expDebugBarServerFunctions::$fn( array() );
+                    $this->fail( "$fn must be refused without setup/setup, also when everything is read" );
+                }
+                catch ( InvalidArgumentException $e )
+                {
+                    $this->assertStringContainsString( 'setup/setup', $e->getMessage(), $fn );
+                }
+            }
+            $_POST['action'] = 'clear';
+            try
+            {
+                expDebugBarServerFunctions::cache( array() );
+                $this->fail( 'clearing must be refused without setup/managecache, also when everything is read' );
+            }
+            catch ( InvalidArgumentException $e )
+            {
+                $this->assertStringContainsString( 'setup/managecache', $e->getMessage() );
+            }
+            finally
+            {
+                unset( $_POST['action'] );
+            }
+            $barIni->setVariable( 'DebugBarSettings', 'ReadAccess', 'privileged' );
 
             // the summary stays: the report itself, without the line of the list that matched
             $GLOBALS['eZDebugEnabled'] = true;
@@ -701,6 +746,10 @@ class expDebugBarSettingsTest extends PHPUnit\Framework\TestCase
         }
         finally
         {
+            if ( $savedAccess === null )
+                $barIni->removeSetting( 'DebugBarSettings', 'ReadAccess' );
+            else
+                $barIni->setVariable( 'DebugBarSettings', 'ReadAccess', $savedAccess );
             $GLOBALS['eZDebugEnabled'] = $savedEnabled;
             if ( $savedMatch === null )
                 unset( $GLOBALS['eZDebugIPMatch'] );
@@ -726,12 +775,14 @@ class expDebugBarSettingsTest extends PHPUnit\Framework\TestCase
     public function testReportCarriesNoSettingsForAVisitor()
     {
         $report = file_get_contents( __DIR__ . '/../../../../../lib/ezutils/classes/expdebugbarreport.php' );
-        // the classic toolbar (values of the quick settings) and the cache tab's content only behind the rights
-        $this->assertMatchesRegularExpression( '/if \( !\$userInfo\[\'can_setup\'\] \)\s*\{[^}]*Sign in with setup access[^}]*\}\s*else if \( \$classicToolbar/s', $report );
-        $this->assertMatchesRegularExpression( '/if \( !\$user\[\'can_cache\'\] \)\s*return \'<p[^;]*Sign in with cache access/s', $report );
+        // the settings and the cache tab's content only for who may read them (read_setup, read_cache: the policy, or
+        // the debug output under ReadAccess=debug); the classic toolbar and the form that clears only with the policy
+        $this->assertMatchesRegularExpression( '/if \( !\$userInfo\[\'read_setup\'\] \)\s*\{[^}]*Sign in with setup access[^}]*\}\s*else if \( \$userInfo\[\'can_setup\'\] && \$classicToolbar/s', $report );
+        $this->assertMatchesRegularExpression( '/if \( !\$read \)\s*return \'<p[^;]*Sign in with cache access/s', $report );
+        $this->assertMatchesRegularExpression( '/if \( empty\( \$user\[\'can_cache\'\] \) \)\s*return \$html;/', $report );
         $js = file_get_contents( __DIR__ . '/../../../../../design/standard/javascript/expdebugbar.js' );
-        $this->assertStringContainsString( '!userRights.can_setup', $js );
-        $this->assertStringContainsString( '!userRights.can_cache', $js );
+        $this->assertStringContainsString( '!(userRights.read_setup || userRights.can_setup)', $js );
+        $this->assertStringContainsString( '!(userRights.read_cache || userRights.can_cache)', $js );
         foreach ( array( 'Sign in with setup access to change debug settings', 'Sign in with cache access to manage caches' ) as $note )
             $this->assertContains( $note, expDebugBarReport::scriptStrings() );
     }

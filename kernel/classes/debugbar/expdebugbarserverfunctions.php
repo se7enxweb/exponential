@@ -20,9 +20,11 @@
  *   expdebugbar::panelheight                POST height: the open panel's height, kept in the user preference
  *                                           expdebugbar_panel_height
  *
- * Only summary needs debug output for this request (the people who see the report). settings, log and iptest need
- * setup/setup, the cache list and clearing caches need setup/managecache, and nothing about the configuration (values,
- * file paths, IP and user lists, the change log) goes to anybody else. Every write is a POST with the form token.
+ * Reading: summary needs debug output for this request (the people who see the report) or a policy below. settings,
+ * log, iptest and policies need setup/setup, the cache list setup/managecache; with debugbar.ini ReadAccess=debug,
+ * the default, the debug output reads them too (readsAll()), with ReadAccess=privileged nothing about the
+ * configuration (values, file paths, IP and user lists, the change log) goes to anybody else. Changing: set, undo and
+ * preset need setup/setup, clearing caches setup/managecache, always, each a POST with the form token.
  * Guide: doc/eng-us/bc/6.0/debug-bar.md
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
@@ -74,18 +76,39 @@ class expDebugBarServerFunctions extends ezjscServerFunctions
         throw new InvalidArgumentException( 'The debug bar needs debug output for this request, or the policy setup/setup or setup/managecache' );
     }
 
-    /** @throws InvalidArgumentException unless the user has setup/setup (settings, log, IP test) */
+    /**
+     * Whether this request reads everything the bar shows without the policies: it gets the debug output and
+     * debugbar.ini ReadAccess is debug, the default (expDebugBarRegistry::readsAll()). Never for a change.
+     */
+    public static function readsAll()
+    {
+        return expDebugBarRegistry::readsAll( eZDebug::isDebugEnabled() );
+    }
+
+    /** Whether the user may read what setup/setup reads (settings, log, IP test, policies, session frame). */
+    public static function canReadSetup()
+    {
+        return self::canWrite() || self::readsAll();
+    }
+
+    /** Whether the user may read the cache list. */
+    public static function canReadCache()
+    {
+        return self::canCache() || self::readsAll();
+    }
+
+    /** @throws InvalidArgumentException unless the user may read the settings, the log and the IP test (canReadSetup()) */
     public static function requireSetup()
     {
-        if ( self::canWrite() )
+        if ( self::canReadSetup() )
             return;
         throw new InvalidArgumentException( 'Sign in with setup access to change debug settings (policy setup/setup)' );
     }
 
-    /** @throws InvalidArgumentException unless the user has setup/managecache (the cache list) */
+    /** @throws InvalidArgumentException unless the user may read the cache list (canReadCache()) */
     public static function requireCache()
     {
-        if ( self::canCache() )
+        if ( self::canReadCache() )
             return;
         throw new InvalidArgumentException( 'Sign in with cache access to manage caches (policy setup/managecache)' );
     }
@@ -441,7 +464,7 @@ class expDebugBarServerFunctions extends ezjscServerFunctions
      * tab, a page at a time (expDebugBarPolicies::PAGE rows), with the roles and their number of policies. Everything
      * is in the path, nothing in the query string (policyArgs()): role, one of the user's role ids or "-" for all; the
      * offset of the page; the search as base64url of its UTF-8 text (it may hold "/" and "::"), "-" for none.
-     * setup/setup only, as the section.
+     * For who may read what setup/setup reads (canReadSetup()), as the section.
      *
      * @return array expDebugBarPolicies::forUser()
      */
@@ -455,8 +478,8 @@ class expDebugBarServerFunctions extends ezjscServerFunctions
     /**
      * expdebugbar::session: the PHP session of this very request for the User tab (section "Session", loaded when
      * opened): its keys as a tree, grouped by extension, values of secrets masked, and its frame. Never another
-     * session. Who sees the User tab may open it (expDebugBarUser::mayView()): setup/setup, or an anonymous visitor
-     * who gets the debug output; the save path and the handler class only with setup/setup.
+     * session. Who sees the User tab may open it (expDebugBarUser::mayView()); the save path and the handler class
+     * for who may read what setup/setup reads (canReadSetup()).
      *
      * @return array expDebugBarSession::forSession()
      */
@@ -467,9 +490,9 @@ class expDebugBarServerFunctions extends ezjscServerFunctions
         // the answer holds the user's own session: no cache or proxy may keep it, the refusal included
         self::noStore();
         if ( !expDebugBarUser::mayView( self::canWrite(), $loggedIn, eZDebug::isDebugEnabled() ) )
-            throw new InvalidArgumentException( 'The session is shown to users with setup/setup, or to an anonymous visitor who gets the debug output' );
+            throw new InvalidArgumentException( 'The session is shown to who sees the User tab (setup/setup, or the debug output under debugbar.ini ReadAccess)' );
         self::requireSessionRequest( $loggedIn );
-        return expDebugBarSession::current( self::canWrite() );
+        return expDebugBarSession::current( self::canReadSetup() );
     }
 
     /** Headers that keep an answer out of every cache: the browser's, a proxy's, Velocity's response cache. */

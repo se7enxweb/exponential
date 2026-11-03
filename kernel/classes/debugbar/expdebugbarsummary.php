@@ -179,9 +179,14 @@ class expDebugBarSummary
         return expDebugBarReport::queryCacheLevel( $snapshot, $limits );
     }
 
-    /** Whether the current user has setup/setup (may see the IP and user lists). */
+    /**
+     * Whether the current user may see the IP and user lists, the versions and the memory of OPcache and APCu:
+     * setup/setup, or the debug output under debugbar.ini ReadAccess=debug (expDebugBarRegistry::readsAll()).
+     */
     protected static function mayReadLists()
     {
+        if ( class_exists( 'expDebugBarRegistry' ) && class_exists( 'eZDebug', false ) && expDebugBarRegistry::readsAll( eZDebug::isDebugEnabled() ) )
+            return true;
         if ( !class_exists( 'eZUser', false ) )
             return false;
         try
