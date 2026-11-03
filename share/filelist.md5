@@ -3644,7 +3644,7 @@ a98f04025a77698f04dcc7f7114859a2  doc/eng-us/bc/6.0/admin4l.md
 57fc6878bd998cb0f26251b458c5fda8  doc/eng-us/bc/6.0/anonymous-public-policies.md
 f0b57cd68a5b41cc14ca22727186740c  doc/eng-us/bc/6.0/api-keys.md
 01d7d12e87c2caff32518e0938438237  doc/eng-us/bc/6.0/audit.md
-2d12f47a5cd7477f143f9e677de4b9e8  doc/eng-us/bc/6.0/backend_ezjscore_services.md
+ae36ca4cd0badc551841af1a15c85de9  doc/eng-us/bc/6.0/backend_ezjscore_services.md
 74bf211249c836e582f29414b8e78479  doc/eng-us/bc/6.0/behaviour-changes-2026-07-08.md
 41b5bdd9a600e99203e97c58f9fb160d  doc/eng-us/bc/6.0/behaviour-changes-2026-09b.md
 34dc9ac582951a50f20f4af3b12a69ae  doc/eng-us/bc/6.0/behaviour-changes-2026-10.md
@@ -3723,7 +3723,7 @@ fe76752d44638f44f345857617e38f5f  doc/eng-us/bc/6.0/php8.md
 078f9ef73fdfe3a0a79ba7d9aecd40c1  doc/eng-us/bc/6.0/platform-package-forks-and-command-renames.md
 06d671c6584a989b477f9332224dd1db  doc/eng-us/bc/6.0/preload.md
 376308514a9856f7e8be3e6e0e49ae14  doc/eng-us/bc/6.0/rad-extension-points.md
-0be7fcd531857ff7726b254443c29bd2  doc/eng-us/bc/6.0/rad-extension-surface.md
+ce738886977278be943451e45fd98a94  doc/eng-us/bc/6.0/rad-extension-surface.md
 9512bd3007f2fa5c5ede9f050f49297e  doc/eng-us/bc/6.0/rad-security.md
 4a8181eadee679b8558fe125d10df9c1  doc/eng-us/bc/6.0/redirect-query-and-image-alias-guards.md
 66d5117dc8ba671ea91285819924bb12  doc/eng-us/bc/6.0/repair.md
@@ -6872,7 +6872,7 @@ e25953f03d485479cdc3121f061eb25b  doc/eng-us/features/6.0/extensions/cjw_newslet
 bfe9e78152ce569fc06e3a263c2483b8  doc/eng-us/features/6.0/extensions/enhancedezbinaryfile.md
 05e93b6f94023df1fe3c6966c6d0ac28  doc/eng-us/features/6.0/extensions/enhancedselection2.md
 46f85590c0a9c25925c3b8fd5f82eb89  doc/eng-us/features/6.0/extensions/exp_enhanced_link.md
-0bdd06c341e780db207a7872e02f8787  doc/eng-us/features/6.0/extensions/expai.md
+61eb6928af1ef30f4c2082108e9a1514  doc/eng-us/features/6.0/extensions/expai.md
 108b7b0cf9132e1b18e4e91006b4fda4  doc/eng-us/features/6.0/extensions/expimageeditor.md
 20fda4ccae44aa86f06307d61aeadc8e  doc/eng-us/features/6.0/extensions/explayouts_ui.md
 861dfd9727fcf343732865761725dd6d  doc/eng-us/features/6.0/extensions/explayouts_ui_api.md
@@ -6931,7 +6931,7 @@ ef86408eb52d65639150b32f89ecf5eb  doc/eng-us/features/6.0/jquery4-and-yui-remova
 04a373a7481b984288eb74d3f580269d  doc/eng-us/features/6.0/legacy-bridge.md
 dc5174c6c6658955b28fe63f7b7a8047  doc/eng-us/features/6.0/legacy-fork-fixes.md
 4363ad61fc0af57c4a88abd40393b9f6  doc/eng-us/features/6.0/log-rotation.md
-2f7a4a1e5919f2dabe7304e0e9855d68  doc/eng-us/features/6.0/log-viewer.md
+636c8c263571ab562af1d79e9412bf9b  doc/eng-us/features/6.0/log-viewer.md
 3bbfd911c86b7d7853c0838a963d01f4  doc/eng-us/features/6.0/mail-layout.md
 fb41e999d70ad1fbeef83693d1ee6c77  doc/eng-us/features/6.0/mail-preferences.md
 70689845801571a8ad48a92751b21397  doc/eng-us/features/6.0/maintenance-mode.md
@@ -8102,7 +8102,7 @@ c93ae043b53f73683b2a4e658f834514  doc/eng-us/help/creators/app-creators/app-crea
 832ffe006626b2f04024c460b27bdb5f  doc/eng-us/help/creators/app-creators/background-work-patterns.md
 64b3de09f5c64235855a7af21db6b1f2  doc/eng-us/help/creators/app-creators/caching-in-applications.md
 14b918ef672b4eeec12c154730099ec6  doc/eng-us/help/creators/app-creators/ci-for-extensions.md
-a7c086be07d330e88ba0e3efa98dfb97  doc/eng-us/help/creators/app-creators/cli-scripts.md
+53d1b367ae2a1d389f3ba28fcb65d4bd  doc/eng-us/help/creators/app-creators/cli-scripts.md
 38b036674388ecd2693a36ed55e4ee9f  doc/eng-us/help/creators/app-creators/clustering-and-shared-storage.md
 dcaedf7a276218bb1e3613a0f7a304a4  doc/eng-us/help/creators/app-creators/composer-and-packagist.md
 7bca4509d28f7e4a4d1d71ee4bfd048c  doc/eng-us/help/creators/app-creators/console-commands.md
@@ -13623,7 +13623,7 @@ dcf1b0b94d93bc43a5091638826844ee  doc/ger-de/bc/5.90/passwortlaenge.md
 693eca963756cd0b335bee8289bc4022  doc/ger-de/bc/6.0/antwort-cache-und-navigation.md
 0e9a9f2936d696af431fdd512833676e  doc/ger-de/bc/6.0/api-schluessel.md
 d7111a34bd865f6c97f446c3bbbc94b7  doc/ger-de/bc/6.0/audit.md
-0b96cc7ba2b41e430e4d0d1b5e5426f1  doc/ger-de/bc/6.0/backend-dienste-ueber-ezjscore.md
+7784378538af9d685f39977a7e7aeb1b  doc/ger-de/bc/6.0/backend-dienste-ueber-ezjscore.md
 43f9ce151bcebf6673bf6d7de63ad9ae  doc/ger-de/bc/6.0/benachrichtigungen-oberflaeche-und-befehle.md
 562c6fd94209969fdefa16a00e413b4c  doc/ger-de/bc/6.0/benutzerpasswort-aendern.md
 26c33e7293e7256f3b06589ba63892ff  doc/ger-de/bc/6.0/bild-fokuspunkt.md
@@ -13701,7 +13701,7 @@ d2f8403906212d10b165b1b9653b9193  doc/ger-de/bc/6.0/phpunitv13-fuer-php841.md
 813e73f951bc569481f43b5ab5d181b4  doc/ger-de/bc/6.0/phpunitv13.md
 612be239edbb585b8d0052eda126c84c  doc/ger-de/bc/6.0/plattform-paket-forks-und-umbenannte-befehle.md
 6185d5f20eeac76275fe2ffee80602cf  doc/ger-de/bc/6.0/preload.md
-78c5914ba36834b6e5cb989b04aabe79  doc/ger-de/bc/6.0/rad-erweiterungsoberflaeche.md
+9e473aad59a3bf695c0f619d993960b6  doc/ger-de/bc/6.0/rad-erweiterungsoberflaeche.md
 a87249b7de03c3604d96098437fbb7b9  doc/ger-de/bc/6.0/rad-erweiterungspunkte.md
 d4b8fa2c2bb2774894e82becbb64ef1a  doc/ger-de/bc/6.0/rad-sicherheit.md
 b138bfbd2a5ee6ac501a13ad9eac89a4  doc/ger-de/bc/6.0/redakteur-rolle-richtlinien.md
@@ -16620,7 +16620,7 @@ aa5230b7a4d2efeba6e36ebe70ccbccd  doc/ger-de/funktionen/6.0/erweiterungen/cjw-ex
 e14a766b2f6ea25ae3ba19ecb317a56e  doc/ger-de/funktionen/6.0/erweiterungen/enhancedezbinaryfile.md
 4f953621adf273e8bcdf45290cdd7deb  doc/ger-de/funktionen/6.0/erweiterungen/enhancedselection2.md
 6193ab3abd0f576e403321d0a005e57a  doc/ger-de/funktionen/6.0/erweiterungen/exp_enhanced_link.md
-46424ac68199657cc080b91f7e3a376a  doc/ger-de/funktionen/6.0/erweiterungen/expai.md
+bbdfaa4322946bd5285d5a0db6200cda  doc/ger-de/funktionen/6.0/erweiterungen/expai.md
 e4cfddce42b86349268269d75e8434e6  doc/ger-de/funktionen/6.0/erweiterungen/expimageeditor.md
 4abbb9068d6b3aa0b3470d572c822edc  doc/ger-de/funktionen/6.0/erweiterungen/explayouts_ui.md
 833e4d5153f0fa771865b40f9de22e2f  doc/ger-de/funktionen/6.0/erweiterungen/explayouts_ui_api.md
@@ -16694,7 +16694,7 @@ c9de4471d5c29a61f80d16650e22b29a  doc/ger-de/funktionen/6.0/ladereihenfolge-der-
 68af730977a4562fde48dd55a371e5ad  doc/ger-de/funktionen/6.0/legacy-bridge.md
 1367a47ed5090fc9b6f4d69d7cc870f8  doc/ger-de/funktionen/6.0/lesezeichen-fuer-systemseiten.md
 da67a1fdef82c7239c71bbff311eeb76  doc/ger-de/funktionen/6.0/lesezeichenordner.md
-814a75b8780507956190e0c206bbfa6a  doc/ger-de/funktionen/6.0/log-betrachter.md
+624d05010894d447da028cc1de54c066  doc/ger-de/funktionen/6.0/log-betrachter.md
 d1adeb16d48df541b3a2c073b9495150  doc/ger-de/funktionen/6.0/log-rotation.md
 2d9e73a5bdc1de02051bb8e74ea9d2b7  doc/ger-de/funktionen/6.0/log-und-cache-pfade-fuer-mehrere-websites.md
 aaf9daf6eaa5923ba7b556acd12b9659  doc/ger-de/funktionen/6.0/migrationen.md
@@ -18395,7 +18395,7 @@ dae875bbcfa48ecb1bd010f301b1c8ee  doc/ger-de/hilfe/ersteller/anwendungsentwickle
 407109b8e445d1140f7d0072d8e99c7e  doc/ger-de/hilfe/ersteller/anwendungsentwickler/benachrichtigungen-und-mail.md
 b8377b76b1025cc371f096e0bcd7b3cf  doc/ger-de/hilfe/ersteller/anwendungsentwickler/caching-in-anwendungen.md
 437b305bf59c267609dc776208f4bfbb  doc/ger-de/hilfe/ersteller/anwendungsentwickler/ci-fuer-erweiterungen.md
-ff056bd283da7296fd8b94f920266238  doc/ger-de/hilfe/ersteller/anwendungsentwickler/cli-skripte.md
+aca23537919b7c1ddeeffb3b52d65c20  doc/ger-de/hilfe/ersteller/anwendungsentwickler/cli-skripte.md
 aedc7efe76805ec5ede3190082a3549e  doc/ger-de/hilfe/ersteller/anwendungsentwickler/clustering-und-gemeinsamer-speicher.md
 f32b2a0628349e2357e73dab427737db  doc/ger-de/hilfe/ersteller/anwendungsentwickler/composer-und-packagist.md
 5e5e6fe63e5c5ec5c0483e0683643d8f  doc/ger-de/hilfe/ersteller/anwendungsentwickler/content-security-policy.md
@@ -27831,7 +27831,7 @@ c232b8c83d581aff716177600b380384  share/translations/ceb-PH/GUIDE.md
 1a4d0978f70d92fd465167324d2d379b  share/translations/ceb-PH/translation.ts
 b62c57dae8e8d30fa4f64a0f217a409e  share/translations/che-RU/GUIDE.md
 83601c3ad7501bef69437f7433e574ef  share/translations/che-RU/translation.ts
-581dc12ebd173ba58e107682c0deb23f  share/translations/chi-CN/GUIDE.md
+64e8cac9cd0dca1ea0e06beef09ce0cb  share/translations/chi-CN/GUIDE.md
 0c4c0cf891c9f82591ffb90e195b811d  share/translations/chi-CN/translation.ts
 2cb5980e3f7f96b11987f08d7332fa8b  share/translations/chi-TW/GUIDE.md
 d271f8ac45c2e698f10089a4498ee4a0  share/translations/chi-TW/translation.ts
