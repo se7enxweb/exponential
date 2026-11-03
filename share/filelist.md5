@@ -4881,7 +4881,7 @@ ec248a3ebdf2fcf86c8a127f596d0c84  doc/eng-us/examples/ini-settings/expservices-e
 b0e45b08b6576733dc2b3495a7f3f6b7  doc/eng-us/examples/ini-settings/ezjscore-ezjscore/AjaxUploader.md
 cbea13c3582defea216d9a15b7099c12  doc/eng-us/examples/ini-settings/ezjscore-ezjscore/Packer.md
 a3feeb41067b4f7c778c11ddf26f5597  doc/eng-us/examples/ini-settings/ezjscore-ezjscore/README.md
-60aa4e65ae762485459eab89ec210102  doc/eng-us/examples/ini-settings/ezjscore-ezjscore/eZJSCore.md
+357ce0b8d5486d0ecaa5aba843497a9c  doc/eng-us/examples/ini-settings/ezjscore-ezjscore/eZJSCore.md
 16f6c18459e4e7762a02b24d59774589  doc/eng-us/examples/ini-settings/ezjscore-ezjscore/ezjscServer.md
 caaba2b93518fbf1ec058068b267c2ea  doc/eng-us/examples/ini-settings/ezjscore-ezjscore/ezjscServer_expdebugbar.md
 3a141d7897f326ceed2bc54119e7931c  doc/eng-us/examples/ini-settings/ezjscore-ezjscore/ezjscServer_expsubitems.md
@@ -8649,7 +8649,7 @@ bb5d7393f7c7680c4803f3a811d002bf  doc/eng-us/help/designers/theme-design/icons-i
 7a45b422a053e9542f0aaf6f329ae330  doc/eng-us/help/designers/theme-design/image-aliases.md
 6d9e17310ece3a218a942078aeb40929  doc/eng-us/help/designers/theme-design/image-performance.md
 1c0ca5cd387e100288aff2b951fd9dc8  doc/eng-us/help/designers/theme-design/images-in-a-design.md
-5daf198bbeebfa0748fa878cbc629fcc  doc/eng-us/help/designers/theme-design/jquery-in-designs.md
+48a6143d817e737b6811e84e659fa779  doc/eng-us/help/designers/theme-design/jquery-in-designs.md
 23ac9cccb6375a1fb70b982fe4908684  doc/eng-us/help/designers/theme-design/keyboard-and-focus.md
 62d46140d1a207a97ed8ef104307391c  doc/eng-us/help/designers/theme-design/landmarks-and-headings.md
 cd09c7f0bb6f278f34b914b404534015  doc/eng-us/help/designers/theme-design/layout-rules.md
@@ -13273,7 +13273,7 @@ d540df62aa49e479062d2e4c943f13b8  doc/eng-us/standards/web-platform.md
 3c8a3d79f60b6093c9dfec548dd48c84  doc/ger-de/.dirnames.json
 25867792cc1baa4f05cba3bbd13a860f  doc/ger-de/.examples/descriptions/01-command-accesscheck.json
 0e81113b726d51b19af7e2cfe986c37e  doc/ger-de/.examples/descriptions/02-command-explogs-file.json
-aa5ab6296e9da39ebdc0cd0e51c8a6c2  doc/ger-de/.examples/descriptions/03-command-mailconsent-email.json
+3bb3f9ae4492b561de268b3694fb52da  doc/ger-de/.examples/descriptions/03-command-mailconsent-email.json
 8d4edb28f11abb9d3e8b38917ba13fbf  doc/ger-de/.examples/descriptions/04-ini-settings-admininterface-ini-additionalmenusettings-.json
 37ce091c6d6540fd6587386c87562cbe  doc/ger-de/.examples/descriptions/05-ini-settings-content-ini.json
 7efd2032e4d9ce390413dcd56a78dfba  doc/ger-de/.examples/descriptions/06-ini-settings-debugbar-ini.json
@@ -14724,7 +14724,7 @@ feb1c4c20551accac65625abbe0630fd  doc/ger-de/beispiele/ini-einstellungen/extende
 9ceb36668b1485612494cd469a3d47f5  doc/ger-de/beispiele/ini-einstellungen/ezjscore-ezjscore/AjaxUploader.md
 7f113adc7f2a44a225b12c5751d32758  doc/ger-de/beispiele/ini-einstellungen/ezjscore-ezjscore/Packer.md
 2e5d89b982b247f88bae397ae7a85224  doc/ger-de/beispiele/ini-einstellungen/ezjscore-ezjscore/README.md
-c0130a072fa9952db715e930d4ac1750  doc/ger-de/beispiele/ini-einstellungen/ezjscore-ezjscore/eZJSCore.md
+a92d3e0362f0ea8a2363a5ebbf742953  doc/ger-de/beispiele/ini-einstellungen/ezjscore-ezjscore/eZJSCore.md
 f07d483b99e4cf2d715ef278e75b3f8d  doc/ger-de/beispiele/ini-einstellungen/ezjscore-ezjscore/ezjscServer.md
 625a3f9b5a8c471228ea35ff1a73115c  doc/ger-de/beispiele/ini-einstellungen/ezjscore-ezjscore/ezjscServer_expdebugbar.md
 938cbc138399371d82ac3acc89d57a74  doc/ger-de/beispiele/ini-einstellungen/ezjscore-ezjscore/ezjscServer_expsubitems.md
@@ -17845,7 +17845,7 @@ e758dd51f1052a3585749300952a8b99  doc/ger-de/hilfe/designer/theme-design/farbkon
 1dc5d8a1bcb8ca8158eef7fbd8aab14b  doc/ger-de/hilfe/designer/theme-design/gemeinsame-layouts-und-verknuepfte-zonen.md
 3e07475773f7402d14f6c2e6b5c0b893  doc/ger-de/hilfe/designer/theme-design/icons-in-einem-design.md
 ae03265b9aac8866bab8f2d841495c8e  doc/ger-de/hilfe/designer/theme-design/javascript-laden.md
-fd477d5f5dea5beed7487daac09061e0  doc/ger-de/hilfe/designer/theme-design/jquery-in-designs.md
+285faf0a496a899e42bf4b631889455e  doc/ger-de/hilfe/designer/theme-design/jquery-in-designs.md
 f6ff9452821362fabdb467fad8a1cdf4  doc/ger-de/hilfe/designer/theme-design/kein-inline-css.md
 74dff423259dc86deb893461e0f566c6  doc/ger-de/hilfe/designer/theme-design/kein-inline-javascript.md
 0d2dbbaaa428749e0b34b871ec346747  doc/ger-de/hilfe/designer/theme-design/keine-versionsparameter-an-asset-links.md
@@ -23052,7 +23052,7 @@ e9d30140fbd42f2815532e7daf033609  extension/ezformtoken/README.rst
 42ea162998c72daf52fdd7bd897a2166  extension/ezformtoken/extension.xml
 d026b4b6493a2fbdafad45ce440bcce2  extension/ezformtoken/settings/debug.ini.append.php
 904cefcac39deefdc471b89751b82a85  extension/ezformtoken/settings/site.ini.append.php
-02d9dbd975324397fd9d5f48805d5222  extension/ezjscore/CHANGELOG
+a6bb2aa91ced5818b226f60652d343a8  extension/ezjscore/CHANGELOG
 0636e73ff0215e8d672dc4c32c317bb3  extension/ezjscore/LICENSE
 d41d8cd98f00b204e9800998ecf8427e  extension/ezjscore/README
 9208e7b829680078ee72389d8a71c152  extension/ezjscore/autoloads/ezjscaccesstemplatefunctions.php
@@ -23097,7 +23097,7 @@ cb1f0862f4c6ea0793348c45f1e89806  extension/ezjscore/ezinfo.php
 eebabdb564222de9447a3200209a41fd  extension/ezjscore/modules/ezjscore/run.php
 cd79b07cce2bbd4e295736ff7c4d9bea  extension/ezjscore/settings/design.ini.append.php
 8db36481e5d6f0b49507c6531cc3639c  extension/ezjscore/settings/ezfind.ini.append.php
-22bbe11957d5dbbee9ae44eb6e99fc25  extension/ezjscore/settings/ezjscore.ini
+05d932033938fc5ed2488e06cada2eb6  extension/ezjscore/settings/ezjscore.ini
 a13eb1cb59361c9f259aa92f7a3b995b  extension/ezjscore/settings/module.ini.append.php
 6e26cbc62f8879008cd08f31618c3043  extension/ezjscore/settings/rad.ini.append.php
 b67e983627ca245b51be9f0bcf9e5a80  extension/ezjscore/settings/site.ini.append.php
@@ -28075,7 +28075,7 @@ ff323f8f82894d6392ea3ea18711694a  tests/tests/extension/ezjscore/ezjscServerFunc
 d311adc24e1c8e0d0e0d223555650167  tests/tests/extension/ezjscore/ezjscServerRouterPolicyTest.php
 24aac648c44171fd17d197580a7fd416  tests/tests/extension/ezjscore/ezjscoreAnonymousAccessTest.php
 99e1646fbcc322def22e5ea7b9b21e6b  tests/tests/extension/ezjscore/ezjscoreCallThrowableTest.php
-ff3804a2910bf86268897521b056d232  tests/tests/extension/ezjscore/ezjscoreVendoredLibrariesTest.php
+012ae1dd34365f458aff02be9ef79c50  tests/tests/extension/ezjscore/ezjscoreVendoredLibrariesTest.php
 4fb5ed987b89c588b7ff9c588d449add  tests/tests/extension/ezjscore/fixtures/publishingqueue_harness.php
 1eb3b1c43d63e722414151a13f3999e7  tests/tests/extension/ezmultiupload/expMultiuploadQuickLocationsScriptTest.php
 d4eddb02951d407a7b710d2492d16959  tests/tests/extension/ezmultiupload/expMultiuploadQuickLocationsTest.php

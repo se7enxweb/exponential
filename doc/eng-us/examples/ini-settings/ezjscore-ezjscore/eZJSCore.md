@@ -100,8 +100,10 @@ PreferredLibrary=jquery
 > leaving LoadFromCDN=disabled (local scripts) or adding Subresource Integrity.  
 > jQuery: the same releases from the CDN as the local files below (the CDN entries used to name  
 > jQuery 1.10.2 and jQuery UI 1.10.3, older than the local copies).  
+> jQuery Migrate is switched off (empty), see LocalScripts\[jqueryMigrate\] below. To switch it back on:  
+> ExternalScripts\[jqueryMigrate\]=https://code.jquery.com/jquery-migrate-4.0.2.min.js  
 
-Default: a hash of 3: `jquery=https://code.jquery.com/jquery-4.0.0.min.js`, `jqueryMigrate=https://code.jquery.com/jquery-migrate-4.0.2.min.js`, `jqueryUI=https://code.jquery.com/ui/1.14.2/jquery-ui.min.js`.
+Default: a hash of 3: `jquery=https://code.jquery.com/jquery-4.0.0.min.js`, `jqueryMigrate=`, `jqueryUI=https://code.jquery.com/ui/1.14.2/jquery-ui.min.js`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -110,7 +112,7 @@ Default: a hash of 3: `jquery=https://code.jquery.com/jquery-4.0.0.min.js`, `jqu
 # an empty "ExternalScripts[]" first replaces the shipped list; without it the items are added
 ExternalScripts[]
 ExternalScripts[jquery]=https://code.jquery.com/jquery-4.0.0.min.js
-ExternalScripts[jqueryMigrate]=https://code.jquery.com/jquery-migrate-4.0.2.min.js
+ExternalScripts[jqueryMigrate]=
 ExternalScripts[jqueryUI]=https://code.jquery.com/ui/1.14.2/jquery-ui.min.js
 */ ?>
 ```
@@ -119,13 +121,16 @@ ExternalScripts[jqueryUI]=https://code.jquery.com/ui/1.14.2/jquery-ui.min.js
 
 > List of local JavaScript jQuery libraries, optionally start with "/" to signal that its in  
 > root of design folder and not in /javascript sub folder  
-> ezjsc::jquery: jQuery 4.0.0, followed by jQuery Migrate 4.0.2, which restores the APIs jQuery 4 removed so older  
-> code keeps working. This build is quiet; to see in the browser console every old call it restores, use the  
-> reporting build, jquery-migrate-4.0.2.js. Leave jqueryMigrate empty to load jQuery 4 alone. Only these releases  
-> are shipped: the older jQuery 3.7.1, Migrate 3.4.1 and jQuery UI 1.10.3 files are removed.  
+> ezjsc::jquery: jQuery 4.0.0 alone. jQuery Migrate 4.0.2, which restores the APIs jQuery 4 removed so older code  
+> keeps working, is still shipped but switched off: the admin designs and the extensions they load no longer call  
+> any of those APIs. A site whose own code still does can switch it back on in an override:  
+>   LocalScripts\[jqueryMigrate\]=jquery-migrate-4.0.2.min.js  
+> (quiet build; jquery-migrate-4.0.2.js reports in the browser console every old call it restores), and  
+> ExternalScripts\[jqueryMigrate\] as above when LoadFromCDN is enabled. Only these releases are shipped: the older  
+> jQuery 3.7.1, Migrate 3.4.1 and jQuery UI 1.10.3 files are removed.  
 > ezjsc::jqueryUI: jQuery UI 1.14.2, which supports jQuery 4  
 
-Default: a hash of 3: `jquery=jquery-4.0.0.min.js`, `jqueryMigrate=jquery-migrate-4.0.2.min.js`, `jqueryUI=jquery-ui-1.14.2.min.js`.
+Default: a hash of 3: `jquery=jquery-4.0.0.min.js`, `jqueryMigrate=`, `jqueryUI=jquery-ui-1.14.2.min.js`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -134,7 +139,7 @@ Default: a hash of 3: `jquery=jquery-4.0.0.min.js`, `jqueryMigrate=jquery-migrat
 # an empty "LocalScripts[]" first replaces the shipped list; without it the items are added
 LocalScripts[]
 LocalScripts[jquery]=jquery-4.0.0.min.js
-LocalScripts[jqueryMigrate]=jquery-migrate-4.0.2.min.js
+LocalScripts[jqueryMigrate]=
 LocalScripts[jqueryUI]=jquery-ui-1.14.2.min.js
 */ ?>
 ```
