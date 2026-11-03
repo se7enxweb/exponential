@@ -255,4 +255,12 @@ class eZTemplateCompiledLoopRecursionTest extends PHPUnit\Framework\TestCase
             array( 'nodes' => self::tree() ),
             '<1.1<11.1><11.2>><11.2><2.1><2.2><3.1><3.2>' );
     }
+    /** LR-07 */
+    public function testIncludeParametersAreRestoredAtEveryLevel()
+    {
+        $this->assertBothWays( 'include_restore',
+            '<{$d}{if $d|gt(0)}{include uri="%self%" d=$d|sub(1) e=$d}{/if}{$d}.{$e}>',
+            array( 'd' => 3, 'e' => 'x' ),
+            '<3<2<1<00.0>1.1>2.2>3.x>' );
+    }
 }

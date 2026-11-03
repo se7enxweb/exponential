@@ -99,7 +99,8 @@ class eZTemplateIncludeFunction
 
         $variableList = array();
         $uniqID = md5( uniqid('inc') );
-        $newNodes[] = eZTemplateNodeTool::createCodePieceNode( "\$oldRestoreIncludeArray" . "_$uniqID = isset( \$restoreIncludeArray ) ? \$restoreIncludeArray : array();\n".
+        // a stack, not one value: a template that includes itself runs this code again in the same scope before the restore
+        $newNodes[] = eZTemplateNodeTool::createCodePieceNode( "\$oldRestoreIncludeArray" . "_{$uniqID}[] = isset( \$restoreIncludeArray ) ? \$restoreIncludeArray : array();\n".
                                                                "\$restoreIncludeArray = array();\n");
         foreach ( array_keys( $parameters ) as $parameterName )
         {
@@ -128,7 +129,7 @@ class eZTemplateIncludeFunction
                                                                "    }\n".
                                                                "    \$vars[\$element[0]][\$element[1]] = \$element[2];\n".
                                                                "}\n".
-                                                               "\$restoreIncludeArray = \$oldRestoreIncludeArray" . "_$uniqID;\n" );
+                                                               "\$restoreIncludeArray = array_pop( \$oldRestoreIncludeArray" . "_$uniqID );\n" );
 
         return $newNodes;
     }
