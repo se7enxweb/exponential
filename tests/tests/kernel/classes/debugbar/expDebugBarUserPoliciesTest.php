@@ -1,9 +1,12 @@
 <?php
 /**
- * Who sees the debug bar's User tab and how its policies are asked for, continuing expDebugBarPoliciesTest (UP-01 to
- * UP-04, UP-06 to UP-08):
- *   - UP-05 the tab: setup/setup, or an anonymous visitor with debug output; never a logged-in user without
- *           setup/setup, even with debug output (expDebugBarUser::mayView())
+ * Who sees the debug bar's User tab, who reads what (debugbar.ini ReadAccess) and how the policies are asked for,
+ * continuing expDebugBarPoliciesTest (UP-01 to UP-04, UP-06 to UP-08):
+ *   - UP-05 the tab: setup/setup always; with debugbar.ini ReadAccess=debug (the default) whoever gets the debug
+ *           output, logged in or not; with ReadAccess=privileged an anonymous visitor with debug output, not a
+ *           logged-in user without setup/setup (expDebugBarUser::mayView())
+ *   - UP-11 ReadAccess: debug unless it says privileged; readsAll() only with debug output; reading the cache list
+ *           is not clearing, the form for it only with setup/managecache
  *   - UP-09 expdebugbar::policies takes its arguments from the path: role id or "-", offset, the search as base64url
  *           ("-" for none); anything else refused, the search held to 100 characters
  *   - UP-10 the script asks with everything in the path, never the query string, and only when the section is opened
@@ -20,12 +23,48 @@ class expDebugBarUserPoliciesTest extends PHPUnit\Framework\TestCase
     /** UP-05 */
     public function testWhoMaySeeTheTab()
     {
-        $this->assertTrue( expDebugBarUser::mayView( true, true, false ), 'setup/setup, with or without debug output' );
-        $this->assertTrue( expDebugBarUser::mayView( true, true, true ) );
-        $this->assertTrue( expDebugBarUser::mayView( false, false, true ), 'an anonymous visitor with debug output' );
-        $this->assertFalse( expDebugBarUser::mayView( false, false, false ), 'an anonymous visitor without debug output' );
-        $this->assertFalse( expDebugBarUser::mayView( false, true, true ), 'a logged-in user without setup/setup, even with debug output' );
-        $this->assertFalse( expDebugBarUser::mayView( false, true, false ) );
+        foreach ( array( 'debug', 'privileged' ) as $mode )
+        {
+            $this->assertTrue( expDebugBarUser::mayView( true, true, false, $mode ), "$mode: setup/setup, with or without debug output" );
+            $this->assertTrue( expDebugBarUser::mayView( true, true, true, $mode ), $mode );
+            $this->assertTrue( expDebugBarUser::mayView( false, false, true, $mode ), "$mode: an anonymous visitor with debug output" );
+            $this->assertFalse( expDebugBarUser::mayView( false, false, false, $mode ), "$mode: an anonymous visitor without debug output" );
+            $this->assertFalse( expDebugBarUser::mayView( false, true, false, $mode ), "$mode: a logged-in user without setup/setup and without debug output" );
+        }
+        $this->assertTrue( expDebugBarUser::mayView( false, true, true, 'debug' ), 'debug: a logged-in user without setup/setup who gets the debug output, their own data' );
+        $this->assertFalse( expDebugBarUser::mayView( false, true, true, 'privileged' ), 'privileged: not a logged-in user without setup/setup' );
+    }
+
+    private function barIni( $readAccess )
+    {
+        $ini = $this->createStub( eZINI::class );
+        $ini->method( 'hasVariable' )->willReturnCallback( function ( $block, $name ) use ( $readAccess ) {
+            return $block === 'DebugBarSettings' && $name === 'ReadAccess' && $readAccess !== null;
+        } );
+        $ini->method( 'variable' )->willReturn( (string)$readAccess );
+        return $ini;
+    }
+
+    /** UP-11 */
+    public function testReadAccess()
+    {
+        $this->assertSame( 'debug', expDebugBarRegistry::readAccess( $this->barIni( null ) ), 'not set: debug, everything' );
+        $this->assertSame( 'debug', expDebugBarRegistry::readAccess( $this->barIni( 'debug' ) ) );
+        $this->assertSame( 'privileged', expDebugBarRegistry::readAccess( $this->barIni( ' Privileged ' ) ) );
+        $this->assertSame( 'debug', expDebugBarRegistry::readAccess( $this->barIni( 'bogus' ) ), 'an unknown word: the default' );
+        $this->assertTrue( expDebugBarRegistry::readsAll( true, $this->barIni( null ) ) );
+        $this->assertFalse( expDebugBarRegistry::readsAll( false, $this->barIni( null ) ), 'never without debug output' );
+        $this->assertFalse( expDebugBarRegistry::readsAll( true, $this->barIni( 'privileged' ) ) );
+
+        $cacheHtml = new ReflectionMethod( 'expDebugBarReport', 'cacheHtml' );
+        $page = array( 'node_id' => 2, 'object_id' => 1, 'uri' => '/' );
+        $reader = $cacheHtml->invoke( null, $page, array( 'can_cache' => false, 'read_cache' => true ) );
+        $this->assertStringContainsString( 'class="exp-debug-cache"', $reader, 'the list for a reader' );
+        $this->assertStringNotContainsString( 'setup/cachetoolbar', $reader, 'no form that clears for a reader' );
+        $manager = $cacheHtml->invoke( null, $page, array( 'can_cache' => true, 'read_cache' => true ) );
+        $this->assertStringContainsString( 'setup/cachetoolbar', $manager );
+        $nobody = $cacheHtml->invoke( null, $page, array( 'can_cache' => false, 'read_cache' => false ) );
+        $this->assertStringNotContainsString( 'class="exp-debug-cache"', $nobody );
     }
 
     private static function b64url( $text )

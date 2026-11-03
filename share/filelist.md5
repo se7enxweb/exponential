@@ -2352,7 +2352,7 @@ ff23b2b1387845ae5f541b38a7951963  design/standard/javascript/exp_bookmarks.js
 2740d834e1c8ecb2a05b6ce65ea4ca3d  design/standard/javascript/exp_passkey.js
 3e27389cb0e9b7fcbc78aa9f77b83e9f  design/standard/javascript/exp_password_field.js
 b8c91691f6f4c2a012fac6884a2523b7  design/standard/javascript/expdebugbar-head.js
-f88b57fd022fb3ec2d189fff84d55c0b  design/standard/javascript/expdebugbar.js
+28ded16c3e8e8a1c6c1eab4b68f23558  design/standard/javascript/expdebugbar.js
 603cddcdfbe3f90ca4c42bd0a0b2eca4  design/standard/javascript/expimagepick.js
 c9d4a91276689383a1be79bb68937c1d  design/standard/javascript/ezasynchronouspublishing.js
 c1f77f113c9e98c8d69676a294815077  design/standard/javascript/ezmedia_silverlight.js
@@ -3515,7 +3515,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-4d6fb350a14d81e77be902ce65a3bfed  doc/changelogs/6.0/6.0.15.md
+bd3a76ace0482999f5e92df30fd30f90  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -3660,7 +3660,7 @@ f8dec2dfb81fbb16a107d0bde08c230b  doc/eng-us/bc/6.0/cli_cronjob_view_abstraction
 f504dbb0bd1d30709cde9b7def0b1c52  doc/eng-us/bc/6.0/content-export-menu.md
 cc90672fddc8e975d7107993d9b1cb59  doc/eng-us/bc/6.0/content-jobs.md
 ec94f35b9c29418f1c35fe46d54a157f  doc/eng-us/bc/6.0/content-object-fallback-locale.md
-e51b0e2dc96d3b1daa2ed2ca5282aa34  doc/eng-us/bc/6.0/debug-bar.md
+8d980845f65b7f54ecc087738e46c27a  doc/eng-us/bc/6.0/debug-bar.md
 dd5a75132053a4ed2a80e386eebe7f04  doc/eng-us/bc/6.0/demo-mode.md
 68ca2915c347f13a647afb19d14748d0  doc/eng-us/bc/6.0/draft-edit-access.md
 b0fbba2abe4abadee42e57cebb5388fd  doc/eng-us/bc/6.0/eZINI_PRESERVES_COMMENTS.md
@@ -6868,7 +6868,7 @@ bb5efc485eb376e77b38aa0824f805e5  doc/eng-us/features/6.0/data-tables.md
 fe706ad129c921a5ec4d194fa6745051  doc/eng-us/features/6.0/editor-account-approval.md
 8bb25377c53c0d863e0b1ad669e226da  doc/eng-us/features/6.0/environment-settings.md
 c5efbdd362ad6370abdcf053a6f5cd9d  doc/eng-us/features/6.0/exp-adminui.md
-6a6a6c5f327c75938d863224bc547540  doc/eng-us/features/6.0/exp-debug-bar.md
+6c2adf7ff3674f1fcce62c788617b16f  doc/eng-us/features/6.0/exp-debug-bar.md
 d9177e42ef957029c160b94a0b7e6363  doc/eng-us/features/6.0/exp-ini-command.md
 ac55ec9c4caa5425b7c20230440f9026  doc/eng-us/features/6.0/extension-list-and-downloads.md
 b35cf8140a2f26d5e3488661f148506d  doc/eng-us/features/6.0/extension-loading-order.md
@@ -11455,7 +11455,7 @@ c8b13b92e9b90ab579eadedea6635aa5  doc/eng-us/help/php-developers/security-in-php
 9bda36c70848dc6e03ffc867d27cea91  doc/eng-us/help/php-developers/static-state-traps.md
 9bb8497d245f5431f64868e4e145a0bf  doc/eng-us/help/php-developers/supported-php-versions.md
 dfe1719906a2ed1eb8f50b52c2164f07  doc/eng-us/help/php-developers/the-coding-standard.md
-e6776c2eb62567984810d5051f588129  doc/eng-us/help/php-developers/the-debug-bar-for-php-developers.md
+38e6578336d6aab99048c76d8044638b  doc/eng-us/help/php-developers/the-debug-bar-for-php-developers.md
 3e66706cbebac52faa1cdafe347d712d  doc/eng-us/help/php-developers/the-engine-phar-for-php-developers.md
 d54b61f35504722feae6c3e9e3781c4a  doc/eng-us/help/php-developers/the-kernel-service-container.md
 19fb72bae7189bbcdb0508f883646789  doc/eng-us/help/php-developers/validating-input-and-casting.md
@@ -13677,7 +13677,7 @@ db7eda525294b18a40ac90327cdfc4a9  doc/ger-de/bc/6.0/cache-konsole.md
 22387ed0bedfdd9b421e473547a4c3c1  doc/ger-de/bc/6.0/crontab-bei-der-installation.md
 ea07b67ad11528eeabcfb2c593d40818  doc/ger-de/bc/6.0/dateimodi.md
 82dae10ac5fe0c63f5922ecbf3165b4f  doc/ger-de/bc/6.0/dateirechte-beim-speichern-von-ini-dateien.md
-a04662fdd46b72168a8bca83a0320c35  doc/ger-de/bc/6.0/debug-leiste.md
+697bc82a0cad49df24008f16ce520a6b  doc/ger-de/bc/6.0/debug-leiste.md
 1ca93780e39ff386b13ea6f6a76267b9  doc/ger-de/bc/6.0/demomodus.md
 639639dd0808e7a81326655b6b971a60  doc/ger-de/bc/6.0/e-mail-einstellungen.md
 c837b1b052fefd9478c4cb6452f2a62a  doc/ger-de/bc/6.0/einstellungen-fuer-seitengroessen.md
@@ -16717,7 +16717,7 @@ c4ac384cbe89a44c6a11a586759b5c84  doc/ger-de/funktionen/6.0/erweiterungen/sevenx
 aaf7124b4c84243459602e94e15c755e  doc/ger-de/funktionen/6.0/erweiterungen/xrowextract.md
 0a352feeafe3914509786f11718402cf  doc/ger-de/funktionen/6.0/erweiterungen/xrowmetadata.md
 35c5a1ba681656ba437b9f07265b606a  doc/ger-de/funktionen/6.0/exp-adminui.md
-549dfc29b7b3979740ac3eee23d122c8  doc/ger-de/funktionen/6.0/exp-debug-leiste.md
+444aaea58cb8213b707d0e06ac4759f4  doc/ger-de/funktionen/6.0/exp-debug-leiste.md
 562485087228bd9e87a72a2bad882695  doc/ger-de/funktionen/6.0/exp-ini-befehl.md
 0de4b3d8a279a43c0f19fcb08c3b54ec  doc/ger-de/funktionen/6.0/extension-liste-und-downloads.md
 2e31533efcf8f0f4f1dce7fa4d593a7b  doc/ger-de/funktionen/6.0/ezpm-paketmanager-cli.md
@@ -20006,7 +20006,7 @@ c8e2c829d3c170676e6264b7f41e4bc3  doc/ger-de/hilfe/php-entwickler/debugging-mit-
 2e41b807e11ce6d5fd50e76794331134  doc/ger-de/hilfe/php-entwickler/definitionen-persistenter-objekte-im-detail.md
 65b78d6b25e3e34ba29882987c7880c6  doc/ger-de/hilfe/php-entwickler/der-coding-standard.md
 bd194ecc9dec42cb21672485ba4515b3  doc/ger-de/hilfe/php-entwickler/der-kernel-service-container.md
-5307514b9a1e5764469f5fe00538fdb8  doc/ger-de/hilfe/php-entwickler/die-debug-leiste-fuer-php-entwickler.md
+81401659ea7f508579e4611da9aee196  doc/ger-de/hilfe/php-entwickler/die-debug-leiste-fuer-php-entwickler.md
 1068b0b4fbd033b30e59a6bb6665a4be  doc/ger-de/hilfe/php-entwickler/ein-php-entwicklungs-checkout.md
 bf86a5465fe5ba9c7136ca094d27dc10  doc/ger-de/hilfe/php-entwickler/ein-rundgang-durch-den-quellbaum.md
 c11ba297d517eabce51c0352809cc8ae  doc/ger-de/hilfe/php-entwickler/eine-fetch-funktion-schreiben.md
@@ -24378,12 +24378,12 @@ f8f9e20684840145d6fed82d211d7d4e  kernel/classes/datatypes/ezxmltext/handlers/ou
 0255f4ea38ff794c28182b4320a50ee3  kernel/classes/debugbar/expdebugbarlog.php
 65e55936aafbeefca1835ecb7fa8f827  kernel/classes/debugbar/expdebugbarpanelinterface.php
 aec100be3f51b8ac680edb98e86a7125  kernel/classes/debugbar/expdebugbarpolicies.php
-e65e5cf2758771560e63ed95a0b41c9b  kernel/classes/debugbar/expdebugbarregistry.php
-94d8d81c4bdbcf990377eefd101970ee  kernel/classes/debugbar/expdebugbarserverfunctions.php
-7d78edfc1759a97043d0ffe5b802677f  kernel/classes/debugbar/expdebugbarsession.php
+2482c2c396d56cef74ed5c66f10edfba  kernel/classes/debugbar/expdebugbarregistry.php
+338c04618a91e8d0db5d2a91b7992cad  kernel/classes/debugbar/expdebugbarserverfunctions.php
+12ebf7dee5a3303264f6c7084c5f4f3e  kernel/classes/debugbar/expdebugbarsession.php
 da343c61d8fc793d750c8ef727afe8ba  kernel/classes/debugbar/expdebugbarsettings.php
-bd109a993ddd142e8f2017620dbdb4df  kernel/classes/debugbar/expdebugbarsummary.php
-978a5e4873095df2ff0a7c68b744030c  kernel/classes/debugbar/expdebugbaruser.php
+1bce0df12ed868f92940f1a5ea5944d8  kernel/classes/debugbar/expdebugbarsummary.php
+d81d092a888f487b052c6594b0144abb  kernel/classes/debugbar/expdebugbaruser.php
 717cd5319155a524b29de28659444487  kernel/classes/debugbar/exprenderstats.php
 a59e7722d7d542f3fd37517175faf889  kernel/classes/expadminpagination.php
 b98d6d508d9e1ad1f595ec2d5a4622cb  kernel/classes/expanonymouspublicpolicies.php
@@ -26653,7 +26653,7 @@ fecb5bd298387ea48398d60640158ab3  lib/eztemplate/classes/eztemplatetypeoperator.
 0bf7054981a58617d93a74c829b2663d  lib/eztemplate/classes/eztemplateunitoperator.php
 b5a1eb2005674c257dff73cc772b37fa  lib/eztemplate/classes/eztemplatevariableelement.php
 ac5136e11f2d4914d698fda861318a5e  lib/eztemplate/classes/eztemplatewhilefunction.php
-41a0240bbd4f77541d27e6af38499ade  lib/ezutils/classes/expdebugbarreport.php
+34aa11243877c7d2d23d380c039da715  lib/ezutils/classes/expdebugbarreport.php
 85ec8b5baf7762c9e1788c1806fd1955  lib/ezutils/classes/expinfo.php
 6b10748123dbb1ee64e43d89ca7962a4  lib/ezutils/classes/ezcachehelper.php
 ec0113527fb59183b48344a81e9e5e62  lib/ezutils/classes/ezcli.php
@@ -26849,7 +26849,7 @@ d5020c505e699f2d0f7606e505c9a8d2  settings/datatype.ini
 ea68c5ba8eb753c5292a1c4dd3a5b2bc  settings/datetime.ini
 9197ab21aa5e2f4e44eb3950d1753461  settings/dbschema.ini
 0c09e0bf093c0f1f18f97705355d487c  settings/debug.ini
-5661e1e102365af5b244d15ea96174af  settings/debugbar.ini
+bf26eed4892753a7e5b98f715d3e2032  settings/debugbar.ini
 b0c004af769060ac23ef847a4250a782  settings/design.ini
 b244336d7be89b1697f8232f4f0fe201  settings/editorpolicies.ini
 32345e49a48d1f9bf1251ad9dde479b7  settings/error.ini
@@ -28694,9 +28694,9 @@ e7046a7b2fa81a816312f355e49bc12f  tests/tests/kernel/classes/debugbar/expDebugBa
 670403b1ee71aa1a4cdf79abf1489903  tests/tests/kernel/classes/debugbar/expDebugBarPoliciesTest.php
 c2015e9a7c16465a385e07c0b2d5f198  tests/tests/kernel/classes/debugbar/expDebugBarQueryCacheTest.php
 2b8fcf8bfcc01416fc7ace195c3a703a  tests/tests/kernel/classes/debugbar/expDebugBarSessionTest.php
-2dcfc3260094d3d76fbc46ca455b3a9a  tests/tests/kernel/classes/debugbar/expDebugBarSettingsTest.php
+cffb48c972edb40a4589a897ac0b4888  tests/tests/kernel/classes/debugbar/expDebugBarSettingsTest.php
 3a346f5a7b9d4a168c7e1aa1b488f325  tests/tests/kernel/classes/debugbar/expDebugBarSummaryPhpVersionTest.php
-0f1d0455b140eb33cbe14e800a400538  tests/tests/kernel/classes/debugbar/expDebugBarUserPoliciesTest.php
+c680e8958ce355170bb27dc043ed3768  tests/tests/kernel/classes/debugbar/expDebugBarUserPoliciesTest.php
 2e63af829c6f7d16e350d519d742cb6c  tests/tests/kernel/classes/debugbar/expDebugBarUserTest.php
 0b2683814861305e830fb4cd770b688d  tests/tests/kernel/classes/debugbar/expDebugBarWaveTogetherTest.php
 767723d71b9b739f92932f0ef3356b24  tests/tests/kernel/classes/debugbar/expRenderStatsCacheBlockTest.php

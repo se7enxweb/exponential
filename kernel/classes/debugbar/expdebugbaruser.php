@@ -19,8 +19,9 @@
  * views under the same tweaks, as far as the parts of the view itself do not differ: the preferences of
  * CachedViewPreferences and the keys listeners add. Those have a fingerprint of their own, for the view of the page.
  *
- * Shown to users with setup/setup, and to an anonymous visitor who gets the debug output: the parts carry role and
- * limitation ids, an anonymous visitor's are those of every anonymous visitor. A logged-in user also sees the profile
+ * Shown to users with setup/setup and, with debugbar.ini ReadAccess=debug (the default), to whoever gets the debug
+ * output (mayView()): a logged-in user sees their own role and limitation ids, an anonymous visitor's are those of
+ * every anonymous visitor. A logged-in user also sees the profile
  * of anonymous visitors, to tell at once whether the two share the cache files.
  */
 class expDebugBarUser
@@ -289,18 +290,25 @@ class expDebugBarUser
     }
 
     /**
-     * Whether the current request may see the User tab: a user with setup/setup, or an anonymous
-     * visitor who gets the debug output (whose roles are those of every anonymous visitor). A logged-in user without
-     * setup/setup does not, even with debug output (DebugByUser).
+     * Whether the current request may see the User and the Rendering tab. A user with setup/setup always. With
+     * debugbar.ini ReadAccess=debug (the default, expDebugBarRegistry::readAccess()) whoever gets the debug output
+     * (DebugByIP, DebugByUser), logged in or not: the tabs hold the user's own data (their roles, profile, preferences
+     * and session; an anonymous visitor's are those of every anonymous visitor). With ReadAccess=privileged, as before,
+     * besides setup/setup only an anonymous visitor who gets the debug output.
      *
      * @param bool $canSetup the user has setup/setup
      * @param bool $loggedIn the user is logged in (not the anonymous user)
      * @param bool $debugOutput the request gets the debug output
+     * @param string|null $readAccess 'debug' or 'privileged' (null: expDebugBarRegistry::readAccess())
      * @return bool
      */
-    public static function mayView( $canSetup, $loggedIn, $debugOutput )
+    public static function mayView( $canSetup, $loggedIn, $debugOutput, $readAccess = null )
     {
-        return (bool)$canSetup || ( !$loggedIn && (bool)$debugOutput );
+        if ( $canSetup )
+            return true;
+        if ( $readAccess === null )
+            $readAccess = class_exists( 'expDebugBarRegistry' ) ? expDebugBarRegistry::readAccess() : 'privileged';
+        return (bool)$debugOutput && ( $readAccess === 'debug' || !$loggedIn );
     }
 
     /**

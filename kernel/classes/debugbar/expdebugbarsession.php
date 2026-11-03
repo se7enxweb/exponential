@@ -58,7 +58,8 @@ class expDebugBarSession
     /**
      * The section's data for the current request: its own session, nothing else.
      *
-     * @param bool $privileged the user has setup/setup: the frame shows the save path and the handler class
+     * @param bool $privileged the user may read what setup/setup reads (expDebugBarServerFunctions::canReadSetup()):
+     *                         the frame shows the save path and the handler class
      * @return array forSession()
      */
     public static function current( $privileged )

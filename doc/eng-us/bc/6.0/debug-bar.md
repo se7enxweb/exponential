@@ -218,7 +218,7 @@ that matched, the engine (Velocity or the SAPI), the siteaccess, and the SQL que
 null while the cache is off). Every figure has a level, `ok`, `warn`
 or `high`, against `Thresholds[]` in debugbar.ini (`time_ms`, `sql_count`, `sql_ms`, `memory_mb`, `templates`, each
 `<warn>;<high>`; `opcache_memory` and `apcu_memory` are the memory in use in percent, `opcache` and `apcu` in the
-summary, null while they are off or for a user without `setup/setup`; `querycache_hit_rate` is a hit rate in percent
+summary, null while they are off or for a user who may not read them ([ReadAccess](#who-reads-what-readaccess)); `querycache_hit_rate` is a hit rate in percent
 and turns the level up **below** its values, see
 `expDebugBarReport::queryCacheLevel()`, the one place of these rules: `expDebugBarSummary::queryCache()` and the bar's own fallback both build the figures with `expDebugBarReport::queryCacheFigures()`). `expDebugBarSummary::json()` is the same as JSON that is safe inside a `<script>` element.
 
@@ -229,16 +229,16 @@ and turns the level up **below** its values, see
 
 | Function | Request | Needs |
 |---|---|---|
-| `settings[::<siteaccess>]` | GET | setup/setup (nothing about the configuration goes to anybody else) |
+| `settings[::<siteaccess>]` | GET | to read: setup/setup, or the debug output under [ReadAccess](#who-reads-what-readaccess) `debug`; `can_write` tells whether the answer may be changed |
 | `set` | POST `setting`, `op`, `value`, `scope` [`siteaccess`, `confirm`, `dry_run`] | setup/setup |
 | `undo` | POST `entry` or `group` [`force`] | setup/setup |
 | `preset` | POST `preset` + `scope` (apply), `save` [+ `values` JSON or `snapshot=1`], or `delete` | setup/setup |
-| `cache` | GET `action=list`; POST `action=clear`, `by=all\|tag\|id\|node\|velocity\|opcache\|querycache_counters`, `names`, `node_id` | setup/managecache (list and clear) |
-| `iptest` | `address`, `list` (JSON array) | setup/setup |
-| `log[::<limit>]` | GET | setup/setup |
+| `cache` | GET `action=list`; POST `action=clear`, `by=all\|tag\|id\|node\|velocity\|opcache\|querycache_counters`, `names`, `node_id` | list: setup/managecache, or the debug output under [ReadAccess](#who-reads-what-readaccess) `debug`; clear: setup/managecache |
+| `iptest` | `address`, `list` (JSON array) | setup/setup, or the debug output under [ReadAccess](#who-reads-what-readaccess) `debug` |
+| `log[::<limit>]` | GET | setup/setup, or the debug output under [ReadAccess](#who-reads-what-readaccess) `debug` |
 | `summary` | GET | debug output for the request (the report itself; a visitor gets no IP list entry in it) |
-| `policies[::<role>[::<offset>[::<search>]]]` | GET; everything in the path: a role id or `-`, the offset, the search as base64url of its UTF-8 text or `-` (`expdebugbar::policies::-::0::Y29udGVudC9yZWFk` searches `content/read`) | setup/setup: the policies of the current user's roles, a page of 200 rows (see [User](#user-roles-and-cache-profile)) |
-| `session` | GET | who sees the User tab (`setup/setup`, or an anonymous visitor with debug output): the request's own PHP session, keys as a tree, grouped by extension, secrets masked, and its frame (see [User](#user-roles-and-cache-profile)) |
+| `policies[::<role>[::<offset>[::<search>]]]` | GET; everything in the path: a role id or `-`, the offset, the search as base64url of its UTF-8 text or `-` (`expdebugbar::policies::-::0::Y29udGVudC9yZWFk` searches `content/read`) | setup/setup, or the debug output under [ReadAccess](#who-reads-what-readaccess) `debug`: the policies of the current user's roles, a page of 200 rows (see [User](#user-roles-and-cache-profile)) |
+| `session` | GET | who sees the User tab (`setup/setup`; whoever gets the debug output under `ReadAccess=debug`, under `privileged` an anonymous visitor with debug output): the request's own PHP session, keys as a tree, grouped by extension, secrets masked, and its frame (see [User](#user-roles-and-cache-profile)) |
 | `panelheight` | POST `height` (pixels, `0` for the default) | a logged-in user (never an anonymous visitor) with debug output for the request: stores the user preference `expdebugbar_panel_height` (see [The panel's height](#the-panels-height)) |
 
 Every POST must carry the form token (`ezxform_token`, or the header `X-CSRF-Token`); the `settings` answer has
@@ -265,8 +265,8 @@ $ curl -s -u YOUR_USER:YOUR_PASSWORD 'https://admin.example.com/ezjscore/call/ex
 {"error_text":"","content":{"address":"...","valid":true,"family":4,"remote_addr":"...","client_ip":"...",
  "trusts_proxy":false,"proxy_header":null,"suggest":{"self":".../32","network":".../24","family":4},
  "debug_by_ip":false,"allowed":false,"matched":null,...}}
-$ curl -s 'https://www.example.com/ezjscore/call/expdebugbar::log?ContentType=json'
-{"error_text":"This needs the policy setup\/setup or setup\/managecache","content":""}
+$ curl -s 'https://www.example.com/ezjscore/call/expdebugbar::log?ContentType=json'    # from an address without debug output
+{"error_text":"Sign in with setup access to change debug settings (policy setup\/setup)","content":""}
 ```
 
 ## RAD
@@ -292,7 +292,7 @@ php vendor/bin/phpunit tests/tests/kernel/classes/debugbar/
 | `RadSurveyDebugBarTest` | the two registries, the total, the bar's figures, the new problem kinds |
 | `expDebugBarPoliciesTest` | the policies of the User tab (UP-01 to UP-04, UP-06 to UP-08): rows and limitation values as one sorted list, the selection by role and by search (module/function, role name, class name, limitation, stored value), a search for a module and function that also finds the wildcards granting it, a row with readable values, the section only for those allowed, with the address for the role links, the script's words, the queries in chunks of 500 ids, 600 policies of 300 roles. No database |
 | `expDebugBarUserTest` | the User tab: the user's parts of the view cache key and each ignore tweak, the preferences key against the code it replaced, the preferences of every view mode (one name with two defaults), the fingerprint, the profile from a view's key (parts a listener left out or changed, pr_user), anonymous visitors, the chip, the tab escaped, the copy text. No database |
-| `expDebugBarUserPoliciesTest` | who sees the User tab, and how its policies are asked for (UP-05, UP-09, UP-10): the arguments of `expdebugbar::policies` in the path and what is refused, the script's request without a query string. No database |
+| `expDebugBarUserPoliciesTest` | who sees the User tab, and how its policies are asked for (UP-05 under both values of ReadAccess, UP-09, UP-10, UP-11 ReadAccess and the cache list without its form for a reader): the arguments of `expdebugbar::policies` in the path and what is refused, the script's request without a query string. No database |
 | `expDebugBarSessionTest` | the section Session of the User tab (US-01 to US-06): keys grouped by the extension that prefixes them, the kernel first; secrets masked with everything below them, the masks of debugbar.ini or the defaults, an invalid mask taken as text; a node's type, size, cut strings, binary as hex, objects with every property; the limits of depth, children and entries; the shortened session id; the section offered to whoever sees the tab, the script's words and request. No session |
 
 `expDebugBarSettingsTest` starts the kernel once on the admin siteaccess with the installation's own database, as
@@ -445,9 +445,9 @@ The summary in the bar shows the request at a glance; each value opens its tab:
 | APCu memory in use (`APCu 25 %`, the title with MB, entries, hit rate and expunges; only while APCu is on for the process) | Server | `Thresholds[apcu_memory]` (amber from 75 %, red from 90 %) |
 | versions (`PHP 8.4.19 \| Exp 6.0.15`, Exponential shortened to Exp; the last chip, at the right end) | Server | never coloured |
 
-The OPcache, APCu and versions chips show only to a user who may see the privileged rows of the Server tab (the
-policies `setup/setup` or `setup/managecache`): the bar also shows to anonymous visitors when `DebugByIP` matches, and
-the state of the server is not theirs to read. APCu is one memory for every site of the PHP pool; at 75 % in use the
+The OPcache, APCu and versions chips show to whoever gets the debug output under [ReadAccess](#who-reads-what-readaccess) `debug`, the default;
+under `privileged` only to a user with `setup/setup` or `setup/managecache`, who also sees the privileged rows of the
+Server tab (process, host, the cache list). APCu is one memory for every site of the PHP pool; at 75 % in use the
 SQL query cache has already stopped adding results (`querycache.ini ApcuReserve=25`). The Server tab lists APCu
 below OPcache. A process without them (the command line, where `apc.enable_cli` is usually off) shows no chip for them. The three are the last chips, at the right end of the summary.
 
@@ -473,8 +473,8 @@ the report's own defaults.
 | Templates | the templates used (`ShowUsedTemplates`) and the CSS/JS packer report, or how to turn them on |
 | Included files | the included PHP files (`DisplayIncludedFiles`), or their number and how to list them |
 | Memory | the classic "Main resources" table, memory now, peak, limit and share, and the five steps that took the most |
-| Rendering | how the page was rendered: the controller, the content view cache and its key, the compiled templates (see [below](#rendering-controller-content-view-cache-and-compiled-templates)); for `setup/setup`, and for an anonymous visitor who gets the debug output |
-| User | the user, their cache profile (the parts of the content view cache key that depend on them), their preferences, role assignments, on demand their own PHP session (secrets masked) and, on demand and for `setup/setup` only, the policies of those roles (see [below](#user-roles-and-cache-profile)); for `setup/setup`, and for an anonymous visitor who gets the debug output |
+| Rendering | how the page was rendered: the controller, the content view cache and its key, the compiled templates (see [below](#rendering-controller-content-view-cache-and-compiled-templates)); for whoever gets the debug output under [ReadAccess](#who-reads-what-readaccess) `debug`, and for `setup/setup` |
+| User | the user, their cache profile (the parts of the content view cache key that depend on them), their preferences, role assignments, on demand their own PHP session (secrets masked) and, on demand and for whoever may read the settings, the policies of those roles (see [below](#user-roles-and-cache-profile)); for whoever gets the debug output under [ReadAccess](#who-reads-what-readaccess) `debug`, and for `setup/setup` |
 | (extensions) | a tab per panel an extension registers, after Memory (see [Panels of extensions](#panels-of-extensions)) |
 | Server | where the request entered and which process rendered the report (Exponential Velocity, PHP-FPM, mod_php, the command line ...), in one sentence (see [below](#server-where-the-request-entered-and-what-rendered-it)), the facts behind it, OPcache status, and Velocity's response cache; called Velocity until 16 October 2026, its section id is still `exp-debug-panel-velocity` |
 | Other | reports appended by extensions with `eZDebug::appendBottomReport()` that belong to no tab (only when there are any) |
@@ -498,7 +498,25 @@ Off, and the user's own) are applied to the scope picked next to them and can be
 as preset" stores the values in effect under a name.
 
 The change log lists the last writes (who, which setting, old and new value, scope) with Undo; an undo that finds
-the file changed since asks before forcing it. Without setup/setup the Settings tab holds only the note "Sign in with setup access to change debug settings" (no values, no IP or user lists, no log, no file paths); without setup/managecache the Cache tab holds only the note "Sign in with cache access to manage caches".
+the file changed since asks before forcing it. A user who may read the settings but not change them ([ReadAccess](#who-reads-what-readaccess)) sees
+every value, the lists and the log with the controls disabled and the note "Sign in with a user who may change
+settings (setup/setup) to change them here."; the Cache tab lists the caches without the buttons that clear them. A
+user who may not read them sees only the note "Sign in with setup access to change debug settings", or in the Cache
+tab "Sign in with cache access to manage caches".
+
+### Who reads what: ReadAccess
+
+`debugbar.ini [DebugBarSettings] ReadAccess` decides who reads what the bar shows; changing settings and clearing
+caches always need `setup/setup` and `setup/managecache`, with the form token (`expDebugBarRegistry::readAccess()`).
+
+| ReadAccess | Who reads |
+|---|---|
+| `debug` (the default) | whoever gets the debug output (`DebugByIP`, `DebugByUser`), logged in or not, reads everything: the settings with their values, the IP and user lists, the change log and the IP test, the cache list, the policies of their roles, the session's save path and handler class, the User and the Rendering tab, the versions of PHP and Exponential, OPcache and APCu, the process and the host |
+| `privileged` | the stricter rule: the settings, the log, the IP test and the policies for `setup/setup`, the cache list for `setup/managecache`, the versions, OPcache and APCu for either; the User and the Rendering tab for `setup/setup` and for an anonymous visitor who gets the debug output |
+
+Who gets the debug output is decided by the IP and the user list (below): under `debug` they are the list of who reads
+the bar. A site that gives the debug output to visitors it does not trust with the configuration sets
+`ReadAccess=privileged`.
 
 ### Who gets debug: the IP list and the user list
 
@@ -520,10 +538,9 @@ it was last cleared, and all caches. Each clear says what it did.
 
 ### Rendering: controller, content view cache and compiled templates
 
-The tab answers "why is this page slow or not cached" without reading the code. A user with `setup/setup` sees it
-and its chips, and, as the User tab, an anonymous visitor who gets the debug output: the cache key carries the role and
-limitation ids of the user, and an anonymous visitor's are those of every anonymous visitor. A logged-in user without
-`setup/setup` does not see it. It opens with an **overview** in one line: the module view that ran last, the state of
+The tab answers "why is this page slow or not cached" without reading the code. Whoever gets the debug output sees it
+and its chips under [ReadAccess](#who-reads-what-readaccess) `debug`, as the User tab, logged in or not, and a user with `setup/setup`: the cache key carries the user's own
+role and limitation ids, and an anonymous visitor's are those of every anonymous visitor. It opens with an **overview** in one line: the module view that ran last, the state of
 the content view cache in a word (*hit*, *generated*, *off*; the reason as its tooltip), the cache blocks read from
 the cache of all, the templates rendered and those compiled in this request. Below it the five parts as **sub-tabs**,
 like the User tab: the one shown last is kept (`exp-debug-rendering-subtab`), the arrow keys, Home and End move
@@ -610,23 +627,26 @@ matching rows:
 - **Cache profile**: the profile with every part and a button that copies it as text (`name=value` per line).
 - **Preferences**: the preferences per view mode (`CachedViewPreferences`) with the user's value and the default.
 - **Roles and policies**: the role assignments (role id and name, the assignment's limitation, and whether it is
-  assigned to the user or to a group, by name and object id), and for `setup/setup` the policies (below).
+  assigned to the user or to a group, by name and object id), and the policies (below; [ReadAccess](#who-reads-what-readaccess)).
 - **Session**: the user's own PHP session (below).
 
 The explanations of the parts are folded away; "?" at the right of the sub-tabs shows them, and the choice is kept
-(`exp-debug-user-help`). Without the script the parts are shown one below the other. A logged-in user who gets the debug output but may
-not see the tab (no `setup/setup`) gets a chip with their login only. A logged-in user also sees the profile of **anonymous visitors**, *same as yours* or
+(`exp-debug-user-help`). Without the script the parts are shown one below the other. A logged-in user also sees the profile of **anonymous visitors**, *same as yours* or
 *different*: the anonymous user's parts under the same tweaks, with the default preferences (an anonymous visitor's
 are in their session), without the keys of listeners, which may read the session and cannot be asked for them.
 
-For `setup/setup`, since the parts carry role and limitation ids; and for an anonymous visitor
-who gets the debug output (`DebugByIP` ...), whose ids are those of every anonymous visitor: they see the anonymous
-user's roles, groups and limitation values, and on a page with a content view the values of the keys of listeners.
+For whoever gets the debug output (`DebugByIP`, `DebugByUser`) under [ReadAccess](#who-reads-what-readaccess) `debug`, the default, and for
+`setup/setup`. The tab holds the user's own
+data: a logged-in user sees their own roles, groups and limitation values, an anonymous visitor those of the anonymous
+user, which are every anonymous visitor's, and on a page with a content view the values of the keys of listeners. What
+a reader of the settings may see (the policies and the session's save path and handler class) is asked for
+separately. Under `ReadAccess=privileged`, as before, a logged-in user without `setup/setup` sees neither this tab
+nor the Rendering tab, only a chip with their login.
 The Rendering tab follows the same rule. The data comes from `expDebugBarUser`
 (`kernel/classes/debugbar/expdebugbaruser.php`); it reads the role assignments with one query and the preferences
 with `eZPreferences::values()`, only when the bar is rendered for such a user.
 
-**Policies.** For `setup/setup` the sub-tab *Roles and policies* ends with a folded section *Policies*: the policies of the user's roles,
+**Policies.** For whoever may read the settings (`setup/setup`, or the debug output under `ReadAccess=debug`) the sub-tab *Roles and policies* ends with a folded section *Policies*: the policies of the user's roles,
 loaded only when it is opened (`expdebugbar::policies`), so a user with hundreds of roles costs the page nothing. The
 first answer lists the roles with their number of policies (the assignments as the tooltip of each) and the first
 page; a role, a search and *Load more* ask again, 200 rows at a time. A row is the module and function (`*` marked),
@@ -660,13 +680,13 @@ the length are shown, and everything below such a key is masked too. The masks a
 expressions without delimiters, case-insensitive, in `debugbar.ini [DebugBarSettings] SessionMask[]` (token, csrf,
 nonce, secret, passw, hash, key$, credential, auth, jwt, bearer, otp, saml, assertion, ticket, sid$; an extension adds its own). Below the keys the *frame*: whether a
 session was started, the cookie's name, the session id **shortened** to four characters (a screenshot does not hand
-over the session), the handler (`session.save_handler`; the handler class and the save path for `setup/setup` only),
+over the session), the handler (`session.save_handler`; the handler class and the save path for whoever may read the settings),
 `session.gc_maxlifetime`, `site.ini [Session]` SessionTimeout, ActivityTimeout, CookieTimeout and RememberMeTimeout,
 and the cookie's lifetime, path, domain, `secure`, `httponly` and `samesite`. At most 8 levels, 200 children per level
 and 3000 entries are listed, the rest is counted (keys after the last entry as *not listed*); a session over 64 KB is
 marked *large*. Keys and texts that are not UTF-8 show as hex (`0x…`). The masks hide secrets, not personal data: a
 name or an address the application keeps in the session is shown as stored, to whoever may see the section. The section is offered to
-whoever sees the User tab, `setup/setup` and an anonymous visitor who gets the debug output; it only ever shows the
+whoever sees the User tab (see above, ReadAccess); it only ever shows the
 session of the request that asks, there is no way to read another one, and nothing in it can change the session
 (`expDebugBarSession`, `kernel/classes/debugbar/expdebugbarsession.php`).
 
