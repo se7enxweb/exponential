@@ -29014,7 +29014,7 @@ c243bf1708e51415584c6fd64a5a11d0  tests/tests/kernel/classes/shopprices/eZShopRe
 8c0728b2f967cd40690522b1d6c5fdb0  tests/tests/kernel/classes/sslzones/eZSSLZoneTest.php
 b1d378be0b0853fcbb3bc90b87263740  tests/tests/kernel/classes/staticpublish/expStaticAdminTest.php
 de7286bfe7b0c3200dc0ab42518781f0  tests/tests/kernel/classes/staticpublish/expStaticBuildMultiSiteSqliteTest.php
-5308a09f559711bbe3015f6481fa8e93  tests/tests/kernel/classes/staticpublish/expStaticBuildSignatureTest.php
+d59d2ad0a7a8edb36968cedfadc5f27c  tests/tests/kernel/classes/staticpublish/expStaticBuildSignatureTest.php
 779079cc3c9b7e558f72630a98a1e37e  tests/tests/kernel/classes/staticpublish/expStaticBuildSqliteTest.php
 0442110bd2c0f3b432346b054e17a7bb  tests/tests/kernel/classes/staticpublish/expStaticCommandContractTest.php
 4e13e1ff07af6f32c6f45064b5640365  tests/tests/kernel/classes/staticpublish/expStaticCredentialsTest.php

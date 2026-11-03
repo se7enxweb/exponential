@@ -99,11 +99,14 @@ class expStaticBuildSignatureTest extends PHPUnit\Framework\TestCase
     /** SG-03 */
     public function testNonceIsUsedUp()
     {
+        // one issue time for every claim: the nonce file is named after it, so a second boundary crossed inside the
+        // loop would start a fresh file and let the replay through
+        $issued = time();
         $nonce = str_repeat( 'b', 32 );
         for ( $i = 1; $i <= expStaticBuildSignature::MAX_USES; $i++ )
-            $this->assertTrue( expStaticBuildSignature::claim( $nonce, time() ), "use $i" );
-        $this->assertFalse( expStaticBuildSignature::claim( $nonce, time() ), 'replayed once too often' );
-        $this->assertTrue( expStaticBuildSignature::claim( str_repeat( 'c', 32 ), time() ), 'another nonce' );
+            $this->assertTrue( expStaticBuildSignature::claim( $nonce, $issued ), "use $i" );
+        $this->assertFalse( expStaticBuildSignature::claim( $nonce, $issued ), 'replayed once too often' );
+        $this->assertTrue( expStaticBuildSignature::claim( str_repeat( 'c', 32 ), $issued ), 'another nonce' );
         $this->assertFalse( expStaticBuildSignature::claim( '../../etc/passwd', time() ) );
 
         // the files of expired signatures go when a new one comes
