@@ -24,7 +24,7 @@ Gespräch auf ihren Seiten zu Einwänden, zum Beispiel [„Lebt es noch?“](../
 ### 1. „Es ist tot; eZ Publish endete 2021.“
 
 Die Produktlinie eZ Publish endete, die Codebasis nicht. 7x veröffentlichte 6.0.0 am 1. Januar 2024 und vierzehn
-weitere Releases bis zum 7. Juni 2026; 6.0.15 ist in Entwicklung ([Die 6.0.x-Releases auf einen Blick](die-6-0-x-releases-auf-einen-blick.md)).
+weitere Releases bis zum 7. Juni 2026; 6.0.15 ist die aktuelle Linie ([Die 6.0.x-Releases auf einen Blick](die-6-0-x-releases-auf-einen-blick.md)).
 Die README: „Exponential has made it beyond it's end of life in 2021 and survived“.
 
 ### 2. „Es ist ein Produkt von Ibexa.“

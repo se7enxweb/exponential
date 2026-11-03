@@ -101,7 +101,8 @@ Weitere Regeln des Projekts, die kein Werkzeug prüft:
 ## Changelogs
 
 - Kernel-Changelogs: `doc/changelogs/<series>/<version>.md`, zum Beispiel
-  [6.0.15](../../changelogs/6.0/6.0.15.md) (in Entwicklung; „Not released yet“ in der ersten Zeile). Ältere Serien bis
+  [6.0.15](../../changelogs/6.0/6.0.15.md) (die aktuelle Linie; bis zum Tag steht „Not released yet“ in der ersten
+  Zeile). Ältere Serien bis
   zurück zu 2.9 liegen in `doc/changelogs/`.
 - Extension-Changelogs: `doc/changelogs/extensions/<name>.md`, zum Beispiel
   [exponential-velocity.md](../../changelogs/extensions/exponential-velocity.md).
@@ -150,7 +151,7 @@ gh release list --limit 10
   `VERSION_RELEASE = 15`). Die `composer.json` im Wurzelverzeichnis hat kein Feld `version`; Composer nimmt die Version
   aus dem Tag, und `main` ist `6.0.x-dev`.
 - Veröffentlichte Tags `v6.0.0` bis `v6.0.14` existieren; GitHub-Releases gibt es für `v6.0.10` bis `v6.0.14` (das
-  neueste, „Exponential 6.0.14“, am 07.06.2026). `v6.0.10` bis `v6.0.12` sind leichtgewichtige Tags, `v6.0.13` und
+  letzte vor der Linie 6.0.15, „Exponential 6.0.14“, am 07.06.2026; den Tag `v6.0.15` zeigt `git tag`). `v6.0.10` bis `v6.0.12` sind leichtgewichtige Tags, `v6.0.13` und
   `v6.0.14` annotiert (geprüft mit `git for-each-ref`).
 
 ### Releases von Extensions

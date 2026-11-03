@@ -3,7 +3,7 @@ title: The 6.0.x releases at a glance
 audience: press
 category: press-media
 order: 14
-summary: Every Exponential 6.0.x release with its date and its documented highlight, for reporters who need a release history - plus where each release's changelog is, how to check the list yourself, and how to write about 6.0.15 before it is released.
+summary: Every Exponential 6.0.x release with its date and its documented highlight, for reporters who need a release history - plus where each release's changelog is, how to check the list yourself, and how to write about the 6.0.15 line.
 keywords: releases, release history, versions, 6.0.0, 6.0.10, 6.0.14, 6.0.15, changelog, tags, dates, release dates
 type: help
 ---
@@ -38,7 +38,7 @@ from [doc/eng-us/release-overview](../../release-overview) and the Git tags, as 
 | 6.0.12 | 10 February 2026 | |
 | 6.0.13 | 18 April 2026 | |
 | 6.0.14 | 7 June 2026 | MongoDB 8 as a database |
-| 6.0.15 | not released | In development: Velocity, admin4, audit trail, Exponential Layouts, Exponential Intelligence, the help system and more |
+| 6.0.15 | the date of the tag `v6.0.15` | The current release line: Velocity, admin4, audit trail, Exponential Layouts, Exponential Intelligence, the help system and more |
 
 Source: [The 6.0.x releases](../who-is-7x.md#the-60x-releases). An empty highlight cell means the history pages name
 no single headline for that release; read its changelog.
@@ -53,7 +53,7 @@ releases in the past tense, for example "6.0.0, released on 1 January 2024" ([Ve
 | 6.0.0 | [6.0.0](../../../changelogs/6.0/6.0.0.md) |
 | 6.0.10 | [6.0.10](../../../changelogs/6.0/6.0.10.md) |
 | 6.0.14 | [6.0.14](../../../changelogs/6.0/6.0.14.md) |
-| 6.0.15 (in development) | [6.0.15](../../../changelogs/6.0/6.0.15.md) |
+| 6.0.15 (the current line) | [6.0.15](../../../changelogs/6.0/6.0.15.md) |
 | Every release | [Changelogs](../../../changelogs/README.md) |
 
 How to read them: [Where changelogs and release notes live](where-changelogs-and-release-notes-live.md) and
@@ -72,7 +72,8 @@ Sort by version, never by name: a plain name sort puts `v6.0.10` before `v6.0.2`
 
 ## Writing about releases
 
-- A release is a Git tag; until the tag exists, the version is "in development" ([Covering 6.0.15 while it is in development](covering-6-0-15-while-in-development.md)).
+- A release is a Git tag; call a version released only when its tag exists, and take its date from the tag
+  ([Covering the 6.0.15 line](covering-6-0-15-while-in-development.md)).
 - A published release is never changed; a fix comes as the next release ([Published versions never change](published-versions-never-change.md)).
 - Write the version without "v" in running text: "Exponential 6.0.14".
 

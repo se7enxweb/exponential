@@ -39,8 +39,8 @@ URHEBERRECHT   "Exponential Foundation and 7x" (1998 - 2026); "eZ Systems AS" (1
 GESCHICHTE     Codebasis seit 1999 entwickelt, zuerst als eZ Publish, ein Produkt, das sein Hersteller nach fast
                18 Jahren einstellte. 7x: Idee 2014 (se7enx.com registriert), Projektbeginn 2022, Start Dezember
                2023. Am 11./12. August 2025 in Exponential umbenannt.
-RELEASES *     6.0.0 am 1. Januar 2024 ... 6.0.14 am 7. Juni 2026 (15 Releases). Aktuelle Linie: 6.0.15,
-               in Entwicklung (lib/version.php), kein Release-Tag am 19. Oktober 2026.
+RELEASES *     6.0.0 am 1. Januar 2024 ... 6.0.14 am 7. Juni 2026 (15 Releases). Aktuelle Linie: 6.0.15
+               (lib/version.php); Tag v6.0.15 mit git tag prüfen (am 19. Oktober 2026 noch keiner).
 LIZENZ         Software: GNU GPL v2 oder später, kostenlos. Dokumentation: GNU FDL 1.3 oder später.
                Exponential Velocity: MIT.
 LÄUFT AUF *    PHP 8.0 - 8.5. SQLite 3 (Standard), PostgreSQL, MongoDB, MariaDB, Oracle, MySQL.
@@ -81,7 +81,7 @@ PRESSE         info@se7enx.com   Pressekit: exponential.earth/about/press-kit
 |---|---|
 | Releases | [Die 6.0.x-Releases auf einen Blick](die-6-0-x-releases-auf-einen-blick.md) oder den Tags auf GitHub |
 | Läuft auf | Dem README-Abschnitt „Requirements“ |
-| Neu in 6.0.15 | Dem Changelog; sobald 6.0.15 getaggt ist, ist es nicht mehr „in Entwicklung“ |
+| Neu in 6.0.15 | Dem Changelog und `git tag -l 'v6.0.*'`: Mit dem Tag `v6.0.15` nennen Sie dessen Datum |
 | Sprachen | [Sprachen in Exponential](../../sprachen.md) |
 
 ## Das Faktenblatt verwenden

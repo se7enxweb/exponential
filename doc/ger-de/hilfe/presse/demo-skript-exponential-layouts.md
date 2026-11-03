@@ -17,7 +17,7 @@ Demo-Website nichts ändert, solange Sie nicht veröffentlichen. Jeder Klick sta
 und [In der Praxis: der Layout-Editor](../rundgang-durch-die-administration.md#in-der-praxis-der-layout-editor).
 
 Melden Sie sich mit einem Konto an, dessen Rolle mit Layouts arbeiten darf: Der Tab **Layouts** wird nur solchen Rollen
-angezeigt. Der aktuelle Editor gehört zur Entwicklungslinie 6.0.15; sagen Sie, welche Version Sie zeigen.
+angezeigt. Der aktuelle Editor gehört zur Linie 6.0.15; sagen Sie, welche Version Sie zeigen.
 
 ## Inhalt
 

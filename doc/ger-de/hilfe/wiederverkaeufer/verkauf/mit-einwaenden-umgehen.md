@@ -39,7 +39,7 @@ Quelle: [Einwandbehandlung](../../geschaeft/einwandbehandlung.md#eine-methode-f�
 | Einwand | Kurze Antwort | Beleg |
 |---|---|---|
 | „Open Source ist weniger sicher.“ | Vertrauliche Meldung von Sicherheitslücken mit einer ersten Antwort innerhalb eines Werktags; Fehlerbehebungen im nächsten Release 6.0.x; eine Content Security Policy, ein Audit-Protokoll, Anmeldung in zwei Schritten und ein Leitfaden zur Härtung | `SECURITY.md`, [Sicherheitshärtung](../../sicherheitshaertung.md) |
-| „Wird es noch gepflegt?“ | Fünfzehn Releases 6.0.x vom 1. Januar 2024 bis zum 7. Juni 2026, 6.0.15 in Entwicklung | [Wer ist 7x?](../../wer-ist-7x.md#die-releases-60x) |
+| „Wird es noch gepflegt?“ | Fünfzehn Releases 6.0.x vom 1. Januar 2024 bis zum 7. Juni 2026, 6.0.15 als aktuelle Linie | [Wer ist 7x?](../../wer-ist-7x.md#die-releases-60x) |
 | „Wird es Bestand haben?“ | Eine seit 1999 gepflegte Codebasis, ein Unternehmen und eine gemeinnützige Organisation dahinter und eine GPL-Lizenz, die den Code für alle verfügbar hält | [Wer ist die Exponential Foundation?](../../wer-ist-die-exponential-foundation.md) |
 | „Wir werden gebunden sein.“ | GPL-Code, sechs Datenbanken, fast jedes Betriebssystem, dokumentierte Umzüge zwischen Datenbanken | [Exponential sachlich vergleichen](../../geschaeft/exponential-sachlich-vergleichen.md#keine-herstellerbindung-punkt-für-punkt) |
 | „Niemand kennt dieses System.“ | Die Quellen zählen keine Entwickler; sie dokumentieren den Stack und stellen freies Lernmaterial bereit | [Einwandbehandlung](../../geschaeft/einwandbehandlung.md#fachkräfte-finden-wir-leute-die-es-kennen) |

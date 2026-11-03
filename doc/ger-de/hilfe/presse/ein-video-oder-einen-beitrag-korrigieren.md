@@ -37,7 +37,7 @@ Löschen Sie nicht stillschweigend: Andere haben das Original vielleicht geteilt
 |---|---|---|
 | Name | „eZ Publish 6“ | Exponential 6 ([Namens-Kurzreferenz für Redaktionen](namens-kurzreferenz-fuer-redaktionen.md)) |
 | Organisation | „die 7x Foundation“ | die Exponential Foundation ([Zwei Organisationen, ein Projekt](zwei-organisationen-ein-projekt.md)) |
-| Release | „6.0.15 ist erschienen“ | 6.0.15 ist in Entwicklung ([Die 6.0.x-Releases auf einen Blick](die-6-0-x-releases-auf-einen-blick.md)) |
+| Release | „6.0.15 ist erschienen“ | Nur, wenn der Tag `v6.0.15` existiert (`git tag -l 'v6.0.*'`); dann mit dessen Datum ([Die 6.0.x-Releases auf einen Blick](die-6-0-x-releases-auf-einen-blick.md)) |
 | Funktion | „die KI veröffentlicht“ | Sie schreibt nur Entwürfe ([Thema: ein Assistent, der nur Entwürfe schreibt](thema-ein-assistent-der-nur-entwuerfe-schreibt.md)) |
 | Zahl | Ein Geschwindigkeitsvergleich | Nur die dokumentierten Zahlen und ihre Bedingungen ([Zahlen prüfen](zahlen-pruefen.md)) |
 | Zugehörigkeit | „von Ibexa“ | Nicht mit eZ Systems oder Ibexa verbunden |

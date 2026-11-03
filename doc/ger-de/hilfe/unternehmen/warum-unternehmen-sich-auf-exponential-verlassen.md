@@ -46,7 +46,7 @@ Abschnitte gehen diese Punkte einzeln durch.
 |---|---|
 | Der Copyright-Vermerk lautet „Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.“ | `COPYRIGHT.md`, zitiert in [Wer ist 7x?](../wer-ist-7x.md#kurz-gesagt) |
 | „Exponential ist über sein Lebensende 2021 hinausgekommen und hat überlebt“ | `README.md`, „Exponential Project Status“ |
-| 7x veröffentlicht die 6.0.x-Releases seit Dezember 2023, von 6.0.0 am 1. Januar 2024 bis 6.0.14 am 7. Juni 2026, mit 6.0.15 in Entwicklung | [Wer ist 7x?](../wer-ist-7x.md#kurz-gesagt) |
+| 7x veröffentlicht die 6.0.x-Releases seit Dezember 2023, von 6.0.0 am 1. Januar 2024 bis 6.0.14 am 7. Juni 2026, mit 6.0.15 als aktueller Linie | [Wer ist 7x?](../wer-ist-7x.md#kurz-gesagt) |
 | Aktuelle Releases zielen darauf, „die Anforderungen für die Unterstützung aktueller Versionen der Sprache PHP wie PHP 8.2, 8.3, 8.4, 8.5, 8.6 und über php9 hinaus zu erleichtern“ | `README.md` |
 | Websites, die in den Jahren gebaut wurden, als die Software noch eZ Publish hieß, lassen sich migrieren | [14. Migration von der 4.x-Linie](../../installation/14-migration-von-4x.md), [15. Migration vom 5.x-Legacy-Stack](../../installation/15-migration-von-5x-legacy.md) |
 

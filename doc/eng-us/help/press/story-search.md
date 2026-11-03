@@ -28,7 +28,7 @@ facts with sources and the claims to leave out.
 Exponential has a "Built in search engine" ([README, Main Exponential features](https://github.com/se7enxweb/exponential/blob/main/README.md#main-exponential-features))
 and needs no search server: "Exponential searches with its built-in index ... until Solr is installed and switched on"
 ([Server control commands](../../features/6.0/web-server-and-solr-commands.md#expsolr-an-optional-search-server)).
-The 6.0.15 development line added the **content finder**, which finds the content behind an id, a URL alias, a page
+The 6.0.15 line added the **content finder**, which finds the content behind an id, a URL alias, a page
 address or a file path, and hardened the administration's search so that malformed or very long queries no longer
 break it ([6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#14-october-2026-the-search-of-the-administration)). The
 help system has its own instant search.
@@ -37,7 +37,8 @@ help system has its own instant search.
 
 ## What is new, and when
 
-All in the 6.0.15 line, which is in development and not released.
+All in the 6.0.15 line, the current release line of Exponential 6.0; the dates are dates of the changes, not a
+release date.
 
 | What | When | Source |
 |---|---|---|

@@ -40,8 +40,8 @@ receive a fix is to upgrade within the line. If you run 5.x or older, plan an up
 
 ## The 6.0.x releases so far
 
-Exponential 6.0.0 was released on 1 January 2024 and 6.0.14 on 7 June 2026; the 6.0.15 line is in development, and
-its changelog says "Not released yet" ([Who is 7x?, the 6.0.x releases](../../who-is-7x.md#the-60x-releases),
+Exponential 6.0.0 was released on 1 January 2024 and 6.0.14 on 7 June 2026; 6.0.15 is the current line, and
+its changelog lists what it contains ([Who is 7x?, the 6.0.x releases](../../who-is-7x.md#the-60x-releases),
 [6.0.15 changelog](../../../../changelogs/6.0/6.0.15.md)).
 
 Releases that matter for planning, from

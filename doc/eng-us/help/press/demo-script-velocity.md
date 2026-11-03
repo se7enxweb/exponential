@@ -14,7 +14,7 @@ of workers alive" ([Velocity](../../features/6.0/velocity-persistent-worker-serv
 videos most often say more than the sources do. This script shows how Velocity works and quotes only the documented
 figures, with their method. It runs about eight minutes, in a terminal and a browser.
 
-Velocity arrived in the 6.0.15 line (`./console exp:velocity`), which is in development; the engine package has its own
+Velocity arrived in the 6.0.15 line (`./console exp:velocity`), the current release line; the engine package has its own
 version numbers (Exponential Velocity 0.0.4.x). Say both on camera.
 
 ## Contents

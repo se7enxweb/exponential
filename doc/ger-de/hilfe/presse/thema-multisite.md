@@ -32,7 +32,7 @@ den Sie drucken sollten.
 Eine Installation kann mehrere Websites ausliefern, „jede ein Siteaccess mit eigenem Host, Pfad, eigener Sprache und
 eigenem Design“ ([Wer ist 7x?, Ein CMS, ein CMF und ein Shop in einem](../wer-ist-7x.md#cms-cmf-und-shop-in-einem)).
 Seit Januar 2026 kann eine Website, die in ihrer eigenen Erweiterung lebt, Einstellungen mitbringen, die nur gelten,
-während ihre Siteaccesses laufen; im Oktober 2026 ergänzte die Entwicklungslinie 6.0.15 die Zuordnung nach dem Anfang
+während ihre Siteaccesses laufen; im Oktober 2026 ergänzte die Linie 6.0.15 die Zuordnung nach dem Anfang
 eines Hostnamens, eine Weiterleitung zur Sprache des Besuchers und korrekte Links von den Seiten einer Website zu
 Inhalten einer anderen.
 
@@ -45,7 +45,8 @@ Inhalten einer anderen.
 | Links zu Inhalten einer anderen Website einer Multisite-Installation | 13. Oktober 2026 | [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md#13-october-2026-links-to-content-of-another-site-of-a-multisite-installation) |
 | Das Website-Menü der Administration: die anderen Websites, bei denen sich ein Benutzer anmelden darf | 15. Oktober 2026 | [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md#15-october-2026-the-site-menu-of-the-administration) |
 
-Die Änderungen vom Oktober gehören zur Linie 6.0.15, die nicht veröffentlicht ist.
+Die Änderungen vom Oktober gehören zur Linie 6.0.15. Die Daten sind Daten der Änderungen, keine
+Veröffentlichungsdaten; ob der Tag `v6.0.15` existiert, zeigt `git tag -l 'v6.0.*' --sort=version:refname`.
 
 ## Fakten, die Sie drucken können
 

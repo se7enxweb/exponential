@@ -42,7 +42,7 @@ facts to use with their sources, and the questions to put to a guest. Adapt free
 | 25:00 | How to upgrade, where to ask | [Help pages by topic, for the press](help-pages-by-topic-for-press.md) |
 
 Record it only after the tag exists; before that, call it a preview of a release in development
-([Covering 6.0.15 while it is in development](covering-6-0-15-while-in-development.md)).
+([Covering 6.0.15, before and after its tag](covering-6-0-15-while-in-development.md)).
 
 ## Episode: who pays for free software
 

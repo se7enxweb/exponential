@@ -39,11 +39,11 @@ features as they are built. There is usually nothing to embargo.
 You may report on work in the development line; it is public. Make clear that it is unreleased:
 
 ```text
-"The changelog of the coming 6.0.15 release, which is still in development, lists ..."
+"The changelog of the coming <version> release, which is still in development, lists ..."
 ```
 
 Features in development can change before release. Re-check them when the release is tagged
-([Covering 6.0.15 while it is in development](covering-6-0-15-while-in-development.md)).
+([Covering 6.0.15, before and after its tag](covering-6-0-15-while-in-development.md)).
 
 ## Security: the one case where you wait
 

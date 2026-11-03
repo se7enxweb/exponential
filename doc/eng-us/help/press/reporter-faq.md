@@ -30,7 +30,8 @@ A free, open source PHP content management system and application framework with
 multisite, many languages and a built-in shop ([Exponential in brief](exponential-in-brief.md)).
 
 **What is the newest version?**
-6.0.14, released on 7 June 2026. 6.0.15 is in development ([The 6.0.x releases at a glance](the-6-0-x-releases-at-a-glance.md)).
+6.0.15 is the current release line; it follows 6.0.14, released on 7 June 2026. Whether the tag `v6.0.15` exists
+shows `git tag -l 'v6.0.*' --sort=version:refname` ([The 6.0.x releases at a glance](the-6-0-x-releases-at-a-glance.md)).
 
 **What is new?**
 The 6.0.15 line adds Exponential Velocity, Exponential Layouts, Exponential Intelligence, the admin4 design, an audit

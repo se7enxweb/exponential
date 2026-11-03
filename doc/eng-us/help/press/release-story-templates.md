@@ -71,14 +71,15 @@ Changelog: <link>   Repository: https://github.com/se7enxweb/exponential
 ```text
 In development: <topic> in the next Exponential version
 
-The development line of Exponential, 6.0.15, includes <feature>, according to the project's
-changelog for the line (<link>). As of <date checked>, 6.0.15 had not been released; the newest
-release is 6.0.14 of 7 June 2026, and the project has not announced a release date.
+The development line of Exponential, <version>, includes <feature>, according to the project's
+changelog for the line (<link>). As of <date checked>, <version> had not been released; the newest
+release is <newest version> of <tag date>, and the project has not announced a release date.
 
 <What the feature does, from its feature page.> <Whether it is active by default, if the source says.>
 ```
 
-Rules for this template: [Covering 6.0.15 while it is in development](covering-6-0-15-while-in-development.md).
+Use this template only while no tag exists for the version; check with `git tag -l 'v6.0.*' --sort=version:refname`.
+Rules for this template: [Covering 6.0.15, before and after its tag](covering-6-0-15-while-in-development.md).
 
 ## Extension or Velocity note
 
@@ -100,7 +101,7 @@ Changelog: <link>
 ```
 
 ```text
-Not released yet, but in Exponential's 6.0.15 development line: <feature>. Details: <link>
+Not released yet, but in Exponential's <version> development line: <feature>. Details: <link>
 ```
 
 Keep the version and status in the post itself; a thread's first post is often shared alone.

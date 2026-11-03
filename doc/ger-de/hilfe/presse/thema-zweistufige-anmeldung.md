@@ -41,8 +41,9 @@ entscheiden selbst, und der Betreiber der Website legt fest, für wen sie gilt.
 | Die Anleitung, Social-Login-Schaltflächen auf der Anmeldeseite von admin4, Codes, die nur einmal gelten und als fehlgeschlagene Anmeldungen gezählt werden, Geheimnisse, die im Ruhezustand verschlüsselt werden können | 6. Oktober 2026 | [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md#6-october-2026-two-step-sign-in) |
 | Jede neue Installation schreibt die zweistufige Anmeldung für Administratoren und Redakteure vor | 23. Oktober 2026 | [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md#2026-10-23-every-new-installation-requires-two-step-sign-in-of-administrators-and-editors-and-has-imports) |
 
-Die Änderungen am Kernel sind Teil der Entwicklungslinie 6.0.15, die nicht veröffentlicht ist; die Erweiterung wird
-eigenständig veröffentlicht.
+Die Änderungen am Kernel sind Teil der Linie 6.0.15; die Erweiterung wird eigenständig veröffentlicht. Die Daten sind
+Daten der Änderungen, keine Veröffentlichungsdaten; ob der Tag `v6.0.15` existiert, zeigt
+`git tag -l 'v6.0.*' --sort=version:refname`.
 
 ## Fakten, die Sie drucken können
 

@@ -34,7 +34,8 @@ der Name der Erweiterung `ezoe`, ein Bezeichner im Code.)
 
 ## Was neu ist, und seit wann
 
-Die Linie 6.0.15 ist in Entwicklung und nicht veröffentlicht; die Daten sind Daten der Änderungen.
+Alles in der Linie 6.0.15. Die Daten sind Daten der Änderungen, keine Veröffentlichungsdaten; ob der Tag `v6.0.15`
+existiert, zeigt `git tag -l 'v6.0.*' --sort=version:refname`.
 
 | Was | Wann | Quelle |
 |---|---|---|

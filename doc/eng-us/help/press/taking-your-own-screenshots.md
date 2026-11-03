@@ -76,8 +76,8 @@ Do not take screenshots of somebody else's live site or administration without t
 - [ ] No personal data, no passwords, no tokens, no private host names ([Keeping secrets off screen](keeping-secrets-off-screen.md)).
 - [ ] The default administrator password is not the one you used.
 - [ ] The screen shows what the caption says, in the version the caption names.
-- [ ] Nothing unreleased is presented as released: a screenshot from a development checkout shows 6.0.15 work, which
-      is "in development" ([Covering 6.0.15 while it is in development](covering-6-0-15-while-in-development.md)).
+- [ ] Nothing unreleased is presented as released: a screenshot from a checkout of `main` shows work that may not be in
+      any tag yet; check `git tag -l 'v6.0.*' --sort=version:refname` ([Covering the 6.0.15 line](covering-6-0-15-while-in-development.md)).
 
 ## Captions
 

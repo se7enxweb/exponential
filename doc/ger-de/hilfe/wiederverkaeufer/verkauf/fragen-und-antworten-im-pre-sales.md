@@ -61,7 +61,7 @@ Budget and timeline
 | Ist es barrierefrei? | Die Administration wird gegen WCAG 2.2 AA geprüft, mit dem Status „Teilweise erfüllt“; Ihr öffentliches Design muss geprüft werden | [Standards für Barrierefreiheit](../../../standards/barrierefreiheit.md) |
 | Wer hält es aktuell? | Wir, im Rahmen des Wartungsvertrags; das Projekt veröffentlicht Versionen 6.0.x und keinen Release-Kalender | [Kunden aktuell halten](../kunden/kunden-aktuell-halten.md) |
 | Gibt es ein SLA des Projekts? | Nein; das Projekt veröffentlicht kein SLA. Unser Vertrag gibt Ihnen unseres | [Service-Levels gestalten](../angebote/service-levels-gestalten.md) |
-| Wird es noch gepflegt? | Ja: fünfzehn Releases 6.0.x vom 1. Januar 2024 bis zum 7. Juni 2026, 6.0.15 in Entwicklung | [Einwandbehandlung](../../geschaeft/einwandbehandlung.md) |
+| Wird es noch gepflegt? | Ja: fünfzehn Releases 6.0.x vom 1. Januar 2024 bis zum 7. Juni 2026, 6.0.15 als aktuelle Linie | [Einwandbehandlung](../../geschaeft/einwandbehandlung.md) |
 | Ist das das alte Produkt unter neuem Namen? | Exponential führt die alte Codebasis fort, ein Produkt, das sein Hersteller nach fast 18 Jahren eingestellt hat; es wird heute von 7x und der Exponential Foundation gepflegt | [Wer ist 7x?](../../wer-ist-7x.md) |
 
 Antworten Sie nie mit einer Funktion, die Sie nicht in der Version geprüft haben, die Sie liefern werden. Die

@@ -41,8 +41,8 @@ betreiben, planen Sie ein Upgrade-Projekt ([Upgrade](../../../anleitungen/aktual
 
 ## Die bisherigen 6.0.x-Releases
 
-Exponential 6.0.0 erschien am 1. Januar 2024 und 6.0.14 am 7. Juni 2026; die Linie 6.0.15 ist in Entwicklung, und ihr
-Changelog sagt „Not released yet“ ([Wer ist 7x?, die 6.0.x-Releases](../../wer-ist-7x.md#die-releases-60x),
+Exponential 6.0.0 erschien am 1. Januar 2024 und 6.0.14 am 7. Juni 2026; die Linie 6.0.15 ist die aktuelle Linie,
+und ihr Changelog nennt ihren Stand ([Wer ist 7x?, die 6.0.x-Releases](../../wer-ist-7x.md#die-releases-60x),
 [Changelog 6.0.15](../../../../changelogs/6.0/6.0.15.md)).
 
 Releases, die für die Planung wichtig sind, aus

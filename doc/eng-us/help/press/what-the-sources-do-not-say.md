@@ -45,7 +45,7 @@ the organizations, attribute their answers, and say so when there is no answer.
 
 | Question | State |
 |---|---|
-| When 6.0.15 will be released | No date published ([Covering 6.0.15 while it is in development](covering-6-0-15-while-in-development.md)) |
+| When the next release will be tagged | No date is announced in advance; a release date is the date of its tag ([Covering the 6.0.15 line](covering-6-0-15-while-in-development.md)) |
 | How long a release will be supported in years | No number of years published; what is documented is on [The support commitment](../who-is-the-exponential-foundation.md#the-support-commitment) |
 | A roadmap with dates | The project website has a roadmap link; this help does not cite dated plans |
 

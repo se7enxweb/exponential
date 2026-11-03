@@ -119,7 +119,7 @@ Longer and shorter versions you may copy are on [Boilerplate descriptions you ma
 | [Covering a release](covering-a-release.md), [Release coverage checklist](release-coverage-checklist.md) | Report a new version step by step |
 | [Where changelogs and release notes live](where-changelogs-and-release-notes-live.md), [Reading a changelog](reading-a-changelog.md) | Find and read the official record |
 | [How version numbers work](how-version-numbers-work.md), [Published versions never change](published-versions-never-change.md), [Verifying a release yourself](verifying-a-release-yourself.md) | Understand and check version numbers |
-| [Covering 6.0.15 while it is in development](covering-6-0-15-while-in-development.md), [Covering security fixes](covering-security-fixes.md) | Report on unreleased work and on fixes responsibly |
+| [Covering 6.0.15, before and after its tag](covering-6-0-15-while-in-development.md), [Covering security fixes](covering-security-fixes.md) | Report on unreleased work and on fixes responsibly |
 | [Release story templates](release-story-templates.md) | Start from a sourced template |
 
 ### Interviews, briefings and fact-checking

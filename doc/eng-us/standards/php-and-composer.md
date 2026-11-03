@@ -181,7 +181,7 @@ meaning of each increment.
 **How Exponential's versions work.**
 
 - **The kernel** is versioned `6.0.x`: `lib/version.php` (`ExponentialSDK`, `VERSION_MAJOR = 6`,
-  `VERSION_MINOR = 0`, `VERSION_RELEASE = 15`) and the tags `v6.0.0` to `v6.0.14`. 6.0.15 is in development
+  `VERSION_MINOR = 0`, `VERSION_RELEASE = 15`) and the tags from `v6.0.0` on. 6.0.15 is the current line
   ([6.0.15 changelog](../../changelogs/6.0/6.0.15.md)). Feature work lands in patch releases of the 6.0 line, which is
   not what SemVer intends for PATCH.
 - **Extensions** use three or four positions: `exp_adminui ~1.0.0.50`, `bcgooglesitemaps ~1.1.6.6`,

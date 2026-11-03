@@ -29,14 +29,15 @@ both, with dates and sources, and tells you how to handle a vulnerability someon
 Exponential's security policy fits on one page. "Please report security issues privately by e-mail to
 security@se7enx.com, not in the public issue tracker or the discussions. You can expect a first answer within one
 business day." Fixes are made on `main` and "published with the next 6.0.x release", and "A published tag is never
-changed" ([SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md)). Around that process the 6.0.15 development line adds protections an
+changed" ([SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md)). Around that process the 6.0.15 line adds protections an
 administrator can see: a Content Security Policy, a tamper-evident audit trail, two-step sign-in, refusal of
 well-known passwords and an administration without inline scripts
 ([6.0.15 changelog](../../../changelogs/6.0/6.0.15.md)).
 
 ## What is new, and when
 
-All in the 6.0.15 line, which is in development and not released.
+All in the 6.0.15 line, the current release line of Exponential 6.0; the dates are dates of the changes, not a
+release date.
 
 | What | When | Source |
 |---|---|---|

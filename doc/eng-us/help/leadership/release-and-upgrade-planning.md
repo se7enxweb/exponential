@@ -35,8 +35,8 @@ tells you which parts to read and who does what.
 
 ### The versions so far
 
-Exponential 6.0.0 was released on 1 January 2024, and 6.0.14 on 7 June 2026. The 6.0.15 line is in development: the
-[6.0.15 changelog](../../../changelogs/6.0/6.0.15.md) says "Not released yet" and lists what the line contains. The full
+Exponential 6.0.0 was released on 1 January 2024, and 6.0.14 on 7 June 2026. 6.0.15 is the current line: the
+[6.0.15 changelog](../../../changelogs/6.0/6.0.15.md) lists what the line contains. The full
 list of dates is on [Who is 7x?](../who-is-7x.md#the-60x-releases), taken from the release overview and the Git
 tags.
 

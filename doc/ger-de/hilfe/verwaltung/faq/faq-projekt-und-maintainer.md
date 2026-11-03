@@ -44,7 +44,7 @@ Hersteller nach fast achtzehn Jahren eingestellt hat; das Projekt ist nicht mit 
 ## Wie aktiv ist das Projekt?
 
 Prüfen Sie es selbst, statt sich auf Behauptungen zu verlassen: Die Releases `v6.0.11` bis `v6.0.14` wurden zwischen
-Dezember 2025 und Juni 2026 getaggt, und 6.0.15 ist in Entwicklung
+Dezember 2025 und Juni 2026 getaggt, und 6.0.15 ist die aktuelle Linie
 ([Die Roadmap](../../projekt/roadmap.md#was-bereits-geliefert-wurde)); jede Version hat ein Changelog
 ([Changelog 6.0.15](../../../../changelogs/6.0/6.0.15.md)); die Geschichte verzeichnet Änderungen seit Dezember 2023
 ([die Geschichte](../../../geschichte/README.md)). Der Bewertungsteil des Bereichs Beschaffung enthält eine Methode, um den

@@ -32,7 +32,7 @@ Counted again on 19 October 2026 with the command in the third column; the first
 | Oldest commit in the repository | 2 September 2002 | `git log --reverse` |
 | Commits on `main` | 27,727 | `git rev-list --count origin/main` |
 | Merged pull requests in the history | 1,042 | `git log --grep="Merge pull request"` |
-| 6.0.x releases | 15 (6.0.0 on 1 January 2024 to 6.0.14 on 7 June 2026); 6.0.15 in development, no tag on 19 October 2026 | `git tag -l 'v6.0.*'` |
+| 6.0.x releases | 15 (6.0.0 on 1 January 2024 to 6.0.14 on 7 June 2026); 6.0.15 is the current line, with no tag on 19 October 2026 | `git tag -l 'v6.0.*'` |
 | se7enxweb packages required by the kernel | 66 on 18 October 2026, 69 on 25 October 2026 (the count grows as extensions are added) | `composer.json` |
 | Packages of the vendor se7enxweb on Packagist | 219 | <https://packagist.org/packages/list.json?vendor=se7enxweb> |
 | Public repositories of the GitHub account se7enxweb | 1,025, of which 95 are not forks | `gh repo list se7enxweb --limit 1100` |

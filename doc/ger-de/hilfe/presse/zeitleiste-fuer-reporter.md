@@ -37,7 +37,7 @@ December 2023   7x's project is launched; first outside change merged 11 Decembe
 19 March 2026   the Exponential Foundation is founded
 7 June 2026     6.0.14, the newest release (as of 18 October 2026)
 September 2026  Exponential Velocity joins Exponential
-October 2026    Exponential Intelligence, admin4, the help system in the 6.0.15 line (in development)
+October 2026    Exponential Intelligence, admin4, the help system in the 6.0.15 line
 ```
 
 ## Die vollständige Zeitleiste
@@ -75,7 +75,7 @@ October 2026    Exponential Intelligence, admin4, the help system in the 6.0.15 
 | „7x wurde 2023 gegründet.“ | Das Unternehmen wurde 2001 als Brookins Consulting gegründet; sein Projekt Exponential startete im Dezember 2023. |
 | „Der Fork begann 2014.“ | 2014 waren die Idee und die stille Vorbereitung; das Projekt begann 2022 und startete im Dezember 2023. |
 | „Exponential wurde 2025 veröffentlicht.“ | 6.0.0 erschien am 1. Januar 2024; der Name änderte sich im August 2025. |
-| „6.0.15 wurde im Oktober 2026 veröffentlicht.“ | 6.0.15 ist in Entwicklung; es hat kein Veröffentlichungsdatum. |
+| „6.0.15 wurde im Oktober 2026 veröffentlicht.“ | Die Daten vom Oktober 2026 sind Daten der Änderungen in der Linie 6.0.15; das Datum des Release ist das seines Tags `v6.0.15` (`git tag -l 'v6.0.*'`). |
 | „Die Foundation wurde 2023 gegründet.“ | 19. März 2026. |
 | „Gegründet 1998.“ | 1998 ist das erste Jahr eines Urheberrechtsvermerks, kein Gründungsdatum. |
 

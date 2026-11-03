@@ -54,7 +54,7 @@ Seiten: [Ein Interview anfragen](ein-interview-anfragen.md), [Fragen an 7x](frag
 ```text
 [ ] Product "Exponential"; old name only in the past tense
 [ ] 7x and the Exponential Foundation not confused
-[ ] "Released" only for a tagged version; 6.0.15 "in development" until tagged
+[ ] "Released" only for a tagged version; for 6.0.15, checked with git tag -l 'v6.0.*'
 [ ] Every number with its source and date; no usage numbers
 [ ] Every quote real and attributed; documentation not presented as a spokesperson
 [ ] No link to eZ Systems or Ibexa implied

@@ -29,7 +29,7 @@ streaming.
 |---|---|
 | Topic | One theme per stream: editing, Layouts, Exponential Intelligence, Velocity, an install |
 | Installation | Your own demo installation with invented content ([Setting up a demo installation](setting-up-a-demo-installation.md)) |
-| Version | Say it in the title and at the start: a release, or the 6.0.15 development line with the date |
+| Version | Say it in the title and at the start: a release, or the `main` branch of the 6.0.15 line with the date |
 | Script | One of the demo scripts in this section, with time for questions |
 | Disclosure | In the title or panel, and spoken at the start ([Disclosure and sponsorship ethics](disclosure-and-sponsorship-ethics.md)) |
 | Co-host | A second person who watches the output and the chat helps catch leaks |

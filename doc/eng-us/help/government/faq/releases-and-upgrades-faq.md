@@ -26,7 +26,8 @@ the lifecycle part of the procurement section explains them for contracts
 
 ## Which version is current?
 
-The 6.0 line. Published kernel tags run from `v6.0.0` to `v6.0.14`; 6.0.15 is in development on `main`
+The 6.0 line. Its current release line is 6.0.15, which follows `v6.0.14` and is carried by `main`; list the published
+kernel tags with `git tag -l 'v6.0.*' --sort=version:refname`
 ([Source control and releases](../../../standards/source-control-and-releases.md#the-kernels-versions)). **Setup > System
 information** shows what your site runs.
 

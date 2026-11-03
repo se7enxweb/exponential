@@ -31,7 +31,8 @@ Sprachen und Länder, [eine Testsprache] und 6 Varianten, 43 davon von rechts na
 lassen sich als Inhaltssprachen und Siteaccess-Locales wählen; es gibt Übersetzungen der Administration (die aktuellen Gesamtzahlen stehen am Anfang der Seite Sprachen)“ ([Sprachen in Exponential](../../sprachen.md)). Wenn ein Redakteur eine Oberflächensprache mit
 Schreibrichtung von rechts nach links wählt, „dreht sich die Administration um“: Die Seite sagt `dir="rtl"`, die
 Seitenspalten tauschen die Plätze, und Text beginnt rechts ([Rechts nach links](../../funktionen/6.0/rechts-nach-links.md)).
-Das meiste davon kam im Oktober 2026, in der Entwicklungslinie 6.0.15, die nicht veröffentlicht ist.
+Das meiste davon kam im Oktober 2026, in der Linie 6.0.15. Die Daten sind Daten der Änderungen, keine
+Veröffentlichungsdaten; ob der Tag `v6.0.15` existiert, zeigt `git tag -l 'v6.0.*' --sort=version:refname`.
 
 ## Was neu ist, und seit wann
 

@@ -38,7 +38,7 @@ Exponential wird als Composer-Paket
 | Standard-Branch | `main` | die aktuelle Entwicklung der Linie 6.0, derzeit 6.0.15 |
 | Release-Branches | `6.0.7` bis `6.0.14` | den Stand jeder Release-Linie |
 
-Der neueste Release-Tag zum Zeitpunkt der Erstellung ist `v6.0.14`; der Branch `main` bezeichnet sich selbst als
+Die Linie 6.0.15 folgt auf den Release-Tag `v6.0.14`; der Branch `main` bezeichnet sich selbst als
 `6.0.15stable` (`lib/version.php`) und enthält die in [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
 beschriebenen Änderungen. Um zu sehen, was derzeit veröffentlicht ist:
 
@@ -52,7 +52,7 @@ oder, innerhalb eines Klons, nach `git fetch --tags`:
 git tag -l 'v*' --sort=version:refname | tail -5
 ```
 
-was die fünf neuesten Tags ausgibt, den neuesten zuletzt:
+was die fünf neuesten Tags ausgibt, den neuesten zuletzt (hier die Ausgabe vor dem Tag `v6.0.15`):
 
 ```text
 v6.0.10
@@ -79,10 +79,10 @@ deren PHP-Anforderung Ihr PHP nicht erfüllt:
 |---|---|---|
 | `v6.0.0` bis `v6.0.7` | `^7.4 \|\| ^8.1` | nicht installierbar |
 | `v6.0.8` bis `v6.0.14` | `^8.1` und spätere 8.x | nicht installierbar |
-| 6.0.15 (`main`, `dev-main` für Composer) | `^8.0` und spätere 8.x | installierbar |
+| 6.0.15 (`~6.0.15`: der Tag `v6.0.15` oder `main`, `dev-main` für Composer) | `^8.0` und spätere 8.x | installierbar |
 
-Kein veröffentlichter Tag akzeptiert PHP 8.0: Verwenden Sie unter PHP 8.0 `main`, bis es einen Tag der Linie 6.0.15
-gibt.
+Die Tags `v6.0.0` bis `v6.0.14` akzeptieren PHP 8.0 nicht: Verwenden Sie unter PHP 8.0 die Linie 6.0.15, also
+`~6.0.15` (den Tag `v6.0.15`, sobald er veröffentlicht ist) oder den Branch `main`, der diese Linie trägt.
 
 `composer.json` gibt `main` den Branch-Alias `6.0.x-dev` (`"extra": { "branch-alias": { "dev-main": "6.0.x-dev" } }`).
 Aus `main` installiert, hat das Root-Paket dann sowohl die Version `6.0.x-dev` als auch `dev-main`, sodass ein Paket,
@@ -177,7 +177,7 @@ Ohne Versionsangabe nimmt Composer die neueste stabile Release. Um eine festzule
 folgen:
 
 ```bash
-composer create-project se7enxweb/exponential:v6.0.14 exponential
+composer create-project se7enxweb/exponential:~6.0.15 exponential
 composer create-project se7enxweb/exponential:dev-main exponential
 ```
 

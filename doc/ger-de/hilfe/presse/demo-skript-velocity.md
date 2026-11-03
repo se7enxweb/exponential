@@ -14,7 +14,7 @@ of workers alive" ([Velocity](../../funktionen/6.0/velocity-server-mit-dauerhaft
 bei dem Videos am häufigsten mehr sagen als die Quellen. Dieses Skript zeigt, wie Velocity funktioniert, und zitiert nur
 die dokumentierten Zahlen, mit ihrer Methode. Es dauert etwa acht Minuten, in einem Terminal und einem Browser.
 
-Velocity kam mit der Linie 6.0.15 (`./console exp:velocity`), die in Entwicklung ist; das Engine-Paket hat eigene
+Velocity kam mit der Linie 6.0.15 (`./console exp:velocity`); das Engine-Paket hat eigene
 Versionsnummern (Exponential Velocity 0.0.4.x). Nennen Sie beide vor der Kamera.
 
 ## Inhalt

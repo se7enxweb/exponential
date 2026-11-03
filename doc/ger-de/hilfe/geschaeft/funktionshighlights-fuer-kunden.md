@@ -66,7 +66,7 @@ eine Seite sagt, lautet die ehrliche Antwort „Die Dokumentation macht dazu kei
    Kunden wichtig waren. Jede Hilfeseite lässt sich drucken oder als PDF herunterladen (siehe [PDF und E-Books](#pdf-und-e-books)).
 
 > **Hinweis**
-> Die folgenden Funktionen sind die der 6.0.15-Linie, die sich in Entwicklung befindet; der neueste Tag ist 6.0.14
+> Die folgenden Funktionen sind die der 6.0.15-Linie, der aktuellen Linie, die auf 6.0.14 folgt
 > ([Wer ist 7x?, Die 6.0.x-Releases](../wer-ist-7x.md#die-releases-60x)). Wenn ein Kunde eine veröffentlichte Version
 > betreiben wird, prüfen Sie im [Changelog zu 6.0.15](../../../changelogs/6.0/6.0.15.md), was in welcher Version
 > enthalten ist, bevor Sie einen Termin zusagen.

@@ -75,9 +75,9 @@ Exponential on 12 August 2025. https://github.com/se7enxweb/exponential/blob/mai
 
 Two cautions:
 
-- **Release status.** A month page can describe work on the development line. October 2026's headline says "no
-  release tag; they belong to the 6.0.15 line". Do not turn a month's work into a release
-  ([Covering 6.0.15 while it is in development](covering-6-0-15-while-in-development.md)).
+- **Release status.** A month page can describe work on the `main` branch that no tag contained yet. October 2026's headline says "no
+  release tag; they belong to the 6.0.15 line". Do not turn a month's work into a release; check which tag contains
+  it ([Covering the 6.0.15 line](covering-6-0-15-while-in-development.md)).
 - **Upstream history.** Forked repositories carry older history that the se7enxweb team did not make. The Who is 7x?
   page counts "6,556 ledger changes in 53 repositories since December 2023, 1,037 of them made by the se7enxweb team,
   the rest upstream history that the forks carry along" ([Who is 7x?](../who-is-7x.md#stewardship-from-a-dormant-code-base-to-exponential-6)).

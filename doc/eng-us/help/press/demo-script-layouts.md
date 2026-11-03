@@ -17,7 +17,7 @@ unless you publish. Every click comes from [The layouts editor](../layouts-edito
 [In action: the layouts editor](../admin-tour.md#in-action-the-layouts-editor).
 
 Sign in with an account whose role may work with layouts: the **Layouts** tab is shown only to such roles. The
-current editor belongs to the 6.0.15 development line; say which version you show.
+current editor belongs to the 6.0.15 line; say which version you show.
 
 ## Contents
 

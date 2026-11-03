@@ -38,7 +38,7 @@ dieser Seite verlangt, dass Sie positiv urteilen.
 ## Nennen Sie Ihren Aufbau
 
 ```text
-Tested: Exponential <6.0.14 | 6.0.15 development line, commit or date>
+Tested: Exponential <release tag, e.g. 6.0.14 | 6.0.15 line on main, commit or date>
 Installed with: <exp:install | setup wizard | kickstarter>, database <SQLite | ...>
 Served by: <Apache + PHP-FPM | nginx | Velocity, engine qbix | FrankenPHP>, PHP <version>
 Design: <admin4 | ...>; extensions switched on: <list>
@@ -79,8 +79,8 @@ Ihre Methode ([Benchmarking](../../anleitungen/benchmarking.md)).
 
 Eine faire Rezension berichtet, was die Quellen selbst einräumen, mit der Quelle:
 
-- 6.0.15 ist in Entwicklung und hat kein Veröffentlichungsdatum; vieles von dem, was die Hilfe beschreibt, gehört dazu
-  ([Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)).
+- Vieles von dem, was die Hilfe beschreibt, gehört zur Linie 6.0.15 ([Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md));
+  ein Release mit Datum ist es erst mit dem Tag `v6.0.15` (`git tag -l 'v6.0.*'`).
 - Alle Übersetzungen der Administration (die aktuellen Gesamtzahlen stehen am Anfang der Seite [Sprachen in Exponential](../../sprachen.md)) sind vollständig (26. Oktober 2026); später hinzukommende Texte zeigen
   sie Englisch, bis sie übersetzt sind ([Sprachen in Exponential](../../sprachen.md)).
 - Die mitgelieferte Standard-Engine von Velocity ist der eingebaute Server von PHP, nur für die Entwicklung; die
