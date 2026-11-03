@@ -99,7 +99,8 @@
         "Introspection": "the term of the GraphQL specification, kept as it is",
         "GitHub Pages": "product name (GitHub's hosting service)",
         "GitHub Actions": "product name (GitHub's workflow service)",
-        "GitHub App": "product name (a kind of GitHub integration)"
+        "GitHub App": "product name (a kind of GitHub integration)",
+        "In AvailableDataTypes[]": "names the content.ini setting AvailableDataTypes[]; In is the same word in Afrikaans, Dutch, German, Irish, Italian and Latin"
     },
     "ara-SA": {
         "#level1 - #level2": "format placeholders only",
@@ -672,7 +673,8 @@
         "%target: job %id": "Danish uses the English loanword job (catalogue: Baggrundsjob)",
         "Job %id": "Danish uses the English loanword job (catalogue: Baggrundsjob)",
         "Build": "Danish developers use the English term build",
-        "Webhook": "Danish uses the English term Webhook"
+        "Webhook": "Danish uses the English term Webhook",
+        "Datatype %string": "Datatype is the Danish word too"
     },
     "dut-NL": {
         "Handler": "Dutch IT usage keeps handler for the PHP session save handler",
@@ -1045,7 +1047,9 @@
         "Webhooks": "the same word in Dutch",
         "Build": "Dutch uses the English term Build",
         "Webhook": "Dutch uses the English term Webhook",
-        "extra": "extra is the Dutch word"
+        "extra": "extra is the Dutch word",
+        "Datatype %string": "Datatype is the Dutch word too",
+        "Datatypes (%count)": "Datatypes is the Dutch plural too"
     },
     "esl-ES": {
         "Cookie": "Spanish uses the loanword cookie for HTTP cookies",
@@ -2699,7 +2703,8 @@
         "Sepia": "spelled the same in Norwegian",
         "Ellipse": "spelled the same in Norwegian",
         "Zoom: %1 %": "zoom is the Norwegian word, spelled the same",
-        "Webhook": "Norwegian uses the English term Webhook"
+        "Webhook": "Norwegian uses the English term Webhook",
+        "Datatype %string": "Datatype is the Norwegian word too"
     },
     "pol-PL": {
         "#level1 - #level2": "code, setting, file name, unit or placeholder text without words to translate",
@@ -15346,7 +15351,14 @@
         "Setup > Secrets": "The catalogue's menu names Setup and Secrets are the same in Nigerian Pidgin",
         "git host": "Technical term used as is in Nigerian Pidgin",
         "Job %id": "Nigerian Pidgin uses the word job",
-        "%target: job %id": "Nigerian Pidgin uses the word job"
+        "%target: job %id": "Nigerian Pidgin uses the word job",
+        "Datatype %string": "Nigerian Pidgin keeps the English technical term",
+        "Identifier, name, PHP class or extension.": "Nigerian Pidgin keeps these English technical terms",
+        "PHP class and file": "Nigerian Pidgin keeps these English technical terms",
+        "Help page": "Nigerian Pidgin keeps the English term",
+        "Class attributes (%count)": "Nigerian Pidgin keeps the English technical term",
+        "From text": "the same words in Nigerian Pidgin",
+        "From file": "the same words in Nigerian Pidgin"
     },
     "syr-IQ": {
         "ID %id": "abbreviation and placeholder only",
@@ -16359,7 +16371,8 @@
         "Deploy key": "Filipino IT usage keeps the English term deploy key",
         "Post-processing": "Filipino IT usage keeps the English term",
         "Webhook": "Filipino uses the English term Webhook",
-        "git host": "Filipino IT usage keeps the English term host; git is a product name"
+        "git host": "Filipino IT usage keeps the English term host; git is a product name",
+        "Datatype %string": "the Filipino catalogue keeps Datatype as a technical term"
     },
     "che-RU": {
         "ID %id": "acronym and placeholder",
