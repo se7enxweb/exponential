@@ -149,33 +149,43 @@ class Translations extends \Exponential\Runnable\ModuleView
             $db = \eZDB::instance();
 
             $db->begin();
-            foreach ( $seletedIDList as $translationID )
+            try
             {
-                $language = \eZContentLanguage::fetch( (int) $translationID );
-                if ( !$language )
-                    continue;
-                $name = $language->attribute( 'name' );
-                $localeCode = $language->attribute( 'locale' );
-                $objects = (int) $language->objectCount();
-                $classes = (int) $language->classCount();
-                // The kernel refuses a language that any object or class still has; the page says why.
-                if ( \eZContentLanguage::removeLanguage( $translationID ) )
+                foreach ( $seletedIDList as $translationID )
                 {
-                    $message = \ezpI18n::tr( self::I18N, '%name (%locale) was removed.', null, array( '%name' => $name, '%locale' => $localeCode ) );
-                    $sites = self::siteAccessLanguages( $siteLists );
-                    if ( !empty( $sites[$localeCode]['sites'] ) )
+                    $language = \eZContentLanguage::fetch( (int) $translationID );
+                    if ( !$language )
+                        continue;
+                    $name = $language->attribute( 'name' );
+                    $localeCode = $language->attribute( 'locale' );
+                    $objects = (int) $language->objectCount();
+                    $classes = (int) $language->classCount();
+                    // The kernel refuses a language that any object or class still has; the page says why.
+                    if ( \eZContentLanguage::removeLanguage( $translationID ) )
                     {
-                        $message .= ' ' . \ezpI18n::tr( self::I18N, 'These siteaccesses still list %locale in SiteLanguageList; take it out there: %sites', null,
-                                                        array( '%locale' => $localeCode, '%sites' => implode( ', ', $sites[$localeCode]['sites'] ) ) );
+                        $message = \ezpI18n::tr( self::I18N, '%name (%locale) was removed.', null, array( '%name' => $name, '%locale' => $localeCode ) );
+                        $sites = self::siteAccessLanguages( $siteLists );
+                        if ( !empty( $sites[$localeCode]['sites'] ) )
+                        {
+                            $message .= ' ' . \ezpI18n::tr( self::I18N, 'These siteaccesses still list %locale in SiteLanguageList; take it out there: %sites', null,
+                                                            array( '%locale' => $localeCode, '%sites' => implode( ', ', $sites[$localeCode]['sites'] ) ) );
+                        }
+                        $feedback[] = array( 'ok' => true, 'message' => $message );
                     }
-                    $feedback[] = array( 'ok' => true, 'message' => $message );
+                    else
+                    {
+                        $feedback[] = array( 'ok' => false,
+                                             'message' => \ezpI18n::tr( self::I18N, '%name (%locale) was not removed: %objects objects and %classes classes still have a translation in it.', null,
+                                                                        array( '%name' => $name, '%locale' => $localeCode, '%objects' => $objects, '%classes' => $classes ) ) );
+                    }
                 }
-                else
-                {
-                    $feedback[] = array( 'ok' => false,
-                                         'message' => \ezpI18n::tr( self::I18N, '%name (%locale) was not removed: %objects objects and %classes classes still have a translation in it.', null,
-                                                                    array( '%name' => $name, '%locale' => $localeCode, '%objects' => $objects, '%classes' => $classes ) ) );
-                }
+            }
+            catch ( \Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
             }
             $db->commit();
             \ezpEvent::getInstance()->notify( 'content/translations/cache', array( $seletedIDList ) );

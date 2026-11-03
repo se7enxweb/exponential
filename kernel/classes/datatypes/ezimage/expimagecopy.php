@@ -236,12 +236,22 @@ class expImageCopy
 
             $db = eZDB::instance();
             $db->begin();
-            if ( !$handler->initializeFromFile( $workPath, $altText, $originalFilename ) )
+            try
             {
-                $db->commit();
-                return ezpI18n::tr( 'kernel/classes/datatypes', 'The image could not be copied. Please try again or contact the site administrator.' );
+                if ( !$handler->initializeFromFile( $workPath, $altText, $originalFilename ) )
+                {
+                    $db->commit();
+                    return ezpI18n::tr( 'kernel/classes/datatypes', 'The image could not be copied. Please try again or contact the site administrator.' );
+                }
+                $handler->store( $target );
             }
-            $handler->store( $target );
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
             $db->commit();
             $target->setContent( $handler );
         }

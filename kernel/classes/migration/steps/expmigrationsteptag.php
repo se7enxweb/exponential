@@ -253,21 +253,31 @@ class expMigrationStepTag extends expMigrationStepStructureBase implements expMi
         $parentId = $parent instanceof eZTagsObject ? (int)$parent->attribute( 'id' ) : 0;
         $db = eZDB::instance();
         $db->begin();
-        $tag = new eZTagsObject( array( 'parent_id' => $parentId, 'main_tag_id' => 0, 'keyword' => $texts[$main],
-                                        'depth' => $parent instanceof eZTagsObject ? (int)$parent->attribute( 'depth' ) + 1 : 1,
-                                        'path_string' => $parent instanceof eZTagsObject ? (string)$parent->attribute( 'path_string' ) : '/',
-                                        'main_language_id' => (int)$language->attribute( 'id' ),
-                                        'language_mask' => eZContentLanguage::maskByLocale( array_keys( $texts ), $always ),
-                                        'remote_id' => $remoteId ), $main );
-        $tag->store();
-        foreach ( $texts as $locale => $keyword )
-            self::storeTranslation( $tag, (string)$locale, $keyword, $always && $locale === $main );
-        $tag->setAttribute( 'path_string', $tag->attribute( 'path_string' ) . $tag->attribute( 'id' ) . '/' );
-        $tag->store();
-        $tag->updateModified();
-        $added = self::addSynonyms( $tag, $step, $main );
-        if ( class_exists( 'ezpEvent', false ) )
-            ezpEvent::getInstance()->filter( 'tag/add', array( 'tag' => $tag, 'parentTag' => $parent ?: false ) );
+        try
+        {
+            $tag = new eZTagsObject( array( 'parent_id' => $parentId, 'main_tag_id' => 0, 'keyword' => $texts[$main],
+                                            'depth' => $parent instanceof eZTagsObject ? (int)$parent->attribute( 'depth' ) + 1 : 1,
+                                            'path_string' => $parent instanceof eZTagsObject ? (string)$parent->attribute( 'path_string' ) : '/',
+                                            'main_language_id' => (int)$language->attribute( 'id' ),
+                                            'language_mask' => eZContentLanguage::maskByLocale( array_keys( $texts ), $always ),
+                                            'remote_id' => $remoteId ), $main );
+            $tag->store();
+            foreach ( $texts as $locale => $keyword )
+                self::storeTranslation( $tag, (string)$locale, $keyword, $always && $locale === $main );
+            $tag->setAttribute( 'path_string', $tag->attribute( 'path_string' ) . $tag->attribute( 'id' ) . '/' );
+            $tag->store();
+            $tag->updateModified();
+            $added = self::addSynonyms( $tag, $step, $main );
+            if ( class_exists( 'ezpEvent', false ) )
+                ezpEvent::getInstance()->filter( 'tag/add', array( 'tag' => $tag, 'parentTag' => $parent ?: false ) );
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
         $tag = self::fresh( (int)$tag->attribute( 'id' ) );
         $lines = array( 'created the tag ' . self::pathOf( $tag ) . ' (' . $tag->attribute( 'id' ) . ') in ' . implode( ', ', array_keys( $texts ) ) );
@@ -292,61 +302,71 @@ class expMigrationStepTag extends expMigrationStepStructureBase implements expMi
         $changed = array();
         $db = eZDB::instance();
         $db->begin();
-        foreach ( $texts as $locale => $keyword )
+        try
         {
-            $translation = eZTagsKeyword::fetch( $id, (string)$locale, true );
-            if ( $translation instanceof eZTagsKeyword && (string)$translation->attribute( 'keyword' ) === $keyword
-                 && (int)$translation->attribute( 'status' ) === eZTagsKeyword::STATUS_PUBLISHED )
-                continue;
-            if ( self::clash( (int)$tag->attribute( 'parent_id' ), $keyword, $id ) )
-                throw new RuntimeException( "another tag below the same parent has the keyword \"$keyword\"" );
-            self::storeTranslation( $tag, (string)$locale, $keyword, false, $translation instanceof eZTagsKeyword ? $translation : null );
-            $changed[] = "$locale \"$keyword\"";
-        }
-        if ( $changed )
-        {
-            $tag = self::fresh( $id );
-            $tag->updateLanguageMask();
-        }
-        if ( isset( $step['main_language'] ) )
-        {
-            $locale = expMigrationStepContentBase::localeOf( $step['main_language'] );
-            $language = eZContentLanguage::fetchByLocale( $locale );
-            if ( (int)$tag->attribute( 'main_language_id' ) !== (int)$language->attribute( 'id' ) )
+            foreach ( $texts as $locale => $keyword )
             {
-                if ( !$tag->updateMainTranslation( $locale ) )
-                    throw new RuntimeException( 'the tag ' . self::pathOf( $tag ) . " has no translation $locale to make its main one" );
-                $changed[] = "main language $locale";
+                $translation = eZTagsKeyword::fetch( $id, (string)$locale, true );
+                if ( $translation instanceof eZTagsKeyword && (string)$translation->attribute( 'keyword' ) === $keyword
+                     && (int)$translation->attribute( 'status' ) === eZTagsKeyword::STATUS_PUBLISHED )
+                    continue;
+                if ( self::clash( (int)$tag->attribute( 'parent_id' ), $keyword, $id ) )
+                    throw new RuntimeException( "another tag below the same parent has the keyword \"$keyword\"" );
+                self::storeTranslation( $tag, (string)$locale, $keyword, false, $translation instanceof eZTagsKeyword ? $translation : null );
+                $changed[] = "$locale \"$keyword\"";
+            }
+            if ( $changed )
+            {
+                $tag = self::fresh( $id );
+                $tag->updateLanguageMask();
+            }
+            if ( isset( $step['main_language'] ) )
+            {
+                $locale = expMigrationStepContentBase::localeOf( $step['main_language'] );
+                $language = eZContentLanguage::fetchByLocale( $locale );
+                if ( (int)$tag->attribute( 'main_language_id' ) !== (int)$language->attribute( 'id' ) )
+                {
+                    if ( !$tag->updateMainTranslation( $locale ) )
+                        throw new RuntimeException( 'the tag ' . self::pathOf( $tag ) . " has no translation $locale to make its main one" );
+                    $changed[] = "main language $locale";
+                }
+            }
+            $tag = self::fresh( $id );
+            $mainKeyword = (string)$tag->getKeyword( self::mainLocale( $tag ) );
+            if ( (string)$tag->attribute( 'keyword' ) !== $mainKeyword )
+            {
+                $tag->setAttribute( 'keyword', $mainKeyword );
+                $tag->store();
+            }
+            if ( isset( $step['always_available'] ) && $tag->isAlwaysAvailable() !== (bool)$step['always_available'] )
+            {
+                $tag->setAlwaysAvailable( (bool)$step['always_available'] );
+                $changed[] = 'always available ' . ( $step['always_available'] ? 'on' : 'off' );
+            }
+            if ( isset( $step['remote_id'] ) && trim( (string)$step['remote_id'] ) !== '' && (string)$tag->attribute( 'remote_id' ) !== trim( (string)$step['remote_id'] ) )
+            {
+                $remoteId = trim( (string)$step['remote_id'] );
+                if ( eZTagsObject::fetchByRemoteID( $remoteId, true ) instanceof eZTagsObject )
+                    throw new RuntimeException( "another tag has the remote id $remoteId" );
+                $tag->setAttribute( 'remote_id', $remoteId );
+                $tag->store();
+                $changed[] = "remote id $remoteId";
+            }
+            $added = self::addSynonyms( $tag, $step, isset( $step['language'] ) ? expMigrationStepContentBase::localeOf( $step['language'] ) : self::mainLocale( $tag ) );
+            if ( $added )
+                $changed[] = 'synonyms ' . implode( ', ', $added );
+            if ( $changed )
+            {
+                $tag->updateModified();
+                self::reindex( $tag );
             }
         }
-        $tag = self::fresh( $id );
-        $mainKeyword = (string)$tag->getKeyword( self::mainLocale( $tag ) );
-        if ( (string)$tag->attribute( 'keyword' ) !== $mainKeyword )
+        catch ( Throwable $e )
         {
-            $tag->setAttribute( 'keyword', $mainKeyword );
-            $tag->store();
-        }
-        if ( isset( $step['always_available'] ) && $tag->isAlwaysAvailable() !== (bool)$step['always_available'] )
-        {
-            $tag->setAlwaysAvailable( (bool)$step['always_available'] );
-            $changed[] = 'always available ' . ( $step['always_available'] ? 'on' : 'off' );
-        }
-        if ( isset( $step['remote_id'] ) && trim( (string)$step['remote_id'] ) !== '' && (string)$tag->attribute( 'remote_id' ) !== trim( (string)$step['remote_id'] ) )
-        {
-            $remoteId = trim( (string)$step['remote_id'] );
-            if ( eZTagsObject::fetchByRemoteID( $remoteId, true ) instanceof eZTagsObject )
-                throw new RuntimeException( "another tag has the remote id $remoteId" );
-            $tag->setAttribute( 'remote_id', $remoteId );
-            $tag->store();
-            $changed[] = "remote id $remoteId";
-        }
-        $added = self::addSynonyms( $tag, $step, isset( $step['language'] ) ? expMigrationStepContentBase::localeOf( $step['language'] ) : self::mainLocale( $tag ) );
-        if ( $added )
-            $changed[] = 'synonyms ' . implode( ', ', $added );
-        if ( $changed )
-        {
-            $tag->updateModified();
-            self::reindex( $tag );
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
         $tag = self::fresh( $id );
@@ -365,12 +385,22 @@ class expMigrationStepTag extends expMigrationStepStructureBase implements expMi
         $values = self::values( $tag );
         $db = eZDB::instance();
         $db->begin();
-        $parent = $tag->getParent( true );
-        if ( $parent instanceof eZTagsObject )
-            $parent->updateModified();
-        if ( class_exists( 'ezpEvent', false ) )
-            ezpEvent::getInstance()->filter( 'tag/delete', $tag );
-        $tag->recursivelyDeleteTag();
+        try
+        {
+            $parent = $tag->getParent( true );
+            if ( $parent instanceof eZTagsObject )
+                $parent->updateModified();
+            if ( class_exists( 'ezpEvent', false ) )
+                ezpEvent::getInstance()->filter( 'tag/delete', $tag );
+            $tag->recursivelyDeleteTag();
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
         if ( self::fresh( (int)$values['tag_id'] ) !== null )
             throw new RuntimeException( 'the tag ' . $values['path'] . ' was not deleted' );
@@ -404,22 +434,32 @@ class expMigrationStepTag extends expMigrationStepStructureBase implements expMi
                 throw new RuntimeException( 'below the new parent a tag has the keyword "' . $translation->attribute( 'keyword' ) . '" already' );
         $db = eZDB::instance();
         $db->begin();
-        $oldParent = $tag->getParent( true );
-        if ( $oldParent instanceof eZTagsObject )
-            $oldParent->updateModified();
-        foreach ( $tag->getSynonyms( true ) as $synonym )
+        try
         {
-            $synonym->setAttribute( 'parent_id', $parentId );
-            $synonym->store();
+            $oldParent = $tag->getParent( true );
+            if ( $oldParent instanceof eZTagsObject )
+                $oldParent->updateModified();
+            foreach ( $tag->getSynonyms( true ) as $synonym )
+            {
+                $synonym->setAttribute( 'parent_id', $parentId );
+                $synonym->store();
+            }
+            $tag->setAttribute( 'parent_id', $parentId );
+            $tag->store();
+            if ( class_exists( 'ezpEvent', false ) )
+                ezpEvent::getInstance()->filter( 'tag/edit', array( 'tag' => $tag, 'oldParentTag' => $oldParent ?: false, 'newParentTag' => $parent ?: false, 'move' => true ) );
+            $tag->updatePathString();
+            $tag->updateDepth();
+            $tag->updateModified();
+            self::reindex( $tag );
         }
-        $tag->setAttribute( 'parent_id', $parentId );
-        $tag->store();
-        if ( class_exists( 'ezpEvent', false ) )
-            ezpEvent::getInstance()->filter( 'tag/edit', array( 'tag' => $tag, 'oldParentTag' => $oldParent ?: false, 'newParentTag' => $parent ?: false, 'move' => true ) );
-        $tag->updatePathString();
-        $tag->updateDepth();
-        $tag->updateModified();
-        self::reindex( $tag );
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
         $tag = self::fresh( $id );
         if ( $tag === null || (int)$tag->attribute( 'parent_id' ) !== $parentId )
@@ -451,22 +491,32 @@ class expMigrationStepTag extends expMigrationStepStructureBase implements expMi
         $intoLabel = self::pathOf( $into );
         $db = eZDB::instance();
         $db->begin();
-        $oldParent = (int)$tag->attribute( 'parent_id' ) !== (int)$into->attribute( 'parent_id' ) ? $tag->getParent( true ) : false;
-        if ( $oldParent instanceof eZTagsObject )
-            $oldParent->updateModified();
-        if ( class_exists( 'ezpEvent', false ) )
-            ezpEvent::getInstance()->filter( 'tag/merge', array( 'tag' => $tag, 'newParentTag' => $into, 'oldParentTag' => $oldParent ) );
-        $tag->moveChildrenBelowAnotherTag( $into );
-        foreach ( $tag->getSynonyms( true ) as $synonym )
+        try
         {
-            self::reindex( $synonym );
-            $synonym->transferObjectsToAnotherTag( $into );
-            $synonym->remove();
+            $oldParent = (int)$tag->attribute( 'parent_id' ) !== (int)$into->attribute( 'parent_id' ) ? $tag->getParent( true ) : false;
+            if ( $oldParent instanceof eZTagsObject )
+                $oldParent->updateModified();
+            if ( class_exists( 'ezpEvent', false ) )
+                ezpEvent::getInstance()->filter( 'tag/merge', array( 'tag' => $tag, 'newParentTag' => $into, 'oldParentTag' => $oldParent ) );
+            $tag->moveChildrenBelowAnotherTag( $into );
+            foreach ( $tag->getSynonyms( true ) as $synonym )
+            {
+                self::reindex( $synonym );
+                $synonym->transferObjectsToAnotherTag( $into );
+                $synonym->remove();
+            }
+            self::reindex( $tag );
+            $tag->transferObjectsToAnotherTag( $into );
+            $tag->remove();
+            $into->updateModified();
         }
-        self::reindex( $tag );
-        $tag->transferObjectsToAnotherTag( $into );
-        $tag->remove();
-        $into->updateModified();
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
         if ( self::fresh( $id ) !== null )
             throw new RuntimeException( "$label was not merged" );

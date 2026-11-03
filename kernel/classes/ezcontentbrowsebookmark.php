@@ -165,24 +165,34 @@ class eZContentBrowseBookmark extends eZPersistentObject
     {
         $db = eZDB::instance();
         $db->begin();
-        $userID =(int) $userID;
-        $nodeID =(int) $nodeID;
-        $nodeName = $db->escapeString( $nodeName );
-        $previous = $db->arrayQuery( "SELECT folder_id, priority FROM ezcontentbrowsebookmark WHERE node_id=$nodeID and user_id=$userID" );
-        if ( $folderID === false || $folderID === null )
-            $folderID = $previous ? (int) $previous[0]['folder_id'] : 0;
-        $folderID = (int) $folderID;
-        if ( $folderID && !eZContentBrowseBookmarkFolder::fetchForUser( $userID, $folderID ) )
-            $folderID = 0;
-        $db->query( "DELETE FROM ezcontentbrowsebookmark WHERE node_id=$nodeID and user_id=$userID" );
-        $bookmark = new eZContentBrowseBookmark( array( 'user_id' => $userID,
-                                                        'node_id' => $nodeID,
-                                                        'name' => $nodeName,
-                                                        'folder_id' => $folderID,
-                                                        'priority' => ( $previous && (int) $previous[0]['folder_id'] === $folderID )
-                                                                      ? (int) $previous[0]['priority']
-                                                                      : eZContentBrowseBookmarkFolder::nextBookmarkPriority( $userID, $folderID ) ) );
-        $bookmark->store();
+        try
+        {
+            $userID =(int) $userID;
+            $nodeID =(int) $nodeID;
+            $nodeName = $db->escapeString( $nodeName );
+            $previous = $db->arrayQuery( "SELECT folder_id, priority FROM ezcontentbrowsebookmark WHERE node_id=$nodeID and user_id=$userID" );
+            if ( $folderID === false || $folderID === null )
+                $folderID = $previous ? (int) $previous[0]['folder_id'] : 0;
+            $folderID = (int) $folderID;
+            if ( $folderID && !eZContentBrowseBookmarkFolder::fetchForUser( $userID, $folderID ) )
+                $folderID = 0;
+            $db->query( "DELETE FROM ezcontentbrowsebookmark WHERE node_id=$nodeID and user_id=$userID" );
+            $bookmark = new eZContentBrowseBookmark( array( 'user_id' => $userID,
+                                                            'node_id' => $nodeID,
+                                                            'name' => $nodeName,
+                                                            'folder_id' => $folderID,
+                                                            'priority' => ( $previous && (int) $previous[0]['folder_id'] === $folderID )
+                                                                          ? (int) $previous[0]['priority']
+                                                                          : eZContentBrowseBookmarkFolder::nextBookmarkPriority( $userID, $folderID ) ) );
+            $bookmark->store();
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
         return $bookmark;
     }

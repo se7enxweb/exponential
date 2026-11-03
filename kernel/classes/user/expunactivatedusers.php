@@ -444,9 +444,19 @@ class expUnactivatedUsers
         $hash = self::newHash();
         $db = eZDB::instance();
         $db->begin();
-        eZUserAccountKey::removeByUserID( $userID );
-        $key = eZUserAccountKey::createNew( $userID, $hash, time() );
-        $key->store();
+        try
+        {
+            eZUserAccountKey::removeByUserID( $userID );
+            $key = eZUserAccountKey::createNew( $userID, $hash, time() );
+            $key->store();
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
 
         if ( $base === null )

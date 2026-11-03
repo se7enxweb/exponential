@@ -206,17 +206,27 @@ class eZWishList extends eZPersistentObject
     {
         $db = eZDB::instance();
         $db->begin();
-        $rows = $db->arrayQuery( "SELECT productcollection_id FROM ezwishlist" );
-        if ( count( $rows ) > 0 )
+        try
         {
-            $productCollectionIDList = array();
-            foreach ( $rows as $row )
+            $rows = $db->arrayQuery( "SELECT productcollection_id FROM ezwishlist" );
+            if ( count( $rows ) > 0 )
             {
-                $productCollectionIDList[] = $row['productcollection_id'];
+                $productCollectionIDList = array();
+                foreach ( $rows as $row )
+                {
+                    $productCollectionIDList[] = $row['productcollection_id'];
+                }
+                eZProductCollection::cleanupList( $productCollectionIDList );
             }
-            eZProductCollection::cleanupList( $productCollectionIDList );
+            $db->query( "DELETE FROM ezwishlist" );
         }
-        $db->query( "DELETE FROM ezwishlist" );
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
     }
 

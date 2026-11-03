@@ -111,22 +111,32 @@ class View extends \Exponential\Runnable\ModuleView
 
             $db = \eZDB::instance();
             $db->begin();
-            foreach ( $selectedObjectIDArray as $objectID )
+            try
             {
-                if ( !in_array(  $objectID, $assignedUserIDArray ) )
+                foreach ( $selectedObjectIDArray as $objectID )
                 {
-                    $role->assignToUser( $objectID );
+                    if ( !in_array(  $objectID, $assignedUserIDArray ) )
+                    {
+                        $role->assignToUser( $objectID );
+                    }
                 }
+                /* Clean up policy cache */
+                \eZUser::cleanupCache();
+
+                // Clear role caches.
+                \eZRole::expireCache();
+
+                // Clear all content cache.
+                \eZContentCacheManager::clearAllContentCache();
+
             }
-            /* Clean up policy cache */
-            \eZUser::cleanupCache();
-
-            // Clear role caches.
-            \eZRole::expireCache();
-
-            // Clear all content cache.
-            \eZContentCacheManager::clearAllContentCache();
-
+            catch ( \Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
             $db->commit();
         }
 
@@ -153,19 +163,29 @@ class View extends \Exponential\Runnable\ModuleView
             $removedAssignments = count( $idArray );
 
             $db->begin();
-            foreach ( $idArray as $id )
+            try
             {
-                $role->removeUserAssignmentByID( $id );
+                foreach ( $idArray as $id )
+                {
+                    $role->removeUserAssignmentByID( $id );
+                }
+                /* Clean up policy cache */
+                \eZUser::cleanupCache();
+
+                // Clear role caches.
+                \eZRole::expireCache();
+
+                // Clear all content cache.
+                \eZContentCacheManager::clearAllContentCache();
+
             }
-            /* Clean up policy cache */
-            \eZUser::cleanupCache();
-
-            // Clear role caches.
-            \eZRole::expireCache();
-
-            // Clear all content cache.
-            \eZContentCacheManager::clearAllContentCache();
-
+            catch ( \Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
             $db->commit();
         }
 

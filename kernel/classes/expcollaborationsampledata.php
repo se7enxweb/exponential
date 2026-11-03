@@ -322,30 +322,40 @@ class expCollaborationSampleData
         }
         $db = eZDB::instance();
         $db->begin();
-        $groupID = false;
-        foreach ( eZWorkflowGroup::fetchList() as $g )
-            if ( $g->attribute( 'name' ) === self::WORKFLOW_GROUP_NAME )
-                $groupID = $g->attribute( 'id' );
-        if ( !$groupID )
+        try
         {
-            $wg = eZWorkflowGroup::create( $adminID );
-            $wg->setAttribute( 'name', self::WORKFLOW_GROUP_NAME );
-            $wg->store();
-            $groupID = $wg->attribute( 'id' );
+            $groupID = false;
+            foreach ( eZWorkflowGroup::fetchList() as $g )
+                if ( $g->attribute( 'name' ) === self::WORKFLOW_GROUP_NAME )
+                    $groupID = $g->attribute( 'id' );
+            if ( !$groupID )
+            {
+                $wg = eZWorkflowGroup::create( $adminID );
+                $wg->setAttribute( 'name', self::WORKFLOW_GROUP_NAME );
+                $wg->store();
+                $groupID = $wg->attribute( 'id' );
+            }
+            $workflow = eZWorkflow::create( $adminID );
+            $workflow->setAttribute( 'name', self::WORKFLOW_NAME );
+            $workflow->setAttribute( 'version', 0 );
+            $workflow->store();
+            $workflowID = $workflow->attribute( 'id' );
+            $link = eZWorkflowGroupLink::create( $workflowID, 0, $groupID, self::WORKFLOW_GROUP_NAME );
+            $link->store();
+            $event = eZWorkflowEvent::create( $workflowID, 'event_ezapprove' );
+            $event->setAttribute( 'version', 0 );
+            $event->setAttribute( 'data_text1', (string)$section->attribute( 'id' ) ); // only this section
+            $event->setAttribute( 'data_text3', (string)$adminID );                    // the administrator approves
+            $event->setAttribute( 'data_int3', eZApproveType::VERSION_OPTION_ALL );
+            $event->store();
         }
-        $workflow = eZWorkflow::create( $adminID );
-        $workflow->setAttribute( 'name', self::WORKFLOW_NAME );
-        $workflow->setAttribute( 'version', 0 );
-        $workflow->store();
-        $workflowID = $workflow->attribute( 'id' );
-        $link = eZWorkflowGroupLink::create( $workflowID, 0, $groupID, self::WORKFLOW_GROUP_NAME );
-        $link->store();
-        $event = eZWorkflowEvent::create( $workflowID, 'event_ezapprove' );
-        $event->setAttribute( 'version', 0 );
-        $event->setAttribute( 'data_text1', (string)$section->attribute( 'id' ) ); // only this section
-        $event->setAttribute( 'data_text3', (string)$adminID );                    // the administrator approves
-        $event->setAttribute( 'data_int3', eZApproveType::VERSION_OPTION_ALL );
-        $event->store();
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
         $this->log( 'Created the workflow ' . self::WORKFLOW_NAME . ' (approval for section ' . $section->attribute( 'id' ) . ' only)' );
         ++$counts['created'];
@@ -563,41 +573,51 @@ class expCollaborationSampleData
             return;
         $db = eZDB::instance();
         $db->begin();
-        $workflow = eZWorkflow::fetch( $process->attribute( 'workflow_id' ) );
-        $workflowEvent = $process->attribute( 'event_id' ) != 0 ? eZWorkflowEvent::fetch( $process->attribute( 'event_id' ) ) : null;
-        $eventLog = array();
-        $process->run( $workflow, $workflowEvent, $eventLog );
-        $status = $process->attribute( 'status' );
-        if ( $status != eZWorkflow::STATUS_DONE )
+        try
         {
-            if ( in_array( $status, array( eZWorkflow::STATUS_RESET, eZWorkflow::STATUS_FAILED, eZWorkflow::STATUS_NONE,
-                                           eZWorkflow::STATUS_CANCELLED, eZWorkflow::STATUS_BUSY ) ) )
+            $workflow = eZWorkflow::fetch( $process->attribute( 'workflow_id' ) );
+            $workflowEvent = $process->attribute( 'event_id' ) != 0 ? eZWorkflowEvent::fetch( $process->attribute( 'event_id' ) ) : null;
+            $eventLog = array();
+            $process->run( $workflow, $workflowEvent, $eventLog );
+            $status = $process->attribute( 'status' );
+            if ( $status != eZWorkflow::STATUS_DONE )
             {
-                if ( $bodyMemento = eZOperationMemento::fetchMain( $process->attribute( 'memento_key' ) ) )
-                    $bodyMemento->remove();
-                foreach ( eZOperationMemento::fetchList( $process->attribute( 'memento_key' ) ) as $memento )
-                    $memento->remove();
+                if ( in_array( $status, array( eZWorkflow::STATUS_RESET, eZWorkflow::STATUS_FAILED, eZWorkflow::STATUS_NONE,
+                                               eZWorkflow::STATUS_CANCELLED, eZWorkflow::STATUS_BUSY ) ) )
+                {
+                    if ( $bodyMemento = eZOperationMemento::fetchMain( $process->attribute( 'memento_key' ) ) )
+                        $bodyMemento->remove();
+                    foreach ( eZOperationMemento::fetchList( $process->attribute( 'memento_key' ) ) as $memento )
+                        $memento->remove();
+                }
+                if ( $status == eZWorkflow::STATUS_CANCELLED )
+                    $process->removeThis();
+                else
+                    $process->store();
             }
-            if ( $status == eZWorkflow::STATUS_CANCELLED )
-                $process->removeThis();
             else
-                $process->store();
-        }
-        else
-        {
-            $bodyMemento = eZOperationMemento::fetchChild( $process->attribute( 'memento_key' ) );
-            $mainMemento = $bodyMemento ? $bodyMemento->attribute( 'main_memento' ) : null;
-            if ( $bodyMemento && $mainMemento )
             {
-                $mementoData = $bodyMemento->data();
-                $mementoData['main_memento'] = $mainMemento;
-                $mementoData['skip_trigger'] = true;
-                $mementoData['memento_key'] = $process->attribute( 'memento_key' );
-                $bodyMemento->remove();
-                $parameters = isset( $mementoData['parameters'] ) ? $mementoData['parameters'] : array();
-                eZOperationHandler::execute( $mementoData['module_name'], $mementoData['operation_name'], $parameters, $mementoData );
-                $process->removeThis();
+                $bodyMemento = eZOperationMemento::fetchChild( $process->attribute( 'memento_key' ) );
+                $mainMemento = $bodyMemento ? $bodyMemento->attribute( 'main_memento' ) : null;
+                if ( $bodyMemento && $mainMemento )
+                {
+                    $mementoData = $bodyMemento->data();
+                    $mementoData['main_memento'] = $mainMemento;
+                    $mementoData['skip_trigger'] = true;
+                    $mementoData['memento_key'] = $process->attribute( 'memento_key' );
+                    $bodyMemento->remove();
+                    $parameters = isset( $mementoData['parameters'] ) ? $mementoData['parameters'] : array();
+                    eZOperationHandler::execute( $mementoData['module_name'], $mementoData['operation_name'], $parameters, $mementoData );
+                    $process->removeThis();
+                }
             }
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
     }
@@ -735,14 +755,24 @@ class expCollaborationSampleData
         {
             $in = implode( ',', $items );
             $db->begin();
-            $db->query( "DELETE FROM ezcollab_simple_message WHERE id IN (SELECT message_id FROM ezcollab_item_message_link WHERE collaboration_id IN ($in))" );
-            $db->query( "DELETE FROM ezcollab_item_message_link WHERE collaboration_id IN ($in)" );
-            $db->query( "DELETE FROM ezcollab_item_participant_link WHERE collaboration_id IN ($in)" );
-            $db->query( "DELETE FROM ezcollab_item_group_link WHERE collaboration_id IN ($in)" );
-            $db->query( "DELETE FROM ezcollab_item_status WHERE collaboration_id IN ($in)" );
-            $db->query( "DELETE FROM eznotificationevent WHERE event_type_string='ezcollaboration' AND data_int1 IN ($in)" );
-            $db->query( "DELETE FROM ezapprove_items WHERE collaboration_id IN ($in)" );
-            $db->query( "DELETE FROM ezcollab_item WHERE id IN ($in)" );
+            try
+            {
+                $db->query( "DELETE FROM ezcollab_simple_message WHERE id IN (SELECT message_id FROM ezcollab_item_message_link WHERE collaboration_id IN ($in))" );
+                $db->query( "DELETE FROM ezcollab_item_message_link WHERE collaboration_id IN ($in)" );
+                $db->query( "DELETE FROM ezcollab_item_participant_link WHERE collaboration_id IN ($in)" );
+                $db->query( "DELETE FROM ezcollab_item_group_link WHERE collaboration_id IN ($in)" );
+                $db->query( "DELETE FROM ezcollab_item_status WHERE collaboration_id IN ($in)" );
+                $db->query( "DELETE FROM eznotificationevent WHERE event_type_string='ezcollaboration' AND data_int1 IN ($in)" );
+                $db->query( "DELETE FROM ezapprove_items WHERE collaboration_id IN ($in)" );
+                $db->query( "DELETE FROM ezcollab_item WHERE id IN ($in)" );
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
             $db->commit();
             $counts['items'] = count( $items );
             $this->log( 'Removed ' . count( $items ) . ' collaboration items with their messages' );
@@ -792,10 +822,20 @@ class expCollaborationSampleData
                 $db->query( "DELETE FROM ezworkflow_process WHERE id=" . (int)$p['id'] );
             }
             $db->begin();
-            eZTrigger::removeTriggerForWorkflow( $workflowID );
-            eZPersistentObject::removeObject( eZWorkflowEvent::definition(), array( 'workflow_id' => $workflowID ) );
-            eZWorkflowGroupLink::removeWorkflowMembers( $workflowID, 0 );
-            eZWorkflow::removeWorkflow( $workflowID, 0 );
+            try
+            {
+                eZTrigger::removeTriggerForWorkflow( $workflowID );
+                eZPersistentObject::removeObject( eZWorkflowEvent::definition(), array( 'workflow_id' => $workflowID ) );
+                eZWorkflowGroupLink::removeWorkflowMembers( $workflowID, 0 );
+                eZWorkflow::removeWorkflow( $workflowID, 0 );
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
             $db->commit();
             $counts['workflows'] = 1;
             $this->log( 'Removed the workflow ' . self::WORKFLOW_NAME . ' and its trigger' );

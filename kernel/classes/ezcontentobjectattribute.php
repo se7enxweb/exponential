@@ -296,12 +296,22 @@ class eZContentObjectAttribute extends eZPersistentObject
 
             $db = eZDB::instance();
             $db->begin();
+            try
+            {
 
-            // store the content data for this attribute
-            $dataType->storeObjectAttribute( $this );
+                // store the content data for this attribute
+                $dataType->storeObjectAttribute( $this );
 
-            parent::store( $fieldFilters );
-            $dataType->postStore( $this );
+                parent::store( $fieldFilters );
+                $dataType->postStore( $this );
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
             $db->commit();
         }
     }
@@ -1013,10 +1023,20 @@ class eZContentObjectAttribute extends eZPersistentObject
 
         $db = eZDB::instance();
         $db->begin();
-        $tmp->sync();
-        $tmp->initialize( $currentVersionNumber, $this );
-        $tmp->sync();
-        $tmp->postInitialize( $currentVersionNumber, $this );
+        try
+        {
+            $tmp->sync();
+            $tmp->initialize( $currentVersionNumber, $this );
+            $tmp->sync();
+            $tmp->postInitialize( $currentVersionNumber, $this );
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
 
         return $tmp;
@@ -1040,15 +1060,25 @@ class eZContentObjectAttribute extends eZPersistentObject
 
         $db = eZDB::instance();
         $db->begin();
-        $tmp->sync();
-        $currentVersionNumber = $this->attribute( 'version' );
-        $tmp->initialize( $currentVersionNumber, $this );
-        $tmp->sync();
-        $tmp->postInitialize( $currentVersionNumber, $this );
-        if ( $updateLanguageMask )
+        try
         {
-            $version = $tmp->objectVersion();
-            $version->updateLanguageMask( (int) $version->languageMask() | (int) $languageID, false );
+            $tmp->sync();
+            $currentVersionNumber = $this->attribute( 'version' );
+            $tmp->initialize( $currentVersionNumber, $this );
+            $tmp->sync();
+            $tmp->postInitialize( $currentVersionNumber, $this );
+            if ( $updateLanguageMask )
+            {
+                $version = $tmp->objectVersion();
+                $version->updateLanguageMask( (int) $version->languageMask() | (int) $languageID, false );
+            }
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
 

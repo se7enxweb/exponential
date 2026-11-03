@@ -352,7 +352,7 @@ class expDebugBarReport
             'levels'    => array(),
             // PHP, OPcache and APCu of the process that rendered the page: only for those who may see the privileged
             // rows of the Server tab, since the bar can show to anonymous visitors (DebugByIP)
-            'runtime'   => self::runtimeFigures( $userInfo['can_setup'] || $userInfo['can_cache'] ),
+            'runtime'   => self::runtimeFigures( $userInfo['read_setup'] || $userInfo['read_cache'] ),
         );
         // how this page came about: rendered by the kernel (why), for the first chip of the bar; a page served from the
         // page cache gets the same bar with "Cached" instead (ezpHttpCacheContract::debugBar())
@@ -383,21 +383,19 @@ class expDebugBarReport
         }
         $summary['querycache'] = $serverSummary !== null && array_key_exists( 'querycache', $serverSummary )
             ? $serverSummary['querycache'] : self::queryCacheSummary();
-        // How the page was rendered: as the User tab, for setup/setup and for an anonymous visitor who gets the debug
-        // output, whose role and limitation ids in the cache key are those of every anonymous visitor
-        $mayRender = class_exists( 'expDebugBarUser' ) ? expDebugBarUser::mayView( $userInfo['can_setup'], $userInfo['logged_in'], true ) : $userInfo['can_setup'];
+        // How the page was rendered: as the User tab, for whoever gets the debug output (expDebugBarUser::mayView())
+        $mayRender = class_exists( 'expDebugBarUser' ) ? expDebugBarUser::mayView( $userInfo['can_setup'], $userInfo['logged_in'], eZDebug::isDebugEnabled() ) : $userInfo['can_setup'];
         $rendering = $mayRender ? self::renderingData() : null;
         $summary['rendering'] = $rendering === null ? null : self::renderingChips( $rendering );
-        // The user's roles and cache profile (User tab and its chip): for setup/setup, as the Rendering tab, and for an
-        // anonymous visitor who gets the debug output, whose ids are those of every anonymous visitor
+        // The user's own roles and cache profile (User tab and its chip), as the Rendering tab: for whoever gets the
+        // debug output (mayView()); the policies for who may read the settings (read_setup, userHtml())
         $userProfile = null;
-        // (the report is only rendered for a request that gets the debug output)
-        if ( class_exists( 'expDebugBarUser' ) && expDebugBarUser::mayView( $userInfo['can_setup'], $userInfo['logged_in'], true ) )
+        if ( class_exists( 'expDebugBarUser' ) && expDebugBarUser::mayView( $userInfo['can_setup'], $userInfo['logged_in'], eZDebug::isDebugEnabled() ) )
         {
             $viewCache = $rendering !== null ? $rendering['view_cache'] : ( class_exists( 'expRenderStats' ) ? expRenderStats::viewCache() : null );
             $userProfile = expDebugBarUser::data( $viewCache );
         }
-        // without the User tab (a logged-in user without setup/setup who gets the debug output) the chip names the login only
+        // without the User tab (expDebugBarUser missing) the chip names the login only
         $summary['user'] = $userProfile !== null ? self::userChip( $userProfile )
                          : ( $userInfo['login'] !== '' ? self::loginChip( $userInfo ) : null );
 
@@ -500,12 +498,12 @@ class expDebugBarReport
         // --- Settings (drawn by the script; the classic toolbar below it)
         self::panelStart( 'settings', $tabs, $metrics );
         echo '<div class="exp-debug-settings" data-state="pending"></div>';
-        if ( !$userInfo['can_setup'] )
+        if ( !$userInfo['read_setup'] )
         {
-            // the classic toolbar shows the quick settings' values: for setup/setup only
+            // the settings for who may read them; the classic toolbar below (it changes them) for setup/setup only
             echo '<p class="exp-debug-hint exp-debug-warn">' . self::h( 'Sign in with setup access to change debug settings' ) . '</p>';
         }
-        else if ( $classicToolbar !== '' )
+        else if ( $userInfo['can_setup'] && $classicToolbar !== '' )
         {
             echo '<details class="exp-debug-classic"><summary>' . self::h( 'Classic controls' ) . '</summary>';
             echo '<table class="exp-debug-classic-table">' . $classicToolbar . '</table>';
@@ -551,7 +549,7 @@ class expDebugBarReport
         if ( $userProfile !== null )
         {
             self::panelStart( 'user', $tabs, $metrics );
-            echo self::userHtml( $userProfile, $userInfo['can_setup'] );
+            echo self::userHtml( $userProfile, $userInfo['read_setup'] );
             self::panelEnd();
         }
 
@@ -575,7 +573,7 @@ class expDebugBarReport
 
         // --- Server (id velocity)
         self::panelStart( 'velocity', $tabs, $metrics );
-        echo self::velocityHtml( $userInfo['can_setup'] || $userInfo['can_cache'] );
+        echo self::velocityHtml( $userInfo['read_setup'] || $userInfo['read_cache'] );
         self::panelEnd();
 
         if ( $otherReports !== '' )
@@ -1603,7 +1601,7 @@ class expDebugBarReport
      * role assignments with where each comes from.
      *
      * @param array $u expDebugBarUser::data()
-     * @param bool $policies whether the section of the policies is offered (setup/setup: they are loaded on demand)
+     * @param bool $policies whether the section of the policies is offered (read_setup: they are loaded on demand)
      * @return string HTML
      */
     public static function userHtml( array $u, $policies = false )
@@ -2188,8 +2186,8 @@ class expDebugBarReport
     /**
      * The limits of the OPcache and APCu chips: debugbar.ini [DebugBarSettings] Thresholds[opcache_memory] and
      * Thresholds[apcu_memory] where the kernel's registry can read them, else the defaults. The kernel's summary gives
-     * its levels only to users with setup/setup; a user with only setup/managecache sees the chips too, with the same
-     * limits.
+     * its levels only to who may read the lists (setup/setup, or the debug output under ReadAccess=debug); a user with
+     * only setup/managecache sees the chips too, with the same limits.
      *
      * @return array 'opcache_memory' / 'apcu_memory' => array( 'warn' => percent, 'high' => percent )
      */
@@ -2329,9 +2327,13 @@ class expDebugBarReport
      */
     protected static function cacheHtml( array $page, array $user )
     {
-        if ( !$user['can_cache'] )
+        $read = !empty( $user['read_cache'] ) || !empty( $user['can_cache'] );
+        if ( !$read )
             return '<p class="exp-debug-hint exp-debug-warn">' . self::h( 'Sign in with cache access to manage caches' ) . '</p>';
         $html = '<div class="exp-debug-cache" data-state="pending"></div>';
+        // reading the list (debugbar.ini ReadAccess=debug) is not clearing: the form only with setup/managecache
+        if ( empty( $user['can_cache'] ) )
+            return $html;
 
         $types = array();
         if ( $page['node_id'] )
@@ -2424,12 +2426,17 @@ class expDebugBarReport
     }
 
     /**
-     * The current user for the bar: logged in, the user id and login (for the user chip), and whether the user may
-     * change settings and clear caches.
+     * The current user for the bar: logged in, the user id and login (for the user chip), whether the user may
+     * change settings and clear caches (can_setup, can_cache), and whether they may read what those policies read
+     * (read_setup, read_cache: also whoever gets the debug output under debugbar.ini ReadAccess=debug, the default;
+     * the report is only rendered for a request that gets it).
      */
     protected static function userInfo()
     {
-        $info = array( 'logged_in' => false, 'id' => 0, 'login' => '', 'can_setup' => false, 'can_cache' => false );
+        $info = array( 'logged_in' => false, 'id' => 0, 'login' => '', 'can_setup' => false, 'can_cache' => false,
+                       'read_setup' => false, 'read_cache' => false );
+        $readsAll = class_exists( 'expDebugBarRegistry' ) && expDebugBarRegistry::readsAll( class_exists( 'eZDebug', false ) && eZDebug::isDebugEnabled() );
+        $info['read_setup'] = $info['read_cache'] = $readsAll;
         if ( !class_exists( 'eZUser', false ) )
             return $info;
         try
@@ -2444,6 +2451,8 @@ class expDebugBarReport
             $cache = $user->hasAccessTo( 'setup', 'managecache' );
             $info['can_setup'] = isset( $setup['accessWord'] ) && $setup['accessWord'] !== 'no';
             $info['can_cache'] = isset( $cache['accessWord'] ) && $cache['accessWord'] !== 'no';
+            $info['read_setup'] = $readsAll || $info['can_setup'];
+            $info['read_cache'] = $readsAll || $info['can_cache'];
         }
         catch ( Throwable $e )
         {

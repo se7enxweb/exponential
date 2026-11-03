@@ -144,21 +144,31 @@ class eZWorkflow extends eZPersistentObject
     {
         $db = eZDB::instance();
         $db->begin();
-        if ( is_array( $remove_childs ) )
+        try
         {
-            foreach( $remove_childs as $event )
+            if ( is_array( $remove_childs ) )
             {
-                $event->remove();
+                foreach( $remove_childs as $event )
+                {
+                    $event->remove();
+                }
             }
-        }
-        else if ( $remove_childs )
-        {
-            eZPersistentObject::removeObject( eZWorkflowEvent::definition(),
-                                              array( "workflow_id" => $this->ID,
-                                                     "version" => $this->Version ) );
-        }
+            else if ( $remove_childs )
+            {
+                eZPersistentObject::removeObject( eZWorkflowEvent::definition(),
+                                                  array( "workflow_id" => $this->ID,
+                                                         "version" => $this->Version ) );
+            }
 
-        $this->remove();
+            $this->remove();
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
     }
 
@@ -175,12 +185,22 @@ class eZWorkflow extends eZPersistentObject
 
         $db = eZDB::instance();
         $db->begin();
-        foreach ( $temporaryWorkflows as $workflow )
+        try
         {
-            $workflow->removeThis( true );
+            foreach ( $temporaryWorkflows as $workflow )
+            {
+                $workflow->removeThis( true );
+            }
+            eZPersistentObject::removeObject( eZWorkflowEvent::definition(),
+                                              array( 'version' => $version ) );
         }
-        eZPersistentObject::removeObject( eZWorkflowEvent::definition(),
-                                          array( 'version' => $version ) );
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
     }
 
@@ -194,9 +214,19 @@ class eZWorkflow extends eZPersistentObject
         {
             $db = eZDB::instance();
             $db->begin();
-            foreach( $events as $event )
+            try
             {
-                $event->remove();
+                foreach( $events as $event )
+                {
+                    $event->remove();
+                }
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
             }
             $db->commit();
         }
@@ -235,22 +265,32 @@ class eZWorkflow extends eZPersistentObject
     {
         $db = eZDB::instance();
         $db->begin();
-        if ( is_array( $store_childs ) or $store_childs )
+        try
         {
-            if ( is_array( $store_childs ) )
+            if ( is_array( $store_childs ) or $store_childs )
             {
-                $events = $store_childs;
+                if ( is_array( $store_childs ) )
+                {
+                    $events = $store_childs;
+                }
+                else
+                {
+                    $events = $this->fetchEvents();
+                }
+                foreach ( $events as $event )
+                {
+                    $event->store();
+                }
             }
-            else
-            {
-                $events = $this->fetchEvents();
-            }
-            foreach ( $events as $event )
-            {
-                $event->store();
-            }
+            parent::store();
         }
-        parent::store();
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
     }
     /*!
@@ -261,22 +301,32 @@ class eZWorkflow extends eZPersistentObject
     {
         $db = eZDB::instance();
         $db->begin();
-        if ( is_array( $store_childs ) or $store_childs )
+        try
         {
-            if ( is_array( $store_childs ) )
+            if ( is_array( $store_childs ) or $store_childs )
             {
-                $events = $store_childs;
+                if ( is_array( $store_childs ) )
+                {
+                    $events = $store_childs;
+                }
+                else
+                {
+                    $events = $this->fetchEvents();
+                }
+                foreach ( $events as $event )
+                {
+                    $event->storeDefined();
+                }
             }
-            else
-            {
-                $events = $this->fetchEvents();
-            }
-            foreach ( $events as $event )
-            {
-                $event->storeDefined();
-            }
+            parent::store();
         }
-        parent::store();
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
     }
 

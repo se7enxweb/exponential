@@ -69,20 +69,27 @@ Controller, Template-Baum, Ansichts-Cache von Inhalten, Cache-Blöcke und Templa
 Der Reiter **Benutzer** (Chip `<Login> · VC <Profil>`, mit Personen-Symbol) beginnt mit einer Übersicht des Benutzers
 und hat vier Unter-Reiter (Cache-Profil, Präferenzen, Rollen und Richtlinien, Session). Er zeigt das Cache-Profil des Benutzers, den Fingerabdruck der Teile des
 Schlüssels im Ansichts-Cache von Inhalten, die vom Benutzer abhängen, sodass zwei Benutzer erkennen, ob sie sich die
-gecachten Ansichten teilen; seine Präferenzen und Rollenzuweisungen mit Links zu den Rollen; und für `setup/setup` in
+gecachten Ansichten teilen; seine Präferenzen und Rollenzuweisungen mit Links zu den Rollen; und in
 einem Abschnitt, der erst beim Öffnen geladen wird, die Richtlinien dieser Rollen, seitenweise, nach Rolle und per Suche
 (`content/read` findet auch die Platzhalter, die es gewähren), mit Klassen, Sektionen, Siteaccesses und Knoten mit Namen;
 und die eigene PHP-Session des Benutzers als Tabelle, geladen, wenn ihr Unter-Reiter gezeigt wird, Geheimnisse maskiert,
 nach Extension gruppiert, durchsuchbar.
-Der Reiter ist für `setup/setup` und für einen
-anonymen Besucher, der die Debug-Ausgabe erhält ([Details](../../bc/6.0/debug-leiste.md#benutzer-rollen-und-cache-profil)).
+Der Reiter ist, wie der Reiter Rendering, für jeden, der
+die Debug-Ausgabe erhält, angemeldet oder nicht, und für `setup/setup`; wer die Debug-Ausgabe erhält, liest auch die
+Einstellungen, die Cache-Liste, OPcache und APCu, ändert aber ohne die Richtlinien nichts (`debugbar.ini ReadAccess`,
+`privileged` für die strengere Regel) ([Details](../../bc/6.0/debug-leiste.md#benutzer-rollen-und-cache-profil)).
 
 ## Wer sie verwenden darf
 
-Besucher, die den Debug-Bericht erhalten, sehen die Zusammenfassung der Seite, aber Einstellungen, Änderungsprotokoll,
-IP-Test und Cache-Liste brauchen die Richtlinien `setup/setup` (Einstellungen, Protokoll, IP-Test) oder
-`setup/managecache` (Cache-Liste). Bevor das am selben Tag verschärft wurde, konnte jeder Besucher, dem der Bericht
-gezeigt wurde, jede Debug-Einstellung lesen, mit Dateipfaden.
+Wer den Debug-Bericht erhält, liest standardmäßig alles, was die Leiste zeigt: die Einstellungen mit Dateipfaden, das
+Änderungsprotokoll, den IP-Test, die Cache-Liste, die Richtlinien seiner Rollen, OPcache und APCu. Eine Einstellung zu
+ändern braucht die Richtlinie `setup/setup`, einen Cache zu leeren `setup/managecache`, beides mit dem Formular-Token.
+`debugbar.ini [DebugBarSettings] ReadAccess=privileged` beschränkt auch das Lesen auf diese Richtlinien, die strengere
+Regel; eine Website, die den Debug-Bericht an Besucher gibt, denen sie ihre Konfiguration nicht
+anvertraut, setzt es ([Details](../../bc/6.0/debug-leiste.md#wer-was-lesen-darf-readaccess)). Niemand liest die
+Daten anderer: Die Session ist immer die eigene des Besuchers, das Änderungsprotokoll kommt ohne den Urheber jeder
+Änderung, IP- und Benutzerliste sind für Leser ohne `setup/setup` maskiert. Debug-Ausgabe auf einer öffentlichen
+Adresse zeigt jedem Besucher seine eigene Session: Im Produktivbetrieb `ReadAccess=privileged` setzen.
 
 ## Einstellungen
 

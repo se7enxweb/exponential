@@ -264,10 +264,20 @@ class eZShopFunctions
         {
             $db = eZDB::instance();
             $db->begin();
+            try
+            {
 
-            $currency->store();
-            eZMultiPriceData::createPriceListForCurrency( $currencyParams['code'] );
+                $currency->store();
+                eZMultiPriceData::createPriceListForCurrency( $currencyParams['code'] );
 
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
             $db->commit();
         }
     }
@@ -276,10 +286,20 @@ class eZShopFunctions
     {
         $db = eZDB::instance();
         $db->begin();
+        try
+        {
 
-        eZCurrencyData::removeCurrencyList( $currencyCodeList );
-        eZMultiPriceData::removePriceListForCurrency( $currencyCodeList );
+            eZCurrencyData::removeCurrencyList( $currencyCodeList );
+            eZMultiPriceData::removePriceListForCurrency( $currencyCodeList );
 
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
     }
 
@@ -297,12 +317,22 @@ class eZShopFunctions
                 {
                     $db = eZDB::instance();
                     $db->begin();
+                    try
+                    {
 
-                    $currency->setAttribute( 'code', $newCurrencyCode );
-                    $currency->sync();
+                        $currency->setAttribute( 'code', $newCurrencyCode );
+                        $currency->sync();
 
-                    eZMultiPriceData::changeCurrency( $oldCurrencyCode, $newCurrencyCode );
+                        eZMultiPriceData::changeCurrency( $oldCurrencyCode, $newCurrencyCode );
 
+                    }
+                    catch ( Throwable $e )
+                    {
+                        // nothing of a transaction that failed half way is committed by a later commit()
+                        if ( $db->transactionCounter() > 0 )
+                            $db->rollback();
+                        throw $e;
+                    }
                     $db->commit();
                 }
                 else

@@ -1065,14 +1065,16 @@
     const sa = siteaccess || (settingsState && settingsState.siteaccess) || '';
     return call('settings' + (sa ? '::' + encodeURIComponent(sa) : ''), {}).then(renderSettings).catch((err) => {
       settingsBox.setAttribute('data-state', 'error');
-      settingsBox.replaceChildren(hint(t('The settings service is not available yet. The classic controls below still work.'), 'warn'),
+      // the classic controls are there for setup/setup only, not for a reader (ReadAccess)
+      const classic = root.querySelector('.exp-debug-classic');
+      settingsBox.replaceChildren(...(classic ? [hint(t('The settings service is not available yet. The classic controls below still work.'), 'warn')] : []),
         el('p', { class: 'exp-debug-hint' }, t('Could not load: %error', { '%error': err.message })),
         el('button', { type: 'button', class: 'exp-debug-button', onclick: () => loadSettings() }, t('Retry')));
-      const classic = root.querySelector('.exp-debug-classic'); if (classic) classic.open = true;
+      if (classic) classic.open = true;
     });
   };
   const userRights = data.user || {};
-  if (settingsBox && !userRights.can_setup) {
+  if (settingsBox && !(userRights.read_setup || userRights.can_setup)) {
     // no policy: no call, no values; the server refuses as well
     settingsBox.replaceChildren(el('p', { class: 'exp-debug-hint exp-debug-warn' }, t('Sign in with setup access to change debug settings')));
     settingsBox.setAttribute('data-state', 'restricted');
@@ -1240,7 +1242,7 @@
       failure(cacheBox, err, loadCache);
     });
   };
-  if (cacheBox && !userRights.can_cache) {
+  if (cacheBox && !(userRights.read_cache || userRights.can_cache)) {
     cacheBox.replaceChildren(el('p', { class: 'exp-debug-hint exp-debug-warn' }, t('Sign in with cache access to manage caches')));
     cacheBox.setAttribute('data-state', 'restricted');
   } else if (cacheBox) { loaders.cache = loadCache; loaders.velocity = () => { if (!loaded.cache) { loaded.cache = true; loadCache(); } }; }

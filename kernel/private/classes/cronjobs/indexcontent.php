@@ -83,98 +83,108 @@ class Indexcontent extends \Exponential\Runnable\CronjobPart
                     // indexed inside the object's transaction, and on SQLite (one writer at a time) every other
                     // write, a page's save among them, waited for all of it.
                     $db->begin();
-                    $object = \eZContentObject::fetch( $objectID );
-                    $removeFromPendingActions = true;
-                    if ( $object )
+                    try
                     {
-                        if ( $needRemoveWithUpdate )
+                        $object = \eZContentObject::fetch( $objectID );
+                        $removeFromPendingActions = true;
+                        if ( $object )
                         {
-                            $searchEngine->removeObject( $object, false );
+                            if ( $needRemoveWithUpdate )
+                            {
+                                $searchEngine->removeObject( $object, false );
+                            }
+
+                            $removeFromPendingActions = $searchEngine->addObject( $object, false );
                         }
 
-                        $removeFromPendingActions = $searchEngine->addObject( $object, false );
-                    }
-
-                    // When moving content (and only, because of performances), reindex the subtree
-                    if ( $object && $action == 'index_moved_node' )
-                    {
-                        $db->commit();
-                        $nodeId = $object->attribute( 'main_node_id' );
-                        $node = \eZContentObjectTreeNode::fetch( $nodeId );
-
-                        if ( !( $node instanceof \eZContentObjectTreeNode ) )
+                        // When moving content (and only, because of performances), reindex the subtree
+                        if ( $object && $action == 'index_moved_node' )
                         {
-                            $cli->error( "An error occured while trying fetching node $nodeId" );
+                            $db->commit();
+                            $nodeId = $object->attribute( 'main_node_id' );
+                            $node = \eZContentObjectTreeNode::fetch( $nodeId );
+
+                            if ( !( $node instanceof \eZContentObjectTreeNode ) )
+                            {
+                                $cli->error( "An error occured while trying fetching node $nodeId" );
+                                $db->begin();
+                                if ( $db->databaseName() === 'mongo' )
+                                    $db->deleteWhere( 'ezpending_actions', [ 'action' => $action, 'param' => (string)$objectID ] );
+                                else
+                                    $db->query( "DELETE FROM ezpending_actions WHERE action = '$action' AND param = '$objectID'" );
+                                $db->commit();
+                                continue;
+                            }
+
+                            $subtreeOffset = 0;
+                            $subtreeLimit = 50;
+
+                            $params = array( 'Limitation' => array(), 'MainNodeOnly' => true );
+
+                            $subtreeCount = $node->subTreeCount( $params );
+
+                            while ( $subtreeOffset < $subtreeCount )
+                            {
+                                $subTree = $node->subTree(
+                                    array_merge(
+                                        $params,
+                                        array( 'Offset' => $subtreeOffset, 'Limit' => $subtreeLimit, 'SortBy' => array() )
+                                    )
+                                );
+
+                                if ( !empty( $subTree ) )
+                                {
+                                    foreach ( $subTree as $innerNode )
+                                    {
+                                        /** @var $innerNode eZContentObjectTreeNode */
+                                        $childObject = $innerNode->attribute( 'object' );
+                                        if ( !$childObject )
+                                        {
+                                            continue;
+                                        }
+
+                                        $db->begin();
+                                        $searchEngine->addObject( $childObject, false );
+                                        $db->commit();
+
+                                        // clear object cache to conserve memory
+                                        \eZContentObject::clearCache();
+                                    }
+                                }
+
+                                $subtreeOffset += $subtreeLimit;
+
+                                if ( $subtreeOffset >= $subtreeCount )
+                                {
+                                    break;
+                                }
+                            }
                             $db->begin();
+                        }
+
+                        if ( $removeFromPendingActions )
+                        {
                             if ( $db->databaseName() === 'mongo' )
                                 $db->deleteWhere( 'ezpending_actions', [ 'action' => $action, 'param' => (string)$objectID ] );
                             else
                                 $db->query( "DELETE FROM ezpending_actions WHERE action = '$action' AND param = '$objectID'" );
-                            $db->commit();
-                            continue;
+                            \eZContentCacheManager::clearContentCacheIfNeeded( $objectID );
                         }
-
-                        $subtreeOffset = 0;
-                        $subtreeLimit = 50;
-
-                        $params = array( 'Limitation' => array(), 'MainNodeOnly' => true );
-
-                        $subtreeCount = $node->subTreeCount( $params );
-
-                        while ( $subtreeOffset < $subtreeCount )
-                        {
-                            $subTree = $node->subTree(
-                                array_merge(
-                                    $params,
-                                    array( 'Offset' => $subtreeOffset, 'Limit' => $subtreeLimit, 'SortBy' => array() )
-                                )
-                            );
-
-                            if ( !empty( $subTree ) )
-                            {
-                                foreach ( $subTree as $innerNode )
-                                {
-                                    /** @var $innerNode eZContentObjectTreeNode */
-                                    $childObject = $innerNode->attribute( 'object' );
-                                    if ( !$childObject )
-                                    {
-                                        continue;
-                                    }
-
-                                    $db->begin();
-                                    $searchEngine->addObject( $childObject, false );
-                                    $db->commit();
-
-                                    // clear object cache to conserve memory
-                                    \eZContentObject::clearCache();
-                                }
-                            }
-
-                            $subtreeOffset += $subtreeLimit;
-
-                            if ( $subtreeOffset >= $subtreeCount )
-                            {
-                                break;
-                            }
-                        }
-                        $db->begin();
-                    }
-
-                    if ( $removeFromPendingActions )
-                    {
-                        if ( $db->databaseName() === 'mongo' )
-                            $db->deleteWhere( 'ezpending_actions', [ 'action' => $action, 'param' => (string)$objectID ] );
                         else
-                            $db->query( "DELETE FROM ezpending_actions WHERE action = '$action' AND param = '$objectID'" );
-                        \eZContentCacheManager::clearContentCacheIfNeeded( $objectID );
-                    }
-                    else
-                    {
-                        $cli->warning( "\tFailed indexing object ID #$objectID, keeping it in the queue." );
-                        // Increase the offset to skip failing objects
-                        ++$offset;
-                    }
+                        {
+                            $cli->warning( "\tFailed indexing object ID #$objectID, keeping it in the queue." );
+                            // Increase the offset to skip failing objects
+                            ++$offset;
+                        }
 
+                    }
+                    catch ( \Throwable $e )
+                    {
+                        // nothing of a transaction that failed half way is committed by a later commit()
+                        if ( $db->transactionCounter() > 0 )
+                            $db->rollback();
+                        throw $e;
+                    }
                     $db->commit();
                 }
 

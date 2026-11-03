@@ -174,18 +174,20 @@ class Adddefaultstates extends \Exponential\Runnable\Command
     public static function apply( $db, array $plan )
     {
         $db->begin();
-        if ( $db->databaseName() === 'mongo' )
+        try
         {
-            foreach ( $plan as $group )
+            if ( $db->databaseName() === 'mongo' )
             {
-                foreach ( $group['missing_ids'] as $objID )
-                    $db->insert( 'ezcobj_state_link', [ 'contentobject_id' => (int)$objID, 'contentobject_state_id' => (int)$group['state_id'] ] );
+                foreach ( $plan as $group )
+                {
+                    foreach ( $group['missing_ids'] as $objID )
+                        $db->insert( 'ezcobj_state_link', [ 'contentobject_id' => (int)$objID, 'contentobject_state_id' => (int)$group['state_id'] ] );
+                }
             }
-        }
-        else
-        {
-            $db->query(
-        "INSERT INTO ezcobj_state_link
+            else
+            {
+                $db->query(
+            "INSERT INTO ezcobj_state_link
         SELECT o.id contentobject_id, s0.id contentobject_state_id
         FROM ezcontentobject o, ezcobj_state s0, ezcobj_state_group g
         WHERE g.id=s0.group_id
@@ -197,6 +199,14 @@ class Adddefaultstates extends \Exponential\Runnable\Command
             AND l.contentobject_id=o.id
             AND s.group_id=g.id
         )" );
+            }
+        }
+        catch ( \Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
     }

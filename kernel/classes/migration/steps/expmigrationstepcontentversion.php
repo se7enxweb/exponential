@@ -112,7 +112,17 @@ class expMigrationStepContentVersion extends expMigrationStepContentBase
             $language = isset( $step['language'] ) ? self::locale( $step['language'] ) : false;
             $db = eZDB::instance();
             $db->begin();
-            $new = $object->copyRevertTo( $number, $language );
+            try
+            {
+                $new = $object->copyRevertTo( $number, $language );
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
             $db->commit();
             $object = self::publish( $objectId, $new, $step );
             return self::result( array( "restored version $number of the object $objectId as version $new" ),
@@ -133,8 +143,18 @@ class expMigrationStepContentVersion extends expMigrationStepContentBase
         ksort( $remove );
         $db = eZDB::instance();
         $db->begin();
-        foreach ( $remove as $version )
-            $version->removeThis();
+        try
+        {
+            foreach ( $remove as $version )
+                $version->removeThis();
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
         eZContentObject::clearCache( array( $objectId ) );
         return self::result( array( 'removed ' . count( $remove ) . " version(s) of the object $objectId" . ( $remove ? ': ' . implode( ', ', array_keys( $remove ) ) : '' ) ),

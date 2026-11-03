@@ -919,30 +919,40 @@ class expBookmarkView extends eZPersistentObject
 
         $db = eZDB::instance();
         $db->begin();
-        $bookmark = self::findForUser( $userID, $uri );
-        if ( $bookmark )
+        try
         {
-            $bookmark->setAttribute( 'name', $name );
-            $bookmark->store();
-            if ( $folderID !== false && $folderID !== null )
-                eZContentBrowseBookmarkFolder::moveBookmark( $userID, $bookmark->attribute( 'id' ), $folderID );
-            $bookmark = eZContentBrowseBookmark::fetch( $bookmark->attribute( 'id' ) );
+            $bookmark = self::findForUser( $userID, $uri );
+            if ( $bookmark )
+            {
+                $bookmark->setAttribute( 'name', $name );
+                $bookmark->store();
+                if ( $folderID !== false && $folderID !== null )
+                    eZContentBrowseBookmarkFolder::moveBookmark( $userID, $bookmark->attribute( 'id' ), $folderID );
+                $bookmark = eZContentBrowseBookmark::fetch( $bookmark->attribute( 'id' ) );
+            }
+            else
+            {
+                $folderID = ( $folderID === false || $folderID === null ) ? 0 : $folderID;
+                $bookmark = new eZContentBrowseBookmark( array( 'user_id' => $userID,
+                                                                'node_id' => 0,
+                                                                'name' => $name,
+                                                                'folder_id' => $folderID,
+                                                                'priority' => eZContentBrowseBookmarkFolder::nextBookmarkPriority( $userID, $folderID ) ) );
+                $bookmark->store();
+                // the parsed columns are left out by definition() while the table does not have them yet
+                $view = new expBookmarkView( array( 'bookmark_id' => (int)$bookmark->attribute( 'id' ),
+                                                    'user_id' => $userID,
+                                                    'module_uri' => $uri,
+                                                    'created' => time() ) + self::parsedFields( $uri ) );
+                $view->store();
+            }
         }
-        else
+        catch ( Throwable $e )
         {
-            $folderID = ( $folderID === false || $folderID === null ) ? 0 : $folderID;
-            $bookmark = new eZContentBrowseBookmark( array( 'user_id' => $userID,
-                                                            'node_id' => 0,
-                                                            'name' => $name,
-                                                            'folder_id' => $folderID,
-                                                            'priority' => eZContentBrowseBookmarkFolder::nextBookmarkPriority( $userID, $folderID ) ) );
-            $bookmark->store();
-            // the parsed columns are left out by definition() while the table does not have them yet
-            $view = new expBookmarkView( array( 'bookmark_id' => (int)$bookmark->attribute( 'id' ),
-                                                'user_id' => $userID,
-                                                'module_uri' => $uri,
-                                                'created' => time() ) + self::parsedFields( $uri ) );
-            $view->store();
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
         unset( self::$uris[$userID] );
@@ -1090,16 +1100,26 @@ class expBookmarkView extends eZPersistentObject
             return $changes;
         $db = eZDB::instance();
         $db->begin();
-        foreach ( $changes as $bookmarkID => $change )
+        try
         {
-            $row = eZPersistentObject::fetchObject( self::definition(), null, array( 'bookmark_id' => (int)$bookmarkID ) );
-            if ( !$row instanceof expBookmarkView )
-                continue;
-            $row->setAttribute( 'module_uri', $change['to'] );
-            if ( self::hasParsedColumns() )
-                foreach ( self::parsedFields( $change['to'] ) as $column => $value )
-                    $row->setAttribute( $column, $value );
-            $row->store();
+            foreach ( $changes as $bookmarkID => $change )
+            {
+                $row = eZPersistentObject::fetchObject( self::definition(), null, array( 'bookmark_id' => (int)$bookmarkID ) );
+                if ( !$row instanceof expBookmarkView )
+                    continue;
+                $row->setAttribute( 'module_uri', $change['to'] );
+                if ( self::hasParsedColumns() )
+                    foreach ( self::parsedFields( $change['to'] ) as $column => $value )
+                        $row->setAttribute( $column, $value );
+                $row->store();
+            }
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
         self::$uris = array();

@@ -268,8 +268,18 @@ class expMigrationRecording
             return false;
         }
         $db->begin();
-        $db->query( 'DELETE FROM ' . self::EVENT_TABLE . ' WHERE ' . self::idWhere( $db, $recordingId ) );
-        $db->query( 'DELETE FROM ' . self::TABLE . ' WHERE ' . self::idWhere( $db, $recordingId ) );
+        try
+        {
+            $db->query( 'DELETE FROM ' . self::EVENT_TABLE . ' WHERE ' . self::idWhere( $db, $recordingId ) );
+            $db->query( 'DELETE FROM ' . self::TABLE . ' WHERE ' . self::idWhere( $db, $recordingId ) );
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
         self::sync( $db );
         self::audit( 'discard', $row );

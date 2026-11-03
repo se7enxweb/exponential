@@ -149,66 +149,76 @@ function importRSSItem( $item, $rssImport, $cli, $channel )
 
     $db = eZDB::instance();
     $db->begin();
-    $contentObject->store();
-    $contentObjectID = $contentObject->attribute( 'id' );
-
-    // Create node assignment
-    $nodeAssignment = eZNodeAssignment::create( array( 'contentobject_id' => $contentObjectID,
-                                                       'contentobject_version' => $contentObject->attribute( 'current_version' ),
-                                                       'is_main' => 1,
-                                                       'parent_node' => $parentContentObjectTreeNode->attribute( 'node_id' ) ) );
-    $nodeAssignment->store();
-
-    $version = $contentObject->version( 1 );
-    $version->setAttribute( 'status', eZContentObjectVersion::STATUS_DRAFT );
-    $version->store();
-
-    // Get object attributes, and set their values and store them.
-    $dataMap = $contentObject->dataMap();
-    $importDescription = $rssImport->importDescription();
-
-    // Set content object attribute values.
-    $classAttributeList = $contentClass->fetchAttributes();
-    foreach( $classAttributeList as $classAttribute )
+    try
     {
-        $classAttributeID = $classAttribute->attribute( 'id' );
-        if ( isset( $importDescription['class_attributes'][$classAttributeID] ) )
+        $contentObject->store();
+        $contentObjectID = $contentObject->attribute( 'id' );
+
+        // Create node assignment
+        $nodeAssignment = eZNodeAssignment::create( array( 'contentobject_id' => $contentObjectID,
+                                                           'contentobject_version' => $contentObject->attribute( 'current_version' ),
+                                                           'is_main' => 1,
+                                                           'parent_node' => $parentContentObjectTreeNode->attribute( 'node_id' ) ) );
+        $nodeAssignment->store();
+
+        $version = $contentObject->version( 1 );
+        $version->setAttribute( 'status', eZContentObjectVersion::STATUS_DRAFT );
+        $version->store();
+
+        // Get object attributes, and set their values and store them.
+        $dataMap = $contentObject->dataMap();
+        $importDescription = $rssImport->importDescription();
+
+        // Set content object attribute values.
+        $classAttributeList = $contentClass->fetchAttributes();
+        foreach( $classAttributeList as $classAttribute )
         {
-            if ( $importDescription['class_attributes'][$classAttributeID] == '-1' )
+            $classAttributeID = $classAttribute->attribute( 'id' );
+            if ( isset( $importDescription['class_attributes'][$classAttributeID] ) )
             {
-                continue;
-            }
-
-            $importDescriptionArray = explode( ' - ', $importDescription['class_attributes'][$classAttributeID] );
-            if ( count( $importDescriptionArray ) < 1 )
-            {
-                $cli->output( 'RSSImport '.$rssImport->attribute( 'name' ).': Invalid import definition. Please redit.' );
-                break;
-            }
-
-            $elementType = $importDescriptionArray[0];
-            array_shift( $importDescriptionArray );
-            switch( $elementType )
-            {
-                case 'item':
+                if ( $importDescription['class_attributes'][$classAttributeID] == '-1' )
                 {
-                    setObjectAttributeValue( $dataMap[$classAttribute->attribute( 'identifier' )],
-                                             recursiveFindRSSElementValue( $importDescriptionArray,
-                                                                           $item ) );
-                } break;
+                    continue;
+                }
 
-                case 'channel':
+                $importDescriptionArray = explode( ' - ', $importDescription['class_attributes'][$classAttributeID] );
+                if ( count( $importDescriptionArray ) < 1 )
                 {
-                    setObjectAttributeValue( $dataMap[$classAttribute->attribute( 'identifier' )],
-                                             recursiveFindRSSElementValue( $importDescriptionArray,
-                                                                           $channel ) );
-                } break;
+                    $cli->output( 'RSSImport '.$rssImport->attribute( 'name' ).': Invalid import definition. Please redit.' );
+                    break;
+                }
+
+                $elementType = $importDescriptionArray[0];
+                array_shift( $importDescriptionArray );
+                switch( $elementType )
+                {
+                    case 'item':
+                    {
+                        setObjectAttributeValue( $dataMap[$classAttribute->attribute( 'identifier' )],
+                                                 recursiveFindRSSElementValue( $importDescriptionArray,
+                                                                               $item ) );
+                    } break;
+
+                    case 'channel':
+                    {
+                        setObjectAttributeValue( $dataMap[$classAttribute->attribute( 'identifier' )],
+                                                 recursiveFindRSSElementValue( $importDescriptionArray,
+                                                                               $channel ) );
+                    } break;
+                }
             }
         }
-    }
 
-    $contentObject->setAttribute( 'remote_id', 'RSSImport_'.$rssImportID.'_'. $md5Sum );
-    $contentObject->store();
+        $contentObject->setAttribute( 'remote_id', 'RSSImport_'.$rssImportID.'_'. $md5Sum );
+        $contentObject->store();
+    }
+    catch ( \Throwable $e )
+    {
+        // nothing of a transaction that failed half way is committed by a later commit()
+        if ( $db->transactionCounter() > 0 )
+            $db->rollback();
+        throw $e;
+    }
     $db->commit();
 
     // Publish new object. The user id is sent to make sure any workflow
@@ -228,66 +238,76 @@ function importRSSItem( $item, $rssImport, $cli, $channel )
     }
 
     $db->begin();
-    unset( $contentObject );
-    unset( $version );
-    $contentObject = eZContentObject::fetch( $contentObjectID );
-    $version = $contentObject->attribute( 'current' );
-    // Set object Attributes like modified and published timestamps
-    $objectAttributeDescription = $importDescription['object_attributes'];
-    foreach( $objectAttributeDescription as $identifier => $objectAttributeDefinition )
+    try
     {
-        if ( $objectAttributeDefinition == '-1' )
+        unset( $contentObject );
+        unset( $version );
+        $contentObject = eZContentObject::fetch( $contentObjectID );
+        $version = $contentObject->attribute( 'current' );
+        // Set object Attributes like modified and published timestamps
+        $objectAttributeDescription = $importDescription['object_attributes'];
+        foreach( $objectAttributeDescription as $identifier => $objectAttributeDefinition )
         {
-            continue;
-        }
-
-        $importDescriptionArray = explode( ' - ', $objectAttributeDefinition );
-
-        $elementType = $importDescriptionArray[0];
-        array_shift( $importDescriptionArray );
-        switch( $elementType )
-        {
-            default:
-            case 'item':
+            if ( $objectAttributeDefinition == '-1' )
             {
-                $domNode = $item;
-            } break;
+                continue;
+            }
 
-            case 'channel':
-            {
-                $domNode = $channel;
-            } break;
-        }
+            $importDescriptionArray = explode( ' - ', $objectAttributeDefinition );
 
-        switch( $identifier )
-        {
-            case 'modified':
+            $elementType = $importDescriptionArray[0];
+            array_shift( $importDescriptionArray );
+            switch( $elementType )
             {
-                $dateTime = recursiveFindRSSElementValue( $importDescriptionArray,
-                                                          $domNode );
-                if ( !$dateTime )
+                default:
+                case 'item':
                 {
-                    break;
-                }
-                $contentObject->setAttribute( $identifier, strtotime( $dateTime ) );
-                $version->setAttribute( $identifier, strtotime( $dateTime ) );
-            } break;
+                    $domNode = $item;
+                } break;
 
-            case 'published':
-            {
-                $dateTime = recursiveFindRSSElementValue( $importDescriptionArray,
-                                                          $domNode );
-                if ( !$dateTime )
+                case 'channel':
                 {
-                    break;
-                }
-                $contentObject->setAttribute( $identifier, strtotime( $dateTime ) );
-                $version->setAttribute( 'created', strtotime( $dateTime ) );
-            } break;
+                    $domNode = $channel;
+                } break;
+            }
+
+            switch( $identifier )
+            {
+                case 'modified':
+                {
+                    $dateTime = recursiveFindRSSElementValue( $importDescriptionArray,
+                                                              $domNode );
+                    if ( !$dateTime )
+                    {
+                        break;
+                    }
+                    $contentObject->setAttribute( $identifier, strtotime( $dateTime ) );
+                    $version->setAttribute( $identifier, strtotime( $dateTime ) );
+                } break;
+
+                case 'published':
+                {
+                    $dateTime = recursiveFindRSSElementValue( $importDescriptionArray,
+                                                              $domNode );
+                    if ( !$dateTime )
+                    {
+                        break;
+                    }
+                    $contentObject->setAttribute( $identifier, strtotime( $dateTime ) );
+                    $version->setAttribute( 'created', strtotime( $dateTime ) );
+                } break;
+            }
         }
+        $version->store();
+        $contentObject->store();
     }
-    $version->store();
-    $contentObject->store();
+    catch ( \Throwable $e )
+    {
+        // nothing of a transaction that failed half way is committed by a later commit()
+        if ( $db->transactionCounter() > 0 )
+            $db->rollback();
+        throw $e;
+    }
     $db->commit();
 
     $cli->output( 'RSSImport '.$rssImport->attribute( 'name' ).': Object created; ' . $title );

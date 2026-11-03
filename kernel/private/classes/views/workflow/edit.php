@@ -100,12 +100,22 @@ class Edit extends \Exponential\Runnable\ModuleView
 
                     $db = \eZDB::instance();
                     $db->begin();
-                    foreach ( $workflowGroups as $workflowGroup )
+                    try
                     {
-                        $groupID = $workflowGroup->attribute( "group_id" );
-                        $groupName = $workflowGroup->attribute( "group_name" );
-                        $ingroup = \eZWorkflowGroupLink::create( $WorkflowID, 1, $groupID, $groupName );
-                        $ingroup->store();
+                        foreach ( $workflowGroups as $workflowGroup )
+                        {
+                            $groupID = $workflowGroup->attribute( "group_id" );
+                            $groupName = $workflowGroup->attribute( "group_name" );
+                            $ingroup = \eZWorkflowGroupLink::create( $WorkflowID, 1, $groupID, $groupName );
+                            $ingroup->store();
+                        }
+                    }
+                    catch ( \Throwable $e )
+                    {
+                        // nothing of a transaction that failed half way is committed by a later commit()
+                        if ( $db->transactionCounter() > 0 )
+                            $db->rollback();
+                        throw $e;
                     }
                     $db->commit();
                 }
@@ -129,11 +139,21 @@ class Edit extends \Exponential\Runnable\ModuleView
 
             $db = \eZDB::instance();
             $db->begin();
-            $workflow->store();
-            $WorkflowID = $workflow->attribute( "id" );
-            $WorkflowVersion = $workflow->attribute( "version" );
-            $ingroup = \eZWorkflowGroupLink::create( $WorkflowID, $WorkflowVersion, $GroupID, $GroupName );
-            $ingroup->store();
+            try
+            {
+                $workflow->store();
+                $WorkflowID = $workflow->attribute( "id" );
+                $WorkflowVersion = $workflow->attribute( "version" );
+                $ingroup = \eZWorkflowGroupLink::create( $WorkflowID, $WorkflowVersion, $GroupID, $GroupName );
+                $ingroup->store();
+            }
+            catch ( \Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
             $db->commit();
             return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->redirectTo( $Module->functionURI( 'edit' ) . '/' . $WorkflowID . '/' . $GroupID ) );
         }
@@ -147,8 +167,18 @@ class Edit extends \Exponential\Runnable\ModuleView
 
             $db = \eZDB::instance();
             $db->begin();
-            $workflow->removeThis( true );
-            \eZWorkflowGroupLink::removeWorkflowMembers( $WorkflowID, 1 );
+            try
+            {
+                $workflow->removeThis( true );
+                \eZWorkflowGroupLink::removeWorkflowMembers( $WorkflowID, 1 );
+            }
+            catch ( \Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
             $db->commit();
 
             $workflowGroups= \eZWorkflowGroupLink::fetchGroupList( $WorkflowID, 0, true );
@@ -235,9 +265,19 @@ class Edit extends \Exponential\Runnable\ModuleView
             {
                 $db = \eZDB::instance();
                 $db->begin();
-                foreach ( $rejects as $reject )
+                try
                 {
-                    $reject->remove();
+                    foreach ( $rejects as $reject )
+                    {
+                        $reject->remove();
+                    }
+                }
+                catch ( \Throwable $e )
+                {
+                    // nothing of a transaction that failed half way is committed by a later commit()
+                    if ( $db->transactionCounter() > 0 )
+                        $db->rollback();
+                    throw $e;
                 }
                 $db->commit();
                 $event_list = $keepers;
@@ -347,10 +387,20 @@ class Edit extends \Exponential\Runnable\ModuleView
                 $new_event_type = $new_event->eventType();
                 $db = \eZDB::instance();
                 $db->begin();
+                try
+                {
 
-                $new_event_type->initializeEvent( $new_event );
-                $new_event->store();
+                    $new_event_type->initializeEvent( $new_event );
+                    $new_event->store();
 
+                }
+                catch ( \Throwable $e )
+                {
+                    // nothing of a transaction that failed half way is committed by a later commit()
+                    if ( $db->transactionCounter() > 0 )
+                        $db->rollback();
+                    throw $e;
+                }
                 $db->commit();
                 $event_list[] = $new_event;
             }

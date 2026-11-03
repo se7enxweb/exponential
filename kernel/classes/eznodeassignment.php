@@ -681,21 +681,31 @@ class eZNodeAssignment extends eZPersistentObject
         $parentMainNodeID = $newMainAssignment->attribute( 'parent_node' );
 
         $db->begin();
-        if ( $db->databaseName() === 'mongo' )
+        try
         {
-            $db->mongoUpdateMany( 'eznode_assignment',
-                [ 'contentobject_id' => (int)$objectID, 'contentobject_version' => (int)$version, 'parent_node' => (int)$parentMainNodeID ],
-                [ '$set' => [ 'is_main' => 1 ] ]
-            );
-            $db->mongoUpdateMany( 'eznode_assignment',
-                [ 'contentobject_id' => (int)$objectID, 'contentobject_version' => (int)$version, 'parent_node' => [ '$ne' => (int)$parentMainNodeID ] ],
-                [ '$set' => [ 'is_main' => 0 ] ]
-            );
+            if ( $db->databaseName() === 'mongo' )
+            {
+                $db->mongoUpdateMany( 'eznode_assignment',
+                    [ 'contentobject_id' => (int)$objectID, 'contentobject_version' => (int)$version, 'parent_node' => (int)$parentMainNodeID ],
+                    [ '$set' => [ 'is_main' => 1 ] ]
+                );
+                $db->mongoUpdateMany( 'eznode_assignment',
+                    [ 'contentobject_id' => (int)$objectID, 'contentobject_version' => (int)$version, 'parent_node' => [ '$ne' => (int)$parentMainNodeID ] ],
+                    [ '$set' => [ 'is_main' => 0 ] ]
+                );
+            }
+            else
+            {
+                $db->query( "UPDATE eznode_assignment SET is_main=1 WHERE contentobject_id=$objectID AND contentobject_version=$version AND parent_node=$parentMainNodeID" );
+                $db->query( "UPDATE eznode_assignment SET is_main=0 WHERE contentobject_id=$objectID AND contentobject_version=$version AND parent_node<>$parentMainNodeID" );
+            }
         }
-        else
+        catch ( Throwable $e )
         {
-            $db->query( "UPDATE eznode_assignment SET is_main=1 WHERE contentobject_id=$objectID AND contentobject_version=$version AND parent_node=$parentMainNodeID" );
-            $db->query( "UPDATE eznode_assignment SET is_main=0 WHERE contentobject_id=$objectID AND contentobject_version=$version AND parent_node<>$parentMainNodeID" );
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
 

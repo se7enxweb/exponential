@@ -183,8 +183,18 @@ class expMigrationRecord
         if ( self::exists( $db ) !== true )
             return false;
         $db->begin();
-        $db->query( 'DELETE FROM ' . self::TABLE . ' WHERE ' . self::keyWhere( $db, $row['source'], $row['migration_id'] ) );
-        $db->query( self::insertSql( $db, self::TABLE, $row ) );
+        try
+        {
+            $db->query( 'DELETE FROM ' . self::TABLE . ' WHERE ' . self::keyWhere( $db, $row['source'], $row['migration_id'] ) );
+            $db->query( self::insertSql( $db, self::TABLE, $row ) );
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
         return true;
     }
@@ -221,8 +231,18 @@ class expMigrationRecord
         if ( self::runTableExists( $db ) !== true )
             return false;
         $db->begin();
-        $db->query( 'DELETE FROM ' . self::RUN_TABLE . " WHERE run_id = '" . $db->escapeString( $run['run_id'] ) . "'" );
-        $db->query( self::insertSql( $db, self::RUN_TABLE, $run ) );
+        try
+        {
+            $db->query( 'DELETE FROM ' . self::RUN_TABLE . " WHERE run_id = '" . $db->escapeString( $run['run_id'] ) . "'" );
+            $db->query( self::insertSql( $db, self::RUN_TABLE, $run ) );
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
         return true;
     }
@@ -302,8 +322,18 @@ class expMigrationRecord
         if ( !$missing )
             return 0;
         $db->begin();
-        foreach ( $missing as $row )
-            $db->query( self::insertSql( $db, self::TABLE, self::fromLegacy( $row ) ) );
+        try
+        {
+            foreach ( $missing as $row )
+                $db->query( self::insertSql( $db, self::TABLE, self::fromLegacy( $row ) ) );
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
         return count( $missing );
     }

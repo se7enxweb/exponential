@@ -177,33 +177,43 @@ class eZContentObjectTrashNode extends eZContentObjectTreeNode
 
         $db = eZDB::instance();
         $db->begin();
+        try
+        {
 
-        /** @var eZContentObject $contentObject */
-        $contentObject = $this->attribute( 'object' );
-        if ( $contentObject === null )
-        {
-            $db->commit();
-            return;
-        }
-        $offset = 0;
-        $limit = 20;
-        while (
-            $contentobjectAttributes = $contentObject->allContentObjectAttributes(
-                $contentObject->attribute( 'id' ), true,
-                array( 'limit' => $limit, 'offset' => $offset )
-            )
-        )
-        {
-            foreach ( $contentobjectAttributes as $contentobjectAttribute )
+            /** @var eZContentObject $contentObject */
+            $contentObject = $this->attribute( 'object' );
+            if ( $contentObject === null )
             {
-                $dataType = $contentobjectAttribute->dataType();
-                if ( !$dataType )
-                    continue;
-                $dataType->trashStoredObjectAttribute( $contentobjectAttribute );
+                $db->commit();
+                return;
             }
-            $offset += $limit;
-        }
+            $offset = 0;
+            $limit = 20;
+            while (
+                $contentobjectAttributes = $contentObject->allContentObjectAttributes(
+                    $contentObject->attribute( 'id' ), true,
+                    array( 'limit' => $limit, 'offset' => $offset )
+                )
+            )
+            {
+                foreach ( $contentobjectAttributes as $contentobjectAttribute )
+                {
+                    $dataType = $contentobjectAttribute->dataType();
+                    if ( !$dataType )
+                        continue;
+                    $dataType->trashStoredObjectAttribute( $contentobjectAttribute );
+                }
+                $offset += $limit;
+            }
 
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
     }
 
@@ -219,7 +229,17 @@ class eZContentObjectTrashNode extends eZContentObjectTreeNode
             return false;
         $db = eZDB::instance();
         $db->begin();
-        $db->query( "DELETE FROM ezcontentobject_trash WHERE contentobject_id='$contentObjectID'" );
+        try
+        {
+            $db->query( "DELETE FROM ezcontentobject_trash WHERE contentobject_id='$contentObjectID'" );
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
         self::callTrashRecord( 'forget', (int)$contentObjectID );
     }

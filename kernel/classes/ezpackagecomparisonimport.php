@@ -722,30 +722,40 @@ class eZPackageComparisonImport
         // one transaction; if the installer fails, it rolls everything back itself.
         $db = eZDB::instance();
         $db->begin();
-        $before = $exists ? self::languageState( $item['remote_id'] ) : null;
-        if ( $before )
-            self::repairLanguageMask( $before );
-        $ok = $package->installItem( $installItem, $parameters );
-        if ( !$ok )
+        try
         {
-            if ( $db->transactionCounter() > 0 )
-                $db->rollback();
-            $error = !empty( $parameters['error']['description'] ) ? $parameters['error']['description'] : ezpI18n::tr( 'design/admin/package', 'The installer could not import the object.' );
-            eZContentObject::clearCache();
-            return false;
-        }
-        eZContentObject::clearCache();
-        if ( $before )
-        {
-            $packageLanguages = array();
-            foreach ( $object->getElementsByTagNameNS( eZPackageComparison::NS_OBJECT, 'object-translation' ) as $translation )
-                $packageLanguages[] = $translation->getAttribute( 'language' );
-            if ( !self::restoreLanguageState( $before, $packageLanguages, $error ) )
+            $before = $exists ? self::languageState( $item['remote_id'] ) : null;
+            if ( $before )
+                self::repairLanguageMask( $before );
+            $ok = $package->installItem( $installItem, $parameters );
+            if ( !$ok )
             {
-                $db->rollback();
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                $error = !empty( $parameters['error']['description'] ) ? $parameters['error']['description'] : ezpI18n::tr( 'design/admin/package', 'The installer could not import the object.' );
                 eZContentObject::clearCache();
                 return false;
             }
+            eZContentObject::clearCache();
+            if ( $before )
+            {
+                $packageLanguages = array();
+                foreach ( $object->getElementsByTagNameNS( eZPackageComparison::NS_OBJECT, 'object-translation' ) as $translation )
+                    $packageLanguages[] = $translation->getAttribute( 'language' );
+                if ( !self::restoreLanguageState( $before, $packageLanguages, $error ) )
+                {
+                    $db->rollback();
+                    eZContentObject::clearCache();
+                    return false;
+                }
+            }
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
         eZContentObject::clearCache();

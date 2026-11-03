@@ -50,7 +50,7 @@ the first hint of a performance problem.
 | Included files | the PHP files included (`DisplayIncludedFiles`) |
 | Memory | memory now, peak, limit, and the steps that took the most |
 | Rendering | the controller, the content view cache and its key, the compiled templates (for `setup/setup`) |
-| User | the user's cache profile (whether two users share the cached views), preferences, role assignments, and on demand the policies of those roles for `setup/setup`, by role and by search (for `setup/setup`, and an anonymous visitor who gets the debug output) |
+| User | the user's cache profile (whether two users share the cached views), preferences, role assignments, and on demand the policies of those roles, by role and by search (for whoever gets the debug output, and `setup/setup`) |
 | Server | where the request entered and which process rendered it (Velocity, PHP-FPM, mod_php, the command line), OPcache status, Velocity's response cache |
 
 The filter box above the tabs filters the rows of every tab at once.

@@ -333,23 +333,33 @@ class expMigrationStepContentClass extends expMigrationStepStructureBase impleme
 
         $db = eZDB::instance();
         $db->begin();
-        $values = array( 'version' => eZContentClass::VERSION_STATUS_DEFINED, 'identifier' => (string)$step['identifier'],
-                         'contentobject_name' => $pattern, 'name' => $names[$language] );
-        if ( isset( $step['remote_id'] ) && (string)$step['remote_id'] !== '' )
-            $values['remote_id'] = (string)$step['remote_id'];
-        $class = eZContentClass::create( eZUser::currentUserID(), $values, $language );
-        foreach ( $names as $locale => $name )
-            $class->setName( $name, $locale );
-        $this->setClassFields( $class, $step, $language );
-        $class->store();
-        foreach ( $groups as $group )
-            eZContentClassClassGroup::create( (int)$class->attribute( 'id' ), eZContentClass::VERSION_STATUS_DEFINED,
-                                              (int)$group->attribute( 'id' ), (string)$group->attribute( 'name' ) )->store();
-        $added = array();
-        foreach ( $attributes as $attribute )
+        try
         {
-            $this->addAttribute( $class, $attribute, $language );
-            $added[] = $attribute['identifier'];
+            $values = array( 'version' => eZContentClass::VERSION_STATUS_DEFINED, 'identifier' => (string)$step['identifier'],
+                             'contentobject_name' => $pattern, 'name' => $names[$language] );
+            if ( isset( $step['remote_id'] ) && (string)$step['remote_id'] !== '' )
+                $values['remote_id'] = (string)$step['remote_id'];
+            $class = eZContentClass::create( eZUser::currentUserID(), $values, $language );
+            foreach ( $names as $locale => $name )
+                $class->setName( $name, $locale );
+            $this->setClassFields( $class, $step, $language );
+            $class->store();
+            foreach ( $groups as $group )
+                eZContentClassClassGroup::create( (int)$class->attribute( 'id' ), eZContentClass::VERSION_STATUS_DEFINED,
+                                                  (int)$group->attribute( 'id' ), (string)$group->attribute( 'name' ) )->store();
+            $added = array();
+            foreach ( $attributes as $attribute )
+            {
+                $this->addAttribute( $class, $attribute, $language );
+                $added[] = $attribute['identifier'];
+            }
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
         $class = self::fresh( $class );
@@ -373,83 +383,93 @@ class expMigrationStepContentClass extends expMigrationStepStructureBase impleme
         $lines = array();
         $db = eZDB::instance();
         $db->begin();
+        try
+        {
 
-        $changed = $this->classChanges( $class, $step, $language, $ensure );
-        if ( $changed )
-        {
-            $class->setAttribute( 'modified', time() );
-            $class->setAttribute( 'modifier_id', eZUser::currentUserID() );
-            $class->store();
-            $lines[] = "updated $label: " . implode( ', ', $changed );
-        }
-        if ( isset( $step['groups'] ) )
-        {
-            $in = array();
-            foreach ( (array)eZContentClassClassGroup::fetchGroupList( (int)$class->attribute( 'id' ), eZContentClass::VERSION_STATUS_DEFINED ) as $link )
-                $in[] = (int)$link->attribute( 'group_id' );
-            foreach ( $this->groups( $step['groups'], false ) as $group )
+            $changed = $this->classChanges( $class, $step, $language, $ensure );
+            if ( $changed )
             {
-                if ( in_array( (int)$group->attribute( 'id' ), $in, true ) )
-                    continue;
-                eZContentClassClassGroup::create( (int)$class->attribute( 'id' ), eZContentClass::VERSION_STATUS_DEFINED,
-                                                  (int)$group->attribute( 'id' ), (string)$group->attribute( 'name' ) )->store();
-                $lines[] = "added $label to the class group \"" . $group->attribute( 'name' ) . '"';
+                $class->setAttribute( 'modified', time() );
+                $class->setAttribute( 'modifier_id', eZUser::currentUserID() );
+                $class->store();
+                $lines[] = "updated $label: " . implode( ', ', $changed );
             }
-        }
-
-        $add = $ensure ? array() : ( isset( $step['add_attributes'] ) ? (array)$step['add_attributes'] : array() );
-        $change = $ensure ? array() : ( isset( $step['update_attributes'] ) ? (array)$step['update_attributes'] : array() );
-        if ( $ensure && isset( $step['attributes'] ) )
-        {
-            foreach ( (array)$step['attributes'] as $attribute )
+            if ( isset( $step['groups'] ) )
             {
-                $existing = $class->fetchAttributeByIdentifier( $attribute['identifier'] );
-                if ( !$existing instanceof eZContentClassAttribute )
+                $in = array();
+                foreach ( (array)eZContentClassClassGroup::fetchGroupList( (int)$class->attribute( 'id' ), eZContentClass::VERSION_STATUS_DEFINED ) as $link )
+                    $in[] = (int)$link->attribute( 'group_id' );
+                foreach ( $this->groups( $step['groups'], false ) as $group )
                 {
-                    $add[] = $attribute;
-                    continue;
+                    if ( in_array( (int)$group->attribute( 'id' ), $in, true ) )
+                        continue;
+                    eZContentClassClassGroup::create( (int)$class->attribute( 'id' ), eZContentClass::VERSION_STATUS_DEFINED,
+                                                      (int)$group->attribute( 'id' ), (string)$group->attribute( 'name' ) )->store();
+                    $lines[] = "added $label to the class group \"" . $group->attribute( 'name' ) . '"';
                 }
-                if ( $existing->attribute( 'data_type_string' ) !== $attribute['type'] )
-                    throw new RuntimeException( "$label: the attribute " . $attribute['identifier'] . ' is a ' . $existing->attribute( 'data_type_string' )
-                                                . ', not a ' . $attribute['type'] . ' (a datatype cannot be changed)' );
-                $rest = $attribute;
-                unset( $rest['identifier'], $rest['type'] );
-                $change[$attribute['identifier']] = $rest;
             }
-        }
-        foreach ( $add as $attribute )
-        {
-            if ( $class->fetchAttributeByIdentifier( $attribute['identifier'] ) instanceof eZContentClassAttribute )
-                throw new RuntimeException( "$label has the attribute " . $attribute['identifier'] . ' already' );
-            $this->addAttribute( $class, $attribute, $language );
-            $lines[] = "added to $label the attribute " . $attribute['identifier'] . ' (' . $attribute['type'] . ')';
-        }
-        foreach ( $change as $identifier => $attribute )
-        {
-            $existing = $class->fetchAttributeByIdentifier( (string)$identifier );
-            if ( !$existing instanceof eZContentClassAttribute )
-                throw new RuntimeException( "$label has no attribute $identifier" );
-            $fields = $this->attributeChanges( $existing, (array)$attribute, $language, $ensure );
-            if ( $fields )
+
+            $add = $ensure ? array() : ( isset( $step['add_attributes'] ) ? (array)$step['add_attributes'] : array() );
+            $change = $ensure ? array() : ( isset( $step['update_attributes'] ) ? (array)$step['update_attributes'] : array() );
+            if ( $ensure && isset( $step['attributes'] ) )
             {
-                $existing->store();
-                $lines[] = "changed the attribute $identifier of $label: " . implode( ', ', $fields );
+                foreach ( (array)$step['attributes'] as $attribute )
+                {
+                    $existing = $class->fetchAttributeByIdentifier( $attribute['identifier'] );
+                    if ( !$existing instanceof eZContentClassAttribute )
+                    {
+                        $add[] = $attribute;
+                        continue;
+                    }
+                    if ( $existing->attribute( 'data_type_string' ) !== $attribute['type'] )
+                        throw new RuntimeException( "$label: the attribute " . $attribute['identifier'] . ' is a ' . $existing->attribute( 'data_type_string' )
+                                                    . ', not a ' . $attribute['type'] . ' (a datatype cannot be changed)' );
+                    $rest = $attribute;
+                    unset( $rest['identifier'], $rest['type'] );
+                    $change[$attribute['identifier']] = $rest;
+                }
             }
-        }
-        if ( !$ensure && isset( $step['remove_attributes'] ) )
-        {
-            foreach ( (array)$step['remove_attributes'] as $identifier )
+            foreach ( $add as $attribute )
             {
-                if ( !$class->fetchAttributeByIdentifier( (string)$identifier ) instanceof eZContentClassAttribute )
-                    throw new RuntimeException( "$label has no attribute $identifier to remove" );
-                $installer = self::installer();
-                $installer->removeClassAttribute( array( 'class_id' => (int)$class->attribute( 'id' ), 'attribute_identifier' => (string)$identifier ) );
-                self::checkInstaller( $installer, "removing the attribute $identifier of $label" );
-                $lines[] = "removed the attribute $identifier from $label with its data";
+                if ( $class->fetchAttributeByIdentifier( $attribute['identifier'] ) instanceof eZContentClassAttribute )
+                    throw new RuntimeException( "$label has the attribute " . $attribute['identifier'] . ' already' );
+                $this->addAttribute( $class, $attribute, $language );
+                $lines[] = "added to $label the attribute " . $attribute['identifier'] . ' (' . $attribute['type'] . ')';
             }
+            foreach ( $change as $identifier => $attribute )
+            {
+                $existing = $class->fetchAttributeByIdentifier( (string)$identifier );
+                if ( !$existing instanceof eZContentClassAttribute )
+                    throw new RuntimeException( "$label has no attribute $identifier" );
+                $fields = $this->attributeChanges( $existing, (array)$attribute, $language, $ensure );
+                if ( $fields )
+                {
+                    $existing->store();
+                    $lines[] = "changed the attribute $identifier of $label: " . implode( ', ', $fields );
+                }
+            }
+            if ( !$ensure && isset( $step['remove_attributes'] ) )
+            {
+                foreach ( (array)$step['remove_attributes'] as $identifier )
+                {
+                    if ( !$class->fetchAttributeByIdentifier( (string)$identifier ) instanceof eZContentClassAttribute )
+                        throw new RuntimeException( "$label has no attribute $identifier to remove" );
+                    $installer = self::installer();
+                    $installer->removeClassAttribute( array( 'class_id' => (int)$class->attribute( 'id' ), 'attribute_identifier' => (string)$identifier ) );
+                    self::checkInstaller( $installer, "removing the attribute $identifier of $label" );
+                    $lines[] = "removed the attribute $identifier from $label with its data";
+                }
+            }
+            if ( isset( $step['update_attributes'] ) || isset( $step['add_attributes'] ) || isset( $step['remove_attributes'] ) || $ensure )
+                self::placeAttributes( $class );
         }
-        if ( isset( $step['update_attributes'] ) || isset( $step['add_attributes'] ) || isset( $step['remove_attributes'] ) || $ensure )
-            self::placeAttributes( $class );
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
 
         $class = self::fresh( $class );
@@ -474,7 +494,17 @@ class expMigrationStepContentClass extends expMigrationStepStructureBase impleme
             throw new RuntimeException( 'the class ' . $values['identifier'] . ' cannot be removed (an object of it is a top level node, or the class is the user class of the site)' );
         $db = eZDB::instance();
         $db->begin();
-        $removed = eZContentClassOperations::remove( (int)$values['class_id'] );
+        try
+        {
+            $removed = eZContentClassOperations::remove( (int)$values['class_id'] );
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
         if ( !$removed )
             throw new RuntimeException( 'the class ' . $values['identifier'] . ' could not be removed' );

@@ -631,17 +631,37 @@ class eZWorkflowProcess extends eZPersistentObject
 
         $db = eZDB::instance();
         $db->begin();
-        if ( isset( $workflowParameters['cleanup_list'] ) && is_array( $workflowParameters['cleanup_list'] ) )
+        try
         {
-            $cleanupList = $workflowParameters['cleanup_list'];
-            foreach ( $cleanupList as $workflowEventID )
+            try
             {
-                $workflowEvent = eZWorkflowEvent::fetch( $workflowEventID );
-                $workflowType = $workflowEvent->eventType();
-                $workflowType->cleanup( $this, eZWorkflowEvent::fetch( $workflowEventID ) );
+                if ( isset( $workflowParameters['cleanup_list'] ) && is_array( $workflowParameters['cleanup_list'] ) )
+                {
+                    $cleanupList = $workflowParameters['cleanup_list'];
+                    foreach ( $cleanupList as $workflowEventID )
+                    {
+                        $workflowEvent = eZWorkflowEvent::fetch( $workflowEventID );
+                        $workflowType = $workflowEvent->eventType();
+                        $workflowType->cleanup( $this, eZWorkflowEvent::fetch( $workflowEventID ) );
+                    }
+                }
+                eZPersistentObject::removeObject( eZWorkflowProcess::definition(), array( 'id' => $this->attribute( 'id' ) ) );
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
             }
         }
-        eZPersistentObject::removeObject( eZWorkflowProcess::definition(), array( 'id' => $this->attribute( 'id' ) ) );
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
     }
 

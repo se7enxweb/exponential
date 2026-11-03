@@ -98,8 +98,18 @@ class expStaticStatus
         if ( !$db || self::exists( $db ) !== true )
             return false;
         $db->begin();
-        $db->query( 'DELETE FROM ' . self::RUN_TABLE . " WHERE run_id = '" . $db->escapeString( $run['run_id'] ) . "'" );
-        $db->query( self::insertSql( $db, self::RUN_TABLE, $run ) );
+        try
+        {
+            $db->query( 'DELETE FROM ' . self::RUN_TABLE . " WHERE run_id = '" . $db->escapeString( $run['run_id'] ) . "'" );
+            $db->query( self::insertSql( $db, self::RUN_TABLE, $run ) );
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
         return true;
     }
@@ -184,20 +194,30 @@ class expStaticStatus
             if ( $row['stale'] > 0 && $row['stale'] >= ( $builtAt ?: time() ) )
                 $late[$path] = $row;
         $db->begin();
-        $db->query( 'DELETE FROM ' . self::PAGE_TABLE . " WHERE target = '" . $db->escapeString( (string)$target ) . "'" );
-        foreach ( $manifest->entries() as $path => $entry )
+        try
         {
-            if ( !isset( $entry['kind'] ) || $entry['kind'] !== 'page' || strlen( $path ) > 255 )
-                continue;
-            $db->query( self::insertSql( $db, self::PAGE_TABLE, self::normalize( array(
-                'target' => (string)$target, 'path' => $path, 'node_id' => isset( $entry['node'] ) ? (int)$entry['node'] : 0,
-                'hash' => isset( $entry['sha256'] ) ? (string)$entry['sha256'] : '', 'page_bytes' => isset( $entry['size'] ) ? (int)$entry['size'] : 0,
-                'built_at' => $builtAt ?: time(), 'stale' => isset( $late[$path] ) ? $late[$path]['stale'] : 0 ), self::PAGE_COLUMNS ) ) );
-            unset( $late[$path] );
+            $db->query( 'DELETE FROM ' . self::PAGE_TABLE . " WHERE target = '" . $db->escapeString( (string)$target ) . "'" );
+            foreach ( $manifest->entries() as $path => $entry )
+            {
+                if ( !isset( $entry['kind'] ) || $entry['kind'] !== 'page' || strlen( $path ) > 255 )
+                    continue;
+                $db->query( self::insertSql( $db, self::PAGE_TABLE, self::normalize( array(
+                    'target' => (string)$target, 'path' => $path, 'node_id' => isset( $entry['node'] ) ? (int)$entry['node'] : 0,
+                    'hash' => isset( $entry['sha256'] ) ? (string)$entry['sha256'] : '', 'page_bytes' => isset( $entry['size'] ) ? (int)$entry['size'] : 0,
+                    'built_at' => $builtAt ?: time(), 'stale' => isset( $late[$path] ) ? $late[$path]['stale'] : 0 ), self::PAGE_COLUMNS ) ) );
+                unset( $late[$path] );
+            }
+            foreach ( $late as $row )
+                if ( strpos( (string)$row['path'], expStaticPublishQueue::QUEUE_PREFIX ) === 0 )
+                    $db->query( self::insertSql( $db, self::PAGE_TABLE, $row ) );
         }
-        foreach ( $late as $row )
-            if ( strpos( (string)$row['path'], expStaticPublishQueue::QUEUE_PREFIX ) === 0 )
-                $db->query( self::insertSql( $db, self::PAGE_TABLE, $row ) );
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
         return true;
     }

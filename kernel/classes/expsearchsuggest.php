@@ -450,9 +450,11 @@ class expSearchSuggest
      * @param string $query
      * @param array $settings
      * @param bool $withPages
+     * @param string|null $thumbnailAlias null: the administration's items; a string (an image alias, or '' for none):
+     *                                    the site's items, which also carry class_identifier, is_user and thumbnail
      * @return array 'items', 'count', 'pages'
      */
-    public static function content( $query, array $settings, $withPages )
+    public static function content( $query, array $settings, $withPages, $thumbnailAlias = null )
     {
         $none = array( 'items' => array(), 'count' => 0, 'pages' => array() );
         $limit = max( $settings['limits']['content'], $withPages ? $settings['limits']['pages'] : 0 );
@@ -463,10 +465,19 @@ class expSearchSuggest
         $text = self::searchText( $query, $settings['wildcard'],
                                   $siteIni->variable( 'SearchSettings', 'EnableWildcard' ) === 'true',
                                   (int)$siteIni->variable( 'SearchSettings', 'MinCharacterWildcard' ) );
+        $searchParams = array( 'SearchOffset' => 0, 'SearchLimit' => min( 2 * $limit, 2 * self::MAX_LIMIT ) );
+        // a site with a PathPrefix (/bold) reaches only the content below it, as its search page (content/search)
+        if ( $thumbnailAlias !== null && $siteIni->hasVariable( 'SiteAccessSettings', 'PathPrefix' )
+             && trim( (string)$siteIni->variable( 'SiteAccessSettings', 'PathPrefix' ), '/' ) !== '' )
+        {
+            $subTree = \Exponential\View\Kernel\Content\Search::pathPrefixSubTreeArray( $siteIni->variable( 'SiteAccessSettings', 'PathPrefix' ) );
+            if ( $subTree )
+                $searchParams['SearchSubTreeArray'] = $subTree;
+        }
         try
         {
             // twice as many as shown: a hit the user may not read or one found twice is left out below
-            $result = $backend['search']->search( $text, array( 'SearchOffset' => 0, 'SearchLimit' => min( 2 * $limit, 2 * self::MAX_LIMIT ) ) );
+            $result = $backend['search']->search( $text, $searchParams );
         }
         catch ( Exception $e )
         {
@@ -479,6 +490,7 @@ class expSearchSuggest
         $items = array();
         $pages = array();
         $iconCache = array();
+        $userClasses = array();
         $seen = array();
         // each document asked for its pages is one more request to the search engine: at most as many as the group
         // "Document pages" shows, also when a document has no page with the words
@@ -504,6 +516,14 @@ class expSearchSuggest
                            'icon' => self::classIcon( $classIdentifier, $iconCache ),
                            'path' => self::nodePath( $node ),
                            'object_id' => (int)$object->attribute( 'id' ) );
+            if ( $thumbnailAlias !== null )
+            {
+                if ( !isset( $userClasses[$classIdentifier] ) )
+                    $userClasses[$classIdentifier] = eZUser::isUserObject( $object );
+                $item['class_identifier'] = $classIdentifier;
+                $item['is_user'] = $userClasses[$classIdentifier];
+                $item['thumbnail'] = $item['is_user'] ? '' : self::thumbnail( $object, $thumbnailAlias );
+            }
             $items[] = $item;
             if ( $backend['pages'] && $withPages && count( $pages ) < $settings['limits']['pages']
                  && $pageLookups < $settings['limits']['pages']
@@ -652,6 +672,7 @@ class expSearchSuggest
         foreach ( (array)$rows as $row )
             $candidates[] = array( 'id' => (int)$row['id'], 'login' => (string)$row['login'] );
         $iconCache = array();
+        $userClasses = array();
         $users = array();
         foreach ( self::readable( $candidates, function ( $candidate ) {
                       $object = eZContentObject::fetch( $candidate['id'] );
@@ -692,6 +713,7 @@ class expSearchSuggest
                                 'name' => $class->attribute( 'name' ) );
         }
         $iconCache = array();
+        $userClasses = array();
         $items = array();
         foreach ( self::matchClasses( $classes, $query, true ) as $class )
         {
@@ -800,6 +822,116 @@ class expSearchSuggest
         if ( self::length( $text ) <= $max )
             return $text;
         return rtrim( function_exists( 'mb_substr' ) ? mb_substr( $text, 0, $max - 1, 'UTF-8' ) : substr( $text, 0, $max - 1 ) ) . '…';
+    }
+
+    /**
+     * The settings of the site's suggestions (content/sitesuggest, parts/front_search_suggest.tpl): site.ini
+     * [SiteSearchSuggestSettings] of the siteaccess, each with its default. Only content is ever suggested there.
+     *
+     * @param eZINI|null $ini site.ini
+     * @return array 'enabled' bool, 'min_length' int, 'limit' int, 'exclude_classes' list, 'thumbnail_alias' string,
+     *               'wildcard' string, 'cache_ttl' int, 'rate_limit' int, 'rate_window' int
+     */
+    public static function siteSettings( $ini = null )
+    {
+        if ( $ini === null )
+            $ini = eZINI::instance();
+        $get = function ( $name, $default ) use ( $ini ) {
+            return $ini->hasVariable( 'SiteSearchSuggestSettings', $name ) ? $ini->variable( 'SiteSearchSuggestSettings', $name ) : $default;
+        };
+        $wildcard = strtolower( (string)$get( 'Wildcard', 'auto' ) );
+        $exclude = array_values( array_filter( array_map( 'strval', (array)$get( 'ExcludeClasses', array( 'user', 'user_group' ) ) ) ) );
+        return array(
+            'enabled' => strtolower( (string)$get( 'Enabled', 'true' ) ) === 'true',
+            'min_length' => max( 1, (int)$get( 'MinLength', 3 ) ),
+            'limit' => self::limit( $get( 'Limit', 6 ) ),
+            'exclude_classes' => $exclude,
+            'thumbnail_alias' => preg_replace( '/[^a-z0-9_]/i', '', (string)$get( 'ThumbnailAlias', 'small' ) ),
+            'wildcard' => in_array( $wildcard, array( 'auto', 'enabled', 'disabled' ), true ) ? $wildcard : 'auto',
+            'cache_ttl' => max( 0, min( 3600, (int)$get( 'PublicCacheTTL', 60 ) ) ),
+            'rate_limit' => max( 0, (int)$get( 'RateLimit', 60 ) ),
+            'rate_window' => max( 1, (int)$get( 'RateWindow', 60 ) ),
+        );
+    }
+
+    /**
+     * The fields a site suggestion may carry, from a content item of content(): nothing of the account, the owner or
+     * the object id. An item of an excluded class or a user account is dropped (null).
+     *
+     * @param array $item content() item plus 'class_identifier' and 'is_user'
+     * @param array $settings siteSettings()
+     * @return array|null 'type', 'title', 'url', 'meta', 'icon'
+     */
+    public static function siteItem( array $item, array $settings )
+    {
+        if ( !empty( $item['is_user'] ) || ( isset( $item['class_identifier'] ) && in_array( (string)$item['class_identifier'], $settings['exclude_classes'], true ) ) )
+            return null;
+        if ( !isset( $item['url'] ) || !self::isSiteAddress( (string)$item['url'] ) )
+            return null;
+        $icon = isset( $item['thumbnail'] ) && $item['thumbnail'] !== '' ? (string)$item['thumbnail'] : ( isset( $item['icon'] ) ? (string)$item['icon'] : '' );
+        return array( 'type' => 'content',
+                      'title' => (string)$item['title'],
+                      'url' => (string)$item['url'],
+                      'meta' => isset( $item['meta'] ) ? (string)$item['meta'] : '',
+                      'icon' => $icon !== '' && self::isSiteAddress( $icon ) ? $icon : '' );
+    }
+
+    /**
+     * The site's suggestions for the current user: content only, as far as the user may read it (the search applies
+     * the read permissions, each hit is asked again), never user accounts, classes or administration pages.
+     *
+     * @param string $query
+     * @param array|null $settings siteSettings()
+     * @return array assemble() with the one group 'content'
+     */
+    public static function siteSuggest( $query, $settings = null )
+    {
+        if ( $settings === null )
+            $settings = self::siteSettings();
+        $query = trim( (string)$query );
+        $groupSettings = array( 'groups' => array( 'content' ), 'limits' => array( 'content' => $settings['limit'] ) );
+        $titles = array( 'content' => ezpI18n::tr( self::CONTEXT, 'Content' ) );
+        if ( self::length( $query ) < $settings['min_length'] || $settings['limit'] <= 0 )
+            return self::assemble( array(), $groupSettings, $titles, $query, 0 );
+        // twice as many asked: a user account or an excluded class is left out afterwards
+        $content = self::content( $query, array( 'limits' => array( 'content' => min( self::MAX_LIMIT, 2 * $settings['limit'] ), 'pages' => 0 ),
+                                                 'wildcard' => $settings['wildcard'], 'page_hit_classes' => array(), 'pages_per_document' => 1 ),
+                                  false, $settings['thumbnail_alias'] );
+        $items = array();
+        foreach ( $content['items'] as $item )
+        {
+            $item = self::siteItem( $item, $settings );
+            if ( $item !== null )
+                $items[] = $item;
+        }
+        return self::assemble( array( 'content' => array( 'items' => $items, 'count' => $content['count'] ) ),
+                               $groupSettings, $titles, $query, $content['count'] );
+    }
+
+    /**
+     * The address of a small image of the object (its first image attribute, in the given alias), or ''.
+     *
+     * @param eZContentObject $object
+     * @param string $alias
+     * @return string
+     */
+    public static function thumbnail( $object, $alias )
+    {
+        if ( $alias === '' || !$object instanceof eZContentObject )
+            return '';
+        foreach ( (array)$object->attribute( 'data_map' ) as $attribute )
+        {
+            if ( !$attribute instanceof eZContentObjectAttribute || $attribute->attribute( 'data_type_string' ) !== 'ezimage' || !$attribute->attribute( 'has_content' ) )
+                continue;
+            $content = $attribute->attribute( 'content' );
+            $image = is_object( $content ) && method_exists( $content, 'imageAlias' ) ? $content->imageAlias( $alias ) : null;
+            if ( !is_array( $image ) || empty( $image['url'] ) )
+                return '';
+            $url = '/' . ltrim( (string)$image['url'], '/' );
+            eZURI::transformURI( $url, true );
+            return self::isSiteAddress( $url ) ? $url : '';
+        }
+        return '';
     }
 
     /**

@@ -186,8 +186,18 @@ class Vatrules extends \Exponential\Runnable\ModuleView
 
             $db = \eZDB::instance();
             $db->begin();
-            foreach ( $ruleIDList as $ruleID )
-                \eZVatRule::removeVatRule( $ruleID );
+            try
+            {
+                foreach ( $ruleIDList as $ruleID )
+                    \eZVatRule::removeVatRule( $ruleID );
+            }
+            catch ( \Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
             $db->commit();
         }
 
@@ -195,16 +205,26 @@ class Vatrules extends \Exponential\Runnable\ModuleView
         {
             $db = \eZDB::instance();
             $db->begin();
-            foreach ( $productCategories as $cat )
+            try
             {
-                $id = $cat->attribute( 'id' );
+                foreach ( $productCategories as $cat )
+                {
+                    $id = $cat->attribute( 'id' );
 
-                if ( !$http->hasPostVariable( "category_name_" . $id ) )
-                    continue;
+                    if ( !$http->hasPostVariable( "category_name_" . $id ) )
+                        continue;
 
-                $name = $http->postVariable( "category_name_" . $id );
-                $cat->setAttribute( 'name', $name );
-                $cat->store();
+                    $name = $http->postVariable( "category_name_" . $id );
+                    $cat->setAttribute( 'name', $name );
+                    $cat->store();
+                }
+            }
+            catch ( \Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
             }
             $db->commit();
             return $this->viewResult( isset( $Result ) ? $Result : null,  $module->redirectTo( $module->functionURI( "productcategories" ) ) );

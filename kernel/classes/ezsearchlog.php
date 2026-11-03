@@ -27,36 +27,46 @@ class eZSearchLog
         if ( $db->databaseName() === 'mongo' )
             return;
         $db->begin();
-        $db->lock( "ezsearch_search_phrase" );
-
-        $trans = eZCharTransform::instance();
-        $phrase = $trans->transformByGroup( trim( $phrase ), 'search' );
-
-        // 250 is the numbers of characters accepted by the DB table, so shorten to fit
-        if ( strlen( $phrase ) > 250 )
+        try
         {
-            $phrase = substr( $phrase , 0 , 247 ) . "...";
-        }
-        $phrase = $db->escapeString( $phrase );
+            $db->lock( "ezsearch_search_phrase" );
 
-        // find or store the phrase
-        $phraseRes = $db->arrayQuery( "SELECT id FROM ezsearch_search_phrase WHERE phrase='$phrase'" );
+            $trans = eZCharTransform::instance();
+            $phrase = $trans->transformByGroup( trim( $phrase ), 'search' );
 
-        if ( count( $phraseRes ) == 1 )
-        {
-            $phraseID = $phraseRes[0]['id'];
-            $db->query( "UPDATE ezsearch_search_phrase
+            // 250 is the numbers of characters accepted by the DB table, so shorten to fit
+            if ( strlen( $phrase ) > 250 )
+            {
+                $phrase = substr( $phrase , 0 , 247 ) . "...";
+            }
+            $phrase = $db->escapeString( $phrase );
+
+            // find or store the phrase
+            $phraseRes = $db->arrayQuery( "SELECT id FROM ezsearch_search_phrase WHERE phrase='$phrase'" );
+
+            if ( count( $phraseRes ) == 1 )
+            {
+                $phraseID = $phraseRes[0]['id'];
+                $db->query( "UPDATE ezsearch_search_phrase
                          SET    phrase_count = phrase_count + 1,
                                 result_count = result_count + $returnCount
                          WHERE  id = $phraseID" );
-        }
-        else
-        {
-            $db->query( "INSERT INTO
+            }
+            else
+            {
+                $db->query( "INSERT INTO
                               ezsearch_search_phrase ( phrase, phrase_count, result_count )
                          VALUES ( '$phrase', 1, $returnCount )" );
+            }
+            $db->unlock();
         }
-        $db->unlock();
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
     }
 

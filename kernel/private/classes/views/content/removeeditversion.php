@@ -57,62 +57,72 @@ class Removeeditversion extends \Exponential\Runnable\ModuleView
                 return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
 
             $db->begin();
+            try
+            {
 
-            if ( $db->databaseName() === 'mongo' )
-            {
-                $versionRows = $db->aggregate( 'ezcontentobject_version', [
-                    [ '$match' => [ 'version' => $version, 'contentobject_id' => $objectID ] ],
-                ] );
-            }
-            elseif( $db->DatabaseName() == 'sqlite' )
-            {
-                $versionRows = $db->arrayQuery( "SELECT * FROM ezcontentobject_version WHERE version = $version AND contentobject_id = $objectID" );
-            }
-            else
-            {
-                $versionRows = $db->arrayQuery( "SELECT * FROM ezcontentobject_version WHERE version = $version AND contentobject_id = $objectID FOR UPDATE" );
-            }
-
-            if ( empty( $versionRows ) )
-            {
-                $db->commit(); // We haven't made any changes, but commit here to avoid affecting any outer transactions.
-                return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
-            }
-            $versionObject = \eZContentObjectVersion::fetch( $versionRows[0]['id'] );
-            if ( is_object( $versionObject ) and
-                 in_array( $versionObject->attribute( 'status' ), array( \eZContentObjectVersion::STATUS_DRAFT, \eZContentObjectVersion::STATUS_INTERNAL_DRAFT ) ) )
-            {
-                if ( !$object->editAccess( $versionObject ) )
+                if ( $db->databaseName() === 'mongo' )
                 {
-                    // An object that was never published may be edited, at every version, by someone who may create
-                    // it under the parent of its main node assignment (no assignment or no parent: denied).
-                    $allowEdit = (bool)$object->draftCreateAccess();
-
-                    if ( !$allowEdit )
-                    {
-                        $db->commit(); // We haven't made any changes, but commit here to avoid affecting any outer transactions.
-                        return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel', array( 'AccessList' => $object->accessList( 'edit' ) ) ) );
-                    }
+                    $versionRows = $db->aggregate( 'ezcontentobject_version', [
+                        [ '$match' => [ 'version' => $version, 'contentobject_id' => $objectID ] ],
+                    ] );
+                }
+                elseif( $db->DatabaseName() == 'sqlite' )
+                {
+                    $versionRows = $db->arrayQuery( "SELECT * FROM ezcontentobject_version WHERE version = $version AND contentobject_id = $objectID" );
+                }
+                else
+                {
+                    $versionRows = $db->arrayQuery( "SELECT * FROM ezcontentobject_version WHERE version = $version AND contentobject_id = $objectID FOR UPDATE" );
                 }
 
-                $versionCount= $object->getVersionCount();
-                $nodeID = $versionCount == 1 ? $versionObject->attribute( 'main_parent_node_id' ) : $object->attribute( 'main_node_id' );
-                // Audit (doc/eng-us/bc/6.0/audit.md, content.version.remove): a discarded draft
-                $auditVersion = array( 'version' => (int)$versionObject->attribute( 'version' ), 'status' => (int)$versionObject->attribute( 'status' ),
-                                       'language' => (string)$versionObject->initialLanguageCode() );
-                $auditName = (string)$object->attribute( 'name' );
-                if ( class_exists( 'expAuditHook' ) )
-                    // the draft of a new object takes the object with it: that is this discard, not a purge of its own
-                    \expAuditHook::muted( 'content.object.purge', function () use ( $versionObject ) { $versionObject->removeThis(); } );
-                else
-                    $versionObject->removeThis();
-                if ( class_exists( 'expAuditHook' ) )
-                    \expAuditHook::emit( 'content.version.remove', array(
-                        'object' => array( 'type' => 'version', 'id' => (string)$auditVersion['version'], 'object_id' => (int)$objectID,
-                                           'name' => $auditName !== '' ? $auditName : null ),
-                        'before' => array( 'versions' => array( $auditVersion ), 'discard' => true ) ) );
-            }
+                if ( empty( $versionRows ) )
+                {
+                    $db->commit(); // We haven't made any changes, but commit here to avoid affecting any outer transactions.
+                    return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
+                }
+                $versionObject = \eZContentObjectVersion::fetch( $versionRows[0]['id'] );
+                if ( is_object( $versionObject ) and
+                     in_array( $versionObject->attribute( 'status' ), array( \eZContentObjectVersion::STATUS_DRAFT, \eZContentObjectVersion::STATUS_INTERNAL_DRAFT ) ) )
+                {
+                    if ( !$object->editAccess( $versionObject ) )
+                    {
+                        // An object that was never published may be edited, at every version, by someone who may create
+                        // it under the parent of its main node assignment (no assignment or no parent: denied).
+                        $allowEdit = (bool)$object->draftCreateAccess();
 
+                        if ( !$allowEdit )
+                        {
+                            $db->commit(); // We haven't made any changes, but commit here to avoid affecting any outer transactions.
+                            return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel', array( 'AccessList' => $object->accessList( 'edit' ) ) ) );
+                        }
+                    }
+
+                    $versionCount= $object->getVersionCount();
+                    $nodeID = $versionCount == 1 ? $versionObject->attribute( 'main_parent_node_id' ) : $object->attribute( 'main_node_id' );
+                    // Audit (doc/eng-us/bc/6.0/audit.md, content.version.remove): a discarded draft
+                    $auditVersion = array( 'version' => (int)$versionObject->attribute( 'version' ), 'status' => (int)$versionObject->attribute( 'status' ),
+                                           'language' => (string)$versionObject->initialLanguageCode() );
+                    $auditName = (string)$object->attribute( 'name' );
+                    if ( class_exists( 'expAuditHook' ) )
+                        // the draft of a new object takes the object with it: that is this discard, not a purge of its own
+                        \expAuditHook::muted( 'content.object.purge', function () use ( $versionObject ) { $versionObject->removeThis(); } );
+                    else
+                        $versionObject->removeThis();
+                    if ( class_exists( 'expAuditHook' ) )
+                        \expAuditHook::emit( 'content.version.remove', array(
+                            'object' => array( 'type' => 'version', 'id' => (string)$auditVersion['version'], 'object_id' => (int)$objectID,
+                                               'name' => $auditName !== '' ? $auditName : null ),
+                            'before' => array( 'versions' => array( $auditVersion ), 'discard' => true ) ) );
+                }
+
+            }
+            catch ( \Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
             $db->commit();
 
             $hasRedirected = false;

@@ -885,49 +885,59 @@ class Processlist extends \Exponential\Runnable\ModuleView
         try
         {
             $db->begin();
-
-            // The version waiting to be published goes back to the author as a draft.
-            if ( $objectID > 0 && $versionNumber > 0 )
+            try
             {
-                $version = \eZContentObjectVersion::fetchVersion( $versionNumber, $objectID );
-                if ( $version instanceof \eZContentObjectVersion
-                     && (int)$version->attribute( 'status' ) === \eZContentObjectVersion::STATUS_PENDING )
+
+                // The version waiting to be published goes back to the author as a draft.
+                if ( $objectID > 0 && $versionNumber > 0 )
                 {
-                    $version->setAttribute( 'status', \eZContentObjectVersion::STATUS_DRAFT );
-                    $version->store();
-                    $toDraft = true;
+                    $version = \eZContentObjectVersion::fetchVersion( $versionNumber, $objectID );
+                    if ( $version instanceof \eZContentObjectVersion
+                         && (int)$version->attribute( 'status' ) === \eZContentObjectVersion::STATUS_PENDING )
+                    {
+                        $version->setAttribute( 'status', \eZContentObjectVersion::STATUS_DRAFT );
+                        $version->store();
+                        $toDraft = true;
+                    }
                 }
-            }
 
-            // The approval request, if this process is waiting in one, is closed in the approvers' inbox.
-            $approvals = self::approvalItems( array( $id ) );
-            if ( isset( $approvals[$id] ) )
-            {
-                $item = \eZCollaborationItem::fetch( $approvals[$id] );
-                if ( $item instanceof \eZCollaborationItem )
+                // The approval request, if this process is waiting in one, is closed in the approvers' inbox.
+                $approvals = self::approvalItems( array( $id ) );
+                if ( isset( $approvals[$id] ) )
                 {
-                    $item->setAttribute( 'status', \eZCollaborationItem::STATUS_INACTIVE );
-                    $item->setAttribute( 'modified', time() );
-                    $item->setIsActive( false );
-                    $item->sync();
-                    $approvalClosed = (int)$approvals[$id];
+                    $item = \eZCollaborationItem::fetch( $approvals[$id] );
+                    if ( $item instanceof \eZCollaborationItem )
+                    {
+                        $item->setAttribute( 'status', \eZCollaborationItem::STATUS_INACTIVE );
+                        $item->setAttribute( 'modified', time() );
+                        $item->setIsActive( false );
+                        $item->sync();
+                        $approvalClosed = (int)$approvals[$id];
+                    }
+                    $db->query( 'DELETE FROM ezapprove_items WHERE workflow_process_id = ' . $id );
                 }
-                $db->query( 'DELETE FROM ezapprove_items WHERE workflow_process_id = ' . $id );
-            }
 
-            // The mementos that would resume the operation, then the process itself (its events' own cleanup runs).
-            $key = (string)$process->attribute( 'memento_key' );
-            if ( $key !== '' )
+                // The mementos that would resume the operation, then the process itself (its events' own cleanup runs).
+                $key = (string)$process->attribute( 'memento_key' );
+                if ( $key !== '' )
+                {
+                    $main = \eZOperationMemento::fetchMain( $key );
+                    if ( $main )
+                        $main->remove();
+                    foreach ( (array)\eZOperationMemento::fetchList( $key ) as $memento )
+                        if ( is_object( $memento ) )
+                            $memento->remove();
+                }
+                $process->removeThis();
+
+            }
+            catch ( \Throwable $e )
             {
-                $main = \eZOperationMemento::fetchMain( $key );
-                if ( $main )
-                    $main->remove();
-                foreach ( (array)\eZOperationMemento::fetchList( $key ) as $memento )
-                    if ( is_object( $memento ) )
-                        $memento->remove();
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
             }
-            $process->removeThis();
-
             $db->commit();
         }
         catch ( \Exception $e )

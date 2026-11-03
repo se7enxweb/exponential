@@ -209,13 +209,23 @@ class Exploremipsumfill extends \Exponential\Runnable\Command
         }
         $db = \eZDB::instance();
         $db->begin();
-        foreach ( (array)$version->contentObjectAttributes( $language ) as $attribute )
+        try
         {
-            $identifier = (string)$attribute->attribute( 'contentclass_attribute_identifier' );
-            if ( !isset( $plan[$identifier] ) )
-                continue;
-            $attribute->fromString( $plan[$identifier][1] );
-            $attribute->store();
+            foreach ( (array)$version->contentObjectAttributes( $language ) as $attribute )
+            {
+                $identifier = (string)$attribute->attribute( 'contentclass_attribute_identifier' );
+                if ( !isset( $plan[$identifier] ) )
+                    continue;
+                $attribute->fromString( $plan[$identifier][1] );
+                $attribute->store();
+            }
+        }
+        catch ( \Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
         $result = \eZOperationHandler::execute( 'content', 'publish', array( 'object_id' => $id, 'version' => (int)$version->attribute( 'version' ) ) );

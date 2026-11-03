@@ -35,28 +35,38 @@ function expModuleViewRolePolicyEditProcessDropdownLimitations( &$policy, $curre
 
     $db = eZDB::instance();
     $db->begin();
-
-    foreach ( $currentFunctionLimitations as $functionLimitation )
+    try
     {
-        if ( $http->hasPostVariable( $functionLimitation['name'] ) and
-            $functionLimitation['name'] != 'Node' and
-            $functionLimitation['name'] != 'Subtree' )
-        {
-            $limitationValueList = \eZPolicyLimitation::validValues( $functionLimitation, $http->postVariable( $functionLimitation['name'] ) );
 
-            if ( $limitationValueList && !in_array( '-1', $limitationValueList ) )
+        foreach ( $currentFunctionLimitations as $functionLimitation )
+        {
+            if ( $http->hasPostVariable( $functionLimitation['name'] ) and
+                $functionLimitation['name'] != 'Node' and
+                $functionLimitation['name'] != 'Subtree' )
             {
-                $hasLimitation = true;
-                $policyLimitation = eZPolicyLimitation::createNew( $policy->attribute( 'id' ),
-                                                                   $functionLimitation['name'] );
-                foreach ( $limitationValueList as $limitationValue )
+                $limitationValueList = \eZPolicyLimitation::validValues( $functionLimitation, $http->postVariable( $functionLimitation['name'] ) );
+
+                if ( $limitationValueList && !in_array( '-1', $limitationValueList ) )
                 {
-                    eZPolicyLimitationValue::createNew( $policyLimitation->attribute( 'id' ), $limitationValue );
+                    $hasLimitation = true;
+                    $policyLimitation = eZPolicyLimitation::createNew( $policy->attribute( 'id' ),
+                                                                       $functionLimitation['name'] );
+                    foreach ( $limitationValueList as $limitationValue )
+                    {
+                        eZPolicyLimitationValue::createNew( $policyLimitation->attribute( 'id' ), $limitationValue );
+                    }
                 }
             }
         }
-    }
 
+    }
+    catch ( \Throwable $e )
+    {
+        // nothing of a transaction that failed half way is committed by a later commit()
+        if ( $db->transactionCounter() > 0 )
+            $db->rollback();
+        throw $e;
+    }
     $db->commit();
 
     return $hasLimitation;
@@ -142,9 +152,19 @@ class Policyedit extends \Exponential\Runnable\ModuleView
 
                 $db = \eZDB::instance();
                 $db->begin();
-                foreach ( $deletedIDList as $deletedID )
+                try
                 {
-                    \eZPolicyLimitationValue::removeByValue( $deletedID, $policyID );
+                    foreach ( $deletedIDList as $deletedID )
+                    {
+                        \eZPolicyLimitationValue::removeByValue( $deletedID, $policyID );
+                    }
+                }
+                catch ( \Throwable $e )
+                {
+                    // nothing of a transaction that failed half way is committed by a later commit()
+                    if ( $db->transactionCounter() > 0 )
+                        $db->rollback();
+                    throw $e;
                 }
                 $db->commit();
             }
@@ -164,11 +184,21 @@ class Policyedit extends \Exponential\Runnable\ModuleView
 
                 $db = \eZDB::instance();
                 $db->begin();
-                foreach ( $deletedIDList as $deletedID )
+                try
                 {
-                    $subtree = \eZContentObjectTreeNode::fetch( $deletedID, false, false );
-                    $path = $subtree['path_string'];
-                    \eZPolicyLimitationValue::removeByValue( $path, $policyID );
+                    foreach ( $deletedIDList as $deletedID )
+                    {
+                        $subtree = \eZContentObjectTreeNode::fetch( $deletedID, false, false );
+                        $path = $subtree['path_string'];
+                        \eZPolicyLimitationValue::removeByValue( $path, $policyID );
+                    }
+                }
+                catch ( \Throwable $e )
+                {
+                    // nothing of a transaction that failed half way is committed by a later commit()
+                    if ( $db->transactionCounter() > 0 )
+                        $db->rollback();
+                    throw $e;
                 }
                 $db->commit();
             }
@@ -231,52 +261,62 @@ class Policyedit extends \Exponential\Runnable\ModuleView
             $hasLimitation = false;
             $db = \eZDB::instance();
             $db->begin();
-            $limitationList = \eZPolicyLimitation::fetchByPolicyID( $policyID );
-            foreach ( $limitationList as $limitation )
+            try
             {
-                $limitationID = $limitation->attribute( 'id' );
-                $limitationIdentifier = $limitation->attribute( 'identifier' );
-                if ( $limitationIdentifier != 'Node' and $limitationIdentifier != 'Subtree' )
-                    \eZPolicyLimitation::removeByID( $limitationID );
-                if ( $limitationIdentifier == 'Node' )
+                $limitationList = \eZPolicyLimitation::fetchByPolicyID( $policyID );
+                foreach ( $limitationList as $limitation )
                 {
-                    $nodeLimitationValues = \eZPolicyLimitationValue::fetchList( $limitationID );
-                    if ( $nodeLimitationValues != null )
-                        $hasNodeLimitation = true;
-                    else
+                    $limitationID = $limitation->attribute( 'id' );
+                    $limitationIdentifier = $limitation->attribute( 'identifier' );
+                    if ( $limitationIdentifier != 'Node' and $limitationIdentifier != 'Subtree' )
                         \eZPolicyLimitation::removeByID( $limitationID );
+                    if ( $limitationIdentifier == 'Node' )
+                    {
+                        $nodeLimitationValues = \eZPolicyLimitationValue::fetchList( $limitationID );
+                        if ( $nodeLimitationValues != null )
+                            $hasNodeLimitation = true;
+                        else
+                            \eZPolicyLimitation::removeByID( $limitationID );
+                    }
+
+                    if ( $limitationIdentifier == 'Subtree' )
+                    {
+                        $nodeLimitationValues = \eZPolicyLimitationValue::fetchList( $limitationID );
+                        if ( $nodeLimitationValues != null )
+                            $hasLimitation = true;
+                        else
+                            \eZPolicyLimitation::removeByID( $limitationID );
+
+                    }
                 }
 
-                if ( $limitationIdentifier == 'Subtree' )
+                if ( expModuleViewRolePolicyEditProcessDropdownLimitations( $policy, $currentModule, $currentFunction, $currentFunctionLimitations ) === true )
+                    $hasLimitation = true;
+
+                $policy->store();
+
+                // Nothing the editor could not grant (site.ini [RoleSettings] PreventPrivilegeEscalation): a change that
+                // makes the policy broader than the editor's own access is dropped and the policy stays as it was
+                $grantCheck = \expRoleGrantCheck::forCurrentUser();
+                $grant = $grantCheck ? \expRoleGrantCheck::grantOf( $policy ) : null;
+                if ( $grant && !$grantCheck->covers( $grant['module'], $grant['function'], $grant['limitations'] ) )
                 {
-                    $nodeLimitationValues = \eZPolicyLimitationValue::fetchList( $limitationID );
-                    if ( $nodeLimitationValues != null )
-                        $hasLimitation = true;
-                    else
-                        \eZPolicyLimitation::removeByID( $limitationID );
-
+                    $db->commit();
+                    \expRoleGrantCheck::remember( 'policy', array( $grant ) );
+                    $policy->removeThis();
+                    return $this->viewResult( null, $Module->redirectTo( $Module->functionURI( 'edit' ) . '/' . $roleID . '/' ) );
                 }
+
+                // Replace the real edited policy with the temporary one
+                $policy->saveTemporary();
             }
-
-            if ( expModuleViewRolePolicyEditProcessDropdownLimitations( $policy, $currentModule, $currentFunction, $currentFunctionLimitations ) === true )
-                $hasLimitation = true;
-
-            $policy->store();
-
-            // Nothing the editor could not grant (site.ini [RoleSettings] PreventPrivilegeEscalation): a change that
-            // makes the policy broader than the editor's own access is dropped and the policy stays as it was
-            $grantCheck = \expRoleGrantCheck::forCurrentUser();
-            $grant = $grantCheck ? \expRoleGrantCheck::grantOf( $policy ) : null;
-            if ( $grant && !$grantCheck->covers( $grant['module'], $grant['function'], $grant['limitations'] ) )
+            catch ( \Throwable $e )
             {
-                $db->commit();
-                \expRoleGrantCheck::remember( 'policy', array( $grant ) );
-                $policy->removeThis();
-                return $this->viewResult( null, $Module->redirectTo( $Module->functionURI( 'edit' ) . '/' . $roleID . '/' ) );
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
             }
-
-            // Replace the real edited policy with the temporary one
-            $policy->saveTemporary();
             $db->commit();
 
             /* Clean up policy cache */
@@ -311,34 +351,44 @@ class Policyedit extends \Exponential\Runnable\ModuleView
         {
             $db = \eZDB::instance();
             $db->begin();
-            $limitationList = \eZPolicyLimitation::fetchByPolicyID( $policyID );
-
-            // Remove other limitations. When the policy is applied to node, no other constraints needed.
-            // Removes limitations only from a DropList if it is specified in the module.
-            if ( isset( $currentFunctionLimitations['Node']['DropList'] ) )
+            try
             {
-                $dropList = $currentFunctionLimitations['Node']['DropList'];
-                foreach ( $limitationList as $limitation )
+                $limitationList = \eZPolicyLimitation::fetchByPolicyID( $policyID );
+
+                // Remove other limitations. When the policy is applied to node, no other constraints needed.
+                // Removes limitations only from a DropList if it is specified in the module.
+                if ( isset( $currentFunctionLimitations['Node']['DropList'] ) )
                 {
-                    $limitationID = $limitation->attribute( 'id' );
-                    $limitationIdentifier = $limitation->attribute( 'identifier' );
-                    if ( in_array( $limitationIdentifier, $dropList ) )
+                    $dropList = $currentFunctionLimitations['Node']['DropList'];
+                    foreach ( $limitationList as $limitation )
                     {
-                        \eZPolicyLimitation::removeByID( $limitationID );
+                        $limitationID = $limitation->attribute( 'id' );
+                        $limitationIdentifier = $limitation->attribute( 'identifier' );
+                        if ( in_array( $limitationIdentifier, $dropList ) )
+                        {
+                            \eZPolicyLimitation::removeByID( $limitationID );
+                        }
                     }
                 }
-            }
-            else
-            {
-                foreach ( $limitationList as $limitation )
+                else
                 {
-                    $limitationID = $limitation->attribute( 'id' );
-                    $limitationIdentifier = $limitation->attribute( 'identifier' );
-                    if ( $limitationIdentifier != 'Node' and $limitationIdentifier != 'Subtree' )
-                        \eZPolicyLimitation::removeByID( $limitationID );
+                    foreach ( $limitationList as $limitation )
+                    {
+                        $limitationID = $limitation->attribute( 'id' );
+                        $limitationIdentifier = $limitation->attribute( 'identifier' );
+                        if ( $limitationIdentifier != 'Node' and $limitationIdentifier != 'Subtree' )
+                            \eZPolicyLimitation::removeByID( $limitationID );
+                    }
                 }
-            }
 
+            }
+            catch ( \Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
             $db->commit();
 
             $selectedNodeIDList = $http->postVariable( 'SelectedNodeIDArray' );
@@ -364,18 +414,28 @@ class Policyedit extends \Exponential\Runnable\ModuleView
 
             $db = \eZDB::instance();
             $db->begin();
-            if ( $subtreeLimitation == null )
-                $subtreeLimitation = \eZPolicyLimitation::createNew( $policyID, 'Subtree' );
-
-            foreach ( $selectedSubtreeIDList as $nodeID )
+            try
             {
-                if ( !isset( $subtreeIDList ) or !in_array( $nodeID, $subtreeIDList ) )
+                if ( $subtreeLimitation == null )
+                    $subtreeLimitation = \eZPolicyLimitation::createNew( $policyID, 'Subtree' );
+
+                foreach ( $selectedSubtreeIDList as $nodeID )
                 {
-                    $subtree = \eZContentObjectTreeNode::fetch( $nodeID );
-                    $pathString = $subtree->attribute( 'path_string' );
-                    $policyLimitationValue = \eZPolicyLimitationValue::createNew( $subtreeLimitation->attribute( 'id' ),  $pathString );
-                    $subtreeList[] = $subtree;
+                    if ( !isset( $subtreeIDList ) or !in_array( $nodeID, $subtreeIDList ) )
+                    {
+                        $subtree = \eZContentObjectTreeNode::fetch( $nodeID );
+                        $pathString = $subtree->attribute( 'path_string' );
+                        $policyLimitationValue = \eZPolicyLimitationValue::createNew( $subtreeLimitation->attribute( 'id' ),  $pathString );
+                        $subtreeList[] = $subtree;
+                    }
                 }
+            }
+            catch ( \Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
             }
             $db->commit();
         }

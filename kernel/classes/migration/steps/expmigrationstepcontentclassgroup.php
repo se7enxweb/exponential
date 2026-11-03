@@ -140,11 +140,21 @@ class expMigrationStepContentClassGroup extends expMigrationStepStructureBase im
                 return self::result( array( "the class group \"$old\" has that name" ), self::values( $group ) + array( 'created' => false, 'changed' => false ) );
             $db = eZDB::instance();
             $db->begin();
-            $group->setAttribute( 'name', (string)$step['name'] );
-            $group->setAttribute( 'modified', time() );
-            $group->setAttribute( 'modifier_id', eZUser::currentUserID() );
-            $group->store();
-            eZContentClassClassGroup::update( null, (int)$group->attribute( 'id' ), (string)$step['name'] );
+            try
+            {
+                $group->setAttribute( 'name', (string)$step['name'] );
+                $group->setAttribute( 'modified', time() );
+                $group->setAttribute( 'modifier_id', eZUser::currentUserID() );
+                $group->store();
+                eZContentClassClassGroup::update( null, (int)$group->attribute( 'id' ), (string)$step['name'] );
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
             $db->commit();
             return self::result( array( "renamed the class group \"$old\" to \"" . $step['name'] . '"' ), self::values( $group ) + array( 'created' => false, 'changed' => true ) );
         }
@@ -182,7 +192,17 @@ class expMigrationStepContentClassGroup extends expMigrationStepStructureBase im
         $values = self::values( $group );
         $db = eZDB::instance();
         $db->begin();
-        eZContentClassGroup::removeSelected( $id );
+        try
+        {
+            eZContentClassGroup::removeSelected( $id );
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
         return self::result( array( 'deleted the class group "' . $values['name'] . "\" ($id)" ), $values + array( 'created' => false, 'changed' => true ) );
     }

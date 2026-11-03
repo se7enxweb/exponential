@@ -902,56 +902,66 @@ class eZLDAPUser extends eZUser
 
                 $db = eZDB::instance();
                 $db->begin();
-
-                // First check existing assignments, remove any that should not exist
-                $assignedNodesList = $contentObject->assignedNodes();
-                $existingParentNodeIDs = array();
-                foreach ( $assignedNodesList as $node )
+                try
                 {
-                    $parentNodeID = $node->attribute( 'parent_node_id' );
-                    if ( !in_array( $parentNodeID, $parentNodeIDs ) )
-                    {
-                        $node->removeThis();
-                        $objectIsChanged = true;
-                    }
-                    else
-                    {
-                        $existingParentNodeIDs[] = $parentNodeID;
-                    }
-                }
 
-                // Then check assignments that should exist, add them if they are missing
-                foreach( $parentNodeIDs as $parentNodeID )
+                    // First check existing assignments, remove any that should not exist
+                    $assignedNodesList = $contentObject->assignedNodes();
+                    $existingParentNodeIDs = array();
+                    foreach ( $assignedNodesList as $node )
+                    {
+                        $parentNodeID = $node->attribute( 'parent_node_id' );
+                        if ( !in_array( $parentNodeID, $parentNodeIDs ) )
+                        {
+                            $node->removeThis();
+                            $objectIsChanged = true;
+                        }
+                        else
+                        {
+                            $existingParentNodeIDs[] = $parentNodeID;
+                        }
+                    }
+
+                    // Then check assignments that should exist, add them if they are missing
+                    foreach( $parentNodeIDs as $parentNodeID )
+                    {
+                        if ( !in_array( $parentNodeID, $existingParentNodeIDs ) )
+                        {
+                            $newNode = $contentObject->addLocation( $parentNodeID, true );
+                            $newNode->updateSubTreePath();
+                            $newNode->setAttribute( 'contentobject_is_published', 1 );
+                            $newNode->sync();
+                            $existingParentNodeIDs[] = $parentNodeID;
+                            $objectIsChanged = true;
+                        }
+                    }
+
+                    // Then ensure that the main node is correct
+                    $currentMainParentNodeID = $contentObject->attribute( 'main_parent_node_id' );
+                    if ( $currentMainParentNodeID != $defaultUserPlacement )
+                    {
+                        $existingNode = eZContentObjectTreeNode::fetchNode( $contentObjectID, $defaultUserPlacement );
+                        if ( !is_object( $existingNode ) )
+                        {
+                            eZDebug::writeError( "Cannot find assigned node as $defaultUserPlacement's child.", __METHOD__ );
+                        }
+                        else
+                        {
+                            $existingNodeID = $existingNode->attribute( 'node_id' );
+                            $versionNum = $version->attribute( 'version' );
+                            eZContentObjectTreeNode::updateMainNodeID( $existingNodeID, $contentObjectID, $versionNum, $defaultUserPlacement );
+                            $objectIsChanged = true;
+                        }
+                    }
+
+                }
+                catch ( Throwable $e )
                 {
-                    if ( !in_array( $parentNodeID, $existingParentNodeIDs ) )
-                    {
-                        $newNode = $contentObject->addLocation( $parentNodeID, true );
-                        $newNode->updateSubTreePath();
-                        $newNode->setAttribute( 'contentobject_is_published', 1 );
-                        $newNode->sync();
-                        $existingParentNodeIDs[] = $parentNodeID;
-                        $objectIsChanged = true;
-                    }
+                    // nothing of a transaction that failed half way is committed by a later commit()
+                    if ( $db->transactionCounter() > 0 )
+                        $db->rollback();
+                    throw $e;
                 }
-
-                // Then ensure that the main node is correct
-                $currentMainParentNodeID = $contentObject->attribute( 'main_parent_node_id' );
-                if ( $currentMainParentNodeID != $defaultUserPlacement )
-                {
-                    $existingNode = eZContentObjectTreeNode::fetchNode( $contentObjectID, $defaultUserPlacement );
-                    if ( !is_object( $existingNode ) )
-                    {
-                        eZDebug::writeError( "Cannot find assigned node as $defaultUserPlacement's child.", __METHOD__ );
-                    }
-                    else
-                    {
-                        $existingNodeID = $existingNode->attribute( 'node_id' );
-                        $versionNum = $version->attribute( 'version' );
-                        eZContentObjectTreeNode::updateMainNodeID( $existingNodeID, $contentObjectID, $versionNum, $defaultUserPlacement );
-                        $objectIsChanged = true;
-                    }
-                }
-
                 $db->commit();
 
                 // Finally, clear object view cache if something was changed

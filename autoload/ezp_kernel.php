@@ -319,6 +319,7 @@ return array(
       'Exponential\\View\\Kernel\\Content\\Reverserelatedlist'       => 'kernel/private/classes/views/content/reverserelatedlist.php',
       'Exponential\\View\\Kernel\\Content\\Search'                   => 'kernel/private/classes/views/content/search.php',
       'Exponential\\View\\Kernel\\Content\\Sharedpreview'            => 'kernel/private/classes/views/content/sharedpreview.php',
+      'Exponential\\View\\Kernel\\Content\\SiteSuggest'              => 'kernel/private/classes/views/content/sitesuggest.php',
       'Exponential\\View\\Kernel\\Content\\Subitemsexport'           => 'kernel/private/classes/views/content/subitemsexport.php',
       'Exponential\\View\\Kernel\\Content\\Suggest'                  => 'kernel/private/classes/views/content/suggest.php',
       'Exponential\\View\\Kernel\\Content\\Tipafriend'               => 'kernel/private/classes/views/content/tipafriend.php',

@@ -333,7 +333,17 @@ if ( $storingAllowed && $hasObjectInput)
 
     $db = eZDB::instance();
     $db->begin();
-    $object->setName( $class->contentObjectName( $object, $version->attribute( 'version' ), $EditLanguage ), $version->attribute( 'version' ), $EditLanguage );
+    try
+    {
+        $object->setName( $class->contentObjectName( $object, $version->attribute( 'version' ), $EditLanguage ), $version->attribute( 'version' ), $EditLanguage );
+    }
+    catch ( Throwable $e )
+    {
+        // nothing of a transaction that failed half way is committed by a later commit()
+        if ( $db->transactionCounter() > 0 )
+            $db->rollback();
+        throw $e;
+    }
     $db->commit();
 }
 elseif ( $storingAllowed )
@@ -359,26 +369,36 @@ if ( $Module->isCurrentAction( 'Publish' ) )
     $assignments = $version->attribute( 'parent_nodes' );
     $db = eZDB::instance();
     $db->begin();
-    foreach ( array_keys( $assignments ) as $key )
+    try
     {
-        // Check that node assignment node exists.
-        if ( !$assignments[$key]->attribute( 'parent_node_obj' ) )
+        foreach ( array_keys( $assignments ) as $key )
         {
-            $validation[ 'placement' ][] = array( 'text' => ezpI18n::tr( 'kernel/content', 'A node in the node assignment list has been deleted.' ) );
-            $validation[ 'processed' ] = true;
-            $inputValidated = false;
-            $invalidNodeAssignmentList[] = $assignments[$key]->attribute( 'parent_node' );
-            $assignments[$key]->remove();
-            unset( $assignments[$key] );
-            eZDebugSetting::writeDebug( 'kernel-content-edit', "placement is not validated" );
-        }
+            // Check that node assignment node exists.
+            if ( !$assignments[$key]->attribute( 'parent_node_obj' ) )
+            {
+                $validation[ 'placement' ][] = array( 'text' => ezpI18n::tr( 'kernel/content', 'A node in the node assignment list has been deleted.' ) );
+                $validation[ 'processed' ] = true;
+                $inputValidated = false;
+                $invalidNodeAssignmentList[] = $assignments[$key]->attribute( 'parent_node' );
+                $assignments[$key]->remove();
+                unset( $assignments[$key] );
+                eZDebugSetting::writeDebug( 'kernel-content-edit', "placement is not validated" );
+            }
 
-        if ( isset( $assignments[$key] ) &&
-             $assignments[$key]->attribute( 'is_main' ) == 1 )
-        {
-            $mainFound = true;
-            break;
+            if ( isset( $assignments[$key] ) &&
+                 $assignments[$key]->attribute( 'is_main' ) == 1 )
+            {
+                $mainFound = true;
+                break;
+            }
         }
+    }
+    catch ( Throwable $e )
+    {
+        // nothing of a transaction that failed half way is committed by a later commit()
+        if ( $db->transactionCounter() > 0 )
+            $db->rollback();
+        throw $e;
     }
     $db->commit();
     if ( !$mainFound and count( $assignments ) > 0 )

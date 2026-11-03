@@ -194,6 +194,18 @@ $ViewList['suggest'] = array(
     'params' => array( ),
     'unordered_params' => array( 'text' => 'Text' ) );
 
+// The suggestions of a site's header search field as JSON (content/sitesuggest/(text)/<text>, the include
+// parts/front_search_suggest.tpl): content only, as far as the user may read it, never users, classes or the
+// administration's pages; rate-limited, an anonymous answer kept briefly and public (expSearchSuggest::siteSuggest()).
+// Settings: site.ini [SiteSearchSuggestSettings].
+$ViewList['sitesuggest'] = array(
+    'functions' => array( 'read' ),
+    'default_navigation_part' => 'ezcontentnavigationpart',
+    'ui_context' => 'ajax',
+    'script' => 'sitesuggest.php',
+    'params' => array( ),
+    'unordered_params' => array( 'text' => 'Text' ) );
+
 $ViewList['urlalias'] = array(
     'functions' => array( 'edit' ),
     'default_navigation_part' => 'ezcontentnavigationpart',

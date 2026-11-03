@@ -293,7 +293,17 @@ class expSecrets
             return false;
         $db = eZDB::instance();
         $db->begin();
-        $counts = self::reencryptAllWith( $next );
+        try
+        {
+            $counts = self::reencryptAllWith( $next );
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
         if ( !expSecretKey::commitRotation() )
             return false;

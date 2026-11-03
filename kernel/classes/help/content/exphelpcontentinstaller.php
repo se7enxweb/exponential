@@ -152,23 +152,33 @@ class expHelpContentInstaller
                 return;
             $db = eZDB::instance();
             $db->begin();
-            $class = eZContentClass::create( $this->userId, array(
-                'version' => eZContentClass::VERSION_STATUS_DEFINED,
-                'identifier' => $identifier,
-                'remote_id' => 'help-class-' . $identifier,
-                'contentobject_name' => $definition['name_pattern'],
-                'is_container' => $definition['container'] ? 1 : 0,
-                'always_available' => 0,
-                'name' => $definition['name'],
-                'description' => $definition['description'],
-            ), $this->language );
-            $class->store();
-            $placement = 0;
-            foreach ( $definition['attributes'] as $attributeIdentifier => $attribute )
-                $this->createAttribute( $class, $attributeIdentifier, $attribute, ++$placement, false );
-            if ( $group instanceof eZContentClassGroup )
-                eZContentClassClassGroup::create( $class->attribute( 'id' ), eZContentClass::VERSION_STATUS_DEFINED,
-                                                  $group->attribute( 'id' ), $group->attribute( 'name' ) )->store();
+            try
+            {
+                $class = eZContentClass::create( $this->userId, array(
+                    'version' => eZContentClass::VERSION_STATUS_DEFINED,
+                    'identifier' => $identifier,
+                    'remote_id' => 'help-class-' . $identifier,
+                    'contentobject_name' => $definition['name_pattern'],
+                    'is_container' => $definition['container'] ? 1 : 0,
+                    'always_available' => 0,
+                    'name' => $definition['name'],
+                    'description' => $definition['description'],
+                ), $this->language );
+                $class->store();
+                $placement = 0;
+                foreach ( $definition['attributes'] as $attributeIdentifier => $attribute )
+                    $this->createAttribute( $class, $attributeIdentifier, $attribute, ++$placement, false );
+                if ( $group instanceof eZContentClassGroup )
+                    eZContentClassClassGroup::create( $class->attribute( 'id' ), eZContentClass::VERSION_STATUS_DEFINED,
+                                                      $group->attribute( 'id' ), $group->attribute( 'name' ) )->store();
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
             $db->commit();
             return;
         }
@@ -189,7 +199,17 @@ class expHelpContentInstaller
                 {
                     $db = eZDB::instance();
                     $db->begin();
-                    $this->createAttribute( $class, $attributeIdentifier, $attribute, ++$placement, true );
+                    try
+                    {
+                        $this->createAttribute( $class, $attributeIdentifier, $attribute, ++$placement, true );
+                    }
+                    catch ( Throwable $e )
+                    {
+                        // nothing of a transaction that failed half way is committed by a later commit()
+                        if ( $db->transactionCounter() > 0 )
+                            $db->rollback();
+                        throw $e;
+                    }
                     $db->commit();
                 }
                 continue;
@@ -634,8 +654,18 @@ class expHelpContentInstaller
             return true;
         $db = eZDB::instance();
         $db->begin();
-        $object->setAttribute( 'section_id', $sectionId );
-        $object->store();
+        try
+        {
+            $object->setAttribute( 'section_id', $sectionId );
+            $object->store();
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
         if ( class_exists( 'eZSearch' ) && method_exists( 'eZSearch', 'updateObjectsSection' ) )
             eZSearch::updateObjectsSection( array( (int)$object->attribute( 'id' ) ), $sectionId );

@@ -31,35 +31,45 @@ function expModuleViewShopVatTypeApplyChanges( $module, $http, $vatTypeArray = f
 
     $db = eZDB::instance();
     $db->begin();
-    foreach ( $vatTypeArray as $vatType )
+    try
     {
-        $id = $vatType->attribute( 'id' );
-
-        if ( $id == -1 ) // avoid storing changes to the "fake" dynamic VAT type
-            continue;
-
-        if ( $http->hasPostVariable( "vattype_name_" . $id ) )
+        foreach ( $vatTypeArray as $vatType )
         {
-            $name = $http->postVariable( "vattype_name_" . $id );
-        }
-        if ( $http->hasPostVariable( "vattype_percentage_" . $id ) )
-        {
-            $percentage = $http->postVariable( "vattype_percentage_" . $id );
-        }
+            $id = $vatType->attribute( 'id' );
 
-        if ( !$name || $percentage < 0 || $percentage > 100 )
-        {
-            if ( !$name )
-                $errors[] = ezpI18n::tr( 'kernel/shop/vattype', 'Empty VAT type names are not allowed (corrected).' );
-            else
-                $errors[] = ezpI18n::tr( 'kernel/shop/vattype', 'Wrong VAT percentage (corrected).' );
+            if ( $id == -1 ) // avoid storing changes to the "fake" dynamic VAT type
+                continue;
 
-            continue;
+            if ( $http->hasPostVariable( "vattype_name_" . $id ) )
+            {
+                $name = $http->postVariable( "vattype_name_" . $id );
+            }
+            if ( $http->hasPostVariable( "vattype_percentage_" . $id ) )
+            {
+                $percentage = $http->postVariable( "vattype_percentage_" . $id );
+            }
+
+            if ( !$name || $percentage < 0 || $percentage > 100 )
+            {
+                if ( !$name )
+                    $errors[] = ezpI18n::tr( 'kernel/shop/vattype', 'Empty VAT type names are not allowed (corrected).' );
+                else
+                    $errors[] = ezpI18n::tr( 'kernel/shop/vattype', 'Wrong VAT percentage (corrected).' );
+
+                continue;
+            }
+
+            $vatType->setAttribute( 'name', $name );
+            $vatType->setAttribute( 'percentage', $percentage );
+            $vatType->store();
         }
-
-        $vatType->setAttribute( 'name', $name );
-        $vatType->setAttribute( 'percentage', $percentage );
-        $vatType->store();
+    }
+    catch ( \Throwable $e )
+    {
+        // nothing of a transaction that failed half way is committed by a later commit()
+        if ( $db->transactionCounter() > 0 )
+            $db->rollback();
+        throw $e;
     }
     $db->commit();
 
@@ -242,13 +252,23 @@ class Vattype extends \Exponential\Runnable\ModuleView
 
             $db = \eZDB::instance();
             $db->begin();
-            foreach ( $vatIDsToRemove as $vatID )
+            try
             {
-                $vatType = \eZVatType::fetch( $vatID );
-                if ( is_object( $vatType ) )
+                foreach ( $vatIDsToRemove as $vatID )
                 {
-                    $vatType->removeThis();
+                    $vatType = \eZVatType::fetch( $vatID );
+                    if ( is_object( $vatType ) )
+                    {
+                        $vatType->removeThis();
+                    }
                 }
+            }
+            catch ( \Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
             }
             $db->commit();
         }

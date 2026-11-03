@@ -367,19 +367,29 @@ class expMigrationStepLocation extends expMigrationStepContentBase implements ex
         $parent = self::node( $parentId );
         $db = eZDB::instance();
         $db->begin();
-        $copy = $object->copy( false );
-        $copy->setAttribute( 'section_id', 0 );
-        $copy->store();
-        $version = $copy->attribute( 'current' );
-        foreach ( (array)$version->attribute( 'node_assignments' ) as $assignment )
-            $assignment->purge();
-        $assignment = eZNodeAssignment::create( array( 'contentobject_id' => $copy->attribute( 'id' ),
-                                                       'contentobject_version' => $copy->attribute( 'current_version' ),
-                                                       'parent_node' => (int)$parentId,
-                                                       'is_main' => 1,
-                                                       'sort_field' => $node->attribute( 'sort_field' ),
-                                                       'sort_order' => $node->attribute( 'sort_order' ) ) );
-        $assignment->store();
+        try
+        {
+            $copy = $object->copy( false );
+            $copy->setAttribute( 'section_id', 0 );
+            $copy->store();
+            $version = $copy->attribute( 'current' );
+            foreach ( (array)$version->attribute( 'node_assignments' ) as $assignment )
+                $assignment->purge();
+            $assignment = eZNodeAssignment::create( array( 'contentobject_id' => $copy->attribute( 'id' ),
+                                                           'contentobject_version' => $copy->attribute( 'current_version' ),
+                                                           'parent_node' => (int)$parentId,
+                                                           'is_main' => 1,
+                                                           'sort_field' => $node->attribute( 'sort_field' ),
+                                                           'sort_order' => $node->attribute( 'sort_order' ) ) );
+            $assignment->store();
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
         $copy = self::publish( $copy->attribute( 'id' ), $copy->attribute( 'current_version' ), $step );
         $newNode = $copy->attribute( 'main_node' );

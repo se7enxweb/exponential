@@ -59,9 +59,19 @@ class Discountgroup extends \Exponential\Runnable\ModuleView
 
             $db = \eZDB::instance();
             $db->begin();
-            foreach ( $discountRuleIDList  as $discountRuleID )
+            try
             {
-                \eZDiscountRule::removeByID( $discountRuleID );
+                foreach ( $discountRuleIDList  as $discountRuleID )
+                {
+                    \eZDiscountRule::removeByID( $discountRuleID );
+                }
+            }
+            catch ( \Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
             }
             $db->commit();
 

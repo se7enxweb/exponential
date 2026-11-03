@@ -123,8 +123,18 @@ class eZMultiPriceData extends eZPersistentObject
     {
         $db = eZDB::instance();
         $db->begin();
-        eZPersistentObject::removeObject( eZMultiPriceData::definition(),
-                                          array( 'id' => $id ) );
+        try
+        {
+            eZPersistentObject::removeObject( eZMultiPriceData::definition(),
+                                              array( 'id' => $id ) );
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
     }
 
@@ -136,18 +146,28 @@ class eZMultiPriceData extends eZPersistentObject
     {
         $db = eZDB::instance();
         $db->begin();
-        if ( $objectAttributeVersion == null )
+        try
         {
-            eZPersistentObject::removeObject( eZMultiPriceData::definition(),
-                                              array( 'contentobject_attr_id' => $objectAttributeID ) );
-        }
-        else
-        {
-            eZPersistentObject::removeObject( eZMultiPriceData::definition(),
-                                              array( 'contentobject_attr_id' => $objectAttributeID,
-                                                     'contentobject_attr_version' => $objectAttributeVersion ) );
-        }
+            if ( $objectAttributeVersion == null )
+            {
+                eZPersistentObject::removeObject( eZMultiPriceData::definition(),
+                                                  array( 'contentobject_attr_id' => $objectAttributeID ) );
+            }
+            else
+            {
+                eZPersistentObject::removeObject( eZMultiPriceData::definition(),
+                                                  array( 'contentobject_attr_id' => $objectAttributeID,
+                                                         'contentobject_attr_version' => $objectAttributeVersion ) );
+            }
 
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
     }
 
@@ -164,18 +184,28 @@ class eZMultiPriceData extends eZPersistentObject
 
         $fetchCount = self::FETCH_DATA_LIST_LIMIT;
         $db->begin();
-        while( $fetchCount === self::FETCH_DATA_LIST_LIMIT  )
+        try
         {
-            $dataList = eZMultiPriceData::fetchDataListWithoutPriceInCurrency( $currencyCode, $fetchCount );
-            $fetchCount = count( $dataList );
-
-            $currencyCode = $db->escapeString( $currencyCode );
-            foreach ( $dataList as $data )
+            while( $fetchCount === self::FETCH_DATA_LIST_LIMIT  )
             {
-                $sql = $insertSql . "
+                $dataList = eZMultiPriceData::fetchDataListWithoutPriceInCurrency( $currencyCode, $fetchCount );
+                $fetchCount = count( $dataList );
+
+                $currencyCode = $db->escapeString( $currencyCode );
+                foreach ( $dataList as $data )
+                {
+                    $sql = $insertSql . "
                                VALUES( {$data['contentobject_attr_id']}, {$data['contentobject_attr_version']}, '$currencyCode', " . self::VALUE_TYPE_AUTO . " )";
-                $db->query( $sql );
+                    $db->query( $sql );
+                }
             }
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
     }
@@ -229,9 +259,11 @@ class eZMultiPriceData extends eZPersistentObject
 
         $sql = '';
         $db->begin();
-        if ( $currentVersionOnly === true )
+        try
         {
-            $fetchSql = "SELECT ezmultipricedata.id
+            if ( $currentVersionOnly === true )
+            {
+                $fetchSql = "SELECT ezmultipricedata.id
                          FROM   ezmultipricedata, ezcontentobject, ezcontentobject_attribute
                          WHERE  ezmultipricedata.currency_code IN ( $currencyListStr )
                                 AND ezcontentobject_attribute.version = ezcontentobject.current_version
@@ -239,31 +271,39 @@ class eZMultiPriceData extends eZPersistentObject
                                 AND ezmultipricedata.contentobject_attr_version = ezcontentobject_attribute.version
                                 AND ezmultipricedata.contentobject_attr_id = ezcontentobject_attribute.id";
 
-            $fetchCount = self::FETCH_DATA_LIST_LIMIT;
-            while( $fetchCount === self::FETCH_DATA_LIST_LIMIT  )
-            {
-                $dataList = $db->arrayQuery( $fetchSql, array( 'limit' => $fetchCount ) );
-                $fetchCount = count( $dataList );
-
-                if ( $fetchCount > 0 )
+                $fetchCount = self::FETCH_DATA_LIST_LIMIT;
+                while( $fetchCount === self::FETCH_DATA_LIST_LIMIT  )
                 {
-                    $idListStr = '';
-                    foreach ( $dataList as $data )
+                    $dataList = $db->arrayQuery( $fetchSql, array( 'limit' => $fetchCount ) );
+                    $fetchCount = count( $dataList );
+
+                    if ( $fetchCount > 0 )
                     {
-                        $idListStr .= $db->escapeString( $data['id'] ). ',';
+                        $idListStr = '';
+                        foreach ( $dataList as $data )
+                        {
+                            $idListStr .= $db->escapeString( $data['id'] ). ',';
+                        }
+
+                        $idListStr = rtrim( $idListStr, ',' );
+
+                        $sql = "DELETE FROM ezmultipricedata where id IN ( $idListStr )";
+                        $db->query( $sql );
                     }
-
-                    $idListStr = rtrim( $idListStr, ',' );
-
-                    $sql = "DELETE FROM ezmultipricedata where id IN ( $idListStr )";
-                    $db->query( $sql );
                 }
             }
+            else
+            {
+                $sql = "DELETE FROM ezmultipricedata where currency_code IN ( $currencyListStr )";
+                $db->query( $sql );
+            }
         }
-        else
+        catch ( Throwable $e )
         {
-            $sql = "DELETE FROM ezmultipricedata where currency_code IN ( $currencyListStr )";
-            $db->query( $sql );
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
     }
@@ -338,32 +378,42 @@ class eZMultiPriceData extends eZPersistentObject
 
             $db = eZDB::instance();
             $db->begin();
-            while( $fetchCount === self::FETCH_DATA_LIST_LIMIT  )
+            try
             {
-                $multipriceDataList = $db->arrayQuery( $sql, array( 'offset' => $fetchOffset, 'limit' => $fetchCount ) );
-                $fetchCount = count( $multipriceDataList );
-                $fetchOffset += $fetchCount;
-
-                foreach ( $multipriceDataList as $multipriceData )
+                while( $fetchCount === self::FETCH_DATA_LIST_LIMIT  )
                 {
-                    if ( $multipriceData['contentobject_attr_id'] != $objectAttributeID )
+                    $multipriceDataList = $db->arrayQuery( $sql, array( 'offset' => $fetchOffset, 'limit' => $fetchCount ) );
+                    $fetchCount = count( $multipriceDataList );
+                    $fetchOffset += $fetchCount;
+
+                    foreach ( $multipriceDataList as $multipriceData )
                     {
-                        // process next attribute.
-                        $objectAttributeID = $multipriceData['contentobject_attr_id'];
+                        if ( $multipriceData['contentobject_attr_id'] != $objectAttributeID )
+                        {
+                            // process next attribute.
+                            $objectAttributeID = $multipriceData['contentobject_attr_id'];
 
-                        // use value of the first custom price as base price.
-                        $fromCurrency = $multipriceData['currency_code'];
-                        $fromValue = $multipriceData['value'];
-                    }
+                            // use value of the first custom price as base price.
+                            $fromCurrency = $multipriceData['currency_code'];
+                            $fromValue = $multipriceData['value'];
+                        }
 
-                    if ( $multipriceData['type'] == self::VALUE_TYPE_AUTO )
-                    {
-                        $value = $converter->convert( $fromCurrency, $multipriceData['currency_code'], $fromValue );
+                        if ( $multipriceData['type'] == self::VALUE_TYPE_AUTO )
+                        {
+                            $value = $converter->convert( $fromCurrency, $multipriceData['currency_code'], $fromValue );
 
-                        $updateSql = "UPDATE ezmultipricedata SET value = '$value' WHERE id = {$multipriceData['id']}";
-                        $db->query( $updateSql );
+                            $updateSql = "UPDATE ezmultipricedata SET value = '$value' WHERE id = {$multipriceData['id']}";
+                            $db->query( $updateSql );
+                        }
                     }
                 }
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
             }
             $db->commit();
         }

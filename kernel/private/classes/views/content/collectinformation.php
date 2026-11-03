@@ -227,31 +227,41 @@ class Collectinformation extends \Exponential\Runnable\ModuleView
 
             $db = \eZDB::instance();
             $db->begin();
-
-            foreach ( array_keys( $contentObjectAttributes ) as $key )
+            try
             {
-                $contentObjectAttribute = $contentObjectAttributes[$key];
-                $contentClassAttribute = $contentObjectAttribute->contentClassAttribute();
 
-                if ( $contentClassAttribute->attribute( 'is_information_collector' ) )
+                foreach ( array_keys( $contentObjectAttributes ) as $key )
                 {
-                    // Collect the information for the current attribute
-                    if ( $newCollection )
-                        $collectionAttribute = \eZInformationCollectionAttribute::create( $collection->attribute( 'id' ) );
-                    else
-                        $collectionAttribute = \eZInformationCollectionAttribute::fetchByObjectAttributeID( $collection->attribute( 'id' ), $contentObjectAttribute->attribute( 'id' ) );
-                    if ( $collectionAttribute and $contentObjectAttribute->collectInformation( $collection, $collectionAttribute, $http, "ContentObjectAttribute" ) )
+                    $contentObjectAttribute = $contentObjectAttributes[$key];
+                    $contentClassAttribute = $contentObjectAttribute->contentClassAttribute();
+
+                    if ( $contentClassAttribute->attribute( 'is_information_collector' ) )
                     {
-                        if ( $canCollect )
+                        // Collect the information for the current attribute
+                        if ( $newCollection )
+                            $collectionAttribute = \eZInformationCollectionAttribute::create( $collection->attribute( 'id' ) );
+                        else
+                            $collectionAttribute = \eZInformationCollectionAttribute::fetchByObjectAttributeID( $collection->attribute( 'id' ), $contentObjectAttribute->attribute( 'id' ) );
+                        if ( $collectionAttribute and $contentObjectAttribute->collectInformation( $collection, $collectionAttribute, $http, "ContentObjectAttribute" ) )
                         {
-                            $collectionAttribute->store();
+                            if ( $canCollect )
+                            {
+                                $collectionAttribute->store();
+                            }
                         }
+                        else
+                        {
+                        }
+                        $collectionAttributes[$contentObjectAttribute->attribute( 'id' )] = $collectionAttribute;
                     }
-                    else
-                    {
-                    }
-                    $collectionAttributes[$contentObjectAttribute->attribute( 'id' )] = $collectionAttribute;
                 }
+            }
+            catch ( \Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
             }
             $db->commit();
 

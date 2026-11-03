@@ -392,22 +392,32 @@ class expPDFExportInfo
         $files = array();
         $db = eZDB::instance();
         $db->begin();
-        foreach ( $ids as $id )
+        try
         {
-            foreach ( array( eZPDFExport::VERSION_DRAFT, eZPDFExport::VERSION_VALID ) as $version )
+            foreach ( $ids as $id )
             {
-                $export = eZPDFExport::fetch( $id, true, $version );
-                if ( !$export instanceof eZPDFExport )
-                    continue;
-                if ( $version === eZPDFExport::VERSION_VALID )
+                foreach ( array( eZPDFExport::VERSION_DRAFT, eZPDFExport::VERSION_VALID ) as $version )
                 {
-                    $names[] = (string)$export->attribute( 'title' );
-                    if ( (int)$export->attribute( 'status' ) === eZPDFExport::CREATE_ONCE
-                         && expPDFExportFile::remove( (string)$export->attribute( 'pdf_filename' ) ) )
-                        $files[] = (string)$export->attribute( 'pdf_filename' );
+                    $export = eZPDFExport::fetch( $id, true, $version );
+                    if ( !$export instanceof eZPDFExport )
+                        continue;
+                    if ( $version === eZPDFExport::VERSION_VALID )
+                    {
+                        $names[] = (string)$export->attribute( 'title' );
+                        if ( (int)$export->attribute( 'status' ) === eZPDFExport::CREATE_ONCE
+                             && expPDFExportFile::remove( (string)$export->attribute( 'pdf_filename' ) ) )
+                            $files[] = (string)$export->attribute( 'pdf_filename' );
+                    }
+                    $export->remove();
                 }
-                $export->remove();
             }
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
         return array( 'names' => $names, 'files' => $files );

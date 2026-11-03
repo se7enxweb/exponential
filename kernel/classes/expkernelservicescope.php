@@ -244,6 +244,11 @@ class expKernelServiceScope
         if ( self::hasWorker() )
         {
             $worker = self::worker();
+            // The worker store is kept from a request before (a persistent worker): a transaction that request left
+            // open (an exception between begin() and commit()) is rolled back, so this request's commits are not
+            // nested in it and never commit what it left half done. On PHP-FPM there is no store yet at this point.
+            if ( class_exists( 'eZDB' ) && method_exists( 'eZDB', 'rollbackOpenTransaction' ) )
+                eZDB::rollbackOpenTransaction();
             $worker->requests++;
             foreach ( $worker->resetHooks as $name => $hook )
             {

@@ -242,29 +242,49 @@ class expMigrationStepContent extends expMigrationStepContentBase implements exp
 
         $db = eZDB::instance();
         $db->begin();
-        $object = $class->instantiate( eZUser::currentUserID(), $sectionId, false, $main );
-        if ( isset( $step['remote_id'] ) && (string)$step['remote_id'] !== '' )
-            $object->setAttribute( 'remote_id', (string)$step['remote_id'] );
-        $object->store();
-        $assignment = eZNodeAssignment::create( array( 'contentobject_id' => $object->attribute( 'id' ),
-                                                       'contentobject_version' => $object->attribute( 'current_version' ),
-                                                       'parent_node' => $parentId,
-                                                       'is_main' => 1,
-                                                       'sort_field' => $class->attribute( 'sort_field' ),
-                                                       'sort_order' => $class->attribute( 'sort_order' ) ) );
-        $assignment->store();
-        $version = $object->version( 1 );
-        $version->setAttribute( 'modified', time() );
-        $version->setAttribute( 'status', eZContentObjectVersion::STATUS_DRAFT );
-        $version->store();
-        self::writeFields( $version->contentObjectAttributes( $main ), $blocks[$main], "fields ($main)" );
+        try
+        {
+            $object = $class->instantiate( eZUser::currentUserID(), $sectionId, false, $main );
+            if ( isset( $step['remote_id'] ) && (string)$step['remote_id'] !== '' )
+                $object->setAttribute( 'remote_id', (string)$step['remote_id'] );
+            $object->store();
+            $assignment = eZNodeAssignment::create( array( 'contentobject_id' => $object->attribute( 'id' ),
+                                                           'contentobject_version' => $object->attribute( 'current_version' ),
+                                                           'parent_node' => $parentId,
+                                                           'is_main' => 1,
+                                                           'sort_field' => $class->attribute( 'sort_field' ),
+                                                           'sort_order' => $class->attribute( 'sort_order' ) ) );
+            $assignment->store();
+            $version = $object->version( 1 );
+            $version->setAttribute( 'modified', time() );
+            $version->setAttribute( 'status', eZContentObjectVersion::STATUS_DRAFT );
+            $version->store();
+            self::writeFields( $version->contentObjectAttributes( $main ), $blocks[$main], "fields ($main)" );
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
 
         $object = self::publish( $object->attribute( 'id' ), 1, $step );
         if ( isset( $step['always_available'] ) )
         {
             $db->begin();
-            $object->setAlwaysAvailableLanguageID( $step['always_available'] ? (int)$object->attribute( 'initial_language_id' ) : false );
+            try
+            {
+                $object->setAlwaysAvailableLanguageID( $step['always_available'] ? (int)$object->attribute( 'initial_language_id' ) : false );
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
             $db->commit();
             eZContentObject::clearCache( array( (int)$object->attribute( 'id' ) ) );
             $object = eZContentObject::fetch( (int)$object->attribute( 'id' ) );
@@ -341,15 +361,25 @@ class expMigrationStepContent extends expMigrationStepContentBase implements exp
         $from = $has ? false : $object->initialLanguageCode();
         $db = eZDB::instance();
         $db->begin();
-        $version = $object->createNewVersionIn( $language, $from );
-        if ( !$version instanceof eZContentObjectVersion )
+        try
         {
-            $db->rollback();
-            throw new RuntimeException( 'no new version of the object ' . $object->attribute( 'id' ) . " in $language could be made" );
+            $version = $object->createNewVersionIn( $language, $from );
+            if ( !$version instanceof eZContentObjectVersion )
+            {
+                $db->rollback();
+                throw new RuntimeException( 'no new version of the object ' . $object->attribute( 'id' ) . " in $language could be made" );
+            }
+            $version->setAttribute( 'modified', time() );
+            $version->store();
+            self::writeFields( $version->contentObjectAttributes( $language ), $fields, "fields ($language)" );
         }
-        $version->setAttribute( 'modified', time() );
-        $version->store();
-        self::writeFields( $version->contentObjectAttributes( $language ), $fields, "fields ($language)" );
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
         return self::publish( $object->attribute( 'id' ), $version->attribute( 'version' ), $step );
     }
@@ -367,12 +397,22 @@ class expMigrationStepContent extends expMigrationStepContentBase implements exp
         $version = $object->version( $versionNumber );
         $db = eZDB::instance();
         $db->begin();
-        self::writeFields( $version->contentObjectAttributes( $language ), $fields, "fields ($language)" );
-        $version->resetDataMap();
-        $object->resetDataMap();
-        $class = $object->contentClass();
-        $object->setName( $class->contentObjectName( $object, $versionNumber, $language ), $versionNumber, $language );
-        $object->store();
+        try
+        {
+            self::writeFields( $version->contentObjectAttributes( $language ), $fields, "fields ($language)" );
+            $version->resetDataMap();
+            $object->resetDataMap();
+            $class = $object->contentClass();
+            $object->setName( $class->contentObjectName( $object, $versionNumber, $language ), $versionNumber, $language );
+            $object->store();
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
         eZContentCacheManager::clearContentCacheIfNeeded( (int)$object->attribute( 'id' ) );
         eZContentOperationCollection::registerSearchObject( (int)$object->attribute( 'id' ) );
@@ -426,7 +466,17 @@ class expMigrationStepContent extends expMigrationStepContentBase implements exp
         {
             $db = eZDB::instance();
             $db->begin();
-            $object->purge();
+            try
+            {
+                $object->purge();
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
             $db->commit();
         }
         // removing an account ends the sessions of that account (eZUser::removeSessionData()), which in a console run

@@ -174,14 +174,24 @@ class eZVatRule extends eZPersistentObject
         }
 
         $db->begin();
+        try
+        {
 
-        // Remove product categories associated with the rule (removeProductCategories() is an instance method;
-        // calling it statically is a fatal error since PHP 8).
-        $db->query( "DELETE FROM ezvatrule_product_category WHERE vatrule_id = " . (int)$id );
+            // Remove product categories associated with the rule (removeProductCategories() is an instance method;
+            // calling it statically is a fatal error since PHP 8).
+            $db->query( "DELETE FROM ezvatrule_product_category WHERE vatrule_id = " . (int)$id );
 
-        // Remove the rule itself.
-        eZPersistentObject::removeObject( eZVatRule::definition(), array( "id" => $id ) );
+            // Remove the rule itself.
+            eZPersistentObject::removeObject( eZVatRule::definition(), array( "id" => $id ) );
 
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
     }
 
@@ -189,28 +199,38 @@ class eZVatRule extends eZPersistentObject
     {
         $db = eZDB::instance();
         $db->begin();
-
-        // Store the rule itself (and record what changed: doc/eng-us/bc/6.0/audit.md, commerce.vat.change)
-        $auditBefore = class_exists( 'expAuditHook' ) ? expAuditHook::rowBefore( 'commerce.vat.change', $this ) : null;
-        parent::store( $fieldFilters );
-        if ( $auditBefore !== null )
-            expAuditHook::rowChanged( 'commerce.vat.change', $this, $auditBefore, array( 'country_code', 'vat_type' ),
-                                      array( 'type' => 'vat_rule', 'id' => (int)$this->attribute( 'id' ) ) );
-
-        // Store product categories associated with the rule,
-        $this->removeProductCategories();
-        $categories = $this->attribute( 'product_categories' );
-        if ( $categories )
+        try
         {
-            foreach ( $categories as $category )
-            {
-                $query = sprintf( "INSERT INTO ezvatrule_product_category " .
-                                  "(vatrule_id, product_category_id) VALUES (%d,%d)" ,
-                                  $this->ID, $category['id'] );
-                $db->query( $query );
-            }
-        }
 
+            // Store the rule itself (and record what changed: doc/eng-us/bc/6.0/audit.md, commerce.vat.change)
+            $auditBefore = class_exists( 'expAuditHook' ) ? expAuditHook::rowBefore( 'commerce.vat.change', $this ) : null;
+            parent::store( $fieldFilters );
+            if ( $auditBefore !== null )
+                expAuditHook::rowChanged( 'commerce.vat.change', $this, $auditBefore, array( 'country_code', 'vat_type' ),
+                                          array( 'type' => 'vat_rule', 'id' => (int)$this->attribute( 'id' ) ) );
+
+            // Store product categories associated with the rule,
+            $this->removeProductCategories();
+            $categories = $this->attribute( 'product_categories' );
+            if ( $categories )
+            {
+                foreach ( $categories as $category )
+                {
+                    $query = sprintf( "INSERT INTO ezvatrule_product_category " .
+                                      "(vatrule_id, product_category_id) VALUES (%d,%d)" ,
+                                      $this->ID, $category['id'] );
+                    $db->query( $query );
+                }
+            }
+
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
     }
 

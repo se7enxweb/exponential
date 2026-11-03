@@ -173,67 +173,14 @@ class eZCollaborationItemHandler
 
         $db = eZDB::instance();
         $db->begin();
-        if ( $collectionHandling == self::NOTIFICATION_COLLECTION_ONE_FOR_ALL )
+        try
         {
-            $tpl = eZTemplate::factory();
-            $tpl->resetVariables();
-            $tpl->setVariable( 'collaboration_item', $item );
-            $result = $tpl->fetch( 'design:notification/handler/ezcollaboration/view/plain.tpl' );
-            $subject = $tpl->variable( 'subject' );
-            if ( $tpl->hasVariable( 'message_id' ) )
-                $parameters['message_id'] = $tpl->variable( 'message_id' );
-            if ( $tpl->hasVariable( 'references' ) )
-                $parameters['references'] = $tpl->variable( 'references' );
-            if ( $tpl->hasVariable( 'reply_to' ) )
-                $parameters['reply_to'] = $tpl->variable( 'reply_to' );
-            if ( $tpl->hasVariable( 'from' ) )
-                $parameters['from'] = $tpl->variable( 'from' );
-            if ( $tpl->hasVariable( 'content_type' ) )
-                $parameters['content_type'] = $tpl->variable( 'content_type' );
-
-            $collection = eZNotificationCollection::create( $event->attribute( 'id' ),
-                                                            eZCollaborationNotificationHandler::NOTIFICATION_HANDLER_ID,
-                                                            eZCollaborationNotificationHandler::TRANSPORT );
-
-            $collection->setAttribute( 'data_subject', $subject );
-            $collection->setAttribute( 'data_text', $result );
-            $collection->store();
-
-            foreach( $userList as $subscriber )
+            if ( $collectionHandling == self::NOTIFICATION_COLLECTION_ONE_FOR_ALL )
             {
-                $collectionItem = $collection->addItem( $subscriber['email'] );
-                self::scheduleForPreference( $collectionItem, $subscriber['contentobject_id'] );
-            }
-        }
-        else if ( $collectionHandling == self::NOTIFICATION_COLLECTION_PER_PARTICIPATION_ROLE )
-        {
-            $userCollection = array();
-            foreach( $userList as $subscriber )
-            {
-                $contentObjectID = $subscriber['contentobject_id'];
-                $participant = $participantMap[$contentObjectID];
-                $participantRole = $participant['participant_role'];
-                $userItem = array( 'participant' => $participant,
-                                   'email' => $subscriber['email'],
-                                   'user_id' => $contentObjectID );
-                if ( !isset( $userCollection[$participantRole] ) )
-                    $userCollection[$participantRole] = array();
-                $userCollection[$participantRole][] = $userItem;
-            }
-
-            $tpl = eZTemplate::factory();
-            $tpl->resetVariables();
-            foreach( $userCollection as $participantRole => $collectionItems )
-            {
-                $templateName = $itemHandler->notificationParticipantTemplate( $participantRole );
-                if ( !$templateName )
-                    $templateName = 'participant.tpl';
-
-                $itemInfo = $itemHandler->attribute( 'info' );
-                $typeIdentifier = $itemInfo['type-identifier'];
+                $tpl = eZTemplate::factory();
+                $tpl->resetVariables();
                 $tpl->setVariable( 'collaboration_item', $item );
-                $tpl->setVariable( 'collaboration_participant_role', $participantRole );
-                $result = $tpl->fetch( 'design:notification/handler/ezcollaboration/view/' . $typeIdentifier . '/' . $templateName );
+                $result = $tpl->fetch( 'design:notification/handler/ezcollaboration/view/plain.tpl' );
                 $subject = $tpl->variable( 'subject' );
                 if ( $tpl->hasVariable( 'message_id' ) )
                     $parameters['message_id'] = $tpl->variable( 'message_id' );
@@ -253,19 +200,82 @@ class eZCollaborationItemHandler
                 $collection->setAttribute( 'data_subject', $subject );
                 $collection->setAttribute( 'data_text', $result );
                 $collection->store();
-                foreach ( $collectionItems as $collectionItem )
+
+                foreach( $userList as $subscriber )
                 {
-                    $added = $collection->addItem( $collectionItem['email'] );
-                    self::scheduleForPreference( $added, $collectionItem['user_id'] );
+                    $collectionItem = $collection->addItem( $subscriber['email'] );
+                    self::scheduleForPreference( $collectionItem, $subscriber['contentobject_id'] );
                 }
             }
+            else if ( $collectionHandling == self::NOTIFICATION_COLLECTION_PER_PARTICIPATION_ROLE )
+            {
+                $userCollection = array();
+                foreach( $userList as $subscriber )
+                {
+                    $contentObjectID = $subscriber['contentobject_id'];
+                    $participant = $participantMap[$contentObjectID];
+                    $participantRole = $participant['participant_role'];
+                    $userItem = array( 'participant' => $participant,
+                                       'email' => $subscriber['email'],
+                                       'user_id' => $contentObjectID );
+                    if ( !isset( $userCollection[$participantRole] ) )
+                        $userCollection[$participantRole] = array();
+                    $userCollection[$participantRole][] = $userItem;
+                }
+
+                $tpl = eZTemplate::factory();
+                $tpl->resetVariables();
+                foreach( $userCollection as $participantRole => $collectionItems )
+                {
+                    $templateName = $itemHandler->notificationParticipantTemplate( $participantRole );
+                    if ( !$templateName )
+                        $templateName = 'participant.tpl';
+
+                    $itemInfo = $itemHandler->attribute( 'info' );
+                    $typeIdentifier = $itemInfo['type-identifier'];
+                    $tpl->setVariable( 'collaboration_item', $item );
+                    $tpl->setVariable( 'collaboration_participant_role', $participantRole );
+                    $result = $tpl->fetch( 'design:notification/handler/ezcollaboration/view/' . $typeIdentifier . '/' . $templateName );
+                    $subject = $tpl->variable( 'subject' );
+                    if ( $tpl->hasVariable( 'message_id' ) )
+                        $parameters['message_id'] = $tpl->variable( 'message_id' );
+                    if ( $tpl->hasVariable( 'references' ) )
+                        $parameters['references'] = $tpl->variable( 'references' );
+                    if ( $tpl->hasVariable( 'reply_to' ) )
+                        $parameters['reply_to'] = $tpl->variable( 'reply_to' );
+                    if ( $tpl->hasVariable( 'from' ) )
+                        $parameters['from'] = $tpl->variable( 'from' );
+                    if ( $tpl->hasVariable( 'content_type' ) )
+                        $parameters['content_type'] = $tpl->variable( 'content_type' );
+
+                    $collection = eZNotificationCollection::create( $event->attribute( 'id' ),
+                                                                    eZCollaborationNotificationHandler::NOTIFICATION_HANDLER_ID,
+                                                                    eZCollaborationNotificationHandler::TRANSPORT );
+
+                    $collection->setAttribute( 'data_subject', $subject );
+                    $collection->setAttribute( 'data_text', $result );
+                    $collection->store();
+                    foreach ( $collectionItems as $collectionItem )
+                    {
+                        $added = $collection->addItem( $collectionItem['email'] );
+                        self::scheduleForPreference( $added, $collectionItem['user_id'] );
+                    }
+                }
+            }
+            else if ( $collectionHandling == self::NOTIFICATION_COLLECTION_PER_USER )
+            {
+            }
+            else
+            {
+                eZDebug::writeError( "Unknown collaboration notification collection handling type '$collectionHandling', skipping notification", __METHOD__ );
+            }
         }
-        else if ( $collectionHandling == self::NOTIFICATION_COLLECTION_PER_USER )
+        catch ( Throwable $e )
         {
-        }
-        else
-        {
-            eZDebug::writeError( "Unknown collaboration notification collection handling type '$collectionHandling', skipping notification", __METHOD__ );
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
 

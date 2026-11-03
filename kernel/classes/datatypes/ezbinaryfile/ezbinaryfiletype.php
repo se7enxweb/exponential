@@ -484,31 +484,41 @@ class eZBinaryFileType extends eZDataType
 
         $db = eZDB::instance();
         $db->begin();
-
-        if ( !$httpFile->store( "original", $suffix, false ) )
+        try
         {
-            $result['errors'][] = array( 'description' => ezpI18n::tr( 'kernel/classes/datatypes/ezbinaryfile',
-                                                        'Failed to store file %filename. Please contact the site administrator.', null,
-                                                        array( '%filename' => $httpFile->attribute( "original_filename" ) ) ) );
-            return false;
+
+            if ( !$httpFile->store( "original", $suffix, false ) )
+            {
+                $result['errors'][] = array( 'description' => ezpI18n::tr( 'kernel/classes/datatypes/ezbinaryfile',
+                                                            'Failed to store file %filename. Please contact the site administrator.', null,
+                                                            array( '%filename' => $httpFile->attribute( "original_filename" ) ) ) );
+                return false;
+            }
+
+
+            $filePath = $binary->attribute( 'filename' );
+
+            $binary->setAttribute( "contentobject_attribute_id", $attributeID );
+            $binary->setAttribute( "version", $objectVersion );
+            $binary->setAttribute( "filename", basename( $httpFile->attribute( "filename" ) ) );
+            $binary->setAttribute( "original_filename", $httpFile->attribute( "original_filename" ) );
+            $binary->setAttribute( "mime_type", $mimeData['name'] );
+
+            $binary->store();
+
+            $filePath = $httpFile->attribute( 'filename' );
+            $fileHandler = eZClusterFileHandler::instance();
+            $fileHandler->fileStore( $filePath, 'binaryfile', true, $mimeData['name'] );
+            $objectAttribute->setContent( $binary );
+
         }
-
-
-        $filePath = $binary->attribute( 'filename' );
-
-        $binary->setAttribute( "contentobject_attribute_id", $attributeID );
-        $binary->setAttribute( "version", $objectVersion );
-        $binary->setAttribute( "filename", basename( $httpFile->attribute( "filename" ) ) );
-        $binary->setAttribute( "original_filename", $httpFile->attribute( "original_filename" ) );
-        $binary->setAttribute( "mime_type", $mimeData['name'] );
-
-        $binary->store();
-
-        $filePath = $httpFile->attribute( 'filename' );
-        $fileHandler = eZClusterFileHandler::instance();
-        $fileHandler->fileStore( $filePath, 'binaryfile', true, $mimeData['name'] );
-        $objectAttribute->setContent( $binary );
-
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
         $db->commit();
 
         $objectAttribute->setContent( $binary );

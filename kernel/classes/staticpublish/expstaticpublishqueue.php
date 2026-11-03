@@ -78,26 +78,36 @@ class expStaticPublishQueue
             $now = $now === null ? time() : (int)$now;
             $marked = 0;
             $db->begin();
-            foreach ( $targets as $target )
+            try
             {
-                $have = array();
-                $rows = expKernelTableSchema::tryArrayQuery( $db, 'SELECT * FROM ' . expStaticStatus::PAGE_TABLE . " WHERE target = '" . $db->escapeString( $target ) . "'"
-                                                                . ' AND node_id IN ( ' . implode( ', ', $nodeIds ) . ' )' );
-                foreach ( (array)$rows as $row )
+                foreach ( $targets as $target )
                 {
-                    $row = expStaticStatus::normalize( array_change_key_case( (array)$row, CASE_LOWER ), expStaticStatus::PAGE_COLUMNS );
-                    $have[$row['node_id']] = true;
-                    $row['stale'] = $now;
-                    self::replace( $db, $row );
-                    $marked++;
-                }
-                foreach ( $nodeIds as $nodeId )
-                    if ( !isset( $have[$nodeId] ) )
+                    $have = array();
+                    $rows = expKernelTableSchema::tryArrayQuery( $db, 'SELECT * FROM ' . expStaticStatus::PAGE_TABLE . " WHERE target = '" . $db->escapeString( $target ) . "'"
+                                                                    . ' AND node_id IN ( ' . implode( ', ', $nodeIds ) . ' )' );
+                    foreach ( (array)$rows as $row )
                     {
-                        self::replace( $db, expStaticStatus::normalize( array( 'target' => $target, 'path' => self::QUEUE_PREFIX . $nodeId, 'node_id' => $nodeId,
-                                                                               'hash' => '', 'page_bytes' => 0, 'built_at' => 0, 'stale' => $now ), expStaticStatus::PAGE_COLUMNS ) );
+                        $row = expStaticStatus::normalize( array_change_key_case( (array)$row, CASE_LOWER ), expStaticStatus::PAGE_COLUMNS );
+                        $have[$row['node_id']] = true;
+                        $row['stale'] = $now;
+                        self::replace( $db, $row );
                         $marked++;
                     }
+                    foreach ( $nodeIds as $nodeId )
+                        if ( !isset( $have[$nodeId] ) )
+                        {
+                            self::replace( $db, expStaticStatus::normalize( array( 'target' => $target, 'path' => self::QUEUE_PREFIX . $nodeId, 'node_id' => $nodeId,
+                                                                                   'hash' => '', 'page_bytes' => 0, 'built_at' => 0, 'stale' => $now ), expStaticStatus::PAGE_COLUMNS ) );
+                            $marked++;
+                        }
+                }
+            }
+            catch ( Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
             }
             $db->commit();
             return $marked;
@@ -172,18 +182,28 @@ class expStaticPublishQueue
             return 0;
         $n = 0;
         $db->begin();
-        foreach ( self::stale( $db, $target ) as $path => $row )
+        try
         {
-            if ( $row['stale'] >= (int)$startedAt )
-                continue;
-            if ( strpos( (string)$path, self::QUEUE_PREFIX ) === 0 )
-                $db->query( 'DELETE FROM ' . expStaticStatus::PAGE_TABLE . " WHERE target = '" . $db->escapeString( (string)$target ) . "' AND path = '" . $db->escapeString( (string)$path ) . "'" );
-            else
+            foreach ( self::stale( $db, $target ) as $path => $row )
             {
-                $row['stale'] = 0;
-                self::replace( $db, $row );
+                if ( $row['stale'] >= (int)$startedAt )
+                    continue;
+                if ( strpos( (string)$path, self::QUEUE_PREFIX ) === 0 )
+                    $db->query( 'DELETE FROM ' . expStaticStatus::PAGE_TABLE . " WHERE target = '" . $db->escapeString( (string)$target ) . "' AND path = '" . $db->escapeString( (string)$path ) . "'" );
+                else
+                {
+                    $row['stale'] = 0;
+                    self::replace( $db, $row );
+                }
+                $n++;
             }
-            $n++;
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
         return $n;

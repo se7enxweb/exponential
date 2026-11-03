@@ -121,58 +121,68 @@ class Wishlist extends \Exponential\Runnable\ModuleView
 
                 $db = \eZDB::instance();
                 $db->begin();
-
-                $item->store();
-
-                //if ( $priceObj->attribute( 'is_vat_included' ) )
-                //{
-                //    $item->setAttribute( "is_vat_inc", '1' );
-                //}
-                //else
-                //{
-                //    $item->setAttribute( "is_vat_inc", '0' );
-                //}
-                //$item->setAttribute( "vat_value", $priceObj->attribute( 'vat_percent' ) );
-                //$item->setAttribute( "discount", $priceObj->attribute( 'discount_percent' ) );
-                $item->store();
-                //$priceWithoutOptions = $price;
-
-                $optionIDList = array();
-                foreach ( array_keys( $optionList ) as $key )
+                try
                 {
-                    $attributeID = $key;
-                    $optionString = $optionList[$key];
-                    if ( is_array( $optionString ) )
+
+                    $item->store();
+
+                    //if ( $priceObj->attribute( 'is_vat_included' ) )
+                    //{
+                    //    $item->setAttribute( "is_vat_inc", '1' );
+                    //}
+                    //else
+                    //{
+                    //    $item->setAttribute( "is_vat_inc", '0' );
+                    //}
+                    //$item->setAttribute( "vat_value", $priceObj->attribute( 'vat_percent' ) );
+                    //$item->setAttribute( "discount", $priceObj->attribute( 'discount_percent' ) );
+                    $item->store();
+                    //$priceWithoutOptions = $price;
+
+                    $optionIDList = array();
+                    foreach ( array_keys( $optionList ) as $key )
                     {
-                        foreach ( $optionString as $optionID )
+                        $attributeID = $key;
+                        $optionString = $optionList[$key];
+                        if ( is_array( $optionString ) )
+                        {
+                            foreach ( $optionString as $optionID )
+                            {
+                                $optionIDList[] = array( 'attribute_id' => $attributeID,
+                                                         'option_string' => $optionID );
+                            }
+                        }
+                        else
                         {
                             $optionIDList[] = array( 'attribute_id' => $attributeID,
-                                                     'option_string' => $optionID );
+                                                     'option_string' => $optionString );
                         }
                     }
-                    else
+
+                    foreach ( $optionIDList as $optionIDItem )
                     {
-                        $optionIDList[] = array( 'attribute_id' => $attributeID,
-                                                 'option_string' => $optionString );
+                        $attributeID = $optionIDItem['attribute_id'];
+                        $optionString = $optionIDItem['option_string'];
+
+                        $attribute = \eZContentObjectAttribute::fetch( $attributeID, $object->attribute( 'current_version' ) );
+                        $dataType = $attribute->dataType();
+                        $optionData = $dataType->productOptionInformation( $attribute, $optionString, $item );
+                        if ( $optionData )
+                        {
+                            $optionItem = \eZProductCollectionItemOption::create( $item->attribute( 'id' ), $optionData['id'], $optionData['name'],
+                            //                                                      $optionData['value'], $optionData['additional_price'], $attributeID );
+                                                                                  $optionData['value'], 0, $attributeID );
+                            $optionItem->store();
+                            //$price += $optionData['additional_price'];
+                        }
                     }
                 }
-
-                foreach ( $optionIDList as $optionIDItem )
+                catch ( \Throwable $e )
                 {
-                    $attributeID = $optionIDItem['attribute_id'];
-                    $optionString = $optionIDItem['option_string'];
-
-                    $attribute = \eZContentObjectAttribute::fetch( $attributeID, $object->attribute( 'current_version' ) );
-                    $dataType = $attribute->dataType();
-                    $optionData = $dataType->productOptionInformation( $attribute, $optionString, $item );
-                    if ( $optionData )
-                    {
-                        $optionItem = \eZProductCollectionItemOption::create( $item->attribute( 'id' ), $optionData['id'], $optionData['name'],
-                        //                                                      $optionData['value'], $optionData['additional_price'], $attributeID );
-                                                                              $optionData['value'], 0, $attributeID );
-                        $optionItem->store();
-                        //$price += $optionData['additional_price'];
-                    }
+                    // nothing of a transaction that failed half way is committed by a later commit()
+                    if ( $db->transactionCounter() > 0 )
+                        $db->rollback();
+                    throw $e;
                 }
                 $db->commit();
 
@@ -195,9 +205,19 @@ class Wishlist extends \Exponential\Runnable\ModuleView
 
             $db = \eZDB::instance();
             $db->begin();
-            foreach ( $itemList as $item )
+            try
             {
-                $wishList->removeItem( $item );
+                foreach ( $itemList as $item )
+                {
+                    $wishList->removeItem( $item );
+                }
+            }
+            catch ( \Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
             }
             $db->commit();
             $module->redirectTo( $module->functionURI( "wishlist" ) . "/" );
@@ -227,14 +247,24 @@ class Wishlist extends \Exponential\Runnable\ModuleView
                 }
                 $db = \eZDB::instance();
                 $db->begin();
-                foreach ( $collectionItems as $item )
+                try
                 {
-                    $itemID = $item->attribute( 'id' );
-                    if ( isset( $productItemsCount[$itemID] ) )
+                    foreach ( $collectionItems as $item )
                     {
-                        $item->setAttribute( 'item_count', $productItemsCount[$itemID] );
-                        $item->store();
+                        $itemID = $item->attribute( 'id' );
+                        if ( isset( $productItemsCount[$itemID] ) )
+                        {
+                            $item->setAttribute( 'item_count', $productItemsCount[$itemID] );
+                            $item->store();
+                        }
                     }
+                }
+                catch ( \Throwable $e )
+                {
+                    // nothing of a transaction that failed half way is committed by a later commit()
+                    if ( $db->transactionCounter() > 0 )
+                        $db->rollback();
+                    throw $e;
                 }
                 $db->commit();
                 $module->redirectTo( $module->functionURI( "wishlist" ) . "/" );

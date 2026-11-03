@@ -115,92 +115,102 @@ class Restore extends \Exponential\Runnable\ModuleView
 
             $db = \eZDB::instance();
             $db->begin();
-            $locationAdded = false;
-
-            $newLocationList    = array();
-            $failedLocationList = array();
-            foreach ( $selectedNodeIDArray as $selectedNodeID )
+            try
             {
-                $parentNode = \eZContentObjectTreeNode::fetch( $selectedNodeID );
-                $parentNodeObject = $parentNode->attribute( 'object' );
+                $locationAdded = false;
 
-                $canCreate = $parentNode->checkAccess( 'create', $class->attribute( 'id' ), $parentNodeObject->attribute( 'contentclass_id' ) ) == 1;
-
-                if ( $canCreate )
+                $newLocationList    = array();
+                $failedLocationList = array();
+                foreach ( $selectedNodeIDArray as $selectedNodeID )
                 {
-                    $newLocationList[] = array(
-                        'parent_node_id' => $selectedNodeID,
-                        'is_main' => !$locationAdded
-                    );
-                    $locationAdded = true;
-                }
-                else
-                {
-                    $failedLocationList[] = array( 'parent_node_id' => $selectedNodeID );
-                }
-            }
+                    $parentNode = \eZContentObjectTreeNode::fetch( $selectedNodeID );
+                    $parentNodeObject = $parentNode->attribute( 'object' );
 
-            // Check if we have failures
-            if ( count( $failedLocationList ) > 0 )
-            {
-                return $this->viewResult( isset( $Result ) ? $Result : null,  $module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel' ) );
-            }
+                    $canCreate = $parentNode->checkAccess( 'create', $class->attribute( 'id' ), $parentNodeObject->attribute( 'contentclass_id' ) ) == 1;
 
-            // Remove all existing assignments, only our new ones should be present.
-            foreach ( $version->attribute( 'node_assignments' ) as $assignment )
-            {
-                $assignment->purge();
-            }
-
-            // Add all new locations
-            foreach ( $newLocationList as $newLocation )
-            {
-                $version->assignToNode( $newLocation['parent_node_id'], $newLocation['is_main'] );
-            }
-
-            $object->setAttribute( 'status', \eZContentObject::STATUS_DRAFT );
-            $object->store();
-            $version->setAttribute( 'status', \eZContentObjectVersion::STATUS_DRAFT );
-            $version->store();
-
-            $object->restoreObjectAttributes();
-
-            $user = \eZUser::currentUser();
-            // the publish of a restore is the restore (audit: content.object.restore below), not a create or publish
-            $publish = function () use ( $objectID, $version ) {
-                return \eZOperationHandler::execute( 'content', 'publish', array( 'object_id' => $objectID,
-                                                                                  'version' => $version->attribute( 'version' ) ) );
-            };
-            $operationResult = class_exists( 'expAuditHook' )
-                ? \expAuditHook::muted( array( 'content.object.create', 'content.object.publish', 'content.object.translate' ), $publish )
-                : $publish();
-            if ( ( array_key_exists( 'status', $operationResult ) && $operationResult['status'] != \eZModuleOperationInfo::STATUS_CONTINUE ) )
-            {
-                switch( $operationResult['status'] )
-                {
-                    case \eZModuleOperationInfo::STATUS_HALTED:
-                    case \eZModuleOperationInfo::STATUS_CANCELLED:
+                    if ( $canCreate )
                     {
-                        $module->redirectToView( 'trash' );
+                        $newLocationList[] = array(
+                            'parent_node_id' => $selectedNodeID,
+                            'is_main' => !$locationAdded
+                        );
+                        $locationAdded = true;
+                    }
+                    else
+                    {
+                        $failedLocationList[] = array( 'parent_node_id' => $selectedNodeID );
                     }
                 }
-            }
-            $objectID = $object->attribute( 'id' );
-            $object = \eZContentObject::fetch( $objectID );
-            $mainNodeID = $object->attribute( 'main_node_id' );
 
-            \eZContentObjectTrashNode::purgeForObject( $objectID  );
-
-            if ( $locationAdded )
-            {
-                if ( $object->attribute( 'contentclass_id' ) == $userClassID )
+                // Check if we have failures
+                if ( count( $failedLocationList ) > 0 )
                 {
-                    \eZUser::purgeUserCacheByUserId( $object->attribute( 'id' ) );
+                    return $this->viewResult( isset( $Result ) ? $Result : null,  $module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel' ) );
                 }
+
+                // Remove all existing assignments, only our new ones should be present.
+                foreach ( $version->attribute( 'node_assignments' ) as $assignment )
+                {
+                    $assignment->purge();
+                }
+
+                // Add all new locations
+                foreach ( $newLocationList as $newLocation )
+                {
+                    $version->assignToNode( $newLocation['parent_node_id'], $newLocation['is_main'] );
+                }
+
+                $object->setAttribute( 'status', \eZContentObject::STATUS_DRAFT );
+                $object->store();
+                $version->setAttribute( 'status', \eZContentObjectVersion::STATUS_DRAFT );
+                $version->store();
+
+                $object->restoreObjectAttributes();
+
+                $user = \eZUser::currentUser();
+                // the publish of a restore is the restore (audit: content.object.restore below), not a create or publish
+                $publish = function () use ( $objectID, $version ) {
+                    return \eZOperationHandler::execute( 'content', 'publish', array( 'object_id' => $objectID,
+                                                                                      'version' => $version->attribute( 'version' ) ) );
+                };
+                $operationResult = class_exists( 'expAuditHook' )
+                    ? \expAuditHook::muted( array( 'content.object.create', 'content.object.publish', 'content.object.translate' ), $publish )
+                    : $publish();
+                if ( ( array_key_exists( 'status', $operationResult ) && $operationResult['status'] != \eZModuleOperationInfo::STATUS_CONTINUE ) )
+                {
+                    switch( $operationResult['status'] )
+                    {
+                        case \eZModuleOperationInfo::STATUS_HALTED:
+                        case \eZModuleOperationInfo::STATUS_CANCELLED:
+                        {
+                            $module->redirectToView( 'trash' );
+                        }
+                    }
+                }
+                $objectID = $object->attribute( 'id' );
+                $object = \eZContentObject::fetch( $objectID );
+                $mainNodeID = $object->attribute( 'main_node_id' );
+
+                \eZContentObjectTrashNode::purgeForObject( $objectID  );
+
+                if ( $locationAdded )
+                {
+                    if ( $object->attribute( 'contentclass_id' ) == $userClassID )
+                    {
+                        \eZUser::purgeUserCacheByUserId( $object->attribute( 'id' ) );
+                    }
+                }
+
+                \eZContentObject::fixReverseRelations( $objectID, 'restore', false );
+
             }
-
-            \eZContentObject::fixReverseRelations( $objectID, 'restore', false );
-
+            catch ( \Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
             $db->commit();
 
             // Audit (doc/eng-us/bc/6.0/audit.md, content.object.restore)

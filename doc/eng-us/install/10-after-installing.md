@@ -113,7 +113,7 @@ The rules live in `site.ini [SiteAccessSettings]`:
 | `URIMatchType`, `URIMatchElement` | `element`, `1` | With `uri`: the first path element names the siteaccess (`/admin/...`). |
 | `HostMatchType`, `HostMatchMapItems[]` | `map` | With `host`: a host name maps to a siteaccess, `HostMatchMapItems[]=www.example.com;site`. |
 | `RelatedSiteAccessList[]` | | Siteaccesses that share one database. |
-| `ForceVirtualHost` | `false` | `true` when the web server rewrites every address to `index.php`, which the shipped rules do. |
+| `ForceVirtualHost` | `false` | `true` when the web server rewrites every address to `index.php`, which the shipped rules and Velocity do. Every installation (setup wizard, kickstarter, `exp:install`, any site package) writes `true` to `settings/override/site.ini.append.php` when the server rewrites, so no generated link carries `/index.php`. Set it back to `false` only on a server without rewrite rules. |
 | `RemoveSiteAccessIfDefaultAccess` | `disabled` | `enabled` leaves the default siteaccess's name out of generated links. |
 | `RequireUserLogin` | `true` in `site.ini` | Overridden per siteaccess; a public site sets it to `false`. |
 

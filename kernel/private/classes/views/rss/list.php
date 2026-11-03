@@ -317,19 +317,29 @@ class ListView extends \Exponential\Runnable\ModuleView
         $names = array();
         $db = \eZDB::instance();
         $db->begin();
-        foreach ( $ids as $id )
+        try
         {
-            foreach ( array( \eZRSSExport::STATUS_VALID, \eZRSSExport::STATUS_DRAFT ) as $status )
+            foreach ( $ids as $id )
             {
-                $export = \eZRSSExport::fetch( $id, true, $status );
-                if ( $export )
+                foreach ( array( \eZRSSExport::STATUS_VALID, \eZRSSExport::STATUS_DRAFT ) as $status )
                 {
-                    if ( !in_array( (string)$export->attribute( 'title' ), $names, true ) )
-                        $names[] = (string)$export->attribute( 'title' );
-                    // removeThis() takes the sources and OPML lines of that status with it; remove() left them behind.
-                    $export->removeThis();
+                    $export = \eZRSSExport::fetch( $id, true, $status );
+                    if ( $export )
+                    {
+                        if ( !in_array( (string)$export->attribute( 'title' ), $names, true ) )
+                            $names[] = (string)$export->attribute( 'title' );
+                        // removeThis() takes the sources and OPML lines of that status with it; remove() left them behind.
+                        $export->removeThis();
+                    }
                 }
             }
+        }
+        catch ( \Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
         return $names;
@@ -346,18 +356,28 @@ class ListView extends \Exponential\Runnable\ModuleView
         $names = array();
         $db = \eZDB::instance();
         $db->begin();
-        foreach ( $ids as $id )
+        try
         {
-            foreach ( array( \eZRSSImport::STATUS_VALID, \eZRSSImport::STATUS_DRAFT ) as $status )
+            foreach ( $ids as $id )
             {
-                $import = \eZRSSImport::fetch( $id, true, $status );
-                if ( $import )
+                foreach ( array( \eZRSSImport::STATUS_VALID, \eZRSSImport::STATUS_DRAFT ) as $status )
                 {
-                    if ( !in_array( (string)$import->attribute( 'name' ), $names, true ) )
-                        $names[] = (string)$import->attribute( 'name' );
-                    $import->remove();
+                    $import = \eZRSSImport::fetch( $id, true, $status );
+                    if ( $import )
+                    {
+                        if ( !in_array( (string)$import->attribute( 'name' ), $names, true ) )
+                            $names[] = (string)$import->attribute( 'name' );
+                        $import->remove();
+                    }
                 }
             }
+        }
+        catch ( \Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
         return $names;

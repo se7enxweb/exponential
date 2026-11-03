@@ -147,16 +147,26 @@ class Draft extends \Exponential\Runnable\ModuleView
                 continue;
             }
             $db->begin();
-            $version = \eZContentObjectVersion::fetch( (int)$id );
-            if ( !$version instanceof \eZContentObjectVersion ||
-                 !\expContentDraftList::removable( array( 'creator_id' => $version->attribute( 'creator_id' ), 'status' => $version->attribute( 'status' ) ),
-                                                   $this->userID, $anonymousID ) )
+            try
             {
-                $db->commit();
-                $refused++;
-                continue;
+                $version = \eZContentObjectVersion::fetch( (int)$id );
+                if ( !$version instanceof \eZContentObjectVersion ||
+                     !\expContentDraftList::removable( array( 'creator_id' => $version->attribute( 'creator_id' ), 'status' => $version->attribute( 'status' ) ),
+                                                       $this->userID, $anonymousID ) )
+                {
+                    $db->commit();
+                    $refused++;
+                    continue;
+                }
+                $version->removeThis();
             }
-            $version->removeThis();
+            catch ( \Throwable $e )
+            {
+                // nothing of a transaction that failed half way is committed by a later commit()
+                if ( $db->transactionCounter() > 0 )
+                    $db->rollback();
+                throw $e;
+            }
             $db->commit();
             $removed++;
         }

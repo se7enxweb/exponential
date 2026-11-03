@@ -329,40 +329,50 @@ class expContentJobCopySubtree implements expContentJobType
 
         $db = eZDB::instance();
         $db->begin();
-        $newObject = $sourceObject->copy( $params['all_versions'] );
-        // the section is set again by updateSectionID() at publishing (0 = a new object)
-        $newObject->setAttribute( 'section_id', 0 );
-        $newObject->setAttribute( 'remote_id', $remoteID );
-        $newObject->store();
+        try
+        {
+            $newObject = $sourceObject->copy( $params['all_versions'] );
+            // the section is set again by updateSectionID() at publishing (0 = a new object)
+            $newObject->setAttribute( 'section_id', 0 );
+            $newObject->setAttribute( 'remote_id', $remoteID );
+            $newObject->store();
 
-        $curVersion = $newObject->attribute( 'current_version' );
-        $curVersionObject = $newObject->attribute( 'current' );
-        $assignmentsForRemoving = array();
-        $foundMainAssignment = false;
-        foreach ( $curVersionObject->attribute( 'node_assignments' ) as $assignment )
-        {
-            $parentNodeID = (int) $assignment->attribute( 'parent_node' );
-            if ( !$this->inSubtree( $parentNodeID, $isRoot ) || isset( $cp['black_nodes'][$parentNodeID] ) )
+            $curVersion = $newObject->attribute( 'current_version' );
+            $curVersionObject = $newObject->attribute( 'current' );
+            $assignmentsForRemoving = array();
+            $foundMainAssignment = false;
+            foreach ( $curVersionObject->attribute( 'node_assignments' ) as $assignment )
             {
-                $assignmentsForRemoving[] = $assignment->attribute( 'id' );
-                continue;
+                $parentNodeID = (int) $assignment->attribute( 'parent_node' );
+                if ( !$this->inSubtree( $parentNodeID, $isRoot ) || isset( $cp['black_nodes'][$parentNodeID] ) )
+                {
+                    $assignmentsForRemoving[] = $assignment->attribute( 'id' );
+                    continue;
+                }
+                if ( !isset( $this->nodeMap[$parentNodeID] ) )
+                    throw new expContentJobException( 'cannot publish the copy of object ' . $sourceObjectID . ': its parent ' . $parentNodeID . ' is not copied yet' );
+                if ( $assignment->attribute( 'is_main' ) )
+                    $foundMainAssignment = true;
+                $assignment->setAttribute( 'parent_node', $this->nodeMap[$parentNodeID] );
+                $assignment->store();
             }
-            if ( !isset( $this->nodeMap[$parentNodeID] ) )
-                throw new expContentJobException( 'cannot publish the copy of object ' . $sourceObjectID . ': its parent ' . $parentNodeID . ' is not copied yet' );
-            if ( $assignment->attribute( 'is_main' ) )
-                $foundMainAssignment = true;
-            $assignment->setAttribute( 'parent_node', $this->nodeMap[$parentNodeID] );
-            $assignment->store();
+            eZNodeAssignment::purgeByID( $assignmentsForRemoving );
+            if ( !$foundMainAssignment )
+            {
+                $assignments = $curVersionObject->attribute( 'node_assignments' );
+                if ( isset( $assignments[0] ) )
+                {
+                    $assignments[0]->setAttribute( 'is_main', 1 );
+                    $assignments[0]->store();
+                }
+            }
         }
-        eZNodeAssignment::purgeByID( $assignmentsForRemoving );
-        if ( !$foundMainAssignment )
+        catch ( Throwable $e )
         {
-            $assignments = $curVersionObject->attribute( 'node_assignments' );
-            if ( isset( $assignments[0] ) )
-            {
-                $assignments[0]->setAttribute( 'is_main', 1 );
-                $assignments[0]->store();
-            }
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
         }
         $db->commit();
 

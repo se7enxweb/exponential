@@ -169,18 +169,28 @@ class expUpgradeStepSqliteCompositeKeys extends expUpgradeBaseStep
         $db->begin();
         try
         {
-            foreach ( array_merge( array( $create,
-                                          "INSERT INTO $new ($quoted) SELECT $quoted FROM $table",
-                                          "DROP TABLE $table",
-                                          "ALTER TABLE $new RENAME TO $table" ), $indexSql ) as $sql )
+            try
             {
-                if ( $db->query( $sql ) === false )
-                    throw new RuntimeException( "$table: the statement failed: $sql" );
+                foreach ( array_merge( array( $create,
+                                              "INSERT INTO $new ($quoted) SELECT $quoted FROM $table",
+                                              "DROP TABLE $table",
+                                              "ALTER TABLE $new RENAME TO $table" ), $indexSql ) as $sql )
+                {
+                    if ( $db->query( $sql ) === false )
+                        throw new RuntimeException( "$table: the statement failed: $sql" );
+                }
+            }
+            catch ( Exception $e )
+            {
+                $db->rollback();
+                throw $e;
             }
         }
-        catch ( Exception $e )
+        catch ( Throwable $e )
         {
-            $db->rollback();
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
             throw $e;
         }
         $db->commit();
