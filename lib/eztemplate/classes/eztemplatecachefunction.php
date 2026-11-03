@@ -159,7 +159,10 @@ class eZTemplateCacheFunction
                                                                "}\n" .
                                                                "else\n" .
                                                                "{\n" .
-                                                               "    unset( \$contentData );" );
+                                                               "    unset( \$contentData );\n" .
+                                                               // A template that includes itself runs this block again in the same scope, which sets and
+                                                               // unsets the handler variable: the handler is kept on a stack until the block's text is stored.
+                                                               "    \$cacheBlockHandlerStack_{$codePlacementHash}[] = \$cacheHandler_{$codePlacementHash};" );
 
         $newNodes[] = eZTemplateNodeTool::createOutputVariableIncreaseNode( array( 'spacing' => 4 ) );
         $newNodes[] = eZTemplateNodeTool::createSpacingIncreaseNode( 4 );
@@ -168,12 +171,15 @@ class eZTemplateCacheFunction
         $newNodes[] = eZTemplateNodeTool::createAssignFromOutputVariableNode( 'cachedText', array( 'spacing' => 4 ) );
 
         $code =
+            "\$cacheHandler_{$codePlacementHash} = array_pop( \$cacheBlockHandlerStack_{$codePlacementHash} );\n" .
             "eZTemplateCacheBlock::store( \$cacheHandler_{$codePlacementHash}, \$cachedText );\n";
 
         $newNodes[] = eZTemplateNodeTool::createCodePieceNode( $code, array( 'spacing' => 4 ) );
         $newNodes[] = eZTemplateNodeTool::createOutputVariableDecreaseNode( array( 'spacing' => 4 ) );
         $newNodes[] = eZTemplateNodeTool::createWriteToOutputVariableNode( 'cachedText', array( 'spacing' => 4 ) );
-        $newNodes[] = eZTemplateNodeTool::createCodePieceNode( "    unset( \$cachedText, \$cacheHandler_{$codePlacementHash} );\n}\n" );
+        $newNodes[] = eZTemplateNodeTool::createCodePieceNode( "    unset( \$cachedText, \$cacheHandler_{$codePlacementHash} );\n" .
+                                                               "    if ( !\$cacheBlockHandlerStack_{$codePlacementHash} )\n" .
+                                                               "        unset( \$cacheBlockHandlerStack_{$codePlacementHash} );\n}\n" );
 
         return $newNodes;
     }
