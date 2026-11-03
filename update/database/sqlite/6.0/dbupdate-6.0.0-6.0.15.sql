@@ -51,6 +51,15 @@ ALTER TABLE ezprest_authcode ADD COLUMN code_challenge_method varchar(10) DEFAUL
 CREATE INDEX IF NOT EXISTS ezcontentobject_trash__ezcobj_trash_trashed_by ON ezcontentobject_trash ( trashed_by );
 
 --
+-- An index on ezcontentobject.modified: Dashboard > Recent content lists the
+-- objects by their modification date, a page at a time, and on a large
+-- database that read must be indexed. Created only when missing, under the
+-- name a new installation gives it.
+--
+
+CREATE INDEX IF NOT EXISTS idx_ezcontentobject_ezcontentobject_modified ON ezcontentobject ( modified );
+
+--
 -- The pdf export carries its own footer wording.
 --
 -- Every page of every export used to read "Exponential PDF export", because

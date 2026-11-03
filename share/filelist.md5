@@ -26317,8 +26317,8 @@ d9cc97fafd718a9c80d3ed94695d1fb8  kernel/sql/common/cleandata.sql
 b68f5306ae401ec3a8a2c007a3f2ed35  kernel/sql/mysql/cluster_db_schema.sql
 97ef2253452a05bf3e490680a0d385ce  kernel/sql/mysql/cluster_dfs_schema.sql
 fb2cd39e1b8a37668d9b45b51294da07  kernel/sql/mysql/cluster_schema.sql
-3c298e45b92daac542888793cc8cb39e  kernel/sql/mysql/kernel_schema.sql
-0a0ab1907bcb7f2d50ba1db9010b5a16  kernel/sql/postgresql/kernel_schema.sql
+e1e0c17a1095f6d17d8be90028735392  kernel/sql/mysql/kernel_schema.sql
+39fc6d9cb8e83a1a7eb9abe7b6b597a8  kernel/sql/postgresql/kernel_schema.sql
 67721f5188e529651254baaf73115a2d  kernel/sql/postgresql/sequence.sql.template
 24f4bdbc332642858d8c0a98a94541d5  kernel/sql/postgresql/setval.sql
 ad8668179a7c34590ea3182a2e6cb59e  kernel/sql/sqlite/cleandata.sql
@@ -28161,7 +28161,7 @@ ad3ef84f9d21cd4076b60e33034063b0  tests/bootstrap.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 1b7dcb4dde933b1ebf8f8f93f3df7d55  tests/suite.php
-c2adf93f028f79a5553d808b244384a3  tests/test-map.json
+5b5bd38e20abb6604b6e9ca05984f3e5  tests/test-map.json
 4f2af04e2bf61d9e7bfbba8181fc08c0  tests/tests/bin/CiWorkflowPullRequestTest.php
 b152194c06e5b05fb18f088d0afd219c  tests/tests/bin/ConsoleExtensionAliasTest.php
 cf640022325724fc8a061137bbc5045e  tests/tests/bin/CopyrightNoticeTest.php
@@ -29301,6 +29301,7 @@ e0b49892e7f4d252029d40910f93812e  tests/tests/kernel/classes/uiswitch/expUISwitc
 40df586f72acf6e2c43d2f5d5de6e622  tests/tests/kernel/classes/uiswitch/expUISwitchTest.php
 b5a5b0b8af07949159b580216b6c1078  tests/tests/kernel/classes/uiswitch/expUISwitchTestLanguageTest.php
 a46daadcacf40b3c72d11dfc374d7cb9  tests/tests/kernel/classes/updatesql/CheckDbFilesVersionListTest.php
+5453f0715c4d7a02c3dbb13cee68d794  tests/tests/kernel/classes/updatesql/KernelSchemaParityUpdateSqlTest.php
 10ce6e7354cbc69c6b1155e5c5e04f33  tests/tests/kernel/classes/updatesql/PasswordHashWideningUpdateSqlTest.php
 4d4cbda49aeaf6ab4b8574c76d2c5bad  tests/tests/kernel/classes/updatesql/SixZeroPathSchemaUpdateSqlTest.php
 ded10af0a07be9289ee8c915f595aa97  tests/tests/kernel/classes/updatesql/UpdateSqlStorageEngineTest.php
@@ -30169,7 +30170,7 @@ a61043bda3eb3efaf8eaffbf565f08a2  update/database/mysql/5.1/dbupdate-5.0.0-to-5.
 7321a019827e7ce24573ae8826624b81  update/database/mysql/5.4/dbupdate-5.3.0-to-5.4.0.sql
 7680457ef9ecafd8fe9a146626d2d8a5  update/database/mysql/5.4/dbupdate-cluster-5.3.0-to-5.4.0.sql
 43c32f318d8ec6354ab033b790353089  update/database/mysql/6.0/dbupdate-5.4.0-6.0.0.sql
-6aa8fb25bc10c74694bba958d3dbe346  update/database/mysql/6.0/dbupdate-6.0.0-6.0.15.sql
+008a477b949b41f951713296c9433c40  update/database/mysql/6.0/dbupdate-6.0.0-6.0.15.sql
 3806e9ec4c551f214c5e0f86f860b64f  update/database/mysql/6.12/dbupdate-5.4.0-to-6.12.0.sql
 bb0ce89d1c76bb76695febd06a28ca46  update/database/mysql/7.3/dbupdate-7.2.0-to-7.3.0.sql
 30a23dcc574e39f354b36f05f5bf0f94  update/database/postgresql/4.0/dbupdate-3.10.0-to-4.0.0.sql
@@ -30228,9 +30229,9 @@ f196d3eba4d08d12080638cb99775ce9  update/database/postgresql/5.0/unstable/dbupda
 0a900e1a2ac54e8f4846de13cd7d1f30  update/database/postgresql/5.3/dbupdate-5.2.0-to-5.3.0.sql
 ab1512294f4ace4ea923fcf1d330aca5  update/database/postgresql/5.4/dbupdate-5.3.0-to-5.4.0.sql
 4cc9de0f1e3d43a26058cd19bf3108bb  update/database/postgresql/6.0/dbupdate-5.4-to-6.0.sql
-e49c8e70ac06875cd11c9701714e28ad  update/database/postgresql/6.0/dbupdate-6.0.0-6.0.15.sql
+2f4c0e8fa3ede81b8955ca9184d07318  update/database/postgresql/6.0/dbupdate-6.0.0-6.0.15.sql
 313e455d9c0200725889659590a92293  update/database/postgresql/6.12/dbupdate-5.4.0-to-6.12.0.sql
 35a6d893420f38ab6f24bf95a93484a9  update/database/postgresql/7.2/dbupdate-6.13.0-to-7.2.0.sql
 df0a9f5046cb6496859e5d8a2769d085  update/database/postgresql/7.3/dbupdate-7.2.0-to-7.3.0.sql
-34ed89b2fe9585a212aa87c866f90c81  update/database/sqlite/6.0/dbupdate-6.0.0-6.0.15.sql
+57385c1bc5ec26b3bee2b4adc035f1fd  update/database/sqlite/6.0/dbupdate-6.0.0-6.0.15.sql
 9764546a5fb37d4866284a992991c819  webdav.php
