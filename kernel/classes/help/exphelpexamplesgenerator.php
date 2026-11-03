@@ -185,7 +185,8 @@ class expHelpExamplesGenerator
             {
                 if ( !is_dir( "$root/$dir" ) )
                     continue;
-                $iterator = new RecursiveIteratorIterator( new RecursiveDirectoryIterator( "$root/$dir", FilesystemIterator::SKIP_DOTS ) );
+                $iterator = new RecursiveIteratorIterator( new RecursiveDirectoryIterator( "$root/$dir", FilesystemIterator::SKIP_DOTS ),
+                                                         RecursiveIteratorIterator::LEAVES_ONLY, RecursiveIteratorIterator::CATCH_GET_CHILD );
                 foreach ( $iterator as $file )
                     if ( $file->isFile() )
                         $list[] = substr( $file->getPathname(), strlen( $root ) + 1 );
