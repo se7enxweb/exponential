@@ -76445,6 +76445,82 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
         <source>Static publishing</source>
         <translation>Statinis publikavimas</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>Peržiūroje</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Skaitytojai mato šį puslapį.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Paslėpta nuo skaitytojų, kol kas nors jį išleis.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Puslapis dabar yra peržiūroje. Jis paslėptas nuo skaitytojų, kol bus išleistas.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Puslapis išleistas: skaitytojai jį dabar mato.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Puslapis vėl yra juodraštis. Jis paslėptas nuo skaitytojų, kol bus peržiūrėtas ir išleistas.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Išleisti dabar</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Jį išleisti gali tik naudotojas, turintis vaidmenį %role ir nerašęs šios versijos.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Žinyno temos, laukiančios išleidimo</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Paslepia jį nuo skaitytojų, kol jis vėl bus išleistas.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Toliau jį patikrina peržiūrėtojas. Skaitytojai jo dar nemato.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Skaitytojai jį mato iš karto.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Išima jį iš peržiūros tolesniam darbui. Skaitytojai jo nemato.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Paslėpti šį puslapį nuo skaitytojų?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Grąžinti šį puslapį į juodraštį?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Skaitytojai nebematys %title, kol kas nors vėl jį išleis.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title grįžta į juodraštį tolesniam darbui. Skaitytojai jo vis dar nemato, o prieš išleidžiant reikia naujos peržiūros.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Atšaukti</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Šios temos yra peržiūroje. Skaitytojai jas pamatys, kai jas išleis kas nors, nerašęs dabartinės versijos.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

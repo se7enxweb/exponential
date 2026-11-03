@@ -76506,6 +76506,82 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
         <source>Static publishing</source>
         <translation>Hoʻopuka paʻa</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>Ma ka loiloi</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>ʻIke nā mea heluhelu i kēia ʻaoʻao.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Hūnā ʻia mai nā mea heluhelu a hiki i ka wā e hoʻokuʻu ai kekahi iā ia.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Aia ka ʻaoʻao ma ka loiloi i kēia manawa. Hūnā ʻia ia mai nā mea heluhelu a hoʻokuʻu ʻia.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Ua hoʻokuʻu ʻia ka ʻaoʻao: ʻike nā mea heluhelu iā ia i kēia manawa.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>He kāmua hou ka ʻaoʻao. Hūnā ʻia ia mai nā mea heluhelu a loiloi ʻia a hoʻokuʻu ʻia.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Hoʻokuʻu i kēia manawa</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>ʻO ka mea hoʻohana wale nō me ke kuleana %role i kākau ʻole i kēia mana ka mea hiki ke hoʻokuʻu iā ia.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Nā kumuhana kōkua e kali ana i ka hoʻokuʻu</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Hūnā ia mai nā mea heluhelu a hoʻokuʻu hou ʻia.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Na ka mea loiloi e nānā ma hope. ʻAʻole ʻike nā mea heluhelu iā ia i kēia manawa.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>ʻIke koke nā mea heluhelu iā ia.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Lawe ʻia ia mai ka loiloi no ka hana hou. ʻAʻole ʻike nā mea heluhelu iā ia.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Hūnā i kēia ʻaoʻao mai nā mea heluhelu?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Hoʻihoʻi i kēia ʻaoʻao i ke kāmua?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>ʻAʻole ʻike hou nā mea heluhelu iā %title a hoʻokuʻu hou kekahi iā ia.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>Hoʻi ʻo %title i ke kāmua no ka hana hou. ʻAʻole nō i ʻike nā mea heluhelu iā ia, a pono ia i ka loiloi hou ma mua o ka hoʻokuʻu ʻia.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Kāpae</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Aia kēia mau kumuhana ma ka loiloi. ʻIke nā mea heluhelu iā lākou ke hoʻokuʻu ka mea i kākau ʻole i ka mana o kēia manawa iā lākou.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

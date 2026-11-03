@@ -76506,6 +76506,82 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
         <source>Static publishing</source>
         <translation>Isohora ridahinduka</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>Mu Gusuzuma</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Abasomyi barabona uru rupapuro.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Rwanyegejwe abasomyi gushika umuntu arusohoye.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Urupapuro ruri mu Gusuzuma ubu. Rwanyegejwe abasomyi gushika rusohowe.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Urupapuro rwarasohowe: abasomyi bararubona ubu.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Urupapuro ni umushinga none kandi. Rwanyegejwe abasomyi gushika rusuzumwe kandi rusohowe.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Sohora ubu</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Uwukoresha afise uruhara %role atanditse iyi verisiyo ni we wenyene ashobora kuyisohora.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Ibiyago vy'imfashanyo birindiriye gusohorwa</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Bituma abasomyi batabibona gushika bisohowe kandi.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Uwusuzuma azobisuzuma hanyuma. Abasomyi ntibarabibona.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Abasomyi barabibona ningoga.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Bikurwa mu Gusuzuma kugira bikorwe kandi. Abasomyi ntibabibona.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Kunyegeza uru rupapuro abasomyi?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Gusubiza uru rupapuro ku mushinga?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Abasomyi ntibacabona %title gushika umuntu agisohoye kandi.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title gisubira ku mushinga kugira gikorwe kandi. Abasomyi ntibarakibona, kandi gikeneye isuzuma rishasha imbere yo gusohorwa.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Guhagarika</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Ibi biyago biri mu Gusuzuma. Abasomyi bazobibona umuntu atanditse verisiyo y'ubu nabisohora.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

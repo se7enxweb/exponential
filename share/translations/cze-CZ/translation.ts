@@ -76342,6 +76342,82 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <source>Static publishing</source>
         <translation>Statické publikování</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>V kontrole</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Čtenáři tuto stránku vidí.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Skrytá před čtenáři, dokud ji někdo nevydá.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Stránka je nyní v kontrole. Je skrytá před čtenáři, dokud nebude vydána.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Stránka je vydána: čtenáři ji nyní vidí.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Stránka je opět koncept. Je skrytá před čtenáři, dokud nebude zkontrolována a vydána.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Vydat nyní</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Vydat ji může pouze uživatel s rolí %role, který tuto verzi nenapsal.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Témata nápovědy čekající na vydání</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Skryje ji před čtenáři, dokud nebude znovu vydána.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Dále ji zkontroluje kontrolor. Čtenáři ji zatím nevidí.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Čtenáři ji uvidí okamžitě.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Vyřadí ji z kontroly k dalšímu zpracování. Čtenáři ji nevidí.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Skrýt tuto stránku před čtenáři?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Vrátit tuto stránku na koncept?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Čtenáři už %title nevidí, dokud ji někdo znovu nevydá.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title se vrací na koncept k dalšímu zpracování. Čtenáři ji stále nevidí a před vydáním potřebuje novou kontrolu.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Zrušit</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Tato témata jsou v kontrole. Čtenáři je uvidí, jakmile je vydá někdo, kdo nenapsal aktuální verzi.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/secrets</name>

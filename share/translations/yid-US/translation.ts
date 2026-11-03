@@ -76506,6 +76506,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Static publishing</source>
         <translation>סטאַטיש פֿאַרעפֿנטלעכן</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>אין איבערקוקונג</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>לייענערס זעען דעם בלאַט.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>באַהאַלטן פֿון לייענערס ביז עמעצער גיט אים אַרויס.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>דער בלאַט איז איצט אין איבערקוקונג. ער איז באַהאַלטן פֿון לייענערס ביז מע גיט אים אַרויס.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>דער בלאַט איז אַרויסגעגעבן: לייענערס זעען אים איצט.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>דער בלאַט איז ווידער אַ שׂרטוט. ער איז באַהאַלטן פֿון לייענערס ביז מע קוקט אים איבער און גיט אים אַרויס.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>אַרויסגעבן איצט</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>נאָר אַ באַניצער מיט דער ראָלע %role וואָס האָט נישט געשריבן די ווערסיע קען זי אַרויסגעבן.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>הילף־טעמעס וואָס וואַרטן אויף אַרויסגעבן</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>באַהאַלט אים פֿון לייענערס ביז מע גיט אים ווידער אַרויס.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>דערנאָך קוקט אים איבער אַן איבערקוקער. לייענערס זעען אים נאָך נישט.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>לייענערס זעען אים גלייך.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>נעמט אים אַרויס פֿון איבערקוקונג פֿאַר מער אַרבעט. לייענערס זעען אים נישט.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>באַהאַלטן דעם בלאַט פֿון לייענערס?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>שיקן דעם בלאַט צוריק צום שׂרטוט?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>לייענערס זעען מער נישט %title ביז עמעצער גיט עס ווידער אַרויס.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title גייט צוריק צום שׂרטוט פֿאַר מער אַרבעט. לייענערס זעען עס נאָך אַלץ נישט, און עס דאַרף אַ נײַע איבערקוקונג איידער מע גיט עס אַרויס.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>אַנולירן</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>די טעמעס זײַנען אין איבערקוקונג. לייענערס זעען זיי ווען עמעצער וואָס האָט נישט געשריבן די איצטיקע ווערסיע גיט זיי אַרויס.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

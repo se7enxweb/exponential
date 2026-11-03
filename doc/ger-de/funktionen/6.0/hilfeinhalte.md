@@ -496,26 +496,49 @@ Administrationsoberfläche kann ihn wie jeden Status setzen; die Seite des Thema
 ihn dort, wo das Thema gelesen wird, in der Karte **Prüfung und Freigabe**, allen, die das Thema bearbeiten oder seinen
 Status zuweisen dürfen:
 
+- ein Statuskasten: der Status als Abzeichen (**Entwurf**, **In Prüfung**, **Veröffentlicht**) und was er für Leser
+  bedeutet: "Leser sehen diese Seite." oder "Für Leser verborgen, bis jemand sie freigibt.";
 - die drei Status als Schritte, der aktuelle markiert;
-- die Schritte, die die `state/assign`-Richtlinien des Benutzers erlauben, als Schaltflächen: **Zur Prüfung geben**
-  (Entwurf), **Freigeben** und **Zurück zum Entwurf** (Prüfung), **Zurück in Prüfung** (Veröffentlicht). Ein
+- die Schritte, die die `state/assign`-Richtlinien des Benutzers erlauben, als Schaltflächen, jede mit ihrer Wirkung
+  daneben: **Zur Prüfung geben** (Entwurf; als Nächstes prüft jemand, Leser sehen sie noch nicht), **Freigeben**
+  (Prüfung; Leser sehen sie sofort) und **Zurück zum Entwurf** (Prüfung; aus der Prüfung zur weiteren Arbeit),
+  **Zurück in Prüfung** (Veröffentlicht; verbirgt sie vor Lesern, bis sie wieder freigegeben ist). Ein
   Hilfe-Redakteur erhält nur Zur Prüfung geben; wer zusätzlich die Rolle Help release hat, auch den Rest. Eine
   Schaltfläche ist ein POST an `exphelp/state/<help_id>` mit dem Formular-Token des Kernels und läuft über die
   Statusoperation des Kernels, sodass daran gehängte Workflows wie beim Reiter Objektstatus laufen;
-- wenn der Benutzer die aktuelle Version des Themas geschrieben hat, keine Schaltfläche Freigeben, sondern der Grund:
-  "Sie haben die aktuelle Version geschrieben, deshalb gibt sie jemand anderes mit der Freigaberolle frei"
-  ([wer schreibt, gibt nicht frei](#rollen));
-- nach einem Schritt sein Ergebnis (das Thema ist jetzt in Prüfung, veröffentlicht, wieder ein Entwurf, oder warum sich
-  nichts geändert hat);
+- ein Schritt zurück (**Zurück in Prüfung**, **Zurück zum Entwurf**) geschieht nicht sofort: `exphelp/state` zeigt
+  zuerst eine Bestätigungsseite ("Diese Seite vor Lesern verbergen?" oder "Diese Seite zurück zum Entwurf geben?"),
+  deren Formular denselben Schritt mit der Bestätigung erneut sendet, oder **Abbrechen**, um ohne Änderung
+  zurückzugehen. Sie ist eine eigene Seite ohne Skript, sodass ein versehentlicher Klick nie eine veröffentlichte
+  Seite verbirgt;
+- wenn der Benutzer nicht freigeben darf, wer es darf: "Nur ein Benutzer mit der Rolle Help release, der diese Version
+  nicht geschrieben hat, kann sie freigeben", mit einem Link auf [Wartet auf Freigabe](#wartet-auf-freigabe) auf der
+  Startseite der Hilfe, wenn die Rollen des Benutzers das Freigeben erlauben. Hat der Benutzer die aktuelle Version
+  des Themas geschrieben, steht zuerst der Grund: "Sie haben die aktuelle Version geschrieben, deshalb gibt sie
+  jemand anderes mit der Freigaberolle frei" ([wer schreibt, gibt nicht frei](#rollen));
+- nach einem Schritt sein Ergebnis mit dem neuen Status und dem nächsten Schritt: "Die Seite ist jetzt in Prüfung.
+  Sie ist für Leser verborgen, bis sie freigegeben ist." mit der Schaltfläche **Jetzt freigeben**, wenn der Benutzer
+  sie freigeben darf, sonst wer es darf; oder veröffentlicht, wieder ein Entwurf, oder warum sich nichts geändert hat;
 - **Prüfung nach dem Styleguide**: die Befunde des Validators zu diesem Thema (Stufe, Regel, Feld, Befund), geprüft mit
   dem, was seine Regeln brauchen (die verwandten Themen, die Themen mit seiner help_id, seine Abbildungen, das Glossar,
   die veröffentlichten help_ids), nicht mit der ganzen Hilfe, sodass die Redakteurin sieht, was `check` melden würde,
   bevor sie das Thema zur Prüfung gibt;
 - die Antworten auf "War das hilfreich?" zu dem Thema: Ja, Nein und die Gründe für Nein.
 
-Die Karte nutzt die gemeinsamen Komponenten der Admin-Designs (`a4-card`, `a4-steps`, `a4-notice`, `a4-table`, `a4-tag`,
-`a4-btn`), hat kein eigenes CSS außer ihrem Platz in der Spalte (`stylesheets/modules/help.css`) und folgt dem hellen und
-dunklen Modus. Dieselbe Vorlage liegt in design/admin und design/admin4.
+Die Karte nutzt die gemeinsamen Komponenten der Admin-Designs (`a4-card`, `a4-steps`, `a4-notice`, `a4-badge`,
+`a4-table`, `a4-tag`, `a4-btn`), hat kein eigenes CSS außer ihrem Platz in der Spalte und der Anordnung von
+Statuskasten und beschriebenen Schritten (`stylesheets/modules/help.css`) und folgt dem hellen und dunklen Modus.
+Dieselbe Vorlage liegt in design/admin und design/admin4. Die Seite eines Handbuchs (`exphelp/manual/<remote_id>`)
+zeigt dieselbe Karte ohne die Prüfung nach dem Styleguide; ihre Schritte gehen an `exphelp/state/manual/<remote_id>`.
+
+### Wartet auf Freigabe
+
+Die Startseite der Hilfe listet **Hilfethemen, die auf Freigabe warten**: die Themen in Prüfung, das am längsten
+wartende zuerst, für alle, die sie freigeben dürfen (die Rolle Help release). Jede Zeile verlinkt das Thema, zeigt die
+letzte Änderung und hat eine Schaltfläche **Freigeben**; ein Thema, das der Benutzer geschrieben hat, steht auch dort,
+markiert: Jemand anderes gibt es frei. Die Liste wird mit dem View-Parameter `(offset)` geblättert
+(`exphelp/dashboard/(offset)/10`), zehn Themen je Seite (`ReviewListLimit`). Die Karte eines Themas verlinkt hierher
+(`exphelp/dashboard#help-dash-waiting`), wenn der Benutzer es nicht freigeben darf.
 
 ## War das hilfreich?
 

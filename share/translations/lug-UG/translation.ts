@@ -76506,6 +76506,82 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
         <source>Static publishing</source>
         <translation>Okufulumya okutakyuka</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>Mu kwekenneenya</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Abasomi balaba olupapula luno.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Kikwekebwa abasomi okutuusa omuntu lw'akifulumya.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Olupapula kati luli mu kwekenneenya. Lukwekebwa abasomi okutuusa lwe lunaafulumizibwa.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Olupapula lufulumiziddwa: abasomi balulaba kati.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Olupapula luli ddulaafuti nate. Lukwekebwa abasomi okutuusa lwe lunaakeneenyezebwa ne lufulumizibwa.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Fulumya kati</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Omukozesa yekka alina omulimu %role atawandiika nkyusa eno y'asobola okugifulumya.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Emitwe gy'obuyambi egirindiridde okufulumizibwa</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Kigikweka abasomi okutuusa lw'eneefulumizibwa nate.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Omwekenneenya y'agikebera oluvannyuma. Abasomi tebannagiraba.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Abasomi bagiraba amangu ddala.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Kigiggya mu kwekenneenya okusobola okugikolako ennyo. Abasomi tebagiraba.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Okukweka olupapula luno abasomi?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Okuzzaayo olupapula luno ku ddulaafuti?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Abasomi tebakyalaba %title okutuusa omuntu lw'anaakifulumya nate.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title kiddayo ku ddulaafuti okusobola okukikolako ennyo. Abasomi bakyali tebakiraba, era kyetaaga okwekenneenya okupya nga tekinnafulumizibwa.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Sazaamu</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Emitwe gino giri mu kwekenneenya. Abasomi bagiraba omuntu atawandiika nkyusa eriwo bw'anaagifulumya.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

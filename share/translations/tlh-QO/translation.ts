@@ -74779,6 +74779,82 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>Static publishing</source>
         <translation>choHbe&apos;bogh HochvaD &apos;angghach</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>nuDlu'taH</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>nav vam legh laDwI'pu'.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>vay' ngangmoHpa', laDwI'pu'vo' So'lu'.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>DaH nuDlu'taH nav. ngangmoHlu'pa', laDwI'pu'vo' So'lu'.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>ngangmoHlu' nav: DaH legh laDwI'pu'.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>nab moj nav. nuDlu' 'ej ngangmoHlu'pa', laDwI'pu'vo' So'lu'.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>DaH ngangmoH</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>%role Dotlh ghajbogh lo'wI' neH ngangmoHlaH, ghItlh vam ghItlhbe'chugh.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>ngangmoHmeH loSbogh QaH qechmey</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>ngangmoHlu'qa'pa', laDwI'pu'vo' So'.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>vaj nuD nuDwI'. wej legh laDwI'pu'.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>nom legh laDwI'pu'.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>latlh vummeH nuDmo' teq. leghbe' laDwI'pu'.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>laDwI'pu'vo' nav vam DaSo''a'?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>nabvo' nav vam DangeHqa''a'?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>vay' ngangmoHqa'pa', %title leghbe' laDwI'pu'.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>latlh vummeH nabvo' chegh %title. wej legh laDwI'pu', 'ej ngangmoHlu'pa' nuDlu'qa'nIS.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>yIqIl</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>nuDlu'taH qechmeyvam. DaH ghItlh ghItlhbe'bogh vay' ngangmoHDI', legh laDwI'pu'.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

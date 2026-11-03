@@ -76506,6 +76506,82 @@ Düyünün sinfini dəyişdirmə funksiyasından istifadə edərək dəyişməli
         <source>Static publishing</source>
         <translation>Statik dərc</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>Baxışda</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Oxucular bu səhifəni görür.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Kimsə buraxana qədər oxuculardan gizlədilib.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Səhifə indi baxışdadır. Buraxılana qədər oxuculardan gizlədilib.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Səhifə buraxılıb: oxucular onu indi görür.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Səhifə yenidən qaralamadır. Baxışdan keçib buraxılana qədər oxuculardan gizlədilib.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>İndi burax</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Yalnız %role roluna malik olan və bu versiyanı yazmamış istifadəçi onu buraxa bilər.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Buraxılışı gözləyən kömək mövzuları</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Yenidən buraxılana qədər onu oxuculardan gizlədir.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Sonra onu rəyçi yoxlayır. Oxucular onu hələ görmür.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Oxucular onu dərhal görür.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Əlavə iş üçün onu baxışdan çıxarır. Oxucular onu görmür.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Bu səhifə oxuculardan gizlədilsin?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Bu səhifə qaralamaya qaytarılsın?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Kimsə onu yenidən buraxana qədər oxucular %title səhifəsini artıq görmür.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title əlavə iş üçün qaralamaya qayıdır. Oxucular onu hələ də görmür və buraxılmazdan əvvəl yeni baxış tələb olunur.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Ləğv et</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Bu mövzular baxışdadır. Cari versiyanı yazmamış biri onları buraxan kimi oxucular onları görür.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

@@ -76506,6 +76506,82 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
         <source>Static publishing</source>
         <translation>Xuất bản tĩnh</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>Đang xem xét</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Người đọc thấy trang này.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Ẩn với người đọc cho đến khi có người phát hành.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Trang hiện đang ở trạng thái Xem xét. Trang bị ẩn với người đọc cho đến khi được phát hành.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Trang đã được Phát hành: người đọc hiện có thể xem.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Trang lại là Bản nháp. Trang bị ẩn với người đọc cho đến khi được xem xét và phát hành.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Phát hành ngay</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Chỉ người dùng có vai trò %role và không viết phiên bản này mới có thể phát hành nó.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Chủ đề trợ giúp đang chờ phát hành</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Ẩn với người đọc cho đến khi được phát hành lại.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Tiếp theo, người xem xét sẽ kiểm tra. Người đọc chưa thấy.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Người đọc thấy ngay.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Rút khỏi xem xét để chỉnh sửa thêm. Người đọc không thấy.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Ẩn trang này với người đọc?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Đưa trang này về Bản nháp?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Người đọc không còn thấy %title cho đến khi có người phát hành lại.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title quay lại Bản nháp để chỉnh sửa thêm. Người đọc vẫn chưa thấy, và cần được xem xét lại trước khi phát hành.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Hủy</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Các chủ đề này đang ở trạng thái Xem xét. Người đọc sẽ thấy khi có người không viết phiên bản hiện tại phát hành chúng.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

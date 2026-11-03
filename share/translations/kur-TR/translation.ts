@@ -75054,6 +75054,82 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <source>Static publishing</source>
         <translation>Weşandina statîk</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>Di venêrînê de</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Xwendevan vê rûpelê dibînin.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Heta ku kesek wê belav neke, ji xwendevanan veşartî ye.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Rûpel niha di venêrînê de ye. Heta ku neyê belavkirin, ji xwendevanan veşartî ye.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Rûpel hat belavkirin: xwendevan niha wê dibînin.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Rûpel dîsa reşnivîs e. Heta ku neyê venêrîn û belavkirin, ji xwendevanan veşartî ye.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Niha belav bike</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Tenê bikarhênerekî bi rola %role ku ev guherto nenivîsandiye dikare wê belav bike.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Mijarên alîkariyê yên li benda belavkirinê</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Heta ku dîsa neyê belavkirin, wê ji xwendevanan vedişêre.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Piştre venêrerek wê kontrol dike. Xwendevan hêj wê nabînin.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Xwendevan wê yekser dibînin.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Ji bo karê zêdetir wê ji venêrînê derdixe. Xwendevan wê nabînin.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Ev rûpel ji xwendevanan were veşartin?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Ev rûpel vegere reşnivîsê?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Heta ku kesek dîsa belav neke, xwendevan êdî %title nabînin.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title ji bo karê zêdetir vedigere reşnivîsê. Xwendevan hêj wê nabînin, û berî belavkirinê venêrîneke nû pêwîst e.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Betal</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Ev mijar di venêrînê de ne. Gava kesekî ku guhertoya niha nenivîsandiye wan belav bike, xwendevan wan dibînin.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/secrets</name>

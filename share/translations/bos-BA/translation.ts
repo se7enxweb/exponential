@@ -76445,6 +76445,82 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <source>Static publishing</source>
         <translation>Statičko objavljivanje</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>U pregledu</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Čitaoci vide ovu stranicu.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Skrivena od čitalaca dok je neko ne izda.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Stranica je sada u pregledu. Skrivena je od čitalaca dok ne bude izdana.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Stranica je izdana: čitaoci je sada vide.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Stranica je ponovo nacrt. Skrivena je od čitalaca dok ne bude pregledana i izdana.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Izdaj sada</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Može je izdati samo korisnik s ulogom %role koji nije napisao ovu verziju.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Teme pomoći koje čekaju izdavanje</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Skriva je od čitalaca dok ponovo ne bude izdana.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Sljedeći je provjerava recenzent. Čitaoci je još ne vide.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Čitaoci je odmah vide.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Uklanja je iz pregleda radi daljeg rada. Čitaoci je ne vide.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Sakriti ovu stranicu od čitalaca?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Vratiti ovu stranicu u nacrt?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Čitaoci više ne vide %title dok je neko ponovo ne izda.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title se vraća u nacrt radi daljeg rada. Čitaoci je i dalje ne vide, a prije izdavanja treba novi pregled.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Otkaži</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Ove teme su u pregledu. Čitaoci ih vide čim ih izda neko ko nije napisao trenutnu verziju.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

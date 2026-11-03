@@ -76504,6 +76504,82 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
         <source>Static publishing</source>
         <translation>Ukushicilela okumileyo</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>KuPhononongo</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Abafundi bayalibona eli phepha.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Lifihliwe kubafundi de umntu alikhuphe.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Iphepha ngoku likuPhononongo. Lifihliwe kubafundi de likhutshwe.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Iphepha Likhutshiwe: abafundi bayalibona ngoku.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Iphepha liphinde laba luYilo. Lifihliwe kubafundi de liphononongwe kwaye likhutshwe.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Khupha ngoku</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Ngumsebenzisi kuphela onendima %role ongazange ayibhale le nguqulelo onokuyikhupha.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Izihloko zoncedo ezilinde ukukhutshwa</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Liyalifihla kubafundi de liphinde likhutshwe.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Umphononongi uyalijonga emva koko. Abafundi abakaliboni.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Abafundi bayalibona ngoko nangoko.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Liyalikhupha kuphononongo ukuze kusetyenzwe ngakumbi. Abafundi abaliboni.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Fihla eli phepha kubafundi?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Buyisela eli phepha kuYilo?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Abafundi abasaboni %title de umntu aliphinde alikhuphe.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title ibuyela kuYilo ukuze kusetyenzwe ngakumbi. Abafundi abakaliboni, kwaye lidinga uphononongo olutsha phambi kokuba likhutshwe.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Rhoxisa</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Ezi zihloko zikuPhononongo. Abafundi bazibona xa umntu ongabhalanga inguqulelo yangoku ezikhupha.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

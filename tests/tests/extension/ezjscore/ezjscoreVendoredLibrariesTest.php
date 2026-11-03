@@ -127,6 +127,9 @@ class ezjscoreVendoredLibrariesTest extends TestCase
         $this->assertSame( array( 'jquery', 'jqueryMigrate', 'jqueryUI' ), array_keys( $localScripts ) );
         foreach ( $localScripts as $key => $fileName )
         {
+            // jqueryMigrate empty: Migrate is switched off (only that one may be)
+            if ( $fileName === '' && $key === 'jqueryMigrate' )
+                continue;
             $path = $fileName[0] === '/'
                 ? self::root() . '/design/standard' . $fileName
                 : self::javascriptDir() . '/' . $fileName;
@@ -149,6 +152,17 @@ class ezjscoreVendoredLibrariesTest extends TestCase
         foreach ( array( 'jquery' => 'jquery', 'jqueryMigrate' => 'jquery-migrate', 'jqueryUI' => 'jquery-ui' ) as $key => $library )
         {
             $shipped = $releases[$library][0];
+            if ( $key === 'jqueryMigrate' && $local[$key] === '' )
+            {
+                // Switched off: both empty, and the comment that tells how to switch it back on names the shipped files
+                $this->assertSame( '', $external[$key], 'ExternalScripts[jqueryMigrate] is empty like LocalScripts[jqueryMigrate]' );
+                $ini = (string)file_get_contents( self::root() . '/settings/ezjscore.ini' );
+                $this->assertStringContainsString( "# ExternalScripts[jqueryMigrate]=https://code.jquery.com/jquery-migrate-$shipped.min.js", $ini );
+                $this->assertStringContainsString( "LocalScripts[jqueryMigrate]=jquery-migrate-$shipped.min.js", $ini );
+                $this->assertSame( $shipped, $declared[self::LIBRARIES[$library]] ?? null,
+                    'extension.xml declares ' . self::LIBRARIES[$library] . ' ' . $shipped );
+                continue;
+            }
             $this->assertSame( array( $library, $shipped ), self::parse( $local[$key] ), "LocalScripts[$key]" );
             $this->assertStringContainsString( $shipped, $external[$key], "ExternalScripts[$key]" );
             $this->assertSame( $shipped, $declared[self::LIBRARIES[$library]] ?? null,

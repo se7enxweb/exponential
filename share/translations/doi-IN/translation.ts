@@ -76506,6 +76506,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Static publishing</source>
         <translation>स्टैटिक प्रकाशन</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>समीक्षा च</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>पाठक एह् सफा दिक्खदे न।</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>जिच्चर तगर कोई जारी नेईं करदा, पाठकें थमां छप्पे दा ऐ।</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>सफा हून समीक्षा च ऐ। जिच्चर तगर एह् जारी नेईं होंदा, पाठकें थमां छप्पे दा ऐ।</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>सफा जारी होई गेआ ऐ: पाठक हून इसगी दिक्खदे न।</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>सफा फी मसौदा ऐ। जिच्चर तगर इसदी समीक्षा होइयै एह् जारी नेईं होंदा, पाठकें थमां छप्पे दा ऐ।</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>हून जारी करो</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>सिर्फ %role भूमका आह्ला ओह् बरतूनी इसगी जारी करी सकदा ऐ जिसने एह् संस्करण नेईं लिखेआ।</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>जारी होने दी उडीक च मदद विशे</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>फी जारी होने तगर इसगी पाठकें थमां छपांदा ऐ।</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>इसदे बाद कोई समीक्षक इसदी जांच करग। पाठक अजें इसगी नेईं दिक्खदे।</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>पाठक इसगी फौरन दिक्खदे न।</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>होर कम्म आस्तै इसगी समीक्षा थमां कड्डदा ऐ। पाठक इसगी नेईं दिक्खदे।</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>क्या एह् सफा पाठकें थमां छपाना ऐ?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>क्या एह् सफा मसौदे च पिच्छें भेजना ऐ?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>जिच्चर तगर कोई फी जारी नेईं करदा, पाठक हून %title नेईं दिक्खङन।</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title होर कम्म आस्तै मसौदे च पिच्छें जंदा ऐ। पाठक अजें बी इसगी नेईं दिक्खदे, ते जारी होने शा पैह्लें इसगी नमीं समीक्षा दी लोड़ ऐ।</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>रद्द करो</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>एह् विशे समीक्षा च न। जिसलै कोई ऐसा बंदा, जिसने मौजूदा संस्करण नेईं लिखेआ, इनेंगी जारी करग, पाठक इनेंगी दिक्खङन।</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

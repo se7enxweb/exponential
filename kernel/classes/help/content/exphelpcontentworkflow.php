@@ -214,14 +214,16 @@ class expHelpContentWorkflow
      * wrote the topic stays, with the reason.
      *
      * @param eZContentObject $object
-     * @return array array( state (current identifier), steps (list of array( state, allowed, reason )) )
+     * @return array array( state (current identifier), steps (list of array( state, allowed, reason )), may_release (the
+     *               roles let the user assign Released), is_author (the user wrote the current version and may not
+     *               release it) )
      */
     public static function transitions( eZContentObject $object )
     {
         $state = self::stateOf( $object );
         $group = eZContentObjectStateGroup::fetchByIdentifier( expHelpContentSchema::STATE_GROUP );
         if ( $state === '' || !$group instanceof eZContentObjectStateGroup )
-            return array( 'state' => $state, 'steps' => array() );
+            return array( 'state' => $state, 'steps' => array(), 'may_release' => false, 'is_author' => false );
         $allowedIds = array_map( 'intval', (array)$object->attribute( 'allowed_assign_state_id_list' ) );
         $allowed = array();
         foreach ( $group->states() as $s )
@@ -233,7 +235,38 @@ class expHelpContentWorkflow
         $steps = array_values( array_filter( self::steps( $state, $allowed, $isAuthor ), function ( $step ) {
             return $step['reason'] !== 'policy';
         } ) );
-        return array( 'state' => $state, 'steps' => $steps );
+        // for the page to say who can take the next step: whether the roles let the user release this object at all
+        // (an author may hold the release role and still not release their own version), and whether they wrote it
+        return array( 'state' => $state, 'steps' => $steps,
+                      'may_release' => in_array( expHelpContentSchema::STATE_RELEASED, $allowed, true ), 'is_author' => $isAuthor );
+    }
+
+    /**
+     * Whether a step goes back (Review from Released, Draft from Review): exphelp/state asks for a confirmation first,
+     * since such a step hides a released page from readers or sends a reviewed one back to its author
+     *
+     * @param string $current the current state identifier
+     * @param string $target the state identifier to go to
+     * @return bool
+     */
+    public static function needsConfirmation( $current, $target )
+    {
+        $order = array_keys( self::STEPS );
+        $from = array_search( (string)$current, $order, true );
+        $to = array_search( (string)$target, $order, true );
+        return $from !== false && $to !== false && $to < $from && in_array( (string)$target, self::STEPS[(string)$current], true );
+    }
+
+    /**
+     * Whether a step takes a page away from readers (any step from Released)
+     *
+     * @param string $current
+     * @param string $target
+     * @return bool
+     */
+    public static function hidesFromReaders( $current, $target )
+    {
+        return (string)$current === expHelpContentSchema::STATE_RELEASED && (string)$target !== expHelpContentSchema::STATE_RELEASED;
     }
 
     /**

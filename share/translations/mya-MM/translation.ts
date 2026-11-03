@@ -76506,6 +76506,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Static publishing</source>
         <translation>Static ထုတ်ဝေခြင်း</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>ပြန်လည်သုံးသပ်ဆဲ</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>ဖတ်ရှုသူများ ဤစာမျက်နှာကို မြင်ရသည်။</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>တစ်စုံတစ်ဦးက ထုတ်ပြန်သည်အထိ ဖတ်ရှုသူများထံမှ ဝှက်ထားသည်။</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>စာမျက်နှာသည် ယခု ပြန်လည်သုံးသပ်ဆဲ ဖြစ်သည်။ ထုတ်ပြန်သည်အထိ ဖတ်ရှုသူများထံမှ ဝှက်ထားသည်။</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>စာမျက်နှာကို ထုတ်ပြန်ပြီးပါပြီ - ဖတ်ရှုသူများ ယခု မြင်ရသည်။</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>စာမျက်နှာသည် မူကြမ်းအဖြစ် ပြန်ရောက်သွားသည်။ ပြန်လည်သုံးသပ်ပြီး ထုတ်ပြန်သည်အထိ ဖတ်ရှုသူများထံမှ ဝှက်ထားသည်။</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>ယခု ထုတ်ပြန်ရန်</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>%role အခန်းကဏ္ဍရှိပြီး ဤဗားရှင်းကို မရေးခဲ့သော အသုံးပြုသူသာ ထုတ်ပြန်နိုင်သည်။</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>ထုတ်ပြန်ရန် စောင့်ဆိုင်းနေသော အကူအညီခေါင်းစဉ်များ</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>ထပ်မံထုတ်ပြန်သည်အထိ ဖတ်ရှုသူများထံမှ ဝှက်ထားမည်။</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>နောက်တစ်ဆင့်တွင် သုံးသပ်သူက စစ်ဆေးမည်။ ဖတ်ရှုသူများ မမြင်ရသေးပါ။</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>ဖတ်ရှုသူများ ချက်ချင်း မြင်ရမည်။</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>ထပ်မံပြင်ဆင်ရန် ပြန်လည်သုံးသပ်ခြင်းမှ ပြန်ထုတ်မည်။ ဖတ်ရှုသူများ မမြင်ရပါ။</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>ဤစာမျက်နှာကို ဖတ်ရှုသူများထံမှ ဝှက်မလား?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>ဤစာမျက်နှာကို မူကြမ်းသို့ ပြန်ပို့မလား?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>တစ်စုံတစ်ဦးက ထပ်မံထုတ်ပြန်သည်အထိ ဖတ်ရှုသူများ %title ကို မမြင်ရတော့ပါ။</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title သည် ထပ်မံပြင်ဆင်ရန် မူကြမ်းသို့ ပြန်သွားသည်။ ဖတ်ရှုသူများ မမြင်ရသေးဘဲ ထုတ်ပြန်မီ ပြန်လည်သုံးသပ်ခြင်း အသစ်လိုအပ်သည်။</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ပယ်ဖျက်ရန်</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>ဤခေါင်းစဉ်များသည် ပြန်လည်သုံးသပ်ဆဲ ဖြစ်သည်။ လက်ရှိဗားရှင်းကို မရေးခဲ့သူတစ်ဦးက ထုတ်ပြန်သည်နှင့် ဖတ်ရှုသူများ မြင်ရမည်။</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

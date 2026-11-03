@@ -76504,6 +76504,82 @@ Kuzodingeka nishintshe isigaba sendawo yomsuka ngokusebenzisa umsebenzi wokushin
         <source>Static publishing</source>
         <translation>Ukushicilela okungaguquki</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>Kubuyekezwa</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Abafundi bayalibona leli khasi.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Lifihliwe kubafundi kuze kube yilapho umuntu elikhipha.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Ikhasi manje lisekubuyekezweni. Lifihliwe kubafundi kuze likhishwe.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Ikhasi Likhishiwe: abafundi sebeyalibona manje.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Ikhasi selibuye laba yiSiqeshana. Lifihliwe kubafundi kuze libuyekezwe futhi likhishwe.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Khipha manje</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Umsebenzisi kuphela onendima %role ongabhalanga lolu hlobo ongalikhipha.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Izihloko zosizo ezilinde ukukhishwa</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Liyalifihla kubafundi kuze liphinde likhishwe.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Umbuyekezi uzolihlola ngokulandelayo. Abafundi abakaliboni.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Abafundi balibona ngokushesha.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Liyalikhipha ekubuyekezweni ukuze kwenziwe omunye umsebenzi. Abafundi abaliboni.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Fihla leli khasi kubafundi?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Buyisela leli khasi eSiqeshaneni?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Abafundi abasaboni %title kuze kube yilapho umuntu elikhipha futhi.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title libuyela eSiqeshaneni ukuze kwenziwe omunye umsebenzi. Abafundi abakaliboni, futhi lidinga ukubuyekezwa okusha ngaphambi kokuthi likhishwe.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Khansela</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Lezi zihloko zisekubuyekezweni. Abafundi bazibona uma umuntu ongabhalanga inguqulo yamanje ezikhipha.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

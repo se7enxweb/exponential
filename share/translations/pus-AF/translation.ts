@@ -75054,6 +75054,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Static publishing</source>
         <translation>ثابته خپرونه</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>په بیاکتنه کې</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>لوستونکي دا پاڼه ویني.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>تر هغه چې څوک یې خپره کړي، له لوستونکو پټه ده.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>پاڼه اوس په بیاکتنه کې ده. تر خپرېدو پورې له لوستونکو پټه ده.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>پاڼه خپره شوه: لوستونکي یې اوس ویني.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>پاڼه بیا مسوده ده. تر بیاکتنې او خپرېدو پورې له لوستونکو پټه ده.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>اوس یې خپره کړئ</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>یوازې هغه کارن چې د %role رول لري او دا نسخه یې نه وي لیکلې، کولی شي دا خپره کړي.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>د مرستې موضوعګانې چې د خپرېدو په تمه دي</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>تر هغه چې بیا خپره شي، له لوستونکو یې پټوي.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>بیا یو بیاکتونکی یې ګوري. لوستونکي یې لا نه ویني.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>لوستونکي یې سمدستي ویني.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>د نورو کار لپاره یې له بیاکتنې باسي. لوستونکي یې نه ویني.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>دا پاڼه له لوستونکو پټه کړئ؟</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>دا پاڼه بېرته مسودې ته واستوئ؟</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>تر هغه چې څوک یې بیا خپره کړي، لوستونکي نور %title نه ویني.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title د نورو کار لپاره بېرته مسودې ته ځي. لوستونکي یې لا هم نه ویني، او له خپرېدو مخکې نوې بیاکتنې ته اړتیا لري.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>لغوه کول</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>دا موضوعګانې په بیاکتنه کې دي. کله چې څوک چې اوسنۍ نسخه یې نه وي لیکلې دا خپرې کړي، لوستونکي یې ویني.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/secrets</name>

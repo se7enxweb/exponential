@@ -76504,6 +76504,82 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
         <source>Static publishing</source>
         <translation>Mbipụta nkwụsi ike</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>Na Nyocha</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Ndị na-agụ ya na-ahụ peeji a.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Ezoro ya ndị na-agụ ya ruo mgbe mmadụ tọhapụrụ ya.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Peeji a nọ na Nyocha ugbu a. Ezoro ya ndị na-agụ ya ruo mgbe a tọhapụrụ ya.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Atọhapụla peeji a: ndị na-agụ ya na-ahụ ya ugbu a.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Peeji a bụ Ndepụta mbụ ọzọ. Ezoro ya ndị na-agụ ya ruo mgbe a nyochara ya ma tọhapụ ya.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Tọhapụ ugbu a</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Naanị onye ọrụ nwere ọrụ %role na-edeghị ụdị a nwere ike ịtọhapụ ya.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Isiokwu Enyemaka na-eche ntọhapụ</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Ọ na-ezo ya ndị na-agụ ya ruo mgbe a tọhapụrụ ya ọzọ.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Onye nyocha ga-elele ya ọzọ. Ndị na-agụ ya ahụbeghị ya.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Ndị na-agụ ya na-ahụ ya ozugbo.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Ọ na-ewepụ ya na nyocha maka ọrụ ọzọ. Ndị na-agụ ya anaghị ahụ ya.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Zoo peeji a ndị na-agụ ya?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Zighachi peeji a na Ndepụta mbụ?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Ndị na-agụ ya anaghị ahụ %title ọzọ ruo mgbe mmadụ tọhapụrụ ya ọzọ.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title na-alaghachi na Ndepụta mbụ maka ọrụ ọzọ. Ndị na-agụ ya ka anaghị ahụ ya, ọ chọkwara nyocha ọhụrụ tupu a tọhapụ ya.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Kagbuo</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Isiokwu ndị a nọ na Nyocha. Ndị na-agụ ya ga-ahụ ha ozugbo onye na-edeghị ụdị nke ugbu a tọhapụrụ ha.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

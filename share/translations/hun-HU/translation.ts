@@ -76445,6 +76445,82 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
         <source>Static publishing</source>
         <translation>Statikus közzététel</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>Felülvizsgálat alatt</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Az olvasók látják ezt az oldalt.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Rejtve az olvasók elől, amíg valaki ki nem adja.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Az oldal most felülvizsgálat alatt van. Rejtve marad az olvasók elől, amíg ki nem adják.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Az oldal kiadva: az olvasók most már látják.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Az oldal ismét piszkozat. Rejtve marad az olvasók elől, amíg felül nem vizsgálják és ki nem adják.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Kiadás most</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Csak %role szerepkörű felhasználó adhatja ki, aki nem ennek a verziónak a szerzője.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Kiadásra váró súgótémakörök</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Elrejti az olvasók elől, amíg újra ki nem adják.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Ezután egy felülvizsgáló ellenőrzi. Az olvasók még nem látják.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Az olvasók azonnal látják.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Kiveszi a felülvizsgálatból további munkára. Az olvasók nem látják.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Elrejti ezt az oldalt az olvasók elől?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Visszaküldi ezt az oldalt piszkozatba?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Az olvasók nem látják többé a(z) %title elemet, amíg valaki újra ki nem adja.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>A(z) %title további munkára visszakerül piszkozatba. Az olvasók továbbra sem látják, és kiadás előtt új felülvizsgálat szükséges.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Mégse</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Ezek a témakörök felülvizsgálat alatt állnak. Az olvasók akkor látják őket, amikor valaki, aki nem az aktuális verzió szerzője, kiadja őket.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

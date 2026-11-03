@@ -76445,6 +76445,82 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
         <source>Static publishing</source>
         <translation>Publicació estàtica</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>En revisió</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Els lectors veuen aquesta pàgina.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Oculta als lectors fins que algú la publiqui.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Ara la pàgina és en revisió. Està oculta als lectors fins que es publiqui.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>La pàgina està publicada: els lectors ja la veuen.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>La pàgina torna a ser un esborrany. Està oculta als lectors fins que es revisi i es publiqui.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Publica ara</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Només la pot publicar un usuari amb el rol %role que no hagi escrit aquesta versió.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Temes d'ajuda pendents de publicació</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>L'oculta als lectors fins que es torni a publicar.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>A continuació la comprova un revisor. Els lectors encara no la veuen.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Els lectors la veuen de seguida.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>La treu de la revisió per treballar-hi més. Els lectors no la veuen.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Voleu ocultar aquesta pàgina als lectors?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Voleu tornar aquesta pàgina a esborrany?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Els lectors ja no veuen %title fins que algú la torni a publicar.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title torna a esborrany per treballar-hi més. Els lectors encara no la veuen, i cal una nova revisió abans de publicar-la.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cancel·la</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Aquests temes són en revisió. Els lectors els veuran quan algú que no hagi escrit la versió actual els publiqui.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

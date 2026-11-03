@@ -76506,6 +76506,82 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
         <source>Static publishing</source>
         <translation>Sayaq lluqsichiy</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>Qhawaypi</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Ñawinchaqkuna kay raphita rikunku.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Pipas lluqsichinankama ñawinchaqkunamanta pakasqa.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Raphiqa kunan qhawaypi kachkan. Lluqsichisqa kanankama ñawinchaqkunamanta pakasqa.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Raphiqa lluqsichisqa: ñawinchaqkuna kunan rikunku.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Raphiqa huktawan ñawpa qillqasqa. Qhawasqa, lluqsichisqa kanankama ñawinchaqkunamanta pakasqa.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Kunan lluqsichiy</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>%role ruwanayuq, kay versiyunta mana qillqaq ruraqlla lluqsichiyta atin.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Lluqsichiyta suyaq yanapay yachaykuna</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Huktawan lluqsichisqa kanankama ñawinchaqkunamanta pakan.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Qhawaqmi qatiqninpi qhawanqa. Ñawinchaqkuna manaraq rikunkuchu.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Ñawinchaqkuna chaylla rikunku.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Aswan llamk'anapaq qhawaymanta hurqun. Ñawinchaqkuna mana rikunkuchu.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Kay raphita ñawinchaqkunamanta pakankichu?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Kay raphita ñawpa qillqasqaman kutichinkichu?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Pipas huktawan lluqsichinankama ñawinchaqkuna %title manaña rikunkuchu.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title aswan llamk'anapaq ñawpa qillqasqaman kutin. Ñawinchaqkuna manaraqmi rikunkuchu, lluqsichisqa kananpaqqa musuq qhawayta munan.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Qhisachay</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Kay yachaykunaqa qhawaypi kachkan. Kunan versiyunta mana qillqaq pipas lluqsichiptin, ñawinchaqkuna rikunqaku.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

@@ -80,7 +80,7 @@ class AdminHelpViewParametersOnlyTest extends PHPUnit\Framework\TestCase
         $FunctionList = array();
         include $root . '/kernel/exphelp/module.php';
         $this->assertSame( array( 'lang' => 'Language' ), $ViewList['viewer']['unordered_params'] );
-        $this->assertSame( array( 'format' => 'Format' ), $ViewList['manual']['unordered_params'] );
+        $this->assertSame( array( 'format' => 'Format', 'step' => 'Step' ), $ViewList['manual']['unordered_params'] );
         $this->assertSame( array( 'tracker' => 'Tracker' ), $ViewList['report']['unordered_params'] );
         $this->assertSame( 'Format', $ViewList['search']['unordered_params']['format'] );
     }

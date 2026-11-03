@@ -76506,6 +76506,82 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
         <source>Static publishing</source>
         <translation>Støðug útgáva</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>Í eftirliti</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Lesarar síggja hesa síðuna.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Fjald fyri lesarum, til onkur gevur hana út.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Síðan er nú í Eftirliti. Hon er fjald fyri lesarum, til hon verður givin út.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Síðan er Útgivin: lesarar síggja hana nú.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Síðan er aftur ein Kladda. Hon er fjald fyri lesarum, til hon er eftirhugd og givin út.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Útgev nú</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Bert ein brúkari við leiklutinum %role, sum ikki skrivaði hesa útgávuna, kann geva hana út.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Hjálparevni, sum bíða eftir útgávu</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Fjalir hana fyri lesarum, til hon verður givin út aftur.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Ein eftirlitsmaður kannar hana næst. Lesarar síggja hana ikki enn.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Lesarar síggja hana beinanvegin.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Tekur hana úr eftirliti til meira arbeiði. Lesarar síggja hana ikki.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Fjal hesa síðuna fyri lesarum?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Send hesa síðuna aftur til Kladdu?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Lesarar síggja ikki longur %title, til onkur gevur tað út aftur.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title fer aftur til Kladdu til meira arbeiði. Lesarar síggja tað enn ikki, og tað krevur nýtt eftirlit, áðrenn tað verður givið út.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Ógilda</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Hesi evnini eru í Eftirliti. Lesarar síggja tey, tá ið onkur, sum ikki skrivaði núverandi útgávuna, gevur tey út.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

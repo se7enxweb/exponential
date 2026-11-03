@@ -76328,6 +76328,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Static publishing</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

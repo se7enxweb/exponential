@@ -76445,6 +76445,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Static publishing</source>
         <translation>静的公開</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>レビュー中</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>このページは読者に表示されています。</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>誰かがリリースするまで読者には表示されません。</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>ページはレビュー中です。リリースされるまで読者には表示されません。</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>ページはリリースされました。読者に表示されています。</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>ページは再び下書きになりました。レビューされてリリースされるまで読者には表示されません。</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>今すぐリリース</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>このバージョンを作成していない、ロール %role を持つユーザーのみがリリースできます。</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>リリース待ちのヘルプトピック</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>再びリリースされるまで読者に表示されなくなります。</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>次にレビュー担当者が確認します。読者にはまだ表示されません。</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>すぐに読者に表示されます。</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>作業を続けるためにレビューから外します。読者には表示されません。</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>このページを読者に非表示にしますか？</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>このページを下書きに戻しますか？</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>誰かが再びリリースするまで、%title は読者に表示されなくなります。</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title は作業を続けるために下書きに戻ります。引き続き読者には表示されず、リリースする前に新たなレビューが必要です。</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>キャンセル</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>これらのトピックはレビュー中です。現在のバージョンを作成していない人がリリースすると、読者に表示されます。</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

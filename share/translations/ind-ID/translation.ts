@@ -76506,6 +76506,82 @@ Anda perlu mengubah kelas simpul tersebut menggunakan fungsi tukar.</translation
         <source>Static publishing</source>
         <translation>Penerbitan statis</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>Dalam Tinjauan</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Pembaca melihat halaman ini.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Disembunyikan dari pembaca sampai seseorang merilisnya.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Halaman sekarang dalam Tinjauan. Halaman disembunyikan dari pembaca sampai dirilis.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Halaman sudah Dirilis: pembaca sekarang melihatnya.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Halaman kembali menjadi Draf. Halaman disembunyikan dari pembaca sampai ditinjau dan dirilis.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Rilis sekarang</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Hanya pengguna dengan peran %role yang tidak menulis versi ini yang dapat merilisnya.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Topik bantuan yang menunggu rilis</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Menyembunyikannya dari pembaca sampai dirilis lagi.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Peninjau akan memeriksanya berikutnya. Pembaca belum melihatnya.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Pembaca langsung melihatnya.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Mengeluarkannya dari tinjauan untuk dikerjakan lagi. Pembaca tidak melihatnya.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Sembunyikan halaman ini dari pembaca?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Kembalikan halaman ini ke Draf?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Pembaca tidak lagi melihat %title sampai seseorang merilisnya lagi.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title kembali ke Draf untuk dikerjakan lagi. Pembaca tetap tidak melihatnya, dan perlu tinjauan baru sebelum dirilis.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Batal</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Topik-topik ini dalam Tinjauan. Pembaca melihatnya setelah seseorang yang tidak menulis versi saat ini merilisnya.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

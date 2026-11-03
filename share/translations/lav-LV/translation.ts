@@ -76445,6 +76445,82 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
         <source>Static publishing</source>
         <translation>Statiskā publicēšana</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>Pārskatīšanā</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Lasītāji redz šo lapu.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Paslēpta no lasītājiem, līdz kāds to izlaiž.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Lapa tagad ir pārskatīšanā. Tā ir paslēpta no lasītājiem, līdz tiek izlaista.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Lapa ir izlaista: lasītāji to tagad redz.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Lapa atkal ir melnraksts. Tā ir paslēpta no lasītājiem, līdz tiek pārskatīta un izlaista.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Izlaist tagad</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>To var izlaist tikai lietotājs ar lomu %role, kurš nav rakstījis šo versiju.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Palīdzības tēmas, kas gaida izlaišanu</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Paslēpj to no lasītājiem, līdz tā tiek atkal izlaista.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Tālāk to pārbauda pārskatītājs. Lasītāji to vēl neredz.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Lasītāji to redz uzreiz.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Izņem to no pārskatīšanas turpmākam darbam. Lasītāji to neredz.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Paslēpt šo lapu no lasītājiem?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Atgriezt šo lapu melnrakstā?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Lasītāji vairs neredz %title, līdz kāds to atkal izlaiž.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title atgriežas melnrakstā turpmākam darbam. Lasītāji to joprojām neredz, un pirms izlaišanas nepieciešama jauna pārskatīšana.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Atcelt</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Šīs tēmas ir pārskatīšanā. Lasītāji tās redz, tiklīdz tās izlaiž kāds, kurš nav rakstījis pašreizējo versiju.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

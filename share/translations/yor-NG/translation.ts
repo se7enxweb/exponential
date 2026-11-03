@@ -76504,6 +76504,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Static publishing</source>
         <translation>Ìtẹ̀jáde aláìyípadà</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>Nínú Àtúnyẹ̀wò</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Àwọn òǹkàwé ń rí ojú-ìwé yìí.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Ó farapamọ́ fún àwọn òǹkàwé títí ẹnìkan yóò fi tú u sílẹ̀.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Ojú-ìwé náà wà ní Àtúnyẹ̀wò báyìí. Ó farapamọ́ fún àwọn òǹkàwé títí a ó fi tú u sílẹ̀.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>A ti Tú ojú-ìwé náà sílẹ̀: àwọn òǹkàwé ń rí i báyìí.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Ojú-ìwé náà tún di Àkọsílẹ̀ àkọ́kọ́. Ó farapamọ́ fún àwọn òǹkàwé títí a ó fi ṣe àtúnyẹ̀wò rẹ̀ tí a ó sì tú u sílẹ̀.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Tú sílẹ̀ báyìí</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Olùmúlò tí ó ní ipa %role tí kò kọ ẹ̀dà yìí nìkan ló lè tú u sílẹ̀.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Àwọn àkòrí ìrànlọ́wọ́ tí ń dúró de ìtúsílẹ̀</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Ó fi í pamọ́ fún àwọn òǹkàwé títí a ó fi tún un tú sílẹ̀.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Olùtúnyẹ̀wò kan ni yóò yẹ̀ ẹ́ wò lẹ́yìn náà. Àwọn òǹkàwé kò tíì rí i.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Àwọn òǹkàwé ń rí i lẹ́sẹ̀kẹsẹ̀.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Ó mú u kúrò nínú àtúnyẹ̀wò fún iṣẹ́ síwájú sí i. Àwọn òǹkàwé kò rí i.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Ṣé kí a fi ojú-ìwé yìí pamọ́ fún àwọn òǹkàwé?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Ṣé kí a dá ojú-ìwé yìí padà sí Àkọsílẹ̀ àkọ́kọ́?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Àwọn òǹkàwé kò rí %title mọ́ títí ẹnìkan yóò fi tún un tú sílẹ̀.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title padà sí Àkọsílẹ̀ àkọ́kọ́ fún iṣẹ́ síwájú sí i. Àwọn òǹkàwé kò tíì rí i, ó sì nílò àtúnyẹ̀wò tuntun kí a tó tú u sílẹ̀.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Fagilé</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Àwọn àkòrí wọ̀nyí wà ní Àtúnyẹ̀wò. Àwọn òǹkàwé yóò rí wọn nígbà tí ẹni tí kò kọ ẹ̀dà lọ́wọ́lọ́wọ́ bá tú wọn sílẹ̀.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

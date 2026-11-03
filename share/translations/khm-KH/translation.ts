@@ -76506,6 +76506,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Static publishing</source>
         <translation>ការបោះពុម្ពផ្សាយឋិតិវន្ត</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>កំពុងត្រួតពិនិត្យ</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>អ្នកអានឃើញទំព័រនេះ។</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>លាក់ពីអ្នកអាន រហូតដល់មាននរណាម្នាក់ចេញផ្សាយវា។</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>ទំព័រនេះស្ថិតក្នុងការត្រួតពិនិត្យឥឡូវនេះ។ វាត្រូវបានលាក់ពីអ្នកអាន រហូតដល់វាត្រូវបានចេញផ្សាយ។</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>ទំព័រនេះត្រូវបានចេញផ្សាយ: អ្នកអានឃើញវាឥឡូវនេះ។</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>ទំព័រនេះជាសេចក្តីព្រាងម្តងទៀត។ វាត្រូវបានលាក់ពីអ្នកអាន រហូតដល់វាត្រូវបានត្រួតពិនិត្យ និងចេញផ្សាយ។</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>ចេញផ្សាយឥឡូវនេះ</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>មានតែអ្នកប្រើដែលមានតួនាទី %role ហើយមិនបានសរសេរកំណែនេះទេ ទើបអាចចេញផ្សាយវាបាន។</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>ប្រធានបទជំនួយដែលកំពុងរង់ចាំការចេញផ្សាយ</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>លាក់វាពីអ្នកអាន រហូតដល់វាត្រូវបានចេញផ្សាយម្តងទៀត។</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>បន្ទាប់មក អ្នកត្រួតពិនិត្យនឹងពិនិត្យវា។ អ្នកអានមិនទាន់ឃើញវានៅឡើយទេ។</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>អ្នកអានឃើញវាភ្លាមៗ។</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>ដកវាចេញពីការត្រួតពិនិត្យ ដើម្បីធ្វើការបន្ថែម។ អ្នកអានមិនឃើញវាទេ។</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>លាក់ទំព័រនេះពីអ្នកអានឬ?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>ផ្ញើទំព័រនេះត្រឡប់ទៅសេចក្តីព្រាងវិញឬ?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>អ្នកអានលែងឃើញ %title ទៀតហើយ រហូតដល់មាននរណាម្នាក់ចេញផ្សាយវាម្តងទៀត។</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title ត្រឡប់ទៅសេចក្តីព្រាងវិញ ដើម្បីធ្វើការបន្ថែម។ អ្នកអាននៅតែមិនឃើញវា ហើយវាត្រូវការការត្រួតពិនិត្យថ្មី មុនពេលចេញផ្សាយ។</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>បោះបង់</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>ប្រធានបទទាំងនេះស្ថិតក្នុងការត្រួតពិនិត្យ។ អ្នកអាននឹងឃើញវា នៅពេលមាននរណាម្នាក់ដែលមិនបានសរសេរកំណែបច្ចុប្បន្ន ចេញផ្សាយវា។</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

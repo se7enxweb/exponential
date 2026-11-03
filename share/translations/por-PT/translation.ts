@@ -76445,6 +76445,82 @@ Será necessário alterar a classe do nó utilizando a funcionalidade de troca.<
         <source>Static publishing</source>
         <translation>Publicação estática</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>Em revisão</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Os leitores veem esta página.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Oculta dos leitores até alguém a publicar.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>A página está agora em Revisão. Está oculta dos leitores até ser publicada.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>A página está Publicada: os leitores já a veem.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>A página voltou a ser um Rascunho. Está oculta dos leitores até ser revista e publicada.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Publicar agora</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Só um utilizador com a função %role que não escreveu esta versão a pode publicar.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Tópicos de ajuda a aguardar publicação</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Oculta-a dos leitores até voltar a ser publicada.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Um revisor verifica-a a seguir. Os leitores ainda não a veem.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Os leitores veem-na de imediato.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Retira-a da revisão para mais trabalho. Os leitores não a veem.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Ocultar esta página dos leitores?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Devolver esta página a Rascunho?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Os leitores deixam de ver %title até alguém o voltar a publicar.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title volta a Rascunho para mais trabalho. Os leitores continuam a não o ver, e precisa de uma nova revisão antes de ser publicado.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cancelar</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Estes tópicos estão em Revisão. Os leitores veem-nos assim que alguém que não escreveu a versão atual os publicar.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

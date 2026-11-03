@@ -76268,6 +76268,82 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <source>Static publishing</source>
         <translation>Publikowanie statyczne</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>W przeglądzie</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Czytelnicy widzą tę stronę.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Ukryta przed czytelnikami, dopóki ktoś jej nie wyda.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Strona jest teraz w przeglądzie. Jest ukryta przed czytelnikami, dopóki nie zostanie wydana.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Strona jest wydana: czytelnicy ją teraz widzą.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Strona jest znowu szkicem. Jest ukryta przed czytelnikami, dopóki nie zostanie przejrzana i wydana.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Wydaj teraz</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Wydać ją może tylko użytkownik z rolą %role, który nie napisał tej wersji.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Tematy pomocy oczekujące na wydanie</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Ukrywa ją przed czytelnikami, dopóki nie zostanie ponownie wydana.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Następnie sprawdza ją recenzent. Czytelnicy jeszcze jej nie widzą.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Czytelnicy widzą ją od razu.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Wycofuje ją z przeglądu do dalszej pracy. Czytelnicy jej nie widzą.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Ukryć tę stronę przed czytelnikami?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Odesłać tę stronę z powrotem do szkicu?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Czytelnicy nie widzą już %title, dopóki ktoś ponownie tego nie wyda.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title wraca do szkicu do dalszej pracy. Czytelnicy nadal tego nie widzą, a przed wydaniem potrzebny jest nowy przegląd.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Anulować</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Te tematy są w przeglądzie. Czytelnicy zobaczą je, gdy tylko wyda je ktoś, kto nie napisał bieżącej wersji.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/secrets</name>

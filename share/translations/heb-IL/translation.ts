@@ -74778,6 +74778,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Static publishing</source>
         <translation>פרסום סטטי</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>בסקירה</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>הקוראים רואים את הדף הזה.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>מוסתר מהקוראים עד שמישהו ישחרר אותו.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>הדף נמצא כעת בסקירה. הוא מוסתר מהקוראים עד שישוחרר.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>הדף שוחרר: הקוראים רואים אותו כעת.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>הדף חזר להיות טיוטה. הוא מוסתר מהקוראים עד שייסקר וישוחרר.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>שחרור עכשיו</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>רק משתמש עם התפקיד %role שלא כתב את הגרסה הזו יכול לשחרר אותה.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>נושאי עזרה הממתינים לשחרור</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>מסתיר אותו מהקוראים עד שישוחרר שוב.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>סוקר יבדוק אותו בשלב הבא. הקוראים עדיין לא רואים אותו.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>הקוראים רואים אותו מיד.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>מוציא אותו מהסקירה לעבודה נוספת. הקוראים לא רואים אותו.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>להסתיר את הדף הזה מהקוראים?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>להחזיר את הדף הזה לטיוטה?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>הקוראים כבר לא רואים את %title עד שמישהו ישחרר אותו שוב.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title חוזר לטיוטה לעבודה נוספת. הקוראים עדיין לא רואים אותו, ונדרשת סקירה חדשה לפני שישוחרר.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ביטול</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>הנושאים האלה נמצאים בסקירה. הקוראים יראו אותם ברגע שמישהו שלא כתב את הגרסה הנוכחית ישחרר אותם.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

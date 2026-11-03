@@ -76506,6 +76506,82 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
         <source>Static publishing</source>
         <translation>Bobimisi ya static</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>Na Review</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Batángi bamonaka lokasa oyo.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Ebombami mpo na batángi tii moto moko akobimisa yango.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Lokasa ezali na Review sikoyo. Ebombami mpo na batángi tii ekobimisama.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Lokasa ezali Released: batángi bamonaka yango sikoyo.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Lokasa ezali lisusu Draft. Ebombami mpo na batángi tii ekotalelama mpe ekobimisama.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Bimisá sikoyo</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Kaka mosaleli oyo azali na mokumba %role mpe akomaki version oyo te nde akoki kobimisa yango.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Bitando ya lisálisi oyo ezali kozela kobimisama</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Ebombaka yango mpo na batángi tii ekobimisama lisusu.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Motaleli akotalela yango na nsima. Batángi bamonaka yango naino te.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Batángi bamonaka yango mbala moko.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Elongolaka yango na Review mpo na mosala mosusu. Batángi bamonaka yango te.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Kobomba lokasa oyo mpo na batángi?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Kozongisa lokasa oyo na Draft?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Batángi bakomona %title lisusu te tii moto moko akobimisa yango lisusu.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title ezongi na Draft mpo na mosala mosusu. Batángi bamonaka yango naino te, mpe esengeli Review ya sika liboso ya kobimisama.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Tiká</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Bitando oyo ezali na Review. Batángi bakomona yango soki moto oyo akomaki version ya sikoyo te abimisi yango.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

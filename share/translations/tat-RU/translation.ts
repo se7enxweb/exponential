@@ -76506,6 +76506,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Static publishing</source>
         <translation>Статик бастыру</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>Тикшерүдә</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Укучылар бу битне күрә.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Кемдер чыгарганчы укучылардан яшерелгән.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Бит хәзер «Тикшерү» халәтендә. Чыгарылганчы ул укучылардан яшерелгән.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Бит чыгарылган: хәзер укучылар аны күрә.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Бит яңадан каралама. Тикшерелеп чыгарылганчы ул укучылардан яшерелгән.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Хәзер чыгару</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Бу версияне %role роле булган һәм аны язмаган кулланучы гына чыгара ала.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Чыгаруны көткән ярдәм темалары</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Яңадан чыгарылганчы аны укучылардан яшерә.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Аннары аны тикшерүче карый. Укучылар аны әлегә күрми.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Укучылар аны шунда ук күрә.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Өстәмә эш өчен аны тикшерүдән ала. Укучылар аны күрми.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Бу битне укучылардан яшерергәме?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Бу битне караламага кире кайтарыргамы?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Кемдер яңадан чыгарганчы укучылар %title күрми.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title өстәмә эш өчен караламага кире кайта. Укучылар аны һаман күрми, һәм чыгарылганчы аңа яңа тикшерү кирәк.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Баш тарту</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Бу темалар тикшерүдә. Агымдагы версияне язмаган кеше аларны чыгаргач, укучылар аларны күрә.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

@@ -76514,6 +76514,82 @@ You go need change di class of di node wit di swap functionality.</translation>
         <source>Static publishing</source>
         <translation>Di static publishing</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>Dey Review</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Readers fit see dis page.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Readers no fit see am until person release am.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>Di page dey Review now. Readers no fit see am until dem release am.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>Di page don Release: readers fit see am now.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>Di page don turn Draft again. Readers no fit see am until dem review am and release am.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>Release am now</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Na only user wey get di %role role and no write dis version fit release am.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Help topics wey dey wait for release</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>E go hide am from readers until dem release am again.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>Reviewer go check am next. Readers never see am yet.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Readers go see am sharp sharp.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>E go comot am from review for more work. Readers no go see am.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Hide dis page from readers?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Send dis page go back to Draft?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Readers no go see %title again until person release am again.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title go back to Draft for more work. Readers still no fit see am, and e need new review before dem release am.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cancel</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Dis topics dey Review. Readers go see dem once person wey no write di current version release dem.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

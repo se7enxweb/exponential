@@ -76506,6 +76506,82 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
         <source>Static publishing</source>
         <translation>Statysk publisearjen</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>Yn kontrôle</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>Lêzers sjogge dizze side.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>Ferburgen foar lêzers oant immen it frijjout.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>De side is no yn kontrôle. Se is ferburgen foar lêzers oant se frijjûn is.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>De side is frijjûn: lêzers sjogge se no.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>De side is wer in konsept. Se is ferburgen foar lêzers oant se kontrolearre en frijjûn is.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>No frijjaan</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>Allinnich in brûker mei de rol %role dy't dizze ferzje net skreaun hat, kin se frijjaan.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>Helpûnderwerpen dy't op frijjefte wachtsje</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>Ferberget it foar lêzers oant it wer frijjûn is.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>In kontroleur besjocht it hjirnei. Lêzers sjogge it noch net.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>Lêzers sjogge it daliks.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>Hellet it út de kontrôle foar mear wurk. Lêzers sjogge it net.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>Dizze side foar lêzers ferbergje?</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>Dizze side werom nei konsept stjoere?</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>Lêzers sjogge %title net mear oant immen it wer frijjout.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title giet werom nei konsept foar mear wurk. Lêzers sjogge it noch altyd net, en it hat in nije kontrôle nedich foardat it frijjûn wurdt.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Annulearje</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>Dizze ûnderwerpen binne yn kontrôle. Lêzers sjogge se sa gau't immen dy't de aktuele ferzje net skreaun hat se frijjout.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

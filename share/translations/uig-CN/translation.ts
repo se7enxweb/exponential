@@ -76506,6 +76506,82 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Static publishing</source>
         <translation>ستاتىك ئېلان قىلىش</translation>
     </message>
+    <message>
+        <source>In review</source>
+        <translation>تەكشۈرۈشتە</translation>
+    </message>
+    <message>
+        <source>Readers see this page.</source>
+        <translation>ئوقۇرمەنلەر بۇ بەتنى كۆرىدۇ.</translation>
+    </message>
+    <message>
+        <source>Hidden from readers until someone releases it.</source>
+        <translation>بىرەرسى ئېلان قىلغۇچە ئوقۇرمەنلەردىن يوشۇرۇن.</translation>
+    </message>
+    <message>
+        <source>The page is in Review now. It is hidden from readers until it is released.</source>
+        <translation>بەت ھازىر تەكشۈرۈشتە. ئېلان قىلىنغۇچە ئوقۇرمەنلەردىن يوشۇرۇن.</translation>
+    </message>
+    <message>
+        <source>The page is Released: readers see it now.</source>
+        <translation>بەت ئېلان قىلىندى: ئوقۇرمەنلەر ئۇنى ھازىر كۆرىدۇ.</translation>
+    </message>
+    <message>
+        <source>The page is a Draft again. It is hidden from readers until it is reviewed and released.</source>
+        <translation>بەت يەنە ئارگىنالغا ئايلاندى. تەكشۈرۈلۈپ ئېلان قىلىنغۇچە ئوقۇرمەنلەردىن يوشۇرۇن.</translation>
+    </message>
+    <message>
+        <source>Release now</source>
+        <translation>ھازىر ئېلان قىل</translation>
+    </message>
+    <message>
+        <source>Only a user with the role %role who did not write this version can release it.</source>
+        <translation>پەقەت %role رولى بار ۋە بۇ نەشرىنى يازمىغان ئىشلەتكۈچىلا ئۇنى ئېلان قىلالايدۇ.</translation>
+    </message>
+    <message>
+        <source>Help topics waiting for release</source>
+        <translation>ئېلان قىلىنىشنى كۈتۈۋاتقان ياردەم تېمىلىرى</translation>
+    </message>
+    <message>
+        <source>Hides it from readers until it is released again.</source>
+        <translation>قايتا ئېلان قىلىنغۇچە ئۇنى ئوقۇرمەنلەردىن يوشۇرىدۇ.</translation>
+    </message>
+    <message>
+        <source>A reviewer checks it next. Readers do not see it yet.</source>
+        <translation>كېيىن تەكشۈرگۈچى ئۇنى تەكشۈرىدۇ. ئوقۇرمەنلەر ئۇنى تېخى كۆرمەيدۇ.</translation>
+    </message>
+    <message>
+        <source>Readers see it at once.</source>
+        <translation>ئوقۇرمەنلەر ئۇنى دەرھال كۆرىدۇ.</translation>
+    </message>
+    <message>
+        <source>Takes it out of review for more work. Readers do not see it.</source>
+        <translation>تېخىمۇ كۆپ ئىشلەش ئۈچۈن ئۇنى تەكشۈرۈشتىن چىقىرىدۇ. ئوقۇرمەنلەر ئۇنى كۆرمەيدۇ.</translation>
+    </message>
+    <message>
+        <source>Hide this page from readers?</source>
+        <translation>بۇ بەتنى ئوقۇرمەنلەردىن يوشۇرامسىز؟</translation>
+    </message>
+    <message>
+        <source>Send this page back to Draft?</source>
+        <translation>بۇ بەتنى ئارگىنالغا قايتۇرامسىز؟</translation>
+    </message>
+    <message>
+        <source>Readers no longer see %title until someone releases it again.</source>
+        <translation>بىرەرسى قايتا ئېلان قىلغۇچە ئوقۇرمەنلەر %title نى ئەمدى كۆرمەيدۇ.</translation>
+    </message>
+    <message>
+        <source>%title goes back to Draft for more work. Readers still do not see it, and it needs a new review before it is released.</source>
+        <translation>%title تېخىمۇ كۆپ ئىشلەش ئۈچۈن ئارگىنالغا قايتىدۇ. ئوقۇرمەنلەر ئۇنى يەنىلا كۆرمەيدۇ، ئېلان قىلىنىشتىن بۇرۇن يېڭى تەكشۈرۈش كېرەك.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ۋاز كەچ</translation>
+    </message>
+    <message>
+        <source>These topics are in Review. Readers see them once someone who did not write the current version releases them.</source>
+        <translation>بۇ تېمىلار تەكشۈرۈشتە. نۆۋەتتىكى نەشرىنى يازمىغان بىرەرسى ئېلان قىلغاندا ئوقۇرمەنلەر ئۇلارنى كۆرىدۇ.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
