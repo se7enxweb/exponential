@@ -2347,7 +2347,7 @@ a.a4-current-user-name { color: var(--a4-ink); font-weight: normal; text-decorat
 .a4-page .a4-figure strong,
 .a4-page .a4-figure.is-date strong { font-size: var(--a4-text-m); }
 .a4-page .a4-figure span { font-size: var(--a4-text-s); }
-/* the chosen filter (content/bookmark): underlined in the accent colour instead of a frame */
+/* the chosen filter (content/bookmark): underlined in the accent color instead of a frame */
 .a4-page .a4-figure.is-current { box-shadow: none; }
 .a4-page .a4-figure.is-current :is(strong, span) { color: var(--a4-accent-text); text-decoration: underline; }
 
