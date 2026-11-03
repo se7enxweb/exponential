@@ -1,12 +1,12 @@
 <?php
 /**
- * The suggestions under the header search field of the administration (design admin and admin4): page_search.tpl,
+ * The suggestions under the header search field of the administration (every admin design): page_search.tpl,
  * parts/search_suggest.tpl, javascript/page/search_suggest.js, the "Suggestions" block of modules/search.css and the
  * view content/suggest (expSearchSuggest).
  *
- *  SG-01  both designs carry the same script, partial template and stylesheet
+ *  SG-01  one script, partial template and stylesheet, in design/admin, for every admin design
  *  SG-02  the field is a combobox controlling the listbox, with the address of content/suggest and the fewest
- *         characters, in both copies of admin4's header and in the admin design; not in the browse mode; the script is
+ *         characters, in both copies of admin3's header (admin3, admin4, admin4l) and in the admin design; not in the browse mode; the script is
  *         loaded once, through the design's script mechanism (ezscript), no inline script or style
  *  SG-03  the script: no jQuery, no innerHTML, the text as a view parameter (a4ViewParameter.encode), 250 ms, a
  *         cancelled request when the text changes, aria-activedescendant, every followed address checked (a4SafeURL)
@@ -52,23 +52,27 @@ class AdminSearchSuggestTest extends PHPUnit\Framework\TestCase
     }
 
     /** SG-01 */
-    public function testBothDesignsCarryTheSameFiles()
+    public function testOneCopyServesEveryDesign()
     {
         foreach ( array( 'javascript/page/search_suggest.js', 'templates/parts/search_suggest.tpl', 'stylesheets/modules/search.css' ) as $file )
-            $this->assertSame( self::read( "design/admin4/$file" ), self::read( "design/admin/$file" ), $file );
+        {
+            $this->assertFileExists( self::root() . "/design/standard/$file" );
+            foreach ( array( 'admin', 'admin3', 'admin4', 'admin4l' ) as $design )
+                $this->assertFileDoesNotExist( self::root() . "/design/$design/$file", "$design/$file" );
+        }
     }
 
     /** SG-02 */
     public function testTheFieldIsAComboboxWithTheSuggestAddress()
     {
-        $partial = self::read( 'design/admin4/templates/parts/search_suggest.tpl' );
+        $partial = self::read( 'design/standard/templates/parts/search_suggest.tpl' );
         $this->assertStringContainsString( 'id="{$suggest_id|wash}-list" role="listbox"', $partial );
         $this->assertStringContainsString( 'id="{$suggest_id|wash}-status" role="status"', $partial );
         $this->assertStringContainsString( 'hidden="hidden"', $partial );
 
-        foreach ( array( 'admin4' => 'searchsuggest{$box}', 'admin' => 'searchsuggest' ) as $design => $id )
+        foreach ( array( 'standard/templates/parts/header_search.tpl' => 'searchsuggest{$box}', 'admin/templates/page_search.tpl' => 'searchsuggest' ) as $design => $id )
         {
-            $tpl = self::read( "design/$design/templates/page_search.tpl" );
+            $tpl = self::read( "design/$design" );
             $this->assertStringContainsString( 'role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="' . $id . '-list" ', $tpl, $design );
             $this->assertStringContainsString( "data-suggest-url={'content/suggest'|ezurl}", $tpl, $design );
             $this->assertStringContainsString( "data-suggest-min=\"{ezini( 'SearchSuggestSettings', 'MinLength', 'admininterface.ini' )|int}\"", $tpl, $design );
@@ -77,18 +81,18 @@ class AdminSearchSuggestTest extends PHPUnit\Framework\TestCase
             $this->assertMatchesRegularExpression( "#\\{ezscript\\( array\\( [^)]*'page/search_suggest\\.js' \\) \\)\\}#", $tpl, $design );
             $this->assertSame( 1, substr_count( $tpl, "'page/search_suggest.js'" ), "$design: loaded once" );
         }
-        // admin4: both copies of the header search, and the script once (with the header's copy)
-        $tpl = self::read( 'design/admin4/templates/page_search.tpl' );
+        // admin3 (and admin4, admin4l): both copies of the header search, and the script once (with the header's copy)
+        $tpl = self::read( 'design/standard/templates/parts/header_search.tpl' );
         $this->assertStringContainsString( "{if \$box|eq( '' )}\n{ezscript( array( 'page/page_search.js' ) )}\n{if \$search_suggest}{ezscript( array( 'page/search_suggest.js' ) )}{/if}", $tpl );
         $this->assertStringContainsString( "suggest_id=concat( 'searchsuggest', \$box )", $tpl );
         $this->assertStringContainsString( 'aria-keyshortcuts="/ Control+/ Meta+/"', $tpl );
-        $this->assertStringNotContainsString( 'style=', self::read( 'design/admin4/templates/parts/search_suggest.tpl' ) );
+        $this->assertStringNotContainsString( 'style=', self::read( 'design/standard/templates/parts/search_suggest.tpl' ) );
     }
 
     /** SG-03 */
     public function testTheScriptIsPlainAndSafe()
     {
-        $js = self::read( 'design/admin4/javascript/page/search_suggest.js' );
+        $js = self::read( 'design/standard/javascript/page/search_suggest.js' );
         // the code, without its comments
         $code = preg_replace( '#/\*.*?\*/|^\s*//.*$#ms', '', $js );
         foreach ( array( 'jQuery', '$(', 'innerHTML', 'insertAdjacentHTML', 'outerHTML', 'document.write', 'YUI' ) as $forbidden )
@@ -109,7 +113,7 @@ class AdminSearchSuggestTest extends PHPUnit\Framework\TestCase
     {
         $node = AdminNodeBinary::require();
         $out = (string)shell_exec( escapeshellarg( $node ) . ' ' . escapeshellarg( __DIR__ . '/js/search_suggest.js' ) . ' '
-                                   . escapeshellarg( self::root() . '/design/admin4/javascript/page/search_suggest.js' ) . ' '
+                                   . escapeshellarg( self::root() . '/design/standard/javascript/page/search_suggest.js' ) . ' '
                                    . escapeshellarg( self::root() . '/design/admin4/javascript/a4_url.js' ) . ' 2>&1' );
         $s = json_decode( $out, true );
         $this->assertIsArray( $s, 'the harness ran: ' . $out );
@@ -182,10 +186,11 @@ class AdminSearchSuggestTest extends PHPUnit\Framework\TestCase
     /** SG-05 */
     public function testTheStylesheetUsesTheDesignsVariables()
     {
-        $block = self::block( 'admin4' );
+        $block = self::block( 'standard' );
         $this->assertNotSame( '', $block );
-        $this->assertStringContainsString( '.searchblock .a4-suggest {', $block );
-        $this->assertStringContainsString( '.searchblock .a4-suggest[hidden] {', $block );
+        // not tied to one design's header markup (AdminUI's header has no .searchblock)
+        $this->assertStringContainsString( "\n.a4-suggest {", $block );
+        $this->assertStringContainsString( "\n.a4-suggest[hidden] {", $block );
         $this->assertStringContainsString( '.header-search-mobile .searchblock .a4-suggest {', $block );
         $this->assertStringContainsString( 'background: var(--a4-surface);', $block );
         $this->assertStringContainsString( '@media (pointer: coarse)', $block );
@@ -201,7 +206,7 @@ class AdminSearchSuggestTest extends PHPUnit\Framework\TestCase
         $this->assertTrue( $ts->load( self::root() . '/share/translations/ger-DE/translation.ts' ) );
         $xpath = new DOMXPath( $ts );
         $sources = array();
-        preg_match_all( "/'([^']+)'\\|i18n\\( 'design\\/admin\\/search\\/suggest' \\)/", self::read( 'design/admin4/templates/parts/search_suggest.tpl' ), $m );
+        preg_match_all( "/'([^']+)'\\|i18n\\( 'design\\/admin\\/search\\/suggest' \\)/", self::read( 'design/standard/templates/parts/search_suggest.tpl' ), $m );
         $sources = array_merge( $sources, $m[1] );
         preg_match_all( "/ezpI18n::tr\\( self::CONTEXT, '([^']+)'/", self::read( 'kernel/classes/expsearchsuggest.php' ), $m );
         $sources = array_merge( $sources, $m[1] );

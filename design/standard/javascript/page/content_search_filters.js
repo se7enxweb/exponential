@@ -8,8 +8,8 @@
  *   for a page without scripts, is hidden;
  * - empty fields are not sent, so the address of a search names only what is set;
  * - on a narrow page the bar is folded under a "Show filters" button ([data-search-toggle]).
- * No jQuery, no inline script (doc/eng-us/features/6.0/content-security-policy.md). The same file is in design/admin
- * and design/admin4.
+ * No jQuery, no inline script (doc/eng-us/features/6.0/content-security-policy.md). One file for every admin design
+ * (design/standard, so admin4 needs no other admin design).
  */
 (function () {
     var form = document.querySelector( 'form[data-search-filters]' );

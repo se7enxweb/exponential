@@ -1,6 +1,7 @@
 /* The administration's search: the suggestions of the header's search field and the results page with its filter
-   bar (content/search, which takes in the former advanced search). design/admin and design/admin4 carry the same
-   file. Two parts, each with its own block, so they can change independently:
+   bar (content/search, which takes in the former advanced search). One file for every admin design, in
+   design/standard (admin4 needs no other admin design). Two parts, each with its own block, so they can change
+   independently:
    - "Suggestions": the list under the header's search field (page_search.tpl, javascript/page/search_suggest.js)
    - "Results": filters, active filter chips, sorting and the result table (content/search.tpl, searchresult.tpl) */
 
@@ -8,7 +9,7 @@
 
 /* The panel under the field, over the page (aligned to the field's end when the window has no room on the other
    side: .a4-suggest-end, set by the script); in the narrow screen menu in the flow, under the field */
-.searchblock .a4-suggest {
+.a4-suggest {
     position: absolute;
     top: calc(100% + 6px);
     inset-inline-start: 0;
@@ -25,11 +26,11 @@
     box-shadow: var(--a4-shadow-m);
 }
 
-.searchblock .a4-suggest[hidden] {
+.a4-suggest[hidden] {
     display: none;
 }
 
-.searchblock .a4-suggest.a4-suggest-end {
+.a4-suggest.a4-suggest-end {
     inset-inline-start: auto;
     inset-inline-end: 0;
 }

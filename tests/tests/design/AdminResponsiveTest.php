@@ -135,8 +135,8 @@ class AdminResponsiveTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'break-word', $tree['overflow-wrap'], '"anywhere" broke words mid-syllable' );
         $this->assertSame( 'auto', $tree['hyphens'] );
         // the search results (content/searchresult.tpl, styled in modules/search.css): a long name breaks
-        $this->assertStringContainsString( '<table class="a4-table is-compact a4-search-table">', self::file( 'design/admin4/templates/content/searchresult.tpl' ) );
-        $rules = AdminBaseStylesheetsTest::rules( self::css( 'modules/search.css' ) );
+        $this->assertStringContainsString( '<table class="a4-table is-compact a4-search-table">', self::file( 'design/admin/templates/content/searchresult.tpl' ) );
+        $rules = AdminBaseStylesheetsTest::rules( preg_replace( '#/\*.*?\*/#s', '', self::file( 'design/standard/stylesheets/modules/search.css' ) ) );
         $this->assertSame( 'anywhere', $rules['.a4-search-table .a4-search-name > a']['overflow-wrap'] );
     }
 
@@ -223,12 +223,12 @@ class AdminResponsiveTest extends PHPUnit\Framework\TestCase
 
     public function testSearchResultsShowTypeAndPathOnAPhone()
     {
-        $template = self::file( 'design/admin4/templates/content/searchresult.tpl' );
+        $template = self::file( 'design/admin/templates/content/searchresult.tpl' );
         $this->assertStringContainsString( '<div class="a4-meta a4-search-path">{foreach $result.path as $path_node}<bdi>{$path_node.name|wash}</bdi>', $template, 'the path under the name' );
         $this->assertStringContainsString( '<thead>', $template, 'a real table: head and body, no grid rows' );
         $this->assertStringNotContainsString( 'role="row"', $template );
         // on a narrow page the modified date and the translations give way, the name and the type stay
-        $css = self::css( 'modules/search.css' );
+        $css = preg_replace( '#/\*.*?\*/#s', '', self::file( 'design/standard/stylesheets/modules/search.css' ) );
         $this->assertStringContainsString( '@container (max-width: 700px)', $css );
         $this->assertMatchesRegularExpression( '#\.a4-search-table th:nth-child\(4\), \.a4-search-table td:nth-child\(4\),\s*\.a4-search-table th:nth-child\(6\), \.a4-search-table td:nth-child\(6\) \{ display: none; \}#', $css );
         $rules = AdminBaseStylesheetsTest::rules( $css );

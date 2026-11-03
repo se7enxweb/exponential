@@ -2,7 +2,7 @@
  * The suggestions of the header search (page_search.tpl, parts/search_suggest.tpl): while the user types, each search
  * field with a data-suggest-url asks content/suggest/(text)/<text> (expSearchSuggest) for content, document pages,
  * users, classes and admin pages, and shows them in groups under the field, the last entry "View all results" (the
- * field's form, content/search). The admin and admin4 designs carry the same file.
+ * field's form, content/search). One file for every admin design (design/standard).
  *
  * The field is an ARIA combobox: the list is its listbox, the entry under the arrow keys its aria-activedescendant.
  * Up and Down move through the entries, Enter opens the one chosen (or searches when none is), Escape and a click
@@ -306,7 +306,7 @@
     // Ctrl+/ or Cmd+/: the visible header search field, from anywhere
     document.addEventListener('keydown', function (e) {
         if (e.key !== '/' || !(e.ctrlKey || e.metaKey) || e.altKey || e.isComposing || e.defaultPrevented) return;
-        var fields = document.querySelectorAll('.searchblock input[name="SearchText"]');
+        var fields = document.querySelectorAll('.searchblock input[name="SearchText"], input[data-suggest-url]');
         for (var i = 0; i < fields.length; i++) {
             var field = fields[i];
             if (field.disabled || field.offsetParent === null) continue;

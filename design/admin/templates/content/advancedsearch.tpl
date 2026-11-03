@@ -5,5 +5,5 @@
    search's parameters too (SearchContentClassID, SearchContentClassAttributeID, SearchSectionID, SearchDate,
    SearchTimestamp, PhraseSearchText), and every link and form of the page leads to content/search.
    It includes design:content/search_page.tpl, not content/search.tpl: with eZ Find and the design admin the latter
-   is eZ Find's own page. The same file is in design/admin and design/admin4. *}
+   is eZ Find's own page. The same file is in design/admin and design/admin4 (design/standard has a front-end one of this name). *}
 {include uri='design:content/search_page.tpl'}

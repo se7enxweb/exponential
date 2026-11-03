@@ -1,7 +1,8 @@
 {* The suggestions under a header search field (page_search.tpl): the list the field controls as a combobox, filled by
    javascript/page/search_suggest.js from content/suggest, and a live region that says how many there are. The texts
    of the script travel here as data attributes; the titles of the groups come with the answer.
-   Parameter: suggest_id, the id the field's aria-controls names. design/admin and design/admin4 carry the same file. *}
+   Parameter: suggest_id, the id the field's aria-controls names. One file for every admin design, in design/standard
+   (admin4 needs no other admin design). *}
 <div class="a4-suggest" id="{$suggest_id|wash}" hidden="hidden"
      data-text-all="{'View all results'|i18n( 'design/admin/search/suggest' )|wash}"
      data-text-count="{'%count results'|i18n( 'design/admin/search/suggest' )|wash}"

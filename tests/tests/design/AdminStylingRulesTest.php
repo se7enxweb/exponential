@@ -257,7 +257,8 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
     public function testModuleStylesheetsUseOnlyTokens()
     {
         $problems = array();
-        foreach ( array( 'admin4', 'admin' ) as $design )
+        // design/standard: module stylesheets every admin design shares (modules/search.css)
+        foreach ( array( 'admin4', 'admin', 'standard' ) as $design )
         {
             foreach ( AdminFiles::files( self::$root . "/design/$design/stylesheets/modules/*.css" ) as $file )
             {
@@ -942,11 +943,14 @@ class AdminStylingRulesTest extends PHPUnit\Framework\TestCase
         $ini = AdminFiles::read( self::$root . '/settings/design.ini' );
         preg_match_all( '/^AdminComponentCSSFileList\[\]=(\S+)\s*$/m', $ini, $m );
         $this->assertContains( 'components.css', $m[1] );
+        // admin4 needs no other admin design: each file in admin4 or design/standard, and in admin or design/standard
+        // (a file every admin design shares, such as modules/search.css, is in design/standard only)
         foreach ( $m[1] as $file )
         {
             foreach ( array( 'admin4', 'admin' ) as $design )
             {
-                $this->assertFileExists( self::$root . "/design/$design/stylesheets/$file" );
+                $this->assertTrue( is_file( self::$root . "/design/$design/stylesheets/$file" ) || is_file( self::$root . "/design/standard/stylesheets/$file" ),
+                                   "$design: $file" );
             }
         }
     }

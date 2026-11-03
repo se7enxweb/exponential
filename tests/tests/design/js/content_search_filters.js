@@ -1,4 +1,4 @@
-// Runs design/admin4/javascript/page/content_search_filters.js (the filter bar of the search page) against
+// Runs design/standard/javascript/page/content_search_filters.js (the filter bar of the search page) against
 // mini_dom.js and prints one JSON line per case: Apply is disabled until a filter changed, the from/to dates show
 // for a custom range only and a typed date chooses it, the sort order submits on change, empty fields are left out
 // of the address, the bar folds under its button.

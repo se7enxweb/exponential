@@ -10,7 +10,7 @@
    fetch( 'content', 'filtered_search' ) (expContentSearchFilters) reads the filters from the request, checks them
    and searches with eZ Find when it is the search engine, else with the built-in engine. A filter the engine cannot
    apply (modification date, owner, language, any of the words, relevance) is not shown ($capabilities).
-   The same file is in design/admin and design/admin4.
+   One file for every admin design, in design/standard (admin4 needs no other admin design).
    Guide: doc/eng-us/help/searching.md *}
 {def $page = fetch( 'content', 'filtered_search', hash( 'offset', first_set( $view_parameters.offset, 0 ) ) )
      $f = $page.filters

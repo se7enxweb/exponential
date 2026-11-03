@@ -10,7 +10,8 @@ type: help
 ---
 # Searching
 
-This page is for editors who need to find an item quickly, and for visitors who search the site.
+This page is for editors who need to find an item quickly, and for visitors who search the site. The quick search, its
+suggestions and the search page work alike in every administration design (Admin 4, Admin 3, AdminUI and Classic).
 
 ## The quick search
 

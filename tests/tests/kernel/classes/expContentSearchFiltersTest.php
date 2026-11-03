@@ -310,7 +310,7 @@ class expContentSearchFiltersTest extends PHPUnit\Framework\TestCase
             $this->assertStringContainsString( 'if ( $useSearchCode && !is_array( $searchData ) )', $code, $view );
         }
         $this->assertStringContainsString( '{if is_set( $search_data )}{set search_data = $page.search_data}{/if}',
-                                           file_get_contents( dirname( __DIR__, 4 ) . '/design/admin4/templates/content/search_page.tpl' ) );
+                                           file_get_contents( dirname( __DIR__, 4 ) . '/design/standard/templates/content/search_page.tpl' ) );
     }
 
     /** SF-13: the view leaves its own search out only when the design's template is the filtered page */
@@ -347,10 +347,10 @@ class expContentSearchFiltersTest extends PHPUnit\Framework\TestCase
             $code = file_get_contents( dirname( __DIR__, 4 ) . '/kernel/private/classes/views/content/' . $view . '.php' );
             $this->assertStringContainsString( "templateSearchesItself( '$template' )", $code, $view );
         }
-        foreach ( array( 'admin', 'admin4' ) as $design )
-            foreach ( array( 'search.tpl', 'advancedsearch.tpl' ) as $file )
-                $this->assertStringContainsString( "{include uri='design:content/search_page.tpl'}",
-                    file_get_contents( dirname( __DIR__, 4 ) . "/design/$design/templates/content/$file" ), "$design/$file" );
+        // design/admin for every admin design; admin4 (and so admin4l and adminui) only search.tpl, before eZ Find's
+        foreach ( array( 'admin/templates/content/search.tpl', 'admin/templates/content/advancedsearch.tpl', 'admin4/templates/content/search.tpl' ) as $file )
+            $this->assertStringContainsString( "{include uri='design:content/search_page.tpl'}",
+                file_get_contents( dirname( __DIR__, 4 ) . "/design/$file" ), $file );
     }
 
     /** SF-10 */

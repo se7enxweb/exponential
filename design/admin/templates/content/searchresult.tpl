@@ -8,7 +8,7 @@
    send them.
 
    $search_text: the words searched for, for the pages of a PDF that hold them (eZ Find with ezfindpdfdeepsearch).
-   The same file is in design/admin and design/admin4. *}
+   The same file is in design/admin and design/admin4 (design/standard has a front-end one of this name). *}
 {def $result_query = first_set( $search_text, '' )
      $result_page_hits = and( $result_query|trim|ne( '' ), ezini( 'SearchSettings', 'SearchEngine' )|eq( 'ezsolr' ), ezini( 'ExtensionSettings', 'ActiveExtensions' )|contains( 'ezfindpdfdeepsearch' ) )}
 

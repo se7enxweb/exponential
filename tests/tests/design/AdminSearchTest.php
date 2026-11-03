@@ -1,6 +1,6 @@
 <?php
 /**
- * admin4's search pages, its pager and the list filters that search one page of a list.
+ * The search pages of the admin designs, admin4's pager and the list filters that search one page of a list.
  *
  *  AS-01 - content/search is one GET form, a search landmark with a visible label and a search field; a failed search
  *          shows an alert, an empty page a prompt, no matches the tips; the header reads "Results for “x” (n)"
@@ -15,7 +15,8 @@
  *  AS-08 - Every new text is in the German and English translations
  *  AS-09 - A search result shows where it is, its type, modification, translations and an edit button
  *  AS-10 - Each active filter is a chip that links to the same search without it; the spelling suggestion keeps them
- *  AS-11 - design/admin and design/admin4 carry the same page; the filter bar works without scripts and offers only
+ *  AS-11 - Every admin design (admin, admin3, admin4, admin4l, adminui) gets the one page and the suggestions from
+ *          design/standard (admin4 stays self-contained), no copies; the filter bar works without scripts and offers only
  *          what the search engine can do
  *  AS-12 - The landmarks, the chips, the sort order and the checkboxes are named for assistive technology
  *  AS-13 - A page past the last one says that it has no matches and links to the first page
@@ -46,15 +47,18 @@ class AdminSearchTest extends PHPUnit\Framework\TestCase
         return AdminFiles::read( self::root() . '/' . $path );
     }
 
-    /** The templates of the search page, which design/admin and design/admin4 carry alike */
-    const SHARED = array( 'templates/content/search.tpl', 'templates/content/search_page.tpl', 'templates/content/searchresult.tpl', 'templates/content/advancedsearch.tpl',
+    /** The files of the search page and the suggestions, one copy in design/standard for every admin design */
+    const SHARED = array( 'templates/content/search_page.tpl', 'templates/parts/search_suggest.tpl', 'templates/parts/header_search.tpl',
                           'javascript/page/content_search_filters.js', 'javascript/page/content_searchresult.js',
-                          'stylesheets/modules/search.css' );
+                          'javascript/page/search_suggest.js', 'javascript/page/page_search.js', 'stylesheets/modules/search.css' );
+
+    /** Small files admin and admin4 both carry, as design/standard has front-end templates of these names */
+    const PAIRED = array( 'templates/content/search.tpl', 'templates/content/searchresult.tpl', 'templates/content/advancedsearch.tpl' );
 
     /** AS-01 */
     public function testTheSearchFormIsALabelledSearchLandmark()
     {
-        $tpl = self::read( 'design/admin4/templates/content/search_page.tpl' );
+        $tpl = self::read( 'design/standard/templates/content/search_page.tpl' );
         $this->assertStringContainsString( '<form class="a4-search-form" id="search-form" action={\'/content/search/\'|ezurl} method="post" role="search" aria-label=', $tpl );
         $this->assertStringContainsString( '<label for="Search">', $tpl );
         $this->assertStringContainsString( 'type="search" name="SearchText" id="Search"', $tpl );
@@ -66,7 +70,7 @@ class AdminSearchTest extends PHPUnit\Framework\TestCase
     /** AS-01 */
     public function testAFailedSearchIsAnAlertNotAnEmptyResult()
     {
-        $tpl = self::read( 'design/admin4/templates/content/search_page.tpl' );
+        $tpl = self::read( 'design/standard/templates/content/search_page.tpl' );
         $this->assertMatchesRegularExpression( '#\{if \$page\.failed\}\s*<div class="a4-notice is-bad" role="alert"><p>\{\'The search could not be run\.#', $tpl );
         $failed = strpos( $tpl, '{if $page.failed}' );
         $this->assertLessThan( strpos( $tpl, '{elseif $page.requested|not}' ), $failed, 'the error, then the initial state' );
@@ -82,7 +86,7 @@ class AdminSearchTest extends PHPUnit\Framework\TestCase
     /** AS-02 */
     public function testThePagesKeepTheWholeSearch()
     {
-        $tpl = self::read( 'design/admin4/templates/content/search_page.tpl' );
+        $tpl = self::read( 'design/standard/templates/content/search_page.tpl' );
         // the search as view parameters without the page (expContentSearchFilters::viewSuffix(): every filter, the sort order, the page size)
         $this->assertStringContainsString( 'page_uri_suffix=$search_query', $tpl );
         $this->assertStringContainsString( '$search_query = $page.query', $tpl );
@@ -93,16 +97,16 @@ class AdminSearchTest extends PHPUnit\Framework\TestCase
     /** AS-03 */
     public function testOneFetchSearchesForBothPages()
     {
-        $tpl = self::read( 'design/admin4/templates/content/search_page.tpl' );
+        $tpl = self::read( 'design/standard/templates/content/search_page.tpl' );
         $this->assertSame( 1, substr_count( $tpl, "fetch( 'content', 'filtered_search', hash( 'offset', first_set( \$view_parameters.offset, 0 ) ) )" ) );
         $this->assertStringNotContainsString( "fetch( 'ezfind'", $tpl, 'the back end is chosen by expContentSearchFilters' );
         $this->assertStringNotContainsString( 'fetch(content,search', $tpl );
         // the advanced search is this page
-        $advanced = self::read( 'design/admin4/templates/content/advancedsearch.tpl' );
+        $advanced = self::read( 'design/admin/templates/content/advancedsearch.tpl' );
         $this->assertStringContainsString( "{include uri='design:content/search_page.tpl'}", $advanced );
         // content/search.tpl only includes the page: eZ Find overrides that name for the design admin, not search_page.tpl
         $this->assertStringContainsString( "{include uri='design:content/search_page.tpl'}", self::read( 'design/admin4/templates/content/search.tpl' ) );
-        $this->assertFileDoesNotExist( self::root() . '/extension/ezfind/design/admin/templates/content/search_page.tpl' );
+        $this->assertFileDoesNotExist( self::root() . '/extension/ezfind/design/standard/templates/content/search_page.tpl' );
         $this->assertStringNotContainsString( '<form', $advanced );
         $FunctionList = array();
         include self::root() . '/kernel/content/function_definition.php';
@@ -136,7 +140,7 @@ class AdminSearchTest extends PHPUnit\Framework\TestCase
     /** AS-06 */
     public function testTheHeaderSearchFetchesLittle()
     {
-        $search = self::read( 'design/admin4/templates/page_search.tpl' );
+        $search = self::read( 'design/standard/templates/parts/header_search.tpl' );
         $menu = self::read( 'design/admin4/templates/page_topmenu.tpl' );
         $this->assertSame( 1, substr_count( $menu, "fetch( 'section', 'list' )" ) );
         $this->assertStringContainsString( "{def \$search_sections = cond( \$ui_context_edit, array(), fetch( 'section', 'list' ) )}", $menu );
@@ -199,7 +203,7 @@ class AdminSearchTest extends PHPUnit\Framework\TestCase
     /** AS-09 */
     public function testASearchResultShowsWhereItIs()
     {
-        $tpl = self::read( 'design/admin4/templates/content/searchresult.tpl' );
+        $tpl = self::read( 'design/admin/templates/content/searchresult.tpl' );
         $this->assertStringContainsString( '{foreach $result.path as $path_node}<bdi>{$path_node.name|wash}</bdi>{delimiter} / {/delimiter}{/foreach}', $tpl );
         // the columns of Ibexa's result table: type, name, modified, content type, translations, edit
         foreach ( array( "'Name'", "'Modified'", "'Content type'", "'Translations'" ) as $head )
@@ -213,17 +217,62 @@ class AdminSearchTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( "{ezscript( array( 'page/content_searchresult.js' ) )}", $tpl );
     }
 
-    /** AS-11 */
-    public function testBothDesignsCarryTheSamePage()
+    /** AS-11: one search page and one header search for every admin design, no copies in the designs */
+    public function testEveryAdminDesignGetsTheSameSearch()
     {
         foreach ( self::SHARED as $file )
-            $this->assertSame( self::read( "design/admin4/$file" ), self::read( "design/admin/$file" ), $file );
+        {
+            $this->assertFileExists( self::root() . "/design/standard/$file" );
+            foreach ( array( 'admin', 'admin2', 'admin3', 'admin4', 'admin4l' ) as $design )
+                $this->assertFileDoesNotExist( self::root() . "/design/$design/$file", "$design: no copy of design/standard/$file" );
+        }
+        foreach ( self::PAIRED as $file )
+            $this->assertSame( self::read( "design/admin/$file" ), self::read( "design/admin4/$file" ), $file );
+        // admin3 and admin4 (and admin4l, adminui through their chain) name the shared header before design/admin's own
+        $ini = self::read( 'settings/uiswitch.ini' );
+        foreach ( array( 'admin4l', 'admin4', 'adminui' ) as $design )
+            $this->assertMatchesRegularExpression( "#^DesignChain\\[$design\\]=\\S*admin3;#m", $ini, $design );
+        $this->assertFileDoesNotExist( self::root() . '/design/admin4l/templates/page_search.tpl' );
+        foreach ( array( 'admin3', 'admin4' ) as $design )
+            $this->assertSame( "{include uri='design:parts/header_search.tpl' search_box=first_set( \$search_box, '' )}",
+                               trim( preg_replace( '#\{\*.*?\*\}#s', '', self::read( "design/$design/templates/page_search.tpl" ) ) ), $design );
+        foreach ( array( 'design/admin/templates/page_search.tpl', 'design/standard/templates/parts/header_search.tpl' ) as $path )
+        {
+            $header = self::read( $path );
+            $this->assertStringContainsString( "{include uri='design:parts/search_suggest.tpl'", $header, $path );
+            $this->assertStringContainsString( "{ezscript( array( 'page/search_suggest.js' ) )}", $header, $path );
+            $this->assertStringContainsString( "<form action={'/content/search/'|ezurl} method=\"post\"", $header, $path );
+            $this->assertStringContainsString( 'data-suggest-url={\'content/suggest\'|ezurl}', $header, $path );
+        }
+        $this->assertStringNotContainsString( '<script', self::read( 'design/standard/templates/parts/header_search.tpl' ), 'no inline script' );
+        // the suggestions are not tied to one design's header markup
+        $this->assertStringContainsString( "\n.a4-suggest {", self::read( 'design/standard/stylesheets/modules/search.css' ) );
+        $this->assertStringContainsString( ".searchblock input[name=\"SearchText\"], input[data-suggest-url]", self::read( 'design/standard/javascript/page/search_suggest.js' ) );
+    }
+
+    /** AS-11: the Admin UI design (extension exp_adminui, where installed) uses the same page and suggests too */
+    public function testTheAdminUIDesignUsesTheSameSearch()
+    {
+        $design = self::root() . '/extension/exp_adminui/design/adminui/templates';
+        if ( !is_dir( $design ) )
+            $this->markTestSkipped( 'extension/exp_adminui is not installed' );
+        // releases before 1.0.0.58 carry their own search page (CI installs the released version)
+        preg_match( '#<version>([^<]+)</version>#', (string)@file_get_contents( self::root() . '/extension/exp_adminui/extension.xml' ), $m );
+        if ( !isset( $m[1] ) || version_compare( $m[1], '1.0.0.58', '<' ) )
+            $this->markTestSkipped( 'exp_adminui ' . ( $m[1] ?? '?' ) . ' predates the shared search (1.0.0.58)' );
+        foreach ( array( 'search.tpl', 'advancedsearch.tpl', 'searchresult.tpl', 'search_page.tpl' ) as $file )
+            $this->assertFileDoesNotExist( "$design/content/$file", "adminui: no page of its own ($file)" );
+        $header = AdminFiles::read( "$design/adminui/page_search.tpl" );
+        $this->assertStringContainsString( "<form action={'/content/search/'|ezurl} method=\"post\"", $header );
+        $this->assertStringNotContainsString( "'get'", $header, 'no query string read' );
+        $this->assertStringContainsString( "{include uri='design:parts/search_suggest.tpl'", $header );
+        $this->assertStringContainsString( "{ezscript( array( 'page/search_suggest.js' ) )}", $header );
     }
 
     /** AS-11 */
     public function testTheFilterBarWorksWithoutScripts()
     {
-        $tpl = self::read( 'design/admin4/templates/content/search_page.tpl' );
+        $tpl = self::read( 'design/standard/templates/content/search_page.tpl' );
         foreach ( array( 'name="SearchMode"', 'name="ClassID[]"', 'name="ClassAttributeID"', 'name="SectionID[]"', 'name="{$date_field.name}"',
                          'name="{$date_field.name}From"', 'name="{$date_field.name}To"', 'name="Owner"', 'name="Language"', 'name="SubTreeArray[]"',
                          'name="SearchPageLimit"', 'name="SortBy"' ) as $field )
@@ -242,17 +291,17 @@ class AdminSearchTest extends PHPUnit\Framework\TestCase
     /** AS-12 */
     public function testTheSearchIsNamedForAssistiveTechnology()
     {
-        $tpl = self::read( 'design/admin4/templates/content/search_page.tpl' );
+        $tpl = self::read( 'design/standard/templates/content/search_page.tpl' );
         $this->assertStringContainsString( "role=\"search\" aria-label=\"{'Search'|i18n( 'design/admin/content/search' )|wash}\"", $tpl );
         $this->assertStringContainsString( '<aside class="a4-search-filters" id="search-filters" aria-labelledby="search-filters-title">', $tpl );
         $this->assertStringContainsString( "<ul class=\"a4-plain a4-search-chips\" aria-label=\"{'Active filters'|i18n( 'design/admin/content/search' )|wash}\">", $tpl );
         $this->assertStringContainsString( "<span class=\"a4-icon a4-bi-x-lg\" role=\"img\" aria-label=\"{'Remove this filter'|i18n( 'design/admin/content/search' )|wash}\"></span>", $tpl );
         $this->assertStringContainsString( '<label for="search-sort">', $tpl );
         $this->assertStringContainsString( 'aria-expanded="true" data-search-toggle=""', $tpl );
-        $header = self::read( 'design/admin4/templates/page_search.tpl' );
+        $header = self::read( 'design/standard/templates/parts/header_search.tpl' );
         $this->assertStringContainsString( "role=\"search\" aria-label=\"{'Quick search'|i18n( 'design/admin/pagelayout' )|wash}\">", $header );
         $this->assertStringContainsString( 'aria-haspopup="dialog"', $header );
-        $result = self::read( 'design/admin4/templates/content/searchresult.tpl' );
+        $result = self::read( 'design/admin/templates/content/searchresult.tpl' );
         $this->assertStringContainsString( "<input aria-label=\"{'Select this item for editing.'|i18n( 'design/admin/content/search' )|wash} {\$result.name|wash}\"", $result );
         // the checkboxes are not sent with the search form
         $this->assertStringNotContainsString( 'class="ezsearch-select" name=', $result );
@@ -261,7 +310,7 @@ class AdminSearchTest extends PHPUnit\Framework\TestCase
     /** AS-13 */
     public function testAPagePastTheLastLinksToTheFirstPage()
     {
-        $tpl = self::read( 'design/admin4/templates/content/search_page.tpl' );
+        $tpl = self::read( 'design/standard/templates/content/search_page.tpl' );
         $this->assertStringContainsString( "{elseif \$page.result|not}", $tpl );
         $this->assertStringContainsString( "{'There are no matches on this page.'|i18n( 'design/admin/content/search' )} <a href={concat( '/content/search', \$search_query )|ezurl}>{'Go to the first page'|i18n( 'design/admin/content/search' )}</a>", $tpl );
         $this->assertLessThan( strpos( $tpl, "{include name=Result uri='design:content/searchresult.tpl'" ), strpos( $tpl, '{elseif $page.result|not}' ) );
@@ -270,7 +319,7 @@ class AdminSearchTest extends PHPUnit\Framework\TestCase
     /** AS-10 */
     public function testEachChipLinksToTheSearchWithoutIt()
     {
-        $tpl = self::read( 'design/admin4/templates/content/search_page.tpl' );
+        $tpl = self::read( 'design/standard/templates/content/search_page.tpl' );
         $this->assertStringContainsString( "<a class=\"a4-tag a4-search-chip\" href={concat( '/content/search', \$chip.query )|ezurl}", $tpl );
         foreach ( array( 'mode', 'class', 'class_attribute', 'section', 'modified', 'published', 'owner', 'language', 'subtree' ) as $type )
             $this->assertStringContainsString( "{case match='$type'}", $tpl, $type );
@@ -281,13 +330,13 @@ class AdminSearchTest extends PHPUnit\Framework\TestCase
     /** AS-14 */
     public function testAResultShowsWhereTheWordsAre()
     {
-        $result = self::read( 'design/admin4/templates/content/searchresult.tpl' );
+        $result = self::read( 'design/admin/templates/content/searchresult.tpl' );
         // No shorten before the marks are put back: it could cut a <em> in half and show a stray "&lt;e".
         $this->assertStringNotContainsString( 'highlight|shorten', $result );
         $this->assertStringContainsString( "{\$result.highlight|wash|explode( '&lt;em&gt;' )|implode( '<mark>' )|explode( '&lt;/em&gt;' )|implode( '</mark>' )}", $result );
         $this->assertStringContainsString( "{include uri='design:ezfindpdfdeepsearch/child_hits.tpl' object_id=\$result.contentobject_id query=\$result_query is_file=true()}", $result );
         $this->assertStringContainsString( "ezini( 'ExtensionSettings', 'ActiveExtensions' )|contains( 'ezfindpdfdeepsearch' )", $result, 'only with the extension' );
-        $this->assertMatchesRegularExpression( "#uri='design:content/searchresult\\.tpl' search_result=\\\$page\\.result search_text=\\\$f\\.text\\}#", self::read( 'design/admin4/templates/content/search_page.tpl' ) );
+        $this->assertMatchesRegularExpression( "#uri='design:content/searchresult\\.tpl' search_result=\\\$page\\.result search_text=\\\$f\\.text\\}#", self::read( 'design/standard/templates/content/search_page.tpl' ) );
         // the template of the PDF pages comes with the extension ezfindpdfdeepsearch, where it is installed
         if ( is_dir( self::root() . '/extension/ezfindpdfdeepsearch' ) )
         {
@@ -304,16 +353,16 @@ class AdminSearchTest extends PHPUnit\Framework\TestCase
     /** AS-15 */
     public function testThePageRunsUnderAContentSecurityPolicy()
     {
-        foreach ( array( 'search', 'searchresult', 'advancedsearch' ) as $name )
+        foreach ( array( 'admin/templates/content/search', 'admin/templates/content/searchresult', 'admin/templates/content/advancedsearch', 'standard/templates/content/search_page', 'standard/templates/parts/header_search' ) as $name )
         {
-            foreach ( array( 'admin4', 'admin' ) as $design )
+            foreach ( array( 'design' ) as $design )
             {
-                $tpl = self::read( "design/$design/templates/content/$name.tpl" );
+                $tpl = self::read( "$design/$name.tpl" );
                 $this->assertDoesNotMatchRegularExpression( '#<script(?![^>]*\bsrc=)|<style|\sstyle="|\son[a-z]+="#i', $tpl, "$design $name" );
             }
         }
-        $this->assertStringContainsString( "{ezscript( array( 'page/content_search_filters.js' ) )}", self::read( 'design/admin4/templates/content/search_page.tpl' ) );
-        $js = self::read( 'design/admin4/javascript/page/content_search_filters.js' );
+        $this->assertStringContainsString( "{ezscript( array( 'page/content_search_filters.js' ) )}", self::read( 'design/standard/templates/content/search_page.tpl' ) );
+        $js = self::read( 'design/standard/javascript/page/content_search_filters.js' );
         $this->assertDoesNotMatchRegularExpression( '#jQuery\s*[(.]|\$\(|YUI\.|\.innerHTML|eval\(#', $js );
     }
 
@@ -322,7 +371,7 @@ class AdminSearchTest extends PHPUnit\Framework\TestCase
     {
         $node = AdminNodeBinary::require();
         $out = shell_exec( escapeshellarg( $node ) . ' ' . escapeshellarg( __DIR__ . '/js/content_search_filters.js' ) . ' '
-                           . escapeshellarg( self::root() . '/design/admin4/javascript/page/content_search_filters.js' ) . ' 2>&1' );
+                           . escapeshellarg( self::root() . '/design/standard/javascript/page/content_search_filters.js' ) . ' 2>&1' );
         $cases = array();
         foreach ( explode( "\n", trim( (string)$out ) ) as $line )
         {
