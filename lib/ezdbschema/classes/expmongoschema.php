@@ -21,9 +21,32 @@ class expMongoSchema extends eZDBSchemaInterface
     function schema( $params = array() )
     {
         if ( $this->Schema === false )
-            return array();
+            return $this->liveCollections();
 
         return $this->Schema;
+    }
+
+    /**
+     * The database's collections as tables without fields or indexes (a document store keeps no column list),
+     * for a reader made from a connection: the installer's check of the declared tables and the extension
+     * tables it creates ask which tables exist. It used to answer none, so every table read as missing.
+     *
+     * @return array table name => array( name, fields, indexes )
+     */
+    function liveCollections()
+    {
+        if ( !is_object( $this->DBInstance ) || !method_exists( $this->DBInstance, 'listCollectionNames' ) )
+            return array();
+        $tables = array();
+        foreach ( (array)$this->DBInstance->listCollectionNames() as $name )
+        {
+            $name = (string)$name;
+            if ( $name === '' || strpos( $name, 'system.' ) === 0 )
+                continue;
+            $tables[$name] = array( 'name' => $name, 'fields' => array(), 'indexes' => array() );
+        }
+        ksort( $tables );
+        return $tables;
     }
 
     /**

@@ -2380,6 +2380,200 @@ class eZContentObjectTreeNode extends eZPersistentObject
         return strtolower( (string)$direction ) === 'desc' ? -1 : 1;
     }
 
+    /**
+     * The aggregate stages that apply an AttributeFilter on MongoDB, as createAttributeFilterSQLStrings() does on
+     * the SQL engines. They run on tree documents with the object's and class's fields flattened in (id,
+     * current_version, published, modified, section_id, owner_id, class_identifier, name; see subTreeByNodeID());
+     * $withJoins puts the stages that flatten them in front, for a pipeline that has not joined yet.
+     *
+     * The filters: path, published, modified, modified_subnode, node_id, contentobject_id, section, state, depth,
+     * class_identifier, priority, name, owner, visibility, and class attributes (identifier or id, by their sort
+     * key); the operators =, !=, <, >, <=, >=, like, not_like, in, not_in, between, not_between; "and" or "or" as
+     * the first entry. Before this the MongoDB path left the filter out and every fetch with one returned the whole
+     * subtree.
+     *
+     * @param array|false $attributeFilter
+     * @param bool $withJoins
+     * @return array|false the stages (none for no filter); false when the filter cannot be applied: an unknown
+     *                     class attribute in an "and" filter (null on the SQL engines), class_name or an unknown
+     *                     operator. The caller returns an empty result then, never the unfiltered subtree.
+     */
+    static function mongoAttributeFilterStages( $attributeFilter, $withJoins = false )
+    {
+        if ( !is_array( $attributeFilter ) || !$attributeFilter )
+            return array();
+        $filterArray = $attributeFilter;
+        $joinType = '$and';
+        if ( isset( $filterArray[0] ) && is_string( $filterArray[0] ) )
+        {
+            $joinType = strtolower( $filterArray[0] ) === 'or' ? '$or' : '$and';
+            unset( $filterArray[0] );
+        }
+        $fields = array( 'path' => array( 'path_string', 'string' ), 'published' => array( 'published', 'int' ),
+                         'modified' => array( 'modified', 'int' ), 'modified_subnode' => array( 'modified_subnode', 'int' ),
+                         'node_id' => array( 'node_id', 'int' ), 'contentobject_id' => array( 'contentobject_id', 'int' ),
+                         'section' => array( 'section_id', 'int' ), 'depth' => array( 'depth', 'int' ),
+                         'class_identifier' => array( 'class_identifier', 'string' ), 'priority' => array( 'priority', 'int' ),
+                         'name' => array( 'name', 'string' ), 'owner' => array( 'owner_id', 'int' ),
+                         'visibility' => array( 'is_invisible', 'int' ) );
+        $stages = array();
+        $conditions = array();
+        $n = 0;
+        foreach ( $filterArray as $filter )
+        {
+            if ( !is_array( $filter ) || count( $filter ) < 3 )
+                continue;
+            list( $attribute, $operator, $value ) = array_values( $filter );
+            if ( $attribute === 'class_name' )
+            {
+                eZDebug::writeWarning( 'The attribute filter class_name is not available on MongoDB', __METHOD__ );
+                return false;
+            }
+            if ( $attribute === 'visibility' )
+                $value = ( $value == '1' ) ? 0 : 1;
+            if ( $attribute === 'state' )
+            {
+                $as = '_afstate' . $n++;
+                $stages[] = array( '$lookup' => array( 'from' => 'ezcobj_state_link', 'localField' => 'id',
+                                                       'foreignField' => 'contentobject_id', 'as' => $as ) );
+                $field = "$as.contentobject_state_id";
+                $type = 'int';
+                if ( $operator === '=' )
+                    $operator = 'in';
+                else if ( $operator === '!=' )
+                    $operator = 'not_in';
+                if ( !is_array( $value ) )
+                    $value = array( $value );
+            }
+            else if ( isset( $fields[$attribute] ) )
+            {
+                list( $field, $type ) = $fields[$attribute];
+            }
+            else
+            {
+                $id = is_numeric( $attribute ) ? (int)$attribute : eZContentObjectTreeNode::classAttributeIDByIdentifier( $attribute );
+                $sortKey = $id ? eZContentObjectTreeNode::sortKeyByClassAttributeID( $id ) : false;
+                if ( !$id || $sortKey === false )
+                {
+                    if ( $joinType === '$and' )
+                        return false;
+                    continue;
+                }
+                $as = '_af' . $n++;
+                $stages[] = array( '$lookup' => array(
+                    'from' => 'ezcontentobject_attribute',
+                    'let' => array( 'oid' => '$contentobject_id', 'ver' => '$contentobject_version' ),
+                    'pipeline' => array(
+                        array( '$match' => array( '$expr' => array( '$and' => array( array( '$eq' => array( '$contentobject_id', '$$oid' ) ),
+                                                                                     array( '$eq' => array( '$version', '$$ver' ) ) ) ) ) ),
+                        array( '$match' => array( 'contentclassattribute_id' => $id ) ),
+                        array( '$project' => array( '_id' => 0, 'sort_key_int' => 1, 'sort_key_string' => 1 ) ),
+                    ),
+                    'as' => $as ) );
+                // the SQL engines join the attribute (INNER JOIN, also in an "or" filter): an object without it
+                // is never in the result, whatever the comparison
+                $stages[] = array( '$match' => array( "$as.0" => array( '$exists' => true ) ) );
+                $type = $sortKey === 'string' ? 'string' : 'int';
+                $field = $as . '.' . ( $type === 'string' ? 'sort_key_string' : 'sort_key_int' );
+            }
+            $condition = self::mongoAttributeFilterCondition( $field, $type, $operator, $value );
+            if ( $condition === false )
+            {
+                eZDebug::writeWarning( "Unknown attribute filter type on MongoDB: $operator", __METHOD__ );
+                return false;
+            }
+            $conditions[] = $condition;
+        }
+        if ( !$conditions )
+            return count( $filterArray ) ? false : array();
+        $stages[] = array( '$match' => count( $conditions ) === 1 ? $conditions[0] : array( $joinType => $conditions ) );
+        $joined = array();
+        foreach ( $stages as $stage )
+        {
+            if ( isset( $stage['$lookup']['as'] ) )
+                $joined[$stage['$lookup']['as']] = 0;
+        }
+        if ( $joined )
+            $stages[] = array( '$project' => $joined );
+        if ( $withJoins )
+            $stages = array_merge( self::mongoFlattenStages(), $stages );
+        return $stages;
+    }
+
+    /**
+     * One AttributeFilter comparison as a MongoDB condition, or false for an unknown operator.
+     *
+     * @param string $field
+     * @param string $type int or string
+     * @param string $operator
+     * @param mixed $value
+     * @return array|false
+     */
+    static function mongoAttributeFilterCondition( $field, $type, $operator, $value )
+    {
+        $cast = function ( $v ) use ( $type ) {
+            return $type === 'int' && is_numeric( $v ) ? (int)$v : (string)$v;
+        };
+        $map = array( '=' => '$eq', '!=' => '$ne', '>' => '$gt', '<' => '$lt', '>=' => '$gte', '<=' => '$lte' );
+        if ( isset( $map[$operator] ) )
+            return array( $field => array( $map[$operator] => $cast( $value ) ) );
+        switch ( $operator )
+        {
+            case 'in':
+            case 'not_in':
+                if ( !is_array( $value ) )
+                    return false;
+                return array( $field => array( $operator === 'in' ? '$in' : '$nin' => array_values( array_map( $cast, $value ) ) ) );
+            case 'between':
+            case 'not_between':
+                if ( !is_array( $value ) || count( $value ) < 2 )
+                    return false;
+                $value = array_values( $value );
+                $range = array( '$gte' => $cast( $value[0] ), '$lte' => $cast( $value[1] ) );
+                return $operator === 'between' ? array( $field => $range ) : array( $field => array( '$not' => $range ) );
+            case 'like':
+            case 'not_like':
+                // * is the wildcard, \* a literal star (as on the SQL engines)
+                $parts = preg_split( '/(?<!\\\\)\*/', (string)$value );
+                $regex = '^' . implode( '.*', array_map( function ( $p ) { return preg_quote( str_replace( '\\*', '*', $p ) ); }, $parts ) ) . '$';
+                return $operator === 'like'
+                    ? array( $field => array( '$regex' => $regex ) )
+                    : array( $field => array( '$not' => array( '$regex' => $regex ) ) );
+        }
+        return false;
+    }
+
+    /**
+     * The stages that join a tree document with its object, class and name and flatten the fields the
+     * attribute filter reads (the same names subTreeByNodeID() gives them).
+     *
+     * @return array
+     */
+    static function mongoFlattenStages()
+    {
+        return array(
+            array( '$lookup' => array( 'from' => 'ezcontentobject', 'localField' => 'contentobject_id', 'foreignField' => 'id', 'as' => '_obj' ) ),
+            array( '$unwind' => '$_obj' ),
+            array( '$lookup' => array( 'from' => 'ezcontentclass', 'localField' => '_obj.contentclass_id', 'foreignField' => 'id', 'as' => '_cls' ) ),
+            array( '$unwind' => '$_cls' ),
+            array( '$match' => array( '_cls.version' => 0 ) ),
+            array( '$lookup' => array(
+                'from' => 'ezcontentobject_name',
+                'let' => array( 'oid' => '$contentobject_id', 'ver' => '$contentobject_version' ),
+                'pipeline' => array(
+                    array( '$match' => array( '$expr' => array( '$and' => array( array( '$eq' => array( '$contentobject_id', '$$oid' ) ),
+                                                                                 array( '$eq' => array( '$content_version', '$$ver' ) ) ) ) ) ),
+                    array( '$limit' => 1 ),
+                ),
+                'as' => '_name' ) ),
+            array( '$unwind' => array( 'path' => '$_name', 'preserveNullAndEmptyArrays' => true ) ),
+            array( '$addFields' => array(
+                'id' => '$_obj.id', 'current_version' => '$_obj.current_version', 'modified' => '$_obj.modified',
+                'owner_id' => '$_obj.owner_id', 'published' => '$_obj.published', 'section_id' => '$_obj.section_id',
+                'class_identifier' => '$_cls.identifier', 'name' => '$_name.name' ) ),
+        );
+    }
+
     static function subTreeByNodeID( $params = false, $nodeID = 0 )
     {
         if ( !is_numeric( $nodeID ) and !is_array( $nodeID ) )
@@ -2639,6 +2833,13 @@ class eZContentObjectTreeNode extends eZPersistentObject
                 'name'                       => '$_name.name',
                 'real_translation'           => '$_name.real_translation',
             ] ];
+            $filterStages = self::mongoAttributeFilterStages( $params['AttributeFilter'] );
+            if ( $filterStages === false )
+            {
+                $db->dropTempTableList( $sqlPermissionChecking['temp_tables'] );
+                return [];
+            }
+            $mPipeline = array_merge( $mPipeline, $filterStages );
             $mPipeline[] = [ '$project' => [ '_id' => 0, '_obj' => 0, '_cls' => 0, '_name' => 0 ] ];
             // Sort
             $sortBy    = isset( $params['SortBy'] ) ? $params['SortBy'] : false;
@@ -3182,6 +3383,13 @@ class eZContentObjectTreeNode extends eZPersistentObject
                 $filterOp = ( isset( $params['ClassFilterType'] ) && $params['ClassFilterType'] === 'include' ) ? '$in' : '$nin';
                 $countPipeline[] = [ '$match' => [ '_obj.contentclass_id' => [ $filterOp => array_map( 'intval', $classIDArray ) ] ] ];
             }
+            $filterStages = self::mongoAttributeFilterStages( $attributeFilterParam, true );
+            if ( $filterStages === false )
+            {
+                $db->dropTempTableList( $sqlPermissionChecking['temp_tables'] );
+                return 0;
+            }
+            $countPipeline = array_merge( $countPipeline, $filterStages );
             $countPipeline[] = [ '$count' => 'count' ];
             $countRows = $db->aggregate( 'ezcontentobject_tree', $countPipeline );
             $db->dropTempTableList( $sqlPermissionChecking['temp_tables'] );
