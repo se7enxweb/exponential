@@ -40,6 +40,7 @@ PathRules[]=doc/eng-us/INSTALL.md;install
 PathRules[]=doc/eng-us/CONFIGURING.md;install
 PathRules[]=doc/eng-us/UPDATE.md;install
 PathRules[]=doc/eng-us/UNINSTALL.md;install
+PathRules[]=doc/eng-us/EXTENDING.md;guide
 PathRules[]=doc/eng-us/specifications/*;specification
 PathRules[]=doc/eng-us/history/*;history
 PathRules[]=doc/eng-us/release-overview;history

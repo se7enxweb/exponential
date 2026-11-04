@@ -44,6 +44,7 @@ PageOrder[project/README.md]=0
 PageOrder[INSTALL.md]=10
 PageOrder[CONFIGURING.md]=11
 PageOrder[UPDATE.md]=12
+PageOrder[EXTENDING.md]=13
 PageOrder[UNINSTALL.md]=14
 PageOrder[languages.md]=20
 PageOrder[branch-overview.md]=30

@@ -268,6 +268,7 @@ das nächste Release, nicht über eine geflickte Kopie dieses Releases.
 
 - [Exponential 6.0 installieren](INSTALL.md): eine saubere Installation derselben Version, für eine Staging-Kopie.
 - [Exponential 6.0 konfigurieren](CONFIGURING.md): die Einstellungen nach einem Update prüfen, und welche Datei gewinnt.
+- [Exponential 6.0 erweitern](EXTENDING.md): nach einem Update die Autoloads Ihrer Extensions neu erzeugen und ihre Upgrade-Schritte ausführen.
 - [Upgrade](anleitungen/aktualisieren.md): von 4.x, 5.x, 5.90 oder LoveStack, und jede Checkliste je Zeitraum von 6.0.
 - [Exponential 6.0 deinstallieren](UNINSTALL.md): der vollständige Datenexport, dann das Entfernen.
 - [Die Upgrade-Prüfung](anleitungen/upgrade-pruefung.md) und [das Datei-Manifest](funktionen/6.0/dateikonsistenzpruefung.md).
