@@ -289,6 +289,27 @@ class expExtensionWizardBaseTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'X & Y', $dom->getElementsByTagName( 'maintainer' )->item( 0 )->textContent );
     }
 
+    public function testPackagingFilesNameAWebsite()
+    {
+        $settings = $this->settings( array() );
+        $php = expExtensionWizardBaseTestWizard::call( 'ezinfo', $settings );
+        expRadWizardTestHelper::assertPhpParses( $this, $php, 'ezinfo.php' );
+        $this->assertStringContainsString( "'Info_url'  => 'https://doc.exponential.earth' );", $php );
+        $dom = new DOMDocument();
+        $this->assertTrue( $dom->loadXML( expExtensionWizardBaseTestWizard::call( 'extensionXml', $settings ) ) );
+        $this->assertSame( 'https://doc.exponential.earth', $dom->getElementsByTagName( 'info_url' )->item( 0 )->textContent );
+
+        $settings = array( 'website' => 'https://example.org/my-extension' ) + $this->settings();
+        $this->assertStringContainsString( "'Info_url'  => 'https://example.org/my-extension' );", expExtensionWizardBaseTestWizard::call( 'ezinfo', $settings ) );
+        $this->assertStringContainsString( '<info_url>https://example.org/my-extension</info_url>', expExtensionWizardBaseTestWizard::call( 'extensionXml', $settings ) );
+
+        foreach ( array( 'javascript:alert(1)', 'example.org', "https://x.org/'a", 'ftp://example.org' ) as $bad )
+        {
+            $settings = array( 'website' => $bad ) + $this->settings();
+            $this->assertStringContainsString( "'Info_url'  => 'https://doc.exponential.earth' );", expExtensionWizardBaseTestWizard::call( 'ezinfo', $settings ), $bad );
+        }
+    }
+
     public function testComposerJson()
     {
         $data = json_decode( expExtensionWizardBaseTestWizard::call( 'composerJson', $this->settings( array( 'licence' => 'MIT' ) ) ), true );

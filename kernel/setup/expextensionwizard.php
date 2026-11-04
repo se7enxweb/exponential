@@ -22,6 +22,9 @@ abstract class expExtensionWizard
     /** A name has to be usable as a directory, a design name and an ini value. */
     const NAME_PATTERN = '/^[a-z][a-z0-9_]{2,40}$/';
 
+    /** The website the about page links to when the settings name none (ezinfo.php Info_url, extension.xml info_url) */
+    const DEFAULT_WEBSITE = 'https://doc.exponential.earth';
+
     /**
      * What this wizard can put in, as key => array( label, description, default ).
      *
@@ -364,7 +367,8 @@ abstract class expExtensionWizard
              . "            'Name'      => '" . self::phpString( $settings['title'] ) . "',\n"
              . "            'Version'   => self::SOFTWARE_VERSION,\n"
              . "            'Copyright' => '" . self::phpString( $settings['author'] ) . "',\n"
-             . "            'License'   => '" . self::phpString( $settings['licence'] ) . "' );\n"
+             . "            'License'   => '" . self::phpString( $settings['licence'] ) . "',\n"
+             . "            'Info_url'  => '" . self::phpString( self::website( $settings ) ) . "' );\n"
              . "    }\n"
              . "}\n";
     }
@@ -377,6 +381,7 @@ abstract class expExtensionWizard
              . "  <summary>" . self::xml( $settings['summary'] ) . "</summary>\n"
              . "  <version>" . self::xml( $settings['version'] ) . "</version>\n"
              . "  <license>" . self::xml( $settings['licence'] ) . "</license>\n"
+             . "  <info_url>" . self::xml( self::website( $settings ) ) . "</info_url>\n"
              . "  <maintainers>\n"
              . "    <maintainer>" . self::xml( $settings['author'] ) . "</maintainer>\n"
              . "  </maintainers>\n"
@@ -533,6 +538,19 @@ abstract class expExtensionWizard
      * @param string $value
      * @return string
      */
+    /**
+     * The website of the extension: the settings' website when it is an http or https address, else
+     * DEFAULT_WEBSITE, so the about page always has one to link to.
+     *
+     * @param array $settings
+     * @return string
+     */
+    protected static function website( array $settings )
+    {
+        $url = isset( $settings['website'] ) && is_string( $settings['website'] ) ? trim( $settings['website'] ) : '';
+        return preg_match( '#^https?://[^\s/<>"\']+[^\s<>"\']*$#i', $url ) ? $url : self::DEFAULT_WEBSITE;
+    }
+
     protected static function phpString( $value )
     {
         return str_replace( array( '\\', "'" ), array( '\\\\', "\\'" ), (string) $value );

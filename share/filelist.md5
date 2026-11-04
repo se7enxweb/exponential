@@ -26271,12 +26271,12 @@ f851dd4a947d1cf7149d3049a2a93d29  kernel/setup/expclassloadcheck.php
 6b48dc3b3fe7de03b2cbb6c2314d97c8  kernel/setup/expcronjobrunner.php
 82f7c053e352623adba257a08867e194  kernel/setup/expdatatypewizard.php
 daebea71ff2c749d4870981a7f5515fb  kernel/setup/expdesignextensionwizard.php
-d2fef518e79ab4a01ea814db7ab8ccd0  kernel/setup/expextensionwizard.php
+17a20c4002c14e6c00d382600c379f0d  kernel/setup/expextensionwizard.php
 b4fb5691175ecaf6d91113d18688c960  kernel/setup/exphandlerwizard.php
 456d17247f629041e0c65d9a38e09d29  kernel/setup/expkerneloverridewizard.php
 c7045d0c22f47072c8975b1ecee2ac3c  kernel/setup/expmoduleextensionwizard.php
 444829a3b91a2d47584bd94eb2e7fd05  kernel/setup/expmoduletablecode.php
-5864c5af0348b4fcbaaa12e023be5d02  kernel/setup/expmoduletablewizard.php
+2f83a64057fca66eaf457394f2f8c9de  kernel/setup/expmoduletablewizard.php
 21ff0b47c3f299c1a6c40410d2558ec2  kernel/setup/expmodulewizard.php
 4ad6e22be53f1ee5109bfc394c688477  kernel/setup/exppreloadrunner.php
 435230ba42366c90bbbd00054307379d  kernel/setup/expradcatalogue.php
@@ -28690,7 +28690,7 @@ ac89f8dbc4b8940b4ec6d081fe6e9df1  tests/tests/kernel/classes/datatable/expDataTa
 8397418da0e0183e6ad9d46be77a6163  tests/tests/kernel/classes/datatable/expDataTableTestLoader.php
 21b04fdec6319bebbb8e0cd1a6ee63a5  tests/tests/kernel/classes/datatable/expDataTableWriterTest.php
 f489b2f2ba31e9d3677a338f5aa1b3fe  tests/tests/kernel/classes/datatable/expKernelSecretAndConnectionTablesTest.php
-f0bf0a7c8847b90a1da2266ee7ea2261  tests/tests/kernel/classes/datatable/expModuleTableWizardTest.php
+7bfad5ebcb049d3a62a3d01b0f70c0f9  tests/tests/kernel/classes/datatable/expModuleTableWizardTest.php
 0944f597529025b2eb0116e10c6fa090  tests/tests/kernel/classes/datatable/expPersistentObjectOnConnectionTest.php
 6b0f72c93f55c20b0a73b49e58d67c53  tests/tests/kernel/classes/datatypes/eZChoiceDatatypesTest.php
 d072c72b21512e5ac96713bf229dfde9  tests/tests/kernel/classes/datatypes/eZDataTypeBaseTest.php
@@ -29250,7 +29250,7 @@ bd8d41ed0a52636adde5f39ce94110c7  tests/tests/kernel/classes/preload/expPreloadL
 629fccbc03f314fe0c61022cb97f5735  tests/tests/kernel/classes/processtools/ExpProcessToolsTest.php
 33f58295142f21f63c1d7733d736c74d  tests/tests/kernel/classes/radwizards/expContentExtensionWizardTest.php
 cdab03f49e10efdbb5d2fd36110c60c4  tests/tests/kernel/classes/radwizards/expDesignExtensionWizardTest.php
-3f329ed7445839a703d1f236a90f29dc  tests/tests/kernel/classes/radwizards/expExtensionWizardBaseTest.php
+f28c96354ca62f031930513fc0968a00  tests/tests/kernel/classes/radwizards/expExtensionWizardBaseTest.php
 77d9ed8c221820e7068f5e71a5c0040a  tests/tests/kernel/classes/radwizards/expModuleExtensionWizardTest.php
 a6c5fcd87570e56272d942e52b5e4966  tests/tests/kernel/classes/radwizards/expModuleWizardTest.php
 8b6601dbecef273b0ef5bf052f795388  tests/tests/kernel/classes/radwizards/expRadSurveyHelpersTest.php

@@ -89,6 +89,7 @@ class expModuleTableWizard extends expExtensionWizard
             'class' => $class,
             'title' => self::text( $get( 'title' ), 120 ) ?: ( $table !== '' ? ucfirst( str_replace( '_', ' ', $table ) ) : '' ),
             'summary' => self::text( $get( 'summary' ), 250 ),
+            'website' => self::text( $get( 'website' ), 250 ),
             'author' => self::text( $get( 'author' ), 120 ),
             'vendor' => self::safeName( $get( 'vendor' ), true ) ?: 'exponential',
             'version' => self::text( $get( 'version' ), 20 ) ?: '1.0.0',
@@ -101,8 +102,9 @@ class expModuleTableWizard extends expExtensionWizard
             'stamps' => !empty( $input['stamps'] ),
             'source_label' => '',
         );
-        if ( $settings['summary'] === '' && $settings['title'] !== '' )
-            $settings['summary'] = 'The data table ' . $settings['title'] . ', its administration and its JSON endpoint.';
+        // named after the table: the title is often a phrase of its own ("Data tables demo: books")
+        if ( $settings['summary'] === '' && $settings['table'] !== '' )
+            $settings['summary'] = 'The data table ' . $settings['table'] . ', its administration and its JSON endpoint.';
         $chosen = isset( $input['parts'] ) && is_array( $input['parts'] ) ? $input['parts'] : null;
         foreach ( self::parts() as $key => $part )
             $settings['parts'][$key] = $chosen === null ? $part['default'] : in_array( $key, $chosen, true );
