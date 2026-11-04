@@ -43,6 +43,7 @@ PathRules[]=doc/eng-us/INTEGRATING.md;install
 PathRules[]=doc/eng-us/DISTRIBUTIONS.md;install
 PathRules[]=doc/eng-us/HISTORY.md;guide
 PathRules[]=doc/eng-us/COMMUNITY.md;guide
+PathRules[]=doc/eng-us/competition/*;guide
 PathRules[]=doc/eng-us/UNINSTALL.md;install
 PathRules[]=doc/eng-us/EXTENDING.md;guide
 PathRules[]=doc/eng-us/specifications/*;specification

@@ -278,3 +278,4 @@ A move never happens by itself: back up the database and `var/` first, and test 
 - [Who is the Exponential Foundation?](help/who-is-the-exponential-foundation.md): every product of the family, with its sources
 - [Knowing the product family](help/advocates/knowing-the-product-family.md): one sentence per product
 - [The Exponential platform ecosystem](history/ecosystem.md)
+- [Exponential Competition](competition/README.md): Exponential compared with proprietary DXPs, SaaS and the systems in every language

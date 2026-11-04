@@ -205,6 +205,7 @@ class expHelpAudience
         'doc/eng-us/DISTRIBUTIONS.md;install', 'doc/eng-us/UNINSTALL.md;install',
         'doc/eng-us/HISTORY.md;guide',
         'doc/eng-us/COMMUNITY.md;guide',
+        'doc/eng-us/competition/*;guide',
         'doc/eng-us/specifications/*;specification', 'doc/eng-us/history/*;history',
         'doc/eng-us/examples/*;example', 'extension/*;extension', '*;reference',
     );
@@ -269,6 +270,7 @@ class expHelpAudience
         'doc/eng-us/DISTRIBUTIONS.md;admin,developer,hosting,businesses,partner',
         'doc/eng-us/HISTORY.md;admin,developer,editor,user,partner,hosting,businesses,community,press,adopter',
         'doc/eng-us/COMMUNITY.md;admin,developer,editor,user,partner,hosting,businesses,community,press,adopter,supporter,advocate,trainer,student,sponsor,designer',
+        'doc/eng-us/competition/*;admin,developer,businesses,adopter,partner,hosting,community,advocate,press',
         'doc/eng-us/guides/rest-api-v1-and-v2.md;developer',
         'doc/eng-us/guides/benchmarking.md;developer',
         'doc/eng-us/guides/test-language-lorem-ipsum.md;developer',
@@ -347,6 +349,7 @@ class expHelpAudience
         'doc/eng-us/INTEGRATING.md;integration',
         'doc/eng-us/HISTORY.md;history',
         'doc/eng-us/COMMUNITY.md;community',
+        'doc/eng-us/competition/*;adoption',
         'doc/eng-us/guides/rest-api-v1-and-v2.md;development',
         'doc/eng-us/guides/benchmarking.md;development',
         'doc/eng-us/guides/test-language-lorem-ipsum.md;development',

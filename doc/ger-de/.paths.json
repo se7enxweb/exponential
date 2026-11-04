@@ -1,11 +1,11 @@
 {
+    "COMMUNITY.md": "COMMUNITY.md",
     "CONFIGURING.md": "CONFIGURING.md",
     "DISTRIBUTIONS.md": "DISTRIBUTIONS.md",
     "EXTENDING.md": "EXTENDING.md",
-    "COMMUNITY.md": "COMMUNITY.md",
     "HISTORY.md": "HISTORY.md",
-    "INTEGRATING.md": "INTEGRATING.md",
     "INSTALL.md": "INSTALL.md",
+    "INTEGRATING.md": "INTEGRATING.md",
     "LIZENZ-GFDL-1.3.txt": "LICENSE-GFDL-1.3.txt",
     "README-LIZENZ.md": "README-LICENSE.md",
     "UNINSTALL.md": "UNINSTALL.md",
@@ -9019,5 +9019,9 @@
     "standards/versionsverwaltung-und-releases.md": "standards/source-control-and-releases.md",
     "standards/webplattform.md": "standards/web-platform.md",
     "uebersetzungswellen.md": "translation-waves.md",
-    "ziele.md": "goals.md"
+    "wettbewerb/php-cms-und-frameworks.md": "competition/php-cms-and-frameworks.md",
+    "wettbewerb/andere-sprachen.md": "competition/other-languages.md",
+    "ziele.md": "goals.md",
+    "wettbewerb/README.md": "competition/README.md",
+    "wettbewerb/proprietaere-dxp-und-saas.md": "competition/proprietary-dxp-and-saas.md"
 }
