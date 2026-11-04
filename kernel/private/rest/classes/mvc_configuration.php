@@ -66,6 +66,17 @@ class ezpMvcConfiguration implements ezcMvcDispatcherConfiguration
         $path = (string)parse_url( $requestUri, PHP_URL_PATH );
         if ( strpos( $scriptName, self::INDEX_FILE ) !== false && $indexDir !== '' && strpos( $path, $indexDir ) === 0 )
             return $indexDir;
+        // The script's own address says where the installation is, also when eZSys found no www directory (the REST
+        // kernel's siteaccess and settings set-up leaves it empty below an Alias): /doc/index_rest.php/api/... in
+        // non-vhost mode, /doc/api/... rewritten to /doc/index_rest.php in vhost mode
+        if ( $scriptName !== '' && basename( $scriptName ) === self::INDEX_FILE )
+        {
+            if ( strpos( $path, $scriptName . '/' ) === 0 )
+                return $scriptName;
+            $base = rtrim( str_replace( '\\', '/', dirname( $scriptName ) ), '/' );
+            if ( $base !== '' && $base !== '.' && strpos( $path, $base . '/' ) === 0 )
+                return $base;
+        }
         $wwwDir = rtrim( $wwwDir, '/' );
         if ( $wwwDir !== '' && strpos( $path, $wwwDir . '/' ) === 0 )
             return $wwwDir;

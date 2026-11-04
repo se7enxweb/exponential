@@ -19,6 +19,14 @@ class ezpMvcConfigurationUriPrefixTest extends PHPUnit\Framework\TestCase
         $this->assertSame( '/doc', ezpMvcConfiguration::uriPrefix( '/doc/index.php', '/doc/api/graphql', '/doc/index.php', '/doc/' ) );
     }
 
+    public function testTheScriptAddressDecidesWhenEZSysKnowsNoDirectory()
+    {
+        // inside the REST kernel below an Alias, eZSys reports no index and no www directory
+        $this->assertSame( '/doc', ezpMvcConfiguration::uriPrefix( '/doc/index_rest.php', '/doc/api/ezp/v2/content/node/2', '', '' ) );
+        $this->assertSame( '/doc/index_rest.php', ezpMvcConfiguration::uriPrefix( '/doc/index_rest.php', '/doc/index_rest.php/api/graphql', '', '' ) );
+        $this->assertSame( '', ezpMvcConfiguration::uriPrefix( '/index_rest.php', '/api/ezp/v2/content/node/2', '', '' ) );
+    }
+
     public function testTheNonVhostAddressKeepsItsIndexFile()
     {
         $this->assertSame( '/index_rest.php', ezpMvcConfiguration::uriPrefix( '/index_rest.php', '/index_rest.php/api/ezp/v2/content/node/2', '/index_rest.php', '' ) );

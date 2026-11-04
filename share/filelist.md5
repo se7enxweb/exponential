@@ -26474,7 +26474,7 @@ c35d283ab48a2808040342c08f047844  kernel/private/rest/classes/interfaces/route_f
 0d8a8b41fa4e29757c53bcf37b646489  kernel/private/rest/classes/models/ezprest_authcode.php
 b044966c86f6c0099033f00d6742765b  kernel/private/rest/classes/models/ezprest_token.php
 bb6c79a268f048dd8ffb2b826bbe253b  kernel/private/rest/classes/models/rest_model.php
-e2d5f13b911dcf88e6e62f8b68d6e763  kernel/private/rest/classes/mvc_configuration.php
+1fc50b39bb4ea9f1cf2c3cdb7c8a5d9f  kernel/private/rest/classes/mvc_configuration.php
 03a717231206240eb2193e4a17509682  kernel/private/rest/classes/oauth/authorize_policy.php
 e419f69a99b810b1d51f85b9c38fb3e8  kernel/private/rest/classes/oauth/authorize_policy_grant.php
 e79684251e365b9acf15dd8148332922  kernel/private/rest/classes/oauth/oauth_filter.php
@@ -29962,7 +29962,7 @@ c6702ee0abe1478afcbccc05fdf8e37a  tests/tests/kernel/private/oauth/expOAuthPkceT
 05b48378fdbf2bc218858904f3c39734  tests/tests/kernel/private/rest/abstract_test.php
 fbf7216ee54f793b0f1712f7b37c935b  tests/tests/kernel/private/rest/application_cache_test.php
 8e6b1f844b99b4ae09c90927f8cdff58  tests/tests/kernel/private/rest/controller_test.php
-0dfe2d8cb8b025760a36f7024d45f24d  tests/tests/kernel/private/rest/ezpMvcConfigurationUriPrefixTest.php
+5946c94330196e6ce9afb09283ffea62  tests/tests/kernel/private/rest/ezpMvcConfigurationUriPrefixTest.php
 e7ba42b302d050866e62352a66eb5389  tests/tests/kernel/private/rest/ezpRestHttpRequestParserRecordedRequestsTest.php
 8370e0b8a1e8d0fddb54b2e77ef64525  tests/tests/kernel/private/rest/ezpRestHttpResponseWriterStatusLineTest.php
 cd56472ac389fc65477aa2088f712be7  tests/tests/kernel/private/rest/ezprest_request_parser_regression.php
