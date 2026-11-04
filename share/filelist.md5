@@ -24899,7 +24899,7 @@ d36e09b1e690617bd7611e91f6360650  kernel/classes/help/exphelpfrontmatter.php
 d2657dc757f79deac67589c1d57e32c4  kernel/classes/help/exphelphighlighter.php
 aa50e042e5cc3af19ad8b5a5a78ec3ae  kernel/classes/help/exphelpissuereport.php
 72ac61296bc06b2f7a90413e56202c46  kernel/classes/help/exphelplanding.php
-75ab24556e7461d5219c3c7511199f60  kernel/classes/help/exphelplanguage.php
+c0c798c829c5b3ea29a09ca645ada102  kernel/classes/help/exphelplanguage.php
 6c269ef02397c3220fcd8e5fdc36c527  kernel/classes/help/exphelplicense.php
 b62f68d250ea7c1033cfe53796e3cd30  kernel/classes/help/exphelplinkcheck.php
 fbae80fe63d96d6e887b16fe062af9a4  kernel/classes/help/exphelplinks.php
@@ -29224,7 +29224,7 @@ a3a08b38baf32f3f84999033b35a45a4  tests/tests/kernel/classes/help/expHelpSearchB
 5279dfae2eba4659ace52fa2102abd7b  tests/tests/kernel/classes/help/expHelpSearchHrefTest.php
 c9a89abdd3d6ef82f6cab53a0dc3c53d  tests/tests/kernel/classes/help/expHelpSearchTest.php
 997fcea350f65410eb0071eb31e23a26  tests/tests/kernel/classes/help/expHelpSearchViewParametersTest.php
-087f4be5a9813fd97363199cc2a91da5  tests/tests/kernel/classes/help/expHelpTranslatedDocumentationTest.php
+8c3e5362190c99ad7a15eed52b530955  tests/tests/kernel/classes/help/expHelpTranslatedDocumentationTest.php
 adac5192811bf518d52266dd4a6b0e72  tests/tests/kernel/classes/help/fixtures/branch-overview-svn.txt
 b9d8c2c0840b87ae23be6231a61f75db  tests/tests/kernel/classes/httpcache/ezpHttpCacheContractTest.php
 425d4bf904aa7280cc752981be409ad1  tests/tests/kernel/classes/httpcache/ezpHttpCacheDebugViewerTest.php
