@@ -29,19 +29,19 @@ wave is done and checked. The languages, their locales and their administration 
 
 ## The plan, measured
 
-<!-- generated: exp:i18n waves 2026-11-04 (start) -->
-**Measured on 4 November 2026** by `./console exp:i18n waves` from the files of this release (no database):
+<!-- generated: exp:i18n waves 2026-11-03 (start) -->
+**Measured on 3 November 2026** by `./console exp:i18n waves` from the files of this release (no database):
 
 | What | Size |
 |---|---:|
 | Administration: strings of `share/translations/untranslated/translation.ts`, in 11 parts | **20,855** (140,414 words) |
 | Shipped extensions (`expimageeditor`, `ezjscore`, `ezoe`) | **567** strings |
-| Help: pages below `doc/eng-us/` (the generated example pages left out) | **5,962** pages, 5,330,882 words |
+| Help: pages below `doc/eng-us/` (the generated example pages left out) | **5,963** pages, 5,332,621 words |
 | Help: tables of the generated example pages (`.examples/`) | **4,186** entries, 112,725 words |
-| Administration translations, complete of them | **155**, 155 |
+| Administration translations, complete of them | **156**, 156 |
 | of them in daily use (administration, extensions and daily-use help ≥ 97 %) | **2** |
-| Languages without an administration translation ([list](#languages-without-a-translation)), being translated on a branch | **42**, 0 |
-| Waves to 100 % in every language | **33,468** |
+| Languages without an administration translation ([list](#languages-without-a-translation)), being translated on a branch | **41**, 0 |
+| Waves to 100 % in every language | **33,675** |
 
 ### Where each language stands
 
@@ -49,168 +49,169 @@ Percent of the strings (administration, extensions) and of the words (help), rou
 
 | Language | Code | Speakers (millions) | Difficulty | Administration | Extensions | Daily-use help | All help | Waves left | Next wave |
 |---|---|---:|:-:|---:|---:|---:|---:|---:|---|
-| Afrikaans | `afr-ZA` | 17 | 2 | 100 | 100 | **0** | **0** | 217 | #658 `S` |
-| Akan | `aka-GH` | 11 | 3 | 100 | 100 | **0** | **0** | 217 | #683 `S` |
-| Albanian | `sqi-AL` | 8 | 2 | 100 | 100 | **0** | **0** | 217 | #682 `S` |
-| Amharic | `amh-ET` | 60 | 4 | 100 | 100 | **0** | **0** | 217 | #642 `S` |
+| Afrikaans | `afr-ZA` | 17 | 2 | 100 | 100 | **0** | **0** | 217 | #648 `S` |
+| Akan | `aka-GH` | 11 | 3 | 100 | 100 | **0** | **0** | 217 | #673 `S` |
+| Albanian | `sqi-AL` | 8 | 2 | 100 | 100 | **0** | **0** | 217 | #672 `S` |
+| Amharic | `amh-ET` | 60 | 4 | 100 | 100 | **0** | **0** | 217 | #632 `S` |
 | Arabic | `ara-SA` | 400 | 4 | 100 | 100 | **0** | **0** | 217 | #2 `S` |
-| Aramaic | `arc-IQ` | < 1 | 5 | 100 | 100 | **0** | **0** | 217 | #736 `S` |
-| Armenian | `hye-AM` | 5 | 4 | 100 | 100 | **0** | **0** | 217 | #705 `S` |
-| Assamese | `asm-IN` | 15 | 5 | 100 | 100 | **0** | **0** | 217 | #687 `S` |
-| Asturian | `ast-ES` | < 1 | 3 | 100 | 100 | **0** | **0** | 217 | #734 `S` |
-| Azerbaijani | `aze-AZ` | 10 | 3 | 100 | 100 | **0** | **0** | 217 | #685 `S` |
-| Bambara | `bam-ML` | 14 | 3 | 100 | 100 | **0** | **0** | 217 | #674 `S` |
-| Basque | `eus-ES` | < 1 | 3 | 100 | 100 | **0** | **0** | 217 | #727 `S` |
-| Belarusian | `bel-BY` | 5 | 4 | 100 | 100 | **0** | **0** | 217 | #706 `S` |
-| Bengali | `ben-BD` | 285 | 4 | 100 | 100 | **0** | **0** | 217 | #619 `S` |
-| Bhojpuri | `bho-IN` | 52 | 5 | 100 | 100 | **0** | **0** | 217 | #649 `S` |
-| Bodo | `brx-IN` | 2 | 5 | 100 | 100 | **0** | **0** | 217 | #725 `S` |
-| Bosnian | `bos-BA` | 3 | 3 | 100 | 100 | **0** | **0** | 217 | #711 `S` |
-| Breton | `bre-FR` | < 1 | 4 | 100 | 100 | **0** | **0** | 217 | #741 `S` |
-| Bulgarian | `bul-BG` | 8 | 2 | 100 | 100 | **0** | **0** | 217 | #678 `S` |
-| Burmese | `mya-MM` | 43 | 5 | 100 | 100 | **0** | **0** | 217 | #657 `S` |
-| Catalan | `cat-ES` | 10 | 1 | 100 | 100 | **0** | **0** | 217 | #651 `S` |
-| Cebuano | `ceb-PH` | 28 | 3 | 100 | 100 | **0** | **0** | 217 | #653 `S` |
-| Central Kurdish (Sorani) | `ckb-IQ` | 7 | 5 | 100 | 100 | **0** | **0** | 217 | #703 `S` |
-| Chechen | `che-RU` | 2 | 5 | 100 | 100 | **0** | **0** | 217 | #723 `S` |
-| Chinese (Simplified) | `chi-CN` | 1,100 | 2 | 100 | 100 | **0** | **0** | 217 | #611 `S` |
-| Chinese (Traditional) | `chi-TW` | 31 | 2 | 100 | 100 | **0** | **0** | 217 | #638 `S` |
-| Croatian | `cro-HR` | 5 | 2 | 100 | 100 | **0** | **0** | 217 | #692 `S` |
-| Czech | `cze-CZ` | 11 | 2 | 100 | 100 | **0** | **0** | 217 | #671 `S` |
-| Danish | `dan-DK` | 6 | 1 | 100 | 100 | **0** | **0** | 217 | #669 `S` |
-| Dari (Persian of Afghanistan) | `fas-AF` | 35 | 4 | 100 | 100 | **0** | **0** | 217 | #655 `S` |
-| Dhivehi | `div-MV` | < 1 | 5 | 100 | 100 | **0** | **0** | 217 | #738 `S` |
-| Dogri | `doi-IN` | 3 | 5 | 100 | 100 | **0** | **0** | 217 | #719 `S` |
-| Dutch | `dut-NL` | 25 | 1 | 100 | 100 | **0** | **0** | 217 | #630 `S` |
-| Dzongkha | `dzo-BT` | < 1 | 5 | 100 | 100 | **0** | **0** | 217 | #733 `S` |
+| Aramaic | `arc-IQ` | < 1 | 5 | 100 | 100 | **0** | **0** | 217 | #727 `S` |
+| Armenian | `hye-AM` | 5 | 4 | 100 | 100 | **0** | **0** | 217 | #696 `S` |
+| Assamese | `asm-IN` | 15 | 5 | 100 | 100 | **0** | **0** | 217 | #677 `S` |
+| Asturian | `ast-ES` | < 1 | 3 | 100 | 100 | **0** | **0** | 217 | #725 `S` |
+| Azerbaijani | `aze-AZ` | 10 | 3 | 100 | 100 | **0** | **0** | 217 | #675 `S` |
+| Bambara | `bam-ML` | 14 | 3 | 100 | 100 | **0** | **0** | 217 | #664 `S` |
+| Basque | `eus-ES` | < 1 | 3 | 100 | 100 | **0** | **0** | 217 | #718 `S` |
+| Belarusian | `bel-BY` | 5 | 4 | 100 | 100 | **0** | **0** | 217 | #697 `S` |
+| Bengali | `ben-BD` | 285 | 4 | 100 | 100 | **0** | **0** | 217 | #609 `S` |
+| Bhojpuri | `bho-IN` | 52 | 5 | 100 | 100 | **0** | **0** | 217 | #639 `S` |
+| Bodo | `brx-IN` | 2 | 5 | 100 | 100 | **0** | **0** | 217 | #716 `S` |
+| Bosnian | `bos-BA` | 3 | 3 | 100 | 100 | **0** | **0** | 217 | #702 `S` |
+| Breton | `bre-FR` | < 1 | 4 | 100 | 100 | **0** | **0** | 217 | #732 `S` |
+| Bulgarian | `bul-BG` | 8 | 2 | 100 | 100 | **0** | **0** | 217 | #668 `S` |
+| Burmese | `mya-MM` | 43 | 5 | 100 | 100 | **0** | **0** | 217 | #647 `S` |
+| Catalan | `cat-ES` | 10 | 1 | 100 | 100 | **0** | **0** | 217 | #641 `S` |
+| Cebuano | `ceb-PH` | 28 | 3 | 100 | 100 | **0** | **0** | 217 | #643 `S` |
+| Central Kurdish (Sorani) | `ckb-IQ` | 7 | 5 | 100 | 100 | **0** | **0** | 217 | #694 `S` |
+| Chechen | `che-RU` | 2 | 5 | 100 | 100 | **0** | **0** | 217 | #714 `S` |
+| Chinese (Simplified) | `chi-CN` | 1,100 | 2 | 100 | 100 | **0** | **0** | 217 | #601 `S` |
+| Chinese (Traditional) | `chi-TW` | 31 | 2 | 100 | 100 | **0** | **0** | 217 | #628 `S` |
+| Croatian | `cro-HR` | 5 | 2 | 100 | 100 | **0** | **0** | 217 | #682 `S` |
+| Czech | `cze-CZ` | 11 | 2 | 100 | 100 | **0** | **0** | 217 | #661 `S` |
+| Danish | `dan-DK` | 6 | 1 | 100 | 100 | **0** | **0** | 217 | #659 `S` |
+| Dari (Persian of Afghanistan) | `fas-AF` | 35 | 4 | 100 | 100 | **0** | **0** | 217 | #645 `S` |
+| Dhivehi | `div-MV` | < 1 | 5 | 100 | 100 | **0** | **0** | 217 | #729 `S` |
+| Dogri | `doi-IN` | 3 | 5 | 100 | 100 | **0** | **0** | 217 | #710 `S` |
+| Dutch | `dut-NL` | 25 | 1 | 100 | 100 | **0** | **0** | 217 | #620 `S` |
+| Dzongkha | `dzo-BT` | < 1 | 5 | 100 | 100 | **0** | **0** | 217 | #724 `S` |
 | English (Australia) | `eng-AU` | 1,500 | 1 | 100 | 100 | 100 | 100 | 0 | source texts |
 | English (United States) | `eng-US` | 1,500 | 1 | 100 | 100 | 100 | 100 | 0 | source texts |
-| Esperanto | `epo-EO` | < 1 | 2 | 100 | 100 | **0** | **0** | 217 | #742 `S` |
-| Estonian | `est-EE` | 1 | 3 | 100 | 100 | **0** | **0** | 217 | #722 `S` |
-| Ewe | `ewe-GH` | 5 | 3 | 100 | 100 | **0** | **0** | 217 | #701 `S` |
-| Faroese | `fao-FO` | < 1 | 4 | 100 | 100 | **0** | **0** | 217 | #745 `S` |
-| Filipino | `fil-PH` | 83 | 2 | 100 | 100 | **0** | **0** | 217 | #624 `S` |
-| Finnish | `fin-FI` | 6 | 2 | 100 | 100 | **0** | **0** | 217 | #689 `S` |
-| French | `fre-FR` | 310 | 1 | 100 | 100 | **0** | **0** | 217 | #613 `S` |
-| Fula | `ful-SN` | 37 | 4 | 100 | 100 | **0** | **0** | 217 | #654 `S` |
-| Galician | `glg-ES` | 2 | 2 | 100 | 100 | **0** | **0** | 217 | #709 `S` |
-| Ganda | `lug-UG` | 11 | 4 | 100 | 100 | **0** | **0** | 217 | #691 `S` |
-| Georgian | `kat-GE` | 4 | 4 | 100 | 100 | **0** | **0** | 217 | #715 `S` |
+| Esperanto | `epo-EO` | < 1 | 2 | 100 | 100 | **0** | **0** | 217 | #733 `S` |
+| Estonian | `est-EE` | 1 | 3 | 100 | 100 | **0** | **0** | 217 | #713 `S` |
+| Ewe | `ewe-GH` | 5 | 3 | 100 | 100 | **0** | **0** | 217 | #691 `S` |
+| Faroese | `fao-FO` | < 1 | 4 | 100 | 100 | **0** | **0** | 217 | #736 `S` |
+| Filipino | `fil-PH` | 83 | 2 | 100 | 100 | **0** | **0** | 217 | #614 `S` |
+| Finnish | `fin-FI` | 6 | 2 | 100 | 100 | **0** | **0** | 217 | #679 `S` |
+| French | `fre-FR` | 310 | 1 | 100 | 100 | **0** | **0** | 217 | #603 `S` |
+| Fula | `ful-SN` | 37 | 4 | 100 | 100 | **0** | **0** | 217 | #644 `S` |
+| Galician | `glg-ES` | 2 | 2 | 100 | 100 | **0** | **0** | 217 | #700 `S` |
+| Ganda | `lug-UG` | 11 | 4 | 100 | 100 | **0** | **0** | 217 | #681 `S` |
+| Georgian | `kat-GE` | 4 | 4 | 100 | 100 | **0** | **0** | 217 | #706 `S` |
 | German | `ger-DE` | 135 | 2 | 100 | **76** | 100 | 100 | 1 | #1 `E` |
-| Greek | `ell-GR` | 13 | 3 | 100 | 100 | **0** | **0** | 217 | #677 `S` |
-| Greenlandic | `kal-GL` | < 1 | 4 | 100 | 100 | **0** | **0** | 217 | #746 `S` |
-| Gujarati | `guj-IN` | 62 | 4 | 100 | 100 | **0** | **0** | 217 | #639 `S` |
-| Hausa | `hau-NG` | 94 | 3 | 100 | 100 | **0** | **0** | 217 | #627 `S` |
-| Hawaiian | `haw-US` | < 1 | 3 | 100 | 100 | **0** | **0** | 217 | #748 `S` |
-| Hebrew | `heb-IL` | 9 | 4 | 100 | 100 | **0** | **0** | 217 | #694 `S` |
-| Hindi | `hin-IN` | 610 | 4 | 100 | 100 | **0** | **0** | 217 | #616 `S` |
-| Hulaulá (Jewish Neo-Aramaic) | `huy-IL` | < 1 | 5 | 100 | 100 | **0** | **0** | 217 | #752 `S` |
-| Hungarian | `hun-HU` | 13 | 2 | 100 | 100 | **0** | **0** | 217 | #668 `S` |
-| Icelandic | `isl-IS` | < 1 | 3 | 100 | 100 | **0** | **0** | 217 | #735 `S` |
-| Igbo | `ibo-NG` | 31 | 3 | 100 | 100 | **0** | **0** | 217 | #650 `S` |
-| Indonesian | `ind-ID` | 252 | 1 | 100 | 100 | **0** | **0** | 217 | #614 `S` |
-| Irish | `gle-IE` | 2 | 4 | 100 | 100 | **0** | **0** | 217 | #720 `S` |
-| isiXhosa | `xho-ZA` | 19 | 4 | 100 | 100 | **0** | **0** | 217 | #673 `S` |
-| isiZulu | `zul-ZA` | 28 | 4 | 100 | 100 | **0** | **0** | 217 | #665 `S` |
-| Italian | `ita-IT` | 68 | 1 | 100 | 100 | **0** | **0** | 217 | #620 `S` |
-| Japanese | `jpn-JP` | 123 | 3 | 100 | 100 | **0** | **0** | 217 | #625 `S` |
-| Javanese | `jav-ID` | 68 | 3 | 100 | 100 | **0** | **0** | 217 | #633 `S` |
-| Kabyle | `kab-DZ` | 5 | 4 | 100 | 100 | **0** | **0** | 217 | #707 `S` |
-| Kannada | `kan-IN` | 59 | 5 | 100 | 100 | **0** | **0** | 217 | #645 `S` |
-| Kashmiri | `kas-IN` | 7 | 5 | 100 | 100 | **0** | **0** | 217 | #704 `S` |
-| Kazakh | `kaz-KZ` | 16 | 4 | 100 | 100 | **0** | **0** | 217 | #679 `S` |
-| Khmer | `khm-KH` | 18 | 4 | 100 | 100 | **0** | **0** | 217 | #675 `S` |
-| Kikuyu | `kik-KE` | 8 | 4 | 100 | 100 | **0** | **0** | 217 | #697 `S` |
-| Kinyarwanda | `kin-RW` | 15 | 4 | 100 | 100 | **0** | **0** | 217 | #680 `S` |
-| Kirundi | `run-BI` | 12 | 4 | 100 | 100 | **0** | **0** | 217 | #688 `S` |
-| Klingon | `tlh-QO` | < 1 | 4 | 100 | 100 | **0** | **0** | 217 | #755 `S` |
-| Konkani | `kok-IN` | 2 | 5 | 100 | 100 | **0** | **0** | 217 | #721 `S` |
-| Korean | `kor-KR` | 82 | 3 | 100 | 100 | **0** | **0** | 217 | #628 `S` |
-| Korean (North Korea, Munhwaŏ) | `kor-KP` | 26 | 3 | 100 | 100 | **0** | **0** | 217 | #656 `S` |
+| Greek | `ell-GR` | 13 | 3 | 100 | 100 | **0** | **0** | 217 | #667 `S` |
+| Greenlandic | `kal-GL` | < 1 | 4 | 100 | 100 | **0** | **0** | 217 | #737 `S` |
+| Guarani | `grn-PY` | 7 | 4 | 100 | **80** | **0** | **0** | 218 | #600 `E` |
+| Gujarati | `guj-IN` | 62 | 4 | 100 | 100 | **0** | **0** | 217 | #629 `S` |
+| Hausa | `hau-NG` | 94 | 3 | 100 | 100 | **0** | **0** | 217 | #617 `S` |
+| Hawaiian | `haw-US` | < 1 | 3 | 100 | 100 | **0** | **0** | 217 | #739 `S` |
+| Hebrew | `heb-IL` | 9 | 4 | 100 | 100 | **0** | **0** | 217 | #684 `S` |
+| Hindi | `hin-IN` | 610 | 4 | 100 | 100 | **0** | **0** | 217 | #606 `S` |
+| Hulaulá (Jewish Neo-Aramaic) | `huy-IL` | < 1 | 5 | 100 | 100 | **0** | **0** | 217 | #743 `S` |
+| Hungarian | `hun-HU` | 13 | 2 | 100 | 100 | **0** | **0** | 217 | #658 `S` |
+| Icelandic | `isl-IS` | < 1 | 3 | 100 | 100 | **0** | **0** | 217 | #726 `S` |
+| Igbo | `ibo-NG` | 31 | 3 | 100 | 100 | **0** | **0** | 217 | #640 `S` |
+| Indonesian | `ind-ID` | 252 | 1 | 100 | 100 | **0** | **0** | 217 | #604 `S` |
+| Irish | `gle-IE` | 2 | 4 | 100 | 100 | **0** | **0** | 217 | #711 `S` |
+| isiXhosa | `xho-ZA` | 19 | 4 | 100 | 100 | **0** | **0** | 217 | #663 `S` |
+| isiZulu | `zul-ZA` | 28 | 4 | 100 | 100 | **0** | **0** | 217 | #655 `S` |
+| Italian | `ita-IT` | 68 | 1 | 100 | 100 | **0** | **0** | 217 | #610 `S` |
+| Japanese | `jpn-JP` | 123 | 3 | 100 | 100 | **0** | **0** | 217 | #615 `S` |
+| Javanese | `jav-ID` | 68 | 3 | 100 | 100 | **0** | **0** | 217 | #623 `S` |
+| Kabyle | `kab-DZ` | 5 | 4 | 100 | 100 | **0** | **0** | 217 | #698 `S` |
+| Kannada | `kan-IN` | 59 | 5 | 100 | 100 | **0** | **0** | 217 | #635 `S` |
+| Kashmiri | `kas-IN` | 7 | 5 | 100 | 100 | **0** | **0** | 217 | #695 `S` |
+| Kazakh | `kaz-KZ` | 16 | 4 | 100 | 100 | **0** | **0** | 217 | #669 `S` |
+| Khmer | `khm-KH` | 18 | 4 | 100 | 100 | **0** | **0** | 217 | #665 `S` |
+| Kikuyu | `kik-KE` | 8 | 4 | 100 | 100 | **0** | **0** | 217 | #687 `S` |
+| Kinyarwanda | `kin-RW` | 15 | 4 | 100 | 100 | **0** | **0** | 217 | #670 `S` |
+| Kirundi | `run-BI` | 12 | 4 | 100 | 100 | **0** | **0** | 217 | #678 `S` |
+| Klingon | `tlh-QO` | < 1 | 4 | 100 | 100 | **0** | **0** | 217 | #746 `S` |
+| Konkani | `kok-IN` | 2 | 5 | 100 | 100 | **0** | **0** | 217 | #712 `S` |
+| Korean | `kor-KR` | 82 | 3 | 100 | 100 | **0** | **0** | 217 | #618 `S` |
+| Korean (North Korea, Munhwaŏ) | `kor-KP` | 26 | 3 | 100 | 100 | **0** | **0** | 217 | #646 `S` |
 | Kurdish (Kurmanji) | `kur-TR` | 16 | 3 | 100 | 100 | **0** | **0** | 217 | #8 `S` |
-| Kyrgyz | `kir-KG` | 5 | 5 | 100 | 100 | **0** | **0** | 217 | #712 `S` |
-| Lao | `lao-LA` | 30 | 5 | 100 | 100 | **0** | **0** | 217 | #670 `S` |
-| Latin | `lat-VA` | < 1 | 4 | 100 | 100 | **0** | **0** | 217 | #753 `S` |
-| Latvian | `lav-LV` | 2 | 3 | 100 | 100 | **0** | **0** | 217 | #718 `S` |
-| Lingala | `lin-CD` | 40 | 4 | 100 | 100 | **0** | **0** | 217 | #652 `S` |
-| Lithuanian | `lit-LT` | 3 | 3 | 100 | 100 | **0** | **0** | 217 | #713 `S` |
-| Lower Sorbian | `dsb-DE` | < 1 | 4 | 100 | 100 | **0** | **0** | 217 | #751 `S` |
-| Luxembourgish | `ltz-LU` | < 1 | 2 | 100 | 100 | **0** | **0** | 217 | #728 `S` |
-| Macedonian | `mkd-MK` | 2 | 3 | 100 | 100 | **0** | **0** | 217 | #717 `S` |
-| Maithili | `mai-IN` | 34 | 5 | 100 | 100 | **0** | **0** | 217 | #666 `S` |
-| Malagasy | `mlg-MG` | 25 | 3 | 100 | 100 | **0** | **0** | 217 | #659 `S` |
-| Malay | `msa-MY` | 60 | 1 | 100 | 100 | **0** | **0** | 217 | #621 `S` |
-| Malayalam | `mal-IN` | 37 | 5 | 100 | 100 | **0** | **0** | 217 | #663 `S` |
-| Maltese | `mlt-MT` | < 1 | 3 | 100 | 100 | **0** | **0** | 217 | #730 `S` |
-| Manipuri | `mni-IN` | 2 | 5 | 100 | 100 | **0** | **0** | 217 | #724 `S` |
-| Māori | `mri-NZ` | < 1 | 3 | 100 | 100 | **0** | **0** | 217 | #739 `S` |
-| Marathi | `mar-IN` | 99 | 4 | 100 | 100 | **0** | **0** | 217 | #632 `S` |
-| Mongolian | `mon-MN` | 6 | 5 | 100 | 100 | **0** | **0** | 217 | #710 `S` |
-| Nepali | `nep-NP` | 32 | 4 | 100 | 100 | **0** | **0** | 217 | #660 `S` |
-| Nigerian Pidgin | `pcm-NG` | 120 | 3 | 100 | 100 | **0** | **0** | 217 | #626 `S` |
-| Northern Sami | `sme-NO` | < 1 | 4 | 100 | 100 | **0** | **0** | 217 | #747 `S` |
-| Norwegian | `nor-NO` | 5 | 1 | 100 | 100 | **0** | **0** | 217 | #672 `S` |
-| N’Ko | `nqo-GN` | – | 5 | 100 | 100 | **0** | **0** | 217 | #754 `S` |
-| Occitan | `oci-FR` | < 1 | 3 | 100 | 100 | **0** | **0** | 217 | #732 `S` |
-| Odia | `ori-IN` | 40 | 5 | 100 | 100 | **0** | **0** | 217 | #661 `S` |
-| Oromo | `orm-ET` | 45 | 4 | 100 | 100 | **0** | **0** | 217 | #647 `S` |
+| Kyrgyz | `kir-KG` | 5 | 5 | 100 | 100 | **0** | **0** | 217 | #703 `S` |
+| Lao | `lao-LA` | 30 | 5 | 100 | 100 | **0** | **0** | 217 | #660 `S` |
+| Latin | `lat-VA` | < 1 | 4 | 100 | 100 | **0** | **0** | 217 | #744 `S` |
+| Latvian | `lav-LV` | 2 | 3 | 100 | 100 | **0** | **0** | 217 | #709 `S` |
+| Lingala | `lin-CD` | 40 | 4 | 100 | 100 | **0** | **0** | 217 | #642 `S` |
+| Lithuanian | `lit-LT` | 3 | 3 | 100 | 100 | **0** | **0** | 217 | #704 `S` |
+| Lower Sorbian | `dsb-DE` | < 1 | 4 | 100 | 100 | **0** | **0** | 217 | #742 `S` |
+| Luxembourgish | `ltz-LU` | < 1 | 2 | 100 | 100 | **0** | **0** | 217 | #719 `S` |
+| Macedonian | `mkd-MK` | 2 | 3 | 100 | 100 | **0** | **0** | 217 | #708 `S` |
+| Maithili | `mai-IN` | 34 | 5 | 100 | 100 | **0** | **0** | 217 | #656 `S` |
+| Malagasy | `mlg-MG` | 25 | 3 | 100 | 100 | **0** | **0** | 217 | #649 `S` |
+| Malay | `msa-MY` | 60 | 1 | 100 | 100 | **0** | **0** | 217 | #611 `S` |
+| Malayalam | `mal-IN` | 37 | 5 | 100 | 100 | **0** | **0** | 217 | #653 `S` |
+| Maltese | `mlt-MT` | < 1 | 3 | 100 | 100 | **0** | **0** | 217 | #721 `S` |
+| Manipuri | `mni-IN` | 2 | 5 | 100 | 100 | **0** | **0** | 217 | #715 `S` |
+| Māori | `mri-NZ` | < 1 | 3 | 100 | 100 | **0** | **0** | 217 | #730 `S` |
+| Marathi | `mar-IN` | 99 | 4 | 100 | 100 | **0** | **0** | 217 | #622 `S` |
+| Mongolian | `mon-MN` | 6 | 5 | 100 | 100 | **0** | **0** | 217 | #701 `S` |
+| Nepali | `nep-NP` | 32 | 4 | 100 | 100 | **0** | **0** | 217 | #650 `S` |
+| Nigerian Pidgin | `pcm-NG` | 120 | 3 | 100 | 100 | **0** | **0** | 217 | #616 `S` |
+| Northern Sami | `sme-NO` | < 1 | 4 | 100 | 100 | **0** | **0** | 217 | #738 `S` |
+| Norwegian | `nor-NO` | 5 | 1 | 100 | 100 | **0** | **0** | 217 | #662 `S` |
+| N’Ko | `nqo-GN` | – | 5 | 100 | 100 | **0** | **0** | 217 | #745 `S` |
+| Occitan | `oci-FR` | < 1 | 3 | 100 | 100 | **0** | **0** | 217 | #723 `S` |
+| Odia | `ori-IN` | 40 | 5 | 100 | 100 | **0** | **0** | 217 | #651 `S` |
+| Oromo | `orm-ET` | 45 | 4 | 100 | 100 | **0** | **0** | 217 | #637 `S` |
 | Pashto | `pus-AF` | 60 | 5 | 100 | 100 | **0** | **0** | 217 | #7 `S` |
 | Persian | `fas-IR` | 83 | 4 | 100 | 100 | **0** | **0** | 217 | #6 `S` |
-| Polish | `pol-PL` | 40 | 2 | 100 | 100 | **0** | **0** | 217 | #634 `S` |
-| Portuguese (Brazil) | `por-BR` | 215 | 1 | 100 | 100 | **0** | **0** | 217 | #615 `S` |
-| Portuguese (Portugal) | `por-PT` | 50 | 1 | 100 | 100 | **0** | **0** | 217 | #623 `S` |
-| Punjabi | `pan-IN` | 48 | 4 | 100 | 100 | **0** | **0** | 217 | #644 `S` |
-| Quechua | `que-PE` | 8 | 4 | 100 | 100 | **0** | **0** | 217 | #698 `S` |
-| Romanian | `ron-RO` | 25 | 1 | 100 | 100 | **0** | **0** | 217 | #631 `S` |
-| Romansh | `roh-CH` | < 1 | 3 | 100 | 100 | **0** | **0** | 217 | #744 `S` |
+| Polish | `pol-PL` | 40 | 2 | 100 | 100 | **0** | **0** | 217 | #624 `S` |
+| Portuguese (Brazil) | `por-BR` | 215 | 1 | 100 | 100 | **0** | **0** | 217 | #605 `S` |
+| Portuguese (Portugal) | `por-PT` | 50 | 1 | 100 | 100 | **0** | **0** | 217 | #613 `S` |
+| Punjabi | `pan-IN` | 48 | 4 | 100 | 100 | **0** | **0** | 217 | #634 `S` |
+| Quechua | `que-PE` | 8 | 4 | 100 | 100 | **0** | **0** | 217 | #688 `S` |
+| Romanian | `ron-RO` | 25 | 1 | 100 | 100 | **0** | **0** | 217 | #621 `S` |
+| Romansh | `roh-CH` | < 1 | 3 | 100 | 100 | **0** | **0** | 217 | #735 `S` |
 | Russian | `rus-RU` | 255 | 3 | 100 | 100 | **0** | **0** | 217 | #5 `S` |
-| Sanskrit | `san-IN` | < 1 | 5 | 100 | 100 | **0** | **0** | 217 | #749 `S` |
-| Santali | `sat-IN` | 8 | 5 | 100 | 100 | **0** | **0** | 217 | #702 `S` |
-| Scottish Gaelic | `gla-GB` | < 1 | 4 | 100 | 100 | **0** | **0** | 217 | #743 `S` |
-| Serbian (Cyrillic) | `srp-RS` | 10 | 4 | 100 | 100 | **0** | **0** | 217 | #693 `S` |
-| Serbian (Latin) | `ser-SR` | 10 | 3 | 100 | 100 | **0** | **0** | 217 | #686 `S` |
-| Shona | `sna-ZW` | 15 | 4 | 100 | 100 | **0** | **0** | 217 | #681 `S` |
-| Sindhi | `snd-PK` | 34 | 5 | 100 | 100 | **0** | **0** | 217 | #667 `S` |
-| Sinhala | `sin-LK` | 18 | 4 | 100 | 100 | **0** | **0** | 217 | #676 `S` |
-| Slovak | `slk-SK` | 7 | 2 | 100 | 100 | **0** | **0** | 217 | #684 `S` |
-| Slovenian | `slv-SI` | 3 | 3 | 100 | 100 | **0** | **0** | 217 | #716 `S` |
-| Somali | `som-SO` | 24 | 3 | 100 | 100 | **0** | **0** | 217 | #662 `S` |
-| Spanish (Mexico) | `esl-MX` | 130 | 1 | 100 | 100 | **0** | **0** | 217 | #617 `S` |
-| Spanish (Spain) | `esl-ES` | 430 | 1 | 100 | 100 | **0** | **0** | 217 | #612 `S` |
-| Standard Moroccan Tamazight | `zgh-MA` | 14 | 5 | 100 | 100 | **0** | **0** | 217 | #690 `S` |
-| Sundanese | `sun-ID` | 32 | 3 | 100 | 100 | **0** | **0** | 217 | #648 `S` |
-| Swahili | `swa-KE` | 80 | 3 | 100 | 100 | **0** | **0** | 217 | #629 `S` |
-| Swedish | `swe-SE` | 13 | 1 | 100 | 100 | **0** | **0** | 217 | #643 `S` |
-| Syriac | `syr-IQ` | < 1 | 5 | 100 | 100 | **0** | **0** | 217 | #737 `S` |
-| Tajik | `tgk-TJ` | 9 | 4 | 100 | 100 | **0** | **0** | 217 | #695 `S` |
-| Tamil | `tam-IN` | 87 | 5 | 100 | 100 | **0** | **0** | 217 | #637 `S` |
-| Tatar | `tat-RU` | 5 | 5 | 100 | 100 | **0** | **0** | 217 | #714 `S` |
-| Telugu | `tel-IN` | 96 | 5 | 100 | 100 | **0** | **0** | 217 | #635 `S` |
-| Thai | `tha-TH` | 61 | 4 | 100 | 100 | **0** | **0** | 217 | #641 `S` |
-| Tibetan | `bod-CN` | 6 | 5 | 100 | 100 | **0** | **0** | 217 | #708 `S` |
-| Tigrinya | `tir-ET` | 10 | 5 | 100 | 100 | **0** | **0** | 217 | #699 `S` |
-| Tongan | `ton-TO` | < 1 | 3 | 100 | 100 | **0** | **0** | 217 | #740 `S` |
+| Sanskrit | `san-IN` | < 1 | 5 | 100 | 100 | **0** | **0** | 217 | #740 `S` |
+| Santali | `sat-IN` | 8 | 5 | 100 | 100 | **0** | **0** | 217 | #693 `S` |
+| Scottish Gaelic | `gla-GB` | < 1 | 4 | 100 | 100 | **0** | **0** | 217 | #734 `S` |
+| Serbian (Cyrillic) | `srp-RS` | 10 | 4 | 100 | 100 | **0** | **0** | 217 | #683 `S` |
+| Serbian (Latin) | `ser-SR` | 10 | 3 | 100 | 100 | **0** | **0** | 217 | #676 `S` |
+| Shona | `sna-ZW` | 15 | 4 | 100 | 100 | **0** | **0** | 217 | #671 `S` |
+| Sindhi | `snd-PK` | 34 | 5 | 100 | 100 | **0** | **0** | 217 | #657 `S` |
+| Sinhala | `sin-LK` | 18 | 4 | 100 | 100 | **0** | **0** | 217 | #666 `S` |
+| Slovak | `slk-SK` | 7 | 2 | 100 | 100 | **0** | **0** | 217 | #674 `S` |
+| Slovenian | `slv-SI` | 3 | 3 | 100 | 100 | **0** | **0** | 217 | #707 `S` |
+| Somali | `som-SO` | 24 | 3 | 100 | 100 | **0** | **0** | 217 | #652 `S` |
+| Spanish (Mexico) | `esl-MX` | 130 | 1 | 100 | 100 | **0** | **0** | 217 | #607 `S` |
+| Spanish (Spain) | `esl-ES` | 430 | 1 | 100 | 100 | **0** | **0** | 217 | #602 `S` |
+| Standard Moroccan Tamazight | `zgh-MA` | 14 | 5 | 100 | 100 | **0** | **0** | 217 | #680 `S` |
+| Sundanese | `sun-ID` | 32 | 3 | 100 | 100 | **0** | **0** | 217 | #638 `S` |
+| Swahili | `swa-KE` | 80 | 3 | 100 | 100 | **0** | **0** | 217 | #619 `S` |
+| Swedish | `swe-SE` | 13 | 1 | 100 | 100 | **0** | **0** | 217 | #633 `S` |
+| Syriac | `syr-IQ` | < 1 | 5 | 100 | 100 | **0** | **0** | 217 | #728 `S` |
+| Tajik | `tgk-TJ` | 9 | 4 | 100 | 100 | **0** | **0** | 217 | #685 `S` |
+| Tamil | `tam-IN` | 87 | 5 | 100 | 100 | **0** | **0** | 217 | #627 `S` |
+| Tatar | `tat-RU` | 5 | 5 | 100 | 100 | **0** | **0** | 217 | #705 `S` |
+| Telugu | `tel-IN` | 96 | 5 | 100 | 100 | **0** | **0** | 217 | #625 `S` |
+| Thai | `tha-TH` | 61 | 4 | 100 | 100 | **0** | **0** | 217 | #631 `S` |
+| Tibetan | `bod-CN` | 6 | 5 | 100 | 100 | **0** | **0** | 217 | #699 `S` |
+| Tigrinya | `tir-ET` | 10 | 5 | 100 | 100 | **0** | **0** | 217 | #689 `S` |
+| Tongan | `ton-TO` | < 1 | 3 | 100 | 100 | **0** | **0** | 217 | #731 `S` |
 | Turkish | `tur-TR` | 90 | 2 | 100 | 100 | **0** | **0** | 217 | #3 `S` |
-| Turkmen | `tuk-TM` | 7 | 4 | 100 | 100 | **0** | **0** | 217 | #700 `S` |
+| Turkmen | `tuk-TM` | 7 | 4 | 100 | 100 | **0** | **0** | 217 | #690 `S` |
 | Ukrainian | `ukr-UA` | 39 | 3 | 100 | 100 | **0** | **0** | 217 | #4 `S` |
-| Upper Sorbian | `hsb-DE` | < 1 | 4 | 100 | 100 | **0** | **0** | 217 | #750 `S` |
-| Urdu | `urd-PK` | 232 | 4 | 100 | 100 | **0** | **0** | 217 | #622 `S` |
-| Uyghur | `uig-CN` | 11 | 5 | 100 | 100 | **0** | **0** | 217 | #696 `S` |
-| Uzbek | `uzb-UZ` | 35 | 3 | 100 | 100 | **0** | **0** | 217 | #646 `S` |
-| Vietnamese | `vie-VN` | 86 | 1 | 100 | 100 | **0** | **0** | 217 | #618 `S` |
-| Welsh | `cym-GB` | < 1 | 3 | 100 | 100 | **0** | **0** | 217 | #726 `S` |
-| Western Frisian | `fry-NL` | < 1 | 3 | 100 | 100 | **0** | **0** | 217 | #731 `S` |
-| Western Punjabi | `pnb-PK` | 90 | 5 | 100 | 100 | **0** | **0** | 217 | #636 `S` |
-| Wolof | `wol-SN` | 22 | 3 | 100 | 100 | **0** | **0** | 217 | #664 `S` |
-| Yiddish | `yid-US` | 1 | 5 | 100 | 100 | **0** | **0** | 217 | #729 `S` |
-| Yoruba | `yor-NG` | 46 | 3 | 100 | 100 | **0** | **0** | 217 | #640 `S` |
+| Upper Sorbian | `hsb-DE` | < 1 | 4 | 100 | 100 | **0** | **0** | 217 | #741 `S` |
+| Urdu | `urd-PK` | 232 | 4 | 100 | 100 | **0** | **0** | 217 | #612 `S` |
+| Uyghur | `uig-CN` | 11 | 5 | 100 | 100 | **0** | **0** | 217 | #686 `S` |
+| Uzbek | `uzb-UZ` | 35 | 3 | 100 | 100 | **0** | **0** | 217 | #636 `S` |
+| Vietnamese | `vie-VN` | 86 | 1 | 100 | 100 | **0** | **0** | 217 | #608 `S` |
+| Welsh | `cym-GB` | < 1 | 3 | 100 | 100 | **0** | **0** | 217 | #717 `S` |
+| Western Frisian | `fry-NL` | < 1 | 3 | 100 | 100 | **0** | **0** | 217 | #722 `S` |
+| Western Punjabi | `pnb-PK` | 90 | 5 | 100 | 100 | **0** | **0** | 217 | #626 `S` |
+| Wolof | `wol-SN` | 22 | 3 | 100 | 100 | **0** | **0** | 217 | #654 `S` |
+| Yiddish | `yid-US` | 1 | 5 | 100 | 100 | **0** | **0** | 217 | #720 `S` |
+| Yoruba | `yor-NG` | 46 | 3 | 100 | 100 | **0** | **0** | 217 | #630 `S` |
 
 ### The help in tiers
 
 | Tier | Sections | Pages | Words | Parts |
 |---|---|---:|---:|---:|
 | Daily use: editors, users, administrators’ how-tos | `help`, `help/manual`, `help/non-technical-people`, `guides`, `help/book-learning`, `help/book-building-a-site` | 343 | 443,905 | 17 |
-| Product and audience guides | `install`, `features`, `help/adopters`, `help/advocates`, `help/business`, `help/businesses`, `help/community`, `help/creators` and 26 more | 3,802 | 3,022,726 | 121 |
+| Product and audience guides | `install`, `features`, `help/adopters`, `help/advocates`, `help/business`, `help/businesses`, `help/community`, `help/creators` and 26 more | 3,803 | 3,024,465 | 121 |
 | Developer reference | `help/extension-development`, `help/template-language`, `help/template-operators`, `help/build-two-ways`, `help/php-developers`, `help/cms-developers`, `help/dxp-developers`, `help/software-engineers` and 12 more | 1,817 | 1,864,251 | 73 |
 | Tables of the generated examples | `examples` | 4,186 entries | 112,725 | 5 |
 
@@ -280,10 +281,10 @@ Percent of the strings (administration, extensions) and of the words (help), rou
 | `H-help-e-commerce-01` | guides | 26 | 17,960 | `help/e-commerce/catalog/README.md` … `help/e-commerce/operations/analytics-for-stores.md` |
 | `H-help-e-commerce-02` | guides | 27 | 18,329 | `help/e-commerce/operations/commerce-audit-trail.md` … `help/e-commerce/settings/workflow-ini-for-the-shop.md` |
 | `H-help-ecosystem` | guides | 45 | 18,856 | `help/ecosystem/a-short-history-of-the-ecosystem.md` … `help/ecosystem/what-the-ecosystem-is.md` |
-| `H-help-government-01` | guides | 52 | 32,399 | `help/government/accessibility/README.md` … `help/government/building/documents-and-publications/odf-import-and-export.md` |
-| `H-help-government-02` | guides | 53 | 24,761 | `help/government/building/documents-and-publications/pdf-export.md` … `help/government/building/multisite/shared-content-across-sites.md` |
-| `H-help-government-03` | guides | 53 | 28,325 | `help/government/building/news-and-alerts/README.md` … `help/government/checklists/privacy-checklist.md` |
-| `H-help-government-04` | guides | 53 | 31,313 | `help/government/checklists/quarterly-access-review.md` … `help/government/languages/redirecting-to-the-visitors-language.md` |
+| `H-help-government-01` | guides | 53 | 32,971 | `help/government/accessibility/README.md` … `help/government/building/documents-and-publications/pdf-export.md` |
+| `H-help-government-02` | guides | 53 | 24,724 | `help/government/building/documents-and-publications/versions-of-documents.md` … `help/government/building/news-and-alerts/README.md` |
+| `H-help-government-03` | guides | 53 | 28,368 | `help/government/building/news-and-alerts/archive-and-expiry.md` … `help/government/checklists/quarterly-access-review.md` |
+| `H-help-government-04` | guides | 53 | 31,704 | `help/government/checklists/records-checklist.md` … `help/government/languages/redirecting-to-the-visitors-language.md` |
 | `H-help-government-05` | guides | 53 | 34,251 | `help/government/languages/removing-a-translation-safely.md` … `help/government/levels/parliaments/structure-sections-and-roles.md` |
 | `H-help-government-06` | guides | 53 | 35,269 | `help/government/levels/parliaments/what-it-publishes.md` … `help/government/operations/availability/database-high-availability.md` |
 | `H-help-government-07` | guides | 53 | 39,235 | `help/government/operations/availability/high-availability-overview.md` … `help/government/operations/incidents/data-breach-notification-framing.md` |
@@ -355,7 +356,7 @@ Percent of the strings (administration, extensions) and of the words (help), rou
 | `H-help-user-management-from-the-console` | guides | 20 | 7,853 | `help/user-management-from-the-console/README.md` … `help/user-management-from-the-console/when-a-command-fails.md` |
 | `H-reference` | guides | 1 | 1,858 | `reference/template-check-rules.md` |
 | `H-root-01` | guides | 4 | 12,136 | `INSTALL.md` … `UPDATE.md` |
-| `H-root-02` | guides | 4 | 34,696 | `branch-overview.md` … `languages.md` |
+| `H-root-02` | guides | 4 | 35,466 | `branch-overview.md` … `languages.md` |
 | `H-help-extension-development-01` | reference | 43 | 36,427 | `help/extension-development/README.md` … `help/extension-development/part-2-builder/the-exp-ini-command.md` |
 | `H-help-extension-development-02` | reference | 43 | 25,222 | `help/extension-development/part-2-builder/view-modes-for-builders.md` … `help/extension-development/part-3-extension-developer/tutorials/by-hand-custom-tag.md` |
 | `H-help-extension-development-03` | reference | 43 | 28,645 | `help/extension-development/part-3-extension-developer/tutorials/by-hand-datatype.md` … `help/extension-development/part-4-upgrading/old-jquery-to-jquery-4.md` |
@@ -478,31 +479,30 @@ The languages of the shipped locales that the administration shows in English, t
 | Umbundu | `umb-AO` | 7 | Latn | LTR | 4 | new locale, wave #296 |
 | Dholuo | `luo-KE` | 5 | Latn | LTR | 3 | new locale, wave #308 |
 | Sango | `sag-CF` | 5 | Latn | LTR | 3 | new locale, wave #320 |
-| Guarani | `grn-PY` | 7 | Latn | LTR | 4 | wave #332 |
-| Balochi | `bal-PK` | 8 | Arab | RTL | 5 | new locale, wave #343 |
-| Kalenjin | `kln-KE` | 6 | Latn | LTR | 4 | new locale, wave #355 |
-| Luba-Kasai | `lua-CD` | 6 | Latn | LTR | 4 | new locale, wave #367 |
-| Sukuma | `suk-TZ` | 5 | Latn | LTR | 4 | new locale, wave #379 |
-| ale-US | `ale-US` | – | Latn | LTR | 3 | wave #391 |
-| arn-CL | `arn-CL` | – | Latn | LTR | 3 | wave #402 |
-| aym-BO | `aym-BO` | – | Latn | LTR | 3 | wave #413 |
-| chr-US | `chr-US` | – | Latn | LTR | 3 | wave #424 |
-| cre-CA | `cre-CA` | – | Latn | LTR | 3 | wave #435 |
-| ems-US | `ems-US` | – | Latn | LTR | 3 | wave #446 |
-| esu-US | `esu-US` | – | Latn | LTR | 3 | wave #457 |
-| gwi-US | `gwi-US` | – | Latn | LTR | 3 | wave #468 |
-| hai-US | `hai-US` | – | Latn | LTR | 3 | wave #479 |
-| iku-CA | `iku-CA` | – | Latn | LTR | 3 | wave #490 |
-| ipk-US | `ipk-US` | – | Latn | LTR | 3 | wave #501 |
-| lkt-US | `lkt-US` | – | Latn | LTR | 3 | wave #512 |
-| moh-CA | `moh-CA` | – | Latn | LTR | 3 | wave #523 |
-| nah-MX | `nah-MX` | – | Latn | LTR | 3 | wave #534 |
-| nav-US | `nav-US` | – | Latn | LTR | 3 | wave #545 |
-| oji-CA | `oji-CA` | – | Latn | LTR | 3 | wave #556 |
-| quc-GT | `quc-GT` | – | Latn | LTR | 3 | wave #567 |
-| tli-US | `tli-US` | – | Latn | LTR | 3 | wave #578 |
-| tsi-US | `tsi-US` | – | Latn | LTR | 3 | wave #589 |
-| yua-MX | `yua-MX` | – | Latn | LTR | 3 | wave #600 |
+| Balochi | `bal-PK` | 8 | Arab | RTL | 5 | new locale, wave #332 |
+| Kalenjin | `kln-KE` | 6 | Latn | LTR | 4 | new locale, wave #344 |
+| Luba-Kasai | `lua-CD` | 6 | Latn | LTR | 4 | new locale, wave #356 |
+| Sukuma | `suk-TZ` | 5 | Latn | LTR | 4 | new locale, wave #368 |
+| ale-US | `ale-US` | – | Latn | LTR | 3 | wave #380 |
+| arn-CL | `arn-CL` | – | Latn | LTR | 3 | wave #391 |
+| aym-BO | `aym-BO` | – | Latn | LTR | 3 | wave #402 |
+| chr-US | `chr-US` | – | Latn | LTR | 3 | wave #413 |
+| cre-CA | `cre-CA` | – | Latn | LTR | 3 | wave #424 |
+| ems-US | `ems-US` | – | Latn | LTR | 3 | wave #435 |
+| esu-US | `esu-US` | – | Latn | LTR | 3 | wave #446 |
+| gwi-US | `gwi-US` | – | Latn | LTR | 3 | wave #457 |
+| hai-US | `hai-US` | – | Latn | LTR | 3 | wave #468 |
+| iku-CA | `iku-CA` | – | Latn | LTR | 3 | wave #479 |
+| ipk-US | `ipk-US` | – | Latn | LTR | 3 | wave #490 |
+| lkt-US | `lkt-US` | – | Latn | LTR | 3 | wave #501 |
+| moh-CA | `moh-CA` | – | Latn | LTR | 3 | wave #512 |
+| nah-MX | `nah-MX` | – | Latn | LTR | 3 | wave #523 |
+| nav-US | `nav-US` | – | Latn | LTR | 3 | wave #534 |
+| oji-CA | `oji-CA` | – | Latn | LTR | 3 | wave #545 |
+| quc-GT | `quc-GT` | – | Latn | LTR | 3 | wave #556 |
+| tli-US | `tli-US` | – | Latn | LTR | 3 | wave #567 |
+| tsi-US | `tsi-US` | – | Latn | LTR | 3 | wave #578 |
+| yua-MX | `yua-MX` | – | Latn | LTR | 3 | wave #589 |
 
 ### The queue: the first 60 waves
 
@@ -511,11 +511,11 @@ The languages of the shipped locales that the administration shows in English, t
 | 1. Catalogues of the priority group | 1 |
 | 2. German: daily-use help | 0 |
 | 3. Daily-use help of the priority group | 126 |
-| 4. New translations | 483 |
-| 5. Extensions of the other languages | 0 |
-| 6. Daily-use help of the other languages | 2,610 |
+| 4. New translations | 472 |
+| 5. Extensions of the other languages | 1 |
+| 6. Daily-use help of the other languages | 2,628 |
 | 7. Rest of the help of the priority group | 1,393 |
-| 8. Rest of the help of the other languages | 28,855 |
+| 8. Rest of the help of the other languages | 29,054 |
 
 | # | Wave | Language | Work set | Size (left) | Difficulty | Prerequisites |
 |---:|---|---|---|---|:-:|---|
@@ -583,7 +583,7 @@ The languages of the shipped locales that the administration shows in English, t
 The whole queue and the pages of a wave: `./console exp:i18n waves --list`, `./console exp:i18n waves --wave=<wave>`.
 
 Made by `./console exp:i18n waves`; `./console exp:i18n waves --check` and the test `expI18nTranslationWavesTest` fail when a percentage changed or a size is more than 3 % off.
-<!-- exp:i18n waves data {"status":{"afr-ZA":[100,100,0,0],"aka-GH":[100,100,0,0],"amh-ET":[100,100,0,0],"ara-SA":[100,100,0,0],"arc-IQ":[100,100,0,0],"asm-IN":[100,100,0,0],"ast-ES":[100,100,0,0],"aze-AZ":[100,100,0,0],"bam-ML":[100,100,0,0],"bel-BY":[100,100,0,0],"ben-BD":[100,100,0,0],"bho-IN":[100,100,0,0],"bod-CN":[100,100,0,0],"bos-BA":[100,100,0,0],"bre-FR":[100,100,0,0],"brx-IN":[100,100,0,0],"bul-BG":[100,100,0,0],"cat-ES":[100,100,0,0],"ceb-PH":[100,100,0,0],"che-RU":[100,100,0,0],"chi-CN":[100,100,0,0],"chi-TW":[100,100,0,0],"ckb-IQ":[100,100,0,0],"cro-HR":[100,100,0,0],"cym-GB":[100,100,0,0],"cze-CZ":[100,100,0,0],"dan-DK":[100,100,0,0],"div-MV":[100,100,0,0],"doi-IN":[100,100,0,0],"dsb-DE":[100,100,0,0],"dut-NL":[100,100,0,0],"dzo-BT":[100,100,0,0],"ell-GR":[100,100,0,0],"eng-AU":[100,100,100,100],"eng-US":[100,100,100,100],"epo-EO":[100,100,0,0],"esl-ES":[100,100,0,0],"esl-MX":[100,100,0,0],"est-EE":[100,100,0,0],"eus-ES":[100,100,0,0],"ewe-GH":[100,100,0,0],"fao-FO":[100,100,0,0],"fas-AF":[100,100,0,0],"fas-IR":[100,100,0,0],"fil-PH":[100,100,0,0],"fin-FI":[100,100,0,0],"fre-FR":[100,100,0,0],"fry-NL":[100,100,0,0],"ful-SN":[100,100,0,0],"ger-DE":[100,76,100,100],"gla-GB":[100,100,0,0],"gle-IE":[100,100,0,0],"glg-ES":[100,100,0,0],"guj-IN":[100,100,0,0],"hau-NG":[100,100,0,0],"haw-US":[100,100,0,0],"heb-IL":[100,100,0,0],"hin-IN":[100,100,0,0],"hsb-DE":[100,100,0,0],"hun-HU":[100,100,0,0],"huy-IL":[100,100,0,0],"hye-AM":[100,100,0,0],"ibo-NG":[100,100,0,0],"ind-ID":[100,100,0,0],"isl-IS":[100,100,0,0],"ita-IT":[100,100,0,0],"jav-ID":[100,100,0,0],"jpn-JP":[100,100,0,0],"kab-DZ":[100,100,0,0],"kal-GL":[100,100,0,0],"kan-IN":[100,100,0,0],"kas-IN":[100,100,0,0],"kat-GE":[100,100,0,0],"kaz-KZ":[100,100,0,0],"khm-KH":[100,100,0,0],"kik-KE":[100,100,0,0],"kin-RW":[100,100,0,0],"kir-KG":[100,100,0,0],"kok-IN":[100,100,0,0],"kor-KP":[100,100,0,0],"kor-KR":[100,100,0,0],"kur-TR":[100,100,0,0],"lao-LA":[100,100,0,0],"lat-VA":[100,100,0,0],"lav-LV":[100,100,0,0],"lin-CD":[100,100,0,0],"lit-LT":[100,100,0,0],"ltz-LU":[100,100,0,0],"lug-UG":[100,100,0,0],"mai-IN":[100,100,0,0],"mal-IN":[100,100,0,0],"mar-IN":[100,100,0,0],"mkd-MK":[100,100,0,0],"mlg-MG":[100,100,0,0],"mlt-MT":[100,100,0,0],"mni-IN":[100,100,0,0],"mon-MN":[100,100,0,0],"mri-NZ":[100,100,0,0],"msa-MY":[100,100,0,0],"mya-MM":[100,100,0,0],"nep-NP":[100,100,0,0],"nor-NO":[100,100,0,0],"nqo-GN":[100,100,0,0],"oci-FR":[100,100,0,0],"ori-IN":[100,100,0,0],"orm-ET":[100,100,0,0],"pan-IN":[100,100,0,0],"pcm-NG":[100,100,0,0],"pnb-PK":[100,100,0,0],"pol-PL":[100,100,0,0],"por-BR":[100,100,0,0],"por-PT":[100,100,0,0],"pus-AF":[100,100,0,0],"que-PE":[100,100,0,0],"roh-CH":[100,100,0,0],"ron-RO":[100,100,0,0],"run-BI":[100,100,0,0],"rus-RU":[100,100,0,0],"san-IN":[100,100,0,0],"sat-IN":[100,100,0,0],"ser-SR":[100,100,0,0],"sin-LK":[100,100,0,0],"slk-SK":[100,100,0,0],"slv-SI":[100,100,0,0],"sme-NO":[100,100,0,0],"sna-ZW":[100,100,0,0],"snd-PK":[100,100,0,0],"som-SO":[100,100,0,0],"sqi-AL":[100,100,0,0],"srp-RS":[100,100,0,0],"sun-ID":[100,100,0,0],"swa-KE":[100,100,0,0],"swe-SE":[100,100,0,0],"syr-IQ":[100,100,0,0],"tam-IN":[100,100,0,0],"tat-RU":[100,100,0,0],"tel-IN":[100,100,0,0],"tgk-TJ":[100,100,0,0],"tha-TH":[100,100,0,0],"tir-ET":[100,100,0,0],"tlh-QO":[100,100,0,0],"ton-TO":[100,100,0,0],"tuk-TM":[100,100,0,0],"tur-TR":[100,100,0,0],"uig-CN":[100,100,0,0],"ukr-UA":[100,100,0,0],"urd-PK":[100,100,0,0],"uzb-UZ":[100,100,0,0],"vie-VN":[100,100,0,0],"wol-SN":[100,100,0,0],"xho-ZA":[100,100,0,0],"yid-US":[100,100,0,0],"yor-NG":[100,100,0,0],"zgh-MA":[100,100,0,0],"zul-ZA":[100,100,0,0]},"sizes":{"messages":20855,"extensions":567,"parts":216,"daily_pages":343,"daily_words":443905,"guides_pages":3802,"guides_words":3022726,"reference_pages":1817,"reference_words":1864251,"tables_pages":0,"tables_words":112725},"waves":33468,"untranslated":["hat-HT","skr-PK","tsn-ZA","dyu-CI","nya-MW","nso-ZA","sot-ZA","mos-BF","azb-IR","kau-NG","vmw-MZ","kon-CD","luy-KE","tso-ZA","umb-AO","luo-KE","sag-CF","grn-PY","bal-PK","kln-KE","lua-CD","suk-TZ","ale-US","arn-CL","aym-BO","chr-US","cre-CA","ems-US","esu-US","gwi-US","hai-US","iku-CA","ipk-US","lkt-US","moh-CA","nah-MX","nav-US","oji-CA","quc-GT","tli-US","tsi-US","yua-MX"]} -->
+<!-- exp:i18n waves data {"status":{"afr-ZA":[100,100,0,0],"aka-GH":[100,100,0,0],"amh-ET":[100,100,0,0],"ara-SA":[100,100,0,0],"arc-IQ":[100,100,0,0],"asm-IN":[100,100,0,0],"ast-ES":[100,100,0,0],"aze-AZ":[100,100,0,0],"bam-ML":[100,100,0,0],"bel-BY":[100,100,0,0],"ben-BD":[100,100,0,0],"bho-IN":[100,100,0,0],"bod-CN":[100,100,0,0],"bos-BA":[100,100,0,0],"bre-FR":[100,100,0,0],"brx-IN":[100,100,0,0],"bul-BG":[100,100,0,0],"cat-ES":[100,100,0,0],"ceb-PH":[100,100,0,0],"che-RU":[100,100,0,0],"chi-CN":[100,100,0,0],"chi-TW":[100,100,0,0],"ckb-IQ":[100,100,0,0],"cro-HR":[100,100,0,0],"cym-GB":[100,100,0,0],"cze-CZ":[100,100,0,0],"dan-DK":[100,100,0,0],"div-MV":[100,100,0,0],"doi-IN":[100,100,0,0],"dsb-DE":[100,100,0,0],"dut-NL":[100,100,0,0],"dzo-BT":[100,100,0,0],"ell-GR":[100,100,0,0],"eng-AU":[100,100,100,100],"eng-US":[100,100,100,100],"epo-EO":[100,100,0,0],"esl-ES":[100,100,0,0],"esl-MX":[100,100,0,0],"est-EE":[100,100,0,0],"eus-ES":[100,100,0,0],"ewe-GH":[100,100,0,0],"fao-FO":[100,100,0,0],"fas-AF":[100,100,0,0],"fas-IR":[100,100,0,0],"fil-PH":[100,100,0,0],"fin-FI":[100,100,0,0],"fre-FR":[100,100,0,0],"fry-NL":[100,100,0,0],"ful-SN":[100,100,0,0],"ger-DE":[100,76,100,100],"gla-GB":[100,100,0,0],"gle-IE":[100,100,0,0],"glg-ES":[100,100,0,0],"grn-PY":[100,80,0,0],"guj-IN":[100,100,0,0],"hau-NG":[100,100,0,0],"haw-US":[100,100,0,0],"heb-IL":[100,100,0,0],"hin-IN":[100,100,0,0],"hsb-DE":[100,100,0,0],"hun-HU":[100,100,0,0],"huy-IL":[100,100,0,0],"hye-AM":[100,100,0,0],"ibo-NG":[100,100,0,0],"ind-ID":[100,100,0,0],"isl-IS":[100,100,0,0],"ita-IT":[100,100,0,0],"jav-ID":[100,100,0,0],"jpn-JP":[100,100,0,0],"kab-DZ":[100,100,0,0],"kal-GL":[100,100,0,0],"kan-IN":[100,100,0,0],"kas-IN":[100,100,0,0],"kat-GE":[100,100,0,0],"kaz-KZ":[100,100,0,0],"khm-KH":[100,100,0,0],"kik-KE":[100,100,0,0],"kin-RW":[100,100,0,0],"kir-KG":[100,100,0,0],"kok-IN":[100,100,0,0],"kor-KP":[100,100,0,0],"kor-KR":[100,100,0,0],"kur-TR":[100,100,0,0],"lao-LA":[100,100,0,0],"lat-VA":[100,100,0,0],"lav-LV":[100,100,0,0],"lin-CD":[100,100,0,0],"lit-LT":[100,100,0,0],"ltz-LU":[100,100,0,0],"lug-UG":[100,100,0,0],"mai-IN":[100,100,0,0],"mal-IN":[100,100,0,0],"mar-IN":[100,100,0,0],"mkd-MK":[100,100,0,0],"mlg-MG":[100,100,0,0],"mlt-MT":[100,100,0,0],"mni-IN":[100,100,0,0],"mon-MN":[100,100,0,0],"mri-NZ":[100,100,0,0],"msa-MY":[100,100,0,0],"mya-MM":[100,100,0,0],"nep-NP":[100,100,0,0],"nor-NO":[100,100,0,0],"nqo-GN":[100,100,0,0],"oci-FR":[100,100,0,0],"ori-IN":[100,100,0,0],"orm-ET":[100,100,0,0],"pan-IN":[100,100,0,0],"pcm-NG":[100,100,0,0],"pnb-PK":[100,100,0,0],"pol-PL":[100,100,0,0],"por-BR":[100,100,0,0],"por-PT":[100,100,0,0],"pus-AF":[100,100,0,0],"que-PE":[100,100,0,0],"roh-CH":[100,100,0,0],"ron-RO":[100,100,0,0],"run-BI":[100,100,0,0],"rus-RU":[100,100,0,0],"san-IN":[100,100,0,0],"sat-IN":[100,100,0,0],"ser-SR":[100,100,0,0],"sin-LK":[100,100,0,0],"slk-SK":[100,100,0,0],"slv-SI":[100,100,0,0],"sme-NO":[100,100,0,0],"sna-ZW":[100,100,0,0],"snd-PK":[100,100,0,0],"som-SO":[100,100,0,0],"sqi-AL":[100,100,0,0],"srp-RS":[100,100,0,0],"sun-ID":[100,100,0,0],"swa-KE":[100,100,0,0],"swe-SE":[100,100,0,0],"syr-IQ":[100,100,0,0],"tam-IN":[100,100,0,0],"tat-RU":[100,100,0,0],"tel-IN":[100,100,0,0],"tgk-TJ":[100,100,0,0],"tha-TH":[100,100,0,0],"tir-ET":[100,100,0,0],"tlh-QO":[100,100,0,0],"ton-TO":[100,100,0,0],"tuk-TM":[100,100,0,0],"tur-TR":[100,100,0,0],"uig-CN":[100,100,0,0],"ukr-UA":[100,100,0,0],"urd-PK":[100,100,0,0],"uzb-UZ":[100,100,0,0],"vie-VN":[100,100,0,0],"wol-SN":[100,100,0,0],"xho-ZA":[100,100,0,0],"yid-US":[100,100,0,0],"yor-NG":[100,100,0,0],"zgh-MA":[100,100,0,0],"zul-ZA":[100,100,0,0]},"sizes":{"messages":20855,"extensions":567,"parts":216,"daily_pages":343,"daily_words":443905,"guides_pages":3803,"guides_words":3024465,"reference_pages":1817,"reference_words":1864251,"tables_pages":0,"tables_words":112725},"waves":33675,"untranslated":["hat-HT","skr-PK","tsn-ZA","dyu-CI","nya-MW","nso-ZA","sot-ZA","mos-BF","azb-IR","kau-NG","vmw-MZ","kon-CD","luy-KE","tso-ZA","umb-AO","luo-KE","sag-CF","bal-PK","kln-KE","lua-CD","suk-TZ","ale-US","arn-CL","aym-BO","chr-US","cre-CA","ems-US","esu-US","gwi-US","hai-US","iku-CA","ipk-US","lkt-US","moh-CA","nah-MX","nav-US","oji-CA","quc-GT","tli-US","tsi-US","yua-MX"]} -->
 <!-- generated: exp:i18n waves (end) -->
 
 ## What the waves are
