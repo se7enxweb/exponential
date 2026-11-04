@@ -253,6 +253,7 @@ next version, so the way forward after a rollback is the next release, not a pat
 ## 9. Related pages
 
 - [Installing Exponential 6.0](INSTALL.md): a clean install of the same version, for a staging copy.
+- [Configuring Exponential 6.0](CONFIGURING.md): check the settings after an update, and which file wins.
 - [Upgrading](guides/upgrading.md): from 4.x, 5.x, 5.90 or LoveStack, and every checklist per period of 6.0.
 - [Uninstalling Exponential 6.0](UNINSTALL.md): the full data export, then the removal.
 - [The upgrade check](guides/upgrade-check.md) and [the file manifest](features/6.0/file-consistency-check.md).

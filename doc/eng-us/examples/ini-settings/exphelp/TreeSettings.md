@@ -42,6 +42,7 @@ Default: a hash of 15: `project/README.md=0`, `INSTALL.md=10`, `UPDATE.md=12`, `
 PageOrder[]
 PageOrder[project/README.md]=0
 PageOrder[INSTALL.md]=10
+PageOrder[CONFIGURING.md]=11
 PageOrder[UPDATE.md]=12
 PageOrder[UNINSTALL.md]=14
 PageOrder[languages.md]=20

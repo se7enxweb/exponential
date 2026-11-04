@@ -798,6 +798,7 @@ Mehr dazu: [SQLite-Datenbankunterstützung](funktionen/6.0/sqlite-datenbank.md),
 
 Fahren Sie dann mit den Anleitungen fort:
 
+- [Exponential 6.0 konfigurieren](CONFIGURING.md): wo Einstellungen liegen und welche Datei gewinnt, Siteaccesses, Sprachen, E-Mail, Caches, Sicherheit, Extensions und Logs.
 - [Erste Schritte](anleitungen/erste-schritte.md): erste Anmeldung, erste Inhalte, erste Template-Änderung.
 - [Das Inhaltsmodell und das Bearbeiten von Inhalten](anleitungen/inhaltsmodell-und-bearbeitung.md): Klassen, Objekte, der Online-Editor, der Papierkorb und Inhalts-Jobs.
 - [Templates und Design](anleitungen/templates-und-design.md): das Template finden, das eine Seite geschrieben hat, es überschreiben, das Admin-Design wechseln.

@@ -37,6 +37,7 @@ PathRules[]=doc/eng-us/bc/*;bc
 PathRules[]=doc/changelogs/*;changelog
 PathRules[]=doc/eng-us/install/*;install
 PathRules[]=doc/eng-us/INSTALL.md;install
+PathRules[]=doc/eng-us/CONFIGURING.md;install
 PathRules[]=doc/eng-us/UPDATE.md;install
 PathRules[]=doc/eng-us/UNINSTALL.md;install
 PathRules[]=doc/eng-us/specifications/*;specification

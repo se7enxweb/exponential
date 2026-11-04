@@ -139,6 +139,7 @@ its id, and wins over its front matter:
 PageOrder[]
 PageOrder[project/README.md]=0
 PageOrder[INSTALL.md]=10
+PageOrder[CONFIGURING.md]=11
 PageOrder[languages.md]=20
 PageOrder[branch-overview.md]=30
 PageOrder[release-overview]=40
