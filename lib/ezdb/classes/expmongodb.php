@@ -1303,6 +1303,55 @@ class expMongoDB extends eZDBInterface
             return true;
         }
 
+        // --- INSERT INTO table ( cols ) SELECT col|literal, ... FROM source ---
+        // eZContentObjectState::store() gives a new state of a group to every object at once this way (the
+        // 6.0.15-review-hold upgrade step and every new state group): unhandled, no object got the state
+        if ( preg_match( '/^\s*INSERT\s+INTO\s+(\w+)\s*\(([^)]*)\)\s*SELECT\s+(.+?)\s+FROM\s+(\w+)\s*;?\s*$/is', $sql, $m ) )
+        {
+            $plan = self::insertSelectPlan( array_map( 'trim', explode( ',', $m[2] ) ), self::splitSqlList( $m[3] ) );
+            if ( $plan === false )
+            {
+                $this->logError( 'expMongoDB::query INSERT ... SELECT with a select list it cannot copy: ' . substr( $sql, 0, 200 ) );
+                return false;
+            }
+            $table = trim( $m[1] );
+            $project = array( '_id' => 0 );
+            foreach ( $plan as $column => $source )
+            {
+                if ( $source['field'] !== null )
+                    $project[$source['field']] = 1;
+            }
+            try
+            {
+                $rows = $this->aggregate( trim( $m[4] ), array( array( '$project' => $project ) ) );
+                if ( $rows === false )
+                    return false;
+                $documents = array();
+                foreach ( $rows as $row )
+                {
+                    $document = array();
+                    foreach ( $plan as $column => $source )
+                        $document[$column] = $source['field'] !== null
+                            ? ( isset( $row[$source['field']] ) ? $row[$source['field']] : null )
+                            : self::castSqlLiteralForColumn( $source['literal'], $table, $column );
+                    $documents[] = $document;
+                }
+                if ( $documents )
+                {
+                    $collection = $this->getClient()->selectCollection( $this->DB, $table );
+                    foreach ( array_chunk( $documents, 1000 ) as $chunk )
+                        $collection->insertMany( self::toBsonSafe( $this->applyAutoIncrementBatch( $table, $chunk ) ) );
+                }
+            }
+            catch ( Exception $e )
+            {
+                $this->recordDriverError( $e );
+                $this->logError( 'expMongoDB::query INSERT ... SELECT failed: ' . $e->getMessage() . ' SQL: ' . substr( $sql, 0, 200 ) );
+                return false;
+            }
+            return true;
+        }
+
         // --- DELETE FROM table WHERE conditions ---
         if ( preg_match( '/^\s*DELETE\s+FROM\s+([\w]+)\s+WHERE\s+(.+)$/is', $sql, $m ) )
         {
@@ -3042,6 +3091,35 @@ class expMongoDB extends eZDBInterface
         }
 
         return $tuples;
+    }
+
+    /**
+     * What an INSERT ... SELECT copies into each column: a field of the source rows (a column name, also with its
+     * table or an alias) or a literal (a number or a quoted string). Anything else, or a count that differs from the
+     * columns, gives false: the statement is refused rather than half copied.
+     *
+     * @param string[] $columns the columns of the INSERT
+     * @param string[] $selectList the expressions of the SELECT (splitSqlList())
+     * @return array|false column => array( 'field' => name or null, 'literal' => SQL literal or null )
+     */
+    static function insertSelectPlan( array $columns, array $selectList )
+    {
+        if ( count( $columns ) !== count( $selectList ) || !$columns )
+            return false;
+        $plan = array();
+        foreach ( array_values( $columns ) as $index => $column )
+        {
+            $expression = trim( preg_replace( '/\s+AS\s+\w+$/i', '', trim( $selectList[$index] ) ) );
+            if ( !preg_match( '/^\w+$/', $column ) )
+                return false;
+            if ( preg_match( '/^-?\d+(\.\d+)?$/', $expression ) || preg_match( "/^'(?:[^']|'')*'$/", $expression ) )
+                $plan[$column] = array( 'field' => null, 'literal' => $expression );
+            else if ( preg_match( '/^(?:\w+\.)?([A-Za-z_]\w*)$/', $expression, $m ) && strtoupper( $m[1] ) !== 'NULL' )
+                $plan[$column] = array( 'field' => $m[1], 'literal' => null );
+            else
+                return false;
+        }
+        return $plan;
     }
 
     /**
