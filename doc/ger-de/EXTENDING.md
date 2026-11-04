@@ -302,6 +302,8 @@ Rückgabewerte dieselben wie bei den Befehlen des Kernels. Referenz:
   implementiert, eingetragen in `[GraphQLSettings] SchemaExtensionList[]` ihrer `settings/graphql.ini.append.php`:
   Wurzelabfragen, Felder eines Orts und die Typen ihrer Datentypen ([GraphQL](funktionen/6.0/graphql.md#schema-erweiterungen)).
   Die REST-Schnittstelle ist die Extension ezprestapi ([REST API v1 und v2](anleitungen/rest-api-v1-und-v2.md)).
+  Andere Systeme über diese Schnittstellen anzubinden, statt sie zu erweitern, beschreibt
+  [Mit Exponential 6.0 integrieren](INTEGRATING.md).
 - **Audit-Protokoll.** Eine Extension, die eigene Ereignisse aufzeichnet, registriert einen Zweig der Taxonomie:
   - den Zweig: `audit.ini.append.php` `[AuditEventSettings] Branches[<name>]=<klasse>`, eine Klasse, die
     `expAuditTaxonomyBranch` implementiert;
@@ -393,4 +395,5 @@ Mehr:
 - [Extensions](anleitungen/extensions.md), die Schritt-für-Schritt-Anleitung zum Finden, Bauen und Veröffentlichen von
   Extensions;
 - das Buch [Extension-Entwicklung](hilfe/erweiterungsentwicklung/README.md);
-- [Eine Installation reparieren](bc/6.0/reparatur.md).
+- [Eine Installation reparieren](bc/6.0/reparatur.md);
+- [Mit Exponential 6.0 integrieren](INTEGRATING.md), um andere Systeme über die Schnittstellen anzubinden, statt den Code zu erweitern.

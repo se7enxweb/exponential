@@ -287,7 +287,8 @@ codes are the same as in the kernel's own commands. Reference:
   `expGraphQLSchemaExtension`, listed in `[GraphQLSettings] SchemaExtensionList[]` of its
   `settings/graphql.ini.append.php`: root queries, fields of a location and the types of its datatypes
   ([GraphQL](features/6.0/graphql.md#schema-extensions)). The REST API is the extension ezprestapi
-  ([REST API v1 and v2](guides/rest-api-v1-and-v2.md)).
+  ([REST API v1 and v2](guides/rest-api-v1-and-v2.md)). Connecting other systems through these APIs, rather than adding
+  to them, is the subject of [Integrating With Exponential 6.0](INTEGRATING.md).
 - **Audit trail.** An extension that records events of its own registers a branch of the taxonomy:
   - the branch: `audit.ini.append.php` `[AuditEventSettings] Branches[<name>]=<class>`, a class implementing
     `expAuditTaxonomyBranch`;
@@ -372,4 +373,5 @@ More:
 
 - [Extensions](guides/extensions.md), the step-by-step guide to finding, building and releasing extensions;
 - the book [Extension development](help/extension-development/README.md);
-- [Repairing an installation](bc/6.0/repair.md).
+- [Repairing an installation](bc/6.0/repair.md);
+- [Integrating With Exponential 6.0](INTEGRATING.md), for connecting other systems through the APIs instead of extending the code.

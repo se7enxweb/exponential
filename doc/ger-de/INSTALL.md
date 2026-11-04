@@ -800,6 +800,7 @@ Fahren Sie dann mit den Anleitungen fort:
 
 - [Exponential 6.0 konfigurieren](CONFIGURING.md): wo Einstellungen liegen und welche Datei gewinnt, Siteaccesses, Sprachen, E-Mail, Caches, Sicherheit, Extensions und Logs.
 - [Exponential 6.0 erweitern](EXTENDING.md): Extensions, Module und Ansichten, Templates, Datentypen, Workflow-Ereignisse, Cronjob-Teile, Befehle, Tests und Veröffentlichungen.
+- [Mit Exponential 6.0 integrieren](INTEGRATING.md): die APIs, die Anmeldung von Maschinen, Inhalte und Ereignisse hinein und hinaus, Single Sign-on, Frontends und Sicherheit für Integrationen.
 - [Erste Schritte](anleitungen/erste-schritte.md): erste Anmeldung, erste Inhalte, erste Template-Änderung.
 - [Das Inhaltsmodell und das Bearbeiten von Inhalten](anleitungen/inhaltsmodell-und-bearbeitung.md): Klassen, Objekte, der Online-Editor, der Papierkorb und Inhalts-Jobs.
 - [Templates und Design](anleitungen/templates-und-design.md): das Template finden, das eine Seite geschrieben hat, es überschreiben, das Admin-Design wechseln.
