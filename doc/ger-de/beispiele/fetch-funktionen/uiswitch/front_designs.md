@@ -9,7 +9,7 @@ generated: exp:help:examples
 ---
 # fetch( 'uiswitch', 'front_designs' )
 
-Definiert in `kernel/uiswitch/function_definition.php`; sie ruft `expFrontDesignSwitch::fetchSwitch()` auf.
+Definiert in `kernel/uiswitch/function_definition.php`; sie ruft `expFrontDesignSwitch::fetchSwitch()` auf (`kernel/classes/uiswitch/expfrontdesignswitch.php`).
 Operationstyp: read.
 
 ## Parameter
@@ -38,4 +38,4 @@ $result = eZFunctionHandler::execute( 'uiswitch', 'front_designs', array() );
 
 ---
 
-Erzeugt von `./console exp:help:examples --language=ger-de` aus `kernel/uiswitch/function_definition.php`. Bearbeiten Sie diese Seite nicht: Ändern Sie die Quelle oder die deutsche Übersetzung und erzeugen Sie sie neu ([wie](../../README.md#so-entstehen-die-generierten-seiten)). Freie Dokumentation: [GFDL 1.3 oder später](../../../hilfe/freie-dokumentation.md).
+Erzeugt von `./console exp:help:examples --language=ger-de` aus `kernel/uiswitch/function_definition.php`, `kernel/classes/uiswitch/expfrontdesignswitch.php`. Bearbeiten Sie diese Seite nicht: Ändern Sie die Quelle oder die deutsche Übersetzung und erzeugen Sie sie neu ([wie](../../README.md#so-entstehen-die-generierten-seiten)). Freie Dokumentation: [GFDL 1.3 oder später](../../../hilfe/freie-dokumentation.md).

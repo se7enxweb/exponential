@@ -2,14 +2,14 @@
 title: site.ini [SiteSearchSuggestSettings]
 audience: developer, admin
 category: examples
-summary: "The settings of [SiteSearchSuggestSettings] in site.ini: Enabled, MinLength, Limit, ExcludeClasses, ThumbnailAlias, Wildcard, PublicCacheTTL, RateLimit ..."
-keywords: site.ini, SiteSearchSuggestSettings, INI, setting, Enabled, MinLength, Limit, ExcludeClasses, ThumbnailAlias, Wildcard, PublicCacheTTL, RateLimit, RateWindow
+summary: "The settings of [SiteSearchSuggestSettings] in site.ini: Enabled, MinLength, Limit, ExcludeClasses, IncludeClasses, ThumbnailAlias, Wildcard, PublicCacheTTL ..."
+keywords: site.ini, SiteSearchSuggestSettings, INI, setting, Enabled, MinLength, Limit, ExcludeClasses, IncludeClasses, ThumbnailAlias, Wildcard, PublicCacheTTL, RateLimit, RateWindow
 type: generated
 generated: exp:help:examples
 ---
 # site.ini [SiteSearchSuggestSettings]
 
-The block `[SiteSearchSuggestSettings]` of `settings/site.ini`, with 9 setting(s).
+The block `[SiteSearchSuggestSettings]` of `settings/site.ini`, with 10 setting(s).
 
 > Suggestions under the header search field of a site's design while the visitor types (the include  
 > design:parts/front\_search\_suggest.tpl in the design's search form; the script javascript/page/search\_suggest.js asks  
@@ -82,6 +82,23 @@ Default: a list of 2: `user`, `user_group`.
 ExcludeClasses[]
 ExcludeClasses[]=user
 ExcludeClasses[]=user_group
+*/ ?>
+```
+
+## IncludeClasses
+
+> Only these classes are suggested and offered in the content type filter of the search page  
+> (content/front\_search\_page.tpl); empty: every class not excluded above. A site whose tree holds other sites' classes  
+> (a multisite package) names its own here, in the siteaccess's site.ini.append.php.  
+
+Default: an empty list.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[SiteSearchSuggestSettings]
+# an empty "IncludeClasses[]" first replaces the shipped list; without it the items are added
+IncludeClasses[]
 */ ?>
 ```
 

@@ -2837,7 +2837,7 @@ b898e8ef7724e37b2b6286d5f10119c1  design/standard/templates/content/edit_placeme
 23dcd6d6ce6130caf3174bafbef08b4f  design/standard/templates/content/edit_redirection.tpl
 b47784b07d7484a95f2ca4c6d6fe8703  design/standard/templates/content/edit_right_menu.tpl
 adae0def427fd51706089f0a31a1063e  design/standard/templates/content/edit_validation.tpl
-330602121f5494a6ca178af6db5b8e77  design/standard/templates/content/front_search_page.tpl
+5306124eec6cd439e04259f2cec26c31  design/standard/templates/content/front_search_page.tpl
 d8079a06a353c58205c4023b72fdd1a3  design/standard/templates/content/history.tpl
 a716d7ff7c19c5cac43aaafeeb84c4a1  design/standard/templates/content/history_access_messages.tpl
 456ae8da6dd39dde2bdb8e80b7f218ea  design/standard/templates/content/job.tpl
@@ -3529,7 +3529,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-ed1b663a1bcf6492bbf602bfd5d62951  doc/changelogs/6.0/6.0.15.md
+fc922eb5dfd6a423b3c929964336c85b  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -4082,7 +4082,7 @@ b6655c97e0f3a74544da58844180cc7e  doc/eng-us/examples/demo-mode/install-demo-sql
 cca5d7ab779676279104a95fbfe62288  doc/eng-us/examples/demo-mode/nginx-fastcgi-demo.conf
 85231412f69ddf5584dc88af3b27095c  doc/eng-us/examples/demo-mode/php-fpm-pool-demo.conf
 b8b3d6b9a764ca22e43f9f52beb3610d  doc/eng-us/examples/demo-mode/velocity-demo-mode.conf
-16e64c2539416d54684288cb75b866b9  doc/eng-us/examples/extension-points/README.md
+393ffb2fb5324fd6559ff24a5cacd5e7  doc/eng-us/examples/extension-points/README.md
 aa3888e9660481d83d5193e47dbc366a  doc/eng-us/examples/extension-points/admininterface.md
 7f5c75fe36346ae0f6daa7de74fb143d  doc/eng-us/examples/extension-points/audit.md
 c2cafe9e2e4dc86fd5103ebc3fca26e9  doc/eng-us/examples/extension-points/binaryfile.md
@@ -4120,7 +4120,7 @@ be3a94174b5b36c8fc92be339872a2ef  doc/eng-us/examples/extension-points/requestru
 e199b0a0ede1481bd174e5eab20256a9  doc/eng-us/examples/extension-points/setup.md
 41c716fe66f9d62a80fc53fdb70aa933  doc/eng-us/examples/extension-points/shop.md
 e4c27f944fa18d46d44095a17e607bcf  doc/eng-us/examples/extension-points/shopaccount.md
-e449a723e80dd74868c0e0e0e01693af  doc/eng-us/examples/extension-points/site.md
+765cc9d2739c817d359ab031d5015e72  doc/eng-us/examples/extension-points/site.md
 e09f07628c0da63193690caa333ba34f  doc/eng-us/examples/extension-points/smarty.md
 795c65c65446d822875f5cb7430cc843  doc/eng-us/examples/extension-points/subitemscolumns.md
 31797884a0010e2ae097e1c969e87b7c  doc/eng-us/examples/extension-points/syscard.md
@@ -4327,7 +4327,7 @@ cd14c1bc526277cdce33b19f4b98a6d1  doc/eng-us/examples/fetch-functions/shop/wish_
 179ffa048a61cbdcd7f1d753a6a68ae9  doc/eng-us/examples/fetch-functions/switchlanguage/README.md
 ec4704ddecc711db70d60ae0deddf8ac  doc/eng-us/examples/fetch-functions/switchlanguage/url_alias.md
 d09a9a7a69be365bcbe4c0911c91a717  doc/eng-us/examples/fetch-functions/uiswitch/README.md
-d82b116ce567777b4a335662425741c2  doc/eng-us/examples/fetch-functions/uiswitch/front_designs.md
+d34859638ac945c248797037fb41bd4c  doc/eng-us/examples/fetch-functions/uiswitch/front_designs.md
 5071404cac2e947215ae2acea15f5169  doc/eng-us/examples/fetch-functions/uiswitch/toolbar.md
 ca7fea667d0157a1e7e74f92afa16243  doc/eng-us/examples/fetch-functions/url/README.md
 aef062daf1e2754961179218633962ba  doc/eng-us/examples/fetch-functions/url/list.md
@@ -5548,7 +5548,7 @@ d98157d9fa323471a1d85edbd71dadbb  doc/eng-us/examples/ini-settings/site/PasskeyS
 026229cc329f932cef3703538e24c34b  doc/eng-us/examples/ini-settings/site/PasswordSettings.md
 db568a7c6a790ae47b375a22aff291ab  doc/eng-us/examples/ini-settings/site/PortAccessSettings.md
 3714ba86f9deca30858e35271af055af  doc/eng-us/examples/ini-settings/site/ProxySettings.md
-73713e3323f3a56d78679b3668086433  doc/eng-us/examples/ini-settings/site/README.md
+f82f8f4a242f2f9a8bb8516b266ba3f6  doc/eng-us/examples/ini-settings/site/README.md
 08b294507b813f03bbb995305d430031  doc/eng-us/examples/ini-settings/site/RSSSettings.md
 4d12fc781fc7be917617fa4f3d165142  doc/eng-us/examples/ini-settings/site/ReauthGroup_account.md
 abc8f5ba626146a4e03e45d2cd0a21c8  doc/eng-us/examples/ini-settings/site/ReauthGroup_content.md
@@ -5571,7 +5571,7 @@ e48642eee4dbd6e70732b2362277b641  doc/eng-us/examples/ini-settings/site/Session.
 f919ae53a39eb0dbdae8797d7dc8691e  doc/eng-us/examples/ini-settings/site/SiteAccessRules.md
 f1f282858d2e96fad6a4bf2c0fa8be23  doc/eng-us/examples/ini-settings/site/SiteAccessSettings.md
 d27566e784eeb0553e0f193084e84431  doc/eng-us/examples/ini-settings/site/SiteDataSettings.md
-9dc44b25aaefa222d40e9e4ae9c6145f  doc/eng-us/examples/ini-settings/site/SiteSearchSuggestSettings.md
+7f2553f59a0b5aea11dbc56ee4460231  doc/eng-us/examples/ini-settings/site/SiteSearchSuggestSettings.md
 9c7893cd8fdb562ad88192fc8f906324  doc/eng-us/examples/ini-settings/site/SiteSettings.md
 02edbbb315e15fd0cc25a6a4e7f4db63  doc/eng-us/examples/ini-settings/site/TemplateBridgeSettings.md
 7f49107a3863d0c6ba769baa561d084b  doc/eng-us/examples/ini-settings/site/TemplateSettings.md
@@ -11773,7 +11773,7 @@ a5222d6181149b9dc971b6b0e7f50ec8  doc/eng-us/help/resellers/sales/naming-and-bra
 94b50c4cfd073c4dd347688b59d1205a  doc/eng-us/help/resellers/sales/powered-by-exponential.md
 41ae0d0facf25f9c806d6926bbc62138  doc/eng-us/help/resellers/sales/pre-sales-questions-and-answers.md
 a420b17ab5dabd8778223cc4aae2b073  doc/eng-us/help/resellers/sales/sales-process.md
-ac670c914631e8fe651a67dbe581f5b0  doc/eng-us/help/searching.md
+c70361337ad5dd16f517a0ade52890a6  doc/eng-us/help/searching.md
 a5c7ce5b15c58ce20085b4f8951ef35b  doc/eng-us/help/security-hardening.md
 0e664fa25d750b89071708b2406b538c  doc/eng-us/help/setting-up-editor-and-admin-accounts.md
 633930576e562b5c2200cd0a1ae93a7c  doc/eng-us/help/site-packages/README.md
@@ -14111,7 +14111,7 @@ b029afb37c9ff1b5c013628114d1d7b6  doc/ger-de/beispiele/datentypen/ezurl.md
 506914e9196030f94b7e99a7d94b5133  doc/ger-de/beispiele/datentypen/ezxmltext.md
 216d0c35472bc8341413a1f9a10b48dd  doc/ger-de/beispiele/demomodus/README.md
 97c928323144bc1d74021baeee5f1a14  doc/ger-de/beispiele/demomodus/crontab-demo
-41907d37eb577a13ea3f3c8bc5def3a7  doc/ger-de/beispiele/erweiterungspunkte/README.md
+22f000264a90b3fe9a545875a7e3c057  doc/ger-de/beispiele/erweiterungspunkte/README.md
 dc60bdb72f5b57ab086bdda95fd2d1f0  doc/ger-de/beispiele/erweiterungspunkte/admininterface.md
 04c376153257da53903a202daf6c8ad0  doc/ger-de/beispiele/erweiterungspunkte/audit.md
 e34329194560e142b7bd6d21a0cbb109  doc/ger-de/beispiele/erweiterungspunkte/binaryfile.md
@@ -14149,7 +14149,7 @@ fea5ef71b7071d5465696e695ca7b5c9  doc/ger-de/beispiele/erweiterungspunkte/rest.m
 a2c6f44f6002c34553c39b11cd042bf3  doc/ger-de/beispiele/erweiterungspunkte/setup.md
 70c41f0417015eb803337c46156f534b  doc/ger-de/beispiele/erweiterungspunkte/shop.md
 8d69aa22110be5d0dc4da882806ebadd  doc/ger-de/beispiele/erweiterungspunkte/shopaccount.md
-a0bdad8e0e548b36d30915a102d5a4c8  doc/ger-de/beispiele/erweiterungspunkte/site.md
+b1a1ad8781456b4a3db13196b6ca57e5  doc/ger-de/beispiele/erweiterungspunkte/site.md
 1cca20fb0d06bb6d33ece8f4db237b56  doc/ger-de/beispiele/erweiterungspunkte/smarty.md
 e60ef56521597ab92d2c2c7cb9ba4faf  doc/ger-de/beispiele/erweiterungspunkte/subitemscolumns.md
 dfb187de89206a6d22fdddde15c2556a  doc/ger-de/beispiele/erweiterungspunkte/syscard.md
@@ -14355,7 +14355,7 @@ a8a04204d2c90c1715b4c532b94c4917  doc/ger-de/beispiele/fetch-funktionen/suche/li
 809b54a51399c38b76fc88e92487a2f6  doc/ger-de/beispiele/fetch-funktionen/switchlanguage/README.md
 e9ff0abe4ff7950d31e49fb157b89b10  doc/ger-de/beispiele/fetch-funktionen/switchlanguage/url_alias.md
 ef978a0bba2f679736416dbe5e0e4eea  doc/ger-de/beispiele/fetch-funktionen/uiswitch/README.md
-e952b69e857a7a2b9f5cdeb27ff9e013  doc/ger-de/beispiele/fetch-funktionen/uiswitch/front_designs.md
+a44a49581b47e9e8b7976e6cfd8c4d3a  doc/ger-de/beispiele/fetch-funktionen/uiswitch/front_designs.md
 9f919e2b30983ad51124c74fb550c112  doc/ger-de/beispiele/fetch-funktionen/uiswitch/toolbar.md
 493a44c7ef5fc17b6305ea39b2300369  doc/ger-de/beispiele/fetch-funktionen/url/README.md
 e121235acb9ae23421ef8746bcf55e02  doc/ger-de/beispiele/fetch-funktionen/url/list.md
@@ -15575,7 +15575,7 @@ e3514edc7a2f05db725c62732e108c22  doc/ger-de/beispiele/ini-einstellungen/site/Li
 3643636c3de654ce6a33825846ba893d  doc/ger-de/beispiele/ini-einstellungen/site/PasswordSettings.md
 9f62066afe0d2e372c41d004b3e5c85f  doc/ger-de/beispiele/ini-einstellungen/site/PortAccessSettings.md
 b55d3fdf378e1bcdc3be626fc28ece22  doc/ger-de/beispiele/ini-einstellungen/site/ProxySettings.md
-cab4ab4111ca4c65dac0fc3b9b0114ff  doc/ger-de/beispiele/ini-einstellungen/site/README.md
+ea977c79f9232b937fc5c0ec4d7d7799  doc/ger-de/beispiele/ini-einstellungen/site/README.md
 7da3655a4fc717865edb47570dea16fd  doc/ger-de/beispiele/ini-einstellungen/site/RSSSettings.md
 c375924685d1a0433a06fea38df0efb6  doc/ger-de/beispiele/ini-einstellungen/site/ReauthGroup_account.md
 2fbb7d1eafbe1175201652854abfc88f  doc/ger-de/beispiele/ini-einstellungen/site/ReauthGroup_content.md
@@ -15598,7 +15598,7 @@ fcad2a9141871c1b2031263cf684ae7f  doc/ger-de/beispiele/ini-einstellungen/site/Se
 68280efa8ec9398045e4676359d4441a  doc/ger-de/beispiele/ini-einstellungen/site/SiteAccessRules.md
 4813111267a2b6eceef320b4736b21b7  doc/ger-de/beispiele/ini-einstellungen/site/SiteAccessSettings.md
 830bb02905506fcf16617e7243013530  doc/ger-de/beispiele/ini-einstellungen/site/SiteDataSettings.md
-d6af7d043014c40fbc5ccdcc7d405751  doc/ger-de/beispiele/ini-einstellungen/site/SiteSearchSuggestSettings.md
+0ebf41d6739edd9a3e61f63be75e043b  doc/ger-de/beispiele/ini-einstellungen/site/SiteSearchSuggestSettings.md
 988c875873f8f78e5b806d67bda87fae  doc/ger-de/beispiele/ini-einstellungen/site/SiteSettings.md
 b138b048f1e956c000627dc11e780a23  doc/ger-de/beispiele/ini-einstellungen/site/TemplateBridgeSettings.md
 ccaf98e0b1b49b29d81a119c87a177aa  doc/ger-de/beispiele/ini-einstellungen/site/TemplateSettings.md
@@ -20767,7 +20767,7 @@ a11a0a28d2d52cd108d2bdb0e51d517c  doc/ger-de/hilfe/statisches-veroeffentlichen/s
 6c6fd11d41e1b182fe18e96da66c6072  doc/ger-de/hilfe/statisches-veroeffentlichen/was-statisches-veroeffentlichen-ist.md
 aa7950ea103082ba387a015e033b0e2a  doc/ger-de/hilfe/statisches-veroeffentlichen/wenn-eine-veroeffentlichung-fehlschlaegt.md
 d33aee31a89c450d6cf2048147ea92af  doc/ger-de/hilfe/statisches-veroeffentlichen/wer-veroeffentlichen-darf-rollen-und-richtlinien.md
-a8b001d7921ef2acb109b487040684c2  doc/ger-de/hilfe/suchen.md
+ff9da4634f4b7eb1ee78f318b7e99e1a  doc/ger-de/hilfe/suchen.md
 11f6935aa99a4119d4977f067c15fc9a  doc/ger-de/hilfe/systemseiten-als-lesezeichen.md
 a0c368729fab00e20fc5c9c690316850  doc/ger-de/hilfe/tastenkuerzel.md
 649d334ea26ec5ee6659f0e7b1f1b80f  doc/ger-de/hilfe/template-operatoren/README.md
@@ -24761,7 +24761,7 @@ c2716b6471cf0a37197768ec9505651c  kernel/classes/expprocesstools.php
 23cb1e7676048a72c0ef3c7088d13f25  kernel/classes/expreviewhold.php
 94f7415d88b918fec5629f6ab648591e  kernel/classes/expreviewholdauto.php
 8f6269e51f361ef385834a13cc7a6a49  kernel/classes/expscriptstatus.php
-62b00aaa3a82ead0d8d23c189e1ca679  kernel/classes/expsearchsuggest.php
+96fd9b39e84a7734ae00ce7f05907025  kernel/classes/expsearchsuggest.php
 aa90dfe294797d07ac3ee9c7be7aa569  kernel/classes/expsecretrule.php
 e773b6378b88c7fb7d34dda61c0242d0  kernel/classes/expsetupfilecopy.php
 d5e199bd454224432eabb39471db46a8  kernel/classes/expsetuplog.php
@@ -27194,7 +27194,7 @@ f7103c5bfddb7fcd5cbd36dc6cab1df1  settings/requestrules.ini
 3d58b3c9abd483644a07965e143cb05f  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
-90539540d238722bf79f0b65d2c39aea  settings/site.ini
+6de89f2c9bc124ea661df42a9b36bdf8  settings/site.ini
 6ab42322e9bd79fffa4d3ff3e7876b61  settings/siteaccess/mysite/override.ini.append
 2f9737c378b44049bb74006cdbae6bb9  settings/siteaccess/mysite/site.ini.append
 459570c4f6e440a4f8fdc53cc37675b2  settings/siteaccess/plain/override.ini.append
@@ -29178,7 +29178,7 @@ c40cd0bc9e3cb716a69ed51ad0dcf654  tests/tests/kernel/classes/expRolePagesTest.ph
 dba841fd53bca2a48771071bc8576cfd  tests/tests/kernel/classes/expSettingsPageTest.php
 9306390fd3cb22bf39fd361414f72235  tests/tests/kernel/classes/expShippedFeatureDefaultsTest.php
 7dc45bff6e79677e772657b530962141  tests/tests/kernel/classes/expSiteAccessOverviewTest.php
-76587f0d25e989d06ca48c17246a8bf0  tests/tests/kernel/classes/expSiteSearchSuggestTest.php
+a6c45cabdc422979ba5cdb2a8df85408  tests/tests/kernel/classes/expSiteSearchSuggestTest.php
 0d4beaad5e2fda13b3e43dffb081ee1c  tests/tests/kernel/classes/expSoapEntryScriptTest.php
 87af0fd8caa0dcd57ff6fddf22c840e9  tests/tests/kernel/classes/expSystemReportMaskTest.php
 33a68d0c02646476c5a0be96c865993c  tests/tests/kernel/classes/expSystemReportTest.php

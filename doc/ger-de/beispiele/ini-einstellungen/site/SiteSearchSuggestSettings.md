@@ -2,14 +2,14 @@
 title: site.ini [SiteSearchSuggestSettings]
 audience: developer, admin
 category: examples
-summary: "Die Einstellungen von [SiteSearchSuggestSettings] in site.ini: Enabled, MinLength, Limit, ExcludeClasses, ThumbnailAlias, Wildcard, PublicCacheTTL, RateLimit ..."
-keywords: Einstellung, site.ini, SiteSearchSuggestSettings, INI, setting, Enabled, MinLength, Limit, ExcludeClasses, ThumbnailAlias, Wildcard, PublicCacheTTL, RateLimit, RateWindow
+summary: "Die Einstellungen von [SiteSearchSuggestSettings] in site.ini: Enabled, MinLength, Limit, ExcludeClasses, IncludeClasses, ThumbnailAlias, Wildcard, PublicCacheTTL ..."
+keywords: Einstellung, site.ini, SiteSearchSuggestSettings, INI, setting, Enabled, MinLength, Limit, ExcludeClasses, IncludeClasses, ThumbnailAlias, Wildcard, PublicCacheTTL, RateLimit, RateWindow
 type: generated
 generated: exp:help:examples
 ---
 # site.ini [SiteSearchSuggestSettings]
 
-Der Block `[SiteSearchSuggestSettings]` von `settings/site.ini`, mit 9 Einstellung(en).
+Der Block `[SiteSearchSuggestSettings]` von `settings/site.ini`, mit 10 Einstellung(en).
 
 > Suggestions under the header search field of a site's design while the visitor types (the include  
 > design:parts/front\_search\_suggest.tpl in the design's search form; the script javascript/page/search\_suggest.js asks  
@@ -82,6 +82,23 @@ Standard: eine Liste mit 2: `user`, `user_group`.
 ExcludeClasses[]
 ExcludeClasses[]=user
 ExcludeClasses[]=user_group
+*/ ?>
+```
+
+## IncludeClasses
+
+> Only these classes are suggested and offered in the content type filter of the search page  
+> (content/front\_search\_page.tpl); empty: every class not excluded above. A site whose tree holds other sites' classes  
+> (a multisite package) names its own here, in the siteaccess's site.ini.append.php.  
+
+Standard: eine leere Liste.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[SiteSearchSuggestSettings]
+# ein leeres "IncludeClasses[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
+IncludeClasses[]
 */ ?>
 ```
 

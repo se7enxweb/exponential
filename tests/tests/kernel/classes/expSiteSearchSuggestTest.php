@@ -69,6 +69,25 @@ class expSiteSearchSuggestTest extends PHPUnit\Framework\TestCase
         $this->assertSame( '', expSearchSuggest::siteItem( array( 'thumbnail' => 'javascript:x', 'icon' => '' ) + $item, $settings )['icon'] );
     }
 
+    /** SSS-02b */
+    public function testIncludeClassesLimitsTheSuggestionsAndTheSearchFilter()
+    {
+        $this->assertSame( array(), expSearchSuggest::siteSettings( self::ini( array() ) )['include_classes'], 'empty: every class' );
+        $settings = expSearchSuggest::siteSettings( self::ini( array( 'IncludeClasses' => array( 'exp_doc_page', '', 'exp_doc_faq' ) ) ) );
+        $this->assertSame( array( 'exp_doc_page', 'exp_doc_faq' ), $settings['include_classes'] );
+        $item = array( 'type' => 'content', 'title' => 'Installing', 'url' => '/installing', 'meta' => 'Doc page', 'icon' => '',
+                       'class_identifier' => 'exp_doc_page', 'is_user' => false );
+        $this->assertNotNull( expSearchSuggest::siteItem( $item, $settings ), 'a listed class' );
+        $this->assertNull( expSearchSuggest::siteItem( array( 'class_identifier' => 'article' ) + $item, $settings ), 'a class not listed' );
+        unset( $item['class_identifier'] );
+        $this->assertNull( expSearchSuggest::siteItem( $item, $settings ), 'no class known' );
+
+        // the search page's content type filter reads the same setting
+        $page = (string)file_get_contents( self::root() . '/design/standard/templates/content/front_search_page.tpl' );
+        $this->assertStringContainsString( "{set \$front_included = ezini( 'SiteSearchSuggestSettings', 'IncludeClasses' )}", $page );
+        $this->assertStringContainsString( '$front_included|contains( $class.identifier )', $page );
+    }
+
     /** SSS-03 */
     public function testTooShortATextAsksNothing()
     {

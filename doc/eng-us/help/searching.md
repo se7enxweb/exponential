@@ -159,6 +159,7 @@ in its `site.ini.append.php`:
 | `MinLength` | `3` | the fewest characters typed before suggestions are asked for |
 | `Limit` | `6` | the most suggestions (0 to 20) |
 | `ExcludeClasses[]` | `user`, `user_group` | classes never suggested (a class with a user account never is) |
+| `IncludeClasses[]` | (empty: every class) | only these classes are suggested and offered in the search page's content type filter; for a site whose tree holds other sites' classes (a multisite package) |
 | `ThumbnailAlias` | `small` | the image alias of the small picture; empty: the class icon |
 | `PublicCacheTTL` | `60` | seconds an anonymous answer is kept (on the server and in shared caches) |
 | `RateLimit`, `RateWindow` | `60`, `60` | requests of one address per window; more are answered 429 |

@@ -167,6 +167,7 @@ Die Vorschläge sind für jeden Siteaccess eingeschaltet. Eingestellt werden sie
 | `MinLength` | `3` | so viele Zeichen müssen getippt sein, bevor Vorschläge geholt werden |
 | `Limit` | `6` | höchstens so viele Vorschläge (0 bis 20) |
 | `ExcludeClasses[]` | `user`, `user_group` | Klassen, die nie vorgeschlagen werden (eine Klasse mit Benutzerkonto nie) |
+| `IncludeClasses[]` | (leer: jede Klasse) | nur diese Klassen werden vorgeschlagen und im Inhaltstyp-Filter der Suchseite angeboten; für eine Site, deren Baum Klassen anderer Sites enthält (ein Multisite-Paket) |
 | `ThumbnailAlias` | `small` | der Bildalias des kleinen Bildes; leer: das Klassensymbol |
 | `PublicCacheTTL` | `60` | so viele Sekunden wird eine anonyme Antwort aufbewahrt (auf dem Server und in geteilten Caches) |
 | `RateLimit`, `RateWindow` | `60`, `60` | Anfragen einer Adresse je Zeitfenster; weitere werden mit 429 beantwortet |

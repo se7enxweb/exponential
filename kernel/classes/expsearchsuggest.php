@@ -829,7 +829,8 @@ class expSearchSuggest
      * [SiteSearchSuggestSettings] of the siteaccess, each with its default. Only content is ever suggested there.
      *
      * @param eZINI|null $ini site.ini
-     * @return array 'enabled' bool, 'min_length' int, 'limit' int, 'exclude_classes' list, 'thumbnail_alias' string,
+     * @return array 'enabled' bool, 'min_length' int, 'limit' int, 'exclude_classes' list, 'include_classes' list (empty: all),
+     *               'thumbnail_alias' string,
      *               'wildcard' string, 'cache_ttl' int, 'rate_limit' int, 'rate_window' int
      */
     public static function siteSettings( $ini = null )
@@ -841,11 +842,13 @@ class expSearchSuggest
         };
         $wildcard = strtolower( (string)$get( 'Wildcard', 'auto' ) );
         $exclude = array_values( array_filter( array_map( 'strval', (array)$get( 'ExcludeClasses', array( 'user', 'user_group' ) ) ) ) );
+        $include = array_values( array_filter( array_map( 'strval', (array)$get( 'IncludeClasses', array() ) ) ) );
         return array(
             'enabled' => strtolower( (string)$get( 'Enabled', 'true' ) ) === 'true',
             'min_length' => max( 1, (int)$get( 'MinLength', 3 ) ),
             'limit' => self::limit( $get( 'Limit', 6 ) ),
             'exclude_classes' => $exclude,
+            'include_classes' => $include,
             'thumbnail_alias' => preg_replace( '/[^a-z0-9_]/i', '', (string)$get( 'ThumbnailAlias', 'small' ) ),
             'wildcard' => in_array( $wildcard, array( 'auto', 'enabled', 'disabled' ), true ) ? $wildcard : 'auto',
             'cache_ttl' => max( 0, min( 3600, (int)$get( 'PublicCacheTTL', 60 ) ) ),
@@ -865,6 +868,8 @@ class expSearchSuggest
     public static function siteItem( array $item, array $settings )
     {
         if ( !empty( $item['is_user'] ) || ( isset( $item['class_identifier'] ) && in_array( (string)$item['class_identifier'], $settings['exclude_classes'], true ) ) )
+            return null;
+        if ( !empty( $settings['include_classes'] ) && ( !isset( $item['class_identifier'] ) || !in_array( (string)$item['class_identifier'], $settings['include_classes'], true ) ) )
             return null;
         if ( !isset( $item['url'] ) || !self::isSiteAddress( (string)$item['url'] ) )
             return null;

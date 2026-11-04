@@ -51,7 +51,7 @@ Where an extension plugs into the kernel through settings: INI settings that nam
 | [setup.ini](setup.md) | kernel | 1 | TestClass |
 | [shop.ini](shop.md) | kernel | 7 | MathHandler, ExchangeRatesUpdateHandler, ExtensionDirectories, ExtensionDirectories, Handler, ExtensionDirectories ... |
 | [shopaccount.ini](shopaccount.md) | kernel | 4 | Repositories, ExtensionRepositories, Handler, Handler |
-| [site.ini](site.md) | kernel | 32 | purgeClass, purgeClass, ExcludeClasses, DatabaseImplementation, Listeners, Implementation ... |
+| [site.ini](site.md) | kernel | 33 | purgeClass, purgeClass, ExcludeClasses, IncludeClasses, DatabaseImplementation, Listeners ... |
 | [smarty.ini](smarty.md) | kernel | 2 | CompileCheck, SecurityStaticClassList |
 | [subitemscolumns.ini](subitemscolumns.md) | kernel | 112 | Class, Class, Class, Class, Class, Class ... |
 | [syscard.ini](syscard.md) | kernel | 1 | ProviderClasses |

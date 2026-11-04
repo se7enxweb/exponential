@@ -2,7 +2,7 @@
 title: Extension points in site.ini
 audience: developer, admin
 category: examples
-summary: Settings of site.ini that list handlers, classes or directories an extension can add to (32, found by name).
+summary: Settings of site.ini that list handlers, classes or directories an extension can add to (33, found by name).
 keywords: site.ini, extension point, handler, extension, hook
 type: generated
 generated: exp:help:examples
@@ -46,6 +46,18 @@ Shipped: a list of 2: `user`, `user_group`. [The setting](../ini-settings/site/S
 # extension/expexample/settings/site.ini.append.php
 [SiteSearchSuggestSettings]
 ExcludeClasses[]=expExampleExcludeClasse    # your class or value, added to the list
+*/ ?>
+```
+
+## SiteSearchSuggestSettings IncludeClasses
+
+Shipped: an empty list. [The setting](../ini-settings/site/SiteSearchSuggestSettings.md#includeclasses).
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# extension/expexample/settings/site.ini.append.php
+[SiteSearchSuggestSettings]
+IncludeClasses[]=expExampleIncludeClasse    # your class or value, added to the list
 */ ?>
 ```
 

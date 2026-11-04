@@ -13,6 +13,7 @@
      $search_query = $page.query
      $search_has_text = $f.text|trim|ne( '' )
      $front_excluded = ezini( 'SiteSearchSuggestSettings', 'ExcludeClasses' )
+     $front_included = array()
      $front_view = first_set( $result_view, 'line' )
      $sort_names = hash( 'relevance', 'Relevance'|i18n( 'design/admin/content/search' ),
                          'name_asc', 'Name A–Z'|i18n( 'design/admin/content/search' ),
@@ -22,6 +23,8 @@
                          'published_desc', 'Published, newest first'|i18n( 'design/admin/content/search' ),
                          'published_asc', 'Published, oldest first'|i18n( 'design/admin/content/search' ) )}
 {if is_set( $search_data )}{set search_data = $page.search_data}{/if}
+{* IncludeClasses[]: a site that lists its own classes offers only those in the content type filter *}
+{if ezini_hasvariable( 'SiteSearchSuggestSettings', 'IncludeClasses' )}{set $front_included = ezini( 'SiteSearchSuggestSettings', 'IncludeClasses' )}{/if}
 <link rel="stylesheet" href={'stylesheets/front_search.css'|ezdesign} />
 <div class="exps-search" id="search-page">
 <h1 class="exps-search-title">{first_set( $title, 'Search'|i18n( 'design/admin/content/search' ) )|wash}</h1>
@@ -39,7 +42,7 @@
         <legend>{'Content type'|i18n( 'design/admin/content/search' )}</legend>
         <ul class="exps-plain">
         {foreach $page.class_groups as $group}{foreach $group.classes as $class}
-        {if and( $front_excluded|contains( $class.identifier )|not, or( $class.selected, $class.count|is_null, $class.count|gt( 0 ) ) )}
+        {if and( $front_excluded|contains( $class.identifier )|not, or( $front_included|count|eq( 0 ), $front_included|contains( $class.identifier ) ), or( $class.selected, $class.count|is_null, $class.count|gt( 0 ) ) )}
             <li><label class="exps-check"><input type="checkbox" name="ClassID[]" value="{$class.id}"{if $class.selected} checked="checked"{/if} /> <span>{$class.name|wash}</span>{if $class.count|is_null|not} <span class="exps-count">({$class.count})</span>{/if}</label></li>
         {/if}
         {/foreach}{/foreach}
@@ -123,4 +126,4 @@
 </div>
 </form>
 </div>
-{undef $page $f $search_query $search_has_text $front_excluded $front_view $sort_names}
+{undef $page $f $search_query $search_has_text $front_excluded $front_included $front_view $sort_names}
