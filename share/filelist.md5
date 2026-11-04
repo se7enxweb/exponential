@@ -1695,6 +1695,7 @@ e6e30f9197ee3b660a776d31bc151b53  design/admin4/templates/popupmenu/popup_sub_ed
 98c8d8cc4b62c5c98b8ed577e72c5e4a  design/admin4/templates/popupmenu/popup_sub_siteaccess_menus.tpl
 6465fbe846663bc4a2f4c12eec1cd58b  design/admin4/templates/popupmenu/popup_subitems_menu.tpl
 ea276526766052b8207ab44bea3f39db  design/admin4/templates/preview.tpl
+a61bdb74d4b12936f3be8ad2d5558504  design/admin4/templates/print_pagelayout.tpl
 f59d5e7db2e30a0e226e913fdfc4be26  design/admin4/templates/relations.tpl
 0ff4c7a8fc5a399261cdb0b92969a02e  design/admin4/templates/role/assign_limited_section.tpl
 842d9db140abdb8c13f5c35f3372714d  design/admin4/templates/role/copy.tpl
