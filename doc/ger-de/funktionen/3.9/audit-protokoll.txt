@@ -1,0 +1,56 @@
+*Titel: Audit-Protokoll
+
+*Anlass:
+Große Websites mit vielen Administratoren, Benutzern und Redakteuren brauchen eine bessere
+Protokollierung.
+
+*Dokumentation:
+Bestimmte Vorgänge wie das Entfernen von Inhalten oder das Zuweisen von Sektionen lassen sich
+mit Benutzername, Zeitpunkt, IP-Adresse usw. protokollieren.
+
+Neue Einstellungen:
+
+- audit.ini[AuditSettings].LogDir
+  Wo die Protokolldateien abgelegt werden.
+- audit.ini[AuditSettings].Audit
+  Bei 'enabled' ist die Funktion eingeschaltet.
+- audit.ini[AuditSettings].AuditFileNames[]
+  Dateinamen der Audits.
+  Der Schlüssel von AuditFileNames[] ist der Name des Audits, der Wert der Dateiname.
+     Beispiel:
+     AuditFileNames[<name of audit>]=<file name>
+
+***********
+Beispiel:
+
+# Failed login attempts will be logged
+AuditFileNames[user-failed-login]=failed_login.log
+(Wird das Audit fehlgeschlagener Anmeldungen nicht gebraucht, kommentieren oder entfernen Sie
+diese Zeile einfach.)
+
+************
+Protokolliert werden immer IP-Adresse des Clients, Zeitpunkt und Benutzername.
+Was sich protokollieren lässt:
+- fehlgeschlagene Anmeldeversuche
+- IP-Adresse des Benutzers
+- wer welchen Inhalt löscht (Knoten-ID / Objekt-ID / Name des Inhalts)
+- wer Inhalte verschiebt (Knoten-ID / alter Elternknoten / neuer Elternknoten / Objektname)
+- wer welche Rolle(n) ändert (Rollen-ID / Rollenname)
+- wer wem welche Rolle zuweist (Rollen-ID / Rollenname)
+- wer welche Sektion welchem Knoten zuweist (Sektions-ID / Sektionsname)
+- wer welche Bestellung im Shop gelöscht hat (Benutzer / Bestell-ID)
+
+***********
+*Verwendung
+
+Um ein weiteres Audit zu verwenden,
+1. fügen Sie den Namen des Audits als SCHLÜSSEL und den Namen der Protokolldatei als WERT in
+   audit.ini[AuditSettings].AuditFileNames[] hinzu
+   (z. B. AuditFileNames[user-login]=login.log),
+2. setzen Sie audit.ini[AuditSettings].Audit auf 'enabled',
+3. verwenden Sie PHP-Code wie diesen:
+
+       include_once( "kernel/classes/ezaudit.php" );
+       eZAudit::writeAudit( 'user-login', array( 'User id' => <userID>,
+                                                 'User login' => <userLogin>,
+                                                 'Name of something' => <valueOfSomething> ) );

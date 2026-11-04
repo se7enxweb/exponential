@@ -1,0 +1,4 @@
+*Titel: Übersetzung der Namen von Klassen und Klassenattributen
+
+*Dokumentation:
+Die Namen von Klassen und Klassenattributen lassen sich ähnlich wie Inhaltsobjekte übersetzen.

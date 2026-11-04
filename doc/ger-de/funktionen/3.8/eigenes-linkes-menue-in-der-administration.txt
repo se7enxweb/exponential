@@ -1,0 +1,8 @@
+*Titel: Eigenes linkes Menü in der Administration
+
+*Dokumentation:
+Eigene Module und Ansichten können im Pagelayout der Administration ein eigenes linkes Menü
+setzen. Das Template des linken Menüs wird über diese Variable im Modul bzw. in der Ansicht
+angegeben, Beispiel:
+$Result['left_menu'] = 'design:my_module/custom_menu.tpl';
+

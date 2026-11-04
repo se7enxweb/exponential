@@ -1,0 +1,9 @@
+*Titel: Einschränkung 'ParentDepth' für Berechtigungen
+
+*Ursprünglicher Autor: Coomans Kristof
+
+*Dokumentation:
+Die Berechtigung 'content/create' lässt sich jetzt nach der Tiefe des Elternknotens
+einschränken.
+Die größte Tiefe lässt sich über die Einstellung [site.ini].RoleSettings.MaxParentDepthLimitation
+konfigurieren.

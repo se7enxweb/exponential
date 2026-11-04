@@ -1,0 +1,16 @@
+*Titel: Daten mit eZSOAPClient über SSL (Port 443) übertragen
+
+*Anlass:
+Bisher überträgt eZSOAPClient Daten per SOAP ohne SSL.
+Heute ist Sicherheit gefragt, und SSL hat sich als das geeignetste Protokoll erwiesen, um
+vertrauliche Dokumente sicher über das Internet zu übertragen. Daher setzen wir SSL mit SOAP für
+eine möglichst sichere Datenübertragung um.
+
+*Dokumentation:
+eZSOAPClient kann Daten jetzt mit und ohne SSL übertragen. Ist als Port 443 oder einfach die
+Zeichenkette 'ssl' angegeben, überträgt die Klasse über SSL, sonst normal. Auch mit der
+SSL-Erweiterung funktioniert sie weiterhin mit früheren Versionen von Exponential und der normalen
+SOAP-Übertragung.
+
+Für die SSL-Übertragung wird die CURL-Bibliothek verwendet; dafür muss das Paket curl 7.0.2 oder
+neuer installiert und PHP mit der Option --with-curl='PATH' neu kompiliert sein.

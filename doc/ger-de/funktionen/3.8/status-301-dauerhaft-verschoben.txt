@@ -1,0 +1,10 @@
+Status 301 Moved Permanently
+============================
+
+Das System setzt jetzt den Status 301, wenn es wegen verschobener Objekte weiterleitet. So können
+externe Suchmaschinen und andere Bots ihre gespeicherten URLs auf den neuen Ort aktualisieren.
+
+Außerdem können Module den HTTP-Status von Weiterleitungen setzen, indem sie
+*setRedirectStatus()* in eZModule aufrufen, z. B.::
+
+  $Module->setRedirectStatus( "301 Moved Permanently" );

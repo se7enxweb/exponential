@@ -1,0 +1,36 @@
+*Titel: Neue Funktionen des Datentyps XML-Block
+
+*Beschreibung: Bearbeiten und Veröffentlichen von XML-Blöcken wurden komplett neu geschrieben.
+Alte Fehler sind damit behoben, und neue Funktionen sind hinzugekommen.
+
+*Funktionen:
+
+- Das vereinfachte XML-Eingabefeld zeigt den Inhalt viel besser formatiert an.
+  Gleichzeitig hängt es nicht von der Formatierung der Benutzereingabe ab.
+
+- Eingabefehler werden genauer behandelt, und die Eingabe des Benutzers wird nie gelöscht
+  oder verändert, solange sie nicht korrekt ist.
+
+- Neues Tag "embed-inline".
+  Einzelheiten in 'doc/eng-us/features/3.8/embed-inline.txt'.
+
+- Inline-Tags lassen sich jetzt in Überschriften verwenden (auch eigene Inline-Tags).
+
+- Wie Leerzeichen in der eZXML-Eingabe behandelt werden, lässt sich festlegen. Das steuern
+  diese Einstellungen:
+
+    ezxml.ini:[InputSettings].TrimSpaces:
+    true bedeutet, dass Leerzeichen wie bisher entfernt werden; false, dass alle Leerzeichen
+    erhalten bleiben.
+
+    ezxml.ini:[InputSettings].AllowMultipleSpaces:
+    true bedeutet, dass eine Folge von Leerzeichen durch ein Leerzeichen ersetzt wird.
+
+- Leere Absätze in der Eingabe lassen sich erlauben. Das steuert die Einstellung:
+    content.ini:[paragraph].AllowEmpty
+
+- Durch die automatische Nummerierung der Überschriften lässt sich mit dem Template-Operator
+  eztoc automatisch ein Inhaltsverzeichnis für Ihre XML-Textfelder erzeugen. Jede Überschrift
+  erhält einen Anker mit eindeutiger ID.
+  Einzelheiten in 'doc/eng-us/features/3.8/TOC_operator.txt'.
+

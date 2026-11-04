@@ -1,0 +1,8 @@
+*Titel: Schnellere Aktualisierung der eZURLAlias-Einträge
+
+*Ursprünglicher Autor: Bard Farstad
+
+*Dokumentation:
+Ein kleiner Patch, der die URL-Aliase der Kinder beim Veröffentlichen nur aktualisiert, wenn es
+wirklich nötig ist. Das beschleunigt die erste Veröffentlichung, den häufigsten Fall. Auf großen
+Websites (nx100k Objekte) wird das Veröffentlichen in diesen Fällen deutlich schneller.

@@ -1,0 +1,63 @@
+*Titel: Prüfen, ob eine Variable in ezini oder ezhttp existiert
+
+*Anlass:
+Bisher ließ sich in Templates nicht prüfen, ob eine POST-Variable oder INI-Einstellung gesetzt
+ist. ezini und ezhttp schreiben einen Fehler ins Debug, aber man konnte nicht prüfen, ob die
+Variable gesetzt ist, bevor man sie lädt.
+
+*Dokumentation:
+
+Neue Template-Operatoren
+  ezini_hasvariable
+  ezhttp_hasvariable
+und neue Parameter für ezini und ezhttp.
+
+1. ezini lässt sich so verwenden:
+
+ *Verwendung:
+
+     ezini( <BlockName>, <SettingName>
+            [, <FileName> [, <IniPath> [, <Dynamic fetch: bei 'true()' wird der Wert der Variablen dynamisch abgerufen>
+            [, <Check for existence: bei 'hasVariable' oder true() wird true zurückgegeben, wenn die Variable existiert, sonst false> ] ] ] ] )
+
+ *Beispiel:
+
+     ezini( 'URL', 'URL', 'my.ini',, true() )
+
+ Bei eingeschalteter Template-Kompilierung werden keine Warnungen angezeigt.
+
+
+2. und ezini_hasvariable:
+
+ *Verwendung:
+
+     ezini_hasvariable( <BlockName>, <SettingName> [, <FileName> [, <IniPath> [, <dynamic> ] ] ] )
+
+ *Beispiel:
+
+     ezini_hasvariable( 'URL', 'URL', 'my.site' )
+     =
+     ezini( 'URL', 'URL', 'my.ini',,,'hasVariable' )
+
+3. ezhttp:
+
+  *Verwendung:
+
+     ezhttp( <Variable> [, <Method: post, get, session> [, <Should We Check for existence: 'hasVariable' oder true()> ] ] )
+
+  *Beispiel:
+
+    ezhttp( 'getVar', 'get', 'hasVariable' )
+
+4. ezhttp_hasvariable
+
+  *Verwendung:
+
+    ezhttp_hasvariable( <Variable> [, <Method> ] )
+
+  *Beispiel:
+
+    ezhttp( 'getVar', 'get', 'hasVariable' )
+    =
+    ezhttp_hasvariable( 'getVar', 'get' )
+

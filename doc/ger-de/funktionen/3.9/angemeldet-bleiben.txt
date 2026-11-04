@@ -1,0 +1,18 @@
+*Titel: "Angemeldet bleiben" bei der Anmeldung
+
+*Dokumentation:
+
+Die Anmeldeseite hat das übliche Kontrollkästchen "Angemeldet bleiben".
+Will ein Benutzer die aktuelle Sitzung (nicht Anmeldename und Passwort) im Cookie speichern,
+hakt er das Kontrollkästchen an.
+Danach wird er automatisch angemeldet, ohne jedes Mal Anmeldename und Passwort einzugeben
+(solange das Cookie nicht abgelaufen ist, siehe site.ini.[Session].RememberMeTimeout).
+
+Ist site.ini[Session].RememberMeTimeout leer oder 0, ist die Funktion ausgeschaltet.
+
+Neue INI-Einstellung in site.ini:
+- [Session].RememberMeTimeout:
+  Wie viele Sekunden ein Sitzungscookie gilt.
+  Leer oder 0 schaltet die Funktion aus; dann gilt CookieTimeout.
+
+

@@ -1,0 +1,9 @@
+*Titel: Trigger 'Warenkorb aktualisieren'
+
+*Ursprünglicher Autor: Jo Henrik Endrerud
+
+*Dokumentation:
+Bei der Operation 'updatebasket' lässt sich jetzt ein Workflow ausführen, um das Produkt weiter zu
+prüfen (manche Produkte sollen paarweise gekauft werden, beim Kauf mehrerer Produkte gibt es einen
+günstigeren Preis und so weiter).
+

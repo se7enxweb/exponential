@@ -1,0 +1,7 @@
+*Titel: Erweiterte Zuordnung von LDAP-Benutzergruppen
+
+*Dokumentation:
+Zwei neue Methoden, einen Benutzer über LDAP einer Gruppe zuzuordnen:
+- über das Array LDAPUserGroupMap[] (siehe ldap.ini)
+- über einen hierarchischen Gruppenbaum auf dem LDAP-Server (über das member-Attribut der
+  LDAP-Gruppe werden die Mitglieder jeder Gruppe ermittelt).

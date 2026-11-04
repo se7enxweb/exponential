@@ -1,0 +1,93 @@
+*Titel: SSL-Zonen
+
+*Anlass:
+
+Für bestimmte Teile der Website kann es nötig sein, den Zugriff über SSL zu erzwingen. Solche Teile
+heißen "SSL-Zonen".
+
+
+*Dokumentation:
+
+Eine SSL-Zone kann sein:
+1. ein Inhaltsteilbaum (Inhalts-SSL-Zone);
+2. eine Modulansicht.
+
+Im ersten Fall erfolgen alle Vorgänge (Ansehen, Bearbeiten, Anlegen von Kindknoten) an Knoten
+dieses Teilbaums über SSL.
+
+Verlässt ein Benutzer eine SSL-Zone (ruft er also einen Teilbaum oder eine Modulansicht auf, die zu
+keiner SSL-Zone gehört), wird er automatisch zurück auf einfaches HTTP (ohne SSL) umgeschaltet.
+
+
+*Konfiguration:
+
+Standardmäßig wird einfaches HTTP verwendet.
+Die Zugriffsart lässt sich je Ansicht überschreiben. Ansichten, deren Zugriffsart nicht
+überschrieben ist, können die passende Zugriffsart je Teilbaum wählen.
+
+Beispielkonfiguration:
+### site.ini.append ###################################################
+[SiteSettings]
+SSLPort=8443
+
+[SSLZoneSettings]
+# Enable/disable the SSL zones functionality.
+SSLZones=enabled
+
+# Content subtrees we must use SSL for.
+# (currently, only content/view and content/edit respect this setting)
+SSLSubtrees[]
+SSLSubtrees[]=/news
+SSLSubtrees[]=/polls
+
+# Default access mode is plain HTTP.
+# Define a view as 'ssl' to force HTTPS access mode for this view.
+# If a view is defined as 'keep' then access mode is unknown
+# for this view, and the previous access mode is kept.
+ModuleViewAccessMode[shop/add]=ssl
+ModuleViewAccessMode[shop/basket]=ssl
+ModuleViewAccessMode[content/*]=keep
+#######################################################################
+
+"content/*" bedeutet alle Ansichten des Moduls 'content'.
+
+*Logik:
+
+Bevor ein Modul läuft, entscheidet das System anhand der Einstellung "ModuleViewAccessMode", ob es
+die Zugriffsart umschaltet.
+
+Ist ein Modul bzw. eine Ansicht dort nicht aufgeführt oder als 'ssl' definiert, wird die
+Zugriffsart umgeschaltet.
+
+Ist ein Modul bzw. eine Ansicht dagegen als 'keep' definiert, kann die Ansicht die Zugriffsart je
+Teilbaum umschalten, wie content/view und content/edit es tun.
+
+Lässt sich die richtige Zugriffsart vor dem Lauf des Moduls nicht bestimmen (bei 'keep') und
+behandelt die Ansicht Inhalts-SSL-Zonen (SSL-Teilbäume) nicht selbst, wird nicht umgeschaltet.
+
+
+*Einzelheiten der Umsetzung:
+
+Ob ein Modul bzw. eine Ansicht die Zugriffsart umschalten soll, prüft index.php mit dem Aufruf
+eZSSLZone::checkModuleView().
+
+Ob ein Objekt bzw. Knoten zu einer Inhalts-SSL-Zone (SSLSubtree) gehört, prüft eine Ansicht mit den
+Methoden checkNode/checkNodeID/checkNodePath/checkObject der Klasse eZSSLZone.
+
+Um Ihrer Ansicht Unterstützung für Inhalts-SSL-Zonen zu geben, definieren Sie die Ansicht in der
+Einstellung "ModuleViewAccessMode" als 'keep' und fügen direkt nach dem Auswerten der
+Modulparameter etwa Folgendes ein:
+
+ // Check if we should switch access mode (http/http) for this node.
+ include_once( 'kernel/classes/ezsslzone.php' );
+ eZSSLZone::checkNodeID( '<module_name>', '<view_name>', $NodeID );
+
+Mehr dazu in den öffentlichen Methoden in ezsslzone.php.
+
+*Bekannte Einschränkungen:
+
+Für Ansichten, die Parameter per POST annehmen (z. B. content/action), lässt sich die Zugriffsart
+nicht umschalten.
+
+Mehr noch: Solche Ansichten funktionieren mit SSLZones=enabled überhaupt nicht, es sei denn, Sie
+markieren sie in der Einstellung ModuleViewAccessMode als 'keep'.

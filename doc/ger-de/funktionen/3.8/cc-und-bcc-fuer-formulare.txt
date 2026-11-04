@@ -1,0 +1,14 @@
+*Titel: Cc/Bcc für Formulare der Informationssammlung
+
+*Ursprünglicher Autor: Ronnie Garcia
+
+*Dokumentation:
+Zwei neue Template-Variablen: email_cc_receivers und email_bcc_receivers.
+Sie werden wie 'to' verwendet.
+Beispiel:
+{set-block scope=root variable=email_cc_receivers}
+    {$object.data_map.cc_recipient.content}
+{/set-block}
+{set-block scope=root variable=email_bcc_receivers}
+    {$object.data_map.bcc_recipient.content}
+{/set-block}

@@ -1,0 +1,17 @@
+*Titel: Override-Bedingungen für die Templates 'content/tipafriend.tpl' und 'content/tipafriendmail.tpl'
+
+*Dokumentation:
+Das Modul 'content/tipafriend' braucht eine Knoten-ID als Pflichtparameter. Daher ist es
+nützlich, diese Templates anhand der Attribute des übergebenen Knotens überschreiben zu können.
+Ab jetzt lassen sich 'content/tipafriend.tpl' und 'content/tipafriendmail.tpl' mit diesen
+Schlüsseln überschreiben:
+
+object              - Die ID des Objekts.
+class               - Die ID der Klasse, deren Instanz das Objekt ist.
+class_identifier    - Der Bezeichner der Klasse, deren Instanz das Objekt ist.
+class_group         - Die ID der Gruppe, zu der die Klasse des Objekts gehört.
+section             - Die Nummer der Sektion, zu der das Objekt gehört.
+node                - Die ID des Knotens.
+parent_node         - Die ID des Elternknotens.
+depth               - Die Tiefe des Knotens. Ein Knoten der obersten Ebene hat die Tiefe 1.
+url_alias           - Die virtuelle URL des Knotens.

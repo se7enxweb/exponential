@@ -1,0 +1,9 @@
+*Titel: Eindeutige IDs in den 'edit'-Templates der Datentypen
+
+*Ursprüngliche Autoren: Bard Farstad, Lukasz Serwatka
+
+*Dokumentation:
+Die 'edit'-Templates der Datentypen haben eindeutige IDs erhalten, etwa:
+<textarea id="ezcoa-<contentclassattribute_id>-<contentclass_attribute_identifier> ...>
+
+Das ist für automatische Testwerkzeuge nützlich.

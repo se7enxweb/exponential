@@ -1,0 +1,217 @@
+*Titel: Änderungen am Paketsystem und am Einrichtungsassistenten
+(Umsetzung der damaligen Spezifikation "packages system and setup wizard"; die Seite gibt es
+nicht mehr.)
+
+*Anlass:
+
+Bisher kann der Benutzer in den Schritten 'Website-Typ' und 'Website-Funktionen' des
+Einrichtungsassistenten einen der eingebauten Website-Typen wählen und bei Bedarf zusätzliche
+Funktionen. Beide Schritte verwenden die Standardpakete (News, Forum, Galerie und andere). Mit dem
+Paketsystem können Benutzer Pakete anlegen, entfernen, installieren und deinstallieren.
+Bekannte Probleme:
+- Exponential lässt sich nicht ohne Standardpakete installieren (ohne einen Website-Typ zu wählen).
+- Design-Pakete hängen an Funktionspaketen.
+- Pakete werden nicht sauber installiert bzw. deinstalliert.
+- Ein Paket vom Typ 'contentobject' lässt sich nicht installieren, wenn eines der enthaltenen
+  Objekte bereits in der Datenbank existiert (dieselbe remote_id).
+- Einige Vorgänge der Standardpakete sind in Exponential fest einprogrammiert, die Pakete lassen
+  sich also nicht einzeln verwenden.
+- Zusätzliche Daten wie Einstellungen, Benutzer und Rollen lassen sich nicht in Paketen speichern.
+- Angaben über installierte Pakete stehen in package.xml-Dateien, gehören aber zu den Daten der
+  Website.
+- Nicht alle Datentypen sind mit dem Paketsystem kompatibel.
+- Erweiterungen lassen sich nicht importieren bzw. exportieren.
+- Mehrere Fehler machen das Paketsystem schwer bedienbar.
+
+*Dokumentation:
+
+1. Pakete
+
+1.1 Neue Pakettypen
+
+Es gibt zwei neue Pakettypen: 'site' und 'extension'.
+
+Pakete vom Typ 'site' enthalten keine echten Objekte, sondern Abhängigkeiten zu anderen Paketen
+sowie bestimmte Einstellungen und Skripte. Im Einrichtungsassistenten wählt der Benutzer das
+gewünschte Site-Paket. Das gewählte Paket wird dann in der Administrationsoberfläche als
+'importiert' markiert.
+Diese Pakete lassen sich in der Administrationsoberfläche weder anlegen noch installieren oder
+deinstallieren. Site-Pakete werden von Hand erstellt (es gibt keinen Handler zum Anlegen).
+Zusätzliche Elemente wie Einstellungen, Rollen, Benutzer usw. werden jetzt in Site-Paketen
+gespeichert.
+
+Pakete vom Typ 'extension' speichern die Dateien einer Erweiterung.
+Sie lassen sich in der Administrationsoberfläche anlegen, installieren und deinstallieren.
+
+1.2 Änderungen am Paketformat
+
+Damit gültiges XML entsteht, wurde das Format von 'package.xml' so geändert:
+- Ungültige Namensraum-Definitionen wurden entfernt.
+- Die Struktur des Teilbaums <simple-files> hat sich geändert. Er enthält jetzt Knoten in diesem
+Format:
+
+<simple-file key="f30cfdbcfe49e40b432599715014472d"
+             original-path="var/shop_site/storage/images/galleries/misc_flowers/yellow_flower/369-1-eng-GB/yellow_flower.jpg"
+             package-path="simplefiles/f8456c3c.jpg" />
+
+2. Paket-Repositorys
+
+Früher gab es zwei Haupt-Repositorys: 'local' (im Verzeichnis 'var') und 'packages' (in der
+Konfigurationsdatei 'package.ini' angegeben). Im Repository 'packages' gab es Unterverzeichnisse
+nach Pakettyp ('styles', 'addons'). Sie erschienen in der Administrationsoberfläche als
+Repositorys, die Pakete waren also nach Typ sortiert.
+
+Diese Verzeichnisse gibt es nicht mehr, und Pakete lassen sich getrennt von Exponential
+herunterladen. Sortiert werden die Pakete nach ihrem Anbieter. Pakete des damaligen Herstellers
+landeten zum Beispiel unabhängig vom Typ im Verzeichnis 'var/storage/packages/ezsystems'.
+
+Pakete ohne Anbieter und lokal angelegte Pakete liegen im Repository 'local'
+('var/storage/packages/local').
+
+3. Der Einrichtungsassistent
+
+Im Schritt 'Website-Typ' schlägt der Einrichtungsassistent eines der verfügbaren Site-Pakete vor.
+Die Liste der verfügbaren Site-Pakete wird von der URL abgerufen, die diese Einstellung in
+'package.ini' angibt:
+[RepositorySettings]
+RemotePackagesIndexURL=http://packages.exponential.no/index.xml
+
+Gibt es lokale Site-Pakete, erscheinen sie ebenfalls hier.
+Das gewählte Paket wird automatisch importiert, und alle Pakete, von denen es abhängt, werden ohne
+Rückfrage installiert.
+
+Der Schritt 'Website-Funktionen', in dem früher Zusatzpakete gewählt wurden, entfällt.
+
+4. Installation und Deinstallation
+
+In der Administrationsoberfläche lassen sich alle Pakete installieren und deinstallieren, außer
+'site' und 'style'. Site-Pakete sind eine Art "Metapakete", die nur im Einrichtungsassistenten
+verwendet werden.
+
+4.1. Speichern der Installationsangaben
+
+Angaben über installierte Pakete stehen jetzt in der Datenbank, in der neuen Tabelle 'ezpackage'.
+
+4.2. Umgang mit Konflikten
+
+Konflikte beim Installieren und Deinstallieren werden behandelt. Existiert zum Beispiel das zu
+installierende Objekt bereits, erhält der Benutzer diese Optionen:
+
+( ) Vorhandenes Objekt ersetzen
+( ) Dieses Objekt nicht installieren
+( ) Vorhandenes behalten und ein neues anlegen
+[ ] Diese Wahl für alle Elemente desselben Typs verwenden.
+
+Beim Deinstallieren von Objekten und Klassen prüft das System außerdem, ob sie seit der
+Installation geändert wurden oder Kinder bzw. verknüpfte Elemente haben, die gelöscht werden
+müssten, aber nicht im Paket enthalten sind, und zeigt entsprechende Warnungen.
+
+5. Datentypen
+
+Alle Datentypen sind jetzt mit dem Paketsystem kompatibel. Die Serialisierung von Objekten und
+Klassen wird unterstützt. Fehlt einem Element beim Verpacken die Serialisierungsfunktion, zeigt
+das System eine Warnung. Das betrifft die Paketelementtypen 'ezcontentobject' und
+'ezcontentclass'.
+
+6. Eigene Installationsskripte
+
+Pakete können eigene Installationsskripte enthalten. Diese Skripte können interaktiv sein und
+zusätzliche Schritte im Assistenten anzeigen.
+
+
+*Beispiel für ein interaktives Skript nach der Installation eines Pakets:
+
+- In der Datei package.xml den Knoten <install> suchen und ein neues Unterelement hinzufügen:
+      <item type="ezinstallscript"
+          filename="myinstallscript"
+          sub-directory="post-install" />
+
+  Das Attribut "type" ist ein besonderer Elementtyp für eigene Skripte.
+  "filename" ist der Name der XML-Datei des Elements; der Name ist beliebig.
+  "sub-directory" ist ein eigener Name für das Verzeichnis, in dem Ihr Skript und alle
+  zugehörigen Dateien liegen.
+
+- Im Paketverzeichnis das Verzeichnis "post-install" anlegen, darin die Datei
+  "myinstallscript.xml" mit diesen Zeilen:
+
+  <?xml version="1.0" encoding="UTF-8"?>
+<install-script filename="myinstallscript.php"
+                classname="myInstallScript"
+                description="This is my custom install step" />
+
+  Das beschreibt Ihr Installationsskript:
+  "filename" ist der Name der Datei mit Ihrer Klasse.
+  "classname" ist der Name der Klasse, in der alle Ihre Schritte implementiert sind.
+  "description" ist eine Beschreibung des Skripts.
+
+- Im Verzeichnis "post-install" das Unterverzeichnis "templates" anlegen und darin ein
+  Template für Ihren Installationsschritt, hier "myownstep.tpl":
+
+    <form method="post" action={'package/install'|ezurl}>
+
+    {include uri="design:package/install/error.tpl"}
+    {include uri="design:package/install_header.tpl"}
+
+    <p>This is my very custom step</p>
+
+    <label>You may even click the checkbox if you want</label>
+
+    <div class="block">
+      <input class="button" type="checkbox" name="MyCheckBox" />
+    </div>
+
+    {include uri="design:package/navigator.tpl"}
+    </form>
+
+
+- Die Datei "myinstallscript.php" anlegen. Ein Beispiel:
+
+<?php
+class myInstallScript extends eZInstallScriptPackageInstaller
+{
+    function myInstallScript( &$package, $type, $installItem )
+    {
+        eZDebug::writeDebug( $installItem, "Hello from myInstallScript" );
+
+        $steps = array();
+        $steps[] = array( 'id' => 'my_own_step',
+                          'name' => 'My own step',
+						  'methods' => array( 'initialize' => 'initializeMyOwnStep',
+						                      'validate' => 'validateMyOwnStep',
+                                              'commit' => 'commitMyOwnStep' ),
+                          'template' => 'myownstep.tpl' );
+        $this->eZPackageInstallationHandler( $package,
+                                             $type,
+                                             $installItem,
+                                             'My own custom step',
+                                             $steps );
+    }
+
+    // Function that is called before the step is displayed. You can use it to set variables
+    // for your template.
+
+    function initializeMyOwnStep( &$package, &$http, $step, &$persistentData, &$tpl, &$module )
+    {
+        eZDebug::writeDebug( "Hello from initializeMyOwnStep()" );
+        return true;
+    }
+
+    // This function is called after user has submitted the form. If this function returns "false",
+    // the step will be displayed again.
+
+    function validateMyOwnStep( &$package, &$http, $currentStepID, &$stepMap, &$persistentData, &$errorList )
+    {
+        eZDebug::writeDebug( "Hello from validateMyOwnStep()" );
+        return true;
+    }
+
+    // This function is called after the form is submitted and validated.
+
+    function commitMyOwnStep( &$package, &$http, $step, &$persistentData, &$tpl )
+    {
+        eZDebug::writeDebug( "Hello from commitMyOwnStep()" );
+        return true;
+    }
+}
+?>
+

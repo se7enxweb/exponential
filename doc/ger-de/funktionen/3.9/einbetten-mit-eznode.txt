@@ -1,0 +1,21 @@
+*Titel: Änderungen zur Behebung des Fehlers #8553: falsches Einbetten von Objekten mit "eznode"
+ bei mehreren Platzierungen
+
+*Dokumentation:
+
+Die folgende Tabelle zeigt, welche Templates ein XML-Tag darstellen, abhängig vom Namen des
+Tags und vom verwendeten Protokoll (eznode oder ezobject).
+
+Die Templates liegen im Verzeichnis templates/content/datatype/view/ezxmltags.
+
+  +------------------+------------------------+------------------------+
+  | Tags \ Protokolle| ezobject               | eznode                 |
+  +------------------+------------------------+------------------------+
+  | <embed>          | embed.tpl              | embed_node.tpl         |
+  | <embed-inline>   | embed-inline.tpl       | embed-inline_node.tpl  |
+  +------------------+------------------------+------------------------+
+
+embed.tpl zeigt ein Objekt mit dem Template-Operator 'content_view_gui', embed_node.tpl mit dem
+Operator 'node_view_gui'. Je nachdem, ob das Protokoll eznode oder ezobject gewählt ist, werden
+also verschiedene Templates zur Darstellung verwendet (templates/content/view/... bzw.
+templates/node/view/...).

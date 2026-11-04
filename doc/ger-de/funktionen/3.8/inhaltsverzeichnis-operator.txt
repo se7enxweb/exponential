@@ -1,0 +1,33 @@
+*Titel: Operator für Inhaltsverzeichnisse (TOC)
+
+*Ursprünglicher Autor: Bard Farstad
+
+*Dokumentation:
+'eztoc' ist ein Template-Operator, der aus den Überschriften eines XML-Felds ein
+Inhaltsverzeichnis erzeugt.
+
+So wird der Operator verwendet:
+
+Im Template des Objekts:
+
+{* body is ezxml datatype*}
+{eztoc( $node.object.data_map.body )}
+
+Das erzeugt diese HTML-Ausgabe auf der Seite (170 ist eine Attribut-ID):
+
+<ul>
+    <ul>
+        <li><a href="#170_1">1. Quisque aliquet</a></li>
+        <ul>
+            <li><a href="#170_1_1">1.1 Cum sociis</a></li>
+        </ul>
+    </ul>
+        <ul>
+            <li><a href="#170_2">2. Quisque aliquet</a></li>
+        <ul>
+            <li><a href="#170_2_1">2.1 Cum sociis</a></li>
+        </ul>
+    </ul>
+</ul>
+
+

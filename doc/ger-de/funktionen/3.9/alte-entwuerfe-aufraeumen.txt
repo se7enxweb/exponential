@@ -1,0 +1,43 @@
+*Titel: Cronjob-Skripte zum Aufräumen alter und interner (unberührter) Entwürfe
+
+*Dokumentation:
+
+Der neue Cronjob 'old_drafts_cleanup.php' entfernt alte Entwürfe aus dem System. Wird eine
+Version eines Inhaltsobjekts angelegt und als Entwurf gespeichert, hat die Version den Status
+'0'. Standardmäßig entfernt das Skript Entwürfe mit Status '0', die länger als 90 Tage im System
+sind. Diese Lebensdauer steuert die Einstellung "DraftsDuration[]" im Block
+"[VersionManagement]" der Datei 'settings/content.ini'. Die Höchstzahl der Entwürfe, die ein
+Aufruf des Skripts entfernt, legt die Einstellung "DraftsCleanUpLimit" an derselben Stelle fest.
+
+Entsprechende Einstellungen gibt es auch für den Cronjob 'internal_drafts_cleanup.php', der
+Entwürfe mit Status '5' entfernt (in der Administrationsoberfläche auch "interne Entwürfe" oder
+"unberührte Entwürfe" genannt). Standardmäßig entfernt er interne Entwürfe, die länger als
+24 Stunden (1 Tag) im System sind. Das steuert die Einstellung "InternalDraftsDuration[]", die
+Höchstzahl der zu entfernenden internen Entwürfe die Einstellung "InternalDraftsCleanUpLimit".
+
+*INI-Einstellungen:
+
+Siehe den Abschnitt [VersionManagement] in der Datei 'settings/content.ini':
+
+[VersionManagement]
+........
+
+# Number of days, hours, minutes and seconds before a draft is considered old and can be removed
+# 90 days by default
+DraftsDuration[]
+DraftsDuration[days]=90
+DraftsDuration[hours]=0
+DraftsDuration[minutes]=0
+DraftsDuration[seconds]=0
+# Clean-up limit per one run of the 'old_drafts_cleanup.php' cronjob script
+DraftsCleanUpLimit=100
+
+# Number of days, hours, minutes and seconds before an internal draft is considered old and can be removed
+# 1 day by default
+InternalDraftsDuration[]
+InternalDraftsDuration[days]=1
+InternalDraftsDuration[hours]=0
+InternalDraftsDuration[minutes]=0
+InternalDraftsDuration[seconds]=0
+# Clean-up limit per one run of the 'internal_drafts_cleanup.php' cronjob script
+InternalDraftsCleanUpLimit=100

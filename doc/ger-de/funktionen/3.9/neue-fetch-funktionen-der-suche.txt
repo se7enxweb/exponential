@@ -1,0 +1,6 @@
+*Titel: Neue Fetch-Funktionen im Modul 'search'
+
+*Dokumentation:
+Das Modul 'search' hat zwei neue Fetch-Funktionen:
+- 'search_list_count' ruft die Anzahl der am häufigsten gesuchten Begriffe ab
+- 'search_list' ruft die Liste der am häufigsten gesuchten Begriffe ab

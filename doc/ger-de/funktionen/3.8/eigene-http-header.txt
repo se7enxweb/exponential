@@ -1,0 +1,22 @@
+*Titel: Eigene HTTP-Header
+
+*Dokumentation:
+Mit dieser Funktion lassen sich eigene HTTP-Header für bestimmte Teilbäume und Module bzw.
+Ansichten setzen. Die eigenen HTTP-Header werden in einem Override der site.ini-Einstellungen
+angegeben.
+
+Ist der Pfad /, betrifft es nur das Modul mit der Ansicht "content/view".
+
+Beispiel:
+# Will set Pragma to "no-cache" for whole content/view.
+[HTTPHeaderSettings]
+HeaderList[]
+HeaderList[]=Pragma
+
+Pragma[]
+Pragma[/]=no-cache
+
+
+Hinweis:
+URLs wie content/view/... erzeugen eine zusätzliche SQL-Abfrage. Verwenden Sie URL-Aliase, um das
+zu vermeiden.

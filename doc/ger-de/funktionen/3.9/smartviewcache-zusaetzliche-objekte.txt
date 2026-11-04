@@ -1,0 +1,4 @@
+*Titel: 'AdditionalObjects' im SmartViewCache
+
+*Dokumentation:
+Mit der neuen Option 'AdditionalObjectIDs' lässt sich der Cache beliebiger Objekte leeren.

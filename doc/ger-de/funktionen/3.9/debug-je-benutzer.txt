@@ -1,0 +1,18 @@
+*Titel: Debug-Ausgabe abhängig von der object_id des aktuellen Benutzers
+
+*Dokumentation:
+Debug-Informationen lassen sich abhängig von der object_id des aktuellen Benutzers ausgeben.
+
+Neue INI-Einstellungen in site.ini:
+
+-[DebugSettings].DebugByUser=enabled/disabled
+ Ob das Debugging je Benutzer-ID eingestellt wird. Bei enabled erhalten nur Benutzer mit den
+ IDs aus DebugUserIDList Debug-Ausgaben.
+-[DebugSettings].DebugUserIDList[]
+  Ein Array der Benutzer-IDs, die Debug-Informationen erhalten
+
+zum Beispiel:
+
+[DebugSettings]
+DebugByUser=enabled
+DebugUserIDList[]=14

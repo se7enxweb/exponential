@@ -1,0 +1,33 @@
+*Titel: Verbessertes Hochladen von Dateien an einen automatisch gewählten Ort
+
+*Anlass:
+
+Eine Einstellung legt Regeln für die automatische Wahl des Orts beim Hochladen von Dateien fest
+(zum Beispiel im Dialog "Objekt einfügen" des Online-Editors):
+
+content.ini:[RelationAssignmentSettings].ClassSpecificAssignment
+
+Jede Zeile dieses Arrays enthält einen Klassenbezeichner und eine Liste von Orten
+(Einzelheiten in den Kommentaren von content.ini).
+
+Hatte der aktuelle Benutzer aber auf keinen der Orte der passenden Liste Zugriff, wurde die
+Datei nicht hochgeladen. Das war unpraktisch, wenn verschiedene Benutzer eigene Ordner zum
+Hochladen haben und beim Hochladen "Automatisch" verwenden wollen.
+
+*Dokumentation:
+
+Ab Version 3.9 kann derselbe Klassenname in mehreren Zeilen stehen. Dann geht das System alle
+passenden Zeilen durch und wählt eine, die Orte enthält, an denen der Benutzer das Recht
+'create' hat.
+
+Gibt es mehrere solche Zeilen, wird die erste verwendet.
+
+*Beispiel:
+
+Ein Benutzer hat keinen Zugriff auf den Ordner 'media/images', wohl aber auf
+'media/myfolder'. Lädt er ein Bild hoch und wählt im Auswahlfeld "Ort" des Upload-Dialogs
+"Automatisch", wird automatisch der Ordner 'media/myfolder' gewählt.
+
+ClassSpecificAssignment[]
+ClassSpecificAssignment[]=image;media/images
+ClassSpecificAssignment[]=image;media/myfolder

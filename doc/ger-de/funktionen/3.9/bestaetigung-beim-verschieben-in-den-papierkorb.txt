@@ -1,0 +1,14 @@
+*Titel: Neue Einstellungen für die Bestätigung beim Verschieben in den Papierkorb
+
+*Dokumentation:
+Im Abschnitt 'RemoveSettings' der Datei 'content.ini' gibt es drei neue INI-Einstellungen, mit
+denen sich das Verhalten des Bestätigungsdialogs beim Verschieben in den Papierkorb besser
+steuern lässt.
+
+Name:                       Beschreibung:
+------------------------------------------------------------------------------
+ DefaultRemoveAction         'delete' oder 'trash' (Standard 'trash')
+ ShowRemoveToTrashCheck      'true' oder 'false' (Standard 'true')
+ HideRemoveConfirmation      'true' oder 'false' (Standard 'false')
+
+

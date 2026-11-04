@@ -1,0 +1,38 @@
+*Titel: Konten nach mehreren fehlgeschlagenen Anmeldeversuchen sperren
+
+*Beschreibung:
+Das System soll Benutzerkonten nach einer festen (konfigurierbaren) Anzahl fehlgeschlagener
+Anmeldeversuche automatisch sperren.
+
+*Dokumentation:
+
+Neue INI-Einstellungen in site.ini:
+
+-[UserSettings].MaxNumberOfFailedLogin=0 (Standard 0)
+Höchstzahl fehlgeschlagener Anmeldeversuche.
+Bei '0' ist die Funktion ausgeschaltet.
+
+-[UserSettings].TrustedIPList[]
+Ein Array von IP-Adressen oder Netzen, die sich auch nach mehreren fehlgeschlagenen
+Anmeldeversuchen immer anmelden dürfen.
+
+-[UserSettings].ShowMessageIfExceeded=false
+Bei true erhält der Benutzer eine Meldung, wenn seine fehlgeschlagenen Anmeldeversuche
+MaxNumberOfFailedLogin überschreiten.
+
+Ist MaxNumberOfFailedLogin > 0 und überschreitet die Zahl der fehlgeschlagenen Anmeldeversuche
+eines Benutzers MaxNumberOfFailedLogin, darf er sich nicht mehr anmelden (das Konto ist gesperrt).
+
+Zum Entsperren rufen Sie [admin_siteaccess]/user/setting/[userID] auf und klicken auf die
+Schaltfläche 'reset'.
+
+Soll sich ein Benutzer nach mehreren fehlgeschlagenen Versuchen immer ohne Sperre anmelden
+können (besonders wenn Sie Administrator sind), tragen Sie seine IP-Adresse oder sein Netz in
+site.ini[UserSettings].TrustedIPList[] ein.
+
+zum Beispiel:
+
+[UserSettings]
+TrustedIPList[]
+TrustedIPList[]=192.168.0.1
+TrustedIPList[]=192.0.0.0/27

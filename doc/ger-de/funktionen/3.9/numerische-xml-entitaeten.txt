@@ -1,0 +1,12 @@
+*Titel: Numerische XML-Entitäten
+
+*Dokumentation:
+
+In XML-Dokumenten lassen sich jetzt fremde Zeichen speichern.
+Dazu muss diese Einstellung true sein:
+
+ezxml [InputSettings].AllowNumericEntities
+
+Dann können Sie numerische Entitäten in Ihren Dokumenten verwenden, etwa &#1234;
+Das ist nützlich, um einzelne Sonderzeichen wie griechische Buchstaben einzugeben, auch wenn der
+aktuelle Zeichensatz sie nicht unterstützt.

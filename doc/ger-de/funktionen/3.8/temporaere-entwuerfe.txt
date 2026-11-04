@@ -1,0 +1,28 @@
+Temporäre Entwürfe
+==================
+Ursprünglicher Autor: Kristof Coomans
+
+Für Versionen von Inhaltsobjekten gibt es einen neuen *status*-Wert. Er zeigt dem System, dass die
+Version angelegt, aber vom Benutzer nicht verändert wurde. Zusammen mit dem Zeitpunkt der letzten
+Änderung der Version lassen sich so alte Einträge aufräumen, etwa wenn jemand auf 'Kommentar
+anlegen' geklickt, ihn aber nie abgeschickt hat.
+Als alt gelten sie, wenn sie älter als 1 Tag sind.
+
+Das System räumt alte Entwürfe bei diesen Vorgängen auf:
+
+- Anmelden
+- Abmelden
+- Bearbeiten eines Objekts
+
+Dabei werden alle alten Entwürfe des aktuellen Benutzers entfernt.
+
+Außerdem gibt es den neuen Cronjob *internal_drafts_cleanup.php*, der alte Entwürfe aller Benutzer
+entfernt, je Lauf höchstens 50. Dieser Cronjob ist standardmäßig eingeschaltet.
+
+
+..
+   Local Variables:
+   mode: rst
+   fill-column: 79
+   End:
+   vim: et syn=rst tw=79

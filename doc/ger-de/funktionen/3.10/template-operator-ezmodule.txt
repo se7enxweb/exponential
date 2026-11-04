@@ -1,0 +1,20 @@
+*Titel: Neuer Template-Operator 'ezmodule'
+
+*Dokumentation:
+Der neue Template-Operator 'ezmodule' prüft, ob ein Modul (oder eine Ansicht) eingeschaltet
+ist, anhand der Rules-Einstellungen im Abschnitt [SiteAccessRules] der Datei
+'settings/site.ini'.
+Syntax:
+{ezmodule( uri )}
+
+Enthält die als uri übergebene Zeichenkette die URI eines eingeschalteten Moduls (oder einer
+Ansicht), gibt der Operator true zurück, sonst false.
+Hinweis: Der Operator prüft nicht die Zugriffsrechte eines Benutzers auf Funktionen oder
+Ansichten eines Moduls; das geht nur mit der Template-Fetch-Funktion 'content/access'.
+Beispiel:
+
+{def $isTipafriendEnabled = ezmodule( 'content/tipafriend' )}
+{if $isTipafriendEnabled}
+<a href={'content/tipafriend/187'|ezurl()}>Click to tip this to your friend</a>
+{/if}
+{undef}

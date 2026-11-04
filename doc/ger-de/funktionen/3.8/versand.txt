@@ -1,0 +1,142 @@
+*Titel: Versand
+
+*Anlass:
+
+Exponential hat keine Versandfunktionen, obwohl viele Webshops sie brauchen.
+
+*Grundlagen:
+
+Eigene Versandoptionen müssen sich definieren lassen; die Versandkosten können von Eigenschaften
+eines bestimmten Produkts abhängen. Dafür gibt es eine Schnittstelle für sogenannte
+"Versand-Handler", die die Versandoptionen einer Produktsammlung (Warenkorb oder Bestellung)
+verwalten und deren Versandkosten berechnen. Exponential bringt selbst keinen Versand-Handler mit.
+
+*Einzelheiten der Umsetzung:
+
+Fragt Exponential den Handler nach den Versandinformationen, erhält es:
+
+- (Text)   Zusammenfassung der Versandoptionen.
+- (Zahl)   Versandkosten.
+- (Text)   Link zur Seite, auf der der Benutzer die Versandoptionen ändern kann.
+
+Ein Versand-Handler ist eine Datei mit einer Klasse, die diese Methoden implementiert:
+
+    /**
+     * Invoked to get shipping information for given product collection.
+     * \public
+     * \static
+     */
+    function getShippingInfo( $productCollectionID );
+
+    /**
+     * Invoked when shopping basket contents are changed
+     * to update shipping info/cost appropriately.
+     * \public
+     * \static
+     */
+    function updateShippingInfo( $productCollectionID );
+
+    /*
+     * Invoked when the associated product collection is removed
+     * to clean up shipping information.
+     * \public
+     * \static
+     */
+    function purgeShippingInfo( $productCollectionID );
+
+Ein Handler wird über die Klasse eZShippingManager aufgerufen, die dieselben Methoden hat.
+
+Die von getShippingInfo() zurückgegebenen Versandinformationen sind ein Array mit diesen
+Pflichtschlüsseln: 'cost', 'description', 'management_link' (siehe Beispiele unten).
+
+Diese Informationen werden [teilweise] an diesen Stellen angezeigt:
+
+.-----------------+-------------------------------------------------.
+| Seite           | Was angezeigt wird                              |
++=================+=================================================+
+| Warenkorb       | Versandbeschreibung (Zusammenfassung der        |
+|                 | Optionen), Versandkosten, Link zur Seite, auf   |
+|                 | der der Benutzer die Optionen ändern kann.      |
++-------------------------------------------------------------------+
+| Bestellung      | Zusammenfassung: Versandbeschreibung, Kosten;   |
+| bestätigen      | die Gesamtsumme enthält die Versandkosten.      |
++-----------------+-------------------------------------------------+
+| Bestellansicht  | <wie oben>                                      |
+`-----------------+-------------------------------------------------'
+
+*Neue Einstellungen:
+
+###############################################################################
+[ShippingSettings]
+# Specifies shipping handler class/file name. For example, if the value is
+# "ezcustom", then the handler class should be named
+# eZCustomShippingHandler (case does not matter) and placed to file
+# ezcustomshippinghandler.php residing in a directory specified by
+# "RepositoryDirectories" and "ExtensionDirectories" settings.
+Handler=ezcustom
+
+# Directories where shippping handlers should be searched for.
+RepositoryDirectories[]=kernel/classes/shippinghandlers
+
+# If you are going to implement your shipping handler in an extension
+# then you should add the extension name to the list below.
+# In that case shipping handlers will be searched for
+# in the following (hardcoded) directory:
+# extension/<your_extension>/shippinghandlers
+# beside directories specified in 'RepositoryDirectories' setting.
+ExtensionDirectories[]
+###############################################################################
+
+
+*Beispiele:
+
+Wir implementieren einen ganz einfachen Versand-Handler, um zu sehen, wie das Ganze funktioniert.
+
+1. In das Verzeichnis von Exponential wechseln.
+2. Das Verzeichnis "extension/ezvoidshipping" anlegen und hineinwechseln.
+3. Die Verzeichnisse "settings" und "shippinghandlers" anlegen.
+4. Im Verzeichnis "shippinghandlers" die Datei "ezvoidshippinghandler.php"
+   mit diesem Inhalt anlegen:
+
+==============================================================
+<?php
+class eZVoidShippingHandler
+{
+    function getShippingInfo( $productCollectionID )
+    {
+        return array(
+                'description'     => 'Manual',
+                'cost'            => 10,
+                'management_link' => '/shop/basket/' // dummy
+                );
+    }
+
+    function purgeShippingInfo( $productCollectionID )
+    {
+        // nothing to purge
+    }
+
+    function updateShippingInfo( $productCollectionID )
+    {
+        // nothing to update
+    }
+}
+?>
+==============================================================
+
+5. Im Verzeichnis "settings" die Datei "shop.ini.append" mit diesem Inhalt anlegen:
+
+========================================================
+[ShippingSettings]
+Handler=ezvoid
+ExtensionDirectories[]=ezvoidshipping
+========================================================
+
+6. In der Administrationsoberfläche "Setup -> Erweiterungen" öffnen und die Erweiterung
+   "ezvoidshipping" einschalten.
+
+Jetzt sehen Sie feste Versandkosten bei den Produkten, die auf Ihrer Website gekauft werden.
+
+
+Ein ausführlicheres Beispiel lag früher in den Community-Beiträgen des damaligen Herstellers;
+diese Seite gibt es nicht mehr.

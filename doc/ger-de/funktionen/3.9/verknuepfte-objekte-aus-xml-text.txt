@@ -1,0 +1,80 @@
+*Titel: Verbesserungen bei verknüpften Objekten aus dem XML-Textfeld
+
+* Rückwärtskompatibilität und Upgrade
+
+Diese Funktion ist nur eingeschaltet, wenn diese Einstellung 'enabled' ist:
+site.ini:[BackwardCompatibilitySettings].ObjectRelationTyped
+
+Führen Sie vor der Verwendung das Upgrade-Skript aus:
+update/common/scripts/3.9/updatetypedrelation.php
+
+*Dokumentation:
+
+Es gibt 4 Arten von Verknüpfungen zwischen Objekten im System:
+
+- 'Common' (gewöhnlich). Gewöhnliche Verknüpfungen entstehen, wenn der Benutzer verknüpfte
+Objekte von Hand hinzufügt.
+
+- 'XML linked' (XML-verlinkt). Sie werden automatisch angelegt, wenn Sie ein Objekt mit
+XML-Feldern speichern, deren <link>-Tags auf Objekte oder Knoten verweisen
+(z. B. <link href='ezobject://123>... ). Entfernen Sie das <link>-Tag und speichern das Objekt,
+wird die Verknüpfung automatisch entfernt.
+
+- 'XML embedded' (XML-eingebettet). Sie werden automatisch angelegt, wenn Sie ein Objekt mit
+XML-Feldern speichern, deren <embed>-Tags Objekte oder Knoten einbetten. Entfernen Sie das
+<embed>-Tag und speichern das Objekt, wird die Verknüpfung automatisch entfernt.
+
+- 'by Attribute' (über Attribut). Verknüpfungen über Attribute der Datentypen
+"Objektverknüpfung" und "Objektverknüpfungsliste".
+
+*Änderungen an der Datenbank:
+
+Die Tabelle 'ezcontentobject_link' hat ein neues Feld 'relation_type', um Verknüpfungen
+verschiedener Art zu unterscheiden. Sein Wert ist eine Bitmaske, in der die vier Arten durch
+Zweierpotenzen gekennzeichnet sind: 0 - common, 1 - embedded, 2 - linked, 3 - by attribute.
+
+Mögliche Werte des Felds 'relation_type':
+1 - common (0001)
+2 - embedded (0010)
+3 - common und embedded (0011)
+4 - linked (0100)
+5 - common und linked (0101)
+6 - embedded und linked (0110)
+7 - common, embedded und linked (0111)
+8 - by attribute (1000)
+
+Hat ein Objekt mehrere verschiedene Verknüpfungen zu einem anderen Inhaltsobjekt, werden die
+Verknüpfungen auf Objektebene zusammengefasst und durch eine Tabellenzeile dargestellt. Eine
+Verknüpfung auf Attributebene steht immer in einer eigenen Zeile der Tabelle
+'ezcontentobject_link', mit 'relation_type' 8 und der ID des Attributs, das die Verknüpfung
+speichert, in 'contentclassattribute_id'. (Beachten Sie, dass 'contentclassattribute_id' bei
+Verknüpfungen auf Attributebene immer null ist.)
+
+*Template-Fetch-Funktionen:
+
+Diese Fetch-Funktionen wurden geändert: related_objects, related_objects_count,
+reverse_related_objects, reverse_related_objects_count.
+
+Der Parameter 'all_relations' hat jetzt einen gemischten Typ. Er kann wie in 3.8 boolesch
+true/false sein, aber auch ein Array. Das Array kann diese Zeichenketten enthalten: 'common',
+'xml_link', 'xml_embed', 'attribute'. Jede steht für die entsprechende Art der Verknüpfung. Die
+Arten lassen sich kombinieren und in beliebiger Reihenfolge angeben. Der neue Parameter ist
+voll kompatibel mit den anderen Optionen.
+
+Außerdem hat die Klasse ezcontentobject diese Funktionsattribute:
+
+linked_contentobject_array
+embedded_contentobject_array
+reverse_embedded_contentobject_array
+reverse_linked_contentobject_array
+
+Sie funktionieren wie die entsprechenden Fetch-Funktionen und geben alle verknüpften bzw.
+rückwärts verknüpften Objekte einer bestimmten Art zurück.
+
+*Beispiele:
+
+Beide Beispiele geben das Array der Objekte zurück, die mit dem Objekt $my_object "verlinkt" sind.
+
+{def $linked = fetch( 'content', 'related_objects', hash( 'object_id', $my_object.id, 'all_relations', array( 'xml_link' ) ) )}
+
+{def $linked = $my_object.linked_contentobject_array}

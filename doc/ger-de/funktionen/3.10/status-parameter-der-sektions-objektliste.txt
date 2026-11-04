@@ -1,0 +1,17 @@
+*Titel: Neuer Parameter 'status' der Fetch-Funktionen 'object_list' und 'object_list_count' des Moduls 'section'
+
+*Dokumentation:
+Der neue optionale Parameter 'status' ermöglicht es, mit den Fetch-Funktionen 'object_list'
+bzw. 'object_list_count' des Moduls 'section' archivierte (im Papierkorb liegende) und
+veröffentlichte Inhaltsobjekte (bzw. deren Anzahl) getrennt abzurufen. 'status' kann einen
+dieser Werte haben: 'archived' oder 'published'. Standard ist 'published'.
+Beispiele:
+
+Dies ruft höchstens 20 archivierte Objekte der Sektion standard (id=1) ab:
+{set $objects = fetch( 'section', 'object_list', hash( section_id, 1,
+                                                       limit, 20,
+                                                       offset, 3,
+                                                       status, 'archived' ) )}
+
+und dies ruft die Anzahl aller veröffentlichten Objekte der Sektion media (id=3) ab:
+{set $objects_count = fetch( 'section', 'object_list_count', hash( section_id, 3 ) )}

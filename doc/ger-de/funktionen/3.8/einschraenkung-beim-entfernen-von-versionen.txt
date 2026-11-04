@@ -1,0 +1,7 @@
+*Titel: Einschränkung der Berechtigung zum Entfernen von Versionen
+
+*Ursprünglicher Autor: Daniel Beyer
+
+*Dokumentation:
+Jetzt lässt sich festlegen, Versionen mit welchem Status entfernt werden dürfen
+(Modul: content, Funktion: versionremove).
