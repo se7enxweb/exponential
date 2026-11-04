@@ -3321,7 +3321,7 @@ e709916cf34c9f054a2c09a23f614ed5  design/standard/templates/url/view/valid.tpl
 89dbc0e619c46bb3be04985f59517b17  design/standard/templates/user/edit.tpl
 1b5ae92d3cc33387a920e5e7f762a04e  design/standard/templates/user/forgotpassword.tpl
 1d61c9271f9093881419294234aa5532  design/standard/templates/user/forgotpasswordmail.tpl
-deb85c8ff3e28f831b5517c3abff0981  design/standard/templates/user/login.tpl
+6e50eb007a0a18463cd96f7f3a1b6ce5  design/standard/templates/user/login.tpl
 6685342c1c48359f2f4168494f8bf71a  design/standard/templates/user/megamenu.tpl
 fdb7ec487419bc7b8c60cc1a905d2edd  design/standard/templates/user/new_signin_admin_mail.tpl
 a01074a02d177b0bb29d046bee8f05ab  design/standard/templates/user/new_signin_mail.tpl
