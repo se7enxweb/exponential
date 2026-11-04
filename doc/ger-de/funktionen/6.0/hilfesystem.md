@@ -146,6 +146,7 @@ PageOrder[INSTALL.md]=10
 PageOrder[CONFIGURING.md]=11
 PageOrder[EXTENDING.md]=13
 PageOrder[INTEGRATING.md]=14
+PageOrder[DISTRIBUTIONS.md]=15
 PageOrder[languages.md]=20
 PageOrder[branch-overview.md]=30
 PageOrder[release-overview]=40
