@@ -127,8 +127,16 @@ jobs:
             grep -qE "^ - ${s}( |$)" <<< "$suites" || { echo "::error::testsuite '${s}' is missing from phpunit.xml"; exit 1; }
           done
 
+      # The summary counts warnings and PHPUnit notices; these flags name each one in the log. PHPUnit 10 (PHP 8.1)
+      # has no --display-phpunit-notices, so each flag is passed where the installed PHPUnit knows it.
       - name: Run PHPUnit
-        run: vendor/bin/phpunit --colors=always
+        run: |
+          help=$(vendor/bin/phpunit --help)
+          flags=()
+          for flag in --display-warnings --display-phpunit-notices; do
+            grep -q -- "$flag" <<< "$help" && flags+=("$flag")
+          done
+          vendor/bin/phpunit --colors=always "${flags[@]}"
 
       # The Twig performance guard compares two engines in one process and skips itself while
       # Xdebug is active: "coverage: xdebug" above sets xdebug.mode=coverage, which costs every PHP function call
