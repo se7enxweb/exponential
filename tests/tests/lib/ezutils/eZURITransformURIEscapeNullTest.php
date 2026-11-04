@@ -16,6 +16,9 @@
  * @group php8
  */
 
+#[\PHPUnit\Framework\Attributes\Group('lib')]
+#[\PHPUnit\Framework\Attributes\Group('ezutils')]
+#[\PHPUnit\Framework\Attributes\Group('php8')]
 class eZURITransformURIEscapeNullTest extends PHPUnit\Framework\TestCase
 {
     private $messages = array();

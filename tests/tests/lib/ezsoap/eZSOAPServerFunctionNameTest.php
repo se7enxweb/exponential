@@ -13,6 +13,8 @@
  * @group ezsoap
  */
 
+#[\PHPUnit\Framework\Attributes\Group('lib')]
+#[\PHPUnit\Framework\Attributes\Group('ezsoap')]
 function ezsoapServerFunctionNameTestEcho( $value )
 {
     return 'echo:' . $value;

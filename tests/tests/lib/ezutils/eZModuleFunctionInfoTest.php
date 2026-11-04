@@ -18,6 +18,8 @@
  * @group ezutils
  */
 
+#[\PHPUnit\Framework\Attributes\Group('lib')]
+#[\PHPUnit\Framework\Attributes\Group('ezutils')]
 class eZModuleFunctionInfoTestFunctions
 {
     public static $instances = 0;

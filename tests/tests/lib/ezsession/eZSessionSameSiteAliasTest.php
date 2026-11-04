@@ -20,6 +20,8 @@
  * @group ezsession
  */
 
+#[\PHPUnit\Framework\Attributes\Group('lib')]
+#[\PHPUnit\Framework\Attributes\Group('ezsession')]
 class eZSessionSameSiteAliasTest extends PHPUnit\Framework\TestCase
 {
     const GLOBAL_KEYS = array( 'eZDebugGlobalInstance', 'eZDebugEnabled', 'eZDebugLogOnly', 'eZDebugAlwaysLog', 'eZDebugLogFileEnabled',

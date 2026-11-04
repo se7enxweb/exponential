@@ -17,6 +17,8 @@
  * @group ezdb
  */
 
+#[\PHPUnit\Framework\Attributes\Group('lib')]
+#[\PHPUnit\Framework\Attributes\Group('ezdb')]
 class eZSQLite3DBQueryCountTest extends PHPUnit\Framework\TestCase
 {
     /** @var array the debug globals before the test */

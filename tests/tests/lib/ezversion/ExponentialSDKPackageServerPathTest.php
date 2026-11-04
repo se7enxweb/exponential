@@ -13,6 +13,7 @@
  * @group lib
  */
 
+#[\PHPUnit\Framework\Attributes\Group('lib')]
 class ExponentialSDKPackageServerPathTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass(): void

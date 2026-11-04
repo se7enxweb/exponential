@@ -11,6 +11,7 @@
  * @group lib
  */
 
+#[\PHPUnit\Framework\Attributes\Group('lib')]
 class expTemplateBridgeTestObject
 {
     public $values;

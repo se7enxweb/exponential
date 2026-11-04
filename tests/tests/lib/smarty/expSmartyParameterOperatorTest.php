@@ -23,6 +23,8 @@
 
 require_once __DIR__ . '/expSmartyOperatorParityTest.php';
 
+#[\PHPUnit\Framework\Attributes\Group('lib')]
+#[\PHPUnit\Framework\Attributes\Group('smarty')]
 class expSmartyParameterOperatorTest extends PHPUnit\Framework\TestCase
 {
     /** The kernel's operators without template hints, by how they take their arguments (modify() read for each) */

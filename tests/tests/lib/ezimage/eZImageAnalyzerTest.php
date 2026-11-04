@@ -17,6 +17,8 @@
  * @group ezimage
  */
 
+#[\PHPUnit\Framework\Attributes\Group('lib')]
+#[\PHPUnit\Framework\Attributes\Group('ezimage')]
 class eZImageAnalyzerTest extends PHPUnit\Framework\TestCase
 {
     private $dir;

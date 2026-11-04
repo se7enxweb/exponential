@@ -11,6 +11,7 @@
  * @group database
  */
 
+#[\PHPUnit\Framework\Attributes\Group('database')]
 class eZPostgreSQLDBTest extends ezpDatabaseTestCase
 {
     protected $insertDefaultData = false;

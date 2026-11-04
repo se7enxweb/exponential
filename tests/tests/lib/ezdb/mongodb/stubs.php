@@ -20,6 +20,7 @@
 
 if ( !class_exists( 'eZDebug', false ) )
 {
+    #[\PHPUnit\Framework\Attributes\Group('mongodb')]
     class eZDebug
     {
         public static $lastWarning = null;

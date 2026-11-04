@@ -21,6 +21,8 @@
  * @group ezdbschema
  */
 
+#[\PHPUnit\Framework\Attributes\Group('lib')]
+#[\PHPUnit\Framework\Attributes\Group('ezdbschema')]
 class eZDbSchemaGenerationTest extends PHPUnit\Framework\TestCase
 {
     protected function setUp(): void

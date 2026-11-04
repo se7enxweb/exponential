@@ -27,6 +27,7 @@
  * @group repairqueue
  */
 
+#[\PHPUnit\Framework\Attributes\Group('repairqueue')]
 class RepairQueueTest extends PHPUnit\Framework\TestCase
 {
     const COPY = 'ezpRepairQueueCopy';

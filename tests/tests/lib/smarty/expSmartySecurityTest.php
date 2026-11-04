@@ -18,6 +18,8 @@
  * @group smarty
  */
 
+#[\PHPUnit\Framework\Attributes\Group('lib')]
+#[\PHPUnit\Framework\Attributes\Group('smarty')]
 class expSmartySecurityTest extends PHPUnit\Framework\TestCase
 {
     /** @var string directory of this class's template files */

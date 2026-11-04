@@ -16,6 +16,8 @@
  * @group ezdiff
  */
 
+#[\PHPUnit\Framework\Attributes\Group('lib')]
+#[\PHPUnit\Framework\Attributes\Group('ezdiff')]
 class eZDiffTextEngineTest extends PHPUnit\Framework\TestCase
 {
     private function changes( $old, $new )

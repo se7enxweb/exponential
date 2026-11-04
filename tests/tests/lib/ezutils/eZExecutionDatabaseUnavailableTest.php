@@ -21,6 +21,8 @@
  * @group ezutils
  */
 
+#[\PHPUnit\Framework\Attributes\Group('lib')]
+#[\PHPUnit\Framework\Attributes\Group('ezutils')]
 class eZExecutionDatabaseUnavailableTest extends PHPUnit\Framework\TestCase
 {
     private static function exception( $message, $code )

@@ -14,6 +14,9 @@
  * @group php8
  */
 
+#[\PHPUnit\Framework\Attributes\Group('lib')]
+#[\PHPUnit\Framework\Attributes\Group('ezdb')]
+#[\PHPUnit\Framework\Attributes\Group('php8')]
 class eZPostgreSQLDBEscapeStringNullTest extends PHPUnit\Framework\TestCase
 {
     private $messages = array();

@@ -25,6 +25,8 @@
  * @group ezutils
  */
 
+#[\PHPUnit\Framework\Attributes\Group('lib')]
+#[\PHPUnit\Framework\Attributes\Group('ezutils')]
 class eZHTTPToolGetDataByURLTest extends PHPUnit\Framework\TestCase
 {
     private static $server;

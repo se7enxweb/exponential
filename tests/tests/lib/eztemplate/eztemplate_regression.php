@@ -3,6 +3,7 @@
 /**
  * @group database
  */
+#[\PHPUnit\Framework\Attributes\Group('database')]
 class eZTemplateRegression extends ezpDatabaseTestCase
 {
     /**
@@ -33,6 +34,7 @@ class eZTemplateRegression extends ezpDatabaseTestCase
      * @link http://issues.ez.no/12285
      * @group issue12285
      */
+    #[\PHPUnit\Framework\Attributes\Group('issue12285')]
     public function testSetScopeSafeVariable()
     {
         $namespace = "myNamespace";

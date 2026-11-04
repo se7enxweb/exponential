@@ -18,6 +18,7 @@
 
 require_once __DIR__ . '/stubs.php';
 
+#[\PHPUnit\Framework\Attributes\Group('mongodb')]
 class expMongoDBWhereTextTest extends PHPUnit\Framework\TestCase
 {
     protected function setUp(): void

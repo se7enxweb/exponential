@@ -17,6 +17,8 @@
  * @group ezutils
  */
 
+#[\PHPUnit\Framework\Attributes\Group('lib')]
+#[\PHPUnit\Framework\Attributes\Group('ezutils')]
 class eZCLITest extends PHPUnit\Framework\TestCase
 {
     const OPTIONS = '[h|help][q|quiet][s:|siteaccess:][l;|level;][v*][f:+|file:+][dry-run]';

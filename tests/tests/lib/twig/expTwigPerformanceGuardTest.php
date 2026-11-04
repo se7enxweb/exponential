@@ -18,6 +18,9 @@
  * @group twig
  * @group performance
  */
+#[\PHPUnit\Framework\Attributes\Group('lib')]
+#[\PHPUnit\Framework\Attributes\Group('twig')]
+#[\PHPUnit\Framework\Attributes\Group('performance')]
 class expTwigPerformanceGuardTest extends PHPUnit\Framework\TestCase
 {
     /** A .twig render may take at most this many times its .tpl. */

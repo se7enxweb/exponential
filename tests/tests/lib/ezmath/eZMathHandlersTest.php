@@ -15,6 +15,8 @@
  * @group ezmath
  */
 
+#[\PHPUnit\Framework\Attributes\Group('lib')]
+#[\PHPUnit\Framework\Attributes\Group('ezmath')]
 class eZMathHandlersTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass(): void

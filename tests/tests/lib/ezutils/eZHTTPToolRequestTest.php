@@ -18,6 +18,8 @@
  * @group ezutils
  */
 
+#[\PHPUnit\Framework\Attributes\Group('lib')]
+#[\PHPUnit\Framework\Attributes\Group('ezutils')]
 class eZHTTPToolRequestTest extends PHPUnit\Framework\TestCase
 {
     private $saved;

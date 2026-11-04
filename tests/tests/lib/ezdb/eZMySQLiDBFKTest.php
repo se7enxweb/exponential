@@ -15,6 +15,7 @@
  * This test case handles removal of foreign keys using eZMySQLiDB
  * @group database
  */
+#[\PHPUnit\Framework\Attributes\Group('database')]
 class eZMySQLiDBFKTest extends ezpDatabaseTestCase
 {
     protected function setUp(): void

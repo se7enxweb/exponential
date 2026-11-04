@@ -14,6 +14,8 @@
  * @group ezlocale
  */
 
+#[\PHPUnit\Framework\Attributes\Group('lib')]
+#[\PHPUnit\Framework\Attributes\Group('ezlocale')]
 class expLocaleTextDirectionTest extends PHPUnit\Framework\TestCase
 {
     protected function setUp(): void

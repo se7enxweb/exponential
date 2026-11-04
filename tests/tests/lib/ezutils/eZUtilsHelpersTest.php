@@ -16,6 +16,8 @@
  * @group ezutils
  */
 
+#[\PHPUnit\Framework\Attributes\Group('lib')]
+#[\PHPUnit\Framework\Attributes\Group('ezutils')]
 class eZUtilsHelpersTest extends PHPUnit\Framework\TestCase
 {
     const ACCEPTED = eZInputValidator::STATE_ACCEPTED;

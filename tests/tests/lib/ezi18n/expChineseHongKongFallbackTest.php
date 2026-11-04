@@ -15,6 +15,8 @@
  * @group ezi18n
  */
 
+#[\PHPUnit\Framework\Attributes\Group('lib')]
+#[\PHPUnit\Framework\Attributes\Group('ezi18n')]
 class expChineseHongKongFallbackTest extends PHPUnit\Framework\TestCase
 {
     private $savedGlobals;

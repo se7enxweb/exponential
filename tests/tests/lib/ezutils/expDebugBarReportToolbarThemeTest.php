@@ -22,6 +22,8 @@
  * @group ezutils
  */
 
+#[\PHPUnit\Framework\Attributes\Group('lib')]
+#[\PHPUnit\Framework\Attributes\Group('ezutils')]
 class expDebugBarReportToolbarThemeTest extends PHPUnit\Framework\TestCase
 {
     private $root;

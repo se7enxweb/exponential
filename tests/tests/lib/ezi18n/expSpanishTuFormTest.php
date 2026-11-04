@@ -16,6 +16,8 @@
  * @group ezi18n
  */
 
+#[\PHPUnit\Framework\Attributes\Group('lib')]
+#[\PHPUnit\Framework\Attributes\Group('ezi18n')]
 class expSpanishTuFormTest extends PHPUnit\Framework\TestCase
 {
     /** catalogue => the form of address it uses */

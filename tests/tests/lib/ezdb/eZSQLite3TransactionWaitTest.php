@@ -28,6 +28,7 @@ class eZSQLite3TransactionWaitTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox settings/site.ini ships SQLiteTransactionWait below Velocity's 30 s request timeout
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('settings/site.ini ships SQLiteTransactionWait below Velocity\'s 30 s request timeout')]
     public function testShippedSettingIsBelowVelocityRequestTimeout(): void
     {
         $ini = file_get_contents( self::root() . '/settings/site.ini' );
@@ -43,6 +44,7 @@ class eZSQLite3TransactionWaitTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox the driver's fallback, with the setting missing, is below Velocity's request timeout too
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('the driver\'s fallback, with the setting missing, is below Velocity\'s request timeout too')]
     public function testDriverFallbackIsBelowVelocityRequestTimeout(): void
     {
         $source = file_get_contents( self::root() . '/lib/ezdb/classes/ezsqlite3db.php' );
@@ -56,6 +58,7 @@ class eZSQLite3TransactionWaitTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox the driver specification states the shipped default in its settings table and its expected output
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('the driver specification states the shipped default in its settings table and its expected output')]
     public function testSpecificationStatesTheShippedDefault(): void
     {
         $ini = file_get_contents( self::root() . '/settings/site.ini' );

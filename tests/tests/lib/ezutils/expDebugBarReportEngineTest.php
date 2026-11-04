@@ -20,6 +20,8 @@
  * @group ezutils
  */
 
+#[\PHPUnit\Framework\Attributes\Group('lib')]
+#[\PHPUnit\Framework\Attributes\Group('ezutils')]
 class expDebugBarReportEngineTest extends PHPUnit\Framework\TestCase
 {
     const WORKER_PARENT = '/usr/bin/php -d opcache.enable_cli=1 /srv/site/vendor/se7enxweb/exponential-velocity/qbixserver.php --port=8088 --https-port=8080';

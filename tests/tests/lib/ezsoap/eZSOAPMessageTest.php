@@ -19,6 +19,8 @@
  * @group ezsoap
  */
 
+#[\PHPUnit\Framework\Attributes\Group('lib')]
+#[\PHPUnit\Framework\Attributes\Group('ezsoap')]
 class eZSOAPMessageTest extends PHPUnit\Framework\TestCase
 {
     const NS = 'urn:example-service';

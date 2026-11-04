@@ -23,6 +23,8 @@
 
 require_once __DIR__ . '/expSmartyOperatorParityTest.php';
 
+#[\PHPUnit\Framework\Attributes\Group('lib')]
+#[\PHPUnit\Framework\Attributes\Group('smarty')]
 class expSmartyTemplateRenderTest extends PHPUnit\Framework\TestCase
 {
     /** @var string directory of this class's template files */

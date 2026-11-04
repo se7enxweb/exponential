@@ -20,6 +20,7 @@
 
 require_once __DIR__ . '/../../../../lib/ezutils/classes/ezexecution.php';
 
+#[\PHPUnit\Framework\Attributes\Group('errorcase')]
 class ErrorCasePageTest extends PHPUnit\Framework\TestCase
 {
     private $saved;

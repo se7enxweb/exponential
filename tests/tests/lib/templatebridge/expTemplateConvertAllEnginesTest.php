@@ -20,6 +20,9 @@ require_once __DIR__ . '/../eztemplate/eZTemplateEngineRenderTest.php';
 require_once __DIR__ . '/../eztemplate/eZTemplateOperatorMatrixTest.php';
 require_once __DIR__ . '/../smarty/expSmartyOperatorParityTest.php';
 
+#[\PHPUnit\Framework\Attributes\Group('lib')]
+#[\PHPUnit\Framework\Attributes\Group('smarty')]
+#[\PHPUnit\Framework\Attributes\Group('twig')]
 class expTemplateConvertAllEnginesTest extends PHPUnit\Framework\TestCase
 {
     private static $dir;

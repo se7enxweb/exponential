@@ -20,6 +20,8 @@
  * @group ezdebug
  */
 
+#[\PHPUnit\Framework\Attributes\Group('lib')]
+#[\PHPUnit\Framework\Attributes\Group('ezdebug')]
 class eZFatalUserErrorTest extends PHPUnit\Framework\TestCase
 {
     private $errors = array();

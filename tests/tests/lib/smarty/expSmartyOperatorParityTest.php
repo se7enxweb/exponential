@@ -22,6 +22,8 @@
 require_once __DIR__ . '/../eztemplate/eZTemplateEngineRenderTest.php';
 require_once __DIR__ . '/../eztemplate/eZTemplateOperatorMatrixTest.php';
 
+#[\PHPUnit\Framework\Attributes\Group('lib')]
+#[\PHPUnit\Framework\Attributes\Group('smarty')]
 class expSmartyOperatorParityTest extends PHPUnit\Framework\TestCase
 {
     /** @var string directory of this class's template files */

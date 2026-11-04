@@ -17,6 +17,8 @@
  * @group eztemplate
  */
 
+#[\PHPUnit\Framework\Attributes\Group('lib')]
+#[\PHPUnit\Framework\Attributes\Group('eztemplate')]
 class eZTemplateFetchOperatorTestFunctions
 {
     function greet( $name, $greeting )

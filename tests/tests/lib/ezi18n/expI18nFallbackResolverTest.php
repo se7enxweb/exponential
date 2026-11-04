@@ -20,6 +20,8 @@
  * @group ezi18n
  */
 
+#[\PHPUnit\Framework\Attributes\Group('lib')]
+#[\PHPUnit\Framework\Attributes\Group('ezi18n')]
 class expI18nFallbackResolverTest extends PHPUnit\Framework\TestCase
 {
     private $dir;

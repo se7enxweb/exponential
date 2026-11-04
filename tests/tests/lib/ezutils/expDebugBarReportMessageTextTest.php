@@ -14,6 +14,8 @@
  * @group ezutils
  */
 
+#[\PHPUnit\Framework\Attributes\Group('lib')]
+#[\PHPUnit\Framework\Attributes\Group('ezutils')]
 class expDebugBarReportMessageTextTest extends PHPUnit\Framework\TestCase
 {
     private function rows( array $strings, $xdebug )

@@ -729,6 +729,7 @@ class eZMailTest extends ezpTestCase
     /**
      * @dataProvider providerTestValidate
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('providerTestValidate')]
     public function testValidate( $email, $valid )
     {
         $this->assertEquals( $valid, eZMail::validate( $email ) );
@@ -737,6 +738,7 @@ class eZMailTest extends ezpTestCase
     /**
      * @dataProvider providerTestExtractEmail
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('providerTestExtractEmail')]
     public function testExtractEmail( $recipient, $name, $email )
     {
         eZMail::extractEmail( $recipient, $extractedEmail, $extractedName );
@@ -747,6 +749,7 @@ class eZMailTest extends ezpTestCase
     /**
      * @dataProvider providerTestStripEmail
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('providerTestStripEmail')]
     public function testStripEmail( $text, $firstEmailAddress )
     {
     }
@@ -754,6 +757,7 @@ class eZMailTest extends ezpTestCase
     /**
      * @dataProvider providerTestSendEmail
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('providerTestSendEmail')]
     public function testSendEmail( $sendData, $expectedResult )
     {
         if( empty( $sendData ) )
