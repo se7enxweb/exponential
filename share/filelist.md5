@@ -3527,7 +3527,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-257d13af565d8bd413f6f74481584074  doc/changelogs/6.0/6.0.15.md
+bb7b1d362b35d66d520f7041f95c0315  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -7063,7 +7063,7 @@ e8e271a078b41c7c877fad14d5156f2e  doc/eng-us/features/6.0/web-server-and-solr-co
 9a239d46246c4ca0e1d8f6ddd3bf6a24  doc/eng-us/features/6.0/website-sidebar.md
 a5621820f4516cedaa2b79e888328b30  doc/eng-us/glossary.md
 4c9effab75570c880f3e4c867f7cbc80  doc/eng-us/goals.md
-83d6fad960407b69527c7bb31029137c  doc/eng-us/guides/README.md
+779ee126c4a171834e1581e9ff0c028d  doc/eng-us/guides/README.md
 c3cd4759e8cbd9569458f6ad5c01021a  doc/eng-us/guides/a-static-blog-with-exponential.md
 cb328df2d889368b2297e4864f4c9c19  doc/eng-us/guides/a-static-documentation-site.md
 9ad99407df5b2fe54c265f5cb65a9870  doc/eng-us/guides/api-keys.md
@@ -7082,6 +7082,7 @@ b73a9d2acee4cfc8c68b3afca0bab7a5  doc/eng-us/guides/classic-menu-settings.md
 0d950613e911e841b9e077b18947dbde  doc/eng-us/guides/datatypes.md
 573e975acd458e4c7374e74421300628  doc/eng-us/guides/deploying.md
 23a9c8cdb46d76ce256d68b16b140ee7  doc/eng-us/guides/develop-in-public-publish-free.md
+38571ead9141d04c59c149d0a38ba5c4  doc/eng-us/guides/documenting-an-extension.md
 ab00d66607f66a79d69efd28d9fba855  doc/eng-us/guides/drafts-and-pending.md
 9ada1e3590016a37138e5ff78bab4322  doc/eng-us/guides/environment-variables.md
 a518e62944d14435eac07c9fde4b2306  doc/eng-us/guides/extensions-page.md
@@ -13502,7 +13503,7 @@ f56beaea3e5d700ac7442b6a68d85cc2  doc/ger-de/.examples/descriptions/35-user-mana
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 84ecf8b47bf44a9a3d53d86b719e8e1b  doc/ger-de/.examples/strings.json
-3b1cf16d4b67de01cde855ac7ad4f39d  doc/ger-de/.paths.json
+375e98e356d1a9f892f978755c5efd85  doc/ger-de/.paths.json
 86c4bc42e93188f788000c1f76e44d5b  doc/ger-de/CONFIGURING.md
 fe5c4b711fcdeed6a96370186848c173  doc/ger-de/EXTENDING.md
 dd4094d944a01d2c87e5f38afa876e3e  doc/ger-de/INSTALL.md
@@ -13510,7 +13511,7 @@ dd4094d944a01d2c87e5f38afa876e3e  doc/ger-de/INSTALL.md
 d4444f60d9f3f6fd7dc43dc6edac7e39  doc/ger-de/README-LIZENZ.md
 35f2e2b3176ed05cb4e6cd1a8e7adf0f  doc/ger-de/UNINSTALL.md
 64854fc59591a4ec01a5ebadf2dd63d1  doc/ger-de/UPDATE.md
-ad3d69e92147819bf922bba79d05bf30  doc/ger-de/anleitungen/README.md
+35bfbadaf629f0eb133012e06396910f  doc/ger-de/anleitungen/README.md
 a21d414954375daf4142412f3609d82a  doc/ger-de/anleitungen/aktualisieren-mit-der-konsole.md
 d7290775402c11f9bffa68a14215d46a  doc/ger-de/anleitungen/aktualisieren.md
 00b768f89ffba00f97d83b38c9fb6a5d  doc/ger-de/anleitungen/api-schluessel.md
@@ -13566,6 +13567,7 @@ ff26b11a2d28f8fee575a03afb1d9aaa  doc/ger-de/anleitungen/caches.md
 be84d6ea2accb0fb7881b73e5cc9e0cb  doc/ger-de/anleitungen/datentypen.md
 e9159f73e1f92f04a0571a6696814f4c  doc/ger-de/anleitungen/eigentuemer-aendern.md
 187275b90a6a296fc3e1d51138bf9d46  doc/ger-de/anleitungen/ein-statisches-blog-mit-exponential.md
+ecf5050bf3158f3d72a6e59ccdb12a88  doc/ger-de/anleitungen/eine-extension-dokumentieren.md
 b406cbc3208dc72c2f80f6fd73e6c3ae  doc/ger-de/anleitungen/eine-statische-dokumentations-site.md
 1d34a16a2b5967dd35fff27ef271a844  doc/ger-de/anleitungen/einstellungsseite.md
 3fe6751fd962193fc20de472c59b64c5  doc/ger-de/anleitungen/entfernte-dienste-und-apps.md
