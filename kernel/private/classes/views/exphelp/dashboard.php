@@ -69,6 +69,8 @@ class Dashboard extends \Exponential\Runnable\ModuleView
             ? \expHelp::reading( $index, \expHelp::url( 'dashboard' ) ) : false );
 
         $Result = array();
+        // the help's own left menu (menu.ini [Leftmenu_help]); the Setup tab stays marked
+        $Result['left_menu'] = 'design:exphelp/menu.tpl';
         $Result['content'] = $tpl->fetch( 'design:exphelp/dashboard.tpl' );
         $Result['path'] = array( array( 'url' => false, 'text' => \ezpI18n::tr( 'kernel/exphelp', 'Help' ) ) );
         return $Result;

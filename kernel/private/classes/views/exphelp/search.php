@@ -108,6 +108,8 @@ class Search extends \Exponential\Runnable\ModuleView
         $title = $state['q'] !== '' ? \ezpI18n::tr( 'kernel/exphelp', 'Search' )
                                     : ( $category ? $category['name'] : \ezpI18n::tr( 'kernel/exphelp', 'Browse' ) );
         $Result = array();
+        // the help's own left menu (menu.ini [Leftmenu_help]); the Setup tab stays marked
+        $Result['left_menu'] = 'design:exphelp/menu.tpl';
         $Result['content'] = $tpl->fetch( 'design:exphelp/search.tpl' );
         $Result['path'] = array( array( 'url' => 'exphelp/dashboard', 'text' => \ezpI18n::tr( 'kernel/exphelp', 'Help' ) ),
                                  array( 'url' => false, 'text' => $title ) );

@@ -39,7 +39,9 @@
                                  'whats_new',          "What's new"|i18n( 'kernel/exphelp' ),
                                  'report',             'Report an error'|i18n( 'kernel/exphelp' ),
                                  'git',                'Develop with Git'|i18n( 'kernel/exphelp' ) )}
-<div id="header-help" class="header-help">
+{* marked on the help's own pages (exphelp/*), as a tab is marked: the header's cache block is keyed by the module
+   ($ui_component), so the mark does not stay on other pages *}
+<div id="header-help" class="header-help{if eq( first_set( $a4_help_params.module_name, '' ), 'exphelp' )} is-current{/if}">
     <a class="a4-header-btn a4-help-context" href={$a4_help_ctx.url|ezurl} title="{$a4_help_label|wash}" aria-label="{$a4_help_label|wash}" data-help-level="{$a4_help_ctx.level|wash}">
         <span class="a4-icon a4-bi-question-circle" aria-hidden="true"></span>
     </a>

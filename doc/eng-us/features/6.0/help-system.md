@@ -25,6 +25,9 @@ if you write documentation (in `doc/` or in an extension) that should show up in
   an index per extension.
 - **Context help**: the **Help** button in the header of the administration opens the help page that belongs to the
   page you are on (the module and view), or the dashboard when there is none.
+- **Navigation**: the help pages keep the Setup tab marked and mark the "?" in admin4's header too; their left menu
+  is the help's own (`menu.ini [Leftmenu_help]`: Help Start, Contents, Search the help, Extensions, Report an error;
+  `design:exphelp/menu.tpl`), not the Setup menu. Each link needs `exphelp/read`.
 - **Report an error** (`/exphelp/report`): which tracker to use, what to write, a prefilled issue and the
   diagnostics to copy (versions, PHP, engine, design; never passwords, keys, database hosts or personal data), and
   where to report a security issue privately.
