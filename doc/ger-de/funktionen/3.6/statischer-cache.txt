@@ -19,19 +19,19 @@ Rewrite-Regeln:
 <code>
 RewriteEngine On
 
-RewriteCond   /dat/ez.no/static/index.html -f
+RewriteCond   /var/www/exponential/static/index.html -f
 RewriteRule  ^/$              /static/index.html [L]
-RewriteCond   /dat/ez.no/static/index.html -f
+RewriteCond   /var/www/exponential/static/index.html -f
 RewriteRule  ^$               /static/index.html [L]
 
 RewriteCond   %{REQUEST_METHOD}       !^POST$
-RewriteCond   /dat/ez.no/static$1/index.html -f
+RewriteCond   /var/www/exponential/static$1/index.html -f
 RewriteRule   ^(.*)$  /static$1/index.html [L]
 
 RewriteRule !\.(gif|css|jpg|png|jar|ico|js)$ /index.php
 </code>
 
-Natürlich müssen Sie "/dat/ez.no" durch den Pfad zum Wurzelverzeichnis Ihrer
+Natürlich müssen Sie "/var/www/exponential" durch den Pfad zum Wurzelverzeichnis Ihrer
 Exponential-Installation ersetzen.
 
 
@@ -60,7 +60,7 @@ CachedURLArray[]=/*
   Cache ruft darüber die erzeugten Inhalte ab, um sie als Cache-Datei zu speichern.
 - StaticStorageDir ist das Verzeichnis, in dem die statischen Cache-Dateien liegen,
   relativ zum Wurzelverzeichnis Ihrer Exponential-Installation. Es muss dem Teil zwischen
-  "/dat/ez.no/" und "$1/index.html" in den Rewrite-Regeln oben entsprechen.
+  "/var/www/exponential/" und "$1/index.html" in den Rewrite-Regeln oben entsprechen.
 - MaxCacheDepth ist die höchste Anzahl an Ebenen, die vom / Ihrer Installation aus
   zwischengespeichert werden.
 - CachedURLArray legt fest, welche Teile Ihrer Website statisch zwischengespeichert werden

@@ -1,0 +1,6 @@
+*Titel: Inhalte - Berechtigung zum Verwalten von Platzierungen
+
+*Dokumentation:
+Jetzt lässt sich eine Berechtigung zum Verwalten von Platzierungen vergeben. Damit kann der
+Benutzer alle Objekte, die er lesen darf, an den Orten platzieren, die die Einschränkungen der
+Berechtigung angeben.

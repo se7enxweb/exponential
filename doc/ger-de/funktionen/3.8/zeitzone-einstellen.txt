@@ -1,0 +1,16 @@
+*Titel: Einstellung der Zeitzone
+
+*Dokumentation:
+Um mehrere Installationen von Exponential mit verschiedenen Zeitzonen auf einem Server zu
+betreiben, lässt sich jetzt die Standard-Zeitzone des Betriebssystems überschreiben.
+
+*Beispiel:
+site.ini überschreiben und hinzufügen:
+<code>
+[TimeZoneSettings]
+TimeZone=America/Antigua
+</code>
+
+*Hinweis:
+Das funktioniert nicht auf Webservern mit Threads und nicht unter Windows.
+Nur mit Apache 1.3 oder 2.0 prefork unter *nix verwenden.

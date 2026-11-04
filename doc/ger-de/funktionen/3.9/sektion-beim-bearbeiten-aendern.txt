@@ -1,0 +1,11 @@
+*Titel: Sektion beim Bearbeiten ändern
+
+*Anlass:
+Bei Websites mit vielen verschiedenen Sektionen oder häufigen Sektionswechseln in Teilbäumen
+spart das viel Zeit.
+
+*Dokumentation:
+Die Sektion eines Objekts lässt sich in der Bearbeitungsansicht der Administration ändern.
+
+Dazu gibt es in der Bearbeitungsansicht der Administrationsoberfläche einen zusätzlichen
+Bereich: eine Auswahlliste für schnelle Sektionswechsel, ohne den Umweg über den Reiter Setup.

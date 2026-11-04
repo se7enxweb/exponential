@@ -1,0 +1,8 @@
+*Titel: LDAP-Anmeldung: Bindung mit Benutzer erlauben
+
+*Dokumentation:
+Für eine Anmeldung über LDAP muss sich das System zuerst an den LDAP-Server binden (bind).
+Manche Server erlauben keine anonyme Bindung. Dann braucht die Bindung Benutzername und Passwort.
+(Hinweis: Das sind nicht der Benutzername und das Passwort, mit denen sich der Benutzer bei
+Exponential anmeldet!) Der Patch ergänzt ldap.ini einfach um die nötigen Parameter und verwendet
+sie in den zwei Dateien, in denen ldap_bind() aufgerufen wird.

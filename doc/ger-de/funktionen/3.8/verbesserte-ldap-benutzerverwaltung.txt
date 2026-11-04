@@ -1,0 +1,13 @@
+*Titel: Verbesserte LDAP-Benutzerverwaltung
+
+*Ursprünglicher Autor: Bard Farstad
+
+*Dokumentation:
+Die Gruppenzuordnung von Benutzern, die mit LDAP synchronisiert werden, lässt sich jetzt
+beibehalten. Standardmäßig verschiebt Exponential sie zurück in die Gruppe, in die sie laut
+Konfiguration gehören. Jetzt können Sie LDAP-Benutzer in eine andere Gruppe verschieben, und sie
+werden bei der nächsten Anmeldung nicht automatisch zurückverschoben.
+
+Neue INI-Einstellung:
+[ldap.ini].LDAPSettings.KeepGroupAssignment=enabled/disabled
+

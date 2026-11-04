@@ -1,0 +1,4 @@
+*Titel: Override-Schlüssel für Fehler
+
+*Dokumentation:
+Für das Modul error gibt es die Override-Schlüssel error_type und error_number. Damit lässt sich zum Beispiel pagelayout.tpl überschreiben, wenn ein Fehler auftritt.

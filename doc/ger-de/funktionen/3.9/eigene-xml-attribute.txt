@@ -1,0 +1,50 @@
+*Titel: Verbesserte eigene Attribute
+
+*Dokumentation:
+
+Früher konnten nur einige Tags wie 'embed' eigene Attribute haben.
+Jetzt kann jedes ezxmltext-Tag eigene Attribute haben; die Liste der verfügbaren eigenen
+Attribute legt diese Einstellung in content.ini fest:
+
+content.ini [tagname].CustomAttributes
+
+Das ist ein Array mit den Namen der Attribute. Bei eigenen Tags ist 'tagname' der Name des Tags,
+zum Beispiel 'factbox'.
+
+Im Template des Tags greifen Sie über eine gleichnamige Variable auf den Wert des eigenen
+Attributs zu.
+
+*Wichtig:
+
+Beim Bearbeiten bestehender Objekte mit Tags, deren eigene Attribute nicht in der Liste stehen,
+kann eine Warnung erscheinen. Um alle vorhandenen Attribute automatisch in content.ini
+aufzunehmen, führen Sie dieses Skript aus:
+
+update/common/scripts/3.9/correctxmltext.php
+
+
+*Beispiel:
+
+Um dem Element 'table' das Attribut 'summary' hinzuzufügen, ergänzen Sie content.ini.append um:
+
+[table]
+CustomAttributes[]
+CustomAttributes[]=summary
+
+
+Jetzt können Sie im Eingabefeld des XML-Textblocks eingeben:
+
+<table summary='123>
+...
+
+
+Im Template table.tpl:
+
+summary:{$summary}
+
+
+*Beispiel für ein eigenes Tag:
+
+[factbox]
+CustomAttributes[]
+CustomAttributes[]=summary

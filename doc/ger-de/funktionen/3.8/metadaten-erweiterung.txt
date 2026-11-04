@@ -1,0 +1,12 @@
+*Titel: Metadaten-Erweiterung
+
+*Dokumentation:
+Eine Liste der Erweiterungen mit Handlern zum Auslesen von Metadaten.
+Üblich ist, in der Erweiterung eine Datei settings/binaryfile.ini.append.php anzulegen und darin
+den Namen der Erweiterung einzutragen; dann werden ihre Handler automatisch verwendet, sobald sie
+eingeschaltet ist.
+Die Handler gehören in das Unterverzeichnis "plugins" der Erweiterung.
+
+*Beispiele
+Ein funktionierendes Beispiel, eine Indizierungs-Erweiterung, lag früher im öffentlichen
+Subversion-Repository der Community; dieses Repository gibt es nicht mehr.

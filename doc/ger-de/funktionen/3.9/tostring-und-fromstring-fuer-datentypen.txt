@@ -1,0 +1,155 @@
+*Titel: toString und fromString für Datentypen
+
+*Hinweis: Diese Funktion ist experimentell; vieles (besonders das Datenformat) kann sich bis zum
+endgültigen Release noch ändern.
+
+*Dokumentation:
+
+Um Import- und Exportskripte einfacher schreiben zu können, hat die Klasse
+ezcontentobjectattribute zwei neue Funktionen. Gleichnamige Funktionen gibt es auch in der
+Datentyp-Schnittstelle und in allen Datentypen der Standarddistribution von Exponential, außer
+ezenum, das jetzt veraltet ist, und ezpackage, das nicht verwendet wird.
+Um die Möglichkeiten zu zeigen, gibt es zwei Skripte unter bin/php/, sehr einfache Skripte für
+den Import und Export von CSV:
+- ezcsvimport.php
+- ezcsvexport.php
+Sie sind sehr einfach gehalten und erheben nicht den Anspruch, ein vollständiger CSV-Import und
+-Export für Exponential zu sein, lassen sich aber für echte Importe und Exporte verwenden.
+Hier die Formate, die die Datentypen in fromString( &$contentObjectAttribute, $string )
+annehmen und in toString( $contentObjectAttribute ) erzeugen.
+
+
+
+ezauthor:
+Autoren werden durch das Zeichen '&' voneinander getrennt, die Teile der Angaben eines Autors
+durch '|'. Das System maskiert '|', '&' und '\' mit dem Zeichen '\'.
+Beispiel eines toString-Ergebnisses
+
+Administrator User|admin@example.com|0&Max|max@example.org|1&SP|sp@example.net|2
+
+Damit sich solche Zeichenketten leicht zerlegen lassen, gibt es die Klasse ezstringutils unter
+lib/ezutils. Sie hat zwei Funktionen,
+explodeStr( $str, $delimiter = '|' ) und implodeStr( $str, $delimiter = '|' ). Die erste zerlegt
+eine Zeichenkette am Trennzeichen in ein Array; anders als PHPs explode/implode maskieren bzw.
+demaskieren diese Funktionen alle Werte korrekt.
+
+
+ezbinaryfile:
+toString gibt eine Zeichenkette in diesem Format zurück:
+filepath|original_filename
+filepath ist der Pfad zu einer Datei, die Sie an den gewünschten Ort kopieren können;
+original_filename ist der ursprüngliche Dateiname der hochgeladenen Datei. Das kann beim Export
+nötig sein, da ein Dateiname aus einem md5-Wert nicht schön ist.
+Um eine Binärdatei in das Attribut zu importieren, übergeben Sie den vollständigen Pfad zur Datei.
+
+ezboolean:
+gibt 1 bzw. 0 für true bzw. false zurück und nimmt sie an.
+
+ezcountry:
+gibt eine kommagetrennte Liste der Locale-Zeichenketten der gewählten Länder zurück, z. B.:
+rus-RU,eng-GB,nor-NO
+
+ezdate:
+gibt den Unix-Zeitstempel des Datums zurück bzw. nimmt ihn an.
+
+ezdatetime:
+gibt den Unix-Zeitstempel des Datums zurück bzw. nimmt ihn an.
+
+ezemail
+gibt die E-Mail-Adresse zurück bzw. nimmt sie an.
+
+ezenum:
+nicht unterstützt
+
+ezfloat
+gibt Gleitkommazahlen zurück bzw. nimmt sie an.
+
+ezidentifier:
+Import und Export sind für diesen Datentyp eigentlich nicht nötig, [to|from]String gibt aber den
+Wert des Bezeichners zurück bzw. nimmt ihn an.
+
+ezimage
+gibt den Pfad zum Original-Alias eines Bildes zurück. Nimmt den vollständigen Pfad zum
+hochzuladenden Bild an.
+
+ezinisetting
+gibt den Wert einer INI-Einstellung zurück bzw. nimmt ihn an.
+
+ezinteger
+in beide Richtungen einfach der Ganzzahlwert.
+
+ezisbn
+ISBN-Nummer als Zeichenkette
+
+ezkeyword
+kommagetrennte Liste der Schlüsselwörter
+
+ezmatrix
+ähnliches Format wie ezauthor: Spalten werden durch '|', Zeilen durch '&' getrennt.
+
+ezmedia
+toString gibt eine Zeichenkette in diesem Format zurück:
+filepath|original_filename
+Um eine Mediendatei in das Attribut zu importieren, übergeben Sie den vollständigen Pfad zur
+Mediendatei.
+
+ezmultioption
+Der erste durch '&' getrennte Wert ist der Name des Multioption-Satzes, dann steht jede durch '&'
+getrennte Zeichenkette für eine Option des Satzes. Diese Zeichenkette ist selbst durch '|'
+getrennt und besteht der Reihe nach aus: dem _Namen_ der Option und der _ID_ des Optionseintrags,
+der standardmäßig gewählt sein soll. Danach folgen option_value und der Aufpreis des
+Optionseintrags.
+
+
+ezmultiprice
+Die Struktur der Daten dieses Datentyps ist
+currency_name_1|value_1|type_of_price_1|currency_name_2|value_2|type_of_price_2|......currency_name_n|value_n|type_of_price_n|
+Dabei ist currency_name der dreistellige Währungsname wie EUR, USD usw.,
+value der Preis in dieser Währung
+und type AUTO oder CUSTOM, je nachdem, ob der Preis in dieser Währung vom Benutzer eingegeben
+oder automatisch berechnet wurde.
+
+
+ezobjectrelation
+in beide Richtungen die ID des verknüpften Objekts.
+
+ezobjectrelationlist
+durch '-' getrennte Liste der IDs der verknüpften Objekte.
+
+ezoption
+durch '|' getrennt der Name der Option und dann die durch '|' getrennte Liste der Werte
+option_item|Aufpreis.
+ezpackage
+Nicht unterstützt.
+
+ezprice
+durch '|' getrennte Liste aus Preis, Mehrwertsteuer-ID und Kennzeichen, ob die Mehrwertsteuer
+im Preis enthalten ist.
+
+
+ezproductcategory
+durch '|' getrennte Zeichenkette aus Name und ID der Produktkategorie; fromString lässt sich aber
+auch nur mit dem Kategorienamen als Parameter aufrufen.
+
+ezrangeoption
+durch '|' getrennte Zeichenkette mit dem Namen der Option sowie Start-, End- und Schrittwert.
+
+ezselection
+durch '|' getrennte Liste der Namen der gewählten Einträge.
+
+ezstring
+einfach eine Zeichenkette
+
+eztext
+der Text aus dem Attribut.
+
+eztime
+Zeichenkette mit der Uhrzeit wie HH:MM im 24-Stunden-Format
+ezurl
+Zeichenkette mit der URL
+ezuser
+durch '|' getrennte Zeichenkette aus Anmeldename, E-Mail, Passwort-Hash und Art des Passwort-Hashs
+
+ezxmltext
+gibt gültiges Exponential-XML zurück und erwartet dasselbe als Eingabe.
+

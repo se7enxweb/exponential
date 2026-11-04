@@ -1,0 +1,15 @@
+*Titel: Erweiterte Fetch-Funktion 'keyword'
+
+*Ursprünglicher Autor: Lukasz Serwatka
+
+*Dokumentation:
+Mit der erweiterten Funktion keyword lassen sich Schlüsselwörter nach Eigentümer (Autor des
+Objekts) abrufen und das Ergebnis so sortieren:
+- Name des Schlüsselworts (Standard)
+- class_identifier
+- class_name
+- modified
+- name
+- published
+- section
+

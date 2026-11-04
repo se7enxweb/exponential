@@ -1,0 +1,24 @@
+*Titel: Definitionen von Fremdschlüsseln
+
+*Anlass:
+
+Automatische Prüfungen der Datenintegrität und automatische Datenmigration sollen möglich
+werden. Kennt man die Fremdschlüssel-Beziehungen, lassen sich Schlüssel automatisch zwischen
+Installationen übersetzen.
+
+
+*Dokumentation:
+
+PHP-Klassen, die eZPersistentObject erweitern, müssen in ihrer Funktion definition() einige
+Zeilen ergänzen, die beschreiben, welche Felder Fremdschlüssel sind:
+- foreign_class, Name der fremden Klasse
+- foreign_attribute, Name des Schlüssels bzw. Felds der fremden Klasse
+- multiplicity, beschreibt die Anzahl der Beziehungen zur fremden Klasse bzw. zum Schlüssel
+
+*Beispiel:
+
+In der Funktion definition():
+...
+'foreign_class' => 'eZOrder',
+'foreign_attribute' => 'id',
+'multiplicity' => '1..*'

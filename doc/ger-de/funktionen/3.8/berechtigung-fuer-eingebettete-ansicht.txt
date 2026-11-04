@@ -1,0 +1,5 @@
+*Titel: Berechtigung für die eingebettete Ansicht
+
+*Dokumentation:
+Eine Berechtigung erlaubt es, dass ein Benutzer Objekte nur als eingebettetes Objekt eines anderen
+Objekts sehen darf.

@@ -1,0 +1,108 @@
+*Titel: Template-Funktionen zum Abrufen von Informationssammlungen
+
+*Ursprünglicher Autor: Kristian Hole
+
+*Beschreibung:
+
+Neue Funktionen zum Abrufen von Informationssammlungen machen es leichter, an die Informationen
+aus Informationssammlungen zu kommen.
+
+*Dokumentation:
+
+Informationssammlungen abrufen:
+
+fetch('content','collected_info_list',  hash(
+             [ 'object_id', object id,    ]
+             [ 'user_id', user_id,        ]
+             [ 'user_identifier', string, ]
+             [ 'limit', integer,          ]
+             [ 'offset', integer,         ]
+             [ 'sort_by', array           ] ) )
+
+Rückgabe:
+Ein Array der Informationssammlungen, die zu den Parametern passen
+
+Parameter:
+
+'object_id' - ID des Objekts, dessen Sammlungen abgerufen werden.
+
+'user_id' - ID des Benutzers, dessen Sammlungen abgerufen werden. Nach einem Upgrade ist sie bei
+            alten Sammlungen nicht gespeichert, nur bei neuen.
+
+'user_identifier' - Ein Hash der in der Sammlung gespeicherten Benutzer-ID, nur für alte
+                    Sammlungen nützlich.
+
+'limit' - Die Höchstzahl der abzurufenden Einträge
+
+'offset' - Der Eintrag, bei dem der Abruf beginnt; bei offset 2 werden z. B. die ersten
+           2 Elemente übersprungen
+
+'sort_by' - Array mit der Sortierung in der Form array( 'field', direction ),
+            wobei 'field' id, contentobject_id, user_identifier, user_id, created oder
+                  modified ist
+            und 'direction' true() für aufsteigend (ASC) oder false() für absteigend (DESC)
+
+            Nach mehreren Feldern sortieren Sie mit einem Array dieser Form:
+            array( array( 'field1', dir1 ), array( 'field2', dir2 ) )
+
+Beispiel:
+
+{def $res=fetch('content','collected_info_list',
+                   hash( 'object_id', 57,
+                         'limit', 10,
+                         'offset', 2,
+                         'sort_by', array(  array( 'user_id',false() ),
+                                            array( 'created', false() ) ) ) )}
+
+
+$res enthält jetzt 10 Informationssammlungen ab Element 2, sortiert zuerst nach user_id und dann
+nach Erstellungszeit, gesammelt vom Inhaltsobjekt mit der ID 57.
+
+Beispiel 2:
+
+{def $res=fetch('content','collected_info_list',
+       hash( 'user_id', 14,
+             'sort_by', array( 'created',false())
+             )
+          ) )}
+
+
+$res enthält jetzt alle Informationssammlungen des Benutzers mit der user_id 14, sortiert nach
+Erstellungsdatum.
+
+
+Anzahl der Informationssammlungen abrufen:
+
+fetch('content','collected_info_count',  hash(
+             [ 'object_id', object id,    ]
+             [ 'user_id', user_id,        ]
+             [ 'user_identifier', string  ] ) )
+
+Rückgabe:
+Die Anzahl der Informationssammlungen, die zu den Parametern passen.
+
+
+Parameter:
+
+'object_id' - ID des Objekts, dessen Sammlungen abgerufen werden.
+
+'user_id' - ID des Benutzers, dessen Sammlungen abgerufen werden. Nach einem Upgrade ist sie bei
+            alten Sammlungen nicht gespeichert, nur bei neuen.
+
+'user_identifier' - Ein Hash der in der Sammlung gespeicherten Benutzer-ID, nur für alte
+                    Sammlungen nützlich.
+
+
+Beispiel:
+
+{def $count=fetch('content','collected_info_count',
+        hash( 'object_id', 57,
+              'user_id', 14 ) )}
+
+Rückgabe:
+Die Anzahl der Informationssammlungen des Inhaltsobjekts 57, angelegt vom Benutzer mit der ID 14.
+
+HINWEIS:
+Nach einem Upgrade von einer früheren Version von Exponential ist das Feld user_id bei alten
+Informationssammlungen 0. Neue Sammlungen erhalten die user_id beim Absenden korrekt.
+

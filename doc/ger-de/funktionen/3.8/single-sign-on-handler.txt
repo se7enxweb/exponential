@@ -1,0 +1,40 @@
+*Titel: Handler für Single Sign-on (SSO)
+
+*Ursprünglicher Autor: Bard Farstad
+
+*Dokumentation:
+Ein Plugin-System für Single-Sign-on-Handler (SSO) wurde eingeführt.
+Damit lässt sich bei jeder neuen Sitzung ein Stück PHP-Code ausführen. Darin können Sie prüfen,
+ob der Benutzer bereits in einem anderen System angemeldet ist, und ihn automatisch bei
+Exponential anmelden - ohne Passworteingabe. Sicherheit und Anbindung übernehmen die jeweiligen
+Plugins.
+
+In site.ini gibt es unter UserSettings eine neue Einstellung:
+SingleSignOnHandlerArray
+
+Dieses Array legt die verfügbaren SSO-Handler fest.
+
+Die Handler gehören in eine Erweiterung, in das Verzeichnis sso_handler. Ein SSO-Handler
+implementiert eine Klasse wie diese:
+<?php
+    include_once( 'kernel/classes/ezpersistentobject.php' );
+    include_once( 'kernel/classes/datatypes/ezuser/ezuser.php' );
+    include_once( 'lib/ezutils/classes/ezini.php' );
+
+    class eZMysqlssohandler
+    {
+        function eZMysqlssohandler()
+        {
+        }
+
+        /*!
+          Return the eZUser object to log in or false if no user should be
+          logged in.
+        */
+        function handleSSOLogin()
+        {
+            $currentUser =& eZUser::fetch( 14 );
+            return $currentUser;
+        }
+    }
+?>

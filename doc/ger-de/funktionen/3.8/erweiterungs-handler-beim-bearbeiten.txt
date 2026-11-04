@@ -1,0 +1,11 @@
+*Titel: Erweiterungs-Handler beim Bearbeiten von Inhaltsobjekten
+
+*Beschreibung:
+
+Ein Erweiterungs-Handler für das Bearbeiten von Inhalten, mit dem sich eigene HTTP-POST-Variablen
+beim Bearbeiten eines Inhaltsobjekts abrufen und verarbeiten lassen. Die eigenen Klassen für die
+HTTP-Verarbeitung gehören in Erweiterungen.
+
+*Dokumentation:
+
+Die Einrichtung ist in settings/content.ini beschrieben.

@@ -1,0 +1,313 @@
+*Titel: Verbesserte Berechnung der Mehrwertsteuer
+
+*Anlass:
+
+Bisher ist die Mehrwertsteuer-Berechnung in Exponential recht einfach: Einer Produktklasse lässt
+sich nur ein fester Steuersatz zuordnen. Die Regeln für die Mehrwertsteuer können aber viel
+komplexer sein, und das sollten wir unterstützen.
+
+*Grundlagen:
+
+Gebraucht wird die Möglichkeit, je nach Produkt und Herkunftsland des Käufers verschiedene
+Steuersätze zu berechnen. Wir sollten keine bestimmte Logik vorschreiben; die Logik, die ein
+Webshop braucht, soll der Entwickler implementieren. Dafür gibt es eine Schnittstelle für
+sogenannte "Mehrwertsteuer-Handler" (VAT handler). Exponential bringt einen Standard-Handler mit
+einfacher Logik mit, der sich bei Bedarf durch eigene Handler ersetzen lässt.
+
+*Einzelheiten der Umsetzung:
+
+1. Schnittstelle der Handler
+
+Ein Mehrwertsteuer-Handler ist eine Datei mit einer Klasse, die diese Methode implementiert:
+
+ /**
+  *
+  * \public
+  * \static
+  * \param $object   The product content object.
+  * \param $country  Country the buyer is from, or false if not specified.
+  * \return          VAT percent (integer), or null in case of an error.
+  */
+ mixed function getVatPercent( eZContentObject $object, mixed $country );
+
+Ein Handler wird nicht direkt aufgerufen, sondern über die Klasse eZVATManager. Deren Methode
+getVAT() gibt den Steuersatz zurück, der für ein Produkt berechnet werden soll:
+
+ $vatPercent = eZVATManager::getVAT( $object, $country );
+
+getVAT() ruft nur die Methode getVatPercent() des in den INI-Einstellungen angegebenen Handlers auf.
+
+2. Standard-Handler
+
+Der mitgelieferte Standard-Handler ermittelt den passenden Steuersatz eines Produkts über
+besondere Regeln. Jede Regel legt fest, welcher Steuersatz für eine bestimmte Produktkategorie
+und ein bestimmtes Herkunftsland des Kunden gilt. Die Regeln (in einer eigenen Datenbanktabelle
+gespeichert) lassen sich in der Administrationsoberfläche verwalten.
+
+Beispiel:
+.---------+---------------------------+-----------------------.
+| Land    | Kategorie                 | Mehrwertsteuer        |
++=========+===========================+=======================+
+| Norwegen| Lebensmittel, Getränke    | Norwegisch / ermäßigt |
++---------+---------------------------+-----------------------+
+| Norwegen| *                         | Norwegisch / Standard |
++---------+---------------------------+-----------------------+
+| Deutschl| Lebensmittel, Bücher,     | Deutsch / ermäßigt    |
+|         | Zeitungen                 |                       |
++---------+---------------------------+-----------------------+
+| Deutschl| *                         | Deutsch / Standard    |
++---------+---------------------------+-----------------------+
+| Ukraine | *                         | Ukrainisch / Standard |
++---------+---------------------------+-----------------------+
+| *       | *                         | Keine                 |
+`---------+---------------------------+-----------------------'
+
+Die rechte Spalte bezieht sich auf die Mehrwertsteuertypen, die im Reiter Shop der
+Administrationsoberfläche definiert sind. Ein Stern (*) bedeutet je nach Spalte "jede Kategorie"
+bzw. "jedes Land".
+
+Die Regeln oben ordnen einigen Produkten in Deutschland und Norwegen den ermäßigten Satz zu; für
+alle anderen Produkte in Norwegen, der Ukraine und Deutschland gilt der Standardsatz. In allen
+anderen Ländern wird keine Mehrwertsteuer berechnet.
+
+Die _Kategorie_ eines Produkts ist ein besonderes Inhaltsattribut der Produktklasse, das der
+Standard-Handler bei der Ermittlung des Steuersatzes verwendet. Der Datentyp dieses Attributs
+speichert die Kategorieliste in einer Datenbanktabelle. Die Administrationsoberfläche hat eine
+Oberfläche zur Verwaltung der Kategorien.
+
+Das _Land_ des Benutzers ist ein Inhaltsattribut vom Typ ezcountry in der Benutzerklasse. Die
+Länderliste wird aus einer .ini-Datei geladen.
+
+Je genauer eine Regel auf das Paar aus Land und Kategorie passt, desto höher ihre Priorität. Der
+Handler versucht also immer, den am besten passenden Steuersatz zu wählen.
+
+Eine genaue Übereinstimmung liegt vor, wenn Kategorie oder Land ausdrücklich angegeben sind,
+nicht als '*'.
+
+Algorithmus zur Wahl des Steuersatzes: mögliche Fälle und ihre Prioritäten:
+4. Land genau, Kategorie genau (z. B.: Norwegen => Lebensmittel, Getränke)
+3. Land genau, Kategorie schwach: (z. B.: Norwegen => *)
+2. Land schwach, Kategorie genau:  (z. B.: * => Lebensmittel, Getränke)
+1. Land schwach, Kategorie schwach:  (z. B.: * => *)
+0. keine Übereinstimmung bei Land und/oder Kategorie.
+
+
+*Einrichtung
+
+1. Datenbankschema aktualisieren
+
+Bei einem Upgrade auf 3.8 führen Sie zuerst das passende Update-Skript der Datenbank aus,
+z. B. dbupdate-3.6.0-to-3.8.0.sql.
+
+2. Den Handler festlegen
+
+Welcher Handler verwendet wird, legen diese Einstellungen in shop.ini fest:
+
+###############################################################################
+[VATSettings]
+
+# Specifies VAT handler class/file name. For example, if the value is
+# "ezdefault", then the handler class should be named
+# eZDefaultVATHandler (case does not matter) and placed to file
+# ezdefaultvathandler.php residing in a directory specified by
+# "RepositoryDirectories" and "ExtensionDirectories" settings.
+Handler=ezdefault
+
+# Directories where VAT handlers should be searched.
+RepositoryDirectories[]=kernel/classes/vathandlers
+
+# If you are going to implement your VAT handler in an extension
+# then you should add the extension name to the list below.
+# In that case VAT handlers will be searched for in the following directory:
+# extension/<your_extension>/vathandlers
+ExtensionDirectories[]
+###############################################################################
+
+3. Den Standard-Handler einrichten
+
+Wollen Sie den mitgelieferten Standard-Handler verwenden, führen Sie die Schritte dieses
+Abschnitts aus.
+
+ 3.1. Produktkategorien anlegen.
+
+Öffnen Sie zuerst "Webshop" -> "Produktkategorien" und legen Sie so viele Kategorien an, wie Sie
+brauchen. Mit ihnen wird der passende Steuertyp der gekauften Produkte ermittelt.
+
+ 3.2. Produkten Kategorien und Benutzern Länder zuordnen.
+
+Jedes Produkt braucht eine Kategorie. Fügen Sie Ihrer Produktklasse ein Attribut vom Datentyp
+ezproductcategory hinzu und ordnen Sie Ihren Produkten Kategorien zu. Tragen Sie dann den
+Bezeichner des Attributs in die INI-Einstellung shop.ini.[VATSettings].ProductCategoryAttribute ein.
+
+Jeder Benutzer braucht ein Land. Das müssen Sie nicht von Hand tun: Will ein Benutzer ohne Land
+etwas kaufen, wird er nach seinem Land gefragt. Sie müssen nur Ihrer Benutzerklasse ein Attribut
+vom Datentyp ezcountry hinzufügen und dessen Bezeichner in die INI-Einstellung
+shop.ini.[VATSettings].UserCountryAttribute eintragen.
+
+Empfohlen ist außerdem, dass Benutzer ihr Land über die Werkzeugleiste "user_country" "im
+Vorbeigehen" wählen können. Fügen Sie dazu diese Zeile in den Abschnitt "[Toolbar_right]" der
+Datei "settings/siteaccess/example/toolbar.ini.append.php" ein, wobei "example" Ihr Siteaccess ist:
+
+Tool[]=user_country
+
+Damit zeigt das System die Länderauswahl in der rechten Werkzeugleiste. Wählt ein Benutzer dort
+ein Land, sieht er sofort die Produktpreise mit dem Steuersatz dieses Landes.
+
+Damit das mit dem Inhaltscache richtig funktioniert, fügen Sie außerdem diese Zeile in den
+Abschnitt "[ContentSettings]" der Datei "site.ini.append.php" im Verzeichnis "settings/override/" ein:
+
+CachedViewPreferences[full]=user_preferred_country
+
+ 3.3. Regeln für die Mehrwertsteuer anlegen.
+
+Die Mehrwertsteuer-Regeln bilden die Steuerlogik Ihres Shops. Öffnen Sie "Webshop" ->
+"Mehrwertsteuer-Regeln" und legen Sie die nötigen Regeln an. Jede Regel besteht aus einem Land,
+einer Menge von Produktkategorien und einem Mehrwertsteuertyp. Sie legt fest, welcher Typ gilt,
+wenn der Benutzer aus dem angegebenen Land kommt und das Produkt zu einer der angegebenen
+Kategorien gehört.
+
+
+4. Einen eigenen Handler einrichten
+
+Passt der Standard-Handler nicht, können Sie einen eigenen implementieren. Dieser Abschnitt
+beschreibt, wie.
+
+Als Beispiel implementieren wir einen einfachen Handler, der den Steuersatz nach der Sektion des
+Produkts festlegt. Wir legen ihn in einer Erweiterung ab, da es nicht empfohlen ist, den Kernel
+von Exponential zu ändern.
+
+ 4.1. Erweiterung anlegen
+
+Legen Sie zuerst eine neue Erweiterung namens "myshop" an (einen neuen Ordner myshop im
+Verzeichnis extension/).
+
+ 4.2 Die nötige Verzeichnisstruktur anlegen.
+
+Legen Sie im Verzeichnis myshop/ ein Unterverzeichnis settings an. Es enthält alle
+Einstellungen der Erweiterung.
+
+Legen Sie im Verzeichnis myshop/ ein Unterverzeichnis vathandlers an. Es enthält Ihren Handler.
+
+ 4.3 Den eigenen Handler anlegen
+
+Legen Sie in extension/myshop/vathandlers die Datei mysectionbasedvathandler.php mit diesem
+Inhalt an:
+
+#############################################################################
+<?php
+class MySectionBasedVATHandler
+{
+    /**
+     * \public
+     * \static
+     */
+    function getVatPercent( $object, $country )
+    {
+        $section = $object->attribute( 'section_id' );
+
+        if ( $section == 1 )
+            $percentage = 10;
+        else
+            $percentage = 20;
+
+        return $percentage;
+    }
+}
+?>
+#############################################################################
+
+ 4.4 INI-Einstellungen bearbeiten
+
+Legen Sie in extension/myshop/settings die Datei shop.ini.append mit diesem Inhalt an:
+
+###################################
+[VATSettings]
+ExtensionDirectories[]=myshop
+Handler=mysectionbased
+RequireUserCountry=false
+DynamicVatTypeName=Section-based
+###################################
+
+Damit sucht Exponential die Datei mysectionbasedvathandler.php im Verzeichnis
+extension/myshop/vathandlers. RequireUserCountry=false schaltet die Fehlermeldungen über ein
+fehlendes Land des Benutzers ab.
+
+ 4.5 Die Erweiterung einschalten.
+
+Öffnen Sie in der Administrationsoberfläche "Setup" -> "Erweiterungen", markieren Sie die
+Erweiterung "myshop" und klicken Sie auf "Änderungen übernehmen".
+
+
+*Neue Ansichten:
+
+/shop/vatrules          -- Liste der Mehrwertsteuer-Regeln.
+/shop/editvatrule       -- Mehrwertsteuer-Regel hinzufügen oder bearbeiten.
+/shop/productcategories -- Liste der Produktkategorien.
+
+
+*Neue Einstellungen:
+
+shop.ini:
+
+ [VATSettings]
+  Handler=
+  RepositoryDirectories[]
+  ExtensionDirectories[]
+  ProductCategoryAttribute=
+  UserCountryAttribute=
+  DynamicVatTypeName=
+
+Mehr dazu in settings/shop.ini.
+
+*Neue Fetch-Funktionen:
+
+Liste aller Produktkategorien abrufen:
+ fetch( shop, product_category_list )
+
+Eine bestimmte Produktkategorie abrufen:
+ fetch( product_category, hash( category_id, $catID ) )
+
+*Änderungen am Datenbankschema:
+
+Drei neue Tabellen speichern Mehrwertsteuer-Regeln und Produktkategorien:
+
+CREATE TABLE ezproductcategory (
+  id int(11) NOT NULL auto_increment,
+  name varchar(255) NOT NULL default '',
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE ezvatrule (
+  id int(11) NOT NULL auto_increment,
+  country varchar(255) NOT NULL default '',
+  vat_type int(11) NOT NULL,
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE ezvatrule_product_category (
+  vatrule_id int(11) NOT NULL,
+  product_category_id int(11) NOT NULL,
+  PRIMARY KEY (vatrule_id, product_category_id)
+
+*Hinweise:
+
+Andere Länder-Datentypen lassen sich in die Mehrwertsteuer-Berechnung einbinden. Dafür muss das
+Land vom Datentyp, von der Verwaltung der Mehrwertsteuer-Regeln und vom Registrierungsmodul für
+Shop-Benutzer (shop/userregister) auf dieselbe Weise gespeichert werden.
+
+So gehen Sie vor:
+
+1. Der Inhalt Ihres Datentyps muss entweder ein Hash mit dem Schlüssel "value" sein oder ein
+Objekt, das das Attribut "value" lesen und setzen kann (wie eZPersistentObject). Wie der Inhalt
+in der Datenbank gespeichert wird, spielt keine Rolle, aber objectAttributeContent() muss ein
+Array bzw. Objekt zurückgeben. Der Wert (meist ein Ländercode) wird dann mit den Ländern der
+Mehrwertsteuer-Regeln verglichen.
+
+2. Überschreiben Sie in der Erweiterung Ihres Datentyps die Templates
+design/standard/templates/shop/country/{view,edit}.tpl, damit sich Länder in der Verwaltung der
+Mehrwertsteuer-Regeln und in shop/userregister anzeigen und bearbeiten lassen.
+
+*Quellen:
+
+Die Spezifikation stand früher in den Entwicklerseiten des damaligen Herstellers; diese Seite
+gibt es nicht mehr.

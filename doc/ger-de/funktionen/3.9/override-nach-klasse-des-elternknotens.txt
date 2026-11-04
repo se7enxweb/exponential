@@ -1,0 +1,27 @@
+*Titel: Match[parent_class] - Templates nach der Klasse des Elternknotens überschreiben
+
+*Dokumentation:
+Eine neue Match-Bedingung erlaubt es, Templates der Funktion 'view' des Moduls 'content' nach
+der Inhaltsklasse des Elternknotens des angezeigten Knotens zu überschreiben.
+Dafür gibt es zwei neue Match-Schlüssel:
+- 'parent_class' vergleicht mit der ID der Inhaltsklasse des Elternknotens;
+- 'parent_class_identifier' vergleicht mit dem Klassenbezeichner der Inhaltsklasse des
+  Elternknotens.
+
+*Beispiel:
+
+# these two override sections are identical:
+# matching by parent_class
+[article_override_1]
+Source=node/view/full.tpl
+MatchFile=your_template_1.tpl
+Subdir=templates
+Match[parent_class]=1
+Match[parent_class_identifier]=folder
+
+# or matching by parent_class_identifier
+[article_override_2]
+Source=node/view/full.tpl
+MatchFile=your_template_2.tpl
+Subdir=templates
+Match[parent_class_identifier]=folder

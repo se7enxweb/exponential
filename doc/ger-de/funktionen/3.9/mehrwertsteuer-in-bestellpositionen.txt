@@ -1,0 +1,11 @@
+*Titel: IsVATIncluded in einer Bestellposition
+
+*Anlass:
+Preise sollen netto oder brutto (ohne oder mit Mehrwertsteuer) sein können.
+
+*Ursprünglicher Autor: Bjørn Reiten
+
+*Dokumentation:
+Das neue Datenbankfeld kann 0 oder 1 sein.
+  0 - Der Preis ist ohne Mehrwertsteuer.
+  1 - Der Preis enthält die Mehrwertsteuer.

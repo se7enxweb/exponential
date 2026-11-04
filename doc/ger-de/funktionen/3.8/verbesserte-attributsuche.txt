@@ -1,0 +1,10 @@
+*Titel: Verbesserte attributbasierte Suche
+
+*Ursprünglicher Autor: Gunnstein Lye
+
+*Dokumentation:
+Der Patch behebt mehrere Fehler und Schwächen dieses Systems. Mehrere Untertypen der Suche
+funktionierten vor diesem Patch nicht.
+Die attributbasierte Suche war in der damaligen Dokumentation zu eigenen Suchfeldern beschrieben;
+diese Seite gibt es nicht mehr.
+

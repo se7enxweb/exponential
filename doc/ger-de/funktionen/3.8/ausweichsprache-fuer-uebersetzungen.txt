@@ -1,0 +1,37 @@
+*Titel: Ausweichsprache für Übersetzungen
+
+*Anlass:
+
+Eine zusätzliche Übersetzungsdatei soll sich vermeiden lassen, wenn es die Übersetzung bereits für
+ein anderes Locale gibt.
+
+
+*Dokumentation:
+
+Ein Siteaccess mit dem Locale ger-CH kann die Übersetzungsdatei von ger-DE verwenden.
+FallbackLanguages legt die verfügbaren Ausweichsprachen der QT-Übersetzungsdateien (.ts) fest.
+Gibt es zum Beispiel keine Übersetzung für ger-CH, wird die Übersetzungsdatei von ger-DE
+angefordert.
+
+*Konfiguration:
+
+Beispielkonfiguration:
+
+Hier ist ger-CH das aktuelle Locale und ger-DE die Ausweichübersetzung.
+
+### i18n.ini.append ###################################################
+
+[TranslationSettings]
+FallbackLanguages[ger-CH]=ger-DE
+
+#######################################################################
+
+*Logik:
+
+Wird eine Übersetzungsdatei nicht gefunden, wird an einer anderen Stelle nach einer passenden
+Übersetzung gesucht.
+
+*Einzelheiten der Umsetzung:
+
+*Bekannte Einschränkungen:
+

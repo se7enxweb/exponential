@@ -1,0 +1,8 @@
+*Titel: Position von Attributen einer Klasse eingeben
+
+*Dokumentation:
+Die Position eines Attributs in einer Klasse lässt sich in Eingabefelder eintragen, statt
+Attribute in der Klasse nach oben und unten zu verschieben.
+Das System prüft bei der Eingabe, dass keine zwei Attribute dieselbe Position haben, und
+speichert die neuen Werte, wenn alles stimmt. Beim Speichern der Klassenversion sortiert es die
+Attribute nach den angegebenen Positionen und vergibt neue Positionen ab 1 (1,2..n).

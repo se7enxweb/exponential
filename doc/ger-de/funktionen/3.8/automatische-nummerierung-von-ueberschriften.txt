@@ -1,0 +1,14 @@
+*Titel: Automatische Nummerierung der Überschriften in XML-Text
+
+*Ursprünglicher Autor: Bard Farstad
+
+*Dokumentation:
+In der Datei 'header.tpl' steht die Template-Variable {$header_number} zur Verfügung. Mit ihr
+lässt sich automatisch ein Link oder ein Präfix zu einer bestimmten Überschrift erzeugen.
+Sehr nützlich, um ein Inhaltsverzeichnis zu erzeugen, das an die richtige Stelle im Text
+verlinkt.
+
+Das Template ändert sich dadurch nicht, nur die Variable steht zur Verfügung.
+Die erste Überschrift hat den Wert 1, die zweite 2, eine Unterüberschrift der zweiten 2_1 und
+so weiter.
+

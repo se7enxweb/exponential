@@ -1,0 +1,24 @@
+*Titel: Neues eZXML-Tag <embed-inline/>
+
+*Beschreibung:
+
+Das Tag "embed-inline" ist das Gegenstück zum Tag "embed". Die Unterschiede:
+
+- "embed" ist ein Block-Tag, "embed-inline" ein Inline-Tag. Templates für "embed-inline" dürfen
+  also keine Block-Tags enthalten, sondern nur Tags, die in HTML-Absätzen stehen können. Der
+  Inhalt von "embed-inline" steht innerhalb von Absätzen und kann von anderen Inline-Tags
+  umschlossen sein. "embed" "bricht" die Absätze in der Ausgabe auf und wird außerhalb
+  dargestellt.
+
+- Standardmäßig stellt "embed" Objekte mit der Ansicht "embed" des Moduls content dar,
+  "embed-inline" mit der Ansicht "embed-inline". Denken Sie daran, wenn Sie Templates
+  überschreiben. Mit dem Attribut "view='...'" lässt sich bei beiden Tags auch eine andere
+  Ansicht verwenden.
+
+- Verwenden Sie "embed-inline", um ein Bild in eine Textzeile einzufügen, und "embed", um es
+  zwischen Absätzen einzufügen.
+
+
+*Dokumentation:
+
+Alle Parameter des Tags "embed-inline" entsprechen denen des Tags "embed".

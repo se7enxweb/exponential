@@ -1,0 +1,5 @@
+*Titel: Anonymer Benutzer: Bearbeiten von Inhalten auf die Sitzung beschränkt
+
+*Dokumentation:
+Die Bearbeitungsrechte anonymer Benutzer lassen sich auf Objekte beschränken, die in der
+aktuellen HTTP-Sitzung angelegt wurden.

@@ -1,0 +1,28 @@
+Erweiterter Operator treemenu
+=============================
+Ursprünglicher Autor: Jonny Bergkvist
+
+Der Operator treemenu in Exponential wurde für 3.8 erweitert.
+Er liefert für jeden Menüeintrag zusätzliche Werte und hat zwei neue Parameter.
+
+Die neuen Parameter:
+
+- indentation_level: int          - Die Einrückungsstufe der Menüeinträge
+                                    (siehe indent).
+- language         : string|array - Die Sprachen für den Abruf der Knoten; überschreibt
+                                    die Voreinstellung des Siteaccess.
+                                    Entweder eine Zeichenkette, z. B. nor-NO, oder ein Array
+                                    von Zeichenketten, z. B. array( 'nor-NO', 'eng-GB' ).
+                                    Die Sprachen werden in der Reihenfolge des Arrays
+                                    bevorzugt.
+
+Die neuen Werte:
+
+- is_main_node: bool   - true, wenn der Knoten ein Hauptknoten ist.
+- has_children: bool   - true, wenn der Knoten Kinder hat
+- indent      : int    - die aktuelle Einrückung (siehe indentation_level) des
+                         Menüeintrags; so muss der Wert nicht jedes Mal berechnet werden.
+- data_map    : array  - Die data_map des Knotens.
+- class_name  : string - Der Name der Inhaltsklasse des Menüeintrags,
+                         z. B. 'Folder'.
+

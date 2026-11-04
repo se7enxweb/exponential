@@ -1,0 +1,40 @@
+*Titel: Unterstützung für SSL-Proxys
+
+*Dokumentation:
+Manchmal ist es praktischer, SSL-Anfragen einfach über einen allgemeinen Proxy auszuliefern,
+etwa bei der Entwicklung oder beim Massen-Hosting mit Platzhalter-Domains.
+Ob ein SSL-Proxy verwendet wird, ermitteln wir über die Servervariable
+"HTTP_X_FORWARDED_SERVER", die der Webserver setzt.
+Der Wert von "HTTP_X_FORWARDED_SERVER" ist der "ServerName" des ursprünglichen virtuellen Hosts.
+Gesteuert wird das über [SiteSettings].SSLProxyServerName, Standardwert "localhost".
+
+Beispiele:
+
+Allgemeiner SSL-Proxy für Apache
+
+LoadModule ssl_module modules/mod_ssl.so
+<IfModule mod_ssl.c>
+Listen 443
+NameVirtualHost *:443
+<VirtualHost *:443>
+
+        ServerAdmin webmaster@localhost
+        ServerName localhost
+
+        DocumentRoot /workspace
+
+        SSLEngine on
+        SSLCertificateFile C:\workspace\conf\ssl\certs\ca.cer
+        SSLCertificateKeyFile C:\workspace\conf\ssl\keys\ca.key
+
+        # security
+        SSLProtocol -ALL +SSLv3 +TLSv1
+        SSLCipherSuite ALL:!aNULL:!ADH:!eNULL:!LOW:!EXP:RC4+RSA:+HIGH:+MEDIUM
+
+        SetEnvIf User-Agent ".*MSIE.*" \
+        nokeepalive ssl-unclean-shutdown downgrade-1.0 force-response-1.0
+
+        RewriteEngine on
+        RewriteRule ^/(.*) http://%{HTTP_HOST}/$1 [P,L]
+</VirtualHost>
+</IfModule>

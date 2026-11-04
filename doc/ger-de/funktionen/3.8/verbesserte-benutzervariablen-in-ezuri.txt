@@ -1,0 +1,14 @@
+*Titel: Verbesserte Benutzervariablen (eZURI)
+
+*Dokumentation:
+Benutzervariablen (in der URL übergeben) konnten das Zeichen '/' nicht enthalten, weil der Inhalt
+einer Benutzervariablen nach ihrem Namen begann und beim ersten '/' in der URI endete.
+Das Verhalten der Klasse ezuri (siehe lib/ezutils/classes/ezuri.php) wurde verbessert, um das zu
+beheben. Jetzt beginnt der Inhalt einer Benutzervariablen nach ihrem Namen und endet beim Namen der
+nächsten Variablen oder am Ende der URI.
+Beachten Sie, dass alle übergebenen Benutzervariablen am Ende der URI stehen müssen, nach allen
+geordneten Parametern des Moduls.
+Das alte Verhalten beim Auswerten der Benutzervariablen wurde nicht entfernt, nur abgeschaltet.
+Sie schalten es ein, indem Sie die INI-Einstellung 'OldStyleUserVariables' auf 'enabled' setzen
+(siehe settings/template.ini, Abschnitt [ControlSettings]).
+Der Standardwert von 'OldStyleUserVariables' ist 'disabled'.

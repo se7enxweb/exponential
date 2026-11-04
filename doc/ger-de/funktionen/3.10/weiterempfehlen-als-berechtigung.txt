@@ -1,0 +1,28 @@
+*Titel: Weiterempfehlen (tipafriend) als Berechtigungsfunktion
+
+*Dokumentation:
+Die Funktion 'tipafriend' wurde in die Liste der Berechtigungsfunktionen des Moduls
+'content' aufgenommen. So lassen sich die Rechte für die Ansicht tipafriend für verschiedene
+Benutzergruppen unterscheiden.
+Ab jetzt müssen Sie einer Rolle die Berechtigung 'content/tipafriend' hinzufügen, damit eine
+bestimmte Benutzergruppe die Ansicht tipafriend verwenden kann. Beachten Sie außerdem, dass die
+Gruppe passenden 'content/read'-Zugriff braucht, um auf die Ansicht tipafriend zugreifen zu
+können.
+
+*Upgrade:
+Nach einem Update von einer früheren Version von Exponential stellen Sie fest, dass Ihre
+Benutzer standardmäßig keinen Zugriff auf die Ansicht 'tipafriend' haben, weil den Rollen
+Ihrer Benutzergruppen die passende Berechtigung 'tipafriend' fehlt.
+Dafür gibt es ein Upgrade-Skript. Es legt optional eine neue Rolle im System an und weist sie
+jedem Benutzer bzw. jeder Benutzergruppe der obersten Ebene zu. Die Rolle enthält nur eine
+Berechtigung, die den Zugriff auf die Ansicht 'tipafriend' erlaubt.
+Das Skript liegt im Unterordner 'update' und muss im Wurzelverzeichnis des Systems ausgeführt
+werden:
+'update/common/scripts/3.10/updatetipafriendpolicy.php'
+
+Das Skript braucht drei Parameter:
+ --siteaccess=<siteaccessname>    Administrations-Siteaccess, in dem die neue Rolle
+                                  angelegt werden soll.
+ --login=<admin_login>            Anmeldename des Administrators
+ --password=<admin_password>      Passwort des Administrators, damit das Skript mit
+                                  Administratorrechten die neue Rolle anlegen kann.

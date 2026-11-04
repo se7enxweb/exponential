@@ -1,0 +1,7 @@
+*Titel: Platzierung eines Bildes unter dem aktuellen Objekt wählen
+
+*Ursprünglicher Autor: Bard Farstad
+
+*Dokumentation:
+Die Platzierung eines hochgeladenen Bildes lässt sich jetzt unter dem aktuellen Objekt wählen,
+allerdings nur, wenn die Version > 1 ist, das Objekt also bereits veröffentlicht wurde.

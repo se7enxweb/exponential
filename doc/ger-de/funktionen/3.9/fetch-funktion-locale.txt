@@ -1,0 +1,21 @@
+*Titel: Template-Fetch-Funktion locale
+
+*Dokumentation:
+
+Die neue Fetch-Funktion "locale" ruft ein bestimmtes Locale ab.
+Sie hat den Parameter "locale_code".
+Fehlt er, wird der Name des aktuellen Locales verwendet (site.ini[RegionalSettings].Locale).
+
+*Zusammenfassung
+Ruft das verfügbare Locale anhand des Locale-Codes ab (zum Beispiel nor-NO oder eng-GB).
+
+*Rückgabe
+ezlocale-Objekt.
+
+*Beispiel
+
+{def $current_locale = fetch( 'content', 'locale' )
+     $rus_ru_locale  = fetch( 'content', 'locale', hash( 'locale_code', 'rus-RU' ) )}
+
+{$current_locale.locale_code} : {$current_locale.country_name}
+{$rus_ru_locale.locale_code}  : {$rus_ru_locale.country_name}

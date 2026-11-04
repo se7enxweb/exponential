@@ -1,0 +1,47 @@
+*Titel: XSLT- und DTD-Definitionen in der XML-Ausgabe
+
+*Beschreibung:
+
+Die Bibliothek eZXML kann beim Aufbau eines XML-Dokuments XSLT- und DTD-Definitionen
+mitliefern. Viele Anwendungen lesen verschiedene XML-Dokumente und ermitteln deren Typ über die
+DTD. Außerdem verwenden sie die XSLT-Definitionen, um die Informationen im XML-Dokument
+darzustellen.
+
+*Dokumentation:
+
+eZDOMNode hat zwei neue Funktionen.
+
+Funktion:
+setDocTypeDefinition( $url = false, $alias = false, $explict = false )
+
+Parameter:
+$url Eine gültige URL
+$alias Ein Alias für das Dokument, zum Beispiel "-//My Company//DTD XMLEXPORT V 1.0//EN"
+$explict Gibt an, ob die DTD verwendet werden muss.
+
+Funktion:
+function setStylesheet( $url )
+
+Parameter:
+$url Eine gültige URL oder ein Array von URLs
+
+Beispiel:
+Das folgende Skript gibt das XML-Dokument darunter aus.
+
+<?php
+include_once( 'lib/ezxml/classes/ezxml.php' );
+$rootname = 'TEST';
+$doc = new eZDOMDocument();
+$base = 'http://www.example.com';
+$doc->setStylesheet( $base . '/test.xslt' );
+$doc->setDocTypeDefinition( $base . '/test.dtd', "-//xrow GbR//DTD ". $rootname . " V 1.0//EN" );
+$root =& $doc->createElementNode( $rootname );
+$doc->setRoot( $root );
+echo $doc->toString();
+exit();
+?>
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE TEST PUBLIC "-//xrow GbR//DTD TEST V 1.0//EN" "http://www.example.com/test.dtd">
+<?xml-stylesheet type="text/xsl" href="http://www.example.com/test.xslt"?>
+<TEST />
