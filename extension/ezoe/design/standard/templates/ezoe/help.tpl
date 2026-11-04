@@ -188,7 +188,7 @@ tinyMCEPopup.onInit.add( function(){
                         <li>{'You can make an image-link by selecting the image first and clicking the link button in the toolbar.'|i18n("design/standard/ezoe/help")}</li>
                         <li>{'You can edit wordmatch.ini to make text copied from MS Word directly assigned to a desired class.'|i18n("design/standard/ezoe/help")}</li>
                         <li>{'You can switch text style from paragraph to header using keybord shortcut CTRL+1 to 6, and back to paragraph using CTRL+7'|i18n("design/standard/ezoe/help")}</li>
-                        <li>{'You can find more documentation in the doc folder of this extension and online on %link.'|i18n("design/standard/ezoe/help", '', hash( '%link', '<a href="http://doc.ez.no/Extensions/Online-Editor/5.x" target="_blank">ez.no/doc</a>' ))}</li>
+                        <li>{'You can find more documentation in the doc folder of this extension and online on %link.'|i18n("design/standard/ezoe/help", '', hash( '%link', '<a href="https://doc.exponential.earth" target="_blank" rel="noopener">doc.exponential.earth</a>' ))}</li>
                     </ul>
                 </div>
             </div>
@@ -209,7 +209,7 @@ tinyMCEPopup.onInit.add( function(){
                 <p>{'Version'|i18n('design/standard/ezoe')}: {$ezoe_version|wash}<br>
                    {'License'|i18n('design/standard/ezoe')}: {$ezoe_license|wash}<br>
                    {$ezoe_copyright|wash}</p>
-                <p>For more information about this software visit the <a href="http://ez.no" target="_blank">eZ Systems</a> website.</p>
+                <p>For more information about this software visit the <a href="https://github.com/se7enxweb/ezoe" target="_blank" rel="noopener">Exponential</a> website.</p>
 
                 <h3>{'About'|i18n('design/standard/ezoe')} Moxiecode TinyMCE</h3>
                 <p>{'Version'|i18n('design/standard/ezoe')}: <span id="version"></span> (<span id="date"></span>)</p>

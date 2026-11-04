@@ -174,6 +174,7 @@ class eZURLWildcardTest extends ezpDatabaseTestCase
      *
      * @depends testFetch
      */
+    #[PHPUnit\Framework\Attributes\Depends( 'testFetch' )]
     public function testCleanup()
     {
         eZURLWildcard::cleanup( 'testPair/0' );
@@ -188,6 +189,7 @@ class eZURLWildcardTest extends ezpDatabaseTestCase
      *
      * @depends testFetch
      */
+    #[PHPUnit\Framework\Attributes\Depends( 'testFetch' )]
     public function testRemoveByIDs()
     {
         // Removing odd wildcards
@@ -251,6 +253,7 @@ class eZURLWildcardTest extends ezpDatabaseTestCase
      *
      * @depends testFetchListCount
      */
+    #[PHPUnit\Framework\Attributes\Depends( 'testFetchListCount' )]
     public function testRemoveAll()
     {
         eZURLWildcard::removeAll();
