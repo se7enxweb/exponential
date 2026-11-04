@@ -83,6 +83,9 @@ class ezpRestRequestTest extends PHPUnit\Framework\TestCase
     public function testHostUri()
     {
         $request = self::full();
+        // the fixture came encrypted (isEncrypted): its links use https although the protocol says http
+        $this->assertSame( 'https://api.k1.example.invalid', $request->getHostURI() );
+        $request->isEncrypted = false;
         $this->assertSame( 'http://api.k1.example.invalid', $request->getHostURI() );
         $request->protocol = 'https-get';
         $this->assertSame( 'https://api.k1.example.invalid', $request->getHostURI() );
