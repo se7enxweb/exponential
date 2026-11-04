@@ -85,8 +85,8 @@ Stated honestly, from the sources:
 
 - The REST route `listAtom` answers `500` at v1 and v2; use the `list` route or the site's RSS export instead
   ([8. Known issue: listAtom](../../../guides/rest-api-v1-and-v2.md#8-known-issue-listatom)).
-- The kernel has no GraphQL API. (The README describes REST and GraphQL APIs for Exponential Platform DXP, a
-  different product line.)
+- The REST API cannot update content yet (it answers 501). The kernel's GraphQL API can, with its mutation
+  `updateContent`; it is off until it is switched on ([The GraphQL API](../../../features/6.0/graphql.md)).
 - The documentation describes no push-notification service; notifications to a phone are your app's own back end.
 - Layouts are rendered by the site's templates; a headless front end renders them itself.
 

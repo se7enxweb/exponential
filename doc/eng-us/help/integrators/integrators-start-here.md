@@ -59,8 +59,8 @@ integration project from discovery to handover.
 - **Everything runs as an extension.** An integration is an extension: settings, classes, cronjob parts, console
   commands, workflow events. It can be versioned, tested, released and contributed back
   ([Building an integration as an extension](building-an-integration-as-an-extension.md)).
-- **What is not there.** No GraphQL, no OpenAPI description of the content API, no XML-RPC, no SAML, no generic
-  outgoing content webhook, no message broker connector in the kernel. Plan these as custom work
+- **What is not there.** No OpenAPI description of the content API, no XML-RPC, no SAML, no message broker
+  connector in the kernel, and no content update over REST (GraphQL has one). Plan these as custom work
   ([Integration surfaces at a glance](integration-surfaces-at-a-glance.md#what-is-not-provided)).
 
 ## What this section covers, and what it does not

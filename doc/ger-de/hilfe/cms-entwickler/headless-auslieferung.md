@@ -104,8 +104,9 @@ News-Listen, die andere Systeme nach Zeitplan abholen.
 
 ## Was es nicht gibt
 
-Exponential 6 hat keinen GraphQL-Endpunkt, und die REST-Schnittstelle hat noch keine Route zum Aktualisieren. Projekte,
-die REST v2 und GraphQL der Symfony-Plattform brauchen, verwenden die Linie Exponential Platform, die über die Legacy
+Die REST-Schnittstelle hat noch keine funktionierende Route zum Aktualisieren (sie antwortet mit 501). Exponential
+6.0.15 hat einen eigenen GraphQL-Endpunkt, `/api/graphql`, der Inhalte liest und ändert und aus ist, bis er
+eingeschaltet wird ([Die GraphQL-API](../../funktionen/6.0/graphql.md)). Projekte, die REST v2 und GraphQL der Symfony-Plattform brauchen, verwenden die Linie Exponential Platform, die über die Legacy
 Bridge neben diesem Kernel laufen kann
 ([Umstieg von eZ Platform oder Ibexa](umstieg-von-ez-platform-oder-ibexa.md#zwei-ziele-in-exponential),
 [Legacy Bridge](../../funktionen/6.0/legacy-bridge.md)).

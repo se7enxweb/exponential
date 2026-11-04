@@ -60,8 +60,8 @@ wie Sie ein Integrationsprojekt von der Analyse bis zur Übergabe durchführen.
 - **Alles läuft als Erweiterung.** Eine Integration ist eine Erweiterung: Einstellungen, Klassen, Cronjob-Teile,
   Konsolenbefehle, Workflow-Ereignisse. Sie lässt sich versionieren, testen, veröffentlichen und zurückgeben
   ([Eine Integration als Erweiterung bauen](eine-integration-als-erweiterung-bauen.md)).
-- **Was es nicht gibt.** Kein GraphQL, keine OpenAPI-Beschreibung der Inhalts-API, kein XML-RPC, kein SAML, kein
-  allgemeiner ausgehender Webhook für Inhalte, kein Connector für Message Broker im Kernel. Planen Sie diese als
+- **Was es nicht gibt.** Keine OpenAPI-Beschreibung der Inhalts-API, kein XML-RPC, kein SAML, kein Connector für
+  Message Broker im Kernel und kein Ändern von Inhalten über REST (GraphQL kann es). Planen Sie diese als
   individuelle Arbeit ein ([Integrationsschnittstellen auf einen Blick](integrationsschnittstellen-auf-einen-blick.md#was-nicht-angeboten-wird)).
 
 ## Was dieser Bereich abdeckt und was nicht

@@ -96,8 +96,9 @@ on a schedule.
 
 ## What is not there
 
-Exponential 6 has no GraphQL endpoint, and the REST interface has no update route yet. Projects that need the Symfony
-platform's REST v2 and GraphQL use the Exponential Platform line, which can run next to this kernel through the
+The REST interface has no working update route yet (it answers 501). Exponential 6.0.15 has a GraphQL endpoint of
+its own, `/api/graphql`, which reads and changes content and is off until it is switched on
+([The GraphQL API](../../features/6.0/graphql.md)). Projects that need the Symfony platform's REST v2 and GraphQL use the Exponential Platform line, which can run next to this kernel through the
 legacy bridge ([Coming from eZ Platform or Ibexa](coming-from-ez-platform-or-ibexa.md#two-exponential-destinations),
 [Legacy bridge](../../features/6.0/legacy-bridge.md)).
 

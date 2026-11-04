@@ -3628,7 +3628,7 @@ bbcfbb1065eefc4a3f53987a1bad5fb1  doc/changelogs/extensions/xrowmetadata.md
 926abec1d70f433796add752c0db25fd  doc/eng-us/CONFIGURING.md
 6d3a30fd59d8e71b2c1ad0ce019b9c7e  doc/eng-us/EXTENDING.md
 0c1e4f61dd4a07d85f0b8cda711ec115  doc/eng-us/INSTALL.md
-493ddee0880524da7a6437cabc7cc4ef  doc/eng-us/INTEGRATING.md
+0ab219a2e330c3db1c8ea1532fd3972e  doc/eng-us/INTEGRATING.md
 a22d0be1ce2284b67950a4d1673dd1b0  doc/eng-us/LICENSE-GFDL-1.3.txt
 d1b7052b2035b91ce9c4cece454f14bf  doc/eng-us/README-LICENSE.md
 0ad9c5cf443537f4044d6148bd6729f8  doc/eng-us/UNINSTALL.md
@@ -7905,7 +7905,7 @@ f653fa0e490fb359623ea48f70adfa62  doc/eng-us/help/businesses/mobile-and-headless
 25010ebcc251aee809e7caef410d5312  doc/eng-us/help/businesses/mobile-and-headless/app-backend-reliability.md
 1d198241e995ab922e268b198c1226da  doc/eng-us/help/businesses/mobile-and-headless/apps-and-api-keys.md
 38ef1a9fb63e093294ec91e401edb226  doc/eng-us/help/businesses/mobile-and-headless/feeds-and-syndication.md
-257eb5eacabbaa018a82d6a0aa181e81  doc/eng-us/help/businesses/mobile-and-headless/headless-with-the-rest-api.md
+ca3fbe6ea07543601a6dca6582f6b9ea  doc/eng-us/help/businesses/mobile-and-headless/headless-with-the-rest-api.md
 f66132278f117d2683669d0161a6b128  doc/eng-us/help/businesses/mobile-and-headless/mobile-checklist.md
 b13e251588378ee8de46aa33d9f466c3  doc/eng-us/help/businesses/mobile-and-headless/mobile-strategy.md
 9376c9ee78d8196eb6b4040c07954975  doc/eng-us/help/businesses/mobile-and-headless/offline-and-repeat-visits.md
@@ -8042,7 +8042,7 @@ e043e3e1c22d5976f78fbf1cf8273d63  doc/eng-us/help/cms-developers/fetching-conten
 f4af86a602be231434694be5c9e232e4  doc/eng-us/help/cms-developers/fixed-ids-and-numeric-codes.md
 a4f9c2304c01d14a765e99f9ee236d4c  doc/eng-us/help/cms-developers/forms-and-information-collection.md
 164e580175700601e261e067c77e6752  doc/eng-us/help/cms-developers/glossary-for-cms-developers.md
-adfc88868b1c47e846877f98efdfb464  doc/eng-us/help/cms-developers/headless-delivery.md
+a6a73c3417270278e5d793a8c3ed3856  doc/eng-us/help/cms-developers/headless-delivery.md
 f3ce65aa39596459443bb7753cba926a  doc/eng-us/help/cms-developers/images-and-image-aliases.md
 26d381442980b054e737db51c37cdb32  doc/eng-us/help/cms-developers/importing-content.md
 d5c92174a0ea85d2c2c1322c2157b32a  doc/eng-us/help/cms-developers/layouts-for-cms-developers.md
@@ -8062,7 +8062,7 @@ bed147861c9b9c9bb11564c44d7ac9d5  doc/eng-us/help/cms-developers/sections-roles-
 073e74326501b86b4d9dca0ff555e21f  doc/eng-us/help/cms-developers/templates-and-overrides-for-cms-developers.md
 b7f982793fc925581a1d2abe1003ae86  doc/eng-us/help/cms-developers/the-built-in-shop.md
 6dadc6ac3fa4c13bcfd964bfa760f901  doc/eng-us/help/cms-developers/the-content-model.md
-cd788cb0badb7cb805a1164a7cc9bf0e  doc/eng-us/help/cms-developers/the-rest-api.md
+798abecb231adf2175640acfbbee705a  doc/eng-us/help/cms-developers/the-rest-api.md
 22cab80157debe7fa9fc2f4d32af73e3  doc/eng-us/help/cms-developers/translations-and-languages.md
 30b91b5b965aef11d0fc2787f53c1efd  doc/eng-us/help/cms-developers/url-aliases-and-routing.md
 e907c3fbae5f561201838e8a151571a8  doc/eng-us/help/cms-developers/users-and-registration.md
@@ -10921,12 +10921,12 @@ c1e418e7b1f570925b852d167831cf5a  doc/eng-us/help/integrators/integration-discov
 9b86f06dfbf8750c7183004968475ba4  doc/eng-us/help/integrators/integration-patterns-push-pull-batch-real-time.md
 55c979de61204fa7e379c5418932ccf9  doc/eng-us/help/integrators/integration-project-playbook.md
 ae530e8f6e2bf36b38302523015595d1  doc/eng-us/help/integrators/integration-security-checklist.md
-d66e8de71670a4e38c0129e281d02c60  doc/eng-us/help/integrators/integration-surfaces-at-a-glance.md
+64254a7ba78fd86b3b824de0efa623a0  doc/eng-us/help/integrators/integration-surfaces-at-a-glance.md
 916464bef5e85c91428943fdd34a8c71  doc/eng-us/help/integrators/integrators-and-the-partner-program.md
 5e93f2f529d773f86a5f7cdb584b42bd  doc/eng-us/help/integrators/integrators-faq.md
 fd9fe00928989008faf41480f3ff93b3  doc/eng-us/help/integrators/integrators-glossary.md
 07ba1293d3ad559c807db33e5d12ce05  doc/eng-us/help/integrators/integrators-reading-path.md
-d8309ab98ad774d6651e724b4666aea2  doc/eng-us/help/integrators/integrators-start-here.md
+3342febc6e2a9aaa2bb51d3fb1cbaae8  doc/eng-us/help/integrators/integrators-start-here.md
 3d4b103e522f32c50f4370fd4900c741  doc/eng-us/help/integrators/interface-specification-template.md
 d67cf8fa984204bd5666fa1b62c35025  doc/eng-us/help/integrators/login-handlers-ldap-and-textfile.md
 25a942583256dc65187d2109b5560427  doc/eng-us/help/integrators/mail-and-notifications-integration.md
@@ -13507,7 +13507,7 @@ f004be693a836110ad5950e653a0db90  doc/ger-de/.paths.json
 86c4bc42e93188f788000c1f76e44d5b  doc/ger-de/CONFIGURING.md
 67d0c51338ceda6e163e950f05431c3a  doc/ger-de/EXTENDING.md
 dd4f3c83254131baddcfcb807aa44d8f  doc/ger-de/INSTALL.md
-1316ffcbd05822078423f926a0f775fa  doc/ger-de/INTEGRATING.md
+ed36201d5767d3703631603291985142  doc/ger-de/INTEGRATING.md
 28bb0394d0d8b5056ebfe1a57ae0bd12  doc/ger-de/LIZENZ-GFDL-1.3.txt
 d4444f60d9f3f6fd7dc43dc6edac7e39  doc/ger-de/README-LIZENZ.md
 35f2e2b3176ed05cb4e6cd1a8e7adf0f  doc/ger-de/UNINSTALL.md
@@ -18173,7 +18173,7 @@ db8d5654f22de9969cff53e764bc66d0  doc/ger-de/hilfe/cms-entwickler/checkliste-zur
 82b1e278ac70b51ffcf62bb94ae3fe75  doc/ger-de/hilfe/cms-entwickler/das-inhaltsmodell.md
 e56ab25a8003426a556322a0b9ec575b  doc/ger-de/hilfe/cms-entwickler/datentypen-waehlen.md
 4eff3cf881df9b4ca27c142c253cdfb5  doc/ger-de/hilfe/cms-entwickler/der-eingebaute-shop.md
-ad679d821842790226f50389c5cf23f0  doc/ger-de/hilfe/cms-entwickler/die-rest-api.md
+3ba4e108e68c1add88b2f6677c131aa3  doc/ger-de/hilfe/cms-entwickler/die-rest-api.md
 238266c2a8594f277d3e7033dad096ad  doc/ger-de/hilfe/cms-entwickler/ein-inhaltsmodell-entwerfen.md
 157024867cc6fede841c13c9d7bff5c4  doc/ger-de/hilfe/cms-entwickler/eine-fertige-inhaltsklasse-waehlen.md
 e4d8b5626ed97669089d56d10aafa438  doc/ger-de/hilfe/cms-entwickler/eine-inhaltsklasse-anlegen.md
@@ -18186,7 +18186,7 @@ ec50b38b6c36d8b848a7bb08a2da34b4  doc/ger-de/hilfe/cms-entwickler/eine-website-b
 f608d4e4c17be563057deb4c2d4b87dc  doc/ger-de/hilfe/cms-entwickler/feste-ids-und-numerische-codes.md
 aba664d5227d0d7a7a544ea91fee2429  doc/ger-de/hilfe/cms-entwickler/formulare-und-informationssammlung.md
 acaf749252611bfa6ac5d6d53af019a5  doc/ger-de/hilfe/cms-entwickler/glossar-fuer-cms-entwickler.md
-423465ad612cbd601407fa01ba5f2c36  doc/ger-de/hilfe/cms-entwickler/headless-auslieferung.md
+6c91792dce6490e8b27cf483b00c31c6  doc/ger-de/hilfe/cms-entwickler/headless-auslieferung.md
 a5b33aec62ac64edf75c26d9266dabf5  doc/ger-de/hilfe/cms-entwickler/inhalte-aus-php.md
 557dd3192bc856fb63e5d7f59950f9e1  doc/ger-de/hilfe/cms-entwickler/inhalte-importieren.md
 8e8aed5f47aa59cb5dea0b9659796897  doc/ger-de/hilfe/cms-entwickler/inhalte-in-templates-abrufen.md
@@ -19566,8 +19566,8 @@ b74dfc516f28da4f7aca3d5ba0cc5672  doc/ger-de/hilfe/integratoren/integrationen-ue
 ba4b89c9556028d9827a54c7460098c8  doc/ger-de/hilfe/integratoren/integrationen-zurueckgeben.md
 b38df691e2403788051b66d204dbb4ca  doc/ger-de/hilfe/integratoren/integrationsaufwand-schaetzen.md
 cbdeb66760289c11fe50fbd7010934d7  doc/ger-de/hilfe/integratoren/integrationsmuster-push-pull-batch-echtzeit.md
-200d7c3b76c02ff50d35d3fb79ee65c9  doc/ger-de/hilfe/integratoren/integrationsschnittstellen-auf-einen-blick.md
-9b5880843bd2da379f591c577668290f  doc/ger-de/hilfe/integratoren/integratoren-hier-beginnen.md
+0c3da9a48d5f916c8995a2fce3d5d651  doc/ger-de/hilfe/integratoren/integrationsschnittstellen-auf-einen-blick.md
+c6fc04e5a0a1898a61da067e6ad0f26c  doc/ger-de/hilfe/integratoren/integratoren-hier-beginnen.md
 8b8ce40041d8ab038df10fb22d3f8d99  doc/ger-de/hilfe/integratoren/integratoren-und-das-partnerprogramm.md
 56f4dd45e47ba287f5f7d95ee01984aa  doc/ger-de/hilfe/integratoren/ki-jobwarteschlange-und-mcp.md
 bd691adcd6a344bbbbc979ad0f7b46b5  doc/ger-de/hilfe/integratoren/leistungsbeschreibungen-fuer-integrationen.md
@@ -21518,7 +21518,7 @@ ca4fabdb8a21c53db4a0c857471c41ae  doc/ger-de/hilfe/unternehmen/mobil-und-headles
 704c98995d311e53fde38a695fc34251  doc/ger-de/hilfe/unternehmen/mobil-und-headless/checkliste-mobil.md
 bef588e60f890a1b0b38c3d4493d26ba  doc/ger-de/hilfe/unternehmen/mobil-und-headless/entfernte-dienste.md
 17cb9a17f86ebe25a3d16f29632a2a6d  doc/ger-de/hilfe/unternehmen/mobil-und-headless/feeds-und-syndication.md
-8ccde9879b41617cf3e7f705b649506c  doc/ger-de/hilfe/unternehmen/mobil-und-headless/headless-mit-der-rest-api.md
+9de3c8582c3820f0e368a42271cbb7fc  doc/ger-de/hilfe/unternehmen/mobil-und-headless/headless-mit-der-rest-api.md
 9cb413a9d94a87114b6144ae6e542917  doc/ger-de/hilfe/unternehmen/mobil-und-headless/mobile-strategie.md
 e0ea2e7aae00f695b50be53082b09861  doc/ger-de/hilfe/unternehmen/mobil-und-headless/offline-und-wiederholte-besuche.md
 eb36da4ed2b4d26bb3fbf0d94b3f2a70  doc/ger-de/hilfe/unternehmen/mobil-und-headless/responsive-websites.md

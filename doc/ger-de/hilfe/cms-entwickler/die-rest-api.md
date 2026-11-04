@@ -120,14 +120,16 @@ Lesen Sie sie so, wie die Website sie sieht: `./console exp:ini list rest.ini/Au
 
 ## Grenzen, die Sie kennen sollten
 
-- **Noch keine Route zum Aktualisieren.** `POST /content/node/<id>` antwortet mit 501. Suchen Sie im Katalog von
-  `expservices` nach einem Aktualisierungsdienst, legen Sie ein neues Objekt an und entfernen Sie das alte, oder führen
-  Sie ein Skript auf dem Server aus ([Inhalte aus PHP](inhalte-aus-php.md)).
+- **Noch keine Route zum Aktualisieren.** `POST /api/ezp/v2/content/node/<id>` antwortet mit 501. Ändern Sie über die
+  GraphQL-Mutation `updateContent` ([Die GraphQL-API](../../funktionen/6.0/graphql.md)), suchen Sie im Katalog von
+  `expservices` nach einem Aktualisierungsdienst, oder führen Sie ein Skript auf dem Server aus
+  ([Inhalte aus PHP](inhalte-aus-php.md)).
 - **`listAtom` antwortet mit 500** in v1 und v2: Verwenden Sie die Route `list` oder den RSS-Export der Website
   ([Bekanntes Problem: listAtom](../../anleitungen/rest-api-v1-und-v2.md#8-bekanntes-problem-listatom)).
 - **Das ist nicht die REST-API der Symfony-Plattformen.** Clients, die für `/api/ibexa/v2` geschrieben wurden, brauchen
   Änderungen ([Umstieg von eZ Platform oder Ibexa](umstieg-von-ez-platform-oder-ibexa.md)).
-- In Exponential 6 gibt es keinen GraphQL-Endpunkt.
+- **GraphQL ist eine eigene API.** Exponential 6.0.15 antwortet mit GraphQL unter `/api/graphql`, aus, bis es
+  eingeschaltet wird ([Die GraphQL-API](../../funktionen/6.0/graphql.md)).
 
 ## Eigene Routen
 

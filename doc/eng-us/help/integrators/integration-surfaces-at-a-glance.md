@@ -27,7 +27,9 @@ are in [API and protocol standards](../../standards/apis-and-protocols.md).
 
 | Surface | Direction | Protocol and format | Authentication | Where | Default |
 |---|---|---|---|---|---|
-| REST content API | In and out | HTTP, JSON; `/api/ezp/v1/...`, `/api/ezp/v2/...` | OAuth 2.0 token, personal API key, or HTTP basic (`AuthenticationStyle`) | Kernel framework `kernel/private/rest/`, routes in `ezprestapi` | Answers when `ezprestapi` is active; `rest.ini [Authentication] RequireAuthentication=enabled` |
+| REST content API | In and out | HTTP, JSON; `/api/ezp/v1/...` reads, `/api/ezp/v2/...` reads, create and delete | OAuth 2.0 token, personal API key, or HTTP basic (`AuthenticationStyle`) | Kernel framework `kernel/private/rest/`, routes in `ezprestapi` | Answers when `ezprestapi` is active; `rest.ini [Authentication] RequireAuthentication=enabled` |
+| GraphQL API | In and out | HTTP, JSON; `/api/graphql` per siteaccess; queries, mutations (create, update, translate, publish, delete, move, hide), subscriptions | Session (with the form token for mutations), OAuth 2.0 token, personal API key (scopes `graphql:read`, `graphql:write`) | Kernel `kernel/classes/graphql/`, Setup > GraphQL, `exp:graphql:*` | `graphql.ini [GraphQLSettings] Enabled=disabled`: off until switched on ([The GraphQL API](../../features/6.0/graphql.md)) |
+| GraphQL webhooks | Out | HTTP POST, JSON, signed with HMAC-SHA-256 | A shared secret in the secret store | `graphql.ini [GraphQLWebhooks]`, cronjob part `graphqlwebhooks` | None configured |
 | OAuth 2.0 authorization server | In (credentials) | `oauth/authorize`, `POST /api/auth/v1/oauth/token` | Client id and secret, user consent | `kernel/private/modules/oauth/`, Setup > oAuth admin | Grants `authorization_code` and `refresh_token` |
 | Personal API keys | In (credentials) | `Authorization: Bearer expk_...` | The key's owner, limited to its scopes | `kernel/apikey/`, `rest.ini [ApiKeySettings]` | `ApiKeys=enabled`; no role has `apikey/create` until you give it |
 | Remote services (`expservices`) | In and out | JSON over `/ezjscore/call/exp<domain>::<method>` | Session cookie and form token, or an `expt_...` token | `extension/expservices` | `expservices.ini [Services] Enabled=enabled` |
@@ -76,12 +78,11 @@ Plan the following as custom work, or choose another approach:
 
 | Not provided | What to do instead |
 |---|---|
-| GraphQL | Use the REST API or `expservices`, or write a module of your own |
 | An OpenAPI description of the content API | Document your routes in your interface specification ([template](interface-specification-template.md)) |
 | XML-RPC | Not implemented; use REST or SOAP |
 | SAML or an OpenID Connect provider | Write a login or SSO handler, or put an identity-aware proxy in front ([Single sign-on](single-sign-on-and-social-login.md)) |
-| A generic outgoing webhook for content events | A workflow event or event listener of your own, or the audit webhook sink with `content.object.publish` switched on ([Audit webhooks](outgoing-webhooks-from-the-audit-trail.md)) |
-| Updating content through REST | `POST /content/node/<id>` checks `content/edit` and answers 501; update from PHP or through `expservices` |
+| Content webhooks without GraphQL | The GraphQL webhooks above need the GraphQL end point switched on; otherwise use the audit webhook sink with `content.object.publish` switched on ([Audit webhooks](outgoing-webhooks-from-the-audit-trail.md)), or a workflow event or event listener of your own |
+| Updating content through REST | `POST /api/ezp/v2/content/node/<id>` checks `content/edit` and answers 501; update through the GraphQL mutation `updateContent`, from PHP, or through `expservices` |
 | A message broker connector (AMQP, Kafka) | Publish from a workflow event or a cronjob through a PHP client library you add to your extension |
 | An MCP server in the kernel | The kernel repository ships none ([AI, job queue and MCP](ai-job-queue-and-mcp.md)) |
 
@@ -111,6 +112,7 @@ Setup > RAD (`/setup/rad`) lists the extension points and the `expservices` cata
 
 ## Related pages
 
+- [Integrating With Exponential 6.0](../../INTEGRATING.md): the book, from the first API call to troubleshooting
 - [Choosing an integration surface](choosing-an-integration-surface.md)
 - [API and protocol standards](../../standards/apis-and-protocols.md)
 - [Integrations FAQ for public bodies](../government/faq/integrations-faq.md)

@@ -117,13 +117,15 @@ installation reachable by others.
 
 ## Limits to know
 
-- **No update route yet.** `POST /content/node/<id>` answers 501. Look for an update service in the `expservices` catalog, or create a new
-  object and remove the old one, or run a script on the server ([Content from PHP](content-from-php.md)).
+- **No update route yet.** `POST /api/ezp/v2/content/node/<id>` answers 501. Update through the GraphQL mutation
+  `updateContent` ([The GraphQL API](../../features/6.0/graphql.md)), look for an update service in the `expservices`
+  catalog, or run a script on the server ([Content from PHP](content-from-php.md)).
 - **`listAtom` answers 500** at v1 and v2: use the `list` route or the site's RSS export
   ([Known issue: listAtom](../../guides/rest-api-v1-and-v2.md#8-known-issue-listatom)).
 - **This is not the REST API of the Symfony platforms.** Clients written for `/api/ibexa/v2` need changes
   ([Coming from eZ Platform or Ibexa](coming-from-ez-platform-or-ibexa.md)).
-- There is no GraphQL endpoint in Exponential 6.
+- **GraphQL is a separate API.** Exponential 6.0.15 answers GraphQL at `/api/graphql`, off until it is switched on
+  ([The GraphQL API](../../features/6.0/graphql.md)).
 
 ## Routes of your own
 

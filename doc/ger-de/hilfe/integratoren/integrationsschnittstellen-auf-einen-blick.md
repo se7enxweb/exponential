@@ -28,7 +28,9 @@ muss. Die Standards hinter jedem Protokoll, mit ihren bekannten Lücken, stehen 
 
 | Schnittstelle | Richtung | Protokoll und Format | Authentifizierung | Wo | Standard |
 |---|---|---|---|---|---|
-| REST-Inhalts-API | hinein und hinaus | HTTP, JSON; `/api/ezp/v1/...`, `/api/ezp/v2/...` | OAuth-2.0-Token, persönlicher API-Schlüssel oder HTTP Basic (`AuthenticationStyle`) | Kernel-Framework `kernel/private/rest/`, Routen in `ezprestapi` | antwortet, wenn `ezprestapi` aktiv ist; `rest.ini [Authentication] RequireAuthentication=enabled` |
+| REST-Inhalts-API | hinein und hinaus | HTTP, JSON; `/api/ezp/v1/...` Lesen, `/api/ezp/v2/...` Lesen, Anlegen und Löschen | OAuth-2.0-Token, persönlicher API-Schlüssel oder HTTP Basic (`AuthenticationStyle`) | Kernel-Framework `kernel/private/rest/`, Routen in `ezprestapi` | antwortet, wenn `ezprestapi` aktiv ist; `rest.ini [Authentication] RequireAuthentication=enabled` |
+| GraphQL-API | hinein und hinaus | HTTP, JSON; `/api/graphql` je Siteaccess; Abfragen, Mutationen (Anlegen, Ändern, Übersetzen, Veröffentlichen, Löschen, Verschieben, Verbergen), Subscriptions | Sitzung (für Mutationen mit dem Formular-Token), OAuth-2.0-Token, persönlicher API-Schlüssel (Bereiche `graphql:read`, `graphql:write`) | Kernel `kernel/classes/graphql/`, Setup > GraphQL, `exp:graphql:*` | `graphql.ini [GraphQLSettings] Enabled=disabled`: aus, bis sie eingeschaltet wird ([Die GraphQL-API](../../funktionen/6.0/graphql.md)) |
+| GraphQL-Webhooks | hinaus | HTTP POST, JSON, signiert mit HMAC-SHA-256 | ein gemeinsames Geheimnis im Geheimnisspeicher | `graphql.ini [GraphQLWebhooks]`, Cronjob-Teil `graphqlwebhooks` | keine eingerichtet |
 | OAuth-2.0-Autorisierungsserver | hinein (Zugangsdaten) | `oauth/authorize`, `POST /api/auth/v1/oauth/token` | Client-ID und Geheimnis, Zustimmung des Benutzers | `kernel/private/modules/oauth/`, Setup > oAuth-Verwaltung | gewährt `authorization_code` und `refresh_token` |
 | Persönliche API-Schlüssel | hinein (Zugangsdaten) | `Authorization: Bearer expk_...` | der Besitzer des Schlüssels, auf dessen Bereiche beschränkt | `kernel/apikey/`, `rest.ini [ApiKeySettings]` | `ApiKeys=enabled`; keine Rolle hat `apikey/create`, bis Sie es vergeben |
 | Remote-Dienste (`expservices`) | hinein und hinaus | JSON über `/ezjscore/call/exp<domain>::<method>` | Sitzungs-Cookie und Formular-Token oder ein Token `expt_...` | `extension/expservices` | `expservices.ini [Services] Enabled=enabled` |
@@ -77,12 +79,11 @@ Planen Sie Folgendes als individuelle Arbeit ein, oder wählen Sie einen anderen
 
 | Nicht angeboten | Was Sie stattdessen tun |
 |---|---|
-| GraphQL | die REST-API oder `expservices` verwenden oder ein eigenes Modul schreiben |
 | Eine OpenAPI-Beschreibung der Inhalts-API | Ihre Routen in Ihrer Schnittstellenspezifikation dokumentieren ([Vorlage](vorlage-fuer-eine-schnittstellenspezifikation.md)) |
 | XML-RPC | nicht umgesetzt; REST oder SOAP verwenden |
 | SAML oder ein OpenID-Connect-Provider | einen Login- oder SSO-Handler schreiben oder einen identitätsbewussten Proxy vorschalten ([Single Sign-on](single-sign-on-und-social-login.md)) |
-| Ein allgemeiner ausgehender Webhook für Inhaltsereignisse | ein eigenes Workflow-Ereignis oder ein eigener Event-Listener oder die Webhook-Senke des Audit-Trails mit eingeschaltetem `content.object.publish` ([Audit-Webhooks](ausgehende-webhooks-aus-dem-audit-trail.md)) |
-| Inhalte über REST aktualisieren | `POST /content/node/<id>` prüft `content/edit` und antwortet mit 501; aus PHP oder über `expservices` aktualisieren |
+| Inhalts-Webhooks ohne GraphQL | die GraphQL-Webhooks oben brauchen den eingeschalteten GraphQL-Endpunkt; sonst die Webhook-Senke des Audit-Trails mit eingeschaltetem `content.object.publish` ([Audit-Webhooks](ausgehende-webhooks-aus-dem-audit-trail.md)) oder ein eigenes Workflow-Ereignis oder ein eigener Event-Listener |
+| Inhalte über REST aktualisieren | `POST /api/ezp/v2/content/node/<id>` prüft `content/edit` und antwortet mit 501; über die GraphQL-Mutation `updateContent`, aus PHP oder über `expservices` aktualisieren |
 | Ein Connector für Message Broker (AMQP, Kafka) | aus einem Workflow-Ereignis oder einem Cronjob über eine PHP-Client-Bibliothek veröffentlichen, die Sie Ihrer Erweiterung hinzufügen |
 | Ein MCP-Server im Kernel | das Kernel-Repository liefert keinen mit ([KI, Job-Warteschlange und MCP](ki-jobwarteschlange-und-mcp.md)) |
 
@@ -112,6 +113,7 @@ Setup > RAD (`/setup/rad`) listet die Erweiterungspunkte und den Katalog von `ex
 
 ## Verwandte Seiten
 
+- [Mit Exponential 6.0 integrieren](../../INTEGRATING.md): das Buch, vom ersten API-Aufruf bis zur Fehlersuche
 - [Eine Integrationsschnittstelle wählen](eine-integrationsschnittstelle-waehlen.md)
 - [API- und Protokollstandards](../../standards/apis-und-protokolle.md)
 - [FAQ zu Integrationen für öffentliche Stellen](../verwaltung/faq/faq-integrationen.md)

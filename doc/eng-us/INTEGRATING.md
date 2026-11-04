@@ -94,7 +94,8 @@ see [Extending Exponential 6.0](EXTENDING.md).
 The extension `ezprestapi` serves the content API through `index_rest.php`, below `/api/`:
 
 - **Reads** answer at version 1 and version 2: `/api/ezp/v1/...` and `/api/ezp/v2/...`.
-- **Writes** (create, update, delete) answer at version 2 only.
+- **Writes** answer at version 2 only: create and delete work; the update route checks `content/edit` and answers
+  501 for now, so update content through GraphQL's `updateContent` ([section 5](#5-graphql)).
 - **Every read and write checks the user's policies** (`content/read`, `content/create`, `content/edit`,
   `content/remove`), whatever the request was signed in with.
 
