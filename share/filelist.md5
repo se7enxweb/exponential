@@ -3527,7 +3527,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-0c0236e3258c6bf0ad1b3d0c304fb9a0  doc/changelogs/6.0/6.0.15.md
+d608f06c5b8196a816957d4060b43b69  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -6951,7 +6951,7 @@ c1612437070da67fdd2723c6b1e1c2b2  doc/eng-us/features/6.0/extensions/xrowmetadat
 3f29ad01e9f5d278ca8af3fe2d21d253  doc/eng-us/features/6.0/form-expired-page.md
 b388ac5e100e8398638ffe8c4c6c8207  doc/eng-us/features/6.0/graphql.md
 d764ef1d7e05fc5071e8521fe1dbe843  doc/eng-us/features/6.0/help-content.md
-97eb9b6f5e4323c700e7c890a344b0c5  doc/eng-us/features/6.0/help-system.md
+aa0986c8b908d9db8aaf401c0e55c870  doc/eng-us/features/6.0/help-system.md
 1497f038f1fb68bf320b385032fe2e31  doc/eng-us/features/6.0/hidden-admin-tabs.md
 67e2133c059b3294dd3d9275b167b820  doc/eng-us/features/6.0/icon-themes-in-extensions.md
 c8c732f08abfb2593fd5f7599f60905f  doc/eng-us/features/6.0/install-in-one-command.md
@@ -16977,7 +16977,7 @@ eb3d2bb16f19518e5d5f40301852dfa7  doc/ger-de/funktionen/6.0/generator-fuer-den-s
 182d80bb708aaaa1348d28e88f2008aa  doc/ger-de/funktionen/6.0/graphql.md
 e667b2bcfdc637b0ebf0d7ce755249e5  doc/ger-de/funktionen/6.0/handler-fuer-inhaltseinschraenkungen.md
 68d47347beaa485aeeced24a6f68bde7  doc/ger-de/funktionen/6.0/hilfeinhalte.md
-995fea767ca75f75a44d71985c1d8245  doc/ger-de/funktionen/6.0/hilfesystem.md
+06dabb6fb5802e40a6b22622faf0efee  doc/ger-de/funktionen/6.0/hilfesystem.md
 445e9e9efb5d3397ac8acc5ce905b8bb  doc/ger-de/funktionen/6.0/icon-themes-in-extensions.md
 6a93174afff8017d38daaa3e8a6bcebc  doc/ger-de/funktionen/6.0/info-und-paketseiten.md
 5b3b088b68957758753acb3f0e3a1ca5  doc/ger-de/funktionen/6.0/inhalts-finder.md
@@ -25744,7 +25744,7 @@ f9ec87d9fa40c93ba773db5c58c1a950  kernel/private/classes/commands/expgraphqlsche
 3d0ea1ad9df088b281556665cc1f08be  kernel/private/classes/commands/expgraphqlstarter.php
 eb118ef2db669df16fdacf1e314c17b1  kernel/private/classes/commands/expgraphqlstatus.php
 4feaac0df7bc4b9dd4c016030182b5c1  kernel/private/classes/commands/expgraphqlwebhooks.php
-cac4c109079d9a739b09b9e0aff8d75f  kernel/private/classes/commands/exphelp.php
+047191514b13784172688136d9b8086b  kernel/private/classes/commands/exphelp.php
 708f0c28160cbb68a971dcc7c40dec44  kernel/private/classes/commands/exphelpcontent.php
 fb3a3a5f3af0553e8c2c1ac4c048f7b7  kernel/private/classes/commands/exphelpexamples.php
 099dc77b3fcba4c0c532c01f59788c6a  kernel/private/classes/commands/explogs.php
@@ -29281,6 +29281,7 @@ e4fb5caf3dcbd84f5db003cfeac79804  tests/tests/kernel/classes/help/expHelpContent
 d59f1faa13cf2843a73af67567010274  tests/tests/kernel/classes/help/expHelpExternalImagesTest.php
 3f44b5a413eac5e8aae51153c0cda427  tests/tests/kernel/classes/help/expHelpFrontMatterQuotingTest.php
 ffd0344e173ab8766e7d56fde561b10b  tests/tests/kernel/classes/help/expHelpIndexBackgroundBuildTest.php
+e050085c069a32870983ec06ab04b7c3  tests/tests/kernel/classes/help/expHelpIndexFreshSettingsTest.php
 19e9611294d57baa6c3b1e95c941a251  tests/tests/kernel/classes/help/expHelpIndexStabilityTest.php
 5752aff10f130f6b0aca2d05e167fefb  tests/tests/kernel/classes/help/expHelpIssueReportTest.php
 657e6fce4de2af44656438bb0ef98350  tests/tests/kernel/classes/help/expHelpLandingPagesTest.php
