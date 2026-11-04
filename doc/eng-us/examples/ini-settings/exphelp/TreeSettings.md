@@ -32,7 +32,7 @@ Never edit `settings/exphelp.ini` itself: an update replaces it. Put the setting
 > (expHelpAudience::PAGE\_ORDER).  
 > PageOrder\[<page id>\]=<integer>  
 
-Default: a hash of 20: `project/README.md=0`, `INSTALL.md=10`, `CONFIGURING.md=11`, `UPDATE.md=12`, `EXTENDING.md=13`, `INTEGRATING.md=14`, `DISTRIBUTIONS.md=15`, `UNINSTALL.md=16`, `languages.md=20`, `HISTORY.md=25`, `branch-overview.md=30`, `release-overview=40` ....
+Default: a hash of 21: `project/README.md=0`, `INSTALL.md=10`, `CONFIGURING.md=11`, `UPDATE.md=12`, `EXTENDING.md=13`, `INTEGRATING.md=14`, `DISTRIBUTIONS.md=15`, `UNINSTALL.md=16`, `languages.md=20`, `HISTORY.md=25`, `branch-overview.md=30`, `release-overview=40` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -53,6 +53,7 @@ PageOrder[HISTORY.md]=25
 PageOrder[branch-overview.md]=30
 PageOrder[release-overview]=40
 PageOrder[project/SECURITY.md]=50
+PageOrder[COMMUNITY.md]=60
 PageOrder[project/CONTRIBUTING.md]=100
 PageOrder[project/CODE_OF_CONDUCT.md]=105
 PageOrder[project/COPYRIGHT.md]=110

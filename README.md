@@ -617,6 +617,9 @@ Submit bugs, stories and issues in general about almost anything Exponential Pro
 
 # Where to get more help
 
+The help center's book [Exponential Community](doc/eng-us/COMMUNITY.md) lists every channel and every public website
+of the project.
+
 Exponential documentation: [exponential.doc.exponential.earth/Exponential](https://exponential.doc.exponential.earth/Exponential)
 
 Exponential Community forums: [share.exponential.earth/forums](https://share.exponential.earth/forums)
