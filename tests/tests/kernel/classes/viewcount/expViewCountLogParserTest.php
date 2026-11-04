@@ -10,6 +10,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expViewCountLogParserTest extends PHPUnit\Framework\TestCase
 {
     public function testTheCombinedFormat()

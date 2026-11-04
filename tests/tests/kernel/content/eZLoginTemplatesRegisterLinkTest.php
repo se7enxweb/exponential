@@ -25,6 +25,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class eZLoginTemplatesRegisterLinkTest extends PHPUnit\Framework\TestCase
 {
     const FETCH = "fetch( 'user', 'can_open', hash( 'uri', 'user/register' ) )";

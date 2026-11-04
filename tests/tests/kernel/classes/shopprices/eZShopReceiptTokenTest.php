@@ -14,6 +14,8 @@
  * @group shop
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
+#[\PHPUnit\Framework\Attributes\Group('shop')]
 class eZShopReceiptTokenTest extends PHPUnit\Framework\TestCase
 {
     private $secret;

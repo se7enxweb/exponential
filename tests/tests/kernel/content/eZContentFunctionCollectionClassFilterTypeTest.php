@@ -17,6 +17,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class eZContentFunctionCollectionClassFilterTypeTest extends PHPUnit\Framework\TestCase
 {
     private $saved;

@@ -10,6 +10,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expGraphQLMessageTest extends PHPUnit\Framework\TestCase
 {
     const HTTP_CODES = array( 'de-at' => 'ger-AT', 'de-de' => 'ger-DE', 'en-au' => 'eng-AU', 'en-us' => 'eng-US', 'es-es' => 'esl-ES',

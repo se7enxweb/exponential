@@ -13,6 +13,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expWebsiteSidebarMigrationTest extends PHPUnit\Framework\TestCase
 {
     private static function role( $id, $name, array $policies )

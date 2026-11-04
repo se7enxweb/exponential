@@ -13,6 +13,7 @@
 
 require_once __DIR__ . '/expGraphQLSchemaTest.php';
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expGraphQLTestSearchRepository extends expGraphQLTestRepository
 {
     /** @var array[] the searches asked for */

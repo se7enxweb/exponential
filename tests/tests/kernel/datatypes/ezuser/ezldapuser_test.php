@@ -514,6 +514,7 @@ class eZLDAPUserTest extends ezpDatabaseTestCase
      *
      * @dataProvider providerTestEscapeLogin
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('providerTestEscapeLogin')]
     public function testEscapeLogin( $login, $for_dn, $escapedLogin )
     {
         self::assertEquals( $escapedLogin, eZLDAPUser::ldap_escape( $login, $for_dn ) );

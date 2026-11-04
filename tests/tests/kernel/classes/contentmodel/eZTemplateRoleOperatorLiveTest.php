@@ -25,6 +25,7 @@
 
 require_once __DIR__ . '/expContentModelLiveTestCase.php';
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class eZTemplateRoleOperatorLiveTest extends expContentModelLiveTestCase
 {
     protected static $group;

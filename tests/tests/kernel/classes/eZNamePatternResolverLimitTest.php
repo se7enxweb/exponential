@@ -30,6 +30,7 @@
 
 require_once __DIR__ . '/datatypes/eZDatatypeTestFixtures.php';
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class eZNamePatternResolverLimitTestAttribute
 {
     private $identifier;

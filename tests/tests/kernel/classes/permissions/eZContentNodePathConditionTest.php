@@ -12,6 +12,7 @@
 
 require_once __DIR__ . '/fixtures/ezcontentpermissionsqltestdb.php';
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class eZContentNodePathConditionTest extends PHPUnit\Framework\TestCase
 {
     private $db;

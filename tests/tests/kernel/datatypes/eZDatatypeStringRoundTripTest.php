@@ -14,6 +14,8 @@
  * @group datatypes
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
+#[\PHPUnit\Framework\Attributes\Group('datatypes')]
 class eZDatatypeStringRoundTripAttributeStub
 {
     public $fields = array( 'data_int' => null, 'data_float' => null, 'data_text' => null );

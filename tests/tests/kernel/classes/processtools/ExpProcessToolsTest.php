@@ -14,6 +14,7 @@
  */
 use PHPUnit\Framework\TestCase;
 
+#[\PHPUnit\Framework\Attributes\Group('processtools')]
 class ExpProcessToolsTest extends TestCase
 {
     private static function root()

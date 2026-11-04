@@ -13,6 +13,7 @@
 
 require_once __DIR__ . '/expGraphQLSchemaTest.php';
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expGraphQLTestLayoutsSource extends expGraphQLLayoutsSource
 {
     /** @var string[] the batches asked for */

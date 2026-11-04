@@ -17,6 +17,8 @@
  * @group oauth
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
+#[\PHPUnit\Framework\Attributes\Group('oauth')]
 class ezpOauthAuthorizeRedirectTest extends PHPUnit\Framework\TestCase
 {
     const ENDPOINT = 'https://client.example/callback';

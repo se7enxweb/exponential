@@ -15,6 +15,7 @@
  * Tests for exporting of RSS feeds.
  * @group database
  */
+#[\PHPUnit\Framework\Attributes\Group('database')]
 class eZRSSExportTest extends ezpDatabaseTestCase
 {
     /**

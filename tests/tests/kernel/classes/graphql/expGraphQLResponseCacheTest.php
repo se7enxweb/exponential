@@ -14,6 +14,7 @@
 
 require_once __DIR__ . '/expGraphQLSchemaTest.php';
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expGraphQLResponseCacheTest extends PHPUnit\Framework\TestCase
 {
     /** @var string */

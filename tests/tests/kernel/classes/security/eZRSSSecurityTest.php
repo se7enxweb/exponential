@@ -21,6 +21,8 @@
  * @group opml
  */
 
+#[\PHPUnit\Framework\Attributes\Group('security')]
+#[\PHPUnit\Framework\Attributes\Group('opml')]
 class eZRSSSecurityTest extends PHPUnit\Framework\TestCase
 {
     // ── RSS-01 ────────────────────────────────────────────────────────────────

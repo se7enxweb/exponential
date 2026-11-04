@@ -15,6 +15,8 @@
 
 require_once __DIR__ . '/eZDatatypeTestFixtures.php';
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
+#[\PHPUnit\Framework\Attributes\Group('datatypes')]
 class eZDataTypeBaseTestPlainType extends eZDataType
 {
     public function __construct( $properties = array() )

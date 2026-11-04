@@ -40,6 +40,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expShippedFeatureDefaultsTest extends PHPUnit\Framework\TestCase
 {
     /** @var eZINI[] shipped file => its settings */

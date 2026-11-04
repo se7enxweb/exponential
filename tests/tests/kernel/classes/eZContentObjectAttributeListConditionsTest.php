@@ -11,6 +11,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class eZContentObjectAttributeListConditionsTest extends PHPUnit\Framework\TestCase
 {
     /**

@@ -25,6 +25,8 @@
  * @group eztemplate
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
+#[\PHPUnit\Framework\Attributes\Group('eztemplate')]
 class eZSelectionMatrixViewTemplateTest extends PHPUnit\Framework\TestCase
 {
     const SELECTION = 'design/standard/templates/content/datatype/view/ezselection.tpl';

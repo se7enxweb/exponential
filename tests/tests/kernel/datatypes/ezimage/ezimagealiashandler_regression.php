@@ -11,6 +11,7 @@
  * @group database
  */
 
+#[\PHPUnit\Framework\Attributes\Group('database')]
 class eZImageAliasHandlerRegression extends ezpDatabaseTestCase
 {
     protected $backupGlobals = false;
@@ -128,6 +129,7 @@ class eZImageAliasHandlerRegression extends ezpDatabaseTestCase
     /**
      * @dataProvider providerForTestImageNameObjectFalse
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('providerForTestImageNameObjectFalse')]
     public function testImageNameObjectFalse( $longName, $expects )
     {
         ezpINIHelper::setINISetting( 'site.ini', 'URLTranslator', 'TransformationGroup', 'urlalias_iri' );
@@ -147,6 +149,7 @@ class eZImageAliasHandlerRegression extends ezpDatabaseTestCase
     /**
      * @dataProvider providerForTestImageNameByNodeObjectFalse
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('providerForTestImageNameByNodeObjectFalse')]
     public function testImageNameByNodeObjectFalse( $longName, $expects )
     {
         ezpINIHelper::setINISetting( 'site.ini', 'URLTranslator', 'TransformationGroup', 'urlalias_iri' );

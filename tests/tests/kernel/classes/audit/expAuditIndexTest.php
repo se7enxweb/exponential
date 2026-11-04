@@ -36,6 +36,7 @@
 
 require_once __DIR__ . '/fixtures/expaudittestfixtures.php';
 
+#[\PHPUnit\Framework\Attributes\Group('audit')]
 class expAuditIndexTest extends PHPUnit\Framework\TestCase
 {
     const CHANNELS = array( 't4content', 't4access', 't4system' );

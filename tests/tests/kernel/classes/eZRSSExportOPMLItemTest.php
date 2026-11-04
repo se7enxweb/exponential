@@ -13,6 +13,7 @@
  * @group opml
  */
 
+#[\PHPUnit\Framework\Attributes\Group('opml')]
 class eZRSSExportOPMLItemTest extends PHPUnit\Framework\TestCase
 {
     // ── Text that a document can carry ────────────────────────────────────────

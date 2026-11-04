@@ -26,6 +26,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expGlobalFunctionCollisionTest extends PHPUnit\Framework\TestCase
 {
     /** extensions shipped in the kernel repository */

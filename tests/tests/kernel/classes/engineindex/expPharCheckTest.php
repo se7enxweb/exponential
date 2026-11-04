@@ -14,6 +14,7 @@
 
 require_once dirname( __DIR__ ) . '/radwizards/expRadWizardTestHelper.php';
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expPharCheckTest extends PHPUnit\Framework\TestCase
 {
     private $scratch;

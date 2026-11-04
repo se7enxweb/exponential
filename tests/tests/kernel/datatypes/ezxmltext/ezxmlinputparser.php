@@ -72,6 +72,7 @@ class eZXMLInputParserTest extends ezpTestCase
      *
      * @dataProvider providerForTestEmptyAttributeParsing
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('providerForTestEmptyAttributeParsing')]
     public function testEmptyAttributeParsing( $string )
     {
         $this->assertEquals(
@@ -97,6 +98,7 @@ class eZXMLInputParserTest extends ezpTestCase
      *
      * @dataProvider providerForTestAdditionalSpacesAttributeParsing
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('providerForTestAdditionalSpacesAttributeParsing')]
     public function testAdditionalSpacesAttributeParsing( $string )
     {
         $this->assertEquals(
@@ -143,6 +145,7 @@ class eZXMLInputParserTest extends ezpTestCase
      *
      * @dataProvider providerForTestSpecialCharactersAttributeParsing
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('providerForTestSpecialCharactersAttributeParsing')]
     public function testSpecialCharactersAttributeParsing( $string, $expected )
     {
         $this->assertEquals(
@@ -194,6 +197,7 @@ class eZXMLInputParserTest extends ezpTestCase
      *
      * @dataProvider providerForTestManyAttributesParsing
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('providerForTestManyAttributesParsing')]
     public function testManyAttributesParsing( $string, $expected )
     {
         $this->assertEquals(
@@ -244,6 +248,7 @@ class eZXMLInputParserTest extends ezpTestCase
      *
      * @dataProvider providerForTestConvertNumericEntities
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('providerForTestConvertNumericEntities')]
     public function testConvertNumericEntities( $string, $expected )
     {
         $this->assertEquals(

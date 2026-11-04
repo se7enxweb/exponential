@@ -20,6 +20,8 @@
 
 require_once __DIR__ . '/eZXMLTextTestFixtures.php';
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
+#[\PHPUnit\Framework\Attributes\Group('xmltext')]
 class eZSimplifiedXMLInputParserTest extends eZXMLTextTestCase
 {
     public static function structureProvider()

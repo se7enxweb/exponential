@@ -16,6 +16,7 @@
 /**
  * @group database
  */
+#[\PHPUnit\Framework\Attributes\Group('database')]
 abstract class eZClusterFileHandlerAbstract extends ezpDatabaseTestCase
 {
     /**

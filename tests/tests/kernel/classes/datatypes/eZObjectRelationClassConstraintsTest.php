@@ -17,6 +17,8 @@
  */
 require_once __DIR__ . '/eZDatatypeTestFixtures.php';
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
+#[\PHPUnit\Framework\Attributes\Group('datatypes')]
 class eZObjectRelationClassConstraintsTest extends eZDatatypeTestCase
 {
     private function relationClass( array $allowed )

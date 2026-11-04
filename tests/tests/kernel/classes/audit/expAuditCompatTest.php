@@ -28,6 +28,7 @@
 require_once __DIR__ . '/fixtures/expaudittestfixtures.php';
 require_once __DIR__ . '/../ini/fixtures/expinienginetestfixtures.php';
 
+#[\PHPUnit\Framework\Attributes\Group('audit')]
 class expAuditCompatTest extends PHPUnit\Framework\TestCase
 {
     protected $dir;

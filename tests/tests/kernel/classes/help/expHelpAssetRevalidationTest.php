@@ -12,6 +12,7 @@
 
 use Exponential\View\Kernel\Exphelp\Asset;
 
+#[\PHPUnit\Framework\Attributes\Group('help')]
 class expHelpAssetRevalidationTest extends PHPUnit\Framework\TestCase
 {
     private $file;

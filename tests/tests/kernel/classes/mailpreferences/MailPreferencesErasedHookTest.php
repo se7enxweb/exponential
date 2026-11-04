@@ -15,6 +15,7 @@
  * @group mailpreferences
  */
 
+#[\PHPUnit\Framework\Attributes\Group('mailpreferences')]
 class MailPreferencesErasedHookTest extends PHPUnit\Framework\TestCase
 {
     const DOMAIN = 'mperase.invalid';

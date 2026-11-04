@@ -12,6 +12,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class ezpSmallKernelHelpersTestNode extends eZContentObjectTreeNode
 {
     public $classIdentifier;

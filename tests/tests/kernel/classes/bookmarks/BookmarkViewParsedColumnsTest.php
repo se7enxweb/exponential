@@ -18,6 +18,7 @@
  * @group bookmarks
  */
 
+#[\PHPUnit\Framework\Attributes\Group('bookmarks')]
 class BookmarkViewParsedColumnsTest extends PHPUnit\Framework\TestCase
 {
     /** @var array|null the global database before the test */

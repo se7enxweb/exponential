@@ -11,6 +11,7 @@
  * @group database
  */
 
+#[\PHPUnit\Framework\Attributes\Group('database')]
 class eZContentObjectRegression extends ezpDatabaseTestCase
 {
     protected $backupGlobals = false;
@@ -254,6 +255,7 @@ class eZContentObjectRegression extends ezpDatabaseTestCase
      *
      * @group issue_15985
      */
+    #[\PHPUnit\Framework\Attributes\Group('issue_15985')]
     public function testIssue15985()
     {
         $folder = new ezpObject( "folder", 2, 14, 1, 'eng-GB' );

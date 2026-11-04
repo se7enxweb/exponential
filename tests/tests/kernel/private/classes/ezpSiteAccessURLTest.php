@@ -14,6 +14,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class ezpSiteAccessURLTest extends PHPUnit\Framework\TestCase
 {
     private $server;

@@ -37,6 +37,7 @@
  * @group mailpreferences
  */
 
+#[\PHPUnit\Framework\Attributes\Group('mailpreferences')]
 class MailPreferencesIntegrationTest extends PHPUnit\Framework\TestCase
 {
     const DOMAIN = 'mpint.invalid';

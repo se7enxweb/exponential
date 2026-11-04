@@ -15,6 +15,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expAdminViewsDebugCleanTest extends PHPUnit\Framework\TestCase
 {
     private $root;

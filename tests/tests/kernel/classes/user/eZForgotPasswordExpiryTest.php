@@ -19,6 +19,7 @@
 
 require_once __DIR__ . '/expWeakPasswordTestINI.php';
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class eZForgotPasswordExpiryTest extends PHPUnit\Framework\TestCase
 {
     private static function ini( $value = null )

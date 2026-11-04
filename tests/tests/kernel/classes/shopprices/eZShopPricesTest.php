@@ -15,6 +15,8 @@
  * @group shop
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
+#[\PHPUnit\Framework\Attributes\Group('shop')]
 class eZShopPricesTestOrder
 {
     public $items = array();

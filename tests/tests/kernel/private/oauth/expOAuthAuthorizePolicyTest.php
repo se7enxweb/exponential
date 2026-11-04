@@ -16,6 +16,8 @@
  * @group oauth
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
+#[\PHPUnit\Framework\Attributes\Group('oauth')]
 class expOAuthAuthorizePolicyTest extends PHPUnit\Framework\TestCase
 {
     private static function root()

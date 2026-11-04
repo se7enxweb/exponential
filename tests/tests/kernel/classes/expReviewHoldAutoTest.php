@@ -23,6 +23,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expReviewHoldAutoTest extends PHPUnit\Framework\TestCase
 {
     protected function tearDown(): void

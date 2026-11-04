@@ -12,6 +12,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class eZURLAliasMLMongoStorePathTestDB extends eZDBInterface
 {
     /** @var array[] every call: array( method, arguments ) */

@@ -22,6 +22,7 @@ class eZContentObjectStateTest extends ezpDatabaseTestCase
     /**
      * @dataProvider providerCreateWithInvalidIdentifier
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('providerCreateWithInvalidIdentifier')]
     public function testCreateWithInvalidIdentifier( $identifier )
     {
         $row = array( 'identifier' => $identifier );
@@ -43,6 +44,7 @@ class eZContentObjectStateTest extends ezpDatabaseTestCase
     /**
      * @dataProvider providerCreateWithValidIdentifier
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('providerCreateWithValidIdentifier')]
     public function testCreateWithvalidIdentifier( $identifier )
     {
         $row = array( 'identifier' => $identifier );

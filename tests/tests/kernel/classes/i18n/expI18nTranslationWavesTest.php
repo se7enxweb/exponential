@@ -29,6 +29,8 @@
 if ( !class_exists( 'expI18nTranslationWaves' ) )
     require_once __DIR__ . '/../../../../../kernel/classes/i18n/expi18ntranslationwaves.php';
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
+#[\PHPUnit\Framework\Attributes\Group('ezi18n')]
 class expI18nTranslationWavesTest extends PHPUnit\Framework\TestCase
 {
     /** @var string */

@@ -13,6 +13,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expViewCountPathResolverTest extends PHPUnit\Framework\TestCase
 {
     /** @var array path => node, as eZURLAliasML::fetchNodeIDByPath() would answer */

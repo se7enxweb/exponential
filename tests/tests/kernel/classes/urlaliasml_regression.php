@@ -15,6 +15,9 @@
  * @group urlaliasml
  * @group database
  */
+#[\PHPUnit\Framework\Attributes\Group('urlaliasml')]
+#[\PHPUnit\Framework\Attributes\Group('database')]
+#[\PHPUnit\Framework\Attributes\CoversClass(eZURLAliasML::class)]
 class eZURLAliasMLRegression extends ezpDatabaseTestCase
 {
     protected $backupGlobals = FALSE;
@@ -1403,6 +1406,7 @@ class eZURLAliasMLRegression extends ezpDatabaseTestCase
      * @group issue19055
      * @covers eZURLAliasML::fetchPathByActionList
      */
+    #[\PHPUnit\Framework\Attributes\Group('issue19055')]
     public function testFetchPathByActionListWithFallback()
     {
         $frenchLocale = $this->frenchLanguage->attribute( 'locale' );
@@ -1445,6 +1449,7 @@ class eZURLAliasMLRegression extends ezpDatabaseTestCase
      * @group issue19062
      * @covers eZURLAliasML::translate
      */
+    #[\PHPUnit\Framework\Attributes\Group('issue19062')]
     public function testTranslateWildcardNopUri()
     {
         $folder = new ezpObject( 'folder' , 2 );

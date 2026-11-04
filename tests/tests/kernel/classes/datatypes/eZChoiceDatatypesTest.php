@@ -16,6 +16,8 @@
 
 require_once __DIR__ . '/eZDatatypeTestFixtures.php';
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
+#[\PHPUnit\Framework\Attributes\Group('datatypes')]
 class eZChoiceDatatypesTest extends eZDatatypeTestCase
 {
     // ---------------------------------------------------------------- ezboolean

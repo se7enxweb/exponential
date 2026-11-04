@@ -27,6 +27,8 @@
  * @group templateoperators
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
+#[\PHPUnit\Framework\Attributes\Group('templateoperators')]
 class eZAutoLinkOperatorLinksTestTpl
 {
     public function ini()

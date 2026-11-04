@@ -21,6 +21,8 @@
 
 require_once dirname( __DIR__ ) . '/datatypes/eZDatatypeTestFixtures.php';
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
+#[\PHPUnit\Framework\Attributes\Group('eztemplate')]
 class eZKernelTemplateOperatorsTest extends eZDatatypeTestCase
 {
     private static $dir;

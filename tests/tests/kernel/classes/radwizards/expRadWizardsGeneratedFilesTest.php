@@ -17,6 +17,7 @@
 
 require_once __DIR__ . '/expRadWizardTestHelper.php';
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expRadWizardsGeneratedFilesTest extends PHPUnit\Framework\TestCase
 {
     const ATTACK = "Nice k1e_injected */ k1e_injected(); /* *// k1e_injected(); ?> <?php k1e_injected();";

@@ -11,6 +11,7 @@
  * @group database
  */
 
+#[\PHPUnit\Framework\Attributes\Group('database')]
 class eZContentObjectTest2 extends ezpDatabaseTestCase
 {
     protected $backupGlobals = false;

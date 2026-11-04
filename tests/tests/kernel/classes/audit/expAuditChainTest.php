@@ -35,6 +35,7 @@
 
 require_once __DIR__ . '/fixtures/expaudittestfixtures.php';
 
+#[\PHPUnit\Framework\Attributes\Group('audit')]
 class expAuditChainTest extends PHPUnit\Framework\TestCase
 {
     const DAY1 = 1790899200; // 2026-10-02T00:00:00Z

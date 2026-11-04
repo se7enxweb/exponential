@@ -23,6 +23,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class eZStylePackageCreatorTest extends PHPUnit\Framework\TestCase
 {
     private $dir;

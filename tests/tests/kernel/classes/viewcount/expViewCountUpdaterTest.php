@@ -14,6 +14,7 @@
 
 require_once __DIR__ . '/expViewCountTestFiles.php';
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expViewCountUpdaterTest extends PHPUnit\Framework\TestCase
 {
     use expViewCountTestFiles;

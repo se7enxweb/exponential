@@ -16,6 +16,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expTemplateCommandContractTest extends PHPUnit\Framework\TestCase
 {
     /** bin script => its aliases */

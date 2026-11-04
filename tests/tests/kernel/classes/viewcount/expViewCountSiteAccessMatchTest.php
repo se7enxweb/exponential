@@ -11,6 +11,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expViewCountSiteAccessMatchTest extends ezpTestCase
 {
     public function setUp(): void

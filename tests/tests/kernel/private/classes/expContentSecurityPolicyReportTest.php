@@ -23,6 +23,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expContentSecurityPolicyReportTest extends PHPUnit\Framework\TestCase
 {
     /** @var string */

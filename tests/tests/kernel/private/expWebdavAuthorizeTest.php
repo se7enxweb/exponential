@@ -13,6 +13,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expWebdavAuthorizeProbe extends eZWebDAVContentBackendAuth
 {
     public $answer = array( 'accessWord' => 'no' );

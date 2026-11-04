@@ -13,6 +13,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expAnonymousPublicPoliciesTest extends PHPUnit\Framework\TestCase
 {
     private static function policies( array $names )

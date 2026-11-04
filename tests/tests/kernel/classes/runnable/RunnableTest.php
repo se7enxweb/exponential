@@ -25,6 +25,7 @@
 foreach ( array( 'runnable', 'command', 'cronjobpart', 'moduleview' ) as $file )
     require_once __DIR__ . '/../../../../../kernel/private/classes/runnable/' . $file . '.php';
 
+#[\PHPUnit\Framework\Attributes\Group('runnable')]
 class ezpTestRunnableCommand extends \Exponential\Runnable\Command
 {
     public static $ran = 0;

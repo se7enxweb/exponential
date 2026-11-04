@@ -21,6 +21,7 @@
  * @group runnable
  */
 
+#[\PHPUnit\Framework\Attributes\Group('runnable')]
 class ezpTestModuleViewScopeProbe extends \Exponential\Runnable\ModuleView
 {
     public function run( array $scope )

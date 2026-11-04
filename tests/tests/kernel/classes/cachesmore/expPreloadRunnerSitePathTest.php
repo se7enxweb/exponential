@@ -21,6 +21,7 @@
 
 require_once dirname( __DIR__ ) . '/radwizards/expRadWizardTestHelper.php';
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expPreloadRunnerSitePathTest extends PHPUnit\Framework\TestCase
 {
     const DEMO = 'https://latest.demo.exponential.earth';

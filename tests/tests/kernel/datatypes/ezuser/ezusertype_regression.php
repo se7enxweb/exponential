@@ -11,6 +11,7 @@
  * @group database
  */
 
+#[\PHPUnit\Framework\Attributes\Group('database')]
 class eZUserTypeRegression extends ezpDatabaseTestCase
 {
     const USER_PASSWORD_HASH = 1234;

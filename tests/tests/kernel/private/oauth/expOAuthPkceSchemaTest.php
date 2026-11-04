@@ -14,6 +14,8 @@
  * @group oauth
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
+#[\PHPUnit\Framework\Attributes\Group('oauth')]
 class expOAuthPkceSchemaTest extends PHPUnit\Framework\TestCase
 {
     private static $columns = array( 'client_id', 'code_challenge', 'code_challenge_method', 'expirytime', 'id', 'scope', 'user_id' );

@@ -16,6 +16,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class ezxFormTokenCompareTest extends PHPUnit\Framework\TestCase
 {
     const TOKEN = '0123456789abcdef0123456789abcdef01234567';

@@ -25,6 +25,7 @@
 
 require_once __DIR__ . '/fixtures/expaudittestfixtures.php';
 
+#[\PHPUnit\Framework\Attributes\Group('audit')]
 class expAuditHookTest extends PHPUnit\Framework\TestCase
 {
     /** @var string|null why the kernel could not be started */

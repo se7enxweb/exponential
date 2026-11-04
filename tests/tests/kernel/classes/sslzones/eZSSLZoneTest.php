@@ -11,6 +11,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class eZSSLZoneTest extends PHPUnit\Framework\TestCase
 {
     private $globals = array();

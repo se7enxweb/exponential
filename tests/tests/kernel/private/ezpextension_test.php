@@ -30,6 +30,7 @@ class ezpExtensionTest extends ezpTestCase
     /**
      * @dataProvider providerForGetLoadingOrderTest
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('providerForGetLoadingOrderTest')]
     public function testGetLoadingOrder( $extensionName, $expectedResult )
     {
         $extension = ezpExtension::getInstance( $extensionName );
@@ -76,6 +77,7 @@ class ezpExtensionTest extends ezpTestCase
     /**
      * @dataProvider providerForGetInfoTest
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('providerForGetInfoTest')]
     public function testGetInfo( $extensionName, $expectedResult )
     {
         $extension = ezpExtension::getInstance( $extensionName );

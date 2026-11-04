@@ -16,6 +16,7 @@
  * @group templateoperators
  */
 
+#[\PHPUnit\Framework\Attributes\Group('templateoperators')]
 class eZWordToImageOperatorIconRootDirectoryTest extends PHPUnit\Framework\TestCase
 {
     const GLOBAL_KEYS = array( 'eZDebugGlobalInstance', 'eZDebugEnabled', 'eZDebugLogOnly', 'eZDebugLogFileEnabled' );

@@ -31,6 +31,7 @@
 
 require_once __DIR__ . '/fixtures/expaudittestfixtures.php';
 
+#[\PHPUnit\Framework\Attributes\Group('audit')]
 class expAuditRecordTestBranch implements expAuditTaxonomyBranch
 {
     public function events()

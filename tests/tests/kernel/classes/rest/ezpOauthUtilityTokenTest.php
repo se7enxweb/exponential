@@ -15,6 +15,8 @@
  * @group rest
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
+#[\PHPUnit\Framework\Attributes\Group('rest')]
 class ezpOauthUtilityTokenTest extends PHPUnit\Framework\TestCase
 {
     private $authorization;

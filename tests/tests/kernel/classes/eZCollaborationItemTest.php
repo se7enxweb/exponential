@@ -10,6 +10,7 @@
  * @group database
  */
 
+#[\PHPUnit\Framework\Attributes\Group('database')]
 class eZCollaborationItemTest extends ezpDatabaseTestCase
 {
     public function setUp(): void

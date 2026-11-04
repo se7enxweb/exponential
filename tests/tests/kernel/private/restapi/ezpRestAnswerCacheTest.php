@@ -16,6 +16,8 @@
  * @group rest
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
+#[\PHPUnit\Framework\Attributes\Group('rest')]
 class ezpRestAnswerCacheTest extends PHPUnit\Framework\TestCase
 {
     private $files = array();

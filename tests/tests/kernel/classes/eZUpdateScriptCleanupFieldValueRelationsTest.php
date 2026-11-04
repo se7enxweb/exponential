@@ -15,6 +15,8 @@
  * @group php8
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
+#[\PHPUnit\Framework\Attributes\Group('php8')]
 class eZUpdateScriptCleanupFieldValueRelationsTest extends PHPUnit\Framework\TestCase
 {
     private static function defineFunction()

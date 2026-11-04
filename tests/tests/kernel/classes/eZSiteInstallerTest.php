@@ -12,6 +12,7 @@
  * @group database
  */
 
+#[\PHPUnit\Framework\Attributes\Group('database')]
 class eZSiteInstallerTest extends ezpDatabaseTestCase
 {
     /**

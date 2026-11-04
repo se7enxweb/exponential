@@ -19,6 +19,7 @@ require_once __DIR__ . '/eZClusterFileHandlerAbstract.php';
 /**
  * @group database
  */
+#[\PHPUnit\Framework\Attributes\Group('database')]
 abstract class eZDBBasedClusterFileHandlerAbstract extends eZClusterFileHandlerAbstract
 {
     /**

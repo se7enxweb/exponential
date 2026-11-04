@@ -13,6 +13,8 @@
  * @group rest
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
+#[\PHPUnit\Framework\Attributes\Group('rest')]
 class ezpRestPrefixFilterTest extends PHPUnit\Framework\TestCase
 {
     protected function setUp(): void

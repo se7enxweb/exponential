@@ -14,6 +14,7 @@
  * @group graphql
  */
 
+#[\PHPUnit\Framework\Attributes\Group('graphql')]
 class expGraphQLMutationExtensionTestReadOnly implements expGraphQLSchemaExtension
 {
     public function isAvailable() { return true; }

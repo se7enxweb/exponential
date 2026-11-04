@@ -15,6 +15,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expGraphQLTestLocation extends expGraphQLLocation
 {
     /** @var array */

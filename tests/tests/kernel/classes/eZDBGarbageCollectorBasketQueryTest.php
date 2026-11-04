@@ -11,6 +11,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class eZDBGarbageCollectorBasketQueryTest extends PHPUnit\Framework\TestCase
 {
     private function query()

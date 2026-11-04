@@ -30,6 +30,7 @@
 
 require_once __DIR__ . '/fixtures/expaudittestfixtures.php';
 
+#[\PHPUnit\Framework\Attributes\Group('audit')]
 class expAuditSourceTestSource extends expAuditSourceBase
 {
     /** @var bool */

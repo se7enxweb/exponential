@@ -15,6 +15,8 @@
  * @group rest
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
+#[\PHPUnit\Framework\Attributes\Group('rest')]
 class expRestCorsTest extends PHPUnit\Framework\TestCase
 {
     const APP = 'https://app.example.com';

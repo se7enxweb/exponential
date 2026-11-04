@@ -29,6 +29,7 @@ class eZXMLInputParserRegression extends ezpTestCase
      * @link http://issues.ez.no/18186
      * @dataProvider providerForIssue18186
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('providerForIssue18186')]
     public function testIssue18186( $string, $expected )
     {
         $this->assertEquals(
@@ -65,6 +66,7 @@ class eZXMLInputParserRegression extends ezpTestCase
      * @link http://issues.ez.no/18737
      * @dataProvider providerForIssue18737
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('providerForIssue18737')]
     public function testIssue18737( $string, $expected )
     {
         $this->assertEquals(

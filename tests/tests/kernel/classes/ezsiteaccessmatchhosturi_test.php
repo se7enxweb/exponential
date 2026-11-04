@@ -47,6 +47,7 @@ class eZSiteAccessMatchHostUriTest extends ezpTestCase
      * Test for eZContentObject::versions(), fetching all of them
      * @dataProvider providerForTestMatchHostUri
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('providerForTestMatchHostUri')]
     public function testMatchHostUri( $uri, $name, $type, $uriPart )
     {
         $this->assertEquals(

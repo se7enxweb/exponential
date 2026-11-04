@@ -12,6 +12,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expContentSecurityPolicyTest extends PHPUnit\Framework\TestCase
 {
     /** @var array section => variable => array( saved value ) or null (not set) */

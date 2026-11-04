@@ -11,6 +11,7 @@
  * @group database
  */
 
+#[\PHPUnit\Framework\Attributes\Group('database')]
 class eZLDAPUserTest extends ezpDatabaseTestCase
 {
     protected $backupGlobals = false; // If true, user object publishing fails

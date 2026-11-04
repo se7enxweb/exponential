@@ -14,6 +14,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class eZPackageComparisonDiffTest extends PHPUnit\Framework\TestCase
 {
     private static function side( array $runs, $skip )

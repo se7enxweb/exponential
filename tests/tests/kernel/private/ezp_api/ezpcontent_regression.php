@@ -12,6 +12,8 @@
  * @group database
  */
 
+#[\PHPUnit\Framework\Attributes\BackupGlobals(false)]
+#[\PHPUnit\Framework\Attributes\Group('database')]
 class ezpContentRegression extends ezpDatabaseTestCase
 {
     protected static $previousUserID;
@@ -38,6 +40,7 @@ class ezpContentRegression extends ezpDatabaseTestCase
      * @group issue18073
      * @link http://issues.ez.no/18073
      */
+    #[\PHPUnit\Framework\Attributes\Group('issue18073')]
     public function testUnauthorizedContentByNodeId()
     {
         $this->setExpectedException( 'ezpContentAccessDeniedException' );
@@ -50,6 +53,7 @@ class ezpContentRegression extends ezpDatabaseTestCase
      * @group issue18073
      * @link http://issues.ez.no/18073
      */
+    #[\PHPUnit\Framework\Attributes\Group('issue18073')]
     public function testUnauthorizedContentByNode()
     {
         $this->setExpectedException( 'ezpContentAccessDeniedException' );
@@ -62,6 +66,7 @@ class ezpContentRegression extends ezpDatabaseTestCase
      * @group issue18073
      * @link http://issues.ez.no/18073
      */
+    #[\PHPUnit\Framework\Attributes\Group('issue18073')]
     public function testUnauthorizedContentByObjectId()
     {
         $this->setExpectedException( 'ezpContentAccessDeniedException' );
@@ -74,6 +79,7 @@ class ezpContentRegression extends ezpDatabaseTestCase
      * @group issue18073
      * @link http://issues.ez.no/18073
      */
+    #[\PHPUnit\Framework\Attributes\Group('issue18073')]
     public function testUnauthorizedContentByObject()
     {
         $this->setExpectedException( 'ezpContentAccessDeniedException' );

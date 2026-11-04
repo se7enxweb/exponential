@@ -37,6 +37,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expDemoModeTest extends PHPUnit\Framework\TestCase
 {
     /** @var string|false the environment value before the test */

@@ -36,6 +36,7 @@
 
 require_once __DIR__ . '/fixtures/expinienginetestfixtures.php';
 
+#[\PHPUnit\Framework\Attributes\Group('ini')]
 class expIniEditorTest extends PHPUnit\Framework\TestCase
 {
     protected $root;

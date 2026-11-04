@@ -25,6 +25,7 @@ class eZSearchEngineRegression extends ezpTestCase
      * Test scenario for issue EZP-19684
      * @dataProvider providerForTestSplitString
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('providerForTestSplitString')]
     public function testSplitString( $originalString, $convertedString )
     {
         $this->assertSame( $convertedString, $this->searchEngine->splitString( $originalString ) );

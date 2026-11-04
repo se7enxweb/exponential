@@ -14,6 +14,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expCrontabSetupTest extends PHPUnit\Framework\TestCase
 {
     const ROOT = '/var/www/site';

@@ -12,6 +12,8 @@
  * @group database
  */
 
+#[\PHPUnit\Framework\Attributes\Group('ezpDatabaseTestCase')]
+#[\PHPUnit\Framework\Attributes\Group('database')]
 class eZContentFunctionCollectionTest extends ezpDatabaseTestCase
 {
 

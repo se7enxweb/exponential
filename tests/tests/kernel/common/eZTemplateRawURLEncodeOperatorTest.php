@@ -16,6 +16,7 @@
  * Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 627004e5c4), Copyright (C) Mugo Web, GPL v2
  */
 
+#[\PHPUnit\Framework\Attributes\Group('templateoperators')]
 class eZTemplateRawURLEncodeOperatorTest extends PHPUnit\Framework\TestCase
 {
     const VALUE = 'a b+c/ä?x=1&y=~';

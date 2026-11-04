@@ -15,6 +15,7 @@
  * Test case for eZSection class
  * @group database
  */
+#[\PHPUnit\Framework\Attributes\Group('database')]
 class eZSectionTest extends ezpDatabaseTestCase
 {
 

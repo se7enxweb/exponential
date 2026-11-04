@@ -14,6 +14,8 @@
  * @group cluster
  * @group eZFS
  */
+#[\PHPUnit\Framework\Attributes\Group('cluster')]
+#[\PHPUnit\Framework\Attributes\Group('eZFS')]
 class eZFSFileHandlerTest extends eZClusterFileHandlerAbstractTest
 {
     protected $backupGlobals = false;

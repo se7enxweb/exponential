@@ -13,6 +13,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class eZPackageComparisonValuesTest extends PHPUnit\Framework\TestCase
 {
     protected function setUp(): void

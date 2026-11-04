@@ -11,6 +11,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expViewCountConfigurationTest extends ezpTestCase
 {
     private $access;

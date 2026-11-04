@@ -11,6 +11,8 @@
  * @group rest
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
+#[\PHPUnit\Framework\Attributes\Group('rest')]
 class ezpRestStatusResponseTest extends PHPUnit\Framework\TestCase
 {
     protected function setUp(): void

@@ -30,6 +30,8 @@
  * @group rest
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
+#[\PHPUnit\Framework\Attributes\Group('rest')]
 class ezpRestHttpRequestParserRecordedRequestsTest extends PHPUnit\Framework\TestCase
 {
     /** @var array the superglobals before the test */

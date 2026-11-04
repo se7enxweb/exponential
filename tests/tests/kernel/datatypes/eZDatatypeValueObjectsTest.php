@@ -14,6 +14,8 @@
  * @group datatypes
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
+#[\PHPUnit\Framework\Attributes\Group('datatypes')]
 class eZDatatypeValueObjectsTest extends PHPUnit\Framework\TestCase
 {
     protected function setUp(): void

@@ -13,6 +13,7 @@
 
 require_once __DIR__ . '/expContentModelLiveTestCase.php';
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class eZRSSExportLiveTest extends expContentModelLiveTestCase
 {
     protected static $folder;

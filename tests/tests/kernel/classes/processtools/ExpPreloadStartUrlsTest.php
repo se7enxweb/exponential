@@ -13,6 +13,7 @@
  */
 use PHPUnit\Framework\TestCase;
 
+#[\PHPUnit\Framework\Attributes\Group('processtools')]
 class ExpPreloadStartUrlsTest extends TestCase
 {
     private static function urls( $base, $prefix )

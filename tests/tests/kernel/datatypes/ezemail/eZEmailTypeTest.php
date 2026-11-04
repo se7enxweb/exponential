@@ -11,6 +11,7 @@ require_once __DIR__ . '/../eZDatatypeAbstract.php';
  * @package tests
  * @group database
  */
+#[\PHPUnit\Framework\Attributes\Group('database')]
 class eZEmailTypeTest extends eZDatatypeAbstract
 {
 

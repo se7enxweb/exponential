@@ -14,6 +14,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class eZTemplateDesignResourceNullSiteAccessTest extends PHPUnit\Framework\TestCase
 {
     private $savedAccess;

@@ -12,6 +12,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class eZURLAliasMLPathPrefixTest extends PHPUnit\Framework\TestCase
 {
     protected function setUp(): void

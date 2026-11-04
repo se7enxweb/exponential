@@ -14,6 +14,7 @@
 
 use PHPUnit\Framework\Attributes\DataProvider;
 
+#[\PHPUnit\Framework\Attributes\Group('updatesql')]
 class SixZeroPathSchemaUpdateSqlTest extends PHPUnit\Framework\TestCase
 {
     private static $root;

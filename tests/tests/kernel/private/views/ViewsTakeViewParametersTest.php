@@ -11,6 +11,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class ViewsTakeViewParametersTest extends PHPUnit\Framework\TestCase
 {
     private static function read( $path )

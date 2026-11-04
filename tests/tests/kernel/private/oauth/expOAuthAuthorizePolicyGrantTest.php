@@ -15,6 +15,8 @@
  * @group oauth
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
+#[\PHPUnit\Framework\Attributes\Group('oauth')]
 class expOAuthAuthorizePolicyGrantTest extends PHPUnit\Framework\TestCase
 {
     private static function role( $id, $name, array $policies, $anonymousOnly = false )

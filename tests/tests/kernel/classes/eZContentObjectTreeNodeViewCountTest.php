@@ -11,6 +11,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class eZContentObjectTreeNodeViewCountTestDatabase extends eZDBInterface
 {
     public $rows = array();

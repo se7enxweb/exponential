@@ -18,6 +18,7 @@
  * @group runnable
  */
 
+#[\PHPUnit\Framework\Attributes\Group('runnable')]
 class ezpTestExtractedRun
 {
     public $log = array();

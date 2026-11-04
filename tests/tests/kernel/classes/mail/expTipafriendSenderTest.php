@@ -15,6 +15,7 @@
 
 use Exponential\View\Kernel\Content\Tipafriend;
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expTipafriendSenderTest extends PHPUnit\Framework\TestCase
 {
     /** @var array */

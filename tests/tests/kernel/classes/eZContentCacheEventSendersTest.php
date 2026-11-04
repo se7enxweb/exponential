@@ -24,6 +24,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class eZContentCacheEventSendersTest extends PHPUnit\Framework\TestCase
 {
     const DIRECTORIES = array( 'kernel', 'lib', 'cronjobs', 'bin', 'extension/ezjscore', 'extension/ezoe' );

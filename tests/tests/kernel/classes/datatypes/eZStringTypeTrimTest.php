@@ -19,6 +19,8 @@
 
 require_once __DIR__ . '/eZDatatypeTestFixtures.php';
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
+#[\PHPUnit\Framework\Attributes\Group('datatypes')]
 class eZStringTypeTrimTest extends eZDatatypeTestCase
 {
     private function fetchPosted( array $classFields, $posted )

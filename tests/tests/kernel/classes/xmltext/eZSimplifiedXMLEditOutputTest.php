@@ -16,6 +16,8 @@
 
 require_once __DIR__ . '/eZXMLTextTestFixtures.php';
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
+#[\PHPUnit\Framework\Attributes\Group('xmltext')]
 class eZSimplifiedXMLEditOutputTest extends eZXMLTextTestCase
 {
     private function stored( $input, $parser = null )

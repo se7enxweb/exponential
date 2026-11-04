@@ -9,6 +9,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class ContentSearchPathPrefixSubTreeTest extends PHPUnit\Framework\TestCase
 {
     protected function setUp(): void

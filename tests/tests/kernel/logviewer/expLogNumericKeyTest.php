@@ -30,6 +30,7 @@ foreach ( array( 'expLogManagerInterface' => 'explogmanagerinterface', 'expLogMa
     if ( !class_exists( $class ) && !interface_exists( $class ) )
         require_once dirname( __DIR__, 4 ) . '/kernel/classes/logviewer/' . $file . '.php';
 
+#[\PHPUnit\Framework\Attributes\Group('logviewer')]
 class expLogNumericKeyTest extends PHPUnit\Framework\TestCase
 {
     /** @var string */

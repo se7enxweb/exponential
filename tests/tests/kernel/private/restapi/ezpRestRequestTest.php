@@ -13,6 +13,8 @@
  * @group rest
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
+#[\PHPUnit\Framework\Attributes\Group('rest')]
 class ezpRestRequestTest extends PHPUnit\Framework\TestCase
 {
     private $provider;

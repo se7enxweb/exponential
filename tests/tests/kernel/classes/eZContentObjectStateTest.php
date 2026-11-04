@@ -11,6 +11,7 @@
  * @group database
  */
 
+#[\PHPUnit\Framework\Attributes\Group('database')]
 class eZContentObjectStateTest extends ezpDatabaseTestCase
 {
     /** The locale of a language of the test database (the base data may not have eng-GB) */

@@ -12,6 +12,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class ezpTopologicalSortOrderTest extends PHPUnit\Framework\TestCase
 {
     private function assertBefore( array $sorted, $first, $second )

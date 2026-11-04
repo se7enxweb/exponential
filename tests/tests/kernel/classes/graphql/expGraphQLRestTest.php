@@ -11,6 +11,8 @@
  * @group rest
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
+#[\PHPUnit\Framework\Attributes\Group('rest')]
 class expGraphQLRestTest extends PHPUnit\Framework\TestCase
 {
     /** @var array */

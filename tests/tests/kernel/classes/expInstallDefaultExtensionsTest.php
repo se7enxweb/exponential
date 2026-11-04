@@ -18,6 +18,7 @@
 if ( !class_exists( 'expInstallDefaultExtensions' ) )
     require_once __DIR__ . '/../../../../kernel/classes/expinstalldefaultextensions.php';
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expInstallDefaultExtensionsTest extends PHPUnit\Framework\TestCase
 {
     private static $root;

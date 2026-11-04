@@ -22,6 +22,7 @@
 
 require_once __DIR__ . '/expRadWizardTestHelper.php';
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expRadWizardPaymentGatewayIsFoundTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass(): void

@@ -21,6 +21,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class eZContentObjectTreeNodeMongoAttributeFilterTest extends PHPUnit\Framework\TestCase
 {
     private function match( $filter )

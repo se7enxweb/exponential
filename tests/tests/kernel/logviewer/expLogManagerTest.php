@@ -21,6 +21,7 @@
 require_once __DIR__ . '/expLogViewerTestFixtures.php';
 require_once __DIR__ . '/../../../../kernel/private/classes/commands/explogs.php';
 
+#[\PHPUnit\Framework\Attributes\Group('logviewer')]
 class expLogManagerTestTerminal
 {
     public $out = array();

@@ -46,6 +46,7 @@
 
 use Exponential\Service\MailPreferencesPage;
 
+#[\PHPUnit\Framework\Attributes\Group('mailpreferences')]
 class MailPreferencesComplianceTest extends PHPUnit\Framework\TestCase
 {
     const DOMAIN = 'mplaw.invalid';

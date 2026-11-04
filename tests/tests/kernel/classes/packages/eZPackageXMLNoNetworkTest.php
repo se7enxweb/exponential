@@ -16,6 +16,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class eZPackageXMLNoNetworkTest extends PHPUnit\Framework\TestCase
 {
     private $dir;

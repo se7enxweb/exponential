@@ -13,6 +13,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expVelocityConfigTest extends PHPUnit\Framework\TestCase
 {
     protected function setUp(): void

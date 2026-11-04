@@ -10,6 +10,7 @@
  * @group updatesql
  */
 
+#[\PHPUnit\Framework\Attributes\Group('updatesql')]
 class CheckDbFilesVersionListTest extends PHPUnit\Framework\TestCase
 {
     private static $root;

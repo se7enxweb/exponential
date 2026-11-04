@@ -11,6 +11,7 @@
  * @group database
  */
 
+#[\PHPUnit\Framework\Attributes\Group('database')]
 class eZXHTMLXMLOutputRegression extends ezpDatabaseTestCase
 {
 
@@ -242,6 +243,7 @@ var_dump( $result );
      * @link http://issues.ez.no/18336
      * @note Test depends on template output!!
      */
+    #[\PHPUnit\Framework\Attributes\Group('issue_18336')]
     function testRenderAlignInCellsWithParagraph()
     {
         ezpINIHelper::setINISetting( 'ezxml.ini', 'ezxhtml', 'RenderParagraphInTableCells', 'enabled' );
@@ -275,6 +277,7 @@ var_dump( $result );
      * @link http://issues.ez.no/18336
      * @note Test depends on template output!!
      */
+    #[\PHPUnit\Framework\Attributes\Group('issue_18336')]
     function testRenderAlignInCellsWithoutParagraph()
     {
         ezpINIHelper::setINISetting( 'ezxml.ini', 'ezxhtml', 'RenderParagraphInTableCells', 'disabled' );
@@ -304,6 +307,7 @@ var_dump( $result );
      * @link http://issues.ez.no/18652
      * @note Test depends on template output!!
      */
+    #[\PHPUnit\Framework\Attributes\Group('issue18652')]
     function testSpaceBetweenInlineTags()
     {
         $xml = '<?xml version="1.0" encoding="utf-8"?>

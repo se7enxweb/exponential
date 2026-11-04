@@ -21,6 +21,7 @@
 
 require_once __DIR__ . '/fixtures/expaudittestfixtures.php';
 
+#[\PHPUnit\Framework\Attributes\Group('audit')]
 class expAuditForkTest extends PHPUnit\Framework\TestCase
 {
     protected $dir;
