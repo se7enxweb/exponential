@@ -440,6 +440,36 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
             $headerOverrides['Cache-Control'] = 'private, no-cache, must-revalidate';
         }
 
+        // A siteaccess whose visitors switch designs by a cookie (expFrontDesignSwitch): the same address answers in
+        // another design, so Vary names the cookie; a page in a chosen design (not the default) stays out of shared
+        // caches that key by address alone.
+        if ( class_exists( 'expFrontDesignSwitch' ) && expFrontDesignSwitch::isActive() )
+        {
+            $vary = '';
+            foreach ( array_keys( $headerOverrides ) as $name )
+            {
+                if ( strcasecmp( $name, 'Vary' ) === 0 )
+                {
+                    $vary = trim( (string)$headerOverrides[$name] );
+                    unset( $headerOverrides[$name] );
+                }
+            }
+            if ( $vary === '' )
+                $vary = 'Cookie';
+            else if ( $vary !== '*' && !in_array( 'cookie', array_map( 'strtolower', array_map( 'trim', explode( ',', $vary ) ) ), true ) )
+                $vary .= ', Cookie';
+            $headerOverrides['Vary'] = $vary;
+            if ( expFrontDesignSwitch::appliedDesign() !== null )
+            {
+                foreach ( array_keys( $headerOverrides ) as $name )
+                {
+                    if ( strcasecmp( $name, 'Cache-Control' ) === 0 )
+                        unset( $headerOverrides[$name] );
+                }
+                $headerOverrides['Cache-Control'] = 'private, no-cache, must-revalidate';
+            }
+        }
+
         // Pragma is the HTTP/1.0 spelling of Cache-Control and there is no way
         // to say "cacheable" in it. So when a configured header makes a page
         // cacheable, leaving the default Pragma in place sends a response that
@@ -1793,6 +1823,15 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
             // (false for file sessions), and the user check opens the database when it needs it
             if ( $this->siteBasics['session-required'] && empty( $this->siteBasics['validity-check-required'] ) )
                 expUISwitch::applyRequest();
+        }
+
+        // A front siteaccess that lets every visitor switch designs (site.ini [DesignSettings] SwitchableDesigns[]):
+        // after expUISwitch, so its design adds to the same cache variant key; before any template. No session needed.
+        if ( class_exists( 'expFrontDesignSwitch' ) )
+        {
+            expFrontDesignSwitch::beginRequest();
+            if ( empty( $this->siteBasics['validity-check-required'] ) )
+                expFrontDesignSwitch::applyRequest();
         }
 
         // pre check, RequireUserLogin & FORCE_LOGIN related so needs to be after session init

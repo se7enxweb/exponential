@@ -15,3 +15,11 @@ $FunctionList['toolbar'] = array( 'name' => 'toolbar',
     'call_method' => array( 'class' => 'expUISwitch', 'method' => 'fetchToolbar' ),
     'parameter_type' => 'standard',
     'parameters' => array() );
+
+// fetch( 'uiswitch', 'front_designs' ): the designs a front siteaccess lets every visitor switch between
+// (site.ini [DesignSettings] SwitchableDesigns[]), with the current one; empty where the siteaccess does not switch
+$FunctionList['front_designs'] = array( 'name' => 'front_designs',
+    'operation_types' => array( 'read' ),
+    'call_method' => array( 'class' => 'expFrontDesignSwitch', 'method' => 'fetchSwitch' ),
+    'parameter_type' => 'standard',
+    'parameters' => array() );

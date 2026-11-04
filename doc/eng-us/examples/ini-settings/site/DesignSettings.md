@@ -2,14 +2,14 @@
 title: site.ini [DesignSettings]
 audience: developer, admin
 category: examples
-summary: "The settings of [DesignSettings] in site.ini: StandardDesign, SiteDesign, AdditionalSiteDesignList, DesignLocationCache"
-keywords: site.ini, DesignSettings, INI, setting, StandardDesign, SiteDesign, AdditionalSiteDesignList, DesignLocationCache
+summary: "The settings of [DesignSettings] in site.ini: StandardDesign, SiteDesign, AdditionalSiteDesignList, SwitchableDesigns, SwitchableDesignLabel, SwitchableDesignChain, DesignSwitchCookie, DesignLocationCache"
+keywords: site.ini, DesignSettings, INI, setting, StandardDesign, SiteDesign, AdditionalSiteDesignList, SwitchableDesigns, SwitchableDesignLabel, SwitchableDesignChain, DesignSwitchCookie, DesignLocationCache
 type: generated
 generated: exp:help:examples
 ---
 # site.ini [DesignSettings]
 
-The block `[DesignSettings]` of `settings/site.ini`, with 4 setting(s).
+The block `[DesignSettings]` of `settings/site.ini`, with 8 setting(s).
 
 > # Set access policy to allowed  
 > Rules\[\]=access;enable  
@@ -73,6 +73,73 @@ Default: an empty list.
 [DesignSettings]
 # an empty "AdditionalSiteDesignList[]" first replaces the shipped list; without it the items are added
 AdditionalSiteDesignList[]
+*/ ?>
+```
+
+## SwitchableDesigns
+
+> A front siteaccess can let every visitor switch between designs with one  
+> click (doc/eng-us/features/6.0/front-design-switch.md). Off while the list is  
+> empty; never on an administration siteaccess. The siteaccess's SiteDesign is  
+> the default; a link with the view parameter /(design)/<name> chooses another  
+> one and keeps it in a cookie. In the siteaccess's site.ini.append.php:  
+>   SwitchableDesigns\[\]  
+>   SwitchableDesigns\[\]=doc2025  
+>   SwitchableDesignLabel\[doc\]=Modern  
+>   SwitchableDesignLabel\[doc2025\]=Classic  
+>   SwitchableDesignChain\[doc2025\]=standard  
+> SwitchableDesignChain\[<design>\] is the fallback chain of a design, designs  
+> separated by ";" (without one the siteaccess's AdditionalSiteDesignList\[\]  
+> stays). fetch( 'uiswitch', 'front\_designs' ) gives templates the choices.  
+
+Default: an empty list.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[DesignSettings]
+# an empty "SwitchableDesigns[]" first replaces the shipped list; without it the items are added
+SwitchableDesigns[]
+*/ ?>
+```
+
+## SwitchableDesignLabel
+
+Default: an empty list.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[DesignSettings]
+# an empty "SwitchableDesignLabel[]" first replaces the shipped list; without it the items are added
+SwitchableDesignLabel[]
+*/ ?>
+```
+
+## SwitchableDesignChain
+
+Default: an empty list.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[DesignSettings]
+# an empty "SwitchableDesignChain[]" first replaces the shipped list; without it the items are added
+SwitchableDesignChain[]
+*/ ?>
+```
+
+## DesignSwitchCookie
+
+> The cookie that keeps the visitor's choice  
+
+Default: `exp_design`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[DesignSettings]
+DesignSwitchCookie=exp_design
 */ ?>
 ```
 

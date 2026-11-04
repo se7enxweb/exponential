@@ -36,7 +36,7 @@ Every `fetch( 'module', 'function', hash( ... ) )` the kernel and the bundled ex
 | [shop](shop/README.md) | 15 | `kernel/shop/function_definition.php` |
 | [staticpublish](staticpublish/README.md) | 1 | `kernel/staticpublish/function_definition.php` |
 | [switchlanguage](switchlanguage/README.md) | 1 | `kernel/private/modules/switchlanguage/function_definition.php` |
-| [uiswitch](uiswitch/README.md) | 1 | `kernel/uiswitch/function_definition.php` |
+| [uiswitch](uiswitch/README.md) | 2 | `kernel/uiswitch/function_definition.php` |
 | [url](url/README.md) | 2 | `kernel/url/function_definition.php` |
 | [user](user/README.md) | 12 | `kernel/user/function_definition.php` |
 | [workflow](workflow/README.md) | 2 | `kernel/workflow/function_definition.php` |

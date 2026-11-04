@@ -200,6 +200,7 @@ nginx with PHP-FPM keep working as before.
 - [Translations and languages](translations-and-languages.md)
 - [Right-to-left languages in the administration](right-to-left.md)
 - [Interface language and the UI switch](ui-switch.md)
+- [Switching designs on a front siteaccess](front-design-switch.md)
 - [The interface language list: every language, the most needed first](ui-switch-languages.md)
 - [The grouped country list](country-groups.md)
 - [A useful robots.txt out of the box](robots-txt.md)

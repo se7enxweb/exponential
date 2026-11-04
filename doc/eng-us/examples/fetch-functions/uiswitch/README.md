@@ -14,6 +14,7 @@ Defined in `kernel/uiswitch/function_definition.php`. A parameter marked * is re
 
 | Function | Parameters |
 |---|---|
+| [front_designs](front_designs.md) |  |
 | [toolbar](toolbar.md) |  |
 
 - [All examples](../../README.md)

@@ -14,6 +14,7 @@ Definiert in `kernel/uiswitch/function_definition.php`. Ein mit * markierter Par
 
 | Funktion | Parameter |
 |---|---|
+| [front_designs](front_designs.md) |  |
 | [toolbar](toolbar.md) |  |
 
 - [Alle Beispiele](../../README.md)

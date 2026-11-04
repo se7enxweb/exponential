@@ -176,7 +176,9 @@ Jeder Siteaccess setzt dann seine eigene Adresse in `settings/siteaccess/<siteac
 `SiteName` und `DefaultPage`. Ein Siteaccess wird durch sein Design (`[DesignSettings] SiteDesign=admin4`) und das
 Administrationsmenü (`[AdminSiteAccessMenu]`) zu einer Administration. Wie die Reihenfolge der Siteaccess-Liste
 gehalten wird: [Die Reihenfolge der Siteaccesses](funktionen/6.0/bestellungen-nach-siteaccess.md). Der Editor-Siteaccess:
-[Der Einrichtungsassistent und der Editor-Siteaccess](funktionen/6.0/einrichtungsassistent-und-editor-siteaccess.md).
+[Der Einrichtungsassistent und der Editor-Siteaccess](funktionen/6.0/einrichtungsassistent-und-editor-siteaccess.md). Ein
+öffentlicher Siteaccess kann seine Besucher mit einem Klick zwischen Designs wechseln lassen:
+[Designs eines öffentlichen Siteaccess umschalten](funktionen/6.0/front-design-umschalter.md).
 
 Leeren Sie nach einer Änderung der Zuordnung den INI-Cache und prüfen Sie jede Adresse. Antwortet die Administration
 nicht mehr, lesen Sie die [Fehlerbehebung](#13-fehlerbehebung).

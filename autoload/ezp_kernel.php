@@ -1327,6 +1327,7 @@ return array(
       'expExtensionChangePlan'                                       => 'kernel/classes/expextensionchangeplan.php',
       'expExtensionWizard'                                           => 'kernel/setup/expextensionwizard.php',
       'expFileConsistencyReport'                                     => 'kernel/private/classes/expfileconsistencyreport.php',
+      'expFrontDesignSwitch'                                         => 'kernel/classes/uiswitch/expfrontdesignswitch.php',
       'expGraphQL'                                                   => 'kernel/classes/graphql/expgraphql.php',
       'expGraphQLBatchLoader'                                        => 'kernel/classes/graphql/expgraphqlbatchloader.php',
       'expGraphQLBench'                                              => 'kernel/classes/graphql/expgraphqlbench.php',

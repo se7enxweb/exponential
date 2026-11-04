@@ -170,6 +170,7 @@ nginx mit PHP-FPM funktionieren weiter wie bisher.
 - [Übersetzungen und Sprachen](uebersetzungen-und-sprachen.md)
 - [Sprachen mit Schreibrichtung von rechts nach links in der Administration](rechts-nach-links.md)
 - [Sprache der Oberfläche und der UI-Umschalter](ui-umschalter.md)
+- [Designs eines öffentlichen Siteaccess umschalten](front-design-umschalter.md)
 - [Die Liste der Oberflächensprachen: jede Sprache, die meistgebrauchten zuerst](ui-umschalter-sprachen.md)
 - [Die gruppierte Länderliste](laendergruppen.md)
 - [Eine brauchbare robots.txt von Haus aus](robots-txt.md)

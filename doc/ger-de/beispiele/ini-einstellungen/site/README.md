@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # site.ini
 
-Die ausgelieferten Einstellungen von `settings/site.ini`: 67 Blöcke, 518 Einstellungen.
+Die ausgelieferten Einstellungen von `settings/site.ini`: 67 Blöcke, 522 Einstellungen.
 
 > Exponential-Konfigurationsdatei.  
 >
@@ -67,7 +67,7 @@ Die ausgelieferten Einstellungen von `settings/site.ini`: 67 Blöcke, 518 Einste
 | [RoleSettings](RoleSettings.md) | 13 |
 | [ConfigurationSettings](ConfigurationSettings.md) | 1 |
 | [SiteAccessRules](SiteAccessRules.md) | 2 |
-| [DesignSettings](DesignSettings.md) | 4 |
+| [DesignSettings](DesignSettings.md) | 8 |
 | [SetupSettings](SetupSettings.md) | 5 |
 | [RegionalSettings](RegionalSettings.md) | 17 |
 | [UnitSettings](UnitSettings.md) | 2 |

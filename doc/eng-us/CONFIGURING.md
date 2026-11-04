@@ -172,7 +172,9 @@ Each siteaccess then sets its own address in `settings/siteaccess/<siteaccess>/s
 and `DefaultPage`. A siteaccess becomes an administration through its design (`[DesignSettings] SiteDesign=admin4`)
 and the administration menu (`[AdminSiteAccessMenu]`). How the order of the siteaccess list is kept:
 [The order of the siteaccesses](features/6.0/order-siteaccess.md). The editor siteaccess:
-[The setup wizard and the editor siteaccess](features/6.0/setup-wizard-and-editor-siteaccess.md).
+[The setup wizard and the editor siteaccess](features/6.0/setup-wizard-and-editor-siteaccess.md). A
+public siteaccess can let its visitors switch between designs with one click:
+[Switching designs on a front siteaccess](features/6.0/front-design-switch.md).
 
 After changing the matching, clear the INI cache and check every address. If the administration no longer answers,
 read [Troubleshooting](#13-troubleshooting).
