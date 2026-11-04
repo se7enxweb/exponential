@@ -1,0 +1,154 @@
+*Titel: Clustering
+
+*Anlass:
+
+Bisher ist es schwer, Cluster mit Exponential aufzubauen, weil Caches, Bilder und Binärdateien
+zwischen den Cluster-Knoten synchronisiert werden müssen.
+
+*Grundlagen:
+
+Mit dem Clustering speichert Exponential Bilder, Binärdateien und alle inhaltsbezogenen Caches in
+der Datenbank.
+Templates, kompilierte Templates, der Override-Cache und andere nicht inhaltsbezogene Caches
+liegen weiterhin im Dateisystem.
+
+*Einrichtung
+
+ 1. Auf Datenbankspeicherung umstellen.
+
+Fügen Sie Folgendes in Ihre file.ini.append.php ein:
+    [ClusteringSettings]
+    FileHandler=ezdb
+    DBBackend=mysql # or pgsql
+    DBHost=db
+    DBPort=3306
+    DBSocket=
+    DBName=cluster
+    DBUser=fred
+    DBPassword=secret
+    DBChunkSize=65535
+
+Mit FileHandler=ezdb verwendet Exponential die Datenbank, um Bilder, Binärdateien und
+inhaltsbezogene Caches zu speichern.
+
+ 2. Tabelle(n) in der Datenbank anlegen.
+
+Die SQL-Abfragen zum Anlegen der Tabellen stehen im Quellcode des ezdb-Backends, dessen
+Datenbankeinstellungen Sie bearbeitet haben (z. B.
+kernel/classes/clusterfilehandlers/dbbackends/mysql.php). Führen Sie sie in der Datenbank aus.
+
+ 3. Die Dateien aus dem var-Verzeichnis in die Datenbank kopieren.
+
+$ bin/php/clusterize.php -s intranet
+
+wobei 'intranet' Ihr Siteaccess ist.
+
+ 4. Den Cache mit dem Skript clearcache.sh leeren.
+
+$ cd <ezp dir>
+$ bin/shell/clearcache.sh --clear-all
+$ bin/shell/clearcache.sh --clear-all --var-subdir=intranet
+
+Das ist das letzte Mal, dass Sie clearcache.sh verwenden, denn es kann keine Caches in der
+Datenbank leeren, sondern nur solche im Dateisystem. Leeren Sie den Cache ab jetzt über die
+Cache-Funktionen der Administrationsoberfläche oder mit dem Skript bin/php/ezcache.php.
+
+ 5. Die Templates kompilieren.
+
+Da jetzt alle Caches leer sind, sollten die Templates neu kompiliert werden. Sie können diesen
+Schritt auch auslassen; dann werden die Templates beim Aufrufen der Website bei Bedarf kompiliert.
+
+$ cd <ezp dir>
+$ /usr/local/php/bin/php bin/php/eztc.php -s intranet
+
+Diesen Schritt für jeden Siteaccess ausführen.
+
+ 6. Die Konfiguration des virtuellen Hosts von Apache anpassen.
+
+Da Bilder nicht mehr auf der Festplatte, sondern in der Datenbank liegen, muss PHP sie
+ausliefern. Dafür brauchen Sie eine weitere RewriteRule. Sie lässt Apache ein bestimmtes
+.php-Skript für Bilder verwenden. Dieses Skript enthält nur die Einstellungen für die
+Cluster-Datenbank und bindet index_image.php ein.
+
+Unten steht der typische Inhalt dieser Datei.
+Angenommen, Sie nennen sie index_image-common.php und legen sie im Wurzelverzeichnis von
+Exponential ab:
+
+###############################################
+<?php
+define( 'STORAGE_BACKEND',     'mysql'   );
+define( 'STORAGE_HOST',        'db'      );
+define( 'STORAGE_PORT',        3306      );
+define( 'STORAGE_SOCKET',      ''        );
+define( 'STORAGE_USER',        'fred'    );
+define( 'STORAGE_PASS',        ''        );
+define( 'STORAGE_DB',          'cluster' );
+define( 'STORAGE_CHUNK_SIZE',  65535     );
+
+include_once( 'index_image.php' );
+?>
+###############################################
+
+Der Code legt die Datenbankeinstellungen fest, dieselben wie in der Gruppe [ClusteringSettings]
+von file.ini (sie sind hier aus Geschwindigkeitsgründen doppelt, denn das Einlesen von
+.ini-Dateien würde das Laden von Bildern stark verlangsamen). Die meisten erklären sich selbst;
+erwähnenswert ist nur die "chunk size", die Größe der Stücke, in denen die Dateidaten aus der
+Datenbank gelesen werden.
+
+Damit dieses Skript Bilder ausliefert, fügen Sie diese Regel vor Ihren Rewrite-Regeln in die
+Apache-Konfiguration ein:
+
+  RewriteRule ^/var/([^/]+/)?storage/images(-versioned)?/.*  /index_image-common.php [L]
+
+Wollen Sie in verschiedenen Siteaccesses verschiedene Cluster-Einstellungen verwenden, legen Sie
+mehrere solche Skripte (mit verschiedenen Datenbankeinstellungen) und entsprechende
+Rewrite-Regeln an:
+
+  RewriteRule ^/var/intranet/storage/images(-versioned)?/.*  /index_image-intranet.php [L]
+  RewriteRule ^/var/shop/storage/images(-versioned)?/.*  /index_image-shop.php [L]
+
+Diese Regeln lassen Apache das jeweilige Skript für die Bilder des Siteaccess aufrufen. Das
+funktioniert nur, wenn die Siteaccesses verschiedene VarDirs haben.
+
+ 7. Apache neu starten.
+
+  /path/to/apache/bin/apachectl stop
+  /path/to/apache/bin/apachectl start
+
+*Verwendung:
+
+Mit der API der Cluster-Datei-Handler können Sie Dateien einfach in der Datenbank speichern und
+wieder abrufen, umbenennen, löschen usw.
+
+Es gibt zwei eingebaute Handler, ezfs und ezdb: Der erste speichert im Dateisystem, der zweite in
+der Datenbank. Der Handler ezdb ist zudem in Backends aufgeteilt, die je eine bestimmte Datenbank
+behandeln (mysql, pgsql, oracle usw.). Eigene Handler und/oder Backends lassen sich in einer
+Erweiterung implementieren. Einzelheiten in den Kommentaren von settings/file.ini.
+
+Vor der Verwendung muss ein Handler so instanziiert werden:
+
+    require_once( 'kernel/classes/ezclusterfilehandler.php' );
+    $fileHandler = eZClusterFileHandler::instance();
+
+Beispiel #1: Eine vorhandene Datei in der Datenbank speichern
+
+    $fileHandler->fileStore( 'var/storage/files/foo.txt' );
+
+Beispiel #2: Eine Datei in der Datenbank anlegen und Daten darin speichern
+
+    $fileHandler->fileStoreContents( 'var/storage/files/foo.txt', $data );
+
+Beispiel #3: Eine Datei aus der Datenbank abrufen
+
+    // copy file from database to filesystem
+    $fileHandler->fileFetch( 'var/storage/files/foo.txt' );
+
+Beispiel #4: Den Inhalt einer Datei aus der Datenbank lesen
+
+    $data = $fileHandler->fileFetchContents( 'var/storage/files/foo.txt' );
+
+Beispiel #5: Eine Datei aus der Datenbank löschen
+
+    $fileHandler->fileDelete( 'var/storage/files/foo.txt' );
+
+Mehr zur API der Handler in kernel/classes/clusterfilehandlers/*.php.

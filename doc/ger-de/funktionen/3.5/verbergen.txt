@@ -1,0 +1,158 @@
+*Titel: Verbergen (Veröffentlichung zurücknehmen)
+
+Anlass:
+
+Das Zurücknehmen einer Veröffentlichung ist Standardfunktionalität und wurde von der
+Community sehr oft gewünscht.
+
+Da Veröffentlichen bedeutet, etwas in den Inhaltsbaum aufzunehmen, würde das Zurücknehmen
+bedeuten, etwas aus dem Inhaltsbaum zu entfernen. Bei der hier beschriebenen Lösung ist das
+nicht der Fall, deshalb heißt die Funktion "Verbergen".
+
+*Dokumentation:
+
+Mit dieser Funktion kann ein Benutzer einen Knoten oder Teilbaum vorübergehend im Inhaltsbaum
+verbergen und ihn später an der bisherigen Stelle wieder anzeigen.
+
+Jeder Knoten hat jetzt zwei zusätzliche boolesche Attribute:
+H - hidden (verborgen);
+X - invisible (unsichtbar).
+
+Das Attribut Hidden (H) setzt ein Benutzer, wenn er einen bestimmten Knoten verbergen will.
+Ein verborgener Knoten wird sofort mit "X" als unsichtbar markiert, und alle seine Nachfahren
+werden rekursiv ebenfalls mit "X" markiert.
+
+Die neuen Attribute bedeuten also:
+- HX: Der Knoten wurde von einem Benutzer verborgen und ist unsichtbar;
+- X : Der Knoten ist unsichtbar, weil ein Vorfahre verborgen ist.
+
+Allgemeine Hinweise:
+
+- Ein Knoten kann nicht sichtbar sein oder werden, wenn sein Elternknoten nicht sichtbar ist.
+- Verbirgt ein Benutzer einen bereits unsichtbaren Knoten, wird der Knoten zusätzlich zur
+  Unsichtbarkeit nur als verborgen markiert.
+- Ist ein Knoten verborgen und wird sein Elternknoten sichtbar, bleibt der Knoten verborgen
+  und seine Nachfahren bleiben unsichtbar.
+- Wichtig: Damit Benutzer in einem Siteaccess keine unsichtbaren Knoten sehen, müssen Sie die
+  passende INI-Einstellung ausdrücklich setzen (siehe unten).
+
+Die folgenden Abbildungen erklären den Algorithmus des Verbergens genauer.
+In den Abbildungen bedeutet:
+N - sichtbarer Knoten
+H - verborgener Knoten (der natürlich auch unsichtbar ist);
+X - unsichtbarer Knoten (wegen eines verborgenen Vorfahren).
+Der bearbeitete Knoten ist mit einem Pfeil markiert.
+
+Es gibt vier mögliche Fälle:
+
+1. Einen sichtbaren Knoten verbergen:
+Inhaltsbaum vorher:
+                 N
+                / \
+            -->N   N
+              / \
+             N   N
+            / \
+           H   N
+           |
+           X
+
+Inhaltsbaum nachher:
+                 N
+                / \
+            -->H   N
+              / \
+             X   X
+            / \
+           H   X
+           |
+           X
+
+2. Einen unsichtbaren Knoten verbergen
+Inhaltsbaum vorher:
+                 N
+                / \
+               H   N
+             /  \
+        --> X    X
+           / \
+          H   X
+          |
+          X
+
+Inhaltsbaum nachher:
+                 N
+                / \
+               H   N
+             /  \
+        --> H    X
+           / \
+          H   X
+          |
+          X
+3. Einen Knoten mit sichtbarem Vorfahren wieder anzeigen:
+Inhaltsbaum vorher:
+                 N
+                / \
+         -->   H   N
+              /     \
+             X       X
+            / \
+           H   X
+           |
+           X
+
+Inhaltsbaum nachher:
+                 N
+                / \
+         -->   N   N
+              /     \
+             N       X
+            / \
+           H   N
+           |
+           X
+
+4. Einen Knoten mit unsichtbarem Vorfahren wieder anzeigen:
+Inhaltsbaum vorher:
+                 N
+                / \
+               H   N
+              / \
+             X   X
+            / \
+       --> H   X
+           |
+           X
+
+Inhaltsbaum nachher:
+                 N
+                / \
+               H   N
+              / \
+             X   X
+            / \
+       --> X   X
+           |
+           X
+
+Benötigte Rechte:
+Zum Verbergen und Wiederanzeigen eines Knotens ist die Berechtigung 'content/hide' nötig.
+
+Neue INI-Einstellungen:
+site.ini:
+ - SiteAccessSettings/ShowHiddenNodes (true/false):
+   Legt fest, ob verborgene Knoten in diesem Siteaccess angezeigt werden.
+   Die Voreinstellung ist true.
+
+Neue Datenbankfelder:
+ - ezcontentobject_tree.hidden
+ - ezcontentobject_tree.invisible
+
+Neuer Parameter der Template-Funktion fetch():
+- fetch( 'content', 'list|list_count|tree|tree_count', ... )
+  nimmt jetzt den neuen booleschen Parameter 'ignore_visibility' an.
+  Damit lassen sich unsichtbare Knoten unabhängig von der INI-Einstellung abrufen oder zählen.
+
+Neue Zugriffsfunktion:
+ - content/hide. Der Zugriff auf das Verbergen und Wiederanzeigen lässt sich auf einen Teilbaum beschränken.

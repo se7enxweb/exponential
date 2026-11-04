@@ -1,0 +1,12 @@
+*Titel: Verlauf
+
+*Anlass:
+Zwei Versionslisten, eine unter /content/versions und eine unter /content/diff, waren
+manchmal verwirrend. Die Ansicht Verlauf führt beide zusammen, sodass man Versionen und
+Änderungen leichter überblickt.
+
+*Dokumentation:
+Die alten Ansichten versions und diff wurden zu einer neuen Ansicht /content/history
+zusammengeführt. Sie ist über das JavaScript-Kontextmenü im Baummenü und über das Klassensymbol
+erreichbar, außerdem wie gewohnt über die Schaltfläche "Versionen verwalten" in der
+Bearbeitungsansicht. Die beiden alten Ansichten gelten jetzt als veraltet.

@@ -1,0 +1,23 @@
+*Titel: Keine Variable $node mehr im Pagelayout
+
+*Dokumentation:
+Die globale Variable $node gab es im Pagelayout-Template nur, wenn ein anderes Modul sie vor dem
+Abruf des Pagelayouts gesetzt hatte und der Ansichtscache ausgeschaltet war. Damit sie künftig
+keine Verwirrung mehr stiftet, wurde sie ganz aus dem Pagelayout entfernt.
+Den aktuell bearbeiteten Knoten ruft man im Pagelayout-Template über $module_result.node_id ab.
+Oder Sie übergeben jede benötigte Knoten-ID aus Ihrem eigenen Modul über das Array
+'module_result' an das Pagelayout, wie im folgenden Beispiel:
+
+==============================
+//// your_module.php file
+...
+$Result['some_node_id'] = $anyNodeIdYouNeed;
+...
+
+===============================
+//// pagelayout.tpl file
+...
+{def $somenode = fetch( content, node, hash( node_id, $module_result.some_node_id ) )}
+    ...
+    {$somenode}
+    ...

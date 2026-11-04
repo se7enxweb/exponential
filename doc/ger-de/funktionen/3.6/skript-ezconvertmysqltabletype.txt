@@ -1,0 +1,64 @@
+*Titel: Skript ezconvertmysqltabletype
+
+*Dokumentation:
+Das Skript ezconvertmysqltabletype wandelt den MySQL-Tabellentyp in einen angegebenen Typ
+um, entweder MyISAM oder InnoDB. Die Umwandlung ist nötig, damit MySQL Transaktionen
+unterstützt; der Tabellentyp mit Transaktionen ist InnoDB.
+
+Die möglichen Parameter des Skripts:
+
+ezconvertmysqltabletype.php [--host=VALUE --user=VALUE --database=VALUE
+   [--password=VALUE]] [--list] [--newtype=TYPE] [--usecopy]
+
+  --host=VALUE      Mit dem Datenbank-Host verbinden
+  --user=VALUE      Benutzer für die Anmeldung an der Datenbank
+  --password=VALUE  Passwort für die Verbindung zur Datenbank
+  --database=VALUE  Der Datenbankname
+  --list            Die Tabellentypen auflisten
+  --newtype=VALUE   Die Datenbank in den angegebenen Typ umwandeln.
+                      Der Typ ist myisam oder innodb.
+                      Legen Sie vorher unbedingt eine SICHERUNG IHRER
+                      DATENBANK an!
+  --usecopy         Zum Umwandeln wird die ursprüngliche Tabelle umbenannt und die
+                      Daten werden in die neue Tabellenstruktur kopiert. Diese Methode
+                      ist viel langsamer und birgt ein höheres Risiko, die Daten zu
+                      beschädigen. Sie kann aber den Absturz von MySQL bei der
+                      ALTER-Abfrage umgehen.
+
+Die Parameter host, user, database und optional password lassen sich nur zusammen
+verwenden. Ist also 'host' angegeben, müssen auch 'user' und 'database' angegeben sein;
+bei Bedarf zusätzlich 'password'.
+
+Ohne host, user und database verwendet das Skript die Werte aus den INI-Einstellungen, um
+sich mit der Datenbank zu verbinden.
+
+Der Parameter 'list' gilt implizit, wenn 'newtype' nicht angegeben ist, und lässt sich nicht
+zusammen mit newtype verwenden. Er zeigt für jede Tabelle der Datenbank den Tabellentyp.
+
+Der Parameter 'newtype' wandelt alle Exponential-Tabellen der Datenbank in den neuen Typ
+um. Legen Sie vorher eine Sicherung Ihrer Datenbank an.
+
+Der Parameter 'usecopy' verwendet eine andere Methode: Statt der ALTER-Abfrage werden alle
+Daten in die neue Tabellenstruktur (mit dem neuen Typ) kopiert. Verwenden Sie diese Option
+nur, wenn die Umwandlung ohne sie fehlschlägt.
+
+*Beispiel:
+Das folgende Beispiel zeigt alle Tabellentypen der Datenbank aus den INI-Einstellungen.
+
+<code>
+./bin/php/ezconvertmysqltabletype.php
+</code>
+
+Das nächste Beispiel wandelt alle Exponential-Tabellen in InnoDB um:
+
+<code>
+./bin/php/ezconvertmysqltabletype.php --host=localhost --user=root
+--password=root --database=exponential --newtype=innodb
+</code>
+
+Dieses Beispiel kopiert die Tabellen in die neue InnoDB-Tabellenstruktur.
+Die Datenbank wird aus den INI-Einstellungen gelesen.
+
+<code>
+./bin/php/ezconvertmysqltabletype.php --newtype=innodb --usecopy
+</code>

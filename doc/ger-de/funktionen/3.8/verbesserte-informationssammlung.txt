@@ -1,0 +1,23 @@
+*Titel: Verbesserungen der Informationssammlung
+
+*Dokumentation:
+
+Informationssammlungen haben die Funktion 'data_map', die die Attribute nach ihren Bezeichnern
+indiziert zurückgibt. So können Templates auf eine weitere Art auf die Attribute einer
+Informationssammlung zugreifen.
+
+Beispiel:
+
+{$collection.data_map.email}
+
+Attribute von Informationssammlungen haben die Funktionen 'content' und 'hasContent'. Sie folgen
+derselben Schnittstelle wie die Attribute von Inhaltsobjekten.
+
+Beispiel:
+
+{if $collection.data_map.name.has_content}
+Recorded name is: {$collection.data_map.name.content|wash(xhtml)}
+{/if}
+
+*Autoren: Paul Forsyth, Vittal Aithal
+

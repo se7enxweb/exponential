@@ -1,0 +1,22 @@
+*Titel: Override-Schlüssel und Variablen für XML-Tabellen
+
+*Dokumentation:
+Für das XML-Tag table und seine Unter-Tags gibt es einen neuen Override-Schlüssel. Mit dem
+Schlüssel "table_classification" lassen sich jetzt alle Unter-Tags einer Tabelle überschreiben.
+
+Zwei zusätzliche Template-Variablen kommen hinzu: col_count und row_count. Beide stehen in
+den Tags th und td zur Verfügung, in tr-Tags nur row_count.
+
+Beispiel:
+Um jedes td in Tabellen mit der Klassifizierung "timetable" zu überschreiben, verwenden Sie
+diese Override-Einstellungen:
+
+[timetable_cell]
+Source=content/datatype/view/ezxmltags/td.tpl
+MatchFile=datatype/ezxmltext/timetable_cell.tpl
+Subdir=templates
+Match[table_classification]=timetable
+
+Beachten Sie, dass der Match-Schlüssel table_classification heißt und nicht wie sonst
+classification. Der Grund: Auch die Tabellenzellen können eine eigene Klassifizierung haben.
+

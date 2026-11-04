@@ -218,7 +218,28 @@ class expReviewHold
             $lines[] = sprintf( 'limit content/%s of the role %s (%d, policy %d) to %s/%s', $entry[3], $entry[1], $entry[0], $entry[2], self::GROUP, self::STATE_FREE );
         if ( !eZRole::fetchByName( self::ROLE ) )
             $lines[] = 'create the role "' . self::ROLE . '" (state/assign of ' . self::GROUP . '; assigned to nobody)';
+        $unlinked = $group ? self::unlinkedPlan() : null;
+        if ( $unlinked !== null && $unlinked['missing'] > 0 )
+            $lines[] = sprintf( 'give %d object(s) without a state of %s the state %s/%s', $unlinked['missing'], self::GROUP, self::GROUP, self::STATE_FREE );
         return $lines;
+    }
+
+    /**
+     * The objects that have no state of the group: the entry of the group in the plan of bin/php/adddefaultstates.php
+     * (every database engine), or null when the group or its default state is missing. A state group links every
+     * object that exists when its first state is stored; an object created afterwards by a process that had read the
+     * default states before the group existed (an installer that ran the step in a process of its own) got none.
+     *
+     * @return array|null group_id, group_identifier, state_id, state_identifier, missing (count) and, on MongoDB, missing_ids
+     */
+    protected static function unlinkedPlan()
+    {
+        if ( !class_exists( '\\Exponential\\Command\\Kernel\\Adddefaultstates' ) )
+            return null;
+        foreach ( \Exponential\Command\Kernel\Adddefaultstates::plan( eZDB::instance() ) as $entry )
+            if ( $entry['group_identifier'] === self::GROUP && $entry['state_identifier'] === self::STATE_FREE )
+                return $entry;
+        return null;
     }
 
     /**
@@ -332,6 +353,51 @@ class expReviewHold
             $done[] = 'created the role "' . self::ROLE . '" (assigned to nobody)';
         }
         eZRole::expireCache();
+
+        $unlinked = self::unlinkedPlan();
+        if ( $unlinked !== null && $unlinked['missing'] > 0 )
+        {
+            self::linkUnlinked( eZDB::instance(), $unlinked );
+            $done[] = sprintf( 'gave %d object(s) without a state of %s the state %s/%s', $unlinked['missing'], self::GROUP, self::GROUP, self::STATE_FREE );
+        }
         return $done;
+    }
+
+    /**
+     * Links every object of unlinkedPlan() to the group's default state, in one transaction; idempotent (an object
+     * with a state of the group is never touched).
+     *
+     * @param eZDBInterface $db
+     * @param array $entry unlinkedPlan()
+     */
+    protected static function linkUnlinked( $db, array $entry )
+    {
+        $stateID = (int)$entry['state_id'];
+        $groupID = (int)$entry['group_id'];
+        $db->begin();
+        try
+        {
+            if ( $db->databaseName() === 'mongo' )
+            {
+                foreach ( isset( $entry['missing_ids'] ) ? $entry['missing_ids'] : array() as $objectID )
+                    $db->insert( 'ezcobj_state_link', array( 'contentobject_id' => (int)$objectID, 'contentobject_state_id' => $stateID ) );
+            }
+            else
+            {
+                $db->query( "INSERT INTO ezcobj_state_link (contentobject_id, contentobject_state_id)
+                             SELECT o.id, $stateID FROM ezcontentobject o
+                             WHERE NOT EXISTS ( SELECT l.contentobject_id FROM ezcobj_state_link l, ezcobj_state s
+                                                WHERE l.contentobject_state_id = s.id AND l.contentobject_id = o.id
+                                                  AND s.group_id = $groupID )" );
+            }
+        }
+        catch ( Throwable $e )
+        {
+            // nothing of a transaction that failed half way is committed by a later commit()
+            if ( $db->transactionCounter() > 0 )
+                $db->rollback();
+            throw $e;
+        }
+        $db->commit();
     }
 }

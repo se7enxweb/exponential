@@ -1,0 +1,359 @@
+*Titel: Mehrere Währungen im Modul shop
+
+*Anlass:
+
+Bisher lassen sich für Produkte nicht mehrere Preise in verschiedenen Währungen festlegen.
+
+*Dokumentation:
+
+1. Währungen
+
+1.1 Hintergrund
+
+Objekte vom Typ 'Currency' enthalten die Angaben zu den verfügbaren Währungen und haben diese
+Attribute:
++-------------------+----------------------------------------------------------+
+| Name              | Beschreibung                                             |
+|-------------------+----------------------------------------------------------|
+| code              | der Währungscode aus 3 Großbuchstaben                    |
+|                   | Beispiel: 'USD', 'NOK', 'UAH', ...                       |
+| symbol            | eine Zeichenkette, die neben dem Preis angezeigt wird    |
+|                   | Beispiel: '$', 'nok', 'grn', ...                         |
+| locale            | das Locale, mit dem der Preis formatiert wird.           |
+|                   | Beispiel: 'eng-US' ergibt '$5.99'                        |
+|                   |           'urk-UA' ergibt '5.99 grn'                     |
+| status            | der Status der Währung, 'active' oder 'inactive'.        |
+|                   | Mit 'inactive' kann der Händler die Währung vor Kunden   |
+|                   | verbergen; Kunden können dann nicht in dieser Währung    |
+|                   | einkaufen.                                               |
+| auto_rate_value   | ein Kurs, der automatisch aus dem Internet aktualisiert  |
+|                   | wurde                                                    |
+| custom_rate_value | ein vom Händler von Hand eingegebener Kurs               |
+| rate_factor       | erlaubt eine Art virtuellen Kurs. Er gilt für 'auto'-    |
+|                   | und 'custom'-Kurse. Der tatsächliche Kurs ist also:      |
+|                   | rate = auto_rate (bzw. custom_rate) * rate_factor        |
+| rate_value        | ein Funktionsattribut.                                   |
+|                   | Es gibt den Wert zurück, mit dem umgerechnet wird:       |
+|                   | ( auto_rate (bzw. custom_rate) * rate_factor             |
++-------------------+----------------------------------------------------------+
+
+1.2 Verwendung
+
+Die Währungen werden in der Ansicht 'currencylist' verwaltet.
+
+Sie ist über '<your_site>/shop/currencylist' in der Adresszeile des Browsers oder über
+'Webshop->Währungen' in der Administrationsoberfläche erreichbar.
+
+Sie hat diese Aktionen:
++-------------------+----------------------------------------------------------+
+| Name              | Beschreibung                                             |
+|-------------------+----------------------------------------------------------|
+| Hinzufügen        | Fügt eine neue Währung hinzu. Sie werden zur Ansicht     |
+|                   | 'editcurrency' weitergeleitet, um die nötigen Attribute  |
+|                   | auszufüllen.                                             |
+|                   | Dabei entstehen die neue Währung und 'auto'-Preise mit   |
+|                   | dem Wert 0.00 für alle Produkte.                         |
+| Entfernen         | Entfernt nicht mehr benötigte Währungen.                 |
+|                   | HINWEIS: Mit der Währung werden auch die Preise aller    |
+|                   | Produkte in dieser Währung entfernt.                     |
+| Änderungen        | Sie können für mehrere Währungen den 'status' ändern     |
+| übernehmen        | und/oder 'custom rate' bzw. 'rate factor' setzen.        |
+|                   | Diese Schaltfläche übernimmt die Änderungen.             |
+| Auto-Kurse        | Startet einen Handler, der die Werte der 'auto'-Kurse    |
+| aktualisieren     | aus einer externen Quelle (etwa dem Internet) holt.      |
+|                   | Ohne verfügbaren Handler ist die Schaltfläche            |
+|                   | ausgegraut. Welcher Handler verwendet wird, legt         |
+|                   | shop.ini.ExchangeRatesSettings.ExchangeRatesUpdateHandler|
+|                   | fest.                                                    |
+| Auto-Preise       | Sind Sie mit der Verwaltung der Währungen fertig (Kurse  |
+| aktualisieren     | gesetzt, neue hinzugefügt ...), können Sie die           |
+|                   | Auto-Preise aller Produkte aktualisieren.                |
++-------------------+----------------------------------------------------------+
+
+1.3 Bevorzugte Währung
+
+Eine Währung lässt sich als 'bevorzugt' festlegen. Dann wird beim Anzeigen eines Produkts der
+Preis in dieser Währung angezeigt, und Zahlungen sind nur in dieser Währung möglich.
+
+Der Wert der bevorzugten Währung stammt aus (aufsteigend nach Priorität):
+    - shop.ini;
+    - den Einstellungen des Benutzers;
+    - einer Sitzungsvariablen;
+
+Die bevorzugte Währung lässt sich ändern über:
+    - 'Webshop'->'Bevorzugte Währung' in der Administrationsoberfläche;
+    - 'shop/preferredcurrency' in der Adresszeile des Browsers;
+    - die Werkzeugleiste 'Bevorzugte Währung' auf der Website;
+    - 'shop/setpreferredcurrency/(currency)/XXX, wobei XXX ein Währungscode wie USD, NOK
+      usw. ist.
+
+2. Mehrfachpreise
+
+2.1 Hintergrund
+
+Für mehrere Währungen gibt es den neuen Datentyp 'ezmultiprice'.
+Er enthält die Angaben zu Preisen und Währungen jedes Produkts.
+
+Der Datentyp 'ezmultiprice' speichert zwei Arten von Preisen:
+   - 'custom': ein vom Händler von Hand eingegebener Wert;
+   - 'auto': ein Wert, der durch Umrechnung des 'Basispreises' mit dem passenden Kurs
+             entsteht. Der Basispreis eines Produkts ist der erste 'custom'-Preis.
+
+Attribute:
+gemeinsam mit dem üblichen Attribut 'ezprice':
++------------------------+-----------------------------------------------------+
+| Name                   | ezprice                       |       ezmultiprice  |
+|------------------------+-----------------------------------------------------|
+| price                  | Wert des Preises              | Wert des Preises in |
+|                        |                               | der bevorzugten     |
+|                        |                               | Währung             |
+| currency               | leere Zeichenkette            | Code der bevorzugten|
+|                        |                               | Währung             |
+| selected_vat_type      | eZVATType-Objekt              | dasselbe            |
+| vat_type               | Liste der verfügbaren         | dasselbe            |
+|                        | Steuertypen (eZVATType)       |                     |
+| vat_percent            | Prozentsatz des gewählten     | dasselbe            |
+|                        | Steuertyps                    |                     |
+| is_vat_included        | ob die Steuer im Preis        | dasselbe            |
+|                        | enthalten ist                 |                     |
+| inc_vat_price          | Preis inklusive Steuer        | dasselbe            |
+| ex_vat_price           | Preis ohne Steuer             | dasselbe            |
+| discount_percent       | Rabatt in Prozent             | dasselbe            |
+| discount_price_inc_vat | Preis inklusive Steuer und    | dasselbe            |
+|                        | Rabatt                        |                     |
+| discount_price_ex_vat  | Preis ohne Steuer, mit Rabatt | dasselbe            |
+| has_discount           |                               |                     |
++------------------------+-----------------------------------------------------+
+
+
+eigene Attribute:
++-----------------------------+------------------------------------------------+
+| Name                        | Beschreibung                                   |
+|-----------------------------+------------------------------------------------|
+| currency_list               | Liste der verfügbaren Währungen                |
+| auto_currency_list          | Liste der Währungen mit 'auto'-Preisen         |
+| price_list                  | Liste der Preise ('custom' und 'auto')         |
+| auto_price_list             | Liste der 'auto'-Preise                        |
+| custom_price_list           | Liste der 'custom'-Preise                      |
+| inc_vat_price_list          | Liste der Preise inklusive Steuer              |
+| ex_vat_price_list           | Liste der Preise ohne Steuer                   |
+| discount_inc_vat_price_list | Liste der Preise inklusive Steuer, mit Rabatt  |
+| discount_ex_vat_price_list  | Liste der Preise ohne Steuer, mit Rabatt       |
++-----------------------------+------------------------------------------------+
+
+2.2 Verwendung
+
+Um mehrere Währungen zu verwenden,
+- legen Sie einige Währungen an;
+- legen Sie eine Klasse mit dem Datentyp 'ezmultiprice' an. Beim Anlegen der Klasse lassen sich
+  ein Standard-Steuertyp und eine Standardwährung wählen. Standardwährung bedeutet: Ein Objekt
+  dieser Klasse hat beim Anlegen einen 'custom'-Preis in dieser Währung, alle anderen Preise
+  sind 'auto'.
+
+  Wollen Sie auf der Website Templates wie für einfache Preise verwenden, setzen Sie 'price' als
+  Bezeichner Ihres 'ezmultiprice'-Attributs und fügen diese Zeilen in
+  settings/siteaccess/<user_site_access>/override.ini.append.php ein:
+
+  [multiprice_product_full]
+  Source=node/view/full.tpl
+  MatchFile=full/multiprice_product.tpl
+  Subdir=templates
+  Match[class_identifier]=<identifier_of_your_multiprice_product_class>
+
+  [multiprice_product_line]
+  Source=node/view/line.tpl
+  MatchFile=line/multiprice_product.tpl
+  Subdir=templates
+  Match[class_identifier]=<identifier_of_your_multiprice_product_class>
+
+  [multiprice_product_embed]
+  Source=content/view/embed.tpl
+  MatchFile=embed/multiprice_product.tpl
+  Subdir=templates
+  Match[class_identifier]=<identifier_of_your_multiprice_product_class>
+
+  [multiprice_product_listitem]
+  Source=node/view/listitem.tpl
+  MatchFile=listitem/multiprice_product.tpl
+  Subdir=templates
+  Match[class_identifier]=<identifier_of_your_multiprice_product_class>
+
+  [multiprice]
+  Source=content/datatype/view/ezmultiprice.tpl
+  MatchFile=datatype/multiprice.tpl
+  Subdir=templates
+
+- fügen Sie 'user_preferred_currency' zu 'CachedViewPreferences' hinzu, in
+  'settings/override/site.ini.append.php':
+  [ContentSettings]
+  CachedViewPreferences[full]=user_preferred_currency='';
+
+- fügen Sie in 'settings/siteaccess/<user_site_access>/toolbar.ini.append.php' hinzu:
+  [Toolbar_right]
+  Tool[]=preferred_currency
+
+- legen Sie einige Objekte dieser Klasse an.
+
+
+Beispiel:
+Angenommen, wir haben einige Währungen mit Kursen gegenüber 'EUR' angelegt.
++----------------+-------------+-----------+--------+------------+
+| Währungscode   | custom rate | auto rate | Faktor | echter Kurs|
+|----------------+-----------------------------------------------|
+| EUR            | 1.0000      | 0.0000    | 1.0000 | 1.0000     |
+|----------------|-------------|-----------|--------|------------|
+| USD            | 1.2000      | 0.0000    | 1.0000 | 1.2000     |
+|----------------|-------------|-----------|--------|------------|
+| UAH            | 6.2000      | 0.0000    | 1.0000 | 6.2000     |
+|----------------|-------------|-----------|--------|------------|
+| NOK            | 0.0000      | 6.0000    | 1.2000 | 7.2000     |
++----------------+-------------+-----------+--------+------------+
+
+Dann sieht ein Mehrfachpreis eines Produkts so aus:
++----------------+----------+--------------+----------------------------------+
+| Produktname    | Währung  | Preisart     | Wert   | Bemerkung               |
+|----------------+----------------------------------|-------------------------|
+| product1       | USD      | custom(Basis)| 10.00  | der Basispreis dieses   |
+|                |          |              |        | Produkts, da es der     |
+|                |          |              |        | erste 'custom'-Preis    |
+|                |          |              |        | ist                     |
+|                | UAH      | custom       | 100.00 | keine Umrechnung, da    |
+|                |          |              |        | der Preis von Hand      |
+|                |          |              |        | eingegeben ist.         |
+|                | NOK      | auto         | 60.00  | da der Preis in 'NOK'   |
+|                |          |              |        | 'auto' ist, wird der    |
+|                |          |              |        | Basispreis (in USD) in  |
+|                |          |              |        | 'NOK' umgerechnet:      |
+|                |          |              |        | NOK/USD (Kreuzkurs) =   |
+|                |          |              |        | = (NOK/EUR) / (USD/EUR)=|
+|                |          |              |        | = 7.2 / 1.2 = 6.0       |
+|                |          |              |        | Preis in 'NOK' =        |
+|                |          |              |        | ='USD-Preis' *(NOK/USD)=|
+|                |          |              |        | = 10.00 * 6.0 = 60.00   |
+|                | EUR      | auto         | 8.33   | wie bei 'NOK'           |
++----------------+----------+--------------+--------+-------------------------+
+
+
+3. Produktübersicht
+
+Die Produktübersicht ist erreichbar über:
+- 'Webshop'->'Produktübersicht' in der Administrationsoberfläche;
+- '<your_site>/shop/productsoverview' in der Adresszeile des Browsers.
+
+Die Ansicht zeigt Produkte nach Klassenbezeichner gruppiert und nach Preis oder Name sortiert.
+
+4. Template-Operatoren
+
+fetch( 'shop',
+       'currency',
+       hash( 'code', <currency_code> ) )    - gibt ein Währungsobjekt zurück;
+
+fetch( 'shop',
+       'currency_list'
+       [, hash( 'status', <status> )] )     - gibt die Liste der verfügbaren Währungen
+                                              zurück;
+
+fetch( 'shop', 'preferred_currency_code' )  - gibt die bevorzugte Währung zurück;
+
+l10n( 'currency'[, locale[, [symbol]] )     - formatiert eine Zahl als Preis mit dem
+                                              angegebenen oder dem Standard-'locale'
+                                              und -'symbol';
+
+5. Handler zur Aktualisierung der Wechselkurse
+Mit einem 'Exchange rates update handler' lassen sich Wechselkurse aus einer externen Quelle
+abrufen, etwa einer Website.
+Mit 'ExchangeRatesUpdateHandler' legen Sie fest, welcher Handler verwendet wird.
+
+Als Beispiel bringt Exponential den Handler 'eZECB' mit. Er holt die Kurse von der Website der
+Europäischen Zentralbank.
+
+Für Entwickler:
+Sie können einen eigenen Handler zum Abrufen der Wechselkurse implementieren. Dazu
+ - legen Sie eine PHP-Klasse für Ihren Handler an;
+ - leiten Sie sie von 'eZExchangeRatesUpdateHandler' ab;
+ - implementieren Sie die Funktionen 'initialize' und 'requestRates' neu.
+   'initialize' wird beim Anlegen des Handler-Objekts aufgerufen. Damit lässt sich Ihr Handler
+   mit Werten initialisieren (zum Beispiel aus einer INI-Datei).
+   'requestRates' wird aufgerufen, um die Kurse abzurufen. Die Funktion füllt die
+   Member-Variable '$RateList' mit den Kursen in diesem Format:
+   $RateList = array( 'currencyCode1' => 'rateValue1',
+                      .....
+                      'currencyCodeN' => 'rateValueN' );
+
+ - setzen Sie '[ExchangeRatesSettings].ExchangeRatesUpdateHandler=<your_handler>
+
+6. INI-Einstellungen
+
++-----------------------+----------------------------+---------------------------------------+
+| Abschnitt             | Einstellung                | Beschreibung                          |
+|-----------------------+----------------------------+---------------------------------------+
+| CurrencySettings      | PreferredCurrency          | Standardwährung beim Einkaufen        |
+|-----------------------+----------------------------+---------------------------------------+
+| MathSettings          | MathHandler                | eZPHPMath - Gleitkommarechnung von PHP|
+|                       |                            | eZBCMath  - mit der Erweiterung bcmath|
+|                       | MathScale                  | Anzahl der signifikanten Stellen nach |
+|                       |                            | dem Komma.                            |
+|                       |                            | Hinweis: gilt nur für den Handler     |
+|                       |                            |          eZBCMath.                    |
+|                       | RoundingType               | Rundungsart bei automatischen         |
+|                       |                            | Umrechnungen.                         |
+|                       |                            | Mögliche Werte: none, round, ceil,    |
+|                       |                            | floor.                                |
+|                       | RoundingPrecision          | Anzahl der signifikanten Stellen nach |
+|                       |                            | dem Komma, die beim Runden erhalten   |
+|                       |                            | bleiben.                              |
+|                       |                            | Mögliche Werte: 0, 1, 2, ...          |
+|                       | RoundingTarget             | Rundet auf das angegebene Ziel        |
+|                       |                            | Mögliche Werte: false, 0, 1, 2, ...   |
+|                       |                            | Beispiel:                             |
+|                       |                            | Zahl = 89.468543                      |
+|                       |                            | precision = 2                         |
+|                       |                            | target_1 = 5                          |
+|                       |                            | target_2 = 99                         |
+|                       |                            | normales Runden:                      |
+|                       |                            | round( number, precision ) = 89.47    |
+|                       |                            | mit target_1:                         |
+|                       |                            | round(number,precision,target )=89.45 |
+|                       |                            | mit target_2:                         |
+|                       |                            | round(number,precision,target)=89.99  |
+|-----------------------+----------------------------+---------------------------------------+
+| ExchangeRatesSettings | ExchangeRatesUpdateHandler | Der zu verwendende Handler            |
+|                       | RepositoryDirectories      | Wo innerhalb der Exponential-         |
+|                       |                            | Installation nach Handlern gesucht    |
+|                       |                            | wird                                  |
+|                       | ExtensionDirectories       | Wo in Erweiterungen nach Handlern     |
+|                       |                            | gesucht wird                          |
+|                       | BaseCurrency               | Basiswährung der 'auto'-Kurse.        |
+|                       |                            | Liefert der Handler Kurse gegenüber   |
+|                       |                            | einer anderen Währung, werden         |
+|                       |                            | Kreuzkurse berechnet.                 |
+|-----------------------+----------------------------+---------------------------------------+
+
+
+7. Einschränkungen
+
+Produkte mit 'einfachen' und mit 'Mehrfach'-Preisen können nicht gleichzeitig im Warenkorb liegen.
+
+8. Skripte
+
+Dateiname   : bin/php/convertprice2multiprice.php
+Beschreibung: Das Skript geht alle Klassen und Objekte mit dem Datentyp 'ezprice' durch und
+              ändert ihn in den Datentyp 'ezmultiprice'.
+              Hinweis: IDs und Bezeichner von Klassen, Klassenattributen, Objekten und
+                       Objektattributen ändern sich nicht.
+              Das entstehende 'ezmultiprice' hat einen 'custom'-Preis (mit dem Wert von
+              'ezprice') in der Währung des aktuellen Locales (das Währungsobjekt wird angelegt,
+              falls es nicht existiert).
+Verwendung  : - Haben Sie bereits Währungen, aber nicht die des Locales, und beziehen sich Ihre
+                Kurse auf eine andere Währung als die des Locales, müssen Sie die Währung des
+                Locales von Hand anlegen und den passenden Kurs setzen. Sonst wird sie
+                automatisch mit dem Kurs '1.0000' angelegt, was zu falschen 'auto'-Preisen
+                führen kann.
+                Beispiel: Haben Sie bereits die Währung 'NOK' mit einem Kurs gegenüber 'EUR',
+                und ist die Währung des Locales 'USD' (site.ini.RegionalSettings.Locale=eng-US,
+                eng-US.ini.Currency.ShortName=USD), müssen Sie die Währung 'USD' von Hand
+                anlegen und den Kurs zum Beispiel auf '1.2' setzen. Sonst legt das Skript 'USD'
+                mit dem Kurs '1.0' an, und Sie erhalten falsche 'auto'-Preise.
+              - Das Skript ändert IDs und Bezeichner von Klassen, Klassenattributen, Objekten
+                und Objektattributen nicht. Alle Ihre Overrides funktionieren also mit den
+                umgewandelten Objekten.

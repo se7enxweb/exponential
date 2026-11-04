@@ -1,0 +1,42 @@
+*Titel: Erweiterte Fetch-Funktion tipafriend_top_list
+
+*Dokumentation:
+Die Tabelle eztipafriend_counter hat ein neues Feld 'requested' mit dem Zeitstempel des Eintrags.
+So lässt sich die Topliste der weiterempfohlenen Knoten für einen bestimmten Zeitraum abrufen.
+Die Fetch-Funktion content/tipafriend_top_list hat dafür neue Parameter.
+
+*Verwendung:
+
+fetch( 'content', 'tipafriend_top_list',
+       hash( [ 'offset', offset, ]
+             [ 'limit', limit, ]
+             [ 'start_time', start_time, ]
+             [ 'end_time', end_time, ]
+             [ 'duration', duration, ]
+             [ 'ascending', ascending, ]
+             [ 'extended', extended, ]
+              ) )
+*Parameter:
+Name:          Typ:         Pflicht:
+ offset         integer      nein
+ limit          integer      nein
+ start_time     integer      nein
+ end_time       integer      nein
+ duration       integer      nein
+ ascending      boolean      nein
+ extended       boolean      nein
+
+
+*Beispiel:
+
+{def $tip_top_list=fetch( 'content',
+                          'tipafriend_top_list',
+                          hash( 'offset', 2,
+                                'limit', 4,
+                                'start_time', maketime( 0, 0, 0 ),
+                                'duration', mul( 60, 60, 24 ),
+                                'ascending', 0,
+                                'extended', true() ) ) }
+{ $tip_top_list | attribute( show, 1 ) }
+{undef}
+

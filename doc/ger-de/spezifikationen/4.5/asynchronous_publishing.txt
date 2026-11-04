@@ -1,0 +1,198 @@
+===========================
+Asynchrones Veröffentlichen
+===========================
+
+Überblick
+=========
+Die derzeit gemeldeten Zeitüberschreitungen bei MySQL LOCK WAIT begrenzen stark,
+wie viele Inhalte der Kernel gleichzeitig veröffentlichen kann.
+
+Der Vorgang selbst muss und wird mit der Zeit verbessert werden, aber es braucht
+sofort eine Verbesserung, um unsere Nutzer zufriedenzustellen.
+
+Da die Ursache die fehlende Kontrolle darüber ist, wie viele Inhalte gleichzeitig
+zur Veröffentlichung gesendet werden, ist die beste langfristige Lösung, diese
+Vorgänge über einen zentralen Prozess steuerbar zu machen. Das ist das Ziel des
+asynchronen Veröffentlichens.
+
+Wie Veröffentlichen funktioniert
+================================
+
+Dieser Aufruf ist der einzige Weg, die Veröffentlichung eines Inhalts mit
+Entwurfsversion auszulösen::
+
+    eZOperationHandler::execute( 'content', 'publish', array( 'object_id' => $objectId, 'version' => $version ) );
+
+Vorher wurde der Entwurf mit den verfügbaren Daten gebaut (meist abgeschickt,
+manchmal per Skript). Beim Veröffentlichen aus content/edit in einer normalen
+Exponential-Administration erhalten die Attribute ihren Inhalt aus
+kernel/content/edit.php, und die Operation wird ausgelöst, sobald alles bereit
+ist.
+
+Die für das Veröffentlichen nötigen Daten liegen also immer *vor* dem Start der
+Operation vor.
+
+Komponenten
+===========
+
+Einreihen der Veröffentlichung
+------------------------------
+
+Ein neuer Eintrag in der Operation content/publish, der den Inhalt in die
+Veröffentlichungs-Warteschlange schickt. Er folgt auf die Aktion
+set-status-pending, damit das wartende Objekt den Status PENDING hat.
+
+Veröffentlichungs-Warteschlange
+-------------------------------
+
+Die Struktur, die eingereihte Operationen speichert. Sie liegt in der Datenbank,
+in einer einfachen Tabelle, aus der der Verarbeiter der Warteschlange erfährt,
+welche Operationen auszuführen sind.
+
+Verarbeiter der Warteschlange
+-----------------------------
+Eine Reihe von Hintergrundprozessen (Kommandozeile), die die Warteschlange lesen
+und die Operationen ausführen.
+
+Der Verarbeiter verwendet mehrere Prozesse, bis zu einer einstellbaren höchsten
+Parallelität, festgelegt in content.ini::
+
+    [PublishingSettings]
+    # how many parallel publishing operations should be allowed
+    # default: 10
+    PublishingProcessSlots=10
+
+(PublishingProcessSlots legt fest, wie viele Veröffentlichungen parallel laufen
+dürfen; Standard 10.)
+
+Umsetzung
+=========
+
+Veröffentlichungs-Operation
+---------------------------
+
+Der Veröffentlichungs-Operation wird eine neue Methode hinzugefügt, die einen
+bestimmten Status zurückgibt und die Operation damit an die Warteschlange
+schickt. Sie soll der zweite Eintrag sein, nach set-status-pending.
+
+Die Methode bittet ezpContentPublishingQueue, die Operation in die Warteschlange
+aufzunehmen.
+
+Oberfläche beim Veröffentlichen
+-------------------------------
+Da der Benutzer nach dem Klick auf "Zur Veröffentlichung senden" nicht vor
+einer ladenden Seite stehen soll, braucht es eine Art "Warteoberfläche" für ein
+gutes Nutzungserlebnis.
+
+Während der Inhalt veröffentlicht wird, erscheint eine Warteanimation (Bild),
+und über ezjscore gehen regelmäßige AJAX-Anfragen an die Administration, die
+den Status der Operation abfragen. Ist die Operation beendet, werden neue
+Elemente der Oberfläche angeboten:
+
+* das veröffentlichte Objekt ansehen
+* zurück zum Container - noch nicht umgesetzt
+
+Die Funktion optional machen
+----------------------------
+Für die Rückwärtskompatibilität muss sich die Funktion abschalten lassen.
+
+Das geschieht über eine INI-Einstellung in content.ini::
+
+    [PublishingSettings]
+    # Enable/Disable the asynchronous publishing feature
+    AsynchronousPublishing=disabled
+
+Ist sie ausgeschaltet, wird die Operation gar nicht an den Daemon übergeben,
+sondern in Echtzeit ausgeführt. So lässt sich die Funktion auch je Siteaccess
+ein- und ausschalten.
+
+Mögliche Probleme
+=================
+
+Interaktive Workflows
+---------------------
+P: Interaktive Workflows wären betroffen, da die Operation asynchron von einem
+   anderen Prozess ausgeführt würde und keine Interaktion mit dem Benutzer
+   möglich wäre.
+
+L: Die Warteschlange könnte per AJAX eine Rückmeldung senden, mit der sich der
+   Vorgang fortsetzen lässt (zurück zu content/edit). Der Daemon erkennt das am
+   Rückgabewert der Operation.
+
+Redakteur verlässt die Seite
+----------------------------
+P: Was geschieht, wenn der Redakteur die Seite verlässt?
+
+L: Einfachster Fall: Da die Operation eingereiht ist, verarbeitet der
+   Verarbeiter der Warteschlange sie, ob der Benutzer wartet oder nicht. Das
+   kann den Benutzer verwirren, hält das Verhalten aber einheitlich.
+
+Veröffentlichen per Skript
+--------------------------
+P: Was geschieht, wenn die Veröffentlichungs-Operation außerhalb von
+   content/edit verwendet wird? Das ist recht häufig, und wir empfehlen es
+   sogar. Die Operation lässt sich weiterhin an den Verarbeiter senden, aber
+   wie wäre die Interaktivität umzusetzen?
+
+L: Konzept einer Veröffentlichungsstrategie? Für volle Rückwärtskompatibilität
+   sollte man den Ablauf während der Veröffentlichung leicht anhalten können.
+   So bliebe das Verhalten wie heute, und die Reihenfolge der Veröffentlichung
+   wäre gültig (Container vor Unterinhalten usw.). Dafür muss das Konzept der
+   Veröffentlichungsstrategie umgesetzt werden.
+
+Zombie-Prozesse
+---------------
+P: Erfahrungsgemäß sind Hintergrundprozesse nicht zu 100 % zuverlässig.
+   Zombie-Prozesse könnten die Parallelität begrenzen, da tote Prozesse der
+   Warteschlange inaktiv sein und neue am Start hindern könnten.
+
+Eingebettetes Veröffentlichen
+-----------------------------
+P: Andere Oberflächen lassen Benutzer Inhalte veröffentlichen, etwa die für
+   eingebettete Elemente in ezoe.
+
+L: Prüfen, wie sich das umgehen lässt, mit einer Warteanimation wie für die
+   normale Veröffentlichung vorgeschlagen.
+
+RedirectURIAfterPublish
+-----------------------
+P: Diese POST-Variable kann dem Formular content/edit hinzugefügt werden und
+   dient der Weiterleitung des Benutzers nach dem Veröffentlichen.
+
+L: Die Variable muss berücksichtigt und nach dem Veröffentlichen als
+   Standardverhalten angeboten werden.
+
+WebDAV
+------
+P: Wie lässt sich das mit WebDAV handhaben?
+
+L: Keine "Warte"-Oberfläche. PublishingStrategy => Echtzeit.
+
+An Cron übergebene Operationen
+------------------------------
+P: Werden sie unterstützt?
+
+L: Ja. Die Warteschlange führt die Operation weiter, bis sie übergeben wird,
+   und der Crontab setzt die Veröffentlichung fort. Bleibt nur, diesen Status
+   bei der Rückkehr zu behandeln. Ein Prozessstatus muss hinzukommen.
+
+TODO-Liste
+==========
+- RedirectURIAfterPublish behandeln (automatische Weiterleitung?) - ERLEDIGT
+- Rechteprüfung (lesen? bearbeiten?) für den Aufruf ezpublishingqueue/status
+  hinzufügen; bearbeiten scheint richtig, da der Benutzer seinen Inhalt in
+  jedem Fall bearbeiten können muss. Zusätzliche Prüfung für die Sprache?
+- tote Datenbank behandeln
+  Der Datenbank-Handler sollte bei toter Verbindung einen behandelbaren Fehler
+  liefern (Ausnahme), damit passend reagiert werden kann
+- interaktive Workflows behandeln. Irgendwie.
+- an Cron übergebenes Veröffentlichen behandeln
+  ein bestimmter Status sollte zurückgegeben werden. ERLEDIGT
+- Aufräumen der Warteschlangen-Tabelle (Archivierung) behandeln
+- Unterbrechung (SIG 3) behandeln: die Warteschlange nicht weiter bearbeiten,
+  laufende Aufträge beenden lassen und aufräumen
+- Daemon-Schalter und -Modus umsetzen
+  * Ausgabe behandeln, auf der Kommandozeile oder über Protokolle, damit der
+    Daemon-Modus funktioniert
+    Die Ausgabe wird jetzt in var/log/async.log protokolliert
+  Daemon-Modus umgesetzt, mit dem Schalter -n

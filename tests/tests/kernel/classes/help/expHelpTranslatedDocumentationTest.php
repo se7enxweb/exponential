@@ -354,6 +354,19 @@ class expHelpTranslatedDocumentationTest extends PHPUnit\Framework\TestCase
         $this->assertContains( 'doc/README.md', expHelpAllowlist::DEFAULTS['excludePatterns'] );
     }
 
+    /** TD-04b: every shipped path map is read: it stays below half the size limit, and it maps the README of its language */
+    public function testShippedPathMapsAreRead()
+    {
+        $languages = new expHelpLanguage( array( 'default' => 'eng-us', 'directories' => array( 'eng-us', 'ger-de' ) ), self::installRoot() );
+        foreach ( glob( self::installRoot() . '/doc/*/' . expHelpLanguage::PATH_MAP_FILE ) as $file )
+        {
+            $this->assertLessThan( expHelpLanguage::PATH_MAP_MAX_SIZE / 2, filesize( $file ), $file . ' has room below the size limit' );
+            $directory = basename( dirname( $file ) );
+            $this->assertNotSame( array(), $languages->pathMap( $directory ), $file . ' is read' );
+        }
+        $this->assertSame( 'README-LICENSE.md', $languages->canonical( 'ger-de', 'README-LIZENZ.md' ) );
+    }
+
     /** TD-05 */
     public function testPathMap()
     {

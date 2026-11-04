@@ -1,0 +1,309 @@
+===========================
+Asynchrones Veröffentlichen
+===========================
+
+Überblick
+=========
+
+Diese Funktion lässt Inhalte über eine Warteschlange veröffentlichen, die die
+Zahl gleichzeitiger Veröffentlichungen vollständig steuert. Ziel ist eine
+beherrschbare Datenbanklast ohne Zeitüberschreitungen.
+
+Einrichtung
+===========
+
+Einstellungen von Exponential
+-----------------------------
+Die Funktion ist standardmäßig ausgeschaltet. Zum Einschalten muss content.ini
+überschrieben und dieser Block in die Überschreibung eingefügt werden::
+
+    [PublishingSettings]
+    AsynchronousPublishing=enabled
+
+Standardmäßig sind bis zu 10 gleichzeitige Veröffentlichungen erlaubt. Um das
+zu ändern, fügen Sie der Überschreibung eine weitere INI-Einstellung hinzu::
+
+    [PublishingSettings]
+    AsynchronousPublishing=disabled
+    PublishingProcessSlots=20
+
+Systemkonfiguration
+-------------------
+Die Veröffentlichungen übernimmt ein System-Daemon. Er muss laufen, sonst
+werden Inhalte schlicht nicht veröffentlicht.
+
+PHP
+'''
+Das Skript bzw. der Daemon für das asynchrone Veröffentlichen braucht die
+pcntl-Funktionen, denn es veröffentlicht parallel über Forks und
+Prozesssteuerung. Manche Distributionen (etwa Ubuntu 11.0) schalten sie
+standardmäßig ab. Fehlt eine der nötigen Funktionen, kann der Daemon nicht
+laufen.
+
+Sind sie abgeschaltet, ändern Sie die php.ini der Kommandozeile oder, wenn das
+nicht möglich ist, überschreiben Sie sie lokal so::
+
+    php -d disabled_functions=0 bin/php/ezasynchronouspublisher.php
+
+Mit den unten unter 'Einstellungen' beschriebenen Init-Skripten lässt sich
+diese Option auch in ezasynchronouspublisher.conf eintragen::
+
+    PHP_EXECUTABLE=/usr/bin/php -d disabled_functions=0
+
+Manueller Start
+'''''''''''''''
+Der Daemon lässt sich von Hand starten, als Benutzer des Webservers::
+
+    ezroot$ php bin/php/ezasynchronouspublisher.php
+
+Das Skript läuft dann interaktiv. Um es als Daemon zu starten (es löst sich
+von der aktuellen Sitzung und läuft auch nach dem Abmelden weiter), fügen Sie
+den Schalter -n hinzu::
+
+    ezroot$ php bin/php/ezasynchronouspublisher.php -n
+
+Init-Skripte
+''''''''''''
+Diesen Weg empfehlen wir für den Produktivbetrieb. Es gibt übliche
+init.d-Skripte für Debian und Red Hat, mit denen der Daemon beim Systemstart
+startet.
+
+Zuerst muss das Startskript Ihres Systems in den Ordner init.d *verlinkt*
+werden. Ein Beispiel für Debian::
+
+    cd /etc/init.d
+    ln -s /path/to/exponential/bin/startup/debian/ezasynchronouspublisher ./ezasynchronouspublisher
+    chmod +x ./ezasynchronouspublisher
+
+Gestartet wird der Daemon dann mit::
+
+    /etc/init.d/ezasynchronouspublisher start
+
+Mit demselben Skript lässt er sich auch anhalten oder neu starten, indem Sie
+start durch stop oder restart ersetzen.
+
+Einstellungen
+'''''''''''''
+Die Init-Skripte bringen Standardeinstellungen mit, die zu den meisten
+Plattformen passen. Ist Ihr Webserver-Benutzer nicht der Standard der
+Plattform und/oder liegt die PHP-Kommandozeile nicht im PATH dieses
+Benutzers, lassen sie sich anpassen.
+
+Kopieren Sie zuerst die Standardkonfiguration Ihrer Plattform an den richtigen
+Ort Ihres Betriebssystems:
+- RHEL: /etc/ezasynchronouspublisher.conf
+- Debian: /etc/default/ezasynchronouspublisher.conf
+
+Beispiel für Debian/Ubuntu::
+    $ cp bin/startup/debian/ezasynchronouspublisher.defaults /etc/default/ezasynchronouspublisher.conf
+
+Bearbeiten Sie dann die Datei: Kommentieren Sie die nötigen Variablen ein und
+setzen Sie sie gemäß den Kommentaren in der Datei.
+
+Mehrere Instanzen
+-----------------
+
+Eine Datenbank je Instanz
+'''''''''''''''''''''''''
+Brauchen Sie mehrere Veröffentlichungs-Daemons, legen Sie je Daemon einen
+symbolischen Link an. Der Name des init.d-Skripts wird als Name der PID-Datei
+verwendet, beide sind unabhängig. Mehrere Daemons auf einer Instanz mit
+mehreren Datenbanken werden noch nicht unterstützt.
+
+Eine Instanz mit mehreren Datenbanken
+'''''''''''''''''''''''''''''''''''''
+Wie bei mehreren Instanzen mit je einer Datenbank brauchen Sie in jedem Fall
+ein Startskript je Datenbank.
+
+Dann ist für jedes init.d-Skript ein weiterer Schritt nötig. Standardmäßig
+verwendet der Daemon die Einstellungen des Standard-Siteaccesses. Da hier
+mehrere Datenbanken im Spiel sind, muss ein Siteaccess ausdrücklich genannt
+werden. Dafür ist eine weitere Datei nötig.
+
+Jedem Daemon lässt sich ein Siteaccess über eine Konfigurationsdatei mit
+diesem Namen zuweisen::
+
+    /etc/default/ezasynchronouspublisher/<init.d name>.conf
+
+Beispiel für ein init.d-Skript ``/etc/init.d/myezdaemon`` ::
+
+    /etc/default/ezasynchronouspublisher/myezdaemon.conf
+
+Diese Datei kennt derzeit eine Einstellung, siteaccess::
+
+    SITEACCESS=plain_site_admin
+
+Anpassung
+=========
+
+Filter-Hooks
+------------
+
+Das asynchrone Veröffentlichen hat Filter-Hooks, mit denen sich leicht
+verhindern lässt, dass bestimmte Elemente asynchron veröffentlicht werden.
+
+Es lassen sich beliebig viele Filter als PHP-Klassen konfigurieren. Jeder
+Filter wird nacheinander aufgerufen und nimmt das Objekt für das asynchrone
+Veröffentlichen an oder lehnt es ab. Lehnt ein Filter ein Objekt ab, endet die
+Filterverarbeitung, und das Objekt wird synchron veröffentlicht.
+
+Umsetzung: ezpAsynchronousPublishingFilter erweitern
+'''''''''''''''''''''''''''''''''''''''''''''''''''
+
+Für einen Filter schreiben Sie eine Klasse, die die abstrakte Klasse
+``ezpAsynchronousPublishingFilter`` erweitert. Diese implementiert das
+Interface ``ezpAsynchronousPublishingFilterInterface`` und verlangt die
+Methode ``accept()``. ``accept()`` muss einen Wahrheitswert zurückgeben: true
+heißt, das Objekt darf asynchron veröffentlicht werden; false lässt das System
+das asynchrone Veröffentlichen überspringen und den Inhalt direkt
+veröffentlichen.
+
+Die abstrakte Klasse stellt die veröffentlichte ``eZContentObjectVersion`` als
+Eigenschaft ``$version`` bereit. Damit lassen sich die Eigenschaften des
+Inhaltsobjekts (Veröffentlichungszeit, Autor, Inhaltsklasse, Sektion) leicht
+prüfen, Attribute lesen und so weiter.
+
+Beispiel::
+
+    <?php
+    /**
+     * Exclude from asynchronous publishing any object that isn't an article
+     * @return bool
+     */
+    class eZAsynchronousPublishingClassFilter extends ezpAsynchronousPublishingFilter
+    {
+        public function accept()
+        {
+            $contentObject = $this->version->contentObject();
+            return in_array( $contentObject->attribute( 'class_identifier' ), $this->validClasses );
+        }
+
+        private $validClasses = array( 'article' );
+    }
+    ?>
+
+Diese Klasse veröffentlicht nur Objekte der Klasse article asynchron.
+
+Einstellungen
+'''''''''''''
+
+Jeder Filter muss über INI-Einstellungen in content.ini registriert werden.
+Ein Beispiel für die Klasse oben::
+
+    [PublishingSettings]
+    AsynchronousPublishingFilters[]=eZAsynchronousPublishingClassFilter
+
+Für jeden Filter ist eine solche Zeile nötig.
+
+Prioritäten
+-----------
+
+Standardmäßig bearbeitet das asynchrone Veröffentlichen die Vorgänge ganz
+einfach nach FIFO: Was zuerst kommt, geht zuerst. Das ist unkompliziert und
+funktioniert in üblichen Fällen gut, aber es gibt leicht vorstellbare Fälle, in
+denen man das nicht will. Bei regelmäßigen Importen großer Inhaltsmengen etwa
+soll die Warteschlange nicht minutenlang durch den Import blockiert sein,
+während die Redakteure verzweifelt auf die Veröffentlichung ihrer Inhalte
+warten.
+
+Ein völlig flexibles System, das nie bricht, konnten wir nicht bieten, aber
+gar keinen sauberen Weg anzubieten war auch keine Option. Wir haben uns für
+ein System aus Hooks und Handlern entschieden, mit dem jeder die Bearbeitung
+der Warteschlange an seine Bedürfnisse anpassen kann.
+
+Die Hooks nutzen die eZ Component SignalSlot. Aus ihrer Dokumentation geht
+hervor, dass sich an jeden Hook mehrere Aufrufe hängen lassen, indem man die
+Methode connect mehrfach aufruft. Die Hooks werden in der Reihenfolge ihrer
+Registrierung aufgerufen.
+
+Hook preQueue
+'''''''''''''
+
+Diese Hooks werden direkt vor dem Einreihen eines Objekts in die
+Veröffentlichungs-Warteschlange aufgerufen. Damit lassen sich frei Daten
+abhängig vom Vorgang lesen und schreiben: Inhaltstyp, Autor,
+Veröffentlichungszeit, wie Sie wollen. Das System bietet keinen Speicher für
+zusätzliche Daten; dafür brauchen Sie ein eigenes System, haben dafür aber
+volle Freiheit bei Ihren Mechanismen.
+
+MyPriorityHandler::queue() vor dem Einreihen aufrufen::
+
+    ezpContentPublishingQueue::signals()->connect( 'preQueue', 'MyPriorityHandler::queue' );
+
+Soll der Aufruf jedes Mal erfolgen, lassen sich Hooks auch über INI-Einstellungen
+anhängen::
+
+    [PublishingSettings]
+    AsynchronousPublishingQueueHooks[]=MyPriorityHandler::queue
+
+Diese Hooks erhalten zwei Parameter:
+* die ID des Inhaltsobjekts (integer)
+* die Version des Inhaltsobjekts (integer)
+
+Sie sollen keinen Wert zurückgeben.
+
+Hook postHandling
+'''''''''''''''''
+
+Diese Hooks werden direkt nach der Bearbeitung eines Elements durch die
+Warteschlange aufgerufen.
+
+Sie eignen sich etwa, um Daten zu löschen oder zu aktualisieren, die ein
+preQueue-Hook angelegt hat.
+
+MyPriorityHandler::cleanup() nach der Bearbeitung aufrufen::
+
+    ezpContentPublishingQueue::signals()->connect( 'postHandling', 'MyPriorityHandler::cleanup' );
+
+Soll der Aufruf jedes Mal erfolgen, lassen sich Hooks auch über INI-Einstellungen
+anhängen::
+
+    [PublishingSettings]
+    AsynchronousPublishingPostHandlingHooks[]=MyPriorityHandler::cleanup
+
+Diese Hooks erhalten drei Parameter:
+* die ID des Inhaltsobjekts (integer)
+* die Version des Inhaltsobjekts (integer)
+* den Status des Veröffentlichungsvorgangs (eine der Konstanten
+  ezpContentPublishingProcess::STATUS_*)
+
+Sie sollen keinen Wert zurückgeben.
+
+Handler queueReader
+'''''''''''''''''''
+
+Dieser Handler liest aus der Warteschlange und entscheidet, welcher Inhalt an
+den Handler der Warteschlange geht.
+
+Exponential bringt einen Standard-Handler queueReader mit. Er liest einfach das
+älteste inaktive Element aus der Warteschlange der Vorgänge und gibt es
+zurück.
+
+Er lässt sich ersetzen, indem man die Klasse ``ezpContentPublishingQueue`` mit
+einer neuen Umsetzung der Methode ``next`` erweitert und die neue Klasse in
+``content.ini`` einträgt.
+
+Eine mögliche Klassendefinition::
+
+    <?php
+    class myPublishingQueue extends ezpContentPublishingQueue
+    {
+        public static function next()
+        {
+            // do your deeds...
+            if ( $process )
+                return $process;
+            else
+                return false;
+        }
+    }
+    ?>
+
+Und die passende Konfiguration in content.ini::
+
+    [PublishingSettings]
+    AsynchronousPublishingQueueReader=myContentPublishingQueue
+
+Auch andere Methoden von ``ezpContentPublishingQueue`` lassen sich
+überschreiben; das wird derzeit aber nicht offiziell unterstützt und ist
+deshalb nicht dokumentiert.

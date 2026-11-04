@@ -1,0 +1,102 @@
+Änderungen an Rückwärtskompatibilität und Verhalten in Version 5.2
+==================================================================
+
+Geänderte INI-Einstellungen
+---------------------------
+
+
+Geändertes Verhalten
+--------------------
+
+- Behoben EZP-18195: $result.object wird nicht richtig erzeugt
+
+  eZContentObject->assignedNodes( false ):
+  * liefert die Spalten "id" und "contentobject_id" nicht mehr.
+  * liefert "ezcontentobject.remote_id" unter dem Schlüssel
+  "object_remote_id"; der Schlüssel "remote_id" enthält weiterhin
+  "ezcontentobject_tree.remote_id".
+
+  eZContentObjectTreeNode::subTreeByNodeID() und
+  eZContentObjectTreeNode::subTreeMultiPaths() verwenden intern die Spalten
+  "ezcontentobject_tree.contentobject_id" und "ezcontentobject.name" nicht
+  mehr. Haben Sie sich in erweiterten Attributfiltern mit einer
+  "HAVING"-Klausel darauf verlassen, ersetzen Sie
+  "ezcontentobject_tree.contentobject_id" durch "ezcontentobject.id" und
+  fügen Sie "ezcontentobject.name" zu den zusätzlich abzurufenden Spalten
+  hinzu, wenn Sie es verwendet haben.
+
+  eZContentObjectTreeNode::findMainNodeArray( [...], false ),
+  eZContentObjectTreeNode::fetch( [...], [...], false ) und:
+  eZContentObjectTreeNode::fetchNodesByPathString( [...], [...], false ):
+  eZContentObjectTreeNode::fetchByRemoteID( [...], false );
+  eZContentObjectTreeNode::fetchByPath( [...], false );
+  eZContentObjectTreeNode::fetchByURLPath( [...], false );
+  * liefern den Schlüssel "contentobject_id" neben "id" nicht mehr; verwenden
+  Sie stattdessen den Schlüssel "id".
+  * liefern "ezcontentobject.remote_id" unter dem Schlüssel
+  "object_remote_id"; der Schlüssel "remote_id" enthält weiterhin
+  "ezcontentobject_tree.remote_id".
+
+- Behoben EZP-20766: Falscher Standardwert für CLUSTER_HEADER_X_POWERED_BY in
+  index_cluster.php
+
+  Der bisherige Standardwert (true) setzte X-Powered-By auf 1 (true als Zahl).
+  Ab 5.2 ist der Standardwert "Exponential".
+
+- menu.ini\[Leftmenu_<menu>]
+
+  Links im linken Menü sind im Browse-Modus jetzt standardmäßig abgeschaltet.
+  Das lässt sich je Eintrag mit der neuen Einstellung
+  Enabled_<link>[<ui_context>] ändern.
+
+- Behoben EZP-21358: ezjscAjaxContent: Die EXIF-Felder MakerNote und
+  UserComment von Bildern müssen base64-kodiert sein
+
+  ezjscAjaxContent liefert die EXIF-Felder MakerNote und UserComment von
+  Bildern jetzt base64-kodiert.
+
+- Die Konstante eZDFSFileHandlerMySQLiBackend::TABLE_METADATA wurde entfernt
+
+  Siehe http://jira.ez.no/browse/EZP-18865
+
+- Cluster: Der MySQLi-Handler für DFS speichert den Cache jetzt in einer
+  eigenen Tabelle.
+
+  Eine Wartung wird empfohlen, um den Cache aus der Haupttabelle zu entfernen.
+  Wer das nicht will, kann zum alten Verhalten zurückkehren, indem die
+  Cache-Tabelle auf die alte gesetzt wird: CLUSTER_METADATA_TABLE_CACHE in
+  config.cluster.php auf ezdfsfile setzen.
+
+  Mehr Informationen stehen in der Online-Dokumentation.
+
+- Globale Variablen in Skripten werden nicht mehr unterstützt (funktionieren
+  nicht über exponential:legacy:script)
+
+  Über die Kommandozeile ausgeführte PHP-Skripte dürfen keine globalen
+  Variablen mehr voraussetzen. Das brach schon früher in 5.x, als der
+  Symfony-Befehl exponential:legacy:script kam, um Legacy-Skripte auszuführen
+  und zugleich die Integration sicherzustellen. Mit globalen Variablen kann
+  dieser Ansatz technisch nicht funktionieren. Bauen Sie Ihre Erweiterungen so
+  um, wie es im Legacy-Kernel geschieht:
+  - https://github.com/ezsystems/exponential-legacy/pull/827
+
+
+Entfernte Funktionen
+--------------------
+
+
+Entfernte Konstanten
+--------------------
+
+- eZContentLanguage::MAX_COUNT
+
+  Die Zahl der unterstützten Sprachen lässt sich nicht mehr in einer Konstante
+  halten; verwenden Sie stattdessen die Methode eZContentLanguage::maxCount().
+
+
+Entfernte globale Variablen
+---------------------------
+
+
+Veraltet
+--------

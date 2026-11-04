@@ -1,0 +1,231 @@
+=========================================
+Anleitung: einen eZDFS-Cluster einrichten
+=========================================
+
+Über
+====
+
+eZDFS steht für Distributed File System (verteiltes Dateisystem).
+
+Das Prinzip dieses Handlers lässt sich so zusammenfassen: Die Cluster-Dateien
+liegen im Wesentlichen auf NFS, ihre Metadaten (Größe, mtime, Ablaufstatus)
+werden in einer Datenbanktabelle geführt, ähnlich der von eZDB.
+Über NFS wird die maßgebliche Kopie der Cluster-Dateien gelesen und
+geschrieben. Cache-Dateien werden lokal kopiert, wenn ein Frontend sie
+verwendet. Bilder und Binärdateien werden (bei direktem Zugriff über den
+Browser) direkt von NFS gestreamt.
+
+eZDFS: Konfiguration der Gesamtarchitektur
+==========================================
+Die wichtigsten Teile der Architektur sind der NFS-Einhängepunkt und die
+Cluster-Datenbank.
+
+Jede Exponential-Instanz, die dieselbe relationale Datenbank nutzt, muss
+dieselbe Cluster-Datenbank verwenden, und jede braucht einen lokalen
+Einhängepunkt desselben NFS-Exports, auf genau dieselbe Weise konfiguriert.
+
+Beispiel:
+NFS-server:/exports/myvardir
+Exponential-server1:/var/www/var/nfsmount => mount of NFS-server:/exports/myvardir
+Exponential-server2:/var/www/var/nfsmount => mount of NFS-server:/exports/myvardir
+Exponential-server3:/var/www/var/nfsmount => mount of NFS-server:/exports/myvardir
+
+Die var-Verzeichnisse dürfen KEINESFALLS zwischen Instanzen geteilt werden, da
+sie automatisch synchronisiert werden. Das gilt für eZDB wie für eZDFS. Die
+Cluster-Handler synchronisieren die Daten mit dem zentralen Speicher.
+
+Installation
+============
+
+Die Datenbankstruktur anlegen
+-----------------------------
+Die Datenbankstruktur für die Informationen der Cluster-Dateien muss angelegt
+werden. Die Tabelle kann auf demselben MySQL-Server liegen wie die relationale
+Datenbank oder auf einem anderen. Bei großen Websites kann ein eigener
+MySQL-Server die Leistung deutlich verbessern.
+
+Die Definition der Tabelle steht in der Klassendatei des MySQL-Treibers von
+eZDFS (kernel/private/classes/clusterfilehandlers/dfsbackends/mysql.php). Sie
+ist genau dieselbe wie unten::
+
+    CREATE TABLE ezdfsfile (
+      `name` text NOT NULL,
+      name_trunk text NOT NULL,
+      name_hash varchar(34) NOT NULL DEFAULT '',
+      datatype varchar(60) NOT NULL DEFAULT 'application/octet-stream',
+      scope varchar(25) NOT NULL DEFAULT '',
+      size bigint(20) unsigned NOT NULL DEFAULT '0',
+      mtime int(11) NOT NULL DEFAULT '0',
+      expired tinyint(1) NOT NULL DEFAULT '0',
+      `status` tinyint(1) NOT NULL DEFAULT '0',
+      PRIMARY KEY (name_hash),
+      KEY ezdfsfile_name (`name`(250)),
+      KEY ezdfsfile_name_trunk (name_trunk(250)),
+      KEY ezdfsfile_mtime (mtime),
+      KEY ezdfsfile_expired_name (expired,`name`(250))
+    ) ENGINE=InnoDB;
+
+NFS
+---
+Da eZDFS auf NFS beruht, muss auf jedem Server mit Exponential ein lokaler
+Einhängepunkt eines NFS-Servers vorhanden und für den Benutzer des Webservers
+beschreibbar sein.
+
+Wie die Einhängepunkte konfiguriert werden, hängt vom Hersteller der
+NFS-Lösung ab.
+
+Den Cluster-Handler konfigurieren
+---------------------------------
+Jede Exponential-Instanz mit demselben var-Verzeichnis muss richtig
+konfiguriert sein, damit der Cluster-Handler funktioniert. Alles wird in
+file.ini eingestellt (dafür legen Sie natürlich eine globale Überschreibung
+dieser Datei an).
+
+Den Cluster-Handler auf eZDFS stellen
+'''''''''''''''''''''''''''''''''''''
+
+Dazu setzen Sie in file.ini die Anweisung ClusteringSettings.FileHandler auf
+eZDFSFileHandler::
+
+    # in settings/override/file.ini.append.php
+    [ClusteringSettings]
+    FileHandler=eZDFSFileHandler
+
+Der Handler selbst wird in derselben Datei im INI-Block
+eZDFSClusteringSettings konfiguriert. Die meisten Einstellungen erklären sich
+selbst; die Kommentare unten beschreiben sie (der NFS-Einhängepunkt, relativ
+zur Exponential-Wurzel oder absolut; das Datenbank-Backend, derzeit nur eines;
+Host, Port, Name, Benutzer und Passwort der MySQL-Datenbank mit der Tabelle
+ezdfsfile)::
+
+    # in settings/override/file.ini.append.php
+    [eZDFSClusteringSettings]
+    # Path to the NFS mount point
+    # Can be relative to the Exponential root, or absolute.
+    # The example below will work for a mount of NFS to the subdirectory
+    # var/nfsmount in the Exponential root. Any location is possible
+    MountPointPath=var/nfsmount
+
+    # Database backend (only one available at the moment)
+    DBBackend=eZDFSFileHandlerMySQLBackend
+    # Hostname of the MySQL server where the ezdfsfile table lies
+    DBHost=localhost
+    # MySQL port
+    DBPort=3306
+    # Database name
+    DBName=ezpublishcluster
+    # Database user
+    DBUser=exponential
+    # Password for the user above
+    DBPassword=exponential
+
+Die index_*-Dateien für den Cluster konfigurieren
+-------------------------------------------------
+
+Damit Cluster-Dateien über direkte HTTP-Anfragen erreichbar sind (Bilder,
+Binärdateien usw.), braucht es ein Konfigurationsskript und Rewrite-Regeln.
+
+Die Konfigurationsskripte sind im Release enthalten. Das Skript, mit dem
+Apache Anfragen nach Binärdateien bedient, ist index_cluster.php (im
+Backport-Release enthalten); es wird in der Rewrite-Konfiguration genannt.
+
+Die Datei enthält Konfigurationskonstanten und bindet beim Ausführen die Datei
+index_image.php ein (Teil der Distribution von Exponential). Diese bindet
+wiederum `index_image_dfscluster.php` ein, das Skript, das die Dateien liest
+und an den Browser streamt.
+
+Unten ein Beispiel für index_cluster.php passend zur INI-Konfiguration oben
+(die Einstellungen stimmen in der Regel zwischen INI und dieser Datei
+überein)::
+
+    <?php
+    // DFS parameters
+    // the cluster handler name
+    define( 'STORAGE_BACKEND', 'dfsmysql' );
+    // database host (eZDFSClusteringSettings.DBHost)
+    define( 'STORAGE_HOST', 'localhost' );
+    // database user (eZDFSClusteringSettings.DBUser)
+    define( 'STORAGE_USER', 'exponential' );
+    // database user password (eZDFSClusteringSettings.DBPassword)
+    define( 'STORAGE_PASS', 'exponential' );
+    define( 'STORAGE_DB', 'ezpublishcluster' );
+    define( 'MOUNT_POINT_PATH', 'var/nfsmount' );
+
+    include_once( 'index_image.php' );
+    ?>
+
+Rewrite-Regeln für den Cluster
+------------------------------
+mod_rewrite ist zwingend nötig, damit index_cluster.php Binärdateien und
+Bilder ausliefern kann. Die Regeln sind recht einfach: Sie schreiben jede
+Anfrage nach einem Inhaltsbild oder einer Binärdatei auf index_cluster.php
+um, das die Dateien dann direkt per HTTP vom NFS-Server ausliefert.
+
+Die Regeln sind dieselben wie für eZDB ( http://ez.no/doc/ez_publish/technical_manual/4_0/features/clustering/setting_it_up ).
+Hier sind sie::
+
+    RewriteEngine On
+
+    Rewriterule ^/var/([^/]+/)?storage/images-versioned/.*  /index_cluster.php  [L]
+    Rewriterule ^/var/([^/]+/)?storage/images/.*            /index_cluster.php  [L]
+
+    # Other Exponential rewrite rules
+
+Diese Regeln *müssen* *vor* den üblichen Rewrite-Regeln von Exponential stehen.
+
+Hinweis:
+Wie beim normalen Cluster wird dringend empfohlen, die Anfragen nach
+Binärdateien über einen Proxy zu cachen, da sie direkt die Datenbank (eZDB)
+bzw. NFS und Datenbank (eZDFS) abfragen und zu Leistungsproblemen führen
+können.
+
+Die Dateien in den Cluster übernehmen
+-------------------------------------
+Ist alles richtig konfiguriert, müssen die Binärdaten (Bilder und Dateien) in
+den Cluster übernommen werden.
+
+Das geschieht mit dem Skript clusterize.php::
+
+    php bin/php/clusterize.php -v
+
+Das Skript überträgt alle Bilder aus ezimage und alle Binärdateien aus
+ezbinaryfile in die Tabelle ezdfsfile (Metadaten) und die Dateien selbst auf
+den konfigurierten NFS-Einhängepunkt.
+
+*Hinweis:* Je nach Zahl der Dateien der Exponential-Instanz kann das lange
+dauern. Wird der Vorgang aus irgendeinem Grund unterbrochen, lässt er sich
+gefahrlos neu starten.
+
+Den Cache von Exponential leeren
+--------------------------------
+Mit dem Kommandozeilenskript ezcache.php::
+
+
+    $ezpublishroot: php bin/php/ezcache.php --clear-all
+
+Richten Sie mehrere Server ein, führen Sie den Befehl auf jedem Server aus.
+
+Fehlerbehebung
+==============
+
+Ist alles konfiguriert und der Binärinhalt im Cluster, ist das Testen
+manchmal kompliziert.
+
+Überschreiben Sie zuerst die Datei debug.ini (in
+settings/override/debug.ini.append.php) und schalten Sie den Debug-Schlüssel
+kernel-clustering ein::
+
+    [GeneralCondition]
+    kernel-clustering=enabled
+
+Dann erhalten Sie viel mehr Debug-Informationen über den Cluster. Laden Sie
+eine beliebige Seite Ihrer Website neu. Die Seite selbst sollte richtig
+funktionieren.
+
+Werden Bilder nicht angezeigt, stimmt wahrscheinlich etwas mit den
+Rewrite-Regeln oder mit index_cluster.php nicht. Den Fehler findet man am
+besten, indem man ein Bild direkt im Browser lädt (meist über das
+Kontextmenü eines Bildes und "Grafik in neuem Tab öffnen" oder ähnlich).
+Erscheint statt des Bildes ein Fehler "Module not found", ist die
+Rewrite-Regel nicht richtig konfiguriert. Erscheint ein PHP-Fehler, ist
+wahrscheinlich die Konfiguration in index_cluster.php falsch.

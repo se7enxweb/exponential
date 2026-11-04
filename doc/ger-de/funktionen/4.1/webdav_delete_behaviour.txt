@@ -1,0 +1,11 @@
+Standardmäßig kommen über WebDAV gelöschte Dateien in den Papierkorb. Den
+Papierkorb zu leeren ist Aufgabe des Administrators der Site. Sollen die
+Dateien direkt entfernt werden (ohne Papierkorb), muss diese Einstellung in
+content.ini geändert werden
+::
+
+  [RemoveSettings]
+  # delete or trash
+  DefaultRemoveAction=delete
+
+(delete löscht direkt, trash legt in den Papierkorb.)

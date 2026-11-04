@@ -1,0 +1,10 @@
+*Titel: Papierkorb
+
+*Anlass:
+Gelöschte Objekte waren für alle Benutzer zugänglich (ohne Prüfung der Rechte).
+
+*Dokumentation:
+Die neue Tabelle 'ezcontentobject_trash' speichert die Hauptknoten entfernter Inhaltsobjekte.
+Die neue Klasse 'eZContentObjectTrashNode' verwaltet die Einträge dieser Tabelle. Beim Abrufen
+der Liste der zugänglichen Papierkorb-Einträge werden jetzt die Rechte des angemeldeten
+Benutzers geprüft.

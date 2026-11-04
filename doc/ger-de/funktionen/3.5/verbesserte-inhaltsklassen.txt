@@ -1,0 +1,26 @@
+*Titel: Verbesserte Struktur der Inhaltsklassen
+
+Anlass:
+Aus einer Inhaltsklasse soll sich ablesen lassen, ob sie als Container gedacht ist
+oder nicht. So kann das Template-System etwas nur dann tun (z. B. Bedienelemente zum
+Anlegen von Unterelementen zeigen), wenn dies gesetzt ist oder nicht.
+
+*Dokumentation:
+Die Tabelle ezcontentclass hat ein neues Feld 'is_container'.
+Es enthält entweder 0 (false) oder 1 (true).
+
+Der Export von Inhaltsklassen kennt das neue Feld und setzt es als Attribut am
+XML-Wurzelknoten. Das Attribut heißt 'is-container' und enthält 'true' oder 'false'.
+Beispiel:
+<content-class is-container="true">
+<content-class is-container="false">
+
+Ein Upgrade von früheren Exponential-Versionen (3.4 oder älter) erfordert ein Skript
+oder eine manuelle Korrektur durch einen Administrator.
+
+Hinweis: Die Administrationsoberfläche braucht diese Einstellung korrekt für Ordner und
+andere containerartige Klassen. Sonst lassen sich keine Unterelemente anlegen.
+
+*Tests:
+
+*SVN-Revisionen:

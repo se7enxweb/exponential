@@ -1,0 +1,159 @@
+Änderungen an Rückwärtskompatibilität und Verhalten in Version 4.5.0
+====================================================================
+
+Geändertes Verhalten
+--------------------
+
+- Ist die Aktivierung eingeschaltet, wird das Benutzerobjekt erst angelegt,
+  wenn der Benutzer sein Konto aktiviert.
+
+  Damit user/register einen Genehmigungs-Workflow unterstützt, wird das Objekt
+  erst veröffentlicht, wenn der Benutzer auf die Aktivierung geklickt hat.
+  Nach dem Klick auf Registrieren entsteht ein Entwurf des Benutzerobjekts;
+  klickt der Benutzer auf die Aktivierung, wird das Objekt veröffentlicht.
+  Nicht aktivierte Benutzer lassen sich daher nicht in der Objektansicht
+  sehen, wohl aber in der Versionsansicht.
+  Das kann Überschreibungen des Templates der Aktivierungs-E-Mail betreffen.
+
+- viewcache.ini\[<class_identifier>]\ClearCacheMethod[]=all
+
+  Diese Einstellung schließt jetzt das neue ClearCacheMethod[]=children ein.
+  'all' umfasst immer alles; wer das nicht will, muss genau angeben, was
+  gelten soll.
+
+- eZINI::instance()
+  Parameter: $useTextCodec, $useCache, $directAccess und $addArrayDefinition
+  (3, 4, 6, 7)
+
+  Diese Funktion verwendete bisher nur $rootDir, $fileName und
+  $useLocalOverrides als Teil des Instanzschlüssels. Statt das zu ändern (dann
+  hätte aller Code mit ::isLoaded() und ::resetGlobals() angepasst werden
+  müssen), liefern alle anderen Parameter, wenn sie nicht ihren Standardwert
+  haben, eine neue statt einer geteilten Instanz. Wer einen dieser Parameter
+  selbst setzen will, sollte der Klarheit halber "new eZINI()" verwenden.
+
+- eZScript
+
+  Die Option 'use-extensions' ist jetzt standardmäßig eingeschaltet (true).
+  Ist sie false, erscheint außerdem ein Hinweis, außer im stillen Modus.
+  So werden die Einstellungen der Erweiterungen geladen, als Antwort auf den
+  Fehler #016614: some update scripts do not load extensions
+
+- eZDB::instance() und eZDB::connect() werfen jetzt eine
+  eZDBNoConnectionException
+
+  Beide Methoden werfen eine eZDBNoConnectionException, wenn die Verbindung
+  zum Datenbankserver fehlschlägt.
+
+Entfernte Funktionen
+--------------------
+
+- Die Inhaltsansichten "diff" und "versions" wurden entfernt.
+
+  Sie waren seit 3.9 veraltet zugunsten der kombinierten Ansicht "history".
+
+
+Entfernte Konstanten
+--------------------
+
+- eZINI::DEBUG_INTERNALS
+
+  Diese Konstante, bisher false, war nur für den internen Gebrauch und stand
+  für den Anfangs- und Standardwert der Methoden eZINI::setIsDebugEnabled()
+  und eZINI::isDebugEnabled().
+
+
+Entfernte globale Variablen
+---------------------------
+
+- eZINIGlobalInstance-*
+
+  eZINI verwendet jetzt eine geschützte statische Variable für die
+  eZINI-Instanzen. Mit eZINI::resetAllGlobals( false ); lassen sie sich bei
+  Bedarf leeren.
+
+- eZINICacheEnabled, eZINIDebugInternalsEnabled und eZINITextCodecEnabled
+
+  eZINI verwendet jetzt eine geschützte statische Variable für diese globalen
+  Zustände.
+
+
+Veraltet
+--------
+
+- eZMySQLDB, also der Treiber ezmysql
+
+  eZMySQLiDB gibt es schon länger und ist jetzt der bevorzugte MySQL-Treiber.
+
+- eZSiteAccess::debugEnabled() und eZSiteAccess::extraDebugEnabled()
+  site.ini\[SiteAccessSettings]DebugAccess und DebugExtraAccess
+
+  Diese Funktionen und Einstellungen sind veraltet; eZSiteAccess verwendet
+  stattdessen die vorhandene Einstellung kernel-siteaccess in debug.ini für
+  eZDebugSetting.
+
+- eZSys::removeMagicQuotes() und eZSys::magickQuotes()
+
+  Veraltet, da Magic Quotes in PHP 5.3 veraltet sind
+
+- eZSys::phpVersionText(), eZSys::phpVersion() und
+  eZSys::isPHPVersionSufficient()
+
+  Verwenden Sie stattdessen PHP_VERSION und andere native Mittel von PHP.
+
+- eZSys::isDebugEnabled() und eZSys::setIsDebugEnabled()
+
+  Werden nicht mehr verwendet.
+
+- eZDebugSetting::setDebugINI()
+
+  eZDebugSetting verwendet eZINI jetzt direkt, damit keine falschen
+  Einstellungen verwendet werden, wenn der Siteaccess wechselt oder
+  Erweiterungen geladen werden.
+
+- eZINI::resetGlobals()
+
+  Veraltet zugunsten von eZINI::resetInstance()
+
+- eZINI::resetAllGlobals()
+
+  Veraltet zugunsten von eZINI::resetAllInstances()
+
+- Parameter $addArrayDefinition von eZINI::instance()
+
+  Der letzte Parameter dieser Funktion ist veraltet; verwenden Sie
+  stattdessen "new eZINI()". Siehe auch 'Geändertes Verhalten' oben.
+
+- eZClusterFileHandlerInterface::requiresBinaryPurge()
+
+  Verwenden Sie stattdessen eZClusterFileHandlerInterface::requiresPurge().
+
+- ::fetchExpiredBinaryItems()
+
+  Klassen: eZDFSFileHandler, eZFSFileHandler, eZDBFileHandler
+  Verwenden Sie stattdessen ::fetchExpiredItems().
+
+- eZOverride
+
+  Wird nirgends verwendet.
+
+- eZSession::addCallback() und eZSession::triggerCallback()
+
+  Diese Callbacks sind veraltet zugunsten des neuen Systems ezpEvent. Es gibt
+  neue, verbesserte Ereignisse für Sessions, siehe funktionen/4.5/event.txt
+
+- site.ini\[OutputSettings]\OutputFilterName
+
+  Diese Funktion ist veraltet zugunsten des neuen Systems ezpEvent,
+  siehe funktionen/4.5/event.txt
+
+- template.ini\[ControlSettings]\OldStyleUserVariables
+
+  Diese Funktion ist veraltet, da sie template.ini lädt, bevor die
+  Einstellungen von Siteaccess und Erweiterungen geladen sind, und so Probleme
+  verursacht.
+
+- shop
+
+  Das Shop-Modul ist veraltet und sollte in naher Zukunft aus dem Kernel in
+  eine eigene Community-Erweiterung verlagert werden.

@@ -1,0 +1,87 @@
+*Titel: Entwickler-Werkzeugleiste (Spezifikation #15)
+
+*Dokumentation:
+Das rechte Menü der Administrationsoberfläche ist als Werkzeugleiste "admin_right" umgesetzt.
+Sie enthält diese Werkzeuge:
+- Aktueller Benutzer.
+- Lesezeichen.
+- Cache leeren. Zum schnellen Leeren der verschiedenen Cache-Arten.
+- Schnelleinstellungen. Zum Setzen boolescher INI-Werte.
+
+Es gibt außerdem eine "Debug-Werkzeugleiste" mit den Werkzeugen "Cache leeren" und
+"Schnelleinstellungen", die in der Debug-Ausgabe jedes Siteaccess erscheint.
+Sie schalten sie mit dieser Einstellung in site.ini ein:
+
+[DebugSettings]
+DebugToolbar=enabled
+
+Die Liste der Einstellungen im Werkzeug "Schnelleinstellungen" ist konfigurierbar. Sie steht
+in site.ini als Array von Zeichenketten, die jede Einstellung in diesem Format beschreiben:
+
+[DebugSettings]
+QuickSettingsList[]=<section name>;<variable name>;<file name>;<text label>
+
+Das Kontrollkästchen einer Einstellung zeigt immer deren aktuellen Wert für den gewählten
+Siteaccess, unabhängig davon, wo sie gesetzt ist.
+Wo sie gesetzt ist, zeigt die Farbe ihres Namens:
+
+- schwarz: Der Wert ist in diesem Siteaccess gesetzt (override), oder es gilt der Standardwert
+- rot bei Siteaccess-Einstellungen: Die Einstellung wird überschrieben
+- grau bei globalen override-Einstellungen: Die Einstellung wird nicht überschrieben.
+  Kontrollkästchen 'grauer' Einstellungen sind immer leer.
+
+Setzen Sie Werte für einen Siteaccess, werden alle entsprechenden override-Einstellungen
+gelöscht.
+
+*Einstellungen:
+Damit die Werkzeugleiste der Administration funktioniert, müssen diese Einstellungen in
+toolbar.ini stehen:
+
+[Toolbar]
+AvailableToolBarArray[]=admin_right
+AvailableToolBarArray[]=admin_developer
+
+[Tool]
+AvailableToolArray[]=admin_current_user
+AvailableToolArray[]=admin_bookmarks
+AvailableToolArray[]=admin_clear_cache
+AvailableToolArray[]=admin_quick_settings
+
+[Toolbar_admin_right]
+Tool[]
+Tool[]=admin_current_user
+Tool[]=admin_bookmarks
+
+[Toolbar_admin_developer]
+Tool[]
+Tool[]=admin_clear_cache
+Tool[]=admin_quick_settings
+
+
+*Hinweis:
+Der Template-Operator 'ezini' wurde geändert und hat jetzt dieses Format:
+ezini( <section_name>, <variable_name>, [<file_name>], [<ini_path>], [<dynamic_fetch>] )
+
+Zwei Parameter sind hinzugekommen:
+- ini_path (string): Pfad zum Verzeichnis der INI-Dateien.
+- dynamic_fetch (boolean): Ist dieser Parameter 'true', wird der Wert der Variablen
+  dynamisch abgerufen.
+
+*Module:
+Das Modul setup hat zwei zusätzliche Ansichten:
+- setup/cachetoolbar (kernel/setup/cachetoolbar.php)
+- setup/settingstoolbar (kernel/setup/settingstoolbar.php)
+
+*Templates:
+Die Funktionsteile der neuen Werkzeuge sind als eigene Standard-Templates umgesetzt:
+design/standard/templates/setup/clearcache.tpl
+design/standard/templates/setup/quicksettings.tpl
+
+Templates der Werkzeugleiste der Administration (mit besonderen Stilen der Administrationsoberfläche):
+design/admin/templates/toolbar/full/admin_bookmarks.tpl
+design/admin/templates/toolbar/full/admin_clear_cache.tpl
+design/admin/templates/toolbar/full/admin_current_user.tpl
+design/admin/templates/toolbar/full/admin_quick_settings.tpl
+
+Template der Debug-Werkzeugleiste:
+design/standard/templates/setup/debug_toolbar.tpl

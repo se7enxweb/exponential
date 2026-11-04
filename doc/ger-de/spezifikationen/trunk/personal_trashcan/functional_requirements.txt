@@ -1,0 +1,76 @@
+Vorwort
+=======
+
+Es hat sich gezeigt, dass das Wiederherstellen von Ordnern schwierig sein kann,
+besonders wenn sie Inhalte wie Unterordner haben, denn der bisherige Papierkorb
+von Exponential löst die Struktur auf, wenn das gelöschte Objekt im Papierkorb
+abgelegt wird.
+
+Daher braucht es einen persönlichen Papierkorb.
+
+Persönlicher Papierkorb
+=======================
+
+Der Papierkorb muss je nach Benutzerart verschieden funktionieren:
+
+1. Endbenutzer
+2. Administrator
+
+Anforderungen für Endbenutzer
+=============================
+
+Öffnet der Endbenutzer den Papierkorb, soll er sehen:
+
+1. Die von ihm gelöschten Objekte mit erhaltener Struktur
+2. Die Liste soll enthalten
+    a. Objektname
+    b. Löschdatum
+    c. Erstellungsdatum
+    d. wenn möglich den Namen des Erstellers des Objekts
+    e. die Größe der gelöschten Objekte
+3. Die Liste soll sich sortieren lassen nach:
+    a. Objektname
+    b. Löschdatum
+    c. Erstellungsdatum
+    d. Ersteller (wenn möglich)
+    e. Größe
+
+Der Papierkorb soll diese Eigenschaften haben:
+
+1. Die Liste soll sich nach den üblichen Standards von Exponential einstellen
+   lassen, etwa die Zahl der Einträge.
+2. Mehrere Objekte sollen sich zum Wiederherstellen markieren lassen.
+3. Beim Wiederherstellen soll es die Möglichkeit geben, die alte node_id zu
+   verwenden, damit vorhandene Templates nicht geändert werden müssen.
+
+Anforderungen für Administratoren
+=================================
+
+Öffnet der Administrator den Papierkorb, soll er sehen:
+
+1. Die von ihm gelöschten Objekte mit erhaltener Struktur
+2. Die Liste soll enthalten
+    a. Name des Eigentümers
+    b. Objektname
+    c. Löschdatum
+    d. Erstellungsdatum
+    e. wenn möglich den Namen des Erstellers des Objekts
+    f. die Größe der gelöschten Objekte
+
+9. Die Liste soll sich sortieren lassen nach:
+    a.	Name des Eigentümers
+    b.	Objektname
+    c.	Löschdatum
+    d.	Erstellungsdatum
+    e.	Ersteller (wenn möglich)
+    f.	Größe
+
+Der Papierkorb des Administrators soll diese Eigenschaften haben:
+
+- Der Administrator soll den gesamten Inhalt des Papierkorbs sehen.
+- Inhalte sollen sich durchsuchen lassen.
+- Die Liste soll sich nach den üblichen Standards von Exponential einstellen
+  lassen, etwa die Zahl der Einträge.
+- Mehrere Objekte sollen sich zum Wiederherstellen markieren lassen.
+- Beim Wiederherstellen soll es die Möglichkeit geben, die alte node_id zu
+  verwenden, damit vorhandene Templates nicht geändert werden müssen.

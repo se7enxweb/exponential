@@ -1,0 +1,51 @@
+*Titel: Upload-Handler für Inhaltsobjekte
+
+*Anlass:
+Erweiterungen sollen das Anlegen von Inhaltsobjekten aus hochgeladenen Dateien übernehmen
+können. Sie können zum Beispiel mehrere Objekte anlegen und mehrere Attribute füllen.
+
+*Dokumentation:
+Damit können Sie in einer Erweiterung Upload-Handler für Inhaltsobjekte schreiben. Für
+verschiedene MIME-Typen lassen sich verschiedene Upload-Handler konfigurieren.
+
+Upload-Handler eignen sich für automatischen Import oder automatische Umwandlung von
+Dokumenten beim Hochladen, zum Beispiel für den Import von OpenOffice.org-Dokumenten.
+
+Das Upload-System wird sowohl beim normalen Hochladen über das Web als auch bei PUT-Anfragen
+über WebDAV verwendet.
+
+Um einen Upload-Handler für einen bestimmten MIME-Typ einzuschalten, setzen Sie diese
+Einstellung in upload.ini:
+MimeUploadHandlerMap[<mime_type>]=<handler_identifier>
+
+<handler_identifier> ist der Name einer Klasse in einer Erweiterung.
+Heißt der Bezeichner zum Beispiel ezopenofficeuploadhandler, wird nach
+extension/*/uploadhandlers/ezopenofficeuploadhandler.php gesucht und die Klasse
+ezopenofficeuploadhandler verwendet.
+
+INI-Beispiel:
+[CreateSettings]
+MimeUploadHandlerMap[application/vnd.sun.xml.writer]=ezopenofficeuploadhandler
+
+Beispielcode eines Upload-Handlers:
+
+include_once( 'kernel/classes/ezcontentuploadhandler.php' );
+
+class eZOpenofficeUploadHandler extends eZContentUploadHandler
+{
+    function eZOpenofficeUploadHandler()
+    {
+        $this->eZContentUploadHandler( 'OOo file handling', 'openoffice' );
+    }
+
+    /*!
+      Handles the uploading of OpenOffice.org documents.
+    */
+    function handleFile( &$upload, &$result,
+                         $filePath, $originalFilename, $mimeInfo,
+                         $location, $existingNode )
+    {
+        // Implement your import/conversion routine here
+        copy( $filepath, "var/cache/oofile.sxw" );
+    }
+}

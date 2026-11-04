@@ -54,8 +54,10 @@ class expHelpLanguage
     /** The path map of a language, in its directory */
     const PATH_MAP_FILE = '.paths.json';
 
-    /** The largest path map that is read, in bytes */
-    const PATH_MAP_MAX_SIZE = 1048576;
+    /** The largest path map that is read, in bytes. The German map passed 1 MiB with the 3.x feature notes (one entry
+     *  per page, about 9,000 pages); a larger map is not read at all, so every page of that language counts as
+     *  untranslated. Kept well above the shipped maps (the shipped-maps test checks the headroom). */
+    const PATH_MAP_MAX_SIZE = 8388608;
 
     /** What a language directory may look like: a lower case Exponential locale (eng-us, ger-de, nor-no) */
     const DIRECTORY_PATTERN = '#^[a-z]{3}-[a-z]{2,4}$#';

@@ -1,0 +1,14 @@
+*Titel: Schnittstelle des Datentyps ezmedia an ezbinaryfile angleichen
+
+Anlass:
+Der Datentyp ezbinaryfile stellt der Template-Sprache die Attribute 'filesize' und
+'filepath' bereit, ezmedia nicht. Attribute, die sich direkt auf Dateien beziehen,
+sollten bei media und binaryfile gleich sein.
+
+*Dokumentation:
+Der Datentyp hat jetzt zwei neue Attribute, 'filesize' und 'filepath', die sich
+genauso verhalten wie die Attribute in ezbinaryfile.
+
+Beispiel im Template:
+filesize: {$attribute.content.filesize|si( byte )}
+filepath: {$attribute.content.filepath}

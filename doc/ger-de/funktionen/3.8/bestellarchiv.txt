@@ -1,0 +1,27 @@
+*Titel: Bestellarchiv
+
+*Dokumentation:
+Diese Funktion ersetzt in der Bestellliste des Webshops die Schaltfläche RemoveButton durch die
+Schaltfläche ArchiveButton und führt das Archivieren ein. RemoveButton wurde ersetzt, weil sie
+diese Probleme verursachte:
+
+1. Entfernte IDs werden wiederverwendet. Siehe Fehler Nummer 6623.
+2. Zahlungsanbieter (Paynet) verlinken auf die gelöschten Bestellungen.
+3. Die Bestellliste ließ sich nicht kompakt und übersichtlich halten, ohne Bestellungen zu löschen.
+
+Ins Archiv gehören alte, erledigte oder nicht mehr relevante Bestellungen. Die Bestellliste wird
+dadurch kompakter und übersichtlicher.
+
+Die Tabelle ezorder in der Datenbank hat ein neues Feld:
+"is_archived int not null default 0".
+
+0 bedeutet, dass die Bestellung nicht im Archiv ist; 1, dass sie archiviert ist.
+
+Neue Templates:
+shop/archivelist.tpl    - Zeigt die Übersicht des Archivs. Umgesetzt für das Design admin und
+                          standard.
+
+Neue Modulansichten:
+shop/archivelist.php    - Übersicht aller archivierten Bestellungen.
+shop/archiveorder.php   - Verschiebt eine Bestellung ins Archiv (setzt den Archivstatus).
+shop/unarchiveorder.php - Verschiebt eine Bestellung zurück in die Bestellliste.

@@ -1,0 +1,78 @@
+Änderungen an Rückwärtskompatibilität und Verhalten in Version 4.2.0
+====================================================================
+
+Geänderte INI-Einstellungen
+---------------------------
+
+image.ini
+  [AnimatedGIF]
+  DisallowedFilters[] ist standardmäßig leer
+  AllowedFilters[] ist standardmäßig geometry/*
+  Damit lassen sich animierte GIFs mit den Standardeinstellungen skalieren.
+  Auch in 4.1.4 und 4.0.7 umgesetzt.
+
+
+Geändertes Verhalten
+--------------------
+
+- eZLDAPUser::loginUser
+
+  Die Einstellung LDAPFollowReferrals in ldap.ini ist neu und standardmäßig 0,
+  da der LDAP-Code mit den meisten AD-Umgebungen nicht funktionierte.
+  LDAP_OPT_REFERRALS wurde bisher gar nicht gesetzt und war damit
+  eingeschaltet.
+
+- User / Forgotpassword
+
+  Links in der vom Template user/forgotpasswordmail.tpl erzeugten E-Mail
+  erhalten den Hostnamen nicht mehr vorangestellt. Das muss das Template
+  übernehmen. So verhält es sich wie die anderen E-Mails von Exponential.
+
+- pagelayout.tpl der Administrationsoberfläche
+
+  Für den default_navigation_part wird automatisch das Template des linken
+  Menüs eingebunden: ez $part_name navigationpart => parts/$part_name/menu.tpl;
+  dieses Template muss vorhanden sein. Das gilt für Modulansichten, die
+  default_navigation_part definieren. Siehe Verbesserungswunsch #14654.
+
+Umbenannte Methoden
+-------------------
+
+- eZSoapRequest::namespace() -> eZSoapRequest::ns()
+
+  Umbenannt für die Unterstützung von PHP 5.3, siehe Fehler #13825.
+
+Änderungen an eZURLWildcard
+---------------------------
+
+Geändertes Format der Cache-Dateien
+'''''''''''''''''''''''''''''''''''
+
+Die Cache-Dateien der Wildcards (var/xxx/cache/wildcard/wildcard_<md5>_xxx.php)
+enthielten bisher Callback-Funktionen. Jetzt enthalten sie wie die meisten
+anderen Caches PHP-Arrays. Die Namen bleiben völlig gleich.
+
+Bereinigte API
+''''''''''''''
+Alle Methoden von eZURLWildcard haben jetzt eine richtige Sichtbarkeit. Viele
+wurden protected.
+
+Öffentliche Methoden: eZURLWildcard, definition, asArray, store, removeAll,
+removeByIDs, fetch, fetchBySourceURL, fetchList, fetchListCount, translate,
+expireCache, fetchCacheFile (Callback für den Cluster-Handler).
+
+Die Signaturen der öffentlichen Methoden sind unverändert.
+
+Geändertes HTTP-Verhalten
+-------------------------
+Bei einem fatalen Fehler wird ein HTTP-1.1-Fehler 500 ausgelöst.
+
+Entfernte Funktionen
+--------------------
+Das veraltete Modul form wurde entfernt.
+
+Entfernte Methoden
+------------------
+eZExpiryHandler::IsModified() war nicht nützlich und wurde als veraltet
+markiert und entfernt. Verwenden Sie stattdessen die Eigenschaft
+eZExpiryHandler->IsModified.

@@ -1,0 +1,32 @@
+*Titel: Skript zum Kopieren von Teilbäumen
+
+*Dokumentation:
+Kopiert einen Teilbaum unter den angegebenen Knoten.
+
+Dateien:
+  bin/php/ezsubtreecopy.php
+
+Eingabeparameter:
+  --src-node-id=<node_id>   - (Pflicht) ID des Quellknotens, des Elternknotens des zu kopierenden Teilbaums.
+  --dst-node-id=<node_id>   - (Pflicht) ID des Zielknotens, unter den der Teilbaum kopiert wird.
+  --all-versions            - (optional) Ist diese Option angegeben, werden alle Versionen der Inhaltsobjekte kopiert,
+                              sonst nur die veröffentlichten Versionen der Quellobjekte.
+  --keep-creator            - Den Ersteller jedes kopierten Inhaltsobjekts und den Ersteller seiner
+                              veröffentlichten Version unverändert lassen.
+  --keep-time               - Erstellungs- und Änderungszeitpunkt der kopierten Inhaltsobjekte unverändert lassen.
+  --siteaccess=<siteaccess> - Siteaccess, für den kopiert werden soll.
+  --login=<user_name>       - Anmeldename des Benutzers.
+  --password=<password>     - Passwort des Benutzers.
+
+Führen Sie das Skript im Wurzelverzeichnis Ihrer Exponential-Installation aus. Mit der Option
+--siteaccess legen Sie die passenden Datenbankeinstellungen für das Skript fest; sonst
+verwendet es den Standard-Siteaccess aus den INI-Einstellungen. Um die Ersteller der kopierten
+Inhaltsobjekte und aller Objektversionen zu ändern, verwenden Sie --login und --password. Mit
+--keep-creator bleiben die Ersteller unverändert. Ist weder --keep-creator noch --login
+angegeben, ist der Ersteller der neuen Inhaltsobjekte der Standardbenutzer Anonymous.
+
+*Beispiele:
+  $php bin/php/ezsubtreecopy.php --siteaccess=gallery_admin --src-node-id=74 --dst-node-id=87
+  $php bin/php/ezsubtreecopy.php --src-node-id=74 --dst-node-id=87 --all-versions --keep-creator
+  $php bin/php/ezsubtreecopy.php --src-node-id=74 --dst-node-id=87 --login=admin --password=publish
+  $php bin/php/ezsubtreecopy.php --src-node-id=74 --dst-node-id=87 --keep-time --keep-creator --all-versions

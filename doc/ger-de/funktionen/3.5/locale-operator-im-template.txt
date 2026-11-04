@@ -1,0 +1,15 @@
+*Titel: Locale-Operator für die Template-Sprache
+
+Anlass:
+Locale-Informationen (z. B. der Name der Sprache) sollen sich aus jeder Locale-Zeichenkette
+abrufen lassen, ohne dass das Modul dafür PHP-Code braucht.
+
+*Dokumentation:
+Übergeben Sie die Locale-Zeichenkette als Eingabe.
+Beispiel:
+{'nor-NO'|locale()}
+{'nor-NO'|locale().language_name}
+
+*Tests:
+
+*SVN-Revisionen:

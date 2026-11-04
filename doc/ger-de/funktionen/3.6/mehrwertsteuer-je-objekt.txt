@@ -1,0 +1,13 @@
+*Titel: Mehrwertsteuer-Angaben je Objekt
+
+*Anlass:
+Die Auswahl der Mehrwertsteuer soll sich auf Objektebene ändern lassen.
+
+*Dokumentation:
+Bis Exponential 3.5 ließ sich die Mehrwertsteuer nur auf Klassenebene wählen. Mit dieser
+Änderung kann der Benutzer auf Objektebene den Mehrwertsteuertyp angeben und ob der Preis
+netto oder brutto ist. So können Produkte mit verschiedenen Mehrwertsteuertypen zur selben
+Klasse gehören.
+
+Die auf Klassenebene getroffene Auswahl ist die Voreinstellung, wenn Objekte mit einem
+Attribut des Datentyps ezprice angelegt werden.

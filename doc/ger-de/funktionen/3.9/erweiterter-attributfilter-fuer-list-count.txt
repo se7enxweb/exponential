@@ -1,0 +1,17 @@
+*Titel: extended_attribute_filter für list_count/tree_count
+
+*Anlass:
+"extended_attribute_filter" ist beim Abrufen von Inhalten sehr nützlich, funktionierte aber nur
+mit 'list' und 'tree'.
+
+*Dokumentation:
+
+Die Fetch-Funktionen list_count und tree_count haben jetzt den Parameter
+"extended_attribute_filter".
+
+Mit dem Parameter lassen sich Attribute fortgeschritten filtern. Er ist für erfahrene
+Benutzer gedacht. Mit diesem Mechanismus lassen sich zusätzliche SQL-Bedingungen in den Abruf
+einbringen. Er erlaubt das Filtern nach Werten in eigenen Tabellen und/oder besondere Filter
+innerhalb der Tabelle "ezcontentobject_attribute".
+
+(Einzelheiten stehen in der Referenz der Fetch-Funktion list.)

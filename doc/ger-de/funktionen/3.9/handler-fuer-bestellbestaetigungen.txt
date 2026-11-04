@@ -1,0 +1,49 @@
+*Titel: Handler für Bestellbestätigungen
+
+*Anlass:
+Die Bestätigungs-E-Mails, die an den Administrator und den Kunden gehen, wenn im Shop ein
+Produkt bestätigt wird, sollen sich steuern lassen.
+
+*Dokumentation:
+
+Geändert wurde ezshopoperationcollection.php mit der Funktion sendOrderEmails().
+
+Statt die E-Mail direkt in dieser Funktion zu versenden, gibt es einen eZConfirmOrderHandler,
+der sich in einer Erweiterung anpassen lässt.
+
+Der Handler muss eine Funktion execute implementieren, die einen Parameter erhält.
+
+Der Parameter ist ein Array mit:
+
+array( 'email' => 'thecustomeremail@example.com',
+       'order' => $order );
+
+- thecustomeremail@example.com: Eine gültige E-Mail-Adresse, die der Kunde eingegeben hat.
+- $order: Das aktuelle eZOrder-Objekt.
+
+Der Handler für Bestellbestätigungen gehört nach kernel/classes/confirmorderhandlers/ und
+hat das Suffix confirmorderhandler.php.
+
+Der Standard-Handler ist:
+kernel/classes/confirmorderhandlers/ezdefaultconfirmorderhandler.php
+
+Beispiel für einen eigenen Handler:
+extension/myextension/confirmorderhandlers/mycustomconfirmorderhandler.php
+
+Außerdem brauchen Sie eine Einstellung in shopaccount.ini:
+
+[HandlerSettings]
+# A list of directories to search for shopaccount handlers
+Repositories[]=kernel/classes
+# A list of extensions which have shop account handlers
+# It's common to create a settings/shopaccount.ini.append file
+# in your extension and add the extension name to automatically
+# get handlers from the extension when it's turned on.
+ExtensionRepositories[]
+
+# Settings for how order emails should be handled in the shop/checkout
+# default is to send confirmation emails to both customer and admin.
+[ConfirmOrderSettings]
+Handler=ezdefault
+# Allows for overriding a handler with another
+Alias[]

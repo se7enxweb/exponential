@@ -1,0 +1,18 @@
+*Titel: Weitere Berechtigungen im Rollensystem
+
+Anlass:
+Feiner abgestufte Berechtigungen im System sollen leichter möglich sein.
+
+*Dokumentation:
+
+
+Neue Berechtigungen:
+content/move - Legt fest, ob ein Objekt oder Knoten verschoben werden darf; bei Ordnern der obersten
+               Ebene wird es immer verweigert. Die Prüfung der Knoten der obersten Ebene musste aus
+               Templates und Code außerhalb der Klassen an eine zentrale Stelle wandern. Intern
+               verwendet sie für die Einschränkungen die Berechtigungen von 'edit'.
+
+
+*Tests:
+
+*SVN-Revisionen:

@@ -1,0 +1,127 @@
+=========================
+Verbesserungen am Cluster
+=========================
+
+:Author:  Jan Borsodi
+:Date:    2007-July-09
+:Version: 1.0
+
+Dieses Dokument ist die Anwenderdokumentation der neuen Verbesserungen am Cluster in
+Exponential 3.10.
+
+Hinweis: Die Cluster-Funktion in 3.10 unterstützt die Datenbanken PostgreSQL und Oracle
+      nicht mehr. Der Code wurde auf die MySQL-Datenbank mit der Engine InnoDB
+      ausgerichtet, damit er schnell ist.
+
+
+Upgrade
+=======
+
+Das Upgrade einer bestehenden Cluster-Installation erfordert Sorgfalt. Der größte Unterschied
+zu früheren Upgrades: Die alte Installation (Code, Dateien und Datenbank) muss erhalten
+bleiben, und das Upgrade der Codebasis muss genau an der unten beschriebenen Stelle erfolgen.
+
+Schritte in der alten Codebasis (3.8 oder 3.9)
+----------------------------------------------
+
+
+1 - Entclustern
+~~~~~~~~~~~~~~~
+
+Alle Dateidaten aus der Datenbank in das lokale Dateisystem kopieren. Das erledigt das
+Skript *bin/php/clusterize.php*. Die Option *unclusterize* muss eingeschaltet sein, damit die
+Dateien aus der Datenbank in das lokale Dateisystem kopiert werden, z. B.::
+
+  bin/php/clusterize.php -u
+
+Hinweis: Sorgen Sie vor diesem Schritt für genügend freien Platz im Dateisystem.
+
+Schritte in der neuen Codebasis (3.10)
+--------------------------------------
+
+2 - Upgrade auf Exponential 3.10
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Codebasis und Datenbank wie in der allgemeinen Upgrade-Anleitung beschrieben aktualisieren.
+
+3 - Datenbanktabellen aktualisieren
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Haben Sie zuerst entclustert? Die nächsten Schritte vernichten die Daten in der Datenbank,
+also stellen Sie sicher, dass alle Dateien im Dateisystem liegen.
+
+Die normalen SQL-Update-Dateien übernehmen die Tabellen-Upgrades nicht, es sind also manuelle
+Änderungen nötig. Zuerst die alten Tabellen entfernen mit:
+
+  DROP TABLE ezdbfile;
+  DROP TABLE ezdbfile_data;
+
+Dann die Tabellen so anlegen, wie es in der PHP-Datei
+*kernel/classes/clusterfilehandlers/dbbackends/mysql.php* steht.
+
+
+4 - Clustern
+~~~~~~~~~~~~
+
+Das entspricht dem ersten Schritt, diesmal aber in umgekehrter Richtung: Die Dateien werden
+aus dem lokalen Dateisystem in den Datenbank-Cluster kopiert. Wieder mit dem Skript
+*bin/php/clusterize.php*.
+
+Hinweis: Die Option *unclusterize* darf **nicht** eingeschaltet sein.
+
+Kopieren mit::
+
+  bin/php/clusterize.php
+
+
+Dokumentation
+=============
+
+Die meisten Änderungen am Cluster betrafen den Backend-Code, einige verändern aber das
+Verhalten des Clusters und der Cache-Systeme in Exponential.
+Die große Änderung betrifft das Entfernen von Caches: Früher wurden Caches physisch aus dem
+Dateisystem oder dem Datenbank-Cluster entfernt, was recht lange dauern kann. Jetzt wird das
+Entfernen von Dateien möglichst vermieden; stattdessen werden sie mit verschiedenen Techniken
+als ungültig markiert.
+
+1. Zum einen wird jede Cache-Datei als abgelaufen markiert. Wird der Cache wieder gelesen,
+   erkennt das System den Ablauf und erzeugt den Inhalt neu.
+2. Sind die Änderungen umfangreich oder sollen alle Cache-Dateien einer bestimmten Art
+   entfernt werden, wird ein globales Ablauf-Kennzeichen verwendet. Es wird vor der
+   Cache-Datei geprüft.
+
+Im Ergebnis bleiben die Dateien in der Datenbank und belegen Speicherplatz, auch wenn sie
+nicht mehr gebraucht werden. Für manche Websites ist das in Ordnung, weil der Eintrag beim
+Neuerzeugen wiederverwendet wird. Websites, die oft neue Einträge veröffentlichen und die
+alten nicht mehr brauchen, wollen die Cache-Einträge aber entfernen.
+
+Zum manuellen Entfernen verwenden Sie das Skript bin/php/ezcache.php mit der Option
+*--purge*, die die Einträge physisch entfernt. Zum Beispiel Inhaltscaches entfernen, die
+älter als zwei Tage sind::
+
+  bin/php/ezcache.php --clear-id=content --purge --expiry='-2 days'
+
+Hinweis: bin/shell/clearcache.sh soll nicht mehr verwendet werden, es wurde sogar
+      abgeschaltet.
+
+Datenbank-Tuning
+----------------
+
+Bei der Konfiguration der MySQL-Datenbank muss die Anzahl der Verbindungen sorgfältig
+eingestellt werden. Der Cluster-Code öffnet beim Schreiben in die Datenbank jetzt eine
+zusätzliche Verbindung. Sie prüft, ob die Datei seit dem Erwerb der Schreibsperre geändert
+wurde, damit das Schreiben gegebenenfalls entfallen kann.
+Die Anzahl der Verbindungen muss also erhöht werden; im schlimmsten Fall auf das Doppelte,
+meist genügen aber 30-50 % mehr.
+
+Hinweis: Sind persistente Verbindungen eingeschaltet, teilt der Cluster-Code seine
+Verbindungen nicht mehr mit den normalen Datenbankaufrufen; die Anzahl der Verbindungen muss
+dann (gegenüber Ihren normalen Einstellungen) verdoppelt werden.
+
+API-Änderungen
+==============
+
+Die API der Cluster-Klasse ist gleich geblieben, es gibt aber neue Funktionen, die besser mit
+den Caches umgehen: processCache() und storeCache(). Wie sie verwendet werden, steht in der
+Datei *kernel/classes/clusterfilehandlers/ezdbfilehandler.php*.
+

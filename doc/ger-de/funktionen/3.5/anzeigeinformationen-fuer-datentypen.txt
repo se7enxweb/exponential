@@ -1,0 +1,43 @@
+*Titel: Anzeigeinformationen für Datentypen
+
+*Anlass:
+Templates sollen Informationen zur Anzeige eines Datentyps in einem bestimmten
+Ansichtsmodus abfragen können, z. B. um mehrere Eingabeelemente in einem
+fieldset-Tag zu gruppieren.
+
+*Dokumentation:
+Ein Objektattribut hat zwei neue Attribute:
+- display_info - Informationen für das Objekt
+- class_display_info - Informationen für die Klasse (wie display_info am Klassenattribut)
+
+Ein Klassenattribut hat ein neues Attribut:
+- display_info - Informationen für die Klasse
+
+Struktur der Objekt-Anzeigeinformationen:
+- edit - Einstellungen für den Bearbeitungsmodus
+  - grouped_input - Ob alle Eingabefelder gruppiert angezeigt werden
+- view - Einstellungen für den Ansichtsmodus
+- collection - Einstellungen für den Modus der Informationssammlung
+  - grouped_input - Ob alle Eingabefelder gruppiert angezeigt werden
+- result - Einstellungen für den Ergebnismodus der Informationssammlung
+
+Struktur der Klassen-Anzeigeinformationen:
+- edit - Einstellungen für den Bearbeitungsmodus
+  - grouped_input - Ob alle Eingabefelder gruppiert angezeigt werden
+- view - Einstellungen für den Ansichtsmodus
+
+Beispiel im Template:
+{section show=$attribute.display_info.edit.grouped_input}
+<fieldset>
+{section-else}
+<label>Name</label>
+{/section}
+
+INI-Einstellungen:
+datatype.ini steuert das Standardverhalten der zurückgegebenen Informationen.
+EditSettings:
+- GroupedInput - Liste der Datentypen, deren Eingaben gruppiert werden
+CollectionSettings:
+- GroupedInput - Liste der Datentypen, deren Eingaben gruppiert werden
+ClassEditSettings:
+- GroupedInput - Liste der Datentypen, deren Eingaben gruppiert werden

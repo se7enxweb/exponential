@@ -1,0 +1,101 @@
+Änderungen an Rückwärtskompatibilität und Verhalten in Version 5.3
+==================================================================
+
+Geänderte INI-Einstellungen
+---------------------------
+
+
+Geändertes Verhalten
+--------------------
+
+- Behoben EZP-16372: Das Löschen von Inhalten dauert sehr lange
+
+  Die Signaturen von eZSearch::removeObject() und eZSearch::removeObjectById()
+  haben sich geändert:
+
+  static function removeObject( $contentObject, $commit = true )
+  wird zu
+  static function removeObject( $contentObject, $commit = null )
+
+  Nur so funktioniert die Option ezfind.ini[IndexOptions]\DisableDeleteCommits
+  von eZFind tatsächlich.
+
+- EZP-22641: Geänderte Quelle der Vorschau-Templates von ezmultiupload
+
+  ezmultiupload verwendet jetzt Templates von content/view statt node/view.
+  So lassen sich auch unveröffentlichte Inhalte anzeigen (Genehmigung,
+  asynchrones Veröffentlichen ...). Überschreibungen von
+  node/view/line_thumbnail.tpl müssen daher zu Überschreibungen von
+  content/view/line_thumbnail.tpl werden.
+
+- **[v5.3.3]** EZP-23019: Die Datentypen date und datetime verwenden NULL als
+  leeren Wert
+
+  Beide Datentypen verwendeten bisher 0 als Standardwert. So fällt der Wert
+  nicht auf 1970-01-01T00:00:00Z zurück. Der Standardwert für die Sortierung
+  ist weiterhin 0, was beim Sortieren von Objekten mit nicht gesetztem Datum zu
+  Unstimmigkeiten führen kann.
+
+  Das führte zu einer Regression in Exponential 5.3.
+
+  Unter anderem brach es den leeren Standardwert in ezdate: Das
+  Bearbeitungsformular zeigte ein Datum zur Epoche, den 1. Januar 1970, die
+  Uhrzeit je nach Zeitzone.
+
+  Der Fehler ist behoben, aber Benutzer haben es möglicherweise nicht bemerkt
+  und Inhalte gespeichert, ohne auf das Datum zu achten.
+
+  Ob das geschehen ist, lässt sich in wenigen Schritten feststellen. Zuerst
+  müssen Sie wissen, welches Datum fälschlich eingetragen wurde, denn es hängt
+  von den Einstellungen Ihres Servers ab.
+
+  **Legen Sie zuerst eine Sicherung der Datenbank an**
+
+  Das Datum ermitteln Sie mit diesem PHP-Code::
+
+    echo mktime( 0, 0, 0, 1, 1, 1970 );
+
+  Dann suchen Sie diesen Wert in Ihrer Datenbank mit dieser Abfrage::
+
+    SELECT * FROM ezcontentobject_attribute
+    WHERE data_type_string='ezdate' AND data_int=<value>
+
+  Dieser Einzeiler für die Shell erledigt das für Sie::
+
+    TS=`php -r "echo mktime( 0, 0, 0, 1, 1, 1970 );"` \
+    mysql -u <username> ezpublish5_legacy -e "SELECT * FROM ezcontentobject_attribute WHERE data_type_string='ezdate' AND data_int=$TS"
+
+  Um das Datum auf ein leeres Datum zu setzen, führen Sie diese Abfrage aus::
+
+    UPDATE ezcontentobject_attribute
+    SET data_int=null
+    WHERE data_type_string='ezdate' AND data_int=<value>
+
+  Leeren Sie danach ViewCache und Template-Blöcke, damit die Änderungen
+  sichtbar werden.
+
+Entfernte Funktionen
+--------------------
+
+
+
+
+Entfernte Konstanten
+--------------------
+
+
+
+Entfernte globale Variablen
+---------------------------
+
+
+
+
+Veraltet
+--------
+- eZExpiryHandler::registerShutdownFunction() ist veraltet (EZP-22749)
+
+  Die Methode wurde nicht entfernt, registriert aber nichts mehr.
+  Stattdessen wird beim Beenden des Kernels eZExpiryHandler::shutdown()
+  aufgerufen. Der Aufruf zum Registrieren kann entfernt werden; bleibt er
+  stehen, schadet es nicht.

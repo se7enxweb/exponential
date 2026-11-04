@@ -1,0 +1,33 @@
+*Titel: Zufallsoperator für Templates
+
+*Beschreibung:
+Ein neuer Template-Operator erzeugt Zufallszahlen. Er gibt eine Ganzzahl zurück, auf Wunsch aus
+einem angegebenen Bereich.
+
+*Dokumentation:
+
+Einen Zufallswert erzeugen. Die Eingabeparameter sind optional.
+
+rand( [min_val, max_val] )
+
+Rückgabe:
+Eine zufällige Ganzzahl. Sind Eingabeparameter angegeben, liegt sie zwischen min_val und max_val.
+
+Parameter:
+'min_val' - kleinster Ganzzahlwert
+'max_val' - größter Ganzzahlwert
+
+Beispiel:
+Einen zufälligen Artikel unter '/news' (Knoten 102) abrufen.
+
+{def $news_count = fetch( content, list_count, hash( 'parent_node_id', 102,
+                                                     'class_filter_type',  'include',
+                                                     'class_filter_array', array( 'article' ) ) )
+     $news_article = fetch( 'content','list',
+                            hash( 'parent_node_id', 102,
+                                  'class_filter_type', 'include',
+                                  'class_filter_array', array( 'article' ),
+                                  'limit', 1,
+                                  'offset', rand(1, $news_count )|sub(1) ) )}
+
+

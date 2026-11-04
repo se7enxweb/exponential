@@ -1,0 +1,11 @@
+*Titel: E-Mails zum Debuggen auf die Festplatte schreiben
+
+*Dokumentation:
+E-Mails lassen sich auf die Festplatte schreiben. Für jede E-Mail entsteht eine Datei im
+Ordner var/log/mail/.
+Keine E-Mail verlässt das System zu einem entfernten Mailserver.
+
+zum Beispiel (site.ini):
+
+[MailSettings]
+Transport=file

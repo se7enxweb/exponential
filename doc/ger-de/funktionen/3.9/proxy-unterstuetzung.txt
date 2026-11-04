@@ -1,0 +1,23 @@
+*Titel: Proxy-Unterstützung
+
+*Anlass:
+Für "externe Daten" (RSS, Linkprüfung, Herunterladen von Site-Paketen im "Einrichtungsassistenten")
+wird Proxy-Unterstützung gebraucht.
+
+*Dokumentation:
+linkchek.php, rssimport.php und das Herunterladen von Site-Paketen unterstützen jetzt Proxys,
+auch mit Proxy-Authentifizierung.
+
+HINWEIS: Ihre PHP-Installation braucht CURL.
+
+Neue INI-Einstellungen in site.ini:
+
+- site.ini[ProxySettings].ProxyServer
+  Der zu verwendende Proxy-Server.
+
+  Ist er leer, wird KEIN Proxy verwendet.
+
+- site.ini[ProxySettings].User
+- site.ini[ProxySettings].Password
+  Für die Proxy-Authentifizierung.
+

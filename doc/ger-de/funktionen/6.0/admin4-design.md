@@ -373,8 +373,11 @@ ohne Gruppe).
   Seite markiert, was ihn aus ihren Kacheln herausnimmt. `TrailLinks[]` ist das Gegenstück am Ende: Die genannten Links
   werden nach allen anderen Links gezeichnet, in ihrer Reihenfolge, auch nach den Links, die Extensions anhängen; in
   einem gruppierten Menü nach den Gruppen und „Mehr“, in keiner von ihnen (`.a4-navtrail`), in einer einfachen Liste
-  als ihre letzten Einträge, in den Kacheln als letzte Kacheln. Das Dashboard-Menü endet auf diese Weise mit Passwort
-  ändern und Profil bearbeiten.
+  als ihre letzten Einträge, in den Kacheln als letzte Kacheln. Das Dashboard-Menü endet auf diese Weise mit
+  Prüfprotokoll, Passwort ändern und Profil bearbeiten. `CollapseAfter=<n>` kürzt ein Menü, das als eine Liste
+  gezeichnet wird: Seine ersten <n> Links erscheinen in der gezeichneten Reihenfolge, die übrigen folgen in einem
+  aufklappbaren „Mehr (Anzahl)“ (`details.a4-navmore`), anfangs geschlossen und offen, wenn es die aktuelle Seite
+  enthält. Das Dashboard-Menü setzt 10.
 - **Zugriff.** Die Ansicht `setup/menu` öffnet sich mit jeder einzelnen Funktion des Setup-Moduls (`setup`,
   `administrate`, `managecache`, `managecronjobs`, `preload`, `system_info`), sodass eine Rolle, die die frühere Seite
   des Tabs (`setup/cache`) erreichte, den Tab behält. Der Tab verlangt nichts weiter (`[Topmenu_setup]` hat keine
@@ -1283,7 +1286,8 @@ Datentabellen gestreift
 | `settings/menu.ini` | `Topmenu_<tab>` | `Name`, `Tooltip`, `TranslationContext` | die Standardnamen der Tabs, Kontext `design/admin/pagelayout` | Siteaccess |
 | `settings/menu.ini` | `Leftmenu_<menu>` | `Groups[]`, `GroupNames[<group>]`, `GroupLinks_<group>[]` | die neun Gruppen von `Leftmenu_setup` (Design und Audit für verschobene Tabs, KI und Updates für Links von Extensions) | Siteaccess |
 | `settings/menu.ini` | `Leftmenu_<menu>` | `LeadLinks[]` | `overview` in `Leftmenu_setup` | Siteaccess |
-| `settings/menu.ini` | `Leftmenu_<menu>` | `TrailLinks[]` | `change_password`, `edit_profile` in `Leftmenu_my` | Siteaccess |
+| `settings/menu.ini` | `Leftmenu_<menu>` | `TrailLinks[]` | `audit`, `change_password`, `edit_profile` in `Leftmenu_my` | Siteaccess |
+| `settings/menu.ini` | `Leftmenu_<menu>` | `CollapseAfter` | `10` in `Leftmenu_my` (die übrigen Links unter „Mehr“) | Siteaccess |
 | `settings/menu.ini` | `Leftmenu_setup` | `GroupTabs[<group>]`, `GroupSections[<group>]` | `design` und `audit` (siehe [Einen Tab nach Setup verschieben](#einen-tab-nach-setup-verschieben)) | Siteaccess |
 | `settings/menu.ini` | `Leftmenu_<menu>` | `LinkIcons[<link>]`, `LinkDescriptions[<link>]`, `LinkFigureTemplates[<link>]` | die Setup-Links des Kerns | Siteaccess |
 | `settings/design.ini` | `AdminDesignSettings` | `IconList[]` | jedes `.a4-bi-*`-Symbol aus `components.css` | Siteaccess |

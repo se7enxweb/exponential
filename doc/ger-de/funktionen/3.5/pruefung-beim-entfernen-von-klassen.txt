@@ -1,0 +1,37 @@
+*Titel: Prüfung beim Entfernen von Klassen
+
+Anlass:
+Das Entfernen von Klassen wird geprüft: Gilt eine Klasse als systemkritisch,
+darf sie nicht entfernt werden.
+
+*Dokumentation:
+Gründe, aus denen eine Klasse systemkritisch ist:
+- Ein Knoten der obersten Ebene verwendet sie. Sie zu entfernen, würde diesen Knoten
+  entfernen, und das System würde nicht mehr richtig funktionieren. Entfernen lässt sich
+  die Klasse dann nur, indem man den Knoten der obersten Ebene zuerst mit einem Knoten
+  einer anderen Klasse tauscht.
+- Eines der Attribute kann nicht entfernt werden, mögliche Gründe:
+  ezuser:
+    - Der aktuelle Benutzer, der Administrator oder der anonyme Benutzer verwendet diese
+      Klasse. Die Klasse oder das Attribut zu entfernen, würde den Benutzer entfernen oder
+      als Benutzer ungültig machen.
+    - Keine andere Klasse hat diesen Datentyp mehr. Hat ihn keine Klasse, kann sich
+      niemand mehr anmelden oder auf die Website zugreifen. Dann bleibt nur, Felder
+      von Hand in der Datenbank anzulegen.
+
+In eZContentClass gibt es zwei neue Methoden für diese Prüfungen:
+- isRemovable() gibt true zurück, wenn die Klasse entfernt werden darf. Die bestehende
+  Methode remove() verhindert damit das Entfernen kritischer Klassen.
+  Sie verwendet removableInformation(), um das festzustellen.
+- removableInformation() gibt die Liste der Gründe zurück, warum die Klasse nicht
+  entfernt werden kann (falls es welche gibt).
+
+In eZDataType gibt es zwei neue Methoden, mit denen bestimmte Datentypen diese
+Prüfungen vornehmen können:
+- isClassAttributeRemovable() gibt true zurück, wenn das Klassenattribut entfernt werden
+  darf. Die Standardimplementierung verwendet classAttributeRemovableInformation, sie muss
+  also nicht neu implementiert werden.
+- classAttributeRemovableInformation() gibt die Liste der Gründe zurück, warum das
+  Klassenattribut nicht entfernt werden kann (falls es welche gibt).
+  Standardmäßig gibt sie false zurück; Datentypen, die diese Prüfung brauchen, müssen sie
+  neu implementieren.

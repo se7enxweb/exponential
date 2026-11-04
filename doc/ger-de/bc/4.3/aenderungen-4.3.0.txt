@@ -1,0 +1,201 @@
+Änderungen an Rückwärtskompatibilität und Verhalten in Version 4.3.0
+====================================================================
+
+Geänderte INI-Einstellungen
+---------------------------
+
+- Reiter Webshop standardmäßig ausgeblendet
+
+  Als erster Schritt, um den Shop aus dem Kernel in eine Erweiterung zu
+  verlagern, ist dieser Reiter jetzt standardmäßig ausgeschaltet. Mit
+  Tabs[]=shop in menu.ini[TopAdminMenu] lässt er sich wieder einschalten.
+
+- Reiter Design standardmäßig ausgeblendet
+
+  Außerdem ist der Eintrag Menüverwaltung im linken Menü in den Reiter Setup
+  gewandert. Den Reiter Design schalten Sie mit Tabs[]=design in
+  menu.ini[TopAdminMenu] wieder ein.
+
+- Link Rollen und Policies im Reiter Setup abgeschaltet
+
+  Der Link steht auch im Reiter Benutzerkonten und gehört dorthin. Im Reiter
+  Setup wurde er in menu.ini unter [Leftmenu_setup] abgeschaltet.
+
+- site.ini[RSSSettings]DefaultVersion
+
+  Die Standardversion ist jetzt 2.0 statt 1.0, da RSS 2.0 das verbreitetste
+  Feed-Format ist und Bilder im Feed unterstützt.
+
+- design.ini [StylesheetSettings]CSSFileList
+
+  Veraltet zugunsten der Einstellungen FrontendCSSFileList und
+  BackendCSSFileList; wird in einer künftigen Version entfernt (normalerweise
+  nach zwei Versionen).
+
+- design.ini [JavaScriptSettings]JavaScriptList
+
+  Veraltet zugunsten der Einstellungen FrontendJavaScriptList und
+  BackendJavaScriptList; wird in einer künftigen Version entfernt
+  (normalerweise nach zwei Versionen).
+
+- site.ini [ContentSettings]CachedViewPreferences[full]
+
+  Das Design admin2 verwendet außer admin_navigation_content keine der
+  Einstellungen admin_navigation_* mehr. Diese Einstellung sollte zudem jetzt
+  standardmäßig 1 statt 0 sein, damit neue Benutzer den Reiter Vorschau sofort
+  sehen. Außerdem wurden viele Einstellungen hier in content/view gar nicht
+  verwendet, waren also unnötig und senkten nur die Effizienz des Caches.
+
+  Ab 4.3 lautet die Einstellung im Admin-Siteaccess daher standardmäßig:
+  CachedViewPreferences[full]=admin_navigation_content=1;admin_children_viewmode=list;admin_list_limit=1
+
+- site.ini [MailSettings]TransportAlias
+
+  Die Liste der verfügbaren Mail-Transporte ist hinzugekommen. Die Klasse
+  eZMailTransport erzeugt damit beim Versand einer E-Mail die Transportklasse
+  anhand der Einstellung [MailSettings]Transport.
+
+- site.ini [DesignSettings]DesignLocationCache
+
+  Cacht die Orte der Basisverzeichnisse der Designs. Die Einstellung ist
+  standardmäßig ausgeschaltet und wird nach dem Einrichtungsassistenten
+  eingeschaltet. Schaltet man sie vorher ein, kann es bei gleichzeitig
+  laufendem Debugger Hinweise geben.
+
+
+Geändertes Verhalten
+--------------------
+
+- URL von Look & Feel fest in der INI
+
+  Wegen der Verbesserung "#15672: Use ini setting for menu items in admin" ist
+  die URL des Look-&-Feel-Objekts in menu.ini[Leftmenu_setup]Links[] definiert
+  (und bei wieder eingeschaltetem Reiter Design auch in
+  menu.ini[Leftmenu_design]Links[]), mit der Objekt-ID 54. In älteren
+  Installationen kann die ID eine andere sein; dann müssen Sie die Einstellung
+  überschreiben.
+
+- eZTreeMenuOperator / 'treemenu' liefert keine vorab erzeugte data_map mehr
+
+  Wegen der Verbesserung "#3005: Increase performance eZTreeMenuOperator" ist
+  data_map nicht mehr Teil der Struktur jedes Elements; greifen Sie wie üblich
+  über den Knoten darauf zu ($item.node.data_map statt $item.data_map).
+
+- eZDir::recursiveDelete() prüft standardmäßig zusätzlich
+
+  Das zu löschende Verzeichnis muss unterhalb des Wurzelverzeichnisses von
+  Exponential liegen, es sei denn, der zweite Parameter ist false. Diese
+  Sicherheitsmaßnahme behebt "#015823: Running cache clearing procedure from
+  upgrade 4.2.0 using root removes all linux system files".
+
+- templateInit( $name = false )
+
+  Der Parameter $name wird jetzt vollständig ignoriert, da man ohnehin immer
+  dieselbe Instanz erhielt. Rufen Sie nach dem Holen der Instanz
+  $tpl->resetVariables(); auf.
+  Hinweis: Diese Funktion ist ebenfalls veraltet; verwenden Sie
+  eZTemplate::factory()
+
+- query() von eZMySQLDB und eZMySQLiDB löst bei einem Fehler E_USER_ERROR aus
+
+  Bisher lieferte eine fehlerhafte Abfrage nur "false" und einen Eintrag in
+  var/error.log. Jetzt hält eine fehlerhafte Abfrage die Ausführung an, damit
+  die Fehlerbehandlung bei PostgreSQL, MySQL und MySQLi gleich ist.
+
+- loginUser() von eZUser verwendet zum Aktualisieren des Hashs nicht mehr die
+  E-Mail-Adresse
+
+  Wurde bisher in site.ini HashType auf md5_user umgestellt, speicherte
+  loginUser() den Hash mit der E-Mail-Adresse. Jetzt verwendet es stattdessen
+  die Spalte login der Tabelle ezuser.
+
+- Die Operation content/removelocation braucht jetzt einen einzigen Parameter
+  (node_list), ein Array von Knoten-IDs, die nicht mehr zum selben Objekt
+  gehören müssen. Die Parameter 'node_id', 'object_id' und 'move_to_trash'
+  wurden entfernt.
+
+Änderungen an eZContentClass::instantiate()
+-------------------------------------------
+
+- $userID muss jetzt false sein, wenn Objekte für den aktuellen Benutzer
+  angelegt werden sollen. Sonst wird die ID des neuen Objekts nicht mehr in der
+  Session des Benutzers gespeichert, über die das Policy-System anonymen
+  Benutzern das erneute Bearbeiten eines Objekts erlaubt.
+
+Veraltete Funktionen
+--------------------
+
+- Die Funktionen ezi18n() und ezx18n() sind veraltet zugunsten der neuen
+  Funktion ezpI18n::tr(), die das Autoload nutzt, sodass i18n.php nicht mehr
+  mit require_once eingebunden werden muss. Die beiden Funktionen werden in
+  einer künftigen Version entfernt.
+
+- kernel/common/ezincludefunctions.php
+  Alle Funktionen dieser Datei sind veraltet; bisher nicht veraltet waren:
+  kernel_include(), kernel_common(), datatype_class(), extension_path(),
+  ext_include(), ext_activate(), ext_class(), lib_include(), lib_class() und
+  kernel_class(). Diese Funktionen werden in einer künftigen Version entfernt.
+
+- kernel/common/image.php: imageInit()
+  Die Funktion wird in einer künftigen Version entfernt; verwenden Sie
+  stattdessen eZImageManager::factory().
+
+- kernel/common/template.php: templateInit()
+  Die Funktion wird in einer künftigen Version entfernt; verwenden Sie
+  stattdessen eZTemplate::factory().
+
+- cronjobs/ldapusermanage.php
+  Dieser Cronjob wird in einer künftigen Version entfernt; die Funktion ist Teil
+  der normalen LDAP-Anmeldung. Siehe Fehler http://issues.ez.no/16319
+
+- kernel/content/ezcontentoperationcollection.php: removeAssignment()
+  Die Funktion wird in einer künftigen Version entfernt; verwenden Sie
+  stattdessen removeNodes(), das auch mit Knoten verschiedener Objekte
+  arbeitet.
+
+Umbenannte Methoden
+-------------------
+
+Entfernte Funktionen
+--------------------
+
+Entfernte Methoden
+------------------
+
+- Alle internen Funktionen von i18n.php wurden entfernt, also:
+  ezcurrentLanguage(), ezinsertarguments() und eZTranslateText()
+
+- eZArchiveHandler
+  Diese Klasse und die Unterklasse eZTARArchiveHandler wurden entfernt. Sie
+  waren seit 4.1 veraltet.
+
+- eZModuleManager
+  Die Klasse eZModuleManager war seit 4.1 veraltet zugunsten der Einstellung
+  [ModuleSettings] ModuleList in module.ini
+
+- eZImportLookupTable
+  Diese Klasse wurde entfernt, nachdem sie seit 4.1 veraltet war.
+
+
+Entfernte globale Variablen
+---------------------------
+
+- eZImageManager
+
+  eZImageManager::instance() verwendet jetzt stattdessen eine statische
+  Variable; sie lässt sich mit eZImageManager::resetInstance() zurücksetzen.
+
+
+- eZPublishTemplate und eZPublishTemplate_*
+
+  Siehe die Hinweise zu templateInit() oben (es nutzt eZTemplate::factory und
+  braucht diese daher nicht).
+
+
+- eZTemplateInstance
+
+  eZTemplate::instance() verwendet jetzt stattdessen eine statische Variable.
+
+- eZMailTransport
+
+  eZMailTransport verwendet keine globalen Variablen mehr.

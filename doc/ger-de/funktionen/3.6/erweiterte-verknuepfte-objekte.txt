@@ -1,0 +1,26 @@
+*Titel: Erweiterte verknüpfte Objekte
+
+*Dokumentation:
+Objektverknüpfungen über die Datentypen 'ezobjectrelationlist' und 'ezobjectrelation' werden
+jetzt auch in der Tabelle 'ezcontentobject_link' gespeichert. Die Tabelle hat ein neues Feld
+'contentclassattribute_id', um Verknüpfungen verschiedener Art zu unterscheiden. Es enthält
+die ID des Attributs, das die Verknüpfung speichert, oder null bei einer gewöhnlichen
+Objektverknüpfung (Standardwert des Felds).
+
+Alle Verknüpfungen zu einem Objekt, die über Datentypen angelegt wurden, werden entfernt,
+wenn Sie das Objekt löschen. Die Funktion eZDataType::removeRelatedObjectItem entfernt
+Einträge mit der angegebenen objectID aus der im Attribut gespeicherten Verknüpfungsliste.
+Derzeit ist sie für die Datentypen 'ezobjectrelationlist' und 'ezobjectrelation'
+implementiert.
+
+Die Dokumentation der neuen Template-Fetch-Funktionen steht in dieser Datei:
+
+related_objects_fetch_functions.txt
+
+
+*Datenbank aktualisieren:
+Verwenden Sie eine Datenbank aus einer früheren Version von Exponential (3.5 oder älter),
+gehen Sie so vor:
+1. Die Datenbankstruktur mit dem SQL-Skript aus dem Verzeichnis update/database aktualisieren.
+2. Das Skript update/common/scripts/updaterelatedobjectslinks.php ausführen, um die
+bestehenden Verknüpfungen zu aktualisieren.

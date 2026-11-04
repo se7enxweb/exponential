@@ -3,13 +3,13 @@ title: menu.ini [Leftmenu_my]
 audience: developer, admin
 category: examples
 summary: "The settings of [Leftmenu_my] in menu.ini: Name, Links, LinkNames, PolicyList_dashboard, PolicyList_recent_content, PolicyList_collaboration, PolicyList_my_pending, PolicyList_my_drafts ..."
-keywords: menu.ini, Leftmenu_my, INI, setting, Name, Links, LinkNames, PolicyList_dashboard, PolicyList_recent_content, PolicyList_collaboration, PolicyList_my_pending, PolicyList_my_drafts, PolicyList_my_bookmarks, PolicyList_my_notifications, PolicyList_help_center, PolicyList_audit, PolicyList_change_password, LinkIcons, LinkDescriptions, TrailLinks
+keywords: menu.ini, Leftmenu_my, INI, setting, Name, Links, LinkNames, PolicyList_dashboard, PolicyList_recent_content, PolicyList_collaboration, PolicyList_my_pending, PolicyList_my_drafts, PolicyList_my_bookmarks, PolicyList_my_notifications, PolicyList_help_center, PolicyList_audit, PolicyList_change_password, LinkIcons, LinkDescriptions, TrailLinks, CollapseAfter
 type: generated
 generated: exp:help:examples
 ---
 # menu.ini [Leftmenu_my]
 
-The block `[Leftmenu_my]` of `settings/menu.ini`, with 16 setting(s).
+The block `[Leftmenu_my]` of `settings/menu.ini`, with 17 setting(s).
 
 > Name=Media Menu  
 > Links\[\]  
@@ -40,8 +40,8 @@ Name=dashboard
 > The user's own work, right after Collaboration  
 > The e-mail preferences: which optional e-mail the user gets, consent history, data download  
 > The Help center (exphelp/dashboard), the start page of the help: guides, search, how to report an error  
-> The audit console, only with audit/read (doc/eng-us/bc/6.0/audit.md, "Placement"); the last kernel link, so the links  
-> extensions append follow it  
+> The audit console, only with audit/read (doc/eng-us/bc/6.0/audit.md, "Placement"); drawn third to last, after the  
+> links extensions append and before Change password (TrailLinks\[\] below)  
 
 Default: a hash of 12: `dashboard=content/dashboard`, `recent_content=moderation/recent`, `collaboration=collaboration/view/summary`, `my_pending=content/pendinglist`, `my_drafts=content/draft`, `my_bookmarks=content/bookmark`, `my_mail=mailpreferences/settings`, `my_notifications=notification/settings`, `help_center=exphelp/dashboard`, `audit=audit/console`, `change_password=user/password`, `edit_profile=user/edit/(action)/edit`.
 
@@ -289,9 +289,9 @@ LinkDescriptions[expai_help]=How the AI features work and how to use them.
 
 ## TrailLinks
 
-> Change password and Edit profile close the menu, after the links extensions append (parts/ini\_menu.tpl)  
+> Audit trail, Change password and Edit profile close the menu, after the links extensions append (parts/ini\_menu.tpl)  
 
-Default: a list of 2: `change_password`, `edit_profile`.
+Default: a list of 3: `audit`, `change_password`, `edit_profile`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -299,8 +299,24 @@ Default: a list of 2: `change_password`, `edit_profile`.
 [Leftmenu_my]
 # an empty "TrailLinks[]" first replaces the shipped list; without it the items are added
 TrailLinks[]
+TrailLinks[]=audit
 TrailLinks[]=change_password
 TrailLinks[]=edit_profile
+*/ ?>
+```
+
+## CollapseAfter
+
+> The first 10 links show; the rest, the trail links among them on a long menu, follow in a "More (count)"  
+> disclosure, open when it holds the current page (parts/ini\_menu.tpl). 0, or no value, shows every link.  
+
+Default: `10`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/menu.ini.append.php
+[Leftmenu_my]
+CollapseAfter=10
 */ ?>
 ```
 

@@ -1,0 +1,6 @@
+*Titel: Erweiterung der Workflow-Ereignisse Multiplexer und Freigabe
+
+*Dokumentation:
+In den Workflow-Ereignissen ezapprove und ezmultiplexer lässt sich wählen, ob sie beim
+Veröffentlichen neuer oder beim Aktualisieren bestehender Inhaltsobjekte greifen.
+

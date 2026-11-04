@@ -33,7 +33,9 @@
  * them (git status) keeps the index. One process builds a new index at a time, the others use the newest one in
  * the cache meanwhile (buildOnce()). A web request never waits for a build while an older index is there: it answers
  * from that one and starts "exp:help index" in the background (startBackgroundBuild()); only the very first build
- * (no index at all, a new FORMAT) is made in the request. The look
+ * (no index at all, a new FORMAT) is made in the request. The allowlist is treated the same way: a rewrite of a git
+ * index (any git operation) makes a new stamp, and a web request answers from the newest older list while the same
+ * background build writes the current one, so no request reads every git index and file itself. The look
  * at every file is reused for [IndexSettings] StatFilesInterval seconds by every process (signature.php in the cache
  * directory), so an edited page shows within that time. With [IndexSettings] StatFiles=disabled the files are not looked at on each request: a changed page is then picked up
  * by "./console exp:help index" or the next change of the git index (a deploy). When git can be run, the build also
@@ -466,7 +468,9 @@ class expHelpDocumentIndex
         foreach ( self::sizesAndTimes( $names ) as $path => $stamp )
             $parts[] = $path . ':' . $stamp[0] . ':' . $stamp[1];
         $this->signature = sha1( implode( "\n", $parts ) );
-        if ( $this->statInterval > 0 )
+        // a signature taken from an older allowlist is not kept for the current one: the background build would find
+        // it and leave a page added meanwhile out of the index until the interval is over
+        if ( $this->statInterval > 0 && !$this->staleFiles )
             $this->store( self::CHECKED_SIGNATURE_FILE, array( 'base' => $base, 'signature' => $this->signature, 'checked' => time() ),
                           self::CHECKED_SIGNATURE_FILE );
         return $this->signature;
@@ -1137,7 +1141,13 @@ class expHelpDocumentIndex
         $signature = $this->signature();
         $cached = $this->readIndex( 'index-' . $signature . '.php', $signature );
         if ( $cached !== null )
+        {
             $this->data = $cached;
+            // a background build started for a new allowlist only (the pages did not change) is done once the console
+            // has written the list and found the index current
+            if ( !$this->servesStale() && $this->cacheDir !== null )
+                @unlink( $this->cacheDir . '/' . self::BUILD_MARKER_FILE );
+        }
         elseif ( $this->servesStale() && ( $older = $this->newestIndex() ) !== null )
         {
             // a web request never waits for a build (15 to 30 s) while an older index is there: it answers from that
@@ -1236,8 +1246,8 @@ class expHelpDocumentIndex
 
     /**
      * The background build: setsid -f <php> bin/php/exphelp.php index --language=<this language> --no-images
-     * [-s <siteaccess>] --allow-root-user, run in the installation root; null when there is no setsid, no command
-     * line PHP or no proc_open.
+     * [-s <siteaccess>] --keep-search --allow-root-user, run in the installation root; null when there is no setsid,
+     * no command line PHP or no proc_open.
      *
      * @return string[]|null
      */
@@ -1252,7 +1262,7 @@ class expHelpDocumentIndex
         $access = class_exists( 'eZSiteAccess' ) ? eZSiteAccess::current() : null;
         if ( is_array( $access ) && isset( $access['name'] ) && preg_match( '/^[A-Za-z0-9_-]{1,100}$/', (string)$access['name'] ) )
             array_push( $command, '-s', (string)$access['name'] );
-        array_push( $command, '--allow-root-user', '--no-colors' );
+        array_push( $command, '--keep-search', '--allow-root-user', '--no-colors' );
         return $command;
     }
 
@@ -1450,14 +1460,51 @@ class expHelpDocumentIndex
             $this->sourcesCache = isset( $cached['sources'] ) ? $cached['sources'] : array();
             return $this->files = $cached['files'];
         }
+        // Any git operation rewrites a git index (git status, a commit or checkout anywhere in the tree), and building
+        // the list again reads every repository's index and looks at thousands of files: 1 to 5 s. A web request does
+        // not wait for that while an older list is there: it answers from the newest one and has the console build
+        // the current list, and the index if the pages changed, in the background (the deploy builds both itself)
+        if ( $this->servesStale() && ( $older = $this->newestAllowlist() ) !== null )
+        {
+            $this->staleFiles = true;
+            $this->sourcesCache = isset( $older['sources'] ) ? $older['sources'] : array();
+            $this->startBackgroundBuild();
+            return $this->files = $older['files'];
+        }
         $files = $this->allowlist->entries();
         $this->sourcesCache = $this->allowlist->usedSources();
         $this->store( $name, array( 'files' => $files, 'sources' => $this->sourcesCache ), 'allowlist-' );
         return $this->files = $files;
     }
 
+    /**
+     * The newest allowlist in the cache directory, of any stamp; null when there is none.
+     *
+     * @return array|null array( 'files', 'sources' )
+     */
+    protected function newestAllowlist()
+    {
+        if ( $this->cacheDir === null )
+            return null;
+        $files = array();
+        foreach ( (array)glob( $this->cacheDir . '/allowlist-*.php' ) as $file )
+            if ( preg_match( '/\/allowlist-[a-f0-9]{40}\.php$/', $file ) && ( $mtime = @filemtime( $file ) ) !== false )
+                $files[$file] = $mtime;
+        arsort( $files );
+        foreach ( array_keys( $files ) as $file )
+        {
+            $cached = $this->read( basename( $file ) );
+            if ( is_array( $cached ) && isset( $cached['files'] ) && is_array( $cached['files'] ) )
+                return $cached;
+        }
+        return null;
+    }
+
     /** @var array the allowlist sources of the entries in use */
     protected $sourcesCache = array();
+
+    /** @var bool whether the entries in use are an older allowlist than the sources' current one (files()) */
+    protected $staleFiles = false;
 
     /**
      * Builds the index from the files.

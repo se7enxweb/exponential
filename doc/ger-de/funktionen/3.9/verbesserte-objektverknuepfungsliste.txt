@@ -1,0 +1,37 @@
+*Titel: Verbesserter Datentyp eZObjectRelationList
+
+*Anlass:
+Der bisherige Datentyp objectrelation hat mehrere Einschränkungen:
+- es ist immer genau eine Verknüpfung (keine Mehrfachauswahl)
+- die Darstellung war nicht die gewünschte (Liste mit Kontrollkästchen und Liste mit
+  Optionsfeldern)
+- man kann nicht einfach alle Objekte abrufen, die mit einem bestimmten Objekt verknüpft sind
+  (rückwärts verknüpft)
+
+*Dokumentation:
+
+Funktionen:
+Einige neue Funktionen sind entstanden:
+- 1:1- oder 1:n-Beziehungen (Mehrfachauswahl ist möglich),
+- die Liste der Zielobjekte lässt sich über ihren Elternknoten festlegen,
+- zwei neue Oberflächen zur Verwaltung der Verknüpfung: eine Liste mit Optionsfeldern
+  (Einfachauswahl) und eine Liste mit Kontrollkästchen (Mehrfachauswahl),
+- die möglichen verknüpften Objekte lassen sich wählen als 1) die Kinder eines Knotens
+- 2) alle Objekte einer bestimmten Klasse.
+- Für die Template-basierten Auswahlarten gibt es eine neue Ansicht (objectrelation.tpl), die
+  Sie bei Bedarf überschreiben können.
+
+Beim Bearbeiten oder Anlegen einer Klasse mit eZObjectRelationList lässt sich eine der
+'Auswahlmethoden' wählen.
+
+Auswahlmethoden:
+ - Durchsuchen - (Standard)
+ - Auswahlliste
+ - Liste mit Optionsfeldern
+ - Liste mit Kontrollkästchen
+ - Mehrfachauswahlliste
+ - Template-basiert, mehrfach
+ - Template-basiert, einfach
+
+Wählen Sie 'Objektklasse' und 'Standardort', können Sie neue Objekte als Kinder des
+'Standardorts' und als Objekte der 'Objektklasse' anlegen.

@@ -1,0 +1,22 @@
+*Titel: Fehlerhafte PHP-Upload-Einrichtung erkennen
+
+Anlass:
+Der Einrichtungsassistent soll das Upload-System von PHP gründlicher prüfen: ob das
+angegebene Upload-Verzeichnis tatsächlich existiert und beschreibbar ist.
+
+*Dokumentation:
+Der Test liest jetzt 'upload_tmp_dir' aus PHP aus und prüft, ob das Verzeichnis existiert
+und beschreibbar ist. Stimmt etwas nicht, erklärt er den Grund und nennt Beispielbefehle für
+die Shell, um es zu beheben.
+
+Der Einrichtungstest 'file_upload' ist in site.ini von OptionalTests nach CriticalTests
+gewandert.
+
+*Tests:
+php.ini umkonfigurieren und eines der folgenden tun:
+- Uploads in PHP abschalten, indem file_uploads auf 0 gesetzt wird
+- Die Einstellung 'upload_tmp_dir' auf ein nicht vorhandenes Verzeichnis setzen
+- Alle Schreibrechte des Verzeichnisses aus 'upload_tmp_dir' entfernen
+
+*SVN-Revisionen:
+8412, 8434, 8435

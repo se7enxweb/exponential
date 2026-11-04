@@ -1,0 +1,20 @@
+*Titel: Bessere Fehlermeldungen in Templates
+
+*Anlass:
+Es soll leichter zu erkennen sein, wo in Templates Fehler auftreten und welche Operatoren
+und Funktionen Probleme verursachen.
+
+*Dokumentation:
+Ist das Template-Debugging eingeschaltet, wird jetzt vor und nach dem Laden eines Templates
+ein Debug-Eintrag mit seiner URL und seinem Dateipfad geschrieben (nicht im kompilierten Modus).
+
+Für fortgeschrittenes Debugging lässt sich jetzt sehen, wann ein bestimmter Template-Operator
+oder eine Funktion beginnt und endet; so findet man Fehler im Template-System viel leichter.
+Das wird in site.ini in der Gruppe TemplateSettings eingestellt: ShowMethodDebug auf enabled
+setzen.
+
+Alle Operatoren und Funktionen übermitteln jetzt ihre Position an das Template-System, das
+damit genau angeben kann, was schiefgeht.
+
+Einige Fehler im Template-System, durch die Zeilen- und Spaltennummer falsch waren, wurden
+behoben.

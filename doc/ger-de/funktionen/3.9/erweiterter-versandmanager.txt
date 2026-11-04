@@ -1,0 +1,70 @@
+*Titel: Erweiterter Versandmanager (shippingmanager)
+
+*Anlass:
+Unterstützung für Mehrwertsteuer und mehr als eine Versandposition.
+
+*Dokumentation:
+Beschreibung dessen, was die Funktion getShippingInfo zurückgeben soll.
+
+     Die Funktion ruft die Versandinformationen ab und muss in einem neuen Versand-Handler neu
+     implementiert werden. Sie kann auch zusätzliche Parameter zur Verwendung in den Templates
+     zurückgeben.
+
+     \return ein Array mit den Versandinformationen.
+     Ein Beispiel für ein Array, das zurückgegeben werden soll:
+
+     \code
+     array( 'shipping_items' => array( array( 'description'     => 'Shipping vat: 12%',
+                                              'cost'            => 50.25,
+                                              'vat_value'       => 12,
+                                              'is_vat_inc'      => 0,
+                                              'management_link' => '/myshippingmodule/options/12' ),
+                                       array( 'description'     => 'Shipping vat: 25%',
+                                              'cost'            => 100.75,
+                                              'vat_value'       => 25,
+                                              'is_vat_inc'      => 1,
+                                              'management_link' => '/myshippingmodule/options/25' ) ),
+            'description'     => 'Total Shipping',
+            'cost'            => 10.25,
+            'vat_value'       => false,
+            'is_vat_inc'      => 1,
+            'management_link' => '/myshippingmodule/options' );
+     \endcode
+
+     Ein Beispiel für die Versandwerte mit nur einer Versandposition:
+     \code
+     array( 'description'     => 'Total Shipping vat: 16%',
+            'cost'            => 10.25,
+            'vat_value'       => 16,
+            'is_vat_inc'      => 1,
+            'management_link' => '/myshippingmodule/options/1234' );
+     \endcode
+
+     Das zurückgegebene Array jeder Versandposition sollte diese Schlüssel haben:
+     - order_id - Die Bestell-ID der aktuellen Bestellung.
+     - description - Eine eigene Beschreibung der Versandposition.
+     - cost - Die Versandkosten als Gleitkommazahl.
+     - vat_value - Der Mehrwertsteuersatz der Versandposition, als Ganzzahl oder false, wenn
+                   sich die Kosten aus mehreren Mehrwertsteuersätzen zusammensetzen.
+     - is_vat_inc - Ganzzahl, 0 oder 1. 0: Die Kosten sind ohne Mehrwertsteuer.
+                                        1: Die Kosten enthalten die Mehrwertsteuer.
+
+     - management_link - Beispiel für einen zusätzlichen Parameter, der in einem Template
+       verwendet werden kann, z. B. basket.tpl
+
+
+Weitere Informationen liefert der Versandmanager über die Funktionen updatePriceInfo und
+vatPriceInfo, die die Preise mit Mehrwertsteuer aus den ursprünglichen Werten berechnen.
+
+Die Funktion updatePriceInfo() lädt einen eigenen basketInfoHandler; standardmäßig wird der
+Handler aus
+
+kernel/classes/basketinfohandlers/ezdefaultbasketinfohandler.php
+
+eingebunden.
+In Erweiterungen lässt sich ein eigener BasketInfoHandler anlegen und in shop.ini angeben:
+
+[BasketInfoSettings]
+Handler=ezdefault
+
+Die neue Funktionalität des Versandmanagers sollte rückwärtskompatibel sein.

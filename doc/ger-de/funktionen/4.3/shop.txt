@@ -1,0 +1,8 @@
+Verbesserungen am Webshop
+=========================
+
+Fetch-Funktion für Bestellungen
+-------------------------------
+
+Bestellungen lassen sich jetzt so im Template-Code abrufen:
+{def $my_order = fetch( shop, order, hash( order_id, 42 ) )}

@@ -1,0 +1,7 @@
+*Titel: Gruppenbasierte Einschränkung der Berechtigungen content/read und content/edit
+
+*Dokumentation:
+
+Die Berechtigungen content/read und content/edit lassen sich auf die Gruppe beschränken, zu der
+der Benutzer gehört. Außerdem können Benutzer Objekte lesen bzw. bearbeiten, wenn sie in
+derselben Gruppe sind wie der Ersteller (Eigentümer).

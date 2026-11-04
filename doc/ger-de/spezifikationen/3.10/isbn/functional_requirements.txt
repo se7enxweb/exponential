@@ -1,0 +1,160 @@
+=========================
+Verbesserungen an ISBN-13
+=========================
+
+:Autoren: Vidar Langseid
+:Version: 0.2
+
+
+Diese Spezifikation behandelt bestimmte Einschränkungen der Umsetzung von
+ISBN-13 in Exponential. Einige Verbesserungen ließen sich auch auf ISBN-10
+anwenden; sie werden hier aber weder bewertet noch behandelt, da ISBN-10 von
+der Branche inzwischen abgelöst ist.
+
+Änderung am ISBN-Datentyp auf Klassenebene
+==========================================
+Wird einer Klasse ein neuer ISBN-Datentyp hinzugefügt, soll "ISBN-13 format"
+standardmäßig eingeschaltet sein.
+
+Änderungen am ISBN-Datentyp auf Objektebene
+===========================================
+
+Automatische Umwandlung von ISBN-10 in ISBN-13
+----------------------------------------------
+Gibt ein Benutzer eine ISBN im Format ISBN-10 ein UND ist "ISBN-13 format" für
+das Attribut eingeschaltet, soll das System sie automatisch in ISBN-13
+umwandeln.
+
+ISBN-13 mit oder ohne Bindestriche '-' eingeben
+-----------------------------------------------
+Die aktuelle Umsetzung nimmt Bindestriche überall an. Das soll sich ändern.
+Bei der Eingabe von ISBN-13 kann der Benutzer wählen, ob er die Bindestriche
+einschließt oder nicht. Das System soll falsch gesetzte Bindestriche ohne
+Warnung automatisch korrigieren.
+
+Stellung der Bindestriche
+-------------------------
+Eine ISBN-13 sieht typischerweise so aus:
+978-824-73-0904-6
+
+Die Bindestriche trennen die Felder:
+- Präfix
+- Registrierungsgruppe
+- Verlagsnummer
+- Titelnummer
+- Prüfziffer
+
+Das Präfix hat eine feste Länge von 3 Ziffern, die Prüfziffer von 1 Ziffer.
+Die Länge der anderen Elemente kann variieren.
+Der Algorithmus, mit dem die Längen der Elemente ermittelt und die
+Bindestriche gesetzt werden, ist hier beschrieben:
+"http://www.isbn-international.org/en/download/2005 ISBN Users' Manual
+International Edition.pdf"
+
+Registrierungsgruppe und innere Struktur ableiten
+-------------------------------------------------
+Jede Registrierungsgruppe gehört zu einem Land oder Gebiet und kann eigene
+Regeln für die innere Struktur von Verlags- und Titelnummer haben.
+
+Das muss aus der Verteilung der Bereiche jeder Region berechnet werden. Die
+Bereiche müssen gespeichert werden, um die richtige Stellung jedes
+Bindestrichs in der inneren Struktur zu berechnen. Die Bereiche können sich
+ändern; sie sollten regelmäßig bei der Internationalen ISBN-Agentur geprüft und
+in Exponential aktualisiert werden. Sie werden in der Datenbank gespeichert und
+sind im Setup als Einstellung für alle ISBN-Datentypen zugänglich.
+
+ISBN-13 in der Datenbank
+------------------------
+In der aktuellen Umsetzung wird eine ISBN-13 so in der Datenbank gespeichert,
+wie der Benutzer sie eingegeben hat (mit oder ohne Bindestriche). Das muss
+sich ändern.
+
+Die Nummer soll mit den Bindestrichen an der richtigen Stelle gespeichert
+werden.
+Zum Beispiel: 978-82-573-0904-6
+
+Eine ISBN-13 darf NICHT ohne Bindestriche oder mit falsch gesetzten
+Bindestrichen gespeichert werden.
+
+ISBN-13 mit oder ohne Bindestriche anzeigen
+-------------------------------------------
+Wie oben festgelegt, sollen ISBN-13 mit Bindestrichen in der Datenbank
+gespeichert werden. Es muss aber möglich und bequem sein, die ISBN-13 im
+Template mit und ohne Bindestriche anzuzeigen.
+
+Dieser Template-Code soll die ISBN-13 mit Bindestrichen anzeigen:
+{$attribute.content.value}
+Aus Gründen der Rückwärtskompatibilität soll auch das funktionieren:
+{$attribute.data_text}
+
+Dieser Template-Code soll die ISBN-13 ohne Bindestriche anzeigen:
+{$attribute.content.value_without_hyphens}
+
+Zur Information: Das Ansichts-Template des ISBN-Datentyps soll weiterhin das
+Präfix "ISBN" zeigen:
+ISBN 978-82-573-0904-6
+
+
+Skript zur Umwandlung von ISBN-10-Daten in ISBN-13
+==================================================
+Ein Skript soll ISBN-10 in ISBN-13 umwandeln:
+
+convert2isbn13.php [--class-id=CLASSID] [--attribute-id=ATTRIBUTEID]
+[--all-classes]
+
+CLASSID und ATTRIBUTEID können eine Zahl oder ein Bezeichner (Zeichenkette)
+sein.
+
+Ist nur --class-id angegeben, werden alle ISBN-Attribute dieser Klasse
+umgewandelt.
+
+Ist --attribute-id angegeben, wird dieses Attribut in ISBN-13 umgewandelt.
+
+Sind --class-id und --attribute-id angegeben, soll das Skript prüfen, ob
+attribute-id wirklich ein Attribut der mit class-id genannten Klasse ist.
+
+Ist nur --attribute-id angegeben, und zwar als Bezeichner (Zeichenkette) und
+nicht als Zahl, soll das Skript sicherstellen, dass es nicht mehrere Attribute
+mit demselben Bezeichner im System gibt.
+
+Ist --all-classes angegeben, werden alle ISBN-Attribute der Datenbank
+umgewandelt.
+
+Ist --force angegeben, wird das Attribut auch umgewandelt, wenn "ISBN-13
+format" für das Attribut nicht eingeschaltet ist. Das Skript schaltet "ISBN-13
+format" dann für das Attribut ein.
+
+Soll das Skript einen Datentyp umwandeln, bei dem "ISBN-13 format" nicht
+eingeschaltet ist, soll es davor warnen und die Ausführung abbrechen, es sei
+denn, die Option "--force" ist angegeben.
+
+Nach der Umwandlung eines Attributs muss das Skript sicherstellen, dass
+"ISBN-13 format" für das Attribut auf Klassenebene eingeschaltet ist.
+
+Das Skript soll keine neuen Versionen der geänderten Objekte anlegen.
+Stattdessen sollen die ISBN-Werte aller Versionen des Objekts umgewandelt
+werden. So sind alle ISBN-Werte in der Datenbank richtig und einheitlich
+gespeichert.
+
+Läuft das Skript auf einem Attribut, das bereits in ISBN-13 umgewandelt ist,
+soll es sicherstellen, dass die Bindestriche an der richtigen Stelle stehen.
+Frühere Versionen von Exponential stellten das nicht sicher; das Skript muss
+daher beim Upgrade einer Installation, die ISBN-13 verwendet, laufen.
+
+Wird "ISBN-13 format" für ein Attribut eingeschaltet, das Nummern im Format
+ISBN-10 enthält, muss dieses Skript laufen.
+
+Beachten Sie, dass es kein Skript gibt, um ISBN-13 zurück in ISBN-10
+umzuwandeln. Das gilt nicht als Problem, da ISBN-10 nach den internationalen
+Normen nicht mehr verwendet werden soll.
+
+
+Fragen der Dokumentation
+========================
+convert2isbn13.php muss dokumentiert werden.
+Die Dokumentation des ISBN-13-Datentyps muss darüber informieren:
+ - convert2isbn13.php muss laufen, nachdem "ISBN-13 format" eingeschaltet ist
+ - wird "ISBN-13 format" ausgeschaltet, gibt es kein Skript, um alle Daten
+   zurück in das Format ISBN-10 umzuwandeln
+ - wie man die Daten im Template abruft
+   ({$attribute.content.value_without_hyphens} und {$attribute.content.value})

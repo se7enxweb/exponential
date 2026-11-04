@@ -1,0 +1,27 @@
+# Exponential 6: die Crontab des Systembenutzers einer öffentlichen Demo
+#
+# Freie Dokumentation: GFDL 1.3 oder später, siehe doc/ger-de/README-LIZENZ.md.
+#
+# Installieren mit "crontab -u demo crontab-demo" (demo und die Pfade
+# ersetzen). Die erste Zeile gibt jedem Job den Demomodus, damit Cronjobs und
+# der geplante Neuaufbau wie der Webserver mit EXP_DEMO_MODE=1 laufen.
+# Anleitung: doc/ger-de/bc/6.0/demomodus.md; die Cronjob-Gruppen:
+# doc/ger-de/anleitungen/cronjobs.md.
+
+EXP_DEMO_MODE=1
+PATH=/usr/local/bin:/usr/bin:/bin
+
+# die Cronjobs des Kernels, wie die mitgelieferte exponential.cron sie ausführt
+35 6 * * *          cd /var/www/demo.example.com && php runcronjobs.php -q 2>&1
+20 5 * * 1          cd /var/www/demo.example.com && php runcronjobs.php -q infrequent 2>&1
+0,15,30,45 * * * *  cd /var/www/demo.example.com && php runcronjobs.php -q frequent 2>&1
+
+# die Job-Warteschlange (expqueue) und die Zeitpläne der Importe (sqliimport)
+# jede Minute; sqliimport ist nur im Administrations-Siteaccess eingeschaltet,
+# daher laufen beide damit (-s admin)
+* * * * *           cd /var/www/demo.example.com && php runcronjobs.php -q -s admin expqueue 2>&1
+* * * * *           cd /var/www/demo.example.com && php runcronjobs.php -q -s admin sqliimport 2>&1
+
+# die Demo alle zwei Stunden aus dem aktuellen Code neu aufbauen
+# (install-demo-sqlite.sh in doc/eng-us/examples/demo-mode/)
+15 */2 * * * /var/www/demo.example.com-builds/install-demo-sqlite.sh >> /var/www/demo.example.com-builds/install.log 2>&1

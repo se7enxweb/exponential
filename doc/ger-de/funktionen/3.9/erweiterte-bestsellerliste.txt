@@ -1,0 +1,49 @@
+*Titel: Erweiterte Fetch-Funktion best_sell_list
+
+*Dokumentation:
+Die Fetch-Funktion shop/best_sell_list hat mehrere neue Parameter, mit denen sich die Liste der
+meistverkauften Produkte für einen bestimmten Zeitraum abrufen lässt.
+
+*Verwendung:
+fetch( 'shop', 'best_sell_list',
+       hash( [ 'top_parent_node_id', parent_node_id, ]
+             [ 'offset', offset, ]
+             [ 'limit', limit, ]
+             [ 'start_time', start_time, ]
+             [ 'end_time', end_time, ]
+             [ 'duration', duration, ]
+             [ 'ascending', ascending, ]
+             [ 'extended', extended, ]
+              ) )
+
+*Parameter:
+Name:               Typ:         Pflicht:
+ top_parent_node_id  integer      ja
+ offset              integer      nein
+ limit               integer      nein
+ start_time          integer      nein
+ end_time            integer      nein
+ duration            integer      nein
+ ascending           boolean      nein
+ extended            boolean      nein
+
+*Beispiel:
+
+{def $best_sellers=fetch( 'shop', 'best_sell_list',
+                          hash( 'top_parent_node_id', 2,
+                                'limit', 5,
+                                'offset', 0,
+                                'start_time', maketime( 0, 0, 0 ),
+                                'duration', mul( 60, 60, 24 ),
+                                'extended', true() ) ) }
+
+<table>
+{foreach $best_sellers as $product}
+    <tr>
+    <td>{$product.object.name}
+    <td>{$product.object.main_node.path_identification_string}
+    <td>{$product.count}
+    </tr>
+{/foreach}
+</table>
+{undef}

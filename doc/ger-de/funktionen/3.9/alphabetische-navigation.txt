@@ -1,0 +1,97 @@
+*Titel: Alphabetische Navigation
+
+*Dokumentation:
+
+Objekte lassen sich nach dem Anfangsbuchstaben filtern.
+Ist content.ini[AlphabeticalFilterSettings].ContentFilterList[] nicht leer, ist die
+alphabetische Navigation eingeschaltet.
+Sie wird zusammen mit der seitenweisen Navigation im Kinderfenster von content/view, in
+content/browse und im Papierkorb verwendet.
+
+Die Navigation kann beliebige Alphabete verwenden (siehe
+content.ini[AlphabeticalFilterSettings].AlphabetList[]).
+
+(Achten Sie darauf, dass Ihre Alphabete in content.ini[AlphabeticalFilterSettings].ContentFilterList[]
+vom Zeichensatz in i18n.ini[CharsetSettings].Charset unterstützt werden. Nicht unterstützte
+Buchstaben erscheinen als Fragezeichen '?'.)
+
+* Neue Einstellungen:
+
+In content.ini[AlphabeticalFilterSettings] gibt es neue INI-Einstellungen:
+
+- ContentFilterList[]
+  Liste der Alphabete der alphabetischen Navigation.
+  Die Alphabete werden aus AlphabetList[<name of alphabet>] gelesen.
+  Beispiel:
+      ContentFilterList[]=<name of alphabet>
+      ContentFilterList[]=eng-GB
+      ContentFilterList[]=ger-DE
+  Ein leeres Array schaltet die alphabetische Navigation aus.
+
+- AlphabetList[]
+  Bereich des Alphabets in Unicode (das englische Alphabet liegt zwischen 97 und 122).
+  Möglich sind Bereiche (z. B. 97-122) und/oder Folgen einzelner Buchstaben (z. B. 248,249).
+  Beispiel:
+      AlphabetList[eng-GB]=97-122
+      AlphabetList[ger-DE]=97,228,98-111,246,112-115,223,116,117,252,118-122
+      AlphabetList[rus-RU]=1072-1103
+      AlphabetList[nor-NO]=97-122,230,248,229
+
+- EnableUnusedLetters=true/false
+  Bei true werden in der alphabetischen Navigation (beim Durchsuchen oder Abrufen von
+  Unterelementen) nicht verwendete Buchstaben ausgegraut.
+  Beispiel:
+      Gibt es kein Objekt, dessen Name mit 'a' beginnt, ist der Buchstabe 'a' in der alphabetischen Navigation ausgegraut.
+
+*Einzelheiten der Umsetzung:
+
+1) eZContentObjectTreeNode:subTree() und eZContentObjectTreeNode:subTreeCount() unterstützen
+den Parameter 'ObjectNameFilter'.
+
+2) Diese Fetch-Funktionen haben den Parameter 'objectname_filter':
+
+- list
+- list_count
+- tree
+- tree_count
+- trash_count
+- trash_object_list
+
+Verwendung:
+      {let children_count=fetch( content, list_count, hash( parent_node_id, $node.node_id,
+                                                            objectname_filter, $view_parameters.namefilter ) )
+           children=fetch( content, list, hash( parent_node_id, $node.node_id,
+                                                sort_by, $node.sort_array,
+                                                limit, $number_of_items,
+                                                offset, $view_parameters.offset,
+                                                objectname_filter, $view_parameters.namefilter ) ) }
+
+Jetzt lässt sich nach dem Anfangsbuchstaben des Objektnamens filtern, etwa so:
+
+      http://host/<site_access>/content/view/full/2/(namefilter)/a
+
+3) Außerdem gibt es die Template-Funktion alphabet().
+Sie gibt die Alphabete für die alphabetische Navigation zurück.
+Sie hat keine Parameter.
+
+Verwendung:
+      {alphabet()}
+
+=============
+
+Um die alphabetische Navigation zu verwenden,
+1. ergänzen Sie die Fetch-Aufrufe in den Templates um "hash( ... objectname_filter, $view_parameters.namefilter )"
+   (siehe 'Einzelheiten der Umsetzung'[2]),
+2. ändern Sie in der 'include'-Anweisung
+      uri='design:navigator/google.tpl'
+   in
+      uri='design:navigator/alphabetical.tpl'
+
+   Beispiel:
+     {include name=navigator
+              uri='design:navigator/alphabetical.tpl'
+              page_uri=$node.url_alias
+              item_count=$children_count
+              view_parameters=$view_parameters
+              node_id=$node.node_id
+              item_limit=$number_of_items}

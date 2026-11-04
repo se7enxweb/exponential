@@ -1,0 +1,9 @@
+*Titel: Skript ezsubtreeremove.php
+
+*Anlass:
+Viele Objekte lassen sich wegen der Zeitüberschreitung des Browsers nicht im Browser löschen.
+
+*Dokumentation:
+Eine große Zahl von Knoten bzw. Objekten lässt sich über die Kommandozeile entfernen.
+
+Neues Skript bin/php/ezsubtreeremove.php.

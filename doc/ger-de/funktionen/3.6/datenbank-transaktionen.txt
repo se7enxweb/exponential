@@ -1,0 +1,60 @@
+*Titel: Datenbank-Transaktionen
+
+*Dokumentation:
+Diese Funktion führt Transaktionen in der Datenbank ein, damit die Integrität der Datenbank
+gewahrt bleibt. MySQL braucht transaktionssichere Tabellen, um Transaktionen zu
+unterstützen; deshalb wird der MySQL-Tabellentyp auf InnoDB umgestellt. PostgreSQL und
+Oracle haben bereits standardmäßig transaktionssichere Tabellen.
+
+Im Kernel- und Bibliothekscode von Exponential sind Gruppen von Abfragen, die Daten ändern,
+in eine Transaktion eingeschlossen. Beispiele für Abfragen, die Daten ändern: insert-,
+replace-, update- und delete-Abfragen.
+Eine Transaktion beginnt mit $db->begin() und endet mit $db->commit().
+
+Der folgende Code zeigt, wie Transaktionen im Kernel umgesetzt sind:
+
+
+Die Klasse eZRole hat diese Funktion:
+function eZRole::remove ( ... )
+{
+	// ...
+	$db =& eZDB::instance();
+    $db->begin();
+    foreach ( $role->attribute( 'policies' ) as $policy )
+    {
+        $policy->remove();
+    }
+    $db->query( "DELETE FROM ezrole WHERE id='$roleID'" );
+    $db->query( "DELETE FROM ezuser_role WHERE role_id = '$roleID'" );
+    $db->commit();
+}
+
+Die Transaktion umschließt die Funktion policy->remove() und zwei DELETE-Abfragen.
+Policy->remove() ist eingeschlossen, weil auch diese Funktion Daten in der Datenbank ändert.
+
+Die Funktion remove in eZPolicy sieht so aus:
+
+function eZPolicy::remove ( ... )
+{
+	// ...
+    $db =& eZDB::instance();
+    $db->begin();
+    foreach ( $policy->attribute( 'limitations' ) as $limitation )
+    {
+        $limitation->remove();
+    }
+    $db->query( "DELETE FROM ezpolicy WHERE id='$delID'" );
+    $db->commit();
+}
+
+Diese Funktion ruft die Funktion remove von eZPolicyLimitation auf und hat eine
+DELETE-Abfrage.
+
+Transaktionen können (und sollen) also geschachtelt werden. Ein interner Zähler verfolgt die
+Anzahl der begin()-Aufrufe und der passenden commit()-Aufrufe. Die Transaktion wird in der
+Datenbank ausgeführt, sobald der letzte commit()-Aufruf erfolgt.
+
+Damit erkennbar ist, welche Funktionen die Datenbank ändern und deshalb in eine Transaktion
+gehören, steht in ihrer Dokumentation der Kommentar "Transaction unsafe". Ruft Ihr Code
+(Kernel- wie Erweiterungscode) mehrere "Transaction unsafe"-Methoden auf, die Daten so ändern,
+dass es atomar geschehen muss, schließen Sie den Code in begin() und commit() ein.

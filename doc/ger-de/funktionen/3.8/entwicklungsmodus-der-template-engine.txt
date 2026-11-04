@@ -1,0 +1,18 @@
+*Titel: Entwicklungsmodus der Template-Engine
+
+*Anlass:
+Bisher muss der Entwickler alle kompilierten Templates entfernen, wenn eine Quelldatei geändert
+wurde, damit die Änderung auf der Seite wirkt. Sind alle Templates gelöscht, muss das System sie
+neu kompilieren, was einige Zeit dauert.
+
+*Dokumentation:
+In site.ini gibt es eine neue INI-Einstellung in der Gruppe TemplateSettings namens
+DevelopmentMode. Sie ist standardmäßig ausgeschaltet und lässt sich so einschalten:
+
+DevelopmentMode=enabled
+
+Nach der Änderung müssen alle kompilierten Templates gelöscht werden; beim Neuerzeugen enthält der
+Code dann die zusätzlichen Prüfungen auf Änderungen.
+
+Verwenden Sie diese Einstellung nicht auf Live-Websites, da sie zusätzliche Prüfungen ausführt und
+die Website langsamer machen kann.

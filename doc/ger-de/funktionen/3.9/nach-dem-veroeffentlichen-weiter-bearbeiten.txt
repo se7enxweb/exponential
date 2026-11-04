@@ -1,0 +1,8 @@
+*Titel: Kontrollkästchen, um nach dem Veröffentlichen im Bearbeitungsfenster zu bleiben
+
+*Dokumentation:
+Das Kontrollkästchen lässt sich unter 'Mein Konto' im Menü 'Einstellungen des
+Bearbeitungsmodus' einschalten.
+Schalten Sie diese Funktion zusammen mit 'Platzierungen' (ein Eintrag darüber im selben Menü)
+ein, können Sie ein Objekt verborgen veröffentlichen und weiter bearbeiten.
+Das braucht man meist, wenn man verknüpfte Objekte unter dem aktuellen Objekt ablegen will.

@@ -1,0 +1,14 @@
+Titel: Abfrageanalyse in eZDB
+
+Dokumentation:
+Die Schnittstelle eZDB kann jetzt jede Abfrage analysieren und das Ergebnis zusammen mit der
+SQL-Ausgabe anzeigen.
+
+Die Analyse hängt vom Datenbanktyp ab und wird derzeit nur mit MySQL unterstützt.
+
+Zum Einschalten muss die Einstellung QueryAnalysisOutput in site.ini (Gruppe
+DatabaseSetings) auf enabled stehen.
+
+Beispiel:
+[DebugSettings]
+QueryAnalysisOutput=enabled

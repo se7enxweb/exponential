@@ -1,0 +1,75 @@
+*Titel: Verbesserter Datentyp ezcountry
+
+*Dokumentation:
+Der Datentyp unterstützt:
+- eine Vorauswahl von Ländern
+- die Mehrfachauswahl von Ländern
+- Hilfsfunktionen.
+
+Neu ist die Datei "country.ini".
+Sie enthält nur Gruppen von Ländern.
+Der Name einer Gruppe ist der Alpha-2-Code gemäß ISO 3166-1
+(siehe http://en.wikipedia.org/wiki/ISO_3166-1)
+
+*Beispiel:
+  [<Alpha2>]
+  Name=<Name of country>
+  Alpha2=<Aplha2 code>
+  Alpha3=<Alpha3 code>
+  IDC=<Internation Dialling Code>
+  <Other info>=<value>
+
+Die englischen Ländernamen lassen sich über Locale-Dateien übersetzen:
+
+*Beispiel:
+  [CountryNames]
+  Countries[]
+  Countries[<Code of country is Alpha-2 code as reserved in ISO 3166-1]=<Translated name>
+  Countries[AF]=Translated_Afghanistan
+  ...
+  Diese Gruppe und Variablen in die Locale-Dateien einfügen (z. B. rus-RU.ini)
+
+Funktion
+========
+Mit der Funktion country_list können Templates Informationen über Länder abrufen.
+
+*Verwendung:
+
+fetch( 'content', 'country_list',
+       hash( [ 'filter', filter, ]
+             [ 'value', value ]
+              ) )
+*Parameter:
+ Name:              Typ:         Pflicht:
+ filter             string       nein
+ value              string       nein
+
+ HINWEIS: 'filter' ist eine Variable der Gruppen in country.ini,
+        z. B.
+	--------
+	[NO]
+        Name=Norway
+        Alpha2=NO
+        Alpha3=NOR
+        IDC=47
+        --------
+	'filter' kann 'Name', 'Alpha2', 'Alpha3' oder 'IDC' sein.
+
+*Beispiel:
+1.
+  {def $all_country_list=fetch( 'content', 'country_list' )}
+      {$all_country_list|attribute(show)}
+
+  zeigt alle Länder
+
+2.
+{def $country=fetch( 'content', 'country_list', hash( 'filter', 'Name', 'value', 'Norway' ) )}
+    {$country|attribute(show)}
+
+  zeigt:
+
+  Attribute Type    Value
+  Name	    string 'Norway'
+  Alpha2    string 'NO'
+  Alpha3    string 'NOR'
+  IDC       string  47

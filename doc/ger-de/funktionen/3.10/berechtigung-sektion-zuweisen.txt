@@ -1,0 +1,11 @@
+*Titel: Berechtigung zum Zuweisen von Sektionen
+
+*Dokumentation:
+Die Funktion 'assign' wurde in die Liste der Berechtigungsfunktionen des Moduls 'section'
+aufgenommen. So lässt sich Benutzern verwehren, Objekte bestimmten Sektionen zuzuweisen oder
+neu zuzuweisen. Die Berechtigung hat diese Einschränkungen:
+
+- Class	       - die Klasse des Objekts, dem der Benutzer die Sektion zuweisen will.
+- Section      - die aktuelle Sektion des Objekts.
+- Owner	       - der Eigentümer des Objekts (Any oder Self)
+- NewSection   - die Sektion, die der Benutzer zuweisen darf.

@@ -1,0 +1,35 @@
+========================
+eZDB mit Ausnahmen
+========================
+
+Überblick
+=========
+
+eZDB kann jetzt über eine Variable für die Fehlerbehandlung mit Ausnahmen
+arbeiten:
+
+Verwendung
+==========
+
+Diese Anweisung lässt global jede eZDBInterface-Instanz Fehler über Ausnahmen
+behandeln::
+
+    eZDB::setErrorHandling( eZDB::ERROR_HANDLING_EXCEPTIONS );
+
+Mit einer ähnlichen Anweisung lässt sich das Verhalten nur für eine bestimmte
+eZDBInterface-Instanz setzen:
+
+    eZDB::instance()->setErrorHandling( eZDB::ERROR_HANDLING_EXCEPTIONS );
+
+Eine weitere Konstante steht für die rückwärtskompatible Standardbehandlung:
+eZDB::ERROR_HANDLING_STANDARD.
+
+Wirkung
+=======
+Bei der Behandlung über Ausnahmen wirft jeder Fehler beim Ausführen einer
+Abfrage eine eZDBException, statt false zurückzugeben (Standardverhalten) oder
+mit dem roten Kasten "A database transaction has failed" abzubrechen.
+
+Im zweiten Fall (innerhalb einer Transaktion) wird die Abfrage weiterhin
+automatisch zurückgerollt; die Behandlung über Ausnahmen verhindert aber, dass
+Exponential sofort abbricht, und lässt Sie weiterarbeiten oder sauber beenden.

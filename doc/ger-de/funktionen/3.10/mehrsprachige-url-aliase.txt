@@ -1,0 +1,464 @@
+=====================================
+Mehrsprachige Unterstützung für URL-Aliase
+=====================================
+
+:Author:    Jan Borsodi
+:Version:   1.0beta2
+:Date:      09.July.2007
+
+Glossar
+=======
+
+SEO:
+  Suchmaschinenoptimierung (Search Engine Optimization)
+
+Transliterieren:
+  Ein Alphabet in ein anderes (meist das lateinische) übertragen, indem Zeichen ersetzt
+  werden, z. B. von Kyrillisch nach Lateinisch.
+
+
+Upgrade
+=======
+
+Schritt 1
+---------
+Änderungen an den Datenbanktabellen und neue Tabellen übernimmt das allgemeine
+Datenbank-Upgrade (update/database/*).
+
+Schritt 2
+---------
+Bevor die Indizierung beginnen kann, muss die Art der Umwandlung der URLs festgelegt werden.
+Es gibt drei Arten.
+
+1. Nur eine eingeschränkte Zeichenmenge in der URL zulassen: a bis z, Ziffern und
+   Unterstrich. (Das entspricht dem Verhalten von 3.9 und früher.)
+
+   Der Bezeichner dafür ist *urlalias_compat*
+
+2. Mehr Zeichen in der URL zulassen, aber weiterhin nur ASCII-Zeichen (mit wenigen
+   Ausnahmen). Groß- und Kleinschreibung der Wörter bleibt jetzt erhalten.
+
+   Der Bezeichner dafür ist *urlalias*
+
+3. Wie #2, aber alle Unicode-Zeichen zulassen (mit wenigen Ausnahmen). So bleibt der Text
+   so weit wie möglich erhalten; das ist für ein- und mehrsprachige Websites sehr zu
+   empfehlen. Am Text ändert sich nur, dass einige Zeichen entfernt werden, die in URLs im
+   Internet eine besondere Bedeutung haben, und mehrere Leerzeichen zu einem
+   zusammengefasst werden.
+   Ist dies eingeschaltet, wird für die Website der Zeichensatz utf-8 empfohlen
+   (*i18n.ini*).
+
+   Der Bezeichner dafür ist *urlalias_iri*
+
+Ist die gewünschte Umwandlung gewählt, muss sie in *site.ini* konfiguriert werden: Die
+Einstellung TransformationGroup in der Gruppe *URLTranslator* erhält den Bezeichner der
+gewählten Art, z. B. bei der dritten Art::
+
+  [URLTranslator]
+  TransformationGroup=urlalias_iri
+
+Fortgeschrittene Benutzer können sich auch *transform.ini* ansehen, um eine eigene
+Umwandlungsgruppe zu konfigurieren. Mit Anpassungen dieser Datei und einer Erweiterung der
+Umwandlung haben Sie volle Kontrolle über die erzeugten URL-Aliase.
+
+Hinweis: #3 wird als IRI_ (Internationalized Resource Identifiers) bezeichnet, eine
+      Spezialisierung von URI/URL mit Unicode-Unterstützung.
+
+.. _IRI: http://www.w3.org/International/O-URL-and-ident.html
+
+
+Schritt 3
+---------
+
+Die Art der Umwandlung ist gewählt, aber die Datenbank enthält noch die alten Aliase. Um die
+Aliase zu aktualisieren und die alten URLs als Verlauf zu übernehmen, verwenden Sie das
+Skript *bin/php/updateniceurls.php*. Es überträgt zuerst die alten Aliase in das neue System,
+geht dann alle Objekte im System durch und legt neue Aliase an; die alten Aliase werden zu
+Verlaufseinträgen.
+
+Ausführen mit::
+
+  bin/php/updateniceurls.php
+
+Hinweis: Das Skript verwendet alle Sprachen Ihrer Website, nicht nur die im gewählten
+      Siteaccess definierten. Das ist nötig, um alle Aliase aller Sprachen anzulegen.
+
+Ändern Sie die Art der Umwandlung später, können Sie das Skript erneut ausführen; alle
+bestehenden Aliase (der alten Art) werden dann als Verlaufseinträge gespeichert.
+
+
+Hinweis: Das Skript kann je nach Anzahl der Knoten eine Weile dauern.
+
+Schritt 4
+---------
+
+Inhaltscache, Template-Block-Cache und Baummenü-Cache leeren, damit die Website die neuen
+Aliase verwendet.
+
+z. B.::
+
+  bin/php/ezcache.php --clear-id=content,template-block,content_tree_menu
+
+
+Dokumentation
+=============
+
+So funktioniert es
+------------------
+
+Das neue Alias-System folgt demselben Verhalten wie die mehrsprachige Unterstützung, die mit
+Exponential 3.8 kam.
+
+Aliase werden jetzt je Übersetzung des Objekts angelegt, nicht nur für die
+Hauptübersetzung.
+
+Liegt zum Beispiel diese Struktur vor::
+
+  Company (node 10)
+  |-- About-us (node 11)
+  `-- Contact (node 12)
+
+und wird *node 10* ins Deutsche übersetzt und erhält den Alias *Unternehmen*, sieht die
+Struktur so aus::
+
+  Company|Unternehmen (node 10)
+  |-- About-us (node 11)
+  `-- Contact (node 12)
+
+Die Unterknoten sind jetzt über den englischen und den deutschen Alias erreichbar, also::
+
+  Company/About-us
+  Unternehmen/About-us
+
+Wird dann *node 12* ins Französische übersetzt und erhält den Alias *Contactez-nous*, sieht
+die Struktur so aus::
+
+  Company|Unternehmen (node 10)
+  |-- About-us (node 11)
+  `-- Contact|Contactez-nous (node 12)
+
+Die Unterknoten sind jetzt über den englischen, französischen und deutschen Alias
+erreichbar, also::
+
+  Company/Contact
+  Company/Contactez-nous
+  Unternehmen/Contact
+  Unternehmen/Contactez-nous
+
+Der gewählte Alias bestimmt aber nicht die Sprache, die auf der Website angezeigt wird; das
+regelt die Liste der bevorzugten Sprachen des Siteaccess. Der Alias dient nur dazu, den
+richtigen Knoten über einen verständlicheren Namen zu finden.
+
+Wird ein Siteaccess nur mit Französisch (und Englisch als Ausweichsprache) verwendet, sind
+nur diese Aliase möglich::
+
+  Company/Contactez-nous
+  Company/Contact
+  Company/About-us
+
+wobei der bevorzugte Alias für *node 12* *Company/Contactez-nous* ist.
+Wäre *node 10* so konfiguriert, dass er unabhängig von der Sprache verfügbar ist, ließe sich
+auch der deutsche Alias im französischen Siteaccess verwenden.
+
+Muster für URL-Aliase
+---------------------
+
+Die Bearbeitung von Klassen hat ein neues Feld, mit dem sich ein Attribut als Eingabe für den
+URL-Alias festlegen lässt. Es funktioniert wie das *Objektnamensmuster*, gilt aber für den
+Alias. So können Redakteure einen Namen für das Objekt und einen anderen (meist gekürzten) für
+den Alias verwenden.
+
+Dazu legen Sie in der Klasse ein neues Attribut an, benennen es passend und verwenden den
+Bezeichner des Attributs im Muster. Heißt das Attribut zum Beispiel *Alias* und hat den
+Bezeichner *alias*, lautet das Muster::
+
+  <alias>
+
+Ist das Muster leer, verwendet das System stattdessen den Namen des Objekts.
+
+Aliase verwalten
+----------------
+
+Die Oberfläche zum Verwalten der URL-Aliase wurde überarbeitet, vereinfacht und in zwei Teile
+geteilt.
+
+Aliase von Knoten
+~~~~~~~~~~~~~~~~~
+
+Der erste Teil ist die neue Oberfläche zum Verwalten der Aliase von Inhaltsknoten unter
+*content/urlalias/<nodeid>*. Sie gibt einen einfacheren Überblick über die Aliase eines
+Knotens, kann neue Aliase anlegen und bestehende entfernen und bietet praktische Links zu den
+aktuellen Aliasen.
+
+Die Oberfläche für neue Aliase besteht aus einer Sprachauswahl, einem Eingabefeld für den
+Alias und einem Kontrollkästchen.
+
+Die Sprachauswahl legt die Sprache des angelegten Alias fest; das Kennzeichen `always
+available` wird vom Knoten übernommen.
+
+Das Eingabefeld enthält den Alias der URL; es kann auch eine vollständige URL enthalten, um den
+Alias an einer anderen Stelle abzulegen. Diese Stelle muss nicht vorher existieren; gibt es sie
+nicht, werden die Einträge angelegt, sind aber nicht aufrufbar, nur der endgültige Alias ist
+es. Werden später Knoten bzw. Aliase mit demselben Namen wie diese Platzhalter-Stellen
+angelegt, werden die Stellen übernommen und sind dann aufrufbar.
+
+Das Kontrollkästchen `Relative to parent` legt fest, wo der Alias bzw. die URL beginnt: Ist es
+angehakt, beginnt sie beim Elternknoten des aktuellen Knotens, der Alias wird also ein
+Geschwister oder Kind des aktuellen Knotens. Ist es nicht angehakt, wird der Alias bzw. die
+URL ab der Wurzel der Website angelegt.
+
+Hinweis: Die Seite der URL-Aliase eines Knotens erreichen Sie über das Auswahlmenü in der
+      Ansicht des Knotens oder über das Auswahlmenü im Baummenü.
+
+Die erzeugten Aliase des Knotens stehen in einer eigenen Liste; sie lassen sich nur durch
+Bearbeiten des Knotens ändern. Links zur Bearbeitung stehen in derselben Liste.
+
+Globale Aliase
+~~~~~~~~~~~~~~
+
+Die andere Oberfläche ist die bestehende globale Übersicht der Aliase im System unter
+*content/urltranslator*, die aufgeräumt wurde, damit sie leichter zu bedienen ist.
+
+Sie ähnelt der Oberfläche am Knoten, mit einigen Unterschieden. Die Hauptliste zeigt alle
+Aliase im System, sortiert nach dem Namen des Elements (nicht dem Pfad), aber keine Aliase von
+Knoten, da diese über die andere Oberfläche verwaltet werden.
+
+Für einen neuen Alias braucht es den Eingabe-Alias bzw. die URL und das Ziel. Das Ziel kann ein
+anderer Alias oder ein Modul samt Ansicht im System sein. Der Eingabe-Alias bzw. die URL
+beginnt immer an der Wurzel der Website.
+Die Sprachauswahl legt die Sprache der URL fest, und das Kontrollkästchen `Include in other
+languages` bestimmt, ob der Alias auch in anderen Sprachen verfügbar ist.
+
+Hinweis: Wird ein Alias zu einem Knoten angelegt (content/view/full/<node> oder dessen
+      Alias), wird er angelegt, erscheint aber nicht in der globalen Liste. Der Benutzer wird
+      darauf hingewiesen und erhält einen Link zur Alias-Seite des Knotens.
+
+Eingaben umwandeln
+~~~~~~~~~~~~~~~~~~
+
+Gibt der Benutzer einen Alias oder eine URL ein, bereinigt das System die Eingabe mit
+denselben Umwandlungsregeln wie bei den erzeugten Aliasen. Das ist nötig, um bestimmte Zeichen
+zu vermeiden und sicherzustellen, dass der Alias zu den URLs der Website passt. Wird der Alias
+dabei verändert, wird der Benutzer darüber informiert.
+
+
+Umwandlung der Aliase
+---------------------
+
+Die Umwandlung eingegebener bzw. erzeugter Aliase hat sich in 3.10 etwas geändert, auf Grund
+von Rückmeldungen der Benutzer und neuer Möglichkeiten moderner Browser.
+
+Bindestrich oder Unterstrich
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Bisher trennte Exponential Wörter mit Unterstrichen. Immer mehr Benutzer wünschten sich aber
+Bindestriche statt Unterstrichen, oft aus SEO-Gründen. Statt ein Verhalten vorzuschreiben,
+lässt Exponential den Benutzer das Trennzeichen wählen.
+
+Setzen Sie die INI-Einstellung *WordSeparator* in der Gruppe *URLTranslator* (Datei
+*site.ini*) auf *dash*, *underscore* oder *space*.
+
+Führen Sie nach einer Änderung dieser Einstellung *updateniceurls.php* aus.
+
+Hinweis: Das Leerzeichen ist derzeit experimentell und könnte vor dem endgültigen Release 3.10
+      entfernt werden.
+
+
+Unicode-Unterstützung
+~~~~~~~~~~~~~~~~~~~~~
+
+Die bisherigen Umwandlungsregeln waren sehr streng und ließen nur einen Teil des
+ASCII-Zeichensatzes zu (also a-z, 0-9 und _). Das bereitet nicht-westlichen Sprachen mit
+anderen Alphabeten viele Probleme, von denen sich manche kaum transliterieren lassen.
+In Exponential 3.10 lässt sich jetzt die Unicode-Unterstützung der Umwandlung einschalten. Dann
+wird nicht transliteriert, und die meisten Zeichen sind erlaubt. Nicht erlaubt sind nur:
+
+  Leerzeichen, kaufmännisches Und, Semikolon, Schrägstrich, Doppelpunkt, Gleichheitszeichen,
+  Fragezeichen, eckige Klammern, runde Klammern und Plus
+
+Sie müssen umgewandelt werden, um Konflikte mit ihrer bestehenden Bedeutung in Webseiten und
+im HTTP-Protokoll zu vermeiden.
+
+Die Unicode-Zeichen werden nach dem Standard IRI_ kodiert: Der Text wird in UTF-8 umgewandelt
+und dann wie in `RFC 1738`_ beschrieben weiter kodiert. Die entstehende URL enthält nur
+Zeichen, die im HTTP-Protokoll gültig sind, und funktioniert in allen vorhandenen Browsern und
+Clients. Moderne Browser dekodieren die URL außerdem und zeigen sie dem Benutzer in
+Unicode-Zeichen an.
+
+Für das Unicode-Format muss *site.ini* konfiguriert werden, und zwar mit der Umwandlung
+*urlalias_iri*, z. B.::
+
+  [URLTranslator]
+  TransformationGroup=urlalias_iri
+
+.. _`RFC 1738`: http://www.faqs.org/rfcs/rfc1738
+
+Groß- und Kleinschreibung
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Buchstaben werden nicht mehr in Kleinbuchstaben umgewandelt, verglichen wird aber ohne
+Beachtung der Groß- und Kleinschreibung. So bleibt der ursprüngliche Text so weit wie möglich
+erhalten, und man kann den Text trotzdem in beliebiger Schreibung eingeben. Es bedeutet auch,
+dass zwei Knoten auf derselben Ebene, die sich nur in der Schreibung unterscheiden, nicht
+denselben Alias erhalten; einer davon wird angepasst, damit er eindeutig ist.
+
+Die Schreibung bewahren die Umwandlungsgruppen *urlalias* und *urlalias_iri*;
+*urlalias_compat* wandelt wie früher in Kleinbuchstaben um.
+
+Kompatibilität
+~~~~~~~~~~~~~~
+
+Wie oben erwähnt, lässt sich das alte Verhalten der Alias-Umwandlung wiederherstellen. Setzen
+Sie dazu *TransformationGroup* in *site.ini* auf *urlalias_compat*, z. B.::
+
+  [URLTranslator]
+  TransformationGroup=urlalias_compat
+
+Filtern des Alias-Texts
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Für noch mehr Flexibilität bei den erzeugten Aliasen lassen sie sich filtern. Das System ruft
+einen oder mehrere im System definierte Filter für die URLs auf, bevor das gefilterte Ergebnis
+in einen gültigen Alias umgewandelt wird.
+Filter lassen sich in Erweiterungen anlegen und über die INI-Konfiguration einbinden, in
+*site.ini* in der Gruppe *URLTranslator*, Variable *Extensions*.
+Die aktiven Filter stehen in der Variablen *Filters* und werden in allen Erweiterungen gesucht.
+Gesucht wird nach dem Namen des Filters in Kleinbuchstaben mit der Endung *.php*; der Name des
+Filters ist auch der gesuchte Klassenname, z. B.::
+
+  Filters[]=StripWords
+
+sucht die Datei *stripwords.php* und die Klasse *StripWords*.
+Die Filterklasse muss eine Methode *process* mit drei Parametern implementieren: dem zu
+filternden Text, dem Sprachobjekt (eZContentLanguage) und dem Objekt, das den Filter
+aufgerufen hat. Die Methode gibt den neu gefilterten Text zurück.
+
+Ein Beispiel::
+
+  class StripWords
+  {
+      function process( $text, $languageObject, $caller )
+      {
+          return str_replace( "and", "", $text );
+      }
+  }
+
+Eigene Umwandlungsbefehle
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Auch die Umwandlung wurde erweitert: Eigene Umwandlungsbefehle sind jetzt möglich.
+Die Befehle lassen sich in Erweiterungen anlegen und über die INI-Konfiguration einbinden, in
+*transform.ini* in der Gruppe *Extensions*, Variable *Commands*.
+
+So legen Sie einen Befehl an:
+
+Schritt 1.
+^^^^^^^^^^
+
+Legen Sie eine neue Klasse an (z. B. *MyReverse*) und speichern Sie sie in Ihrer Erweiterung, z. B. *extension/myextension/transformation/myreverse.php*.
+Die Klasse braucht eine statische Methode *executeCommand* mit drei Parametern: *$text*, *$command* und *$charsetName*.
+
+- $text - Der umzuwandelnde Eingabetext.
+- $command - Der Name des auszuführenden Befehls; so lassen sich mehrere Befehle in einer Funktion unterbringen.
+- $charsetName - Der Name des Zeichensatzes von $text, meist nicht nötig.
+
+Der vollständige Code sähe etwa so aus::
+
+  class MyReverse
+  {
+      function executeCommand( $text, $command, $charsetName )
+      {
+          $text = strrev( $text );
+          return $text;
+      }
+  }
+
+Schritt 2.
+^^^^^^^^^^
+
+Registrieren Sie den PHP-Code in der INI-Datei *transform.ini*: Sie braucht einen Eintrag in der Gruppe *Extensions* unter der Variablen *Commands* mit dem Pfad zur PHP-Datei und dem Klassennamen (durch einen Doppelpunkt getrennt).
+
+Der INI-Eintrag sähe so aus::
+
+  [Extensions]
+  Commands[]
+  Commands[my_reverse]=extension/myextension/transformation/myreverse.php:MyReverse
+
+Schritt 3.
+^^^^^^^^^^
+
+Fügen Sie den neuen Befehl einer der Umwandlungsgruppen hinzu, etwa so::
+
+  Commands[]=my_reverse
+
+Damit ist der Befehl registriert und sollte funktionieren.
+
+Schritt 4.
+^^^^^^^^^^
+
+Um zu prüfen, ob der Befehl funktioniert, verwenden Sie dieses Code-Beispiel::
+
+  include_once( 'lib/ezi18n/classes/ezchartransform.php' );
+
+  $textList = array( 'Hello there', 'What_the?' );
+
+  $transform = eZCharTransform::instance();
+
+  foreach ( $textList as $text )
+  {
+      $trText = $transform->transformByGroup( $text, 'urlalias' );
+      echo "Original text '$text'\n";
+      echo "New text      '$trText'\n";
+  }
+
+Speichern Sie es als *trans.php* und führen Sie es mit *bin/php/ezexec.php* aus, z. B.::
+
+  ./bin/php/ezexec.php trans.php
+
+Änderungen für Entwickler
+=========================
+
+Die erste Änderung betrifft das Datenbankschema. Die neue Tabelle *ezurlalias_ml* enthält alle
+neuen Aliase. Die alten Aliase bleiben in der Tabelle *ezurlalias*, die eine neue Spalte
+*is_imported* erhält; sie hält fest, welche der alten Aliase erfolgreich importiert wurden.
+Der Aufbau der Tabelle *ezurlalias_ml* ist in einem eigenen Dokument genauer beschrieben.
+
+Zusammen mit der neuen Tabelle gibt es eine neue Klasse (genau genommen mehrere), die die neuen
+Aliase verwaltet. Die Klasse heißt eZURLAliasML und liegt in *kernel/classes/ezurlaliasml.php*.
+Die alte Klasse eZURLAlias ist noch vorhanden, ihre Funktionen sind aber abgeschaltet.
+Die Klasse eZURLAliasML übernimmt zusammen mit eZPathElement, eZURLAliasQuery und
+eZURLAliasFilter die gesamte neue Funktionalität und ist dafür gedacht, von Erweiterungen und
+anderen Teilen des Systems verwendet zu werden (also nicht mehr nur von
+eZContentObjectTreeNode). Einen Überblick, wie das geht, gibt die API-Dokumentation von
+eZURLAliasML.
+
+Der alte Platzhalter-Cache (wildcard cache) wird nicht mehr gebraucht und kann gefahrlos aus
+dem Dateisystem entfernt werden, falls vorhanden. Der neue Datenbankaufbau hat ihn
+überflüssig gemacht.
+
+eZURLAlias
+----------
+
+Die Klasse ist veraltet; wird sie verwendet, bricht der laufende Prozess ab. Aller Code, der sie
+verwendet, muss auf eZURLAliasML umgestellt werden; diese hat für die Funktionen *translate*,
+*cleanURL*, *convertPathToAlias* und *convertToAlias* dieselben Signaturen. Die übrige
+Funktionalität hat sich gemäß dem neuen Datenbankaufbau geändert.
+
+eZContentObjectTreeNode
+-----------------------
+
+Das Attribut *path_identification_string* bleibt erhalten, wird aber nur für die Hauptsprache
+des Knotens angelegt. Für echte mehrsprachige Pfade verwenden Sie die Funktion *urlAlias*
+(auch *url*) und in Templates das Attribut *url_alias* (auch *url*).
+
+Die Methode *updateURLAlias* ist zugunsten von *updateSubTreePath* veraltet, die für mehrere
+Sprachen erweitert wurde.
+
+eZURI
+-----
+
+Das Dekodieren von IRI_-Eingaben ist hinzugekommen; die resultierende URI ist im Zeichensatz
+der Website.
+Außerdem werden ausgehende URLs jetzt in *kernel/error/view.php* und
+*lib/ezutils/classes/ezhttptool.php* kodiert.
+

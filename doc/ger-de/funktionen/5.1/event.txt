@@ -1,0 +1,30 @@
+Ereignissystem
+==============
+
+Einführung
+----------
+Alle Informationen zu dieser Funktion stehen in {4.5,4.7,5.0}/event.txt
+
+
+Neue Ereignisse
+---------------
+{@see ezpEvent->notify()}
+
+content/class/cache/all
+content/class/cache ( $classID )
+content/class/group/cache ( $groupID )
+
+content/state/cache/all
+content/state/cache ( $stateID )
+content/state/group/cache ( $groupID )
+
+content/section/cache ( $sectionID )
+
+user/cache/all
+
+content/translations/cache ( array $languageIDs )
+
+
+Neue Filter
+-----------
+{@see ezpEvent->filter()}

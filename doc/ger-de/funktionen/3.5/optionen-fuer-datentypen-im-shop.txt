@@ -1,0 +1,29 @@
+*Titel: Allgemeine Behandlung von Optionen für Datentypen
+
+Anlass:
+Der Code des Shops, der fest auf bestimmte Datentypen zugeschnitten war, soll eine
+allgemeinere Schnittstelle verwenden. So lassen sich neue Datentypen mit Optionen viel
+leichter schreiben.
+
+*Dokumentation:
+Die Schnittstelle eZDatatype hat eine neue Methode, um Informationen über eine Option abzufragen.
+
+productOptionInformation(): Gibt die Informationen zu einer Option zurück, die über eine Options-ID angegeben wird.
+                            Der Datentyp muss sicherstellen, dass die Options-ID eindeutig und dauerhaft ist,
+                            da das System diese Informationen auch später noch abfragen kann.
+
+Die Methode muss folgende Struktur zurückgeben:
+- id - Die eindeutige ID der gewählten Option; sie muss innerhalb des Attributs eindeutig sein und
+       wird später zur Neuberechnung der Preise verwendet.
+- name - Der Name der Optionsliste (z. B. Farbe, Größe usw.)
+- value - Der Anzeigetext der gewählten Option (z. B. rot, grün, groß, klein)
+- additional_price - Ein Wert, der zum Gesamtpreis des Produkts addiert wird; 0 oder false bedeutet kein Aufpreis
+
+
+Datentypen:
+Hinzugefügt für eZOption, eZRangeOption und eZMultiOption.
+
+*Tests:
+
+*SVN-Revisionen:
+7505

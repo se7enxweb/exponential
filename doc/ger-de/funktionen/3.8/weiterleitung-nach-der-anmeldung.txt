@@ -1,0 +1,65 @@
+*Titel: Erweiterte Weiterleitung nach user/login
+
+*Anlass:
+
+Bisher führte die Weiterleitung nach der Anmeldung zur Wurzel der Website (oder einem im
+Anmelde-Template fest eingetragenen Ziel). Das ist bei Websites mit differenzierten
+Berechtigungen wenig hilfreich, auf denen manche Benutzer nur bestimmte Teile der Website
+erreichen und andere nur andere Teile. Gebraucht wird ein System, mit dem Administratoren
+festlegen, wohin Benutzer nach der Anmeldung weitergeleitet werden.
+
+*Dokumentation:
+
+Die Weiterleitungs-URI lässt sich jetzt je Benutzer oder je Gruppe festlegen.
+
+Sie brauchen nur ein Attribut vom Typ 'Textzeile' in der Klasse 'Benutzer' und/oder
+'Benutzergruppe' und tragen dessen Bezeichner in eine INI-Einstellung ein. Das Attribut gibt
+dann an, wohin der Benutzer nach der Anmeldung weitergeleitet wird.
+
+*Neue Einstellungen:
+
+site.ini hat zwei neue INI-Einstellungen:
+
+[UserSettings]
+LoginRedirectionUriAttribute[user]=<attribute_identifier>
+LoginRedirectionUriAttribute[group]=<attribute_identifier>
+
+Die erste gibt an, welches Attribut der Klasse 'Benutzer' die Weiterleitungs-URI des Benutzers
+enthält.
+
+Die zweite gibt an, welches Attribut der Klasse 'Benutzergruppe' die Weiterleitungs-URI für die
+Mitglieder der Gruppe enthält.
+
+*Beispiele:
+
+Um eine "Startseite" für den Benutzer Fred festzulegen, gehen Sie so vor:
+1. Der Klasse 'Benutzer' ein Attribut vom Typ 'Textzeile' namens 'Redirection URI' hinzufügen.
+   Das neue Attribut erhält den Bezeichner 'redirection_uri'.
+2. site.ini.append bearbeiten:
+   [UserSettings]
+   LoginRedirectionUriAttribute[user]=redirection_uri
+3. Den Benutzer Fred bearbeiten und "/media" (oder eine andere URI) in das Feld 'Redirection URI' eintragen.
+
+Das war's.
+Ab jetzt wird Fred nach der Anmeldung immer in den Ordner Media weitergeleitet.
+
+Für die Gruppe "Gastkonten" legen Sie die Weiterleitungs-URI ähnlich fest:
+1. Der Klasse 'Benutzergruppe' ein Attribut vom Typ 'Textzeile' namens 'Home page' hinzufügen.
+   Das neue Attribut erhält den Bezeichner 'home_page'.
+2. site.ini.append bearbeiten:
+   [UserSettings]
+   LoginRedirectionUriAttribute[group]=home_page
+3. Die Gruppe "Gastkonten" bearbeiten und "/news" (oder eine andere URI) in das Feld 'Home page' eintragen.
+
+*Einzelheiten der Umsetzung:
+
+Ist ein Benutzer Mitglied mehrerer Gruppen (also Kind mehrerer Knoten der Klasse
+'Benutzergruppe'), hat die "Hauptgruppe" (der Hauptelternknoten) Vorrang.
+
+Die Klassen müssen nicht 'Benutzer' oder 'Benutzergruppe' sein. Die erste Klasse braucht nur ein
+Attribut vom Typ 'Benutzerkonto', die zweite muss nur Kinder haben können.
+
+Ist bereits eine Weiterleitungs-URI festgelegt (z. B. über die Sitzungsvariable
+'LastAccessesURI'), ist die erweiterte Weiterleitung abgeschaltet.
+Öffnet ein Benutzer also den Browser und ruft our.site.com/news auf, wird er _nicht_ zu seiner
+"Startseite" weitergeleitet.

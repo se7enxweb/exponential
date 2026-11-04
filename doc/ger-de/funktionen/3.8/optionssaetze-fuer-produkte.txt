@@ -1,0 +1,30 @@
+*Titel: Optionssätze für Produkte
+
+*Anlass:
+
+Produkte, die man mehrmals mit verschiedenen Optionen kauft (z. B. Kontaktlinsen, je eine für
+jedes Auge), sollen sich leichter unterstützen lassen. Bisher muss der Benutzer das Produkt mit
+den verschiedenen Optionen von Hand mehrmals kaufen.
+
+*Dokumentation:
+
+Beim Auflisten der Optionen eines Produkts lassen sich jetzt Sätze bilden, indem man im Array
+eZOption einen weiteren Schlüssel mit dem Namen des Satzes einfügt. Der Satz beginnt mit 'set_',
+gefolgt von einem Namen; haben mehrere Optionen denselben Satznamen, gehören sie alle zum selben
+Satz.
+
+Statt zum Beispiel:
+
+<select name="eZOption[<attributeID>]">...</select>
+
+kann man jetzt schreiben:
+
+<select name="eZOption[set_one][<attributeID>]">...</select>
+<select name="eZOption[set_two][<attributeID>]">...</select>
+
+Damit kommt dasselbe Produkt zweimal mit verschiedenen Optionen in den Warenkorb, einmal mit den
+Optionen aus 'set_one' und einmal mit denen aus 'set_two'.
+
+
+Hinweis: Es gibt keine Oberfläche, um diese Sätze festzulegen; sie müssen von Hand in ein
+      Template eingetragen werden.

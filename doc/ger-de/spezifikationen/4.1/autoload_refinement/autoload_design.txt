@@ -1,0 +1,186 @@
+Entwurf der Autoload-Verfeinerung in Exponential 4.1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+:Autor: Ole Marius Smestad
+:Revision: $Revision$
+:Datum: $Date$
+
+Überblick
+=========
+
+Die folgende Liste beschreibt die Initialisierung von Exponential im Hinblick
+auf die Einrichtung der Autoload-Arrays.
+
+#. autoload.php wird geladen
+
+#. config.php wird geladen, falls vorhanden
+
+   - Diese Datei kann den include_path ändern
+
+   - eine Methode kann auf den Autoload-Stapel von PHP gelegt werden
+
+#. spl_autoload_register wird mit der Standard-Autoload-Methode von
+   Exponential aufgerufen
+
+Die Autoload-Methode
+====================
+
+In Exponential 4.1 gibt es eine Autoload-Methode zum Laden der Klassen des
+Kernsystems, ezpAutoload(). Sie lädt die Kernel-Klassen wie im Zweig 4.0.x.
+
+Vereinfachtes Konzept
+=====================
+
+Das Laden von Kernel-Überschreibungen ändert sich. Ob Kernel-Überschreibungen
+erlaubt sind, steuert die Konstante 'EZP_AUTOLOAD_ALLOW_KERNEL_OVERRIDE'. Wird
+sie in config.php auf true gesetzt, dürfen Kernel-Klassen überschrieben werden.
+
+Die andere Änderung: Klassen sind unabhängig vom Zustand der Erweiterung
+erreichbar, in der sie liegen, ob diese aktiviert ist oder nicht. Das
+vereinfacht unsere Umsetzung und macht das System für Benutzer leichter
+verständlich und bedienbar, ohne unterschiedliche Ergebnisse, je nachdem, ob
+die Autoloads auf der Kommandozeile oder in der Oberfläche erzeugt wurden.
+
+Daraus folgt, dass die Autoload-Erzeugung in der Ansicht der Erweiterungen der
+Administrationsoberfläche so geändert wird, dass sie Autoloads für alle
+Erweiterungen erzeugt, ob eingeschaltet oder nicht.
+
+Geänderter Ort der Autoload-Dateien
+===================================
+
+Alle Autoload-Dateien, die der Benutzer schreiben soll, liegen jetzt im
+Verzeichnis var/autoload, passend zu den übrigen Dateirechten.
+
+<root>/autoload/ enthält weiterhin das vom System mitgelieferte
+Autoload-Array des Kernels; diese Datei soll schreibgeschützt sein und die
+Standardwerte bereitstellen, die Exponential zum Laufen braucht.
+
+Änderungen an der Autoload-Erzeugung
+====================================
+
+- Die verschiedenen Betriebsarten setzen automatisch das richtige
+  Zielverzeichnis. Es lässt sich mit Optionen immer überschreiben.
+
+- Doppelte Klassen werden geprüft, während jede neue Klasse verarbeitet wird.
+  Das mitgelieferte Kernel-Array und die bereits durchsuchten Klassen der
+  Erweiterungen werden auf Namenskollisionen geprüft. Um Kernel-Überschreibungen
+  zu filtern, muss das Autoload-Array auf dem System vorhanden sein.
+
+  Wird eine Kollision erkannt, gibt es eine Warnung, und gefundene doppelte
+  Klassen kommen in kein Autoload-Array. Einzige Ausnahme sind
+  Kernel-Überschreibungen, aber auch dann darf nur eine Klasse zugleich eine
+  Kernel-Klasse überschreiben. Gibt es mehrere Kernel-Überschreibungen, gibt es
+  eine Warnung.
+
+- [TODO] Um die Autoload-Erzeugung zu vereinfachen, wenn Benutzer zusätzliche
+  Ordner im Verzeichnis von Exponential haben, sollen erkannte Ordner
+  verwendet werden, statt eine Sperrliste zu führen.
+
+- Das Trennzeichen der Liste ausgeschlossener Verzeichnisse ist jetzt ein KOMMA
+  statt eines LEERZEICHENS, damit auch Ordnernamen mit Leerzeichen gehen.
+
+Änderungen an der Klasse eZAutoloadGenerator
+============================================
+
+eZAutoloadGenerator hat einige neue öffentliche Methoden erhalten, damit die
+Klasse in verschiedenen Zusammenhängen besser nutzbar ist; sie betreffen
+meist die Ausgabe und Rückmeldungen der Autoload-Erzeugung.
+
+Auch der Konstruktor ist stark vereinfacht: Er nimmt nur ein Optionsobjekt an
+statt einer langen Parameterliste. Fehlt es, wird ein Optionsobjekt mit
+Standardwerten angelegt.
+
+Dann erzeugt der Generator Autoload-Arrays für die Erweiterungen der Site.
+
+Wird die Klasse zur Autoload-Erzeugung verwendet, gibt sie standardmäßig nichts
+aus. Meldungen und Warnungen werden in zwei Arrays gesammelt, deren Inhalt
+sich mit den Methoden getMessages() und getWarnings() abrufen lässt. Damit lässt
+sich beliebig weiterarbeiten.
+
+Beschreibung der neuen Methoden:
+
+getMessages
+-----------
+::
+
+    /**
+     * Get the array of logged messaages
+     *
+     * @return array
+     */
+    public function getMessages()
+
+(Liefert das Array der gesammelten Meldungen.)
+
+getWarnings
+-----------
+::
+
+    /**
+     * Get the array of logged warnings
+     *
+     * @return array
+     */
+    public function getWarnings()
+
+(Liefert das Array der gesammelten Warnungen.)
+
+printAutoloadArray
+------------------
+::
+
+    /**
+     * Prints out the generated autoload arrays.
+     *
+     * Meant to provide a user-viewable output of the defined autoload arrays.
+     * If <var>$printForMode</var> is provided, only the array for that mode
+     * will be printed.
+     *
+     * @param string $printForMode Run mode specified by the MODE_* constants.
+     * @return mixed
+     */
+    public function printAutoloadArray( $printForMode = null )
+
+(Gibt die erzeugten Autoload-Arrays lesbar aus; mit $printForMode nur das
+Array dieser Betriebsart.)
+
+setOutputCallback
+-----------------
+::
+
+    /**
+     * Sets callback for outputting messages.
+     *
+     * @param callback $callback
+     * @return void
+     */
+    public function setOutputCallback( $callback )
+
+Diese Methode lässt sich verwenden, wenn eZAutoloadGenerator in
+Kommandozeilenskripten und Ähnlichem sofort etwas ausgeben soll. Intern leitet
+eZAutoloadGenerator Meldungen und Warnungen an den Callback weiter, wenn er
+gesetzt ist.
+
+setMode
+-------
+::
+
+    /**
+     * Convenience method to set the mode directly.
+     *
+     * This is a method which allow you to set the operation mode directly and
+     * bypass the options object. The bitmask <var>$modeValue</var> can be set
+     * using the MODE_* class constants.
+     *
+     * <code>
+     * $gen = new eZAutoloadGenerator();
+     * $gen->setMode( eZAutoloadGenerator::MODE_EXTENSION | eZAutoloadGenerator::MODE_TESTS );
+     * </code>
+     *
+     * @param int $modeValue
+     * @return void
+     */
+    public function setMode( $modeValue )
+
+(Setzt die Betriebsart direkt, am Optionsobjekt vorbei; die Bitmaske
+$modeValue wird mit den Klassenkonstanten MODE_* gebildet.)

@@ -1,0 +1,11 @@
+*Titel: Neue Einstellung AutoConvertOnSave
+
+*Dokumentation:
+In template.ini gibt es eine neue Einstellung, CharsetSettings:AutoConvertOnSave.
+Sie wandelt Ihre Templates automatisch in den HTTPCharset aus i18n.ini um, sobald
+Sie ein Template speichern, das Sie in der Administrationsoberfläche bearbeiten.
+So muss Exponential das Template nicht bei jedem Aufruf erneut in den HTTPCharset
+umwandeln. Die Voreinstellung ist "enabled".
+
+Hatte das Template einen Zeichensatz-Kopf ( {*?template charset=utf-8?*} ), wird
+er entsprechend angepasst; gab es keinen, wird einer hinzugefügt.

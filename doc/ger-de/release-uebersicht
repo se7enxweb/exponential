@@ -1,0 +1,1916 @@
+Release-Historie von Exponential
+================================
+
+Diese Datei verzeichnet die Releases von 2.9 bis 6.0.15 mit ihren Daten und Quellen. Sie ist die deutsche Fassung von
+doc/eng-us/release-overview; Versionen, Revisionen, URLs, Tags und Daten sind unverändert übernommen, nur die
+Feldnamen und festen Wendungen sind übersetzt. Die frühen Einträge stammen aus der Zeit von eZ Publish, dem
+eingestellten System, aus dem Exponential hervorging; ihre Adressen (zev.ez.no, pubsvn.ez.no) sind nicht mehr
+erreichbar und stehen nur als Beleg da.
+
+Feldnamen: Alias = auch genannt, Datum = Datum des Codes bzw. Tags, Veröffentlichungsdatum = Tag der
+Veröffentlichung, Quelle = woher das Datum stammt.
+
+2.9-3:
+- Alias 3.0-beta2
+- Revision=431
+- Release-URL=http://zev.ez.no/svn/nextgen/releases/3.0-beta2
+- Versions-URL=http://zev.ez.no/svn/nextgen/versions/2.9-3
+- Datum 01-Nov-2002
+
+2.9-4:
+- Alias 3.0-beta3
+- Revision=643
+- Release-URL=http://zev.ez.no/svn/nextgen/releases/3.0-beta3
+- Versions-URL=http://zev.ez.no/svn/nextgen/versions/2.9-4
+- Datum 20-Nov-2002
+
+2.9-5:
+- Alias 3.0-beta4
+- Revision=844
+- Release-URL=http://zev.ez.no/svn/nextgen/releases/3.0-beta4
+- Versions-URL=http://zev.ez.no/svn/nextgen/versions/2.9-5
+- Datum 03-Dec-2002
+
+2.9-6:
+- Alias 3.0-rc1
+- Start-Revision=1159
+- Zusammengeführte Revision=1159:1162
+- Zusammengeführte Revision=1170:1171
+- End-Revision=1173
+- Release-URL=http://zev.ez.no/svn/nextgen/releases/3.0-rc1
+- Versions-URL=http://zev.ez.no/svn/nextgen/versions/2.9-6
+- Datum 13-Dec-2002
+
+2.9-7:
+- Alias 3.0-rc2
+- Revision=1694
+- Release-URL=http://zev.ez.no/svn/nextgen/releases/3.0-rc2
+- Versions-URL=http://zev.ez.no/svn/nextgen/versions/2.9-7
+- Datum 5-Feb-2003
+
+3.0-1:
+- Alias 3.0 (endgültig)
+- Revision=2251
+- Release-URL=http://zev.ez.no/svn/nextgen/releases/3.0 (2252)
+- Versions-URL=http://zev.ez.no/svn/nextgen/versions/3.0-1 (2253)
+- Datum 24-Mar-2003
+
+3.0-2:
+- Alias 3.0 Release 2
+- Revision=2373
+- Release-URL=http://zev.ez.no/svn/nextgen/releases/3.0_release_2 (2374)
+- Versions-URL=http://zev.ez.no/svn/nextgen/versions/3.0-2 (2375)
+- Datum 24-Apr-2003
+
+Sicherheitskorrektur 1:
+- Behebt eine Sicherheitslücke in user/edit
+- Revision 2454 und 2458
+- Datum 19-May-2003
+
+3.1.0-1:
+- Alias 3.1 beta1
+- Revision=2618
+- Release-URL=http://zev.ez.no/svn/nextgen/releases/3.1-beta1 (2619)
+- Versions-URL=http://zev.ez.no/svn/nextgen/versions/3.1.0-1 (2620)
+- Datum 27-May-2003
+
+Datatype-Zweig:
+- Abgezweigt von Revision=2627
+- Zweig endet bei Revision=2711
+- In trunk zusammengeführt in Revision=2714
+- URL=http://zev.ez.no/svn/nextgen/unstable/datatype-development-20030530 (2628)
+- Datum 30-May-2003
+
+3.1.0-2:
+- Alias 3.1 beta2
+- Revision=2695
+- Release-URL=http://zev.ez.no/svn/nextgen/releases/3.1-beta2 (2696)
+- Versions-URL=http://zev.ez.no/svn/nextgen/versions/3.1.0-2 (2697)
+- Datum 10-June-2003
+
+3.1-1
+- Alias 3.1 (endgültig)
+- Revision=2786
+- Release-URL=http://zev.ez.no/svn/nextgen/releases/3.1/
+- Versions-URL=http://zev.ez.no/svn/nextgen/versions/3.1-1/
+- Datum 24-Jun-2003
+
+3.2.0-1
+- Alias 3.2 beta1
+- Revision=3232
+- Versions-URL=http://zev.ez.no/svn/nextgen/versions/3.2.0-1/
+- Datum 20-Aug-2003
+
+3.2.0-2
+- Alias 3.2 beta2
+- Revision=3314
+- Versions-URL=http://zev.ez.no/svn/nextgen/versions/3.2.0-2/
+- Datum 02-Sep-2003
+
+3.2-1
+- Alias 3.2
+- Revision=3502
+- Versions-URL=http://zev.ez.no/svn/nextgen/versions/3.2-1/
+- Datum 16-Sep-2003
+
+3.2-2
+- Alias 3.2 Release 2
+- Revision=3709
+- Versions-URL=http://zev.ez.no/svn/nextgen/versions/3.2-2/
+- Datum 14-Oct-2003
+
+3.2-3
+- Alias 3.2 Release 3
+- Revision=3896
+- Versions-URL=http://zev.ez.no/svn/nextgen/versions/3.2-3/
+- Datum 30-Oct-2003
+
+3.3.0-2
+- Alias 3.3 Release 2
+- Revision=4475
+- Versions-URL=http://zev.ez.no/svn/nextgen/versions/3.3.0-2/
+- Datum 10-Dec-2003
+
+3.2-4
+- Alias 3.2 Release 4
+- Revision=4613
+- Versions-URL=http://zev.ez.no/svn/nextgen/versions/3.2-4/
+- Datum 22-Dec-2003
+
+3.3-1
+- Alias 3.3 Release 1
+- Revision=4676
+- Ab Revision=4647
+- Versions-URL=http://zev.ez.no/svn/nextgen/versions/3.3-1
+- Datum 07-Jan-2003
+
+3.3-2
+- Alias 3.3 Release 2
+- Revision=4785
+- Ab Revision=4786
+- Versions-URL=http://zev.ez.no/svn/nextgen/versions/3.3-2
+- Datum 16-Jan-2003
+
+3.3-3
+- Alias 3.3 Release 3
+- Revision=5727
+- Ab Revision=5019
+- Versions-URL=http://zev.ez.no/svn/nextgen/versions/3.3-3
+- Datum 5-Feb-2003
+
+3.4.0alpha1:
+- Alias 3.4.0 alpha 1
+- Revision=5347
+- Ab Revision=5346
+- Versions-URL=http://zev.ez.no/svn/nextgen/versions/3.4.0alpha1
+- Datum 27-Feb-2004
+
+3.2-5
+- Alias 3.2 Release 5
+- Revision=5405
+- Versions-URL=http://zev.ez.no/svn/nextgen/versions/3.2-5/
+- Datum 3-Mar-2004
+
+3.3-4
+- Alias 3.3 Release 4
+- Revision=5587
+- Ab Revision=5584
+- Versions-URL=http://zev.ez.no/svn/nextgen/versions/3.3-4
+- Datum 24-Mar-2004
+
+3.4.0alpha2:
+- Alias 3.4.0 alpha 2
+- Revision=5726
+- Ab Revision=5721
+- Versions-URL=http://zev.ez.no/svn/nextgen/versions/3.4.0alpha2
+- Datum 31-Mar-2004
+
+3.4.0alpha3:
+- Alias 3.4.0 alpha 3
+- Revision=6235
+- Ab Revision=6233
+- Versions-URL=http://zev.ez.no/svn/nextgen/versions/3.4.0alpha3
+- Datum 23-Apr-2004
+
+3.4.0alpha4:
+- Alias 3.4.0 alpha 4
+- Revision=6342
+- Ab Revision=6319
+- Versions-URL=http://zev.ez.no/svn/nextgen/versions/3.4.0alpha4
+- Datum 29-Apr-2004
+
+3.2-6
+- Alias 3.2 Release 6
+- Revision=6424
+- Versions-URL=http://zev.ez.no/svn/nextgen/versions/3.2-6/
+- Datum 7-May-2004
+
+3.3-5
+- Alias 3.3 Release 5
+- Revision=6425
+- Versions-URL=http://zev.ez.no/svn/nextgen/versions/3.3-5/
+- Datum 7-May-2004
+
+3.4.0beta1:
+- Alias 3.4.0 beta 1
+- Revision=6441
+- Ab Revision=6440
+- Versions-URL=http://zev.ez.no/svn/nextgen/versions/3.4.0beta1
+- Datum 10-May-2004
+
+3.4.0beta2:
+- Alias 3.4.0 beta 2
+- Revision=6554
+- Ab Revision=6553
+- Versions-URL=http://zev.ez.no/svn/nextgen/versions/3.4.0beta2
+- Datum 19-May-2004
+
+3.4.0:
+- Revision=6742
+- Ab Revision=6741
+- Versions-URL=http://zev.ez.no/svn/nextgen/versions/3.4.0
+- Datum 2-June-2004
+
+3.4.1:
+- Ab Revision=7070
+- Revision=7071
+- Versions-URL=http://zev.ez.no/svn/nextgen/versions/3.4.1
+- Datum 7-Jul-2004
+
+3.4.2:
+- Ab Revision=8152
+- Revision=8154
+- Versions-URL=http://zev.ez.no/svn/nextgen/versions/3.4.2
+- Datum 23-Sep-2004
+
+3.5.0alpha1:
+- Ab Revision=8420
+- Revision=8421
+- Versions-URL=http://zev.ez.no/svn/nextgen/versions/3.5.0alpha1
+- Datum  1-Oct-2004
+
+3.5.0beta1:
+- Ab Revision=9167
+- Revision=9168
+- Versions-URL=http://zev.ez.no/svn/nextgen/versions/3.5.0beta1
+- Datum 22-Oct-2004
+
+3.3-6:
+- Ab Revision=9286
+- Revision=9287
+- Versions-URL=http://zev.ez.no/svn/nextgen/versions/3.3-6
+- Datum 2-Nov-2004
+
+3.4.3:
+- Ab Revision=9286
+- Revision=9289
+- Versions-URL=http://zev.ez.no/svn/nextgen/versions/3.4.3
+- Datum  2-Nov-2004
+
+3.4.4:
+- Ab Revision=9443
+- Revision=9444
+- Versions-URL=http://zev.ez.no/svn/nextgen/versions/3.4.4
+- Datum  8-Nov-2004
+
+3.5.0rc1:
+- Ab Revision=9995
+- Revision=9996
+- Versions-URL=http://zev.ez.no/svn/nextgen/versions/3.5.0rc1
+- Datum 23-Nov-2004
+
+3.5.0rc2:
+- Ab Revision=10322
+- Revision=10323
+- Versions-URL=http://zev.ez.no/svn/nextgen/versions/3.5.0rc2
+- Datum 10-Dec-2004
+
+3.5.0:
+- Ab Revision=10451
+- Revision=10452
+- Versions-URL=http://zev.ez.no/svn/nextgen/versions/3.5.0
+- Datum 22-Dec-2004
+
+3.3-7:
+- Release-Zweig=release/3.3-7
+- Beginn des Release-Zweigs=10845
+- Ende des Release-Zweigs=10950
+- Ab Revision=10946
+- Revision=10950
+- Versions-URL=http://zev.ez.no/svn/nextgen/versions/3.3-7
+- Datum 23-Feb-2005
+
+3.4.5:
+- Release-Zweig=release/3.4.5
+- Beginn des Release-Zweigs=10846
+- Ende des Release-Zweigs=10958
+- Ab Revision=10955
+- Revision=10958
+- Versions-URL=http://zev.ez.no/svn/nextgen/versions/3.4.5
+- Datum 24-Feb-2005
+
+3.5.1:
+- Release-Zweig=release/3.5.1
+- Beginn des Release-Zweigs=10856
+- Ende des Release-Zweigs=10959
+- Ab Revision=10958
+- Revision=10959
+- Versions-URL=http://zev.ez.no/svn/nextgen/versions/3.5.1
+- Datum 24-Feb-2005
+
+3.4.6:
+- Release-Zweig=release/3.4.6
+- Beginn des Release-Zweigs=11431
+- Ende des Release-Zweigs=
+- Release-Zweig eingerichtet=11434
+- Ab Revision=11513
+- Revision=11519
+- Versions-URL=http://zev.ez.no/svn/nextgen/versions/3.4.6
+- Datum 22-Apr-2005
+
+3.5.2:
+- Release-Zweig=release/3.5.2
+- Beginn des Release-Zweigs=11458
+- Ende des Release-Zweigs=
+- Release-Zweig eingerichtet=11461
+- Ab Revision=11512
+- Revision=11523
+- Versions-URL=http://zev.ez.no/svn/nextgen/versions/3.5.2
+- Datum 22-Apr-2005
+
+3.6.0beta1:
+- Ab Revision=11654
+- Revision=11656
+- Versions-URL=http://zev.ez.no/svn/nextgen/versions/3.6.0beta1
+- Datum  2-May-2005
+
+3.6.0rc1:
+- Ab Revision=11798
+- Revision=11799
+- Versions-URL=http://zev.ez.no/svn/nextgen/versions/3.6.0rc1
+- Datum 12-May-2005
+
+3.6.0:
+- Ab Revision=12052
+- Revision=12060
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.6.0
+- Datum 30-May-2005
+
+3.4.7:
+- Release-Zweig=release/3.4.7
+- Beginn des Release-Zweigs=12202
+- Ende des Release-Zweigs=
+- Release-Zweig eingerichtet=12205
+- Datum des Release-Zweigs 13-Jun-2005
+- Ab Revision=12220
+- Revision=12222
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.4.7
+- Datum 14-Jun-2005
+
+3.5.3:
+- Release-Zweig=release/3.5.3
+- Beginn des Release-Zweigs=12206
+- Ende des Release-Zweigs=
+- Release-Zweig eingerichtet=12211
+- Datum des Release-Zweigs 13-Jun-2005
+- Ab Revision=12215
+- Revision=12219
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.5.3
+- Datum 14-Jun-2005
+
+3.4.8:
+- Ab Revision=12582
+- Revision=12584
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.4.8
+- Datum 19-Jul-2005
+
+3.5.4rc1:
+- Ab Revision=12427
+- Revision=12431
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.5.4rc1
+- Datum 6-Jul-2005
+
+3.6.1rc1:
+- Ab Revision=12420
+- Revision=12432
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.6.1rc1
+- Datum 6-Jul-2005
+
+3.5.4:
+- Release-Zweig=release/3.5.4
+- Beginn des Release-Zweigs=12600
+- Ende des Release-Zweigs=
+- Release-Zweig eingerichtet=12612
+- Datum des Release-Zweigs 19-Jul-2005
+- Ab Revision=12747
+- Revision=12751
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.5.4
+- Datum 26-Jul-2005
+
+3.6.1:
+- Release-Zweig=release/3.6.1
+- Beginn des Release-Zweigs=12607
+- Ende des Release-Zweigs=
+- Release-Zweig eingerichtet=12613
+- Datum des Release-Zweigs 19-Jul-2005
+- Ab Revision=12755
+- Revision=12756
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.6.1
+- Datum 26-Jul-2005
+
+3.7.0rc1:
+- Ab Revision=12717
+- Revision=12720
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.7.0rc1
+- Datum 22-Jul-2005
+
+3.7.0rc2:
+- Ab Revision=13277
+- Revision=13286
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.7.0rc2
+- Datum 13-Sep-2005
+
+3.5.5:
+- Release-Zweig=release/3.5.5
+- Beginn des Release-Zweigs=13312
+- Ende des Release-Zweigs=
+- Release-Zweig eingerichtet=13322
+- Datum des Release-Zweigs 14-Sep-2005
+- Ab Revision=13363
+- Revision=13364
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.5.5
+- Datum 19-Sep-2005
+
+3.6.2:
+- Release-Zweig=release/3.6.2
+- Beginn des Release-Zweigs=13317
+- Ende des Release-Zweigs=
+- Release-Zweig eingerichtet=13323
+- Veröffentlichungsdatum 14-Sep-2005
+- Ab Revision=13364
+- Revision=13366
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.6.2
+- Datum 19-Sep-2005
+
+3.7.0:
+- Release-Zweig=release/3.7.0
+- Beginn des Release-Zweigs=13650
+- Ende des Release-Zweigs=
+- Veröffentlichungsdatum 07-Oct-2005
+- Release-Zweig eingerichtet=13654
+- Ab Revision=13693
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.7.0
+- Datum 12-Oct-2005
+- Revision=13694
+
+3.5.6:
+- Release-Zweig=release/3.5.6
+- Beginn des Release-Zweigs=13842
+- Ende des Release-Zweigs=
+- Release-Zweig eingerichtet=13848
+- Datum des Release-Zweigs 25-Oct-2005
+- Ab Revision=13861
+- Revision=13869
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.5.6
+- Datum 27-Oct-2005
+
+3.6.3:
+- Release-Zweig=release/3.6.3
+- Beginn des Release-Zweigs=13843
+- Ende des Release-Zweigs=
+- Release-Zweig eingerichtet=13849
+- Veröffentlichungsdatum 25-Oct-2005
+- Ab Revision=13861
+- Revision=13870
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.6.3
+- Datum 27-Oct-2005
+
+3.7.1:
+- Release-Zweig=release/3.7.1
+- Beginn des Release-Zweigs=13846
+- Ende des Release-Zweigs=
+- Veröffentlichungsdatum 25-Oct-2005
+- Release-Zweig eingerichtet=13850
+- Ab Revision=13861
+- Revision=13871
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.7.1
+- Datum 27-Oct-2005
+
+3.5.7:
+- Release-Zweig=release/3.5.7
+- Beginn des Release-Zweigs=13931
+- Ende des Release-Zweigs=
+- Release-Zweig eingerichtet=13935
+- Datum des Release-Zweigs 03-Nov-2005
+- Ab Revision=13931
+- Revision=13955
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.5.7
+- Datum 03-Nov-2005
+
+3.6.4:
+- Release-Zweig=release/3.6.4
+- Beginn des Release-Zweigs=13932
+- Ende des Release-Zweigs=
+- Release-Zweig eingerichtet=13937
+- Veröffentlichungsdatum 03-Nov-2005
+- Ab Revision=13932
+- Revision=13956
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.6.4
+- Datum 04-Nov-2005
+
+3.7.2:
+- Release-Zweig=release/3.7.2
+- Beginn des Release-Zweigs=13933
+- Ende des Release-Zweigs=
+- Veröffentlichungsdatum 03-Nov-2005
+- Release-Zweig eingerichtet=13942
+- Ab Revision=13933
+- Revision=13957
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.7.2
+- Datum 4-Nov-2005
+
+3.5.8:
+- Release-Zweig=release/3.5.8
+- Beginn des Release-Zweigs=14535
+- Ende des Release-Zweigs=
+- Veröffentlichungsdatum 13-Jan-2006
+- Release-Zweig eingerichtet=14544
+- Ab Revision=14539
+- Revision=14581
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.5.8
+- Datum 17-Jan-2006
+
+3.6.5:
+- Release-Zweig=release/3.6.5
+- Beginn des Release-Zweigs=14534
+- Ende des Release-Zweigs=
+- Veröffentlichungsdatum 13-Jan-2006
+- Release-Zweig eingerichtet=14543
+- Ab Revision=14571
+- Revision=14582
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.6.5
+- Datum 17-Jan-2006
+
+3.7.3:
+- Release-Zweig=release/3.7.3
+- Beginn des Release-Zweigs=14532
+- Ende des Release-Zweigs=
+- Veröffentlichungsdatum 13-Jan-2006
+- Release-Zweig eingerichtet=14541
+- Ab Revision=14540
+- Revision=14583
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.7.3
+- Datum 17-Jan-2006
+
+3.5.9:
+- Release-Zweig=release/3.5.9
+- Beginn des Release-Zweigs=15046
+- Ende des Release-Zweigs=
+- Veröffentlichungsdatum 10-Mar-2006
+- Release-Zweig eingerichtet=15059
+- Ab Revision=15054
+- Revision=15071
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.5.9
+- Datum 11-Mar-2006
+
+3.6.6:
+- Release-Zweig=release/3.6.6
+- Beginn des Release-Zweigs=15047
+- Ende des Release-Zweigs=
+- Veröffentlichungsdatum 10-Mar-2006
+- Release-Zweig eingerichtet=15060
+- Ab Revision=15054
+- Revision=15073
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.6.6
+- Datum 11-Mar-2006
+
+3.7.4:
+- Release-Zweig=release/3.7.4
+- Beginn des Release-Zweigs=15048
+- Ende des Release-Zweigs=
+- Veröffentlichungsdatum 10-Mar-2006
+- Release-Zweig eingerichtet=15061
+- Ab Revision=15054
+- Revision=15072
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.7.4
+- Datum 11-Mar-2006
+
+3.8.0alpha2:
+- Ab Revision=15127
+- Revision=15128
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.8.0alpha2
+- Datum 14-Mar-2006
+
+3.5.10:
+- Release-Zweig=release/3.5.10
+- Beginn des Release-Zweigs=15246
+- Veröffentlichungsdatum 23-Mar-2006
+- Ab Revision=15256
+- Revision=15289
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.5.10
+- Datum 24-Mar-2006
+
+3.6.7:
+- Release-Zweig=release/3.6.7
+- Beginn des Release-Zweigs=15247
+- Veröffentlichungsdatum 23-Mar-2006
+- Ab Revision=15256
+- Revision=15290
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.6.7
+- Datum 24-Mar-2006
+
+3.7.5:
+- Release-Zweig=release/3.7.5
+- Beginn des Release-Zweigs=15248
+- Veröffentlichungsdatum 23-Mar-2006
+- Ab Revision=15256
+- Revision=15292
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.7.5
+- Datum 24-Mar-2006
+
+3.8.0beta1:
+- Revision=15549
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.8.0beta1
+- Datum 4-Apr-2006
+
+3.8.0beta2:
+- Ab Revision=15728
+- Revision=15729
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.8.0beta2
+- Datum 17-Apr-2006
+
+3.8.0rc1:
+- Ab Revision=15856
+- Revision=15857
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.8.0rc1
+- Datum 25-Apr-2006
+
+3.8.0:
+- Release-Zweig=release/3.8.0
+- Beginn des Release-Zweigs=15959
+- Ende des Release-Zweigs=
+- Veröffentlichungsdatum 02-May-2006
+- Release-Zweig eingerichtet=15962
+- Ab Revision=15960
+- Revision=15967
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.8.0
+- Datum  2-May-2006
+
+3.5.11:
+- Release-Zweig=release/3.5.11
+- Beginn des Release-Zweigs=16007
+- Release-Zweig eingerichtet=16017
+- Veröffentlichungsdatum 06-May-2006
+- Ab Revision=16007
+- Revision=16022
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.5.11
+- Datum 06-May-2006
+
+3.6.8:
+- Release-Zweig=release/3.6.8
+- Beginn des Release-Zweigs=16014
+- Release-Zweig eingerichtet=16025
+- Veröffentlichungsdatum 06-May-2006
+- Ab Revision=16022
+- Revision=16026
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.6.8
+- Datum 06-May-2006
+
+3.7.6:
+- Release-Zweig=release/3.7.6
+- Beginn des Release-Zweigs=16015
+- Release-Zweig eingerichtet=16020
+- Veröffentlichungsdatum 06-May-2006
+- Ab Revision=16019
+- Revision=16023
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.7.6
+- Datum 06-May-2006
+
+3.6.9:
+- Release-Zweig=release/3.6.9
+- Beginn des Release-Zweigs=16455
+- Release-Zweig eingerichtet=16468
+- Veröffentlichungsdatum 19-Jul-2006
+- Revision=16510
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.6.9
+- Datum 25-Jul-2006
+
+3.7.7:
+- Release-Zweig=release/3.7.7
+- Beginn des Release-Zweigs=16456
+- Release-Zweig eingerichtet=16469
+- Veröffentlichungsdatum 19-Jul-2006
+- Revision=16509
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.7.7
+- Datum 25-Jul-2006
+
+3.8.2:
+- Release-Zweig=release/3.8.2
+- Beginn des Release-Zweigs=16457
+- Veröffentlichungsdatum 19-Jul-2006
+- Release-Zweig eingerichtet=16470
+- Revision=16508
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.8.2
+- Datum 25-Jul-2006
+
+3.6.10:
+- Release-Zweig=release/3.6.10
+- Beginn des Release-Zweigs=16511
+- Release-Zweig eingerichtet=16530
+- Veröffentlichungsdatum 25-Jul-2006
+- Revision=16658
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.6.10
+- Datum 17-Aug-2006
+
+3.7.8:
+- Release-Zweig=release/3.7.8
+- Beginn des Release-Zweigs=16515
+- Release-Zweig eingerichtet=16520
+- Veröffentlichungsdatum 25-Jul-2006
+- Revision=16660
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.7.8
+- Datum 17-Aug-2006
+
+3.8.3:
+- Release-Zweig=release/3.8.3
+- Beginn des Release-Zweigs=16517
+- Veröffentlichungsdatum 25-Jul-2006
+- Release-Zweig eingerichtet=16522
+- Revision=16662
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.8.3
+- Datum 17-Aug-2006
+
+3.6.11:
+- Release-Zweig=release/3.6.11
+- Beginn des Release-Zweigs=16740
+- Release-Zweig eingerichtet=16754
+- Veröffentlichungsdatum 5-Sep-2006
+- Revision=16787
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.6.11
+- Datum 31-Aug-2006
+
+3.7.9:
+- Release-Zweig=release/3.7.9
+- Beginn des Release-Zweigs=16741
+- Release-Zweig eingerichtet=16755
+- Veröffentlichungsdatum 5-Sep-2006
+- Revision=16786
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.7.9
+- Datum 31-Aug-2006
+
+3.8.4:
+- Release-Zweig=release/3.8.4
+- Beginn des Release-Zweigs=16742
+- Veröffentlichungsdatum 5-Sep-2006
+- Release-Zweig eingerichtet=16756
+- Revision=16785
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.8.4
+- Datum 31-Aug-2006
+
+3.9.0alpha1:
+- Ab Revision=17202
+- Revision=17203
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.9.0alpha1
+- Datum 18-Oct-2006
+
+3.8.5:
+- Release-Zweig=release/3.8.5
+- Beginn des Release-Zweigs=17270
+- Veröffentlichungsdatum 25-Oct-2006
+- Release-Zweig eingerichtet=17287
+- Revision=17278
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.8.5
+- Datum 25-Oct-2006
+
+3.8.6:
+- Release-Zweig=release/3.8.6
+- Beginn des Release-Zweigs=17337
+- Veröffentlichungsdatum 31-Oct-2006
+- Release-Zweig eingerichtet=17333
+- Revision=17337
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.8.6
+- Datum 31-Oct-2006
+
+3.9.0beta1:
+- Ab Revision=17337
+- Revision=17337
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.9.0beta1
+- Datum 31-Oct-2006
+
+3.9.0rc1:
+- Ab Revision=17510
+- Revision=17511
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.9.0rc1
+- Datum 16-Nov-2006
+
+3.9.0rc2:
+- Ab Revision=17704
+- Revision=17704
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.9.0rc2
+- Datum 7-Dec-2006
+
+3.9.1rc1:
+- Ab Revision=18210
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.9.1rc1
+- Datum 22-Feb-2007
+
+3.6.12:
+- Release-Zweig=release/3.6.12
+- Beginn des Release-Zweigs=18307
+- Veröffentlichungsdatum 7-March-2007
+- Revision=18393
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.6.12
+- Datum 7-March-2007
+
+3.7.10:
+- Release-Zweig=release/3.7.10
+- Beginn des Release-Zweigs=18302
+- Veröffentlichungsdatum 7-March-2007
+- Revision=18384
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.7.10
+- Datum 7-March-2007
+
+3.8.7:
+- Release-Zweig=release/3.8.7
+- Beginn des Release-Zweigs=18287
+- Veröffentlichungsdatum 7-March-2007
+- Revision=18384
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.8.7
+- Datum 7-March-2007
+
+3.9.1:
+- Release-Zweig=release/3.9.1
+- Beginn des Release-Zweigs=18287
+- Veröffentlichungsdatum 7-March-2007
+- Revision=18384
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.9.1
+- Datum 7-March-2007
+
+3.8.8:
+- Release-Zweig=release/3.8.8
+- Beginn des Release-Zweigs=18804
+- Veröffentlichungsdatum 30-Apr-2007
+- Revision=18841
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.8.8
+- Datum 04-May-2007
+
+3.9.2:
+- Release-Zweig=release/3.9.2
+- Beginn des Release-Zweigs=18815
+- Veröffentlichungsdatum 30-Apr-2007
+- Revision=18840
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.9.2
+- Datum 04-May-2007
+
+3.10.0alpha1:
+- Revision=19448
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.10.0alpha1
+- Datum 18-Jul-2007
+
+3.8.9:
+- Release-Zweig=release/3.8.9
+- Beginn des Release-Zweigs=19740
+- Veröffentlichungsdatum 22-Aug-2007
+- Revision=19766
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.8.9
+- Datum 22-Aug-2007
+
+3.9.3:
+- Release-Zweig=release/3.9.3
+- Beginn des Release-Zweigs=19742
+- Veröffentlichungsdatum 22-Aug-2007
+- Revision=19765
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.9.3
+- Datum 22-Aug-2007
+
+3.10.0beta1:
+- Revision=19767
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.10.0beta1
+- Datum 22-Aug-2007
+
+3.8.10:
+- Release-Zweig=release/3.8.10
+- Beginn des Release-Zweigs=20215
+- Veröffentlichungsdatum 02-Oct-2007
+- Revision=20334
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.8.10
+- Datum 02-Oct-2007
+
+3.9.4:
+- Release-Zweig=release/3.9.4
+- Beginn des Release-Zweigs=20213
+- Veröffentlichungsdatum 02-Oct-2007
+- Revision=20335
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.9.4
+- Datum 02-Oct-2007
+
+3.10.0:
+- Release-Zweig=release/3.10.0
+- Beginn des Release-Zweigs=20204
+- Veröffentlichungsdatum 02-Oct-2007
+- Revision=20336
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.10.0
+- Datum 02-Oct-2007
+
+4.0.0beta1:
+- Ab Revision=20805
+- Revision=20810
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/4.0.0beta1
+- Datum 19-Nov-2007
+
+4.0.0:
+- Release-Zweig=release/4.0.0
+- Beginn des Release-Zweigs=20980
+- Veröffentlichungsdatum 03-Dec-2007
+- Ab Revision=20988
+- Revision=20991
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/4.0.0
+- Datum 04-Dec-2007
+
+3.10.1rc1:
+- Release-Zweig=release/3.10.1
+- Beginn des Release-Zweigs=21980
+- Ab Revision=22001
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.10.1rc1
+- Datum 11-Jun-2008
+
+4.0.1rc1:
+- Release-Zweig=release/4.0.1
+- Beginn des Release-Zweigs=21981
+- Ab Revision=21995
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/4.0.1rc1
+- Datum 11-Jun-2008
+
+4.0.1rc2:
+- Ab Revision=22188
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/4.0.1rc2
+- Datum  6-Aug-2008
+- Revision=22267
+
+3.10.1rc2:
+- Ab Revision=22188
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.10.1rc2
+- Datum  6-Aug-2008
+- Revision=22268
+
+4.0.1:
+- Ab Revision=22260
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/4.0.1
+- Datum 20-Aug-2008
+- Revision=22269
+
+3.10.1:
+- Ab Revision=22261
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.10.1
+- Datum 20-Aug-2008
+- Revision=22270
+
+3.9.5:
+- Ab Revision=22261
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/3.9.5
+- Datum 20-Aug-2008
+- Revision=22271
+
+4.1.0alpha2:
+- Ab Revision=22912
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/4.1.0alpha2
+- Datum 28-Jan-2009
+- Revision=22913
+
+4.0.2:
+- Ab Revision=22912
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/4.0.2
+- Datum 02-Feb-2009
+- Revision=22914
+
+4.0.3:
+- Ab Revision=22993
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/4.0.3
+- Datum 16-Feb-2009
+- Revision=22994
+
+4.1.0beta1:
+- Ab Revision=23063
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/4.1.0beta1
+- Datum 27-Feb-2009
+- Revision=23064
+
+4.1.0rc1:
+- Ab Revision=23212
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/4.1.0rc1
+- Datum 17-Mar-2009
+- Revision=23213
+
+4.1.0:
+- Ab Revision=23235
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/4.1.0
+- Datum 17-Mar-2009
+- Revision=23246
+
+4.1.1:
+- Release-Zweig=release/4.1.1
+- Beginn des Release-Zweigs=23504
+- Ende des Release-Zweigs=
+- Release-Zweig eingerichtet=23510
+- Veröffentlichungsdatum 29-Apr-2009
+- Ab Revision=23565
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/4.1.1
+- Datum 29-Apr-2009
+- Revision=23566
+
+4.0.4:
+- Release-Zweig=release/4.0.4
+- Beginn des Release-Zweigs=23505
+- Ende des Release-Zweigs=
+- Release-Zweig eingerichtet=23509
+- Veröffentlichungsdatum 29-Apr-2009
+- Ab Revision=23566
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/4.0.4
+- Datum 29-Apr-2009
+- Revision=23567
+
+4.1.2:
+- Ab Revision=23602
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/4.1.2
+- Datum 20-May-2009
+- Revision=23641
+- Veröffentlichungsdatum 26-May-2009
+
+4.0.5:
+- Ab Revision=23603
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/4.0.5
+- Datum 20-May-2009
+- Revision=23642
+- Veröffentlichungsdatum 26-May-2009
+
+4.1.3:
+- Release-Zweig=release/4.1.3
+- Beginn des Release-Zweigs=23650
+- Ende des Release-Zweigs=
+- Release-Zweig eingerichtet=23658
+- Ab Revision=23660
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/4.1.3
+- Datum  3-Jun-2009
+- Revision=23675
+- Veröffentlichungsdatum 8-Jun-2009
+
+4.0.6:
+- Release-Zweig=release/4.0.6
+- Beginn des Release-Zweigs=23651
+- Ende des Release-Zweigs=
+- Release-Zweig eingerichtet=23659
+- Ab Revision=23661
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/4.0.6
+- Datum  3-Jun-2009
+- Revision=23676
+- Veröffentlichungsdatum 8-Jun-2009
+
+4.2.0alpha1:
+- Ab Revision=23824
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/4.2.0alpha1
+- Datum 31-Jul-2009
+- Revision=23868
+
+4.2.0beta1:
+- Ab Revision=24058
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/4.2.0beta1
+- Datum  8-Sep-2009
+- Revision=24059
+
+4.2.0:
+- Release-Zweig=release/4.2.0
+- Beginn des Release-Zweigs=24061
+- Ende des Release-Zweigs=24181
+- Veröffentlichungsdatum 30-Sep-2009
+- Ab Revision=24181
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/4.2.0
+- Datum 30-Sep-2009
+- Revision=24331
+
+4.1.4:
+- Release-Zweig=release/4.1.4
+- Beginn des Release-Zweigs=24067
+- Ende des Release-Zweigs=24188
+- Release-Zweig eingerichtet=
+- Ab Revision=24188
+- Revision=24332
+- Datum 28-Sep-2009
+- Veröffentlichungsdatum 29-Sep-2009
+
+4.0.7:
+- Release-Zweig=release/4.0.7
+- Beginn des Release-Zweigs=24070
+- Ende des Release-Zweigs=24191
+- Release-Zweig eingerichtet=
+- Ab Revision=24191
+- Revision=24333
+- Datum 28-Sep-2009
+- Veröffentlichungsdatum 29-Sep-2009
+
+4.2.0rc1:
+- Ab Revision=24114
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/4.2.0rc1
+- Datum 16-Sep-2009
+- Revision=24115
+
+4.2.0rc2:
+- Ab Revision=24151
+- Versions-URL=http://svn.ez.no/svn/exponential/versions/4.2.0rc2
+- Datum 22-Sep-2009
+- Revision=24152
+
+# Die folgenden Einträge schließen an 4.2 an. Sie wurden 2026 allein aus Quellen ergänzt: den Git-Tags dieses
+# Repositorys, doc/changelogs/, den GitHub-Releases von se7enxweb/exponential sowie den Releases und Tags des
+# archivierten Upstream-Repositorys github.com/ezsystems/ezpublish-legacy. Jeder Eintrag nennt seine Quelle; ein
+# Datum, das keine Quelle nennt, ist "unbekannt". 5.90 ist der Alias der Legacy-Releases ab 2017.08
+# (doc/ger-de/bc/5.90/README.md).
+
+4.0.20:
+- Tag=4.0.20
+- Datum 02-Feb-2009
+- Quelle=Git-Tag 4.0.20 (Datum des Taggers)
+
+4.3.0:
+- Tag=4.3.0
+- Datum 14-Jul-2010
+- Changelog-URL=changelogs/4.3/CHANGELOG-4.2.0-to-4.3.0
+- Quelle=Git-Tag 4.3.0 (Datum des Taggers)
+
+4.4.0:
+- Tag=4.4.0
+- Datum 29-Sep-2010
+- Changelog-URL=changelogs/4.4/CHANGELOG-4.3.0-to-4.4.0
+- Quelle=Git-Tag 4.4.0 (Datum des Taggers)
+
+4.6.0:
+- Datum unbekannt (kein Tag in diesem Repository)
+- Changelog-URL=changelogs/4.6/CHANGELOG-4.5.0-to-4.6.0.txt
+- Quelle=changelogs/4.6/CHANGELOG-4.5.0-to-4.6.0.txt
+
+4.7.0:
+- Datum unbekannt (kein Tag in diesem Repository)
+- Changelog-URL=changelogs/4.7/CHANGELOG-4.6.0-to-4.7.0.txt
+- Quelle=changelogs/4.7/CHANGELOG-4.6.0-to-4.7.0.txt
+
+5.0:
+- Serie=5.x
+- Teil=5.0 bis 5.2
+- Datum unbekannt (kein Tag in diesem Repository)
+- Quelle=genannt in doc/changelogs/5.1/CHANGELOG-5.0.0-to-5.1.0.txt
+
+5.1.0:
+- Serie=5.x
+- Teil=5.0 bis 5.2
+- Datum unbekannt (kein Tag in diesem Repository)
+- Changelog-URL=changelogs/5.1/CHANGELOG-5.0.0-to-5.1.0.txt
+- Online-Changelog-URL=https://confluence.ez.no/display/EZP/5.1+Changelog
+- Quelle=changelogs/5.1/CHANGELOG-5.0.0-to-5.1.0.txt
+
+5.2.0:
+- Serie=5.x
+- Teil=5.0 bis 5.2
+- Datum unbekannt (kein Tag in diesem Repository)
+- Changelog-URL=changelogs/5.2/CHANGELOG-5.1.0-to-5.2.0.txt
+- Online-Changelog-URL=https://confluence.ez.no/display/EZP/5.2+Changelog
+- Quelle=changelogs/5.2/CHANGELOG-5.1.0-to-5.2.0.txt
+
+2011.9:
+- Serie=5.x
+- Teil=Community-Builds 2011
+- Datum unbekannt (Tag später gesetzt als der Code)
+- Datum des Tags=2013-01-14
+- Commit-Datum=2012-10-08
+- Tag-URL=https://github.com/ezsystems/ezpublish-legacy/tree/2011.9
+- Quelle=GitHub-Tag ezsystems/ezpublish-legacy 2011.9 (Datum des Tags); kein Release
+
+2012.9:
+- Serie=5.x
+- Teil=Community-Builds 2012
+- Datum unbekannt (Tag später gesetzt als der Code)
+- Datum des Tags=2013-01-14
+- Commit-Datum=2012-10-08
+- Tag-URL=https://github.com/ezsystems/ezpublish-legacy/tree/2012.9
+- Quelle=GitHub-Tag ezsystems/ezpublish-legacy 2012.9 (Datum des Tags); kein Release
+
+2012.11:
+- Serie=5.x
+- Teil=Community-Builds 2012
+- Datum 14-Dec-2012
+- Tag-URL=https://github.com/ezsystems/ezpublish-legacy/tree/2012.11
+- Quelle=GitHub-Tag ezsystems/ezpublish-legacy 2012.11 (Datum des Tags); kein Release
+
+2012.12:
+- Serie=5.x
+- Teil=Community-Builds 2012
+- Datum 14-Jan-2013
+- Tag-URL=https://github.com/ezsystems/ezpublish-legacy/tree/2012.12
+- Quelle=GitHub-Tag ezsystems/ezpublish-legacy 2012.12 (Datum des Tags); kein Release
+
+2013.1:
+- Serie=5.x
+- Teil=Community-Builds 2013
+- Datum 18-Feb-2013
+- Tag-URL=https://github.com/ezsystems/ezpublish-legacy/tree/2013.1
+- Quelle=GitHub-Tag ezsystems/ezpublish-legacy 2013.1 (Datum des Tags); kein Release
+
+v2013.04.0:
+- Serie=5.x
+- Teil=Community-Builds 2013
+- Datum 30-Apr-2013
+- Tag-URL=https://github.com/ezsystems/ezpublish-legacy/tree/v2013.04.0
+- Quelle=GitHub-Tag ezsystems/ezpublish-legacy v2013.04.0 (Datum des Tags); kein Release
+
+2013.05:
+- Serie=5.x
+- Teil=Community-Builds 2013
+- Datum 17-May-2013
+- Tag-URL=https://github.com/ezsystems/ezpublish-legacy/tree/2013.05
+- Quelle=GitHub-Tag ezsystems/ezpublish-legacy 2013.05 (Datum des Tags); kein Release
+
+v2013.05.0:
+- Serie=5.x
+- Teil=Community-Builds 2013
+- Datum 07-Jun-2013
+- Tag-URL=https://github.com/ezsystems/ezpublish-legacy/tree/v2013.05.0
+- Quelle=GitHub-Tag ezsystems/ezpublish-legacy v2013.05.0 (Datum des Tags); kein Release
+
+v2013.06.0:
+- Serie=5.x
+- Teil=Community-Builds 2013
+- Datum 13-Jun-2013
+- Tag-URL=https://github.com/ezsystems/ezpublish-legacy/tree/v2013.06.0
+- Quelle=GitHub-Tag ezsystems/ezpublish-legacy v2013.06.0 (Datum des Tags); kein Release
+
+v2013.07.0:
+- Serie=5.x
+- Teil=Community-Builds 2013
+- Datum 18-Jul-2013
+- Tag-URL=https://github.com/ezsystems/ezpublish-legacy/tree/v2013.07.0
+- Quelle=GitHub-Tag ezsystems/ezpublish-legacy v2013.07.0 (Datum des Tags); kein Release
+
+v2013.07.1:
+- Serie=5.x
+- Teil=Community-Builds 2013
+- Alias Community-Project-Build v2013.07.1
+- Datum 30-Jul-2013
+- Release-URL=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2013.07.1
+- Quelle=GitHub-Release ezsystems/ezpublish-legacy v2013.07.1 (Veröffentlichungsdatum)
+
+v2013.07.3:
+- Serie=5.x
+- Teil=Community-Builds 2013
+- Datum unbekannt (Tag später gesetzt als der Code)
+- Datum des Tags=2013-08-12
+- Commit-Datum=2013-06-05
+- Tag-URL=https://github.com/ezsystems/ezpublish-legacy/tree/v2013.07.3
+- Quelle=GitHub-Tag ezsystems/ezpublish-legacy v2013.07.3 (Datum des Tags); kein Release
+
+v2013.09.0:
+- Serie=5.x
+- Teil=Community-Builds 2013
+- Alias Community-Project-Build v2013.09.0
+- Datum 01-Oct-2013
+- Release-URL=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2013.09.0
+- Quelle=GitHub-Release ezsystems/ezpublish-legacy v2013.09.0 (Veröffentlichungsdatum)
+
+v2013.11:
+- Serie=5.x
+- Teil=Community-Builds 2013
+- Datum 29-Nov-2013
+- Tag-URL=https://github.com/ezsystems/ezpublish-legacy/tree/v2013.11
+- Quelle=GitHub-Tag ezsystems/ezpublish-legacy v2013.11 (Datum des Tags); kein Release
+
+v2013.11.0:
+- Serie=5.x
+- Teil=Community-Builds 2013
+- Alias Community-Project-Build v2013.11.0
+- Datum 28-Jan-2014
+- Release-URL=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2013.11.0
+- Quelle=GitHub-Release ezsystems/ezpublish-legacy v2013.11.0 (Veröffentlichungsdatum)
+
+v2014.01.0:
+- Serie=5.x
+- Teil=Community-Builds 2014
+- Alias Community-Project-Build v2014.01.0
+- Datum 28-Jan-2014
+- Release-URL=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2014.01.0
+- Quelle=GitHub-Release ezsystems/ezpublish-legacy v2014.01.0 (Veröffentlichungsdatum)
+
+v2014.01.1:
+- Serie=5.x
+- Teil=Community-Builds 2014
+- Alias Community-Project-Build v2014.01.1
+- Datum 29-Jan-2014
+- Release-URL=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2014.01.1
+- Quelle=GitHub-Release ezsystems/ezpublish-legacy v2014.01.1 (Veröffentlichungsdatum)
+
+v2014.01.2:
+- Serie=5.x
+- Teil=Community-Builds 2014
+- Datum 29-Sep-2014
+- Tag-URL=https://github.com/ezsystems/ezpublish-legacy/tree/v2014.01.2
+- Quelle=GitHub-Tag ezsystems/ezpublish-legacy v2014.01.2 (Datum des Tags); kein Release
+
+v2014.03.1:
+- Serie=5.x
+- Teil=Community-Builds 2014
+- Datum 16-Apr-2014
+- Tag-URL=https://github.com/ezsystems/ezpublish-legacy/tree/v2014.03.1
+- Quelle=GitHub-Tag ezsystems/ezpublish-legacy v2014.03.1 (Datum des Tags); kein Release
+
+v2014.03.2:
+- Serie=5.x
+- Teil=Community-Builds 2014
+- Datum 29-Sep-2014
+- Tag-URL=https://github.com/ezsystems/ezpublish-legacy/tree/v2014.03.2
+- Quelle=GitHub-Tag ezsystems/ezpublish-legacy v2014.03.2 (Datum des Tags); kein Release
+
+v2014.05.0:
+- Serie=5.x
+- Teil=Community-Builds 2014
+- Datum 12-Jun-2014
+- Release-URL=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2014.05.0
+- Quelle=GitHub-Release ezsystems/ezpublish-legacy v2014.05.0 (Veröffentlichungsdatum)
+
+v2014.05.1:
+- Serie=5.x
+- Teil=Community-Builds 2014
+- Datum 12-Jun-2014
+- Tag-URL=https://github.com/ezsystems/ezpublish-legacy/tree/v2014.05.1
+- Quelle=GitHub-Tag ezsystems/ezpublish-legacy v2014.05.1 (Datum des Tags); kein Release
+
+v2014.05.2:
+- Serie=5.x
+- Teil=Community-Builds 2014
+- Datum 29-Sep-2014
+- Tag-URL=https://github.com/ezsystems/ezpublish-legacy/tree/v2014.05.2
+- Quelle=GitHub-Tag ezsystems/ezpublish-legacy v2014.05.2 (Datum des Tags); kein Release
+
+v2014.07.0:
+- Serie=5.x
+- Teil=Community-Builds 2014
+- Datum 04-Aug-2014
+- Release-URL=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2014.07.0
+- Quelle=GitHub-Release ezsystems/ezpublish-legacy v2014.07.0 (Veröffentlichungsdatum)
+
+v2014.07.1:
+- Serie=5.x
+- Teil=Community-Builds 2014
+- Datum 07-Aug-2014
+- Release-URL=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2014.07.1
+- Quelle=GitHub-Release ezsystems/ezpublish-legacy v2014.07.1 (Veröffentlichungsdatum)
+
+v2014.07.2:
+- Serie=5.x
+- Teil=Community-Builds 2014
+- Datum 29-Sep-2014
+- Release-URL=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2014.07.2
+- Quelle=GitHub-Release ezsystems/ezpublish-legacy v2014.07.2 (Veröffentlichungsdatum)
+
+v2014.11.0:
+- Serie=5.x
+- Teil=Community-Builds 2014
+- Datum 04-Nov-2014
+- Release-URL=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2014.11.0
+- Quelle=GitHub-Release ezsystems/ezpublish-legacy v2014.11.0 (Veröffentlichungsdatum)
+
+v2014.11.1:
+- Serie=5.x
+- Teil=Community-Builds 2014
+- Datum 04-Nov-2014
+- Release-URL=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2014.11.1
+- Quelle=GitHub-Release ezsystems/ezpublish-legacy v2014.11.1 (Veröffentlichungsdatum)
+
+v2014.11.2:
+- Serie=5.x
+- Teil=Community-Builds 2014
+- Datum 11-May-2015
+- Release-URL=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2014.11.2
+- Quelle=GitHub-Release ezsystems/ezpublish-legacy v2014.11.2 (Veröffentlichungsdatum)
+
+v2015.01.0:
+- Serie=5.x
+- Teil=Community-Builds 2015
+- Datum 26-Jan-2015
+- Release-URL=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2015.01.0
+- Quelle=GitHub-Release ezsystems/ezpublish-legacy v2015.01.0 (Veröffentlichungsdatum)
+
+v2015.01.1:
+- Serie=5.x
+- Teil=Community-Builds 2015
+- Datum 24-Feb-2015
+- Release-URL=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2015.01.1
+- Quelle=GitHub-Release ezsystems/ezpublish-legacy v2015.01.1 (Veröffentlichungsdatum)
+
+v2015.01.2:
+- Serie=5.x
+- Teil=Community-Builds 2015
+- Datum 16-Apr-2015
+- Release-URL=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2015.01.2
+- Quelle=GitHub-Release ezsystems/ezpublish-legacy v2015.01.2 (Veröffentlichungsdatum)
+
+v2015.01.3:
+- Serie=5.x
+- Teil=Community-Builds 2015
+- Datum 19-May-2015
+- Release-URL=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2015.01.3
+- Quelle=GitHub-Release ezsystems/ezpublish-legacy v2015.01.3 (Veröffentlichungsdatum)
+
+v2017.08.0:
+- Serie=5.x
+- Teil=Linie 5.90 (2017.08 und später)
+- Alias 2017.08
+- Datum 22-Aug-2017
+- Release-URL=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2017.08.0
+- Quelle=GitHub-Release ezsystems/ezpublish-legacy v2017.08.0 (Veröffentlichungsdatum)
+
+v2017.08.1:
+- Serie=5.x
+- Teil=Linie 5.90 (2017.08 und später)
+- Datum 05-Sep-2017
+- Release-URL=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2017.08.1
+- Quelle=GitHub-Release ezsystems/ezpublish-legacy v2017.08.1 (Veröffentlichungsdatum)
+
+v2017.08.1.1:
+- Serie=5.x
+- Teil=Linie 5.90 (2017.08 und später)
+- Datum 11-Sep-2017
+- Release-URL=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2017.08.1.1
+- Quelle=GitHub-Release ezsystems/ezpublish-legacy v2017.08.1.1 (Veröffentlichungsdatum)
+
+v2017.10.0-RC1:
+- Serie=5.x
+- Teil=Linie 5.90 (2017.08 und später)
+- Datum 26-Oct-2017
+- Release-URL=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2017.10.0-RC1
+- Quelle=GitHub-Release ezsystems/ezpublish-legacy v2017.10.0-RC1 (Veröffentlichungsdatum)
+
+v2017.10.0:
+- Serie=5.x
+- Teil=Linie 5.90 (2017.08 und später)
+- Datum 31-Oct-2017
+- Release-URL=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2017.10.0
+- Quelle=GitHub-Release ezsystems/ezpublish-legacy v2017.10.0 (Veröffentlichungsdatum)
+
+v2017.10.1:
+- Serie=5.x
+- Teil=Linie 5.90 (2017.08 und später)
+- Datum 21-Nov-2017
+- Release-URL=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2017.10.1
+- Quelle=GitHub-Release ezsystems/ezpublish-legacy v2017.10.1 (Veröffentlichungsdatum)
+
+v2017.12.0:
+- Serie=5.x
+- Teil=Linie 5.90 (2017.08 und später)
+- Datum 22-Dec-2017
+- Release-URL=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2017.12.0
+- Quelle=GitHub-Release ezsystems/ezpublish-legacy v2017.12.0 (Veröffentlichungsdatum)
+
+v2017.12.1:
+- Serie=5.x
+- Teil=Linie 5.90 (2017.08 und später)
+- Datum 15-Jan-2018
+- Release-URL=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2017.12.1
+- Quelle=GitHub-Release ezsystems/ezpublish-legacy v2017.12.1 (Veröffentlichungsdatum)
+
+v2017.12.1.1:
+- Serie=5.x
+- Teil=Linie 5.90 (2017.08 und später)
+- Datum 18-Jan-2018
+- Release-URL=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2017.12.1.1
+- Quelle=GitHub-Release ezsystems/ezpublish-legacy v2017.12.1.1 (Veröffentlichungsdatum)
+
+v2017.12.2:
+- Serie=5.x
+- Teil=Linie 5.90 (2017.08 und später)
+- Datum 06-Feb-2018
+- Release-URL=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2017.12.2
+- Quelle=GitHub-Release ezsystems/ezpublish-legacy v2017.12.2 (Veröffentlichungsdatum)
+
+v2017.12.2.1:
+- Serie=5.x
+- Teil=Linie 5.90 (2017.08 und später)
+- Datum 06-Feb-2018
+- Tag-URL=https://github.com/ezsystems/ezpublish-legacy/tree/v2017.12.2.1
+- Quelle=GitHub-Tag ezsystems/ezpublish-legacy v2017.12.2.1 (Datum des getaggten Commits); kein Release
+
+v2017.12.2.2:
+- Serie=5.x
+- Teil=Linie 5.90 (2017.08 und später)
+- Datum 22-Jun-2018
+- Tag-URL=https://github.com/ezsystems/ezpublish-legacy/tree/v2017.12.2.2
+- Quelle=GitHub-Tag ezsystems/ezpublish-legacy v2017.12.2.2 (Datum des getaggten Commits); kein Release
+
+v2017.12.3:
+- Serie=5.x
+- Teil=Linie 5.90 (2017.08 und später)
+- Datum 29-Jun-2018
+- Release-URL=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2017.12.3
+- Quelle=GitHub-Release ezsystems/ezpublish-legacy v2017.12.3 (Veröffentlichungsdatum)
+
+v2017.12.3.1:
+- Serie=5.x
+- Teil=Linie 5.90 (2017.08 und später)
+- Datum 06-Jul-2018
+- Tag-URL=https://github.com/ezsystems/ezpublish-legacy/tree/v2017.12.3.1
+- Quelle=GitHub-Tag ezsystems/ezpublish-legacy v2017.12.3.1 (Datum des getaggten Commits); kein Release
+
+v2017.12.3.2:
+- Serie=5.x
+- Teil=Linie 5.90 (2017.08 und später)
+- Datum 18-Jul-2018
+- Tag-URL=https://github.com/ezsystems/ezpublish-legacy/tree/v2017.12.3.2
+- Quelle=GitHub-Tag ezsystems/ezpublish-legacy v2017.12.3.2 (Datum des getaggten Commits); kein Release
+
+v2017.12.4:
+- Serie=5.x
+- Teil=Linie 5.90 (2017.08 und später)
+- Datum 29-Oct-2018
+- Release-URL=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2017.12.4
+- Quelle=GitHub-Release ezsystems/ezpublish-legacy v2017.12.4 (Veröffentlichungsdatum)
+
+v2017.12.4.1:
+- Serie=5.x
+- Teil=Linie 5.90 (2017.08 und später)
+- Datum 05-Oct-2018
+- Tag-URL=https://github.com/ezsystems/ezpublish-legacy/tree/v2017.12.4.1
+- Quelle=GitHub-Tag ezsystems/ezpublish-legacy v2017.12.4.1 (Datum des getaggten Commits); kein Release
+
+v2017.12.4.2:
+- Serie=5.x
+- Teil=Linie 5.90 (2017.08 und später)
+- Datum 17-Oct-2018
+- Tag-URL=https://github.com/ezsystems/ezpublish-legacy/tree/v2017.12.4.2
+- Quelle=GitHub-Tag ezsystems/ezpublish-legacy v2017.12.4.2 (Datum des getaggten Commits); kein Release
+
+v2017.12.4.3:
+- Serie=5.x
+- Teil=Linie 5.90 (2017.08 und später)
+- Datum 11-Oct-2018
+- Tag-URL=https://github.com/ezsystems/ezpublish-legacy/tree/v2017.12.4.3
+- Quelle=GitHub-Tag ezsystems/ezpublish-legacy v2017.12.4.3 (Datum des getaggten Commits); kein Release
+
+v2017.12.5:
+- Serie=5.x
+- Teil=Linie 5.90 (2017.08 und später)
+- Datum 18-Jan-2019
+- Release-URL=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2017.12.5
+- Quelle=GitHub-Release ezsystems/ezpublish-legacy v2017.12.5 (Veröffentlichungsdatum)
+
+v2017.12.6:
+- Serie=5.x
+- Teil=Linie 5.90 (2017.08 und später)
+- Datum 18-Feb-2019
+- Release-URL=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2017.12.6
+- Quelle=GitHub-Release ezsystems/ezpublish-legacy v2017.12.6 (Veröffentlichungsdatum)
+
+v2017.12.7:
+- Serie=5.x
+- Teil=Linie 5.90 (2017.08 und später)
+- Datum 14-May-2019
+- Release-URL=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2017.12.7
+- Quelle=GitHub-Release ezsystems/ezpublish-legacy v2017.12.7 (Veröffentlichungsdatum)
+
+v2017.12.7.2:
+- Serie=5.x
+- Teil=Linie 5.90 (2017.08 und später)
+- Datum 03-Mar-2020
+- Tag-URL=https://github.com/ezsystems/ezpublish-legacy/tree/v2017.12.7.2
+- Quelle=GitHub-Tag ezsystems/ezpublish-legacy v2017.12.7.2 (Datum des getaggten Commits); kein Release
+
+v2017.12.7.3:
+- Serie=5.x
+- Teil=Linie 5.90 (2017.08 und später)
+- Datum 05-Oct-2020
+- Tag-URL=https://github.com/ezsystems/ezpublish-legacy/tree/v2017.12.7.3
+- Quelle=GitHub-Tag ezsystems/ezpublish-legacy v2017.12.7.3 (Datum des getaggten Commits); kein Release
+
+v2017.12.7.4:
+- Serie=5.x
+- Teil=Linie 5.90 (2017.08 und später)
+- Datum 03-Sep-2021
+- Tag-URL=https://github.com/ezsystems/ezpublish-legacy/tree/v2017.12.7.4
+- Quelle=GitHub-Tag ezsystems/ezpublish-legacy v2017.12.7.4 (Datum des getaggten Commits); kein Release
+
+v2018.06.0:
+- Serie=5.x
+- Teil=Linie 5.90 (2017.08 und später)
+- Datum 29-Jun-2018
+- Release-URL=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2018.06.0
+- Quelle=GitHub-Release ezsystems/ezpublish-legacy v2018.06.0 (Veröffentlichungsdatum)
+
+v2018.06.1:
+- Serie=5.x
+- Teil=Linie 5.90 (2017.08 und später)
+- Datum 11-Jul-2018
+- Release-URL=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2018.06.1
+- Quelle=GitHub-Release ezsystems/ezpublish-legacy v2018.06.1 (Veröffentlichungsdatum)
+
+v2018.06.1.1:
+- Serie=5.x
+- Teil=Linie 5.90 (2017.08 und später)
+- Datum 18-Jul-2018
+- Tag-URL=https://github.com/ezsystems/ezpublish-legacy/tree/v2018.06.1.1
+- Quelle=GitHub-Tag ezsystems/ezpublish-legacy v2018.06.1.1 (Datum des getaggten Commits); kein Release
+
+v2018.06.1.2:
+- Serie=5.x
+- Teil=Linie 5.90 (2017.08 und später)
+- Datum 05-Oct-2018
+- Tag-URL=https://github.com/ezsystems/ezpublish-legacy/tree/v2018.06.1.2
+- Quelle=GitHub-Tag ezsystems/ezpublish-legacy v2018.06.1.2 (Datum des getaggten Commits); kein Release
+
+v2018.06.1.3:
+- Serie=5.x
+- Teil=Linie 5.90 (2017.08 und später)
+- Datum 17-Oct-2018
+- Tag-URL=https://github.com/ezsystems/ezpublish-legacy/tree/v2018.06.1.3
+- Quelle=GitHub-Tag ezsystems/ezpublish-legacy v2018.06.1.3 (Datum des getaggten Commits); kein Release
+
+v2018.06.1.4:
+- Serie=5.x
+- Teil=Linie 5.90 (2017.08 und später)
+- Datum 11-Oct-2018
+- Tag-URL=https://github.com/ezsystems/ezpublish-legacy/tree/v2018.06.1.4
+- Quelle=GitHub-Tag ezsystems/ezpublish-legacy v2018.06.1.4 (Datum des getaggten Commits); kein Release
+
+v2018.09.0:
+- Serie=5.x
+- Teil=Linie 5.90 (2017.08 und später)
+- Datum 05-Oct-2018
+- Release-URL=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2018.09.0
+- Quelle=GitHub-Release ezsystems/ezpublish-legacy v2018.09.0 (Veröffentlichungsdatum)
+
+v2018.09.1:
+- Serie=5.x
+- Teil=Linie 5.90 (2017.08 und später)
+- Datum 29-Oct-2018
+- Release-URL=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2018.09.1
+- Quelle=GitHub-Release ezsystems/ezpublish-legacy v2018.09.1 (Veröffentlichungsdatum)
+
+v2018.09.1.1:
+- Serie=5.x
+- Teil=Linie 5.90 (2017.08 und später)
+- Datum 31-Oct-2018
+- Tag-URL=https://github.com/ezsystems/ezpublish-legacy/tree/v2018.09.1.1
+- Quelle=GitHub-Tag ezsystems/ezpublish-legacy v2018.09.1.1 (Datum des getaggten Commits); kein Release
+
+v2018.09.1.2:
+- Serie=5.x
+- Teil=Linie 5.90 (2017.08 und später)
+- Datum 01-Nov-2018
+- Tag-URL=https://github.com/ezsystems/ezpublish-legacy/tree/v2018.09.1.2
+- Quelle=GitHub-Tag ezsystems/ezpublish-legacy v2018.09.1.2 (Datum des getaggten Commits); kein Release
+
+v2018.09.1.3:
+- Serie=5.x
+- Teil=Linie 5.90 (2017.08 und später)
+- Datum 21-Nov-2018
+- Tag-URL=https://github.com/ezsystems/ezpublish-legacy/tree/v2018.09.1.3
+- Quelle=GitHub-Tag ezsystems/ezpublish-legacy v2018.09.1.3 (Datum des getaggten Commits); kein Release
+
+v2018.09.2:
+- Serie=5.x
+- Teil=Linie 5.90 (2017.08 und später)
+- Datum 09-Jan-2019
+- Release-URL=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2018.09.2
+- Quelle=GitHub-Release ezsystems/ezpublish-legacy v2018.09.2 (Veröffentlichungsdatum)
+
+v2018.09.3:
+- Serie=5.x
+- Teil=Linie 5.90 (2017.08 und später)
+- Datum 18-Jan-2019
+- Release-URL=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2018.09.3
+- Quelle=GitHub-Release ezsystems/ezpublish-legacy v2018.09.3 (Veröffentlichungsdatum)
+
+v2018.09.4:
+- Serie=5.x
+- Teil=Linie 5.90 (2017.08 und später)
+- Datum 18-Feb-2019
+- Release-URL=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2018.09.4
+- Quelle=GitHub-Release ezsystems/ezpublish-legacy v2018.09.4 (Veröffentlichungsdatum)
+
+v2018.09.5:
+- Serie=5.x
+- Teil=Linie 5.90 (2017.08 und später)
+- Datum 14-May-2019
+- Release-URL=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2018.09.5
+- Quelle=GitHub-Release ezsystems/ezpublish-legacy v2018.09.5 (Veröffentlichungsdatum)
+
+v2019.03.0-rc1:
+- Serie=5.x
+- Teil=Linie 5.90 (2017.08 und später)
+- Datum 02-Apr-2019
+- Release-URL=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2019.03.0-rc1
+- Quelle=GitHub-Release ezsystems/ezpublish-legacy v2019.03.0-rc1 (Veröffentlichungsdatum)
+
+v2019.03.0-rc2:
+- Serie=5.x
+- Teil=Linie 5.90 (2017.08 und später)
+- Datum 14-May-2019
+- Release-URL=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2019.03.0-rc2
+- Quelle=GitHub-Release ezsystems/ezpublish-legacy v2019.03.0-rc2 (Veröffentlichungsdatum)
+
+v2019.03.0:
+- Serie=5.x
+- Teil=Linie 5.90 (2017.08 und später)
+- Datum 16-May-2019
+- Tag-URL=https://github.com/ezsystems/ezpublish-legacy/tree/v2019.03.0
+- Quelle=GitHub-Tag ezsystems/ezpublish-legacy v2019.03.0 (Datum des Tags); kein Release
+
+v2019.03.1:
+- Serie=5.x
+- Teil=Linie 5.90 (2017.08 und später)
+- Datum 09-Aug-2019
+- Release-URL=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2019.03.1
+- Quelle=GitHub-Release ezsystems/ezpublish-legacy v2019.03.1 (Veröffentlichungsdatum)
+
+v2019.03.2:
+- Serie=5.x
+- Teil=Linie 5.90 (2017.08 und später)
+- Datum 01-Nov-2019
+- Release-URL=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2019.03.2
+- Quelle=GitHub-Release ezsystems/ezpublish-legacy v2019.03.2 (Veröffentlichungsdatum)
+
+v2019.03.3:
+- Serie=5.x
+- Teil=Linie 5.90 (2017.08 und später)
+- Datum 18-Dec-2019
+- Release-URL=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2019.03.3
+- Quelle=GitHub-Release ezsystems/ezpublish-legacy v2019.03.3 (Veröffentlichungsdatum)
+
+v2019.03.4:
+- Serie=5.x
+- Teil=Linie 5.90 (2017.08 und später)
+- Datum 18-Dec-2019
+- Release-URL=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2019.03.4
+- Quelle=GitHub-Release ezsystems/ezpublish-legacy v2019.03.4 (Veröffentlichungsdatum)
+
+v2019.03.4.2:
+- Serie=5.x
+- Teil=Linie 5.90 (2017.08 und später)
+- Datum 03-Mar-2020
+- Tag-URL=https://github.com/ezsystems/ezpublish-legacy/tree/v2019.03.4.2
+- Quelle=GitHub-Tag ezsystems/ezpublish-legacy v2019.03.4.2 (Datum des getaggten Commits); kein Release
+
+v2019.03.5:
+- Serie=5.x
+- Teil=Linie 5.90 (2017.08 und später)
+- Datum 27-Aug-2020
+- Release-URL=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2019.03.5
+- Quelle=GitHub-Release ezsystems/ezpublish-legacy v2019.03.5 (Veröffentlichungsdatum)
+
+v2019.03.5.1:
+- Serie=5.x
+- Teil=Linie 5.90 (2017.08 und später)
+- Datum 05-Oct-2020
+- Tag-URL=https://github.com/ezsystems/ezpublish-legacy/tree/v2019.03.5.1
+- Quelle=GitHub-Tag ezsystems/ezpublish-legacy v2019.03.5.1 (Datum des getaggten Commits); kein Release
+
+v2019.03.6:
+- Serie=5.x
+- Teil=Linie 5.90 (2017.08 und später)
+- Datum 16-Oct-2020
+- Release-URL=https://github.com/ezsystems/ezpublish-legacy/releases/tag/v2019.03.6
+- Quelle=GitHub-Release ezsystems/ezpublish-legacy v2019.03.6 (Veröffentlichungsdatum)
+
+v2019.03.6.1:
+- Serie=5.x
+- Teil=Linie 5.90 (2017.08 und später)
+- Datum 03-Sep-2021
+- Tag-URL=https://github.com/ezsystems/ezpublish-legacy/tree/v2019.03.6.1
+- Quelle=GitHub-Tag ezsystems/ezpublish-legacy v2019.03.6.1 (Datum des getaggten Commits); kein Release
+
+6.0.0:
+- Alias Exponential 6.0.0
+- Tag=v6.0.0
+- Datum 01-Jan-2024
+- Release-URL=https://github.com/se7enxweb/exponential/releases/tag/v6.0.0
+- Changelog-URL=changelogs/6.0/6.0.0.md
+- Quelle=changelogs/6.0/6.0.0.md, Git-Tag v6.0.0, GitHub-Release (Veröffentlichungsdatum)
+
+6.0.1:
+- Alias Exponential 6.0.1
+- Tag=v6.0.1
+- Datum 29-Jan-2024
+- Veröffentlichungsdatum 01-Feb-2024
+- Release-URL=https://github.com/se7enxweb/exponential/releases/tag/v6.0.1
+- Changelog-URL=changelogs/6.0/6.0.1.md
+- Quelle=changelogs/6.0/6.0.1.md, Git-Tag v6.0.1, GitHub-Release (Veröffentlichungsdatum)
+
+6.0.2:
+- Alias Exponential 6.0.2
+- Tag=v6.0.2
+- Datum 29-Feb-2024
+- Veröffentlichungsdatum 01-Mar-2024
+- Release-URL=https://github.com/se7enxweb/exponential/releases/tag/v6.0.2
+- Changelog-URL=changelogs/6.0/6.0.2.md
+- Quelle=changelogs/6.0/6.0.2.md, Git-Tag v6.0.2, GitHub-Release (Veröffentlichungsdatum)
+
+6.0.3:
+- Alias Exponential 6.0.3
+- Tag=v6.0.3
+- Datum 02-Apr-2024
+- Veröffentlichungsdatum 03-Apr-2024
+- Release-URL=https://github.com/se7enxweb/exponential/releases/tag/v6.0.3
+- Changelog-URL=changelogs/6.0/6.0.3.md
+- Quelle=changelogs/6.0/6.0.3.md, Git-Tag v6.0.3, GitHub-Release (Veröffentlichungsdatum)
+
+6.0.4:
+- Alias Exponential 6.0.4
+- Tag=v6.0.4
+- Datum 05-Sep-2024
+- Release-URL=https://github.com/se7enxweb/exponential/releases/tag/v6.0.4
+- Changelog-URL=changelogs/6.0/6.0.4.md
+- Quelle=changelogs/6.0/6.0.4.md, Git-Tag v6.0.4, GitHub-Release (Veröffentlichungsdatum)
+
+6.0.5:
+- Alias Exponential 6.0.5
+- Tag=v6.0.5
+- Datum 01-Oct-2024
+- Release-URL=https://github.com/se7enxweb/exponential/releases/tag/v6.0.5
+- Changelog-URL=changelogs/6.0/6.0.5.md
+- Quelle=changelogs/6.0/6.0.5.md, Git-Tag v6.0.5, GitHub-Release (Veröffentlichungsdatum)
+
+6.0.6:
+- Alias Exponential 6.0.6
+- Tag=v6.0.6
+- Datum 17-Dec-2024
+- Release-URL=https://github.com/se7enxweb/exponential/releases/tag/v6.0.6
+- Changelog-URL=changelogs/6.0/6.0.6.md
+- Quelle=changelogs/6.0/6.0.6.md, Git-Tag v6.0.6, GitHub-Release (Veröffentlichungsdatum)
+
+6.0.7:
+- Alias Exponential 6.0.7
+- Tag=v6.0.7
+- Datum 01-Feb-2025
+- Veröffentlichungsdatum 14-Feb-2025
+- Release-URL=https://github.com/se7enxweb/exponential/releases/tag/v6.0.7
+- Changelog-URL=changelogs/6.0/6.0.7.md
+- Quelle=changelogs/6.0/6.0.7.md, Git-Tag v6.0.7, GitHub-Release (Veröffentlichungsdatum)
+
+6.0.8:
+- Alias Exponential 6.0.8
+- Tag=v6.0.8
+- Datum 02-May-2025
+- Veröffentlichungsdatum 05-May-2025
+- Release-URL=https://github.com/se7enxweb/exponential/releases/tag/v6.0.8
+- Changelog-URL=changelogs/6.0/6.0.8.md
+- Quelle=changelogs/6.0/6.0.8.md, Git-Tag v6.0.8, GitHub-Release (Veröffentlichungsdatum)
+
+6.0.9:
+- Alias Exponential 6.0.9
+- Tag=v6.0.9
+- Datum 10-Jun-2025
+- Release-URL=https://github.com/se7enxweb/exponential/releases/tag/v6.0.9
+- Changelog-URL=changelogs/6.0/6.0.9.md
+- Quelle=changelogs/6.0/6.0.9.md, Git-Tag v6.0.9, GitHub-Release (Veröffentlichungsdatum)
+
+6.0.10:
+- Alias Exponential 6.0.10
+- Tag=v6.0.10
+- Datum 28-Aug-2025
+- Veröffentlichungsdatum 29-Aug-2025
+- Release-URL=https://github.com/se7enxweb/exponential/releases/tag/v6.0.10
+- Changelog-URL=changelogs/6.0/6.0.10.md
+- Quelle=changelogs/6.0/6.0.10.md, Git-Tag v6.0.10, GitHub-Release (Veröffentlichungsdatum)
+
+6.0.11:
+- Alias Exponential 6.0.11
+- Tag=v6.0.11
+- Datum 30-Dec-2025
+- Veröffentlichungsdatum 01-Jan-2026
+- Release-URL=https://github.com/se7enxweb/exponential/releases/tag/v6.0.11
+- Changelog-URL=changelogs/6.0/6.0.11.md
+- Quelle=changelogs/6.0/6.0.11.md, Git-Tag v6.0.11, GitHub-Release (Veröffentlichungsdatum)
+
+6.0.12:
+- Alias Exponential 6.0.12
+- Tag=v6.0.12
+- Datum 10-Feb-2026
+- Release-URL=https://github.com/se7enxweb/exponential/releases/tag/v6.0.12
+- Changelog-URL=changelogs/6.0/6.0.12.md
+- Quelle=changelogs/6.0/6.0.12.md, Git-Tag v6.0.12, GitHub-Release (Veröffentlichungsdatum)
+
+6.0.13:
+- Alias Exponential 6.0.13
+- Tag=v6.0.13
+- Datum 18-Apr-2026
+- Veröffentlichungsdatum 20-Apr-2026
+- Release-URL=https://github.com/se7enxweb/exponential/releases/tag/v6.0.13
+- Changelog-URL=changelogs/6.0/6.0.13.md
+- Quelle=changelogs/6.0/6.0.13.md, Git-Tag v6.0.13, GitHub-Release (Veröffentlichungsdatum)
+
+6.0.14:
+- Alias Exponential 6.0.14
+- Tag=v6.0.14
+- Datum 07-Jun-2026
+- Release-URL=https://github.com/se7enxweb/exponential/releases/tag/v6.0.14
+- Changelog-URL=changelogs/6.0/6.0.14.md
+- Quelle=changelogs/6.0/6.0.14.md, Git-Tag v6.0.14, GitHub-Release (Veröffentlichungsdatum)
+
+6.0.15:
+- Alias Exponential 6.0.15
+- Datum: noch nicht veröffentlicht
+- Changelog-URL=changelogs/6.0/6.0.15.md
+- Quelle=changelogs/6.0/6.0.15.md (kein Tag)

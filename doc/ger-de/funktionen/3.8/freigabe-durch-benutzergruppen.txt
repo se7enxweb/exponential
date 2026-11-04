@@ -1,0 +1,6 @@
+*Titel: Freigabe durch Benutzergruppen
+
+*Dokumentation:
+Mit dieser Erweiterung lassen sich mehrere Benutzergruppen für die Freigabe von Inhalten wählen.
+Mehrere Benutzer und/oder Benutzergruppen können jetzt Inhalte freigeben. Bestehende Workflows
+mit dem Freigabe-Ereignis funktionieren nach dem Upgrade weiter.

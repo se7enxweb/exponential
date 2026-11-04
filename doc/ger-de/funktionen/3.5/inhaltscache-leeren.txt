@@ -1,0 +1,21 @@
+*Titel: Leeren des Inhaltscaches
+
+Anlass:
+Den Ansichtscache eines Knotens oder Teilbaums einfach leeren können, ohne den ganzen
+Inhaltscache zu leeren. Das hält die Last auf dem Server gering, weil nur die Caches
+geleert werden, für die neue und geänderte Templates bereitstehen.
+
+*Dokumentation:
+Dafür gibt es ein neues Skript, contentcache.sh, das eine Liste von Knoten-IDs oder
+sprechenden URLs annimmt.
+
+Einen Knoten leeren:
+./bin/php/ezcontentcache.php --clear-node=/
+oder mehrere Knoten (5 sind die Benutzer)
+./bin/php/ezcontentcache.php --clear-node=/,5
+
+
+Einen Teilbaum leeren:
+./bin/php/ezcontentcache.php --clear-subtree=2
+oder mehrere Teilbäume
+./bin/php/ezcontentcache.php --clear-subtree=2,users

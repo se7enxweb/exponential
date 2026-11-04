@@ -1,0 +1,18 @@
+*Titel: Neue Funktionen im XML-Block
+
+*Dokumentation:
+
+Das Tag <link> hat jetzt das Attribut 'view', mit dem sich auf verschiedene Ansichten eines
+Objekts verlinken lässt. Der Standardwert ist 'full'.
+
+Das Tag <tr> hat jetzt das Attribut 'class'.
+
+
+*Beispiel:
+
+<link href='eznode://1234' view='line'>
+....
+
+<table>
+<tr class='trBlue'>
+...

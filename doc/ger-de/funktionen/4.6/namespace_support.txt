@@ -1,0 +1,16 @@
+Unterstützung von Namespaces
+============================
+
+Exponential unterstützt jetzt **PHP-Namespaces in Erweiterungen**.
+Werden sie verwendet, stehen die Klassen mit ihrem vollqualifizierten Namen
+(FQN) in ``var/autoload/ezp_extension.php``
+
+Diese Klasse zum Beispiel::
+
+    <?php
+    namespace My\Custom\Namespace;
+    class MyClass {}
+
+steht so im Autoload-Array::
+
+    My\Custom\Namespace\MyClass

@@ -1,0 +1,9 @@
+AutoloadIgnore
+==============
+
+Im Wurzelverzeichnis von Exponential kann jetzt eine Datei '.autoloadignore'
+liegen, die Verzeichnisse nennt, die von der Autoload-Erzeugung ausgenommen
+werden. Das ist manchmal während der Entwicklung nützlich.
+
+Die Datei ist zeilenweise aufgebaut, ein Verzeichnis je Zeile.
+

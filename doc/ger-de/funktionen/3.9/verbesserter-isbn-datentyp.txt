@@ -1,0 +1,7 @@
+*Titel: Verbesserter ISBN-Datentyp
+
+*Dokumentation:
+Der neue Standard ISBN-13 wird unterstützt.
+
+Alle nötigen Informationen stehen in den Benutzerhandbüchern zu ISBN-10 und ISBN-13 unter:
+http://www.isbn-international.org/en/manual.html

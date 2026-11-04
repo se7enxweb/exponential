@@ -1,0 +1,159 @@
+*Titel: Statischer Cache für Inhalte
+
+*Dokumentation:
+Mit dem statischen Cache in Exponential 3.6 lassen sich Inhalte anhand einer
+Konfigurationsdatei statisch zwischenspeichern. Rewrite-Regeln von Apache prüfen, ob eine
+statische Datei existiert, und liefern sie in diesem Fall direkt von der Festplatte aus, ohne
+den Umweg über PHP. Existiert die Datei nicht, geht die Anfrage einfach an Exponential.
+
+Statische Cache-Dateien entstehen auf zwei Wegen:
+1. Beim Veröffentlichen eines Objekts.
+2. Beim Ausführen des Skripts, das den Cache erzeugt.
+
+
+*Einrichtung mit einem Siteaccess:
+Hier gibt es einen Siteaccess (in diesem Beispiel "ezno"), für den der statische Cache
+eingerichtet werden soll. Zuerst ergänzen wir die Apache-VHOST-Konfiguration um diese
+Rewrite-Regeln:
+
+<code>
+RewriteEngine On
+
+RewriteCond   /var/www/exponential/static/index.html -f
+RewriteRule  ^/$              /static/index.html [L]
+RewriteCond   /var/www/exponential/static/index.html -f
+RewriteRule  ^$               /static/index.html [L]
+
+RewriteCond   %{REQUEST_METHOD}       !^POST$
+RewriteCond   /var/www/exponential/static$1/index.html -f
+RewriteRule   ^(.*)$  /static$1/index.html [L]
+
+RewriteRule !\.(gif|css|jpg|png|jar|ico|js)$ /index.php
+</code>
+
+Natürlich müssen Sie "/var/www/exponential" durch den Pfad zum Wurzelverzeichnis Ihrer
+Exponential-Installation ersetzen.
+
+
+Um den statischen Cache einzuschalten, fügen Sie in settings/override/site.ini.append.php
+diese Einstellungen hinzu:
+
+<code>
+[ContentSettings]
+StaticCache=enabled
+</code>
+
+In settings/override/staticcache.ini.append.php konfigurieren Sie den Host und was genau
+zwischengespeichert wird:
+
+<code>
+[CacheSettings]
+HostName=tequila:1400
+StaticStorageDir=static
+MaxCacheDepth=4
+
+# A list of url's to cache
+CachedURLArray[]=/*
+</code>
+
+- HostName ist der Host, auf dem die Seiten normal aufgerufen werden können. Der statische
+  Cache ruft darüber die erzeugten Inhalte ab, um sie als Cache-Datei zu speichern.
+- StaticStorageDir ist das Verzeichnis, in dem die statischen Cache-Dateien liegen,
+  relativ zum Wurzelverzeichnis Ihrer Exponential-Installation. Es muss dem Teil zwischen
+  "/var/www/exponential/" und "$1/index.html" in den Rewrite-Regeln oben entsprechen.
+- MaxCacheDepth ist die höchste Anzahl an Ebenen, die vom / Ihrer Installation aus
+  zwischengespeichert werden.
+- CachedURLArray legt fest, welche Teile Ihrer Website statisch zwischengespeichert werden
+  dürfen. Mit / oder /products wird nur die jeweilige Seite gespeichert (in diesem Beispiel
+  die Startseite und die Seite "/products"). Platzhalter sind möglich: Mit "/products*"
+  werden alle URLs gespeichert, die mit /products beginnen, also im Grunde alles unterhalb
+  von /products. (Beachten Sie, dass diese Regel auch /products2/42 einschließt!)
+
+
+
+*Einrichtung mit mehreren Sprachversionen einer Website:
+In diesem Beispiel gibt es eine Website in zwei Sprachen, Englisch und Französisch, mit den
+Siteaccesses news_en und news_fr.
+
+Hier verwenden wir diese (leicht abweichenden) Rewrite-Regeln; das Wurzelverzeichnis der
+Exponential-Installation ist hier "/home/httpd/ez-3.6":
+
+<code>
+RewriteEngine On
+RewriteLog    /tmp/rewrite
+RewriteLogLevel 4
+
+RewriteCond   /home/httpd/ez-3.6/static/news_en/index.html -f
+RewriteRule  ^/$              /static/news_en/index.html [L]
+RewriteCond   /home/httpd/ez-3.6/static/news_en/index.html -f
+RewriteRule  ^$               /static/news_en/index.html [L]
+
+RewriteCond   /home/httpd/ez-3.6/static/news_fr/index.html -f
+RewriteRule  ^/$              /static/news_fr/index.html [L]
+RewriteCond   /home/httpd/ez-3.6/static/news_fr/index.html -f
+RewriteRule  ^$               /static/news_fr/index.html [L]
+
+RewriteCond   %{REQUEST_METHOD}       !^POST$
+RewriteCond   /home/httpd/ez-3.6/static$1/index.html -f
+RewriteRule   ^(.*)$  /static$1/index.html [L]
+
+RewriteRule !\.(gif|css|jpg|png|jar|ico|js)$ /index.php
+</code>
+
+Nötig sind diese Einstellungen:
+
+In settings/override/site.ini.append.php:
+<code>
+[ContentSettings]
+StaticCache=enabled
+</code>
+
+In settings/siteaccess/news_en/staticcache.ini.append.php:
+<code>
+[CacheSettings]
+StaticStorageDir=static/news_en
+</code>
+und in settings/siteaccess/news_fr/staticcache.ini.append.php:
+<code>
+[CacheSettings]
+StaticStorageDir=static/news_fr
+</code>
+
+Achten Sie darauf, dass der Teil nach "static" dem Namen des Siteaccess entspricht! "static"
+lässt sich natürlich ändern, muss dann aber wieder mit den Rewrite-Regeln übereinstimmen.
+
+In settings/override/staticcache.ini.append.php konfigurieren wir dann den statischen Cache:
+<code>
+[CacheSettings]
+HostName=localhost
+MaxCacheDepth=4
+
+# A list of url's to cache
+CachedURLArray[]
+CachedURLArray[]=/news*
+CachedURLArray[]=/weblog*
+
+CachedSiteAccesses[]
+CachedSiteAccesses[]=news_en
+CachedSiteAccesses[]=news_fr
+</code>
+
+Damit werden die Teilbäume /news und /weblog der Website auf dem Host "localhost" bis zu
+einer Tiefe von 4 zwischengespeichert.
+
+
+*Cache-Dateien erzeugen:
+Mit dem Skript bin/php/makestaticcache.php erzeugen Sie alle statischen Cache-Dateien eines
+bestimmten Siteaccess. In unserem Beispiel mit dem Siteaccess ezno etwa so:
+
+<code>
+php bin/php/makestaticcache.php -s ezno
+</code>
+
+Um alle Cache-Dateien neu zu erzeugen, auch die bereits vorhandenen, erzwingen Sie das mit
+dem Parameter -f. Dieses Beispiel erzeugt alle statischen Cache-Dateien beider Siteaccesses
+aus dem zweiten Beispiel neu:
+
+<code>
+php bin/php/makestaticcache.php -f
+</code>

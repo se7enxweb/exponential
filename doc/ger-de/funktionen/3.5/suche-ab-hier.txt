@@ -1,0 +1,31 @@
+*Titel: Suche ab hier
+
+Anlass:
+Wurde von vielen Mitgliedern der Community gewünscht, unter anderem in den damaligen
+Notizen eines Community-Workshops (die Seite gibt es nicht mehr).
+
+*Dokumentation:
+Die Such-Werkzeugleiste wurde erweitert: Der Benutzer kann jetzt wählen, ob er ab dem
+aktuellen Ort oder (wie bisher) global sucht.
+
+Neue Werkzeug-Einstellungen:
+relative_check:  'yes' oder 'no'
+
+Neue POST-Variablen:
+SubTreeArray: Wird ausgefüllt, um die Suche auf einen bestimmten Teilbaum zu beschränken.
+
+Neues CSS:
+Der Optionsblock im Werkzeug ist inline gesetzt, damit die Optionen in einer Zeile stehen.
+
+*Tests:
+Ein Suchwerkzeug hinzufügen und die Option 'Relative Suche' einschalten. Es erscheinen
+zwei Optionsfelder, 'Global' und 'Ab hier'.
+
+Zwei Ordner auf oberster Ebene anlegen und darin je einen Artikel mit denselben Wörtern.
+
+Mit der Option 'Global' nach einem der Wörter suchen: Die Suche findet beide Artikel.
+
+Einen der Ordner öffnen und mit der Option 'Ab hier' nach demselben Wort suchen: Die Suche zeigt nur den Artikel im aktuellen Ordner.
+
+*SVN-Revisionen:
+trunk 7105

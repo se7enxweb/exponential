@@ -1,0 +1,139 @@
+Sprachumschalter
+================
+
+Einführung
+----------
+
+In Exponential 4.1 gibt es einen neuen Weg, Links zu erzeugen, die Benutzer zu
+einem anderen Übersetzungs-Siteaccess führen. Das war bisher schwierig, wenn
+die URL im gewählten Übersetzungs-Siteaccess wegen abweichender Übersetzungen
+nicht verfügbar war.
+
+Die URLs des Sprachumschalters haben folgende Form (im Folgenden
+Sprachumschalter-URL genannt).
+
+::
+
+    /switchlanguage/to/<destinationTranslationSiteaccess>/<nodeID|URLalias>
+
+Meist wird diese Funktion über das mitgelieferte Modul switchlanguage
+verwendet. Das ist der optimierte Weg, denn die Umrechnung von Knoten-IDs und
+URL-Aliasen in die Zielsprache geschieht erst, wenn jemand auf einen
+Sprachumschalter-Link klickt. Andernfalls müsste das für jede URL vorab
+berechnet werden.
+
+Arbeitsweise
+------------
+
+Klickt ein Benutzer auf eine Sprachumschalter-URL, wird er auf eine URL
+weitergeleitet, die den Ziel-Siteaccess und den Zielinhalt darstellt. Meist
+ist der Zielinhalt die Übersetzung des gerade angezeigten Inhalts, es gibt
+aber einige Ausnahmen. So funktioniert es:
+
+=========================================== ===================== =============================================
+Herkunft                                    Ziel                  Ziel-URL
+=========================================== ===================== =============================================
+Knoten                                      Übersetzter Knoten    Übersetzter URL-Alias
+Knoten ohne verfügbare Übersetzung [#]_     Ursprünglicher Knoten Übersetzungs-Siteaccess, gleicher URL-Alias
+Modul                                       Modul                 Bei Modulen wird die URL durchgereicht
+=========================================== ===================== =============================================
+
+.. [#] Knoten können trotzdem im anderen Siteaccess sichtbar sein. So kann
+       englischer Inhalt im norwegischen Siteaccess sichtbar sein, wenn
+       Englisch zu den bevorzugten Sprachen gehört.
+
+Einsatz
+-------
+
+Den Sprachumschalter einzusetzen heißt einfach, Links nach dem oben gezeigten
+Muster zu erzeugen. Das geht zum Beispiel leicht mit der Template-Sprache.
+
+Es gibt noch einen bequemen Weg, Sprachumschalter-URLs zu erzeugen, der in
+den Templates möglichst wenig Logik erfordert: den Template-Operator
+language_switcher(). Wie er eingerichtet wird, steht im nächsten Abschnitt.
+
+Der Operator gibt ein Array zurück, nach Siteaccess-Namen indiziert, mit einer
+Sprachumschalter-URL und einem lesbaren Text.
+
+Beispiel aus dem Pagelayout:
+
+::
+
+    {def $translations = language_switcher( $module_result.content_info.node_id )}
+    {foreach $translations as $siteaccessName => $lang}
+
+    {*
+       Note we are not using the $siteaccessName index here, but useful
+       for matching against current siteaccess for instance
+    *}
+        <a href={$lang.url|ezurl}>{$lang.text|wash}</a>
+    {/foreach}
+
+(Der Kommentar im Beispiel besagt: Der Index $siteaccessName wird hier nicht
+verwendet, ist aber nützlich, um ihn zum Beispiel mit dem aktuellen
+Siteaccess zu vergleichen.)
+
+Die Eingabe von ``language_switcher( $var )`` kann die Knoten-ID sein, der
+aktuelle URL-Alias oder bei einem Modul einfach die angefragte URL.
+
+Konfiguration
+-------------
+
+Damit der Sprachumschalter in Templates leicht zu verwenden ist, wird ein Teil
+über Einstellungen konfiguriert. Dort lässt sich am bequemsten festlegen,
+welche Übersetzungs-Siteaccesses die Site hat; der Operator
+``language_swither()`` verwendet dann beim automatischen Erzeugen der Links
+keine normalen Siteaccesses.
+
+Unten ein Beispiel für eine solche Einrichtung. Der Ausschnitt stammt aus
+site.ini.[RegionalSettings]
+::
+
+    # Example mapping between translation siteaccesses and the name to use for the
+    # language switcher link, e.g. the name which will be used when making links to
+    # these siteaccesses.
+    # Example: TranslationSA[<name of siteaccess>]=<name of language switcher link, pointing to this siteaccess>
+    TranslationSA[]
+    TranslationSA[eng]=English
+    TranslationSA[nor]=Norwegian
+    TranslationSA[fre]=French
+
+(TranslationSA ordnet jedem Übersetzungs-Siteaccess den Namen zu, den der Link
+des Sprachumschalters zu diesem Siteaccess trägt.)
+
+
+Anpassung durch Überschreiben
+-----------------------------
+
+Jede Site hat eigene Anforderungen. Deshalb lässt sich die Klasse des
+Sprachumschalters vollständig durch eine eigene Klasse ersetzen.
+
+Die Klasse wird in site.ini.[RegionalSettings].LanguageSwitcherClass
+eingestellt. Standardmäßig ist es ezpLanguageSwitcher.
+::
+
+    LanguageSwitcherClass=ezpLanguageSwitcher
+
+Die Klasse muss das Interface ezpLanguageSwitcherCapable implementieren.
+Einzelheiten stehen in der Dokumentation dieses Interfaces.
+
+Extras
+------
+
+Der Sprachumschalter bietet Template-Entwicklern noch eine Annehmlichkeit: Den
+URL-Alias eines Knotens in einer vom Benutzer gewählten Übersetzung (Locale)
+abzurufen. Das geschieht über eine Fetch-Funktion im Template:
+::
+
+    {def $demo = fetch( 'switchlanguage', 'url_alias', hash( 'path', $node.url_alias, 'locale', 'nor-NO' ) )}
+
+Das Beispiel liefert den URL-Alias der norwegischen Übersetzung. Lässt sich
+der URL-Alias nicht abrufen oder gibt es ihn für diese Übersetzung nicht, wird
+``false`` zurückgegeben.
+
+Die vollständige Liste der Parameter:
+::
+
+    fetch( 'switchlanguage', 'url_alias', hash( [ 'node_id',   <node_id>,  ]
+                                                [ 'path', <node_path> ] ) )
+

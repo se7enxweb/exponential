@@ -1,0 +1,17 @@
+*Titel: Ein Produkt mit dem neuen Parameter 'Quantity' in den Warenkorb legen.
+
+*Dokumentation:
+Der neue Parameter 'Quantity' (Menge) kann beim Hinzufügen eines Produkts zum
+Warenkorb verwendet werden. In früheren Versionen von Exponential legte der
+Shop immer nur ein Produkt auf einmal in den Warenkorb. Mit dieser Funktion
+lassen sich beliebig viele Produkte derselben Art auf einmal hinzufügen.
+
+Beispiel (Template der Knotenansicht):
+
+<form method="post" action={"content/action"|ezurl}>
+	<label for="Quantity">Quantity</label><input type="input" id="Quantity" name="Quantity" value="" />
+    <input type="submit" class="defaultbutton" name="ActionAddToBasket" value="Add to basket" />
+    <input type="hidden" name="ContentNodeID" value="{$node.node_id}" />
+	<input type="hidden" name="ContentObjectID" value="{$node.object.id}" />
+    <input type="hidden" name="ViewMode" value="full" />
+</form>

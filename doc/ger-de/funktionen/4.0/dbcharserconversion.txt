@@ -1,0 +1,77 @@
+Umwandlung des Datenbank-Zeichensatzes in Exponential 4
+=======================================================
+Wandelt den Zeichensatz der Datenbank von einer beliebigen Kodierung in utf8 um.
+Unterstützt MySQL und PostgreSQL.
+
+Aufruf:
+$ ./bin/php/ezconvertdbcharset.php -s <ihr_siteaccess>
+
+Parameter:
+$ ./bin/php/ezconvertdbcharset.php --help
+
+
+Fehlerbehebung
+--------------
+* Problem mit der Sortierfolge (Collation)
+
+  Symptom:
+  Das Skript kann unter MySQL mit einer Meldung wie dieser abbrechen:
+  "Query error: Duplicate entry 'bjön' for key 2.
+   Query: ALTER TABLE ezsearch_search_phrase CONVERT TO CHARACTER SET utf8"
+
+  Beschreibung:
+  - die ursprüngliche Sortierfolge ist 'latin1_swedish_ci';
+  - die Spalte 'phrase' der Tabelle 'ezsearch_search_phrase' ist als
+    eindeutiger Schlüssel definiert, daher legt MySQL bei der Umwandlung einen
+    Index für diese Spalte an;
+  - 'latin1_swedish_ci' unterscheidet die Zeichen 'o', 'ö' ('o' mit Umlaut)
+    und 'ø' ('o' mit Schrägstrich). Die ursprüngliche Spalte 'phrase' kann
+    daher Werte mit allen drei Zeichen enthalten, etwa:
+    +-----------+
+    | phrase    |
+    +-----------+
+    | abco      |
+    | abcö      |
+    | abcø      |
+    +-----------+
+  - es gibt keine passende 'utf8_...'-Sortierfolge, die diese Zeichen
+    unterscheidet.
+
+  Lösung:
+  - Mit 'GROUP BY' und einer anderen als der ursprünglichen Sortierfolge die
+    problematischen Zeilen entfernen. Die neue Sortierfolge sollte sich so
+    verhalten wie die gewünschte 'utf8_...'-Sortierfolge.
+    'utf8_general_ci' unterscheidet zum Beispiel 'ö' und 'ø' nicht,
+    'latin1_danish_ci' ebenso wenig. Daher ist Folgendes nötig:
+    (1) mysql> create table ezsearch_search_phrase_1 as select min(id) as id,
+                  phrase,
+                  sum(phrase_count) as phrase_count,
+                  sum(result_count) as result_count
+                from ezsearch_search_phrase
+                group by phrase
+                collate latin1_danish_ci;
+
+    (2) mysql> truncate ezsearch_search_phrase;
+    (3) mysql> insert into ezsearch_search_phrase select *
+                from ezsearch_search_phrase_1;
+    (4) mysql> drop table ezsearch_search_phrase_1;
+
+  - Beim Ausprobieren von Gruppierungen und Sortierfolgen ist es nützlich zu
+    prüfen, ob das Problem behoben ist, ohne das Skript laufen zu lassen. Ist
+    die gewünschte Sortierfolge zum Beispiel 'utf8_general_ci' und soll
+    geprüft werden, ob die Gruppierung mit 'latin1_danish_ci' genügt:
+        mysql> create unique index ezsearch_search_phrase_phrase
+                on ezsearch_search_phrase_1(phrase);
+    (5) mysql> alter table ezsearch_search_phrase_1
+                convert to character set 'utf8'
+                collate 'utf8_general_ci';
+
+  - Schlägt (5) fehl, ist Schritt (1) mit einer anderen Sortierfolge zu
+    wiederholen (latin1_german1_ci, latin1_german2_ci), etwa:
+        mysql> create table ezsearch_search_phrase_2 as select min(id) as id,
+                    phrase,
+                    sum(phrase_count) as phrase_count,
+                    sum(result_count) as result_count
+                from ezsearch_search_phrase_1
+                group by phrase
+                collate latin1_german1_ci;

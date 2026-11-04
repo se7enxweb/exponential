@@ -1,0 +1,17 @@
+*Titel: Neue Funktion "view_count" für eZContentObjectTreeNode
+
+*Beschreibung:
+
+Diese neue Funktion ruft die Anzahl der erfassten Aufrufe eines Knotens ab.
+
+*Dokumentation:
+
+Abruf:
+
+{def $node = fetch( 'content', 'node',
+        hash( 'node_id', 2 ) }
+Views: {$node.view_count}
+
+
+Rückgabe:
+Eine Ganzzahl mit der Anzahl der Aufrufe dieses Knotens.

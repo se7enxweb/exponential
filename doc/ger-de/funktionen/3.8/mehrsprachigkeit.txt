@@ -1,0 +1,604 @@
+Neue Konzepte
+`````````````
+
+Bis 3.7 hielt das System alle Sprachen in einer Version und ließ nur eine Person deren Daten
+ändern. Mehrere Personen konnten also nicht gleichzeitig getrennt an je einer Sprache arbeiten,
+sondern mussten warten, bis eine Sprache aktualisiert und veröffentlicht war.
+
+Sprachen sind jetzt eigenständiger und unabhängig. Mehrere Benutzer können Sprachen getrennt
+anlegen und bearbeiten, und Dinge wie die Freigabe werden einfacher, weil man jeweils nur eine
+Sprache betrachten muss.
+
+Die wichtigsten Änderungen am Inhaltsmodell:
+
+- Ein Benutzer bearbeitet immer nur eine Version und Sprache gleichzeitig.
+- Objekte lassen sich in jeder Sprache in jedem Siteaccess anlegen; die erste Sprache des Objekts
+  wird festgehalten.
+- Objekte lassen sich in beliebig viele Sprachen übersetzen.
+- Die verfügbaren Sprachen lassen sich je Siteaccess steuern und so filtern.
+
+Globale Übersetzungen
+---------------------
+
+Eine neue Tabelle (*ezcontent_language*) ersetzt die alte Tabelle (*ezcontent_translation*).
+Jeder Eintrag erhält eine neue *id*, die die Bitnummer als Wert darstellt, also 2^bitnum. Die
+Id 1 (2^0) ist für das System reserviert.
+Die Sprache wird mit einem Locale-Code (z. B. nor-NO) und einem Namen gespeichert; dazu kommt das
+Feld *disabled*, mit dem sich eine Sprache auf der Website abschalten lässt.
+
+Die Höchstzahl der Sprachen ist 30.
+
+Die globale Tabelle sieht so aus::
+
+  ezcontent_language
+  +----+----------+--------+--------------------------+
+  | id | disabled | locale | name                     |
+  +----+----------+--------+--------------------------+
+  |  2 |        0 | eng-GB | English (United Kingdom) |
+  |  4 |        0 | rus-RU | Russian                  |
+  |  8 |        0 | slk-SK | Slovak                   |
+  | 16 |        0 | eng-US | English (American)       |
+  | 32 |        0 | nor-NO | Norwegian (Bokmal)       |
+  +----+----------+--------+--------------------------+
+
+
+Ausgangssprache
+---------------
+
+Wird ein Objekt zum ersten Mal angelegt, speichert es die Sprache, in der es angelegt wurde. So
+kann das System eine Sprache des Objekts finden, wenn keine der anderen verwendet werden kann
+(z. B. weil sie herausgefiltert sind). Der Wert steht im Feld *initial_language_id* und
+verwendet die *language_id* aus der Tabelle *ezcontent_language*.
+
+Das neue Feld sieht so aus::
+
+  ezcontentobject
+  +-----+----------------------+
+  | id  | initial_language_id  |
+  +-----+----------------------+
+  |   1 |                    2 | (eng-GB)
+  |   2 |                    2 | (eng-GB)
+  |   5 |                    2 | (eng-GB)
+  |  10 |                    2 | (eng-GB)
+  |  42 |                   16 | (eng-US)
+  |  44 |                    4 | (rus-RU)
+  +-----+----------------------+
+
+Verfügbare Sprachen
+-------------------
+
+Damit sich leichter ermitteln lässt, welche Sprachen ein Objekt hat, gibt es ein neues Attribut,
+das die Sprachen als Array von Locale-Codes zurückgibt.
+
+Es heißt *available_languages* und ermittelt die Codes aus dem Feld *language_mask* zusammen mit
+der globalen Sprachtabelle.
+
+Das Ergebnis dieses Attributs::
+
+  Object  1: array( 'eng-GB' )
+  Object  2: array( 'eng-GB', 'slk-SK' )
+  Object  5: array( 'eng-GB', 'rus-RU' )
+  Object 10: array( 'eng-GB' )
+  Object 42: array( 'eng-US' )
+  Object 44: array( 'rus-RU' )
+
+Priorität und Filterung der Sprachen
+------------------------------------
+
+Mit den neuen Konzepten ist nicht mehr direkt bekannt, welche Sprachen für ein Objekt verwendet
+werden. Das muss aus den angeforderten Sprachen in ihrer Prioritätsreihenfolge und den
+verfügbaren Sprachen des Objekts berechnet werden.
+
+Die angeforderten Sprachen können je Siteaccess verschieden sein, die Lösung muss also schnell
+und skalierbar sein.
+
+Eine Prioritätsliste der Sprachen ist im Grunde eine Liste der anzuzeigenden Sprachen, wobei die
+erste Vorrang vor der zweiten hat und so weiter.
+
+Sprachen filtern
+~~~~~~~~~~~~~~~~
+
+Für die richtige Filterung und Priorisierung der Sprachen gibt es einen neuen Bitfeld-Algorithmus.
+Alle Sprachen einer Exponential-Installation werden durch Zweierpotenzen gekennzeichnet, damit sich
+mit einem bitweisen *und* die Zeilen mit Informationen über Objekte oder Attribute in den
+priorisierten Sprachen auswählen lassen.
+Die Id 1 (2^0) ist für Objekte reserviert, die immer verfügbar sind.
+
+Wie der Bitfeld-Algorithmus funktioniert, zeigt die Tabelle ezcontentobject. Ein neues Feld
+kennzeichnet die Sprachen, in denen die zuletzt veröffentlichte Version eines Objekts existiert.
+Es enthält die Summe der ids dieser Sprachen. Da die ids Zweierpotenzen sind, lassen sich die
+Sprachen ermitteln und/oder Objekte auswählen, die in einer der priorisierten Sprachen
+veröffentlicht sind::
+
+  ezcontentobject
+  +-----+---------------+
+  | id  | language_mask |
+  +-----+---------------+
+  |   1 |             3 | %00011
+  |   2 |            10 | %01010
+  |   5 |             6 | %00110
+  |  10 |             2 | %00010
+  |  42 |            16 | %10000
+  |  44 |             4 | %00100
+  +-----+---------------+
+
+language_mask 3 in der ersten Zeile bedeutet, dass die Sprache Englisch ist (id 2) und das
+Objekt immer verfügbar ist (id 1), auch wenn die Prioritätsliste kein Englisch (eng-GB) enthält.
+
+Um zum Beispiel Objekte zu filtern, die auf Slowakisch (id 8) oder Russisch (id 4) existieren,
+könnte man dieses SQL ausführen::
+
+  SELECT id FROM ezcontentobject
+  WHERE language_mask & 12 > 0
+
+Ändern sich die verfügbaren Sprachen des Objekts (also wird eine neue Version veröffentlicht),
+wird das Bitfeld aktualisiert.
+
+Ein weiteres Bitfeld steht in Tabellen mit dem Attribut language_code. Es enthält dieselbe
+Information wie language_code, verwendet aber die id aus der Tabelle ezcontent_language, damit
+sich die richtigen Zeilen bezogen auf die Liste der priorisierten Sprachen leicht auswählen
+lassen.
+
+Ein Beispiel::
+
+  ezcontentobject_attribute
+  +----+---------+------------------+---------------+-------------+
+  | id | version | contentobject_id | language_code | language_id |
+  +----+---------+------------------+---------------+-------------+
+  | 10 |       1 |                1 |        eng-GB |           3 |
+  | 31 |       1 |                2 |        eng-GB |           2 |
+  | 32 |       1 |                2 |        slk-SK |           8 |
+  | 46 |       1 |                5 |        eng-GB |           2 |
+  | 47 |       1 |                5 |        rus-RU |           4 |
+  +----+---------+------------------+---------------+-------------+
+
+Um Attribute von Inhaltsobjekten in den priorisierten Sprachen auszuwählen, genügt ein einziges
+SQL mit einer Bedingung über Bitfelder, bitweises *und* und einfache Arithmetik
+(Multiplikation, Division und Summe).
+
+Nehmen wir diese Prioritätsliste: slk-SK, eng-GB. Ob das Attribut auf slk-SK vorliegt, prüft man
+z. B. damit, dass language_id & 8 nicht null ist. Führt man diese Operation aus::
+
+  ( language_id & 8 ) / 2
+  + language_id & 2
+  + language_id & 1
+
+erhält man einen Bitfeld-Wert mit 1 im Bit 0, wenn das Attribut immer verfügbar ist (das Objekt
+also auch angezeigt werden muss, wenn es in keiner der priorisierten Sprachen vorliegt), mit 1
+im Bit 1, wenn das Attribut auf eng-GB vorliegt, und mit 1 im Bit 2, wenn es auf slk-SK vorliegt.
+
+Um festzustellen, ob das Attribut in einer der priorisierten Sprachen vorliegt und es keine
+Übersetzung in einer höher priorisierten Sprache gibt, wählt man die Zeilen, die diese Bedingung
+erfüllen::
+
+  ( (     language_mask - language_id ) & 8 ) / 2
+      + ( language_mask - language_id ) & 2
+      + ( language_mask - language_id ) & 1
+  < ( language_id & 8 ) / 2
+    + language_id & 2
+    + language_id & 1
+
+wobei *language_mask* das Attribut von ezcontentobject mit dem Bitfeld der verfügbaren Sprachen ist.
+
+Alle Sprachen
+~~~~~~~~~~~~~
+
+Für Cronjobs und Administrationsoberflächen, die immer alle verfügbaren Sprachen auflisten
+müssen, gibt es ein besonderes Kennzeichen. Ist es gesetzt, schließen die SQL-Abfragen alle
+Objekte ein, auch wenn sie keine der anderen Sprachen haben.
+
+Übersetzte Attribute
+--------------------
+
+Mit den neuen Datenbankkonzepten können mehrere Benutzer dasselbe Objekt in verschiedenen
+Sprachen (und Versionen) bearbeiten. Die Speicherung der Attribute ändert sich also, da eine
+Version nicht mehr alle Sprachen enthält.
+
+Kurz gesagt: Beim Bearbeiten gibt es für eine Version eines Objekts nur Attributdaten für eine
+Sprache. Wird die Version veröffentlicht, kopiert das System die Attribute aller anderen Sprachen
+aus der zuletzt veröffentlichten Version in diese.
+
+Die Tabelle sieht dann so aus::
+
+  ezcontentobject_attribute
+  +----+------------------+---------+---------------+-------------+
+  | id | contentobject_id | version | language_code | language_id |
+  +----+------------------+---------+---------------+-------------+
+  |  7 |                5 |       1 | eng-GB        |           2 |
+  |  8 |                5 |       1 | eng-GB        |           2 |
+  |  9 |                5 |       2 | rus-RU        |           4 |
+  | 10 |                5 |       2 | rus-RU        |           4 |
+  |  7 |                5 |       2 | eng-GB        |           2 |
+  |  8 |                5 |       2 | eng-GB        |           2 |
+  |  7 |                5 |       3 | eng-GB        |           2 |
+  |  8 |                5 |       3 | eng-GB        |           2 |
+  |  9 |                5 |       3 | rus-RU        |           4 |
+  | 10 |                5 |       3 | rus-RU        |           4 |
+  |  7 |                5 |       4 | slk-SK        |           8 |
+  |  8 |                5 |       4 | slk-SK        |           8 |
+  |  7 |                5 |       4 | eng-GB        |           2 |
+  |  8 |                5 |       4 | eng-GB        |           2 |
+  |  9 |                5 |       4 | rus-RU        |           4 |
+  | 10 |                5 |       4 | rus-RU        |           4 |
+  | 22 |               44 |       1 | eng-GB        |           2 |
+  | 23 |               44 |       1 | eng-GB        |           2 |
+  +----+------------------+---------+---------------+-------------+
+
+Platzierungen von Knoten
+------------------------
+
+Wie bei den übersetzten Attributen gibt es auch bei den Platzierungen Probleme. Bearbeiten zum
+Beispiel zwei Benutzer dasselbe Objekt gleichzeitig in verschiedenen Sprachen, erhält jeder eine
+Kopie der veröffentlichten Platzierungen; ändern beide sie, gibt es beim Veröffentlichen
+Konflikte.
+
+Um diesen Konflikt zu vermeiden, erlaubt das System beim Bearbeiten (außer bei der ersten
+Version) nicht mehr, Platzierungen hinzuzufügen, zu entfernen oder zu verschieben. Änderungen an
+Platzierungen erfolgen in der Administrationsoberfläche (Reiter Platzierungen).
+
+Das System verfolgt die Vorgänge in der Tabelle der Platzierungen und führt das Ergebnis mit der
+"lebenden" Baumstruktur zusammen, um Knoten richtig hinzuzufügen, zu entfernen oder zu verschieben.
+
+Hinweis: PHP-Skripte können weiterhin Platzierungen hinzufügen, entfernen und verschieben.
+
+
+Objektverknüpfungen
+-------------------
+
+Derzeit werden alle Verknüpfungen nur je Version gespeichert, nicht je Sprache. Werden zwei
+Sprachen gleichzeitig bearbeitet, kann es also Konflikte geben.
+
+Beim Veröffentlichen einer Version bzw. Sprache wird die Liste der Verknüpfungen mit den zuvor
+veröffentlichten Daten zusammengeführt. Entfernte Verknüpfungen müssen daher als entfernt
+markiert und dürfen nicht einfach aus der Datenbank gelöscht werden.
+
+Übersetzung ignorieren
+----------------------
+
+Manche Objekte müssen immer verfügbar sein, gleich welcher Siteaccess verwendet wird.
+Benutzerobjekte etwa müssen auch dann abrufbar sein, wenn sie nicht in die aktuelle Sprache
+übersetzt sind.
+
+Die bisherige Lösung kennt das bereits bei Klassenattributen, sie wird aber erweitert.
+
+Klasse
+~~~~~~
+
+Die Tabelle *class* hat ein neues Feld *always_available* (Standard 0), das festlegt, ob Objekte
+dieser Klasse immer verfügbar sind. Steht es auf 1, ist jedes daraus angelegte Objekt immer
+verfügbar. Das wird vor allem für Klassen gebraucht, die immer verfügbar sein müssen, etwa
+Benutzer oder Benutzergruppen.
+
+Beim Anlegen übernehmen Objekte die aktuelle Einstellung der Klasse; spätere Änderungen an der
+Klasse wirken sich nicht auf bestehende Objekte aus. So lässt sich die Einstellung später je
+Objekt umschalten.
+
+Exponential liefert diese Einstellung standardmäßig eingeschaltet für Ordner, Benutzer und
+Benutzergruppen.
+
+Bild-Datentyp
++++++++++++++
+
+Wegen der neuen Mehrsprachigkeit hat sich die XML-Speicherung des Datentyps ezimage etwas
+geändert. Er speichert jetzt immer das Tag <original> mit Attribut-ID, Version und Sprache, und
+es wird nur aktualisiert, wenn ein neues Bild hochgeladen wird.
+
+Ein Beispiel::
+
+  <original attribute_id="1530"
+            attribute_version="1"
+            attribute_language="eng-GB" />
+
+Das war nötig, weil das System Attributdaten jetzt bei abgeschalteter Übersetzung mit reinen
+SQL-Befehlen kopiert.
+
+Upgrade
+-------
+
+Das System funktioniert weiterhin mit alten Einträgen, deren <original> leer ist, und füllt die
+Angaben beim Bearbeiten und Veröffentlichen aus. Auch bei alten nicht übersetzbaren Attributen
+ist das Tag <original> korrekt gesetzt, sie funktionieren also weiter.
+
+
+Objekte
+~~~~~~~
+
+Ist ein Objekt immer verfügbar, ist das erste Bit (Bit 0) auf 1 gesetzt. Es wird also mit jeder
+Prioritätsliste abgerufen. Das Objekt lässt sich trotzdem übersetzen. Bei Objekten, die keine der
+verfügbaren Sprachen haben, wird die Ausgangssprache verwendet.
+
+Workflows
+`````````
+
+Jede Version eines Objekts kann jetzt nur noch eine Sprache enthalten; das Workflow-System und
+die Aufrufe des Prozesses 'publish' müssen also nicht geändert werden. Stattdessen können die
+Workflow-Ereignisse *approval* und *multiplexer* nach Sprache filtern. Sie speichern im
+Datenbankfeld *data_int2* eine Sprachmaske, die festlegt, auf welche Sprache sie reagieren; 0
+bedeutet jede Sprache.
+
+Berechtigungen
+``````````````
+
+Den Zugriff nach Sprache einschränken zu können, ist sehr nützlich, denn ein Übersetzer darf
+vielleicht den Originalinhalt nicht ändern, sondern nur eine neue Übersetzung anlegen.
+
+Diese Zugriffsfunktionen unterstützen jetzt Sprachen:
+
+- content/create : legt fest, ob der Benutzer neue Objekte in der angegebenen Sprache anlegen darf.
+- content/edit : legt fest, ob der Benutzer die angegebene(n) Sprache(n) bearbeiten und neue
+  Übersetzungen in der/den angegebenen Sprache(n) anlegen darf.
+
+Zum Übersetzen braucht man *content/read* und *content/edit* für die Zielsprache; Benutzer können
+also Objekte übersetzen, ohne das Recht *content/create* zu haben.
+
+Ansichtscache
+`````````````
+
+Mit der neuen Mehrsprachigkeit wird ein Ansichtscache nicht mehr für eine bestimmte Sprache
+erzeugt, sondern für eine Prioritätsliste von Sprachen; die Ablage im Verzeichnis muss sich also
+ändern. Statt des einzelnen Sprachcodes und der Site-Designs verwenden wir den Namen des
+Siteaccess. Hat der Siteaccess *no* zum Beispiel die Sprachen *nor-NO*, *eng-GB* und *ger-DE*,
+ergibt das::
+
+  var/cache/no/full/
+
+Außerdem optimieren wir den Aufräumcode mit dem Aufruf *glob* und der Erweiterung *GLOB_BRACE*,
+z. B.::
+
+  glob( "var/cache/{admin,mysite}/{full,line}/1/5/15-*.cache",
+        GLOB_BRACE );
+
+Dadurch werden beim Aufräumen der Caches jetzt *AvailableSiteAccessList* und
+*RelatedSiteAccessList* (*site.ini*) verwendet.
+
+Papierkorb
+``````````
+
+Bisher wurden Objekte aus dem Papierkorb wiederhergestellt, indem man content/edit aufrief und
+eine neue Version erhielt. Mit dem neuen System, in dem eine Version nur eine Sprache hat,
+funktioniert das nicht gut.
+
+Eine neue Ansicht im Modul content übernimmt das Wiederherstellen aus dem Papierkorb
+(content/restore). Der Benutzer kann am alten Ort wiederherstellen oder einen neuen Ort wählen.
+
+Cronjobs
+````````
+
+Cronjobs laufen mit allen Sprachen, damit sie jedes Objekt erreichen. Das Cronjob-System setzt das
+globale Kennzeichen der Sprachklasse, sodass alle folgenden Vorgänge jedes Objekt im System
+abrufen, unabhängig von der Sprache.
+
+
+Konfigurierbarkeit
+``````````````````
+
+Derzeit legen die Einstellungen des Siteaccess fest, welche Sprachen abgerufen werden. Manchmal
+ist es aber entscheidend, das je Sitzung oder Funktionsaufruf überschreiben zu können. Die meisten
+Abrufe sollten daher die Prioritätsliste wählen können.
+
+Außerdem kann PHP-Code die aktuell priorisierten Sprachen aller Vorgänge so ändern::
+
+  // Only Norwegian and English are shown, no matter what INI settings are
+  // configured to
+  $languages = array( 'nor-NO', 'eng-GB' );
+  eZContentLanguage::setPrioritizedLanguages( $languages );
+
+Listen von Knoten und Objekten abrufen
+--------------------------------------
+
+Beim Abrufen von Listen von Knoten oder Objekten (Template-Fetch-Funktion) lässt sich die
+Standardsprache des Siteaccess überschreiben, um die Sprachen einzugrenzen oder Objekte in
+Sprachen abzurufen, die sonst nicht zugänglich sind. Die Fetch-Funktion hat dafür den Parameter
+*language*, ein Array von Sprachen, das als Prioritätsliste dient (statt der im Siteaccess
+definierten).
+
+Die bisherigen Parameter *only_translated* und *language* der Fetch-Funktionen *content/list*,
+*content/tree*, *content/list_count* und *content/tree_count* sind veraltet, da sie nicht mehr
+gelten. Werden sie verwendet, gibt das System eine Warnung aus.
+
+Auch der Operator *treemenu()* hat den Parameter *language*.
+
+API
+```
+
+Die Sprachen der Website verwaltet die neue Klasse eZContentLanguage. Sie hat Methoden, um die
+aktuelle Prioritätsliste oder die vollständige Sprachliste abzurufen oder die verfügbaren Sprachen
+der aktuellen Anfrage zu ändern.
+
+Einstellungen der Website
+-------------------------
+
+Welche Sprachen auf der Website (bzw. im Siteaccess) verwendet werden, steuern neue
+INI-Einstellungen in der Gruppe *RegionalSettings* von *site.ini*.
+Die verfügbaren Sprachen und ihre Priorität legt die Einstellung *SiteLanguageList* fest, ein
+Array mit den verwendeten Sprachcodes (aus dem Locale); weiter oben stehende haben Vorrang vor den
+folgenden.
+
+Eine Website mit zwei Sprachen, Englisch und Deutsch, richten Sie zum Beispiel so ein::
+
+  [RegionalSettings]
+  SiteLanguageList[]
+  SiteLanguageList[]=eng-GB
+  SiteLanguageList[]=ger-DE
+
+Um die Reihenfolge zu ändern (z. B. Deutsch zuerst), ordnen Sie die Einstellung einfach um::
+
+  [RegionalSettings]
+  SiteLanguageList[]
+  SiteLanguageList[]=ger-DE
+  SiteLanguageList[]=eng-GB
+
+Fehlt diese Einstellung, verwendet das System die alte Einstellung *ContentObjectLocale*, es wird
+also nur eine Sprache angezeigt.
+
+Da es nützlich ist, alle Sprachen anzuzeigen, gibt es außerdem die Einstellung
+*ShowUntranslatedObjects*. Sie wird sehr oft für die Administration verwendet, lässt sich aber in
+jedem Siteaccess einsetzen. Ist sie eingeschaltet, filtert das System keine Sprachen heraus,
+verwendet aber weiterhin *SiteLanguageList* für die Priorität.
+
+Zum Einschalten::
+
+  [RegionalSettings]
+  ShowUntranslatedObjects=enabled
+
+eZContentObject::defaultLanguage()
+----------------------------------
+
+Diese statische Methode verhält sich jetzt etwas anders. Sie gibt die oberste Sprache der
+Sprachliste zurück oder den Wert von *ContentObjectLocale*, falls gesetzt. Haben Sie sie in Ihrem
+Code verwendet, prüfen Sie, ob sie noch die richtige Methode ist; oft ist das Attribut
+*initial_language_code* des Objekts nützlicher, da es die erste Sprache des Objekts zurückgibt.
+
+Benutzeroberfläche
+``````````````````
+
+Die Benutzeroberfläche (Administration) wurde wegen der erweiterten Mehrsprachigkeit
+überarbeitet. Die Grundidee ist, Benutzern die Verwaltung von Übersetzungen zu erleichtern.
+
+Sprachen in der Entwurfsliste
+-----------------------------
+
+Jede Sprache eines Objekts erscheint jetzt als eigener Eintrag in der Entwurfsliste. Bearbeitet
+ein Benutzer zwei Sprachen desselben Objekts, erscheinen zwei Einträge.
+
+Anlegen und Bearbeiten
+----------------------
+
+Beim Anlegen eines neuen Objekts lässt sich die Sprache jetzt in einer Auswahlliste wählen. Die
+verfügbaren Sprachen werden nach der gewählten Klasse gefiltert. Ist JavaScript ausgeschaltet,
+erscheint keine Auswahlliste, sondern ein zusätzlicher Bildschirm, der nach der Sprache fragt.
+
+Beim Bearbeiten eines Objekts bietet das System eine Sprachauswahl an, wenn die Sprache nicht in
+der URL steht. Der Benutzer kann eine vorhandene Sprache bearbeiten oder (wenn möglich) eine neue
+anlegen.
+
+Mehrere Sprachen bearbeiten
+---------------------------
+
+Um das Übersetzen zu erleichtern, lassen sich (in der Oberfläche) weiterhin zwei oder mehr
+Übersetzungen gleichzeitig bearbeiten, der Ablauf ist aber anders als früher. Intern bearbeitet
+das System tatsächlich zwei Versionen desselben Objekts.
+
+Kontextmenüs
+------------
+
+Die JavaScript-Kontextmenüs haben ein zusätzliches Untermenü mit den Sprachen, in denen das Objekt
+bearbeitet werden kann, oder der Wahl, eine neue Übersetzung anzulegen (Andere).
+
+Änderungen an bestehender Funktionalität
+````````````````````````````````````````
+
+Die Mehrsprachigkeit von 3.8 hat sehr darauf geachtet, keine vorhandenen Einstellungen oder
+Schnittstellen zu ändern (nur zu ergänzen); einige Stellen mussten aber geändert werden. Sie sind
+hier erklärt:
+
+content/action
+--------------
+
+Aktion AddAssignment/SelectAssignmentLocation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Diese Aktion legt zum Hinzufügen einer Platzierung keine neue Version des Objekts mehr an, sondern
+legt den Knoten sofort an.
+
+Aktion RemoveAssignment
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Diese Aktion nimmt die POST-Variable *AssignmentIDSelection* mit der Liste der IDs der
+Platzierungen nicht mehr an. Verwenden Sie stattdessen die Variable *LocationIDSelection* mit
+Knoten-IDs.
+
+Auch das Template *location.tpl* (Administration) verwendet jetzt diese neue Variable und ruft die
+Platzierungen aus der Knotentabelle ab, nicht aus den Platzierungs-Einträgen.
+
+
+Nicht umgesetzt
+```````````````
+
+Aus technischen Gründen haben es diese Punkte nicht in 3.8 geschafft.
+
+
+URL-Aliase
+----------
+
+Bei einer französischen Website, die nur französische Übersetzungen der URLs zeigt, wäre es
+wünschenswert, den Benutzern den französischen URL-Alias anzuzeigen. Die übersetzte URL zeigt auf
+dieselbe interne URL, verwendet aber die Sprachpriorität, um zu wählen, was angezeigt wird.
+
+Statt dafür eine neue Tabelle einzuführen oder die Teilbaum-Tabelle zu ändern, wird die bestehende
+Tabelle der URL-Aliase erweitert. Sie erhält ein neues Feld *language_code*, das angibt, für
+welche Sprache die URL gilt. Das System legt diese Einträge dann beim Veröffentlichen für alle
+Sprachen eines Objekts an bzw. aktualisiert sie.
+
+Die Tabelle sähe so aus::
+
+  ezurlalias
+  +---------------------------+-------------+--------------------------------------+
+  | destination_url           | language_id | path_id_string                       |
+  +---------------------------+-------------+--------------------------------------+
+  | content/view/full/2       |           2 |                                      |
+  | content/view/full/13      |          32 | folder_1/pingvinen_har_en_megafon    |
+  | content/view/full/13      |           2 | folder_1/the_penguin_has_a_megaphone |
+  +---------------------------+-------------+--------------------------------------+
+
+Die PHP-Klasse eZContentObjectTreeNode stellt diesen übersetzten URL-Alias als Funktionsattribut
+(*localized_path*) bereit; ist er im Objekt null, wird er aus der Datenbank geholt. Um nicht für
+jeden Knoten viele wiederholte SQL-Aufrufe auszuführen, sollten alle abgerufenen Knoten einer
+Sammlung zugeordnet sein; dann lassen sich die Knoten-IDs der Sammlung einsammeln und in einem SQL
+verwenden. (Das bestehende Cache-System könnte auch genügen.)
+
+Die Fetch-Aufrufe sollten Name und Pfad gleich mit abrufen können: Weiß man, dass man Name und/oder
+Pfad braucht, lassen sie sich in einem Zug (nach dem Haupt-SQL) abrufen. Die Fetch-Funktionen
+erhalten dafür einen neuen Parameter.
+
+Suchmaschine
+------------
+
+*language_code* in der Worttabelle trennt die Wörter nach Sprache und löst das Problem, wenn ein
+Wort in zwei oder mehr Sprachen mit verschiedener Bedeutung vorkommt. Außerdem: Sucht man in einer
+bestimmten Sprache und das gesuchte Wort gibt es dort nicht, sondern nur in anderen, muss es nicht
+in die Suche einbezogen werden (man könnte das dem Benutzer sogar mitteilen).
+
+Ein Beispiel, wie es aussehen könnte::
+
+  ezsearch_word
+  +------+--------------+-------+-------------+
+  | id   | object_count | word  | language_id |
+  +------+--------------+-------+-------------+
+  |    1 |            5 | to    |           2 |
+  |    2 |            2 | to    |          32 |
+  |    3 |            1 | kaker |          32 |
+  |    4 |            1 | go    |           2 |
+  +------+--------------+-------+-------------+
+
+Suchoberfläche
+--------------
+
+Beim Suchen muss sich die Standardsprache des Siteaccess überschreiben lassen, um die Sprachen
+einzugrenzen oder Objekte in Sprachen abzurufen, die sonst nicht zugänglich sind.
+
+Die Sprache muss sich auf zwei Arten angeben lassen:
+
+- über einen Parameter der Template-Fetch-Funktion search.
+- über einen GET-/POST-Parameter aus einem HTML-Formular.
+
+Wählbar sind nur Sprachen, die im Siteaccess definiert sind.
+
+Übersetzung je Knoten wählen
+----------------------------
+
+Der Benutzer sollte je Platzierung wählen können, welche Übersetzung verwendet wird. Die
+Prioritätsliste hinge dann vom gewählten Knoten ab, z. B. würde der norwegische Artikel nur im
+norwegischen Teilbaum und der englische nur im englischen angezeigt.
+
+Das ist technisch sehr kompliziert und lässt sich ohne große Änderungen an der Baumstruktur nicht
+lösen.
+
+
+
+..
+   Local Variables:
+   mode: rst
+   fill-column: 79
+   End:
+   vim: et syn=rst tw=79

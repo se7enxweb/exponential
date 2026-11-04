@@ -1,0 +1,214 @@
+*Titel: Verbesserte Template-Syntax
+
+*Anlass:
+
+Die Template-Syntax soll klarer werden und der Syntax verbreiteter prozeduraler
+Programmiersprachen ähnlicher.
+
+*Dokumentation:
+
+1 Variablen
+===========
+
+1.1 Dollarzeichen
+    -------------
+
+Das Dollarzeichen ($) steht überall, wo eine Variable verwendet wird, auch bei Zuweisungen.
+Beispiel:
+ {set $i=10}
+ i: {$i}
+
+Zuweisungen im alten Stil ohne "$" funktionieren weiterhin.
+
+1.2 Neue Funktionen zum Anlegen und Entfernen von Variablen
+    -------------------------------------------------------
+
+Der Block {let}...{/let} sollte vermieden werden, weil er die tpl-Datei schwerer lesbar macht
+und das Verschieben von Code darin erschwert. Stattdessen gibt es zwei neue Funktionen,
+{def} und {undef}:
+
+- def    legt im aktuellen Namensraum eine neue Variable an und weist ihr einen Wert zu.
+- undef  entfernt die angegebene Variable, ähnlich wie der entsprechende PHP-Operator.
+
+Syntax:
+ {def $var1=<value1> [$var2=<value2> ...]}
+ {undef [$var1 [$var2] ...]}
+
+Beispiel:
+ {def $i=10 $j=20}
+ {def $s1='hello' $s2='world'}
+ ...
+ {set $i=$i+1}
+ ...
+ {undef $i}
+ {undef $s1 $s2}
+ {undef}
+
+Existiert die anzulegende Variable bereits, zeigt {def} eine Warnung und weist ihr nur den
+neuen Wert zu. Ohne Argumente aufgerufen, entfernt {undef} alle Variablen.
+
+1.3 Gültigkeitsbereich von Variablen
+    --------------------------------
+
+Mit {def} angelegte Variablen bestehen bis zum Ende der Datei, sofern sie nicht mit {undef}
+entfernt werden. Eine Template-Datei öffnet (und schließt) einen neuen Gültigkeitsbereich.
+
+2 Neue Kontrollstrukturen
+  =======================
+
+Es gibt einige neue Kontrollstrukturen. Sie sollen für Entwickler viel einfacher zu
+verstehen und zu verwenden sein als die allmächtige Funktion {section}.
+
+2.1 IF-Anweisung
+    ------------
+
+Syntax:
+ {if <condition>}
+ [{elseif <condition>}]
+ [{else}]
+ {/if}
+
+Beispiel:
+ {if eq( $var, true() )}
+ Hello world
+ {else}
+ No world here, move along.
+ {/if}
+
+2.2 WHILE-Anweisung
+    ---------------
+
+Syntax:
+ {while <condition> [sequence <array> as $seqVar] }
+ [{delimiter}...{/delimiter}]
+ [{break}]
+ [{continue}]
+ [{skip}]
+ {/while}
+
+Beispiel:
+ {while ne( $var, false() ) }
+ I like big trucks
+ {/while}
+
+2.3 DO..WHILE-Anweisung
+    -------------------
+
+Syntax:
+ {do}
+ [{delimiter}...{/delimiter}]
+ [{break}]
+ [{continue}]
+ [{skip}]
+ {/do while <condition> [sequence <array> as $seqVar]}
+
+Beispiel:
+ {do}
+ One more beer, please.
+ {/do while eq( $drunk, false() )}
+
+2.4 FOR-Anweisung
+    -------------
+
+Syntax:
+ {for <number> to <number> as $itemVar [sequence <array> as $seqVar]}
+ [{delimiter}...{/delimiter}]
+ [{break}]
+ [{continue}]
+ [{skip}]
+ {/for}
+
+Beispiele:
+ {for 1 to 5 as $i}
+     i: {$i}
+ {/for}
+ {for 5 to 1 as $i}
+     i: {$i}
+ {/for}
+
+$itemVar wird nach dem Ende der Schleife entfernt.
+
+2.5 FOREACH-Anweisung
+    -----------------
+
+Syntax:
+ {foreach <array> as [$keyVar =>] $itemVar
+          [sequence <array> as $sequenceVar]
+          [offset <offset>]
+          [max <max>]
+          [reverse]}
+     [{delimiter}...{/delimiter}]
+     [{break}]
+     [{continue}]
+     [{skip}]
+ {/foreach}
+
+Beispiel:
+ {foreach $objects as $object}
+ <tr>
+     {foreach $object.nodes as $node sequence array(dark,light) as $class}
+         <td class=$class>{$node.name|wash}</td>
+     {/foreach}
+ </tr>
+ {/foreach}
+
+Die Variablen $keyVar, $itemVar und $sequenceVar werden nach dem Ende der Schleife entfernt.
+
+{foreach} kann nicht über Zeichenketten iterieren, wie es {section loop=...} kann.
+{foreach $string as $character} funktioniert also nicht.
+
+{foreach} kann auch nicht über einen Zahlenbereich iterieren, wie es {section loop=NUMBER}
+konnte. Verwenden Sie dafür {for}.
+
+Außerdem verwendet {foreach} nicht den Proxy-Iterator von {section loop=...}; Sie können
+also nicht {$node.key} oder {$node.index} schreiben.
+
+Die Parameter 'offset', 'max' und 'reverse' haben dieselbe Bedeutung wie bei {section}.
+
+2.6 Hinweise zu den Schleifenfunktionen
+    -----------------------------------
+
+Alle neuen Schleifenfunktionen unterstützen:
+
+- den optionalen Parameter 'sequence': ein Array, das fortlaufend durchlaufen wird.
+- die Funktion {delimiter}: Code bzw. Text, der nach jedem Durchlauf außer dem letzten
+  ausgeführt bzw. angezeigt wird.
+- die Funktion {break}: beendet die Schleife sofort.
+- die Funktion {continue}: springt zum nächsten Durchlauf und führt dabei {delimiter} aus,
+  falls angegeben.
+- die Funktion {skip}: springt zum nächsten Durchlauf, ohne {delimiter} auszuführen.
+
+Das Konstrukt {delimiter} muss ein direktes Kind des Schleifenkonstrukts sein. Das hier
+sollte zum Beispiel nicht möglich sein:
+
+ {foreach ...}
+ {if eq( $item, 5 )}
+     {delimiter}----{/delimiter}
+ {else}
+     {delimiter}===={/delimiter}
+ {/if}
+ {/foreach}
+
+Stattdessen muss es so geschrieben werden:
+
+ {foreach ...}
+ {delimiter}
+ {if eq( $item, 5 )}
+ ----
+ {else}
+ ====
+ {/if}
+ {/delimiter}
+ {/foreach}
+
+Die Funktionen {skip}, {continue} und {break} können beliebig tief verschachtelt stehen. Sie
+wirken also auf das zuletzt aktive Schleifenkonstrukt.
+
+*Hinweis*: Haben Sie Code wie "{section var=start loop=array( 1, 2 )}...", können Sie $start
+nicht direkt als Parameter der neuen Schleifenfunktionen verwenden, sondern müssen
+$start.item schreiben. Proxy-Iteratoren von section-Schleifen müssen also vorher
+dereferenziert werden.
+
+
+Die Online-Fassung dieses Artikels stand früher in der Entwickler-Spezifikation des damaligen
+Herstellers; diese Seite gibt es nicht mehr.

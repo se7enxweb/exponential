@@ -1,0 +1,69 @@
+Verbesserungen beim E-Mail-Versand
+==================================
+
+DebugSending
+------------
+
+Ist diese Einstellung (in [MailSettings] in site.ini) eingeschaltet, gehen
+keine E-Mails an die eigentlichen Empfänger. Sie gehen stattdessen an die
+Adresse in der Einstellung DebugReceiverEmail. Das ist zum Beispiel nützlich
+auf einem Testserver mit einer Kopie der Produktivdatenbank: Der Versand lässt
+sich testen, ohne dass Test-E-Mails an Ihre Endbenutzer gehen.
+
+Das gilt für E-Mails, die über die API von eZMail gesendet werden. E-Mails,
+die über die PHP-Funktion mail() oder auf andere Weise gesendet werden, sind
+nicht betroffen.
+
+
+Neue SMTP-Klasse
+----------------
+
+Die Klasse smtp wird durch ezcMailSmtpTransport aus den eZ Components ersetzt.
+Die Klasse eZMail wird zugunsten von ezcMail aus den eZ Components als veraltet
+markiert.
+
+Damit die Rückwärtskompatibilität erhalten bleibt, wird eZMail so umgeschrieben,
+dass sie ihre Daten in einem ezcMail-Objekt speichert. Die Daten werden auch in
+den vorhandenen Strukturen in eZMail gespeichert, damit sendmail- und
+Datei-Transporte wie bisher funktionieren. Vorhandener Code, der eZMail nutzt,
+ist nicht betroffen; es ist aber vorgesehen, dass ezcMail eZMail in einem
+späteren Release von Exponential vollständig ersetzt.
+
+So wurde die Klasse eZMail verwendet (mit der alten Klasse smtp, die entfernt
+wird)::
+
+    <?php
+    $mail = new eZMail();
+    $mail->setSender( $fromEmail, $yourName );
+    $mail->setReceiver( $receiversEmail, $receiversName );
+    $mail->setSubject( $subject );
+
+    $smtp = new smtp( $parameters );
+    $smtpConnected = $smtp->connect();
+    if ( $smtpConnected )
+    {
+        $result = $smtp->send( $sendData );
+    }
+    ?>
+
+Da die Klasse smtp entfernt wird, kann vorübergehend ezcMailSmtpTransport aus
+den eZ Components verwendet werden (auch die Klasse eZSMTPTransport verwendet
+ezcMailSmtpTransport statt smtp)::
+
+    <?php
+    $smtp = new ezcMailSmtpTransport( $host, $username, $password, $port );
+    $smtp->send( $mail->Mail );
+    ?>
+
+Statt des Codes oben wird ezcMail zusammen mit dem SMTP-Transport der
+eZ Components verwendet (der MTA-Transport funktioniert ebenso):
+
+    <?php
+    $mail = new ezcMail();
+    $mail->from = new ezcMailAddress( $fromEmail, $yourName );
+    $mail->addTo( new ezcMailAddress( $receiversEmail, $receiversName ) );
+    $mail->subject = $subject;
+
+    $smtp = new ezcMailSmtpTransport( $host, $username, $password, $port );
+    $smtp->send( $mail );
+    ?>

@@ -1,0 +1,10 @@
+* Titel: Versionen von Inhalten vergleichen
+
+*Dokumentation:
+Unterschiede zwischen Versionen von Inhaltsobjekten lassen sich anzeigen. Verglichen wird auf
+Ebene der Datentypen. Standardmäßig werden alte und neue Version gleichzeitig angezeigt. Bei Text
+und XML-Text wird ein Vergleich des Textinhalts selbst angezeigt. Die Funktion ist über das
+Kontextmenü der Administrationsoberfläche erreichbar.
+
+Derzeit gibt es allerdings noch Fehler beim Textvergleich, und XML-Text zeigt vorerst nur alte und
+neue Version an.

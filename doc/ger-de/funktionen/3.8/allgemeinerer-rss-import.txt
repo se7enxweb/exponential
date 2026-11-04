@@ -1,0 +1,16 @@
+*Titel: Allgemeinerer RSS-Import
+
+*Dokumentation:
+
+Diese Verbesserung unterstützt eigene RSS-Import-Definitionen und mehr Felder als die frühere Version.
+Eigene Import-Zuordnungen lassen sich in Erweiterungen ablegen.
+
+Um alte RSS-Import-Definitionen weiter zu verwenden, muss das Update-Skript update/common/scripts/updaterssimport.php ausgeführt werden.
+
+Eigene Import-Zuordnungen gehören nach:
+
+<extension directory>/<extension name>/rss/ez<extension name>rssimport.php
+Die Datei muss eine gleichnamige Klasse mit einer Funktion 'rssFieldDefinition' enthalten.
+Die Funktion gibt eine RSS-Definition als mehrdimensionales Array zurück.
+
+Die Standard-RSS-Definition steht in kernel/classes/ezrssimport.php ::rssFieldDefinition().
