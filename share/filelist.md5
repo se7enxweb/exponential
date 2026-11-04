@@ -3527,7 +3527,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-62db1e8ee465da32b3dc040eaff04eb4  doc/changelogs/6.0/6.0.15.md
+8ff1010622d7264f6e849c1a181565a6  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -3626,8 +3626,9 @@ ded49d230901ad3762b2ceae14619701  doc/changelogs/extensions/twig.md
 af285ac8d63f408a2ebaf23e88716894  doc/changelogs/extensions/xrowextract.md
 bbcfbb1065eefc4a3f53987a1bad5fb1  doc/changelogs/extensions/xrowmetadata.md
 926abec1d70f433796add752c0db25fd  doc/eng-us/CONFIGURING.md
+0101a4fc3ef4925f5882b075d3db7478  doc/eng-us/DISTRIBUTIONS.md
 8f1308a0bb70a3295a8a8d9c3a214333  doc/eng-us/EXTENDING.md
-0c1e4f61dd4a07d85f0b8cda711ec115  doc/eng-us/INSTALL.md
+2b3cb0af24217aa1c20aa63fc3834cf5  doc/eng-us/INSTALL.md
 493ddee0880524da7a6437cabc7cc4ef  doc/eng-us/INTEGRATING.md
 a22d0be1ce2284b67950a4d1673dd1b0  doc/eng-us/LICENSE-GFDL-1.3.txt
 d1b7052b2035b91ce9c4cece454f14bf  doc/eng-us/README-LICENSE.md
@@ -4952,8 +4953,8 @@ ca2674ec74f81022f4cd7a748770bf77  doc/eng-us/examples/ini-settings/exphelp/Title
 0ba48a9cf37cdfb565b1e917929eefb3  doc/eng-us/examples/ini-settings/exphelp/Tracker_community.md
 aeec9e7a12212b862a115f962ab8cbc8  doc/eng-us/examples/ini-settings/exphelp/Tracker_software.md
 314874544e21e6b51c13bd6ffc742008  doc/eng-us/examples/ini-settings/exphelp/Tracker_velocity.md
-bcc8ad78b240b16c67c8f473b3bb9188  doc/eng-us/examples/ini-settings/exphelp/TreeSettings.md
-e41a218af9bc2927834d2a7f658872bc  doc/eng-us/examples/ini-settings/exphelp/TypeSettings.md
+ba2c71fcb2935e4d038cce112eadf2b9  doc/eng-us/examples/ini-settings/exphelp/TreeSettings.md
+34e2d205b903bce28357f76321f1696c  doc/eng-us/examples/ini-settings/exphelp/TypeSettings.md
 dae15689b65dac0b6640120102738692  doc/eng-us/examples/ini-settings/expservices-expportal/Portal.md
 8d6a0e1d1cf136baab84004d31f218ab  doc/eng-us/examples/ini-settings/expservices-expportal/README.md
 18da3e1f07b3db6ebd7885c7f2ec29fd  doc/eng-us/examples/ini-settings/expservices-expservices/Community.md
@@ -6950,7 +6951,7 @@ c1612437070da67fdd2723c6b1e1c2b2  doc/eng-us/features/6.0/extensions/xrowmetadat
 3f29ad01e9f5d278ca8af3fe2d21d253  doc/eng-us/features/6.0/form-expired-page.md
 b388ac5e100e8398638ffe8c4c6c8207  doc/eng-us/features/6.0/graphql.md
 d764ef1d7e05fc5071e8521fe1dbe843  doc/eng-us/features/6.0/help-content.md
-8580c5347193025410485cdbc342afa3  doc/eng-us/features/6.0/help-system.md
+03ab1f3af93dbbe3f32a0d7311c7c3a4  doc/eng-us/features/6.0/help-system.md
 1497f038f1fb68bf320b385032fe2e31  doc/eng-us/features/6.0/hidden-admin-tabs.md
 67e2133c059b3294dd3d9275b167b820  doc/eng-us/features/6.0/icon-themes-in-extensions.md
 c8c732f08abfb2593fd5f7599f60905f  doc/eng-us/features/6.0/install-in-one-command.md
@@ -13504,10 +13505,11 @@ f56beaea3e5d700ac7442b6a68d85cc2  doc/ger-de/.examples/descriptions/35-user-mana
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 84ecf8b47bf44a9a3d53d86b719e8e1b  doc/ger-de/.examples/strings.json
-059a1cdc818690250bfc8d83471005a7  doc/ger-de/.paths.json
+ae3dfe0b5fed94c59f3e92cab9569c27  doc/ger-de/.paths.json
 86c4bc42e93188f788000c1f76e44d5b  doc/ger-de/CONFIGURING.md
+1cd811669f94673b3ba9db99603f0f42  doc/ger-de/DISTRIBUTIONS.md
 d92e7d32e4f6ac50174e4d7f82ca379b  doc/ger-de/EXTENDING.md
-dd4f3c83254131baddcfcb807aa44d8f  doc/ger-de/INSTALL.md
+f714ac81a205d3c9771c77072df79204  doc/ger-de/INSTALL.md
 1316ffcbd05822078423f926a0f775fa  doc/ger-de/INTEGRATING.md
 28bb0394d0d8b5056ebfe1a57ae0bd12  doc/ger-de/LIZENZ-GFDL-1.3.txt
 d4444f60d9f3f6fd7dc43dc6edac7e39  doc/ger-de/README-LIZENZ.md
@@ -14969,8 +14971,8 @@ a0bf82fc93b2f98e337b2bc30484e228  doc/ger-de/beispiele/ini-einstellungen/exphelp
 c33ef1623aecfc5904c4a9dcf73e69bc  doc/ger-de/beispiele/ini-einstellungen/exphelp/Tracker_community.md
 f1fc889c88ef62869c704363e2914a11  doc/ger-de/beispiele/ini-einstellungen/exphelp/Tracker_software.md
 d77071a743107de563390806d2cb44fd  doc/ger-de/beispiele/ini-einstellungen/exphelp/Tracker_velocity.md
-ddcb8b2c2ec69bfc5f70fd7d2d15023f  doc/ger-de/beispiele/ini-einstellungen/exphelp/TreeSettings.md
-329410698568b23a4ce9933f3a1f1337  doc/ger-de/beispiele/ini-einstellungen/exphelp/TypeSettings.md
+adfb00aab07633dc8a3257c16d30ece7  doc/ger-de/beispiele/ini-einstellungen/exphelp/TreeSettings.md
+d38ffc4fe4ece7898a71bce21bceed97  doc/ger-de/beispiele/ini-einstellungen/exphelp/TypeSettings.md
 d4dd3bcf407cd3e2211a65f104d5f211  doc/ger-de/beispiele/ini-einstellungen/expservices-expportal/Portal.md
 dfd63961180fbe5f8501b2620ffadf96  doc/ger-de/beispiele/ini-einstellungen/expservices-expportal/README.md
 0ca07087b4317d31390db9f3b8bb6c9d  doc/ger-de/beispiele/ini-einstellungen/expservices-expservices/Community.md
@@ -16977,7 +16979,7 @@ eb3d2bb16f19518e5d5f40301852dfa7  doc/ger-de/funktionen/6.0/generator-fuer-den-s
 182d80bb708aaaa1348d28e88f2008aa  doc/ger-de/funktionen/6.0/graphql.md
 e667b2bcfdc637b0ebf0d7ce755249e5  doc/ger-de/funktionen/6.0/handler-fuer-inhaltseinschraenkungen.md
 68d47347beaa485aeeced24a6f68bde7  doc/ger-de/funktionen/6.0/hilfeinhalte.md
-8278e51012a0f1fd847875f2ca7c543c  doc/ger-de/funktionen/6.0/hilfesystem.md
+015e00c377e750759076ec7f063950b9  doc/ger-de/funktionen/6.0/hilfesystem.md
 445e9e9efb5d3397ac8acc5ce905b8bb  doc/ger-de/funktionen/6.0/icon-themes-in-extensions.md
 6a93174afff8017d38daaa3e8a6bcebc  doc/ger-de/funktionen/6.0/info-und-paketseiten.md
 5b3b088b68957758753acb3f0e3a1ca5  doc/ger-de/funktionen/6.0/inhalts-finder.md
@@ -24968,7 +24970,7 @@ e36bbe93748e047396c720e927431ea9  kernel/classes/help/content/exphelpmanualsync.
 bdd022a78ded90fa2ef96ce71a1bfeb3  kernel/classes/help/content/rest/exphelprestviewcontroller.php
 87426f43762967b08e1326eeecfd935a  kernel/classes/help/exphelp.php
 a63ff9934a8519aa4b506d0e5cfebfee  kernel/classes/help/exphelpallowlist.php
-e8f367c1c9ccf87e77b623c890412fee  kernel/classes/help/exphelpaudience.php
+d0d090f5ae2ea1b5fa21c9c37ca7ff89  kernel/classes/help/exphelpaudience.php
 0a220545866ed07af78d148550f03023  kernel/classes/help/exphelpcommitfeed.php
 5378d01788118723dc59f7347128b4cd  kernel/classes/help/exphelpcontextpageinterface.php
 f546e5b19a93c07565afe222731b0a3d  kernel/classes/help/exphelpcontextproviderinterface.php
@@ -25744,7 +25746,7 @@ f9ec87d9fa40c93ba773db5c58c1a950  kernel/private/classes/commands/expgraphqlsche
 3d0ea1ad9df088b281556665cc1f08be  kernel/private/classes/commands/expgraphqlstarter.php
 eb118ef2db669df16fdacf1e314c17b1  kernel/private/classes/commands/expgraphqlstatus.php
 4feaac0df7bc4b9dd4c016030182b5c1  kernel/private/classes/commands/expgraphqlwebhooks.php
-cac4c109079d9a739b09b9e0aff8d75f  kernel/private/classes/commands/exphelp.php
+047191514b13784172688136d9b8086b  kernel/private/classes/commands/exphelp.php
 708f0c28160cbb68a971dcc7c40dec44  kernel/private/classes/commands/exphelpcontent.php
 fb3a3a5f3af0553e8c2c1ac4c048f7b7  kernel/private/classes/commands/exphelpexamples.php
 099dc77b3fcba4c0c532c01f59788c6a  kernel/private/classes/commands/explogs.php
@@ -27128,7 +27130,7 @@ db2bae948264a3a4af9be5be6760321b  settings/debugbar.ini
 b0c004af769060ac23ef847a4250a782  settings/design.ini
 b244336d7be89b1697f8232f4f0fe201  settings/editorpolicies.ini
 32345e49a48d1f9bf1251ad9dde479b7  settings/error.ini
-5e166f3862dad198ecf4546b41aeeb80  settings/exphelp.ini
+ab0ba0bfc378c7f74351c5ed0ff0b1c2  settings/exphelp.ini
 4209ce0fc8d74237bef6f2415d450959  settings/extendedattributefilter.ini
 e87b6557bf97b4e7a43f052afcca7015  settings/ezxml.ini
 fb2495206b5c7b42cdef926446b6f7c0  settings/fetchalias.ini
@@ -29281,6 +29283,7 @@ e4fb5caf3dcbd84f5db003cfeac79804  tests/tests/kernel/classes/help/expHelpContent
 d59f1faa13cf2843a73af67567010274  tests/tests/kernel/classes/help/expHelpExternalImagesTest.php
 3f44b5a413eac5e8aae51153c0cda427  tests/tests/kernel/classes/help/expHelpFrontMatterQuotingTest.php
 ffd0344e173ab8766e7d56fde561b10b  tests/tests/kernel/classes/help/expHelpIndexBackgroundBuildTest.php
+e050085c069a32870983ec06ab04b7c3  tests/tests/kernel/classes/help/expHelpIndexFreshSettingsTest.php
 19e9611294d57baa6c3b1e95c941a251  tests/tests/kernel/classes/help/expHelpIndexStabilityTest.php
 5752aff10f130f6b0aca2d05e167fefb  tests/tests/kernel/classes/help/expHelpIssueReportTest.php
 657e6fce4de2af44656438bb0ef98350  tests/tests/kernel/classes/help/expHelpLandingPagesTest.php

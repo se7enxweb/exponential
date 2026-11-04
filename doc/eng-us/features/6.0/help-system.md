@@ -142,6 +142,7 @@ PageOrder[INSTALL.md]=10
 PageOrder[CONFIGURING.md]=11
 PageOrder[EXTENDING.md]=13
 PageOrder[INTEGRATING.md]=14
+PageOrder[DISTRIBUTIONS.md]=15
 PageOrder[languages.md]=20
 PageOrder[branch-overview.md]=30
 PageOrder[release-overview]=40
@@ -503,7 +504,9 @@ one and starts `exp:help index` for its language in the background (`setsid`; th
 to one build, and a marker older than five minutes is retried). The page after the build uses the new index. Only
 when there is no index at all (a fresh installation, a new index format) does a request build it itself.
 `exp:velocity deploy` builds the index right after the caches are cleared (step "help index"), so the first help page
-after a landing already shows the new pages. Every siteaccess and the console build the same index: the
+after a landing already shows the new pages. `exp:help index` first drops a cached copy of `exphelp.ini` that is older than a file it was built from, so
+the index takes changed help settings (a new `PageOrder[]` entry) even where the INI file time check is off and the INI
+caches were not cleared yet. Every siteaccess and the console build the same index: the
 extensions whose documentation it holds are `ActiveExtensions[]` and the `ActiveAccessExtensions[]` of every
 siteaccess, never only those of the current one, so a console run no longer replaces the administration's index.
 The lock and marker files get the storage file mode, like the index, so a console run as root leaves them usable

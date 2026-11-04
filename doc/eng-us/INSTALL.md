@@ -150,7 +150,9 @@ One of these, chosen in [section 8](#8-serve-the-site-web-server-https-and-permi
 
 *Full chapter: [03-getting-the-code](install/03-getting-the-code.md)*
 
-Pick one. All give the same installation.
+Pick one. All give the same installation. This installs Exponential 6; the Symfony based distributions (Exponential
+Platform Legacy, Nexus and DXP) and the site packages to choose from are compared in
+[Distributions of Exponential](DISTRIBUTIONS.md).
 
 **Git clones with history** (recommended for anyone who builds websites): the kernel and every se7enxweb extension
 arrive as Git clones, so you can see what changed, follow development, keep your own changes on a branch and send
@@ -772,6 +774,7 @@ Then continue with the guides:
 - [Configuring Exponential 6.0](CONFIGURING.md): where settings live and which file wins, siteaccesses, languages, mail, caches, security, extensions and logs.
 - [Extending Exponential 6.0](EXTENDING.md): extensions, modules and views, templates, datatypes, workflow events, cronjob parts, commands, tests and releases.
 - [Integrating With Exponential 6.0](INTEGRATING.md): the APIs, machine sign-in, content and events in and out, single sign-on, front ends and security for integrations.
+- [Distributions of Exponential](DISTRIBUTIONS.md): every distribution of Exponential, its PHP versions and databases, and which one to choose.
 - [Getting started](guides/getting-started.md): first login, first content, first template change.
 - [The content model and editing content](guides/content-model-and-editing.md): classes, objects, the online editor, the trash and content jobs.
 - [Templates and design](guides/templates-and-design.md): find the template that wrote a page, override it, switch the admin design.

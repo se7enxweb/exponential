@@ -156,7 +156,9 @@ Einer der folgenden, gewählt in [Abschnitt 8](#8-die-website-ausliefern-webserv
 
 *Vollständiges Kapitel: [03-getting-the-code](installation/03-den-code-beschaffen.md)*
 
-Wählen Sie einen Weg. Alle ergeben dieselbe Installation.
+Wählen Sie einen Weg. Alle ergeben dieselbe Installation. Das installiert Exponential 6; die Symfony-basierten
+Distributionen (Exponential Platform Legacy, Nexus und DXP) und die Site-Pakete zur Auswahl vergleicht
+[Distributionen von Exponential](DISTRIBUTIONS.md).
 
 **Git-Klone mit Historie** (empfohlen für alle, die Websites bauen): Der Kernel und jede se7enxweb-Extension kommen als
 Git-Klone an, sodass Sie sehen, was sich geändert hat, die Entwicklung verfolgen, eigene Änderungen auf einem Branch
@@ -801,6 +803,7 @@ Fahren Sie dann mit den Anleitungen fort:
 - [Exponential 6.0 konfigurieren](CONFIGURING.md): wo Einstellungen liegen und welche Datei gewinnt, Siteaccesses, Sprachen, E-Mail, Caches, Sicherheit, Extensions und Logs.
 - [Exponential 6.0 erweitern](EXTENDING.md): Extensions, Module und Ansichten, Templates, Datentypen, Workflow-Ereignisse, Cronjob-Teile, Befehle, Tests und Veröffentlichungen.
 - [Mit Exponential 6.0 integrieren](INTEGRATING.md): die APIs, die Anmeldung von Maschinen, Inhalte und Ereignisse hinein und hinaus, Single Sign-on, Frontends und Sicherheit für Integrationen.
+- [Distributionen von Exponential](DISTRIBUTIONS.md): jede Distribution von Exponential, ihre PHP-Versionen und Datenbanken und welche Sie wählen.
 - [Erste Schritte](anleitungen/erste-schritte.md): erste Anmeldung, erste Inhalte, erste Template-Änderung.
 - [Das Inhaltsmodell und das Bearbeiten von Inhalten](anleitungen/inhaltsmodell-und-bearbeitung.md): Klassen, Objekte, der Online-Editor, der Papierkorb und Inhalts-Jobs.
 - [Templates und Design](anleitungen/templates-und-design.md): das Template finden, das eine Seite geschrieben hat, es überschreiben, das Admin-Design wechseln.

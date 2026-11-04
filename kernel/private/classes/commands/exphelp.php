@@ -166,6 +166,21 @@ class Exphelp extends \Exponential\Runnable\Command
     }
 
     /**
+     * Makes the index read exphelp.ini as it is on disk: a cached copy of it that is older than one of the files it
+     * was built from is removed first (expVelocity::refreshIni()). config.php turns the INI file time check off, so
+     * without this a landing that changed exphelp.ini and built the index before the INI caches were cleared stored
+     * the old settings in the index (a new PageOrder[] entry was missing and its page went to the end of the tree).
+     *
+     * @return int how many stale cached copies were removed
+     */
+    public static function freshSettings()
+    {
+        if ( !class_exists( 'expVelocity' ) || !method_exists( 'expVelocity', 'refreshIni' ) )
+            return 0;
+        return \expVelocity::refreshIni( 'exphelp.ini' );
+    }
+
+    /**
      * exp:help index [--rebuild] [--list]
      *
      * @param array $options
@@ -174,6 +189,7 @@ class Exphelp extends \Exponential\Runnable\Command
      */
     protected function index( array $options, $json )
     {
+        self::freshSettings();
         // every language of the documentation has its own index ([DocLanguages] Directories[]); --language one of them
         $languages = \expHelpLanguage::fromIni();
         $wanted = $this->languageOption( $options, $languages );
