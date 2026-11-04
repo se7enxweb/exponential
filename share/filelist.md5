@@ -24723,7 +24723,7 @@ a63ff9934a8519aa4b506d0e5cfebfee  kernel/classes/help/exphelpallowlist.php
 5378d01788118723dc59f7347128b4cd  kernel/classes/help/exphelpcontextpageinterface.php
 f546e5b19a93c07565afe222731b0a3d  kernel/classes/help/exphelpcontextproviderinterface.php
 9415fa6eae63f3887dc785be19df564a  kernel/classes/help/exphelpcontextregistry.php
-9dd35bd84c7df683012b27501c31c896  kernel/classes/help/exphelpdocumentindex.php
+c99fbf81df601277b6614e77804815ac  kernel/classes/help/exphelpdocumentindex.php
 9cbbce6c93a112d302d03a64f6979e37  kernel/classes/help/exphelpexamplesgenerator.php
 08dbfd780297b74f7f1a800b1c50de6f  kernel/classes/help/exphelpexamplestranslation.php
 d36e09b1e690617bd7611e91f6360650  kernel/classes/help/exphelpfrontmatter.php
@@ -25494,7 +25494,7 @@ f9ec87d9fa40c93ba773db5c58c1a950  kernel/private/classes/commands/expgraphqlsche
 3d0ea1ad9df088b281556665cc1f08be  kernel/private/classes/commands/expgraphqlstarter.php
 eb118ef2db669df16fdacf1e314c17b1  kernel/private/classes/commands/expgraphqlstatus.php
 4feaac0df7bc4b9dd4c016030182b5c1  kernel/private/classes/commands/expgraphqlwebhooks.php
-deb6a99c8fdc9edd3e16f0529c0ce114  kernel/private/classes/commands/exphelp.php
+cac4c109079d9a739b09b9e0aff8d75f  kernel/private/classes/commands/exphelp.php
 708f0c28160cbb68a971dcc7c40dec44  kernel/private/classes/commands/exphelpcontent.php
 fb3a3a5f3af0553e8c2c1ac4c048f7b7  kernel/private/classes/commands/exphelpexamples.php
 099dc77b3fcba4c0c532c01f59788c6a  kernel/private/classes/commands/explogs.php
@@ -29030,7 +29030,7 @@ e4fb5caf3dcbd84f5db003cfeac79804  tests/tests/kernel/classes/help/expHelpContent
 897240b7bd90b571bc8dcb76089dc066  tests/tests/kernel/classes/help/expHelpExtensionDocsTest.php
 d59f1faa13cf2843a73af67567010274  tests/tests/kernel/classes/help/expHelpExternalImagesTest.php
 3f44b5a413eac5e8aae51153c0cda427  tests/tests/kernel/classes/help/expHelpFrontMatterQuotingTest.php
-4387cf97e436348664a10d3a9c9fa8d8  tests/tests/kernel/classes/help/expHelpIndexBackgroundBuildTest.php
+ffd0344e173ab8766e7d56fde561b10b  tests/tests/kernel/classes/help/expHelpIndexBackgroundBuildTest.php
 19e9611294d57baa6c3b1e95c941a251  tests/tests/kernel/classes/help/expHelpIndexStabilityTest.php
 5752aff10f130f6b0aca2d05e167fefb  tests/tests/kernel/classes/help/expHelpIssueReportTest.php
 657e6fce4de2af44656438bb0ef98350  tests/tests/kernel/classes/help/expHelpLandingPagesTest.php
