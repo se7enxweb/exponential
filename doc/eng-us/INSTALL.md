@@ -803,6 +803,9 @@ https://exponential.doc.exponential.earth/Exponential/Technical-manual/6.x/Insta
 
 *Full chapter: [12-troubleshooting](install/12-troubleshooting.md)*
 
+When the table does not help, [Getting Support](SUPPORT.md) shows where to ask, from the communities of PHP and
+the database to the Exponential community and 7x.
+
 | Symptom | Cause and fix |
 |---|---|
 | Every address shows the setup wizard | `CheckValidity` is still `true`: the install did not finish. Finish the wizard, or run the kickstarter or `exp:install`. |

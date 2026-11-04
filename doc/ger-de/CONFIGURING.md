@@ -524,6 +524,8 @@ Weiter geht es mit den Anleitungen:
 
 ## 13. Fehlerbehebung
 
+Wenn die Tabelle nicht weiterhilft, zeigt [Unterstützung erhalten](SUPPORT.md), wo Sie fragen.
+
 | Symptom | Ursache und Abhilfe |
 |---|---|
 | Eine geänderte Einstellung wirkt nicht | Der INI-Cache hält noch den alten Wert: `php bin/php/ezcache.php --clear-tag=ini`. Prüfen Sie mit `./console exp:ini where <datei>/<block>/<einstellung>`, welche Datei gewinnt: Eine spätere Schicht (oft `settings/override/`) setzt sie womöglich erneut. |

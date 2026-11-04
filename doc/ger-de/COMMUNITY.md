@@ -130,7 +130,9 @@ zu denselben Websites); verwenden Sie die Adressen oben. Kurzlinks wie <https://
 ## 4. Wo Sie sprechen und Hilfe bekommen
 
 Alle diese Kanäle sind kostenlos. [Community-Kanäle](hilfe/projekt/community-kanaele.md) beschreibt jeden ausführlich,
-[Support bekommen](hilfe/projekt/unterstuetzung-erhalten.md) sagt, was Sie zuerst versuchen.
+[Support bekommen](hilfe/projekt/unterstuetzung-erhalten.md) sagt, was Sie zuerst versuchen. Die Anleitung
+[Unterstützung erhalten](SUPPORT.md) zeigt außerdem, wie Sie die Gemeinschaften von PHP, der Datenbank und des
+Webservers fragen und wann Sie 7x beauftragen.
 
 | Kanal | Wofür | Adresse |
 |---|---|---|
@@ -336,7 +338,9 @@ Exponential öffentlich.
 
 - [Geschichte von Exponential (1999 - 2026)](HISTORY.md)
 - [Distributionen von Exponential](DISTRIBUTIONS.md)
+- [Exponential im Wettbewerb](wettbewerb/README.md): wie Exponential im Vergleich zu den anderen Wegen abschneidet, eine Website zu betreiben
 - [Community-Kanäle](hilfe/projekt/community-kanaele.md)
 - [Support bekommen](hilfe/projekt/unterstuetzung-erhalten.md)
+- [Unterstützung erhalten](SUPPORT.md): von der Selbsthilfe über das PHP-Ökosystem bis zur Foundation und 7x
 - [Zum Projekt beitragen](hilfe/projekt/zum-projekt-beitragen.md)
 - [CONTRIBUTING.md](../../CONTRIBUTING.md), [CODE_OF_CONDUCT.md](../../CODE_OF_CONDUCT.md), [SECURITY.md](../../SECURITY.md)
