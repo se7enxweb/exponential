@@ -535,7 +535,10 @@ die zu behaltenden Tabs) funktioniert für die Tabs des Kerns ebenso; der Tab ei
   nicht im oberen Menü ist, oder zeichnet ein Menü, zu dem kein Tab führt; die Brotkrümelnavigation ist die eigene der
   Seite. Solange der Tab im oberen Menü ist, behalten seine Seiten ihren Tab und ihr linkes Menü.
   `parts/a4_navigation_part.tpl` liefert den Navigationsteil, den beide Menüs
-  verwenden, in admin4 und in den Blöcken für Kopfzeile und linkes Menü von admin4l.
+  verwenden, in admin4 und in den Blöcken für Kopfzeile und linkes Menü von admin4l. Mit
+  `[Leftmenu_setup] GroupTabsLeftMenu=tab` (Vorgabe `setup`) markiert eine solche Seite weiterhin den Tab Setup, zeichnet
+  aber das eigene linke Menü des Tabs (sein `parts/<part>/menu.tpl` oder `$module_result.left_menu` der Ansicht) statt
+  des Setup-Menüs.
 - **Dashboard.** Ohne den Tab Dashboard führt das Logo für einen Benutzer, der es öffnen darf
   (`content/dashboard`), zum Dashboard (`[Topmenu_dashboard] URL[default]`) statt zur Inhaltswurzel, die weiterhin der
   Tab Inhalte öffnet. Das
