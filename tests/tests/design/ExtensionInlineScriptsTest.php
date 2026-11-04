@@ -62,7 +62,7 @@ class ExtensionInlineScriptsTest extends PHPUnit\Framework\TestCase
         'ezpm' => array( 'since' => '0.10.1', 'why' => '', 'files' => array() ),
         'ezstarrating' => array( 'since' => '6.0.12', 'why' => '', 'files' => array() ),
         'eztags' => array( 'since' => '2.4.17', 'why' => '', 'files' => array() ),
-        'ezwebin' => array( 'since' => '6.0.22', 'why' => 'the footer script is content: it prints the code an editor enters in the site design object (footer_script)', 'files' => array( 'design/ezwebin/templates/page_footer_script.tpl' => array( 'script' => 1 ) ) ),
+        'ezwebin' => array( 'since' => '6.0.32', 'why' => '', 'files' => array() ),
         'ezwt' => array( 'since' => '6.0.11', 'why' => '', 'files' => array() ),
         'hcaptcha' => array( 'since' => '1.4', 'why' => '', 'files' => array() ),
         'recaptcha' => array( 'since' => '1.4.8', 'why' => '', 'files' => array() ),

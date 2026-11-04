@@ -28391,7 +28391,7 @@ c0c0f5eb8bbcd4ba17e6dac25d579b6b  tests/tests/design/AdminTokenUsageTest.php
 3999bb1c3385aa4ad3bf6dcc97873526  tests/tests/design/ClassicAdminNarrowWindowTest.php
 93cb71110291cc247c6c71a6d5c9a635  tests/tests/design/CopyrightFooterNoticeTest.php
 557399816585b4decf84b3fb3625d28f  tests/tests/design/DemoModeUserTemplatesTest.php
-07d0f56be01dbd752bdf1c99ef8df8a6  tests/tests/design/ExtensionInlineScriptsTest.php
+104b9fae8cb4b38de695950b7dd7e010  tests/tests/design/ExtensionInlineScriptsTest.php
 0710fd0f4116c01a9a299beba675c049  tests/tests/design/FormSubmitButtonDisableTest.php
 8e8452be9fc384ea01e7f33ad8dc1183  tests/tests/design/LogViewerCopyMessagesTest.php
 6daf7c6280369c901a6b348253f70dae  tests/tests/design/LogViewerNavTest.php
