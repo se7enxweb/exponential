@@ -24543,7 +24543,7 @@ fc6f6834eed639ece543d094ba8e8d86  kernel/classes/ezcontentclassname.php
 3eacb3a9f4146c1b46da85f2640e8dfd  kernel/classes/ezcontentobjectoperations.php
 b88ed727eb2e649bb566de243808c35d  kernel/classes/ezcontentobjecttranslation.php
 3111400be468fd9f63e203de1285120a  kernel/classes/ezcontentobjecttrashnode.php
-136ba66b918d163cb4dff3781a774d07  kernel/classes/ezcontentobjecttreenode.php
+4033f93db543fa2429da9f10b02307b3  kernel/classes/ezcontentobjecttreenode.php
 f73d8bab1442410d9b14c551a8643e15  kernel/classes/ezcontentobjecttreenodeoperations.php
 b9770c6b028f7ba0c9d70639acd1e354  kernel/classes/ezcontentobjectversion.php
 2287cb6e7a772477b9e052f4f8ecbd70  kernel/classes/ezcontentupload.php
@@ -28743,6 +28743,7 @@ e19683ada0a1f10ee6c9eb55db1e73f2  tests/tests/kernel/classes/eZContentObjectStat
 7ddc3dceef67d556c3963accbb2aa998  tests/tests/kernel/classes/eZContentObjectStateTest.php
 ee577b3121aa179a03fd8d3f45a5df38  tests/tests/kernel/classes/eZContentObjectTest.php
 1ba7d9cfc97efb6b1e67bb787fd7f8bc  tests/tests/kernel/classes/eZContentObjectTreeNodeMissingPathLogTest.php
+f7c9ba91e092ce00691a66a1c6e1699d  tests/tests/kernel/classes/eZContentObjectTreeNodeMongoAttributeFilterTest.php
 baf4f0f4e77a81b483f963b84fcc0511  tests/tests/kernel/classes/eZContentObjectTreeNodePreviewPathTest.php
 401b83d873199c3780b65ad9154f93c1  tests/tests/kernel/classes/eZContentObjectTreeNodeSortingTest.php
 66d4eb64bf261e3b0a5502dc4d229fa8  tests/tests/kernel/classes/eZContentObjectTreeNodeTest.php
