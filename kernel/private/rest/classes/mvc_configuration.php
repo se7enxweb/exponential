@@ -42,13 +42,34 @@ class ezpMvcConfiguration implements ezcMvcDispatcherConfiguration
     public function createRequestParser()
     {
         $parser = new ezpRestHttpRequestParser();
-        if ( strpos( $_SERVER['SCRIPT_NAME'], self::INDEX_FILE ) !== false ) // Non-vhost mode
-        {
-            // In non-vhost mode we need to build the prefix to be removed from URI
-            $parser->prefix = eZSys::indexDir(true);
-        }
-
+        $parser->prefix = self::uriPrefix( isset( $_SERVER['SCRIPT_NAME'] ) ? (string)$_SERVER['SCRIPT_NAME'] : '',
+                                           (string)eZSys::serverVariable( 'REQUEST_URI', true ),
+                                           eZSys::indexDir( true ), eZSys::wwwDir() );
         return $parser;
+    }
+
+    /**
+     * The part of the address in front of the API prefix (rest.ini [System] ApiPrefix) that the parser removes:
+     * - index_rest.php in the address (non-vhost mode, /index_rest.php/api/...): the index directory with that file;
+     * - an installation served below a path (an Alias such as /doc, the rewrite rule sending /doc/api/... to
+     *   /doc/index_rest.php): that path, so /doc/api/ezp/v2/... is read as /api/ezp/v2/...;
+     * - otherwise nothing.
+     *
+     * @param string $scriptName $_SERVER['SCRIPT_NAME']
+     * @param string $requestUri the request address
+     * @param string $indexDir eZSys::indexDir( true )
+     * @param string $wwwDir eZSys::wwwDir()
+     * @return string
+     */
+    public static function uriPrefix( $scriptName, $requestUri, $indexDir, $wwwDir )
+    {
+        $path = (string)parse_url( $requestUri, PHP_URL_PATH );
+        if ( strpos( $scriptName, self::INDEX_FILE ) !== false && $indexDir !== '' && strpos( $path, $indexDir ) === 0 )
+            return $indexDir;
+        $wwwDir = rtrim( $wwwDir, '/' );
+        if ( $wwwDir !== '' && strpos( $path, $wwwDir . '/' ) === 0 )
+            return $wwwDir;
+        return '';
     }
 
     public function createResponseWriter( ezcMvcRoutingInformation $routeInfo, ezcMvcRequest $request, ezcMvcResult $result, ezcMvcResponse $response )
