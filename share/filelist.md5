@@ -8968,7 +8968,7 @@ fd6e107bfa535c4a6311d9733c61d877  doc/eng-us/help/extension-development/part-1-f
 908afde627a9b1602b4df2c055704260  doc/eng-us/help/extension-development/part-1-from-user-to-developer/learning-from-an-extension-step-by-step.md
 3e03974bdb6fccdca4d502ea891b4d65  doc/eng-us/help/extension-development/part-1-from-user-to-developer/learning-from-the-books.md
 47d20095a32ab9a21d437a1014fa252c  doc/eng-us/help/extension-development/part-1-from-user-to-developer/linking-versus-copying.md
-23c0c7c9a962f0b243f9e6760ad131c3  doc/eng-us/help/extension-development/part-1-from-user-to-developer/projects-exponential-earth.md
+f15a9ebeddf7fcdb850f55d4a2be0fa3  doc/eng-us/help/extension-development/part-1-from-user-to-developer/projects-exponential-earth.md
 903b438972b66005e5a4847d15a88db3  doc/eng-us/help/extension-development/part-1-from-user-to-developer/reading-licenses-before-reusing.md
 5b31fcabca11221c8b3ce9cc8cf52a3b  doc/eng-us/help/extension-development/part-1-from-user-to-developer/reading-the-code-you-have.md
 1cb1c53bae519488a7c5aeecf100fc0c  doc/eng-us/help/extension-development/part-1-from-user-to-developer/setting-up-a-development-installation.md
@@ -11842,7 +11842,7 @@ e2fded9a1ae020510a8c181902443dd3  doc/eng-us/help/site-packages/sevenx-multisite
 ccbb9d636f1ca3e1a6f78f8e6329dc34  doc/eng-us/help/site-packages/sevenx-multisite/the-demo-content-packages.md
 3e5448faa46baab14ddcd8f67fa0d2cd  doc/eng-us/help/site-packages/sevenx-multisite/the-multisite-installer-script.md
 281ad8757cbc78d92a18c8ff1abd2807  doc/eng-us/help/site-packages/sevenx-multisite/what-it-is-made-of.md
-21aaf0ce2e8cb5f9d4cafacc76ada867  doc/eng-us/help/site-packages/sevenx-multisite/what-you-have-after-installing.md
+b79d05ad6332fbfad51db1cd70b6feca  doc/eng-us/help/site-packages/sevenx-multisite/what-you-have-after-installing.md
 b6ce21c52089bbcdb1e3a8fa5077bc5c  doc/eng-us/help/site-packages/your-own/README.md
 e3f3d09857aaf46d8be012f0880e71bd  doc/eng-us/help/site-packages/your-own/changing-classes-and-content.md
 c5b90f9e373b6023b9a3d27ec8b35354  doc/eng-us/help/site-packages/your-own/changing-the-installer-script.md
@@ -18875,7 +18875,7 @@ bd7ad7d739a8507fd42ddd011b1e521d  doc/ger-de/hilfe/erweiterungsentwicklung/teil-
 4b563176550b2974baf50ff40d1d1cd0  doc/ger-de/hilfe/erweiterungsentwicklung/teil-1-vom-benutzer-zum-entwickler/ideen-auf-packagist-finden.md
 f9dd8fec0232a47bbaa943b909e35e76  doc/ger-de/hilfe/erweiterungsentwicklung/teil-1-vom-benutzer-zum-entwickler/ihre-erste-stunde-als-entwickler.md
 99e8ffe388fa57b997b3339c629c91d6  doc/ger-de/hilfe/erweiterungsentwicklung/teil-1-vom-benutzer-zum-entwickler/lizenzen-vor-der-wiederverwendung-lesen.md
-eb9b17ed778d86ec910b73cadfcdb4b5  doc/ger-de/hilfe/erweiterungsentwicklung/teil-1-vom-benutzer-zum-entwickler/projects-exponential-earth.md
+9ec396dec9f1989802a9120e00f84314  doc/ger-de/hilfe/erweiterungsentwicklung/teil-1-vom-benutzer-zum-entwickler/projects-exponential-earth.md
 31b8a103284f9c461b9da9db45801569  doc/ger-de/hilfe/erweiterungsentwicklung/teil-1-vom-benutzer-zum-entwickler/schritt-fuer-schritt-von-einer-erweiterung-lernen.md
 6cc86126b354350ce9c5c0a6d15cd274  doc/ger-de/hilfe/erweiterungsentwicklung/teil-1-vom-benutzer-zum-entwickler/share-exponential-earth.md
 2602626cd5fcb3bf0aedef9dfdf879b9  doc/ger-de/hilfe/erweiterungsentwicklung/teil-1-vom-benutzer-zum-entwickler/verlinken-oder-kopieren.md
@@ -20668,7 +20668,7 @@ c3b56811a2dda0b6752fd5a0de6b887a  doc/ger-de/hilfe/seitenpakete/sevenx-multisite
 2bee7c5f19c8ffd0823e4281e64858c7  doc/ger-de/hilfe/seitenpakete/sevenx-multisite/rollen-und-richtlinien-von-sevenx-multisite.md
 42f47c3877012dbf2bd07c26c41748d8  doc/ger-de/hilfe/seitenpakete/sevenx-multisite/sevenx-classes-das-paket-der-inhaltsklassen.md
 b0200212398d100a07f395dcecc75e21  doc/ger-de/hilfe/seitenpakete/sevenx-multisite/siteaccesses-und-sprachen-von-sevenx-multisite.md
-3c150880ec051e7faefd02da69bd082b  doc/ger-de/hilfe/seitenpakete/sevenx-multisite/was-sie-nach-der-installation-von-sevenx-multisite-haben.md
+c3a61289ca948e9b152733bd800f252a  doc/ger-de/hilfe/seitenpakete/sevenx-multisite/was-sie-nach-der-installation-von-sevenx-multisite-haben.md
 27f30d5a9f89ed9593b599f2582c1bdc  doc/ger-de/hilfe/seitenpakete/sevenx-multisite/woraus-sevenx-multisite-besteht.md
 9863e064d2772cdb82b6ea0cf82c4e8f  doc/ger-de/hilfe/sicherheitshaertung.md
 c702aca91ab21f76627d538e4011e007  doc/ger-de/hilfe/softwareingenieure/abhaengigkeitsverwaltung-mit-composer.md

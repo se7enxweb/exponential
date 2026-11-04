@@ -69,7 +69,7 @@ for PHP 5 and older releases of the kernel. Treat them as **ideas and starting p
 
 ## Copyright: link, do not copy
 
-The portal's footer reads "Copyright © 1998 - 2026 7x (except where otherwise noted). All rights reserved." The
+The portal's footer reads "Copyright © 1998 - 2026 Exponential Foundation and 7x (except where otherwise noted). All rights reserved." The
 portal's own text is therefore not free to copy: **link to project pages** instead of reproducing their descriptions.
 
 The **projects themselves** carry their own licenses, almost always the GNU GPL, stated in their downloads (a

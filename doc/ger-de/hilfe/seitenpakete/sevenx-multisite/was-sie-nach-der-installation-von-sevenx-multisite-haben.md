@@ -62,7 +62,7 @@ Details pro Siteaccess: [Siteaccesses und Sprachen](siteaccesses-und-sprachen-vo
 - 31 Tags und die Tag-Links der Demo-Inhalte.
 - Ein Bild für das Logo der Website (`logo.png` aus dem Paket) und der Seitenstil `ezwebin_design_blue` auf dem Objekt `template_look`, dazu
   zwölf neue Felder für Aussehen und Bedienung wie der Text im Footer
-  (`Copyright © <year> 7x (except where otherwise noted). All rights reserved.`).
+  (`Copyright © <year> Exponential Foundation and 7x (except where otherwise noted). All rights reserved.`).
 
 Siehe [Die Demo-Inhaltspakete](die-demo-inhaltspakete.md) und [Layoutdaten und share-DBA-Dateien](layoutdaten-und-share-dba-dateien.md).
 
