@@ -39,10 +39,31 @@ class expUpgradeCaption
      */
     const KINDS = array( 'pre', 'post', 'safety', 'manual', 'migration-pre', 'migration-post', 'migration-failure' );
 
-    /** @return BackupManager|null git_manager's backup manager, when git_manager is there */
-    public static function manager()
+    /**
+     * Whether git_manager can take captions here: an active extension, not only a class the autoloads know. An
+     * installed but inactive git_manager has no settings loaded (git_manager.ini), so its backup folder was
+     * unknown and its protection files (.htaccess "Require all denied", index.html) went to the root.
+     *
+     * @param string[]|null $activeExtensions the active extensions (eZExtension::activeExtensions() when null)
+     * @return bool
+     */
+    public static function managerActive( $activeExtensions = null )
     {
         if ( !class_exists( 'BackupManager' ) )
+            return false;
+        if ( $activeExtensions === null )
+        {
+            if ( !class_exists( 'eZExtension' ) )
+                return true;
+            $activeExtensions = eZExtension::activeExtensions();
+        }
+        return in_array( 'git_manager', (array)$activeExtensions, true );
+    }
+
+    /** @return BackupManager|null git_manager's backup manager, when git_manager is active */
+    public static function manager()
+    {
+        if ( !self::managerActive() )
             return null;
         try
         {
@@ -62,7 +83,7 @@ class expUpgradeCaption
      */
     public static function managerDumps( $engine )
     {
-        if ( !class_exists( 'BackupManager' ) )
+        if ( !self::managerActive() )
             return false;
         // supportedEngines() arrived in git_manager 2.0.25; older copies dump MySQL only
         $engines = is_callable( array( 'BackupManager', 'supportedEngines' ) )
@@ -103,7 +124,7 @@ class expUpgradeCaption
         else
         {
             $why = $context->option( 'own-dump' ) ? 'a dump of the connection given (own-dump)'
-                 : ( class_exists( 'BackupManager' ) ? "git_manager does not dump $engine (update git_manager)" : 'git_manager is not active' );
+                 : ( self::managerActive() ? "git_manager does not dump $engine (update git_manager)" : 'git_manager is not active' );
             $backup = expUpgradeBackup::create( $db, $context->option( 'backup-dir' ), $root );
             $result['dir'] = $backup['dir'];
             $result['source'] = 'exp:upgrade';

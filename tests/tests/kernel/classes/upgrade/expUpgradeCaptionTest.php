@@ -8,6 +8,7 @@
  *  UK-03 a caption id is a name inside the caption folders, never a path
  *  UK-04 the error log: fatal lines from a moment on, by the timestamps of eZLog
  *  UK-05 the smoke addresses given win
+ *  UK-06 git_manager takes captions only as an active extension (inactive, its settings are not loaded)
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -110,5 +111,13 @@ class expUpgradeCaptionTest extends PHPUnit\Framework\TestCase
     public function testGivenSmokeUrlsWin()
     {
         $this->assertSame( array( 'https://x/' ), expUpgradeVerifyAfter::smokeUrls( array( 'https://x/' ) ) );
+    }
+
+    /** UK-06 */
+    public function testGitManagerTakesCaptionsOnlyWhenActive()
+    {
+        $this->assertFalse( expUpgradeCaption::managerActive( array( 'ezjscore', 'ezoe' ) ),
+                            'an installed but inactive git_manager takes no captions' );
+        $this->assertSame( class_exists( 'BackupManager' ), expUpgradeCaption::managerActive( array( 'ezjscore', 'git_manager' ) ) );
     }
 }
