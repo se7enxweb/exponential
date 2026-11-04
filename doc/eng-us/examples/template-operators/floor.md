@@ -28,10 +28,10 @@ Built from the parameter list above; the values are placeholders (the operator's
 
 ## In a shipped template
 
-The first use in the templates of this installation, `design/admin/templates/datatable/syncs.tpl` line 48:
+The first use in the templates of this installation, `design/admin/templates/class/datatype_list.tpl` line 22:
 
 ```tpl
-<td>{switch match=$s.run_mode}{case match='once'}{'when started'|i18n( 'design/admin/datatable' )}{/case}{case match='live'}{'live'|i18n( 'design/admin/datatable' )}{/case}{case}{'every %minutes minutes'|i18n( 'design/admin/datatable',, hash( '%minutes', div( $s.interval_seconds, 60 )|floor ) )|wash}{/case}{/switch}</td>
+<span class="a4-meta">{'Counted %time, again after %minutes minutes'|i18n( 'design/admin/class/datatype',, hash( '%time', $datatype_counted|l10n( shortdatetime ), '%minutes', div( $datatype_cache_ttl, 60 )|floor ) )|wash}</span>
 ```
 
 ## Related

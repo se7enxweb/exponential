@@ -1631,7 +1631,7 @@ f215bb452463034ff031071386b696a1  design/admin4/templates/page_head_script.tpl
 1cc492f23a527cc8e24d339a1d994936  design/admin4/templates/page_head_style.tpl
 392a431599e6a36e779733835d00bf18  design/admin4/templates/page_head_style_inline.tpl
 cb128a4645e891cd796919aad3ed36d1  design/admin4/templates/page_header.tpl
-b8e61d3a5a8ce7617372a96054f362bb  design/admin4/templates/page_leftmenu.tpl
+e738f63a35a698e29ac06badc48a4c94  design/admin4/templates/page_leftmenu.tpl
 8042a9d3f3a0e261d4b3e5659671874c  design/admin4/templates/page_login_copyright.tpl
 442dc3f6f797080f31819836eca9fbb2  design/admin4/templates/page_mainarea.tpl
 a2501a7a5f982715d274939ff4ad0937  design/admin4/templates/page_search.tpl
@@ -1895,7 +1895,7 @@ bca57a446436cead3102f7699c240b96  design/admin4l/templates/explayouts/block/admi
 efbb48a4def955752faa19f849cd8845  design/admin4l/templates/explayouts/block/admin_current_user.tpl
 d32ea5c9ac61787a910308fd75511a3c  design/admin4l/templates/explayouts/block/admin_debug_area.tpl
 3d33a22a1727180cf850b86c2f191213  design/admin4l/templates/explayouts/block/admin_footer.tpl
-0b763a943c76b68ab6127ac876045119  design/admin4l/templates/explayouts/block/admin_left_menu.tpl
+d66d234d94aa5bfaf09826c4988d5af1  design/admin4l/templates/explayouts/block/admin_left_menu.tpl
 02202fcac88fef478405b05ea16fc9e7  design/admin4l/templates/explayouts/block/admin_logo.tpl
 70a59d6074c9f7ebdd76a94d3ddddf24  design/admin4l/templates/explayouts/block/admin_menu_button.tpl
 47ee73eb89e8ba1214a3c8ac084583d8  design/admin4l/templates/explayouts/block/admin_module_result.tpl
@@ -3527,7 +3527,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-e2ae579267f52cabc040f42e2366ade2  doc/changelogs/6.0/6.0.15.md
+2a16e7a9690ce70f15217b6cdb442bbd  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -3819,7 +3819,7 @@ b791538120cc3622e7d2268eee2a4ab9  doc/eng-us/examples/commands/expgraphqlquery.m
 da3556f0306e10c9ebb391766a13b36c  doc/eng-us/examples/commands/expgraphqlstarter.md
 c147eb81b588ba2ab38af6dde1cab996  doc/eng-us/examples/commands/expgraphqlstatus.md
 838861e8d88a23d984e3c85e8112310c  doc/eng-us/examples/commands/expgraphqlwebhooks.md
-379924437a3392f4f0015a1224c8d8b8  doc/eng-us/examples/commands/exphelp.md
+0f785bf17975e13e4cf701bb0c28193a  doc/eng-us/examples/commands/exphelp.md
 e8d9f6e06e1709a34a8e2b131e7a8b8a  doc/eng-us/examples/commands/exphelpcontent.md
 da36319ce9b473e688815ba1ef0871ae  doc/eng-us/examples/commands/exphelpexamples.md
 cd7e304cbf5a64c0421f25eb82c5759a  doc/eng-us/examples/commands/explogs.md
@@ -4074,7 +4074,7 @@ b6655c97e0f3a74544da58844180cc7e  doc/eng-us/examples/demo-mode/install-demo-sql
 cca5d7ab779676279104a95fbfe62288  doc/eng-us/examples/demo-mode/nginx-fastcgi-demo.conf
 85231412f69ddf5584dc88af3b27095c  doc/eng-us/examples/demo-mode/php-fpm-pool-demo.conf
 b8b3d6b9a764ca22e43f9f52beb3610d  doc/eng-us/examples/demo-mode/velocity-demo-mode.conf
-c4c52044fd68c8d3deb29eca0a1fda42  doc/eng-us/examples/extension-points/README.md
+16e64c2539416d54684288cb75b866b9  doc/eng-us/examples/extension-points/README.md
 aa3888e9660481d83d5193e47dbc366a  doc/eng-us/examples/extension-points/admininterface.md
 7f5c75fe36346ae0f6daa7de74fb143d  doc/eng-us/examples/extension-points/audit.md
 c2cafe9e2e4dc86fd5103ebc3fca26e9  doc/eng-us/examples/extension-points/binaryfile.md
@@ -4112,7 +4112,7 @@ be3a94174b5b36c8fc92be339872a2ef  doc/eng-us/examples/extension-points/requestru
 e199b0a0ede1481bd174e5eab20256a9  doc/eng-us/examples/extension-points/setup.md
 41c716fe66f9d62a80fc53fdb70aa933  doc/eng-us/examples/extension-points/shop.md
 e4c27f944fa18d46d44095a17e607bcf  doc/eng-us/examples/extension-points/shopaccount.md
-21087ce6bf0545a2ad73d58645602db8  doc/eng-us/examples/extension-points/site.md
+e449a723e80dd74868c0e0e0e01693af  doc/eng-us/examples/extension-points/site.md
 e09f07628c0da63193690caa333ba34f  doc/eng-us/examples/extension-points/smarty.md
 795c65c65446d822875f5cb7430cc843  doc/eng-us/examples/extension-points/subitemscolumns.md
 31797884a0010e2ae097e1c969e87b7c  doc/eng-us/examples/extension-points/syscard.md
@@ -4341,7 +4341,7 @@ d8ecf8a36f51610f9879784a8776ab80  doc/eng-us/examples/fetch-functions/user/membe
 e2a0d933b995c654fb8d0b0d61460b08  doc/eng-us/examples/fetch-functions/workflow/workflow_type_statuses.md
 afabb952a48810ef8ebb35f166d11f22  doc/eng-us/examples/hooks/template-check-pre-commit.sh
 5fd72660cc5c80f159ea936f0d72133b  doc/eng-us/examples/htaccess
-cacd9247edada56c193995f59bb818af  doc/eng-us/examples/ini-settings/README.md
+6e2ce13929ab5d5b2058b2b9eac06648  doc/eng-us/examples/ini-settings/README.md
 6522da4a85b1b6fbd3b3c71c41603590  doc/eng-us/examples/ini-settings/admininterface/AdditionalMenuSettings.md
 00dd82562f4f4fcb17497b31e0f32f2f  doc/eng-us/examples/ini-settings/admininterface/AdditionalTab_audit.md
 1982ccc2ae500e3049741b22912053c6  doc/eng-us/examples/ini-settings/admininterface/AdditionalTab_datatable.md
@@ -4791,7 +4791,7 @@ b1f673056948bb0d843a086f10fd10c5  doc/eng-us/examples/ini-settings/cronjob/Cronj
 5d1c06f1e358e22b920ced44aa0f0992  doc/eng-us/examples/ini-settings/cronjob/CronjobSettings.md
 550bb528977e081a799dda3a4a944d62  doc/eng-us/examples/ini-settings/cronjob/CrontabSettings.md
 9c6d78f34677e9f3222a67cdac15ca34  doc/eng-us/examples/ini-settings/cronjob/PauseSettings.md
-94f338e3f61643ae434fdc8242070b40  doc/eng-us/examples/ini-settings/cronjob/README.md
+0a5f9f4c11c81a21cd7cd7062ceba9de  doc/eng-us/examples/ini-settings/cronjob/README.md
 c51dc5ef2e976eb21f45099f0476b1b0  doc/eng-us/examples/ini-settings/cronjob/ScriptDocumentation.md
 96004d842caaccab0c37c3bc9b2755ef  doc/eng-us/examples/ini-settings/cronjob/linkCheckSettings.md
 3e8012935d68e29961356e00e3bcd156  doc/eng-us/examples/ini-settings/dashboard/DashboardBlock_all_latest_content.md
@@ -4826,12 +4826,12 @@ e4e3e5791a70691e53af802dfff23759  doc/eng-us/examples/ini-settings/dbschema/post
 ad08646bc6e997ce6796fa7d030d855d  doc/eng-us/examples/ini-settings/debug/DebugSettings.md
 578edb0b04e6e514891dec8f1c4b9e1e  doc/eng-us/examples/ini-settings/debug/GeneralCondition.md
 eb47a83bc4a42a81b7f503670a142114  doc/eng-us/examples/ini-settings/debug/README.md
-71242a2dc487186198bdd6a03e701c45  doc/eng-us/examples/ini-settings/debugbar/DebugBarSettings.md
+41f979fbecd96117afbfdf0e50563217  doc/eng-us/examples/ini-settings/debugbar/DebugBarSettings.md
 6e7f6cf8b13a71531053622a88d303ea  doc/eng-us/examples/ini-settings/debugbar/Preset_everything.md
 e38f45542cb8386642172412ebdfe417  doc/eng-us/examples/ini-settings/debugbar/Preset_off.md
 5efe79484121f67510be0d560f738bfc  doc/eng-us/examples/ini-settings/debugbar/Preset_sql_tuning.md
 965d7cad61cd778a8fba21977f3b5a93  doc/eng-us/examples/ini-settings/debugbar/Preset_template_work.md
-fdbf0dc3a495a5ea0a10b95ca5d012fd  doc/eng-us/examples/ini-settings/debugbar/README.md
+6fc48735f098e3d04011285eda2fe4c7  doc/eng-us/examples/ini-settings/debugbar/README.md
 91769bfd728f0fd0b604d4d889ed7b65  doc/eng-us/examples/ini-settings/debugbar/Setting_always_log.md
 b904b058d2a1e42e4006b6a494b01bcc  doc/eng-us/examples/ini-settings/debugbar/Setting_condition_debug.md
 5347fe0acf6944a612b64683d98296b9  doc/eng-us/examples/ini-settings/debugbar/Setting_content_view_caching.md
@@ -4886,11 +4886,11 @@ d9eee41b354d44edaa02d269af60d80b  doc/eng-us/examples/ini-settings/error/HTTPErr
 d7242053330bdcb5eebf5ba020ab24bd  doc/eng-us/examples/ini-settings/error/HTTPError-403.md
 397dcc317ce855be5813c04a6c501781  doc/eng-us/examples/ini-settings/error/HTTPError-404.md
 caf60908b53ecf82087e9a61ba87f97f  doc/eng-us/examples/ini-settings/error/README.md
-94d97523d44a2855a3d867b5e072667c  doc/eng-us/examples/ini-settings/exphelp/AudienceSettings.md
-9adcf9753d3ee0535abb30108786a1df  doc/eng-us/examples/ini-settings/exphelp/CategorySettings.md
+5663096fbe6089f0a6471fc575079c98  doc/eng-us/examples/ini-settings/exphelp/AudienceSettings.md
+516d724fcad20012dd0ad7e749da3b91  doc/eng-us/examples/ini-settings/exphelp/CategorySettings.md
 557fe8ed9a4915b7a452bf8c6227414a  doc/eng-us/examples/ini-settings/exphelp/CommitFeedSettings.md
 911d1187ea9ea5ab50301cfb83357cfc  doc/eng-us/examples/ini-settings/exphelp/ContentSettings.md
-3c9c3d0b99a218c26d084840e5f469d4  doc/eng-us/examples/ini-settings/exphelp/ContextHelp.md
+8ba0637bbf69d87f749462646acbeb23  doc/eng-us/examples/ini-settings/exphelp/ContextHelp.md
 3d307f778430f1bdd6462b040e20299c  doc/eng-us/examples/ini-settings/exphelp/DashboardSettings.md
 90f841d4dbe892c1f296413d1b4d0557  doc/eng-us/examples/ini-settings/exphelp/DocLanguages.md
 129f2a0f3ebae02dbea9bda88c6ecc84  doc/eng-us/examples/ini-settings/exphelp/FeaturedSettings.md
@@ -4954,8 +4954,8 @@ ca2674ec74f81022f4cd7a748770bf77  doc/eng-us/examples/ini-settings/exphelp/Title
 0ba48a9cf37cdfb565b1e917929eefb3  doc/eng-us/examples/ini-settings/exphelp/Tracker_community.md
 aeec9e7a12212b862a115f962ab8cbc8  doc/eng-us/examples/ini-settings/exphelp/Tracker_software.md
 314874544e21e6b51c13bd6ffc742008  doc/eng-us/examples/ini-settings/exphelp/Tracker_velocity.md
-a52676ae775778a834c5e46e7670d496  doc/eng-us/examples/ini-settings/exphelp/TreeSettings.md
-083efeb8cd9436e605e961e5a09d755e  doc/eng-us/examples/ini-settings/exphelp/TypeSettings.md
+d8d4b6871487efefb04cdec3491e199d  doc/eng-us/examples/ini-settings/exphelp/TreeSettings.md
+09397ee5eb42bd5d30e3aef0a692441c  doc/eng-us/examples/ini-settings/exphelp/TypeSettings.md
 dae15689b65dac0b6640120102738692  doc/eng-us/examples/ini-settings/expservices-expportal/Portal.md
 8d6a0e1d1cf136baab84004d31f218ab  doc/eng-us/examples/ini-settings/expservices-expportal/README.md
 18da3e1f07b3db6ebd7885c7f2ec29fd  doc/eng-us/examples/ini-settings/expservices-expservices/Community.md
@@ -5113,7 +5113,7 @@ b8f311c90dbb9b1e2f4a8feb39fe40d9  doc/eng-us/examples/ini-settings/menu/Leftmenu
 04b4f5e6e6d06f7191c49b819aee916c  doc/eng-us/examples/ini-settings/menu/Leftmenu_media.md
 0c229b73285123b7c862dce39918aadc  doc/eng-us/examples/ini-settings/menu/Leftmenu_my.md
 2b37550947dd619acf36d51a63ece07c  doc/eng-us/examples/ini-settings/menu/Leftmenu_my_mega.md
-bffeaab6cf20d154ddd46773fc643196  doc/eng-us/examples/ini-settings/menu/Leftmenu_setup.md
+44d20e686500808435093ee83b79b570  doc/eng-us/examples/ini-settings/menu/Leftmenu_setup.md
 be3201513686289ad19abc02d2f79bcc  doc/eng-us/examples/ini-settings/menu/Leftmenu_shop.md
 00226ae53130ef43d693e0c592608bac  doc/eng-us/examples/ini-settings/menu/Leftmenu_user.md
 948f812204dd28949c8520e32c42f922  doc/eng-us/examples/ini-settings/menu/Leftmenu_user_mega.md
@@ -5121,7 +5121,7 @@ be3201513686289ad19abc02d2f79bcc  doc/eng-us/examples/ini-settings/menu/Leftmenu
 af20f5a9a359ddbbcefbd5c11923a8f3  doc/eng-us/examples/ini-settings/menu/MenuContentSettings.md
 88fbb1e69a6f84e2bbb8b80069f0da32  doc/eng-us/examples/ini-settings/menu/MenuSettings.md
 264a258b2c9c41d391327fd7954b11cc  doc/eng-us/examples/ini-settings/menu/NavigationPart.md
-17655d2dc242229ae5b9bd2a6c69a9f4  doc/eng-us/examples/ini-settings/menu/README.md
+f87067f26116e9c0f056bbdb0e5c33e1  doc/eng-us/examples/ini-settings/menu/README.md
 79d221630e57232e13f4cd63e345c325  doc/eng-us/examples/ini-settings/menu/SelectedMenu.md
 2a5ddc50ed27e3621011b4b753b32914  doc/eng-us/examples/ini-settings/menu/TopAdminMenu.md
 3801f05fa5941fcbd899696a788e6cca  doc/eng-us/examples/ini-settings/menu/TopOnly.md
@@ -5538,14 +5538,14 @@ d98157d9fa323471a1d85edbd71dadbb  doc/eng-us/examples/ini-settings/site/PasskeyS
 026229cc329f932cef3703538e24c34b  doc/eng-us/examples/ini-settings/site/PasswordSettings.md
 db568a7c6a790ae47b375a22aff291ab  doc/eng-us/examples/ini-settings/site/PortAccessSettings.md
 3714ba86f9deca30858e35271af055af  doc/eng-us/examples/ini-settings/site/ProxySettings.md
-83d9b5031a681c47b1bdee9148132fea  doc/eng-us/examples/ini-settings/site/README.md
+245a380dc99c237b447f2e1397fb4d29  doc/eng-us/examples/ini-settings/site/README.md
 08b294507b813f03bbb995305d430031  doc/eng-us/examples/ini-settings/site/RSSSettings.md
 4d12fc781fc7be917617fa4f3d165142  doc/eng-us/examples/ini-settings/site/ReauthGroup_account.md
 abc8f5ba626146a4e03e45d2cd0a21c8  doc/eng-us/examples/ini-settings/site/ReauthGroup_content.md
 f1c2e4d5f7849e72a14d212aba037d8b  doc/eng-us/examples/ini-settings/site/ReauthGroup_delete.md
 14465b5c0056e1a428e985fbbe2dd8ff  doc/eng-us/examples/ini-settings/site/ReauthGroup_export.md
 caaf319bef61aea8a96c7e4e3e2617b7  doc/eng-us/examples/ini-settings/site/ReauthGroup_system.md
-045123fa4b7e5be62d6fa65c72ddcc8c  doc/eng-us/examples/ini-settings/site/ReauthGroup_users.md
+a717b3ec7e0e55b3dfeb1bd45fa50b00  doc/eng-us/examples/ini-settings/site/ReauthGroup_users.md
 2386f6d38beeb105bc6ea8269c96bca3  doc/eng-us/examples/ini-settings/site/ReauthSettings.md
 2b2b4808ddb2c376e2a4a165f1475bbf  doc/eng-us/examples/ini-settings/site/RegionalSettings.md
 f28588e05ec0e35f21c7961596721b67  doc/eng-us/examples/ini-settings/site/RequestLogSettings.md
@@ -5561,6 +5561,7 @@ e48642eee4dbd6e70732b2362277b641  doc/eng-us/examples/ini-settings/site/Session.
 f919ae53a39eb0dbdae8797d7dc8691e  doc/eng-us/examples/ini-settings/site/SiteAccessRules.md
 f1f282858d2e96fad6a4bf2c0fa8be23  doc/eng-us/examples/ini-settings/site/SiteAccessSettings.md
 d27566e784eeb0553e0f193084e84431  doc/eng-us/examples/ini-settings/site/SiteDataSettings.md
+9dc44b25aaefa222d40e9e4ae9c6145f  doc/eng-us/examples/ini-settings/site/SiteSearchSuggestSettings.md
 9c7893cd8fdb562ad88192fc8f906324  doc/eng-us/examples/ini-settings/site/SiteSettings.md
 02edbbb315e15fd0cc25a6a4e7f4db63  doc/eng-us/examples/ini-settings/site/TemplateBridgeSettings.md
 7f49107a3863d0c6ba769baa561d084b  doc/eng-us/examples/ini-settings/site/TemplateSettings.md
@@ -5805,7 +5806,7 @@ ef6349083925cd2714e8bf8d03ea0cb6  doc/eng-us/examples/ini-settings/units/BinaryP
 d56bd0119117724ec28451b955cf9040  doc/eng-us/examples/ini-settings/units/FakeBinaryPrefixes.md
 dd6d7906b719b6760aa1bc4f73629d05  doc/eng-us/examples/ini-settings/units/README.md
 0e232771066dcceaa317c813e63cbefe  doc/eng-us/examples/ini-settings/upgrade/README.md
-9a8879195729f8c0c136e1875035eb05  doc/eng-us/examples/ini-settings/upgrade/UpgradeSettings.md
+3e6aa3c338f62e830f3a3b48e345a510  doc/eng-us/examples/ini-settings/upgrade/UpgradeSettings.md
 9e1b1ccf30cd6e71aea2f74dba8e332d  doc/eng-us/examples/ini-settings/upload/BugFileUpload.md
 250a3b352f951ffa60262e4294242ab6  doc/eng-us/examples/ini-settings/upload/CreateSettings.md
 fab0fc00ce80a0f18ebccd6e6f08f37d  doc/eng-us/examples/ini-settings/upload/LocationSettings.md
@@ -5889,7 +5890,7 @@ f389a70f96befc288e984f50f2661bab  doc/eng-us/examples/migration-steps/sql.md
 8d7bc74d322f4d4a9df7b75f60de94fe  doc/eng-us/examples/migration-steps/url_alias.md
 cd880b717583b4bdf2c2e8919a72789c  doc/eng-us/examples/migration-steps/user.md
 887c3683f69cb7a5a4d18671aa6b41bf  doc/eng-us/examples/migration-steps/user_group.md
-43f805b339a80b152bae70c38259b1aa  doc/eng-us/examples/module-views/README.md
+0e986e306565ee055ec4444e05465dbd  doc/eng-us/examples/module-views/README.md
 d47ea617a5a6ef7957b8ab9f59d987fc  doc/eng-us/examples/module-views/apikey/README.md
 ffa53e72494d43ac42b742210fb45311  doc/eng-us/examples/module-views/apikey/list.md
 2805e18cdf0c9a1e3a48b7131199e9c1  doc/eng-us/examples/module-views/audit/README.md
@@ -5905,7 +5906,7 @@ e22433b68c18da8323917ccfd09fe2e5  doc/eng-us/examples/module-views/audit/setting
 8c85bf32fd584fa262b054e744d84f2b  doc/eng-us/examples/module-views/class/README.md
 c0d70b2d8b2662c913c233b9b2bc938e  doc/eng-us/examples/module-views/class/classlist.md
 aede429b1acfc537b242bf4bef7c0506  doc/eng-us/examples/module-views/class/copy.md
-a2a3eefa49ed513a7e3a95e96929acef  doc/eng-us/examples/module-views/class/datatype.md
+99d7116fea5fc6cd29cdf952da3bbea3  doc/eng-us/examples/module-views/class/datatype.md
 e0cd2c61243eea1f6295914c9250676c  doc/eng-us/examples/module-views/class/down.md
 2738b930e5ec6d4d0cf251553cd25eef  doc/eng-us/examples/module-views/class/edit.md
 6703a1252f589ab4a9c028517799a377  doc/eng-us/examples/module-views/class/groupedit.md
@@ -5920,7 +5921,7 @@ f6630aafe1facb40d7b7e5691e565b64  doc/eng-us/examples/module-views/collaboration
 1674cf092806140ff5c00c9ee28ad1a4  doc/eng-us/examples/module-views/collaboration/group.md
 df54384a09e4f3f09b08a080e3737a01  doc/eng-us/examples/module-views/collaboration/item.md
 0c14661a9916c362be636b31fb44a077  doc/eng-us/examples/module-views/collaboration/view.md
-2d89be5b502fa1aa2ec51eea6ada9bb7  doc/eng-us/examples/module-views/content/README.md
+f9daa8c6a93296835a25ca57cdca5f5f  doc/eng-us/examples/module-views/content/README.md
 115381decabdfaae353339119c859b4d  doc/eng-us/examples/module-views/content/action.md
 694332e8a553ef63ba95f2ed30d0965b  doc/eng-us/examples/module-views/content/advancedsearch.md
 c4b9736ca2053881c149c5859f35d7e6  doc/eng-us/examples/module-views/content/bookmark.md
@@ -5954,6 +5955,7 @@ e80e5c4b0e19f9c7fabe716bc93ed509  doc/eng-us/examples/module-views/content/resto
 9da3dcb5c7272db94cc70edc0732cb72  doc/eng-us/examples/module-views/content/reverserelatedlist.md
 3d85fd1c5fd75991ccf1d47c8c43f374  doc/eng-us/examples/module-views/content/search.md
 07d3c2efe5d7afdb762e78363fbc2f04  doc/eng-us/examples/module-views/content/sharedpreview.md
+6317ad0b43405ed7c34cf6dbddea2fb9  doc/eng-us/examples/module-views/content/sitesuggest.md
 dddfc4e2143d0532aa6053b3313e27bc  doc/eng-us/examples/module-views/content/subitemsexport.md
 b456b918ec5f2dc5b72b15dc6acd867a  doc/eng-us/examples/module-views/content/suggest.md
 2c2489947b2f6f6788a09b04dc065127  doc/eng-us/examples/module-views/content/tipafriend.md
@@ -6275,7 +6277,7 @@ abad9585e60aa8d8afb7caceb4f1d032  doc/eng-us/examples/policies/README.md
 d6ec3bba02deac72d2831972526df59a  doc/eng-us/examples/policies/audit.md
 ad10095b797f6b5becb28574a063235d  doc/eng-us/examples/policies/class.md
 603182180d85ceca82756313d39c4670  doc/eng-us/examples/policies/collaboration.md
-ea0daf2d07eca04a5b80422a1fc0a0d4  doc/eng-us/examples/policies/content.md
+4374b8ffbe1f48331f0305150de7d160  doc/eng-us/examples/policies/content.md
 ac2216b59c0f58dfd52c41b566006ed3  doc/eng-us/examples/policies/contentcheck.md
 bd86883afe035e3e6031db57af41d74c  doc/eng-us/examples/policies/contentfinder.md
 479c60c474fe0d9573ecf89189c46fb5  doc/eng-us/examples/policies/csp.md
@@ -6399,10 +6401,10 @@ a5e30ddb58041606ce8705b2723cfb26  doc/eng-us/examples/template-operators/count_w
 f2a50c3f8ce9f472873147e1fcd9ebe5  doc/eng-us/examples/template-operators/crc32.md
 68afbe6c6b5dad32ef302229022857e0  doc/eng-us/examples/template-operators/csp_nonce.md
 9758cdd5af58a7fc4abd3d7dfdc88727  doc/eng-us/examples/template-operators/currentdate.md
-93b4ae09ea0a38ce5b70dc418147d69f  doc/eng-us/examples/template-operators/d18n.md
+89aa232f820bc59230b5b0ff406f936a  doc/eng-us/examples/template-operators/d18n.md
 e4d3444331815860b0afa9149fa2b282  doc/eng-us/examples/template-operators/datetime.md
 804269193aeca09f5c94e1f42ec5f3f9  doc/eng-us/examples/template-operators/dec.md
-3747de7edc9db9eddd8b96b655b1616a  doc/eng-us/examples/template-operators/div.md
+483073de599204f04e4910f45a6ee4ba  doc/eng-us/examples/template-operators/div.md
 11291d86fd6455fc9ec886ce54d5de8b  doc/eng-us/examples/template-operators/downcase.md
 037c0feed1e1bbd84336e660a3e11269  doc/eng-us/examples/template-operators/dump.md
 c74c4fef619b0fecc141328864240e87  doc/eng-us/examples/template-operators/ends_with.md
@@ -6433,7 +6435,7 @@ f1fe00b01912a2ac3e87393751ee3edd  doc/eng-us/examples/template-operators/ezoe_in
 bf124eef28f7130446249229cf21a950  doc/eng-us/examples/template-operators/ezpackage.md
 22bb22b814dbcf36da16009b7a275efe  doc/eng-us/examples/template-operators/ezpreference.md
 88f9ffdcbb6b08ddce8ebaee15af60d4  doc/eng-us/examples/template-operators/ezroot.md
-8ae24e0f20fffa67f2313e5ab12ec9da  doc/eng-us/examples/template-operators/ezscript.md
+b36efb6cbc8f86ce21a323881433dbc2  doc/eng-us/examples/template-operators/ezscript.md
 881859fc2a47fe194ce95f1fb3c7afa5  doc/eng-us/examples/template-operators/ezscript_load.md
 6eaacc402d4b3cdf055ec5e815258452  doc/eng-us/examples/template-operators/ezscript_require.md
 5adb32547e1d249d676440d13054a8c0  doc/eng-us/examples/template-operators/ezscriptfiles.md
@@ -6446,7 +6448,7 @@ d67163ed425f9b1af757689b4cd3092e  doc/eng-us/examples/template-operators/eztoc.m
 ac12ee9fc1e3e73ae0d7dc7712f2a0bd  doc/eng-us/examples/template-operators/first_set.md
 b852fc93ff0de9a8f3a143d6b7dd904a  doc/eng-us/examples/template-operators/flag_icon.md
 e469ecf9727732100512cc6e94e137c6  doc/eng-us/examples/template-operators/float.md
-dac8b3e4ab4d46916cc71936605fed96  doc/eng-us/examples/template-operators/floor.md
+20350f11cc1ca471103f43635cef3bce  doc/eng-us/examples/template-operators/floor.md
 4530e9177200c88530eaf7dd02338789  doc/eng-us/examples/template-operators/ge.md
 890c5a9b2df18a5d34ef565a5fbb253d  doc/eng-us/examples/template-operators/get_class.md
 08066aa4c7555176009a76ee5e4ac638  doc/eng-us/examples/template-operators/get_type.md
@@ -6860,7 +6862,7 @@ f591dfeee412831cbf4c9ec450c93dc6  doc/eng-us/features/6.0/admin-links-follow-per
 730f4bd870741ba72e0b822ed910c9fd  doc/eng-us/features/6.0/admin-list-paging.md
 a20fc339f62ddfac2c3df7da80ebfdfc  doc/eng-us/features/6.0/admin3-responsive-admin.md
 a29a680e52b85935874388c9c6d885bd  doc/eng-us/features/6.0/admin3-sidebar-width-and-font-size.md
-0fc9e7109e671d185e8485d5213921e5  doc/eng-us/features/6.0/admin4-design.md
+373274809dddfdbf578d951cb855d5f7  doc/eng-us/features/6.0/admin4-design.md
 c39d570092f54064a972f04dc1ae069e  doc/eng-us/features/6.0/admin4l.md
 4e6288e58d6f4884e2c040b863cbb545  doc/eng-us/features/6.0/adminneo-database-manager.md
 64d6c14e6630ba2fab70560d20ccab11  doc/eng-us/features/6.0/audit-trail.md
@@ -16881,7 +16883,7 @@ acc487d9c36faff1bcb4a95e881e5d84  doc/ger-de/funktionen/5.3/shop_product_datatyp
 c42f6063193b16db2d02b1241393196b  doc/ger-de/funktionen/6.0/admin-links-folgen-den-berechtigungen.md
 bb1cb6cf268ab524e4a3ea1fd0eef9f6  doc/ger-de/funktionen/6.0/admin3-responsives-admin.md
 e2836e805e1dcad6c266afcbd5b608a8  doc/ger-de/funktionen/6.0/admin3-seitenleistenbreite-und-schriftgroesse.md
-ae1385fc9b5750c96eb03becb214efe0  doc/ger-de/funktionen/6.0/admin4-design.md
+df9628b3e6e2ed83e2bb453730f0f340  doc/ger-de/funktionen/6.0/admin4-design.md
 35bf105cf4d756df21ca7a2618426c19  doc/ger-de/funktionen/6.0/admin4l.md
 60e8c726f4ab01642d28261fd8386769  doc/ger-de/funktionen/6.0/adminneo-datenbankverwaltung.md
 b5ab866318b551d544f0563be5b5b6a3  doc/ger-de/funktionen/6.0/anfrageprotokolle.md
@@ -27150,7 +27152,7 @@ ba0c39f06c1735dda504b831ab1f89ef  settings/ldap.ini
 473463c7f61e8acbcf8e30e022d70c59  settings/logviewer.ini
 f38064dccc9974bbc272bd49a25b4a96  settings/mailpreferences.ini
 c1f0320332dab25bd13faf6ea46c6a74  settings/membermanagement.ini
-8bcaffb72c9a6a9e57e5bfc1c6825692  settings/menu.ini
+49a6fde2791c518fd9a6a414de5b84db  settings/menu.ini
 e3d712d03b9a8b2596ecbe61f2fbd2ad  settings/migration.ini
 71a7ac0296299fca0a6f1ae1b62ae817  settings/mime.ini
 409f9d6ffd0d2b030179c0d01f0a0e00  settings/module.ini
@@ -28625,7 +28627,7 @@ c7efb57d2cd3262114888210fa5ff3e4  tests/tests/design/AdminSearchTest.php
 6fb26c4c02b0cc7d20306448d08db456  tests/tests/design/AdminSectionScopeTest.php
 8ece8ddb00b8dc5b62126ebd234606ea  tests/tests/design/AdminSelfContainedTest.php
 8a3b808d1ee42e2d45746587cb9cdd28  tests/tests/design/AdminSetupOverviewTest.php
-c14605b059143dd7cdcd79fe6d02daa0  tests/tests/design/AdminSetupTabsLeftMenuTest.php
+becf07bd65d7e0176ce0f392fbe7454e  tests/tests/design/AdminSetupTabsLeftMenuTest.php
 1bbd917d4b1d5f827bd2928bccacba89  tests/tests/design/AdminSetupWizardTemplatesTest.php
 94a67d0efe9a74e17b3bd6d35233b34d  tests/tests/design/AdminSidebarDrawerTest.php
 6915ce6688eed31f2837d7020708d9e3  tests/tests/design/AdminSiteAccessMenuTest.php

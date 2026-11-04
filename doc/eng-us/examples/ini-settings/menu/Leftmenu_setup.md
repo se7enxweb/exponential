@@ -2,14 +2,14 @@
 title: menu.ini [Leftmenu_setup]
 audience: developer, admin
 category: examples
-summary: "The settings of [Leftmenu_setup] in menu.ini: Name, Groups, GroupNames, GroupTabs, GroupSections, GroupLinks_content_model, GroupLinks_site, GroupLinks_design ..."
-keywords: menu.ini, Leftmenu_setup, INI, setting, Name, Groups, GroupNames, GroupTabs, GroupSections, GroupLinks_content_model, GroupLinks_site, GroupLinks_design, GroupLinks_workflow, GroupLinks_users, GroupLinks_data, GroupLinks_system, GroupLinks_ai, GroupLinks_updates, LeadLinks, MegaMenuLinks, LinkIcons, LinkDescriptions, LinkFigureTemplates, Links, LinkNames, PolicyList_cache, PolicyList_static_publishing, PolicyList_audit, PolicyList_classes, PolicyList_collected, PolicyList_contentfinder, PolicyList_unreferenced_objects, PolicyList_broken_relations, PolicyList_storage_files
+summary: "The settings of [Leftmenu_setup] in menu.ini: Name, Groups, GroupNames, GroupTabs, GroupTabsLeftMenu, GroupSections, GroupLinks_content_model, GroupLinks_site ..."
+keywords: menu.ini, Leftmenu_setup, INI, setting, Name, Groups, GroupNames, GroupTabs, GroupTabsLeftMenu, GroupSections, GroupLinks_content_model, GroupLinks_site, GroupLinks_design, GroupLinks_workflow, GroupLinks_users, GroupLinks_data, GroupLinks_system, GroupLinks_ai, GroupLinks_updates, LeadLinks, MegaMenuLinks, LinkIcons, LinkDescriptions, LinkFigureTemplates, Links, LinkNames, PolicyList_cache, PolicyList_static_publishing, PolicyList_audit, PolicyList_classes, PolicyList_datatypes, PolicyList_collected, PolicyList_contentfinder, PolicyList_unreferenced_objects
 type: generated
 generated: exp:help:examples
 ---
 # menu.ini [Leftmenu_setup]
 
-The block `[Leftmenu_setup]` of `settings/menu.ini`, with 66 setting(s).
+The block `[Leftmenu_setup]` of `settings/menu.ini`, with 68 setting(s).
 
 Never edit `settings/menu.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -107,6 +107,24 @@ GroupTabs[audit]=audit
 */ ?>
 ```
 
+## GroupTabsLeftMenu
+
+> The left menu of the pages of such a tab while it is moved into Setup (admin4 page\_leftmenu.tpl, admin4l's left menu  
+> block): setup draws this menu with the tab's group open (default); tab draws the tab's own left menu (the view's  
+> left\_menu, else parts/<part>/menu.tpl), while the top menu still marks the Setup tab and opens the Setup mega menu;  
+> the path above the page is the view's own either way. design/admin and exp\_adminui never move a tab into Setup, so they always draw the tab's own menu  
+> (doc/eng-us/features/6.0/admin4-design.md, "Moving a tab into Setup").  
+
+Default: `setup`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/menu.ini.append.php
+[Leftmenu_setup]
+GroupTabsLeftMenu=setup
+*/ ?>
+```
+
 ## GroupSections
 
 Default: a hash of 2: `design=Leftmenu_design`, `audit=Leftmenu_audit`.
@@ -124,7 +142,7 @@ GroupSections[audit]=Leftmenu_audit
 
 ## GroupLinks_content_model
 
-Default: a list of 10: `classes`, `sections`, `states`, `languages`, `interface_languages`, `contentfinder`, `unreferenced_objects`, `broken_relations`, `storage_files`, `collected`.
+Default: a list of 11: `classes`, `datatypes`, `sections`, `states`, `languages`, `interface_languages`, `contentfinder`, `unreferenced_objects`, `broken_relations`, `storage_files`, `collected`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -133,6 +151,7 @@ Default: a list of 10: `classes`, `sections`, `states`, `languages`, `interface_
 # an empty "GroupLinks_content_model[]" first replaces the shipped list; without it the items are added
 GroupLinks_content_model[]
 GroupLinks_content_model[]=classes
+GroupLinks_content_model[]=datatypes
 GroupLinks_content_model[]=sections
 GroupLinks_content_model[]=states
 GroupLinks_content_model[]=languages
@@ -369,7 +388,7 @@ MegaMenuLinks[]=git_manager
 >                                   figure\_key=<key> for a shown tile only; empty or not design: draws none  
 > An extension sets them for its own link in its menu.ini.append.php (doc/eng-us/features/6.0/admin4-design.md).  
 
-Default: a hash of 60: `audit=journal-check`, `broken_relations=exclamation-diamond`, `storage_files=files`, `cache=arrow-clockwise`, `classes=diagram-3`, `collected=inbox`, `contentfinder=search`, `cronjobs=clock`, `design_node=brush`, `dse=database`, `expai_budgets=piggy-bank`, `expai_models=cpu` ....
+Default: a hash of 61: `audit=journal-check`, `broken_relations=exclamation-diamond`, `storage_files=files`, `cache=arrow-clockwise`, `classes=diagram-3`, `datatypes=ui-radios`, `collected=inbox`, `contentfinder=search`, `cronjobs=clock`, `design_node=brush`, `dse=database`, `expai_budgets=piggy-bank` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -382,6 +401,7 @@ LinkIcons[broken_relations]=exclamation-diamond
 LinkIcons[storage_files]=files
 LinkIcons[cache]=arrow-clockwise
 LinkIcons[classes]=diagram-3
+LinkIcons[datatypes]=ui-radios
 LinkIcons[collected]=inbox
 LinkIcons[contentfinder]=search
 LinkIcons[cronjobs]=clock
@@ -396,14 +416,13 @@ LinkIcons[ezupdate]=cloud-arrow-down
 LinkIcons[git_manager]=git
 LinkIcons[git_manager_backup]=archive
 LinkIcons[global_setting]=globe
-LinkIcons[ini]=sliders
-# ... 40 more in the shipped file
+# ... 41 more in the shipped file
 */ ?>
 ```
 
 ## LinkDescriptions
 
-Default: a hash of 60: `audit=Who changed what: the audit settings and archives.`, `broken_relations=Visible content that links to deleted, hidden or trashed content.`, `storage_files=Files in the storage that nothing uses, and files with the wrong owner or mode.`, `cache=Clear or regenerate the caches.`, `classes=The content classes and their attributes.`, `collected=What visitors sent through forms.`, `contentfinder=Find content by its id, remote id or path.`, `cronjobs=The cronjob parts, their scripts and last runs.`, `design_node=The design's top node and the objects below it.`, `dse=Browse and query the database directly.`, `expai_budgets=AI budgets, queued requests and what they cost.`, `expai_models=The AI providers and models, and their tests.` ....
+Default: a hash of 61: `audit=Who changed what: the audit settings and archives.`, `broken_relations=Visible content that links to deleted, hidden or trashed content.`, `storage_files=Files in the storage that nothing uses, and files with the wrong owner or mode.`, `cache=Clear or regenerate the caches.`, `classes=The content classes and their attributes.`, `datatypes=Every datatype of the kernel and the extensions, and how the classes and content use it.`, `collected=What visitors sent through forms.`, `contentfinder=Find content by its id, remote id or path.`, `cronjobs=The cronjob parts, their scripts and last runs.`, `design_node=The design's top node and the objects below it.`, `dse=Browse and query the database directly.`, `expai_budgets=AI budgets, queued requests and what they cost.` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -416,6 +435,7 @@ LinkDescriptions[broken_relations]=Visible content that links to deleted, hidden
 LinkDescriptions[storage_files]=Files in the storage that nothing uses, and files with the wrong owner or mode.
 LinkDescriptions[cache]=Clear or regenerate the caches.
 LinkDescriptions[classes]=The content classes and their attributes.
+LinkDescriptions[datatypes]=Every datatype of the kernel and the extensions, and how the classes and content use it.
 LinkDescriptions[collected]=What visitors sent through forms.
 LinkDescriptions[contentfinder]=Find content by its id, remote id or path.
 LinkDescriptions[cronjobs]=The cronjob parts, their scripts and last runs.
@@ -430,8 +450,7 @@ LinkDescriptions[ezupdate]=Packages with a newer release, and their updates.
 LinkDescriptions[git_manager]=The Git checkout of the installation and its updates.
 LinkDescriptions[git_manager_backup]=Make, download and remove backups.
 LinkDescriptions[global_setting]=The settings of the whole site.
-LinkDescriptions[ini]=Read and edit the INI settings.
-# ... 40 more in the shipped file
+# ... 41 more in the shipped file
 */ ?>
 ```
 
@@ -461,6 +480,7 @@ LinkFigureTemplates[cronjobs]=design:setup/setupmenu_figure.tpl
 > Static publishing (module staticpublish): a site published as static files to GitHub Pages or any git host  
 > (doc/eng-us/help/static-publishing/README.md)  
 > The audit settings and archives (doc/eng-us/bc/6.0/audit.md, "Placement"), only with audit/manage  
+> The datatypes (class/datatype): every registered datatype, its provider and how the content model uses it  
 > The content finder (doc/eng-us/features/6.0/content-finder.md): find content by id or path, only with contentfinder/search  
 > The content checks (doc/eng-us/features/6.0/content-checks.md): unreferenced objects and broken relations, each only  
 > with its policy  
@@ -501,7 +521,7 @@ LinkFigureTemplates[cronjobs]=design:setup/setupmenu_figure.tpl
 > PolicyList\_toolbar\_management\[\]=visual/\*  
 > RAD closes the group "Site and URLs"  
 
-Default: a hash of 47: `overview=setup/menu`, `cache=setup/cache`, `static_publishing=staticpublish/dashboard`, `audit=audit/settings`, `classes=class/grouplist`, `collected=infocollector/overview`, `contentfinder=contentfinder/search`, `unreferenced_objects=contentcheck/unreferenced`, `broken_relations=contentcheck/brokenrelations`, `storage_files=contentcheck/storage`, `maintenance=setup/maintenance`, `migrations=migration/status` ....
+Default: a hash of 48: `overview=setup/menu`, `cache=setup/cache`, `static_publishing=staticpublish/dashboard`, `audit=audit/settings`, `classes=class/grouplist`, `datatypes=class/datatype/list`, `collected=infocollector/overview`, `contentfinder=contentfinder/search`, `unreferenced_objects=contentcheck/unreferenced`, `broken_relations=contentcheck/brokenrelations`, `storage_files=contentcheck/storage`, `maintenance=setup/maintenance` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -514,6 +534,7 @@ Links[cache]=setup/cache
 Links[static_publishing]=staticpublish/dashboard
 Links[audit]=audit/settings
 Links[classes]=class/grouplist
+Links[datatypes]=class/datatype/list
 Links[collected]=infocollector/overview
 Links[contentfinder]=contentfinder/search
 Links[unreferenced_objects]=contentcheck/unreferenced
@@ -528,14 +549,13 @@ Links[design_node]=content/view/full/58
 Links[ini]=settings/view
 Links[languages]=content/translations
 Links[interface_languages]=setup/languages
-Links[mailpreferences]=mailpreferences/admin/status
-# ... 27 more in the shipped file
+# ... 28 more in the shipped file
 */ ?>
 ```
 
 ## LinkNames
 
-Default: a hash of 21: `static_publishing=Static publishing`, `audit=Audit`, `contentfinder=Content finder`, `unreferenced_objects=Unreferenced objects`, `broken_relations=Broken relations`, `storage_files=Storage files`, `maintenance=Maintenance`, `migrations=Migrations`, `cronjobs=Cronjobs`, `logs=Log files`, `design_node=Design content`, `interface_languages=Interface languages` ....
+Default: a hash of 22: `static_publishing=Static publishing`, `audit=Audit`, `datatypes=Datatypes`, `contentfinder=Content finder`, `unreferenced_objects=Unreferenced objects`, `broken_relations=Broken relations`, `storage_files=Storage files`, `maintenance=Maintenance`, `migrations=Migrations`, `cronjobs=Cronjobs`, `logs=Log files`, `design_node=Design content` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -545,6 +565,7 @@ Default: a hash of 21: `static_publishing=Static publishing`, `audit=Audit`, `co
 LinkNames[]
 LinkNames[static_publishing]=Static publishing
 LinkNames[audit]=Audit
+LinkNames[datatypes]=Datatypes
 LinkNames[contentfinder]=Content finder
 LinkNames[unreferenced_objects]=Unreferenced objects
 LinkNames[broken_relations]=Broken relations
@@ -562,8 +583,7 @@ LinkNames[data_connections]=Connections
 LinkNames[secrets]=Secrets
 LinkNames[graphql]=GraphQL
 LinkNames[data_syncs]=Synchronisations
-LinkNames[sitedata]=Site data
-# ... 1 more in the shipped file
+# ... 2 more in the shipped file
 */ ?>
 ```
 
@@ -620,6 +640,20 @@ Default: a list of 1: `class/*`.
 # an empty "PolicyList_classes[]" first replaces the shipped list; without it the items are added
 PolicyList_classes[]
 PolicyList_classes[]=class/*
+*/ ?>
+```
+
+## PolicyList_datatypes
+
+Default: a list of 1: `class/*`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/menu.ini.append.php
+[Leftmenu_setup]
+# an empty "PolicyList_datatypes[]" first replaces the shipped list; without it the items are added
+PolicyList_datatypes[]
+PolicyList_datatypes[]=class/*
 */ ?>
 ```
 

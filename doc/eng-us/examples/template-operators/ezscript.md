@@ -32,10 +32,10 @@ Built from the parameter list above; the values are placeholders (the operator's
 
 ## In a shipped template
 
-The first use in the templates of this installation, `design/admin/templates/content/datatype/edit/ezdate.tpl` line 26:
+The first use in the templates of this installation, `design/admin/templates/class/datatype_list.tpl` line 153:
 
 ```tpl
-{ezscript( array( 'page/content_datepicker.js' ) )}
+{ezscript( array( 'page/class_datatypes.js' ) )}
 ```
 
 ## Related

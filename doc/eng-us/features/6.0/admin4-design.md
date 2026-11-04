@@ -456,7 +456,17 @@ well for the core tabs; an extension's tab is left out only with `HiddenTabs[]`.
   menu, its pages keep their tab and left menu. `parts/a4_navigation_part.tpl` gives the navigation part both menus
   use, in admin4 and in admin4l's header and left menu blocks. With `[Leftmenu_setup] GroupTabsLeftMenu=tab` (default
   `setup`) such a page still marks the Setup tab but draws the tab's own left menu (its `parts/<part>/menu.tpl` or the
-  view's `$module_result.left_menu`) instead of the Setup menu.
+  view's `$module_result.left_menu`) instead of the Setup menu. The Setup tab's mega menu and the breadcrumb stay as
+  they are, so a site that collects several extension tabs under Setup keeps each tab's own navigation in the left
+  column. Set it in `settings/override/menu.ini.append.php`:
+
+  ```ini
+  [Leftmenu_setup]
+  GroupTabsLeftMenu=tab
+  ```
+
+  design/admin and the Exponential Admin UI (exp_adminui) never move a tab into Setup, so they always draw the tab's
+  own left menu and need no setting.
 - **Dashboard.** Without the Dashboard tab the logo leads to the dashboard (`[Topmenu_dashboard] URL[default]`) for a
   user who may open it (`content/dashboard`), instead of the content root, which the Content tab still opens. The
   dashboard is also the admin's start page after login when `site.ini [SiteSettings] DefaultPage=content/dashboard`,
