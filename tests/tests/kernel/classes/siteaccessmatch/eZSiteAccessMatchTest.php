@@ -20,6 +20,11 @@ class eZSiteAccessMatchTest extends PHPUnit\Framework\TestCase
     protected function setUp(): void
     {
         chdir( dirname( __DIR__, 5 ) );
+        // the status code is the process's: an earlier test may have set one
+        if ( !headers_sent() )
+            http_response_code( 200 );
+        // and a request rule of an earlier test may have kept its request out of the caches
+        unset( $GLOBALS['ezpRequestRuleNoStore'] );
         $this->set( 'SiteAccessSettings', 'StaticMatch', '' );
         $this->set( 'SiteSettings', 'DefaultAccess', 'k1default' );
         $this->set( 'SiteAccessSettings', 'AvailableSiteAccessList', array( 'k1default', 'k1eng', 'k1ger', 'k1admin', 'k1_mobile' ) );

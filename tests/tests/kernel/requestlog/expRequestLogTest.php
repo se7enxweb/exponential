@@ -40,6 +40,9 @@ class expRequestLogTest extends PHPUnit\Framework\TestCase
     protected function setUp(): void
     {
         chdir( dirname( __DIR__, 4 ) );
+        // the status code is the process's: an earlier test may have set one
+        if ( !headers_sent() )
+            http_response_code( 200 );
         $this->dir = 'var/tmp/requestlog_test_' . uniqid( '', true );
         mkdir( $this->dir, 0700, true );
         expRequestLog::reset();

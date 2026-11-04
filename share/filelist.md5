@@ -28829,7 +28829,7 @@ df82295d02a58f92493126230dcb9a52  tests/tests/kernel/classes/eZURLTest.php
 3e286fd422c9f7eae476dceae79797c1  tests/tests/kernel/classes/eZUserAuthenticationTest.php
 acc27e3959c9169bbc67cce50b90692e  tests/tests/kernel/classes/eZUserDiscountRuleTest.php
 dc5211d1ded5a6dbfb99d64cb16b6f88  tests/tests/kernel/classes/eZUserEditCancelTest.php
-37d0c986aa3c9c23878828e4619b8dcf  tests/tests/kernel/classes/eZUserLogoutTest.php
+5984d459daac45f1a931984e62b63603  tests/tests/kernel/classes/eZUserLogoutTest.php
 04fd39a0480fb054466faea9ce2eb108  tests/tests/kernel/classes/eZWorkflowProcessGroupingTest.php
 0129eafe481637d3d8eb30734e2b5fb2  tests/tests/kernel/classes/eZWorkflowProcessListLiveTest.php
 99dbccc3fc64a03207f78f172ab46ef8  tests/tests/kernel/classes/eZWorkflowProcessListPageTest.php
@@ -29362,7 +29362,7 @@ daae1c2f9fd305fb79f5b60fbcefb287  tests/tests/kernel/classes/shop/expOrderSiteac
 bd5f77156bbd94e89ce00b7912f80a0a  tests/tests/kernel/classes/shopprices/eZPaymentCallbackCheckerTest.php
 7bd96c00d553a044910271aa1ea2c6e0  tests/tests/kernel/classes/shopprices/eZShopPricesTest.php
 c243bf1708e51415584c6fd64a5a11d0  tests/tests/kernel/classes/shopprices/eZShopReceiptTokenTest.php
-6ff327ab616500ef1a0e2f54fb092cca  tests/tests/kernel/classes/siteaccessmatch/eZSiteAccessMatchTest.php
+160af2505d0caadd301a7477907e6897  tests/tests/kernel/classes/siteaccessmatch/eZSiteAccessMatchTest.php
 8c0728b2f967cd40690522b1d6c5fdb0  tests/tests/kernel/classes/sslzones/eZSSLZoneTest.php
 b1d378be0b0853fcbb3bc90b87263740  tests/tests/kernel/classes/staticpublish/expStaticAdminTest.php
 de7286bfe7b0c3200dc0ab42518781f0  tests/tests/kernel/classes/staticpublish/expStaticBuildMultiSiteSqliteTest.php
@@ -29891,7 +29891,7 @@ ea78290da17011e1c5e5fa5c26e2f812  tests/tests/kernel/private/webdav/regression/P
 d5a5d57ef47b9b57f9871a2fbbf5b752  tests/tests/kernel/requestclassifier/expRequestClassifierTest.php
 a17689ffdad3de141a54df0be36b5b8e  tests/tests/kernel/requestclassifier/expRequestClassifierThresholdTest.php
 39abb422a69acfab626c6cd3d0dc708a  tests/tests/kernel/requestlog/expRequestLogRequestEndTest.php
-5c3e599565541838e599260a4fe75ac5  tests/tests/kernel/requestlog/expRequestLogTest.php
+b952e7ea8b97dca34b3b612e0da7caef  tests/tests/kernel/requestlog/expRequestLogTest.php
 db6c4a8ca3c8ccf2ed6fcbbdd2c0b803  tests/tests/kernel/requestlog/fixtures/request_ending_in_clean_exit.php
 1e9e7547b8ae5731de34a3aa97cb10de  tests/tests/kernel/search/eZSearchEngineIdsTest.php
 04f721dfbca54f26e828acc82f099bf9  tests/tests/kernel/search/eZSearchEngineIntegerClampTest.php
@@ -30096,7 +30096,7 @@ cd9b15cbda2d7cf4ab918f89745c1f86  tests/tests/lib/ezutils/eZURITransformURINullT
 928c3575ddbe82124c032d98733c8fa5  tests/tests/lib/ezutils/expDebugBarReportMessageTextTest.php
 60a9b701b0feb7e1dabdc5e52e5d9ee1  tests/tests/lib/ezutils/expDebugBarReportPanelHeightTest.php
 38dd51e326a256aba5d8a3f7cbea1eab  tests/tests/lib/ezutils/expDebugBarReportRuntimeChipsTest.php
-4b618536d09968136377a4218458a14c  tests/tests/lib/ezutils/expDebugBarReportToolbarThemeTest.php
+d352af19a204491ba55add44610fea42  tests/tests/lib/ezutils/expDebugBarReportToolbarThemeTest.php
 cd9240b4ea8d59125f761af07ac41ae5  tests/tests/lib/ezutils/expDebugOffHeaderTest.php
 5c2924a59ad2748766f3ab2a5999fa7b  tests/tests/lib/ezutils/expDebugReportNoInlineCssTest.php
 e81fa7dbd78e2bb8974da3c6c02d5576  tests/tests/lib/ezutils/ezdebug_regression.php

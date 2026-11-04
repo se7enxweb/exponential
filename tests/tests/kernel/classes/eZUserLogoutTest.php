@@ -34,6 +34,8 @@ class eZUserLogoutTest extends PHPUnit\Framework\TestCase
     private $savedCookie = array();
     private $hadDB;
     private $previousDB;
+    /** @var array|null $GLOBALS['eZSiteBasics'] before the test (null: not set) */
+    private $savedSiteBasics;
 
     protected function setUp(): void
     {
@@ -42,6 +44,10 @@ class eZUserLogoutTest extends PHPUnit\Framework\TestCase
         {
             $this->markTestSkipped( 'headers already sent in this process: no session can be started' );
         }
+        // an eZScript of an earlier test (use-session false) leaves session-required false, and eZSession then
+        // starts no session at all
+        $this->savedSiteBasics = array_key_exists( 'eZSiteBasics', $GLOBALS ) ? $GLOBALS['eZSiteBasics'] : null;
+        $GLOBALS['eZSiteBasics']['session-required'] = true;
         $this->dir = 'var/tmp/phpunit-logout-' . getmypid() . '-' . substr( md5( uniqid( '', true ) ), 0, 8 );
         mkdir( $this->dir, 0700, true );
         foreach ( array( 'session.save_path', 'session.save_handler', 'session.use_strict_mode', 'session.use_cookies' ) as $key )
@@ -82,6 +88,10 @@ class eZUserLogoutTest extends PHPUnit\Framework\TestCase
             ini_set( $key, (string)$value );
         $_COOKIE = $this->savedCookie;
         $_SESSION = array();
+        if ( $this->savedSiteBasics === null )
+            unset( $GLOBALS['eZSiteBasics'] );
+        else
+            $GLOBALS['eZSiteBasics'] = $this->savedSiteBasics;
         ezpINIHelper::restoreINISettings();
         $GLOBALS['eZUserGlobalInstance_'] = false;
         $this->setStatic( 'eZUser', 'userHasLoggedOut', false );
