@@ -1,0 +1,31 @@
+*Titel: Allgemeine Schnittstelle für Dateiinformationen von Datentypen
+
+Anlass:
+Dateiinformationen eines Attributs bzw. Datentyps sollen leichter abzufragen sein.
+Statt wissen zu müssen, welcher Datentyp Dateiinformationen hat, fragt man die
+Datentyp-Schnittstelle, ob sie Dateiinformationen hat, und bekommt sie gegebenenfalls zurück.
+
+*Dokumentation:
+Die Schnittstelle eZDatatype hat neue Methoden: eine prüft, ob Dateiinformationen
+unterstützt werden, eine liefert die Informationen selbst.
+
+Methoden:
+ - hasStoredFileInformation(): Gibt true zurück, wenn der Datentyp dies unterstützt
+ - storedFileInformation(): Gibt die Informationen als Array zurück oder false, wenn keine gefunden wurden
+   Die Struktur:
+   * filepath
+   * filename (optional)
+   * original_filename (optional)
+   * filesize (optional)
+   * mime_type (optional)
+   Fehlende optionale Felder werden berechnet.
+
+Unterstützte Datentypen:
+ - ezimage: Gibt das Originalbild zurück
+ - ezbinaryfile: Verwendet die gespeicherte Binärdatei
+ - ezmedia: Verwendet die gespeicherte Mediendatei
+
+*Tests:
+
+*SVN-Revisionen:
+8734

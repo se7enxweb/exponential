@@ -1,0 +1,63 @@
+*Titel: Vereinfachtes Hochladen von Dateien, Bildern usw. als Objekte
+
+*Anlass:
+Neue Dateien, Bilder und Videos sollen sich viel einfacher in den Inhaltsbaum aufnehmen
+lassen. Bisher musste der Benutzer ein neues Objekt einer Klasse mit Dateiunterstützung
+anlegen und dann die Datei hochladen.
+
+Das System soll den Dateityp erkennen und danach die Klasse wählen. Außerdem sollen sich
+die Objekte automatisch nach Dateityp platzieren lassen oder an einem im Formular
+angegebenen Ort.
+
+*Dokumentation:
+
+INI-Einstellungen für Aktionen:
+Das System sucht nach einer INI-Gruppe mit dem Namen der Aktion.
+Die Gruppe einer Aktion kann diese Einstellungen enthalten:
+
+- NavigationPartIdentifier
+Legt den Navigationsbereich der Seite fest.
+
+- ParentNodes
+Ein Array mit den Orten für das neue Objekt.
+Jeder Eintrag ist entweder ein Alias oder die Knoten-ID.
+Aliase lassen sich in der Variablen AliasList oben in dieser Datei definieren, oder man
+verwendet einen der vom System definierten Aliase:
+- content
+- users
+- media
+- setup
+
+
+XHTML-Formular:
+Um das Hochladen aus einem Formular zu starten, lassen Sie das Formular an content/action
+senden und sorgen für eine Absende-Schaltfläche mit dem Namen UploadFileAction.
+Außerdem legen Sie einen Namen für die Upload-Aktion fest, die in upload.ini konfiguriert
+wird; die Aktion kann verschiedene Dinge steuern, etwa die Platzierung.
+
+Beispiel:
+<input type="hidden" name="UploadActionName" value="BugFileUpload" />
+<input type="submit" name="UploadFileAction" value="Upload" />
+
+Wollen Sie steuern, wo das Objekt abgelegt wird, übergeben Sie die POST-Variable
+UploadParentNodes. Sie ist entweder ein einzelner Zahlenwert mit der ID des Elternknotens
+oder ein Array von Knoten-IDs.
+
+Beispiel:
+<input type="hidden" name="UploadParentNodes" value="5" />
+
+Standardmäßig leitet der Upload auf das neu angelegte Objekt weiter; das lässt sich ändern.
+
+Um zur aktuellen URL zurückzukehren, übergeben Sie UploadRedirectBack.
+Mit 1 geht es zurück zur letzten Ansichtsseite, mit 2 zur letzten Seite gleich welcher Art.
+Jeder andere Wert setzt keine Weiterleitungs-URL.
+
+Beispiel:
+<input type="hidden" name="UploadRedirectBack" value="1" />
+
+Um an eine bestimmte Stelle weiterzuleiten, übergeben Sie die Variable UploadRedirectURI.
+Ihr Inhalt wird als Weiterleitungs-URL verwendet.
+
+Beispiel:
+<input type="hidden" name="UploadRedirectURI" value="setup/cache" />
+

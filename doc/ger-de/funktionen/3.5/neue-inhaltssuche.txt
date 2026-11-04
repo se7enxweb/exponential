@@ -1,0 +1,28 @@
+*Titel: Neue Inhaltssuche
+
+Anlass:
+Der Benutzer soll einfacher einen Überblick über die Inhalte bekommen, die seit seinem
+letzten Besuch der Website veröffentlicht oder geändert wurden.
+
+*Dokumentation:
+
+Ein angemeldeter Benutzer kann den Link /content/new aufrufen. Die Seite zeigt ein Template
+mit der Variablen {$last_visit_timestamp}, mit der sich die Inhalte abrufen lassen, die seit
+dem letzten Besuch des Benutzers veröffentlicht wurden.
+
+Das Standard-Template listet alle Inhalte, die der Benutzer lesen darf; standardmäßig wird
+nichts gefiltert.
+
+Der letzte Besuch wird so gespeichert:
+* Meldet sich ein Benutzer an, wird der Zeitstempel des letzten Besuchs gespeichert.
+* Läuft die Sitzung eines Benutzers ab (Leerlauf-Zeitüberschreitung), wird der Zeitstempel
+  des letzten Besuchs aktualisiert.
+
+*Tests:
+
+Prüfen, dass der Zeitpunkt des letzten Besuchs bei der Anmeldung tatsächlich gespeichert wird.
+
+Prüfen, dass der Zeitstempel aktualisiert wird, wenn die Leerlaufzeit des Benutzers endet
+(ActivityTimeout ist der Wert für die Zeitüberschreitung).
+
+*SVN-Revisionen:

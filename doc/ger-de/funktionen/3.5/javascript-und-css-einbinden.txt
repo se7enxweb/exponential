@@ -1,0 +1,17 @@
+*Titel: INI-Einstellung für JavaScript- und CSS-Dateien, die eine Seite einbindet
+
+Anlass:
+Eine neue Einstellung und ein neuer Abschnitt in design.ini:
+- JavaScriptSettings
+- JavaScriptList
+
+*Dokumentation:
+1.
+JavaScriptList - Array von JS-Dateien, die in der Pagelayout-Datei eingebunden werden.
+
+Eine Datei, die Sie dieser Variablen hinzufügen, wird automatisch in der Pagelayout-Datei der
+Designs admin und base eingebunden. Für Ihr eigenes Design sehen Sie in
+design/admin/templates/pagelayout.tpl nach, wie es dort gemacht wird, und setzen es in Ihrem
+Pagelayout genauso um.
+
+

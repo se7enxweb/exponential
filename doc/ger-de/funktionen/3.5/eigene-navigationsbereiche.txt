@@ -1,0 +1,32 @@
+*Titel: Eigene Bezeichner für Navigationsbereiche
+
+*Anlass:
+Erweiterungen sollen eigene Bezeichner für Navigationsbereiche (navigation parts)
+ihrer Module anlegen können. Zusammen mit dem neuen Topmenü-System lassen sich so
+eigene Reiter in der Administrationsoberfläche anlegen.
+
+*Dokumentation:
+Die Bezeichner der Navigationsbereiche sind aus dem PHP-Code in eZNavigationPart
+in die INI-Datei menu.ini gewandert.
+
+Die Liste ist ein assoziatives Array in der Gruppe NavigationPart, in der Variablen Parts.
+
+Für einen eigenen Bereich fügen Sie einfach einen Eintrag hinzu.
+
+Beispiel:
+Part[ezcustomnavigationpart]=Custom
+
+Hinweis: Achten Sie darauf, dass Ihr Bezeichner eindeutig ist. Bezeichner, die mit ez
+      beginnen, sind dem Kernel vorbehalten (ursprünglich eZ Systems, dem früheren
+      Hersteller).
+
+Übersetzungen:
+
+Der Text in der INI-Datei ist nur übersetzbar, wenn Sie irgendwo etwas Platzhalter-PHP-Code
+anlegen. Legen Sie in Ihrer Erweiterung eine neue PHP-Datei an oder fügen Sie einer Ihrer
+Klassen eine Platzhalterfunktion hinzu, mit
+
+ezi18n( 'kernel/navigationpart', 'Custom navigation', 'Navigation part' );
+
+Führen Sie dann ezlupdate für Ihre Erweiterung aus. Der Text steht danach in den
+Übersetzungsdateien.

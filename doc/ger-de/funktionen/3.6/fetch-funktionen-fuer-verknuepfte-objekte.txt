@@ -1,0 +1,99 @@
+*Titel: Template-Funktionen zum Abrufen verknüpfter Objekte
+
+*Beschreibung:
+
+Neue Funktionen zum Abrufen verknüpfter Objekte bieten eine bequeme und schnelle Methode,
+verknüpfte Objekte jeder Art abzurufen (über Attribute vom Typ "Verknüpftes Objekt" oder
+"Liste verknüpfter Objekte" oder auf Objektebene).
+
+*Dokumentation:
+
+Verknüpfte Objekte abrufen:
+
+fetch( 'content', 'related_objects',
+        hash( 'object_id',            object_id,
+            [ 'attribute_identifier', attribute_identifier, ]
+            [ 'all_relations',        boolean,              ]
+            [ 'group_by_attribute',   boolean,              ],
+       	    [ 'sort_by',              sort_by               ] ) )
+
+Rückgabe:
+Ein Array verknüpfter Objekte oder ein zweidimensionales Array, wenn 'group_by_attribute'
+true() ist.
+
+Parameter:
+
+'object_id' - ID des Objekts, dessen Verknüpfungen abgerufen werden.
+
+'attribute_identifier' - Entweder der Attribut-Bezeichner als Zeichenkette oder die
+numerische Attribut-ID. Der Parameter ist optional, sein Standardwert ist null; dann werden
+die auf Objektebene verknüpften Objekte zurückgegeben, nicht die über Attribute verknüpften.
+Das entspricht dem Funktionsattribut 'related_contentobject_array' eines Inhaltsobjekts.
+
+'all_relations' - true() bedeutet, dass ALLE Verknüpfungen abgerufen werden, gleich welcher
+Art (Objektebene oder ein bestimmtes Attribut). (Standard false)
+
+'group_by_attribute' - true() ist nur zusammen mit 'all_relations' = true sinnvoll und
+bedeutet, dass die Ausgabe nicht (wie sonst) ein einfaches Array von Objekten ist, sondern
+diese Struktur:
+
+$related_objects_grouped = array(         0 => array( $object1, $object2 ... ),
+                                   /* auf Objektebene verknüpfte Objekte */
+
+                                  attr_id_1 => array( $object1, $object2 ... ),
+                                  attr_id_2 => array( $object1, $object2 ... ),
+                                   ...
+                                     /* über Attribute verknüpfte Objekte */
+                                );
+also nach Attribut-ID gruppierte Objekte (bzw. '0' für die Objektebene).
+
+'sort_by' - Sortiert das Ergebnis auf verschiedene Weise. Der Parameter ist ein Array von
+Arrays, die die Sortierungen festlegen. Das erste Element jedes Arrays ist die gewünschte
+Sortierung, das zweite die Richtung: true() oder false() - aufsteigend oder absteigend.
+
+Er funktioniert wie der Parameter 'sort_by' der Fetch-Funktion 'list' (siehe deren
+Referenz), unterstützt derzeit aber nur diese Sortierungen:
+ class_identifier,
+ class_name,
+ modified,
+ name,
+ published,
+ section.
+Andere Sortierungen führen zu einem Fehler.
+
+Beispiel:
+
+{def $related_objects_grouped = fetch( 'content', 'related_objects',
+	hash( 'object_id', $node.object.id,
+	      'all_relations', true(),
+	      'group_by_attribute', true(),
+	      'sort_by', array( array( 'class_name', true() ),
+				array( 'name', true() ) ) ) )}
+
+Gibt alle Verknüpfungen in Arrays nach Attribut-ID gruppiert zurück, jeweils aufsteigend nach
+Klassenname und Objektname sortiert.
+
+
+Anzahl verknüpfter Objekte abrufen:
+
+fetch( 'content', 'related_objects_count',
+       hash( 'object_id',            object_id,
+       [ 'attribute_identifier',     attribute_identifier,  ]
+       [ 'all_relations',            boolean,               ] ) )
+
+
+Rückwärts verknüpfte Objekte abrufen (Objekte, die dieses Objekt als Verknüpfung haben):
+
+(Alle Parameter sind dieselben)
+
+fetch( 'content', 'reverse_related_objects',
+       hash( 'object_id',            object_id,
+           [ 'attribute_identifier', attribute_identifier, ]
+           [ 'all_relations',        boolean,              ]
+           [ 'group_by_attribute',   boolean,              ]
+           [ 'sort_by',              sort_by               ] ) )
+
+fetch( 'content', 'reverse_related_objects_count',
+       hash( 'object_id',            object_id,
+           [ 'attribute_identifier', attribute_identifier,  ]
+           [ 'all_relations',        boolean,               ] ) )

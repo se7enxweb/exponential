@@ -1,0 +1,45 @@
+*Titel: Verschieben von Knoten im Navigationsmodus
+
+Anlass:
+Bisher musste der Benutzer einen Knoten bearbeiten und dann eine der Platzierungen
+verschieben. Eine Verschiebe-Aktion direkt in der Navigationsoberfläche macht die
+Bedienung einfacher.
+
+*Dokumentation:
+Zum Verschieben eines Knotens sind die Berechtigungen 'content/move' und 'content/edit'
+nötig. Außerdem braucht der Benutzer 'content/create' für die Inhaltsklasse am neuen Ort.
+
+content/action hat zwei neue Aktionen:
+
+MoveNodeRequest:
+Prüft die aktuellen Berechtigungen und startet das Durchsuchen nach dem neuen Ort.
+Das Durchsuchen beginnt beim Elternknoten des aktuellen Knotens. Auswählbar sind nur Orte,
+an denen der Benutzer die Berechtigung 'content/create' hat; die bisherigen Orte (mit
+Elternknoten) sind nicht auswählbar.
+
+ - POST-Variable zum Auslösen: MoveNodeButton
+ - POST-Parameter:
+   - NodeID (Pflicht): ID des zu verschiebenden Knotens
+   - ViewMode (optional): Aktueller Ansichtsmodus; fehlt er, wird 'full' angenommen
+   - LanguageCode (optional): Aktuelle Sprache der Anzeige; fehlt sie, gilt die Standardsprache des Objekts.
+
+
+
+MoveNode:
+Führt das eigentliche Verschieben aus.
+Wenn Sie dies direkt ohne Browse-Seite aufrufen wollen, müssen Sie die Variable
+NewParentNode angeben.
+
+ - POST-Variable zum Auslösen: MoveNodeAction
+ - POST-Parameter:
+   - NodeID (Pflicht): ID des zu verschiebenden Knotens
+   - ViewMode (optional): Aktueller Ansichtsmodus; fehlt er, wird 'full' angenommen
+   - LanguageCode (optional): Aktuelle Sprache der Anzeige; fehlt sie, gilt die Standardsprache des Objekts.
+   - NewParentNode (optional): ID des neuen Elternknotens. Ist sie angegeben, wird der Wert aus dem
+                                Durchsuchen nicht verwendet. So lässt sich ein Knoten automatisch an einen
+                                festgelegten Ort verschieben. Hinweis: Die Berechtigungen werden trotzdem
+                                geprüft, das Verschieben kann also daran scheitern.
+
+*Tests:
+
+*SVN-Revisionen:

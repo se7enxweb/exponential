@@ -1,0 +1,15 @@
+*Titel: Neues Skript zum Aktualisieren der Namen von Inhaltsobjekten
+
+*Dokumentation:
+Das neue Skript update/common/scripts/updatecontentobjectname.php beruht auf dem Skript
+updatesearchindex.php. Es aktualisiert den Namen jedes Inhaltsobjekts (nach dem
+"Objektnamensmuster" seiner Inhaltsklasse) und speichert ihn.
+
+*Tests:
+1. Ein Verzeichnis ansehen, das Objekte eines bestimmten Typs (Inhaltsklasse) über das Attribut node.name auflistet.
+2. Das Objektnamensmuster der Inhaltsklasse ändern.
+3. Das Verzeichnis erneut ansehen - die Namen haben sich nicht geändert.
+4. Das Skript updatecontentobjectname.php ausführen.
+5. Prüfen, dass sich der Name geändert hat.
+
+*SVN-Revisionen:

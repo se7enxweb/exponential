@@ -1,0 +1,27 @@
+*Titel: Attribute in persistentobject überschreiben
+
+Anlass:
+In 3.4 wurden die 'fields' einer persistentobject-Definition vor den 'attribute_functions'
+geprüft. Dadurch ließen sich diese 'fields' nicht überschreiben, ohne die Methode attribute()
+der Klasse neu zu schreiben.
+
+Die Lösung: Die Methode attribute() sieht zuerst in den 'attribute_functions' nach und
+prüft erst danach die 'fields' der persistentobject-Definition. So können
+'function_attributes' die 'fields' überschreiben und eigenen Code ausführen.
+Verwendung: Damals nötig, um das Problem mit 'remote_id' in ezcontentclass zu beheben.
+
+*Dokumentation:
+Fügen Sie in 'attribute_functions' einen Eintrag mit demselben Namen wie ein 'field' hinzu
+und lassen Sie ihn auf eine Methode der Klasse zeigen. Diese Methode wird dann bei jedem
+Zugriff auf das Attribut aufgerufen.
+
+Damit lässt sich allerdings der Wert des eigentlichen 'field' nicht mehr abrufen.
+Dafür hat eZPersistentObject::attribute einen zweiten Parameter, standardmäßig false.
+Ist er true, werden nur die Felder geprüft.
+
+Hinweis: eZContentClass:remoteID() verwendet jetzt eZPersistentObject::attribute( 'remote_id', true );
+
+*Tests:
+
+*SVN-Revisionen:
+8367, 8368, 8379

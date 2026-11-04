@@ -1,0 +1,38 @@
+*Titel: Verbesserungen beim Durchsuchen von Inhalten (Browse)
+
+Anlass:
+Einige Verbesserungen der Browse-Seite, die man üblicherweise braucht:
+- Berechtigungsprüfung auf Knoten
+- Abbrechen eines Browse-Vorgangs
+
+*Dokumentation:
+1.
+Die Browse-Seite kann die Berechtigungen des Systems beachten: Dazu wird ihr die
+zu prüfende Berechtigung übergeben.
+
+Neue Einträge:
+- permission - Ein assoziatives Array mit der Zugriffsart und der zu prüfenden Klasse,
+               zum Beispiel, um nur Knoten auswählbar zu machen, unter denen man eine bestimmte Klasse anlegen darf.
+               Enthält:
+               - access (Pflicht) Name des zu prüfenden Inhaltszugriffs, z. B. read, edit oder create
+               - contentclass_id (optional) Welche Klassen-ID in die Prüfung einbezogen wird; nur bei 'create' sinnvoll.
+
+2.
+Die Browse-Seite kann eine Schaltfläche zum Abbrechen haben.
+Das Problem dabei: Das Browse-Formular sendet seine Daten an die from_page zurück, also
+müsste die Seite, die das Browsen anfordert, das Browsen selbst behandeln.
+
+Stattdessen gibt es ein neues Formular, das an content/browse sendet und neben der
+Schaltfläche "Auswählen" steht. browse.php nimmt die Anfrage entgegen und leitet auf eine
+Seite weiter. Die Weiterleitung folgt diesen Regeln:
+- cancel_page - Wenn in der Browse-Anfrage (vom aufrufenden Code) gesetzt, wird dorthin weitergeleitet.
+                Die meisten Aufrufer brauchen das nicht.
+- from_page - Wenn in der Browse-Anfrage (vom aufrufenden Code) gesetzt, wird dorthin weitergeleitet.
+- Ist keine Seite angegeben, wird auf content/view/full/2 weitergeleitet.
+
+Hinweis: Code in content/action oder anderen Seiten ohne eigene Anzeige sollte cancel_page
+setzen, sonst landet der Benutzer an einer Stelle, an der nichts passiert.
+
+*Tests:
+
+*SVN-Revisionen:

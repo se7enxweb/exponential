@@ -1,0 +1,12 @@
+*Titel: Weitere Attribute für den Bild-Datentyp
+
+Anlass:
+Die Dateigröße der gespeicherten Datei (Original oder ein anderer Alias) soll sich
+ermitteln lassen.
+
+*Dokumentation:
+Unter jedem Alias gibt es ein neues Attribut 'filesize'. Die Dateigröße wird jedes Mal
+berechnet, wenn die Alias-Liste erstellt wird.
+
+Beispiel im Template:
+filesize: {$attribute.content.original.filesize|si( byte )}

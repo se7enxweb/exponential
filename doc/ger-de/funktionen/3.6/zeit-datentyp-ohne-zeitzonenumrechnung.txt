@@ -1,0 +1,21 @@
+*Titel: Datentyp eZTimeType unabhängig von Sommerzeit- und GMT-Umrechnungen
+
+*Dokumentation:
+Ein Attribut des Typs eZTimeType hat jetzt zwei Inhaltsattribute:
+ - 'time_of_day' ist die Anzahl der Sekunden seit Beginn des Tages
+    (seit der letzten Mitternacht).
+ - 'timestamp' ist der berechnete Wert aus der Summe des Zeitstempels der letzten
+   Mitternacht (seit 00:00 01.01.1970) und 'time_of_day'.
+
+In der Datenbank wird nur der Wert von 'time_of_day' gespeichert, im Feld 'data_int'. Der
+Wert von 'timestamp' wird bei Bedarf berechnet. Damit hat 'timestamp' an jedem neuen Tag
+einen anderen Wert, der sich vom Vortag um 24 Stunden unterscheidet. So lassen sich Stunden
+und Minuten richtig und unabhängig von Sommerzeit- und GMT-Umrechnungen darstellen, wenn
+Template-Operatoren wie 'datetime' verwendet werden. Und Zeitwerte verschiedener
+eZTimeType-Attribute lassen sich über 'time_of_day' immer vergleichen.
+Der Datentyp eZTimeType wird also als lokale Tageszeit des Servers gespeichert.
+
+Diese Änderungen kamen mit Exponential 3.5.3. Wer von 3.5.2 oder älter auf 3.5.3 oder neuer
+aktualisiert, muss daher das passende Update-Skript
+(update/common/scripts/updateeztimetype.php) ausführen, um die Zeitwerte aller bestehenden
+eZTimeType-Attribute im System zu korrigieren.

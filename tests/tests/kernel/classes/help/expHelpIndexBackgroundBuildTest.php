@@ -17,6 +17,12 @@
  *         previous and next pages
  *  BB-07  the background command is exp:help index for the index's language, without the image download
  *  BB-08  exp:velocity deploy builds the help index (bin/php/exphelp.php index), and its failure does not stop it
+ *  BB-09  a rewrite of the git index that changes no page: the web load answers from the older allowlist, writes
+ *         none and starts one background build; the console writes the current allowlist, finds the index current
+ *         (builds none) and removes the marker; the next web load starts nothing
+ *  BB-10  a page added while the older allowlist is served (StatFilesInterval set) is in the index the background
+ *         build writes, and found by the next web load
+ *  BB-11  the background build keeps a current search index (exp:help index --keep-search)
  *
  * Run: php vendor/bin/phpunit tests/tests/kernel/classes/help/expHelpIndexBackgroundBuildTest.php
  *
@@ -80,12 +86,27 @@ class expHelpIndexBackgroundBuildTest extends PHPUnit\Framework\TestCase
     }
 
     /** A new index as each request makes one: $web answers from an older index and records the background start. */
-    private function index( $web )
+    private function index( $web, array $options = array() )
     {
         $allowlist = new expHelpAllowlist( array( 'root' => $this->base . '/install', 'roots' => array( 'doc' ), 'max_size' => 1024 * 1024 ) );
         $started = &$this->started;
-        return new expHelpDocumentIndex( $allowlist, array( 'cache_dir' => $this->base . '/cache',
+        return new expHelpDocumentIndex( $allowlist, $options + array( 'cache_dir' => $this->base . '/cache',
             'background' => $web ? function () use ( &$started ) { ++$started; } : false ) );
+    }
+
+    private function allowlistFiles()
+    {
+        $files = glob( $this->base . '/cache/allowlist-*.php' );
+        sort( $files );
+        return $files;
+    }
+
+    /** A git operation that changes no page (git status, a commit elsewhere) rewrites the git index. */
+    private function rewriteGitIndex()
+    {
+        $file = $this->base . '/install/.git/index';
+        touch( $file, time() + 10 );
+        clearstatcache();
     }
 
     private function indexFiles()
@@ -236,5 +257,63 @@ class expHelpIndexBackgroundBuildTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'help-index', $step['id'] );
         $this->assertSame( '', $step['skip'] );
         $this->assertSame( 'php bin/php/exphelp.php index --no-images --allow-root-user --no-colors', $step['command'] );
+    }
+
+    /** BB-09 */
+    public function testGitIndexRewriteServesTheOlderAllowlist()
+    {
+        $this->assertCount( 3, $this->index( true )->documents(), 'with no allowlist at all the request builds it' );
+        $lists = $this->allowlistFiles();
+        $this->assertCount( 1, $lists );
+        $this->assertSame( 0, $this->started );
+
+        $this->rewriteGitIndex();
+        $web = $this->index( true );
+        $this->assertCount( 3, $web->documents() );
+        $this->assertSame( $lists, $this->allowlistFiles(), 'the request wrote no allowlist' );
+        $this->assertSame( 1, $this->started, 'the background build was started once' );
+        $this->assertFileExists( $this->base . '/cache/' . expHelpDocumentIndex::BUILD_MARKER_FILE );
+        $this->index( true )->documents();
+        $this->assertSame( 1, $this->started, 'not twice while it runs' );
+
+        // the background build: the console writes the current allowlist and finds the index current
+        $console = $this->index( false );
+        $this->assertCount( 3, $console->documents() );
+        $this->assertCount( 2, $this->allowlistFiles(), 'the current allowlist is written beside the older one' );
+        $this->assertCount( 1, $this->indexFiles(), 'the pages did not change: the index is not built again' );
+        $this->assertFileDoesNotExist( $this->base . '/cache/' . expHelpDocumentIndex::BUILD_MARKER_FILE, 'the build is done' );
+
+        $this->assertCount( 3, $this->index( true )->documents() );
+        $this->assertSame( 1, $this->started, 'the next request uses the current allowlist' );
+    }
+
+    /** BB-10 */
+    public function testPageAddedWhileTheOlderAllowlistIsServedIsIndexedByTheBackgroundBuild()
+    {
+        $options = array( 'stat_interval' => 300 );
+        $this->assertCount( 3, $this->index( false, $options )->documents() );
+        $this->addPage();
+        $this->assertCount( 3, $this->index( true, $options )->documents(), 'the older allowlist and index answer' );
+        $this->assertSame( 1, $this->started );
+        // the signature the request took from the older allowlist is not reused by the build
+        $console = $this->index( false, $options );
+        $this->assertCount( 4, $console->documents() );
+        $this->assertNotNull( $console->document( 'help/new.md' ) );
+        $after = $this->index( true, $options );
+        $this->assertNotNull( $after->document( 'help/new.md' ), 'right after the build the new page is found' );
+        $this->assertSame( 1, $this->started );
+    }
+
+    /** BB-11 */
+    public function testBackgroundCommandKeepsACurrentSearchIndex()
+    {
+        mkdir( $this->base . '/install/bin/php', 0777, true );
+        file_put_contents( $this->base . '/install/bin/php/exphelp.php', "<?php\n" );
+        $command = $this->index( false )->backgroundCommand();
+        if ( $command === null )
+            $this->markTestSkipped( 'no setsid or command line PHP here' );
+        $this->assertContains( '--keep-search', $command );
+        $source = file_get_contents( dirname( __DIR__, 5 ) . '/kernel/private/classes/commands/exphelp.php' );
+        $this->assertStringContainsString( '[keep-search]', $source, 'exp:help knows the option' );
     }
 }
