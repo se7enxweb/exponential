@@ -27,6 +27,9 @@
    they are its last items. Only the menu's own Links[] keys count, a link of a GroupSections[] section never; a key
    in LeadLinks[] and TrailLinks[] is a trail link. Access is checked as for every link. In the tiles they are the
    last tiles, a group without title after the others in a grouped menu.
+   CollapseAfter=<n> (optional, menu.ini): a menu drawn as one list (no Groups[]) shows its first <n> links, in the
+   order drawn (the trail links last), and the rest in a "More (count)" disclosure below them, closed at first and
+   open when it holds the current page. Without it, or with 0, every link shows. Not used in the tiles or the groups.
    GroupTabs[<group>]=<tab> (optional): the group stands for a top tab and is drawn only while that tab is not in the
    top menu (left out of [TopAdminMenu] Tabs[], named in HiddenTabs[], or named in SetupTabs[] for a user who may
    open setup/menu); while the tab is shown, the group and the
@@ -333,6 +336,10 @@
         {if ezini_hasvariable( $ini_section, 'LeadLinks', 'menu.ini' )}
             {set $lead_links = ezini( $ini_section, 'LeadLinks', 'menu.ini' )}
         {/if}
+        {def $collapse_after = 0}
+        {if ezini_hasvariable( $ini_section, 'CollapseAfter', 'menu.ini' )}
+            {set $collapse_after = ezini( $ini_section, 'CollapseAfter', 'menu.ini' )}
+        {/if}
 
         {* An empty Groups[] (reset in an override) means one plain list, as no Groups[] does *}
         {if $ini_menu_group_list|count}
@@ -431,13 +438,26 @@
             {if $trail_items|count}
                 <div class="a4-navtrail">{include uri='design:parts/ini_menu_items.tpl' items=$trail_items current_uri_string=$current_uri_string}</div>
             {/if}
+        {elseif and( $collapse_after|gt( 0 ), $items|count|gt( $collapse_after ) )}
+            {* CollapseAfter: the first links, then the rest in a "More" disclosure, open when it holds the current page *}
+            {def $ini_menu_more = $items|extract( $collapse_after )
+                 $ini_menu_more_open = false()}
+            {foreach $ini_menu_more as $item}
+                {if and( eq( $item.state, 'link' ), or( eq( $current_uri_string, $item.url ), $current_uri_string|begins_with( concat( $item.url, '/' ) ) ) )}{set $ini_menu_more_open = true()}{/if}
+            {/foreach}
+            {include uri='design:parts/ini_menu_items.tpl' items=$items|extract_left( $collapse_after ) current_uri_string=$current_uri_string labelledby=cond( $menu_name, $menu_title_id, '' )}
+            <details class="a4-navgroup a4-navmore" id="{concat( $menu_title_id, '-more' )|wash}"{if $ini_menu_more_open} open{/if}>
+                <summary class="a4-nav-title">{'More'|i18n( 'design/admin/pagelayout' )|wash} ({$ini_menu_more|count})</summary>
+                {include uri='design:parts/ini_menu_items.tpl' items=$ini_menu_more current_uri_string=$current_uri_string}
+            </details>
+            {undef $ini_menu_more $ini_menu_more_open}
         {else}
             {include uri='design:parts/ini_menu_items.tpl' items=$items current_uri_string=$current_uri_string labelledby=cond( $menu_name, $menu_title_id, '' )}
         {/if}
 
         {* DESIGN: Content END *}</div></div></div>
         {/if}
-        {undef $menu_title_id $ini_menu_groups $grouped_keys $group_items $group_open $ini_menu_group_id $group_links $lead_links $lead_items}
+        {undef $menu_title_id $ini_menu_groups $grouped_keys $group_items $group_open $ini_menu_group_id $group_links $lead_links $lead_items $collapse_after}
     {/if}
     {undef $trail_links $trail_items $trail_keys}
     {undef $ini_menu_url_list $name_list $menu_name $access_check $has_access $item_name $disabled $enabled_hash $enabled_defaults $items $check_view $hide_no_access
