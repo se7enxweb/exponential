@@ -38,7 +38,10 @@ extension/str_replace/ezinfo.php
 extension/str_replace/settings/site.ini.append.php
 ```
 
-Drei Dateien erledigen die Arbeit: eine Einstellung, eine Registrierung, eine Klasse.
+Drei Dateien erledigen die Arbeit: eine Einstellung, eine Registrierung, eine Klasse. Die Dokumentation liegt dort, wo
+jede Erweiterung sie hat: `README.md` oben, der Rest in `doc/`. `doc/readme.txt` ist Klartext, wie ältere Erweiterungen
+ihn schrieben; neue und überarbeitete Erweiterungen schreiben diese Seiten als Markdown (`.md`), auf Englisch
+([Eine Extension dokumentieren](../../../anleitungen/eine-extension-dokumentieren.md)).
 
 ### Schritt 2: die Einstellung, die sie einsteckt
 

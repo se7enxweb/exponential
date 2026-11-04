@@ -51,7 +51,7 @@ Liste an; eine leere Zeile `Name[]` davor leert sie zuerst.
 | Kontextmenüs und Knoten-Reiter | `admininterface.ini` | `[AdditionalMenuSettings] ContextMenuTemplateArray[]` ...; `[WindowControlsSettings] AdditionalTabs[]` und `[AdditionalTab_<id>]` |
 | Register des RAD-Katalogs | `rad.ini` | `[RegistrySettings]` und `[Registry_<name>]` |
 | Fetch-Aliase | `fetchalias.ini` | ein Abschnitt je Alias |
-| Hilfeseiten | `exphelp.ini` | der Dokumentationsordner der Erweiterung ([Das Hilfesystem für Erweiterungen](hilfesystem-fuer-erweiterungen.md)) |
+| Hilfeseiten | `exphelp.ini` | `README.md` und `INSTALL.md` oben, jede weitere Seite als Markdown in `doc/`, angezeigt, solange die Erweiterung aktiv ist ([Das Hilfesystem für Erweiterungen](hilfesystem-fuer-erweiterungen.md), [Eine Extension dokumentieren](../../../anleitungen/eine-extension-dokumentieren.md)) |
 | Ihre eigenen Einstellungen | `myext.ini` | in `settings/myext.ini`, Ihre eigenen Abschnitte |
 
 ## Weitere Dateien, die Sie lesen könnten

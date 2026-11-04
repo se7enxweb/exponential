@@ -38,7 +38,7 @@ settings the extension carries ([Extensions](../../../guides/extensions.md)).
 | `bin/php/` | command line scripts | found by the console as `ext:<ext>:<name>` |
 | `share/`, `sql/<engine>/` | database schema and data | installed by your setup script or the package |
 | `translations/<locale>/translation.ts` | translations | `site.ini [RegionalSettings] TranslationExtensions[]` |
-| `doc/` | the extension's own documentation | the help can read it when listed in `exphelp.ini` `ExtensionDocDirs[]` |
+| `doc/` | the extension's own documentation, as Markdown (`.md`) in English; `README.md` and `INSTALL.md` stay on top | the help center shows it while the extension is active ([Documenting an extension](../../../guides/documenting-an-extension.md)) |
 | `tests/` | PHPUnit tests | your CI ([Testing applications](testing-applications.md)) |
 
 The real catalogue of every extension point, with the INI line that registers it, is **Setup > RAD**

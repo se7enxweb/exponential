@@ -3,7 +3,7 @@ title: Documenting your extension, including help pages
 audience: developer, app-creator, designer
 category: extension-development
 order: 370
-summary: Document an extension where people look, and put it into the admin help center with ExtensionDocDirs, front matter, featured pages and context help for your views.
+summary: Document an extension where people look: README.md and INSTALL.md on top, the rest as Markdown in doc/, in English; the help center shows it while the extension is active, with front matter, featured pages and context help for your views.
 keywords: documentation, README, doc folder, changelog, help center, exphelp, ExtensionDocDirs, front matter, context help, ContextHelp Map, expHelpContextProviderInterface, featured, GFDL
 type: help
 ---
@@ -15,10 +15,16 @@ center, next to the kernel's, including the "?" help button of your module's pag
 
 ## The documents
 
+The convention: `README.md` and `INSTALL.md` on top of `extension/<extensionName>/`, every other page as Markdown
+(`.md`) in `extension/<extensionName>/doc/`, in English. Old extensions shipped plain text (`README`, `doc/*.txt`),
+which still shows; new and updated ones use Markdown. The full reference, with a directory tree and a plain-text
+document converted to Markdown: [Documenting an extension](../../../guides/documenting-an-extension.md).
+
 | File | Holds |
 |---|---|
 | `README.md` | what it does in one paragraph, requirements, installation, activation, settings, a first example, license |
-| `doc/` | longer guides: settings reference, templates and their variables, upgrade notes |
+| `INSTALL.md` | the installation step by step |
+| `doc/` | longer guides as Markdown pages: settings reference, templates and their variables, upgrade notes |
 | `CHANGELOG.md` or `doc/changelogs/` | what changed in each release ([Changelogs](../part-7-releasing/changelogs.md)) |
 | `LICENSE` | the license text |
 | `ezinfo.php`, `extension.xml` | name, version, license, website ([ezinfo.php](ezinfo-php.md)) |
@@ -28,17 +34,21 @@ their defaults, and every command with its expected output.
 
 ## Your doc folder in the help center
 
-The help center (`/exphelp/dashboard` in the administration) shows the git-tracked files of `doc/`. An extension's own
-`doc/` is shown when the installation opts in, in `settings/exphelp.ini`:
+The help center (`/exphelp/dashboard` in the administration) shows the documentation of every active extension on its
+own (`[IndexSettings] ActiveExtensionDocs=enabled`, the default): the files of `extension/mysite_hello/doc/` that the
+extension's Git repository tracks, and its `README*`, `INSTALL*`, `CHANGELOG*`, `LICENSE*`, `USAGE*` and `COPYING*` on
+top. Their pages get the id `ext/mysite_hello/<path below doc>` and appear under **Extensions**. Only tracked files are
+served; nothing else of the extension is ever read.
+
+An extension that is not active can be shown too, when the installation names it in `settings/exphelp.ini`:
 
 ```ini
 [IndexSettings]
 ExtensionDocDirs[]=mysite_hello
 ```
 
-The help then reads `extension/mysite_hello/doc`, the files tracked by the extension's own Git repository, and gives
-their pages the id `ext/mysite_hello/<path below doc>`. Only tracked files are served; nothing outside the folder is
-ever read. See [The help system](../../../features/6.0/help-system.md).
+See [Documenting an extension](../../../guides/documenting-an-extension.md) and
+[The help system](../../../features/6.0/help-system.md#documentation-of-the-extensions).
 
 ## Front matter
 

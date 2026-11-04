@@ -3,7 +3,7 @@ title: "Von Hand: Hilfeseiten für Ihre Erweiterung"
 audience: developer, app-creator, designer
 category: extension-development
 order: 220
-summary: Die Dokumentation einer Erweiterung ins Hilfecenter der Administration bringen - doc/-Seiten mit Front Matter, die Freischaltung über ExtensionDocDirs, Kontexthilfe für ihre Views und die Prüfung mit exp:help.
+summary: Die Dokumentation einer Erweiterung ins Hilfecenter der Administration bringen - doc/-Seiten mit Front Matter, angezeigt, solange die Erweiterung aktiv ist (ExtensionDocDirs nur für eine inaktive), Kontexthilfe für ihre Views und die Prüfung mit exp:help.
 keywords: Tutorial, von Hand, Hilfeseiten, Hilfecenter, Front Matter, Kontexthilfe, Dokumentation, tutorial, by hand, help pages, help center, exphelp, ExtensionDocDirs, front matter, context help, ContextHelp, Map, ext/, exp:help check, documentation
 type: help
 ---
@@ -49,17 +49,21 @@ git -C extension/mysite_hello add doc
 git -C extension/mysite_hello commit -m "Added: Help pages for mysite_hello"
 ```
 
-## 3. Freischalten
+## 3. Einchecken und aktivieren
 
-Die Installation entscheidet in ihrer `settings/override/exphelp.ini.append.php` (oder einer Site-Erweiterung), welche
-Dokumentation von Erweiterungen sie anzeigt:
+Checken Sie beide Seiten im Repository der Erweiterung ein. Solange `mysite_hello` aktiv ist, zeigt das Hilfecenter sie
+von selbst an (`[IndexSettings] ActiveExtensionDocs=enabled`, die Vorgabe), mit den IDs `ext/mysite_hello/README.md`
+und `ext/mysite_hello/compose.md`, unter **Extensions**. Eine `README.md` und eine `INSTALL.md` oben in
+`extension/mysite_hello/` würden ebenfalls angezeigt; jede weitere Seite gehört nach `doc/`, als Markdown, auf Englisch
+([Eine Extension dokumentieren](../../../../anleitungen/eine-extension-dokumentieren.md)).
+
+Nur um die Seiten einer **nicht** aktiven Erweiterung zu zeigen, nennt die Installation sie in ihrer
+`settings/override/exphelp.ini.append.php`:
 
 ```ini
 [IndexSettings]
 ExtensionDocDirs[]=mysite_hello
 ```
-
-Die Seiten erhalten die IDs `ext/mysite_hello/README.md` und `ext/mysite_hello/compose.md`.
 
 ## 4. Kontexthilfe
 

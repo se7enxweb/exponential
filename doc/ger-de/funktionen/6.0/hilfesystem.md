@@ -181,6 +181,12 @@ haben die IDs `ext/<extension>/<path>`, die die Zuordnung der Kontexthilfe nenne
 
 ## Dokumentation der Extensions
 
+Die Konvention für Autoren von Extensions: `README.md` und `INSTALL.md` oben in `extension/<name>/`, jede weitere Seite
+als Markdown (`.md`) in `extension/<name>/doc/`, auf Englisch. Die Anleitung
+[Eine Extension dokumentieren](../../anleitungen/eine-extension-dokumentieren.md) erklärt sie mit einem
+Verzeichnisbaum und der Umwandlung eines alten Klartextdokuments; dieser Abschnitt nennt die Regeln, die das
+Hilfe-Center anwendet.
+
 Das Hilfe-Center findet die Dokumentation jeder **aktiven** Extension, sobald es nachsieht
 (`[IndexSettings] ActiveExtensionDocs=enabled`, der Standard; `eZExtension::activeExtensions()` der Anfrage): Eine
 eingeschaltete Extension erscheint sofort, eine ausgeschaltete ist sofort verschwunden. Von jeder solchen Extension

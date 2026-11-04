@@ -51,7 +51,7 @@ The PHP comment wrapper keeps the file from being served as text. `Name[]=value`
 | Context menus and node tabs | `admininterface.ini` | `[AdditionalMenuSettings] ContextMenuTemplateArray[]` ...; `[WindowControlsSettings] AdditionalTabs[]` and `[AdditionalTab_<id>]` |
 | Registries of the RAD catalogue | `rad.ini` | `[RegistrySettings]` and `[Registry_<name>]` |
 | Fetch aliases | `fetchalias.ini` | a section per alias |
-| Help pages | `exphelp.ini` | the extension's documentation folder ([The help system for extensions](help-system-for-extensions.md)) |
+| Help pages | `exphelp.ini` | `README.md` and `INSTALL.md` on top, every other page as Markdown in `doc/`, shown while the extension is active ([The help system for extensions](help-system-for-extensions.md), [Documenting an extension](../../../guides/documenting-an-extension.md)) |
 | Your own settings | `myext.ini` | in `settings/myext.ini`, your own sections |
 
 ## Other files you may read

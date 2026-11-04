@@ -77,6 +77,8 @@ image), warnings (an anchor no heading has, an absolute link) and notices (a lin
 The help shows the documentation every active extension brings (its `doc/` directory, README, CHANGELOG, LICENSE)
 under `/exphelp/extensions`, in the same viewer and search ([Help system for extensions](../extension-development/part-8-reference/help-system-for-extensions.md),
 [Documenting your extension](../extension-development/part-3-extension-developer/documenting-your-extension.md)).
+The convention is the same docs as code: `README.md` and `INSTALL.md` on top of `extension/<name>/`, every other page
+as Markdown (`.md`) in `extension/<name>/doc/`, in English ([Documenting an extension](../../guides/documenting-an-extension.md)).
 
 ## Writing rules
 
