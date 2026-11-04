@@ -4,7 +4,7 @@ audience: government, project-manager, admin, editor
 category: public-sector
 order: 130
 summary: How a public body offers content in minority, regional or indigenous languages with Exponential: which locales ship, what to do when one is missing, partial translation with fallbacks, interface texts that stay in another language, and working with speakers.
-keywords: minority languages, regional languages, indigenous languages, Welsh, Basque, Irish, Scottish Gaelic, Sami, Maori, Frisian, locale, partial translation, community translators
+keywords: minority languages, regional languages, indigenous languages, Native American languages, Alaska Native languages, Welsh, Basque, Irish, Scottish Gaelic, Sami, Maori, Frisian, locale, partial translation, community translators
 type: help
 ---
 # Minority and regional languages
@@ -26,13 +26,19 @@ language. The question is usually less the software than the translation capacit
 
 ## Is the locale there?
 
-`share/locale/` ships 368 locale files, among them many regional and minority languages, for example Welsh
+`share/locale/` ships 390 locale files, among them many regional and minority languages, for example Welsh
 (`cym-GB`), Basque (`eus-ES`), Galician (`glg-ES`), Irish (`gle-IE`), Scottish Gaelic (`gla-GB`), Breton (`bre-FR`),
 Occitan (`oci-FR`), Western Frisian (`fry-NL`), Northern Sami (`sme-NO`), Romansh (`roh-CH`), Luxembourgish
 (`ltz-LU`), Maori (`mri-NZ`), Hawaiian (`haw-US`) and Greenlandic (`kal-GL`). The complete list with native names is
 in [Languages in Exponential, section 3](../../../languages.md#3-every-locale); languages still missing are in
 [section 6](../../../languages.md#6-common-languages-still-missing). A missing locale can be added as a file (see
 "Custom locales for unlisted languages").
+
+Since 6.0.15 it also ships the locales of 22 Indigenous languages of the Americas: Central Yup'ik, Inupiaq,
+Aleut, Alutiiq, Tlingit, Haida, Gwich'in and Tsimshian of Alaska; Navajo, Cherokee, Lakota, Ojibwe, Cree,
+Inuktitut and Mohawk of the United States and Canada; Nahuatl, Yucatec Maya, K'iche', Guarani, Aymara and
+Mapudungun of Latin America. [Indigenous languages of the Americas](indigenous-languages-of-the-americas.md)
+explains how to publish in them.
 
 ## Partial translation with a fallback
 
@@ -74,6 +80,7 @@ Characters above U+FFFF need `utf8mb4` on MySQL and MariaDB ([Internationalizati
 ## Related pages
 
 - [Languages in Exponential](../../../languages.md)
+- [Indigenous languages of the Americas](indigenous-languages-of-the-americas.md)
 - [Custom locales for unlisted languages](custom-locales-for-unlisted-languages.md)
 - [Content languages](../../../guides/content-languages.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

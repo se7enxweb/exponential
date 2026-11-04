@@ -37,6 +37,7 @@ Nach oben: [Verwaltungen: hier beginnen](../verwaltungen-hier-beginnen.md).
 | [Hauptsprache eines Eintrags](hauptsprache-eines-eintrags.md) | Was die Hauptsprache ist und wie Sie sie ändern |
 | [Zweite und dritte Amtssprachen](zweite-und-dritte-amtssprachen.md) | Die vollständige Einrichtung für zwei oder drei Amtssprachen |
 | [Minderheiten- und Regionalsprachen](minderheiten-und-regionalsprachen.md) | Mitgelieferte Locales, teilweise Übersetzung, Zusammenarbeit mit Sprechern |
+| [Indigene Sprachen Amerikas](indigene-sprachen-amerikas.md) | Die 22 mitgelieferten Locales von Alaska bis in die Anden und wie man in ihnen veröffentlicht |
 | [Eigene Locales für nicht gelistete Sprachen](eigene-locales-fuer-nicht-gelistete-sprachen.md) | Wie Sie eine Sprache ohne Locale-Datei hinzufügen |
 | [Rechts-nach-links-Sprachen auf öffentlichen Websites](rechts-nach-links-sprachen-auf-oeffentlichen-websites.md) | Was ein öffentliches Design für Arabisch, Hebräisch und andere braucht |
 | [Rechts nach links in der Administration](rechts-nach-links-in-der-administration.md) | Was Mitarbeitende in einer Oberfläche von rechts nach links erhalten |

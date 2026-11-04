@@ -4,7 +4,7 @@ audience: government, project-manager, admin, editor
 category: public-sector
 order: 130
 summary: Wie eine öffentliche Stelle mit Exponential Inhalte in Minderheiten-, Regional- oder indigenen Sprachen anbietet - welche Locales mitgeliefert werden, was zu tun ist, wenn eine fehlt, teilweise Übersetzung mit Ersatzsprache, Oberflächentexte, die in einer anderen Sprache bleiben, und die Zusammenarbeit mit Sprechern.
-keywords: Minderheitensprachen, Regionalsprachen, indigene Sprachen, Walisisch, Baskisch, Irisch, Schottisch-Gälisch, Samisch, Maori, Friesisch, Sorbisch, Locale, teilweise Übersetzung, Übersetzer aus der Sprachgemeinschaft, minority languages, regional languages, indigenous languages, Welsh, Basque, Irish, Scottish Gaelic, Sami, Frisian, locale, partial translation, community translators
+keywords: Minderheitensprachen, Regionalsprachen, indigene Sprachen, Sprachen der amerikanischen Ureinwohner, Sprachen Alaskas, Walisisch, Baskisch, Irisch, Schottisch-Gälisch, Samisch, Maori, Friesisch, Sorbisch, Locale, teilweise Übersetzung, Übersetzer aus der Sprachgemeinschaft, minority languages, regional languages, indigenous languages, Welsh, Basque, Irish, Scottish Gaelic, Sami, Frisian, locale, partial translation, community translators
 type: help
 ---
 # Minderheiten- und Regionalsprachen
@@ -27,7 +27,7 @@ Kapazität für Übersetzungen.
 
 ## Ist die Locale vorhanden?
 
-`share/locale/` liefert 368 Locale-Dateien mit, darunter viele Regional- und Minderheitensprachen, zum Beispiel
+`share/locale/` liefert 390 Locale-Dateien mit, darunter viele Regional- und Minderheitensprachen, zum Beispiel
 Walisisch (`cym-GB`), Baskisch (`eus-ES`), Galicisch (`glg-ES`), Irisch (`gle-IE`), Schottisch-Gälisch (`gla-GB`),
 Bretonisch (`bre-FR`), Okzitanisch (`oci-FR`), Westfriesisch (`fry-NL`), Nordsamisch (`sme-NO`), Rätoromanisch
 (`roh-CH`), Luxemburgisch (`ltz-LU`), Maori (`mri-NZ`), Hawaiisch (`haw-US`) und Grönländisch (`kal-GL`). Die
@@ -35,6 +35,12 @@ vollständige Liste mit den Namen in der jeweiligen Sprache steht in
 [Sprachen in Exponential, Abschnitt 3](../../../sprachen.md#3-alle-locales); noch fehlende Sprachen stehen in
 [Abschnitt 6](../../../sprachen.md#6-verbreitete-sprachen-die-noch-fehlen). Eine fehlende Locale lässt sich als Datei
 hinzufügen (siehe „Eigene Locales für nicht gelistete Sprachen“).
+
+Seit 6.0.15 liefert es auch die Locales von 22 indigenen Sprachen Amerikas mit: Zentral-Yupik, Inupiaq,
+Aleutisch, Alutiiq, Tlingit, Haida, Gwich'in und Tsimshian aus Alaska; Navajo, Cherokee, Lakota, Ojibwe, Cree,
+Inuktitut und Mohawk aus den USA und Kanada; Nahuatl, Yukatekisches Maya, K'iche', Guaraní, Aymara und
+Mapudungun aus Lateinamerika. [Indigene Sprachen Amerikas](indigene-sprachen-amerikas.md) erklärt, wie man in
+ihnen veröffentlicht.
 
 ## Teilweise Übersetzung mit Ersatzsprache
 
@@ -79,6 +85,7 @@ und Sonderbuchstaben). Zeichen oberhalb von U+FFFF brauchen unter MySQL und Mari
 ## Verwandte Seiten
 
 - [Sprachen in Exponential](../../../sprachen.md)
+- [Indigene Sprachen Amerikas](indigene-sprachen-amerikas.md)
 - [Eigene Locales für nicht gelistete Sprachen](eigene-locales-fuer-nicht-gelistete-sprachen.md)
 - [Inhaltssprachen](../../../anleitungen/inhaltssprachen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.

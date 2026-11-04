@@ -3,17 +3,17 @@ summary: Die eine Stelle, die angibt, welche Sprachen Exponential unterstützt, 
 ---
 # Sprachen in Exponential
 
-<!-- generated: exp:i18n coverage 2026-11-02 (start) -->
-**Auf einen Blick, Stand 2. November 2026.** Eine Standardinstallation (die mitgelieferten `share/locale`,
+<!-- generated: exp:i18n coverage 2026-11-04 (start) -->
+**Auf einen Blick, Stand 4. November 2026.** Eine Standardinstallation (die mitgelieferten `share/locale`,
 `share/translations` und `settings/i18n.ini`, ohne Erweiterungen) hat:
 
 | Was | Anzahl |
 |---|---:|
 | Sprachen der Administration: Übersetzungen in `share/translations` | **155**, davon 155 vollständig |
-| Locales: Dateien `share/locale/*.ini` | **368**: 361 Sprachen und Länder, 1 Testsprache, 6 Varianten |
-| Bekannte Sprachen: die Sprachcodes der Locales (ohne Varianten und Testsprache) | **150** |
+| Locales: Dateien `share/locale/*.ini` | **390**: 383 Sprachen und Länder, 1 Testsprache, 6 Varianten |
+| Bekannte Sprachen: die Sprachcodes der Locales (ohne Varianten und Testsprache) | **171** |
 | davon von der Administration übersetzt gezeigt (eigene Übersetzung, Fallback oder Englisch) | **150** |
-| davon nicht übersetzt ([Liste](#die-noch-nicht-übersetzten-sprachen)) | **0** |
+| davon nicht übersetzt ([Liste](#die-noch-nicht-übersetzten-sprachen)) | **21** |
 | Länder und Gebiete der Locales | **247** |
 | davon mit der Administration in ihrer Sprache (grün auf der Karte) | **247** |
 | Codes aus ISO 3166-1 (`settings/country.ini`) ohne Locale | **4**, alle mit Absicht: unbewohnt oder zurückgezogen (Liste unter der Karte) |
@@ -63,7 +63,7 @@ Exponential bedient diese Gebiete in jeder Sprache; lokale Konventionen gibt es 
 | Bermuda | BM | `eng-BM` (Quelltexte) |
 | Bhutan | BT | `dzo-BT` |
 | Birma (Myanmar) | MM | `mya-MM` |
-| Bolivien | BO | `esl-BO` → `esl-ES` |
+| Bolivien | BO | `aym-BO` (nicht übersetzt), `esl-BO` → `esl-ES` |
 | Bonaire, Saint Eustatius and Saba | BQ | `dut-BQ` → `dut-NL` |
 | Bosnien und Herzegowina | BA | `bos-BA` |
 | Botsuana | BW | `eng-BW` (Quelltexte) |
@@ -74,7 +74,7 @@ Exponential bedient diese Gebiete in jeder Sprache; lokale Konventionen gibt es 
 | Bulgarien | BG | `bul-BG` |
 | Burkina Faso | BF | `fre-BF` → `fre-FR` |
 | Burundi | BI | `fre-BI` → `fre-FR`, `run-BI` |
-| Chile | CL | `esl-CL` → `esl-ES` |
+| Chile | CL | `arn-CL` (nicht übersetzt), `esl-CL` → `esl-ES` |
 | China | CN | `bod-CN`, `chi-CN`, `uig-CN` |
 | Cookinseln | CK | `eng-CK` (Quelltexte) |
 | Costa Rica | CR | `esl-CR` → `esl-ES` |
@@ -108,7 +108,7 @@ Exponential bedient diese Gebiete in jeder Sprache; lokale Konventionen gibt es 
 | Grönland | GL | `kal-GL` |
 | Guadeloupe | GP | `fre-GP` → `fre-FR` |
 | Guam | GU | `eng-GU` (Quelltexte) |
-| Guatemala | GT | `esl-GT` → `esl-ES` |
+| Guatemala | GT | `esl-GT` → `esl-ES`, `quc-GT` (nicht übersetzt) |
 | Guernsey | GG | `eng-GG` (Quelltexte) |
 | Guinea | GN | `fre-GN` → `fre-FR`, `nqo-GN` |
 | Guinea-Bissau | GW | `por-GW` → `por-PT` |
@@ -133,7 +133,7 @@ Exponential bedient diese Gebiete in jeder Sprache; lokale Konventionen gibt es 
 | Kaimaninseln | KY | `eng-KY` (Quelltexte) |
 | Kambodscha | KH | `khm-KH` |
 | Kamerun | CM | `fre-CM` → `fre-FR` |
-| Kanada | CA | `eng-CA` (Quelltexte), `fre-CA` → `fre-FR` |
+| Kanada | CA | `cre-CA` (nicht übersetzt), `eng-CA` (Quelltexte), `fre-CA` → `fre-FR`, `iku-CA` (nicht übersetzt), `moh-CA` (nicht übersetzt), `oji-CA` (nicht übersetzt) |
 | Kap Verde | CV | `por-CV` → `por-PT` |
 | Kasachstan | KZ | `kaz-KZ`, `rus-KZ` → `rus-RU` |
 | Katar | QA | `ara-QA` → `ara-SA` |
@@ -171,7 +171,7 @@ Exponential bedient diese Gebiete in jeder Sprache; lokale Konventionen gibt es 
 | Mauretanien | MR | `ara-MR` → `ara-SA`, `fre-MR` → `fre-FR` |
 | Mauritius | MU | `fre-MU` → `fre-FR` |
 | Mayotte | YT | `fre-YT` → `fre-FR` |
-| Mexiko | MX | `esl-MX` |
+| Mexiko | MX | `esl-MX`, `nah-MX` (nicht übersetzt), `yua-MX` (nicht übersetzt) |
 | Mikronesien | FM | `eng-FM` (Quelltexte) |
 | Moldau (Republik Moldau) | MD | `ron-MD` → `ron-RO`, `rus-MD` → `rus-RU` |
 | Monaco | MC | `fre-MC` → `fre-FR` |
@@ -200,7 +200,7 @@ Exponential bedient diese Gebiete in jeder Sprache; lokale Konventionen gibt es 
 | Palau | PW | `eng-PW` (Quelltexte) |
 | Panama | PA | `esl-PA` → `esl-ES` |
 | Papua-Neuguinea | PG | `eng-PG` (Quelltexte) |
-| Paraguay | PY | `esl-PY` → `esl-ES` |
+| Paraguay | PY | `esl-PY` → `esl-ES`, `grn-PY` (nicht übersetzt) |
 | Peru | PE | `esl-PE` → `esl-ES`, `que-PE` |
 | Philippinen | PH | `ceb-PH`, `eng-PH` (Quelltexte), `fil-PH` |
 | Pitcairn | PN | `eng-PN` (Quelltexte) |
@@ -267,7 +267,7 @@ Exponential bedient diese Gebiete in jeder Sprache; lokale Konventionen gibt es 
 | Ukraine | UA | `ukr-UA` |
 | Ungarn | HU | `hun-HU` |
 | Uruguay | UY | `esl-UY` → `esl-ES` |
-| USA | US | `eng-US`, `esl-US` → `esl-ES`, `haw-US`, `yid-US` |
+| USA | US | `ale-US` (nicht übersetzt), `chr-US` (nicht übersetzt), `ems-US` (nicht übersetzt), `eng-US`, `esl-US` → `esl-ES`, `esu-US` (nicht übersetzt), `gwi-US` (nicht übersetzt), `hai-US` (nicht übersetzt), `haw-US`, `ipk-US` (nicht übersetzt), `lkt-US` (nicht übersetzt), `nav-US` (nicht übersetzt), `oji-US` (nicht übersetzt), `tli-US` (nicht übersetzt), `tsi-US` (nicht übersetzt), `yid-US` |
 | Usbekistan | UZ | `uzb-UZ` |
 | Vanuatu | VU | `fre-VU` → `fre-FR` |
 | Venezuela | VE | `esl-VE` → `esl-ES` |
@@ -309,7 +309,7 @@ hinzufügen. Die Zahlen wurden am 15. Oktober 2026 erhoben, die der Übersetzung
 26. Oktober 2026 (Exponential 6.0.15).
 
 <!-- generated: exp:i18n coverage translations (start) -->
-Kurz gefasst: **368 Locale-Dateien** (361 Sprachen und Länder, die Testsprache Lorem Ipsum und 6 Varianten, 43 davon
+Kurz gefasst: **390 Locale-Dateien** (383 Sprachen und Länder, die Testsprache Lorem Ipsum und 6 Varianten, 43 davon
 von rechts nach links geschrieben) lassen sich als Inhaltssprachen und Siteaccess-Locales wählen; es gibt **155
 Übersetzungen der Administrationsoberfläche**, alle vollständig: Afrikaans (`afr-ZA`), Akan (`aka-GH`), Albanian
 (`sqi-AL`), Amharic (`amh-ET`), Arabic (Saudi Arabia) (`ara-SA`), Armenian (`hye-AM`), Assamese (`asm-IN`), Asturian
@@ -365,17 +365,38 @@ Jede Locale ist reines INI: Nichts davon benötigt zur Laufzeit eine PHP-Extensi
 <!-- generated: exp:i18n coverage languages (start) -->
 ## Die noch nicht übersetzten Sprachen
 
-Exponential kennt **150 Sprachen**: so viele verschiedene Sprachcodes (die drei Buchstaben vor dem
+Exponential kennt **171 Sprachen**: so viele verschiedene Sprachcodes (die drei Buchstaben vor dem
 Bindestrich) haben die mitgelieferten Locales `share/locale/*.ini`, ohne Varianten und Testsprache. **150** davon
 zeigt die Administration übersetzt: mindestens eine ihrer Locales hat eine eigene Übersetzung, fällt auf die erste
 Übersetzung ihrer Kette zurück (`FallbackMode=first`) oder ist Englisch, die Sprache der Quelltexte. Für die
-übrigen **0** zeigt sie die Quelltexte auf Englisch; jede ist ein Kandidat für eine neue Übersetzung
+übrigen **21** zeigt sie die Quelltexte auf Englisch; jede ist ein Kandidat für eine neue Übersetzung
 (siehe [Abschnitt 8](#8-eine-übersetzung-der-administrationsoberfläche-hinzufügen-oder-vervollständigen)). Die Namen sind die englischen der Locale-Dateien.
 
-<details><summary>Die 0 nicht übersetzten Sprachen</summary>
+<details><summary>Die 21 nicht übersetzten Sprachen</summary>
 
 | Sprache | Eigener Name | Code | Locales (Länder) |
 |---|---|---|---|
+| Aleut | Unangam Tunuu | `ale` | `ale-US` (USA) |
+| Alutiiq | Sugt'stun | `ems` | `ems-US` (USA) |
+| Aymara | Aymar aru | `aym` | `aym-BO` (Bolivien) |
+| Central Yup'ik | Yugtun | `esu` | `esu-US` (USA) |
+| Cherokee | ᏣᎳᎩ | `chr` | `chr-US` (USA) |
+| Cree | nêhiyawêwin | `cre` | `cre-CA` (Kanada) |
+| Guarani | Avañe'ẽ | `grn` | `grn-PY` (Paraguay) |
+| Gwich'in | Dinjii Zhuh K'yàa | `gwi` | `gwi-US` (USA) |
+| Haida | Xaad Kíl | `hai` | `hai-US` (USA) |
+| Inuktitut | ᐃᓄᒃᑎᑐᑦ | `iku` | `iku-CA` (Kanada) |
+| Inupiaq | Iñupiatun | `ipk` | `ipk-US` (USA) |
+| K'iche' | K'iche' | `quc` | `quc-GT` (Guatemala) |
+| Lakota | Lakȟólʼiyapi | `lkt` | `lkt-US` (USA) |
+| Mapudungun | Mapudungun | `arn` | `arn-CL` (Chile) |
+| Mohawk | Kanien'kéha | `moh` | `moh-CA` (Kanada) |
+| Nahuatl | Nawatl | `nah` | `nah-MX` (Mexiko) |
+| Navajo | Diné Bizaad | `nav` | `nav-US` (USA) |
+| Ojibwe | Anishinaabemowin | `oji` | `oji-CA` (Kanada), `oji-US` (USA) |
+| Tlingit | Lingít | `tli` | `tli-US` (USA) |
+| Tsimshian | Sm'algyax | `tsi` | `tsi-US` (USA) |
+| Yucatec Maya | Maaya t'aan | `yua` | `yua-MX` (Mexiko) |
 
 </details>
 <!-- generated: exp:i18n coverage languages (end) -->
@@ -456,6 +477,7 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 |---|---|---|---|---|---|---|---:|
 | `afr-ZA` | Afrikaans | Afrikaans | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `aka-GH` | Akan | Akan | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
+| `ale-US` | Aleut | Unangam Tunuu | Amerika | LTR | Lateinisch (`Latn`) | von Hand erstellt | — |
 | `amh-ET` | Amharic | አማርኛ | Afrika | LTR | Äthiopisch (`Ethi`) | CLDR 44 | 100 % |
 | `ara-AE` | Arabic (United Arab Emirates) | العربية (الإمارات العربية المتحدة) | Naher Osten | RTL | Arabisch (`Arab`) | CLDR 44 | 100 % (fällt auf `ara-SA` zurück) |
 | `ara-BH` | Arabic (Bahrain) | العربية (البحرين) | Naher Osten | RTL | Arabisch (`Arab`) | CLDR 48 | 100 % (fällt auf `ara-SA` zurück) |
@@ -483,8 +505,10 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | `ara-TN` | Arabic (Tunisia) | العربية (تونس) | Afrika | RTL | Arabisch (`Arab`) | CLDR 44 | 100 % (fällt auf `ara-SA` zurück) |
 | `ara-YE` | Arabic (Yemen) | العربية (اليمن) | Naher Osten | RTL | Arabisch (`Arab`) | CLDR 48 | 100 % (fällt auf `ara-SA` zurück) |
 | `arc-IQ` | Imperial Aramaic | ארמית | Naher Osten | RTL | Hebräisch (`Hebr`) | Namen von Hand, Konventionen aus CLDR 44 | 100 % |
+| `arn-CL` | Mapudungun | Mapudungun | Amerika | LTR | Lateinisch (`Latn`) | von Hand erstellt | — |
 | `asm-IN` | Assamese | অসমীয়া | Südasien | LTR | Bengalisch (`Beng`) | CLDR 44 | 100 % |
 | `ast-ES` | Asturian | Asturianu | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
+| `aym-BO` | Aymara | Aymar aru | Amerika | LTR | Lateinisch (`Latn`) | von Hand erstellt | — |
 | `aze-AZ` | Azerbaijani | Azərbaycan | Zentralasien und Kaukasus | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `bam-ML` | Bambara | Bamanakan | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `bel-BY` | Belarusian | Беларуская | Europa | LTR | Kyrillisch (`Cyrl`) | CLDR 44 | 100 % |
@@ -505,7 +529,9 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | `chi-MO` | Chinese (Macao SAR China) | 中文 (中國澳門特別行政區) | Ostasien | LTR | Han (traditionell) (`Hant`) | CLDR 44 | 100 % (fällt auf `chi-TW` zurück) |
 | `chi-SG` | Simplified Chinese (Singapore) | 简体中文 (新加坡) | Südostasien | LTR | Han (vereinfacht) (`Hans`) | CLDR 44 | 100 % (fällt auf `chi-CN` zurück) |
 | `chi-TW` | Traditional Chinese (Taiwan) | 繁體中文 (臺灣) | Ostasien | LTR | Han (traditionell) (`Hant`) | älter, von Hand erstellt | 100 % |
+| `chr-US` | Cherokee | ᏣᎳᎩ | Amerika | LTR | Cherokee (`Cher`) | CLDR 44 | — |
 | `ckb-IQ` | Central Kurdish | کوردیی ناوەندی | Naher Osten | RTL | Arabisch (`Arab`) | CLDR 44 | 100 % |
+| `cre-CA` | Cree | nêhiyawêwin | Amerika | LTR | Lateinisch (`Latn`) | Namen von Hand, Konventionen aus CLDR 44 | — |
 | `cro-HR` | Croatian | Hrvatski | Europa | LTR | Lateinisch (`Latn`) | älter, von Hand erstellt | 100 % |
 | `cym-GB` | Welsh | Cymraeg | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `cze-CZ` | Czech | Čeština | Europa | LTR | Lateinisch (`Latn`) | älter, von Hand erstellt | 100 % |
@@ -524,6 +550,7 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | `dzo-BT` | Dzongkha | རྫོང་ཁ | Südasien | LTR | Tibetisch (`Tibt`) | CLDR 44 | 100 % |
 | `ell-CY` | Greek (Cyprus) | Ελληνικά (Κύπρος) | Europa | LTR | Griechisch (`Grek`) | CLDR 44 | 100 % (fällt auf `ell-GR` zurück) |
 | `ell-GR` | Greek (Hellenic) | Ελληνικά | Europa | LTR | Griechisch (`Grek`) | älter, von Hand erstellt, korrigiert in 6.0.15 | 100 % |
+| `ems-US` | Alutiiq | Sugt'stun | Amerika | LTR | Lateinisch (`Latn`) | von Hand erstellt | — |
 | `eng-AG` | English (Antigua & Barbuda) | English (Antigua & Barbuda) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-AI` | English (Anguilla) | English (Anguilla) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-AS` | English (American Samoa) | English (American Samoa) | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
@@ -619,6 +646,7 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | `esl-UY` | Spanish (Uruguay) | Español (Uruguay) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `esl-ES` zurück) |
 | `esl-VE` | Spanish (Venezuela) | Español (Venezuela) | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `esl-ES` zurück) |
 | `est-EE` | Estonian | Eesti | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
+| `esu-US` | Central Yup'ik | Yugtun | Amerika | LTR | Lateinisch (`Latn`) | von Hand erstellt | — |
 | `eus-ES` | Basque | Euskara | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `ewe-GH` | Ewe | Eʋegbe | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `fao-FO` | Faroese | Føroyskt | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
@@ -681,7 +709,10 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | `gla-GB` | Scottish Gaelic | Gàidhlig | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `gle-IE` | Irish | Gaeilge | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `glg-ES` | Galician | Galego | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
+| `grn-PY` | Guarani | Avañe'ẽ | Amerika | LTR | Lateinisch (`Latn`) | von Hand erstellt | — |
 | `guj-IN` | Gujarati | ગુજરાતી | Südasien | LTR | Gujarati (`Gujr`) | CLDR 44 | 100 % |
+| `gwi-US` | Gwich'in | Dinjii Zhuh K'yàa | Amerika | LTR | Lateinisch (`Latn`) | von Hand erstellt | — |
+| `hai-US` | Haida | Xaad Kíl | Amerika | LTR | Lateinisch (`Latn`) | von Hand erstellt | — |
 | `hau-NG` | Hausa | Hausa | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `haw-US` | Hawaiian | ʻŌlelo Hawaiʻi | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `heb-IL` | Hebrew | עברית | Naher Osten | RTL | Hebräisch (`Hebr`) | älter, neu erzeugt aus CLDR 44 | 100 % |
@@ -691,7 +722,9 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | `huy-IL` | Hulaulá | הולאולא | Naher Osten | RTL | Hebräisch (`Hebr`) | Namen von Hand, Konventionen aus CLDR 44 | 100 % |
 | `hye-AM` | Armenian | Հայերեն | Zentralasien und Kaukasus | LTR | Armenisch (`Armn`) | CLDR 44 | 100 % |
 | `ibo-NG` | Igbo | Igbo | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
+| `iku-CA` | Inuktitut | ᐃᓄᒃᑎᑐᑦ | Amerika | LTR | Kanadische Silbenschrift (`Cans`) | Namen von Hand, Konventionen aus CLDR 44 | — |
 | `ind-ID` | Indonesian | Indonesian | Südostasien | LTR | Lateinisch (`Latn`) | älter, von Hand erstellt | 100 % |
+| `ipk-US` | Inupiaq | Iñupiatun | Amerika | LTR | Lateinisch (`Latn`) | von Hand erstellt | — |
 | `isl-IS` | Icelandic | Íslenska | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `ita-CH` | Italian (Switzerland) | Italiano (Svizzera) | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `ita-IT` zurück) |
 | `ita-IT` | Italian (Italy) | Italiano (Italia) | Europa | LTR | Lateinisch (`Latn`) | älter, von Hand erstellt | 100 % |
@@ -718,6 +751,7 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | `lav-LV` | Latvian | Latviešu | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `lin-CD` | Lingala | Lingála | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `lit-LT` | Lithuanian | Lietuvių | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
+| `lkt-US` | Lakota | Lakȟólʼiyapi | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | — |
 | `ltz-LU` | Luxembourgish | Lëtzebuergesch | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `lug-UG` | Ganda | Luganda | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `mai-IN` | Maithili | मैथिली | Südasien | LTR | Devanagari (`Deva`) | CLDR 44 | 100 % |
@@ -727,12 +761,15 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | `mlg-MG` | Malagasy | Malagasy | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `mlt-MT` | Maltese | Malti | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `mni-IN` | Manipuri | মৈতৈলোন্ | Südasien | LTR | Bengalisch (`Beng`) | CLDR 44 | 100 % |
+| `moh-CA` | Mohawk | Kanien'kéha | Amerika | LTR | Lateinisch (`Latn`) | von Hand erstellt | — |
 | `mon-MN` | Mongolian | Монгол | Ostasien | LTR | Kyrillisch (`Cyrl`) | CLDR 44 | 100 % |
 | `mri-NZ` | Māori | Māori | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `msa-BN` | Malay (Brunei) | Melayu (Brunei) | Südostasien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `msa-MY` zurück) |
 | `msa-MY` | Malay (Malaysia) | Melayu (Malaysia) | Südostasien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `msa-SG` | Malay (Singapore) | Melayu (Singapura) | Südostasien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `msa-MY` zurück) |
 | `mya-MM` | Burmese | မြန်မာ | Südostasien | LTR | Myanmar (`Mymr`) | CLDR 44 | 100 % |
+| `nah-MX` | Nahuatl | Nawatl | Amerika | LTR | Lateinisch (`Latn`) | von Hand erstellt | — |
+| `nav-US` | Navajo | Diné Bizaad | Amerika | LTR | Lateinisch (`Latn`) | Namen von Hand, Konventionen aus CLDR 44 | — |
 | `nep-NP` | Nepali | नेपाली | Südasien | LTR | Devanagari (`Deva`) | CLDR 44 | 100 % |
 | `nno-NO` | Norwegian (Nynorsk) | Norsk (Nynorsk) | Europa | LTR | Lateinisch (`Latn`) | älter, von Hand erstellt | 100 % (fällt auf `nor-NO` zurück) |
 | `nor-NO` | Norwegian Bokmål | Norsk (Bokmål) | Europa | LTR | Lateinisch (`Latn`) | älter, von Hand erstellt | 100 % |
@@ -740,6 +777,8 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | `nor-NO@spraakraad` | Variant of `nor-NO`: Norsk Språkråd |  | Europa | LTR | Lateinisch (`Latn`) | ältere Variante, von Hand erstellt | 100 % (fällt auf `nor-NO` zurück) |
 | `nqo-GN` | N’Ko | ߒߞߏ | Afrika | RTL | N’Ko (`Nkoo`) | CLDR 44 | 100 % |
 | `oci-FR` | Occitan | Occitan | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
+| `oji-CA` | Ojibwe | Anishinaabemowin | Amerika | LTR | Lateinisch (`Latn`) | Namen von Hand, Konventionen aus CLDR 44 | — |
+| `oji-US` | Ojibwe | Anishinaabemowin | Amerika | LTR | Lateinisch (`Latn`) | Namen von Hand, Konventionen aus CLDR 44 | — |
 | `ori-IN` | Odia | ଓଡ଼ିଆ | Südasien | LTR | Oriya (Odia) (`Orya`) | CLDR 44 | 100 % |
 | `orm-ET` | Oromo | Oromoo | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `pan-IN` | Punjabi | ਪੰਜਾਬੀ | Südasien | LTR | Gurmukhi (`Guru`) | CLDR 44 | 100 % |
@@ -757,6 +796,7 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | `por-TL` | Portuguese (Timor-Leste) | Português (Timor-Leste) | Südostasien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `por-PT` zurück) |
 | `pus-AF` | Pashto | پښتو | Südasien | RTL | Arabisch (`Arab`) | CLDR 44 | 100 % |
 | `qlo-ZZ` | Lorem Ipsum | Lorem Ipsum | Keine (Testsprache) | LTR | Lateinisch (`Latn`) | von Hand erstellt, nur Testsprache | — |
+| `quc-GT` | K'iche' | K'iche' | Amerika | LTR | Lateinisch (`Latn`) | von Hand erstellt | — |
 | `que-PE` | Quechua | Runasimi | Amerika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `roh-CH` | Romansh | Rumantsch | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `ron-MD` | Romanian (Moldova) | Română (Republica Moldova) | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `ron-RO` zurück) |
@@ -797,7 +837,9 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | `tha-TH` | Thai | ไทย | Südostasien | LTR | Thai (`Thai`) | CLDR 44 | 100 % |
 | `tir-ET` | Tigrinya | ትግርኛ | Afrika | LTR | Äthiopisch (`Ethi`) | CLDR 44 | 100 % |
 | `tlh-QO` | Klingon | tlhIngan Hol | Weltweit (fiktiv) | LTR | Lateinisch (`Latn`) | von Hand erstellt | 100 % |
+| `tli-US` | Tlingit | Lingít | Amerika | LTR | Lateinisch (`Latn`) | von Hand erstellt | — |
 | `ton-TO` | Tongan | Lea fakatonga | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
+| `tsi-US` | Tsimshian | Sm'algyax | Amerika | LTR | Lateinisch (`Latn`) | von Hand erstellt | — |
 | `tuk-TM` | Turkmen | Türkmen dili | Zentralasien und Kaukasus | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `tur-CY` | Turkish (Cyprus) | Türkçe (Kıbrıs) | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `tur-TR` zurück) |
 | `tur-TR` | Turkish | Türkçe | Naher Osten | LTR | Lateinisch (`Latn`) | älter, von Hand erstellt | 100 % |
@@ -811,6 +853,7 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | `xho-ZA` | Xhosa | IsiXhosa | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `yid-US` | Yiddish | ייִדיש | Amerika | RTL | Hebräisch (`Hebr`) | CLDR 44 | 100 % |
 | `yor-NG` | Yoruba | Èdè Yorùbá | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
+| `yua-MX` | Yucatec Maya | Maaya t'aan | Amerika | LTR | Lateinisch (`Latn`) | von Hand erstellt | — |
 | `zgh-MA` | Standard Moroccan Tamazight | ⵜⴰⵎⴰⵣⵉⵖⵜ | Afrika | LTR | Tifinagh (`Tfng`) | CLDR 44 | 100 % |
 | `zul-ZA` | Zulu | IsiZulu | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 
@@ -903,6 +946,53 @@ Leerzeichen zwischen Wörtern um, wie es gesetzt wird; Thai, Laotisch, Khmer und
 geschrieben werden, brechen an den Wortgrenzen des Browser-Wörterbuchs um, mit `break-word` als Sicherheitsnetz für
 eine Zeichenfolge, die es nicht kennt. Chinesisch braucht nichts: Browser brechen zwischen Ideogrammen um. Die
 klingonische Schrift pIqaD wird nie verwendet (siehe Klingonisch oben).
+
+### Indigene Sprachen Amerikas
+
+Seit 6.0.15 liefert Exponential die Locales von 22 indigenen Sprachen Amerikas mit, von der Arktis bis in die Anden.
+Eine Locale-Datei macht die Sprache zur Inhaltssprache: Einträge, URL-Aliase und Suchen in der Sprache, ihr eigener
+Name in den Sprachlisten und Datum, Zahlen und Währung ihres Landes. Die Administrationsoberfläche zeigt diese
+Sprachen auf Englisch oder auf Spanisch, wenn ein Siteaccess `esl-ES` als Oberflächensprache nennt; die Einrichtung
+beschreibt [die Hilfeseite](hilfe/verwaltung/sprachen/indigene-sprachen-amerikas.md).
+
+| Sprache | Eigener Name | Code | Wo | Schrift |
+|---|---|---|---|---|
+| Zentral-Yupik | Yugtun | `esu-US` | Alaska | Lateinisch |
+| Inupiaq | Iñupiatun | `ipk-US` | Alaska | Lateinisch |
+| Aleutisch | Unangam Tunuu | `ale-US` | Alaska (Aleuten und Pribilof-Inseln) | Lateinisch |
+| Alutiiq | Sugt'stun | `ems-US` | Alaska (Kodiak, Golfküste) | Lateinisch |
+| Tlingit | Lingít | `tli-US` | Südost-Alaska | Lateinisch |
+| Haida | Xaad Kíl | `hai-US` | Südost-Alaska | Lateinisch |
+| Gwich'in | Dinjii Zhuh K'yàa | `gwi-US` | Inneres Alaska | Lateinisch |
+| Tsimshian | Sm'algyax | `tsi-US` | Südost-Alaska | Lateinisch |
+| Navajo | Diné Bizaad | `nav-US` | Südwesten der USA | Lateinisch |
+| Cherokee | ᏣᎳᎩ | `chr-US` | Oklahoma, North Carolina | Cherokee-Silbenschrift |
+| Lakota | Lakȟólʼiyapi | `lkt-US` | Great Plains | Lateinisch |
+| Ojibwe | Anishinaabemowin | `oji-US` | Große Seen (USA) | Lateinisch |
+| Ojibwe | Anishinaabemowin | `oji-CA` | Große Seen (Kanada) | Lateinisch |
+| Cree (Plains Cree) | nêhiyawêwin | `cre-CA` | Kanada | Lateinisch (Standard Roman Orthography) |
+| Inuktitut | ᐃᓄᒃᑎᑐᑦ | `iku-CA` | Nunavut, Kanada | Kanadische Silbenschrift |
+| Mohawk | Kanien'kéha | `moh-CA` | Ontario und Québec | Lateinisch |
+| Nahuatl (östliche Huasteca) | Nawatl | `nah-MX` | Mexiko | Lateinisch |
+| Yukatekisches Maya | Maaya t'aan | `yua-MX` | Yucatán, Mexiko | Lateinisch |
+| K'iche' | K'iche' | `quc-GT` | Guatemala | Lateinisch |
+| Guaraní | Avañe'ẽ | `grn-PY` | Paraguay | Lateinisch |
+| Aymara | Aymar aru | `aym-BO` | Bolivien | Lateinisch |
+| Mapudungun | Mapudungun | `arn-CL` | Chile | Lateinisch |
+
+- **Monats- und Tagesnamen**: Wo Unicode CLDR Daten hat (Cherokee, Lakota), ist die Datei daraus erzeugt. Navajo,
+  Cherokee, Inuktitut, Cree, Ojibwe, Guaraní und Mapudungun haben von Hand geschriebene Monats- und Tagesnamen; die
+  Sprachen Alaskas und Mohawk behalten die englischen Namen, Aymara, Nahuatl, Yukatekisches Maya und K'iche' die
+  spanischen, wie Texte in diesen Sprachen sie üblicherweise verwenden. Jede Datei sagt das in ihrem Kopf.
+- **Ojibwe** hat zwei Locales, `oji-CA` und `oji-US`: Die Sprache wird auf beiden Seiten der Grenze gesprochen, und
+  die beiden unterscheiden sich nur in Land, Währung und Datumsreihenfolge.
+- **Übersetzungen der Administrationsoberfläche** in indigene Sprachen Amerikas: Quechua (`que-PE`), Grönländisch
+  (`kal-GL`) und, aus dem Pazifik, Hawaiisch (`haw-US`) sind vollständig; Guaraní (`grn-PY`) ist in Arbeit.
+- **Schriften**: Cherokee wird in seiner eigenen Silbenschrift geschrieben (U+13A0 bis U+13FF, U+AB70 bis U+ABBF),
+  Inuktitut in der kanadischen Silbenschrift (U+1400 bis U+167F); alle anderen Sprachen hier verwenden lateinische
+  Buchstaben, manche mit Sonderzeichen (ł, ŋ, x̱, ẽ, der Knacklaut ʼ). Windows, macOS, iOS und Android liefern
+  Schriften für beide Silbenschriften mit; ein öffentliches Design mit eigener Webschrift nennt eine Ersatzschrift wie
+  Noto Sans Cherokee oder Noto Sans Canadian Aboriginal.
 
 ## 4. Alle Übersetzungen der Administrationsoberfläche
 
@@ -1565,17 +1655,19 @@ Jede Sprache der Tabelle oben hat eine Locale. Sprachen mit einer Million oder m
 
 - **Keine Daten in ICU 74 (CLDR 44)**: Haitianisches Kreolisch (`hat`), Setswana (`tsn`), Sesotho (`sot`),
   Nord-Sotho (`nso`), Xitsonga (`tso`), Siswati (`ssw`), Tshivenda (`ven`) und Süd-Ndebele (`nbl`) (Amtssprachen
-  Südafrikas), Chichewa (`nya`), Guaraní (`grn`), Aymara (`aym`), Baschkirisch (`bak`), Ilokano (`ilo`), Hmong
-  (`hmn`), Inuktitut (`iku`), Samoanisch (`smo`), Korsisch (`cos`), Tok Pisin (`tpi`), Fidschianisch (`fij`) und
+  Südafrikas), Chichewa (`nya`), Baschkirisch (`bak`), Ilokano (`ilo`), Hmong
+  (`hmn`), Samoanisch (`smo`), Korsisch (`cos`), Tok Pisin (`tpi`), Fidschianisch (`fij`) und
   Belutschisch (`bal`). Jede braucht eine von Hand erstellte Datei (wie Latein und Dhivehi sie haben), am besten von
   einem Sprecher geschrieben oder geprüft; CLDR 45 und spätere Versionen fügen einige davon hinzu, und ein neueres ICU
   auf dem Build-Rechner würde diese erzeugen.
 - **Mit CLDR-Daten, vorerst weggelassen** (klein oder eine zweite Schrift einer Sprache, die eine Locale hat): Manx
   (`glv`), Kornisch (`cor`), Schweizerdeutsch (`gsw`, in Standarddeutsch geschrieben), Friaulisch (`fur`), Sardisch
-  (`srd`), Ligurisch, Venetisch, Schlesisch, Cherokee (`chr`), Nheengatu, Ossetisch (`oss`), Jakutisch (`sah`),
+  (`srd`), Ligurisch, Venetisch, Schlesisch, Nheengatu, Ossetisch (`oss`), Jakutisch (`sah`),
   Tschuwaschisch (`chv`), Zentralatlas-Tamazight, Sango (`sag`), Masanderanisch und Nord-Luri (CLDR hat für beide
   englische Tagesnamen), Fulfulde in Adlam-Schrift, Usbekisch in arabischer Schrift, Interlingua (nur für die Region
   „Welt“, siehe [Abschnitt 3](#3-alle-locales)).
+- Guaraní, Aymara, Inuktitut und Cherokee haben seit 6.0.15 Locales, mit den anderen indigenen Sprachen Amerikas
+  ([Abschnitt 3](#indigene-sprachen-amerikas)).
 - **Weitere regionale Varianten**: Portugiesisch von Guinea-Bissau; Englisch von Hongkong und Malaysia; Schwedisch
   von Finnland; Russisch von Kasachstan und Belarus; traditionelles Chinesisch von Macau. (Die übrigen Länder des
   Spanischen, Französischen, Arabischen und Deutschen kamen am 18. Oktober 2026 hinzu.)

@@ -36,6 +36,7 @@ Up: [Governments: start here](../government-start-here.md).
 | [Main language of an item](main-language-of-an-item.md) | What the main language is and how to change it |
 | [Second and third official languages](second-and-third-official-languages.md) | The complete setup for two or three official languages |
 | [Minority and regional languages](minority-and-regional-languages.md) | Locales that ship, partial translation, working with speakers |
+| [Indigenous languages of the Americas](indigenous-languages-of-the-americas.md) | The 22 locales that ship, from Alaska to the Andes, and how to publish in them |
 | [Custom locales for unlisted languages](custom-locales-for-unlisted-languages.md) | How to add a language that has no locale file |
 | [Right-to-left languages on public sites](right-to-left-languages-on-public-sites.md) | What a public design needs for Arabic, Hebrew and others |
 | [Right-to-left in the administration](right-to-left-in-the-administration.md) | What staff get in a right-to-left interface |

@@ -3527,7 +3527,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-2e6295c81e51959f86d0831826f73a2f  doc/changelogs/6.0/6.0.15.md
+3d559effaf572a8d9c7b7d619b1d6f60  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -9345,7 +9345,7 @@ c01855605fa14bfb59bc31226e98b27f  doc/eng-us/help/government/faq/training-faq.md
 1b1dcbd6b28aaf38f1b451e81b3adaf0  doc/eng-us/help/government/glossary/terms-m-to-r.md
 8bfd5096a27a4d742add7249e60a375b  doc/eng-us/help/government/glossary/terms-s-to-z.md
 24cd71173477faa253afad9b57d9d04c  doc/eng-us/help/government/government-start-here.md
-f43d7ab7aa67e58725443a2ba9945c3f  doc/eng-us/help/government/languages/README.md
+19d8706f06908a68b419efa5a9b03064  doc/eng-us/help/government/languages/README.md
 3cb7f31aab796d7fb8562b66bb3d7f80  doc/eng-us/help/government/languages/a-siteaccess-per-language.md
 c6b27bf939cf1599ec70f852a4f94fbf  doc/eng-us/help/government/languages/adding-a-content-language.md
 ff601bc74931230631d830ab421be4f9  doc/eng-us/help/government/languages/administration-interface-languages.md
@@ -9356,12 +9356,13 @@ d898bb5e1b9682f2bb70ff488329e888  doc/eng-us/help/government/languages/content-l
 c22b678a520862b0e156d626d372157c  doc/eng-us/help/government/languages/fallback-rules-for-untranslated-content.md
 98c51a457a06dc613f376eba7498bfab  doc/eng-us/help/government/languages/glossaries-of-terms.md
 c5c32dbcb8ef7d660d139fab5fab4926  doc/eng-us/help/government/languages/html-language-tags-and-accessibility.md
+ca59529f07d2d93069a603fce0685145  doc/eng-us/help/government/languages/indigenous-languages-of-the-americas.md
 443cb661aaa86c8d6ae8085e8e25a21b  doc/eng-us/help/government/languages/interface-translation-fallbacks.md
 f1aa200fb88181905102f1ebbc36c466  doc/eng-us/help/government/languages/language-addresses-path-or-host.md
 1df943de43d882898e3181106559959e  doc/eng-us/help/government/languages/languages-at-a-glance.md
 ebf10f0f0a45672c704ae30e75c1587b  doc/eng-us/help/government/languages/languages-checklist.md
 489fafc26c553161b9ce49298a36b6a6  doc/eng-us/help/government/languages/main-language-of-an-item.md
-3e75eaa8c440c83ecbe517c7151c0b5e  doc/eng-us/help/government/languages/minority-and-regional-languages.md
+6fdd09667564903b5c3635a78f7fe501  doc/eng-us/help/government/languages/minority-and-regional-languages.md
 9e33010435140e47bec35e153b3a889d  doc/eng-us/help/government/languages/multilingual-search.md
 4e6eb866b1d04727a4325c3e31a305a8  doc/eng-us/help/government/languages/plain-language.md
 3d0eb585cd9adcab8aba4351f0f53e0d  doc/eng-us/help/government/languages/redirecting-to-the-visitors-language.md
@@ -13155,7 +13156,7 @@ e9e96bfe1a547715698636f3b5ca4a07  doc/eng-us/install/migration/other-application
 0abfe339c3b8505840a67bc0ead04f08  doc/eng-us/install/migration/static-html.md
 77086c0914a9e5e8d960262ffd85eccc  doc/eng-us/install/migration/symfony-apps.md
 470354c857d794827531e5cf374d7859  doc/eng-us/install/migration/wordpress.md
-a2120c705ec90b288f5d9642e4fdb2fd  doc/eng-us/languages.md
+7b0bf5b246b2348e164c1ce56e8f1c92  doc/eng-us/languages.md
 a01cfab17abd8fe9afb536c336665f82  doc/eng-us/reference/template-check-rules.md
 7fd547b3e5bba61137f6fd583ac6b6c1  doc/eng-us/reference/template-check-schema.json
 5ca19bde368970c0a22a6a314de2c9af  doc/eng-us/release-overview
@@ -13442,7 +13443,7 @@ aa57a726dc0740993dd6d133be08b6f5  doc/eng-us/standards/patterns/value-object.md
 965ab8e3c5a29dc3c29e89f7f5a9c31c  doc/eng-us/standards/source-control-and-releases.md
 6076499d7dc68d5e1fb7dae4e8a7c41c  doc/eng-us/standards/testing-and-ci.md
 d540df62aa49e479062d2e4c943f13b8  doc/eng-us/standards/web-platform.md
-24aa82514095a0789bfaf786225a41d9  doc/eng-us/translation-waves.md
+4ae70c82ecc34582cb5213719d0ec61d  doc/eng-us/translation-waves.md
 89ccdfe7e882533060c6c3639a2f8f47  doc/ger-de/.dirnames.json
 25867792cc1baa4f05cba3bbd13a860f  doc/ger-de/.examples/descriptions/01-command-accesscheck.json
 0e81113b726d51b19af7e2cfe986c37e  doc/ger-de/.examples/descriptions/02-command-explogs-file.json
@@ -13499,7 +13500,7 @@ f56beaea3e5d700ac7442b6a68d85cc2  doc/ger-de/.examples/descriptions/35-user-mana
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 84ecf8b47bf44a9a3d53d86b719e8e1b  doc/ger-de/.examples/strings.json
-f545c2172f0d2e0a9d7f3734d4affba9  doc/ger-de/.paths.json
+f8d99d1cb50a0e1ec247edce757f00b6  doc/ger-de/.paths.json
 46b0d878748f4b75b5d5c4a2102f56b4  doc/ger-de/INSTALL.md
 d4444f60d9f3f6fd7dc43dc6edac7e39  doc/ger-de/README-LIZENZ.md
 35f2e2b3176ed05cb4e6cd1a8e7adf0f  doc/ger-de/UNINSTALL.md
@@ -22253,7 +22254,7 @@ d71225afa52c2b57257cbc3314f2d372  doc/ger-de/hilfe/verwaltung/souveraenitaet/sic
 f5e2509d87f695377d40563ac84d2564  doc/ger-de/hilfe/verwaltung/souveraenitaet/wahl-der-datenbank.md
 c54c68c95e3fb618d29c4857c2f9f465  doc/ger-de/hilfe/verwaltung/souveraenitaet/was-die-gpl-fuer-eine-oeffentliche-stelle-bedeutet.md
 eb407b2f2ed59b810390880ea57537f9  doc/ger-de/hilfe/verwaltung/souveraenitaet/zu-pruefende-dienste-von-drittanbietern.md
-efba24ac3241a0b516af518923da5f2f  doc/ger-de/hilfe/verwaltung/sprachen/README.md
+dee2c0d087551f8a270041a44c96a3db  doc/ger-de/hilfe/verwaltung/sprachen/README.md
 37e5dc4481448ab47aa56b7c88809180  doc/ger-de/hilfe/verwaltung/sprachen/begriffsglossare.md
 4e3fa290309dee3232c630d38b3b1891  doc/ger-de/hilfe/verwaltung/sprachen/checkliste-sprachen.md
 e3e30e089762799b7e549daa3325811a  doc/ger-de/hilfe/verwaltung/sprachen/datum-zahlen-und-waehrung-pro-sprache.md
@@ -22271,9 +22272,10 @@ b8c2b666f979e3a6a4c6b61cfc34f8e1  doc/ger-de/hilfe/verwaltung/sprachen/ersatz-fu
 28680f25b9a8a774fada2f7f2ae4b6c5  doc/ger-de/hilfe/verwaltung/sprachen/hauptsprache-eines-eintrags.md
 280497c0f2e4f4ca1617a21dd4507be0  doc/ger-de/hilfe/verwaltung/sprachen/html-sprachangaben-und-barrierefreiheit.md
 049507c9577cdd9ffee5dcc6f2f3c0b5  doc/ger-de/hilfe/verwaltung/sprachen/immer-verfuegbare-inhalte.md
+436b1ab7e72a1bd06a613de6dfdef370  doc/ger-de/hilfe/verwaltung/sprachen/indigene-sprachen-amerikas.md
 43622df8b778d0f07758a01b68773ee9  doc/ger-de/hilfe/verwaltung/sprachen/inhaltssprachen-und-oberflaechensprachen.md
 2efa4549bfe9174df326328c8c09a33c  doc/ger-de/hilfe/verwaltung/sprachen/mehrsprachige-suche.md
-40aff5a5893743b97acac8470bdf49cb  doc/ger-de/hilfe/verwaltung/sprachen/minderheiten-und-regionalsprachen.md
+954c46bc426f75dff88f04b5a523b440  doc/ger-de/hilfe/verwaltung/sprachen/minderheiten-und-regionalsprachen.md
 b4027e28172108866d3e6cc3a4258095  doc/ger-de/hilfe/verwaltung/sprachen/rechts-nach-links-in-der-administration.md
 417959e6908251cd0645b344d1b9cd16  doc/ger-de/hilfe/verwaltung/sprachen/rechts-nach-links-sprachen-auf-oeffentlichen-websites.md
 6f34573692c40e03566a8797bd401438  doc/ger-de/hilfe/verwaltung/sprachen/rollen-und-rechte-fuer-uebersetzer.md
@@ -22791,7 +22793,7 @@ f6ce87b6422da987a43c79641d17de0c  doc/ger-de/spezifikationen/6.0/syndikation.md
 c26c10f120d2b58bf79e3ceefedb7568  doc/ger-de/spezifikationen/6.0/velocity-http2-und-sicherheit.md
 0a829bee13ffa1d319b038f4c24af29e  doc/ger-de/spezifikationen/6.0/velocity-worker-pool.md
 c4f17fcd2efd17b97d9e37fbcd966f62  doc/ger-de/spezifikationen/6.0/xrowextract.md
-9d1d6aceb41202e3cab492e0306aa45f  doc/ger-de/sprachen.md
+e20e781825f5807aabf6afdf6d0aa8fb  doc/ger-de/sprachen.md
 646670ae34963ff3e0c2c29b89df73d0  doc/ger-de/standards/README.md
 daa5c11d25c00c75f86baa632a188217  doc/ger-de/standards/apis-und-protokolle.md
 0b0f0ca714c2ab620eab9538302ed3dc  doc/ger-de/standards/architektur/kernel-architektur.md
@@ -22995,7 +22997,7 @@ f5ff4f18d94e1c80ff309a29ec39ac4d  doc/ger-de/standards/sicherheit.md
 3e355cb14e5eefd2bf6bb2044c682f56  doc/ger-de/standards/tests-und-ci.md
 f1b4a7cf645fcdcd0e1f0c602ecdd3b5  doc/ger-de/standards/versionsverwaltung-und-releases.md
 9e515575ffc50620e08b29cbb7a63894  doc/ger-de/standards/webplattform.md
-dc6387fe8ccefa2fcec4b30aca6a3b1d  doc/ger-de/uebersetzungswellen.md
+5e4ef4aaa9021236489485a0ac961577  doc/ger-de/uebersetzungswellen.md
 14811ce24f620b4c00cc43d63aa8b2d0  doc/ger-de/ziele.md
 1147a04b0458d869f2da4e5c14256142  exponential.cron
 b09f1f23ad8851037391227378101eda  extension/exphelpsite/design/standard/override/templates/help/full_map.tpl
@@ -27494,6 +27496,7 @@ c7f37020e39bd2c9f6a848a6dc424220  share/icons/suspicious.gif
 ccf4660fe661e37c6be324101b7b0863  share/legacy_schema.sql
 fc20e7562a63f4af789353d03cec3071  share/locale/afr-ZA.ini
 a8ab7604d6761ffb0b1b416ef50f6c99  share/locale/aka-GH.ini
+684b13ff8fad66a878f10f4bbd553ca3  share/locale/ale-US.ini
 fa452883e4b973d6688745183682ef29  share/locale/amh-ET.ini
 3570a71f0ee4af9d00abfc529dadf56b  share/locale/ara-AE.ini
 83aaaf80d2d27b121521690dd4703801  share/locale/ara-BH.ini
@@ -27521,8 +27524,10 @@ fd989a1841ed614140facfbfa29c22f7  share/locale/ara-SO.ini
 b1c15f1b1eacc291e9e2ade5c442b85d  share/locale/ara-TN.ini
 9d49edb5a81714bc5ee4e4eef4d5493b  share/locale/ara-YE.ini
 f13079b77ef7b6e913f5011904b431df  share/locale/arc-IQ.ini
+847b73dd467cb254d9bdcc4f98660c74  share/locale/arn-CL.ini
 aaa284957fac985e247bbe0fed2cc734  share/locale/asm-IN.ini
 45262c554264dddbcffc31f3ad555206  share/locale/ast-ES.ini
+7e6641278fef3e7ee38ec1b9ff7ad069  share/locale/aym-BO.ini
 6587ecd00d8ff77f54cc75635a0b741a  share/locale/aze-AZ.ini
 f3439d068543ad3eebc8ff6a9a121877  share/locale/bam-ML.ini
 c4de7d252784cef18fa1b822956a3db4  share/locale/bel-BY.ini
@@ -27543,7 +27548,9 @@ d8572a66ac34dee819b5a8647b7eda0d  share/locale/chi-HK.ini
 cc4e929baae3f5dece8d79e301ed67fa  share/locale/chi-MO.ini
 7e127ae9e0271762e2e8ff0c1675f104  share/locale/chi-SG.ini
 e8366442b0fea7d21a4bf507e0ddeea9  share/locale/chi-TW.ini
+6b3fe32a49d64026dc7ddb3a8154300a  share/locale/chr-US.ini
 f1b608fb45ae02a95b835f355a8c19c5  share/locale/ckb-IQ.ini
+d1ddf96c8cf9525e8ddcb5693184fa63  share/locale/cre-CA.ini
 60fe90ff4db9610737eb725a314f122f  share/locale/cro-HR.ini
 82b49a8026023ecc0cddb95f1773c954  share/locale/cym-GB.ini
 d8b23ce9541e8e388d8b4900e9205407  share/locale/cze-CZ.ini
@@ -27562,6 +27569,7 @@ e8e973b1825bf26bf2b7c407237009be  share/locale/dut-SR.ini
 280da0cef0486b3e6ecbee1f64c6b9c2  share/locale/dzo-BT.ini
 b8d4a7f57e319266ed8edc5365d0ec88  share/locale/ell-CY.ini
 4f2e3ba37c2e27c8b3c0db841bb8d8af  share/locale/ell-GR.ini
+f267f52ccaf636987e0dc3226d08afc1  share/locale/ems-US.ini
 f96fc0e3a378ebd397e6aa376e229a63  share/locale/eng-AG.ini
 47d85be5aec8c0801d8572eff313b329  share/locale/eng-AI.ini
 722439bc2d259de56ca3ddea9fdc3680  share/locale/eng-AS.ini
@@ -27662,6 +27670,7 @@ b787074093645ca5ab62916b9ca36129  share/locale/esl-PE.ini
 4eecf0044af16919ba8418141ce60d38  share/locale/esl-UY.ini
 69ba92e735f7cd1399cc9e51c43ca406  share/locale/esl-VE.ini
 c953d63138443a49ad93cf4f9877613c  share/locale/est-EE.ini
+58ac02d3b23d13d1de3bad595479a405  share/locale/esu-US.ini
 d51847af3a8ea98a85916fc9dc88f103  share/locale/eus-ES.ini
 5af526e4f0ac9ddeabd3aac612731926  share/locale/ewe-GH.ini
 bcd1ce7a578b0fa4fc0f61ab219a52c5  share/locale/fao-FO.ini
@@ -27727,7 +27736,10 @@ ebe90d845f1b2d37cff9e92eb2407315  share/locale/ger-DE@euro.ini
 502388f44b65e341d5c85952cd142490  share/locale/gla-GB.ini
 0a5133a5f8c50040702b754891a0d376  share/locale/gle-IE.ini
 a4c7906e5716773d2a1ad7589878ab87  share/locale/glg-ES.ini
+3a3cd18aa50049e68c2f8a3683602bd7  share/locale/grn-PY.ini
 9b4387947eb84a0fad6161e8133f2085  share/locale/guj-IN.ini
+cf347b6f5f76f50a0d329391eb28ff9f  share/locale/gwi-US.ini
+b952b5da51973a5d2c01080e2f2f265d  share/locale/hai-US.ini
 b5af53dbd193ded66c63ede06be70975  share/locale/hau-NG.ini
 84babf5d838ba48fbb6a8afac9e2e586  share/locale/haw-US.ini
 64b40f60f54da5f050c35a93ce1fc80e  share/locale/heb-IL.ini
@@ -27737,7 +27749,9 @@ af0cfc842fa1e8155cf881900c113f3d  share/locale/hun-HU.ini
 331795e5b03beecf1266f59fede159a8  share/locale/huy-IL.ini
 dddaade290d8ac6c2323608ce837690e  share/locale/hye-AM.ini
 ab6224e86fd95f80e0beec73bc47a3aa  share/locale/ibo-NG.ini
+3b6649e6ad4e4129d801f003c51da35f  share/locale/iku-CA.ini
 7b2d25a32d6bbe7cf0ce1562b77e449d  share/locale/ind-ID.ini
+a2092df8f100aadbb498764afc20cc80  share/locale/ipk-US.ini
 d00377dbe09ea2f9eac5562d2d69694d  share/locale/isl-IS.ini
 db06be19e6c73f8dd6cd7fbd970500a7  share/locale/ita-CH.ini
 bafe87b43ec360efef694732551253de  share/locale/ita-IT.ini
@@ -27764,6 +27778,7 @@ f279d78c68fe5f959f0e68209c90df51  share/locale/kok-IN.ini
 e321381128b9ca28b5fce6f144477a92  share/locale/lav-LV.ini
 56494dd6233e4e1331a33e59830dafd0  share/locale/lin-CD.ini
 2706fe8fdcdaa4e4760173b417f094ba  share/locale/lit-LT.ini
+1da1631e4d0f7c3d8853be1502e7bbce  share/locale/lkt-US.ini
 9f9d37377f63912be71cb4080842405a  share/locale/ltz-LU.ini
 66c6f762a1a0fa033cebc213067f8c76  share/locale/lug-UG.ini
 a94aea9af86039afa84ee9ca14ea128e  share/locale/mai-IN.ini
@@ -27773,12 +27788,15 @@ cf5eda064ac533a629126347e29dd101  share/locale/mkd-MK.ini
 84d78d9764510c92d8db9972bde051a5  share/locale/mlg-MG.ini
 31cea310f2c769e3f23e9a92ba38ae73  share/locale/mlt-MT.ini
 8ef50d3ae062faebcb1020a6b6b14caf  share/locale/mni-IN.ini
+ba6250007398a88a00f1f6baa607b689  share/locale/moh-CA.ini
 a73c91af26c65fff3f0872063bda19f2  share/locale/mon-MN.ini
 a727d773bec74916b6273de299c91654  share/locale/mri-NZ.ini
 c89b19b076663ba59705ca26231fe159  share/locale/msa-BN.ini
 3198fff873d595c0baa0ebb3f9fcddfc  share/locale/msa-MY.ini
 a2fa7a273e632218ea9715dd61df0c57  share/locale/msa-SG.ini
 02c67f69cca3c9c6aa504c4e9b5c68ff  share/locale/mya-MM.ini
+fc7843700569702adb06f0b64dcbe4c3  share/locale/nah-MX.ini
+268ceb8f19ae8fc233a90bb0f1ba9e7c  share/locale/nav-US.ini
 25d26c1ba2b7118bf78e13288158adff  share/locale/nep-NP.ini
 3ed39f5b8876d22f60949768c67bef0d  share/locale/nno-NO.ini
 5b0fe5ccd5e1f08591a6a886e1df47bb  share/locale/nor-NO.ini
@@ -27787,6 +27805,8 @@ fa7d8f07f3293c3eebc0ac3b4ef6744e  share/locale/nor-NO@spraakraad.ini
 26eec2af45f5eca3129cffb95c4568a9  share/locale/nor-SJ.ini
 78f4fd12d271aadcab554204ea1c945f  share/locale/nqo-GN.ini
 3d0e957c2a3604987e8f4a2ad6df1e11  share/locale/oci-FR.ini
+2cef79562506c24d6531394a4f954dc8  share/locale/oji-CA.ini
+094623c97bbf7a70cbbeb7e34031169e  share/locale/oji-US.ini
 c6faa0665c923879b5355d3d13cb1345  share/locale/ori-IN.ini
 984afe12d6bc12bcce8d8f02858f22ea  share/locale/orm-ET.ini
 458b8a50e3ceebc022ed0fa2b17b5306  share/locale/pan-IN.ini
@@ -27804,6 +27824,7 @@ fa68e2a5a81251ff940e01240f734529  share/locale/por-ST.ini
 bfb7a41280e724437d4be045566c55dc  share/locale/por-TL.ini
 4456778c81fe386a8dfab9fd5f4a7123  share/locale/pus-AF.ini
 800e37f2890b817d376103f72de8d0cb  share/locale/qlo-ZZ.ini
+ea20a5a7a74deccfad65a2689648960e  share/locale/quc-GT.ini
 546ca64f0eb91a87e3d3bed1e8262ed6  share/locale/que-PE.ini
 b9dd5cfc0e5aac2bad65046a7fcf75b5  share/locale/roh-CH.ini
 a484133fd538e39ae68808883f7cffd8  share/locale/ron-MD.ini
@@ -27844,7 +27865,9 @@ ff2df7779e5fbf21ced34cf71b93927d  share/locale/syr-IQ.ini
 c8979ab0625e75452a47a9e979b9de6d  share/locale/tha-TH.ini
 28135d14aefce1c931a693b3d28699b5  share/locale/tir-ET.ini
 53c14b4255278318f2fb42d04baf78b6  share/locale/tlh-QO.ini
+4646ac25955405c6a174c09546cfaa57  share/locale/tli-US.ini
 1a6f71637af686e8bb5248206f7c8719  share/locale/ton-TO.ini
+f7eac708577be6be684d6b5003117360  share/locale/tsi-US.ini
 526330ff9b0c9ddcbbd865b6e17a57c0  share/locale/tuk-TM.ini
 d80896b24e50329f5e4537fcc60eb053  share/locale/tur-CY.ini
 c101fe1b103e543f43536f0459348ae5  share/locale/tur-TR.ini
@@ -27858,6 +27881,7 @@ b66cbeca6d22b8db5d0fa18c77ab5ec3  share/locale/uzb-UZ.ini
 ebff7cbf8406cf4126529e38ee113c4a  share/locale/xho-ZA.ini
 2dd82bf9cca1690cd0c7818c8dc12842  share/locale/yid-US.ini
 6bbc0c6befe23e6f5cf2c2b39ffc21c5  share/locale/yor-NG.ini
+01d4529a3b806415f066738fc221787b  share/locale/yua-MX.ini
 b8160ea71edf0154b385e7644ffcf18b  share/locale/zgh-MA.ini
 a88240aaeefe10741d558c33dee734ab  share/locale/zul-ZA.ini
 fb46297c8027e5df9dc921ffabe17758  share/maintenance.html
