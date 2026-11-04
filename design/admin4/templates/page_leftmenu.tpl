@@ -8,6 +8,11 @@
         {set-block variable=navigation_part_name}{include uri='design:parts/a4_navigation_part.tpl'}{/set-block}
         {set $navigation_part_name = $navigation_part_name|trim}
         {if $a4_own_part|eq( '' )}{set $a4_own_part = first_set( $module_result.navigation_part, '' )}{/if}
+        {* menu.ini [Leftmenu_setup] GroupTabsLeftMenu=tab: the tab's own left menu, though the Setup tab is marked *}
+        {if and( $navigation_part_name|eq( 'ezsetupnavigationpart' ), $a4_own_part|ne( '' ),
+                 ezini( 'Leftmenu_setup', 'GroupTabsLeftMenu', 'menu.ini' )|eq( 'tab' ) )}
+            {set $navigation_part_name = $a4_own_part}
+        {/if}
         {* A view's own left menu ($module_result.left_menu, the audit pages' design:audit/menu.tpl) is drawn, unless
            the page belongs to a tab the Setup menu stands in for: then the Setup menu with the tab's group is, as the
            Setup tab is marked (doc/eng-us/features/6.0/admin4-design.md, "Moving a tab into Setup") *}

@@ -6,6 +6,11 @@
 {set-block variable=navigation_part_name}{include uri='design:parts/a4_navigation_part.tpl'}{/set-block}
 {set $navigation_part_name = $navigation_part_name|trim}
 {if $a4_own_part|eq( '' )}{set $a4_own_part = first_set( $module_result.navigation_part, '' )}{/if}
+{* menu.ini [Leftmenu_setup] GroupTabsLeftMenu=tab: the tab's own left menu, though the Setup tab is marked *}
+{if and( $navigation_part_name|eq( 'ezsetupnavigationpart' ), $a4_own_part|ne( '' ),
+         ezini( 'Leftmenu_setup', 'GroupTabsLeftMenu', 'menu.ini' )|eq( 'tab' ) )}
+    {set $navigation_part_name = $a4_own_part}
+{/if}
 {if and( is_set( $block.values.part ), $block.values.part|ne( '' ) )}
     {include uri=concat( 'design:parts/', $block.values.part, '/menu.tpl' )}
 {* a view's own left menu, unless the page belongs to a tab the Setup menu stands in for (as page_leftmenu.tpl) *}

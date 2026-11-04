@@ -51,6 +51,23 @@ class AdminSetupTabsLeftMenuTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( '{undef $navigation_part_name $a4_own_part}', $tpl, $path );
     }
 
+    #[PHPUnit\Framework\Attributes\DataProvider( 'leftMenus' )]
+    public function testGroupTabsLeftMenuTabDrawsTheTabsOwnMenu( $path )
+    {
+        $tpl = self::read( $path );
+        $switch = strpos( $tpl, "ezini( 'Leftmenu_setup', 'GroupTabsLeftMenu', 'menu.ini' )|eq( 'tab' )" );
+        $this->assertNotFalse( $switch, $path );
+        // the switch hands the page's own part back after the navigation part is asked and before either menu is drawn
+        $this->assertGreaterThan( strpos( $tpl, "{include uri='design:parts/a4_navigation_part.tpl'}{/set-block}" ), $switch, $path );
+        $this->assertLessThan( strpos( $tpl, '{include uri=$module_result.left_menu}' ), $switch, $path );
+        $this->assertStringContainsString( '{set $navigation_part_name = $a4_own_part}', $tpl, $path );
+    }
+
+    public function testGroupTabsLeftMenuDefaultsToTheSetupMenu()
+    {
+        $this->assertMatchesRegularExpression( '/\n\[Leftmenu_setup\]\n(?:(?!\n\[)[\s\S])*\nGroupTabsLeftMenu=setup\n/', self::read( 'settings/menu.ini' ) );
+    }
+
     public function testTheAuditViewsNameTheirOwnMenuAndTheirNavigationPartIsMoved()
     {
         $this->assertStringContainsString( "'left_menu' => 'design:audit/menu.tpl'", self::read( 'kernel/classes/audit/console/expauditconsole.php' ) );

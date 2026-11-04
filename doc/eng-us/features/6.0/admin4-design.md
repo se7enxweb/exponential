@@ -454,7 +454,9 @@ well for the core tabs; an extension's tab is left out only with `HiddenTabs[]`.
   left menu of its own (`$module_result.left_menu`, as the audit views do). No page marks a tab that is
   not in the top menu or draws a menu no tab leads to; the breadcrumb is the page's own. While the tab is in the top
   menu, its pages keep their tab and left menu. `parts/a4_navigation_part.tpl` gives the navigation part both menus
-  use, in admin4 and in admin4l's header and left menu blocks.
+  use, in admin4 and in admin4l's header and left menu blocks. With `[Leftmenu_setup] GroupTabsLeftMenu=tab` (default
+  `setup`) such a page still marks the Setup tab but draws the tab's own left menu (its `parts/<part>/menu.tpl` or the
+  view's `$module_result.left_menu`) instead of the Setup menu.
 - **Dashboard.** Without the Dashboard tab the logo leads to the dashboard (`[Topmenu_dashboard] URL[default]`) for a
   user who may open it (`content/dashboard`), instead of the content root, which the Content tab still opens. The
   dashboard is also the admin's start page after login when `site.ini [SiteSettings] DefaultPage=content/dashboard`,
