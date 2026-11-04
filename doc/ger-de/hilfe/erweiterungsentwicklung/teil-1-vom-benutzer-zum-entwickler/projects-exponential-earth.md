@@ -72,7 +72,7 @@ GitHub nach einem gepflegten Fork ([Ideen auf GitHub finden](ideen-auf-github-fi
 
 ## Urheberrecht: verlinken, nicht kopieren
 
-Die Fußzeile des Portals lautet „Copyright © 1998 - 2026 7x (except where otherwise noted). All rights reserved.“ Der
+Die Fußzeile des Portals lautet „Copyright © 1998 - 2026 Exponential Foundation and 7x (except where otherwise noted). All rights reserved.“ Der
 eigene Text des Portals darf also nicht frei kopiert werden: **Verlinken Sie auf Projektseiten**, statt ihre
 Beschreibungen wiederzugeben.
 
