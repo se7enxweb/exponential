@@ -1547,16 +1547,30 @@ class expMongoDB extends eZDBInterface
 
             // Build projection from SELECT list (skip * and COUNT(*))
             $projection = [ '_id' => 0 ];
+            // "column AS name": the column is projected and the row answers to the name, as on the SQL engines
+            // (the projection used to ask for a field called "column AS name", so the row came back without it)
+            $aliases = array();
+            $selectedColumns = array();
             if ( $selectClause !== '*' && stripos( $selectClause, 'COUNT(' ) === false )
             {
                 foreach ( preg_split( '/\s*,\s*/', $selectClause ) as $col )
                 {
                     $col = trim( $col );
+                    $alias = null;
+                    if ( preg_match( '/^([\w.]+)\s+AS\s+(\w+)$/i', $col, $am ) )
+                    {
+                        $col = $am[1];
+                        $alias = $am[2];
+                    }
                     // strip table.col prefix if present
                     if ( strpos( $col, '.' ) !== false )
                         $col = substr( $col, strrpos( $col, '.' ) + 1 );
                     if ( $col !== '' )
                         $projection[$col] = 1;
+                    if ( $alias !== null && $col !== '' && $alias !== $col )
+                        $aliases[$alias] = $col;
+                    else if ( $col !== '' )
+                        $selectedColumns[] = $col;
                 }
             }
             else
@@ -1598,6 +1612,8 @@ class expMongoDB extends eZDBInterface
                     $field = $parts[0];
                     if ( strpos( $field, '.' ) !== false )
                         $field = substr( $field, strrpos( $field, '.' ) + 1 );
+                    if ( isset( $aliases[$field] ) )
+                        $field = $aliases[$field];
                     $sort[$field] = ( isset( $parts[1] ) && strtoupper( $parts[1] ) === 'DESC' ) ? -1 : 1;
                 }
                 if ( $sort )
@@ -1632,6 +1648,12 @@ class expMongoDB extends eZDBInterface
                     {
                         if ( !array_key_exists( $column, $row ) )
                             $row[$column] = $default;
+                    }
+                    foreach ( $aliases as $alias => $column )
+                    {
+                        $row[$alias] = array_key_exists( $column, $row ) ? $row[$column] : null;
+                        if ( !in_array( $column, $selectedColumns, true ) )
+                            unset( $row[$column] );
                     }
                     $result[] = $row;
                 }

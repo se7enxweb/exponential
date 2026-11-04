@@ -242,7 +242,8 @@
       "tests/tests/kernel/classes/eZDBGarbageCollectorBasketQueryTest.php"
     ],
     "kernel/classes/ezcontentobjecttreenode.php": [
-      "tests/tests/kernel/classes/eZContentObjectTreeNodeMissingPathLogTest.php"
+      "tests/tests/kernel/classes/eZContentObjectTreeNodeMissingPathLogTest.php",
+      "tests/tests/kernel/classes/eZContentObjectTreeNodeMongoAttributeFilterTest.php"
     ],
     "kernel/common/ezpi18n.php": [
       "tests/tests/kernel/common/ezpI18nMissingTranslationLogTest.php"
@@ -3079,6 +3080,12 @@
     ],
     "lib/ezdbschema/classes/ezpgsqlschema.php": [
       "tests/tests/lib/ezdbschema/expPgsqlSchemaEngineOnlyTypesTest.php"
+    ],
+    "lib/ezdb/classes/expmongodb.php": [
+      "tests/tests/lib/ezdb/mongodb/expMongoDBColumnAliasAndCollectionsTest.php"
+    ],
+    "lib/ezdbschema/classes/expmongoschema.php": [
+      "tests/tests/lib/ezdb/mongodb/expMongoDBColumnAliasAndCollectionsTest.php"
     ]
   },
   "generated": {

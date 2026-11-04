@@ -3526,7 +3526,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-d44fce8899ef1a930a1f3ad9703e3899  doc/changelogs/6.0/6.0.15.md
+2e6295c81e51959f86d0831826f73a2f  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -26491,7 +26491,7 @@ f8422b2d7c5983552ff65b4105c20766  kernel/workflow/view.php
 4ca5c95269d6a6ee11b56bab377d82e9  kernel/workflow/workflowlist.php
 0dfe9528cfa06ba3902bafd352aaaae0  kickstart.ini--example
 29a9398e1ffaf0295240ff21451d1f16  kickstart.ini-dist
-067fc5ca564eac88e7f97630888b36d2  lib/ezdb/classes/expmongodb.php
+ade1981226ccdaf5254ba2de702f897e  lib/ezdb/classes/expmongodb.php
 13f0a583c9b7da0867680d243ffdcb5e  lib/ezdb/classes/exppdodb.php
 4a4c9ff3c3b806245f6e3e709208198b  lib/ezdb/classes/ezdb.php
 661ef313a4ddad8e41cfa06a5e021a1e  lib/ezdb/classes/ezdbinterface.php
@@ -26502,7 +26502,7 @@ b66248e35051b10fab37396107632d39  lib/ezdb/classes/ezdbquerycache.php
 ec6538c99af5eb7c84f089898a6907d2  lib/ezdb/classes/eznulldb.php
 d2b9ad028227c37896ac352d2c697f71  lib/ezdb/classes/ezpostgresqldb.php
 25a871931a40f09bf1629725349f80b2  lib/ezdb/classes/ezsqlite3db.php
-86b2f701aa81e8db34267630e6ce5acf  lib/ezdbschema/classes/expmongoschema.php
+ac6df8d4565b779eff3ff9c41b2da301  lib/ezdbschema/classes/expmongoschema.php
 eca147e65440b86a146555c6e4122e0f  lib/ezdbschema/classes/ezdbschema.php
 7f09acd4dab532f71ff61c004d1f4af8  lib/ezdbschema/classes/ezdbschemachecker.php
 50c73edff627f9168563109f778a4128  lib/ezdbschema/classes/ezdbschemainterface.php
@@ -26844,7 +26844,7 @@ cff22610bddd02e8cf7795f65a6e682f  openspec/specs/admin/search-suggestions/spec.m
 b30a45607707aac28b209398030287b4  phpcs.xml.dist
 080c55fc5da723c850e6f9794c5dd4e1  phpstan-baseline.neon
 d0c444da64532de0fa023226f56bc9d1  phpstan.neon.dist
-6c6e982564dd33e20b29beaf7e5f4330  phpunit.xml
+82432bde434c2995a71eef86502f9c79  phpunit.xml
 c981f3e6ff32017cd87f4b02adc3dfa9  robots.txt
 242b474556fa73a01c4a1cc2b0348abb  runcronjobs.php
 17f0220e8e577b7bf95ffbea6f562fd2  schemas/translation/ts.rng
@@ -28251,7 +28251,7 @@ ad3ef84f9d21cd4076b60e33034063b0  tests/bootstrap.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 1b7dcb4dde933b1ebf8f8f93f3df7d55  tests/suite.php
-9d60edcf92aa8311f80895997aac225f  tests/test-map.json
+e69168c080d239a42b661e3e5b97c405  tests/test-map.json
 4f2af04e2bf61d9e7bfbba8181fc08c0  tests/tests/bin/CiWorkflowPullRequestTest.php
 b152194c06e5b05fb18f088d0afd219c  tests/tests/bin/ConsoleExtensionAliasTest.php
 cf640022325724fc8a061137bbc5045e  tests/tests/bin/CopyrightNoticeTest.php
@@ -29910,6 +29910,7 @@ d556369e67b90d0ad142a16350b61303  tests/tests/lib/ezdb/mongodb/expMigrationTagAl
 95ab2d6b813a213bfc0a0e069adf0e82  tests/tests/lib/ezdb/mongodb/expMigrationYamlMongoDBTest.php
 4edb9c083ce0f04929eebfb986fdcdec  tests/tests/lib/ezdb/mongodb/expModerationMongoDBTest.php
 3ae0f518a930be42555ac09c9a98f48a  tests/tests/lib/ezdb/mongodb/expMongoDBAdapterTest.php
+bdec9fe1ef1854a80214a75e9dcb67d6  tests/tests/lib/ezdb/mongodb/expMongoDBColumnAliasAndCollectionsTest.php
 38be04b9091de550d95ec4f5228a40fc  tests/tests/lib/ezdb/mongodb/expMongoDBDeclaredDefaultTest.php
 bcef478dbd8dfaf8f6670a76305ed158  tests/tests/lib/ezdb/mongodb/expMongoDBIntegrationTest.php
 fe54c82cf72b0c80c8176345a0dcee54  tests/tests/lib/ezdb/mongodb/expMongoDBWhereTextTest.php
