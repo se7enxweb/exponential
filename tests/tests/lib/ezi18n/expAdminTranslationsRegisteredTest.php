@@ -33,7 +33,7 @@ class expAdminTranslationsRegisteredTest extends PHPUnit\Framework\TestCase
         'glg-ES', 'eus-ES', 'cym-GB', 'mkd-MK', 'ltz-LU', 'run-BI', 'tgk-TJ', 'bod-CN', 'dzo-BT', 'div-MV', 'kok-IN',
         'mni-IN', 'doi-IN', 'kas-IN', 'brx-IN', 'sat-IN', 'san-IN', 'bam-ML', 'ewe-GH', 'kab-DZ', 'zgh-MA', 'nqo-GN',
         'que-PE', 'ton-TO', 'ast-ES', 'bre-FR', 'oci-FR', 'kor-KP', 'fas-AF', 'roh-CH', 'hsb-DE', 'fry-NL', 'fao-FO',
-        'sme-NO', 'epo-EO' );
+        'sme-NO', 'epo-EO', 'grn-PY' );
 
     /** Those whose ezoe and ezjscore catalogues are complete too. */
     const WITH_EXTENSION_CATALOGUES = array( 'fre-FR', 'ukr-UA', 'ara-SA', 'heb-IL', 'afr-ZA', 'bos-BA', 'bul-BG',
@@ -46,7 +46,7 @@ class expAdminTranslationsRegisteredTest extends PHPUnit\Framework\TestCase
         'mlg-MG', 'mon-MN', 'kir-KG', 'tat-RU', 'tuk-TM', 'lug-UG', 'wol-SN', 'bel-BY', 'glg-ES', 'eus-ES', 'cym-GB',
         'mkd-MK', 'ltz-LU', 'run-BI', 'tgk-TJ', 'bod-CN', 'dzo-BT', 'div-MV', 'kok-IN', 'mni-IN', 'doi-IN', 'kas-IN',
         'brx-IN', 'sat-IN', 'san-IN', 'bam-ML', 'ewe-GH', 'kab-DZ', 'zgh-MA', 'nqo-GN', 'que-PE', 'ton-TO', 'ast-ES',
-        'bre-FR', 'oci-FR', 'kor-KP', 'fas-AF', 'roh-CH', 'hsb-DE', 'fry-NL', 'fao-FO', 'sme-NO', 'epo-EO' );
+        'bre-FR', 'oci-FR', 'kor-KP', 'fas-AF', 'roh-CH', 'hsb-DE', 'fry-NL', 'fao-FO', 'sme-NO', 'epo-EO', 'grn-PY' );
 
     /**
      * Complete translations that no ranked group of settings/uiswitch.ini names: the switch offers them in its A-Z
@@ -61,7 +61,7 @@ class expAdminTranslationsRegisteredTest extends PHPUnit\Framework\TestCase
         'mlg-MG', 'mon-MN', 'kir-KG', 'tat-RU', 'tuk-TM', 'lug-UG', 'wol-SN', 'bel-BY', 'glg-ES', 'eus-ES', 'cym-GB',
         'mkd-MK', 'ltz-LU', 'run-BI', 'tgk-TJ', 'bod-CN', 'dzo-BT', 'div-MV', 'kok-IN', 'mni-IN', 'doi-IN', 'kas-IN',
         'brx-IN', 'sat-IN', 'san-IN', 'bam-ML', 'ewe-GH', 'kab-DZ', 'zgh-MA', 'nqo-GN', 'que-PE', 'ton-TO', 'ast-ES',
-        'bre-FR', 'oci-FR', 'kor-KP', 'fas-AF', 'roh-CH', 'hsb-DE', 'fry-NL', 'fao-FO', 'sme-NO', 'epo-EO' );
+        'bre-FR', 'oci-FR', 'kor-KP', 'fas-AF', 'roh-CH', 'hsb-DE', 'fry-NL', 'fao-FO', 'sme-NO', 'epo-EO', 'grn-PY' );
 
     /** @var string the repository */
     protected $root;
