@@ -834,6 +834,9 @@ https://exponential.doc.exponential.earth/Exponential/Technical-manual/6.x/Insta
 
 *Vollständiges Kapitel: [12-troubleshooting](installation/12-fehlerbehebung.md)*
 
+Wenn die Tabelle nicht weiterhilft, zeigt [Unterstützung erhalten](SUPPORT.md), wo Sie fragen: von den Gemeinschaften
+von PHP und der Datenbank bis zur Exponential-Gemeinschaft und 7x.
+
 | Symptom | Ursache und Lösung |
 |---|---|
 | Jede Adresse zeigt den Einrichtungsassistenten | `CheckValidity` ist noch `true`: Die Installation wurde nicht abgeschlossen. Schließen Sie den Assistenten ab oder führen Sie den Kickstarter oder `exp:install` aus. |
