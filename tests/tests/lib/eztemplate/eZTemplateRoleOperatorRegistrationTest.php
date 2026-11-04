@@ -19,6 +19,8 @@
  * @group eztemplate
  */
 
+#[\PHPUnit\Framework\Attributes\Group('lib')]
+#[\PHPUnit\Framework\Attributes\Group('eztemplate')]
 class eZTemplateRoleOperatorRegistrationTest extends PHPUnit\Framework\TestCase
 {
     const NAMES = array( 'has_role', 'has_role_id', 'has_any_role', 'has_role_by_user', 'has_role_by_user_id',

@@ -15,6 +15,7 @@
 
 require_once dirname( __DIR__ ) . '/workflowevents/fixtures/k1workflowtesthttp.php';
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class eZPackageCreationHandlerTestCreator extends eZPackageCreationHandler
 {
     public $skip = true;

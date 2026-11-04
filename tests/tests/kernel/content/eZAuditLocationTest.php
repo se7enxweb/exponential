@@ -33,6 +33,7 @@
 
 require_once dirname( __DIR__ ) . '/classes/audit/fixtures/expaudittestfixtures.php';
 
+#[\PHPUnit\Framework\Attributes\Group('audit')]
 class eZAuditLocationTest extends PHPUnit\Framework\TestCase
 {
     /** @var string */

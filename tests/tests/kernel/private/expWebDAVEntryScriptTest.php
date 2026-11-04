@@ -12,6 +12,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expWebDAVEntryScriptTest extends PHPUnit\Framework\TestCase
 {
     /** @var string */

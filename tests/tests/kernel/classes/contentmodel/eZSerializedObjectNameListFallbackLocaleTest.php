@@ -12,6 +12,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class eZSerializedObjectNameListFallbackLocaleTest extends PHPUnit\Framework\TestCase
 {
     /** A stand-in for eZINI with the two methods the name list calls, holding [RegionalSettings] only. */

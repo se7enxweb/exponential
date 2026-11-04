@@ -20,6 +20,8 @@
  * @group ezutils
  */
 
+#[\PHPUnit\Framework\Attributes\Group('lib')]
+#[\PHPUnit\Framework\Attributes\Group('ezutils')]
 class eZURIElementsTest extends PHPUnit\Framework\TestCase
 {
     protected function setUp(): void

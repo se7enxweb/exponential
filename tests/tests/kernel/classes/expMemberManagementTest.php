@@ -14,6 +14,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expMemberManagementTest extends PHPUnit\Framework\TestCase
 {
     const MEMBERS = '/1/5/12/';

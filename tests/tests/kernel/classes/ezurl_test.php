@@ -16,6 +16,7 @@ class eZURLTest extends ezpDatabaseTestCase
     /**
      * @group ezurl
      */
+    #[\PHPUnit\Framework\Attributes\Group('ezurl')]
     public function testFetchByUrl()
     {
         $url = 'http://ez.no/ezpublish';

@@ -16,6 +16,7 @@
 
 require_once __DIR__ . '/expRadWizardTestHelper.php';
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expExtensionWizardBaseTestWizard extends expExtensionWizard
 {
     public static $files = array( 'a/b/c.txt' => 'one', 'top.txt' => 'two' );

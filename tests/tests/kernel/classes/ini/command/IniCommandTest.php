@@ -35,6 +35,7 @@
 
 require_once __DIR__ . '/fixtures/iniroot.php';
 
+#[\PHPUnit\Framework\Attributes\Group('ini')]
 class IniCommandTest extends PHPUnit\Framework\TestCase
 {
     /** @var string the installation (cwd of the processes) */

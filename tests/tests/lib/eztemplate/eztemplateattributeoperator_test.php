@@ -32,6 +32,8 @@ class eZTemplateAttributeOperatorTest extends ezpDatabaseTestCase
      * @group templateOperators
      * @group attributeOperator
      */
+    #[\PHPUnit\Framework\Attributes\Group('templateOperators')]
+    #[\PHPUnit\Framework\Attributes\Group('attributeOperator')]
     public function testDisplayVariableWithObject()
     {
         $db = eZDB::instance();

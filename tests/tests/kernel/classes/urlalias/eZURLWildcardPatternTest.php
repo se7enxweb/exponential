@@ -11,6 +11,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class eZURLWildcardPatternTestProbe extends eZURLWildcard
 {
     public static function regexp( $wildcard )

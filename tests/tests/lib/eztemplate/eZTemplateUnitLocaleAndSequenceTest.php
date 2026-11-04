@@ -18,6 +18,8 @@
  * @group eztemplate
  */
 
+#[\PHPUnit\Framework\Attributes\Group('lib')]
+#[\PHPUnit\Framework\Attributes\Group('eztemplate')]
 class eZTemplateUnitLocaleAndSequenceTest extends PHPUnit\Framework\TestCase
 {
     private static $dir;

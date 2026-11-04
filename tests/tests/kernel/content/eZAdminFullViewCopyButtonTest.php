@@ -21,6 +21,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class eZAdminFullViewCopyButtonTest extends PHPUnit\Framework\TestCase
 {
     const TEMPLATES = array( 'admin' => 'design/admin/templates/node/view/full.tpl',

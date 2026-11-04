@@ -21,6 +21,8 @@
  * @group ezfile
  */
 
+#[\PHPUnit\Framework\Attributes\Group('lib')]
+#[\PHPUnit\Framework\Attributes\Group('ezfile')]
 class eZLogMaxSizeTest extends PHPUnit\Framework\TestCase
 {
     const GLOBAL_KEYS = array( 'eZMaxLogSize', 'eZMaxLogrotateFiles', 'eZDebugMaxLogSize', 'eZDebugMaxLogrotateFiles' );

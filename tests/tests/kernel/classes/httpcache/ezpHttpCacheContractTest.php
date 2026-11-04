@@ -35,6 +35,7 @@
 
 require_once __DIR__ . '/../../../../../kernel/private/classes/httpcache/ezphttpcachecontract.php';
 
+#[\PHPUnit\Framework\Attributes\Group('httpcache')]
 class ezpHttpCacheContractTest extends PHPUnit\Framework\TestCase
 {
     private $dir;

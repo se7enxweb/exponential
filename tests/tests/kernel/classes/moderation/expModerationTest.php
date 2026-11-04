@@ -35,6 +35,7 @@ if ( !class_exists( 'Exponential\\View\\Kernel\\Moderation\\Recent' ) )
 if ( !class_exists( 'Exponential\\View\\Kernel\\Moderation\\Action' ) )
     require_once dirname( __DIR__, 5 ) . '/kernel/private/classes/views/moderation/action.php';
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expModerationTest extends PHPUnit\Framework\TestCase
 {
     const SIZES = array( 25, 100, 300, 700, 1000 );

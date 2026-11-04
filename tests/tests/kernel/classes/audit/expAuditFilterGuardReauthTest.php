@@ -35,6 +35,7 @@
 require_once __DIR__ . '/fixtures/expaudittestfixtures.php';
 require_once __DIR__ . '/../ini/fixtures/expinienginetestfixtures.php';
 
+#[\PHPUnit\Framework\Attributes\Group('audit')]
 class expAuditFilterGuardReauthTest extends PHPUnit\Framework\TestCase
 {
     /** @var string|null */

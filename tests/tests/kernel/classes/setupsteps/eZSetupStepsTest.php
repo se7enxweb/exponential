@@ -14,6 +14,7 @@
 
 require_once __DIR__ . '/eZSetupStepTestHelper.php';
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class eZSetupStepsTest extends PHPUnit\Framework\TestCase
 {
     /** @var eZSetupStepTestHelper */

@@ -22,6 +22,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class eZEditLocationsVisibilityTest extends PHPUnit\Framework\TestCase
 {
     /** @var string private directory of the extracted templates */

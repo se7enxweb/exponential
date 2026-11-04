@@ -15,6 +15,8 @@
  * @group rest
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
+#[\PHPUnit\Framework\Attributes\Group('rest')]
 class ezpRestNoAuthStyleTest extends PHPUnit\Framework\TestCase
 {
     /** @var string|false RoleSettings EnableCaching before the test */

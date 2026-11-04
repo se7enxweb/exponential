@@ -23,6 +23,7 @@ class eZContentClassTest extends ezpDatabaseTestCase
      * Unit test for eZContentClass::classIDByIdentifier()
      * @dataProvider providerForTestClassIDByIdentifier
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('providerForTestClassIDByIdentifier')]
     public function testClassIDByIdentifier( $sourceArray, $expectedArray )
     {
         $transformedClassArray = eZContentClass::classIDByIdentifier( $sourceArray );
@@ -45,6 +46,7 @@ class eZContentClassTest extends ezpDatabaseTestCase
      * Unit test for eZContentClass::versionHistoryLimit()
      * @dataProvider providerForTestVersionHistoryLimit
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('providerForTestVersionHistoryLimit')]
     public function testVersionHistoryLimit( $INISettings, $class, $expectedLimit )
     {
         // change the INI limit settings

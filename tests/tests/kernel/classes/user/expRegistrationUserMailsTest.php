@@ -24,6 +24,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expRegistrationUserMailsTest extends PHPUnit\Framework\TestCase
 {
     const INFO = 'design/standard/templates/user/registrationinfo.tpl';

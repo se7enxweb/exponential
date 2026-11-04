@@ -36,6 +36,7 @@ class eZDebugRegression extends ezpTestCase
      * @link http://issues.ez.no/13942
      * @group issue_13942
      */
+    #[\PHPUnit\Framework\Attributes\Group('issue_13942')]
     function testSubsequentAccumulatorStartRecursive()
     {
         $GLOBALS['eZDebugEnabled'] = true;
@@ -57,6 +58,7 @@ class eZDebugRegression extends ezpTestCase
      * @link http://issues.ez.no/13955
      * @group issue_13955
      */
+    #[\PHPUnit\Framework\Attributes\Group('issue_13955')]
     function testAccumulatorStopRecursiveCounter()
     {
         self::markTestSkipped( "Pending bugfix" );
@@ -75,6 +77,7 @@ class eZDebugRegression extends ezpTestCase
      * @link http://issues.ez.no/13956
      * @group issue_13956
      */
+    #[\PHPUnit\Framework\Attributes\Group('issue_13956')]
     function testAccumulatorStartMultipleResursiveCounter()
     {
         self::markTestSkipped( "Pending bugfix" );

@@ -13,6 +13,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expGraphQLLibraryMissingTest extends PHPUnit\Framework\TestCase
 {
     /** @var array */

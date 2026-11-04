@@ -28,6 +28,7 @@
 
 require_once __DIR__ . '/expWeakPasswordTestINI.php';
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expWeakPasswordListTest extends PHPUnit\Framework\TestCase
 {
     private static function make( array $userSettings = array(), array $passwordSettings = array() )

@@ -21,6 +21,7 @@
 
 require_once dirname( __DIR__ ) . '/contentmodel/expContentModelLiveTestCase.php';
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class eZURLAliasMLHistoryLiveTest extends expContentModelLiveTestCase
 {
     /** @var string[] ids of the global alias rows made by a test, removed in tearDown() */

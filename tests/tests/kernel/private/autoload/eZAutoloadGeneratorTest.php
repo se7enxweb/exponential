@@ -17,6 +17,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class eZAutoloadGeneratorTestGenerator extends eZAutoloadGenerator
 {
     /** @var array|null extension roots used instead of the INI setting, when set */

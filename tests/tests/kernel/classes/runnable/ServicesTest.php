@@ -30,6 +30,7 @@ require_once __DIR__ . '/../../../../../kernel/private/classes/services/trash.ph
 require_once __DIR__ . '/../../../../../kernel/private/classes/services/sessiongarbagecollector.php';
 require_once __DIR__ . '/../../../../../kernel/private/classes/services/draftscleanup.php';
 
+#[\PHPUnit\Framework\Attributes\Group('runnable')]
 class ezpTestTrashUser
 {
     public $word;

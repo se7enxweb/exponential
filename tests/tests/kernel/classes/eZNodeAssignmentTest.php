@@ -11,6 +11,7 @@
  * @package tests
  * @group database
  */
+#[\PHPUnit\Framework\Attributes\Group('database')]
 class eZNodeAssignmentTest extends ezpDatabaseTestCase
 {
 

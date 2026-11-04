@@ -25,6 +25,8 @@
  * @group ezdb
  */
 
+#[\PHPUnit\Framework\Attributes\Group('lib')]
+#[\PHPUnit\Framework\Attributes\Group('ezdb')]
 class eZDBTransactionExceptionTestDriver extends eZDBInterface
 {
     public $TransactionQueries = array();

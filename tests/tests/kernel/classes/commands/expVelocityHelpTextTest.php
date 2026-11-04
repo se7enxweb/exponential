@@ -33,6 +33,7 @@ class expVelocityHelpTextTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox every verb exp:velocity accepts is listed under Commands in its help
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('every verb exp:velocity accepts is listed under Commands in its help')]
     public function testEveryVelocityVerbIsInTheHelp(): void
     {
         $source = self::source( 'velocity.php' );
@@ -52,6 +53,7 @@ class expVelocityHelpTextTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox exp:webserver --help recommends the qbix engine for every stage, as exp:velocity --help does
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('exp:webserver --help recommends the qbix engine for every stage, as exp:velocity --help does')]
     public function testWebserverHelpDescribesQbixAsRecommended(): void
     {
         $help = self::helpText( self::source( 'webserver.php' ) );

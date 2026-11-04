@@ -13,6 +13,7 @@ use PHPUnit\Framework\Attributes\DataProvider;
  * @group updatesql
  */
 
+#[\PHPUnit\Framework\Attributes\Group('updatesql')]
 class PasswordHashWideningUpdateSqlTest extends PHPUnit\Framework\TestCase
 {
     private static $root;

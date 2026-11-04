@@ -12,6 +12,7 @@
  * @group database
  */
 
+#[\PHPUnit\Framework\Attributes\Group('database')]
 class eZTemplateAttributeOperatorTest extends ezpDatabaseTestCase
 {
     protected $backupGlobals = false;
@@ -34,6 +35,8 @@ class eZTemplateAttributeOperatorTest extends ezpDatabaseTestCase
      * @group templateOperators
      * @group attributeOperator
      */
+    #[\PHPUnit\Framework\Attributes\Group('templateOperators')]
+    #[\PHPUnit\Framework\Attributes\Group('attributeOperator')]
     public function testDisplayVariableWithObject()
     {
         $db = eZDB::instance();

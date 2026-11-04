@@ -14,6 +14,7 @@
  *  object relation list data tupe regression test
  * @group database
  */
+#[\PHPUnit\Framework\Attributes\Group('database')]
 class eZObjectRelationListDatatypeRegression extends ezpDatabaseTestCase
 {
 
@@ -38,6 +39,7 @@ class eZObjectRelationListDatatypeRegression extends ezpDatabaseTestCase
     /**
      * @group issue18249
      */
+    #[\PHPUnit\Framework\Attributes\Group('issue18249')]
     public function testIssue18249()
     {
 

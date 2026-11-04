@@ -11,6 +11,7 @@
  * @group database
  */
 
+#[\PHPUnit\Framework\Attributes\Group('database')]
 class eZSimplifiedXMLInputParserRegression extends ezpDatabaseTestCase
 {
 
@@ -21,6 +22,7 @@ class eZSimplifiedXMLInputParserRegression extends ezpDatabaseTestCase
      * @link http://issues.ez.no/18149
      * @group issue18149
      */
+    #[\PHPUnit\Framework\Attributes\Group('issue18149')]
     public function testIssue18149()
     {
         $parser = new eZSimplifiedXMLInputParser( 0 );

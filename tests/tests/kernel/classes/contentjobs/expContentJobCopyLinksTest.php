@@ -13,6 +13,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expContentJobCopyLinksTestJob extends expContentJobCopySubtree
 {
     public function withMaps( array $nodeMap, array $objectMap )

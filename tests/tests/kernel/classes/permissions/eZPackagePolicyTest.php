@@ -13,6 +13,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class eZPackagePolicyTest extends PHPUnit\Framework\TestCase
 {
     private $hadUser;

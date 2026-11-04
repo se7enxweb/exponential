@@ -9,6 +9,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expViewCountRequestFilterTest extends PHPUnit\Framework\TestCase
 {
     private static function record( $target, $status = 200, $agent = 'Mozilla/5.0 Firefox/140.0', $method = 'GET' )

@@ -14,6 +14,7 @@
 
 require_once __DIR__ . '/expRadWizardTestHelper.php';
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expRadWizardFirstVisitProblemsTest extends PHPUnit\Framework\TestCase
 {
     const VIEWS = array( 'datatype' => 'expDatatypeWizard', 'workflowevent' => 'expWorkflowEventWizard',

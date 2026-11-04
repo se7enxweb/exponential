@@ -21,6 +21,7 @@
  * @group collaboration
  */
 
+#[\PHPUnit\Framework\Attributes\Group('collaboration')]
 class CollaborationSampleDataTest extends PHPUnit\Framework\TestCase
 {
     private static $installation;

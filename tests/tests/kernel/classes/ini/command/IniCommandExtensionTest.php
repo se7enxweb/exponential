@@ -23,6 +23,7 @@
 require_once __DIR__ . '/fixtures/iniroot.php';
 require_once __DIR__ . '/fixtures/extension/iniactionfixture/classes/iniactionfixture.php';
 
+#[\PHPUnit\Framework\Attributes\Group('ini')]
 class iniActionFixtureNotAnAction
 {
 }

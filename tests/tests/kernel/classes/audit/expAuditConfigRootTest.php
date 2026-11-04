@@ -16,6 +16,7 @@
 
 require_once __DIR__ . '/../../../lib/ezutils/EngineArchiveInstallationRootTest.php';
 
+#[\PHPUnit\Framework\Attributes\Group('audit')]
 class expAuditConfigRootTest extends PHPUnit\Framework\TestCase
 {
     public function testRootIsTheInstallationWhenLoadedFromTheEngineArchive()

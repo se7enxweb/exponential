@@ -30,6 +30,7 @@
  * @group bookmarks
  */
 
+#[\PHPUnit\Framework\Attributes\Group('bookmarks')]
 class expBookmarkViewTest extends PHPUnit\Framework\TestCase
 {
     /** BV-01 */

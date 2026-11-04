@@ -29,6 +29,8 @@
  * @group ezdb
  */
 
+#[\PHPUnit\Framework\Attributes\Group('lib')]
+#[\PHPUnit\Framework\Attributes\Group('ezdb')]
 class eZDBExceptionCodeTest extends PHPUnit\Framework\TestCase
 {
     const MISSING_TABLE = 'expw6_no_such_table';
@@ -135,6 +137,7 @@ class eZDBExceptionCodeTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox SQLite: result code 1 for a missing table and 19 for a duplicate key, in a transaction
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('SQLite: result code 1 for a missing table and 19 for a duplicate key, in a transaction')]
     public function testSQLite(): void
     {
         if ( !class_exists( 'SQLite3' ) )
@@ -168,6 +171,7 @@ class eZDBExceptionCodeTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox MySQL: 1146 for a missing table, 1062 for a duplicate key
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('MySQL: 1146 for a missing table, 1062 for a duplicate key')]
     public function testMySQL(): void
     {
         if ( !extension_loaded( 'mysqli' ) )
@@ -200,6 +204,7 @@ class eZDBExceptionCodeTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox PostgreSQL: the SQLSTATE, 42P01 for a missing table, 23505 for a duplicate key, the message as usual
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('PostgreSQL: the SQLSTATE, 42P01 for a missing table, 23505 for a duplicate key, the message as usual')]
     public function testPostgreSQL(): void
     {
         if ( !extension_loaded( 'pgsql' ) )
@@ -231,6 +236,7 @@ class eZDBExceptionCodeTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox PostgreSQL messages: the SQLSTATE and the extra lines of the verbose form are taken out
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('PostgreSQL messages: the SQLSTATE and the extra lines of the verbose form are taken out')]
     public function testPostgreSQLMessageSplit(): void
     {
         $verbose = "ERROR:  23505: duplicate key value violates unique constraint \"t_pkey\"\n" .
@@ -247,6 +253,7 @@ class eZDBExceptionCodeTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox Oracle: 942 for a missing table (ORA-00942)
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('Oracle: 942 for a missing table (ORA-00942)')]
     public function testOracle(): void
     {
         if ( !extension_loaded( 'oci8' ) )
@@ -272,6 +279,7 @@ class eZDBExceptionCodeTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox MongoDB: the server's error code of a refused statement is errorNumber(), the next statement clears it
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('MongoDB: the server\'s error code of a refused statement is errorNumber(), the next statement clears it')]
     public function testMongoDBRecordsTheServerErrorCode(): void
     {
         if ( !class_exists( 'expMongoDB' ) )

@@ -13,6 +13,8 @@
  * @group twig
  */
 
+#[\PHPUnit\Framework\Attributes\Group('lib')]
+#[\PHPUnit\Framework\Attributes\Group('twig')]
 class expTwigDebugBarTest extends PHPUnit\Framework\TestCase
 {
     private static $dir;

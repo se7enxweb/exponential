@@ -13,6 +13,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class eZURLAliasMLNameGenerationTest extends PHPUnit\Framework\TestCase
 {
     private $charset;

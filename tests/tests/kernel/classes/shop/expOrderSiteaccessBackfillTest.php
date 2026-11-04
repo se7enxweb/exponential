@@ -18,6 +18,8 @@
 
 use PHPUnit\Framework\Attributes\DataProvider;
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
+#[\PHPUnit\Framework\Attributes\Group('shop')]
 class expOrderSiteaccessBackfillTest extends PHPUnit\Framework\TestCase
 {
     /** public sites only (the administrations are left out before): a site on the whole tree, two shops nested in it,

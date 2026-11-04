@@ -14,6 +14,7 @@
 
 require_once __DIR__ . '/expRadWizardTestHelper.php';
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expDesignExtensionWizardTest extends PHPUnit\Framework\TestCase
 {
     const NAME = 'k1e_design_tpl';

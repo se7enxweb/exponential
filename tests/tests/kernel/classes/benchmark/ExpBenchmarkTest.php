@@ -14,6 +14,7 @@
 require_once __DIR__ . '/../../../../../kernel/classes/expbenchmark.php';
 require_once __DIR__ . '/../../../../../kernel/classes/expbenchmarkhttp.php';
 
+#[\PHPUnit\Framework\Attributes\Group('benchmark')]
 class ExpBenchmarkTest extends \PHPUnit\Framework\TestCase
 {
     public function testPercentileInterpolatesBetweenRanks()

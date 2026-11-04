@@ -16,6 +16,8 @@
 
 require_once dirname( __DIR__ ) . '/datatypes/eZDatatypeTestFixtures.php';
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
+#[\PHPUnit\Framework\Attributes\Group('eztemplate')]
 class eZTemplateDesignResourceTest extends eZDatatypeTestCase
 {
     const GLOBALS = array( 'eZTemplateDesignSetting', 'eZSiteBasics', 'eZTemplateDesignResourceStartPath', 'eZDesignKeys',

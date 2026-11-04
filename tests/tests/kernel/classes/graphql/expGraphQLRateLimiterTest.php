@@ -10,6 +10,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expGraphQLRateLimiterTest extends PHPUnit\Framework\TestCase
 {
     /** @var string */

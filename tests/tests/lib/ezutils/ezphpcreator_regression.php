@@ -10,6 +10,7 @@
  * @package tests
  * @group database
  */
+#[\PHPUnit\Framework\Attributes\Group('database')]
 class eZPHPCreatorRegression extends ezpDatabaseTestCase
 {
 

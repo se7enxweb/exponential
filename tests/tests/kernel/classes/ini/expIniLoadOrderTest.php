@@ -24,6 +24,7 @@
 
 require_once __DIR__ . '/fixtures/expinienginetestfixtures.php';
 
+#[\PHPUnit\Framework\Attributes\Group('ini')]
 class expIniLoadOrderTest extends PHPUnit\Framework\TestCase
 {
     const PROBES = array( 'Probe/Who', 'Probe/SaWins', 'Probe/AccessLoses', 'Probe/OverrideWins', 'Probe/Seen' );

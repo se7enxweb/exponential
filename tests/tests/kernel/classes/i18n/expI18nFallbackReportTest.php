@@ -21,6 +21,8 @@
 use Exponential\Command\Kernel\I18n;
 use Exponential\View\Kernel\Setup\Languages;
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
+#[\PHPUnit\Framework\Attributes\Group('ezi18n')]
 class expI18nFallbackReportTest extends PHPUnit\Framework\TestCase
 {
     private $dir;

@@ -24,6 +24,7 @@
 
 require_once __DIR__ . '/expContentModelLiveTestCase.php';
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class eZContentObjectTreeNodeFetchTest extends expContentModelLiveTestCase
 {
     /** @var array name => array( 'object' => int, 'node' => int ) */

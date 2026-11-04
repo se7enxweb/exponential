@@ -100,6 +100,7 @@ class eZPendingActionsTest extends ezpDatabaseTestCase
      * @param $badFilter
      * @dataProvider providerForTestBadDateFilter
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('providerForTestBadDateFilter')]
     public function testBadDateFilter( $badFilter )
     {
         $res = eZPendingActions::fetchByAction( 'test', $badFilter );

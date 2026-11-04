@@ -29,6 +29,7 @@ class eZHTTPToolTest extends ezpTestCase
     /**
      * @dataProvider providerTestGetDataByURL
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('providerTestGetDataByURL')]
     public function testGetDataByURL( $expectedDataResult, $url, $justCheckURL = false, $userAgent = false )
     {
         self::markTestSkipped( "Test disabled as critmon has been shut down. Needs a different server or way of doing this." );

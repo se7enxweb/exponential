@@ -19,6 +19,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expPreloadAddressTest extends PHPUnit\Framework\TestCase
 {
     /** the demonstration server's own settings, with example hosts */

@@ -27,6 +27,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expPreloadLockAndHistoryTest extends PHPUnit\Framework\TestCase
 {
     private $dir;

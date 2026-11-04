@@ -14,6 +14,8 @@
  * @group rest
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
+#[\PHPUnit\Framework\Attributes\Group('rest')]
 class ezpRestDbConfigTestDouble extends ezpRestDbConfig
 {
     public static function dsn()

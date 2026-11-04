@@ -19,6 +19,7 @@
  * @group lib
  */
 
+#[\PHPUnit\Framework\Attributes\Group('lib')]
 class EngineArchiveInstallationRootTest extends PHPUnit\Framework\TestCase
 {
     const FILES = array(

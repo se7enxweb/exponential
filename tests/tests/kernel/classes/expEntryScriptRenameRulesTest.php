@@ -14,6 +14,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expEntryScriptRenameRulesTest extends PHPUnit\Framework\TestCase
 {
     /** The example configurations that carry the rules of .htaccess_root for a server. */

@@ -21,6 +21,8 @@
  * @group rest
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
+#[\PHPUnit\Framework\Attributes\Group('rest')]
 class expRestContentPermissionTestObject extends eZContentObject
 {
     public $id = 0;

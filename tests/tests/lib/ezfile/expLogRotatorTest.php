@@ -20,6 +20,8 @@
  * @group ezfile
  */
 
+#[\PHPUnit\Framework\Attributes\Group('lib')]
+#[\PHPUnit\Framework\Attributes\Group('ezfile')]
 class expLogRotatorTest extends PHPUnit\Framework\TestCase
 {
     private $dir;

@@ -10,6 +10,7 @@
  * @group updatesql
  */
 
+#[\PHPUnit\Framework\Attributes\Group('updatesql')]
 class UpdateSqlStorageEngineTest extends PHPUnit\Framework\TestCase
 {
     /**

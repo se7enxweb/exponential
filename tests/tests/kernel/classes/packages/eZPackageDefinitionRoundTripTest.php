@@ -14,6 +14,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class eZPackageDefinitionRoundTripTest extends PHPUnit\Framework\TestCase
 {
     private $dir;

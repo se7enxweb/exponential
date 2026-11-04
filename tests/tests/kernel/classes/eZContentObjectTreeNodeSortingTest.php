@@ -21,6 +21,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class eZContentObjectTreeNodeSortingTest extends PHPUnit\Framework\TestCase
 {
     protected function setUp(): void

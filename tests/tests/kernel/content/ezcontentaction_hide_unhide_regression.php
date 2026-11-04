@@ -15,6 +15,8 @@
  * @backupGlobals disabled
  * @group database
  */
+#[\PHPUnit\Framework\Attributes\BackupGlobals(false)]
+#[\PHPUnit\Framework\Attributes\Group('database')]
 class eZContentActionHideUnhideRegression extends ezpDatabaseTestCase
 {
     private $folder;

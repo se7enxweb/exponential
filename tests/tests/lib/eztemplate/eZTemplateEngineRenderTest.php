@@ -21,6 +21,8 @@
  * @group eztemplate
  */
 
+#[\PHPUnit\Framework\Attributes\Group('lib')]
+#[\PHPUnit\Framework\Attributes\Group('eztemplate')]
 class eZTemplateEngineRenderTest extends PHPUnit\Framework\TestCase
 {
     /** @var string directory of this class's template files and compiled templates */

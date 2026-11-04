@@ -11,6 +11,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expGraphQLPersistedQueriesTest extends PHPUnit\Framework\TestCase
 {
     /** @var string */

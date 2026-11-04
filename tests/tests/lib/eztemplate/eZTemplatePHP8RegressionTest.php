@@ -19,6 +19,9 @@
  * @group php8
  */
 
+#[\PHPUnit\Framework\Attributes\Group('lib')]
+#[\PHPUnit\Framework\Attributes\Group('eztemplate')]
+#[\PHPUnit\Framework\Attributes\Group('php8')]
 class eZTemplatePHP8RegressionTest extends PHPUnit\Framework\TestCase
 {
     /** @var string private directory of this class's templates and compiled templates */

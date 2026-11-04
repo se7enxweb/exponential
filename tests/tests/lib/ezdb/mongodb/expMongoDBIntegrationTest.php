@@ -179,6 +179,7 @@ class expMongoDBIntegrationTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox [LIVE] MongoDB ping succeeds — server is reachable
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('[LIVE] MongoDB ping succeeds — server is reachable')]
     public function testMongoPingSucceeds(): void
     {
         $this->requireMongo();
@@ -193,6 +194,7 @@ class expMongoDBIntegrationTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox [LIVE] MongoDB insert + aggregate round-trip
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('[LIVE] MongoDB insert + aggregate round-trip')]
     public function testMongoInsertAndAggregate(): void
     {
         $this->requireMongo();
@@ -217,6 +219,7 @@ class expMongoDBIntegrationTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox [LIVE] MongoDB upsert: update existing document
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('[LIVE] MongoDB upsert: update existing document')]
     public function testMongoUpsertUpdatesExisting(): void
     {
         $this->requireMongo();
@@ -237,6 +240,7 @@ class expMongoDBIntegrationTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox [LIVE] MongoDB deleteMany removes all matched documents
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('[LIVE] MongoDB deleteMany removes all matched documents')]
     public function testMongoDeleteMany(): void
     {
         $this->requireMongo();
@@ -256,6 +260,7 @@ class expMongoDBIntegrationTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox [LIVE] MongoDB findAndModify / updateOne with $inc
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('[LIVE] MongoDB findAndModify / updateOne with $inc')]
     public function testMongoUpdateOneIncrement(): void
     {
         $this->requireMongo();
@@ -278,6 +283,7 @@ class expMongoDBIntegrationTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox [LIVE] MongoDB listCollections includes expected core collections
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('[LIVE] MongoDB listCollections includes expected core collections')]
     public function testMongoExpectedCollectionsExist(): void
     {
         $this->requireMongo();
@@ -306,6 +312,7 @@ class expMongoDBIntegrationTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox [LIVE] MongoDB ezcontentobject collection has expected fields
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('[LIVE] MongoDB ezcontentobject collection has expected fields')]
     public function testMongoContentObjectDocumentStructure(): void
     {
         $this->requireMongo();
@@ -330,6 +337,7 @@ class expMongoDBIntegrationTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox [LIVE] MongoDB ezcontentobject_tree documents have path_string
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('[LIVE] MongoDB ezcontentobject_tree documents have path_string')]
     public function testMongoTreeNodeHasPathString(): void
     {
         $this->requireMongo();
@@ -349,6 +357,7 @@ class expMongoDBIntegrationTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox [LIVE] MySQL connection works and returns correct server info
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('[LIVE] MySQL connection works and returns correct server info')]
     public function testMysqlConnectionWorks(): void
     {
         $this->skipIfNoMySQL();
@@ -359,6 +368,7 @@ class expMongoDBIntegrationTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox [LIVE] MySQL ezcontent_language has at least one row
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('[LIVE] MySQL ezcontent_language has at least one row')]
     public function testMysqlContentLanguageHasRows(): void
     {
         $this->skipIfNoMySQL();
@@ -371,6 +381,7 @@ class expMongoDBIntegrationTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox [LIVE] MySQL ezcontentobject has at least one row
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('[LIVE] MySQL ezcontentobject has at least one row')]
     public function testMysqlContentObjectHasRows(): void
     {
         $this->skipIfNoMySQL();
@@ -383,6 +394,7 @@ class expMongoDBIntegrationTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox [LIVE] MySQL ezcontentobject_tree path_string format is valid
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('[LIVE] MySQL ezcontentobject_tree path_string format is valid')]
     public function testMysqlTreeNodePathStringFormat(): void
     {
         $this->skipIfNoMySQL();
@@ -401,6 +413,7 @@ class expMongoDBIntegrationTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox [LIVE] MySQL ezcontentobject_version has no orphaned versions (status=5 garbage)
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('[LIVE] MySQL ezcontentobject_version has no orphaned versions (status=5 garbage)')]
     public function testMysqlNoOrphanedArchivedVersions(): void
     {
         $this->skipIfNoMySQL();
@@ -421,6 +434,7 @@ class expMongoDBIntegrationTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox [LIVE] MySQL ezcontent_class table has at least one class
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('[LIVE] MySQL ezcontent_class table has at least one class')]
     public function testMysqlContentClassExists(): void
     {
         $this->skipIfNoMySQL();
@@ -433,6 +447,7 @@ class expMongoDBIntegrationTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox [LIVE] MySQL ezcontentobject has no rows with NULL status
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('[LIVE] MySQL ezcontentobject has no rows with NULL status')]
     public function testMysqlContentObjectNoNullStatus(): void
     {
         $this->skipIfNoMySQL();
@@ -445,6 +460,7 @@ class expMongoDBIntegrationTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox [LIVE] MySQL ezsection has at least one section
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('[LIVE] MySQL ezsection has at least one section')]
     public function testMysqlSectionTableHasRows(): void
     {
         $this->skipIfNoMySQL();
@@ -456,6 +472,7 @@ class expMongoDBIntegrationTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox [LIVE] MySQL and MongoDB ezcontentobject row counts match
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('[LIVE] MySQL and MongoDB ezcontentobject row counts match')]
     public function testContentObjectCountMatchesBetweenEngines(): void
     {
         $this->requireMongo();
@@ -490,6 +507,7 @@ class expMongoDBIntegrationTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox [LIVE] MySQL INSERT + SELECT + DELETE round-trip (no side effects)
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('[LIVE] MySQL INSERT + SELECT + DELETE round-trip (no side effects)')]
     public function testMysqlInsertSelectDeleteRoundTrip(): void
     {
         $this->skipIfNoMySQL();

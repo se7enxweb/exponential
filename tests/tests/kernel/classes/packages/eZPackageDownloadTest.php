@@ -10,6 +10,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class eZPackageDownloadTest extends PHPUnit\Framework\TestCase
 {
     private $file;

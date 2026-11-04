@@ -17,6 +17,7 @@
  * @group design
  */
 
+#[\PHPUnit\Framework\Attributes\Group('design')]
 class AdminI18nStringTagsTest extends PHPUnit\Framework\TestCase
 {
     /** A complete i18n tag with a literal text and a literal context, as a template writes it. */

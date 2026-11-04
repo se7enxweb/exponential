@@ -14,6 +14,7 @@
 
 require_once __DIR__ . '/../smarty/expSmartyOperatorParityTest.php';
 
+#[\PHPUnit\Framework\Attributes\Group('lib')]
 class expTemplateCheckerTest extends PHPUnit\Framework\TestCase
 {
     private static $dir;

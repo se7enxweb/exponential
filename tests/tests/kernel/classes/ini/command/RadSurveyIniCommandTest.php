@@ -17,6 +17,7 @@
 
 require_once __DIR__ . '/../../../../../../kernel/setup/expradsurvey.php';
 
+#[\PHPUnit\Framework\Attributes\Group('ini')]
 class RadSurveyIniCommandTest extends PHPUnit\Framework\TestCase
 {
     private static $survey;

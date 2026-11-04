@@ -14,6 +14,7 @@
 
 use PHPUnit\Framework\Attributes\DataProvider;
 
+#[\PHPUnit\Framework\Attributes\Group('updatesql')]
 class KernelSchemaParityUpdateSqlTest extends PHPUnit\Framework\TestCase
 {
     private static $root;

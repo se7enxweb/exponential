@@ -25,6 +25,7 @@
 
 require_once __DIR__ . '/eZPackageTestFixtures.php';
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expPackageArchiveTest extends PHPUnit\Framework\TestCase
 {
     const GNU_MAGIC = "ustar  \0";

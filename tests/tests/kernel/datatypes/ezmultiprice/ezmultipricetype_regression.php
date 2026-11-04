@@ -11,6 +11,7 @@
  * @group database
  */
 
+#[\PHPUnit\Framework\Attributes\Group('database')]
 class eZMultiPriceTypeRegression extends ezpDatabaseTestCase
 {
 
@@ -30,6 +31,7 @@ class eZMultiPriceTypeRegression extends ezpDatabaseTestCase
      * @link http://issues.ez.no/13712
      * @group issue_13712
      */
+    #[\PHPUnit\Framework\Attributes\Group('issue_13712')]
     public function testMultipleCallsToCalculatedPrice()
     {
         $currencyCode = 'EUR';

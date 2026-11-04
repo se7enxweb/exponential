@@ -12,6 +12,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expSoapEntryScriptTest extends PHPUnit\Framework\TestCase
 {
     /** @var string a directory of its own under the installation's var/tmp */

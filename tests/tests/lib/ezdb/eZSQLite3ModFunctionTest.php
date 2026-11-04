@@ -64,6 +64,7 @@ class eZSQLite3ModFunctionTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox MOD() answers as MySQL does for integers, decimals, NULL and a zero divisor
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('MOD() answers as MySQL does for integers, decimals, NULL and a zero divisor')]
     public function testModAnswersAsMySQL(): void
     {
         $db = $this->db();
@@ -78,6 +79,7 @@ class eZSQLite3ModFunctionTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox The eZ Tags language mask query runs: the main language of each tag
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('The eZ Tags language mask query runs: the main language of each tag')]
     public function testTagsLanguageMaskQuery(): void
     {
         $db = $this->db();

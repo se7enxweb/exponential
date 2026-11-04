@@ -11,6 +11,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expGraphQLStarterTest extends PHPUnit\Framework\TestCase
 {
     /** @var string[] directories made by a test */

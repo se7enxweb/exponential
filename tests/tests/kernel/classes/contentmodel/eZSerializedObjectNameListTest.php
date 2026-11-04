@@ -13,6 +13,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class eZSerializedObjectNameListTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass(): void

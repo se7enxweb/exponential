@@ -39,6 +39,7 @@ class eZCollaborationItemTest extends ezpDatabaseTestCase
     /**
      * @dataProvider providerForIsParticipant
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('providerForIsParticipant')]
     public function testIsParticipant( $expectedResult, $userId, array $groupIdArray = array() )
     {
         $user = $this->createUserMock( $userId, $groupIdArray );

@@ -14,6 +14,7 @@
 
 require_once dirname( __DIR__ ) . '/ini/fixtures/expinienginetestfixtures.php';
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expGraphQLSetupTest extends PHPUnit\Framework\TestCase
 {
     /** @var string */

@@ -12,6 +12,7 @@
 
 require_once __DIR__ . '/expGraphQLSchemaTest.php';
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expGraphQLTestTagsSource extends expGraphQLTagsSource
 {
     /** @var array id => tag */

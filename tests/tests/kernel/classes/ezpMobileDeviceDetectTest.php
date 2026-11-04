@@ -12,6 +12,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class ezpMobileDeviceDetectTest extends PHPUnit\Framework\TestCase
 {
     const HEADERS = array( 'HTTP_USER_AGENT', 'HTTP_ACCEPT', 'HTTP_X_WAP_PROFILE', 'HTTP_PROFILE' );

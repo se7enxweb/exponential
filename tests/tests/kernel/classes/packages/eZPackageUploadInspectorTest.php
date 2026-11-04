@@ -19,6 +19,7 @@
 
 require_once __DIR__ . '/eZPackageTestFixtures.php';
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class eZPackageUploadInspectorTest extends PHPUnit\Framework\TestCase
 {
     private $dir;

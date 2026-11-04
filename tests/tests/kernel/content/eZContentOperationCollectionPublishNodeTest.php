@@ -14,6 +14,7 @@
  * @group database
  */
 
+#[\PHPUnit\Framework\Attributes\Group('database')]
 class eZContentOperationCollectionPublishNodeTest extends ezpDatabaseTestCase
 {
     protected $backupGlobals = false;

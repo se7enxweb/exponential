@@ -70,6 +70,7 @@
 
 require_once __DIR__ . '/../../../../lib/ezdb/classes/ezdbquerycache.php';
 
+#[\PHPUnit\Framework\Attributes\Group('querycache')]
 class eZDBQueryCacheTest extends PHPUnit\Framework\TestCase
 {
     private $dir;

@@ -13,6 +13,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expContentPreviewLinkTest extends PHPUnit\Framework\TestCase
 {
     private static function link( array $change = array() )

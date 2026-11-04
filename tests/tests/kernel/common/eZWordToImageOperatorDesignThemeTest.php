@@ -18,6 +18,7 @@
  * @group templateoperators
  */
 
+#[\PHPUnit\Framework\Attributes\Group('templateoperators')]
 class eZWordToImageOperatorDesignThemeTest extends PHPUnit\Framework\TestCase
 {
     private $dir;

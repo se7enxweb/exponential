@@ -11,6 +11,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class eZRSSExportHeadsTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass(): void

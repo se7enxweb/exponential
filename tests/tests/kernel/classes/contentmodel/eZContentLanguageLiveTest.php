@@ -11,6 +11,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class eZContentLanguageLiveTest extends PHPUnit\Framework\TestCase
 {
     /** @var eZContentLanguage[] locale => language */

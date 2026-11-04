@@ -33,6 +33,7 @@ use PHPUnit\Framework\Attributes\RunTestsInSeparateProcesses;
  * @covers ezpSessionHandlerDB
  */
 #[RunTestsInSeparateProcesses]
+#[\PHPUnit\Framework\Attributes\CoversClass(ezpSessionHandlerDB::class)]
 class EzpSessionHandlerDBPhp8BugfixesTest extends \PHPUnit\Framework\TestCase
 {
     private ezpSessionHandlerDB $handler;
@@ -71,6 +72,7 @@ class EzpSessionHandlerDBPhp8BugfixesTest extends \PHPUnit\Framework\TestCase
      * false signals a fatal error; '' signals "no data" and allows the session
      * to start cleanly. The pre-patch code returned false in both failure paths.
      */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function testReadReturnsEmptyStringWhenDatabaseNotConnected(): void
     {
         $this->db->connected = false;
@@ -96,6 +98,7 @@ class EzpSessionHandlerDBPhp8BugfixesTest extends \PHPUnit\Framework\TestCase
      * arrayQuery returns false when no rows match. The pre-patch code then
      * returned false from read(), causing PHP 8 to fail the session start.
      */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function testReadReturnsEmptyStringWhenNoSessionRowFound(): void
     {
         // DB connected but query returns no rows (false = zero results)
@@ -121,6 +124,7 @@ class EzpSessionHandlerDBPhp8BugfixesTest extends \PHPUnit\Framework\TestCase
      * Bug1c: read() returns the data string when a session row IS found.
      * (Regression guard — the happy path must be unchanged.)
      */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function testReadReturnsSessionDataWhenRowFound(): void
     {
         $sessionData = 'serialized|session:data:here';
@@ -149,6 +153,7 @@ class EzpSessionHandlerDBPhp8BugfixesTest extends \PHPUnit\Framework\TestCase
      * @test
      * Bug1d: read() return type is always string (never false) on both failure paths.
      */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function testReadReturnTypeIsAlwaysString(): void
     {
         // Path 1: DB not connected
@@ -177,6 +182,7 @@ class EzpSessionHandlerDBPhp8BugfixesTest extends \PHPUnit\Framework\TestCase
      * as an absolute Unix timestamp (time() + SessionTimeout ~= 1700000000+).
      * 'expiration_time < 1440' would never match — the fix uses time().
      */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function testGcIteratingPathUsesCurrentTimestampNotMaxLifetime(): void
     {
         // gcSessionsPrIteration > 0 → iterating path; return no rows so loop exits.
@@ -220,6 +226,7 @@ class EzpSessionHandlerDBPhp8BugfixesTest extends \PHPUnit\Framework\TestCase
      * Bug2b: The non-iterating gc() path (gcSessionsPrIteration = false) also
      * uses time() in the DELETE query, not $maxLifeTime.
      */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function testGcNonIteratingPathUsesCurrentTimestampNotMaxLifetime(): void
     {
         $this->handler->gcSessionsPrIteration = false;
@@ -251,6 +258,7 @@ class EzpSessionHandlerDBPhp8BugfixesTest extends \PHPUnit\Framework\TestCase
      * @test
      * Bug2c: $maxLifeTime = 1440 must never appear literally in the WHERE clause.
      */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function testGcDoesNotUseDurationLiteralInWhereClause(): void
     {
         $this->db->queryResult = false;
@@ -283,6 +291,7 @@ class EzpSessionHandlerDBPhp8BugfixesTest extends \PHPUnit\Framework\TestCase
      * With the fix ($stopTime - $gcStartTime), elapsed time is near zero for the
      * first iteration, so the timeout guard does not fire prematurely.
      */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function testGcDoesNotPrematurelyTimeOutWithReasonableMaxLifetime(): void
     {
         // Set a high execution time via ini so the timeout guard has plenty of room.
@@ -323,6 +332,7 @@ class EzpSessionHandlerDBPhp8BugfixesTest extends \PHPUnit\Framework\TestCase
      * We verify this by checking that gc() actually processes a second batch of
      * rows rather than bailing out after the first one.
      */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function testGcTimeoutGuardUsesElapsedTimeNotMaxLifetime(): void
     {
         ini_set( 'max_execution_time', '300' );
@@ -365,6 +375,7 @@ class EzpSessionHandlerDBPhp8BugfixesTest extends \PHPUnit\Framework\TestCase
      * The non-iterating gc() path (gcSessionsPrIteration = false) must still
      * return true.
      */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function testGcNonIteratingPathReturnsTrue(): void
     {
         $this->handler->gcSessionsPrIteration = false;
@@ -376,6 +387,7 @@ class EzpSessionHandlerDBPhp8BugfixesTest extends \PHPUnit\Framework\TestCase
      * @test
      * gc() with iterating path and no expired sessions returns true (completed).
      */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function testGcIteratingPathReturnsTrueWhenNoExpiredSessions(): void
     {
         $this->db->queryResult = false; // no rows → loop body never executes
@@ -389,6 +401,7 @@ class EzpSessionHandlerDBPhp8BugfixesTest extends \PHPUnit\Framework\TestCase
      * verify the class still implements read/write/destroy/gc/open/close
      * as required by SessionHandlerInterface (PHP 8 strict check).
      */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function testHandlerImplementsRequiredMethods(): void
     {
         $this->assertTrue( method_exists( $this->handler, 'read' ) );
@@ -403,6 +416,7 @@ class EzpSessionHandlerDBPhp8BugfixesTest extends \PHPUnit\Framework\TestCase
      * which throws a ValueError on PHP 8; session_set_save_handler() selects the
      * user module by itself.
      */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function testSetSaveHandlerRegistersTheUserModule(): void
     {
         $this->assertTrue( $this->handler->setSaveHandler() );

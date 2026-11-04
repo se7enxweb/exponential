@@ -26,6 +26,7 @@
 
 require_once __DIR__ . '/fixtures/expaudittestfixtures.php';
 
+#[\PHPUnit\Framework\Attributes\Group('audit')]
 class expAuditAlertsTest extends PHPUnit\Framework\TestCase
 {
     /** Fri 2026-10-02 12:00:00 UTC */

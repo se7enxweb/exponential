@@ -112,6 +112,9 @@ class ezpRestApplicationCacheTest extends ezpRestTestCase
      * @dataProvider cacheEnabledIniSettingsProvider
      * @param array $iniVariables
      */
+    #[\PHPUnit\Framework\Attributes\Group('restApplicationCache')]
+    #[\PHPUnit\Framework\Attributes\Group('restCache')]
+    #[\PHPUnit\Framework\Attributes\DataProvider('cacheEnabledIniSettingsProvider')]
     public function testIsCacheEnabled( array $iniVariables )
     {
         $this->restINI->setVariables( $iniVariables );
@@ -132,6 +135,9 @@ class ezpRestApplicationCacheTest extends ezpRestTestCase
      * @dataProvider cacheDisabledIniSettingsProvider
      * @param array $iniVariables
      */
+    #[\PHPUnit\Framework\Attributes\Group('restApplicationCache')]
+    #[\PHPUnit\Framework\Attributes\Group('restCache')]
+    #[\PHPUnit\Framework\Attributes\DataProvider('cacheDisabledIniSettingsProvider')]
     public function testIsCacheDisabled( array $iniVariables )
     {
         $this->restINI->setVariables( $iniVariables );
@@ -191,6 +197,9 @@ class ezpRestApplicationCacheTest extends ezpRestTestCase
      * @dataProvider cacheTTLProvider
      * @param array $iniVariables
      */
+    #[\PHPUnit\Framework\Attributes\Group('restApplicationCache')]
+    #[\PHPUnit\Framework\Attributes\Group('restCache')]
+    #[\PHPUnit\Framework\Attributes\DataProvider('cacheTTLProvider')]
     public function testGetActionTTL( array $iniVariables )
     {
         $this->restINI->setVariables( $iniVariables );
@@ -227,6 +236,8 @@ class ezpRestApplicationCacheTest extends ezpRestTestCase
      * @group restApplicationCache
      * @group restCache
      */
+    #[\PHPUnit\Framework\Attributes\Group('restApplicationCache')]
+    #[\PHPUnit\Framework\Attributes\Group('restCache')]
     public function testGetCacheLocation()
     {
         $uri = $this->restINI->variable( 'System', 'ApiPrefix' ).'/test/rest/foo';
@@ -288,6 +299,9 @@ class ezpRestApplicationCacheTest extends ezpRestTestCase
      * @param array $internalVariables
      * @param array $contentVariables
      */
+    #[\PHPUnit\Framework\Attributes\Group('restApplicationCache')]
+    #[\PHPUnit\Framework\Attributes\Group('restCache')]
+    #[\PHPUnit\Framework\Attributes\DataProvider('cacheIdVariableProvider')]
     public function testGenerateCacheId( array $internalVariables, array $contentVariables )
     {
         /*
@@ -342,6 +356,9 @@ class ezpRestApplicationCacheTest extends ezpRestTestCase
      * @group restClusterCache
      * @group restCache
      */
+    #[\PHPUnit\Framework\Attributes\Group('restApplicationCache')]
+    #[\PHPUnit\Framework\Attributes\Group('restClusterCache')]
+    #[\PHPUnit\Framework\Attributes\Group('restCache')]
     public function testClusterCache()
     {
         $this->markTestSkipped( "Cluster cache seems broken, more info in EZPNEXT-217" );
@@ -397,6 +414,9 @@ class ezpRestApplicationCacheTest extends ezpRestTestCase
      * @group restClusterCache
      * @group restCache
      */
+    #[\PHPUnit\Framework\Attributes\Group('restApplicationCache')]
+    #[\PHPUnit\Framework\Attributes\Group('restClusterCache')]
+    #[\PHPUnit\Framework\Attributes\Group('restCache')]
     public function testManageCache()
     {
         $cacheOptions = array( 'ttl' => 2 );

@@ -13,6 +13,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class eZPackageFileBrowserTest extends PHPUnit\Framework\TestCase
 {
     private $dir;

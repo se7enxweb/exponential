@@ -14,6 +14,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class eZNamePatternResolverPatternAttributeStub
 {
     private $identifier;

@@ -21,6 +21,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expViewActionCheckHookNamesTest extends PHPUnit\Framework\TestCase
 {
     const VIEWS = array(

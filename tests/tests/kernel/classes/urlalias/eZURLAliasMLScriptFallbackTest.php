@@ -21,6 +21,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class eZURLAliasMLScriptFallbackTest extends PHPUnit\Framework\TestCase
 {
     private $charset;

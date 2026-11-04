@@ -27,6 +27,7 @@
  * @group bookmarks
  */
 
+#[\PHPUnit\Framework\Attributes\Group('bookmarks')]
 class BookmarkFoldersTest extends PHPUnit\Framework\TestCase
 {
     private static $installation;

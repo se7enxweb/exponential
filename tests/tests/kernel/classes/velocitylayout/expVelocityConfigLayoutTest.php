@@ -16,6 +16,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expVelocityConfigLayoutTestVelocity extends expVelocity
 {
     public $settings = array();

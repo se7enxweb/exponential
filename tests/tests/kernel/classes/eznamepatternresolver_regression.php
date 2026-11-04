@@ -74,6 +74,7 @@ class eZNamePatternResolverRegression extends ezpTestCase
      * @link https://jira.ez.no/browse/EZP-21410
      * @dataProvider providerForTestNamePatternResolver
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('providerForTestNamePatternResolver')]
     public function testNamePatternResolver( $name, $limit, $sequence, $namePattern, $identifier, $expects )
     {
         $contentObjectMock = $this->getMock( "eZContentObject", array(), array(), '', false, false );

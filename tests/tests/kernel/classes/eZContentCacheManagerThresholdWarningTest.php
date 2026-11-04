@@ -19,6 +19,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class eZContentCacheManagerThresholdWarningTest extends PHPUnit\Framework\TestCase
 {
     const GLOBAL_KEYS = array( 'eZDebugGlobalInstance', 'eZDebugEnabled', 'eZDebugLogOnly', 'eZDebugAlwaysLog',
@@ -119,6 +120,7 @@ class eZContentCacheManagerThresholdWarningTest extends PHPUnit\Framework\TestCa
     /**
      * @testdox at the threshold all view caches are expired, with a warning that gives the node count and the threshold
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('at the threshold all view caches are expired, with a warning that gives the node count and the threshold')]
     public function testThresholdReachedWarnsWithTheNodeCount(): void
     {
         $before = time();
@@ -138,6 +140,7 @@ class eZContentCacheManagerThresholdWarningTest extends PHPUnit\Framework\TestCa
     /**
      * @testdox below the threshold the nodes' caches are cleared one by one and nothing is warned
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('below the threshold the nodes\' caches are cleared one by one and nothing is warned')]
     public function testBelowThresholdWarnsNothing(): void
     {
         eZContentCacheManager::clearNodeViewCacheArray( array( 2147483001, 2147483002 ) );
@@ -148,6 +151,7 @@ class eZContentCacheManagerThresholdWarningTest extends PHPUnit\Framework\TestCa
     /**
      * @testdox the warning text
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('the warning text')]
     public function testWarningText(): void
     {
         $this->assertSame( 'Expiring all view cache: the view cache of 300 nodes was to be cleared, which reaches site.ini [ContentSettings] CacheThreshold=3',

@@ -15,6 +15,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expTreeMenuErrorStatusTest extends PHPUnit\Framework\TestCase
 {
     public function testAccessDeniedIsForbidden()

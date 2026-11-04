@@ -13,6 +13,8 @@
  * @group php8
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
+#[\PHPUnit\Framework\Attributes\Group('php8')]
 class eZDynamicPropertiesPHP82Test extends PHPUnit\Framework\TestCase
 {
     /** class => the properties LoveStack declared on it, which Exponential does not declare */

@@ -15,6 +15,8 @@
  * @group ezcontentlanguage
  * @group database
  */
+#[\PHPUnit\Framework\Attributes\Group('ezcontentlanguage')]
+#[\PHPUnit\Framework\Attributes\Group('database')]
 class eZContentLanguageRegression extends ezpDatabaseTestCase
 {
     protected $backupGlobals = false;
@@ -85,6 +87,7 @@ END;
      * @link http://issues.ez.no/18613
      * @group issue18613
      */
+    #[\PHPUnit\Framework\Attributes\Group('issue18613')]
     public function testFetchListWithBlankCacheFile()
     {
         // First simulate a problem generating the language cache file (make it blank)

@@ -34,6 +34,7 @@
 
 use Exponential\Service\MailPreferencesPage;
 
+#[\PHPUnit\Framework\Attributes\Group('mailpreferences')]
 class MailPreferencesHardeningTest extends PHPUnit\Framework\TestCase
 {
     const DOMAIN = 'mph.invalid';

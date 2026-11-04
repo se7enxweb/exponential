@@ -15,6 +15,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expUserApprovalSectionTest extends PHPUnit\Framework\TestCase
 {
     private static function root()

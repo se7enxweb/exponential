@@ -14,6 +14,8 @@
  * @group ezlocale
  */
 
+#[\PHPUnit\Framework\Attributes\Group('lib')]
+#[\PHPUnit\Framework\Attributes\Group('ezlocale')]
 class eZLocaleFormattingTest extends PHPUnit\Framework\TestCase
 {
     /** 2023-11-14 22:13:20 UTC, a Tuesday */

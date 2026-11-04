@@ -17,6 +17,7 @@
 /**
  * @group database
  */
+#[\PHPUnit\Framework\Attributes\Group('database')]
 abstract class eZClusterStaleCacheBase extends ezpDatabaseTestCase
 {
     protected $backupGlobals = false;

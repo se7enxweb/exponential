@@ -12,6 +12,8 @@
  * @group php8
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
+#[\PHPUnit\Framework\Attributes\Group('php8')]
 class eZPHP8RemovedFunctionCallsTest extends PHPUnit\Framework\TestCase
 {
     /** functions removed in PHP 7.0 or 8.0 */

@@ -10,6 +10,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class eZPackageRequestGuardTest extends PHPUnit\Framework\TestCase
 {
     protected function setUp(): void

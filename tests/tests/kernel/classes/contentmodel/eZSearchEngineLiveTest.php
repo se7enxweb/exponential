@@ -15,6 +15,7 @@
 
 require_once __DIR__ . '/expContentModelLiveTestCase.php';
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class eZSearchEngineLiveTest extends expContentModelLiveTestCase
 {
     /** @var string a word nobody else has, made for the run */

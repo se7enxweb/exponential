@@ -14,6 +14,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expReviewHoldTest extends PHPUnit\Framework\TestCase
 {
     public function testTheFirstStateIsNotHeldSoEveryObjectStartsFree()

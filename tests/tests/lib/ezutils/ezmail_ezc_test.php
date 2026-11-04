@@ -12,6 +12,7 @@
 /**
  * @group ezmail
  */
+#[\PHPUnit\Framework\Attributes\Group('ezmail')]
 class eZMailEzcTest extends ezpTestCase
 {
     public $adminEmail = 'ezp-unittests-01@ez.no';

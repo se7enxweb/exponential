@@ -19,6 +19,7 @@
  * @group mailpreferences
  */
 
+#[\PHPUnit\Framework\Attributes\Group('mailpreferences')]
 class MailPreferencesBounceListenersTestListener
 {
     public static $calls = array();

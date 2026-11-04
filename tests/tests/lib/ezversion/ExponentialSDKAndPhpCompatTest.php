@@ -16,6 +16,7 @@
  * @group lib
  */
 
+#[\PHPUnit\Framework\Attributes\Group('lib')]
 class ExponentialSDKAndPhpCompatTest extends PHPUnit\Framework\TestCase
 {
     private static $fallback;

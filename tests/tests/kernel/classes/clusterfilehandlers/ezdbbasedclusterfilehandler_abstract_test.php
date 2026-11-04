@@ -75,6 +75,7 @@ abstract class eZDBBasedClusterFileHandlerAbstractTest extends eZClusterFileHand
      *
      * @dataProvider providerForTestCleanPath
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('providerForTestCleanPath')]
     public function testCleanPath( $path, $expectedPath )
     {
         self::assertEquals( $expectedPath, call_user_func( array( $this->clusterClass, 'cleanpath' ), $path ) );
@@ -202,6 +203,7 @@ abstract class eZDBBasedClusterFileHandlerAbstractTest extends eZClusterFileHand
      * Tests the name trunk automatic creation (at backend level)
      * @dataProvider providerForTestNameTrunk
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('providerForTestNameTrunk')]
     public function testNameTrunk( $path, $scope, $expectedNameTrunk, $expectedCacheType )
     {
         // postgres doesn't use nametrunk

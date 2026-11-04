@@ -13,6 +13,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class ezpFormTokenRefusalTest extends PHPUnit\Framework\TestCase
 {
     private $server;

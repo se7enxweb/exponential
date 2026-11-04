@@ -13,6 +13,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expWebdavBackendProbe extends eZWebDAVContentBackend
 {
     public $contentAnswer = false;

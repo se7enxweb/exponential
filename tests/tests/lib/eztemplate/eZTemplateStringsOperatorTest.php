@@ -25,6 +25,9 @@
 // Minimal template stub — passes operator parameters through unchanged so that
 // tests can supply plain PHP values without wrapping them in eZTemplate nodes.
 // ---------------------------------------------------------------------------
+#[\PHPUnit\Framework\Attributes\Group('lib')]
+#[\PHPUnit\Framework\Attributes\Group('eztemplate')]
+#[\PHPUnit\Framework\Attributes\Group('stringsoperator')]
 class eZTemplateStringsOperatorTplStub
 {
     /** @var string[] */
@@ -102,6 +105,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group contract
      */
+    #[\PHPUnit\Framework\Attributes\Group('contract')]
     public function testOperatorListIsNonEmpty()
     {
         $ops = $this->op->operatorList();
@@ -112,6 +116,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group contract
      */
+    #[\PHPUnit\Framework\Attributes\Group('contract')]
     public function testOperatorListContainsRequiredOperators()
     {
         $ops = $this->op->operatorList();
@@ -142,6 +147,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group contract
      */
+    #[\PHPUnit\Framework\Attributes\Group('contract')]
     public function testOperatorListHasNoDuplicates()
     {
         $ops = $this->op->operatorList();
@@ -159,6 +165,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group contract
      */
+    #[\PHPUnit\Framework\Attributes\Group('contract')]
     public function testHintsReturnedForEveryOperator()
     {
         $ops   = $this->op->operatorList();
@@ -180,6 +187,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group noParam
      */
+    #[\PHPUnit\Framework\Attributes\Group('noParam')]
     public function testAddslashesEscapesQuotes()
     {
         $this->assertSame( 'He said \"hi\"', $this->runOp( 'addslashes', 'He said "hi"' ) );
@@ -188,6 +196,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group noParam
      */
+    #[\PHPUnit\Framework\Attributes\Group('noParam')]
     public function testAddslashesPlainTextUnchanged()
     {
         $this->assertSame( 'Hello World', $this->runOp( 'addslashes', 'Hello World' ) );
@@ -196,6 +205,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group noParam
      */
+    #[\PHPUnit\Framework\Attributes\Group('noParam')]
     public function testStripslashesRemovesEscapes()
     {
         $this->assertSame( 'He said "hi"', $this->runOp( 'stripslashes', 'He said \"hi\"' ) );
@@ -204,6 +214,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group noParam
      */
+    #[\PHPUnit\Framework\Attributes\Group('noParam')]
     public function testStripcslashesPlainText()
     {
         $this->assertSame( 'abc', $this->runOp( 'stripcslashes', 'abc' ) );
@@ -212,6 +223,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group noParam
      */
+    #[\PHPUnit\Framework\Attributes\Group('noParam')]
     public function testBin2hex()
     {
         $this->assertSame( '68656c6c6f', $this->runOp( 'bin2hex', 'hello' ) );
@@ -220,6 +232,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group noParam
      */
+    #[\PHPUnit\Framework\Attributes\Group('noParam')]
     public function testHex2bin()
     {
         $this->assertSame( 'hello', $this->runOp( 'hex2bin', '68656c6c6f' ) );
@@ -228,6 +241,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group noParam
      */
+    #[\PHPUnit\Framework\Attributes\Group('noParam')]
     public function testHex2binInvalidInputReturnsFalse()
     {
         // hex2bin returns false on invalid input (odd-length string in some versions)
@@ -239,6 +253,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group noParam
      */
+    #[\PHPUnit\Framework\Attributes\Group('noParam')]
     public function testLcfirst()
     {
         $this->assertSame( 'hello World', $this->runOp( 'lcfirst', 'Hello World' ) );
@@ -247,6 +262,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group noParam
      */
+    #[\PHPUnit\Framework\Attributes\Group('noParam')]
     public function testQuotemeta()
     {
         $this->assertSame( 'Hello\+World', $this->runOp( 'quotemeta', 'Hello+World' ) );
@@ -255,6 +271,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group noParam
      */
+    #[\PHPUnit\Framework\Attributes\Group('noParam')]
     public function testSoundex()
     {
         $this->assertSame( 'R163', $this->runOp( 'soundex', 'Robert' ) );
@@ -263,6 +280,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group noParam
      */
+    #[\PHPUnit\Framework\Attributes\Group('noParam')]
     public function testStrlen()
     {
         $this->assertSame( 5, $this->runOp( 'strlen', 'hello' ) );
@@ -272,6 +290,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group noParam
      */
+    #[\PHPUnit\Framework\Attributes\Group('noParam')]
     public function testStrShufflePreservesLength()
     {
         $result = $this->runOp( 'str_shuffle', 'abcdef' );
@@ -281,6 +300,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group noParam
      */
+    #[\PHPUnit\Framework\Attributes\Group('noParam')]
     public function testQuotedPrintableRoundTrip()
     {
         $encoded = $this->runOp( 'quoted_printable_encode', "hello\n" );
@@ -296,6 +316,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group trim
      */
+    #[\PHPUnit\Framework\Attributes\Group('trim')]
     public function testLtrimDefaultWhitespace()
     {
         $this->assertSame( 'hello  ', $this->runOp( 'ltrim', '  hello  ' ) );
@@ -304,6 +325,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group trim
      */
+    #[\PHPUnit\Framework\Attributes\Group('trim')]
     public function testLtrimCharlist()
     {
         $this->assertSame( 'hellopxx', $this->runOp( 'ltrim', 'xxhellopxx', [ 'xp' ] ) );
@@ -312,6 +334,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group trim
      */
+    #[\PHPUnit\Framework\Attributes\Group('trim')]
     public function testRtrimDefaultWhitespace()
     {
         $this->assertSame( '  hello', $this->runOp( 'rtrim', '  hello  ' ) );
@@ -320,6 +343,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group trim
      */
+    #[\PHPUnit\Framework\Attributes\Group('trim')]
     public function testRtrimCharlist()
     {
         $this->assertSame( 'hello', $this->runOp( 'rtrim', 'helloxx', [ 'x' ] ) );
@@ -332,6 +356,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group html
      */
+    #[\PHPUnit\Framework\Attributes\Group('html')]
     public function testStripTagsAll()
     {
         $this->assertSame( 'Hello World', $this->runOp( 'strip_tags', '<p>Hello <b>World</b></p>' ) );
@@ -340,6 +365,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group html
      */
+    #[\PHPUnit\Framework\Attributes\Group('html')]
     public function testStripTagsWithAllowed()
     {
         $result = $this->runOp( 'strip_tags', '<p>Hello <b>World</b></p>', [ '<p>' ] );
@@ -353,6 +379,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group strpos
      */
+    #[\PHPUnit\Framework\Attributes\Group('strpos')]
     public function testStrposFound()
     {
         $this->assertSame( 6, $this->runOp( 'strpos', 'hello world', [ 'world' ] ) );
@@ -361,6 +388,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group strpos
      */
+    #[\PHPUnit\Framework\Attributes\Group('strpos')]
     public function testStrposNotFound()
     {
         $this->assertFalse( $this->runOp( 'strpos', 'hello world', [ 'xyz' ] ) );
@@ -369,6 +397,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group strpos
      */
+    #[\PHPUnit\Framework\Attributes\Group('strpos')]
     public function testStrposWithOffset()
     {
         $this->assertSame( 9, $this->runOp( 'strpos', 'hello world', [ 'l', 5 ] ) );
@@ -377,6 +406,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group strpos
      */
+    #[\PHPUnit\Framework\Attributes\Group('strpos')]
     public function testStrrpos()
     {
         $this->assertSame( 9, $this->runOp( 'strrpos', 'hello world', [ 'l' ] ) );
@@ -385,6 +415,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group strpos
      */
+    #[\PHPUnit\Framework\Attributes\Group('strpos')]
     public function testStriposCaseInsensitive()
     {
         $this->assertSame( 6, $this->runOp( 'stripos', 'Hello World', [ 'WORLD' ] ) );
@@ -393,6 +424,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group strpos
      */
+    #[\PHPUnit\Framework\Attributes\Group('strpos')]
     public function testStrripos()
     {
         $this->assertSame( 9, $this->runOp( 'strripos', 'Hello World', [ 'L' ] ) );
@@ -405,6 +437,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group substr
      */
+    #[\PHPUnit\Framework\Attributes\Group('substr')]
     public function testSubstrStartLength()
     {
         $this->assertSame( 'hello', $this->runOp( 'substr', 'hello world', [ 0, 5 ] ) );
@@ -413,6 +446,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group substr
      */
+    #[\PHPUnit\Framework\Attributes\Group('substr')]
     public function testSubstrStartOnly()
     {
         $this->assertSame( 'world', $this->runOp( 'substr', 'hello world', [ 6 ] ) );
@@ -421,6 +455,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group substr
      */
+    #[\PHPUnit\Framework\Attributes\Group('substr')]
     public function testSubstrCount()
     {
         $this->assertSame( 2, $this->runOp( 'substr_count', 'hello world hello', [ 'hello' ] ) );
@@ -429,6 +464,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group substr
      */
+    #[\PHPUnit\Framework\Attributes\Group('substr')]
     public function testSubstrReplace()
     {
         $this->assertSame( 'hello PHP', $this->runOp( 'substr_replace', 'hello world', [ 'PHP', 6, 5 ] ) );
@@ -437,6 +473,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group substr
      */
+    #[\PHPUnit\Framework\Attributes\Group('substr')]
     public function testSubstrCompareEqual()
     {
         $this->assertSame( 0, $this->runOp( 'substr_compare', 'Hello World', [ 'World', 6, 5 ] ) );
@@ -449,6 +486,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group str
      */
+    #[\PHPUnit\Framework\Attributes\Group('str')]
     public function testStrSplit()
     {
         $this->assertSame( [ 'he', 'll', 'o' ], $this->runOp( 'str_split', 'hello', [ 2 ] ) );
@@ -457,6 +495,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group str
      */
+    #[\PHPUnit\Framework\Attributes\Group('str')]
     public function testStrWordCount()
     {
         $this->assertSame( 3, $this->runOp( 'str_word_count', 'hello world foo' ) );
@@ -465,6 +504,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group str
      */
+    #[\PHPUnit\Framework\Attributes\Group('str')]
     public function testStrContainsTrue()
     {
         $this->assertTrue( (bool) $this->runOp( 'str_contains', 'hello world', [ 'world' ] ) );
@@ -473,6 +513,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group str
      */
+    #[\PHPUnit\Framework\Attributes\Group('str')]
     public function testStrContainsFalse()
     {
         $this->assertFalse( (bool) $this->runOp( 'str_contains', 'hello world', [ 'xyz' ] ) );
@@ -481,6 +522,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group str
      */
+    #[\PHPUnit\Framework\Attributes\Group('str')]
     public function testStrStartsWithTrue()
     {
         $this->assertTrue( (bool) $this->runOp( 'str_starts_with', 'hello world', [ 'hello' ] ) );
@@ -489,6 +531,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group str
      */
+    #[\PHPUnit\Framework\Attributes\Group('str')]
     public function testStrStartsWithFalse()
     {
         $this->assertFalse( (bool) $this->runOp( 'str_starts_with', 'hello world', [ 'world' ] ) );
@@ -497,6 +540,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group str
      */
+    #[\PHPUnit\Framework\Attributes\Group('str')]
     public function testStrEndsWithTrue()
     {
         $this->assertTrue( (bool) $this->runOp( 'str_ends_with', 'hello world', [ 'world' ] ) );
@@ -505,6 +549,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group str
      */
+    #[\PHPUnit\Framework\Attributes\Group('str')]
     public function testStrEndsWithFalse()
     {
         $this->assertFalse( (bool) $this->runOp( 'str_ends_with', 'hello world', [ 'hello' ] ) );
@@ -513,6 +558,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group str
      */
+    #[\PHPUnit\Framework\Attributes\Group('str')]
     public function testStrGetcsv()
     {
         $this->assertSame( [ 'hello', 'world', 'foo' ], $this->runOp( 'str_getcsv', 'hello,world,foo', [ ',' ] ) );
@@ -525,6 +571,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group compare
      */
+    #[\PHPUnit\Framework\Attributes\Group('compare')]
     public function testStrcmpEqual()
     {
         $this->assertSame( 0, $this->runOp( 'strcmp', 'hello', [ 'hello' ] ) );
@@ -533,6 +580,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group compare
      */
+    #[\PHPUnit\Framework\Attributes\Group('compare')]
     public function testStrcmpLess()
     {
         $this->assertLessThan( 0, $this->runOp( 'strcmp', 'abc', [ 'abd' ] ) );
@@ -541,6 +589,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group compare
      */
+    #[\PHPUnit\Framework\Attributes\Group('compare')]
     public function testStrcasecmpEqual()
     {
         $this->assertSame( 0, $this->runOp( 'strcasecmp', 'abc', [ 'ABC' ] ) );
@@ -549,6 +598,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group compare
      */
+    #[\PHPUnit\Framework\Attributes\Group('compare')]
     public function testStrncmpFirstNCharsMatch()
     {
         $this->assertSame( 0, $this->runOp( 'strncmp', 'hello', [ 'hello world', 5 ] ) );
@@ -557,6 +607,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group compare
      */
+    #[\PHPUnit\Framework\Attributes\Group('compare')]
     public function testStrncasecmpFirstNCharsMatch()
     {
         $this->assertSame( 0, $this->runOp( 'strncasecmp', 'abc', [ 'abc world', 3 ] ) );
@@ -565,6 +616,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group compare
      */
+    #[\PHPUnit\Framework\Attributes\Group('compare')]
     public function testStrnatcmpFile10GreaterThanFile9()
     {
         $this->assertGreaterThan( 0, $this->runOp( 'strnatcmp', 'file10', [ 'file9' ] ) );
@@ -573,6 +625,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group compare
      */
+    #[\PHPUnit\Framework\Attributes\Group('compare')]
     public function testStrnatcasecmpCaseInsensitive()
     {
         $this->assertGreaterThan( 0, $this->runOp( 'strnatcasecmp', 'file10', [ 'FILE9' ] ) );
@@ -585,6 +638,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group search
      */
+    #[\PHPUnit\Framework\Attributes\Group('search')]
     public function testStrstrNeedle()
     {
         $this->assertSame( '@example.com', $this->runOp( 'strstr', 'user@example.com', [ '@' ] ) );
@@ -593,6 +647,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group search
      */
+    #[\PHPUnit\Framework\Attributes\Group('search')]
     public function testStrstrBeforeNeedle()
     {
         $this->assertSame( 'user', $this->runOp( 'strstr', 'user@example.com', [ '@', true ] ) );
@@ -601,6 +656,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group search
      */
+    #[\PHPUnit\Framework\Attributes\Group('search')]
     public function testStristrCaseInsensitive()
     {
         $this->assertSame( 'World', $this->runOp( 'stristr', 'Hello World', [ 'WORLD' ] ) );
@@ -609,6 +665,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group search
      */
+    #[\PHPUnit\Framework\Attributes\Group('search')]
     public function testStrpbrk()
     {
         $this->assertSame( 'is is a test', $this->runOp( 'strpbrk', 'This is a test', [ 'aeiou' ] ) );
@@ -617,6 +674,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group search
      */
+    #[\PHPUnit\Framework\Attributes\Group('search')]
     public function testStrrchr()
     {
         $this->assertSame( '/file.php', $this->runOp( 'strrchr', 'path/to/file.php', [ '/' ] ) );
@@ -629,6 +687,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group span
      */
+    #[\PHPUnit\Framework\Attributes\Group('span')]
     public function testStrcspn()
     {
         // 'h' in "hello" is not a vowel → initial non-mask segment length = 1
@@ -638,6 +697,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group span
      */
+    #[\PHPUnit\Framework\Attributes\Group('span')]
     public function testStrspn()
     {
         // Every char of "hello" is in mask "helo" → 5
@@ -651,6 +711,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group strtr
      */
+    #[\PHPUnit\Framework\Attributes\Group('strtr')]
     public function testStrtrTwoArgFromTo()
     {
         // strtr( str, from, to ) maps individual *characters*, not substrings.
@@ -661,6 +722,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group strtr
      */
+    #[\PHPUnit\Framework\Attributes\Group('strtr')]
     public function testStrtrAssocArray()
     {
         $this->assertSame( 'World', $this->runOp( 'strtr', 'Hello', [ [ 'Hello' => 'World' ] ] ) );
@@ -673,6 +735,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group misc
      */
+    #[\PHPUnit\Framework\Attributes\Group('misc')]
     public function testChunkSplit()
     {
         $this->assertSame( 'ab-cd-ef-gh-', $this->runOp( 'chunk_split', 'abcdefgh', [ 2, '-' ] ) );
@@ -681,6 +744,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group misc
      */
+    #[\PHPUnit\Framework\Attributes\Group('misc')]
     public function testStrtokReturnsFirstToken()
     {
         $this->assertSame( 'hello', $this->runOp( 'strtok', 'hello world foo', [ ' ' ] ) );
@@ -689,6 +753,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group misc
      */
+    #[\PHPUnit\Framework\Attributes\Group('misc')]
     public function testLevenshtein()
     {
         $this->assertSame( 3, $this->runOp( 'levenshtein', 'kitten', [ 'sitting' ] ) );
@@ -697,6 +762,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group misc
      */
+    #[\PHPUnit\Framework\Attributes\Group('misc')]
     public function testSimilarText()
     {
         $this->assertSame( 4, $this->runOp( 'similar_text', 'World', [ 'Word' ] ) );
@@ -705,6 +771,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group misc
      */
+    #[\PHPUnit\Framework\Attributes\Group('misc')]
     public function testMetaphone()
     {
         $this->assertSame( 'RBRT', $this->runOp( 'metaphone', 'Robert' ) );
@@ -717,6 +784,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group htmlEncode
      */
+    #[\PHPUnit\Framework\Attributes\Group('htmlEncode')]
     public function testHtmlentities()
     {
         $this->assertSame(
@@ -728,6 +796,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group htmlEncode
      */
+    #[\PHPUnit\Framework\Attributes\Group('htmlEncode')]
     public function testHtmlEntityDecode()
     {
         $this->assertSame(
@@ -739,6 +808,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group htmlEncode
      */
+    #[\PHPUnit\Framework\Attributes\Group('htmlEncode')]
     public function testHtmlspecialcharsDecode()
     {
         $this->assertSame(
@@ -754,6 +824,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group format
      */
+    #[\PHPUnit\Framework\Attributes\Group('format')]
     public function testSprintf()
     {
         $this->assertSame(
@@ -765,6 +836,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group format
      */
+    #[\PHPUnit\Framework\Attributes\Group('format')]
     public function testVsprintf()
     {
         $this->assertSame(
@@ -776,6 +848,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group format
      */
+    #[\PHPUnit\Framework\Attributes\Group('format')]
     public function testNumberFormatNoParams()
     {
         $this->assertSame( '1,235', $this->runOp( 'number_format', 1234.5 ) );
@@ -784,6 +857,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group format
      */
+    #[\PHPUnit\Framework\Attributes\Group('format')]
     public function testNumberFormatOneParam()
     {
         $this->assertSame( '1,234.50', $this->runOp( 'number_format', 1234.5, [ 2 ] ) );
@@ -792,6 +866,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group format
      */
+    #[\PHPUnit\Framework\Attributes\Group('format')]
     public function testNumberFormatThreeParams()
     {
         $this->assertSame( '1,234,567.89', $this->runOp( 'number_format', 1234567.891, [ 2, '.', ',' ] ) );
@@ -804,6 +879,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group cslashes
      */
+    #[\PHPUnit\Framework\Attributes\Group('cslashes')]
     public function testAddcslashes()
     {
         $this->assertSame( '\\Hello World!', $this->runOp( 'addcslashes', 'Hello World!', [ 'H' ] ) );
@@ -816,6 +892,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group ristring
      */
+    #[\PHPUnit\Framework\Attributes\Group('ristring')]
     public function testRistringCaseSensitiveMatch()
     {
         $this->assertSame(
@@ -827,6 +904,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group ristring
      */
+    #[\PHPUnit\Framework\Attributes\Group('ristring')]
     public function testRistringCaseSensitiveNoMatch()
     {
         // Lower-case needle must NOT match mixed-case haystack
@@ -839,6 +917,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group ristring
      */
+    #[\PHPUnit\Framework\Attributes\Group('ristring')]
     public function testRistringReplacesAllOccurrences()
     {
         $this->assertSame(
@@ -850,6 +929,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group ristring
      */
+    #[\PHPUnit\Framework\Attributes\Group('ristring')]
     public function testRistringArraySearchReplace()
     {
         $this->assertSame(
@@ -865,6 +945,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group rstring
      */
+    #[\PHPUnit\Framework\Attributes\Group('rstring')]
     public function testRstringUppercaseNeedle()
     {
         $this->assertSame(
@@ -876,6 +957,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group rstring
      */
+    #[\PHPUnit\Framework\Attributes\Group('rstring')]
     public function testRstringLowercaseNeedle()
     {
         $this->assertSame(
@@ -887,6 +969,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group rstring
      */
+    #[\PHPUnit\Framework\Attributes\Group('rstring')]
     public function testRstringExactCaseNeedle()
     {
         $this->assertSame(
@@ -898,6 +981,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group rstring
      */
+    #[\PHPUnit\Framework\Attributes\Group('rstring')]
     public function testRstringArraySearchReplace()
     {
         $this->assertSame(
@@ -913,6 +997,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group warnings
      */
+    #[\PHPUnit\Framework\Attributes\Group('warnings')]
     public function testAddcslashesMissingParamEmitsWarning()
     {
         $this->tpl->warnings = [];
@@ -923,6 +1008,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group warnings
      */
+    #[\PHPUnit\Framework\Attributes\Group('warnings')]
     public function testStrposMissingNeedleEmitsWarning()
     {
         $this->tpl->warnings = [];
@@ -933,6 +1019,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group warnings
      */
+    #[\PHPUnit\Framework\Attributes\Group('warnings')]
     public function testLevenshteinMissingStr2EmitsWarning()
     {
         $this->tpl->warnings = [];
@@ -943,6 +1030,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group warnings
      */
+    #[\PHPUnit\Framework\Attributes\Group('warnings')]
     public function testStrncmpOnlyOneParamEmitsWarning()
     {
         $this->tpl->warnings = [];
@@ -953,6 +1041,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group warnings
      */
+    #[\PHPUnit\Framework\Attributes\Group('warnings')]
     public function testRistringOnlySearchEmitsWarning()
     {
         $this->tpl->warnings = [];
@@ -963,6 +1052,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group warnings
      */
+    #[\PHPUnit\Framework\Attributes\Group('warnings')]
     public function testRstringOnlySearchEmitsWarning()
     {
         $this->tpl->warnings = [];
@@ -973,6 +1063,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group warnings
      */
+    #[\PHPUnit\Framework\Attributes\Group('warnings')]
     public function testSubstrMissingStartEmitsWarning()
     {
         $this->tpl->warnings = [];
@@ -983,6 +1074,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
     /**
      * @group warnings
      */
+    #[\PHPUnit\Framework\Attributes\Group('warnings')]
     public function testStrtrSingleNonArrayParamEmitsWarning()
     {
         $this->tpl->warnings = [];
@@ -998,6 +1090,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
      * @group compiler
      */
     #[PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    #[\PHPUnit\Framework\Attributes\Group('compiler')]
     public function testNoParamTransformationConstantInput()
     {
         require_once __DIR__ . '/fixtures/eztemplatenodetoolstub.php';
@@ -1015,6 +1108,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
      * @group compiler
      */
     #[PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    #[\PHPUnit\Framework\Attributes\Group('compiler')]
     public function testNoParamTransformationVariableInputEmitsCodePiece()
     {
         require_once __DIR__ . '/fixtures/eztemplatenodetoolstub.php';
@@ -1033,6 +1127,7 @@ class eZTemplateStringsOperatorTest extends PHPUnit\Framework\TestCase
      * @group compiler
      */
     #[PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    #[\PHPUnit\Framework\Attributes\Group('compiler')]
     public function testNoParamTransformationWrongParamCountReturnsFalse()
     {
         require_once __DIR__ . '/fixtures/eztemplatenodetoolstub.php';

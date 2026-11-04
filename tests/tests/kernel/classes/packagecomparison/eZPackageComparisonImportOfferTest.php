@@ -11,6 +11,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class eZPackageComparisonImportOfferTest extends PHPUnit\Framework\TestCase
 {
     private static $built = 0;

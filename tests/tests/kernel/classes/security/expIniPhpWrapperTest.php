@@ -16,6 +16,7 @@
  * @group security
  */
 
+#[\PHPUnit\Framework\Attributes\Group('security')]
 class expIniPhpWrapperTest extends PHPUnit\Framework\TestCase
 {
     private static function root()

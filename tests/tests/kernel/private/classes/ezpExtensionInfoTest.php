@@ -13,6 +13,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class ezpExtensionInfoTest extends PHPUnit\Framework\TestCase
 {
     private $root;

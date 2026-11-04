@@ -33,6 +33,8 @@
 if ( !class_exists( 'expI18nCoverageMap' ) )
     require_once __DIR__ . '/../../../../../kernel/classes/i18n/expi18ncoveragemap.php';
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
+#[\PHPUnit\Framework\Attributes\Group('ezi18n')]
 class expI18nCoverageMapTest extends PHPUnit\Framework\TestCase
 {
     /** @var string */

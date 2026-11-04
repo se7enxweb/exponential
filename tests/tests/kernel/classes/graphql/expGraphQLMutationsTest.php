@@ -16,6 +16,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expGraphQLMutationsTestContent extends expGraphQLContent
 {
     /** @var int */

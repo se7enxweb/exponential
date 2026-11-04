@@ -29,6 +29,9 @@
 
 require_once dirname( __DIR__, 4 ) . '/lib/smarty/expSmartyOperatorParityTest.php';
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
+#[\PHPUnit\Framework\Attributes\Group('smarty')]
+#[\PHPUnit\Framework\Attributes\Group('twig')]
 class expTemplateConvertCommandTest extends PHPUnit\Framework\TestCase
 {
     /** @var string directory of this class's files */

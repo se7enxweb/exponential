@@ -20,6 +20,7 @@
  * @group design
  */
 
+#[\PHPUnit\Framework\Attributes\Group('design')]
 class DemoModeUserTemplatesTest extends PHPUnit\Framework\TestCase
 {
     /** The extensions of the root repository itself: a missing notice there is a failure, never incomplete */

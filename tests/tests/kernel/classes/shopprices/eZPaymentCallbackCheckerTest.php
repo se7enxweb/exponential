@@ -14,6 +14,8 @@
  * @group shop
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
+#[\PHPUnit\Framework\Attributes\Group('shop')]
 class eZPaymentCallbackCheckerTestLogger
 {
     public $lines = array();

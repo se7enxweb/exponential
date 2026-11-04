@@ -17,6 +17,7 @@ class eZUserAuthenticationTest extends ezpTestCase
      * Unit test for eZUser::createHash()
      * @dataProvider hashDataProvider
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('hashDataProvider')]
     public function testCreateHash( $user, $password, $site, $type, $hash, $expected )
     {
         $this->assertSame( $expected, eZUser::createHash( $user, $password, $site, $type, $hash ) );
@@ -26,6 +27,7 @@ class eZUserAuthenticationTest extends ezpTestCase
      * Unit test for eZUser::authenticateHash()
      * @dataProvider hashDataProvider
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('hashDataProvider')]
     public function testAuthenticateHashSuccess( $user, $password, $site, $type, $hash, $expected )
     {
         $this->assertTrue( eZUser::authenticateHash( $user, $password, $site, $type, $expected ) );
@@ -35,6 +37,7 @@ class eZUserAuthenticationTest extends ezpTestCase
      * Unit test for eZUser::authenticateHash()
      * @dataProvider hashDataProviderFail
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('hashDataProviderFail')]
     public function testAuthenticateHashFail( $user, $password, $site, $type, $hash, $expected )
     {
         $this->assertFalse( eZUser::authenticateHash( $user, $password, $site, $type, $expected ) );

@@ -17,6 +17,7 @@
 
 require_once __DIR__ . '/expRadWizardTestHelper.php';
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expRadWizardListsTest extends PHPUnit\Framework\TestCase
 {
     private $hadPathList;

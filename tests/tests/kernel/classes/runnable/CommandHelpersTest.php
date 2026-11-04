@@ -23,6 +23,7 @@
 foreach ( array( 'runnable', 'command' ) as $file )
     require_once __DIR__ . '/../../../../../kernel/private/classes/runnable/' . $file . '.php';
 
+#[\PHPUnit\Framework\Attributes\Group('runnable')]
 class ezpTestRecorder
 {
     public $calls = array();

@@ -16,6 +16,7 @@
 
 require_once dirname( __DIR__ ) . '/radwizards/expRadWizardTestHelper.php';
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class eZStaticCachePathsTest extends PHPUnit\Framework\TestCase
 {
     private $injected;

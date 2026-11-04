@@ -28,6 +28,7 @@
 
 require_once __DIR__ . '/../../../../../kernel/setup/expradsurvey.php';
 
+#[\PHPUnit\Framework\Attributes\Group('runnable')]
 class ezpTestRadSurveyWithExtraRegistry extends expRADSurvey
 {
     public static function registryDescriptors()

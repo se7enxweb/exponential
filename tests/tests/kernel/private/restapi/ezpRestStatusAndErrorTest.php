@@ -14,6 +14,8 @@
  * @group rest
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
+#[\PHPUnit\Framework\Attributes\Group('rest')]
 class ezpRestStatusAndErrorTestPlainWriter extends ezcMvcResponseWriter
 {
     public $headers = array();

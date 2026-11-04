@@ -19,6 +19,8 @@
  * @group ezlocale
  */
 
+#[\PHPUnit\Framework\Attributes\Group('lib')]
+#[\PHPUnit\Framework\Attributes\Group('ezlocale')]
 class expLocaleStandaloneMonthNamesTest extends PHPUnit\Framework\TestCase
 {
     /** 2025-10-15 12:00:00 UTC, a Wednesday in October */

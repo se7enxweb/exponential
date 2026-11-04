@@ -21,6 +21,7 @@
 
 require_once __DIR__ . '/fixtures/expsubitemstesthelpers.php';
 
+#[\PHPUnit\Framework\Attributes\Group('subitems')]
 class expSubitemsServerFunctionsTest extends ezpTestCase
 {
     private $granted = array();

@@ -16,6 +16,7 @@
  * @group runnable
  */
 
+#[\PHPUnit\Framework\Attributes\Group('runnable')]
 class InstallPasswordTest extends PHPUnit\Framework\TestCase
 {
     private static function dir()

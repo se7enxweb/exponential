@@ -27,6 +27,7 @@
  * @group eztemplate
  */
 
+#[\PHPUnit\Framework\Attributes\Group('eztemplate')]
 class expMapAddressEscapingTest extends PHPUnit\Framework\TestCase
 {
     /** Templates that put an address into a script: file => the variables that go into HTML through the script */

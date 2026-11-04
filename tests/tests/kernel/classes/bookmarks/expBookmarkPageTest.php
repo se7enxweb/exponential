@@ -28,6 +28,7 @@
 
 require_once dirname( __DIR__, 5 ) . '/kernel/classes/expbookmarkpage.php';
 
+#[\PHPUnit\Framework\Attributes\Group('bookmarks')]
 class expBookmarkPageTest extends PHPUnit\Framework\TestCase
 {
     /**

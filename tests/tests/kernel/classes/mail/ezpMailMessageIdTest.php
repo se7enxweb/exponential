@@ -17,6 +17,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class ezpMailMessageIdTest extends PHPUnit\Framework\TestCase
 {
     private static function messageId( ezpMail $mail )

@@ -27,6 +27,7 @@
 require_once __DIR__ . '/../../../../../kernel/private/classes/httpcache/ezphttpcachecontract.php';
 require_once __DIR__ . '/../../../../../kernel/private/classes/httpcache/exprenderswitch.php';
 
+#[\PHPUnit\Framework\Attributes\Group('httpcache')]
 class ezpHttpCacheDebugViewerTest extends PHPUnit\Framework\TestCase
 {
     const VIEWER_IP = '203.0.113.7';

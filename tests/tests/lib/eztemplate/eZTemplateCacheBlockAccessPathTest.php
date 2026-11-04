@@ -16,6 +16,8 @@
  * @group lib
  * @group eztemplate
  */
+#[\PHPUnit\Framework\Attributes\Group('lib')]
+#[\PHPUnit\Framework\Attributes\Group('eztemplate')]
 class eZTemplateCacheBlockAccessPathTest extends PHPUnit\Framework\TestCase
 {
     private $savedAccess;

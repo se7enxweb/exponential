@@ -15,6 +15,7 @@
  * @group eztemplate
  */
 
+#[\PHPUnit\Framework\Attributes\Group('eztemplate')]
 class eZTemplateToolbarUnconfiguredTest extends PHPUnit\Framework\TestCase
 {
     const GLOBAL_KEYS = array( 'eZDebugGlobalInstance', 'eZDebugEnabled', 'eZDebugLogOnly', 'eZDebugLogFileEnabled' );

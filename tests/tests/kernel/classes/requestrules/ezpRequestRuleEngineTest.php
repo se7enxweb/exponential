@@ -37,6 +37,7 @@ foreach ( array( 'ezprequestcontext', 'ezprequestrule', 'ezprequestruleresult', 
                  'ezprequestruleconditions', 'ezprequestruleactions', 'ezprequestruleengine' ) as $file )
     require_once __DIR__ . '/../../../../../kernel/private/classes/requestrules/' . $file . '.php';
 
+#[\PHPUnit\Framework\Attributes\Group('requestrules')]
 class ezpRequestRuleEngineTest extends PHPUnit\Framework\TestCase
 {
     /** The rule shipped as system_url_full_view_to_alias */

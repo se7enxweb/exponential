@@ -13,6 +13,8 @@
  * @group lib
  * @group twig
  */
+#[\PHPUnit\Framework\Attributes\Group('lib')]
+#[\PHPUnit\Framework\Attributes\Group('twig')]
 class expTwigLibraryGuardTest extends PHPUnit\Framework\TestCase
 {
     public function testNoTwigIsReportedAsMissing()

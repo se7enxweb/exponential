@@ -25,6 +25,7 @@
 
 require_once __DIR__ . '/fixtures/expsubitemstesthelpers.php';
 
+#[\PHPUnit\Framework\Attributes\Group('subitems')]
 class expSubitemsColumnRegistryTest extends ezpTestCase
 {
     /** @var array module/function => granted */

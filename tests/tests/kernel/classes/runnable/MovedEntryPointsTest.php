@@ -22,6 +22,7 @@
  * @group runnable
  */
 
+#[\PHPUnit\Framework\Attributes\Group('runnable')]
 class MovedEntryPointsTest extends PHPUnit\Framework\TestCase
 {
     const MARKER = '(#207); this file is the entry point.';

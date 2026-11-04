@@ -16,6 +16,8 @@
  * @group oauth
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
+#[\PHPUnit\Framework\Attributes\Group('oauth')]
 class expOAuthPkceTest extends PHPUnit\Framework\TestCase
 {
     // computed independently: printf %s VERIFIER | openssl dgst -sha256 -binary | base64 | tr '+/' '-_' | tr -d '='

@@ -49,6 +49,8 @@ class eZFileRenameTest extends ezpTestCase
      * @group ezfile
      * @group ezfilerename
      */
+    #[\PHPUnit\Framework\Attributes\Group('ezfile')]
+    #[\PHPUnit\Framework\Attributes\Group('ezfilerename')]
     public function testRename()
     {
         self::assertTrue( eZFile::rename( $this->file, $this->destFile ) );
@@ -60,6 +62,8 @@ class eZFileRenameTest extends ezpTestCase
      * @group ezfile
      * @group ezfilerename
      */
+    #[\PHPUnit\Framework\Attributes\Group('ezfile')]
+    #[\PHPUnit\Framework\Attributes\Group('ezfilerename')]
     public function testRenameWithDirectory()
     {
         $this->destFile = "$this->fileDir/somedir/file.txt";
@@ -72,6 +76,8 @@ class eZFileRenameTest extends ezpTestCase
      * @group ezfile
      * @group ezfilerename
      */
+    #[\PHPUnit\Framework\Attributes\Group('ezfile')]
+    #[\PHPUnit\Framework\Attributes\Group('ezfilerename')]
     public function testRenameFails()
     {
         self::assertFalse( @eZFile::rename( $this->file, "/non/existing/dir/file.txt" ) );
@@ -81,6 +87,8 @@ class eZFileRenameTest extends ezpTestCase
      * @group ezfile
      * @group ezfilerename
      */
+    #[\PHPUnit\Framework\Attributes\Group('ezfile')]
+    #[\PHPUnit\Framework\Attributes\Group('ezfilerename')]
     public function testRenameFailsWithFlags()
     {
         self::assertFalse(

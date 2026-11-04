@@ -13,6 +13,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class ezpLanguageSwitcherTestDouble extends ezpLanguageSwitcher
 {
     public function exposed( $name )

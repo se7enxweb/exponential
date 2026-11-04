@@ -22,6 +22,8 @@
  * @group ezi18n
  */
 
+#[\PHPUnit\Framework\Attributes\Group('lib')]
+#[\PHPUnit\Framework\Attributes\Group('ezi18n')]
 class eZTSTranslatorTest extends PHPUnit\Framework\TestCase
 {
     const LOCALE = 'tst-TS';

@@ -16,6 +16,7 @@
 require_once __DIR__ . '/../../../../../kernel/classes/expbenchmark.php';
 require_once __DIR__ . '/../../../../../kernel/classes/expbenchmarkmicro.php';
 
+#[\PHPUnit\Framework\Attributes\Group('benchmark')]
 class ExpBenchmarkMicroTest extends \PHPUnit\Framework\TestCase
 {
     /** @var string a scratch directory under var/tmp, removed after each test */

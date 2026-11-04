@@ -61,6 +61,7 @@ class eZDBInterfaceTest extends ezpDatabaseTestCase
     /**
      * @dataProvider providerForTestImplodeWithTypeCast
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('providerForTestImplodeWithTypeCast')]
     public function testImplodeWithTypeCast( $array, $glue, $type, $expected )
     {
         $db = eZDB::instance();
@@ -71,6 +72,7 @@ class eZDBInterfaceTest extends ezpDatabaseTestCase
     /**
      * @dataProvider providerForTestGenerateSQLINStatement
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('providerForTestGenerateSQLINStatement')]
     public function testGenerateSQLINStatement( $elements, $columnName, $not, $unique, $type, $expected )
     {
         $db = eZDB::instance();
@@ -82,6 +84,7 @@ class eZDBInterfaceTest extends ezpDatabaseTestCase
     /**
      * @dataProvider providerForTestGenerateSQLINStatement2
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('providerForTestGenerateSQLINStatement2')]
     public function testGenerateSQLINStatementOracle( $elements, $columnName, $not, $unique, $type, $expected )
     {
         $db = eZDB::instance();

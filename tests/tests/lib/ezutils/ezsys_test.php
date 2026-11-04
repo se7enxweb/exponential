@@ -224,6 +224,7 @@ class eZSysTest extends ezpTestCase
      *
      * @dataProvider providerForTestGetValidWwwDir
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('providerForTestGetValidWwwDir')]
     public function testGetValidWwwDir( $expected, $phpSelf, $scriptFileName, $index )
     {
         $method = new ReflectionMethod( 'eZSys', 'getValidwwwDir' );

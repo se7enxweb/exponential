@@ -19,6 +19,7 @@
 
 require_once __DIR__ . '/fixtures/expinienginetestfixtures.php';
 
+#[\PHPUnit\Framework\Attributes\Group('ini')]
 class expIniRoundTripTest extends PHPUnit\Framework\TestCase
 {
     /** @var array relative real path => relative copy path */

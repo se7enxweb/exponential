@@ -28,6 +28,8 @@
  * @group ezutils
  */
 
+#[\PHPUnit\Framework\Attributes\Group('lib')]
+#[\PHPUnit\Framework\Attributes\Group('ezutils')]
 class eZExecutionPerRequestRegistrationTest extends PHPUnit\Framework\TestCase
 {
     private static $names = array( 'requestKey', 'hasCleanExit', 'shutdownHandle', 'fatalErrorHandlers', 'cleanupHandlers' );

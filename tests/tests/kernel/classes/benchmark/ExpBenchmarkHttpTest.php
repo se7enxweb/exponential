@@ -14,6 +14,7 @@
 require_once __DIR__ . '/../../../../../kernel/classes/expbenchmark.php';
 require_once __DIR__ . '/../../../../../kernel/classes/expbenchmarkhttp.php';
 
+#[\PHPUnit\Framework\Attributes\Group('benchmark')]
 class ExpBenchmarkHttpTest extends \PHPUnit\Framework\TestCase
 {
     /** @var resource|null */

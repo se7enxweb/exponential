@@ -15,6 +15,7 @@
 
 require_once __DIR__ . '/expContentModelLiveTestCase.php';
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class eZContentOperationsLiveTest extends expContentModelLiveTestCase
 {
     private function node( $nodeID )

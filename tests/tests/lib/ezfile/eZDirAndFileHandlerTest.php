@@ -20,6 +20,8 @@
  * @group ezfile
  */
 
+#[\PHPUnit\Framework\Attributes\Group('lib')]
+#[\PHPUnit\Framework\Attributes\Group('ezfile')]
 class eZDirAndFileHandlerTest extends PHPUnit\Framework\TestCase
 {
     private static $root;

@@ -28,6 +28,7 @@ foreach ( array( 'runnable', 'command', 'cronjobpart', 'moduleview' ) as $file )
 
 const EZP_TEST_EP_SETTINGS = 'tests/tests/kernel/classes/runnable/fixtures/settings';
 
+#[\PHPUnit\Framework\Attributes\Group('runnable')]
 trait ezpTestEpFixtureSettings
 {
     public static function settings( $rootDir = 'settings' )

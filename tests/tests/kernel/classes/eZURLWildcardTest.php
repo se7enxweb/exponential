@@ -15,6 +15,9 @@
  * @group urlWildcard
  * @group database
  */
+#[\PHPUnit\Framework\Attributes\Group('urlWildcard')]
+#[\PHPUnit\Framework\Attributes\Group('database')]
+#[\PHPUnit\Framework\Attributes\CoversClass(eZURLWildcard::class)]
 class eZURLWildcardTest extends ezpDatabaseTestCase
 {
     /**

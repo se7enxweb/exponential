@@ -18,6 +18,8 @@
  * @group shop
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
+#[\PHPUnit\Framework\Attributes\Group('shop')]
 class eZCurrencyConverterRoundingTest extends PHPUnit\Framework\TestCase
 {
     private $saved = array();

@@ -16,6 +16,8 @@
 
 require_once __DIR__ . '/expTwigTemplateRenderTest.php';
 
+#[\PHPUnit\Framework\Attributes\Group('lib')]
+#[\PHPUnit\Framework\Attributes\Group('twig')]
 class expTwigSecurityTest extends PHPUnit\Framework\TestCase
 {
     private static $dir;

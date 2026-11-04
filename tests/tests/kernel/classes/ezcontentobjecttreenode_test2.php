@@ -11,6 +11,7 @@
  * @group database
  */
 
+#[\PHPUnit\Framework\Attributes\Group('database')]
 class eZContentObjectTreeNodeTest2 extends ezpDatabaseTestCase
 {
     public function providerForTestIssue23528()
@@ -56,6 +57,7 @@ class eZContentObjectTreeNodeTest2 extends ezpDatabaseTestCase
      * @link http://issues.ez.no/23528
      * @dataProvider providerForTestIssue23528
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('providerForTestIssue23528')]
     public function testIssue23528( $name, $expected )
     {
         $params = array( 1, '3', 'foo', '1foo', 'foo_1' );

@@ -27,6 +27,7 @@
 
 require_once __DIR__ . '/fixtures/iniroot.php';
 
+#[\PHPUnit\Framework\Attributes\Group('ini')]
 class IniMoveTest extends PHPUnit\Framework\TestCase
 {
     const OVERRIDE = 'settings/override/site.ini.append.php';

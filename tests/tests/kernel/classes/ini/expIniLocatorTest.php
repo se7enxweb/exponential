@@ -18,6 +18,7 @@
 
 require_once __DIR__ . '/fixtures/expinienginetestfixtures.php';
 
+#[\PHPUnit\Framework\Attributes\Group('ini')]
 class expIniLocatorTest extends PHPUnit\Framework\TestCase
 {
     private $handler;

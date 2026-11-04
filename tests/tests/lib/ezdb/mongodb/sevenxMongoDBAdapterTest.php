@@ -42,6 +42,7 @@ class sevenxMongoDBAdapterTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox databaseName() always returns the literal string 'mongo'
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('databaseName() always returns the literal string \'mongo\'')]
     public function testDatabaseNameReturnsMongo(): void
     {
         $this->assertSame( 'mongo', $this->db->databaseName() );
@@ -56,6 +57,7 @@ class sevenxMongoDBAdapterTest extends PHPUnit\Framework\TestCase
      * inserts on the collection; a statement it has no translation for, such
      * as a bare SELECT, still returns false.
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('query() refuses SQL it cannot translate, and stores a translated INSERT')]
     public function testQueryStoresATranslatedInsertAndRefusesTheRest(): void
     {
         $this->assertFalse( $this->db->query( "SELECT 1" ) );
@@ -69,6 +71,7 @@ class sevenxMongoDBAdapterTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox escapeString() returns the input cast to string without modification for clean values
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('escapeString() returns the input cast to string without modification for clean values')]
     public function testEscapeStringCleanValue(): void
     {
         $this->assertSame( 'hello world', $this->db->escapeString( 'hello world' ) );
@@ -77,6 +80,7 @@ class sevenxMongoDBAdapterTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox escapeString() casts to string and does not throw on binary input
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('escapeString() casts to string and does not throw on binary input')]
     public function testEscapeStringHandlesBinaryInput(): void
     {
         // The MongoDB adapter's escapeString is a simple (string) cast.
@@ -89,6 +93,7 @@ class sevenxMongoDBAdapterTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox escapeString() casts non-string scalars to string
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('escapeString() casts non-string scalars to string')]
     public function testEscapeStringCastsToString(): void
     {
         $this->assertSame( '42', $this->db->escapeString( 42 ) );
@@ -100,6 +105,7 @@ class sevenxMongoDBAdapterTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox translateConditions([]) returns an empty filter array
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('translateConditions([]) returns an empty filter array')]
     public function testTranslateConditionsEmpty(): void
     {
         $this->assertSame( [], $this->db->translateConditions( [] ) );
@@ -108,6 +114,7 @@ class sevenxMongoDBAdapterTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox translateConditions: scalar value → exact-match filter
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('translateConditions: scalar value → exact-match filter')]
     public function testTranslateConditionsScalar(): void
     {
         $filter = $this->db->translateConditions( [ 'status' => 1, 'name' => 'Alice' ] );
@@ -117,6 +124,7 @@ class sevenxMongoDBAdapterTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox translateConditions: ['>', value] → $gt operator
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('translateConditions: [\'>\', value] → $gt operator')]
     public function testTranslateConditionsGt(): void
     {
         $filter = $this->db->translateConditions( [ 'modified' => [ '>', 1000 ] ] );
@@ -126,6 +134,7 @@ class sevenxMongoDBAdapterTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox translateConditions: ['>=', value] → $gte operator
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('translateConditions: [\'>=\', value] → $gte operator')]
     public function testTranslateConditionsGte(): void
     {
         $filter = $this->db->translateConditions( [ 'id' => [ '>=', 5 ] ] );
@@ -135,6 +144,7 @@ class sevenxMongoDBAdapterTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox translateConditions: ['<', value] → $lt operator
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('translateConditions: [\'<\', value] → $lt operator')]
     public function testTranslateConditionsLt(): void
     {
         $filter = $this->db->translateConditions( [ 'version' => [ '<', 3 ] ] );
@@ -144,6 +154,7 @@ class sevenxMongoDBAdapterTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox translateConditions: ['<=', value] → $lte operator
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('translateConditions: [\'<=\', value] → $lte operator')]
     public function testTranslateConditionsLte(): void
     {
         $filter = $this->db->translateConditions( [ 'version' => [ '<=', 3 ] ] );
@@ -153,6 +164,7 @@ class sevenxMongoDBAdapterTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox translateConditions: ['!=', value] → $ne operator
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('translateConditions: [\'!=\', value] → $ne operator')]
     public function testTranslateConditionsNe(): void
     {
         $filter = $this->db->translateConditions( [ 'status' => [ '!=', 0 ] ] );
@@ -162,6 +174,7 @@ class sevenxMongoDBAdapterTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox translateConditions: ['=', value] → exact match (null op)
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('translateConditions: [\'=\', value] → exact match (null op)')]
     public function testTranslateConditionsEq(): void
     {
         $filter = $this->db->translateConditions( [ 'id' => [ '=', 42 ] ] );
@@ -171,6 +184,7 @@ class sevenxMongoDBAdapterTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox translateConditions: ['like', '%pattern%'] → $regex case-insensitive
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('translateConditions: [\'like\', \'%pattern%\'] → $regex case-insensitive')]
     public function testTranslateConditionsLike(): void
     {
         $filter = $this->db->translateConditions( [ 'name' => [ 'like', '%Alice%' ] ] );
@@ -184,6 +198,7 @@ class sevenxMongoDBAdapterTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox translateConditions: [false, [low, high]] → $gte/$lte range
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('translateConditions: [false, [low, high]] → $gte/$lte range')]
     public function testTranslateConditionsRange(): void
     {
         $filter = $this->db->translateConditions( [ 'created' => [ false, [ 100, 200 ] ] ] );
@@ -193,6 +208,7 @@ class sevenxMongoDBAdapterTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox translateConditions: [[v1, v2, v3]] → $in array
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('translateConditions: [[v1, v2, v3]] → $in array')]
     public function testTranslateConditionsIn(): void
     {
         $filter = $this->db->translateConditions( [ 'id' => [ [ 1, 5, 9 ] ] ] );
@@ -204,6 +220,7 @@ class sevenxMongoDBAdapterTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox beginQuery() returns true (MongoDB auto-commits, no real BEGIN)
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('beginQuery() returns true (MongoDB auto-commits, no real BEGIN)')]
     public function testBeginQueryReturnsTrue(): void
     {
         $this->assertTrue( $this->db->beginQuery() );
@@ -212,6 +229,7 @@ class sevenxMongoDBAdapterTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox commitQuery() returns true
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('commitQuery() returns true')]
     public function testCommitQueryReturnsTrue(): void
     {
         $this->assertTrue( $this->db->commitQuery() );
@@ -220,6 +238,7 @@ class sevenxMongoDBAdapterTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox rollbackQuery() returns true (no-op)
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('rollbackQuery() returns true (no-op)')]
     public function testRollbackQueryReturnsTrue(): void
     {
         $this->assertTrue( $this->db->rollbackQuery() );
@@ -228,6 +247,7 @@ class sevenxMongoDBAdapterTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox begin()/commit() cycle increments/decrements transaction counter
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('begin()/commit() cycle increments/decrements transaction counter')]
     public function testTransactionCounterTracking(): void
     {
         $this->assertSame( 0, $this->db->TransactionCounter );
@@ -246,6 +266,7 @@ class sevenxMongoDBAdapterTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox subString() returns a PHP substr fragment
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('subString() returns a PHP substr fragment')]
     public function testSubString(): void
     {
         $expr = $this->db->subString( "'hello world'", 1, 5 );
@@ -257,6 +278,7 @@ class sevenxMongoDBAdapterTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox concatString() joins multiple expressions
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('concatString() joins multiple expressions')]
     public function testConcatString(): void
     {
         $expr = $this->db->concatString( [ 'a', 'b', 'c' ] );
@@ -271,6 +293,7 @@ class sevenxMongoDBAdapterTest extends PHPUnit\Framework\TestCase
      * MongoDB has no MD5 function, so the kernel's usual call -- a quoted
      * literal going straight into a WHERE -- is answered with the hash itself.
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('md5() hashes a quoted literal itself, and wraps a column reference in MD5(...)')]
     public function testMd5(): void
     {
         $this->assertSame( "'" . md5( 'hello' ) . "'", $this->db->md5( "'hello'" ) );
@@ -280,6 +303,7 @@ class sevenxMongoDBAdapterTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox bitAnd() produces a bitwise-AND expression string
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('bitAnd() produces a bitwise-AND expression string')]
     public function testBitAnd(): void
     {
         $expr = $this->db->bitAnd( 'lang_mask', 2 );
@@ -290,6 +314,7 @@ class sevenxMongoDBAdapterTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox bitOr() produces a bitwise-OR expression string
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('bitOr() produces a bitwise-OR expression string')]
     public function testBitOr(): void
     {
         $expr = $this->db->bitOr( 'lang_mask', 4 );
@@ -302,6 +327,7 @@ class sevenxMongoDBAdapterTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox checkCharset() always returns true (charset irrelevant for MongoDB)
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('checkCharset() always returns true (charset irrelevant for MongoDB)')]
     public function testCheckCharsetAlwaysTrue(): void
     {
         $current = '';
@@ -312,6 +338,7 @@ class sevenxMongoDBAdapterTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox isCharsetSupported() accepts utf-8 and UTF-8
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('isCharsetSupported() accepts utf-8 and UTF-8')]
     public function testIsCharsetSupported(): void
     {
         $this->assertTrue( $this->db->isCharsetSupported( 'utf-8' ) );
@@ -323,6 +350,7 @@ class sevenxMongoDBAdapterTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox aggregate() returns array of rows from stub collection
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('aggregate() returns array of rows from stub collection')]
     public function testAggregateReturnsRows(): void
     {
         $this->db->stubCollections['eztestcol'] = [
@@ -343,6 +371,7 @@ class sevenxMongoDBAdapterTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox aggregate() with empty pipeline returns all rows
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('aggregate() with empty pipeline returns all rows')]
     public function testAggregateEmptyPipelineReturnsAll(): void
     {
         $this->db->stubCollections['eztestcol2'] = [
@@ -357,6 +386,7 @@ class sevenxMongoDBAdapterTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox aggregate() on missing collection returns empty array (no throw)
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('aggregate() on missing collection returns empty array (no throw)')]
     public function testAggregateMissingCollectionReturnsEmpty(): void
     {
         $rows = $this->db->aggregate( 'nosuch_collection', [] );
@@ -367,6 +397,7 @@ class sevenxMongoDBAdapterTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox insert() appends document and returns true
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('insert() appends document and returns true')]
     public function testInsertAppendsDocument(): void
     {
         $result = $this->db->insert( 'eztestinsert', [ 'id' => 99, 'name' => 'Test' ] );
@@ -378,6 +409,7 @@ class sevenxMongoDBAdapterTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox upsert() updates existing document matched by filter
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('upsert() updates existing document matched by filter')]
     public function testUpsertUpdatesExisting(): void
     {
         $this->db->stubCollections['ezupserttable'] = [
@@ -393,6 +425,7 @@ class sevenxMongoDBAdapterTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox upsert() inserts new document when filter matches nothing
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('upsert() inserts new document when filter matches nothing')]
     public function testUpsertInsertsWhenNotFound(): void
     {
         $this->db->stubCollections['ezupserttable2'] = [];
@@ -406,6 +439,7 @@ class sevenxMongoDBAdapterTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox deleteWhere() removes matched documents
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('deleteWhere() removes matched documents')]
     public function testDeleteWhereRemovesMatched(): void
     {
         $this->db->stubCollections['ezdeltable'] = [
@@ -424,6 +458,7 @@ class sevenxMongoDBAdapterTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox deleteWhere() with no matching documents leaves collection unchanged
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('deleteWhere() with no matching documents leaves collection unchanged')]
     public function testDeleteWhereNoMatchLeavesCollection(): void
     {
         $this->db->stubCollections['ezdeltable2'] = [
@@ -440,6 +475,7 @@ class sevenxMongoDBAdapterTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox Kernel code that checks databaseName() === 'mongo' will reach MongoDB branches
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('Kernel code that checks databaseName() === \'mongo\' will reach MongoDB branches')]
     public function testDatabaseNameBranchingContract(): void
     {
         // This mirrors the pattern used throughout the patched kernel:
@@ -456,6 +492,7 @@ class sevenxMongoDBAdapterTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox arrayQuery() returns empty array, does NOT throw, and logs via eZDebug (not error_log)
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('arrayQuery() returns empty array, does NOT throw, and logs via eZDebug (not error_log)')]
     public function testArrayQueryReturnsEmptyArray(): void
     {
         eZDebug::reset();

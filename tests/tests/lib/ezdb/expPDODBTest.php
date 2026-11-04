@@ -25,6 +25,8 @@
 
 require_once dirname( __DIR__, 4 ) . '/lib/ezdb/classes/exppdodb.php';
 
+#[\PHPUnit\Framework\Attributes\Group('lib')]
+#[\PHPUnit\Framework\Attributes\Group('ezdb')]
 class expPDODBTest extends PHPUnit\Framework\TestCase
 {
     /** @var string */

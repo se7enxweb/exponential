@@ -13,6 +13,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class eZUserAccessEvaluationTest extends PHPUnit\Framework\TestCase
 {
     const USER_ID = 999999801;

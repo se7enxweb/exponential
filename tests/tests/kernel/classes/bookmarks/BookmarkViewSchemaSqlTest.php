@@ -24,6 +24,7 @@
  * @group bookmarks
  */
 
+#[\PHPUnit\Framework\Attributes\Group('bookmarks')]
 class BookmarkViewSchemaSqlTest extends PHPUnit\Framework\TestCase
 {
     private static $root;

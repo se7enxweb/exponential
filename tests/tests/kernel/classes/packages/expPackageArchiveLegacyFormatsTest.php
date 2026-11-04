@@ -21,6 +21,7 @@
 
 require_once __DIR__ . '/eZPackageTestFixtures.php';
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expPackageArchiveLegacyFormatsTest extends PHPUnit\Framework\TestCase
 {
     const REPOSITORY = 'k1-legacy-formats';

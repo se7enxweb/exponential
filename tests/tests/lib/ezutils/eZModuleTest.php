@@ -23,6 +23,8 @@
  * @group ezutils
  */
 
+#[\PHPUnit\Framework\Attributes\Group('lib')]
+#[\PHPUnit\Framework\Attributes\Group('ezutils')]
 function eZModuleTestHookFunction( $module, $a = null, $b = null )
 {
     $GLOBALS['eZModuleTestHookLog'][] = 'function:' . $a . ',' . $b;

@@ -17,6 +17,8 @@
  * @group templateoperators
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
+#[\PHPUnit\Framework\Attributes\Group('templateoperators')]
 class eZURLOperatorAbsoluteEscapeTest extends PHPUnit\Framework\TestCase
 {
     private $dir;

@@ -12,6 +12,8 @@
  * @group ezutils
  */
 
+#[\PHPUnit\Framework\Attributes\Group('lib')]
+#[\PHPUnit\Framework\Attributes\Group('ezutils')]
 class eZTextToolTest extends PHPUnit\Framework\TestCase
 {
     public static function setUpBeforeClass(): void

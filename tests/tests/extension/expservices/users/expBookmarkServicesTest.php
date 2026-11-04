@@ -11,6 +11,7 @@
 
 require_once __DIR__ . '/expUsersTestCase.php';
 
+#[\PHPUnit\Framework\Attributes\Group('bookmarks')]
 class expBookmarkServicesTest extends expUsersTestCase
 {
     private $nodeBase = 99900000;

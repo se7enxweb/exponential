@@ -16,6 +16,7 @@
 
 require_once __DIR__ . '/fixtures/k1workflowtesthttp.php';
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class eZWorkflowEventTypesTest extends PHPUnit\Framework\TestCase
 {
     const EVENT_ID = 999999901;

@@ -14,6 +14,7 @@
 
 require_once __DIR__ . '/expContentModelLiveTestCase.php';
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class eZContentClassLiveTest extends expContentModelLiveTestCase
 {
     protected static $classID;

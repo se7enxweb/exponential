@@ -19,6 +19,8 @@ class ezpRestControllerTest extends ezpRestTestCase
      * @group restResponseGroups
      * @group restController
      */
+    #[\PHPUnit\Framework\Attributes\Group('restResponseGroups')]
+    #[\PHPUnit\Framework\Attributes\Group('restController')]
     public function testHasResponseGroup()
     {
         $r = new ezpRestRequest();
@@ -38,6 +40,8 @@ class ezpRestControllerTest extends ezpRestTestCase
      * @group restResponseGroups
      * @group restController
      */
+    #[\PHPUnit\Framework\Attributes\Group('restResponseGroups')]
+    #[\PHPUnit\Framework\Attributes\Group('restController')]
     public function testGetResponseGroups()
     {
         $r = new ezpRestRequest();
@@ -58,6 +62,8 @@ class ezpRestControllerTest extends ezpRestTestCase
      * @group restResponseGroups
      * @group restController
      */
+    #[\PHPUnit\Framework\Attributes\Group('restResponseGroups')]
+    #[\PHPUnit\Framework\Attributes\Group('restController')]
     public function testDefaultResponseGroups()
     {
         $r = new ezpRestRequest();
@@ -82,6 +88,8 @@ class ezpRestControllerTest extends ezpRestTestCase
      * @group restContentVariables
      * @group restController
      */
+    #[\PHPUnit\Framework\Attributes\Group('restContentVariables')]
+    #[\PHPUnit\Framework\Attributes\Group('restController')]
     public function testHasContentVariable()
     {
         $r = new ezpRestRequest();
@@ -100,6 +108,8 @@ class ezpRestControllerTest extends ezpRestTestCase
      * @group restContentVariables
      * @group restController
      */
+    #[\PHPUnit\Framework\Attributes\Group('restContentVariables')]
+    #[\PHPUnit\Framework\Attributes\Group('restController')]
     public function testGetContentVariable()
     {
         $r = new ezpRestRequest();
@@ -118,6 +128,8 @@ class ezpRestControllerTest extends ezpRestTestCase
      * @group restContentVariables
      * @group restController
      */
+    #[\PHPUnit\Framework\Attributes\Group('restContentVariables')]
+    #[\PHPUnit\Framework\Attributes\Group('restController')]
     public function testGetAllContentVariables()
     {
         $r = new ezpRestRequest();

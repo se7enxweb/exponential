@@ -68,6 +68,7 @@ class eZSQLite3SerialIDTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox serialIDNeedsValue() is true only for a NOT NULL id in a key of two columns
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('serialIDNeedsValue() is true only for a NOT NULL id in a key of two columns')]
     public function testSerialIDNeedsValue(): void
     {
         $db = $this->db();
@@ -80,6 +81,7 @@ class eZSQLite3SerialIDTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox nextSerialID() is the maximum + 1, and 1 for an empty table
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('nextSerialID() is the maximum + 1, and 1 for an empty table')]
     public function testNextSerialID(): void
     {
         $db = $this->db();
@@ -92,6 +94,7 @@ class eZSQLite3SerialIDTest extends PHPUnit\Framework\TestCase
     /**
      * @testdox eZPersistentObject stores a new row with a NOT NULL id in a key of two columns, and numbers the next one after it
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('eZPersistentObject stores a new row with a NOT NULL id in a key of two columns, and numbers the next one after it')]
     public function testStoreObjectNumbersTheId(): void
     {
         $db = $this->db();

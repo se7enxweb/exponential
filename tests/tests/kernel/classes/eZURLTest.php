@@ -11,6 +11,7 @@
  * @group database
  */
 
+#[\PHPUnit\Framework\Attributes\Group('database')]
 class eZURLTest extends ezpDatabaseTestCase
 {
     protected $backupGlobals = false;
@@ -18,6 +19,7 @@ class eZURLTest extends ezpDatabaseTestCase
     /**
      * @group ezurl
      */
+    #[\PHPUnit\Framework\Attributes\Group('ezurl')]
     public function testFetchByUrl()
     {
         $url = 'http://ez.no/ezpublish';
@@ -34,6 +36,7 @@ class eZURLTest extends ezpDatabaseTestCase
      *
      * @group ezurl
      */
+    #[\PHPUnit\Framework\Attributes\Group('ezurl')]
     public function testRegisterURLNeverOverwritesAnotherSpelling()
     {
         $first = eZURL::registerURL( 'https://example.com/wiki/Present_Perfect' );
@@ -48,6 +51,7 @@ class eZURLTest extends ezpDatabaseTestCase
     /**
      * @group ezurl
      */
+    #[\PHPUnit\Framework\Attributes\Group('ezurl')]
     public function testFetchExactByUrl()
     {
         $id = eZURL::registerURL( 'https://example.com/Stra%C3%9Fe' );

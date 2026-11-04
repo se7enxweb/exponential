@@ -12,6 +12,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class expAdminPaginationTest extends PHPUnit\Framework\TestCase
 {
     private $saved = array();

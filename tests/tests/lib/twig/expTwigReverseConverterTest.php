@@ -21,6 +21,8 @@
 require_once __DIR__ . '/../eztemplate/eZTemplateEngineRenderTest.php';
 require_once __DIR__ . '/../eztemplate/eZTemplateOperatorMatrixTest.php';
 
+#[\PHPUnit\Framework\Attributes\Group('lib')]
+#[\PHPUnit\Framework\Attributes\Group('twig')]
 class expTwigReverseConverterTest extends PHPUnit\Framework\TestCase
 {
     /** @var string directory of this class's files */

@@ -13,6 +13,8 @@
  * @group cluster
  * @group eZDFS
  */
+#[\PHPUnit\Framework\Attributes\Group('cluster')]
+#[\PHPUnit\Framework\Attributes\Group('eZDFS')]
 class eZDFSFileHandlerTest extends eZDBBasedClusterFileHandlerAbstractTest
 {
     /**

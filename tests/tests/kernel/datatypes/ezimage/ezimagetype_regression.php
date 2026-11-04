@@ -11,6 +11,7 @@
  * @group database
  */
 
+#[\PHPUnit\Framework\Attributes\Group('database')]
 class eZImageTypeRegression extends ezpDatabaseTestCase
 {
     protected $backupGlobals = false;
@@ -73,6 +74,8 @@ class eZImageTypeRegression extends ezpDatabaseTestCase
      * @group issue14983
      * @group issue17781
      */
+    #[\PHPUnit\Framework\Attributes\Group('issue14983')]
+    #[\PHPUnit\Framework\Attributes\Group('issue17781')]
     public function testIssue14983()
     {
         $files = eZImageFile::fetchForContentObjectAttribute( $this->fileAttribute->attribute( "id" ), true );
@@ -100,6 +103,7 @@ class eZImageTypeRegression extends ezpDatabaseTestCase
      * @link http://issues.ez.no/17781
      * @group issue17781
      */
+    #[\PHPUnit\Framework\Attributes\Group('issue17781')]
     public function testRestoreImageTrashed()
     {
         $this->imageObject->refresh();

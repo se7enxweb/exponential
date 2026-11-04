@@ -19,6 +19,7 @@
  * @group kernel
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
 class eZTemplatesStatisticsReporterEditUrlTest extends PHPUnit\Framework\TestCase
 {
     const FILE = 'design/standard/templates/node/view/full.tpl';
@@ -76,6 +77,7 @@ class eZTemplatesStatisticsReporterEditUrlTest extends PHPUnit\Framework\TestCas
     /**
      * @testdox empty (the default): the link the list always had
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('empty (the default): the link the list always had')]
     public function testEmptyKeepsTheUsualLink(): void
     {
         ezpINIHelper::setINISetting( 'site.ini', 'DebugSettings', 'UsedTemplateEditUrl', '' );
@@ -86,6 +88,7 @@ class eZTemplatesStatisticsReporterEditUrlTest extends PHPUnit\Framework\TestCas
     /**
      * @testdox the LoveStack default %1$s/(siteAccess)/%2$s gives the same link
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('the LoveStack default %1$s/(siteAccess)/%2$s gives the same link')]
     public function testUsualFormatGivesTheUsualLink(): void
     {
         ezpINIHelper::setINISetting( 'site.ini', 'DebugSettings', 'UsedTemplateEditUrl', '%1$s/(siteAccess)/%2$s' );
@@ -95,6 +98,7 @@ class eZTemplatesStatisticsReporterEditUrlTest extends PHPUnit\Framework\TestCas
     /**
      * @testdox a format of its own: the placeholders filled, the link escaped
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('a format of its own: the placeholders filled, the link escaped')]
     public function testOwnFormat(): void
     {
         ezpINIHelper::setINISetting( 'site.ini', 'DebugSettings', 'UsedTemplateEditUrl', '/admin/visual/templateedit/%3$s/(siteAccess)/%2$s?a=1&b=2' );
@@ -104,6 +108,7 @@ class eZTemplatesStatisticsReporterEditUrlTest extends PHPUnit\Framework\TestCas
     /**
      * @testdox a format sprintf() refuses: the usual link
      */
+    #[\PHPUnit\Framework\Attributes\TestDox('a format sprintf() refuses: the usual link')]
     public function testRefusedFormatFallsBack(): void
     {
         $this->assertSame( 'ed/x.tpl/(siteAccess)/w6site',

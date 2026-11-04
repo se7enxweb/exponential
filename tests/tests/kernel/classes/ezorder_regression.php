@@ -10,6 +10,7 @@
  * @group database
  */
 
+#[\PHPUnit\Framework\Attributes\Group('database')]
 class eZOrderRegression extends ezpDatabaseTestCase
 {
 

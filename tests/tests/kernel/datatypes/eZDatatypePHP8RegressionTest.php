@@ -18,6 +18,9 @@
  * @group php8
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
+#[\PHPUnit\Framework\Attributes\Group('datatypes')]
+#[\PHPUnit\Framework\Attributes\Group('php8')]
 class eZDatatypePHP8RegressionTestAttribute extends eZContentObjectAttribute
 {
     public $required = false;

@@ -23,6 +23,8 @@
  * @group rest
  */
 
+#[\PHPUnit\Framework\Attributes\Group('kernel')]
+#[\PHPUnit\Framework\Attributes\Group('rest')]
 class ezpRestRouteMatchingTestRouter extends ezpRestRouter
 {
     public $testRoutes = array();
