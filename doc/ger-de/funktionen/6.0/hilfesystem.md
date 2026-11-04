@@ -519,7 +519,10 @@ den Zielgruppenkarten des Dashboards erscheint.
 Der Index wird in `var/<site>/cache/exphelp/` gecacht und von selbst neu aufgebaut, wenn sich die verfolgten Dateien
 ändern. Ein Neuaufbau entfernt auch, was der ältere Index hinterlassen hat: die anderen Dateien
 `index-<signature>.php` und die gecachten Navigationsbäume (`nav/`) und gerenderten Seiten (`render/`), die vor ihm
-geschrieben wurden, sodass der Cache nur das enthält, was der aktuelle Index verwendet.
+geschrieben wurden, sodass der Cache nur das enthält, was der aktuelle Index verwendet. `exp:help index` entfernt zuerst eine gecachte Kopie
+der `exphelp.ini`, die älter ist als eine der Dateien, aus denen sie gebaut wurde. So übernimmt der Index geänderte
+Hilfe-Einstellungen (einen neuen Eintrag `PageOrder[]`), auch wenn die Prüfung der Dateizeiten der INI-Dateien
+abgeschaltet ist und die INI-Caches noch nicht geleert wurden.
 
 ## Sprachen und Barrierefreiheit
 
