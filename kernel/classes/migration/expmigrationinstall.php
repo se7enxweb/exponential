@@ -123,11 +123,25 @@ class expMigrationInstall
                                       isset( $settings['siteaccess'] ) ? (string)$settings['siteaccess'] : '',
                                       function_exists( 'posix_geteuid' ) && posix_geteuid() === 0 );
         list( $exit, $output ) = expMigrationProcess::run( self::SCRIPT, $arguments, $root, (int)$settings['timeout'] );
+        self::forgetChangedDefinitions();
         $report = expMigrationJob::report( $output );
         if ( is_array( $report ) && isset( $report['exit'] ) )
             $exit = (int)$report['exit'];
         return array( 'ok' => $exit === 0, 'exit' => (int)$exit, 'report' => $report,
                       'message' => self::message( $exit, $report, $output ), 'arguments' => $arguments );
+    }
+
+    /**
+     * Forgets what this process has kept of the definitions a run in its own process may have changed. The object
+     * states a new object gets (eZContentObjectState::defaults()) are kept for the whole process: an installer that
+     * created objects before the run (and so read them) gave the objects it created after it the states of before,
+     * without the state groups the run added (the review hold of 6.0.15-review-hold, on 56 help manual objects of a
+     * fresh installation).
+     */
+    public static function forgetChangedDefinitions()
+    {
+        if ( class_exists( 'eZContentObjectState' ) )
+            eZContentObjectState::cleanDefaultsCache();
     }
 
     /**

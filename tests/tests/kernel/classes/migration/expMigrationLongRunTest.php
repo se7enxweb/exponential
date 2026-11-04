@@ -16,6 +16,8 @@
  *        runQueued() refuses a job it cannot run; the long-run options pass from the administration to the command
  *  LR-09 settings: migration.ini [RunSettings] Limit, MaxTime, Nice, [InstallSettings], [AdminSettings] Background;
  *        velocity.ini [DeploySettings] Migrate=disabled
+ *  LR-10 a run at installation makes the installer read the default object states again (a state group the run added
+ *        reaches the objects the installer creates afterwards)
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -368,6 +370,25 @@ class expMigrationLongRunTest extends PHPUnit\Framework\TestCase
     }
 
     /** LR-07 */
+    /** LR-10 */
+    public function testInstallRunForgetsTheDefaultObjectStatesOfThisProcess()
+    {
+        $defaults = new ReflectionProperty( 'eZContentObjectState', 'Defaults' );
+        if ( PHP_VERSION_ID < 80100 )
+            $defaults->setAccessible( true );
+        // what an installer read before the run: the states of before (the run adds a state group in its own process)
+        $defaults->setValue( null, array( 'the default states of before' ) );
+        $report = array( 'schema' => 'exp-migration/1', 'run_id' => '20261104-044106-b2f79b', 'summary' => array( 'applied' => 1, 'failed' => 0 ),
+                         'errors' => array(), 'exit' => 0 );
+        expMigrationProcess::setRunner( function () use ( $report ) {
+            return array( 0, json_encode( $report ) );
+        } );
+        $result = expMigrationInstall::run( array(), array( 'package' => true, 'kickstart' => true, 'options' => array(), 'timeout' => 60,
+                                                            'root' => $this->dir ) );
+        $this->assertTrue( $result['ok'] );
+        $this->assertNull( $defaults->getValue(), 'the next object of the installer reads the default states again' );
+    }
+
     public function testDeployMigrate()
     {
         $off = new expMigrationLongRunIni( array( 'DeploySettings/Migrate' => 'disabled' ) );
