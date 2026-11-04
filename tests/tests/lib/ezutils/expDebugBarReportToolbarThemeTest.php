@@ -29,9 +29,10 @@ class expDebugBarReportToolbarThemeTest extends PHPUnit\Framework\TestCase
     protected function setUp(): void
     {
         $this->root = dirname( __DIR__, 4 );
-        // the status code is the process's: an earlier test may have set one
+        // the status code is the process's: an earlier test may have set one (a status line, as http_response_code()
+        // has no effect after an earlier header( 'HTTP/...' ) on PHP 8.5)
         if ( !headers_sent() )
-            http_response_code( 200 );
+            header( 'HTTP/1.1 200 OK', true, 200 );
     }
 
     private static function summary( array $over = array() )
