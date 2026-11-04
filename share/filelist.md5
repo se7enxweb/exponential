@@ -3625,7 +3625,7 @@ f3810ed1fe8ce28f454c0747ce38f8cb  doc/changelogs/extensions/symfony.md
 ded49d230901ad3762b2ceae14619701  doc/changelogs/extensions/twig.md
 af285ac8d63f408a2ebaf23e88716894  doc/changelogs/extensions/xrowextract.md
 bbcfbb1065eefc4a3f53987a1bad5fb1  doc/changelogs/extensions/xrowmetadata.md
-db96c8969822445b87dcb6d11db98a74  doc/eng-us/COMMUNITY.md
+e9fd3b52538ea89b8a8e06163bd592aa  doc/eng-us/COMMUNITY.md
 9034c228aa36d7fc774fc9e6c38e76ac  doc/eng-us/CONFIGURING.md
 0101a4fc3ef4925f5882b075d3db7478  doc/eng-us/DISTRIBUTIONS.md
 8f1308a0bb70a3295a8a8d9c3a214333  doc/eng-us/EXTENDING.md
@@ -3634,7 +3634,7 @@ fbdaf5f0670fc0f90ca9cdeff2cf7a3c  doc/eng-us/INSTALL.md
 0ab219a2e330c3db1c8ea1532fd3972e  doc/eng-us/INTEGRATING.md
 a22d0be1ce2284b67950a4d1673dd1b0  doc/eng-us/LICENSE-GFDL-1.3.txt
 d1b7052b2035b91ce9c4cece454f14bf  doc/eng-us/README-LICENSE.md
-b2df901ec275f1463c215b0ce8b15375  doc/eng-us/SUPPORT.md
+92b7066897e85fc41c966348468e7c24  doc/eng-us/SUPPORT.md
 0ad9c5cf443537f4044d6148bd6729f8  doc/eng-us/UNINSTALL.md
 363da6e8f04a0496682f8aaf68d35ff1  doc/eng-us/UPDATE.md
 18eb180621655795c488a99d85dd26f0  doc/eng-us/bc/4.1/changes-4.1.0.txt
@@ -13511,7 +13511,7 @@ f56beaea3e5d700ac7442b6a68d85cc2  doc/ger-de/.examples/descriptions/35-user-mana
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 84ecf8b47bf44a9a3d53d86b719e8e1b  doc/ger-de/.examples/strings.json
 dc7ff024aa77430c7b263454381d2f50  doc/ger-de/.paths.json
-a3a6342a9fe8f679286e85731e648899  doc/ger-de/COMMUNITY.md
+a7e204b670691a8bb1f2d666eef36abd  doc/ger-de/COMMUNITY.md
 a8125eb49b252dc31f8db75ef93ca53a  doc/ger-de/CONFIGURING.md
 1cd811669f94673b3ba9db99603f0f42  doc/ger-de/DISTRIBUTIONS.md
 d92e7d32e4f6ac50174e4d7f82ca379b  doc/ger-de/EXTENDING.md
@@ -13520,7 +13520,7 @@ d92e7d32e4f6ac50174e4d7f82ca379b  doc/ger-de/EXTENDING.md
 ed36201d5767d3703631603291985142  doc/ger-de/INTEGRATING.md
 28bb0394d0d8b5056ebfe1a57ae0bd12  doc/ger-de/LIZENZ-GFDL-1.3.txt
 d4444f60d9f3f6fd7dc43dc6edac7e39  doc/ger-de/README-LIZENZ.md
-74834c11d7a140a4a4960c0f672a9fe2  doc/ger-de/SUPPORT.md
+09b22e4925f7af29f6000511fc9cbb06  doc/ger-de/SUPPORT.md
 35f2e2b3176ed05cb4e6cd1a8e7adf0f  doc/ger-de/UNINSTALL.md
 64854fc59591a4ec01a5ebadf2dd63d1  doc/ger-de/UPDATE.md
 35bfbadaf629f0eb133012e06396910f  doc/ger-de/anleitungen/README.md

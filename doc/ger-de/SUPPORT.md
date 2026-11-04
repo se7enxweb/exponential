@@ -178,7 +178,8 @@ schneller beantwortet ([Abschnitt 2](#die-fakten-sammeln-die-ein-helfer-braucht)
 | **Exponential Projects** | Erweiterungen und Designs aus der Gemeinschaft, mit eigenen Seiten | <https://projects.exponential.earth/> |
 | **Die Dokumentationssite** | Die Handbücher, online | <https://doc.exponential.earth> |
 
-Jeder Ort, an dem sich die Gemeinschaft trifft, steht in [Gemeinschaftskanäle](hilfe/projekt/community-kanaele.md).
+Jeder Ort, an dem sich die Gemeinschaft trifft, steht in [Gemeinschaftskanäle](hilfe/projekt/community-kanaele.md),
+und die Community selbst, mit allen ihren Websites, beschreibt [Exponential Community](COMMUNITY.md).
 Für einen Fehler bereitet die Seite
 **Einen Fehler melden** dieser Hilfe das Issue mit einer sicheren Zusammenfassung der Installation vor
 ([Wenn etwas schiefgeht](hilfe/wenn-etwas-schiefgeht.md#einen-fehler-in-exponential-melden)).
@@ -280,6 +281,6 @@ Werktags. Zur Härtung einer Installation siehe [Sicherheitshärtung](hilfe/sich
 ## Verwandte Seiten
 
 - [Unterstützung erhalten: freie und bezahlte Hilfe](hilfe/projekt/unterstuetzung-erhalten.md), [Gemeinschaftskanäle](hilfe/projekt/community-kanaele.md)
-- [Geschichte von Exponential](HISTORY.md)
+- [Exponential Community](COMMUNITY.md), [Geschichte von Exponential](HISTORY.md)
 - [Wenn etwas schiefgeht](hilfe/wenn-etwas-schiefgeht.md), [Die Log-Anzeige](funktionen/6.0/log-betrachter.md)
 - [Exponential 6.0 installieren](INSTALL.md), [Exponential 6.0 konfigurieren](CONFIGURING.md)

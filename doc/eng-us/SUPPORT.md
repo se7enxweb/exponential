@@ -171,7 +171,8 @@ faster ([section 2](#collect-the-facts-a-helper-needs)).
 | **Exponential Projects** | Extensions and designs from the community, with their own pages | <https://projects.exponential.earth/> |
 | **The documentation site** | The manuals, online | <https://doc.exponential.earth> |
 
-Every place the community meets is listed in [Community channels](help/project/community-channels.md). For a bug, the
+Every place the community meets is listed in [Community channels](help/project/community-channels.md), and the
+community itself, with all of its websites, is described in [Exponential Community](COMMUNITY.md). For a bug, the
 **Report an error** page of
 this help prepares the issue with a safe summary of the installation
 ([When something goes wrong](help/when-something-goes-wrong.md#filing-a-bug-in-exponential)).
@@ -265,6 +266,6 @@ installation, see [Security hardening](help/security-hardening.md) and
 ## Related pages
 
 - [Getting support: free help and paid help](help/project/getting-support.md), [Community channels](help/project/community-channels.md)
-- [History of Exponential](HISTORY.md)
+- [Exponential Community](COMMUNITY.md), [History of Exponential](HISTORY.md)
 - [When something goes wrong](help/when-something-goes-wrong.md), [The log viewer](features/6.0/log-viewer.md)
 - [Installing Exponential 6.0](INSTALL.md), [Configuring Exponential 6.0](CONFIGURING.md)
