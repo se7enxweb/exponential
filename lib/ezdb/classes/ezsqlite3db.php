@@ -1043,7 +1043,8 @@ class eZSQLite3DB extends eZDBInterface
     }
 
     /**
-     * The primary and unique keys the shipped schema gives a table.
+     * The primary and unique keys the shipped schema gives a table: the kernel's share/db_schema.dba,
+     * then the share/db_schema.dba of each active extension for the tables an extension creates.
      *
      * @param string $table
      * @return array[] one list of column names per key; empty when the table or the schema file is not there
@@ -1052,21 +1053,67 @@ class eZSQLite3DB extends eZDBInterface
     {
         static $schema = null;
         if ( $schema === null )
+            $schema = self::shippedSchema( self::shippedSchemaFiles() );
+        return self::schemaUniqueKeys( $schema, $table );
+    }
+
+    /**
+     * The schema files shippedUniqueKeys() reads, the kernel's first.
+     *
+     * @return string[]
+     */
+    static function shippedSchemaFiles()
+    {
+        $root = rtrim( (string)( class_exists( 'eZSys', false ) ? eZSys::rootDir() : getcwd() ), '/' );
+        $files = array( $root . '/share/db_schema.dba' );
+        if ( class_exists( 'eZExtension' ) && class_exists( 'eZINI' ) )
         {
-            $schema = array();
-            $root = class_exists( 'eZSys', false ) ? eZSys::rootDir() : getcwd();
-            $file = rtrim( (string)$root, '/' ) . '/share/db_schema.dba';
-            if ( is_file( $file ) )
+            try
             {
-                $loaded = ( static function ( $file ) {
-                    $schema = null;
-                    include $file;
-                    return $schema;
-                } )( $file );
-                if ( is_array( $loaded ) )
-                    $schema = $loaded;
+                foreach ( (array)eZExtension::activeExtensions() as $extension )
+                    $files[] = $root . '/extension/' . $extension . '/share/db_schema.dba';
+            }
+            catch ( Throwable $e )
+            {
+                // without settings only the kernel's schema is known
             }
         }
+        return $files;
+    }
+
+    /**
+     * Reads schema files into one schema; a table keeps the definition of the first file that has it.
+     *
+     * @param string[] $files
+     * @return array
+     */
+    static function shippedSchema( array $files )
+    {
+        $schema = array();
+        foreach ( $files as $file )
+        {
+            if ( !is_file( $file ) )
+                continue;
+            $loaded = ( static function ( $file ) {
+                $schema = null;
+                include $file;
+                return $schema;
+            } )( $file );
+            if ( is_array( $loaded ) )
+                $schema += $loaded;
+        }
+        return $schema;
+    }
+
+    /**
+     * The primary and unique keys a schema gives a table.
+     *
+     * @param array $schema
+     * @param string $table
+     * @return array[] one list of column names per key
+     */
+    static function schemaUniqueKeys( array $schema, $table )
+    {
         $keys = array();
         if ( isset( $schema[$table]['indexes'] ) && is_array( $schema[$table]['indexes'] ) )
         {
