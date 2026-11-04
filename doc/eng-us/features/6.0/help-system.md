@@ -179,6 +179,11 @@ Its own documentation is shown on its own while the extension is active (next se
 
 ## Documentation of the extensions
 
+The convention for extension authors: `README.md` and `INSTALL.md` on top of `extension/<name>/`, every other page as
+Markdown (`.md`) in `extension/<name>/doc/`, in English. The guide [Documenting an extension](../../guides/documenting-an-extension.md)
+explains it with a directory tree and the conversion of an old plain-text document; this section gives the rules the
+help center applies.
+
 The help center finds the documentation of every **active** extension when it looks
 (`[IndexSettings] ActiveExtensionDocs=enabled`, the default; `eZExtension::activeExtensions()` of the request): an
 extension switched on shows up at once, one switched off is gone at once. Of each such extension it shows

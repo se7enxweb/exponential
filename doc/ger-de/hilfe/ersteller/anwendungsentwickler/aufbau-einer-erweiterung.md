@@ -39,7 +39,7 @@ Teile über Verzeichnisnamen und über die Einstellungen, die die Erweiterung mi
 | `bin/php/` | Kommandozeilenskripte | von der Konsole als `ext:<ext>:<name>` gefunden |
 | `share/`, `sql/<engine>/` | Datenbankschema und Daten | installiert durch Ihr Setup-Skript oder das Paket |
 | `translations/<locale>/translation.ts` | Übersetzungen | `site.ini [RegionalSettings] TranslationExtensions[]` |
-| `doc/` | die eigene Dokumentation der Erweiterung | die Hilfe kann sie lesen, wenn sie in `exphelp.ini` unter `ExtensionDocDirs[]` steht |
+| `doc/` | die eigene Dokumentation der Erweiterung, als Markdown (`.md`) auf Englisch; `README.md` und `INSTALL.md` bleiben oben | das Hilfecenter zeigt sie, solange die Erweiterung aktiv ist ([Eine Extension dokumentieren](../../../anleitungen/eine-extension-dokumentieren.md)) |
 | `tests/` | PHPUnit-Tests | Ihre CI ([Anwendungen testen](anwendungen-testen.md)) |
 
 Der tatsächliche Katalog jedes Erweiterungspunkts, mit der INI-Zeile, die ihn registriert, ist **Setup > RAD**

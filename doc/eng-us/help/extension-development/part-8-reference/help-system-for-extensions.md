@@ -3,14 +3,14 @@ title: The help system for extensions
 audience: developer
 category: extension-development
 order: 360
-summary: Putting an extension's documentation into the admin help: ExtensionDocDirs, front matter and audience ids, folder READMEs, context help with Map[] and providers, and exp:exphelp check.
+summary: Putting an extension's documentation into the admin help: README.md and INSTALL.md on top, Markdown in doc/, shown while the extension is active (ExtensionDocDirs for an inactive one), front matter and audience ids, folder READMEs, context help with Map[] and providers, and exp:help check.
 keywords: help system, exphelp, ExtensionDocDirs, front matter, audience, category, summary, featured, hidden, ContextHelp, Map, Providers, expHelpContextProviderInterface, exp:exphelp check
 type: help
 ---
 # The help system for extensions
 
-Part 8, reference 32. The administration's help center shows the documentation of the kernel and, when the
-installation opts in, of extensions. This page collects the settings and file conventions in one place. The
+Part 8, reference 32. The administration's help center shows the documentation of the kernel and of every active
+extension. This page collects the settings and file conventions in one place. The
 explanation is in [Documenting your extension](../part-3-extension-developer/documenting-your-extension.md), the
 tutorial in [Help pages for your extension, by hand](../part-3-extension-developer/tutorials/by-hand-help-pages-for-your-extension.md),
 and the full description in [The help system](../../../features/6.0/help-system.md) and its
@@ -18,13 +18,22 @@ and the full description in [The help system](../../../features/6.0/help-system.
 
 ## Serving your doc folder
 
+| Where | What |
+|---|---|
+| `extension/myext/README.md`, `INSTALL.md` | on top of the extension; also `CHANGELOG*`, `LICENSE*`, `USAGE*`, `COPYING*` (`ExtensionTopFiles[]`) |
+| `extension/myext/doc/` | every other page, as Markdown (`.md`), in English; `doc/README.md` or `doc/index.md` is the start page |
+
+While the extension is active (`[IndexSettings] ActiveExtensionDocs=enabled`, the default), the help serves the
+**Git-tracked** files of both places, with page ids `ext/myext/<path below doc>`. Untracked files are not shown.
+Plain-text pages (`.txt`, `.rst`, a `README` without a suffix) of older extensions still show, as plain text. To show
+the pages of an extension that is not active, name it in the installation's `settings/exphelp.ini.append.php`:
+
 ```ini
 [IndexSettings]
 ExtensionDocDirs[]=myext
 ```
 
-in the installation's `settings/exphelp.ini.append.php` (or your extension's). The help then serves the **Git-tracked**
-Markdown files of `extension/myext/doc/`, with page ids `ext/myext/<path below doc>`. Untracked files are not shown.
+The convention, with a tree and a converted example: [Documenting an extension](../../../guides/documenting-an-extension.md).
 
 ## Front matter
 

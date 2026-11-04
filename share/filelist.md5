@@ -3527,7 +3527,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-a9b968a25acfd5d58704e0b83c83d143  doc/changelogs/6.0/6.0.15.md
+e2ae579267f52cabc040f42e2366ade2  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -3627,7 +3627,7 @@ af285ac8d63f408a2ebaf23e88716894  doc/changelogs/extensions/xrowextract.md
 bbcfbb1065eefc4a3f53987a1bad5fb1  doc/changelogs/extensions/xrowmetadata.md
 926abec1d70f433796add752c0db25fd  doc/eng-us/CONFIGURING.md
 0101a4fc3ef4925f5882b075d3db7478  doc/eng-us/DISTRIBUTIONS.md
-6d3a30fd59d8e71b2c1ad0ce019b9c7e  doc/eng-us/EXTENDING.md
+8f1308a0bb70a3295a8a8d9c3a214333  doc/eng-us/EXTENDING.md
 3867b0b3c3f7160677e995eb28012161  doc/eng-us/HISTORY.md
 2b3cb0af24217aa1c20aa63fc3834cf5  doc/eng-us/INSTALL.md
 493ddee0880524da7a6437cabc7cc4ef  doc/eng-us/INTEGRATING.md
@@ -6952,7 +6952,7 @@ c1612437070da67fdd2723c6b1e1c2b2  doc/eng-us/features/6.0/extensions/xrowmetadat
 3f29ad01e9f5d278ca8af3fe2d21d253  doc/eng-us/features/6.0/form-expired-page.md
 b388ac5e100e8398638ffe8c4c6c8207  doc/eng-us/features/6.0/graphql.md
 d764ef1d7e05fc5071e8521fe1dbe843  doc/eng-us/features/6.0/help-content.md
-db85cba2ed3de670a18b411f201b3b8e  doc/eng-us/features/6.0/help-system.md
+d3ff37b5648c2a9fb96777c8e828b67f  doc/eng-us/features/6.0/help-system.md
 1497f038f1fb68bf320b385032fe2e31  doc/eng-us/features/6.0/hidden-admin-tabs.md
 67e2133c059b3294dd3d9275b167b820  doc/eng-us/features/6.0/icon-themes-in-extensions.md
 c8c732f08abfb2593fd5f7599f60905f  doc/eng-us/features/6.0/install-in-one-command.md
@@ -7066,7 +7066,7 @@ e8e271a078b41c7c877fad14d5156f2e  doc/eng-us/features/6.0/web-server-and-solr-co
 9a239d46246c4ca0e1d8f6ddd3bf6a24  doc/eng-us/features/6.0/website-sidebar.md
 a5621820f4516cedaa2b79e888328b30  doc/eng-us/glossary.md
 4c9effab75570c880f3e4c867f7cbc80  doc/eng-us/goals.md
-83d6fad960407b69527c7bb31029137c  doc/eng-us/guides/README.md
+779ee126c4a171834e1581e9ff0c028d  doc/eng-us/guides/README.md
 c3cd4759e8cbd9569458f6ad5c01021a  doc/eng-us/guides/a-static-blog-with-exponential.md
 cb328df2d889368b2297e4864f4c9c19  doc/eng-us/guides/a-static-documentation-site.md
 9ad99407df5b2fe54c265f5cb65a9870  doc/eng-us/guides/api-keys.md
@@ -7085,6 +7085,7 @@ b73a9d2acee4cfc8c68b3afca0bab7a5  doc/eng-us/guides/classic-menu-settings.md
 0d950613e911e841b9e077b18947dbde  doc/eng-us/guides/datatypes.md
 573e975acd458e4c7374e74421300628  doc/eng-us/guides/deploying.md
 23a9c8cdb46d76ce256d68b16b140ee7  doc/eng-us/guides/develop-in-public-publish-free.md
+38571ead9141d04c59c149d0a38ba5c4  doc/eng-us/guides/documenting-an-extension.md
 ab00d66607f66a79d69efd28d9fba855  doc/eng-us/guides/drafts-and-pending.md
 9ada1e3590016a37138e5ff78bab4322  doc/eng-us/guides/environment-variables.md
 a518e62944d14435eac07c9fde4b2306  doc/eng-us/guides/extensions-page.md
@@ -8156,7 +8157,7 @@ b55979e7920e055ef0510c1fa317b499  doc/eng-us/help/creators/app-creators/deployin
 85f89c1ac2ae76e66b0f3c7468df107d  doc/eng-us/help/creators/app-creators/exponential-as-an-application-platform.md
 a27bfaa7d63dfec9be40c2fc6f7bbd09  doc/eng-us/help/creators/app-creators/exponential-intelligence.md
 cb41b39b38102b539cff85e472bfa5a5  doc/eng-us/help/creators/app-creators/extending-exponential-intelligence.md
-627a840b5a00a8a953a71b7033bf083f  doc/eng-us/help/creators/app-creators/extension-anatomy.md
+8546a858aee0c067373e673ff2ae128a  doc/eng-us/help/creators/app-creators/extension-anatomy.md
 c3329393cbdc5146b456c028d7730612  doc/eng-us/help/creators/app-creators/fetch-functions.md
 3aa8f9bb3addc7c770a7af4d07a75551  doc/eng-us/help/creators/app-creators/forms-csrf-and-http-input.md
 34384f5026ddfc7e9361c97f444d9eb2  doc/eng-us/help/creators/app-creators/headless-exponential.md
@@ -8951,7 +8952,7 @@ dde29042339641a20482b672785d5488  doc/eng-us/help/extension-development/part-1-f
 4ff73208f2f5c2a72c72c9a7703b564d  doc/eng-us/help/extension-development/part-1-from-user-to-developer/finding-ideas-on-github.md
 fd6e107bfa535c4a6311d9733c61d877  doc/eng-us/help/extension-development/part-1-from-user-to-developer/finding-ideas-on-packagist.md
 630439462a1cf8c2e42c609d702f1940  doc/eng-us/help/extension-development/part-1-from-user-to-developer/finding-the-extensions-on-your-site.md
-a27bed5b988f6b8bacc02a0405cb6a34  doc/eng-us/help/extension-development/part-1-from-user-to-developer/learning-from-an-extension-step-by-step.md
+908afde627a9b1602b4df2c055704260  doc/eng-us/help/extension-development/part-1-from-user-to-developer/learning-from-an-extension-step-by-step.md
 3e03974bdb6fccdca4d502ea891b4d65  doc/eng-us/help/extension-development/part-1-from-user-to-developer/learning-from-the-books.md
 47d20095a32ab9a21d437a1014fa252c  doc/eng-us/help/extension-development/part-1-from-user-to-developer/linking-versus-copying.md
 23c0c7c9a962f0b243f9e6760ad131c3  doc/eng-us/help/extension-development/part-1-from-user-to-developer/projects-exponential-earth.md
@@ -9002,7 +9003,7 @@ db6de29d7385007ad882222ba267081b  doc/eng-us/help/extension-development/part-3-e
 eff5a797ab04242b578384923cd895e3  doc/eng-us/help/extension-development/part-3-extension-developer/datatypes.md
 25bdb6c2a22b3888762cf08daac87787  doc/eng-us/help/extension-development/part-3-extension-developer/debugging-extensions.md
 51bd3d7c1e54ba5d9c542ebe87f098a2  doc/eng-us/help/extension-development/part-3-extension-developer/design-in-an-extension.md
-133f9ef9f30c98bed04f615170e95756  doc/eng-us/help/extension-development/part-3-extension-developer/documenting-your-extension.md
+0377b41cee0f1f1854bf2698c37e2692  doc/eng-us/help/extension-development/part-3-extension-developer/documenting-your-extension.md
 73cc69f82965d44390d2e32ff53625a2  doc/eng-us/help/extension-development/part-3-extension-developer/events-and-filters.md
 2aa80e9a27f075a25b8605e9983567c5  doc/eng-us/help/extension-development/part-3-extension-developer/extension-directory-layout.md
 8ed855cabc7a3454ab6bfbd7e028a5da  doc/eng-us/help/extension-development/part-3-extension-developer/extension-load-order.md
@@ -9029,7 +9030,7 @@ c077985caa03cbc88d77f81dbf55f9b2  doc/eng-us/help/extension-development/part-3-e
 cac8418ad545825d5969a56a813309cf  doc/eng-us/help/extension-development/part-3-extension-developer/tutorials/by-hand-custom-tag.md
 7cde2951f1dcbeadd252b09c04cf7f39  doc/eng-us/help/extension-development/part-3-extension-developer/tutorials/by-hand-datatype.md
 3b12c0c02a419c63bb272fa09d59fa5c  doc/eng-us/help/extension-development/part-3-extension-developer/tutorials/by-hand-fetch-function.md
-98eadc97b33ac87a41135b32a684a953  doc/eng-us/help/extension-development/part-3-extension-developer/tutorials/by-hand-help-pages-for-your-extension.md
+b670fa62660530d47d6ed1bb123966f5  doc/eng-us/help/extension-development/part-3-extension-developer/tutorials/by-hand-help-pages-for-your-extension.md
 a4d8f5fb7a43bb58993a63e1ab01fa98  doc/eng-us/help/extension-development/part-3-extension-developer/tutorials/by-hand-minimal-extension.md
 a334d1f12b22b6049d07adb87359dba2  doc/eng-us/help/extension-development/part-3-extension-developer/tutorials/by-hand-module-with-a-policy.md
 072afe91b97672d0f3bb10a0fb4bdaca  doc/eng-us/help/extension-development/part-3-extension-developer/tutorials/by-hand-module-with-a-view.md
@@ -9152,8 +9153,8 @@ a6a9efd435e39ef46122917603f19a13  doc/eng-us/help/extension-development/part-8-r
 ebd3dfa8be2e8b94d68670aa5b1ac443  doc/eng-us/help/extension-development/part-8-reference/ezworkflowtype-api.md
 0e4a0101c8198a68071aaaeef8aa5429  doc/eng-us/help/extension-development/part-8-reference/fetch-functions-reference.md
 bd2c2b888f7bb10a5fd7e147426c3f5c  doc/eng-us/help/extension-development/part-8-reference/glossary-for-extension-developers.md
-56e842af2dce982c0f36eff05360391c  doc/eng-us/help/extension-development/part-8-reference/help-system-for-extensions.md
-abae68073f7e901caad77f5e8867aa29  doc/eng-us/help/extension-development/part-8-reference/ini-files-for-extension-authors.md
+8422ed73f23bf71cd5fb198338ea8fbe  doc/eng-us/help/extension-development/part-8-reference/help-system-for-extensions.md
+5f15cbbb1c39b9cd1b942082838e3a64  doc/eng-us/help/extension-development/part-8-reference/ini-files-for-extension-authors.md
 5e8bdc7b13d70a1bf5d3eb3dea999a60  doc/eng-us/help/extension-development/part-8-reference/template-functions-reference.md
 1147b9dd3530ed2f52a8106dfbd59639  doc/eng-us/help/extension-development/part-8-reference/template-operators-reference.md
 41d53309d3d564e95ea7a8b649c95ce5  doc/eng-us/help/extension-development/reading-paths.md
@@ -11690,7 +11691,7 @@ c1f7a212ea842e5d20ea84e5fb9f577a  doc/eng-us/help/press/why-it-is-called-exponen
 0f29e522057b0fac13c4aa217a6291c0  doc/eng-us/help/press/writing-about-funding-and-sponsors.md
 4596960dd1928e5ff75ece6bb3f1ac1f  doc/eng-us/help/press/writing-about-the-community.md
 3d1e47b6b2c52a73bbb582ae17937106  doc/eng-us/help/press/writing-about-the-ez-publish-years.md
-8803893c5e43856c48793f81f6967e12  doc/eng-us/help/project-files.md
+2256b8e4072258e6387918b8dec7b3c5  doc/eng-us/help/project-files.md
 61a020971043323372adb5b3563602f6  doc/eng-us/help/project/README.md
 b2c2e8cb2f45eab8944874c308f83e05  doc/eng-us/help/project/about-the-project.md
 a2b81b7e7e6819b7366db25e6f83c340  doc/eng-us/help/project/build-with-exponential.md
@@ -11859,7 +11860,7 @@ b9b72d9c8a56b8bdf348ba62febac831  doc/eng-us/help/software-engineers/contributin
 dc916d101aeeb97158abe0e0a74e5caf  doc/eng-us/help/software-engineers/dependency-management-with-composer.md
 1773511673a35c6a7a9bf20c76c7cf0d  doc/eng-us/help/software-engineers/deploying-a-change.md
 1d10d28043f7bddd7a73c2103c3afde7  doc/eng-us/help/software-engineers/design-review-checklist.md
-633f0febcf152b6bfed334beaaad984c  doc/eng-us/help/software-engineers/documentation-as-code.md
+50f019491e59cca0b67e2f34934220e5  doc/eng-us/help/software-engineers/documentation-as-code.md
 9a6fd316cf7eaf26a8edd55619672d93  doc/eng-us/help/software-engineers/evaluating-exponential.md
 46f8df574e714859b368d2af4633d2d5  doc/eng-us/help/software-engineers/events-extension-points-and-plugins.md
 fa45a1f8b3f6a9dbc2d398fdff75190a  doc/eng-us/help/software-engineers/exponential-for-software-engineers.md
@@ -13505,10 +13506,10 @@ f56beaea3e5d700ac7442b6a68d85cc2  doc/ger-de/.examples/descriptions/35-user-mana
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 84ecf8b47bf44a9a3d53d86b719e8e1b  doc/ger-de/.examples/strings.json
-22a6376de867dc11a1f8a7da704528d5  doc/ger-de/.paths.json
+3230b50ddd6164b46fbd408a2273e403  doc/ger-de/.paths.json
 86c4bc42e93188f788000c1f76e44d5b  doc/ger-de/CONFIGURING.md
 1cd811669f94673b3ba9db99603f0f42  doc/ger-de/DISTRIBUTIONS.md
-67d0c51338ceda6e163e950f05431c3a  doc/ger-de/EXTENDING.md
+d92e7d32e4f6ac50174e4d7f82ca379b  doc/ger-de/EXTENDING.md
 7bec84c63be0f20f31d152df583d426b  doc/ger-de/HISTORY.md
 f714ac81a205d3c9771c77072df79204  doc/ger-de/INSTALL.md
 1316ffcbd05822078423f926a0f775fa  doc/ger-de/INTEGRATING.md
@@ -13516,7 +13517,7 @@ f714ac81a205d3c9771c77072df79204  doc/ger-de/INSTALL.md
 d4444f60d9f3f6fd7dc43dc6edac7e39  doc/ger-de/README-LIZENZ.md
 35f2e2b3176ed05cb4e6cd1a8e7adf0f  doc/ger-de/UNINSTALL.md
 64854fc59591a4ec01a5ebadf2dd63d1  doc/ger-de/UPDATE.md
-ad3d69e92147819bf922bba79d05bf30  doc/ger-de/anleitungen/README.md
+35bfbadaf629f0eb133012e06396910f  doc/ger-de/anleitungen/README.md
 a21d414954375daf4142412f3609d82a  doc/ger-de/anleitungen/aktualisieren-mit-der-konsole.md
 d7290775402c11f9bffa68a14215d46a  doc/ger-de/anleitungen/aktualisieren.md
 00b768f89ffba00f97d83b38c9fb6a5d  doc/ger-de/anleitungen/api-schluessel.md
@@ -13572,6 +13573,7 @@ ff26b11a2d28f8fee575a03afb1d9aaa  doc/ger-de/anleitungen/caches.md
 be84d6ea2accb0fb7881b73e5cc9e0cb  doc/ger-de/anleitungen/datentypen.md
 e9159f73e1f92f04a0571a6696814f4c  doc/ger-de/anleitungen/eigentuemer-aendern.md
 187275b90a6a296fc3e1d51138bf9d46  doc/ger-de/anleitungen/ein-statisches-blog-mit-exponential.md
+ecf5050bf3158f3d72a6e59ccdb12a88  doc/ger-de/anleitungen/eine-extension-dokumentieren.md
 b406cbc3208dc72c2f80f6fd73e6c3ae  doc/ger-de/anleitungen/eine-statische-dokumentations-site.md
 1d34a16a2b5967dd35fff27ef271a844  doc/ger-de/anleitungen/einstellungsseite.md
 3fe6751fd962193fc20de472c59b64c5  doc/ger-de/anleitungen/entfernte-dienste-und-apps.md
@@ -16979,7 +16981,7 @@ eb3d2bb16f19518e5d5f40301852dfa7  doc/ger-de/funktionen/6.0/generator-fuer-den-s
 182d80bb708aaaa1348d28e88f2008aa  doc/ger-de/funktionen/6.0/graphql.md
 e667b2bcfdc637b0ebf0d7ce755249e5  doc/ger-de/funktionen/6.0/handler-fuer-inhaltseinschraenkungen.md
 68d47347beaa485aeeced24a6f68bde7  doc/ger-de/funktionen/6.0/hilfeinhalte.md
-8be558d1308a4c1413ee470fdcadbfc8  doc/ger-de/funktionen/6.0/hilfesystem.md
+44f8d0457800d58ca536960314991892  doc/ger-de/funktionen/6.0/hilfesystem.md
 445e9e9efb5d3397ac8acc5ce905b8bb  doc/ger-de/funktionen/6.0/icon-themes-in-extensions.md
 6a93174afff8017d38daaa3e8a6bcebc  doc/ger-de/funktionen/6.0/info-und-paketseiten.md
 5b3b088b68957758753acb3f0e3a1ca5  doc/ger-de/funktionen/6.0/inhalts-finder.md
@@ -18698,7 +18700,7 @@ eb7faae068fa628e6e0bdedb8aa322e8  doc/ger-de/hilfe/e-commerce/settings/shopaccou
 8a1950157ad1fa5637ed07d9167852ad  doc/ger-de/hilfe/ersteller/anwendungsentwickler/anwendungen-testen.md
 dae875bbcfa48ecb1bd010f301b1c8ee  doc/ger-de/hilfe/ersteller/anwendungsentwickler/anwendungsentwickler-hier-beginnen.md
 9d1e6e34dbc03478a8c84b5ad61a7fa8  doc/ger-de/hilfe/ersteller/anwendungsentwickler/architektur-fuer-anwendungsentwickler.md
-9670de49acf61e1f90965b6d7cd01e52  doc/ger-de/hilfe/ersteller/anwendungsentwickler/aufbau-einer-erweiterung.md
+2595e707f63bc9dfe86cdd692960df3b  doc/ger-de/hilfe/ersteller/anwendungsentwickler/aufbau-einer-erweiterung.md
 5e3c75bf61f39ad5e15c5a230b2a70ea  doc/ger-de/hilfe/ersteller/anwendungsentwickler/autoloads-und-klassenbenennung.md
 407109b8e445d1140f7d0072d8e99c7e  doc/ger-de/hilfe/ersteller/anwendungsentwickler/benachrichtigungen-und-mail.md
 b8377b76b1025cc371f096e0bcd7b3cf  doc/ger-de/hilfe/ersteller/anwendungsentwickler/caching-in-anwendungen.md
@@ -18853,7 +18855,7 @@ bd7ad7d739a8507fd42ddd011b1e521d  doc/ger-de/hilfe/erweiterungsentwicklung/teil-
 f9dd8fec0232a47bbaa943b909e35e76  doc/ger-de/hilfe/erweiterungsentwicklung/teil-1-vom-benutzer-zum-entwickler/ihre-erste-stunde-als-entwickler.md
 99e8ffe388fa57b997b3339c629c91d6  doc/ger-de/hilfe/erweiterungsentwicklung/teil-1-vom-benutzer-zum-entwickler/lizenzen-vor-der-wiederverwendung-lesen.md
 eb9b17ed778d86ec910b73cadfcdb4b5  doc/ger-de/hilfe/erweiterungsentwicklung/teil-1-vom-benutzer-zum-entwickler/projects-exponential-earth.md
-8f12714080e81873450d4a5b0776c89b  doc/ger-de/hilfe/erweiterungsentwicklung/teil-1-vom-benutzer-zum-entwickler/schritt-fuer-schritt-von-einer-erweiterung-lernen.md
+31b8a103284f9c461b9da9db45801569  doc/ger-de/hilfe/erweiterungsentwicklung/teil-1-vom-benutzer-zum-entwickler/schritt-fuer-schritt-von-einer-erweiterung-lernen.md
 6cc86126b354350ce9c5c0a6d15cd274  doc/ger-de/hilfe/erweiterungsentwicklung/teil-1-vom-benutzer-zum-entwickler/share-exponential-earth.md
 2602626cd5fcb3bf0aedef9dfdf879b9  doc/ger-de/hilfe/erweiterungsentwicklung/teil-1-vom-benutzer-zum-entwickler/verlinken-oder-kopieren.md
 dcf5b549e157f385580fccac9e55e33e  doc/ger-de/hilfe/erweiterungsentwicklung/teil-1-vom-benutzer-zum-entwickler/was-eine-erweiterung-ist.md
@@ -18903,7 +18905,7 @@ a0025a8e7044f97c78ad5afd0754379a  doc/ger-de/hilfe/erweiterungsentwicklung/teil-
 a2f65a31a90b5513a845d90d02c36bc2  doc/ger-de/hilfe/erweiterungsentwicklung/teil-3-erweiterungsentwickler/fakten-themes-und-logos-fuer-die-systemkarte.md
 e5f84f0ca95e477959e3269be8b442c3  doc/ger-de/hilfe/erweiterungsentwicklung/teil-3-erweiterungsentwickler/fetch-funktionen.md
 981b9711891ce3862ba5f2abf2d1206a  doc/ger-de/hilfe/erweiterungsentwicklung/teil-3-erweiterungsentwickler/handler-ueber-einstellungen-benennen.md
-8dad462870c25efbb79e105411b4efaf  doc/ger-de/hilfe/erweiterungsentwicklung/teil-3-erweiterungsentwickler/ihre-erweiterung-dokumentieren.md
+9fb7362f3604b6f2d35ab16299caf50d  doc/ger-de/hilfe/erweiterungsentwicklung/teil-3-erweiterungsentwickler/ihre-erweiterung-dokumentieren.md
 098dde34eb8dea473feb557b6b1767ac  doc/ger-de/hilfe/erweiterungsentwicklung/teil-3-erweiterungsentwickler/kernel-overrides-der-letzte-ausweg.md
 658aa3e0dbb08e73ab5e0e84a6390b86  doc/ger-de/hilfe/erweiterungsentwicklung/teil-3-erweiterungsentwickler/ladereihenfolge-der-erweiterungen.md
 21d516d140f74194a69d949f586c70f3  doc/ger-de/hilfe/erweiterungsentwicklung/teil-3-erweiterungsentwickler/leistung-in-erweiterungen.md
@@ -18931,7 +18933,7 @@ f2af391bc08d70cf4c5eec62b5ee2c77  doc/ger-de/hilfe/erweiterungsentwicklung/teil-
 59248b48818461f74add432efd839b23  doc/ger-de/hilfe/erweiterungsentwicklung/teil-3-erweiterungsentwickler/tutorials/von-hand-datentyp.md
 ebb0bbe3001aea1f5cd9d0d661de2a41  doc/ger-de/hilfe/erweiterungsentwicklung/teil-3-erweiterungsentwickler/tutorials/von-hand-eigene-tabelle-mit-persistentem-objekt.md
 d915aa28b0d9e93f76c23517b52bd8c1  doc/ger-de/hilfe/erweiterungsentwicklung/teil-3-erweiterungsentwickler/tutorials/von-hand-fetch-funktion.md
-0f659af1a59e96d2a1c54b98b20d2592  doc/ger-de/hilfe/erweiterungsentwicklung/teil-3-erweiterungsentwickler/tutorials/von-hand-hilfeseiten-fuer-ihre-erweiterung.md
+d73cfecd2af019682b06009664ab46ef  doc/ger-de/hilfe/erweiterungsentwicklung/teil-3-erweiterungsentwickler/tutorials/von-hand-hilfeseiten-fuer-ihre-erweiterung.md
 d1f807cccbe38e290234fabfbaac3848  doc/ger-de/hilfe/erweiterungsentwicklung/teil-3-erweiterungsentwickler/tutorials/von-hand-minimale-erweiterung.md
 259aec3393e90718758a64cebb1e8e56  doc/ger-de/hilfe/erweiterungsentwicklung/teil-3-erweiterungsentwickler/tutorials/von-hand-modul-mit-richtlinie.md
 2a2417d362c8cd1db9fcdd08f7727ca0  doc/ger-de/hilfe/erweiterungsentwicklung/teil-3-erweiterungsentwickler/tutorials/von-hand-modul-mit-view.md
@@ -19042,9 +19044,9 @@ fd15c4cdd2d282bcd0e6b171dc990fd1  doc/ger-de/hilfe/erweiterungsentwicklung/teil-
 466cd33943ca0010d950677627a01729  doc/ger-de/hilfe/erweiterungsentwicklung/teil-8-referenz/ezworkflowtype-api.md
 fc42d44465b2f2ea43eb8c979b7b0acd  doc/ger-de/hilfe/erweiterungsentwicklung/teil-8-referenz/fehlercodes-und-modulergebnisse.md
 f589b2bb14cc05ca961aed9cd72d01ec  doc/ger-de/hilfe/erweiterungsentwicklung/teil-8-referenz/glossar-fuer-erweiterungsentwickler.md
-ced66a1f64608ec4630f76ebc4e176e2  doc/ger-de/hilfe/erweiterungsentwicklung/teil-8-referenz/hilfesystem-fuer-erweiterungen.md
+3dab3752d97b15d827b6a727170d00df  doc/ger-de/hilfe/erweiterungsentwicklung/teil-8-referenz/hilfesystem-fuer-erweiterungen.md
 3236c31ae605107f19b829af8d8bd68b  doc/ger-de/hilfe/erweiterungsentwicklung/teil-8-referenz/inhaltsfunktionen-aus-php.md
-4e48c2be553b4dd545aaec68c2ee90cc  doc/ger-de/hilfe/erweiterungsentwicklung/teil-8-referenz/ini-dateien-fuer-erweiterungsautoren.md
+c892cc76746a661a47a6506ce63741dd  doc/ger-de/hilfe/erweiterungsentwicklung/teil-8-referenz/ini-dateien-fuer-erweiterungsautoren.md
 bdf341a1f64569a264438985584a93d4  doc/ger-de/hilfe/erweiterungsentwicklung/teil-8-referenz/konsolenbefehle-fuer-entwickler.md
 010b170cb70a882c96fe5503010ac01e  doc/ger-de/hilfe/erweiterungsentwicklung/teil-8-referenz/referenz-der-fetch-funktionen.md
 5f55b21f3cd9c1338ee429b84605edaf  doc/ger-de/hilfe/erweiterungsentwicklung/teil-8-referenz/referenz-der-template-funktionen.md
@@ -20567,7 +20569,7 @@ d67a690066e82331b7f0914d1936f604  doc/ger-de/hilfe/projekt/mit-exponential-bauen
 8de4c2387108ed3fe91f73766daf5f5a  doc/ger-de/hilfe/projekt/unterstuetzung-erhalten.md
 48bef02fd241141dcc9f29ce1754f132  doc/ger-de/hilfe/projekt/verhaltenskodex.md
 0e387802fda4fe2400fa5dbcf1de93e8  doc/ger-de/hilfe/projekt/zum-projekt-beitragen.md
-844c2dea4b786d018b10b819da645dad  doc/ger-de/hilfe/projektdateien.md
+13a6e800dcebfc55bce27d6fbc1807e7  doc/ger-de/hilfe/projektdateien.md
 364a5760522de955d4481e682e446fe7  doc/ger-de/hilfe/rundgang-durch-die-administration.md
 a85b1e0a5ca224ed96b8cd423e8c85e9  doc/ger-de/hilfe/seitenpakete/README.md
 190b8e1722736fb69d61f2812ed0caff  doc/ger-de/hilfe/seitenpakete/admin-oberflaeche/README.md
@@ -20662,7 +20664,7 @@ f6d7722fd05bb14f5012d2a44023f56f  doc/ger-de/hilfe/softwareingenieure/api-design
 0643133ce71cc85afe514c04e6b7ef92  doc/ger-de/hilfe/softwareingenieure/checkliste-fuer-sicherheitspruefungen.md
 3bb2ef0b50c2a2cddf47f6a655c3bb67  doc/ger-de/hilfe/softwareingenieure/ci-gates.md
 baaccc9afcaddd692fec475dd099e175  doc/ger-de/hilfe/softwareingenieure/datenbanken-und-die-wahl-einer-datenbank.md
-73162e3d542704fa5e2091be91e1c9ff  doc/ger-de/hilfe/softwareingenieure/dokumentation-als-code.md
+5d43c69dfc8e055e01ac540d5f4ccca2  doc/ger-de/hilfe/softwareingenieure/dokumentation-als-code.md
 8f7890ca56a8a84cb3ca840170cf0479  doc/ger-de/hilfe/softwareingenieure/eine-aenderung-bereitstellen.md
 012507c96d3fd220755ca1e56577996b  doc/ger-de/hilfe/softwareingenieure/events-erweiterungspunkte-und-plugins.md
 6bf72f04af6b0d068a55352b6122149c  doc/ger-de/hilfe/softwareingenieure/exponential-bewerten.md
