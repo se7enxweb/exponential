@@ -108,7 +108,7 @@ MenuLinks[git]=install/03-getting-the-code.md#b-git-clone-and-composer-install
 > these: it is read after this file)  
 > The database manager of sevenx\_dse (module dse)  
 
-Standard: ein Hash mit 164: `content=guides/content-model-and-editing.md`, `content/dashboard=help/admin-tour.md`, `content/view=help/editing-content.md`, `content/edit=help/editing-content.md`, `content/multiedit=guides/content-model-and-editing.md#6-edit-many-items-in-one-form-multi-node-edit`, `content/versionview=guides/content-history.md`, `content/history=guides/content-history.md`, `content/draft=guides/drafts-and-pending.md#1-my-drafts`, `content/pendinglist=guides/drafts-and-pending.md#2-my-pending-items`, `content/trash=guides/content-model-and-editing.md#7-the-trash`, `content/restore=guides/content-model-and-editing.md#7-the-trash`, `content/bookmark=guides/bookmarks.md` ....
+Standard: ein Hash mit 165: `content=guides/content-model-and-editing.md`, `content/dashboard=help/admin-tour.md`, `content/view=help/editing-content.md`, `content/edit=help/editing-content.md`, `content/multiedit=guides/content-model-and-editing.md#6-edit-many-items-in-one-form-multi-node-edit`, `content/versionview=guides/content-history.md`, `content/history=guides/content-history.md`, `content/draft=guides/drafts-and-pending.md#1-my-drafts`, `content/pendinglist=guides/drafts-and-pending.md#2-my-pending-items`, `content/trash=guides/content-model-and-editing.md#7-the-trash`, `content/restore=guides/content-model-and-editing.md#7-the-trash`, `content/bookmark=guides/bookmarks.md` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -136,7 +136,7 @@ Map[content/translation]=guides/content-languages.md
 Map[content/urlalias]=guides/urls-and-aliases.md
 Map[content/urltranslator]=guides/urls-and-aliases.md#3-global-url-aliases
 Map[content/urlwildcards]=guides/urls-and-aliases.md#4-url-wildcards
-# ... 144 weitere in der ausgelieferten Datei
+# ... 145 weitere in der ausgelieferten Datei
 */ ?>
 ```
 

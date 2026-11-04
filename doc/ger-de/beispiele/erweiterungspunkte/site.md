@@ -2,7 +2,7 @@
 title: Erweiterungspunkte in site.ini
 audience: developer, admin
 category: examples
-summary: Einstellungen von site.ini, die Handler, Klassen oder Verzeichnisse auflisten, die eine Erweiterung ergänzen kann (31, am Namen erkannt).
+summary: Einstellungen von site.ini, die Handler, Klassen oder Verzeichnisse auflisten, die eine Erweiterung ergänzen kann (32, am Namen erkannt).
 keywords: Erweiterungspunkt, Erweiterung, site.ini, extension point, handler, extension, hook
 type: generated
 generated: exp:help:examples
@@ -34,6 +34,18 @@ Ausgeliefert: `expHelpContentRepository`. [Die Einstellung](../ini-einstellungen
 # extension/expexample/settings/site.ini.append.php
 [Cache_exphelpcontent]
 purgeClass=expHelpContentRepository    # durch Ihre Klasse oder Ihren Wert ersetzen
+*/ ?>
+```
+
+## SiteSearchSuggestSettings ExcludeClasses
+
+Ausgeliefert: eine Liste mit 2: `user`, `user_group`. [Die Einstellung](../ini-einstellungen/site/SiteSearchSuggestSettings.md#excludeclasses).
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# extension/expexample/settings/site.ini.append.php
+[SiteSearchSuggestSettings]
+ExcludeClasses[]=expExampleExcludeClasse    # Ihre Klasse oder Ihr Wert, zur Liste hinzugefügt
 */ ?>
 ```
 

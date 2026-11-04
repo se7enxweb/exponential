@@ -22,7 +22,7 @@ Bearbeiten Sie `settings/exphelp.ini` nie selbst: Ein Update ersetzt die Datei. 
 > Welche Art von Seite eine Datei ist: ihr Front Matter (type: guide), sonst die erste passende Regel.  
 > <pattern>;<type>, der erste Treffer gewinnt  
 
-Standard: eine Liste mit 16: `doc/eng-us/help/*;help`, `doc/eng-us/guides/*;guide`, `doc/eng-us/features/*;feature`, `doc/eng-us/bc/*;bc`, `doc/changelogs/*;changelog`, `doc/eng-us/install/*;install`, `doc/eng-us/INSTALL.md;install`, `doc/eng-us/UPDATE.md;install`, `doc/eng-us/UNINSTALL.md;install`, `doc/eng-us/specifications/*;specification`, `doc/eng-us/history/*;history`, `doc/eng-us/release-overview;history` ....
+Standard: eine Liste mit 21: `doc/eng-us/help/*;help`, `doc/eng-us/guides/*;guide`, `doc/eng-us/features/*;feature`, `doc/eng-us/bc/*;bc`, `doc/changelogs/*;changelog`, `doc/eng-us/install/*;install`, `doc/eng-us/INSTALL.md;install`, `doc/eng-us/CONFIGURING.md;install`, `doc/eng-us/UPDATE.md;install`, `doc/eng-us/INTEGRATING.md;install`, `doc/eng-us/DISTRIBUTIONS.md;install`, `doc/eng-us/HISTORY.md;guide` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -44,6 +44,7 @@ PathRules[]=doc/eng-us/DISTRIBUTIONS.md;install
 PathRules[]=doc/eng-us/HISTORY.md;guide
 PathRules[]=doc/eng-us/SUPPORT.md;guide
 PathRules[]=doc/eng-us/COMMUNITY.md;guide
+PathRules[]=doc/eng-us/competition/*;guide
 PathRules[]=doc/eng-us/UNINSTALL.md;install
 PathRules[]=doc/eng-us/EXTENDING.md;guide
 PathRules[]=doc/eng-us/specifications/*;specification
@@ -52,7 +53,7 @@ PathRules[]=doc/eng-us/release-overview;history
 PathRules[]=doc/eng-us/examples/*;example
 PathRules[]=doc/eng-us/standards/patterns/*;catalogue
 PathRules[]=extension/*;extension
-PathRules[]=*;reference
+# ... 1 weitere in der ausgelieferten Datei
 */ ?>
 ```
 

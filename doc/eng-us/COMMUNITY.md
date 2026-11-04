@@ -327,6 +327,7 @@ in public.
 
 - [History of Exponential (1999 - 2026)](HISTORY.md)
 - [Distributions of Exponential](DISTRIBUTIONS.md)
+- [Exponential Competition](competition/README.md): how Exponential compares with the other ways to run a website
 - [Community channels](help/project/community-channels.md)
 - [Getting support](help/project/getting-support.md)
 - [Getting Support](SUPPORT.md): from helping yourself to the PHP ecosystem, the Foundation and 7x

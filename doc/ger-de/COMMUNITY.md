@@ -338,6 +338,7 @@ Exponential öffentlich.
 
 - [Geschichte von Exponential (1999 - 2026)](HISTORY.md)
 - [Distributionen von Exponential](DISTRIBUTIONS.md)
+- [Exponential im Wettbewerb](wettbewerb/README.md): wie Exponential im Vergleich zu den anderen Wegen abschneidet, eine Website zu betreiben
 - [Community-Kanäle](hilfe/projekt/community-kanaele.md)
 - [Support bekommen](hilfe/projekt/unterstuetzung-erhalten.md)
 - [Unterstützung erhalten](SUPPORT.md): von der Selbsthilfe über das PHP-Ökosystem bis zur Foundation und 7x

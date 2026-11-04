@@ -63,6 +63,8 @@ class Audience extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'help_search_url', \expHelp::url( 'search' ) );
 
         $Result = array();
+        // the help's own left menu (menu.ini [Leftmenu_help]); the Setup tab stays marked
+        $Result['left_menu'] = 'design:exphelp/menu.tpl';
         $Result['content'] = $tpl->fetch( 'design:exphelp/audience.tpl' );
         $Result['path'] = array( array( 'url' => 'exphelp/dashboard', 'text' => \ezpI18n::tr( 'kernel/exphelp', 'Help' ) ),
                                  array( 'url' => false, 'text' => $landing['name'] ) );

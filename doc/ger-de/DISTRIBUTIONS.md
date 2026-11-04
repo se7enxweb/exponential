@@ -285,3 +285,4 @@ Ein Wechsel geschieht nie von selbst: Sichern Sie zuerst die Datenbank und `var/
 - [Wer ist die Exponential Foundation?](hilfe/wer-ist-die-exponential-foundation.md): jedes Produkt der Familie, mit seinen Quellen
 - [Die Produktfamilie kennen](hilfe/fuersprecher/die-produktfamilie-kennen.md): ein Satz je Produkt
 - [Das Ökosystem der Exponential-Plattform](geschichte/oekosystem.md)
+- [Exponential im Wettbewerb](wettbewerb/README.md): Exponential im Vergleich mit proprietären DXPs, SaaS und den Systemen in allen Sprachen

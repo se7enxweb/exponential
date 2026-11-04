@@ -128,7 +128,7 @@ CategoryIcons[theme-extensions]=puzzle
 
 > <pattern>;<category>, der erste Treffer gewinnt  
 
-Standard: eine Liste mit 106: `doc/eng-us/help/manual/*;manual`, `doc/eng-us/help/migrations/*;migrations`, `doc/eng-us/guides/migrations*.md;migrations`, `doc/eng-us/features/6.0/migrations.md;migrations`, `doc/eng-us/specifications/6.0/migration-file-format.md;migrations`, `doc/eng-us/help/leadership/*;leadership`, `doc/eng-us/help/business/*;business`, `doc/eng-us/help/partners/*;partnership`, `doc/eng-us/help/advocates/*;advocacy`, `doc/eng-us/help/designers/templates/*;templates`, `doc/eng-us/help/designers/*;theme-design`, `doc/eng-us/help/hosting/*;hosting` ....
+Standard: eine Liste mit 109: `doc/eng-us/help/manual/*;manual`, `doc/eng-us/help/migrations/*;migrations`, `doc/eng-us/guides/migrations*.md;migrations`, `doc/eng-us/features/6.0/migrations.md;migrations`, `doc/eng-us/specifications/6.0/migration-file-format.md;migrations`, `doc/eng-us/help/leadership/*;leadership`, `doc/eng-us/help/business/*;business`, `doc/eng-us/help/partners/*;partnership`, `doc/eng-us/help/advocates/*;advocacy`, `doc/eng-us/help/designers/templates/*;templates`, `doc/eng-us/help/designers/*;theme-design`, `doc/eng-us/help/hosting/*;hosting` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -156,7 +156,7 @@ PathRules[]=doc/eng-us/help/sponsors/*;sponsorship
 PathRules[]=doc/eng-us/help/customers/*;customer-success
 PathRules[]=doc/eng-us/help/government/*;public-sector
 PathRules[]=doc/eng-us/help/businesses/*;business-solutions
-# ... 86 weitere in der ausgelieferten Datei
+# ... 89 weitere in der ausgelieferten Datei
 */ ?>
 ```
 

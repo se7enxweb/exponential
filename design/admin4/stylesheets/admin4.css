@@ -904,6 +904,8 @@ body,
 .a4-header-btn:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
 .a4-header-btn[aria-expanded="true"] { border-color: var(--a4-accent); background-color: var(--a4-accent-soft); }
 .a4-header-btn .a4-icon { width: 18px; height: 18px; }
+/* the "?" on the help's own pages (parts/a4_header_help.tpl), marked as a current tab is */
+.header-help.is-current .a4-header-btn { border-color: var(--a4-accent); background-color: var(--a4-accent-soft); color: var(--a4-accent); }
 .a4-header-btn.disabled { opacity: .45; cursor: default; pointer-events: none; }
 .a4-user-menu[hidden] { display: none; }
 .a4-user-menu-name {

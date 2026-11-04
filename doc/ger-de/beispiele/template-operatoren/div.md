@@ -28,10 +28,10 @@ Aus der Parameterliste oben gebildet; die Werte sind Platzhalter (die Template-H
 
 ## In einem ausgelieferten Template
 
-Die erste Verwendung in den Templates dieser Installation, `design/admin/templates/datatable/syncs.tpl` Zeile 48:
+Die erste Verwendung in den Templates dieser Installation, `design/admin/templates/class/datatype_list.tpl` Zeile 22:
 
 ```tpl
-<td>{switch match=$s.run_mode}{case match='once'}{'when started'|i18n( 'design/admin/datatable' )}{/case}{case match='live'}{'live'|i18n( 'design/admin/datatable' )}{/case}{case}{'every %minutes minutes'|i18n( 'design/admin/datatable',, hash( '%minutes', div( $s.interval_seconds, 60 )|floor ) )|wash}{/case}{/switch}</td>
+<span class="a4-meta">{'Counted %time, again after %minutes minutes'|i18n( 'design/admin/class/datatype',, hash( '%time', $datatype_counted|l10n( shortdatetime ), '%minutes', div( $datatype_cache_ttl, 60 )|floor ) )|wash}</span>
 ```
 
 ## Siehe auch

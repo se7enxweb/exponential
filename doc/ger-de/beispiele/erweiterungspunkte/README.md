@@ -51,7 +51,7 @@ Wo eine Erweiterung sich über Einstellungen in den Kernel einklinkt: INI-Einste
 | [setup.ini](setup.md) | Kernel | 1 | TestClass |
 | [shop.ini](shop.md) | Kernel | 7 | MathHandler, ExchangeRatesUpdateHandler, ExtensionDirectories, ExtensionDirectories, Handler, ExtensionDirectories ... |
 | [shopaccount.ini](shopaccount.md) | Kernel | 4 | Repositories, ExtensionRepositories, Handler, Handler |
-| [site.ini](site.md) | Kernel | 31 | purgeClass, purgeClass, DatabaseImplementation, Listeners, Implementation, Listeners ... |
+| [site.ini](site.md) | Kernel | 32 | purgeClass, purgeClass, ExcludeClasses, DatabaseImplementation, Listeners, Implementation ... |
 | [smarty.ini](smarty.md) | Kernel | 2 | CompileCheck, SecurityStaticClassList |
 | [subitemscolumns.ini](subitemscolumns.md) | Kernel | 112 | Class, Class, Class, Class, Class, Class ... |
 | [syscard.ini](syscard.md) | Kernel | 1 | ProviderClasses |

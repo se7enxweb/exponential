@@ -62,7 +62,7 @@ Jede ausgelieferte INI-Datei des Kernels und der mitgelieferten Erweiterungen, e
 | [logviewer.ini](logviewer/README.md) | Kernel | 10 |
 | [mailpreferences.ini](mailpreferences/README.md) | Kernel | 19 |
 | [membermanagement.ini](membermanagement/README.md) | Kernel | 4 |
-| [menu.ini](menu/README.md) | Kernel | 28 |
+| [menu.ini](menu/README.md) | Kernel | 29 |
 | [migration.ini](migration/README.md) | Kernel | 12 |
 | [mime.ini](mime/README.md) | Kernel | 192 |
 | [module.ini](module/README.md) | Kernel | 2 |
@@ -80,7 +80,7 @@ Jede ausgelieferte INI-Datei des Kernels und der mitgelieferten Erweiterungen, e
 | [setup.ini](setup/README.md) | Kernel | 24 |
 | [shop.ini](shop/README.md) | Kernel | 10 |
 | [shopaccount.ini](shopaccount/README.md) | Kernel | 3 |
-| [site.ini](site/README.md) | Kernel | 66 |
+| [site.ini](site/README.md) | Kernel | 67 |
 | [smarty.ini](smarty/README.md) | Kernel | 1 |
 | [soap.ini](soap/README.md) | Kernel | 2 |
 | [solr.ini](solr/README.md) | Kernel | 1 |
