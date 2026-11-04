@@ -363,5 +363,6 @@ Der Teil über Exponential und die Daten der Versionen 2.9 bis 4.4 stammen aus d
 - [Branch-Geschichte](branch-uebersicht.md)
 - [Release-Übersicht](release-uebersicht)
 - [Distributionen von Exponential](DISTRIBUTIONS.md)
+- [Exponential Community](COMMUNITY.md): wo sich die Community heute trifft, und jede öffentliche Website des Projekts
 - [Exponential 6.0 installieren](INSTALL.md)
 - [Glossar](glossar.md)

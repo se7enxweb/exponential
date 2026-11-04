@@ -351,5 +351,6 @@ The Exponential part and the dates of the 2.9 to 4.4 releases come from this rep
 - [Branch history](branch-overview.md)
 - [Release overview](release-overview)
 - [Distributions of Exponential](DISTRIBUTIONS.md)
+- [Exponential Community](COMMUNITY.md): where the community meets today, and every public project website
 - [Installing Exponential 6.0](INSTALL.md)
 - [Glossary](glossary.md)

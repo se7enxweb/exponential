@@ -230,6 +230,9 @@ All contributions will be reviewed before merging. Be open to feedback and be wi
 
 Feel free to open an issue for bug reports, feature requests, or general discussions. Follow the provided templates to provide necessary details.
 
+Where the community meets, which channel to use for what, and every public website of the project are in the help
+center's book [Exponential Community](doc/eng-us/COMMUNITY.md).
+
 **Negative features.** Not every reported bug is a bug. Some behavior is deliberate, or open to interpretation, and
 other installations, extensions and integrations depend on it working exactly as it does today. Engineers call this a
 negative feature. An issue or pull request that changes one needs a clear justification of the use case and of who
