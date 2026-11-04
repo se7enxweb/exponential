@@ -147,6 +147,7 @@ PageOrder[CONFIGURING.md]=11
 PageOrder[EXTENDING.md]=13
 PageOrder[INTEGRATING.md]=14
 PageOrder[DISTRIBUTIONS.md]=15
+PageOrder[SUPPORT.md]=16
 PageOrder[languages.md]=20
 PageOrder[HISTORY.md]=25
 PageOrder[branch-overview.md]=30

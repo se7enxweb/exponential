@@ -504,6 +504,8 @@ Then continue with the guides:
 
 ## 13. Troubleshooting
 
+When the table does not help, [Getting Support](SUPPORT.md) shows where to ask.
+
 | Symptom | Cause and fix |
 |---|---|
 | A changed setting has no effect | The INI cache still holds the old value: `php bin/php/ezcache.php --clear-tag=ini`. Check with `./console exp:ini where <file>/<block>/<setting>` which file wins: a later layer (often `settings/override/`) may set it again. |

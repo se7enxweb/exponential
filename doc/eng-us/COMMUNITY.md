@@ -128,7 +128,8 @@ same sites); the addresses above are the ones to use. Short links such as <https
 ## 4. Where to talk and get help
 
 All of these are free. [Community channels](help/project/community-channels.md) describes each one in detail, and
-[Getting support](help/project/getting-support.md) says which to try first.
+[Getting support](help/project/getting-support.md) says which to try first. The guide [Getting Support](SUPPORT.md)
+also shows how to ask the communities of PHP, the database and the web server, and when to hire 7x.
 
 | Channel | What it is for | Address |
 |---|---|---|
@@ -329,5 +330,6 @@ in public.
 - [Exponential Competition](competition/README.md): how Exponential compares with the other ways to run a website
 - [Community channels](help/project/community-channels.md)
 - [Getting support](help/project/getting-support.md)
+- [Getting Support](SUPPORT.md): from helping yourself to the PHP ecosystem, the Foundation and 7x
 - [Contribute to the project](help/project/contribute-to-the-project.md)
 - [CONTRIBUTING.md](../../CONTRIBUTING.md), [CODE_OF_CONDUCT.md](../../CODE_OF_CONDUCT.md), [SECURITY.md](../../SECURITY.md)
