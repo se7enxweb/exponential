@@ -1,0 +1,39 @@
+*Titel: Ein Ausgabefilter über das gesamte erzeugte HTML.
+
+*Dokumentation:
+Mit dieser neuen Funktion lässt sich das HTML ändern, bevor es an den Client
+bzw. Browser gesendet wird. Ein Anwendungsfall ist die Beschleunigung der
+Auslieferung von Inhalten. Mit passenden Filtern lassen sich statische Dateien
+von anderen Servern ausliefern, um eine weltweit genutzte Website schneller zu
+machen. So kann der Benutzer zum Beispiel statische Dateien von einem Server
+in seiner Nähe erhalten. Das kann das Nutzungserlebnis enorm verbessern. In
+einem Testszenario sank die Ladezeit der Website um über 80 %.
+
+Einen neuen Ausgabefilter richten Sie mit
+site.ini[OutputSettings].OutputFilterName ein.
+
+
+Beispiel (statische Dateien von einem anderen Host ausliefern):
+
+in site.ini
+[OutputSettings]
+OutputFilterName=myFilter
+
+<?php
+class myFilter
+{
+	static function filter( $output )
+	{
+        $patterns = array();
+        $patterns[0] = '/((\/extension\/.*|)\/design\/[a-z0-9_-]*\/(stylesheets|images|javascript)\/.*\.(gif|jpg|png|js|css))/isU';
+        $replacements = array();
+        $replacements[0] = 'http://static.example.com\1';
+        return preg_replace($patterns, $replacements, $output );
+	}
+}
+?>
+
+Weitergedacht lässt sich auch ein Mechanismus umsetzen, bei dem statische
+Inhalte vom Host ausgeliefert werden, der dem Standort des Benutzers am
+nächsten ist. Ein Benutzer in den USA erhielte statische Dateien vom Host
+static.us.example.com, einer in China von static.cn.example.com.

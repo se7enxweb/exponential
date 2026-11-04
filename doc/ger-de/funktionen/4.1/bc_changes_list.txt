@@ -1,0 +1,14 @@
+Änderungen an Rückwärtskompatibilität und Verhalten
+==================================================
+
+Ab Exponential 4.1 verfolgen wir Änderungen, die die Rückwärtskompatibilität
+(BC) und das Verhalten betreffen, genauer. Für Änderungen dieser Art gibt es
+eine eigene Datei mit Informationen.
+
+Die Datei richtet sich an Entwickler. Bei Bedarf gibt es für jede
+veröffentlichte Version eine eigene Datei.
+
+Die Datei liegt unter::
+    <ezp-root>/doc/eng-us/bc/4.1/changes-4.1.0.txt
+
+(Die deutsche Fassung liegt unter doc/ger-de/bc/4.1/aenderungen-4.1.0.txt.)

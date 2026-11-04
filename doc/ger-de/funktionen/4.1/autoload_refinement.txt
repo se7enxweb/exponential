@@ -1,0 +1,30 @@
+Verfeinerung des Autoloads
+==========================
+
+Verwendung von spl_autoload_register()
+--------------------------------------
+
+Exponential ruft die Autoload-Methoden jetzt über den Autoload-Funktionsstapel
+der SPL auf. Damit lassen sich in config.php auch eigene Autoload-Methoden
+hinzufügen.
+
+Lädt die eigene Autoload-Methode nicht die Klassen von Exponential, sollte sie
+das Präfix der Klasse prüfen oder einfach ohne Ausnahme zurückkehren, wenn die
+Klasse nicht gefunden wird. Der Grund: PHP probiert jede Methode im
+Autoload-Stapel aus, bricht aber ab, wenn weiter oben im Stapel eine Ausnahme
+auftritt.
+
+Jeder Aufruf von spl_autoload_register() hängt die neue Methode unten an den
+Stapel an. Bei der Suche nach Klassen beginnt PHP oben.
+
+Fortschrittsanzeige
+-------------------
+
+Ab Exponential 4.1 lässt sich der Fortschritt der Autoload-Erzeugung
+schrittweise ausgeben.
+
+Das wird mit den Optionen *-p / --progress* von
+*bin/php/ezpgenerateautoloads.php* eingeschaltet.
+
+Derzeit gibt es die Fortschrittsanzeige nur für die Kommandozeile; sie stammt
+von der Klasse ezpAutoloadCliOutput.

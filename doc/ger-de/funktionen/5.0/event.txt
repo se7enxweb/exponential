@@ -1,0 +1,16 @@
+Ereignissystem
+==============
+
+Einführung
+----------
+Alle Informationen zu dieser Funktion stehen in 4.5/event.txt
+
+
+Neue Ereignisse
+---------------
+{@see ezpEvent->notify()}
+
+
+content/cache/all
+
+Wird ausgelöst, wenn der gesamte Inhalts-Cache geleert wird.

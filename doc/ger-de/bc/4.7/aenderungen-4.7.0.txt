@@ -1,0 +1,80 @@
+Änderungen an Rückwärtskompatibilität und Verhalten in Version 4.7.0
+====================================================================
+
+Geänderte INI-Einstellungen
+---------------------------
+
+- Überarbeiteter Index-Mechanismus des Clusters
+
+  Das Index-System des Clusters, das im Cluster-Betrieb von Exponential Bilder
+  und Binärdateien ausliefert, wurde vollständig überarbeitet. Die
+  Einstellungen gehören jetzt in config.php und heißen etwas anders (unter
+  anderem beginnen alle mit CLUSTER_). Die Konfiguration der neuen Version ist
+  online dokumentiert.
+  Alle Dateien index_cluster_* und index_image_* sind aus dem
+  Dokument-Wurzelverzeichnis zu entfernen. Die Backend-spezifischen Dateien
+  liegen jetzt in kernel/clustering.
+
+  Bei einem eZDB-Cluster sollte die Unterstützung von HTTP_RANGE ausdrücklich
+  abgeschaltet werden, indem die Konstante CLUSTER_ENABLE_HTTP_RANGE auf false
+  gesetzt wird.
+
+- LogDir=log/audit
+
+  Das Standard-Protokollverzeichnis hat sich geändert und ist ab jetzt immer
+  relativ zur Einstellung VarDir.
+
+Geändertes Verhalten
+--------------------
+
+- #019024: Vertauschte IDs von Klassenattributen nach dem Umsortieren
+
+  Die Eingabefelder des Bearbeitungsformulars einer Inhaltsklasse wurden für
+  Klassenattribute geändert. Sie sind jetzt nach Attribut-ID statt nach
+  laufender Nummer indiziert. Überschreibungen von *content/class/edit.tpl*
+  müssen ebenso geändert werden.
+
+- #019215: Die Audit-Funktion sollte für Multisite-Installationen verbessert
+  werden
+
+  Ab jetzt liegen die Protokolle standardmäßig relativ zur Einstellung VarDir.
+  Das ist besonders bei Multisite-Installationen nützlich, die meist zwei oder
+  mehr Datenbanken verwenden: So gibt es getrennte Audit-Protokolle je Website.
+
+- ezpMvcRailsRoute verlangt jetzt die ausdrückliche Angabe der HTTP-Methode.
+
+  Standardmäßig wird jetzt http-get angenommen; verwendet Ihre Rails-Route
+  etwas anderes, müssen Sie sie ändern. Zwei Möglichkeiten:
+  * stattdessen ezcMvcRailsRoute verwenden; es verhält sich wie früher
+    ezpMvcRailsRoute und funktioniert ab 4.5
+  * die Konfiguration der Route ändern:
+   - 'oauthToken'   => new ezpMvcRailsRoute( '/oauth/token', 'ezpRestOauthTokenController', 'handleRequest' )
+   + 'oauthToken'   => new ezpMvcRailsRoute( '/oauth/token', 'ezpRestOauthTokenController', array( 'http-post' => 'handleRequest' ) )
+
+
+
+Entfernte Funktionen
+--------------------
+
+
+
+
+Entfernte Konstanten
+--------------------
+
+
+
+Entfernte globale Variablen
+---------------------------
+
+
+
+
+Veraltet
+--------
+
+- eZSession::get() und eZHTTPTool->sessionVariable()
+
+  Diese Funktionen werden den Session-Wert künftig nicht mehr per Referenz
+  zurückgeben. Passen Sie Ihren Code an und verwenden Sie ausdrücklich set()
+  bzw. setSessionVariable().

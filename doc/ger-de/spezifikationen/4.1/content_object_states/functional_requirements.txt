@@ -1,0 +1,37 @@
+==============================
+Zustände von Inhaltsobjekten
+==============================
+
+:Autoren: Kristof Coomans
+
+
+
+Vorwort
+-------
+Die Erfahrung aus Kundenprojekten zeigt, dass das bisherige Workflow-System für
+einfache Zustandsübergänge von Inhalten oft zu kompliziert ist. Es braucht eine
+Alternative, die wir "Zustände von Inhaltsobjekten" nennen.
+
+
+
+Funktionen
+----------
+Inhaltsobjekte sollen einem oder mehreren "Zuständen von Inhaltsobjekten"
+zugeordnet werden. Diese Zustände werden auch mit dem System der Rollen und
+Policies verbunden, damit bestimmte Benutzer Inhalte in bestimmten Zuständen
+lesen, bearbeiten oder entfernen dürfen und in anderen nicht. Eigene Policies
+erlauben Benutzern außerdem, einem Objekt einen bestimmten Zustand zuzuweisen
+und den Übergang von einem Zustand in einen anderen auszuführen.
+
+Jeder Zustand gehört zu einer "Zustandsgruppe", um sie logisch zu gruppieren.
+Zustände lassen sich innerhalb ihrer Gruppe sortieren, meist für die Anzeige.
+Der erste Zustand der Gruppe ist der Standard.
+
+Ein Inhaltsobjekt kann zur selben Zeit nur einen Zustand derselben Gruppe
+haben. Übergänge sind nur zwischen Zuständen derselben Gruppe erlaubt.
+
+Es soll auch möglich sein, neue Template-Überschreibungen für Inhaltsobjekte in
+einem bestimmten Zustand festzulegen.
+
+Namen und Beschreibungen der Zustände sollen sich in der
+Administrationsoberfläche übersetzen lassen.

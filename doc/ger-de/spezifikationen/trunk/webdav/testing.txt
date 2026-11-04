@@ -1,0 +1,288 @@
+WebDAV in Exponential
+~~~~~~~~~~~~~~~~~~~~~
+
+Dieses Dokument beschreibt die Unit-Tests für WebDAV und wie sie eingerichtet
+werden.
+
+
+Serverkonfiguration
+===================
+
+Die Exponential-Installation muss so konfiguriert sein, dass alle
+WebDAV-Anfragen über index_webdav.php laufen (bis 6.0.14 hieß es webdav.php;
+webdav.php leitet jetzt nur noch weiter und wird in einer späteren
+Hauptversion entfernt, siehe
+doc/ger-de/bc/6.0/webdav-einstiegsskript-index-webdav.md).
+
+Wie WebDAV in einer Exponential-Installation eingeschaltet wird, war unter
+http://ez.no/doc/ez_publish/technical_manual/4_0/features/webdav beschrieben.
+
+Außerdem muss WebDAV in webdav.ini eingeschaltet sein::
+
+  [GeneralSettings]
+  EnableWebDAV=true
+
+Für jeden Siteaccess sollte es eine webdav.ini.append.php geben, die den
+Startknoten des Siteaccesses nennt::
+
+ [GeneralSettings]
+ StartNode=2
+
+Das WebDAV-Protokoll wird so eingeschaltet (in webdav.ini oder in
+Überschreibungen)::
+
+ [GeneralSettings]
+ Logging=enable
+
+Die WebDAV-Protokolle liegen in var/log/webdav.log (von index_webdav.php) und
+var/log/<siteaccess>/log/webdav.log (von ezwebdavcontentbackend.php).
+
+Bei mehreren Siteaccesses sollten die Einstellungen PathPrefix und
+PathPrefixExclude in site.ini und ihren Überschreibungen verwendet werden
+(PathPrefix blendet diesen Teil am Anfang des URL-Alias aus;
+PathPrefixExclude nennt URLs, die davon ausgenommen sind)::
+
+  [SiteAccessSettings]
+
+  # Hides this part from the start of the url alias
+  PathPrefix=
+
+  # Which URLs to exclude from being affected by PathPrefix setting.
+  # URLs containing the specified texts after siteaccess name will not be affected by PathPrefix
+  PathPrefixExclude[]
+  #PathPrefixExclude[]=media
+
+Standardmäßig kommen über WebDAV gelöschte Dateien in den Papierkorb. Den
+Papierkorb zu leeren ist Aufgabe des Administrators der Site. Sollen die
+Dateien direkt entfernt werden (ohne Papierkorb), muss diese Einstellung in
+content.ini geändert werden
+::
+
+  [RemoveSettings]
+  # delete or trash
+  DefaultRemoveAction=delete
+
+Wie Dateinamen beim Hochladen gebildet werden, ändern Sie mit der Einstellung
+TransformationGroup in site.ini und ihren Überschreibungen (urlalias_iri für
+URL-Aliase neuer Art mit Unicode, urlalias_compat für die alte Art)::
+
+  [URLTranslator]
+  TransformationGroup=urlalias
+  # Uncomment this to get the new-style url aliases with Unicode support
+  #TransformationGroup=urlalias_iri
+  # Uncomment this to get the old-style url aliases
+  #TransformationGroup=urlalias_compat
+
+
+Regressionstest-System
+======================
+
+Die Unit-Tests liegen in tests/tests/kernel/private/webdav.
+
+Die Datei backend_content_regression_test.php enthält die Testklasse
+eZWebDAVContentBackendRegressionTest, die ezpTestRegressionTest erweitert.
+
+Die WebDAV-Tests verwenden die Erweiterung ezsiteaccesshelper
+(http://svn.ez.no/svn/commercial/projects/qa/trunk/ezsiteaccesshelper/), die
+einen Siteaccess für die Tests anlegt.
+
+Die normale index_webdav.php der Exponential-Installation wird NICHT
+verwendet. Stattdessen ist der Code in backend_content_regression_test.php
+dupliziert.
+
+Da eZWebDAVContentBackendRegressionTest von ezcTestRegressionTest erbt, kann
+es Tests dynamisch anlegen: Es durchläuft rekursiv den Verzeichnisbaum
+regression und legt für jede gefundene .request-Datei einen Test an.
+
+Zu jeder .request-Datei gehören weitere Dateien mit demselben Namen und
+anderen Endungen.
+
+Benennen Sie Testdateien nicht mit Zeichen, die in PHP-Funktionsnamen nicht
+vorkommen dürfen. Für jede .request-Datei wird dynamisch eine Testfunktion mit
+dem Dateinamen ohne Endung angelegt.
+
+
+.request
+--------
+
+Pflichtdatei. Sie wird per include in das Testsystem eingebunden. Für jede
+.request-Datei entstehen eine Testfunktion und ein Exponential-Ordner unter
+/$GLOBALS['ezc_siteaccess']/Content. Der Ordner wird nach jedem Test entfernt.
+
+Da WebDAV Informationen normalerweise über die Funktion header() ausgibt,
+wurden in wrappers.php im Ordner tests/tests/kernel/private/webdav einige
+Kniffe eingebaut. Die Ausgabe von WebDAV wird in die globale Variable
+$GLOBALS['ezc_response_body'] umgeleitet und mit dem Textinhalt der
+.expected-Datei verglichen.
+
+
+.expected
+---------
+
+Pflichtdatei. Ihr Inhalt wird mit der Ausgabe verglichen, die der Test mit der
+Eingabe aus der .request-Datei erzeugt.
+
+WebDAV-Befehle, die XML liefern (PROPFIND), können besondere Zeichenketten
+verwenden, die vor dem Vergleich ersetzt werden (damit Tests auf verschiedenen
+Testmaschinen laufen). Diese Zeichenketten sind:
+
+  @ezc_siteaccess@
+    Der in site.ini definierte Siteaccess, auf dem die WebDAV-Tests aufbauen.
+    Es ist der Name der Testklasse in Kleinbuchstaben
+    (**ezwebdavbackendcontentregressiontest**). Der Siteaccess wird beim
+    Testlauf automatisch angelegt.
+
+  @ezc_webdav_host@
+    Der Host der WebDAV-Maschine, auf der die Tests laufen. Meist webdav.ezp.
+    Zu ändern in der Funktion setUp() der Datei
+    backend_content_regression_test.php, Wert $GLOBALS['ezc_webdav_host'].
+
+  @ezc_webdav_testfolder@
+    Der Name der aktuellen .request-Datei ohne Endung. Das Testsystem setzt
+    ihn automatisch. Ein Exponential-Ordner mit diesem Namen wird vor dem
+    Einbinden der .request-Datei automatisch unter
+    /$GLOBALS['ezc_siteaccess']/Content/ angelegt.
+
+
+.txt, .jpg oder andere Endungen
+-------------------------------
+
+Optionale Datei. Muss die .request-Datei in Exponential ein Datei- oder
+Bildobjekt anlegen, kann sie dazu diese Datei angeben (Name
+$GLOBALS['ezc_webdav_testfolder'] mit der nötigen Endung).
+
+
+.body
+-----
+
+Optionale Datei.
+
+Für WebDAV-Befehle, die neben den normalen HTTP-Headern binären Inhalt
+liefern. Der binäre Inhalt (etwa ein Bild) steht in der .body-Datei, und der
+Test hängt ihn automatisch an die normale Ausgabe der .expected-Datei an.
+
+
+Unit-Tests
+==========
+
+Jeder WebDAV-Befehl (COPY, GET, PROPFIND usw.) hat ein eigenes Verzeichnis mit
+seinen Regressionstests. Für jeden Befehl gibt es 2 Verzeichnisse:
+
+  correct
+    Tests mit "normaler" Ausgabe, etwa ein GET auf eine vorhandene Datei, das
+    '200 OK' und den Inhalt der Datei liefert.
+
+  incorrect
+    Tests mit "abweichender" Ausgabe, etwa ein GET auf eine fehlende Datei,
+    das '404 Not Found' liefert.
+
+Jede .request-Datei kann im Test einige globale Variablen verwenden:
+
+  $GLOBALS['ezc_siteaccess']
+    Der in site.ini definierte Siteaccess, auf dem die WebDAV-Tests aufbauen.
+    Es ist der Name der Testklasse in Kleinbuchstaben
+    (**ezwebdavbackendcontentregressiontest**). Der Siteaccess wird beim
+    Testlauf automatisch angelegt.
+
+  $GLOBALS['ezc_webdav_host']
+    Der Host der WebDAV-Maschine, auf der die Tests laufen. Meist webdav.ezp.
+    Zu ändern in der Funktion setUp() der Datei
+    backend_content_regression_test.php, Wert $GLOBALS['ezc_webdav_host'].
+
+  $GLOBALS['ezc_webdav_testfolder']
+    Der Name der aktuellen .request-Datei ohne Endung. Das Testsystem setzt
+    ihn automatisch. Ein Exponential-Ordner mit diesem Namen wird vor dem
+    Einbinden der .request-Datei automatisch unter
+    $GLOBALS['ezc_siteaccess']/Content/ angelegt.
+
+  $GLOBALS['ezc_webdav_testfolderid']
+    Die node_id zu $GLOBALS['ezc_webdav_testfolder']. Damit lassen sich etwa
+    Dateien, Ordner oder Bilder im aktuellen Ordner
+    ($GLOBALS['ezc_webdav_testfolder']) anlegen.
+
+  $GLOBALS['ezc_webdav_username'] und $GLOBALS['ezc_webdav_password']
+    Diese werden automatisch auf die Standardwerte 'admin' und 'publish'
+    gesetzt (zu ändern in backend_content_regression_test.php in setUp()).
+    Um abweichende Ausgaben bei falschem Benutzernamen und Passwort zu testen,
+    ändern Sie die Werte in der .request-Datei.
+
+  $GLOBALS['ezc_post_body']
+    Für WebDAV-Befehle, die einen Body brauchen (etwa braucht PROPFIND einen
+    XML-Body, der die angefragten Eigenschaften nennt). Braucht die
+    $_SERVER-Variablen HTTP_CONTENT_LENGTH und CONTENT_TYPE.
+
+
+Die Servervariablen werden direkt in den .request-Dateien gesetzt:
+
+  $_SERVER['REQUEST_METHOD']
+    Pflicht. Nennt die WebDAV-Methode, die die .request-Datei testet.
+    Mögliche Werte: COPY, DELETE, GET, HEAD, MKCOL, MOVE, OPTIONS, PROPFIND,
+    PROPPATCH, PUT.
+
+  $_SERVER['REQUEST_URI']
+    Pflicht. Verwenden Sie die globalen Variablen oben für portable Tests.
+
+  $_SERVER['HTTP_DESTINATION']
+    Pflicht für die WebDAV-Befehle COPY und MOVE. Verwenden Sie die globalen
+    Variablen oben für portable Tests. Hier gehört die volle URL hin, also
+    auch 'http://' . $GLOBALS['ezc_webdav_host'] vor den Siteaccess.
+
+  $_SERVER['HTTP_DEPTH']
+    Für manche WebDAV-Befehle nötig. Mögliche Werte: '0', '1' oder 'infinity'.
+
+  $_SERVER['HTTP_OVERWRITE']
+    Für manche WebDAV-Befehle nötig (COPY, MOVE). Mögliche Werte: 'F' (nicht
+    überschreiben) oder 'T' (überschreiben).
+
+  $_SERVER['HTTP_CONTENT_LENGTH']
+    Pflicht für WebDAV-Befehle mit Body (PROPFIND, PROPPATCH). Der Wert ist
+    beliebig (er wird nicht geprüft).
+
+  $_SERVER['CONTENT_TYPE']
+    Pflicht für WebDAV-Befehle mit Body (PROPFIND, PROPPATCH). Für einen
+    XML-Body 'application/xml' verwenden.
+
+  $_SERVER['HTTP_USER_AGENT']
+    Derzeit nicht verwendet (der Wert ist 'cadaver/0.22.5 neon/0.26.3'), aber
+    künftig lassen sich Tests für jeden relevanten WebDAV-Client schreiben.
+
+Damit die Tests auf einer anderen Maschine laufen, ändern Sie diese Werte in
+backend_content_regression_test.php in der Funktion setUp()::
+
+  $GLOBALS['ezc_webdav_username'] = 'admin';
+  $GLOBALS['ezc_webdav_password'] = 'publish';
+  $GLOBALS['ezc_webdav_host'] = 'webdav.ezp';
+
+
+Fehlschlagende Tests
+====================
+
+Manche Tests schlagen auf anderen Maschinen aus bestimmten Gründen fehl:
+
+  PROPFIND
+    Der Test testPropFindFolderLevel0Depth1 schlägt fehl, weil er den
+    Siteaccess second_site erwartet. Eine Behebung sollte folgen.
+
+Tests lassen sich überspringen, indem man ihre Zeile in der Funktion skip() in
+backend_content_regression_test.php einkommentiert.
+
+
+Aktuelle Probleme
+=================
+
+Inhalte zwischen 2 Siteaccesses verschieben oder kopieren
+---------------------------------------------------------
+
+Das ist noch nicht möglich (es kommt 409 Conflict zurück); manche Clients wie
+BitKinex verhalten sich aber seltsam und versuchen es erneut, wobei die
+Quelldatei verschwindet und die Zieldatei nicht erscheint.
+
+
+
+
+..
+   Local Variables:
+   mode: rst
+   fill-column: 79
+   End:
+   vim: et syn=rst tw=79

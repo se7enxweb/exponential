@@ -1,0 +1,43 @@
+Ereignissystem
+==============
+
+Einführung
+----------
+Alle Informationen zu dieser Funktion stehen in 4.5/event.txt
+
+
+Änderung der API
+----------------
+{@see ezpEvent->filter()} kann jetzt mehr als eine Variable annehmen.
+
+
+Neue Ereignisse
+---------------
+{@see ezpEvent->notify()}
+
+
+request/preinput ( eZURI $uri )
+
+Erlaubt Logik direkt nach dem Laden der Einstellungen von Siteaccess und
+Erweiterungen.
+
+
+Neue Filter
+-----------
+{@see ezpEvent->filter()}
+
+
+response/preoutput  ( string $templateResult )
+
+Der Filter 'response/preoutput' wird vor dem Debug-Bericht ausgelöst, der bei
+eingeschaltetem Debug am Ende der Seite ausgegeben wird. So lassen sich im
+Callback Akkumulatoren verwenden oder etwas an den Debug-Bericht anhängen; es
+erscheint im endgültigen Debug-Bericht (anders als beim Filter
+response/output, der ganz am Ende nach dem Bericht ausgelöst wird ...)
+
+
+content/view        ( int $nodeId, eZINI $siteINI )
+
+Wird direkt nach dem Setzen der Parameter in Variablen ausgeführt. Damit lässt
+sich die Knoten-ID abhängig von einer Bedingung ändern oder die
+site.ini-Einstellungen für die Anfrage anpassen.

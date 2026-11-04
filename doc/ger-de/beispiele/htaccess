@@ -1,0 +1,264 @@
+# Apache-.htaccess für Exponential 6 (deutsche Fassung)
+# ---------------------------------------------------------------------------
+# Was das ist: die Rewrite-Regeln, mit denen Apache eine Exponential-
+# Installation sicher ausliefert, wenn das Dokument-Wurzelverzeichnis das
+# Wurzelverzeichnis der Installation ist (das Verzeichnis mit index.php). Nur
+# eine feste Liste von Asset-Pfaden wird als Datei gesendet; jede andere
+# Anfrage (URL-Aliase, Module, aber auch settings/, var/, vendor/, kernel/,
+# composer.json) beantwortet index.php, das die Datei nie herausgibt.
+# Punktdateien (.git, .env, .htaccess) antworten überall mit 404, und keine
+# .php unterhalb der Wurzel läuft, nur weil ihr Pfad angefragt wurde.
+#
+# In dieser deutschen Fassung sind nur die Kommentare übersetzt; jede
+# Anweisung ist Zeichen für Zeichen dieselbe wie in der englischen Fassung
+# doc/eng-us/examples/htaccess und in .htaccess_root.
+#
+# Installation: die mitgelieferte Datei ist .htaccess_root im
+# Wurzelverzeichnis der Installation. Kopieren Sie sie, verschieben Sie sie
+# nicht, damit ein Update eine neue Fassung bringen kann:
+#
+#     cp .htaccess_root .htaccess
+#
+# Der Abschnitt "Regeln" unten ist eine wörtliche Kopie von .htaccess_root
+# dieses Releases (die Anweisungen; die Kommentare sind hier übersetzt), zum
+# Lesen und zum Kopieren in einen <Directory>-Block. Der Abschnitt "Optional"
+# danach steht nicht in .htaccess_root: HTTPS-Weiterleitung, Header für
+# statische Dateien und Browser-Cache, jeweils ausgeschaltet oder abgesichert,
+# bis Sie sie einschalten. Löschen Sie nie eine Regel des Abschnitts "Regeln",
+# damit etwas funktioniert; suchen Sie stattdessen die Ursache
+# (doc/ger-de/installation/13-sicherheitshaertung.md, 13.2).
+#
+# Braucht: mod_rewrite und AllowOverride All (oder mindestens FileInfo) für
+# das Verzeichnis. Prüfen mit "apachectl configtest", dann diese Anfragen:
+#   /.git/config, /.env, /kernel/classes/ezini.php  -> 404
+#   /settings/site.ini, /composer.json               -> eine Seite von index.php, nie die Datei
+#
+# Regel für Regel erklärt: doc/ger-de/beispiele/webserver/apache-htaccess.md
+# Dieselben Regeln für einen virtuellen Host (Server-Kontext): doc/eng-us/examples/ezpublish.conf
+#
+# Lizenz: Die ersten Fassungen dieser Datei kamen mit der Software, aus der
+# Exponential hervorging, eZ Publish, 1999 - 2014. Die Rewrite-Regeln sind
+# die von .htaccess_root, Teil der Software (GNU General Public License
+# Version 2 oder später, wie der übrige Code). Dieses dokumentierte Beispiel
+# mit seinen Kommentaren und optionalen Abschnitten ist freie Dokumentation
+# unter der GNU Free Documentation License 1.3 oder später
+# (doc/ger-de/README-LIZENZ.md).
+
+# ===========================================================================
+# Regeln (wörtlich .htaccess_root)
+# ===========================================================================
+
+# Kopieren Sie diese Datei in eine neue Datei .htaccess im Wurzelverzeichnis
+# von Exponential, um Ihre Installation mit dem .htaccess-basierten Modus für
+# virtuelle Hosts abzusichern.
+
+DirectoryIndex index.php
+
+RewriteEngine On
+# Keine Punktdatei und kein Punktverzeichnis (.git, .env, .htaccess ...)
+# wird ausgeliefert oder ausgeführt, in welchem Ordner auch immer;
+# .well-known bleibt erreichbar.
+RewriteRule (^|/)\.(?!well-known(/|$)) - [R=404,L]
+# Kein Skript läuft, nur weil sein Pfad angefragt wurde, außer den
+# Front-Controllern in der Wurzel: eine .php darunter (im Paketspeicher,
+# einer Erweiterung, var/) antwortet mit 404, statt ausgeführt zu werden.
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^.+/[^/]+\.(php[0-9]?|phtml|phar)$ - [R=404,L]
+RewriteRule ^api/ index_rest.php [L]
+RewriteRule ^index_rest\.php - [L]
+# Der SOAP-Server (settings/soap.ini EnableSOAP=true) ist seit Exponential
+# 6.0.15 index_soap.php; soap.php, sein alter Name, leitet nur noch weiter.
+# Einkommentieren, wenn SOAP eingeschaltet ist, und die SOAP-Clients
+# index_soap.php aufrufen lassen:
+#RewriteRule ^index_soap\.php - [L]
+RewriteRule ^([^/]+/)?content/treemenu.* index_treemenu.php [L]
+# WebDAV (settings/webdav.ini [GeneralSettings] EnableWebDAV=true): der
+# Server ist index_webdav.php, erreichbar als
+# https://www.example.com/index_webdav.php/<siteaccess>/.
+# Einkommentieren, damit er auf diesem Host antwortet, oder ihm einen eigenen
+# Host geben, der jede Anfrage an index_webdav.php sendet. webdav.php, sein
+# alter Name, leitet nur noch weiter und wird in einer späteren Hauptversion
+# entfernt: nennen Sie in neuen Regeln index_webdav.php.
+#RewriteRule ^index_webdav\.php - [L]
+RewriteRule ^var/([^/]+/)?storage/images(-versioned)?/.* - [L]
+# SVG-Bilder werden beim Hochladen bereinigt; aus dem Speicher ausgeliefert,
+# führen sie beim direkten Öffnen auch nichts aus und laden nichts (braucht
+# mod_headers).
+<IfModule mod_headers.c>
+    <FilesMatch "(?i)\.svgz?$">
+        Header always set Content-Security-Policy "sandbox; default-src 'none'; style-src 'unsafe-inline'"
+        Header always set X-Content-Type-Options "nosniff"
+    </FilesMatch>
+</IfModule>
+# Die gespeicherten Dateien einmal erzeugter PDF-Exporte (Setup > PDF-Export):
+# nur Namen aus Buchstaben, Ziffern, ".", "_" und "-" mit der Endung .pdf, wie
+# der Export sie schreibt.
+RewriteRule ^var/([^/]+/)?storage/pdf/[A-Za-z0-9][A-Za-z0-9._-]*\.pdf$ - [L]
+# Von den Originalen nur die Bilder (SVG-Bilder werden von dort gezeigt);
+# andere Uploads bleiben hinter content/download und seinen Rechten.
+RewriteRule ^var/([^/]+/)?storage/original/image/.+\.(png|jpe?g|gif|webp|svg)$ - [L]
+RewriteRule ^var/([^/]+/)?cache/(texttoimage|public)/.* - [L]
+# Mit site.ini [FileSettings] CacheVarDir=var_cache (die Caches der Sites in
+# einem eigenen Baum, Multisite-Hosting) werden ihre öffentlichen Caches von
+# dort ausgeliefert:
+#RewriteRule ^var_cache/([^/]+/)?cache/(texttoimage|public)/.* - [L]
+RewriteRule ^design/[^/]+/(stylesheets|images|javascript|fonts)/.* - [L]
+RewriteRule ^share/icons/.* - [L]
+# Symbol-Themes aus Erweiterungen (icon.ini [ExtensionSettings]
+# IconExtensions[], extension/<name>/icons/). Nur Bilder mit genau einer
+# Endung: ein Name wie a.php.svg könnte sonst über eine AddHandler-Zuordnung
+# an PHP gehen.
+RewriteRule ^extension/[^/]+/icons/[A-Za-z0-9_/-]+\.(svg|png|gif)$ - [L]
+RewriteRule ^extension/[^/]+/design/[^/]+/(stylesheets|flash|images|lib|javascripts?|fonts|vendor|media)/.* - [L]
+RewriteRule ^packages/styles/.+/(stylesheets|images|javascript)/[^/]+/.* - [L]
+RewriteRule ^packages/styles/.+/thumbnail/.* - [L]
+# Nur die Vorschaubilder importierter Pakete: ihr XML, SQL und ihre
+# Einstellungen sind nicht für das Web bestimmt.
+RewriteRule ^var/storage/packages/.+\.(png|jpe?g|gif|webp)$ - [L]
+
+#  Damit kann das Favicon im Wurzelverzeichnis der Exponential-Instanz liegen.
+#  Es wird dann direkt ausgeliefert.
+RewriteRule ^favicon\.ico - [L]
+#  Kommentieren Sie die Zeile unten ein, wenn das Favicon aus dem
+#  Standard-Design kommen soll. Den Pfad zu favicon.ico passen Sie an, indem
+#  Sie design/standard/images/favicon.ico durch den passenden Pfad ersetzen.
+#RewriteRule ^favicon\.ico /design/standard/images/favicon.ico [L]
+RewriteRule ^design/standard/images/favicon\.ico - [L]
+
+# Direkter Zugriff auf robots.txt für Crawler (Google, Bing, Spammer ...)
+RewriteRule ^robots\.txt - [L]
+
+# Die Service Worker der Site, die aus der Wurzel ausgeliefert werden müssen:
+# index.js, der Exponential Service Workers Index, und sw.js, sein alter Name,
+# für Browser, die sich vorher registriert haben.
+RewriteRule ^index\.js$ - [L]
+RewriteRule ^sw\.js$ - [L]
+
+# Kommentieren Sie die folgenden Zeilen ein, wenn Sie Debug im Popup-Stil
+# verwenden.
+# RewriteRule ^var/cache/debug\.html.* - [L]
+# RewriteRule ^var/[^/]+/cache/debug\.html.* - [L]
+
+# Dateien zu Platform for Privacy Preferences Project (P3P) für den Internet
+# Explorer. Mehr dazu: http://en.wikipedia.org/wiki/P3p
+RewriteRule ^w3c/p3p\.xml - [L]
+
+## >>> LiteSpeed page cache (off) >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+## LiteSpeed Web Server (Enterprise) und OpenLiteSpeed können ganze Seiten
+## vorhalten und anonyme Besucher und Crawler daraus bedienen, ohne PHP
+## auszuführen: kein Plugin und kein Code, nur die Regeln unten. Apache und
+## nginx lesen sie nie (<IfModule LiteSpeed>). Jede Zeile, Leeren, Prüfungen
+## und Fehlerbehebung:
+##   doc/ger-de/anleitungen/seiten-cache-mit-litespeed.md
+##
+## Zum Einschalten entfernen Sie das erste "#" jeder Zeile von der ">>>"-Zeile
+## bis zur "<<<"-Zeile (eine "##"-Zeile behält ein "#" und bleibt Kommentar),
+## oder Sie führen aus (die Markierungszeilen bleiben englisch, damit der
+## Befehl sie findet):
+##   sed -i '/^## >>> LiteSpeed page cache/,/^## <<< LiteSpeed page cache/ s/^#//' .htaccess
+## Dann eine Seite zweimal ohne Cookies anfragen; die zweite Antwort sagt "hit":
+##   curl -sI https://www.example.com/ | grep -i x-litespeed-cache
+## Der Server braucht ein Cache-Verzeichnis (LiteSpeed Enterprise: CacheRoot
+## auf Serverebene). OpenLiteSpeed liest nur die Rewrite-Regeln von
+## .htaccess, nur mit eingeschaltetem autoLoadHtaccess und erst nach einem
+## Neustart, und braucht sein Cache-Modul für den virtuellen Host: siehe die
+## Anleitung.
+##
+#<IfModule LiteSpeed>
+## Die Anfrage im Seiten-Cache nachschlagen.
+#CacheLookup on
+## Nur Lesezugriffe: jedes Formular (POST) und jeder andere Schreibzugriff
+## erreicht PHP.
+#RewriteCond %{REQUEST_METHOD} ^(GET|HEAD)$
+## Keine Query-String: Suchen, Filter und Tracking-Parameter erreichen PHP.
+#RewriteCond %{QUERY_STRING} ^$
+## Niemand mit Session oder angemeldet. Das Session-Cookie ist PHPSESSID mit
+## site.ini [Session] SessionNameHandler=default (php.ini session.name) und
+## eZSESSID<md5 des Siteaccesses> mit SessionNameHandler=custom; der Kernel
+## setzt is_logged_in=true für jeden angemeldeten Benutzer. Redakteure,
+## Mitglieder und ein Besucher mit Warenkorb haben alle eines. Ergänzen Sie
+## eigene Cookies, die ändern, was eine Seite zeigt, getrennt durch "|".
+#RewriteCond %{HTTP_COOKIE} !(eZSESSID|PHPSESSID|is_logged_in) [NC]
+## Nicht die Ansichten, die je Besucher verschieden sind oder etwas ändern, mit
+## oder ohne Siteaccess davor: die Administration (setzen Sie die URI Ihrer
+## ein, wenn sie nicht "admin" ist), user/, shop/, notification/, layout/,
+## ezjscore/, setup/ und jede content/-Ansicht außer content/view/. REST,
+## SOAP, WebDAV und das Baummenü kommen nie hierher: die Regeln oben schicken
+## sie ihren eigenen Weg.
+#RewriteCond %{REQUEST_URI} !^/([^/]+/)?((admin|user|shop|notification|layout|ezjscore|setup)(/|$)|content/(?!view/)) [NC]
+## Die Administration auf einem eigenen Hostnamen: ein weiteres "#" entfernen,
+## anpassen.
+##RewriteCond %{HTTP_HOST} !^admin\. [NC]
+## Die Seite 120 Sekunden halten (max-age). Nichts entfernt sie, wenn ein
+## Redakteur veröffentlicht: anonyme Besucher sehen eine Änderung höchstens
+## max-age Sekunden später. Cachen Sie nie Seiten mit Debug-Ausgabe (site.ini
+## DebugOutput, DebugByIP).
+#RewriteRule .* - [E=cache-control:max-age=120]
+#</IfModule>
+## <<< LiteSpeed page cache <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+RewriteRule .* index.php
+
+# ===========================================================================
+# Optional (nicht in .htaccess_root). Lesen Sie jeden Block, bevor Sie ihn
+# einschalten.
+# ===========================================================================
+#
+# Nichts hier unten ändert, welche Pfade ausgeliefert oder weitergeleitet
+# werden. Die Blöcke 2 und 3 fügen nur Antwort-Header hinzu; Block 1 ist eine
+# Weiterleitung und der einzige, der verschoben werden muss (siehe seinen
+# Kommentar). mod_headers braucht AllowOverride FileInfo, mod_expires
+# AllowOverride Indexes; ohne sie antwortet Apache mit 500.
+
+# --- 1. Einfaches HTTP auf HTTPS umleiten ------------------------------------
+# Standardmäßig aus. Besser im virtuellen Host für Port 80
+# (doc/eng-us/examples/ezpublish.conf). Können Sie nur .htaccess verwenden,
+# verschieben Sie diese zwei Zeilen direkt unter "RewriteEngine On" oben und
+# entfernen Sie das "#".
+# Hinter einem Proxy oder Load Balancer, der TLS beendet, ist %{HTTPS} hier
+# immer "off": prüfen Sie stattdessen X-Forwarded-Proto, und nur, wenn der
+# Proxy es immer setzt (sonst läuft jede Anfrage im Kreis):
+#   RewriteCond %{HTTP:X-Forwarded-Proto} !https
+#RewriteCond %{HTTPS} off
+#RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# --- 2. Sicherheits-Header für statische Dateien ---------------------------
+# Der Kernel sendet sie auf seinen eigenen Seiten (site.ini
+# [HTTPHeaderSettings] SecurityHeaders[]); Apache sendet bei Dateien, die er
+# selbst ausliefert, nichts zusätzlich. Es sind dieselben Werte wie die
+# Standardwerte des Kernels. "setifempty" behält einen Header, den index.php
+# schon gesendet hat.
+<IfModule mod_headers.c>
+    Header setifempty X-Content-Type-Options "nosniff"
+    Header setifempty X-Frame-Options "SAMEORIGIN"
+    Header setifempty Referrer-Policy "strict-origin-when-cross-origin"
+    Header setifempty Permissions-Policy "camera=(), microphone=(), payment=(), usb=()"
+    # HSTS: erst, wenn jeder Name der Site dauerhaft über HTTPS ausgeliefert
+    # wird. Kurz anfangen (300) und später auf ein Jahr erhöhen; ein Browser
+    # merkt es sich für den ganzen Zeitraum
+    # (doc/ger-de/installation/13-sicherheitshaertung.md, 13.9).
+    # Hier oder in site.ini SecurityHeaders[Strict-Transport-Security] setzen,
+    # nicht an beiden Stellen.
+    #Header always set Strict-Transport-Security "max-age=300" "expr=%{HTTPS} == 'on'"
+</IfModule>
+
+# --- 3. Browser-Cache für Bilder und Design-Dateien -------------------------
+# Bild-URLs ändern sich, wenn sich das Bild ändert (die Version steht im
+# Pfad), daher lassen sie sich lange cachen. Design-Dateien behalten ihre
+# Namen: halten Sie ihre Lebensdauer kurz, oder verwenden Sie die Dateinamen
+# des Packers mit der Änderungszeit (ezjscore.ini [Packer]
+# AppendLastModifiedTime=enabled).
+<IfModule mod_expires.c>
+    <If "%{REQUEST_URI} =~ m#^/var/([^/]+/)?storage/images(-versioned)?/#">
+        ExpiresActive On
+        ExpiresDefault "access plus 1 year"
+    </If>
+    <ElseIf "%{REQUEST_URI} =~ m#^/(extension/[^/]+/)?design/[^/]+/(stylesheets|images|javascripts?|fonts|lib)/#">
+        ExpiresActive On
+        ExpiresDefault "access plus 7 days"
+    </ElseIf>
+    <ElseIf "%{REQUEST_URI} =~ m#^/(share|extension/[^/]+)/icons/#">
+        ExpiresActive On
+        ExpiresDefault "access plus 7 days"
+    </ElseIf>
+</IfModule>

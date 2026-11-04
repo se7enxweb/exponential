@@ -1,0 +1,85 @@
+Änderungen an Rückwärtskompatibilität und Verhalten in Version 4.6.0
+====================================================================
+
+Geänderte INI-Einstellungen
+---------------------------
+
+- Der Cronjob subtreeexpirycleanup.php ist standardmäßig nicht aktiviert.
+
+  Da DelayedCacheBlockCleanup ausgeschaltet ist, ist dieses Skript
+  standardmäßig nicht aktiviert. Mit Scripts[]=subtreeexpirycleanup.php in
+  cronjob.ini[CronjobSettings] lässt es sich wieder einschalten.
+
+Geändertes Verhalten
+--------------------
+
+- #016171: admin2: window_controls_user.tpl - neue Reiter in einer eigenen
+  Erweiterung
+
+  Mit dieser Verbesserung lassen sich Reiter in admin2 erweitern, ohne die
+  Templates zu überschreiben. Die Überschreibungen für die Benutzer-Reiter
+  müssen daher entfernt werden, da es die Templates nicht mehr gibt. Zu
+  entfernen sind diese Regeln in override.ini:
+
+  [window_controls]
+  Source=window_controls.tpl
+  MatchFile=window_controls_user.tpl
+  Subdir=templates
+  Match[navigation_part_identifier]=ezusernavigationpart
+
+  [windows]
+  Source=windows.tpl
+  MatchFile=windows_user.tpl
+  Subdir=templates
+  Match[navigation_part_identifier]=ezusernavigationpart
+
+- #17656: Die Teilbaum-Beschränkung wurde bei Inhalten mit mehreren Orten
+  nicht richtig beachtet
+
+  Das Leserecht auf Inhalte wird jetzt auf Ebene des Knotens statt des
+  Inhaltsobjekts geprüft. Zur Information: Geprüft wird in
+  eZNodeViewFunctions::contentViewGenerate()
+
+- #18703: Ein Benutzer kann jeden Ort entfernen, wenn er einen davon löschen
+  darf
+
+  Beim Entfernen eines Knotens wird das Recht zum Entfernen jetzt auf Ebene des
+  Knotens statt des Inhaltsobjekts geprüft.
+
+- #18258: Sicherstellen, dass die Indizierung gelingt
+
+  Such-Plugins wie eZ Find müssen jetzt das Interface ezpSearchEngine
+  implementieren, um als Such-Plugin akzeptiert zu werden. Die eigene
+  eZSearchEngine ist im Release 4.6 natürlich kompatibel, aber eZ Find 2.6 ist
+  jetzt Voraussetzung. Frühere Versionen von eZ Find laufen nicht mit
+  Exponential 4.6 oder neuer.
+
+Entfernte Funktionen
+--------------------
+
+
+
+
+Entfernte Konstanten
+--------------------
+
+
+
+Entfernte globale Variablen
+---------------------------
+
+
+
+
+Veraltet
+--------
+
+- Bibliothek eZSoap
+
+  Veraltet zugunsten der nativen Funktionen von PHP.
+
+- Methode 'fileDeleteByRegex()' in verschiedenen Datei-Handlern
+
+  Diese Methoden werden nicht verwendet und haben ungünstige
+  Leistungseigenschaften.
+

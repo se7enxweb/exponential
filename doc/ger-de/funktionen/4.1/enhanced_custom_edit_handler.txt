@@ -1,0 +1,23 @@
+*Erweiterter eigener Edit-Handler*
+
+Mit dem eigenen Edit-Handler können Sie die Prüfmethode
+eZContentObjectEditHandler::validateInput() implementieren.
+Diese Methode dient zusätzlichen Prüfungen auf der Ebene des Inhaltsobjekts. Sie
+muss ein Array in folgendem Format zurückgeben:
+
+array( 'is_valid' => false, 'warnings' => array() );
+
+Ist das Flag is_valid auf false gesetzt, werden dem Benutzer die Warnungen
+angezeigt. Das Array warnings sollte Einträge dieser Form enthalten:
+
+array( 'text' => 'Warning text displayed to user.' );
+
+Beispiel:
+
+function validateInput( $http, &$module, &$class, $object, &$version, $contentObjectAttributes, $editVersion, $editLanguage, $fromLanguage, $validationParameters )
+{
+   $result = array( 'is_valid' => false, 'warnings' => array() );
+   $result['warnings'][] = array( 'text' => 'Warning text displayed to user.' );
+
+   return $result;
+}

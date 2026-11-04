@@ -1,0 +1,13 @@
+Systeminformationen
+===================
+
+Das Modul für Systeminformationen wurde in dieser Version überarbeitet. Zur
+Untersuchung des Systems wird jetzt die Komponente SystemInformation verwendet.
+Dadurch erkennt Exponential auch Mac-OS-X-Systeme richtig.
+
+phpinfo()
+---------
+
+Die Seite der Systeminformationen zeigt jetzt auch alle Angaben von phpinfo().
+Sie sind über den Link "Details" im Abschnitt PHP der Seite erreichbar. Mit der
+Zurück-Taste des Browsers kehren Sie zur normalen Seite zurück.

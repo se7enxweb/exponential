@@ -1,0 +1,68 @@
+Ereignissystem
+==============
+
+Einführung
+----------
+Diese Version enthält eine Vorschau eines Systems zum Verteilen von
+Ereignissen.
+
+Hintergrund ist ein einheitlicher Erweiterungspunkt im Kernel für Stellen, an
+denen Erweiterungen über bestimmte Aktionen benachrichtigt werden müssen und
+diese Aktion in manchen Fällen verändern können. Das ist auch nötig, um den
+Kernel aufzuräumen und Dinge wie den Shop in Erweiterungen auszulagern.
+
+Das System überschneidet sich etwas mit dem bisherigen System aus Triggern und
+Operationen, ist aber viel leichter. Die Idee ist, dass unser Workflow-System
+irgendwann durch ein vollwertiges Workflow-System wie ezcWorkflow ersetzt wird
+und sich dann nicht mehr als Ereignisbus für Benachrichtigungen zwischen
+Kernel-Komponenten und Erweiterungen eignet.
+
+
+Verwendung: global
+------------------
+Um global auf Ereignisse zu hören, werden INI-Einstellungen verwendet.
+
+Die Einstellung ist site.ini/[Event]/Listeners[]; dort ist auch ihre
+Verwendung beschrieben.
+
+
+Verwendung: verzögertes Laden
+-----------------------------
+Hinweis: Die API liegt in kernel/private/classes/, ist also keine öffentliche
+API und kann sich jederzeit ändern!
+
+{@see ezpEvent->attach()}
+
+
+Arten von Ereignissen
+---------------------
+Derzeit gibt es zwei Arten: Listener und Filter.
+Listener funktionieren wie ein Benachrichtigungssystem; ein Listener kann
+nicht eingreifen, es sei denn, die übergebenen Parameter sind Objekte oder es
+ist dokumentiert, dass bestimmte Ausnahmen geworfen werden dürfen.
+Filter dagegen sollen den Eingabewert verändern, den sie erhalten, und
+*müssen* ihn immer zurückgeben, ob sie ihn verändert haben oder nicht.
+
+
+Signaturen der Ereignisse
+-------------------------
+{@see ezpEvent->notify()}
+Hinweis: Da diese Funktion private API ist, können sie sich jederzeit ändern.
+
+request/input       ( eZURI $uri )
+session/cleanup     ()
+session/destroy     ( string $sessionId )
+session/regenerate  ( string $oldSessionId, string $newSessionId )
+session/gc          ( int $maxLifeTime )
+
+
+Signaturen der Filter
+---------------------
+{@see ezpEvent->filter()}
+Hinweis: Da diese Funktion private API ist, können sie sich jederzeit ändern.
+Filter *müssen* den Wert zurückgeben, den sie erhalten, auch wenn sie ihn nicht
+ändern.
+
+response/output     ( string $templateResult )
+content/cache       ( array $nodeList )
+

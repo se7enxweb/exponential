@@ -1,0 +1,226 @@
+Änderungen an Rückwärtskompatibilität und Verhalten in Version 4.4.0
+====================================================================
+
+Geänderte INI-Einstellungen
+---------------------------
+
+- AvailableSiteAccessList[]=admin
+
+  Der Siteaccess admin ist in den Standardeinstellungen nicht mehr
+  standardmäßig eingeschaltet.
+
+
+
+Geändertes Verhalten
+--------------------
+
+- Die Subversion-Revisionsnummer von Exponential ist nicht mehr abrufbar.
+
+  Mit dem Wechsel zu git gibt es diese Angabe nicht mehr. Sie wird nicht
+  ersetzt, da die vollständige Version von Exponential aussagekräftig genug
+  ist.
+
+  Die Funktionen eZPublishSDK::revision() und
+  eZSetupFunctionCollection::fetchRevision() wurden entfernt, ebenso die
+  Konstanten 'VERSION_REVISION_STRING' und 'VERSION_REVISION' der Klasse
+  eZPublishSDK.
+
+
+- Für anonyme Benutzer startet die Session erst, wenn sie gebraucht wird
+
+  Ruft man mit einer Fetch-Funktion die Zahl der anonymen Benutzer ab, fehlen
+  also anonyme Benutzer, die noch keine Session haben (eine entsteht etwa bei
+  user/register oder content/edit). Auch LastAccessesURI /
+  LastAccessedModifyingURI werden erst gespeichert, wenn der Benutzer eine
+  Session hat. Mit site.ini/Session.ForceStart=enabled erhalten Sie das alte
+  Verhalten.
+
+
+- session_write_close()
+
+  Wegen der geänderten Sessions oben sollten Sie diese Funktion nicht direkt
+  aufrufen, sondern eZSession::stop(), das es seit 4.1.0 gibt. Siehe
+  http://issues.ez.no/017037
+
+
+- Der Session-Handler verwendet standardmäßig den nativen Handler von PHP
+  (normalerweise file, in php.ini festgelegt)
+
+  Damit funktionieren alle Fetch-Funktionen zu angemeldeten Benutzern nicht
+  mehr, und es ist weder möglich noch nötig, Sessions in der
+  Administrationsoberfläche oder auf der Kommandozeile zu leeren bzw. ablaufen
+  zu lassen. Das alte Verhalten erhalten Sie mit dem Datenbank-Handler:
+  site.ini/Session.Handler auf ezpSessionHandlerDB setzen.
+
+
+- eZExtension::activateExtensions()
+
+  Der Standardwert des ersten Parameters ist jetzt 'default' statt false;
+  siehe den Hinweis zur Veraltung dieser Funktion unten.
+
+
+- eZOperationHandler::operationIsAvailable()
+
+  Der Parameter $name dieser Methode ist nicht mehr optional. Ohne ihn gab sie
+  ohnehin false zurück.
+
+
+- ezHTTPTool::sendHTTPRequest()
+
+  1. Der Parameter $uri kann jetzt eine Portnummer enthalten; sie wird
+     verwendet, wenn $port false ist (Standard). Steht weder in $uri noch in
+     $port ein Port, wird Port 80 verwendet.
+  2. Für $uri war bisher die Form "ssl://example.com/path" dokumentiert; das
+     funktionierte nicht und ist nicht mehr als unterstützt dokumentiert.
+     https:// wurde und wird unterstützt.
+  3. Außerdem gibt es einen Parameter $cookies für den HTTP-Header der
+     Cookies.
+
+
+- Template-Operator ezmodule()
+
+  Der Operator berücksichtigt jetzt auch die Einstellung ModuleList, bevor er
+  SiteAccessRules auf Verbotsregeln prüft.
+
+
+- $object.main_node.name im Template
+
+  main_node.name liefert den Namen des Knotens in der aktuellen Sprache des
+  Knotens, nicht mehr wie bisher in der Ausgangssprache. Siehe
+  http://issues.ez.no/16395.
+
+
+- Einstellung SiteURL
+
+  Die Einstellung site.ini\[SiteSettings]\SiteURL wird im Kernel zunehmend
+  für die Rückwärtssuche der URLs von Siteaccesses verwendet. Deshalb wurde
+  ihre Beschreibung in site.ini erweitert: Sie darf nicht mit einem Protokoll
+  ('http://') beginnen und nicht mit einem Schrägstrich enden. In 4.4
+  verwenden statischer Cache und Sprachumschalter meist SiteURL.
+  Neu ist die Einstellung SiteUriParts; sie wird verwendet, wenn der
+  Siteaccess während der Ausführung wechselt und der Code dabei kein
+  uri_part angibt. Setzen Sie sie also je Siteaccess, wenn Sie host_uri oder
+  URI-Zuordnung verwenden.
+
+
+Veraltete Funktionen
+--------------------
+
+- eZTemplate->setVariableRef()
+
+  Diese Funktion setzt Variablen seit vor 4.0 (in PHP-4-Versionen) nicht mehr
+  per Referenz; sie ist daher jetzt veraltet. Verwenden Sie stattdessen
+  setVariable().
+
+- Dritter Parameter ($attrs) von eZTemplate->hasVariable() und ->variable()
+
+  Der Parameter wurde im Kernel nie verwendet und wird in einer künftigen
+  Version entfernt.
+
+- Session-Variablen LastAccessesURI und LastAccessedModifyingURI
+
+  Diese Variablen stellen Zustand dar und sollten keine Sessions verwenden*.
+  Exponential soll künftig auf POST-Parameter umgestellt werden; wir empfehlen
+  dasselbe für eigenen Code.
+  * das bricht bei mehreren offenen Fenstern, was erfahrene Benutzer oft tun.
+
+- eZExtension::activateExtensions( false )
+
+  Ab dieser Version wird ein Strict-Fehler ausgelöst, wenn der erste Parameter
+  false ist. Grund: Die Änderungen am INI-System verlangen eine klarere
+  Trennung zwischen Access- und Standard-Erweiterungen. Erweiterungen sollten
+  daher in mindestens zwei Phasen geladen werden, normalerweise mit dem Laden
+  des Siteaccesses dazwischen, wie index.php es tut und immer getan hat.
+
+- eZINI::parameterSet()
+
+  Veraltet zugunsten des normalen und effizienteren Wegs:
+  eZINI::instance('<file>.ini')->hasVariable('SomeSection', 'SomeSetting')
+
+- INI-Endungen *.ini.php und *.ini.append
+
+  Diese Endungen sind veraltet; verwenden Sie *.ini oder *.ini.append.php
+
+- eZFile::splitLines( $file )
+
+  Verwenden Sie stattdessen das native "file( $file, FILE_IGNORE_NEW_LINES )".
+
+- design/admin
+
+  Das alte Admin-Design ist veraltet und wird in der nächsten Version
+  entfernt. Admin-Templates in Erweiterungen funktionieren dank des
+  Design-Rückfalls weiter:
+  [DesignSettings]
+  SiteDesign=<my_admin_design>
+  AdditionalSiteDesignList[]=admin2
+  AdditionalSiteDesignList[]=admin
+
+- eZUser::PASSWORD_HASH_CRYPT
+
+  Der Hash-Typ eZUser::PASSWORD_HASH_CRYPT ist ab 4.4.0 veraltet. Er wird
+  nicht empfohlen, da die Ausgabe von ``crypt()`` je nach Plattform und
+  zwischen den PHP-Versionen 5.2.x und 5.3.x abweicht. Die Unterstützung
+  sollte in Matterhorn entfallen.
+
+- site.ini\[RoleSettings]\UserPolicyCache
+
+  Wird im Kernel nicht mehr verwendet; site.ini\[RoleSettings]\EnableCaching
+  bleibt bestehen.
+
+- AvailableSiteAccessList[]=admin
+
+  Der Siteaccess admin ist veraltet, da ihn keiner der aktuellen Installer
+  verwendet; viele Einstellungen eines Admin-Siteaccesses muss der Installer
+  dynamisch schreiben.
+
+Umbenannte Methoden
+-------------------
+
+Entfernte Funktionen
+--------------------
+
+- Die Template-Variable 'ezinfo' ist nicht mehr standardmäßig definiert. Sie
+  enthielt die Schlüssel 'version', 'version_alias' und 'revision'.
+  Diese Angaben lassen sich weiterhin über die Funktionen von eZPublishSDK
+  abrufen, außer 'revision'.
+
+- Die Sektions-ID ist nicht mehr global
+
+  Wie bei den anderen Session-Themen oben merkten sich frühere Versionen von
+  Exponential die Sektions-ID als Override-Option für Seiten ohne Bezug zu
+  einer Sektion (ohne Bezug zu Inhalten), etwa user/login. Das wird nicht mehr
+  unterstützt.
+
+- Session-Validierung
+
+  Die in 4.1 hinzugefügte Session-Validierung wurde entfernt; sie war
+  fehlerhaft und verursachte in mehreren Fällen Probleme. Übrig blieb nur der
+  Einsatz in Intranets, und dafür gibt es weit bessere Lösungen (VPN,
+  IP-Filter). Daher wurden diese Einstellungen in site.ini\[Session]
+  entfernt: SessionValidationIpParts, SessionValidationForwardedIpParts und
+  SessionValidationUseUA
+
+- Ältere Versionen von ezlupdate
+
+  Quellcode von ezlupdate für QT3 und QT4 wird nicht mehr mit Exponential
+  ausgeliefert. Künftig wird nur noch die Version für QT 4.5 mitgeliefert.
+
+Entfernte Methoden
+------------------
+
+- eZCharTransform::varExportInternal()
+
+  Diese private Funktion wurde entfernt, da sie unter PHP 5 nicht nötig ist
+  und nirgends verwendet wurde.
+
+Entfernte globale Variablen
+---------------------------
+
+- eZINIOverrideDirList
+
+  eZINI verwendet jetzt eine private statische Variable für die
+  Override-Ordner; neue API-Aufrufe erlauben, sie zu ändern.
+  ->overrideDirs() liefert weiterhin eine iterierbare Liste von Ordnern, hat
+  aber einen neuen Parameter, um stattdessen die interne Rohstruktur zu
+  erhalten.
+

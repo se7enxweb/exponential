@@ -1,0 +1,97 @@
+Exponential: Kommentar-/UGC-System, Anforderungen, 4.3
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+$Author$
+$Revision$
+$Date$
+:Status: Entwurf
+
+.. contents::
+
+=======
+Vorwort
+=======
+
+Exponential kann schon seit Beginn Kommentare verwalten. Für große Kunden ist
+die Inhaltsstruktur aber nicht optimal skalierbar, da der Aufwand für Knoten,
+Objekte und Attribute bei nutzergenerierten Inhalten (UGC) auf Sites mit hohem
+Durchsatz zu hoch ist. Neben der Skalierbarkeit besteht großer Bedarf an
+besserer Genehmigung, Moderation, Meldung und Spam-Behandlung von UGC.
+
+
+==========
+Funktionen
+==========
+
+Nach Priorität für 4.3:
+
+#1 Neue Kommentar-Erweiterung
+-----------------------------
+Soll: eine eigene Tabelle mit Feldern für ID, Text, Name, Webseite, E-Mail,
+      Zeit, Benutzer-ID, Objekt-ID, Objektattribut-ID und Sprache verwenden
+Soll: Beiträge angemeldeter und nicht angemeldeter Benutzer unterstützen
+Soll: bei Anmeldung Name, E-Mail und Webseite automatisch ausfüllen
+Soll: Name, E-Mail und Webadresse in einem Cookie für später speichern, wenn
+      der Benutzer nicht angemeldet ist und das Kästchen 'Angemeldet bleiben'
+      ankreuzt
+Soll: über einen Datentyp an Objekte angebunden sein (wer Kommentare will,
+      fügt ein Attribut hinzu)
+Soll: Lese- und Schreibrechte unterstützen (Zugriff über die Rollen von
+      Exponential steuern)
+Soll: Kommentare je Objektattribut ein- und ausschalten sowie ein- und
+      ausblenden lassen (in der Inhaltsansicht des Datentyps)
+Soll: ezjscore verwenden und die Kommentaroberfläche per Ajax umsetzen
+      (wählbar)
+Soll: erweiterbar sein, um Captcha und Spam-Erkennung einzubinden
+Soll: Kommentare per Template und per Ajax mit Seitenblättern auflisten
+Soll: Kommentare entfernen, wenn Objekt oder Attribut entfernt wird
+Kann: das Kommentieren je Attribut nach n Tagen automatisch abschalten
+Kann: [spätere Version] Antworten auf Kommentare und damit Kommentarstränge
+      unterstützen
+Kann: Felder für IP und Session-Schlüssel zur Moderation haben (könnte #2
+      bereitstellen)
+Kann: die Zahl der Kommentare am Objektattribut speichern, damit sie ohne
+      Tabellenabfrage vorliegt
+Könnte: zusätzliche Tabellenspalten für die Moderation brauchen, es sei denn,
+        das Moderationssystem (#2) bietet eigenen Speicher für Inhalte, die auf
+        Moderation warten
+
+#2 Neues Moderationssystem
+--------------------------
+Soll: in der Administration einen Reiter für die Moderation von UGC
+      hinzufügen
+Soll: automatische Genehmigung per Einstellung oder Berechtigung erlauben
+Soll: zwischen genehmigten, nicht genehmigten (gelöschten/ausgeblendeten) und
+      nicht moderierten (automatisch genehmigten) Inhalten unterscheiden
+Kann: einen Dashboard-Kasten für Moderationsaufgaben und -listen bieten (siehe
+      das Anforderungsdokument zur Überarbeitung der Administration)
+Kann: E-Mail-Benachrichtigungen an Genehmigende unterstützen
+Kann: abstrakt umgesetzt sein, damit es später für andere Arten von UGC
+      wiederverwendet werden kann.
+
+#2.1 Meldungen durch Benutzer (Moderation durch Benutzer)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Soll: das Melden von UGC unterstützen
+Kann: den Administrator benachrichtigen, wenn Inhalt gemeldet wird
+Kann: Inhalt automatisch zurückziehen, wenn er n-mal gemeldet wurde und noch
+      nicht moderiert (automatisch genehmigt) war
+
+#3 Benachrichtigungen für Kommentare
+------------------------------------
+Begriffe: Abonnent = ein angemeldeter oder anonymer Benutzer mit E-Mail
+          Abonnement = eine Beziehung zwischen Abonnent und dem Inhalt, den er
+          abonniert
+Soll: Kommentierenden erlauben, im Kommentarformular Benachrichtigungen je
+      Objekt zu abonnieren
+Soll: beim Veröffentlichen eines Kommentars das Benachrichtigungssystem
+      auslösen
+Soll: eine Oberfläche zum Ändern von Abonnements haben
+Soll: bei anonymen Benutzern eine Bestätigungsanfrage des Abonnements per
+      E-Mail senden (einmal je Abonnement)
+Kann: Abonnements gesammelt in einer E-Mail in festen Abständen senden
+
+#4 Unterstützung von eZFind/Suche für Kommentare [für später]
+-------------------------------------------------------------
+Soll: den Text der Kommentare an die normale Suchmaschine geben
+Soll: einen Filter auf Unterattribute oder etwas Ähnliches in ezfind
+      unterstützen

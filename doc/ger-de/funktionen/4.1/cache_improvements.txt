@@ -1,0 +1,61 @@
+Verbesserungen an Cluster und Cache
+===================================
+
+Exponential 4.1 bringt große Verbesserungen an Cluster und Cache.
+
+Schnelleres Ablaufen des Caches
+-------------------------------
+Das Datenbankschema der Cluster-Tabelle ezdbfile hat ein neues Feld erhalten,
+name_trunk. Es speichert den gemeinsamen Teil der Namen von Cache-Dateien.
+
+So haben zum Beispiel alle ViewCache-Dateien des Knotens 2 einen Namen dieser
+Art:
+var/plain_site/cache/content/plain_site_user/2-xxx.cache.
+
+name_trunk enthält dann für ALLE ViewCache-Dateien des Knotens 2
+var/plain_site/cache/content/plain_site_user/2-.
+
+Musste der ViewCache von Knoten 2 ablaufen, lautete die Bedingung bisher:
+DELETE FROM ezdbfile WHERE name LIKE 'var/plain_site/cache/content/plain_site_user/2-%'.
+
+Mit dieser Änderung lässt sich eine VIEL schnellere Abfrage ausführen:
+DELETE FROM ezdbfile WHERE name_trunk = 'var/plain_site/cache/content/plain_site_user/2-'.
+
+Das wirkt sich auch auf die Gesamtleistung aus, weil dabei keine Zeilen
+durchsucht werden. Das gilt für den ViewCache ebenso wie für Cache-Blöcke.
+
+Veralteter Cache (Stale Cache)
+------------------------------
+Bis Exponential 4.1 konnte das Leeren des Inhalts-Caches eines Knotens die
+Leistung stark beeinträchtigen: Der erste Prozess, der die Cache-Datei
+anforderte, musste die dynamischen Daten erzeugen und die Cache-Datei
+speichern.
+
+In dieser Zeit war jeder andere Prozess, der denselben Cache anforderte,
+gesperrt und wartete, bis der erste fertig war. Auf Websites mit viel Verkehr
+konnten sich so Dutzende Prozesse anstauen, jeder mit offener
+Datenbankverbindung, Speicher- und CPU-Verbrauch ...
+
+Die Änderungen in Exponential 4.1 ändern diesen Ablauf grundlegend.
+
+Läuft ein Cache ab, erzeugt der erste Prozess das Cache-Element unter einem
+anderen Namen. Die ursprüngliche Datei bleibt unverändert erhalten
+(abgelaufen, aber unverändert). Jeder andere Prozess, der dieselbe
+Cache-Datei anfordert, erfährt, dass sie gerade erzeugt wird, und verwendet
+eine alte Cache-Datei, statt auf das Ende des Vorgangs zu warten.
+
+Es gibt eine Zeitgrenze für die Erzeugung: Wird eine Cache-Datei sehr lange
+erzeugt, kann ein anderer Prozess den Vorgang übernehmen (meist ist dann der
+erste Prozess abgestürzt). Standardmäßig beträgt die Zeitgrenze 60 Sekunden;
+sie lässt sich mit ContentSettings.CacheGenerationTimeout in site.ini
+einstellen.
+
+Umgesetzt ist das sowohl für den FS- als auch für den DB-Cluster-Handler. Die
+Unterschiede zwischen beiden sind unten beschrieben.
+
+DB-Handler
+''''''''''
+
+FS-Handler
+''''''''''
+

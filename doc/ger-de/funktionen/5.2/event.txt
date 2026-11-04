@@ -1,0 +1,12 @@
+Ereignissystem
+==============
+
+- Neues Ereignis für die Ansicht content/download (nützlich etwa für Statistiken)
+- Neues Ereignis content/pre_rendering (nützlich für Geschäftslogik in PHP vor
+  dem Rendern des Templates)
+
+Neues Ereignis
+--------------
+
+content/download    ( (int) $contentObjectID, (int) $contentObjectAttributeID )
+content/pre_rendering ( $node, $tpl, (string)$viewMode )
