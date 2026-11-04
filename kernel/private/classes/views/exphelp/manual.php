@@ -85,6 +85,8 @@ class Manual extends \Exponential\Runnable\ModuleView
         if ( $manual )
             $path[] = array( 'url' => false, 'text' => $manual['title'] );
         $Result = array();
+        // the help's own left menu (menu.ini [Leftmenu_help]); the Setup tab stays marked
+        $Result['left_menu'] = 'design:exphelp/menu.tpl';
         $Result['content'] = $tpl->fetch( 'design:exphelp/manual.tpl' );
         $Result['path'] = $path;
         return $Result;

@@ -88,6 +88,8 @@ class Viewer extends \Exponential\Runnable\ModuleView
 
         $title = isset( $document['title'] ) && $document['title'] !== '' ? $document['title'] : $id;
         $Result = array();
+        // the help's own left menu (menu.ini [Leftmenu_help]); the Setup tab stays marked
+        $Result['left_menu'] = 'design:exphelp/menu.tpl';
         $Result['content'] = $tpl->fetch( 'design:exphelp/viewer.tpl' );
         $Result['path'] = self::breadcrumb( $index, $id, $title );
         return $Result;

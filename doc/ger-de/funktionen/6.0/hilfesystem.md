@@ -26,6 +26,10 @@ erscheinen soll.
   Suche, mit einem Index pro Extension.
 - **Kontexthilfe**: Die Schaltfläche **Hilfe** in der Kopfzeile der Administrationsoberfläche öffnet die Hilfeseite,
   die zur aktuellen Seite gehört (Modul und Ansicht), oder das Dashboard, wenn es keine gibt.
+- **Navigation**: Die Hilfeseiten lassen den Tab Setup markiert und markieren in der Kopfzeile von admin4 zusätzlich
+  das „?“; ihr linkes Menü ist das eigene der Hilfe (`menu.ini [Leftmenu_help]`: Hilfe-Startseite, Inhalt, Hilfe
+  durchsuchen, Extensions, Fehler melden; `design:exphelp/menu.tpl`), nicht das Setup-Menü. Jeder Link verlangt
+  `exphelp/read`.
 - **Fehler melden** (`/exphelp/report`): welcher Tracker zu verwenden ist, was Sie schreiben sollten, ein vorausgefülltes
   Issue und die Diagnosedaten zum Kopieren (Versionen, PHP, Engine, Design; niemals Passwörter, Schlüssel,
   Datenbank-Hosts oder personenbezogene Daten) sowie wo Sie eine Sicherheitslücke vertraulich melden.

@@ -50,6 +50,8 @@ class Extensions extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'help_folders', $extension === false ? array() : self::folders( $extension ) );
 
         $Result = array();
+        // the help's own left menu (menu.ini [Leftmenu_help]); the Setup tab stays marked
+        $Result['left_menu'] = 'design:exphelp/menu.tpl';
         $Result['content'] = $tpl->fetch( 'design:exphelp/extensions.tpl' );
         $Result['path'] = array( array( 'url' => 'exphelp/dashboard', 'text' => \ezpI18n::tr( 'kernel/exphelp', 'Help' ) ) );
         if ( $extension === false )
