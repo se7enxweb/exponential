@@ -1,0 +1,95 @@
+=============
+extension.xml
+=============
+
+Einführung
+==========
+
+Diese Datei kam mit Exponential Fuji (4.4) und ersetzt die frühere Datei
+ezinfo.php mit den Metadaten einer Erweiterung. Die XML-Datei enthält dieselben
+Angaben und dazu Angaben zu Abhängigkeiten und Reihenfolge.
+
+Aufbau
+======
+Die Datei kann im Wurzelverzeichnis jeder Erweiterung liegen und wird vom
+System ausgewertet. Die Metadaten werden unter anderem in ezinfo/about
+verwendet; die Angaben zur Reihenfolge sorgen dafür, dass die Erweiterungen in
+der richtigen Reihenfolge geladen werden.
+
+Beispiel
+========
+Das ist die Datei `http://svn.projects.ez.no/ezoe/trunk/ezoe/extension.xml`::
+
+    <?xml version="1.0" encoding="utf-8" ?>
+    <software>
+        <metadata>
+            <name>eZ Online Editor</name>
+            <version>5.2.0beta3</version>
+            <copyright>Copyright (C) 1999-2014 eZ Systems AS</copyright>
+            <license>GNU General Public License v2.0</license>
+            <info_url>http://projects.ez.no/ezoe</info_url>
+
+            <software>
+                <uses>
+                    <name>TinyMce Javascript HTML WYSIWYG editor</name>
+                    <license>GNU Lesser General Public License v2.1</license>
+                    <copyright>Copyright (C) 2004-2010, Moxiecode Systems AB, All rights reserved.</copyright>
+                    <info_url>http://tinymce.moxiecode.com/</info_url>
+                    <version>3.3.9</version>
+                </uses>
+                <uses>
+                    <name>Tango Icon theme</name>
+                    <license>Creative Commons Attribution-ShareAlike 2.5</license>
+                    <copyright>Copyright (C) 1999-2010 Tango_Icon_Library</copyright>
+                    <info_url>http://tango.freedesktop.org/</info_url>
+                    <version>0.8.90</version>
+                </uses>
+            </software>
+
+        </metadata>
+
+        <dependencies>
+            <requires>
+                <extension name="ezjscore" />
+            </requires>
+            <extends>
+                <extension name="ezwebin" />
+            </extends>
+        </dependencies>
+
+    </software>
+
+Metadaten der Software
+----------------------
+
+Der Knoten ``software/metadata`` ersetzt, was früher in ``ezinfo.php`` stand.
+Wegen der *Flexibilität* von ezinfo.php wird diese Datei nicht streng geprüft.
+Erwartet werden aber diese Knoten:
+- ``name`` der lesbare Name der Erweiterung (*eZ Online Editor*)
+- ``version`` die Version der Erweiterung, unabhängig von einer Version von
+  Exponential (*5.2.0beta3*)
+- ``copyright`` die Urheberrechtsangabe des Eigentümers der Erweiterung
+- ``license`` die Lizenz der Erweiterung
+- ``info_url`` die URL des Projekts
+
+Angaben zu Abhängigkeiten von Drittsoftware
+-------------------------------------------
+
+Im Knoten ``software/metadata/software`` lässt sich festhalten, welche
+Bibliotheken oder Anwendungen von Dritten die Erweiterung verwendet. Die Felder
+sind dieselben wie bei ``software/metadata``. Es sind beliebig viele
+uses-Knoten möglich.
+
+Angaben zu Abhängigkeiten
+-------------------------
+
+Hinweis: Mehr zu Abhängigkeiten steht in der Datei ``extension_ordering.txt``.
+
+``dependencies`` enthält einen Knoten für jede Abhängigkeit bzw. Angabe zur
+Reihenfolge, die diese Erweiterung braucht (requires), nutzt (uses) oder
+erweitert (extends). Im Beispiel oben braucht die Erweiterung ezjscore und
+erweitert ezwebin.
+
+Derzeit wird nur dependencies/(requires|extends|uses)/extension unterstützt;
+weitere Angaben zu Abhängigkeiten (PHP-Version, Version von Exponential ...)
+sollten später folgen.

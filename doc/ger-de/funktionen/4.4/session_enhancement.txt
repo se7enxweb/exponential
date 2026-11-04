@@ -1,0 +1,208 @@
+Verbesserungen an eZSession in Exponential 4.4
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+==========
+Einführung
+==========
+
+eZSession hat in dieser Version einige Änderungen erhalten:
+
+ 1. Unterstützung von Session-Handlern
+ 2. Aus Leistungsgründen standardmäßig der native Session-Handler von PHP
+ 3. Unterstützung anonymer Benutzer ohne Session durch verzögertes Starten
+    der Session
+   3.1. Das betrifft Session-Variablen wie LastAccessesURI
+
+Das hat mehrere Änderungen im Kernel nach sich gezogen. Darauf ist zu achten:
+
+ - Cluster: Sessions müssen zwischen den Anwendungsservern geteilt werden; am
+   einfachsten mit dem mitgelieferten Datenbank-Handler ezpSessionHandlerDB.
+
+ - Linux-Distributionen auf Debian-Basis (auch Ubuntu): Sie räumen Sessions
+   meist mit einem eigenen Cronjob auf. maxlifetime (/usr/lib/php5/maxlifetime)
+   liest session.gc_maxlifetime nur aus /etc/php5/*/php.ini. Diese Einstellung
+   muss also etwa in /etc/php5/apache2/php.ini oder /etc/php5/conf.d/php.ini
+   deutlich höher als der Standard 1440 (24 Minuten) gesetzt werden, zum
+   Beispiel 259200 (72 Stunden), der Standardwert von
+   site.ini\[Session]\SessionTimeout, den der Datenbank-Handler verwendet.
+
+ - Direkter Zugriff auf $_SESSION: Das wurde nie empfohlen, war aber möglich.
+   Jetzt geht es nicht mehr. Direkte Zugriffe auf diese Variable führen zu
+   Fehlern, wenn die Session noch nicht gestartet ist. Verwenden Sie die
+   bisherige API (eZHTTPTool) oder die neue von eZSession (Beispiele unter
+   "Anonyme Sessions").
+
+ - Wer beim Upgrade keine Sessions verlieren will, richtet vorab den
+   Datenbank-Handler in site.ini\[Session]\ Handler=ezpSessionHandlerDB ein.
+
+ - Weitere Brüche der Rückwärtskompatibilität stehen in doc/ger-de/bc/4.4/
+
+
+=================
+1. Session-Handler
+=================
+
+Session-Handler sind Klassen, die ezpSessionHandler erweitern
+(lib/ezsession/classes/ezpsessionhandler.php). Wer einen eigenen Handler
+schreiben will, sollte sich diese Klasse ansehen und dazu, wie es in
+ezpSessionHandlerPHP und ezpSessionHandlerDB im selben Ordner umgesetzt ist.
+
+Beim Wechsel des Session-Handlers verlieren alle Benutzer ihre Session und
+müssen sich neu anmelden, es sei denn, ein eigener Handler greift auf die alten
+Sessions zurück. Ein Beispiel wäre ein memcache-Session-Handler für
+Exponential, der für die dauerhafte Speicherung auf dasselbe
+Datenbank-Backend wie ezpSessionHandlerDB zurückgreift. Die Einstellung ist
+site.ini\[Session]\Handler; sie nutzt das Autoload-System. Achten Sie darauf,
+dass die angegebene Klasse stimmt und die Autoload-Daten neu erzeugt sind,
+wenn Sie einen eigenen Handler hinzugefügt haben.
+
+==================================
+2. Nativer Session-Handler von PHP
+==================================
+
+Das ist jetzt der Standard-Handler. Er überlässt PHP die Sessions; damit sind
+alle verfügbaren Session-Handler von PHP (session.save_handler) nutzbar.
+Standard ist 'files', Sessions werden also in Dateien gespeichert. Die
+PHP-Erweiterungen Memcache und Memcached bieten auch Session-Handler auf Basis
+von Memcached. Sie können sie ausprobieren; wir konnten sie aber noch nicht
+testen. Richten Sie sie redundant ein, damit Sessions nicht verloren gehen,
+wenn memcache der Speicher ausgeht, und möglichst auch nicht bei einem Update
+oder Neustart.
+
+
+=================
+3. Anonyme Sessions
+=================
+
+Anonyme Sessions sind möglichst rückwärtskompatibel durch verzögertes Laden
+umgesetzt. Hat der aktuelle Benutzer kein Session-Cookie und keine
+Session-Daten in POST-Variablen (wie bei ezmultiupload, um Probleme mit
+Flash-Cookies zu umgehen), startet die Session NICHT, außer Code greift auf
+Session-Variablen zu.
+
+Für Entwickler von Erweiterungen und Kernel:
+Damit Ihr Code davon profitiert und nicht selbst Sessions startet, sind einige
+Änderungen nötig. Es gibt drei Möglichkeiten:
+
+ - eZSession::hasStarted() verwenden und ältere Versionen von Exponential 4
+   unterstützen:
+
+       if ( !class_exists('eZSession',false) || !method_exists('eZSession','hasStarted') || eZSession::hasStarted() )
+       {
+           // use session as normal using eZHTTPTool
+       }
+       else
+       {
+           // optionally get default values for anonymous users
+       }
+
+   (Im ersten Zweig wird die Session wie gewohnt über eZHTTPTool verwendet,
+   im zweiten können Standardwerte für anonyme Benutzer geholt werden.)
+
+ - eZSession::userHasSessionCookie() ab Exponential 4.1 verwenden
+
+       Hinweis: Diese Funktion zeigt nicht an, ob die Session durch andere
+       Zugriffe gestartet wurde. Sie zeigt aber, dass der Benutzer zu Beginn
+       der Anfrage keine Session hatte (Cookie oder POST), der nur für Ihren
+       Code bestimmte Session-Wert also noch nicht vorhanden ist.
+
+       Hinweis 2: Das ist besonders nützlich, um zu prüfen, ob der Client
+       Cookies annimmt, wie es user/register tut, um Suchmaschinen-Crawler und
+       skriptgesteuerte Anfragen wie die der Funktion für den statischen Cache
+       zu übergehen.
+
+       if ( eZSession::userHasSessionCookie() )
+       {
+           // use session as normal using eZHTTPTool
+       }
+       else
+       {
+           // optionally get default values for anonymous users
+       }
+
+ - die API von eZSession ab 4.4 direkt verwenden (aus dem phpdoc im Code):
+
+        /**
+         * Get session value (wrapper)
+         *
+         * @param string|null $key Return the whole session array if null otherwise the value of $key
+         * @param null|mixed $defaultValue Return this if not null and session has not started
+         * @return mixed|null $defaultValue if key does not exist, otherwise session value depending on $key
+         */
+        static public function &get( $key = null, $defaultValue = null )
+
+        /**
+         * Isset session value (wrapper)
+         *
+         * @param string $key
+         * @param bool $forceStart Force session start if true
+         * @return bool|null Null if session has not started and $forceStart is false
+         */
+        static public function issetkey( $key, $forceStart = true )
+
+        /**
+         * unset session value (wrapper)
+         *
+         * @param string $key
+         * @param bool $forceStart Force session start if true
+         * @return bool|null True if value was removed, false if it did not exist and
+         *                   null if session is not started and $forceStart is false
+         */
+        static public function unsetkey( $key, $forceStart = true )
+
+   (get() liefert einen Session-Wert oder den Standardwert, wenn die Session
+   nicht gestartet ist; issetkey() prüft einen Schlüssel; unsetkey() entfernt
+   ihn. Mit $forceStart wird die Session dafür bei Bedarf gestartet.)
+
+
+3.1 LastAccessesURI
+-------------------
+
+LastAccessesURI wird für Benutzer ohne Session nicht mehr gesetzt. Ändern Sie
+Ihren Code so, dass er prüft, ob der Benutzer ein Session-Cookie hat, und
+sonst eine Standardweiterleitung vorsieht. Der Session-Wert ist ohnehin nur
+nützlich, wenn die vorige Seite ihn gesetzt hat.
+Es gibt zwei Wege: den sauberen und den einfachen.
+
+ - Der saubere Weg: In Formularen, die eine Aktion auslösen (Weiterleitung zu
+   einer Bearbeitungsansicht oder eine andere Aktion über POST-Formulare),
+   immer eine POST-Variable mitgeben. Sie sollte 'RedirectURI' heißen; so
+   macht es jetzt auch der übrige Kernel.
+
+ - Der einfache Weg: Eine Standard-URL vorsehen, falls weder (POST aus dem
+   sauberen Weg noch) die Session etwas enthält. Ab 4.4 geht das mit
+   Rückfallwerten so:
+
+       $redirectURI = $http->sessionVariable('LastAccessesURI', '/');
+
+   oder noch besser, indem der Code auch eine URI per POST-Variable annimmt
+   und Rückfallwerte zweimal nutzt:
+
+       $redirectURI = $http->postVariable('RedirectURI', $http->sessionVariable('LastAccessesURI', '/'));
+
+   Was geschieht hier? Zuerst wird die POST-Variable 'RedirectURI' gesucht;
+   gibt es sie nicht, wird LastAccessesURI verwendet, und ist die Session
+   nicht gestartet, '/', also die Startseite.
+
+   Leider kamen die Rückfallwerte ebenfalls erst mit 4.4; ab 4.1 geht es so
+   (hasSessionVariable() ist nicht nötig, macht den Code aber zukunftssicher,
+   falls es entfernt wird):
+
+       $redirectURI = eZSession::userHasSessionCookie() && $http->hasSessionVariable('LastAccessesURI') ?
+                      $http->sessionVariable('LastAccessesURI') :
+                      '/';
+
+   Oder besser, mit Unterstützung von POST-Parametern:
+
+       if ( $http->hasPostVariable('RedirectURI') )
+       {
+           $redirectURI = $http->postVariable('RedirectURI');
+       }
+       else if ( eZSession::userHasSessionCookie() && $http->hasSessionVariable('LastAccessesURI') )
+       {
+           $redirectURI = $http->sessionVariable('LastAccessesURI');
+       }
+       else
+       {
+           $redirectURI = '/';
+       }

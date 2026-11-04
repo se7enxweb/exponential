@@ -1,0 +1,232 @@
+WebDAV-Umsetzung mit ezcWebdav in Exponential
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Einführung
+==========
+
+Die WebDAV-Umsetzung von Exponential hat einige Probleme:
+
+- keine Sperren: funktioniert nicht mit WebDAV-Clients, die Sperren
+  brauchen, etwa dem Finder unter OS X.
+- nur Basic-Authentifizierung (keine Digest-Authentifizierung); dadurch
+  funktioniert sie mit Clients wie dem Internet Explorer 6 nicht ohne
+  besondere Eingriffe in die Registry.
+- die Funktionen copy und proppatch sind nicht umgesetzt.
+
+Ziel der Umsetzung auf Basis der Webdav-Komponente der eZ Components ist, einige
+dieser Probleme zu beheben und WebDAV mit möglichst vielen Clients besser zu
+unterstützen.
+
+Die Umsetzung beruht auf Exponential 4.1 (die neuen Objektzustände sollen für
+Sperren verwendet werden) und Webdav aus eZ Components 2008.2 (mit
+Authentifizierung, Autorisierung und Sperren).
+
+
+Aktuelle Probleme der WebDAV-Umsetzung mit eZ Components
+========================================================
+
+Wesentlich
+----------
+
+- keine Sperren (ezcWebdav unterstützt Sperren, in Exponential sind sie aber
+  noch nicht umgesetzt).
+- nur Basic-Authentifizierung (kein Digest). Der Hash wird in der
+  Benutzertabelle anders gespeichert, als Digest es braucht.
+
+Weniger wesentlich
+------------------
+
+- Beim Hochladen von Dateien mit großgeschriebener Endung (.JPG) wird die
+  Endung kleingeschrieben (.jpg); das macht Probleme mit Clients wie BitKinex
+  (endloses Hochladen). Mehr dazu unter
+  http://lists.ez.no/mailman/private/sdk/2008-December/009446.html. Lösung:
+  die Prüfung des Hochladens in BitKinex abschalten.
+- Beim Hochladen von Dateien mit Leerzeichen oder Sonderzeichen enthalten die
+  Namen der angelegten Objekte die Leerzeichen und Sonderzeichen kodiert (%20
+  für Leerzeichen usw.). Lösung: die Prüfung des Hochladens in BitKinex
+  abschalten.
+- Probleme mit 2 Siteaccesses, die sich die Datenbank teilen: Der Inhalt wird
+  in den falschen Siteaccess hochgeladen (von Dirk in IE6 SP2 beobachtet).
+- Inhalte zwischen 2 Siteaccesses zu verschieben oder zu kopieren ist noch
+  nicht möglich (es kommt 409 Conflict zurück); manche Clients wie BitKinex
+  verhalten sich aber seltsam und versuchen es erneut, wobei die Quelldatei
+  verschwindet und die Zieldatei nicht erscheint. Lösung: Das muss gut
+  sichtbar dokumentiert sein, damit Benutzer es nicht tun; es kann zu
+  Datenverlust führen.
+
+
+Umsetzung
+=========
+
+Der Einstiegspunkt in das WebDAV-System bleibt: Alle WebDAV-Anfragen
+verarbeitet index_webdav.php.
+
+In index_webdav.php wird die Klasse eZWebDAVContentBackend instanziiert statt
+der alten Umsetzung in der Klasse eZWebDAVContentServer. Die Klasse
+eZWebDAVContentBackendAuth übernimmt Authentifizierung und Autorisierung für
+WebDAV.
+
+
+eZWebDAVContentBackend
+----------------------
+
+eZWebDAVContentBackend erweitert ezcWebdavSimpleBackend, eine Basisklasse für
+Backends (mit der Webdav-Komponente kommen außerdem ein Datei- und ein
+Speicher-Backend).
+
+ezcWebdavSimpleBackend enthält alle Funktionen zur Behandlung von
+WebDAV-Befehlen. Einige sind abstrakt und müssen von den Backends selbst
+umgesetzt werden (hier eZWebDAVContentBackend).
+
+Der meiste Code der alten WebDAV-Umsetzung wurde behalten und an die neue
+Struktur von ezcWebdavSimpleBackend angepasst.
+
+Diese Funktionen kamen mit ezcWebdavSimpleBackend. Für jede ist erklärt, wie sie
+mit dem WebDAV-Code von Exponential zusammenarbeitet.
+
+createCollection( $path )
+  Legt mit eZContentObject::createWithNodeAssignment() einen Ordner an und
+  veröffentlicht ihn mit eZOperationHandler::execute( 'content', 'publish', ... )
+
+createResource( $path, $content = null )
+  ezcWebdavSimpleBackend verwendet 2 Funktionen, um eine Ressource anzulegen:
+  eine zum Anlegen und eine zum Setzen des Inhalts. Diese Funktion tut nichts,
+  da das gesamte Anlegen einer Ressource in WebDAV in getResourceContents()
+  geschieht.
+
+setResourceContents( $path, $content )
+  Speichert die hochgeladene Datei in einem Verzeichnis unter
+  exponential/var/webdav/tmp und legt dann mit handleLocalFile() aus
+  eZContentUpload ein Objekt auf Basis der Datei an und veröffentlicht es.
+
+getResourceContents( $path )
+  Holt mit eZContentObjectTreeNode::fetch() den durch $path genannten Knoten.
+  Die Knoten-ID von $path liefert eZURLAliasML::fetchNodeIDByPath(). Mit der
+  Funktion objectFileInfo() aus eZContentUpload wird geprüft, ob der Knoten
+  eine Datei (dann wird der gespeicherte Dateiname geholt) oder ein
+  Verzeichnis ist.
+
+setProperty( $path, ezcWebdavProperty $property )
+removeProperty( $path, ezcWebdavProperty $property )
+resetProperties( $path, ezcWebdavPropertyStorage $properties )
+  Diese Funktionen werden noch nicht verwendet. Sie sollen den Status
+  gesperrt/entsperrt setzen, sobald Sperren umgesetzt sind.
+
+getProperty( $path, $propertyName, $namespace = 'DAV:' )
+  Verwendet getAllProperties() und gibt die angefragte Eigenschaft
+  $propertyName im XML-Format zurück.
+
+getAllProperties( $path )
+  Holt mit denselben Funktionen wie getResourceContents() den Knoten zu $path,
+  um seine Eigenschaften zu erhalten, etwa Erstellungszeit, letzten Zugriff,
+  Anzeigenamen, Größe in Byte und MIME-Typ.
+
+performCopy( $fromPath, $toPath, $depth = ezcWebdavRequest::DEPTH_INFINITY )
+  Klont das unter $fromPath gespeicherte Inhaltsobjekt und speichert es unter
+  $toPath. Den neuen Knoten veröffentlicht es mit eZNodeAssignment::create()
+  und eZOperationHandler::execute( 'content', 'publish', ... ). Dasselbe
+  geschieht rekursiv für alle Unterknoten von $fromPath.
+
+performDelete( $path )
+  Prüft rekursiv, ob die Unterknoten von $path gelöscht werden dürfen, und
+  löscht sie dann mit removeNodeFromTree() aus eZContentObjectTreeNode. Die
+  Löschart kommt aus der Einstellung DefaultRemoveAction in content.ini
+  (trash oder delete).
+
+nodeExists( $path )
+  Holt mit eZContentObjectTreeNode::fetch() den durch $path genannten Knoten.
+  Die Knoten-ID von $path liefert eZURLAliasML::fetchNodeIDByPath(). Gibt
+  zurück, ob der durch $path genannte Knoten existiert.
+
+isCollection( $path )
+  Holt mit eZContentObjectTreeNode::fetch() den durch $path genannten Knoten.
+  Die Knoten-ID von $path liefert eZURLAliasML::fetchNodeIDByPath(). Gibt
+  zurück, ob der durch $path genannte Knoten eine Sammlung ist.
+
+getCollectionMembers( $path )
+  Liefert einen Baum aus ezcWebdavCollection- und ezcWebdavResource-Objekten,
+  den Unterknoten von $path.
+
+
+eZWebDAVContentBackendAuth
+--------------------------
+
+Übernimmt Basic-Authentifizierung und Autorisierung für WebDAV.
+
+Mit loginUser() aus eZUserLoginHandler prüft sie, ob die angegebenen
+Zugangsdaten stimmen.
+
+
+Serverkonfiguration
+===================
+
+Die Exponential-Installation muss so konfiguriert sein, dass alle
+WebDAV-Anfragen über index_webdav.php laufen (bis 6.0.14 hieß es webdav.php;
+webdav.php leitet jetzt nur noch weiter und wird in einer späteren
+Hauptversion entfernt, siehe
+doc/ger-de/bc/6.0/webdav-einstiegsskript-index-webdav.md).
+
+Außerdem muss WebDAV in webdav.ini eingeschaltet sein::
+
+  [GeneralSettings]
+  EnableWebDAV=true
+
+Für jeden Siteaccess sollte es eine webdav.ini.append.php geben, die den
+Startknoten des Siteaccesses nennt::
+
+ [GeneralSettings]
+ StartNode=2
+
+Das WebDAV-Protokoll wird so eingeschaltet (in webdav.ini oder in
+Überschreibungen)::
+
+ [GeneralSettings]
+ Logging=enable
+
+Die WebDAV-Protokolle liegen in var/log/webdav.log (von index_webdav.php) und
+var/log/<siteaccess>/log/webdav.log (von ezwebdavcontentbackend.php).
+
+Bei mehreren Siteaccesses sollte die Einstellung PathPrefix in site.ini und
+ihren Überschreibungen verwendet werden (PathPrefix blendet diesen Teil am
+Anfang des URL-Alias aus; PathPrefixExclude nennt URLs, die davon ausgenommen
+sind)::
+
+  [SiteAccessSettings]
+
+  # Hides this part from the start of the url alias
+  PathPrefix=
+
+  # Which URLs to exclude from being affected by PathPrefix setting.
+  # URLs containing the specified texts after siteaccess name will not be affected by PathPrefix
+  PathPrefixExclude[]
+  #PathPrefixExclude[]=media
+
+Standardmäßig kommen über WebDAV gelöschte Dateien in den Papierkorb. Den
+Papierkorb zu leeren ist Aufgabe des Administrators der Site. Sollen die
+Dateien direkt entfernt werden (ohne Papierkorb), muss diese Einstellung in
+content.ini geändert werden
+::
+
+  [RemoveSettings]
+  # delete or trash
+  DefaultRemoveAction=delete
+
+Wie Dateinamen beim Hochladen gebildet werden, ändern Sie mit der Einstellung
+TransformationGroup in site.ini und ihren Überschreibungen (urlalias_iri für
+URL-Aliase neuer Art mit Unicode, urlalias_compat für die alte Art)::
+
+  [URLTranslator]
+  TransformationGroup=urlalias
+  # Uncomment this to get the new-style url aliases with Unicode support
+  #TransformationGroup=urlalias_iri
+  # Uncomment this to get the old-style url aliases
+  #TransformationGroup=urlalias_compat
+
+
+
+..
+   Local Variables:
+   mode: rst
+   fill-column: 79
+   End:
+   vim: et syn=rst tw=79

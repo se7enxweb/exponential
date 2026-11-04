@@ -1,0 +1,16 @@
+Ereignissystem
+==============
+
+- Neue Ereignisse für das Entfernen von Bildvarianten (Aliases)
+- 5.4.6: Neue Ereignisse für das Zuweisen von Zuständen
+
+Neue Ereignisse
+---------------
+
+image/invalidateAliases
+image/removeAliases ( $originalAliasURI )
+image/purgeAliases ( $originalAliasURI )
+image/trashAliases ( $originalAliasURI )
+
+
+content/state/assign ( $objectID, $selectedStateIDList )

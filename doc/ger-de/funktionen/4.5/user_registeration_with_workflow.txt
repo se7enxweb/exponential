@@ -1,0 +1,11 @@
+Benutzerregistrierung mit Workflow
+==================================
+
+Einführung
+----------
+Diese Funktion verwendet den Workflow auch für die Registrierung von
+Benutzern. Genehmigende (etwa Redakteure) können neue Registrierungen jetzt
+wie ein normales Inhaltsobjekt genehmigen.
+
+Einzelheiten zur Verwendung standen in der Dokumentation von Exponential 4.5
+auf doc.ez.no.

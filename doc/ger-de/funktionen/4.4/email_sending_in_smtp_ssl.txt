@@ -1,0 +1,24 @@
+SSL-Unterstützung für den E-Mail-Versand über SMTP
+==================================================
+
+Einführung
+----------
+In Exponential 4.4 lassen sich E-Mails über SMTP mit einer SSL-Verbindung
+senden.
+
+
+Voraussetzungen
+---------------
+Die Bibliothek OpenSSL ist installiert.
+
+
+Konfiguration
+-------------
+Ändern Sie in site.ini die Einstellungen so:
+[MailSettings]
+Transport=SMTP
+TransportServer=<SMTP SERVER>
+TransportConnectionType=ssl
+TransportPort=465|<OTHER SSL PORT>
+TransportUser=<username>
+TransportPassword=<password>

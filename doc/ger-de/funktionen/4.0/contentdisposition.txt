@@ -1,0 +1,22 @@
+Content-Disposition
+===================
+
+In file.ini gibt es eine Einstellung, die je MIME-Typ festlegt, ob Dateien
+heruntergeladen oder im Browser direkt angezeigt werden. Sie bestimmt, wie der
+Header "Content-disposition" gesetzt wird. Die beiden gültigen Werte "inline"
+und "attachment" sagen dem Browser, wie er mit der Datei umgehen soll.
+
+Zwei Fälle, in denen diese Steuerung nützlich ist:
+
+1. Ab Flash Player 10 wird Flash nicht mehr geladen, wenn der Header
+"Content-disposition: attachment;" gesendet wird.
+
+2. Oft möchten Benutzer PDFs im Browser ansehen, statt sie erst auf die
+Festplatte herunterzuladen und dann zu öffnen. PDFs werden standardmäßig
+heruntergeladen. Damit PDFs direkt angezeigt werden, setzen Sie in file.ini:
+
+file.ini:
+::
+
+    [PassThroughSettings]
+    ContentDisposition[application/pdf]=inline

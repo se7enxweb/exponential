@@ -1,0 +1,189 @@
+=================================
+Windows-Installer von Exponential
+=================================
+
+:Autor: Alexandru Stanoi
+:Datum: 2009/03/12
+:Version: 1.0
+
+Dieses Dokument beschreibt die neue Installer-Funktion von Exponential 4.1.
+Vorerst gibt es nur einen Installer für Microsoft Windows; Installer für Linux,
+Mac OS X und Solaris waren für später geplant.
+
+.. contents:: Inhaltsverzeichnis
+
+
+Einführung
+==========
+
+Der Installer von Exponential ist ein Paket mit:
+
+ - Apache
+ - MySQL
+ - PHP
+ - Exponential
+ - eZ Components
+
+Diese Softwarepakete sind gebündelt, damit der Einstieg in Exponential leicht
+fällt.
+
+Verzeichnisstruktur
+-------------------
+
+Diese Verzeichnisstruktur legt der Installer im gewählten
+Installationsverzeichnis an (nur die wichtigsten Unterverzeichnisse, mit den
+wichtigen Konfigurationsdateien)::
+
+  Installationsverzeichnis von Exponential
+  ├─apache
+  │ ├─conf (Konfigurationsdatei httpd.conf für Apache)
+  │ └─htdocs (die Dateien im Web-Wurzelverzeichnis der Apache-Installation)
+  ├─apps
+  │ └─exponential
+  │   ├─conf (Konfigurationsdatei exponential.conf, an httpd.conf angehängt)
+  │   └─exponential (alle Dateien von Exponential, entspricht localhost/exponential)
+  ├─mysql (Konfigurationsdatei my.ini für MySQL)
+  │ └─data (MySQL-Datenbanken; bitnami_ezpublish ist die vom Installer angelegte Datenbank)
+  └─php (Konfigurationsdatei php.ini für PHP)
+
+
+Exponential unter Windows installieren
+======================================
+
+Starten Sie den Installer für Windows nach dem Herunterladen. Bis er auf dem
+Bildschirm erscheint, können einige Minuten vergehen, je nachdem, wie lange
+die Suche nach freien Ports für Apache und MySQL dauert. Die
+Internetverbindung muss bestehen, weil der Installer das gewählte
+Website-Paket herunterlädt.
+
+Mit Weiter gelangen Sie jeweils zur nächsten Seite des Installers.
+
+Zuerst geben Sie das Verzeichnis an, in das die gebündelte Software
+installiert wird.
+
+Danach zeigt eine Seite die gebündelte Software mit ihren Versionen und die
+Ports von Apache und MySQL (automatisch erkannte freie Ports). Ihre
+Exponential-Installation ist dann unter dieser Adresse erreichbar::
+
+  http://computername:apacheport/exponential
+
+Dabei ist:
+
+  computername
+    der Name Ihres Computers unter Windows (Rechtsklick auf Arbeitsplatz auf
+    dem Desktop, unter Eigenschaften ... steht der Name des Computers).
+    Statt des Computernamens können Sie auch **localhost** verwenden.
+
+  apacheport
+    der Port, den der Installer als frei erkannt hat. Meist ist es **8080**.
+
+Auf der Seite mit den Angaben für das Administratorkonto geben Sie ein
+Passwort ein und wiederholen es im Feld darunter. Merken Sie sich das
+Passwort des Administratorkontos; Sie brauchen es für die
+Administrationsoberfläche von Exponential.
+
+Nachdem der Installer alle Dateien kopiert hat, führt er diese Schritte aus:
+
+ - Apache als Dienst mit dem Namen **ezpublishApache** auf dem zuvor
+   erkannten freien **apacheport** installieren
+ - MySQL als Dienst mit dem Namen **ezpublishMySQL** auf dem zuvor erkannten
+   freien **mysqlport** installieren
+ - eine MySQL-Datenbank für Exponential mit dem Namen **bitnami_ezpublish**
+   anlegen
+
+Danach öffnet der Installer ein Browserfenster mit
+*http://computername:apacheport/exponential*, wo der Einrichtungsassistent
+von Exponential startet.
+
+
+Einrichtungsassistent
+---------------------
+
+Der Einrichtungsassistent von Exponential war hier ausführlich beschrieben:
+http://ez.no/doc/ez_publish/technical_manual/4_0/installation/the_setup_wizard
+
+Der Einrichtungsassistent des Installers ist eine vereinfachte Fassung des
+normalen Assistenten; viele Schritte hat der Installer bereits ausgefüllt.
+
+Haben Sie in einem Schritt auf Weiter geklickt, warten Sie bitte geduldig,
+bis die Anfrage abgeschlossen ist, und drücken Sie nicht die Zurück-Taste.
+Manche Schritte können wegen der Systemlast fehlschlagen. Mehr dazu im
+Abschnitt `Fehlerbehebung`_.
+
+Zuerst wählen Sie die Sprache des Einrichtungsassistenten.
+
+Danach legen Sie fest, welche Sprachen in Exponential installiert werden.
+
+Als Drittes wählen Sie ein Website-Paket zur Installation. Hängt das
+Website-Paket von Sprachen ab, die Sie im vorigen Schritt nicht installiert
+haben, können Sie die fehlende Sprache installieren oder sie durch eine
+bereits installierte ersetzen.
+
+Sind alle Schritte abgeschlossen, enthält die letzte Seite des Assistenten
+Links zur Site und zur Administrationsoberfläche Ihrer Exponential-Installation.
+Legen Sie für diese Links Lesezeichen an, damit Sie sie später leicht finden.
+
+
+Exponential unter Windows deinstallieren
+========================================
+
+Zum Deinstallieren klicken Sie auf Start und rufen
+Programme->Exponential->Uninstall Exponential auf. Das entfernt die
+installierte Software, aber keine Dateien, die nach der Installation
+entstanden sind, etwa Protokolldateien. Diese müssen Sie von Hand löschen.
+
+
+Fehlerbehebung
+==============
+
+
+Übrig gebliebene Dateien
+------------------------
+
+Das mitgelieferte Deinstallationsprogramm löscht die installierten Dateien,
+aber keine Dateien, die nach der Installation entstanden sind, etwa
+MySQL-Datenbanken und Protokolldateien. Diese Dateien müssen von Hand aus dem
+Installationsverzeichnis gelöscht werden.
+
+
+Warnungen im Einrichtungsassistenten
+------------------------------------
+
+Diese Warnungen können im Schritt Systemprüfung des Einrichtungsassistenten
+erscheinen.
+
+AcceptPathInfo
+''''''''''''''
+
+Möglicherweise erhalten Sie die Meldung, dass in der Konfigurationsdatei von
+Apache *AcceptPathInfo On* hinzugefügt werden muss.
+
+Der Grund ist wahrscheinlich, dass Ihr Computername nicht in der Datei
+**hosts** steht. Sie liegt im Verzeichnis **system32\drivers\etc** innerhalb
+Ihres **Windows**-Verzeichnisses (Windows oder WINNT). Die Datei ist versteckt
+und schreibgeschützt; entfernen Sie diese Attribute, bevor Sie sie mit einem
+Texteditor wie Notepad bearbeiten.
+
+Fügen Sie in der Datei **hosts** die Zeile::
+
+  127.0.0.1 computername
+
+hinzu, wobei **computername** der Name Ihres Computers ist (Rechtsklick auf
+Arbeitsplatz auf dem Desktop, unter Eigenschaften ... steht der Name des
+Computers).
+
+
+Ausführungszeit von PHP
+'''''''''''''''''''''''
+
+Die Konfigurationsdatei **php.ini** der im Installer enthaltenen PHP-Version
+setzt einen angemessenen Wert für *max_execution_time*. Wird dieser Wert
+überschritten (wegen Hardware- oder Softwareproblemen), läuft der
+Einrichtungsassistent in eine Zeitüberschreitung.
+
+Laden Sie in diesem Fall die Seite neu, bei der die Zeitüberschreitung
+auftrat. Hilft das nicht, deinstallieren Sie Exponential und installieren es
+auf einem "frischen" System mit möglichst wenigen laufenden Programmen
+(auch Firewall, Virenschutz, Download-Programme, Messenger).
+
+

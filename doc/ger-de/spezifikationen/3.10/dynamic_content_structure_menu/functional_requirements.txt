@@ -1,0 +1,46 @@
+======================================
+Verbesserungen am Inhaltsstruktur-Menü
+======================================
+
+:Autoren: Jan Kudlicka
+:Version: 0.1
+
+
+
+Vorwort
+-------
+Aus der Erfahrung mit unseren Kunden und ihren Projekten, besonders den
+größeren, lässt sich sagen, dass das Menü der Inhaltsstruktur in der
+Administrationsoberfläche nicht optimal umgesetzt ist. Jede Änderung an einer
+Site, die Cache-Blöcke entfernt, entfernt auch den gecachten Inhalt des
+Baummenüs, und ein Benutzer muss lange auf eine Seite mit dem Baummenü warten.
+Grund: Der HTML-Code des Menüs wird neu erzeugt (und gecacht), indem die
+gesamte Struktur der Site (genauer: eines Teils der Site) abgerufen und das
+Menü in den Templates gerendert wird. Außerdem enthält dieser HTML-Code
+
+  - Angaben zu allen Knoten, auch zu selten genutzten,
+  - manche Angaben vielfach doppelt,
+  - und ist daher groß (auf manchen Sites sogar Hunderte Kilobyte) und muss
+    bei jeder Anfrage an die Ansicht *content/view* übertragen werden.
+
+
+
+Vorgeschlagene Lösung
+---------------------
+Da praktisch alle Benutzer die Administrationsoberfläche in modernen Browsern
+mit XMLHTTPRequest-Objekten (auch AJAX-Anfrageobjekte genannt) nutzen, soll das
+Baummenü mit dieser Technik umgesetzt werden: Die Liste der Kinder eines
+Knotens wird erst bei Bedarf geholt (etwa nach einem Klick auf das Symbol zum
+Aufklappen). Außerdem sollen diese Anforderungen erfüllt werden:
+
+  - der Inhalt der Teilbäume, der vom Server zum Client übertragen wird, soll
+    nur die nötigen Angaben enthalten, um die übertragene Menge möglichst
+    klein zu halten,
+  - die Angaben sollen sich auf dem Server und im Browser cachen lassen,
+  - index.php soll umgangen und stattdessen ein leichtes Skript verwendet
+    werden (für kürzere Reaktionszeiten).
+
+Dieses dynamische Menü der Inhaltsstruktur soll nur in den
+Administrations-Siteaccesses verwendet werden. Die alte Umsetzung soll nicht
+entfernt werden; ein Administrator soll zwischen der ursprünglichen und der
+neuen dynamischen Umsetzung umschalten können.

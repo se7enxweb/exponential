@@ -1,0 +1,134 @@
+Verbesserungen an eZINI in Exponential 4.4
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+==========
+Einführung
+==========
+
+eZINI hat in dieser Version einige Änderungen erhalten:
+
+ 1. Die Reihenfolge der INI-Dateien ist jetzt nach Bereichen (Scopes)
+    gegliedert, damit sie einheitlicher und weniger fehleranfällig ist
+ 2. Bessere Leistung durch Cachen der INI-Orte
+ 3. Der zugehörige Code für Erweiterungen und Siteaccesses wurde verbessert
+    und bietet eine API, um Einstellungen anderer Siteaccesses richtig zu
+    laden und den Siteaccess während der Ausführung zu wechseln.
+
+Daher gibt es ein neues Cache-Format, mehrere Ergänzungen der API, und einige
+Funktionen wurden als veraltet markiert (siehe doc/ger-de/bc/4.4/).
+
+
+=================================
+Bereiche der INI-Überschreibungen
+=================================
+
+INI-Überschreibungen sind die verschiedenen Orte, an denen eine INI-Datei
+liegen kann. Vor den Bereichen ergab sich die Reihenfolge daraus, in welcher
+Reihenfolge der Code die INI-Orte zur Liste der möglichen Orte hinzufügte.
+Damit sie stimmig blieb, musste das richtig geschehen, besonders wenn Code
+mitten in der Ausführung Einstellungen eines anderen Siteaccesses laden oder
+ändern wollte. Siteaccess-Einstellungen in ActiveAccessExtensions etwa
+funktionierten nicht wie erwartet, und ActiveAccessExtensions wurde an vielen
+Stellen nicht richtig geladen.
+
+Um das zu verbessern und künftig zu vermeiden, legen Bereiche die gesamte
+Ladereihenfolge der INI-Einstellungen fest. Sie lautet::
+
+    override
+    extension (ActiveExtensions)
+    siteaccess
+    sa-extension (ActiveAccessExtensions)
+
+Unter sa-extension liegt der Ordner settings; er ist derzeit kein eigener
+Bereich, da er nicht konfigurierbar ist.
+
+Jeder Bereich enthält eine Liste von INI-Orten in der Reihenfolge, in der sie
+geladen werden; bei Erweiterungen ist das die Reihenfolge nach der
+Erweiterungs-Reihenfolge (siehe eigene Funktionsbeschreibung). Beim Siteaccess
+zuerst der in settings/siteaccess/*, dann die Orte in ActiveExtensions nach
+der Erweiterungs-Reihenfolge, zuletzt die Orte in ActiveAccessExtensions.
+
+Die Bedingung ``file_exists`` beim Verarbeiten der möglichen Orte von
+Erweiterungen ist entfallen. Zunächst werden alle Orte versucht, die gültigen
+werden im INI-Cache gespeichert, und spätere Läufe holen die Liste der Orte
+direkt aus dem Cache, ohne ``file_exists``-Aufrufe. Siehe auch
+`Bessere Leistung`_ unten.
+
+Ein weiterer Vorteil der Bereiche: Die Ladereihenfolge lässt sich künftig viel
+leichter ändern, wie schon an mehreren Stellen besprochen.
+
+Bis dahin gibt es jetzt einen verlässlichen Weg, Erweiterungen mit
+Einstellungen zu bauen, die mehrere Siteaccesses teilen, und diese
+Einstellungen zugleich in den Einstellungen des Siteaccesses zu überschreiben.
+(ActiveAccessExtensions)
+
+
+=================
+Bessere Leistung
+=================
+
+PHP cacht stat-Aufrufe (file_exists, filemtime ...) nicht, wenn eine Datei
+nicht existiert, und soll es auch nicht. Deshalb werden in dieser Version die
+Dateien, auf denen der INI-Cache beruht, in der INI-Cache-Datei gespeichert.
+So muss nicht mehr die ganze Installation durchlaufen und geprüft werden, ob
+ein settings-Ordner und darin eine bestimmte INI-Datei existiert.
+Standardmäßig wird dann die Änderungszeit dieser Dateien geprüft, um zu
+entscheiden, ob der INI-Cache erneuert werden muss. Das lässt sich weiterhin
+global oder für eine einzelne Datei mit EZP_INI_FILEMTIME_CHECK abschalten,
+der Gewinn ist aber nicht mehr so groß, weil es schon standardmäßig viel
+effizienter ist.
+
+Einen Nachteil hat das: Neue INI-Überschreibungen an vorhandenen Orten (in
+bereits aktivierten Erweiterungen oder Siteaccesses oder im Ordner override)
+werden nicht mehr automatisch gefunden. Leeren Sie den INI-Cache, damit sie
+gefunden werden.
+
+
+=========================
+Neue API für Siteaccesses
+=========================
+
+Die API von eZINI zum Lesen von Siteaccess-Einstellungen war fehlerhaft bzw.
+wurde falsch verwendet: Sie lud Siteaccess-Einstellungen nur von einem Ort,
+entweder aus settings/siteaccess/* oder, falls es den nicht gab, vom ersten in
+Erweiterungen gefundenen; Einstellungen von extension oder sa-extension wurden
+weder geladen noch berücksichtigt.
+
+Die neue API ( eZSiteAccess::getIni() ) behebt all das und nutzt das normale
+Laden der INI-Dateien, ohne die Festplatte zu durchlaufen. Sie wird jetzt im
+ganzen Kernel verwendet und behebt so mehrere Probleme mit nicht gelesenen
+Einstellungen von Erweiterungen und besonders Siteaccess-Erweiterungen.
+
+Verwendung ('admin' ist der Name des Siteaccesses, 'site.ini' ist optional, da
+es auch der Standardwert ist):
+
+    $ini = eZSiteAccess::getIni( 'admin', 'site.ini' );
+    $adminSiteURL = $ini->variable( 'SiteSettings', 'SiteURL' );
+    (...)
+
+oder für eine einzelne Variable:
+
+    $adminSiteURL = eZSiteAccess::getIni( 'admin', 'site.ini' )->variable( 'SiteSettings', 'SiteURL' );
+
+
+So wechseln Sie den Siteaccess während der Ausführung:
+
+    eZSiteAccess::load( array( 'name' => 'admin'[, 'type' => eZSiteAccess::<TYPE-CONSTANT>[, 'uri_part' => array(...) ] ] ) );
+    // But if you use any kind or uri mapping (incl. host_uri) where the uri part is not the same as
+    // the name of the siteaccess, links might not work on the generated page if uri_part is wrong/undefined.
+
+    // In that case make sure you have specified site.ini\[SiteSettings]\SiteUriParts[]
+    // to be the same as the uri parts that match siteaccess in uri.
+    // However, this won't cover you if you use host_uri matching and siteaccess uses different host.
+
+(Die Kommentare im Code besagen: Wird eine URI-Zuordnung verwendet (auch
+host_uri), bei der der URI-Teil nicht dem Namen des Siteaccesses entspricht,
+können Links auf der erzeugten Seite bei falschem oder fehlendem uri_part
+nicht funktionieren. Dann muss site.ini\[SiteSettings]\SiteUriParts[] den
+URI-Teilen entsprechen, die den Siteaccess in der URI zuordnen. Bei host_uri
+mit einem anderen Host des Siteaccesses hilft das allerdings nicht.)
+
+Wir empfehlen daher, stattdessen wie oben mit 'SiteURL' zu arbeiten und den
+Benutzer wenn möglich weiterzuleiten; das ist viel einfacher und braucht nur
+eine richtige Einstellung SiteURL.
+

@@ -1,0 +1,28 @@
+User-Agent des statischen Caches
+================================
+
+#009126: Der statische Cache erzeugt beim Veröffentlichen neuen Cache aus altem Cache
+http://issues.ez.no/IssueView.php?Id=9126&ProjectId=3
+
+Die Behebung von Fehler #9126 besteht darin, dass sich der Cache-Generator in
+der Anfrage, mit der er den statischen Cache aktualisiert, als solcher zu
+erkennen gibt. Der User-Agent solcher Anfragen lautet jetzt "Exponential static
+cache generator".
+
+Um das zu nutzen, legen Sie im Webserver eine Bedingung auf diesen User-Agent
+an. In Apache etwa so, gefolgt von den Rewrite-Regeln für den statischen
+Cache:
+
+# Ist der User-Agent nicht "Exponential static cache generator",
+RewriteCond %{HTTP_USER_AGENT} !^Exponential\ static\ cache\ generator$
+# wird auf den statischen Cache umgeschrieben
+
+Eine Site, deren Webserver-Regeln noch den früheren User-Agent ("eZ Publish
+static cache generator") prüfen, muss diese Bedingung auf die obige Zeichenfolge
+ändern oder beide durchlassen:
+RewriteCond %{HTTP_USER_AGENT} !^(Exponential|eZ\ Publish)\ static\ cache\ generator$
+
+HINWEIS:
+Die herkömmliche Lösung gilt weiterhin: getrennte Hostnamen für das dynamische
+und das statisch gecachte Exponential. Wer diese Lösung verwendet, muss nichts
+ändern.

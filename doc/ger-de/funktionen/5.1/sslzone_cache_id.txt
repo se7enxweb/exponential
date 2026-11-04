@@ -1,0 +1,11 @@
+Für SSL-Zonen gibt es eine neue Cache-ID: "sslzones".
+Sie gehört zum Tag ini und leert die Cache-Datei mit der Liste der
+SSL-Teilbäume.
+
+Ändern Sie diese Liste, müssen Sie alle Caches, den INI-Cache oder genau diesen
+Cache leeren (wird der INI-Cache nicht geleert, werden die Änderungen nicht
+berücksichtigt):
+
+    php bin/php/ezcache.php --clear-id=sslzones
+    php bin/php/ezcache.php --clear-tag=ini
+    php bin/php/ezcache.php --clear-all

@@ -1,0 +1,69 @@
+Reihenfolge der Erweiterungen
+=============================
+
+Einführung
+----------
+
+In Exponential 4.4 gibt es einen Mechanismus, mit dem Erweiterungen festlegen
+können, in welcher Reihenfolge sie im Verhältnis zu anderen, verwandten
+Erweiterungen geladen werden.
+
+Voraussetzungen
+---------------
+
+Damit der Mechanismus greift, müssen die Erweiterungen neu genug sein, um die
+nötigen Metadaten zu enthalten. Diese stehen in einer Datei *extension.xml* im
+Wurzelverzeichnis der Erweiterung.
+
+Konfiguration
+-------------
+
+Damit die Reihenfolge greift, muss in *site.ini.append.php* diese Einstellung
+eingeschaltet sein:
+
+::
+
+    [ExtensionSettings]
+    ExtensionOrdering=enabled
+
+Cache
+-----
+Da diese Funktion die Bearbeitungszeit jeder Anfrage erhöht, werden die
+Ergebnisse gecacht. Der Cache wird je nach aktivem Siteaccess und angefragter
+Ebene der Erweiterungen (global, Siteaccess oder beides) getrennt gespeichert.
+Er enthält das endgültige, bei Bedarf sortierte (siehe "Konfiguration") Array
+der aktiven Erweiterungen.
+
+Dieser Cache lässt sich auf mehrere Arten leeren:
+
+- in der Oberfläche setup/cache über das Kontrollkästchen "Active extensions"
+  unten;
+- durch Leeren des INI-Caches über die Schaltfläche im oberen Block der
+  Oberfläche ``setup/cache``;
+- durch Leeren des INI-Caches auf der Kommandozeile mit
+  ``bin/php/ezcache.php --clear-tag=ini``
+- durch Leeren genau dieses Caches auf der Kommandozeile mit
+  ``bin/php/ezcache.php --clear-id=active_extensions``
+
+Beim Aktivieren einer Erweiterung in der Oberfläche ``setup/extensions``
+geschieht das automatisch.
+
+Syntax von extension.xml
+------------------------
+Die Datei enthält drei Arten von Angaben zur Reihenfolge, die inhaltlich als
+Abhängigkeiten formuliert sind. Das ist Absicht: Mit dieser weiter gefassten
+Syntax lassen sich später Abhängigkeiten zwischen Erweiterungen umsetzen, ohne
+die Syntax der Datei zu ändern.
+
+Die Knoten für die Ladereihenfolge sind
+
+* *dependsOn*: diese Erweiterung braucht zum Laufen die genannte Erweiterung.
+  Starke Abhängigkeit. In der Umsetzung in loading.php als 'danach' ausgelegt
+* *uses*: diese Erweiterung nutzt Funktionen der genannten Erweiterung.
+  Schwache Abhängigkeit. In der Umsetzung in loading.php ebenfalls als
+  'danach' ausgelegt
+* *extends*: diese Erweiterung überschreibt einige Funktionen (meist das
+  Design, auch Einstellungen) der genannten. In der Umsetzung in loading.php
+  als 'davor' ausgelegt.
+
+Ein vollständiges Beispiel steht in doc/ger-de/funktionen/4.4/extension_xml.txt.

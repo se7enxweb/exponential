@@ -1,0 +1,47 @@
+Änderungen an Rückwärtskompatibilität und Verhalten in Version 5.4
+==================================================================
+
+Geänderte INI-Einstellungen
+---------------------------
+
+
+Geändertes Verhalten
+--------------------
+
+- EZP-23296: Kollisionen der Cache-Schlüssel im Template-Block-Cache
+
+  Die Template-Cache-Blöcke verwendeten crc32, das mit hoher
+  Wahrscheinlichkeit kollidiert. Jetzt wird wie beim ViewCache md5 verwendet.
+
+  Hinweis: Damit nicht zu viele Cache-Blöcke entstehen, legen Sie identische
+  Blöcke in ein eigenes Template; dann teilen sie sich den Cache (Template und
+  Ort des Blocks sind Teil des internen eindeutigen Schlüssels).
+
+- EZP-26028: Online-Editor unter PHP 7 nicht nutzbar
+
+  Zur Behebung darf der erste Parameter aller XML-Ein- und Ausgabe-Handler,
+  `$xmlData`, keine Referenz mehr sein.
+
+
+Entfernte Funktionen
+--------------------
+
+- EZP-23082: Tabelle ezsearch_return_count vollständig entfernen
+
+  Exponential verwendet die Tabelle ezsearch_return_count nicht mehr; sie
+  kann einfach entfernt werden. Das verkleinert die Datenbank großer Sites
+  erheblich.
+
+
+Entfernte Konstanten
+--------------------
+
+
+
+Entfernte globale Variablen
+---------------------------
+
+
+
+Veraltet
+--------

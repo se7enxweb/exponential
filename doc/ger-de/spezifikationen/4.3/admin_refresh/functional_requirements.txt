@@ -1,0 +1,232 @@
+Exponential: Administrationsoberfläche, Anforderungen, 4.3
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+$Author$
+$Revision$
+$Date$
+:Status: Entwurf
+
+.. contents::
+
+=======
+Vorwort
+=======
+
+Das bisherige Admin-Design wurde in Gestaltung und Bedienung zunehmend
+kritisiert: veraltet, langsam, nicht sauber erweiterbar, wenig intuitiv, und es
+fehlt ein zentraler Ort mit einem Überblick über alle Aufgaben eines Benutzers
+(Redakteur wie Administrator).
+
+Insgesamt muss die Administrationsoberfläche stärker dem entsprechen, wie sich
+Webanwendungen entwickelt haben: bessere Benutzbarkeit, einfachere
+Oberflächen, Ajax-Funktionen und klare Designs, an die sich Benutzer im
+Web-2.0-Zeitalter gewöhnen.
+
+Veraltet heißt hier vor allem ein überladenes Design im Vergleich zu anderen
+Administrationsoberflächen: der Benutzer wird mit Klickmöglichkeiten
+überschüttet, zu viel Bildschirmfläche geht an die Gestaltung verloren, und die
+Gestaltung ist altmodisch.
+
+Langsam heißt vor allem die Zahl der Klicks und Seitenneuladungen, die für
+einige Kernaufgaben nötig sind. Erkannte Kernaufgaben:
+* Klassenattribute verschieben, hinzufügen und entfernen
+* Rollen Policies hinzufügen
+* Beziehungen in Objektattributen vom Typ Objektbeziehung und
+  Objektbeziehungsliste finden
+* Knoten auswählen bei Aktionen wie: verschieben nach, kopieren nach,
+   Beziehungen, Rolle zuweisen und Funktionsbeschränkungen für Knoten /
+   Teilbäume in Policies
+
+Erweiterbarkeit heißt, dass Erweiterungen die Administrationsoberfläche
+erweitern können, ohne Template-Dateien zu überschreiben, denn dann könnten
+nicht mehrere Erweiterungen dieselben Teile erweitern.
+
+Eine intuitivere Oberfläche heißt bessere Benutzbarkeit und das Entfernen,
+Verschieben oder Ausblenden von Funktionen, die Benutzer bei ihrer aktuellen
+Tätigkeit nicht brauchen. Erkannte Aufgaben:
+* rechtes Menü standardmäßig ausblenden
+* den Reiter Medien für eine bessere Verwaltung der Mediendateien anpassen
+* den Platz der Knotenkästen (Vorschau, Details ...) verkleinern, damit sich
+  Unterelemente und Aktionen darauf leichter durchsehen lassen.
+
+Für einen Überblick über die Aufgaben braucht der Benutzer ein Dashboard, in
+dem er eigene Inhalte, Genehmigungen und andere regelmäßige Aufgaben verfolgen
+kann.
+
+
+Vorwort der Community
+---------------------
+Einige Mitglieder unserer Community haben Artikel darüber geschrieben, was sie
+an der Administrationsoberfläche geändert sehen möchten, hier einige davon:
+http://www.stuffandcontent.com/2009/10/Exponential-admin-interface-overhaul.html
+http://pwet.fr/blog/some_thougths_about_the_admin_interface_refresh_of_ez_publish
+
+
+Hinweis zur Browser-Kompatibilität
+----------------------------------
+Wir folgen der A-Grade-Tabelle der Browser-Unterstützung von YUI, unterstützen
+also alle wichtigen Browser vollständig. Wir alle (Entwickler und ihre
+Vorgesetzten) wissen aber, wie mühsam die Unterstützung des Internet Explorer
+6 (IE6) sein kann. Daher unterstützen wir IE6 nur funktional: Alle Funktionen
+sollen darin wie erwartet arbeiten, aber wir streben keine pixelgenaue
+Gestaltung an. Außerdem können wir zentrale JavaScript-/Ajax-Verbesserungen
+dort weglassen, wenn sie für IE6 zusätzlichen Code oder Umgehungen erfordern.
+Bei CSS nutzen wir Funktionen von CSS 2, die es seit 11 Jahren gibt und die
+alle anderen A-Grade-Browser umsetzen.
+
+
+==========
+Funktionen
+==========
+
+Nach Priorität für 4.3:
+
+#1 Neuer Stil der Administrationsoberfläche
+-------------------------------------------
+Soll: moderner und zeitgemäßer aussehen
+Soll: Bildschirmfläche für den Inhaltsbereich zurückgewinnen
+Soll: keine neuen Funktionen oder Änderungen im Kernel erfordern
+Soll: weiterhin ein Design mit flexibler Breite sein
+Soll: Layout und Wireframe nicht ändern, außer für andere Funktionen dieses
+      Dokuments
+Soll: weniger überladen sein und besseren Textkontrast haben (Schwarz auf
+      Weiß)
+Soll: allen Formular-Labels das Attribut for geben, damit sie wie vorgesehen
+      funktionieren (WAI)
+Kann: den Admin-Stil für moderne Mobilgeräte zugänglicher machen
+Kann: Schaltflächen je nach Funktion farblich kennzeichnen: löschen / holen /
+      speichern
+Kann: CSS-Sprites für kleine Bild-Schaltflächen, Symbole und Logos verwenden,
+      um Menge und Größe der Admin-Grafiken zu verringern
+
+#1.1 Neue Möglichkeit, das rechte Menü auszublenden, standardmäßig ausgeblendet
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Soll: ohne Neuladen der Seite (ein- und) ausblenden.
+Soll: den Abmelde-Link in die Kopfzeile verschieben, damit er immer
+      erreichbar ist.
+Kann: den Code für die Layout-Änderung allgemein halten, damit ihn die
+      Größenwahl des linken Menüs sowie die Ein-/Ausblende-Schaltflächen des
+      rechten Menüs und der Einträge im linken Menü wiederverwenden können.
+
+#1.2 Geänderte Darstellung der Medienbibliothek
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Soll: die Medienbibliothek medienspezifischer machen und das Durchsuchen von
+      Mediendateien leichter und schneller
+
+#1.3 Weniger Scrollen auf großen Seiten
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Kann: Speichern-/Verwerfen-Schaltflächen auch oben in den Bearbeitungsformularen
+      von Inhalten und Klassen haben, oder eine fest positionierte Leiste, die
+      immer sichtbar bleibt.
+Kann: das Eingabefeld "Hier erstellen" in den oberen Kasten statt nach unten
+      verschieben
+Kann: die oberen Schaltflächen (Vorschau, Details ...) und zugehörige Blöcke in
+      einen Block mit Reitern unter dem oberen Block verschieben, der sich
+      einklappen lässt (ähnlich für die Kästen von class/view)
+
+#1.4 Schnellere Administrationsoberfläche
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Soll: die Struktur des Pagelayouts an ezwebin angleichen und cache-blocks
+      einschalten. Das soll auch das Überschreiben von Teilen des
+      Pagelayouts wie bei webin 1.4+ erleichtern
+
+#1.5 Nur Optionen zeigen, auf die der Benutzer Zugriff hat
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Soll: Reitern erlauben, in menu.ini eine Policy für die Zugriffsprüfung
+      anzugeben
+Soll: Links in Leftmenu_* erlauben, in menu.ini eine Policy für die
+      Zugriffsprüfung anzugeben
+
+#1.6 Nur Optionen, die im aktuellen Zusammenhang relevant sind
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Soll: bei "Hier erstellen" nur Klassen aus der Klassengruppe zeigen, die zum
+      jeweiligen Teil der Struktur gehört (Inhaltsklassen im Reiter Inhalt,
+      Medienklassen im Reiter Medien ...)
+
+#2 Neues Dashboard als Startseite nach der Anmeldung
+----------------------------------------------------
+Soll: die Standardseite nach der Anmeldung in der Administrationsoberfläche
+      sein
+Soll: einen Kasten mit zuletzt veröffentlichten Inhalten bieten
+Soll: einen Kasten mit den vom aktuellen Benutzer zuletzt geänderten Inhalten
+      bieten
+Soll: einen Kasten mit eigenen Entwürfen (gespeicherten Entwürfen) bieten
+Soll: Kurzlinks zu benutzerbezogenen Aufgaben wie Passwort ändern bieten
+Soll: einen Kasten mit eigenen Inhalten bieten, die auf Genehmigung warten
+Soll: erweiterbar sein, sodass Erweiterungen Blöcke hinzufügen oder
+      überschreiben können
+Soll: das rechte Menü ausblenden, um die volle Bildschirmfläche zu nutzen
+Kann: einen Kasten mit den am besten/schlechtesten bewerteten Inhalten bieten
+      (ezstarrating)
+Kann: einen Kasten zur Genehmigung von Kommentaren bieten (ezjscomment)
+
+#3 Neue Ajax-Funktionen für Inhaltsattribute vom Typ Objektbeziehung und -liste
+------------------------------------------------------------------------------
+Soll: eine Ajax-Suche im Formular bieten, um mögliche Beziehungen zu finden
+Kann: Beziehungen ohne Neuladen der Seite entfernen
+Kann: Beziehungen ohne Neuladen der Seite umsortieren (Liste)
+Kann: Beziehungen per Drag-and-drop umsortieren (Liste)
+
+#4 Neue Ajax-Funktionen zum Hinzufügen von Policies zu Rollen
+-------------------------------------------------------------
+Soll: Modul und Funktion ohne Neuladen der Seite wählen lassen
+
+#5 Neue Ajax-Funktionen in der Bearbeitung von Klassen
+------------------------------------------------------
+Soll: Attribute ohne Neuladen der Seite verschieben
+Soll: nach dem Neuladen den Fokus auf das hinzugefügte Attribut setzen
+ODER
+Soll: Attribute ohne Neuladen der Seite hinzufügen
+Kann: Attribute ohne Neuladen der Seite entfernen
+Kann: Attribute per Drag-and-drop verschieben
+
+#6 Ajax-Funktion zum Umsortieren von Unterelementen per Drag-and-drop
+---------------------------------------------------------------------
+Kann: die Drag-and-drop-Funktion der Erweiterung ezwt übernehmen
+
+#7 Das Inhaltsklassen-Modell von Exponential für eine reichere Bearbeitung erweitern
+-----------------------------------------------------------------------------------
+Soll: je Klasse einen übersetzbaren Beschreibungstext als Hilfe für
+      Redakteure hinzufügen (also serialized_description_list)
+Soll: je Klassenattribut einen übersetzbaren Beschreibungstext als Hilfe für
+      Redakteure hinzufügen
+Soll: Klassenattributen ein übersetzbares (langes) Textattribut geben, als
+      übersetzbare Vorgabe für string/text und als Optionen des Datentyps
+      selection (also serialized_data_text)
+Soll: eine Kategorie bzw. einen Typ für Klassenattribute hinzufügen, um
+      bestimmte Attribute zu gruppieren (die Typen sollen erweiterbar sein)
+Kann: der Kategorie bzw. dem Typ erlauben festzulegen, ob sie in der
+      Knotenansicht angezeigt werden
+Wunsch: Vererbung von Klassen, um andere Klassen mit gemeinsamen Attributen
+        zu erweitern und abweichende zu überladen (und/oder weitere
+        hinzuzufügen).
+
+#8 [Nicht geplant] Kontextbezogene Hilfe
+----------------------------------------
+Soll: immer einen sichtbaren Hilfe-Link in der Kopfzeile haben, der einen
+      neuen Reiter öffnet.
+Soll: Modul und Ansicht als Parameter an die Hilfeansicht senden, damit
+      gezielte Hilfe, etwa zu content/edit beim Bearbeiten, gezeigt werden
+      kann.
+Soll: Erweiterungen unterstützen, damit auch sie kontextbezogene Hilfe bieten
+      können.
+Kann: so gegliedert sein, dass es allgemeine Informationen zum Modul und
+      gezielte Hilfe je Ansicht gibt.
+Kann: die Hilfe online bereitstellen, damit sie immer aktuell und zentral ist.
+      Module (auch Erweiterungen) müssten dann nur eine URL zu den Hilfeseiten
+      angeben. Dann sollte es Richtlinien für diese Hilfeseiten geben, und
+      project.ez.no könnte Projekten eine solche Oberfläche bieten. Außerdem
+      sollte sich externe Hilfe per Einstellung abschalten lassen, vielleicht
+      mit einer Positivliste von Domains, auf die für Hilfe verlinkt werden
+      darf.
+
+#9 [Nicht geplant] Neue Ajax-Oberfläche zur Auswahl von Knoten
+--------------------------------------------------------------
+Kann: bei der Auswahl von Knoten-/Teilbaum-Beschränkungen in Policies von
+      Rollen verwendet werden
+Kann: bei der Wahl des Ziels für Verschieben verwendet werden
+Kann: bei der Wahl des Ziels für Kopieren verwendet werden
+Kann: bei der Auswahl einer Beziehung beim Suchen neuer Beziehungen verwendet
+      werden
+Kann: beim Zuweisen einer Rolle mit und ohne Teilbaum-Beschränkung verwendet
+      werden

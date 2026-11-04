@@ -1,0 +1,52 @@
+Auf Benutzer beschränkte Elemente mit CSS ein- und ausblenden
+=============================================================
+
+Eine kleine, aber potenziell nützliche Funktion ist in trunk hinzugekommen.
+
+Sie umgeht die Tatsache, dass der ViewCache rollenbasiert ist und nicht
+benutzerbasiert. Ein gutes Beispiel für eine ältere Funktion, bei der sie
+helfen kann, sind Foren auf Basis von Exponential: Haben Benutzer die Policy
+content/edit/owner(self), muss ihnen ein Link zum Bearbeiten ihrer eigenen
+Beiträge angeboten werden. Da Foren aber über den ViewCache gecacht werden,
+teilen sich alle Benutzer jede Seite; prüft man für jeden Link die Policy
+content/edit, landet ein benutzerspezifischer Cache bei mehreren Benutzern.
+
+Das lässt sich umgehen:
+- mit AJAX, aber mit hohen Leistungskosten
+- indem die Links allen Benutzern gezeigt werden, auf Kosten der
+  Benutzerfreundlichkeit
+- oder durch Abschalten des ViewCache
+
+Diese Funktion bietet einen weiteren Ausweg, der in den meisten Fällen das
+erwartete Nutzungserlebnis bietet, ohne zusätzliche Kosten für Sicherheit oder
+Leistung.
+
+Das Template page_head_displaystyles.tpl
+----------------------------------------
+
+Dieses Template definiert zwei Stile:
+
+* .limitdisplay-user
+  Diese Klasse blendet jedes Element, auf das sie angewendet wird, vollständig
+  aus
+
+*  .limitdisplay-user-<UserID>
+  Diese Klasse zeigt Elemente, die zur ID des angemeldeten Benutzers passen
+
+Das Template gehört zu standard und wird von den pagelayout.tpl von standard,
+webin und flow eingebunden.
+
+Verwendung
+----------
+
+Soll ein Link oder Button nur seinem "Eigentümer" gezeigt werden (das Beispiel
+edit/owner(self) oben), versehen Sie ihn einfach mit zwei Klassen::
+
+    class="limitdisplay-user limitdisplay-user-{$current_user.contentobject_id}"
+
+Die erste Klasse blendet das Element für alle aus, die zweite macht es für
+seinen Eigentümer sichtbar.
+
+Werden die Stile nicht angewendet, etwa wegen eines bestimmten User-Agents,
+sind die Elemente für alle sichtbar; die Sicherheitsprüfungen auf dem Server
+schützen Ihre Daten aber trotzdem vollständig.

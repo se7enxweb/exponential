@@ -1,0 +1,57 @@
+Änderungen an Rückwärtskompatibilität und Verhalten in Version 5.1
+==================================================================
+
+Geänderte INI-Einstellungen
+---------------------------
+
+
+Geändertes Verhalten
+--------------------
+
+- Behoben EZP-19889: eZSelectionType->hasObjectAttributeContent gibt jetzt nur
+  TRUE zurück, wenn mindestens eine Auswahl getroffen ist, sonst FALSE. In
+  früheren Releases gab diese Methode immer TRUE zurück.
+
+- Behoben EZP-20289: Der CSRF-Schutz von Symfony war nicht in Legacy
+  integriert
+
+  ezFormToken schützt jetzt auf dieselbe Weise vor CSRF wie Symfony. Für gute
+  Sicherheit gibt es daher eine neue Einstellung, die je Projekt gesetzt werden
+  muss: site.ini\[HTMLForms]\Secret bei einer reinen Legacy-/4.x-Einrichtung.
+
+  Unter Exponential 5.x wird der vorhandene YML-Parameter %secret% automatisch
+  an eZFormToken übergeben, sofern framework.csrf_protection in config.yml auf
+  true (eingeschaltet) steht.
+
+- Weiterleitungen aus Modulen zu nicht vertrauenswürdigen Hosts sind jetzt
+  verboten und enden mit HTTP 403. Hosts lassen sich im Array
+  site.ini/[SiteSettings].AllowedRedirectHosts zur Positivliste hinzufügen.
+
+
+Entfernte Funktionen
+--------------------
+
+- eZContentOperationCollection::publishContentObjectRelations()
+
+  Diente der Verarbeitung von Beziehungen über die Spalte
+  ezcontentobject_link.op_code. Diese Art der Behandlung von Beziehungen wurde
+  als überflüssig entfernt. Siehe Fehler EZP-20239.
+
+- Die Handler eZDBFileHandler und eZFS2FileHandler wurden entfernt; sie waren
+  überholt und durch die eZDFS-Handler ersetzt.
+
+
+Entfernte Konstanten
+--------------------
+
+
+
+Entfernte globale Variablen
+---------------------------
+
+
+
+
+Veraltet
+--------
+

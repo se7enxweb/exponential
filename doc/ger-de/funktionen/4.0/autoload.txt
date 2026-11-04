@@ -1,0 +1,57 @@
+Erzeugung der Autoload-Arrays in Exponential 4
+==============================================
+
+Exponential 4 lädt Klassen über die Autoload-Funktion von PHP 5. Das bedeutet:
+Kommen neue Klassen in das System, müssen die Autoload-Arrays aktualisiert
+werden.
+
+Es gibt mehrere Situationen, in denen man die Autoload-Arrays neu erzeugen
+möchte:
+
+1. Nach einem Upgrade von Exponential, damit neue Klassen im Kernel von
+Exponential erkannt werden.
+
+2. Wenn der Site eine neue Erweiterung hinzugefügt wird, müssen ihre Klassen
+für Exponential verfügbar gemacht werden.
+
+Aktualisierte Autoload-Arrays erzeugen
+--------------------------------------
+
+Es gibt zwei Wege, das Skript zur Autoload-Erzeugung aufzurufen. Der erste,
+der die volle Kontrolle bietet, ist das Kommandozeilenskript (seine Hilfe ist
+unten wiedergegeben):
+
+bin/php/ezpgenerateautoloads.php
+::
+
+	Usage: $ bin/php/ezpgenerateautoloads.php [-h] [-t "autoload"] [-v] [-n] [-k] [-e] [--exclude <string>]  [[--] <args>]
+	Autoload file generator.
+
+	-h / --help       Show help information
+	-t / --target     The directory to where the generated autoload file should be
+	                  written.
+	-v / --verbose    Whether or not to display more information.
+	-n / --dry-run    Whether a new file autoload file should be written.
+	-k / --kernel     If an autoload array for the kernel files should be generated.
+	-e / --extension  If an autoload array for the extensions should be generated.
+	--exclude         Folders to exclude from the class search.
+
+(Die Hilfe des Skripts gibt das Skript selbst auf Englisch aus. Die Optionen:
+-h zeigt die Hilfe, -t nennt das Verzeichnis, in das die erzeugte Datei
+geschrieben wird, -v gibt mehr Informationen aus, -n schreibt keine neue Datei
+(Probelauf), -k erzeugt das Array für den Kernel, -e das für die Erweiterungen,
+--exclude nennt Verzeichnisse, die bei der Suche nach Klassen ausgelassen
+werden.)
+
+Der andere Weg führt über die Administrationsoberfläche, die Ansicht
+Setup / Erweiterungen. Dort lassen sich die Autoload-Arrays für neu aktivierte
+Erweiterungen neu erzeugen.
+
+Zwischen beiden Wegen gibt es einen wichtigen Unterschied. Der erste erzeugt
+Autoload-Arrays für alle Klassen, die in den Verzeichnissen des Kernels
+und/oder der Erweiterungen gefunden werden, je nach Betriebsart. Soll eine
+Erweiterung nicht in die Autoload-Erzeugung eingehen, muss sie im Parameter
+--exclude genannt werden.
+
+Die Ansicht der Erweiterungen erzeugt Autoload-Arrays nur für aktivierte
+Erweiterungen, denn sie prüft selbst, welche Erweiterungen einzubeziehen sind.

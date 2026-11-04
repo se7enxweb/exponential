@@ -1,0 +1,237 @@
+======================================
+Verbesserungen am Inhaltsstruktur-Menü
+======================================
+
+:Autoren: Jan Kudlicka
+:Version: 0.1
+
+
+
+Einführung
+----------
+Um das neue dynamische Menü der Inhaltsstruktur zu nutzen, muss es in
+contentstructuremenu.ini für Ihren Administrations-Siteaccess eingeschaltet
+werden. Fügen Sie der Gruppe [TreeMenu] diese Einstellung hinzu::
+
+    Dynamic=enabled
+
+Wird eine Site mit dem Einrichtungsassistenten von Exponential 3.10 oder neuer
+installiert, kommt diese Einstellung automatisch in die Konfiguration; das
+dynamische Menü ist dann Standard. Mit *Dynamic* auf *disabled* schalten Sie es
+ab und verwenden die alte Umsetzung.
+
+Zwei Dateien sind in der Umsetzung wichtig. Wir sehen uns beide an und
+beschreiben, wie das dynamische Menü der Inhaltsstruktur funktioniert.
+
+
+
+kernel/content/treemenu.php
+---------------------------
+Setzt die Ansicht *content/treemenu* um. Die URL einer Anfrage an diese Ansicht
+sieht typischerweise so aus::
+
+    http://site.com/path/to/ez/index.php/content/treemenu?node_id=109&modified=1179233056&expiry=1179214259&perm=43b864bde60564a9abad0598b1d5d203
+
+Mit einer solchen Anfrage fordert ein Browser die Liste der Kinder des mit dem
+GET-Parameter *node_id* genannten Knotens an. Die anderen GET-Parameter
+verwendet die Ansicht selbst nicht; sie dienen dem Cachen, siehe unten.
+
+Der Inhaltstyp der Antwort ist *application/json*. (Eine solche Antwort nennen
+wir im Folgenden *JSON-Dokument*.) Die Antwort hat im Header *Cache-Control*
+*max-age* auf 86400 Sekunden gesetzt und ein passendes Ablaufdatum. Sie
+enthält die Liste der direkten Kinder des Knotens mit ihren Eigenschaften. In
+der Liste stehen nur Kinder, die der Benutzer lesen darf.
+
+Ein Beispiel einer solchen Antwort (mit Header)::
+
+    Date: Tue, 29 May 2007 11:42:47 GMT
+    Server: ...
+    X-Powered-By: ...
+    Expires: Wed, 30 May 2007 11:42:50 GMT
+    Cache-Control: max-age=86400
+    Last-Modified: Tue, 15 May 2007 12:44:16 GMT
+    Content-Length: ...
+    Content-Type: application/json; charset=utf-8
+
+    {
+        "error_code": 0,
+        "node_id": 109,
+        "children_count": 2,
+        "children":
+        [
+            {
+                "node_id": 130,
+                "object_id": 128,
+                "class_id": 1,
+                "has_children": 0,
+                "name": "Multimedia",
+                "url": "/community/multimedia",
+                "modified_subnode": 1177503912,
+                "languages": ["eng-US", "slk-SK"],
+                "is_hidden": 0,
+                "is_invisible": 0
+            },
+            {
+                "node_id": 124,
+                "object_id": 122,
+                "class_id": 1,
+                "has_children": 0,
+                "name": "Downloads",
+                "url": "/community/downloads",
+                "modified_subnode": 1177503910,
+                "languages": ["eng-US"],
+                "is_hidden": 0,
+                "is_invisible": 0
+            }
+        ]
+    }
+
+Echte Antworten enthalten keine bedeutungslosen Leerzeichen; sie stehen im
+Beispiel nur zur besseren Lesbarkeit.
+
+JSON-Dokumente mit den Kindern verschiedener Elternknoten cacht Exponential mit
+der Knoten-ID und dem Berechtigungs-Hash als Schlüssel. So antwortet
+Exponential schnell. Das Cachen ahmt Template-Cache-Blöcke mit dem Parameter
+subtree_expiry nach. Die Cache-Datei eines Knotens wird entfernt, wenn ein
+Knoten unterhalb geändert wird oder alle Inhalts-Caches entfernt werden.
+
+Zusätzlich cacht der Browser die JSON-Dokumente, da *max-age* im Header
+*Cache-Control* der Antworten auf 86400 Sekunden (1 Tag) steht (und *Expires*
+entsprechend). Macht eine Änderung auf dem Server die gecachten Angaben
+falsch oder ungültig, darf der Browser sie nicht mehr verwenden, sondern muss
+die neue Liste der Kinder vom Server holen. Dafür enthält die URL einige
+weitere GET-Parameter. Die URLs bereitet JavaScript vor (in
+ContentStructureMenu::load(), siehe unten). Der Wert des Parameters *modified*
+ist die Eigenschaft *modified_subnode* des Knotens. Ändert sich etwas
+unterhalb des Knotens, ändert sich *modified_subnode*; JavaScript erzeugt eine
+URL mit dem neuen Wert von *modified*, und die Angaben müssen vom Server geholt
+werden, weil für die neue URL keine Antwort im Browser-Cache liegt.
+
+Um den Browser-Cache vollständig umgehen zu können, etwa weil auf dem Server
+eine neue Klasse oder Sprache hinzugekommen ist oder ein Administrator
+INI-Einstellungen geändert und alle Caches in der Administrationsoberfläche
+geleert hat, gibt es einen weiteren Parameter namens *expiry*. Sein Wert steigt
+in solchen Fällen und ändert alle URLs.
+
+Der letzte Parameter *perm* stellt nur sicher, dass alles richtig
+funktioniert, wenn Personen mit unterschiedlichen Rechten denselben Browser
+verwenden.
+
+Hinweise:
+    - Die Ansicht *content/treemenu* liefert nur dann ein JSON-Dokument, wenn
+      das dynamische Menü für den Siteaccess erlaubt ist.
+    - Für die Ansicht *content/treemenu* gilt die Funktion *content/read* (für
+      Rollen und Policies).
+    - Wegen des seltsamen Cache-Verhaltens verschiedener Browser antwortet die
+      Ansicht *content/treemenu* (und auch *index_treemenu.php*, siehe unten)
+      sofort mit *HTTP/1.1 304 Not Modified*, wenn eine Anfrage den Header
+      *If-Modified-Since* enthält (der Browser hat das Dokument also im Cache
+      und fragt beim Server, ob es noch gültig ist). Dabei wird auch der Header
+      *Expires* aktualisiert.
+
+
+
+design/admin/templates/contentstructuremenu/content_structure_menu_dynamic.tpl
+------------------------------------------------------------------------------
+Diese Datei enthält die Umsetzung der Klasse *ContentStructureMenu*.
+Kurzbeschreibung der wichtigen Methoden dieser Klasse:
+
+    - updateCookie():
+      Welche Untermenüs offen sind, steht wie in der alten Umsetzung in einem
+      Cookie (standardmäßig 10 Jahre gültig).
+
+    - setOpen():
+      Fügt den Knoten der Liste der Knoten mit sichtbarer Kinderliste hinzu
+      und aktualisiert das Cookie.
+
+    - setClosed():
+      Entfernt den Knoten aus der Liste der Knoten mit sichtbarer
+      Kinderliste und aktualisiert das Cookie.
+
+    - generateEntry():
+      Erzeugt das HTML-Stück für den Knoten und gibt es zurück. Das Beispiel
+      zeigt das HTML, das diese Funktion für einen Knoten mit der ID 109
+      erzeugt. Es ähnelt dem HTML der alten Umsetzung des Baummenüs::
+
+            <li id="n109">
+                <a id="a109" class="openclose-close"
+                   onclick="this.blur(); return treeMenu.load( this, 109, 1177503912 )" href="#" />
+                <a class="nodeicon" onclick="ezpopmenu_showTopLevel( ... ); return false" href="#">
+                    <img title="[Frontpage] Click on the icon to get a context sensitive menu." alt=""
+                         src="/share/icons/crystal-admin/16x16_indexed/mimetypes/empty.png" />
+                </a>
+                <a class="nodetext" href="/community">
+                    <span class="node-name-normal">Community</span>
+                </a>
+                <div id="c109" class="hidden">
+                </div>
+            </li>
+
+      Die Kinder eines Knotens werden als ungeordnete Liste (<ul>) unter dem
+      div mit der ID *c* plus Knoten-ID (*c109* im Beispiel) geladen und
+      gerendert. Im Folgenden nennen wir diese Liste manchmal das Untermenü des
+      Knotens.
+
+    - load():
+      Ist das Untermenü eines Knotens geladen, wird es gezeigt; ist es geladen
+      und sichtbar, wird es ausgeblendet; sonst lädt die Methode das
+      JSON-Dokument mit der Liste der Kinder über eine AJAX-Anfrage an
+      Exponential (an die Ansicht *content/tree*). Ist das Dokument geladen,
+      erzeugt sie den HTML-Code des Untermenüs als Liste der HTML-Stücke, die
+      generateEntry() für alle Kinder erzeugt, und hängt sie an den Baum an.
+      Außerdem ruft sie für den Knoten die Methode openUnder() auf.
+
+    - openUnder():
+      Prüft (in der DOM-Struktur) die Kinder des Knotens, ermittelt, welche
+      aufgeklappt werden müssen, und öffnet sie.
+
+    - collapse():
+      Klappt alle Untermenüs unter dem Knoten zu.
+
+Die Datei enthält auch ein kleines JavaScript, das eine Instanz der Klasse
+erzeugt und das Menü rendert, indem es für den Wurzelknoten generateEntry()
+und load() dieser Instanz aufruft. Ist JavaScript im Browser abgeschaltet,
+sieht der Benutzer keine Baumstruktur, wie bei abgeschalteter
+Inhaltsstruktur.
+
+
+
+Allgemeine Hinweise
+-------------------
+Erzeugt Exponential eine Seite mit dem Baummenü des Inhalts, wird
+content_structure_menu_dynamic.tpl eingebunden. Lädt der Browser die Seite und
+entsteht die Instanz von ContentStructureMenu, wird der Wurzelknoten gerendert,
+und das JavaScript lädt die Liste der direkten Kinder (AJAX-Anfrage an die
+Ansicht *content/treemenu*). Diese Liste wird gerendert, und für die
+aufzuklappenden Einträge werden die Kinderlisten geladen und gerendert. Das
+wiederholt sich, bis alle sichtbaren Einträge gerendert sind.
+
+Ein Klick auf ein Aufklapp-Symbol (kleines Plus) im Baummenü lässt das
+JavaScript prüfen, ob das Untermenü des Knotens schon geladen ist (siehe
+unten); wenn nicht, lädt es die Liste der direkten Kinder des Knotens und
+rendert sie. Solange das dauert, erscheint statt des Aufklapp-Symbols eine
+Uhr. Danach wird die Knoten-ID im Cookie gespeichert, und statt der Uhr
+erscheint das Zuklapp-Symbol (kleines Minus). Das Skript prüft erneut, ob
+Kinder zu zeigen sind, und lädt und rendert gegebenenfalls deren Untermenüs.
+
+Tritt beim Laden der Kinderliste ein Fehler auf, wird die Uhr durch ein rotes
+Kreuz ersetzt und der Titel auf die Beschreibung des Fehlers gesetzt. Das kann
+etwa geschehen, wenn der Elternknoten des geladenen Menüs nach dem Laden der
+Seite (und des Baummenüs) entfernt wurde.
+
+Ein Klick auf ein Zuklapp-Symbol blendet das Untermenü aus (entfernt es aber
+nicht aus dem DOM), entfernt die Knoten-ID aus dem Cookie und wechselt zum
+Aufklapp-Symbol.
+
+
+
+index_treemenu.php
+------------------
+Für kürzere Reaktionszeiten sollte für die Ansicht *content/treemenu*
+*index_treemenu.php* statt *index.php* verwendet werden. Es prüft nur, was
+diese Ansicht braucht, und ist daher viel schneller als index.php. Mit diesen
+Rewrite-Regeln verwendet Apache die Datei (im Zweifel über die bestehenden
+Regeln für Exponential setzen)::
+
+    RewriteRule content/treemenu/?$ index_treemenu.php
+    RewriteRule index_treemenu.php - [L]

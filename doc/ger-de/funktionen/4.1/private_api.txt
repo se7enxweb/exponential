@@ -1,0 +1,31 @@
+Private APIs
+============
+
+Exponential 4.1 führt das Konzept privater APIs ein. Es ist nicht zu
+verwechseln mit der objektorientierten Sichtbarkeit 'private'.
+
+Beschreibung
+------------
+
+Was ist eine private API? Kurz gesagt eine API, für die wir keine
+Rückwärtskompatibilität garantieren. Sie ist voll nutzbar wie jede andere API,
+kann sich aber zwischen Releases ändern, und zwar zwischen jedem Release, nicht
+nur zwischen Hauptversionen.
+
+Typischerweise besteht eine private API aus neuem Code, bei dem wir uns erst
+vergewissern wollen, dass die API für diese Funktion gut funktioniert, bevor
+wir sie als öffentliche API freigeben.
+
+Private APIs können auch Code enthalten, der auf unbestimmte Zeit privat
+bleibt: Funktionen, die nur innerhalb des Kernels verwendet werden sollen und
+sich häufiger ändern können als anderer Code.
+
+Welche APIs privat sind
+-----------------------
+
+Als privat geltende Funktionen kommen in einen Ordner 'private' unterhalb ihres
+jeweiligen Orts. Ein Beispiel für einen solchen Ort::
+
+    <ezp-root>/kernel/private/classes/someclass.php
+
+Alles, was im Ordner private liegt, ist genau das: privat.

@@ -1,0 +1,337 @@
+Änderungen an Rückwärtskompatibilität und Verhalten in Version 4.1.0
+====================================================================
+
+Geänderte Voraussetzungen
+-------------------------
+
+- Neu verwendete eZ Components:
+  - SystemInformation
+  - Archive
+
+Veraltete Funktionen
+--------------------
+
+- eZArchiveHandler
+  Diese Klasse und verwandte Unterklassen wie eZTARArchiveHandler sind veraltet
+  und werden in Exponential 4.2 entfernt. Als Ersatz ist Archive aus den
+  eZ Components vorgesehen.
+
+- eZFile::getContents()
+  Die Methode getContents() von eZFile ist jetzt veraltet; verwenden Sie
+  stattdessen file_get_contents().
+
+- eZModuleManager
+  Die ganze Klasse eZModuleManager ist jetzt veraltet zugunsten der Einstellung
+  [ModuleSettings] ModuleList in module.ini
+
+- eZImportLookupTable
+  Diese Klasse ist veraltet und wird in künftigen Versionen von Exponential
+  entfernt. Vor langer Zeit verwendete sie das Paketsystem von Exponential.
+
+- eZExtension::findExtensionType
+  Diese Methode ist jetzt veraltet. Sie steht zwar noch im Code, wir empfehlen
+  aber dringend die neue Methode eZExtension::getHandlerClass, die das
+  Autoload nutzt. Die Umstellung des Kernels auf diese Methode ist geplant und
+  geschieht Schritt für Schritt.
+
+- Attribut 'aliased_type' der XML-Handler (Ein- und Ausgabe)
+  Nach den Änderungen am Laden der Handler gibt dieses Attribut immer false
+  zurück und wird in 'aliased_handler' nicht mehr verwendet.
+
+Entfernte Funktionen
+--------------------
+
+- Lose Funktionen von eZSelectionType
+
+  Die Datei mit der Definition von eZSelectionType enthielt zwei lose
+  Funktionen, serializeContentObjectAttribute und
+  unserializeContentObjectAttribute, die eigentlich in die Klasse gehört
+  hätten. Diese beiden Funktionen wurden entfernt.
+
+- eZFilePasstroughHandler
+
+  Die veraltete Klasse eZFilePasstroughHandler wurde entfernt. Verwenden Sie
+  stattdessen ezFilePassthroughHandler.
+
+- eZXMLInputType
+
+  Die Klasse eZXMLInputType, die kein Teil des Kernels mehr verwendete, wurde
+  entfernt.
+
+- eZURLTranslator
+
+  Die Klasse eZURLTranslator, die kein Teil des Kernels mehr verwendete, wurde
+  entfernt.
+
+- eZDebugErrorHandler()
+  Die Funktion eZDebugErrorHandler() aus lib/ezutils/classes/ezdebug.php wurde
+  entfernt. Als eigener Fehler-Handler dient jetzt die neue Funktion
+  eZDebug::recursionProtectErrorHandler().
+
+- Such-Plugin OpenFTS
+  Es gab Code, um OpenFTS als Suchmaschine zu verwenden. Er wurde nie fertig
+  und war unbrauchbar. Daher wurde er entfernt.
+
+- eZXML
+  Die veraltete Bibliothek eZXML, eine nicht standardkonforme DOM-Umsetzung,
+  wurde entfernt.
+
+- eZReference
+  Das Modul reference wurde aus dem Kernel entfernt.
+
+- Vererbung der Override-Regeln für Embed-Templates
+  Um "#014328: Nested embedding override issue" beheben zu können, wurde die
+  Vererbung der Override-Regeln für Embed-Templates entfernt; das war eine
+  undokumentierte und unbekannte Funktion.
+
+
+Neue Konstanten in config.php
+-----------------------------
+
+EZP_INI_FILEMTIME_CHECK
+  Diese neue Einstellung legt fest, ob eZINI prüft, ob die Einstellungen in den
+  *.ini-Dateien* geändert wurden. Ist die Prüfung abgeschaltet, verwendet
+  Exponential immer die gecachten Werte; das senkt die Zahl der stat-Aufrufe
+  im Dateisystem und steigert die Leistung.
+
+EZP_AUTOLOAD_ALLOW_KERNEL_OVERRIDE
+  Diese Einstellung legt fest, ob das Autoload-System von Exponential Klassen
+  aus Erweiterungen zulässt und lädt, die Kernel-Klassen überschreiben.
+
+EZP_USE_BUNDLED_COMPONENTS
+  Verwenden Sie eine Distribution von Exponential mit gebündelten
+  eZ Components (in lib/ezc), legt diese Einstellung fest, ob die gebündelten
+  eZ Components verwendet werden (true) oder nicht (false). Fehlt die
+  Einstellung, werden standardmäßig die gebündelten verwendet. Wer sie
+  verwendet, sollte EZP_USE_BUNDLED_COMPONENTS für die beste Geschwindigkeit
+  trotzdem als true definieren.
+
+EZC_BASE_PATH
+  Verwenden Sie nicht die gebündelten eZ Components, sollten Sie für die beste
+  Geschwindigkeit EZC_BASE_PATH auf ezc/Base/base.php oder Base/src/base.php
+  setzen, je nachdem, wie die eZ Components installiert sind. Fehlt die
+  Einstellung, versucht Exponential zuerst ezc/Base/base.php einzubinden;
+  schlägt das fehl, wird Base/src/base.php eingebunden.
+
+EZP_AUTOLOAD_OUTPUT
+  Diese Einstellung nennt den Namen einer eigenen Klasse für die Ausgabe der
+  Autoload-Erzeugung. Die Klasse muss vom Typ ezpAutoloadOutput sein. Da
+  Autoloads verwendet werden, muss sie in config.php geladen oder auf andere
+  Weise vor dem Skript selbst bereitgestellt werden.
+
+Geänderte Methodensignaturen
+----------------------------
+
+- eZContentObject - fetchAttributesByIdentifier
+
+  Parameter 3 ist jetzt ein Array von Locale-Codes statt einer Zeichenkette
+  mit einem Locale-Code.
+
+- eZDBClusterFileHandler - getFileList
+
+  Die Parameter sind völlig neu. Bisher nahm getFileList() zwei
+  Wahrheitswerte an, die festlegten, ob Dateien der Bereiche 'binaryfile' und
+  'image' ausgelassen werden. Jetzt nimmt die Methode ein Array der Bereiche der
+  gewünschten Dateien an und einen Wahrheitswert, der das Verhalten umkehrt,
+  sodass alle Dateien der genannten Bereiche ausgeschlossen werden.
+
+- eZRSSExport::fetchRSS2_0() und fetchRSS1_0
+
+  Diese Methoden nehmen die ID des RSSExport nicht mehr als Parameter an.
+  Holen Sie die Instanz zuerst mit eZRSSExport::fetch() über ihre ID.
+
+- eZURLAliasML - fetchByAction
+
+  Für diese Methode wurde der vorhandene Parameter *$maskLanguages*
+  wiederverwendet. Bei Wahrheitswerten greift die alte Logik, bei
+  Zeichenketten werden die Einträge mit der Sprachmaske der Locale gefiltert.
+
+  *$onlyprioritized* wirkt nicht, wenn in *$maskLanguages* eine Locale
+  angegeben ist.
+
+- eZURLAliasML - getPath
+
+  Neuer Parameter *$locale*. Wird *$locale* verwendet, ersetzt er die
+  Standardfilterung in der Methode *choosePriortizedRow()*.
+
+- eZURLAliasML - fetchPathByActionList
+
+  Parameter *$locale* hinzugefügt, mit Rückfall auf das normale Verhalten.
+
+
+Geändertes Verhalten
+--------------------
+
+- eZDBInterface - Konstruktor
+
+  Lässt sich keine Verbindung zur Datenbank herstellen, wird eine
+  eZDBNoConnectionException geworfen (typischerweise über
+  $db = eZDB::instance() aufgerufen).
+
+- eZContentClass - __clone
+
+  Ein Klon einer Instanz von eZContentClass erhält eine neue Remote-ID; bisher
+  hatte er dieselbe Remote-ID wie das Original.
+
+- eZCharTransform hat keine Member-Variable $Mapper mehr, denn sie führte zu
+  falschen Umwandlungsregeln, wenn eZCharTransform::transformByGroup mehrmals
+  mit einem anderen Wert für den Parameter $group aufgerufen wurde.
+
+- eZMail - validate
+
+  Diese Methode gibt jetzt direkt den Wert von preg_match zurück, statt ereg zu
+  verwenden. Rückgabewert ist also 1 für eine gültige und 0 für eine ungültige
+  Adresse.
+
+- eZDBFileHandler - $metaData
+
+  Diese Eigenschaft ist jetzt standardmäßig null. Werden Metadaten abgerufen
+  und nicht gefunden (die Datei existiert nicht), wird sie auf false gesetzt.
+  Bei erneuter Abfrage mit dem Wert false findet keine Datenbankprüfung statt,
+  bis $force auf true gesetzt wird.
+
+- eZDBFileHandler - $useStaleCache
+
+  Diese private Eigenschaft schaltet für die aktuelle Cache-Datei in den Modus
+  für veralteten Cache. Standard ist false.
+
+- eZDBFileHandler - $realFilePath
+
+  Diese private Eigenschaft sichert den echten Pfad der Cache-Datei beim
+  Wechsel in den Modus für veralteten Cache, da $filePath dann auf den Pfad der
+  gerade erzeugten Datei gesetzt wird.
+
+- eZDBFileHandler - isFileExpired
+
+  Diese neue statische Methode ersetzt isExpired. Sie wird von Hand mit einem
+  Dateipfad aufgerufen oder von den beiden neuen Methoden isLocalFileExpired
+  und isDBFileExpired.
+
+- eZDBFileHandler - isLocalFileExpired
+
+  Diese neue Methode prüft den Ablaufstatus der lokalen Datei
+  ($this->filePath) gegen eine mtime / TTL.
+
+- eZDBFileHandler - isDBFileExpired
+
+  Diese neue Methode prüft den Ablaufstatus der Datei in der Datenbank gegen
+  eine mtime / TTL.
+
+- eZDBFileHandler - startCacheGeneration
+
+  Neue Methode, die die Cache-Erzeugung für die aktuelle Datei startet.
+
+- eZDBFileHandler - endCacheGeneration
+
+  Neue Methode, die die Cache-Erzeugung für die aktuelle Datei beendet.
+
+- eZDBFileHandler - abortCacheGeneration
+
+  Neue Methode, die die Cache-Erzeugung für die aktuelle Datei abbricht.
+
+- eZDBFileHandlerMysqlBackend - _exists
+
+  Neuer optionaler Parameter $ignoreExpiredFiles, standardmäßig true. Bei false
+  gelten Dateien, die in der Datenbank existieren, aber laut mtime oder dem
+  Feld expired abgelaufen sind, als vorhanden.
+
+- eZDBFileHandlerMysqlBackend - _startCacheGeneration
+
+  Neue Methode, die die gleichnamige Methode von eZDBFileHandler verwendet.
+
+- eZDBFileHandlerMysqlBackend - _endCacheGeneration
+
+  Neue Methode, die die gleichnamige Methode von eZDBFileHandler verwendet.
+
+- eZDBFileHandlerMysqlBackend - _abortCacheGeneration
+
+  Neue Methode, die die gleichnamige Methode von eZDBFileHandler verwendet.
+
+- eZContentOperationCollection::setVersionStatus()
+
+  Diese Methode verwendet den Parameter $status jetzt unverändert; $status muss
+  also eine der Konstanten eZContentObjectVersion::STATUS sein.
+
+- eZContentOperationCollection::operationIsAvailable()
+
+  Diese Methode gibt true oder false zurück, je nachdem, ob eine Operation in
+  workflow.ini/[OperationSettings]/AvailableOperationList verfügbar ist.
+  Die neuen Trigger sind eigentlich neue Operationen mit pre- und
+  post-Triggern, außer content_read, das nur einen "pre"-Trigger und keinen
+  "post"-Trigger hat.
+
+- eZLDAPUser::loginUser (ab 4.1.1 und 4.2.0Alpha1)
+
+  Die Einstellung LDAPFollowReferrals in ldap.ini ist neu und standardmäßig 0,
+  da der LDAP-Code mit den meisten AD-Umgebungen nicht funktionierte.
+  LDAP_OPT_REFERRALS wurde bisher gar nicht gesetzt und war damit
+  eingeschaltet.
+
+
+Geänderte INI-Einstellungen
+---------------------------
+    Dieser Abschnitt betrifft die Handler-Einstellungen, die in 4.1 bewusst
+    geändert wurden, um Systemaufrufe zu sparen, indem Handler über das
+    Autoload-System geladen werden.
+
+image.ini
+  [ImageConverterSettings]
+  RepositoryList[], ExtensionList[] und ImageHandlerAlias[] werden nicht mehr
+  verwendet
+
+  [<ImageConverters, zum Beispiel GD und ImageMagick>]
+  Handler= erwartet jetzt einen Klassennamen statt eines Dateinamens
+
+file.ini
+  [BinaryFileSettings]
+  Handler= erwartet jetzt einen Klassennamen statt eines Dateinamens
+  Repositories[] und ExtensionRepositories[] werden nicht mehr verwendet
+
+  [ClusteringSettings]
+  FileHandler= erwartet jetzt einen Klassennamen statt eines Dateinamens
+  DBBackend= erwartet jetzt einen Klassennamen statt eines Dateinamens
+  ExtensionDirectories[] werden nicht mehr verwendet
+
+ezxml.ini
+  [InputSettings]
+  Handler= wird nicht mehr verwendet
+  HandlerClass= neue Einstellung anstelle von Handler, erwartet einen
+  Klassennamen
+  Alias[] wird nicht mehr verwendet
+  AliasClasses[] neue Einstellung anstelle von Alias, erwartet Klassennamen als
+  Schlüssel und Wert
+
+  [OutputSettings]
+  Handler= wird nicht mehr verwendet
+  HandlerClass= neue Einstellung anstelle von Handler, erwartet einen
+  Klassennamen
+  Alias[] wird nicht mehr verwendet
+  AliasClasses[] neue Einstellung anstelle von Alias, erwartet Klassennamen als
+  Schlüssel und Wert
+
+package.ini
+  [PackageSettings]
+  HandlerAlias[]= erwartet jetzt einen Klassennamen statt eines Dateinamens
+
+  CreationSettings]
+  HandlerAlias[]= erwartet jetzt einen Klassennamen statt eines Dateinamens
+
+  [InstallerSettings]
+  HandlerAlias[]= erwartet jetzt einen Klassennamen statt eines Dateinamens
+
+
+Umbenannte Konstanten
+---------------------
+
+===================================================== =======================================
+Alte Konstante                                        Neue Konstante
+===================================================== =======================================
+eZURLWildcard::EZURLWILDCARD_REGEXP_ARRAY_CALLBACK    eZURLWildcard::REGEXP_ARRAY_CALLBACK
+eZURLWildcard::EZURLWILDCARD_TRANSLATE_CALLBACK       eZURLWildcard::TRANSLATE_CALLBACK
+eZURLWildcard::EZURLWILDCARD_CACHED_TRANSLATE         eZURLWildcard::CACHED_TRANSLATE
+eZURLWildcard::EZURLWILDCARD_WILDCARDS_PER_CACHE_FILE eZURLWildcard::WILDCARDS_PER_CACHE_FILE
+eZURLWildcard::EZ_URLWILDCARD_TYPE_NONE               eZURLWildcard::TYPE_NONE
+eZURLWildcard::EZ_URLWILDCARD_TYPE_FORWARD            eZURLWildcard::TYPE_FORWARD
+eZURLWildcard::EZ_URLWILDCARD_TYPE_DIRECT             eZURLWildcard::TYPE_DIRECT
+eZURLWildcard::EZ_URLWILDCARD_CACHE_SIGNATURE         eZURLWildcard::CACHE_SIGNATURE
+===================================================== =======================================

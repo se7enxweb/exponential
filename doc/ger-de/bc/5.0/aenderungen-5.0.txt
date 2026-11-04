@@ -1,0 +1,420 @@
+Änderungen an Rückwärtskompatibilität und Verhalten in Version 5.0
+==================================================================
+
+Unterstützte Funktionen
+-----------------------
+
+- VarDir oder CacheDir in site.ini auf ein absolutes Verzeichnis zu setzen wird
+  offiziell nicht mehr unterstützt. Der Wert wird angenommen, aber manche
+  Funktionen verhalten sich dann unvorhersehbar.
+
+Geändertes Verhalten
+--------------------
+
+- Das Design "admin2" heißt jetzt "admin"
+
+  Alles, was nur zur alten Administrationsoberfläche gehörte, wurde entfernt
+  (siehe "Entfernte Funktionen"). Da admin2 auf admin aufbaute, wurden beide
+  Verzeichnisse zusammengeführt.
+
+  Konfiguration Ihres Admin-Backends in site.ini:
+  Damit nichts bricht, wird das Design "admin2" weiterhin als SiteDesign oder
+  in AdditionalSiteDesignList genannt. Überschreiben Sie nichts aus admin2,
+  sollten Sie die Verweise darauf aktualisieren. Ändern Sie "SiteDesign=admin2"
+  in "SiteDesign=admin", sollten Sie wahrscheinlich
+  AdditionalSiteDesignList[]=admin entfernen, damit "admin" nicht doppelt in
+  der Liste der Site-Designs steht.
+
+  Konfiguration aller Siteaccesses in content.ini:
+  Überschreiben Sie nichts aus admin2, möchten Sie vielleicht auch die
+  Einstellung AvailableSiteDesignList aller Siteaccesses aktualisieren.
+
+- #19397: Geänderte Signatur von eZGeneralDigestUserSettings::create()
+
+  Der erste Parameter dieser Methode ist jetzt die Benutzer-ID statt einer
+  E-Mail-Adresse.
+
+- eZINI::group() und eZINI::groups() geben das Array nicht mehr per Referenz
+  zurück
+
+  Bisher gaben diese Methoden eine Referenz auf ein internes Array der
+  eZINI-Instanz zurück.
+
+- kernel/user/activate.php setzt die Template-Variable 'account_avtivated' nicht
+  mehr (bisher aus Gründen der Rückwärtskompatibilität beibehalten)
+
+  Die Variable ist seit 3.4.1 veraltet.
+
+- Erweiterte Attributfilter
+
+  Die Behebung von EZP-19158 verwendet die SQL-Klausel INNER JOIN zum
+  Verknüpfen von Tabellen.
+
+  Ihr erweiterter Attributfilter muss weiterhin ein Array zurückgeben, aber
+  mit einigen Änderungen:
+
+  * Schlüssel *tables*: muss *JOIN/INNER JOIN* mit Verknüpfungsbedingungen in
+    der SQL-Klausel *ON* verwenden
+  * Schlüssel *joins*: darf keine Verknüpfungsbedingungen mehr enthalten,
+    sondern allgemeine Filter
+  * Schlüssel *columns*: unverändert
+  * Schlüssel *group_by*: unverändert
+
+Entfernte Funktionen
+--------------------
+
+- Alte Oberfläche "admin"
+
+  Die alte Oberfläche "admin", seit 4.4 veraltet, wurde entfernt. Was in
+  design/admin liegt, ist das Ergebnis der Zusammenführung der neueren
+  Oberfläche "admin2" in dieses Verzeichnis. Alles, was nur zur alten
+  Oberfläche "admin" gehörte, ist entfernt.
+
+- Funktionsattribut 'rss-xml' von eZRSSExport
+
+  Verwenden Sie stattdessen das Attribut 'rss-xml-content'. Das Attribut war
+  seit 4.3 veraltet.
+
+- Falsch geschriebene Ansicht "forgetpassword" des Moduls "user"
+
+  Diese falsch geschriebene Ansicht wurde aus Gründen der
+  Rückwärtskompatibilität behalten und war seit 3.0 veraltet.
+
+- Klassen eZWebDAVServer, eZWebDAVFileServer, eZWebDAVContentServer und
+  eZWebDAVContentServerWrapper
+
+  Diese Klassen wurden vor dem Wechsel zur WebDAV-Komponente der ezc verwendet.
+
+- Klasse eZOverride
+
+  Seit SVN-Revision 20881 unbenutzt und in 4.5 als veraltet markiert.
+
+- Klasse eZFileDirectHandler
+
+  Direkte Downloads von Binärdateien sind seit 4.1 veraltet.
+
+- Klasse eZContentClassAttributeNameList
+
+  Seit 4.3 veraltet; verwenden Sie stattdessen direkt
+  eZSerializedObjectNameList.
+
+- eZContentObject::removeReverseRelations()
+
+  Unbenutzte und veraltete Methode.
+
+- eZContentObject::revertTo()
+
+  Unbenutzte und veraltete Methode.
+
+- eZContentObject::expireTemplateBlockCacheIfNeeded()
+
+  Unbenutzte und veraltete Methode.
+
+- eZContentObjectTrashNode::fetchListForObject()
+
+  Unbenutzte und veraltete Methode.
+
+- Methode eZUser::getCacheFilename()
+
+  Unbenutzt und seit 4.4 veraltet.
+
+- Methode eZFile::getContents()
+
+  Unbenutzt und seit 4.1 veraltet. Verwenden Sie stattdessen
+  file_get_contents().
+
+- Funktionen von eZTemplateCacheFunction: subtreeCacheBaseSubDir(),
+  expiryTemplateBlockCacheDir(), templateBlockCacheDir(), subtreeCacheSubDir()
+  und subtreeCacheSubDirForNode().
+
+  Unbenutzt und seit 3.10 veraltet.
+
+- Methode eZRandomTranslator::makeSeed()
+
+  Unbenutzt und seit 4.2 veraltet.
+
+- Methode eZLocale::translationCode()
+
+  Unbenutzt und seit 4.1 veraltet.
+
+- Methode eZTemplate::setVariableRef()
+
+  Unbenutzt und seit 4.4 veraltet.
+
+- Funktionen von eZTemplateNodeTool: createStaticElement(),
+  elementStaticValue() und isStaticElement()
+
+  Unbenutzt und seit 3.5 veraltet.
+
+- Funktionen von eZHTTPPersistence: handleChecked() und handleCheckedElement()
+
+  Unbenutzt und seit 3.0 veraltet.
+
+- eZDebugSetting:setDebugINI()
+
+  Seit 4.5 veraltet. Die Funktion tat nichts.
+
+- Methoden von eZHTTPTool: getSessionKey() und setSessionKey()
+
+  Seit 4.4 veraltet.
+
+- eZMimeType::mimeTypeFor()
+
+  Unbenutzt und seit 3.3 veraltet.
+
+- Methode callClassMethod() von eZModuleOperationInfo und eZModuleFunctionInfo
+
+  Unbenutzt und seit 4.1 veraltet.
+
+- Methode requiresBinaryPurge() der Datei-Handler
+
+  Unbenutzt und seit 4.5 veraltet.
+
+- Methode fetchExpiredBinaryItems() der Datei-Handler
+
+  Unbenutzt und seit 4.5 veraltet.
+
+- Veraltete und unbenutzte Methoden von eZBinaryFileHandler:
+  storedFilename(), downloadType() und downloadURL();
+
+- eZExpiryHandler::isModified()
+
+  Unbenutzt und seit 4.2 veraltet.
+
+- Funktionen eZCacheClear*:
+  eZCacheClearImageAlias(), eZCacheClearClassID(), eZCacheClearGlobalINI(),
+  eZCacheClearSortKey(), eZCacheClearTemplateBlockCache() und
+  eZCacheClearContentTreeMenu()
+
+  Unbenutzt und seit 4.3 veraltet.
+
+- eZClusterFileHandler::searchPathArray()
+
+  Unbenutzt und seit 4.3 veraltet.
+
+- eZContentCacheManager::clearViewCache()
+
+  Unbenutzt und seit 3.6 veraltet.
+
+- eZContentLanguage::updateObjectNames()
+
+  Unbenutzt und seit 3.8 veraltet.
+
+- Methode canMove() von eZContentObject und eZContentObjectTreeNode
+
+  Unbenutzt und seit 3.6 veraltet.
+
+- eZContentObjectTreeNode::createPermissionCheckingSQLString()
+
+  Unbenutzt und seit 3.9 veraltet.
+
+- eZContentObjectTreeNode::createObject()
+
+  Unbenutzt und seit 3.3 veraltet.
+
+- eZContentObjectTreeNode::updateURLAlias()
+
+  Unbenutzt und seit 3.1 veraltet.
+
+- Methoden von eZRSSExport: rssXml(), fetchRSS1_0() und fetchRSS2_0()
+
+  Seit 4.3 veraltet.
+
+- Methoden von eZSection: initGlobalID(), setGlobalID() und globalID()
+
+  Unbenutzt und seit 4.4 veraltet.
+
+- Methoden von eZTipafriendCounter: clear() und increase()
+
+  Unbenutzt und seit 3.9 veraltet.
+
+- eZURLWildcard::isCacheExpired()
+
+  Unbenutzt und seit 4.2 veraltet.
+
+- Methoden von eZContentOperationCollection: beginPublish() und endPublish()
+
+  Unbenutzt und seit 4.1 veraltet.
+
+- eZContentOperationCollection::removeAssignment()
+
+  Unbenutzt und seit 4.3 veraltet.
+
+- Methoden _deleteByRegex() und _deleteByRegexInner() der Datei-Handler.
+
+  Unbenutzt seit dem Entfernen der Methoden 'fileDeleteByRegex()'.
+
+- Methoden von eZSession: getUserSessionHash() und userSessionIsValid()
+
+  Unbenutzt und seit 4.4 veraltet.
+
+- eZFile::splitLines()
+
+  Unbenutzt und seit 4.4 veraltet.
+
+- kernel/common/ezincludefunctions.php
+
+  Alle Funktionen dieser Datei waren bereits veraltet und sind jetzt
+  entfernt: kernel_include(), kernel_common(), datatype_class(),
+  extension_path(), ext_include(), ext_activate(), ext_class(), lib_include(),
+  lib_class() und kernel_class().
+
+- access.php
+
+  Alle Funktionen dieser Datei waren bereits veraltet und sind jetzt
+  entfernt: accessType(), changeAccess(), accessMatchRegexp(),
+  accessMatchText(), accessDebugEnabled(), accessExtraDebugEnabled() und
+  accessAllowed()
+
+  Auch die Konstanten EZ_ACCESS_* dieser Dateien sind entfernt.
+
+- pre_check.php
+
+  Alle Funktionen dieser Datei waren bereits veraltet und sind jetzt
+  entfernt: eZCheckValidity(), eZCheckList(), eZCheckUser(), eZCheckOrder(),
+  eZHandlePreChecks() und precheckAllowed().
+
+- Datei kernel/common/image.php
+
+  Die Funktion imageInit() dieser Datei war bereits veraltet und ist jetzt
+  entfernt.
+
+- Abschnitt [CountrySettings] der Datei content.ini
+
+  Der Inhalt dieses Abschnitts war zugunsten von country.ini veraltet.
+
+- kernel/error/errors.php
+
+  Enthielt alte, veraltete Konstanten.
+
+- eZSys::removeMagicQuotes() und eZSys::magickQuotes()
+
+  Seit 4.5 veraltet; Magic Quotes sind in PHP 5.3 veraltet.
+
+- eZHTTPTool::removeMagicQuotes()
+
+  Da die PHP-Einstellungen für Magic Quotes seit Langem als veraltet gelten,
+  wurde auch diese Methode entfernt, obwohl sie vorher nicht ausdrücklich als
+  veraltet markiert war.
+
+- eZSys::phpVersionText(), eZSys::phpVersion() und
+  eZSys::isPHPVersionSufficient()
+
+  Seit 4.5 veraltet; verwenden Sie PHP_VERSION und andere native Mittel von
+  PHP.
+
+- eZSys::isDebugEnabled() und eZSys::setIsDebugEnabled()
+
+  Seit 4.5 veraltet.
+
+- eZSiteAccess::debugEnabled() und eZSiteAccess::extraDebugEnabled()
+  site.ini\[SiteAccessSettings]DebugAccess und DebugExtraAccess
+
+  Seit 4.5 veraltet.
+
+- eZDebug::timeToFloat()
+
+  Seit 4.4 veraltet; verwenden Sie stattdessen microtime( true ).
+
+- Hash-Methode crypt für Passwörter.
+  eZUser::PASSWORD_HASH_CRYPT
+
+  Seit 4.4 veraltet.
+
+- Methode 'fileDeleteByRegex()' in verschiedenen Datei-Handlern
+
+  Wegen schwerer Leistungsprobleme bereits veraltet.
+
+- eZMySQLDB, also der Treiber ezmysql
+
+  Dieser Treiber war seit 4.5 veraltet zugunsten von eZMySQLiDB, also dem
+  Treiber ezmysqli.
+
+- eZDFSFileHandlerMySQLBackend
+
+  Die mysql-Anbindung wird durch mysqli ersetzt. Verwenden Sie stattdessen
+  eZDFSFileHandlerMySQLiBackend.
+
+- eZDBFileHandlerMysqlBackend
+
+  Die mysql-Anbindung wird durch mysqli ersetzt. Verwenden Sie stattdessen
+  eZDBFileHandlerMysqliBackend.
+
+- ezpDbMySQLClusterGateway
+
+  Diese Klasse war seit 4.7 veraltet.
+  Die mysql-Anbindung wird durch mysqli ersetzt. Verwenden Sie stattdessen
+  ezpDbMySQLiClusterGateway.
+
+- Verzeichnis settings/siteaccess/admin
+
+  Dieser Siteaccess diente früher zum Testen.
+
+- site.ini/[TemplateSettings]/AutoloadPath
+
+  Seit 3.2 veraltet und durch AutoloadPathList ersetzt.
+
+- site.ini/[UserSettings]/VerifyUserEmail
+
+  Seit 4.1 veraltet; verwenden Sie stattdessen
+  site.ini/[UserSettings]/VerifyUserType.
+
+- Abschnitte [DisplaySettings], [GetSettings], [PutSettings], [RenameSettings]
+  und der Eintrag [FolderSettings]/NameAttribute in webdav.ini
+
+  Seit 3.5 veraltet.
+
+- workflow.ini/[OperationSettings]/AvailableOperations
+
+  Seit 3.8 veraltet; verwenden Sie stattdessen AvailableOperationList.
+
+- Abschnitt file.ini/[ArchiveSettings]
+
+  Seit 4.1 veraltet.
+
+- site.ini/[DatabaseSettings]/DatabasePluginPath
+
+  Seit 4.1 veraltet.
+
+- Veraltete Optionen von viewcache.ini/[ViewCacheSettings]/ClearCacheMethod:
+
+  clear_object_caches_only, clear_object_and_parent_nodes_caches,
+  clear_object_and_relating_objects_caches, clear_parent_nodes_caches_only,
+  clear_parent_nodes_and_relating_caches, clear_relating_caches_only,
+  clear_keyword_caches_only und clear_all_caches.
+
+- site.ini/[URLTranslator]/Extensions und site.ini/[URLTranslator]/Filters
+
+  Seit 4.3 veraltet.
+
+- Abschnitt site.ini/[OutputSettings]
+
+  Seit 4.5 veraltet.
+
+- template.ini/[ControlSettings]/OldStyleUserVariables
+
+  Seit 4.5 veraltet.
+
+- Datei cronjobs/ldapusermanage.php
+
+  Seit 4.3 veraltet.
+
+- site.ini\[RoleSettings]\UserPolicyCache
+
+  Seit 4.4 veraltet.
+
+Veraltet
+--------
+
+- #19397: eZGeneralDigestUserSettings::fetchForUser() und
+  eZGeneralDigestUserSettings::removeByAddress()
+
+  Verwenden Sie stattdessen eZGeneralDigestUserSettings::fetchByUserId() und
+  eZGeneralDigestUserSettings::removeByUserID.
+
+
+- #EZP-19941: API, um den Suchindex nach dem Löschen eines Objekts zu entfernen
+
+  eZSearchEngine::removeObject() und eZSearch::removeObject() sind veraltet;
+  verwenden Sie stattdessen eZSearchEngine::removeObjectById() und
+  eZSearch::removeObjectById().

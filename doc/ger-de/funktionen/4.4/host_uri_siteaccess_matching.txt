@@ -1,0 +1,78 @@
+Siteaccess-Zuordnung nach Host und URI in Exponential 4.4
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+==========
+Einführung
+==========
+
+Mit host_uri lassen sich Host und URI im selben Ausdruck zuordnen. Damit sind
+Multisite-Einrichtungen wie diese möglich:
+
+example.com    -> zu example_eng
+example.com/en -> zu example_eng
+example.com/no -> zu example_nor
+
+page2.com    -> zu page2_nor
+page2.com/no -> zu page2_nor
+page2.com/en -> zu page2_eng
+
+Hinweis: Für einen effizienten Cache (Exponential und Reverse-Proxy) wird
+empfohlen, mit Rewrite-Regeln bzw. Weiterleitungen des Apache/httpd-Servers zum
+Beispiel example.com auf example.com/en weiterzuleiten, wenn beide wirklich
+denselben Siteaccess verwenden sollen; so braucht man auch keine Regeln für
+beide.
+
+Bei der Umsetzung dieser Funktion wurde der Siteaccess-Code teilweise
+umgebaut. Veraltete oder geänderte Funktionen stehen in doc/ger-de/bc/4.4.
+Die neue API zum Laden der Einstellungen anderer Siteaccesses steht in
+ini_enhancement.txt.
+
+
+=========================
+Beschreibung der Settings
+=========================
+
+Alle Einstellungen dieser Funktion stehen in site.ini\[SiteAccessSettings]
+
+ - MatchOrder
+
+   Diese Einstellung erlaubt jetzt host_uri als Zuordnungsart. host_uri lässt
+   sich wie jede andere Zuordnungsart verketten, etwa:
+   MatchOrder=servervar;host_uri;port
+
+ - HostUriMatchMapItems[]=hostname;urlmatch;accessname[;start|end|part|strict]
+
+   Diese neue Einstellung enthält die Zuordnungsregeln für host_uri.
+   urlmatch ist optional; damit lässt sich mit dieser Funktion auch nur nach
+   dem Host zuordnen. Der letzte Teil legt fest, wie der Host verglichen wird;
+   Standard ist strict, also Gleichheit. Zu den anderen siehe
+   site.ini\[SiteAccessSettings]\HostUriMatchMapItems
+
+ - HostUriMatchMethodDefault=strict
+
+   Legt die Standardart des Host-Vergleichs für host_uri fest. Wie oben siehe
+   site.ini\[SiteAccessSettings]\HostUriMatchMethodDefault.
+
+
+====================
+Beispiel-Einrichtung
+====================
+
+Für das Beispiel aus der Einführung braucht es diese Einstellungen:
+
+[SiteAccessSettings]
+
+MatchOrder=host_uri
+
+HostUriMatchMapItems[]=example.com;en;example_eng
+HostUriMatchMapItems[]=example.com;no;example_nor
+HostUriMatchMapItems[]=example.com;;example_eng
+HostUriMatchMapItems[]=page2.com;no;page2_nor
+HostUriMatchMapItems[]=page2.com;en;page2_eng
+HostUriMatchMapItems[]=page2.com;;page2_nor
+
+
+Im Beispiel wird eine leere URL genutzt, um nur den Hostnamen zuzuordnen. Diese
+Zeile muss nach den Zuordnungen mit Host und URI stehen, damit diese ebenfalls
+berücksichtigt werden.
+

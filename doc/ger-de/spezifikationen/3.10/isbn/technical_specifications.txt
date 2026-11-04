@@ -1,0 +1,220 @@
+============================================
+Technische Spezifikation des ISBN-Datentyps
+============================================
+
+:Autoren: Bjørn Reiten
+:Version: 0.1
+
+Diese Spezifikation beschreibt die technische Umsetzung des ISBN-Datentyps.
+
+Klassendiagramm
+===============
+
+           +------------+
+           | eZDataType |
+           +------------+
+                 1|
+                  +----------+
+                             |oo
+                        +------------+
+       ...   ...  ...   | eZISBNType |   ...   ...   ...
+                        +------------+
+                             1|
+                              |
+                              |1
+                     oo +------------+
+       +----------------|  eZISBN13  |
+       |                +------------+
+       | 1
+  +-------------+     1 +-----------------------+
+  | eZISBNGroup |-------| eZISBNRegistrantRange |
+  +-------------+ oo    +-----------------------+
+        | oo
+        |             1 +------------------+
+        +---------------| eZISBNGroupRange |
+                        +------------------+
+
+
+Beschreibung der Klassen des ISBN-Datentyps
+===========================================
+
+eZISBNType
+----------
+Die Hauptklasse des ISBN-Datentyps, abgeleitet von eZDataType. Diese Klasse
+verarbeitet auch alle ISBN-10-Nummern, also den alten ISBN-Standard, der
+abgelöst ist und nicht mehr verwendet werden sollte.
+
+Die ISBN wird in einem Feld gespeichert, data_text der Tabelle
+ezcontentobject_attribute, und zwar immer mit Bindestrichen als Trenner an der
+richtigen Stelle, abhängig von den Bereichen jedes Gebiets. Beispiel:
+978-0-11-000222-4
+
+Ob der Wert als ISBN-10 oder ISBN-13 gespeichert ist, zeigt das Feld
+data_int1. Die möglichen Werte:
+
+isbn-10: 0
+isbn-13: 1
+
+Wird einer Inhaltsklasse ein neuer ISBN-Datentyp hinzugefügt, ist der
+Standardwert isbn-13.
+
+
+eZISBN13
+--------
+Übernimmt alle Aufgaben rund um ISBN-13. Die Teile der ISBN werden
+herausgelöst, und zwischen jede Gruppe kommt ein Bindestrich. Eine ISBN-13
+besteht aus:
+
+Präfix
+Registrierungsgruppe
+Verlagsnummer
+Titelnummer
+Prüfziffer
+
+Wie die Gruppen abgeleitet werden, wird aus den Angaben in den Klassen
+eZISBNGroup, eZISBNGroupRange und eZISBNRegistrantRange berechnet, die die
+Bereiche jedes Gebiets (jeder Registrierungsgruppe) enthalten.
+
+Das Präfix sollte immer 978 sein. Das Präfix 979 ist für später reserviert.
+
+
+eZISBNGroup
+-----------
+Enthält Angaben zu allen Gebieten (Gruppenelementen) mit einer kurzen
+Beschreibung. Alle Gruppennummern sollten den Regeln in eZISBNGroup folgen,
+die die Länge des Gruppenelements beschreiben.
+
+
+eZISBNGroupRange
+----------------
+Enthält alle gültigen Bereiche des Gruppenelements. Von- und Bis-Nummer sind
+der Prüfbereich, den die ISBN enthalten darf. Die Prüfnummer besteht aus den
+5 Ziffern nach dem Präfix.
+
+Beispiel: 978-0-11-000222-4, die Prüfnummer ist 01100. Sie wird in der
+Datenbank als Ganzzahl gespeichert. Ist der Bereich 0 - 59999, ergibt sich
+eine Länge der Gruppennummer von 1, also die Gruppennummer 0.
+
+group_from und group_to beschreiben ebenso Von und Bis der Prüfnummer, mit der
+richtigen Zahl an Stellen. Sie werden als Zeichenkette gespeichert, da der
+Wert wegen der Feldlänge mit 0 beginnen kann. Beispiel: 02.
+
+group_length gibt an, wie viele Stellen der Wert der Registrierungsgruppe
+braucht.
+
+
+eZISBNRegistrantRange
+---------------------
+Ähnlich der Klasse für Gruppenbereiche. Enthält alle gültigen Bereiche der
+Verlagsnummern, die je Gruppenelement verschieden sein können. Deshalb gibt es
+isbn_group_id, die auf ein eZISBNGroup-Objekt verweist.
+
+from_number und to_number enthalten alle gültigen Bereiche der Verlagsnummer.
+Der Prüfbereich der Verlagsnummer besteht aus den 5 Ziffern nach Präfix und
+Gruppenelement. Deshalb muss das Gruppenelement zuerst berechnet werden,
+bevor sich die Verlagsnummer finden lässt.
+
+Beispiel: 978-0-11-000222-4, die Prüfnummer ist 11000. Der Bereich 0 - 19999
+hat die Länge 2, das ergibt die Verlagsnummer 11.
+
+registrant_from und registrant_to beschreiben ebenso Von und Bis der
+Prüfnummer, mit der richtigen Zahl an Stellen. Sie werden als Zeichenkette
+gespeichert, da der Wert wegen der Feldlänge mit 0 beginnen kann. Beispiel: 02.
+
+registrant_length gibt an, wie viele Stellen die Verlagsnummer braucht.
+
+isbn_group_id ist die ID in eZISBNGroup.
+
+
+
+Weitere Skripte
+===============
+
+Skript, das alle ISBN in gültige ISBN-13 umwandelt
+--------------------------------------------------
+Das Skript:
+bin/php/ezconvert2isbn13.php
+
+Es durchläuft die Attribute von Inhaltsobjekten mit dem ISBN-Datentyp und
+wandelt sie in gültige ISBN-13 um. Es sollte laufen, nachdem beim Ändern der
+Inhaltsklasse die Option ISBN-13 für das Klassenattribut gesetzt wurde.
+Die Optionen auf der Kommandozeile:
+
+--class-id=2 durchläuft alle ezisbn-Attribute der Klasse mit der ID 2 und
+wandelt jedes um, das einen ISBN-10-Wert hat.
+
+--attribute-id=12 prüft, ob es sich um einen ISBN-Datentyp handelt, und
+wandelt alle ISBN-13-Werte im Attribut mit der ID 12 um.
+
+--all-classes hat kein Argument und wandelt alle Attribute von
+Inhaltsobjekten um, die auf isbn-13 stehen.
+
+
+--force oder -f wirkt zusätzlich zu allen Optionen oben: Es setzt das
+Klassenattribut auf isbn-13, auch wenn es vorher isbn10 war, und setzt auch die
+Option isbn-13 in der Inhaltsklasse für das ISBN-Attribut.
+
+
+Skript, das ISBN-Daten aus der dba-Datei liest
+----------------------------------------------
+Müssen bei einem Upgrade einer Site die ISBN-Daten eingefügt werden, aktualisiert
+dieses Skript die nötigen Tabellen.
+
+Das Skript:
+bin/php/ezimportdbafile.php
+
+Parameter:
+--datatype=ezisbn
+
+Es sucht eine dba-Datei im angegebenen Datentyp. Beispiel:
+kernel/classes/datatypes/ezisbn/share/db_data.dba
+
+Jeder Datentyp räumt die nötigen Tabellen selbst auf, bevor die Daten
+eingefügt werden. Dazu wird die Funktion
+
+cleanDBDataBeforeImport() im Datentyp neu umgesetzt; der Datentyp weiß, welche
+Tabellen zu leeren sind.
+
+Die Datei db_data.bda enthält nur die Daten der Tabellen, nicht deren
+Definition. Die Datei db_data.dba lässt sich mit dem Skript
+bin/php/ezsqldumpisbndata.php erzeugen.
+
+Hinweis: Die nötigen Tabellen müssen vor dem Skript angelegt sein; sie stehen
+in den SQL-Updates der Exponential-Version (3.10).
+
+
+Skript, das ISBN-Gruppen und -Bereiche aktualisiert
+---------------------------------------------------
+Das Skript:
+cronjobs/updateisbn13.php
+
+Es wird so gestartet:
+php runcronjobs.php isbn13 --file=ranges.js
+
+Dabei ist:
+isbn13 eine eigene Gruppe in cronjob.ini
+--file=ranges.js verweist auf eine JavaScript-Datei mit den Angaben zu den
+Bereichen. Die Bereiche liegen unter:
+
+http://www.isbn-international.org/converter/ranges.js (verwendet von
+http://www.isbn-international.org/converter/ranges.htm).
+
+Diese Datei müssen Sie zuerst an einen lokalen Ort auf Ihrem Server kopieren.
+
+Bei jedem Lauf werden alle Angaben in den Tabellen zu eZISBNGroup,
+eZISBNGroupRange und eZISBNRegistrantRange entfernt und durch die Angaben aus
+dieser Datei ersetzt.
+
+Beispiel:
+Herausgelöst werden Zeilen mit diesen Angaben:
+
+gi.area0.text="English speaking area";
+
+mit dem Namen des Gebiets (der Registrierungsgruppe) und
+
+gi.area0.pubrange="00-19;200-699;7000-8499;85000-89999;900000-949999";
+
+mit den Bereichen der Verlagsnummern. Die Registrierungsgruppe wird daraus
+berechnet, wie die Werte der Registrierungsgruppen verwendet werden.
+
+Hinweis: Prüfen Sie, ob die Datei noch diese Struktur hat.
