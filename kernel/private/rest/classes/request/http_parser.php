@@ -30,7 +30,11 @@ class ezpRestHttpRequestParser extends ezcMvcHttpRequestParser
      */
     protected function createRequestObject()
     {
-        return new ezpRestRequest();
+        $request = new ezpRestRequest();
+        // the part of the address in front of the API prefix that is removed (ezpMvcConfiguration::uriPrefix()),
+        // kept so the links of an answer carry it
+        $request->basePath = (string)$this->prefix;
+        return $request;
     }
 
     /**

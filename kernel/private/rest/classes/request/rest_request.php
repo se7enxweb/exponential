@@ -55,6 +55,15 @@ class ezpRestRequest extends ezcMvcRequest
     public $isEncrypted;
 
     /**
+     * The path the installation is served below, as it appears in front of the API prefix (the request parser's
+     * prefix: /doc for an installation below an Alias, /index_rest.php in non-vhost mode, empty at the root). Links
+     * the API writes into its answers put it back.
+     *
+     * @var string
+     */
+    public $basePath = '';
+
+    /**
      * Constructs a new ezpRestRequest.
      *
      * @param DateTime $date
@@ -124,13 +133,15 @@ class ezpRestRequest extends ezcMvcRequest
      */
     static public function __set_state( array $array )
     {
-        return new ezpRestRequest( $array['date'], $array['protocol'],
+        $request = new ezpRestRequest( $array['date'], $array['protocol'],
             $array['host'], $array['uri'], $array['requestId'],
             $array['referrer'], $array['variables'], $array['get'],
             $array['post'], $array['contentVariables'], $array['isEncrypted'],
             $array['body'], $array['files'], $array['accept'], $array['agent'],
             $array['authentication'], $array['raw'], $array['cookies'],
             $array['isFatal'], $array['originalProtocol'] );
+        $request->basePath = isset( $array['basePath'] ) ? (string)$array['basePath'] : '';
+        return $request;
     }
 
     /**
@@ -158,7 +169,10 @@ class ezpRestRequest extends ezcMvcRequest
     {
         $protIndex = strpos( $this->protocol, '-' );
         $protocol = substr( $this->protocol, 0, $protIndex );
-        $hostUri = $protocol.'://'.$this->host;
+        // an encrypted request (HTTPS, also behind a proxy as eZSys::isSSLNow() sees it) links with https
+        if ( $this->isEncrypted && $protocol === 'http' )
+            $protocol = 'https';
+        $hostUri = $protocol.'://'.$this->host.rtrim( (string)$this->basePath, '/' );
 
         return $hostUri;
     }

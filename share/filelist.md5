@@ -3529,7 +3529,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-16be3b00933ff226f4187de668945e59  doc/changelogs/6.0/6.0.15.md
+789b5229ba9e9ec5e181da47d023bd1f  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -26486,8 +26486,8 @@ dd9f23988c1ca39b5f66bbeb2f1d2ece  kernel/private/rest/classes/outh_error_type.ph
 c11aa98fcef74b53bb8faa6a00c753f6  kernel/private/rest/classes/po_maps/ezpresttoken.php
 2b3f8279e8c73bcb38acd17fa2ecd08c  kernel/private/rest/classes/prefix_filter.php
 db9583a5b4d9db59e5cae7c745103408  kernel/private/rest/classes/renderers/xhtml_content_renderer.php
-37d311af8a314be43652cca9f1b0f293  kernel/private/rest/classes/request/http_parser.php
-84d1e23be3e3b3b6e84482649490b21f  kernel/private/rest/classes/request/rest_request.php
+dfbee06d568bcbf67641f83d7e0b6510  kernel/private/rest/classes/request/http_parser.php
+a8854fe35578f2284c1c64f53c4a299b  kernel/private/rest/classes/request/rest_request.php
 234a76e1db216de929c2efc3f7471414  kernel/private/rest/classes/response/result.php
 49c1c7d66974b071abbe19db7862b842  kernel/private/rest/classes/rest_http_response_writer.php
 1c99d4430028a3d8f6953687ca14ee1b  kernel/private/rest/classes/rest_provider.php
@@ -29965,6 +29965,7 @@ fbf7216ee54f793b0f1712f7b37c935b  tests/tests/kernel/private/rest/application_ca
 5946c94330196e6ce9afb09283ffea62  tests/tests/kernel/private/rest/ezpMvcConfigurationUriPrefixTest.php
 e7ba42b302d050866e62352a66eb5389  tests/tests/kernel/private/rest/ezpRestHttpRequestParserRecordedRequestsTest.php
 8370e0b8a1e8d0fddb54b2e77ef64525  tests/tests/kernel/private/rest/ezpRestHttpResponseWriterStatusLineTest.php
+d0dfbb6fa99faebeeffdeeef51567b70  tests/tests/kernel/private/rest/ezpRestRequestLinkBaseTest.php
 cd56472ac389fc65477aa2088f712be7  tests/tests/kernel/private/rest/ezprest_request_parser_regression.php
 88651e7e857b87c990f0a14e4b12c041  tests/tests/kernel/private/rest/railsroute_test.php
 6455661792b0790ff5d3917820d40694  tests/tests/kernel/private/rest/regexproute_test.php
