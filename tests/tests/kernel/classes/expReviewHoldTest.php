@@ -1,7 +1,8 @@
 <?php
 /**
  * The review hold (expReviewHold): its states and their order, the role's policies, which policies the upgrade step
- * limits and which it leaves, the publish operation's two checks and the step's registration.
+ * limits and which it leaves, the objects without a state of the group it links on every engine, the publish
+ * operation's two checks and the step's registration.
  *
  * No database, no files.
  *
@@ -104,6 +105,32 @@ class expReviewHoldTest extends PHPUnit\Framework\TestCase
         }
     }
 
+    public function testObjectsWithoutAStateOfTheGroupGetTheFreeStateOnEveryEngine()
+    {
+        $link = new ReflectionMethod( 'expReviewHold', 'linkUnlinked' );
+        if ( PHP_VERSION_ID < 80100 )
+            $link->setAccessible( true );
+        $entry = array( 'group_id' => 3, 'group_identifier' => 'review_hold', 'state_id' => 6, 'state_identifier' => 'not_held',
+                        'missing' => 2, 'missing_ids' => array( 149, 150 ) );
+
+        // SQL engines: one statement, only for objects with no state of this group, so a second run adds nothing
+        $sql = new expReviewHoldTestDb( 'postgresql' );
+        $link->invoke( null, $sql, $entry );
+        $this->assertCount( 1, $sql->queries );
+        $query = preg_replace( '/\s+/', ' ', $sql->queries[0] );
+        $this->assertStringContainsString( 'INSERT INTO ezcobj_state_link (contentobject_id, contentobject_state_id) SELECT o.id, 6 FROM ezcontentobject o', $query );
+        $this->assertStringContainsString( 'WHERE NOT EXISTS', $query );
+        $this->assertStringContainsString( 's.group_id = 3', $query );
+        $this->assertSame( array( 'begin', 'commit' ), $sql->transaction );
+
+        // MongoDB: one link per object the plan found
+        $mongo = new expReviewHoldTestDb( 'mongo' );
+        $link->invoke( null, $mongo, $entry );
+        $this->assertSame( array( array( 'ezcobj_state_link', array( 'contentobject_id' => 149, 'contentobject_state_id' => 6 ) ),
+                                  array( 'ezcobj_state_link', array( 'contentobject_id' => 150, 'contentobject_state_id' => 6 ) ) ), $mongo->inserts );
+        $this->assertSame( array(), $mongo->queries );
+    }
+
     public function testTheStepIsListedAndTheRefusalIsInTheAuditCatalogue()
     {
         $step = new expUpgradeStepReviewHold();
@@ -114,5 +141,60 @@ class expReviewHoldTest extends PHPUnit\Framework\TestCase
         $catalogue = expAuditTaxonomy::catalogue();
         $this->assertArrayHasKey( 'content.object.hold.refused', $catalogue );
         $this->assertSame( 'content', $catalogue['content.object.hold.refused']['channel'] );
+    }
+}
+
+/** A database that records what it is asked to do. */
+class expReviewHoldTestDb
+{
+    public $queries = array();
+    public $inserts = array();
+    public $transaction = array();
+    private $name;
+    private $depth = 0;
+
+    public function __construct( $name )
+    {
+        $this->name = $name;
+    }
+
+    public function databaseName()
+    {
+        return $this->name;
+    }
+
+    public function begin()
+    {
+        $this->transaction[] = 'begin';
+        ++$this->depth;
+    }
+
+    public function commit()
+    {
+        $this->transaction[] = 'commit';
+        --$this->depth;
+    }
+
+    public function rollback()
+    {
+        $this->transaction[] = 'rollback';
+        $this->depth = 0;
+    }
+
+    public function transactionCounter()
+    {
+        return $this->depth;
+    }
+
+    public function query( $sql )
+    {
+        $this->queries[] = $sql;
+        return true;
+    }
+
+    public function insert( $table, array $row )
+    {
+        $this->inserts[] = array( $table, $row );
+        return true;
     }
 }
