@@ -51,6 +51,7 @@ Exit code: 0 fine, 1 check found errors (with --strict also warnings) or nothing
 | `--rebuild` |  | index: build the index again even when the cached one is current |
 | `--list` |  | index: list every page |
 | `--no-images` |  | index: do not fetch the external images of the pages (they stay links) |
+| `--keep-search` |  | index: keep a current search index instead of building it again (the background build a help page starts) |
 | `--json` |  | Print one JSON document instead of the text |
 | `--audience` | required | search, index --list: only pages for this audience (editor, admin, developer, user) |
 | `--category` | required | search, index --list: only pages of this category |

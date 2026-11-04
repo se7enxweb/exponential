@@ -322,9 +322,12 @@ Rückgabewerte dieselben wie bei den Befehlen des Kernels. Referenz:
     Deutsch.
 
   Referenz: [Übersetzungen und Sprachen](funktionen/6.0/uebersetzungen-und-sprachen.md), [Sprachen](sprachen.md).
-- **Hilfeseiten.** Die Seiten in `extension/<name>/doc/` und ihre `README*`, `CHANGELOG*`, `LICENSE*` und `INSTALL*`
-  erscheinen in dieser Hilfe, sobald die Extension aktiv ist, mit der Seitenkennung `ext/<name>/<pfad>`. Gezeigt werden
-  nur Dateien, die das Repository der Extension verfolgt oder in seiner `share/filelist.md5` auflistet. Referenz:
+- **Hilfeseiten.** `README.md` und `INSTALL.md` gehören oben in `extension/<name>/`, jede weitere Seite als Markdown
+  (`.md`) in `extension/<name>/doc/`, auf Englisch. Diese Seiten und die `CHANGELOG*`, `LICENSE*`, `USAGE*` und
+  `COPYING*` der Extension erscheinen in dieser Hilfe, sobald die Extension aktiv ist, mit der Seitenkennung
+  `ext/<name>/<pfad>`. Gezeigt werden nur Dateien, die das Repository der Extension verfolgt oder in seiner
+  `share/filelist.md5` auflistet. Klartextseiten älterer Extensions erscheinen weiterhin, als Klartext. Anleitung:
+  [Eine Extension dokumentieren](anleitungen/eine-extension-dokumentieren.md); Referenz:
   [Das Hilfesystem](funktionen/6.0/hilfesystem.md).
 
 ## 10. Die Website-Werkzeugleiste und Exponential Layouts

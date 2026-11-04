@@ -30,7 +30,9 @@ Ihre Adressen beginnen mit `project/`, gefolgt vom Pfad der Datei im Repository:
 Kommandozeilenskripte (`project/bin/...`), der Designs und des Kernels werden ebenfalls angezeigt, wenn diese
 Verzeichnisse eine haben.
 
-Die Dokumentation der Extensions gehört nicht dazu: Sie hat ihre eigene Kategorie, **Extensions**. Tests, die Dateien
+Die Dokumentation der Extensions gehört nicht dazu: Sie hat ihre eigene Kategorie, **Extensions** (eine Extension hat
+`README.md` und `INSTALL.md` oben und jede weitere Seite als Markdown in ihrem `doc/`; siehe
+[Eine Extension dokumentieren](../anleitungen/eine-extension-dokumentieren.md)). Tests, die Dateien
 verborgener Verzeichnisse wie `.github/` (die Vorlage für Pull Requests) und alles andere, was nicht als Dokumentation
 gelesen werden soll, werden hier nie angezeigt.
 

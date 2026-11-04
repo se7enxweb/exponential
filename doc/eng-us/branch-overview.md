@@ -201,3 +201,6 @@ a final revision. These branches are not in the Git repository; the release tags
 
 The datatype branch was merged into the trunk in revision 2714; the
 [release history](release-overview) has its record and the releases of the 3.x and 4.x lines.
+
+The whole story of the code, from eZ publish in 1999 to Exponential today, is told in
+[History of Exponential (1999 - 2026)](HISTORY.md).

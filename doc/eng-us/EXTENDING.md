@@ -305,10 +305,12 @@ codes are the same as in the kernel's own commands. Reference:
   - The administration is translated into 156 languages. An extension of the product ships at least English and German.
 
   Reference: [Translations and languages](features/6.0/translations-and-languages.md), [Languages](languages.md).
-- **Help pages.** The pages in `extension/<name>/doc/` and its `README*`, `CHANGELOG*`, `LICENSE*` and `INSTALL*` appear
-  in this help center as soon as the extension is active, with the page id `ext/<name>/<path>`. Only files the
-  extension's repository tracks, or lists in its `share/filelist.md5`, are shown. Reference:
-  [The help system](features/6.0/help-system.md).
+- **Help pages.** Keep `README.md` and `INSTALL.md` on top of `extension/<name>/` and every other page as Markdown
+  (`.md`) in `extension/<name>/doc/`, in English. These pages, and the extension's `CHANGELOG*`, `LICENSE*`, `USAGE*`
+  and `COPYING*`, appear in this help center as soon as the extension is active, with the page id `ext/<name>/<path>`.
+  Only files the extension's repository tracks, or lists in its `share/filelist.md5`, are shown. Older extensions'
+  plain-text pages still show, as plain text. How to: [Documenting an extension](guides/documenting-an-extension.md);
+  reference: [The help system](features/6.0/help-system.md).
 
 ## 10. The website toolbar and Exponential Layouts
 

@@ -142,7 +142,9 @@ PageOrder[INSTALL.md]=10
 PageOrder[CONFIGURING.md]=11
 PageOrder[EXTENDING.md]=13
 PageOrder[INTEGRATING.md]=14
+PageOrder[DISTRIBUTIONS.md]=15
 PageOrder[languages.md]=20
+PageOrder[HISTORY.md]=25
 PageOrder[branch-overview.md]=30
 PageOrder[release-overview]=40
 PageOrder[project/SECURITY.md]=50
@@ -176,6 +178,11 @@ Its own documentation is shown on its own while the extension is active (next se
 `ext/<extension>/<path>`, which the context help map can name.
 
 ## Documentation of the extensions
+
+The convention for extension authors: `README.md` and `INSTALL.md` on top of `extension/<name>/`, every other page as
+Markdown (`.md`) in `extension/<name>/doc/`, in English. The guide [Documenting an extension](../../guides/documenting-an-extension.md)
+explains it with a directory tree and the conversion of an old plain-text document; this section gives the rules the
+help center applies.
 
 The help center finds the documentation of every **active** extension when it looks
 (`[IndexSettings] ActiveExtensionDocs=enabled`, the default; `eZExtension::activeExtensions()` of the request): an

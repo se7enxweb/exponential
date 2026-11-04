@@ -1631,7 +1631,7 @@ f215bb452463034ff031071386b696a1  design/admin4/templates/page_head_script.tpl
 1cc492f23a527cc8e24d339a1d994936  design/admin4/templates/page_head_style.tpl
 392a431599e6a36e779733835d00bf18  design/admin4/templates/page_head_style_inline.tpl
 cb128a4645e891cd796919aad3ed36d1  design/admin4/templates/page_header.tpl
-b8e61d3a5a8ce7617372a96054f362bb  design/admin4/templates/page_leftmenu.tpl
+e738f63a35a698e29ac06badc48a4c94  design/admin4/templates/page_leftmenu.tpl
 8042a9d3f3a0e261d4b3e5659671874c  design/admin4/templates/page_login_copyright.tpl
 442dc3f6f797080f31819836eca9fbb2  design/admin4/templates/page_mainarea.tpl
 a2501a7a5f982715d274939ff4ad0937  design/admin4/templates/page_search.tpl
@@ -1895,7 +1895,7 @@ bca57a446436cead3102f7699c240b96  design/admin4l/templates/explayouts/block/admi
 efbb48a4def955752faa19f849cd8845  design/admin4l/templates/explayouts/block/admin_current_user.tpl
 d32ea5c9ac61787a910308fd75511a3c  design/admin4l/templates/explayouts/block/admin_debug_area.tpl
 3d33a22a1727180cf850b86c2f191213  design/admin4l/templates/explayouts/block/admin_footer.tpl
-0b763a943c76b68ab6127ac876045119  design/admin4l/templates/explayouts/block/admin_left_menu.tpl
+d66d234d94aa5bfaf09826c4988d5af1  design/admin4l/templates/explayouts/block/admin_left_menu.tpl
 02202fcac88fef478405b05ea16fc9e7  design/admin4l/templates/explayouts/block/admin_logo.tpl
 70a59d6074c9f7ebdd76a94d3ddddf24  design/admin4l/templates/explayouts/block/admin_menu_button.tpl
 47ee73eb89e8ba1214a3c8ac084583d8  design/admin4l/templates/explayouts/block/admin_module_result.tpl
@@ -3527,7 +3527,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-94fe55690d212bad323ac4ed9e707f2b  doc/changelogs/6.0/6.0.15.md
+2a16e7a9690ce70f15217b6cdb442bbd  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -3626,8 +3626,10 @@ ded49d230901ad3762b2ceae14619701  doc/changelogs/extensions/twig.md
 af285ac8d63f408a2ebaf23e88716894  doc/changelogs/extensions/xrowextract.md
 bbcfbb1065eefc4a3f53987a1bad5fb1  doc/changelogs/extensions/xrowmetadata.md
 926abec1d70f433796add752c0db25fd  doc/eng-us/CONFIGURING.md
-6d3a30fd59d8e71b2c1ad0ce019b9c7e  doc/eng-us/EXTENDING.md
-0c1e4f61dd4a07d85f0b8cda711ec115  doc/eng-us/INSTALL.md
+0101a4fc3ef4925f5882b075d3db7478  doc/eng-us/DISTRIBUTIONS.md
+8f1308a0bb70a3295a8a8d9c3a214333  doc/eng-us/EXTENDING.md
+3867b0b3c3f7160677e995eb28012161  doc/eng-us/HISTORY.md
+2b3cb0af24217aa1c20aa63fc3834cf5  doc/eng-us/INSTALL.md
 0ab219a2e330c3db1c8ea1532fd3972e  doc/eng-us/INTEGRATING.md
 a22d0be1ce2284b67950a4d1673dd1b0  doc/eng-us/LICENSE-GFDL-1.3.txt
 d1b7052b2035b91ce9c4cece454f14bf  doc/eng-us/README-LICENSE.md
@@ -3772,7 +3774,7 @@ e37c2dcbaa794657ef0b6ade79057808  doc/eng-us/bc/6.0/velocity-engine-upgrade-note
 47fd2bff5c237dc0a50c3deb40ab5f34  doc/eng-us/bc/6.0/weak-passwords-and-reset-key-lifetime.md
 c99118cb6b0537f2ca6d975c9ef3918f  doc/eng-us/bc/6.0/webdav-entry-script-index-webdav.md
 67f18c68d2630fcc6c26ac4ee6fe0ab5  doc/eng-us/bc/6.0/yui-removal.md
-715629d1297281bca0c4c15d0cb86564  doc/eng-us/branch-overview.md
+dbf786531ebcae285be530cca616cd1d  doc/eng-us/branch-overview.md
 9aad8564171ca8a3ebbdf24d0ac878f1  doc/eng-us/doxygen/Doxyfile
 96a0cec80eb773687ca28840ecc67ca1  doc/eng-us/doxygen/empty.html
 218a5bdcfb7e8b6199a72d575b78aac8  doc/eng-us/examples/README.md
@@ -3817,7 +3819,7 @@ b791538120cc3622e7d2268eee2a4ab9  doc/eng-us/examples/commands/expgraphqlquery.m
 da3556f0306e10c9ebb391766a13b36c  doc/eng-us/examples/commands/expgraphqlstarter.md
 c147eb81b588ba2ab38af6dde1cab996  doc/eng-us/examples/commands/expgraphqlstatus.md
 838861e8d88a23d984e3c85e8112310c  doc/eng-us/examples/commands/expgraphqlwebhooks.md
-379924437a3392f4f0015a1224c8d8b8  doc/eng-us/examples/commands/exphelp.md
+0f785bf17975e13e4cf701bb0c28193a  doc/eng-us/examples/commands/exphelp.md
 e8d9f6e06e1709a34a8e2b131e7a8b8a  doc/eng-us/examples/commands/exphelpcontent.md
 da36319ce9b473e688815ba1ef0871ae  doc/eng-us/examples/commands/exphelpexamples.md
 cd7e304cbf5a64c0421f25eb82c5759a  doc/eng-us/examples/commands/explogs.md
@@ -4072,7 +4074,7 @@ b6655c97e0f3a74544da58844180cc7e  doc/eng-us/examples/demo-mode/install-demo-sql
 cca5d7ab779676279104a95fbfe62288  doc/eng-us/examples/demo-mode/nginx-fastcgi-demo.conf
 85231412f69ddf5584dc88af3b27095c  doc/eng-us/examples/demo-mode/php-fpm-pool-demo.conf
 b8b3d6b9a764ca22e43f9f52beb3610d  doc/eng-us/examples/demo-mode/velocity-demo-mode.conf
-c4c52044fd68c8d3deb29eca0a1fda42  doc/eng-us/examples/extension-points/README.md
+16e64c2539416d54684288cb75b866b9  doc/eng-us/examples/extension-points/README.md
 aa3888e9660481d83d5193e47dbc366a  doc/eng-us/examples/extension-points/admininterface.md
 7f5c75fe36346ae0f6daa7de74fb143d  doc/eng-us/examples/extension-points/audit.md
 c2cafe9e2e4dc86fd5103ebc3fca26e9  doc/eng-us/examples/extension-points/binaryfile.md
@@ -4110,7 +4112,7 @@ be3a94174b5b36c8fc92be339872a2ef  doc/eng-us/examples/extension-points/requestru
 e199b0a0ede1481bd174e5eab20256a9  doc/eng-us/examples/extension-points/setup.md
 41c716fe66f9d62a80fc53fdb70aa933  doc/eng-us/examples/extension-points/shop.md
 e4c27f944fa18d46d44095a17e607bcf  doc/eng-us/examples/extension-points/shopaccount.md
-21087ce6bf0545a2ad73d58645602db8  doc/eng-us/examples/extension-points/site.md
+e449a723e80dd74868c0e0e0e01693af  doc/eng-us/examples/extension-points/site.md
 e09f07628c0da63193690caa333ba34f  doc/eng-us/examples/extension-points/smarty.md
 795c65c65446d822875f5cb7430cc843  doc/eng-us/examples/extension-points/subitemscolumns.md
 31797884a0010e2ae097e1c969e87b7c  doc/eng-us/examples/extension-points/syscard.md
@@ -4339,7 +4341,7 @@ d8ecf8a36f51610f9879784a8776ab80  doc/eng-us/examples/fetch-functions/user/membe
 e2a0d933b995c654fb8d0b0d61460b08  doc/eng-us/examples/fetch-functions/workflow/workflow_type_statuses.md
 afabb952a48810ef8ebb35f166d11f22  doc/eng-us/examples/hooks/template-check-pre-commit.sh
 5fd72660cc5c80f159ea936f0d72133b  doc/eng-us/examples/htaccess
-cacd9247edada56c193995f59bb818af  doc/eng-us/examples/ini-settings/README.md
+6e2ce13929ab5d5b2058b2b9eac06648  doc/eng-us/examples/ini-settings/README.md
 6522da4a85b1b6fbd3b3c71c41603590  doc/eng-us/examples/ini-settings/admininterface/AdditionalMenuSettings.md
 00dd82562f4f4fcb17497b31e0f32f2f  doc/eng-us/examples/ini-settings/admininterface/AdditionalTab_audit.md
 1982ccc2ae500e3049741b22912053c6  doc/eng-us/examples/ini-settings/admininterface/AdditionalTab_datatable.md
@@ -4789,7 +4791,7 @@ b1f673056948bb0d843a086f10fd10c5  doc/eng-us/examples/ini-settings/cronjob/Cronj
 5d1c06f1e358e22b920ced44aa0f0992  doc/eng-us/examples/ini-settings/cronjob/CronjobSettings.md
 550bb528977e081a799dda3a4a944d62  doc/eng-us/examples/ini-settings/cronjob/CrontabSettings.md
 9c6d78f34677e9f3222a67cdac15ca34  doc/eng-us/examples/ini-settings/cronjob/PauseSettings.md
-94f338e3f61643ae434fdc8242070b40  doc/eng-us/examples/ini-settings/cronjob/README.md
+0a5f9f4c11c81a21cd7cd7062ceba9de  doc/eng-us/examples/ini-settings/cronjob/README.md
 c51dc5ef2e976eb21f45099f0476b1b0  doc/eng-us/examples/ini-settings/cronjob/ScriptDocumentation.md
 96004d842caaccab0c37c3bc9b2755ef  doc/eng-us/examples/ini-settings/cronjob/linkCheckSettings.md
 3e8012935d68e29961356e00e3bcd156  doc/eng-us/examples/ini-settings/dashboard/DashboardBlock_all_latest_content.md
@@ -4824,12 +4826,12 @@ e4e3e5791a70691e53af802dfff23759  doc/eng-us/examples/ini-settings/dbschema/post
 ad08646bc6e997ce6796fa7d030d855d  doc/eng-us/examples/ini-settings/debug/DebugSettings.md
 578edb0b04e6e514891dec8f1c4b9e1e  doc/eng-us/examples/ini-settings/debug/GeneralCondition.md
 eb47a83bc4a42a81b7f503670a142114  doc/eng-us/examples/ini-settings/debug/README.md
-71242a2dc487186198bdd6a03e701c45  doc/eng-us/examples/ini-settings/debugbar/DebugBarSettings.md
+41f979fbecd96117afbfdf0e50563217  doc/eng-us/examples/ini-settings/debugbar/DebugBarSettings.md
 6e7f6cf8b13a71531053622a88d303ea  doc/eng-us/examples/ini-settings/debugbar/Preset_everything.md
 e38f45542cb8386642172412ebdfe417  doc/eng-us/examples/ini-settings/debugbar/Preset_off.md
 5efe79484121f67510be0d560f738bfc  doc/eng-us/examples/ini-settings/debugbar/Preset_sql_tuning.md
 965d7cad61cd778a8fba21977f3b5a93  doc/eng-us/examples/ini-settings/debugbar/Preset_template_work.md
-fdbf0dc3a495a5ea0a10b95ca5d012fd  doc/eng-us/examples/ini-settings/debugbar/README.md
+6fc48735f098e3d04011285eda2fe4c7  doc/eng-us/examples/ini-settings/debugbar/README.md
 91769bfd728f0fd0b604d4d889ed7b65  doc/eng-us/examples/ini-settings/debugbar/Setting_always_log.md
 b904b058d2a1e42e4006b6a494b01bcc  doc/eng-us/examples/ini-settings/debugbar/Setting_condition_debug.md
 5347fe0acf6944a612b64683d98296b9  doc/eng-us/examples/ini-settings/debugbar/Setting_content_view_caching.md
@@ -4884,11 +4886,11 @@ d9eee41b354d44edaa02d269af60d80b  doc/eng-us/examples/ini-settings/error/HTTPErr
 d7242053330bdcb5eebf5ba020ab24bd  doc/eng-us/examples/ini-settings/error/HTTPError-403.md
 397dcc317ce855be5813c04a6c501781  doc/eng-us/examples/ini-settings/error/HTTPError-404.md
 caf60908b53ecf82087e9a61ba87f97f  doc/eng-us/examples/ini-settings/error/README.md
-94d97523d44a2855a3d867b5e072667c  doc/eng-us/examples/ini-settings/exphelp/AudienceSettings.md
-9adcf9753d3ee0535abb30108786a1df  doc/eng-us/examples/ini-settings/exphelp/CategorySettings.md
+5663096fbe6089f0a6471fc575079c98  doc/eng-us/examples/ini-settings/exphelp/AudienceSettings.md
+516d724fcad20012dd0ad7e749da3b91  doc/eng-us/examples/ini-settings/exphelp/CategorySettings.md
 557fe8ed9a4915b7a452bf8c6227414a  doc/eng-us/examples/ini-settings/exphelp/CommitFeedSettings.md
 911d1187ea9ea5ab50301cfb83357cfc  doc/eng-us/examples/ini-settings/exphelp/ContentSettings.md
-3c9c3d0b99a218c26d084840e5f469d4  doc/eng-us/examples/ini-settings/exphelp/ContextHelp.md
+8ba0637bbf69d87f749462646acbeb23  doc/eng-us/examples/ini-settings/exphelp/ContextHelp.md
 3d307f778430f1bdd6462b040e20299c  doc/eng-us/examples/ini-settings/exphelp/DashboardSettings.md
 90f841d4dbe892c1f296413d1b4d0557  doc/eng-us/examples/ini-settings/exphelp/DocLanguages.md
 129f2a0f3ebae02dbea9bda88c6ecc84  doc/eng-us/examples/ini-settings/exphelp/FeaturedSettings.md
@@ -4952,8 +4954,8 @@ ca2674ec74f81022f4cd7a748770bf77  doc/eng-us/examples/ini-settings/exphelp/Title
 0ba48a9cf37cdfb565b1e917929eefb3  doc/eng-us/examples/ini-settings/exphelp/Tracker_community.md
 aeec9e7a12212b862a115f962ab8cbc8  doc/eng-us/examples/ini-settings/exphelp/Tracker_software.md
 314874544e21e6b51c13bd6ffc742008  doc/eng-us/examples/ini-settings/exphelp/Tracker_velocity.md
-bcc8ad78b240b16c67c8f473b3bb9188  doc/eng-us/examples/ini-settings/exphelp/TreeSettings.md
-e41a218af9bc2927834d2a7f658872bc  doc/eng-us/examples/ini-settings/exphelp/TypeSettings.md
+d8d4b6871487efefb04cdec3491e199d  doc/eng-us/examples/ini-settings/exphelp/TreeSettings.md
+09397ee5eb42bd5d30e3aef0a692441c  doc/eng-us/examples/ini-settings/exphelp/TypeSettings.md
 dae15689b65dac0b6640120102738692  doc/eng-us/examples/ini-settings/expservices-expportal/Portal.md
 8d6a0e1d1cf136baab84004d31f218ab  doc/eng-us/examples/ini-settings/expservices-expportal/README.md
 18da3e1f07b3db6ebd7885c7f2ec29fd  doc/eng-us/examples/ini-settings/expservices-expservices/Community.md
@@ -5111,7 +5113,7 @@ b8f311c90dbb9b1e2f4a8feb39fe40d9  doc/eng-us/examples/ini-settings/menu/Leftmenu
 04b4f5e6e6d06f7191c49b819aee916c  doc/eng-us/examples/ini-settings/menu/Leftmenu_media.md
 0c229b73285123b7c862dce39918aadc  doc/eng-us/examples/ini-settings/menu/Leftmenu_my.md
 2b37550947dd619acf36d51a63ece07c  doc/eng-us/examples/ini-settings/menu/Leftmenu_my_mega.md
-bffeaab6cf20d154ddd46773fc643196  doc/eng-us/examples/ini-settings/menu/Leftmenu_setup.md
+44d20e686500808435093ee83b79b570  doc/eng-us/examples/ini-settings/menu/Leftmenu_setup.md
 be3201513686289ad19abc02d2f79bcc  doc/eng-us/examples/ini-settings/menu/Leftmenu_shop.md
 00226ae53130ef43d693e0c592608bac  doc/eng-us/examples/ini-settings/menu/Leftmenu_user.md
 948f812204dd28949c8520e32c42f922  doc/eng-us/examples/ini-settings/menu/Leftmenu_user_mega.md
@@ -5119,7 +5121,7 @@ be3201513686289ad19abc02d2f79bcc  doc/eng-us/examples/ini-settings/menu/Leftmenu
 af20f5a9a359ddbbcefbd5c11923a8f3  doc/eng-us/examples/ini-settings/menu/MenuContentSettings.md
 88fbb1e69a6f84e2bbb8b80069f0da32  doc/eng-us/examples/ini-settings/menu/MenuSettings.md
 264a258b2c9c41d391327fd7954b11cc  doc/eng-us/examples/ini-settings/menu/NavigationPart.md
-17655d2dc242229ae5b9bd2a6c69a9f4  doc/eng-us/examples/ini-settings/menu/README.md
+f87067f26116e9c0f056bbdb0e5c33e1  doc/eng-us/examples/ini-settings/menu/README.md
 79d221630e57232e13f4cd63e345c325  doc/eng-us/examples/ini-settings/menu/SelectedMenu.md
 2a5ddc50ed27e3621011b4b753b32914  doc/eng-us/examples/ini-settings/menu/TopAdminMenu.md
 3801f05fa5941fcbd899696a788e6cca  doc/eng-us/examples/ini-settings/menu/TopOnly.md
@@ -5536,14 +5538,14 @@ d98157d9fa323471a1d85edbd71dadbb  doc/eng-us/examples/ini-settings/site/PasskeyS
 026229cc329f932cef3703538e24c34b  doc/eng-us/examples/ini-settings/site/PasswordSettings.md
 db568a7c6a790ae47b375a22aff291ab  doc/eng-us/examples/ini-settings/site/PortAccessSettings.md
 3714ba86f9deca30858e35271af055af  doc/eng-us/examples/ini-settings/site/ProxySettings.md
-83d9b5031a681c47b1bdee9148132fea  doc/eng-us/examples/ini-settings/site/README.md
+245a380dc99c237b447f2e1397fb4d29  doc/eng-us/examples/ini-settings/site/README.md
 08b294507b813f03bbb995305d430031  doc/eng-us/examples/ini-settings/site/RSSSettings.md
 4d12fc781fc7be917617fa4f3d165142  doc/eng-us/examples/ini-settings/site/ReauthGroup_account.md
 abc8f5ba626146a4e03e45d2cd0a21c8  doc/eng-us/examples/ini-settings/site/ReauthGroup_content.md
 f1c2e4d5f7849e72a14d212aba037d8b  doc/eng-us/examples/ini-settings/site/ReauthGroup_delete.md
 14465b5c0056e1a428e985fbbe2dd8ff  doc/eng-us/examples/ini-settings/site/ReauthGroup_export.md
 caaf319bef61aea8a96c7e4e3e2617b7  doc/eng-us/examples/ini-settings/site/ReauthGroup_system.md
-045123fa4b7e5be62d6fa65c72ddcc8c  doc/eng-us/examples/ini-settings/site/ReauthGroup_users.md
+a717b3ec7e0e55b3dfeb1bd45fa50b00  doc/eng-us/examples/ini-settings/site/ReauthGroup_users.md
 2386f6d38beeb105bc6ea8269c96bca3  doc/eng-us/examples/ini-settings/site/ReauthSettings.md
 2b2b4808ddb2c376e2a4a165f1475bbf  doc/eng-us/examples/ini-settings/site/RegionalSettings.md
 f28588e05ec0e35f21c7961596721b67  doc/eng-us/examples/ini-settings/site/RequestLogSettings.md
@@ -5559,6 +5561,7 @@ e48642eee4dbd6e70732b2362277b641  doc/eng-us/examples/ini-settings/site/Session.
 f919ae53a39eb0dbdae8797d7dc8691e  doc/eng-us/examples/ini-settings/site/SiteAccessRules.md
 f1f282858d2e96fad6a4bf2c0fa8be23  doc/eng-us/examples/ini-settings/site/SiteAccessSettings.md
 d27566e784eeb0553e0f193084e84431  doc/eng-us/examples/ini-settings/site/SiteDataSettings.md
+9dc44b25aaefa222d40e9e4ae9c6145f  doc/eng-us/examples/ini-settings/site/SiteSearchSuggestSettings.md
 9c7893cd8fdb562ad88192fc8f906324  doc/eng-us/examples/ini-settings/site/SiteSettings.md
 02edbbb315e15fd0cc25a6a4e7f4db63  doc/eng-us/examples/ini-settings/site/TemplateBridgeSettings.md
 7f49107a3863d0c6ba769baa561d084b  doc/eng-us/examples/ini-settings/site/TemplateSettings.md
@@ -5803,7 +5806,7 @@ ef6349083925cd2714e8bf8d03ea0cb6  doc/eng-us/examples/ini-settings/units/BinaryP
 d56bd0119117724ec28451b955cf9040  doc/eng-us/examples/ini-settings/units/FakeBinaryPrefixes.md
 dd6d7906b719b6760aa1bc4f73629d05  doc/eng-us/examples/ini-settings/units/README.md
 0e232771066dcceaa317c813e63cbefe  doc/eng-us/examples/ini-settings/upgrade/README.md
-9a8879195729f8c0c136e1875035eb05  doc/eng-us/examples/ini-settings/upgrade/UpgradeSettings.md
+3e6aa3c338f62e830f3a3b48e345a510  doc/eng-us/examples/ini-settings/upgrade/UpgradeSettings.md
 9e1b1ccf30cd6e71aea2f74dba8e332d  doc/eng-us/examples/ini-settings/upload/BugFileUpload.md
 250a3b352f951ffa60262e4294242ab6  doc/eng-us/examples/ini-settings/upload/CreateSettings.md
 fab0fc00ce80a0f18ebccd6e6f08f37d  doc/eng-us/examples/ini-settings/upload/LocationSettings.md
@@ -5887,7 +5890,7 @@ f389a70f96befc288e984f50f2661bab  doc/eng-us/examples/migration-steps/sql.md
 8d7bc74d322f4d4a9df7b75f60de94fe  doc/eng-us/examples/migration-steps/url_alias.md
 cd880b717583b4bdf2c2e8919a72789c  doc/eng-us/examples/migration-steps/user.md
 887c3683f69cb7a5a4d18671aa6b41bf  doc/eng-us/examples/migration-steps/user_group.md
-43f805b339a80b152bae70c38259b1aa  doc/eng-us/examples/module-views/README.md
+0e986e306565ee055ec4444e05465dbd  doc/eng-us/examples/module-views/README.md
 d47ea617a5a6ef7957b8ab9f59d987fc  doc/eng-us/examples/module-views/apikey/README.md
 ffa53e72494d43ac42b742210fb45311  doc/eng-us/examples/module-views/apikey/list.md
 2805e18cdf0c9a1e3a48b7131199e9c1  doc/eng-us/examples/module-views/audit/README.md
@@ -5903,7 +5906,7 @@ e22433b68c18da8323917ccfd09fe2e5  doc/eng-us/examples/module-views/audit/setting
 8c85bf32fd584fa262b054e744d84f2b  doc/eng-us/examples/module-views/class/README.md
 c0d70b2d8b2662c913c233b9b2bc938e  doc/eng-us/examples/module-views/class/classlist.md
 aede429b1acfc537b242bf4bef7c0506  doc/eng-us/examples/module-views/class/copy.md
-a2a3eefa49ed513a7e3a95e96929acef  doc/eng-us/examples/module-views/class/datatype.md
+99d7116fea5fc6cd29cdf952da3bbea3  doc/eng-us/examples/module-views/class/datatype.md
 e0cd2c61243eea1f6295914c9250676c  doc/eng-us/examples/module-views/class/down.md
 2738b930e5ec6d4d0cf251553cd25eef  doc/eng-us/examples/module-views/class/edit.md
 6703a1252f589ab4a9c028517799a377  doc/eng-us/examples/module-views/class/groupedit.md
@@ -5918,7 +5921,7 @@ f6630aafe1facb40d7b7e5691e565b64  doc/eng-us/examples/module-views/collaboration
 1674cf092806140ff5c00c9ee28ad1a4  doc/eng-us/examples/module-views/collaboration/group.md
 df54384a09e4f3f09b08a080e3737a01  doc/eng-us/examples/module-views/collaboration/item.md
 0c14661a9916c362be636b31fb44a077  doc/eng-us/examples/module-views/collaboration/view.md
-2d89be5b502fa1aa2ec51eea6ada9bb7  doc/eng-us/examples/module-views/content/README.md
+f9daa8c6a93296835a25ca57cdca5f5f  doc/eng-us/examples/module-views/content/README.md
 115381decabdfaae353339119c859b4d  doc/eng-us/examples/module-views/content/action.md
 694332e8a553ef63ba95f2ed30d0965b  doc/eng-us/examples/module-views/content/advancedsearch.md
 c4b9736ca2053881c149c5859f35d7e6  doc/eng-us/examples/module-views/content/bookmark.md
@@ -5952,6 +5955,7 @@ e80e5c4b0e19f9c7fabe716bc93ed509  doc/eng-us/examples/module-views/content/resto
 9da3dcb5c7272db94cc70edc0732cb72  doc/eng-us/examples/module-views/content/reverserelatedlist.md
 3d85fd1c5fd75991ccf1d47c8c43f374  doc/eng-us/examples/module-views/content/search.md
 07d3c2efe5d7afdb762e78363fbc2f04  doc/eng-us/examples/module-views/content/sharedpreview.md
+6317ad0b43405ed7c34cf6dbddea2fb9  doc/eng-us/examples/module-views/content/sitesuggest.md
 dddfc4e2143d0532aa6053b3313e27bc  doc/eng-us/examples/module-views/content/subitemsexport.md
 b456b918ec5f2dc5b72b15dc6acd867a  doc/eng-us/examples/module-views/content/suggest.md
 2c2489947b2f6f6788a09b04dc065127  doc/eng-us/examples/module-views/content/tipafriend.md
@@ -6273,7 +6277,7 @@ abad9585e60aa8d8afb7caceb4f1d032  doc/eng-us/examples/policies/README.md
 d6ec3bba02deac72d2831972526df59a  doc/eng-us/examples/policies/audit.md
 ad10095b797f6b5becb28574a063235d  doc/eng-us/examples/policies/class.md
 603182180d85ceca82756313d39c4670  doc/eng-us/examples/policies/collaboration.md
-ea0daf2d07eca04a5b80422a1fc0a0d4  doc/eng-us/examples/policies/content.md
+4374b8ffbe1f48331f0305150de7d160  doc/eng-us/examples/policies/content.md
 ac2216b59c0f58dfd52c41b566006ed3  doc/eng-us/examples/policies/contentcheck.md
 bd86883afe035e3e6031db57af41d74c  doc/eng-us/examples/policies/contentfinder.md
 479c60c474fe0d9573ecf89189c46fb5  doc/eng-us/examples/policies/csp.md
@@ -6397,10 +6401,10 @@ a5e30ddb58041606ce8705b2723cfb26  doc/eng-us/examples/template-operators/count_w
 f2a50c3f8ce9f472873147e1fcd9ebe5  doc/eng-us/examples/template-operators/crc32.md
 68afbe6c6b5dad32ef302229022857e0  doc/eng-us/examples/template-operators/csp_nonce.md
 9758cdd5af58a7fc4abd3d7dfdc88727  doc/eng-us/examples/template-operators/currentdate.md
-93b4ae09ea0a38ce5b70dc418147d69f  doc/eng-us/examples/template-operators/d18n.md
+89aa232f820bc59230b5b0ff406f936a  doc/eng-us/examples/template-operators/d18n.md
 e4d3444331815860b0afa9149fa2b282  doc/eng-us/examples/template-operators/datetime.md
 804269193aeca09f5c94e1f42ec5f3f9  doc/eng-us/examples/template-operators/dec.md
-3747de7edc9db9eddd8b96b655b1616a  doc/eng-us/examples/template-operators/div.md
+483073de599204f04e4910f45a6ee4ba  doc/eng-us/examples/template-operators/div.md
 11291d86fd6455fc9ec886ce54d5de8b  doc/eng-us/examples/template-operators/downcase.md
 037c0feed1e1bbd84336e660a3e11269  doc/eng-us/examples/template-operators/dump.md
 c74c4fef619b0fecc141328864240e87  doc/eng-us/examples/template-operators/ends_with.md
@@ -6431,7 +6435,7 @@ f1fe00b01912a2ac3e87393751ee3edd  doc/eng-us/examples/template-operators/ezoe_in
 bf124eef28f7130446249229cf21a950  doc/eng-us/examples/template-operators/ezpackage.md
 22bb22b814dbcf36da16009b7a275efe  doc/eng-us/examples/template-operators/ezpreference.md
 88f9ffdcbb6b08ddce8ebaee15af60d4  doc/eng-us/examples/template-operators/ezroot.md
-8ae24e0f20fffa67f2313e5ab12ec9da  doc/eng-us/examples/template-operators/ezscript.md
+b36efb6cbc8f86ce21a323881433dbc2  doc/eng-us/examples/template-operators/ezscript.md
 881859fc2a47fe194ce95f1fb3c7afa5  doc/eng-us/examples/template-operators/ezscript_load.md
 6eaacc402d4b3cdf055ec5e815258452  doc/eng-us/examples/template-operators/ezscript_require.md
 5adb32547e1d249d676440d13054a8c0  doc/eng-us/examples/template-operators/ezscriptfiles.md
@@ -6444,7 +6448,7 @@ d67163ed425f9b1af757689b4cd3092e  doc/eng-us/examples/template-operators/eztoc.m
 ac12ee9fc1e3e73ae0d7dc7712f2a0bd  doc/eng-us/examples/template-operators/first_set.md
 b852fc93ff0de9a8f3a143d6b7dd904a  doc/eng-us/examples/template-operators/flag_icon.md
 e469ecf9727732100512cc6e94e137c6  doc/eng-us/examples/template-operators/float.md
-dac8b3e4ab4d46916cc71936605fed96  doc/eng-us/examples/template-operators/floor.md
+20350f11cc1ca471103f43635cef3bce  doc/eng-us/examples/template-operators/floor.md
 4530e9177200c88530eaf7dd02338789  doc/eng-us/examples/template-operators/ge.md
 890c5a9b2df18a5d34ef565a5fbb253d  doc/eng-us/examples/template-operators/get_class.md
 08066aa4c7555176009a76ee5e4ac638  doc/eng-us/examples/template-operators/get_type.md
@@ -6858,7 +6862,7 @@ f591dfeee412831cbf4c9ec450c93dc6  doc/eng-us/features/6.0/admin-links-follow-per
 730f4bd870741ba72e0b822ed910c9fd  doc/eng-us/features/6.0/admin-list-paging.md
 a20fc339f62ddfac2c3df7da80ebfdfc  doc/eng-us/features/6.0/admin3-responsive-admin.md
 a29a680e52b85935874388c9c6d885bd  doc/eng-us/features/6.0/admin3-sidebar-width-and-font-size.md
-0fc9e7109e671d185e8485d5213921e5  doc/eng-us/features/6.0/admin4-design.md
+373274809dddfdbf578d951cb855d5f7  doc/eng-us/features/6.0/admin4-design.md
 c39d570092f54064a972f04dc1ae069e  doc/eng-us/features/6.0/admin4l.md
 4e6288e58d6f4884e2c040b863cbb545  doc/eng-us/features/6.0/adminneo-database-manager.md
 64d6c14e6630ba2fab70560d20ccab11  doc/eng-us/features/6.0/audit-trail.md
@@ -6950,7 +6954,7 @@ c1612437070da67fdd2723c6b1e1c2b2  doc/eng-us/features/6.0/extensions/xrowmetadat
 3f29ad01e9f5d278ca8af3fe2d21d253  doc/eng-us/features/6.0/form-expired-page.md
 b388ac5e100e8398638ffe8c4c6c8207  doc/eng-us/features/6.0/graphql.md
 d764ef1d7e05fc5071e8521fe1dbe843  doc/eng-us/features/6.0/help-content.md
-116ea4542f2f4bcb0a25ca2fc4e0f5a7  doc/eng-us/features/6.0/help-system.md
+d3ff37b5648c2a9fb96777c8e828b67f  doc/eng-us/features/6.0/help-system.md
 1497f038f1fb68bf320b385032fe2e31  doc/eng-us/features/6.0/hidden-admin-tabs.md
 67e2133c059b3294dd3d9275b167b820  doc/eng-us/features/6.0/icon-themes-in-extensions.md
 c8c732f08abfb2593fd5f7599f60905f  doc/eng-us/features/6.0/install-in-one-command.md
@@ -7064,7 +7068,7 @@ e8e271a078b41c7c877fad14d5156f2e  doc/eng-us/features/6.0/web-server-and-solr-co
 9a239d46246c4ca0e1d8f6ddd3bf6a24  doc/eng-us/features/6.0/website-sidebar.md
 a5621820f4516cedaa2b79e888328b30  doc/eng-us/glossary.md
 4c9effab75570c880f3e4c867f7cbc80  doc/eng-us/goals.md
-83d6fad960407b69527c7bb31029137c  doc/eng-us/guides/README.md
+779ee126c4a171834e1581e9ff0c028d  doc/eng-us/guides/README.md
 c3cd4759e8cbd9569458f6ad5c01021a  doc/eng-us/guides/a-static-blog-with-exponential.md
 cb328df2d889368b2297e4864f4c9c19  doc/eng-us/guides/a-static-documentation-site.md
 9ad99407df5b2fe54c265f5cb65a9870  doc/eng-us/guides/api-keys.md
@@ -7083,6 +7087,7 @@ b73a9d2acee4cfc8c68b3afca0bab7a5  doc/eng-us/guides/classic-menu-settings.md
 0d950613e911e841b9e077b18947dbde  doc/eng-us/guides/datatypes.md
 573e975acd458e4c7374e74421300628  doc/eng-us/guides/deploying.md
 23a9c8cdb46d76ce256d68b16b140ee7  doc/eng-us/guides/develop-in-public-publish-free.md
+38571ead9141d04c59c149d0a38ba5c4  doc/eng-us/guides/documenting-an-extension.md
 ab00d66607f66a79d69efd28d9fba855  doc/eng-us/guides/drafts-and-pending.md
 9ada1e3590016a37138e5ff78bab4322  doc/eng-us/guides/environment-variables.md
 a518e62944d14435eac07c9fde4b2306  doc/eng-us/guides/extensions-page.md
@@ -8154,7 +8159,7 @@ b55979e7920e055ef0510c1fa317b499  doc/eng-us/help/creators/app-creators/deployin
 85f89c1ac2ae76e66b0f3c7468df107d  doc/eng-us/help/creators/app-creators/exponential-as-an-application-platform.md
 a27bfaa7d63dfec9be40c2fc6f7bbd09  doc/eng-us/help/creators/app-creators/exponential-intelligence.md
 cb41b39b38102b539cff85e472bfa5a5  doc/eng-us/help/creators/app-creators/extending-exponential-intelligence.md
-627a840b5a00a8a953a71b7033bf083f  doc/eng-us/help/creators/app-creators/extension-anatomy.md
+8546a858aee0c067373e673ff2ae128a  doc/eng-us/help/creators/app-creators/extension-anatomy.md
 c3329393cbdc5146b456c028d7730612  doc/eng-us/help/creators/app-creators/fetch-functions.md
 3aa8f9bb3addc7c770a7af4d07a75551  doc/eng-us/help/creators/app-creators/forms-csrf-and-http-input.md
 34384f5026ddfc7e9361c97f444d9eb2  doc/eng-us/help/creators/app-creators/headless-exponential.md
@@ -8949,7 +8954,7 @@ dde29042339641a20482b672785d5488  doc/eng-us/help/extension-development/part-1-f
 4ff73208f2f5c2a72c72c9a7703b564d  doc/eng-us/help/extension-development/part-1-from-user-to-developer/finding-ideas-on-github.md
 fd6e107bfa535c4a6311d9733c61d877  doc/eng-us/help/extension-development/part-1-from-user-to-developer/finding-ideas-on-packagist.md
 630439462a1cf8c2e42c609d702f1940  doc/eng-us/help/extension-development/part-1-from-user-to-developer/finding-the-extensions-on-your-site.md
-a27bed5b988f6b8bacc02a0405cb6a34  doc/eng-us/help/extension-development/part-1-from-user-to-developer/learning-from-an-extension-step-by-step.md
+908afde627a9b1602b4df2c055704260  doc/eng-us/help/extension-development/part-1-from-user-to-developer/learning-from-an-extension-step-by-step.md
 3e03974bdb6fccdca4d502ea891b4d65  doc/eng-us/help/extension-development/part-1-from-user-to-developer/learning-from-the-books.md
 47d20095a32ab9a21d437a1014fa252c  doc/eng-us/help/extension-development/part-1-from-user-to-developer/linking-versus-copying.md
 23c0c7c9a962f0b243f9e6760ad131c3  doc/eng-us/help/extension-development/part-1-from-user-to-developer/projects-exponential-earth.md
@@ -9000,7 +9005,7 @@ db6de29d7385007ad882222ba267081b  doc/eng-us/help/extension-development/part-3-e
 eff5a797ab04242b578384923cd895e3  doc/eng-us/help/extension-development/part-3-extension-developer/datatypes.md
 25bdb6c2a22b3888762cf08daac87787  doc/eng-us/help/extension-development/part-3-extension-developer/debugging-extensions.md
 51bd3d7c1e54ba5d9c542ebe87f098a2  doc/eng-us/help/extension-development/part-3-extension-developer/design-in-an-extension.md
-133f9ef9f30c98bed04f615170e95756  doc/eng-us/help/extension-development/part-3-extension-developer/documenting-your-extension.md
+0377b41cee0f1f1854bf2698c37e2692  doc/eng-us/help/extension-development/part-3-extension-developer/documenting-your-extension.md
 73cc69f82965d44390d2e32ff53625a2  doc/eng-us/help/extension-development/part-3-extension-developer/events-and-filters.md
 2aa80e9a27f075a25b8605e9983567c5  doc/eng-us/help/extension-development/part-3-extension-developer/extension-directory-layout.md
 8ed855cabc7a3454ab6bfbd7e028a5da  doc/eng-us/help/extension-development/part-3-extension-developer/extension-load-order.md
@@ -9027,7 +9032,7 @@ c077985caa03cbc88d77f81dbf55f9b2  doc/eng-us/help/extension-development/part-3-e
 cac8418ad545825d5969a56a813309cf  doc/eng-us/help/extension-development/part-3-extension-developer/tutorials/by-hand-custom-tag.md
 7cde2951f1dcbeadd252b09c04cf7f39  doc/eng-us/help/extension-development/part-3-extension-developer/tutorials/by-hand-datatype.md
 3b12c0c02a419c63bb272fa09d59fa5c  doc/eng-us/help/extension-development/part-3-extension-developer/tutorials/by-hand-fetch-function.md
-98eadc97b33ac87a41135b32a684a953  doc/eng-us/help/extension-development/part-3-extension-developer/tutorials/by-hand-help-pages-for-your-extension.md
+b670fa62660530d47d6ed1bb123966f5  doc/eng-us/help/extension-development/part-3-extension-developer/tutorials/by-hand-help-pages-for-your-extension.md
 a4d8f5fb7a43bb58993a63e1ab01fa98  doc/eng-us/help/extension-development/part-3-extension-developer/tutorials/by-hand-minimal-extension.md
 a334d1f12b22b6049d07adb87359dba2  doc/eng-us/help/extension-development/part-3-extension-developer/tutorials/by-hand-module-with-a-policy.md
 072afe91b97672d0f3bb10a0fb4bdaca  doc/eng-us/help/extension-development/part-3-extension-developer/tutorials/by-hand-module-with-a-view.md
@@ -9150,8 +9155,8 @@ a6a9efd435e39ef46122917603f19a13  doc/eng-us/help/extension-development/part-8-r
 ebd3dfa8be2e8b94d68670aa5b1ac443  doc/eng-us/help/extension-development/part-8-reference/ezworkflowtype-api.md
 0e4a0101c8198a68071aaaeef8aa5429  doc/eng-us/help/extension-development/part-8-reference/fetch-functions-reference.md
 bd2c2b888f7bb10a5fd7e147426c3f5c  doc/eng-us/help/extension-development/part-8-reference/glossary-for-extension-developers.md
-56e842af2dce982c0f36eff05360391c  doc/eng-us/help/extension-development/part-8-reference/help-system-for-extensions.md
-abae68073f7e901caad77f5e8867aa29  doc/eng-us/help/extension-development/part-8-reference/ini-files-for-extension-authors.md
+8422ed73f23bf71cd5fb198338ea8fbe  doc/eng-us/help/extension-development/part-8-reference/help-system-for-extensions.md
+5f15cbbb1c39b9cd1b942082838e3a64  doc/eng-us/help/extension-development/part-8-reference/ini-files-for-extension-authors.md
 5e8bdc7b13d70a1bf5d3eb3dea999a60  doc/eng-us/help/extension-development/part-8-reference/template-functions-reference.md
 1147b9dd3530ed2f52a8106dfbd59639  doc/eng-us/help/extension-development/part-8-reference/template-operators-reference.md
 41d53309d3d564e95ea7a8b649c95ce5  doc/eng-us/help/extension-development/reading-paths.md
@@ -11688,7 +11693,7 @@ c1f7a212ea842e5d20ea84e5fb9f577a  doc/eng-us/help/press/why-it-is-called-exponen
 0f29e522057b0fac13c4aa217a6291c0  doc/eng-us/help/press/writing-about-funding-and-sponsors.md
 4596960dd1928e5ff75ece6bb3f1ac1f  doc/eng-us/help/press/writing-about-the-community.md
 3d1e47b6b2c52a73bbb582ae17937106  doc/eng-us/help/press/writing-about-the-ez-publish-years.md
-8803893c5e43856c48793f81f6967e12  doc/eng-us/help/project-files.md
+2256b8e4072258e6387918b8dec7b3c5  doc/eng-us/help/project-files.md
 61a020971043323372adb5b3563602f6  doc/eng-us/help/project/README.md
 b2c2e8cb2f45eab8944874c308f83e05  doc/eng-us/help/project/about-the-project.md
 a2b81b7e7e6819b7366db25e6f83c340  doc/eng-us/help/project/build-with-exponential.md
@@ -11857,7 +11862,7 @@ b9b72d9c8a56b8bdf348ba62febac831  doc/eng-us/help/software-engineers/contributin
 dc916d101aeeb97158abe0e0a74e5caf  doc/eng-us/help/software-engineers/dependency-management-with-composer.md
 1773511673a35c6a7a9bf20c76c7cf0d  doc/eng-us/help/software-engineers/deploying-a-change.md
 1d10d28043f7bddd7a73c2103c3afde7  doc/eng-us/help/software-engineers/design-review-checklist.md
-633f0febcf152b6bfed334beaaad984c  doc/eng-us/help/software-engineers/documentation-as-code.md
+50f019491e59cca0b67e2f34934220e5  doc/eng-us/help/software-engineers/documentation-as-code.md
 9a6fd316cf7eaf26a8edd55619672d93  doc/eng-us/help/software-engineers/evaluating-exponential.md
 46f8df574e714859b368d2af4633d2d5  doc/eng-us/help/software-engineers/events-extension-points-and-plugins.md
 fa45a1f8b3f6a9dbc2d398fdff75190a  doc/eng-us/help/software-engineers/exponential-for-software-engineers.md
@@ -12817,7 +12822,7 @@ c7cdb0d6a8282f5615c51c97d03961b5  doc/eng-us/history/2026/2026-06b.md
 baf0a1abb1a74ef6750c9fabd489f337  doc/eng-us/history/2026/2026-09a.md
 5d5ee79c7f0a6884d2c882cf316977b0  doc/eng-us/history/2026/2026-09b.md
 cb6bd94501ab228bc30231d0dcdac14c  doc/eng-us/history/2026/2026-10.md
-f141dae6f33c684548da6af923b32140  doc/eng-us/history/README.md
+9e19d5586f13d7ff0c6d800b384a0d4a  doc/eng-us/history/README.md
 ce37311e8dbae6d00d565cabfb7eb117  doc/eng-us/history/coverage.md
 3d3da2c9608f58cec6e8c77f0edcf081  doc/eng-us/history/ecosystem.md
 4282c626398cba0e3b13294c6497c776  doc/eng-us/history/ecosystem/DoctrineBundle.md
@@ -13503,16 +13508,18 @@ f56beaea3e5d700ac7442b6a68d85cc2  doc/ger-de/.examples/descriptions/35-user-mana
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 84ecf8b47bf44a9a3d53d86b719e8e1b  doc/ger-de/.examples/strings.json
-f004be693a836110ad5950e653a0db90  doc/ger-de/.paths.json
+3230b50ddd6164b46fbd408a2273e403  doc/ger-de/.paths.json
 86c4bc42e93188f788000c1f76e44d5b  doc/ger-de/CONFIGURING.md
-67d0c51338ceda6e163e950f05431c3a  doc/ger-de/EXTENDING.md
-dd4f3c83254131baddcfcb807aa44d8f  doc/ger-de/INSTALL.md
+1cd811669f94673b3ba9db99603f0f42  doc/ger-de/DISTRIBUTIONS.md
+d92e7d32e4f6ac50174e4d7f82ca379b  doc/ger-de/EXTENDING.md
+7bec84c63be0f20f31d152df583d426b  doc/ger-de/HISTORY.md
+f714ac81a205d3c9771c77072df79204  doc/ger-de/INSTALL.md
 ed36201d5767d3703631603291985142  doc/ger-de/INTEGRATING.md
 28bb0394d0d8b5056ebfe1a57ae0bd12  doc/ger-de/LIZENZ-GFDL-1.3.txt
 d4444f60d9f3f6fd7dc43dc6edac7e39  doc/ger-de/README-LIZENZ.md
 35f2e2b3176ed05cb4e6cd1a8e7adf0f  doc/ger-de/UNINSTALL.md
 64854fc59591a4ec01a5ebadf2dd63d1  doc/ger-de/UPDATE.md
-ad3d69e92147819bf922bba79d05bf30  doc/ger-de/anleitungen/README.md
+35bfbadaf629f0eb133012e06396910f  doc/ger-de/anleitungen/README.md
 a21d414954375daf4142412f3609d82a  doc/ger-de/anleitungen/aktualisieren-mit-der-konsole.md
 d7290775402c11f9bffa68a14215d46a  doc/ger-de/anleitungen/aktualisieren.md
 00b768f89ffba00f97d83b38c9fb6a5d  doc/ger-de/anleitungen/api-schluessel.md
@@ -13568,6 +13575,7 @@ ff26b11a2d28f8fee575a03afb1d9aaa  doc/ger-de/anleitungen/caches.md
 be84d6ea2accb0fb7881b73e5cc9e0cb  doc/ger-de/anleitungen/datentypen.md
 e9159f73e1f92f04a0571a6696814f4c  doc/ger-de/anleitungen/eigentuemer-aendern.md
 187275b90a6a296fc3e1d51138bf9d46  doc/ger-de/anleitungen/ein-statisches-blog-mit-exponential.md
+ecf5050bf3158f3d72a6e59ccdb12a88  doc/ger-de/anleitungen/eine-extension-dokumentieren.md
 b406cbc3208dc72c2f80f6fd73e6c3ae  doc/ger-de/anleitungen/eine-statische-dokumentations-site.md
 1d34a16a2b5967dd35fff27ef271a844  doc/ger-de/anleitungen/einstellungsseite.md
 3fe6751fd962193fc20de472c59b64c5  doc/ger-de/anleitungen/entfernte-dienste-und-apps.md
@@ -14967,8 +14975,8 @@ a0bf82fc93b2f98e337b2bc30484e228  doc/ger-de/beispiele/ini-einstellungen/exphelp
 c33ef1623aecfc5904c4a9dcf73e69bc  doc/ger-de/beispiele/ini-einstellungen/exphelp/Tracker_community.md
 f1fc889c88ef62869c704363e2914a11  doc/ger-de/beispiele/ini-einstellungen/exphelp/Tracker_software.md
 d77071a743107de563390806d2cb44fd  doc/ger-de/beispiele/ini-einstellungen/exphelp/Tracker_velocity.md
-ddcb8b2c2ec69bfc5f70fd7d2d15023f  doc/ger-de/beispiele/ini-einstellungen/exphelp/TreeSettings.md
-329410698568b23a4ce9933f3a1f1337  doc/ger-de/beispiele/ini-einstellungen/exphelp/TypeSettings.md
+0992b5fc5f4118490de4d57a5f9ded13  doc/ger-de/beispiele/ini-einstellungen/exphelp/TreeSettings.md
+9a84e14512044df8e77951955a60b0de  doc/ger-de/beispiele/ini-einstellungen/exphelp/TypeSettings.md
 d4dd3bcf407cd3e2211a65f104d5f211  doc/ger-de/beispiele/ini-einstellungen/expservices-expportal/Portal.md
 dfd63961180fbe5f8501b2620ffadf96  doc/ger-de/beispiele/ini-einstellungen/expservices-expportal/README.md
 0ca07087b4317d31390db9f3b8bb6c9d  doc/ger-de/beispiele/ini-einstellungen/expservices-expservices/Community.md
@@ -16654,7 +16662,7 @@ a437b6de2cfeb8157ec0bd620cfe6f82  doc/ger-de/beispiele/workflow-ereignisse/ezfin
 65dddf148faeeed5b008171d5ecc92c8  doc/ger-de/beispiele/workflow-ereignisse/ezwaituntildate.md
 7bb1b4550c0b752f61d29753d8b8061f  doc/ger-de/bilder/sprachen/abdeckungskarte.svg
 800b87bb88f68ebbb35579602e7f762c  doc/ger-de/bilder/sprachen/abdeckungskarte.webp
-1a99ff81e679dcb26606964706be3852  doc/ger-de/branch-uebersicht.md
+c8f823d883c4ef52e169e1729393f510  doc/ger-de/branch-uebersicht.md
 5c1300ec13825a45839a835e74c558e0  doc/ger-de/funktionen/3.10/berechtigung-sektion-zuweisen.txt
 b514de4f1454d62ac50e3695adbffcb4  doc/ger-de/funktionen/3.10/mehrsprachige-url-aliase.txt
 e0dffdec5d5d7e60e1651602bc20176e  doc/ger-de/funktionen/3.10/override-bedingungen-fuer-weiterempfehlen.txt
@@ -16875,7 +16883,7 @@ acc487d9c36faff1bcb4a95e881e5d84  doc/ger-de/funktionen/5.3/shop_product_datatyp
 c42f6063193b16db2d02b1241393196b  doc/ger-de/funktionen/6.0/admin-links-folgen-den-berechtigungen.md
 bb1cb6cf268ab524e4a3ea1fd0eef9f6  doc/ger-de/funktionen/6.0/admin3-responsives-admin.md
 e2836e805e1dcad6c266afcbd5b608a8  doc/ger-de/funktionen/6.0/admin3-seitenleistenbreite-und-schriftgroesse.md
-ae1385fc9b5750c96eb03becb214efe0  doc/ger-de/funktionen/6.0/admin4-design.md
+df9628b3e6e2ed83e2bb453730f0f340  doc/ger-de/funktionen/6.0/admin4-design.md
 35bf105cf4d756df21ca7a2618426c19  doc/ger-de/funktionen/6.0/admin4l.md
 60e8c726f4ab01642d28261fd8386769  doc/ger-de/funktionen/6.0/adminneo-datenbankverwaltung.md
 b5ab866318b551d544f0563be5b5b6a3  doc/ger-de/funktionen/6.0/anfrageprotokolle.md
@@ -16975,7 +16983,7 @@ eb3d2bb16f19518e5d5f40301852dfa7  doc/ger-de/funktionen/6.0/generator-fuer-den-s
 182d80bb708aaaa1348d28e88f2008aa  doc/ger-de/funktionen/6.0/graphql.md
 e667b2bcfdc637b0ebf0d7ce755249e5  doc/ger-de/funktionen/6.0/handler-fuer-inhaltseinschraenkungen.md
 68d47347beaa485aeeced24a6f68bde7  doc/ger-de/funktionen/6.0/hilfeinhalte.md
-c471e96c3409339cf72fdd6df382e963  doc/ger-de/funktionen/6.0/hilfesystem.md
+44f8d0457800d58ca536960314991892  doc/ger-de/funktionen/6.0/hilfesystem.md
 445e9e9efb5d3397ac8acc5ce905b8bb  doc/ger-de/funktionen/6.0/icon-themes-in-extensions.md
 6a93174afff8017d38daaa3e8a6bcebc  doc/ger-de/funktionen/6.0/info-und-paketseiten.md
 5b3b088b68957758753acb3f0e3a1ca5  doc/ger-de/funktionen/6.0/inhalts-finder.md
@@ -17122,7 +17130,7 @@ a5c50abb255008458d9b98ac41541881  doc/ger-de/geschichte/2026/2026-06a.md
 33ed205a05ee7fc7c84b0e998f54977d  doc/ger-de/geschichte/2026/2026-09a.md
 7b97f2a4629b5dbee11a0a6c40ae3b77  doc/ger-de/geschichte/2026/2026-09b.md
 aee0e1a937b203d880e0e4d7bae3dff9  doc/ger-de/geschichte/2026/2026-10.md
-823226bd175d6be0e9923d44deb9c770  doc/ger-de/geschichte/README.md
+6cc361100780f9a0a812f529301ceea3  doc/ger-de/geschichte/README.md
 c4e7bc456b8f458cb84ea8aea45eb564  doc/ger-de/geschichte/abdeckung.md
 9840fec868601cf27213f9723db558de  doc/ger-de/geschichte/aenderungsverzeichnis/AdminAid.md
 422c8e49bfcf7b302132277c12daf679  doc/ger-de/geschichte/aenderungsverzeichnis/DoctrineBundle.md
@@ -18694,7 +18702,7 @@ eb7faae068fa628e6e0bdedb8aa322e8  doc/ger-de/hilfe/e-commerce/settings/shopaccou
 8a1950157ad1fa5637ed07d9167852ad  doc/ger-de/hilfe/ersteller/anwendungsentwickler/anwendungen-testen.md
 dae875bbcfa48ecb1bd010f301b1c8ee  doc/ger-de/hilfe/ersteller/anwendungsentwickler/anwendungsentwickler-hier-beginnen.md
 9d1e6e34dbc03478a8c84b5ad61a7fa8  doc/ger-de/hilfe/ersteller/anwendungsentwickler/architektur-fuer-anwendungsentwickler.md
-9670de49acf61e1f90965b6d7cd01e52  doc/ger-de/hilfe/ersteller/anwendungsentwickler/aufbau-einer-erweiterung.md
+2595e707f63bc9dfe86cdd692960df3b  doc/ger-de/hilfe/ersteller/anwendungsentwickler/aufbau-einer-erweiterung.md
 5e3c75bf61f39ad5e15c5a230b2a70ea  doc/ger-de/hilfe/ersteller/anwendungsentwickler/autoloads-und-klassenbenennung.md
 407109b8e445d1140f7d0072d8e99c7e  doc/ger-de/hilfe/ersteller/anwendungsentwickler/benachrichtigungen-und-mail.md
 b8377b76b1025cc371f096e0bcd7b3cf  doc/ger-de/hilfe/ersteller/anwendungsentwickler/caching-in-anwendungen.md
@@ -18849,7 +18857,7 @@ bd7ad7d739a8507fd42ddd011b1e521d  doc/ger-de/hilfe/erweiterungsentwicklung/teil-
 f9dd8fec0232a47bbaa943b909e35e76  doc/ger-de/hilfe/erweiterungsentwicklung/teil-1-vom-benutzer-zum-entwickler/ihre-erste-stunde-als-entwickler.md
 99e8ffe388fa57b997b3339c629c91d6  doc/ger-de/hilfe/erweiterungsentwicklung/teil-1-vom-benutzer-zum-entwickler/lizenzen-vor-der-wiederverwendung-lesen.md
 eb9b17ed778d86ec910b73cadfcdb4b5  doc/ger-de/hilfe/erweiterungsentwicklung/teil-1-vom-benutzer-zum-entwickler/projects-exponential-earth.md
-8f12714080e81873450d4a5b0776c89b  doc/ger-de/hilfe/erweiterungsentwicklung/teil-1-vom-benutzer-zum-entwickler/schritt-fuer-schritt-von-einer-erweiterung-lernen.md
+31b8a103284f9c461b9da9db45801569  doc/ger-de/hilfe/erweiterungsentwicklung/teil-1-vom-benutzer-zum-entwickler/schritt-fuer-schritt-von-einer-erweiterung-lernen.md
 6cc86126b354350ce9c5c0a6d15cd274  doc/ger-de/hilfe/erweiterungsentwicklung/teil-1-vom-benutzer-zum-entwickler/share-exponential-earth.md
 2602626cd5fcb3bf0aedef9dfdf879b9  doc/ger-de/hilfe/erweiterungsentwicklung/teil-1-vom-benutzer-zum-entwickler/verlinken-oder-kopieren.md
 dcf5b549e157f385580fccac9e55e33e  doc/ger-de/hilfe/erweiterungsentwicklung/teil-1-vom-benutzer-zum-entwickler/was-eine-erweiterung-ist.md
@@ -18899,7 +18907,7 @@ a0025a8e7044f97c78ad5afd0754379a  doc/ger-de/hilfe/erweiterungsentwicklung/teil-
 a2f65a31a90b5513a845d90d02c36bc2  doc/ger-de/hilfe/erweiterungsentwicklung/teil-3-erweiterungsentwickler/fakten-themes-und-logos-fuer-die-systemkarte.md
 e5f84f0ca95e477959e3269be8b442c3  doc/ger-de/hilfe/erweiterungsentwicklung/teil-3-erweiterungsentwickler/fetch-funktionen.md
 981b9711891ce3862ba5f2abf2d1206a  doc/ger-de/hilfe/erweiterungsentwicklung/teil-3-erweiterungsentwickler/handler-ueber-einstellungen-benennen.md
-8dad462870c25efbb79e105411b4efaf  doc/ger-de/hilfe/erweiterungsentwicklung/teil-3-erweiterungsentwickler/ihre-erweiterung-dokumentieren.md
+9fb7362f3604b6f2d35ab16299caf50d  doc/ger-de/hilfe/erweiterungsentwicklung/teil-3-erweiterungsentwickler/ihre-erweiterung-dokumentieren.md
 098dde34eb8dea473feb557b6b1767ac  doc/ger-de/hilfe/erweiterungsentwicklung/teil-3-erweiterungsentwickler/kernel-overrides-der-letzte-ausweg.md
 658aa3e0dbb08e73ab5e0e84a6390b86  doc/ger-de/hilfe/erweiterungsentwicklung/teil-3-erweiterungsentwickler/ladereihenfolge-der-erweiterungen.md
 21d516d140f74194a69d949f586c70f3  doc/ger-de/hilfe/erweiterungsentwicklung/teil-3-erweiterungsentwickler/leistung-in-erweiterungen.md
@@ -18927,7 +18935,7 @@ f2af391bc08d70cf4c5eec62b5ee2c77  doc/ger-de/hilfe/erweiterungsentwicklung/teil-
 59248b48818461f74add432efd839b23  doc/ger-de/hilfe/erweiterungsentwicklung/teil-3-erweiterungsentwickler/tutorials/von-hand-datentyp.md
 ebb0bbe3001aea1f5cd9d0d661de2a41  doc/ger-de/hilfe/erweiterungsentwicklung/teil-3-erweiterungsentwickler/tutorials/von-hand-eigene-tabelle-mit-persistentem-objekt.md
 d915aa28b0d9e93f76c23517b52bd8c1  doc/ger-de/hilfe/erweiterungsentwicklung/teil-3-erweiterungsentwickler/tutorials/von-hand-fetch-funktion.md
-0f659af1a59e96d2a1c54b98b20d2592  doc/ger-de/hilfe/erweiterungsentwicklung/teil-3-erweiterungsentwickler/tutorials/von-hand-hilfeseiten-fuer-ihre-erweiterung.md
+d73cfecd2af019682b06009664ab46ef  doc/ger-de/hilfe/erweiterungsentwicklung/teil-3-erweiterungsentwickler/tutorials/von-hand-hilfeseiten-fuer-ihre-erweiterung.md
 d1f807cccbe38e290234fabfbaac3848  doc/ger-de/hilfe/erweiterungsentwicklung/teil-3-erweiterungsentwickler/tutorials/von-hand-minimale-erweiterung.md
 259aec3393e90718758a64cebb1e8e56  doc/ger-de/hilfe/erweiterungsentwicklung/teil-3-erweiterungsentwickler/tutorials/von-hand-modul-mit-richtlinie.md
 2a2417d362c8cd1db9fcdd08f7727ca0  doc/ger-de/hilfe/erweiterungsentwicklung/teil-3-erweiterungsentwickler/tutorials/von-hand-modul-mit-view.md
@@ -19038,9 +19046,9 @@ fd15c4cdd2d282bcd0e6b171dc990fd1  doc/ger-de/hilfe/erweiterungsentwicklung/teil-
 466cd33943ca0010d950677627a01729  doc/ger-de/hilfe/erweiterungsentwicklung/teil-8-referenz/ezworkflowtype-api.md
 fc42d44465b2f2ea43eb8c979b7b0acd  doc/ger-de/hilfe/erweiterungsentwicklung/teil-8-referenz/fehlercodes-und-modulergebnisse.md
 f589b2bb14cc05ca961aed9cd72d01ec  doc/ger-de/hilfe/erweiterungsentwicklung/teil-8-referenz/glossar-fuer-erweiterungsentwickler.md
-ced66a1f64608ec4630f76ebc4e176e2  doc/ger-de/hilfe/erweiterungsentwicklung/teil-8-referenz/hilfesystem-fuer-erweiterungen.md
+3dab3752d97b15d827b6a727170d00df  doc/ger-de/hilfe/erweiterungsentwicklung/teil-8-referenz/hilfesystem-fuer-erweiterungen.md
 3236c31ae605107f19b829af8d8bd68b  doc/ger-de/hilfe/erweiterungsentwicklung/teil-8-referenz/inhaltsfunktionen-aus-php.md
-4e48c2be553b4dd545aaec68c2ee90cc  doc/ger-de/hilfe/erweiterungsentwicklung/teil-8-referenz/ini-dateien-fuer-erweiterungsautoren.md
+c892cc76746a661a47a6506ce63741dd  doc/ger-de/hilfe/erweiterungsentwicklung/teil-8-referenz/ini-dateien-fuer-erweiterungsautoren.md
 bdf341a1f64569a264438985584a93d4  doc/ger-de/hilfe/erweiterungsentwicklung/teil-8-referenz/konsolenbefehle-fuer-entwickler.md
 010b170cb70a882c96fe5503010ac01e  doc/ger-de/hilfe/erweiterungsentwicklung/teil-8-referenz/referenz-der-fetch-funktionen.md
 5f55b21f3cd9c1338ee429b84605edaf  doc/ger-de/hilfe/erweiterungsentwicklung/teil-8-referenz/referenz-der-template-funktionen.md
@@ -20563,7 +20571,7 @@ d67a690066e82331b7f0914d1936f604  doc/ger-de/hilfe/projekt/mit-exponential-bauen
 8de4c2387108ed3fe91f73766daf5f5a  doc/ger-de/hilfe/projekt/unterstuetzung-erhalten.md
 48bef02fd241141dcc9f29ce1754f132  doc/ger-de/hilfe/projekt/verhaltenskodex.md
 0e387802fda4fe2400fa5dbcf1de93e8  doc/ger-de/hilfe/projekt/zum-projekt-beitragen.md
-844c2dea4b786d018b10b819da645dad  doc/ger-de/hilfe/projektdateien.md
+13a6e800dcebfc55bce27d6fbc1807e7  doc/ger-de/hilfe/projektdateien.md
 364a5760522de955d4481e682e446fe7  doc/ger-de/hilfe/rundgang-durch-die-administration.md
 a85b1e0a5ca224ed96b8cd423e8c85e9  doc/ger-de/hilfe/seitenpakete/README.md
 190b8e1722736fb69d61f2812ed0caff  doc/ger-de/hilfe/seitenpakete/admin-oberflaeche/README.md
@@ -20658,7 +20666,7 @@ f6d7722fd05bb14f5012d2a44023f56f  doc/ger-de/hilfe/softwareingenieure/api-design
 0643133ce71cc85afe514c04e6b7ef92  doc/ger-de/hilfe/softwareingenieure/checkliste-fuer-sicherheitspruefungen.md
 3bb2ef0b50c2a2cddf47f6a655c3bb67  doc/ger-de/hilfe/softwareingenieure/ci-gates.md
 baaccc9afcaddd692fec475dd099e175  doc/ger-de/hilfe/softwareingenieure/datenbanken-und-die-wahl-einer-datenbank.md
-73162e3d542704fa5e2091be91e1c9ff  doc/ger-de/hilfe/softwareingenieure/dokumentation-als-code.md
+5d43c69dfc8e055e01ac540d5f4ccca2  doc/ger-de/hilfe/softwareingenieure/dokumentation-als-code.md
 8f7890ca56a8a84cb3ca840170cf0479  doc/ger-de/hilfe/softwareingenieure/eine-aenderung-bereitstellen.md
 012507c96d3fd220755ca1e56577996b  doc/ger-de/hilfe/softwareingenieure/events-erweiterungspunkte-und-plugins.md
 6bf72f04af6b0d068a55352b6122149c  doc/ger-de/hilfe/softwareingenieure/exponential-bewerten.md
@@ -24966,7 +24974,7 @@ e36bbe93748e047396c720e927431ea9  kernel/classes/help/content/exphelpmanualsync.
 bdd022a78ded90fa2ef96ce71a1bfeb3  kernel/classes/help/content/rest/exphelprestviewcontroller.php
 87426f43762967b08e1326eeecfd935a  kernel/classes/help/exphelp.php
 a63ff9934a8519aa4b506d0e5cfebfee  kernel/classes/help/exphelpallowlist.php
-e8f367c1c9ccf87e77b623c890412fee  kernel/classes/help/exphelpaudience.php
+484b09c3ee362720ef36bc2b2886fde2  kernel/classes/help/exphelpaudience.php
 0a220545866ed07af78d148550f03023  kernel/classes/help/exphelpcommitfeed.php
 5378d01788118723dc59f7347128b4cd  kernel/classes/help/exphelpcontextpageinterface.php
 f546e5b19a93c07565afe222731b0a3d  kernel/classes/help/exphelpcontextproviderinterface.php
@@ -27126,7 +27134,7 @@ db2bae948264a3a4af9be5be6760321b  settings/debugbar.ini
 b0c004af769060ac23ef847a4250a782  settings/design.ini
 b244336d7be89b1697f8232f4f0fe201  settings/editorpolicies.ini
 32345e49a48d1f9bf1251ad9dde479b7  settings/error.ini
-5e166f3862dad198ecf4546b41aeeb80  settings/exphelp.ini
+b5611dd75b46623c75bef5e94029bd61  settings/exphelp.ini
 4209ce0fc8d74237bef6f2415d450959  settings/extendedattributefilter.ini
 e87b6557bf97b4e7a43f052afcca7015  settings/ezxml.ini
 fb2495206b5c7b42cdef926446b6f7c0  settings/fetchalias.ini
@@ -27144,7 +27152,7 @@ ba0c39f06c1735dda504b831ab1f89ef  settings/ldap.ini
 473463c7f61e8acbcf8e30e022d70c59  settings/logviewer.ini
 f38064dccc9974bbc272bd49a25b4a96  settings/mailpreferences.ini
 c1f0320332dab25bd13faf6ea46c6a74  settings/membermanagement.ini
-8bcaffb72c9a6a9e57e5bfc1c6825692  settings/menu.ini
+49a6fde2791c518fd9a6a414de5b84db  settings/menu.ini
 e3d712d03b9a8b2596ecbe61f2fbd2ad  settings/migration.ini
 71a7ac0296299fca0a6f1ae1b62ae817  settings/mime.ini
 409f9d6ffd0d2b030179c0d01f0a0e00  settings/module.ini
@@ -28619,7 +28627,7 @@ c7efb57d2cd3262114888210fa5ff3e4  tests/tests/design/AdminSearchTest.php
 6fb26c4c02b0cc7d20306448d08db456  tests/tests/design/AdminSectionScopeTest.php
 8ece8ddb00b8dc5b62126ebd234606ea  tests/tests/design/AdminSelfContainedTest.php
 8a3b808d1ee42e2d45746587cb9cdd28  tests/tests/design/AdminSetupOverviewTest.php
-c14605b059143dd7cdcd79fe6d02daa0  tests/tests/design/AdminSetupTabsLeftMenuTest.php
+becf07bd65d7e0176ce0f392fbe7454e  tests/tests/design/AdminSetupTabsLeftMenuTest.php
 1bbd917d4b1d5f827bd2928bccacba89  tests/tests/design/AdminSetupWizardTemplatesTest.php
 94a67d0efe9a74e17b3bd6d35233b34d  tests/tests/design/AdminSidebarDrawerTest.php
 6915ce6688eed31f2837d7020708d9e3  tests/tests/design/AdminSiteAccessMenuTest.php

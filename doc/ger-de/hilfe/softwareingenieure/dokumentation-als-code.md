@@ -79,6 +79,9 @@ Die Hilfe zeigt die Dokumentation, die jede aktive Erweiterung mitbringt (ihr Ve
 LICENSE), unter `/exphelp/extensions`, im selben Betrachter und in derselben Suche
 ([Hilfesystem für Erweiterungen](../erweiterungsentwicklung/teil-8-referenz/hilfesystem-fuer-erweiterungen.md),
 [Ihre Erweiterung dokumentieren](../erweiterungsentwicklung/teil-3-erweiterungsentwickler/ihre-erweiterung-dokumentieren.md)).
+Die Konvention ist dieselbe Dokumentation als Code: `README.md` und `INSTALL.md` oben in `extension/<name>/`, jede
+weitere Seite als Markdown (`.md`) in `extension/<name>/doc/`, auf Englisch
+([Eine Extension dokumentieren](../../anleitungen/eine-extension-dokumentieren.md)).
 
 ## Schreibregeln
 

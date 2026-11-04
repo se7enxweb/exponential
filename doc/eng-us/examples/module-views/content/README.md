@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # The content module
 
-Name `eZContentObject`, defined in `kernel/content/module.php`. 46 views.
+Name `eZContentObject`, defined in `kernel/content/module.php`. 47 views.
 
 | View | Address | Policy functions |
 |---|---|---|
@@ -47,6 +47,7 @@ Name `eZContentObject`, defined in `kernel/content/module.php`. 46 views.
 | [reverserelatedlist](reverserelatedlist.md) | `/content/reverserelatedlist/<NodeID>` | reverserelatedlist |
 | [search](search.md) | `/content/search` | read |
 | [sharedpreview](sharedpreview.md) | `/content/sharedpreview/<Token>` | read |
+| [sitesuggest](sitesuggest.md) | `/content/sitesuggest` | read |
 | [subitemsexport](subitemsexport.md) | `/content/subitemsexport/<NodeID>` | read |
 | [suggest](suggest.md) | `/content/suggest` | read |
 | [tipafriend](tipafriend.md) | `/content/tipafriend/<NodeID>` | tipafriend; read |

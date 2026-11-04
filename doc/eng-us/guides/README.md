@@ -107,6 +107,7 @@ Read them in this order the first time. Each one also stands on its own.
 | [Smarty templates: security and escaping](smarty-templates-security.md) | `wash` against Smarty's `escape` and `raw`, values from visitors printed safely, what Smarty can reach, the form token, what never goes into a cache block, a review checklist | 15 minutes |
 | [Extensions](extensions.md) | An extension found, installed, switched on and configured; one of your own built and released | 45 minutes |
 | [The Extensions page](extensions-page.md) | Extensions activated, deactivated and put in order in one list, the changes reviewed with their risks and applied, the written and the real loading order told apart | 10 minutes |
+| [Documenting an extension](documenting-an-extension.md) | README.md and INSTALL.md on top of the extension, every other page as Markdown (.md) in its doc/, in English; the pages in the help center with order, titles and context help; an old plain-text document turned into Markdown | 20 minutes |
 | [Deploying](deploying.md) | The site served by Apache with PHP-FPM, by Velocity or by FrankenPHP, with HTTPS | 30 minutes |
 | [Setting up .htaccess and config.php from the console](setup-files-from-the-console.md) | `.htaccess` and `config.php` copied from their templates with a backup and no silent overwrite, a `config.php` setting read, set and removed without an editor, the files compared with the new templates after an upgrade | 10 minutes |
 | [Operating a site](operating-a-site.md) | The right caches cleared, cronjobs running, static cache and preload on, a backup, a checklist | 30 minutes |
@@ -238,6 +239,7 @@ You write extensions, templates with logic, commands and integrations.
 
 1. [Getting started](getting-started.md), then the settings tool: [exp:ini](../features/6.0/exp-ini-command.md).
 2. [Extensions](extensions.md), section 6 and 7: build an extension by hand or with the RAD wizards, and release it.
+   Its documentation: [Documenting an extension](documenting-an-extension.md) (README.md and INSTALL.md on top, the rest as Markdown in `doc/`).
    Extension points (RAD): [RAD tools](../features/6.0/rad-tools.md), [the extension points](../bc/6.0/rad-extension-points.md), [the extension surface](../bc/6.0/rad-extension-surface.md), [RAD security](../bc/6.0/rad-security.md).
 3. Commands, cronjobs and module views as classes: [Commands, cronjob parts and module views](../bc/6.0/cli_cronjob_view_abstractions.md) and the [specification](../specifications/6.0/runnable-commands-cronjobs-views.md); [Console](../bc/6.0/console.md).
 4. Metadata and services: [Remote services and apps](remote-services-and-apps.md) (the guide), [Personal API keys](api-keys.md) (REST with a key), [Extension metadata](../specifications/6.0/extension-metadata.md), [Backend services over ezjscore](../bc/6.0/backend_ezjscore_services.md).

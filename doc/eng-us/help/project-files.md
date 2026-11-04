@@ -29,7 +29,9 @@ Their addresses start with `project/`, followed by the path of the file in the r
 `/exphelp/viewer/project/README.md`, `/exphelp/viewer/project/SECURITY.md`. The `README.md` files of the command line
 scripts (`project/bin/...`), the designs and the kernel are shown too, when those directories have one.
 
-The documentation of the extensions is not among them: it has its own category, **Extensions**. Tests, the files
+The documentation of the extensions is not among them: it has its own category, **Extensions** (an extension keeps
+`README.md` and `INSTALL.md` on top and every other page as Markdown in its `doc/`; see
+[Documenting an extension](../guides/documenting-an-extension.md)). Tests, the files
 of hidden directories such as `.github/` (the pull request template) and anything else that is not meant to be read
 as documentation are never shown here.
 

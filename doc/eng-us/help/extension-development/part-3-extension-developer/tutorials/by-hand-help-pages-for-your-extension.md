@@ -3,7 +3,7 @@ title: "By hand: help pages for your extension"
 audience: developer, app-creator, designer
 category: extension-development
 order: 220
-summary: Put an extension's documentation into the admin help center: doc/ pages with front matter, the ExtensionDocDirs opt-in, context help for its views, and checking with exp:help.
+summary: Put an extension's documentation into the admin help center: doc/ pages with front matter, shown while the extension is active (ExtensionDocDirs only for an inactive one), context help for its views, and checking with exp:help.
 keywords: tutorial, by hand, help pages, help center, exphelp, ExtensionDocDirs, front matter, context help, ContextHelp, Map, ext/, exp:help check, documentation
 type: help
 ---
@@ -47,17 +47,21 @@ git -C extension/mysite_hello add doc
 git -C extension/mysite_hello commit -m "Added: Help pages for mysite_hello"
 ```
 
-## 3. Opt in
+## 3. Commit and activate
 
-The installation decides which extensions' docs it shows, in its `settings/override/exphelp.ini.append.php` (or a site
-extension):
+Commit both pages in the extension's repository. While `mysite_hello` is active, the help center shows them on its
+own (`[IndexSettings] ActiveExtensionDocs=enabled`, the default), with the ids `ext/mysite_hello/README.md` and
+`ext/mysite_hello/compose.md`, under **Extensions**. A `README.md` and an `INSTALL.md` on top of
+`extension/mysite_hello/` would be shown too; every other page belongs in `doc/`, as Markdown, in English
+([Documenting an extension](../../../../guides/documenting-an-extension.md)).
+
+Only to show the pages of an extension that is **not** active, the installation names it in its
+`settings/override/exphelp.ini.append.php`:
 
 ```ini
 [IndexSettings]
 ExtensionDocDirs[]=mysite_hello
 ```
-
-The pages get the ids `ext/mysite_hello/README.md` and `ext/mysite_hello/compose.md`.
 
 ## 4. Context help
 

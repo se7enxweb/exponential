@@ -80,7 +80,7 @@ Every shipped INI file of the kernel and the bundled extensions, one page per bl
 | [setup.ini](setup/README.md) | kernel | 24 |
 | [shop.ini](shop/README.md) | kernel | 10 |
 | [shopaccount.ini](shopaccount/README.md) | kernel | 3 |
-| [site.ini](site/README.md) | kernel | 66 |
+| [site.ini](site/README.md) | kernel | 67 |
 | [smarty.ini](smarty/README.md) | kernel | 1 |
 | [soap.ini](soap/README.md) | kernel | 2 |
 | [solr.ini](solr/README.md) | kernel | 1 |

@@ -3,14 +3,14 @@ title: Das Hilfesystem für Erweiterungen
 audience: developer
 category: extension-development
 order: 360
-summary: Die Dokumentation einer Erweiterung in die Hilfe der Administration bringen - ExtensionDocDirs, Front Matter und Zielgruppen-IDs, README-Dateien der Ordner, Kontexthilfe mit Map[] und Providern sowie exp:exphelp check.
+summary: Die Dokumentation einer Erweiterung in die Hilfe der Administration bringen - README.md und INSTALL.md oben, Markdown in doc/, angezeigt, solange die Erweiterung aktiv ist (ExtensionDocDirs für eine inaktive), Front Matter und Zielgruppen-IDs, README-Dateien der Ordner, Kontexthilfe mit Map[] und Providern sowie exp:help check.
 keywords: Hilfesystem, Hilfe, Dokumentation, Front Matter, Zielgruppe, Kontexthilfe, Linkprüfung, help system, exphelp, ExtensionDocDirs, front matter, audience, category, summary, featured, hidden, ContextHelp, Map, Providers, expHelpContextProviderInterface, exp:exphelp check
 type: help
 ---
 # Das Hilfesystem für Erweiterungen
 
-Teil 8, Referenz 32. Das Hilfezentrum der Administration zeigt die Dokumentation des Kernels und, wenn sich die
-Installation dafür entscheidet, die von Erweiterungen. Diese Seite fasst die Einstellungen und Dateikonventionen an
+Teil 8, Referenz 32. Das Hilfezentrum der Administration zeigt die Dokumentation des Kernels und jeder aktiven
+Erweiterung. Diese Seite fasst die Einstellungen und Dateikonventionen an
 einer Stelle zusammen. Die Erklärung steht in [Ihre Erweiterung dokumentieren](../teil-3-erweiterungsentwickler/ihre-erweiterung-dokumentieren.md),
 das Tutorial in [Hilfeseiten für Ihre Erweiterung, von Hand](../teil-3-erweiterungsentwickler/tutorials/von-hand-hilfeseiten-fuer-ihre-erweiterung.md)
 und die vollständige Beschreibung in [Das Hilfesystem](../../../funktionen/6.0/hilfesystem.md) und seiner
@@ -18,14 +18,24 @@ und die vollständige Beschreibung in [Das Hilfesystem](../../../funktionen/6.0/
 
 ## Ihren doc-Ordner ausliefern
 
+| Wo | Was |
+|---|---|
+| `extension/myext/README.md`, `INSTALL.md` | oben in der Erweiterung; außerdem `CHANGELOG*`, `LICENSE*`, `USAGE*`, `COPYING*` (`ExtensionTopFiles[]`) |
+| `extension/myext/doc/` | jede weitere Seite, als Markdown (`.md`), auf Englisch; `doc/README.md` oder `doc/index.md` ist die Startseite |
+
+Solange die Erweiterung aktiv ist (`[IndexSettings] ActiveExtensionDocs=enabled`, die Vorgabe), liefert die Hilfe die
+**von Git verfolgten** Dateien beider Orte aus, mit den Seiten-IDs `ext/myext/<path below doc>`. Nicht verfolgte
+Dateien werden nicht angezeigt. Klartextseiten (`.txt`, `.rst`, eine `README` ohne Endung) älterer Erweiterungen
+erscheinen weiterhin, als Klartext. Um die Seiten einer nicht aktiven Erweiterung zu zeigen, nennen Sie sie in
+`settings/exphelp.ini.append.php` der Installation:
+
 ```ini
 [IndexSettings]
 ExtensionDocDirs[]=myext
 ```
 
-in `settings/exphelp.ini.append.php` der Installation (oder Ihrer Erweiterung). Die Hilfe liefert dann die **von Git
-verfolgten** Markdown-Dateien aus `extension/myext/doc/` aus, mit den Seiten-IDs `ext/myext/<path below doc>`. Nicht
-verfolgte Dateien werden nicht angezeigt.
+Die Konvention, mit einem Baum und einem umgewandelten Beispiel:
+[Eine Extension dokumentieren](../../../anleitungen/eine-extension-dokumentieren.md).
 
 ## Front Matter
 

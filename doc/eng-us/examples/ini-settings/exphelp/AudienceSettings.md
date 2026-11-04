@@ -137,7 +137,7 @@ AudienceIcons[community]=chat-left-dots
 
 > <pattern>;<audience,audience>, first match wins ("\*" also matches "/")  
 
-Default: a list of 100: `doc/eng-us/help/manual/*;editor,admin,user`, `doc/eng-us/help/leadership/*;project-manager`, `doc/eng-us/help/business/*;sales-marketing`, `doc/eng-us/help/partners/*;partner`, `doc/eng-us/help/advocates/*;advocate`, `doc/eng-us/help/designers/*;designer`, `doc/eng-us/help/hosting/*;hosting`, `doc/eng-us/help/creators/app-creators/*;app-creator`, `doc/eng-us/help/creators/website-creators/*;website-creator`, `doc/eng-us/help/creators/*;app-creator,website-creator`, `doc/eng-us/help/supporters/*;supporter`, `doc/eng-us/help/sponsors/*;sponsor` ....
+Default: a list of 104: `doc/eng-us/help/manual/*;editor,admin,user`, `doc/eng-us/help/leadership/*;project-manager`, `doc/eng-us/help/business/*;sales-marketing`, `doc/eng-us/help/partners/*;partner`, `doc/eng-us/help/advocates/*;advocate`, `doc/eng-us/help/designers/*;designer`, `doc/eng-us/help/hosting/*;hosting`, `doc/eng-us/help/creators/app-creators/*;app-creator`, `doc/eng-us/help/creators/website-creators/*;website-creator`, `doc/eng-us/help/creators/*;app-creator,website-creator`, `doc/eng-us/help/supporters/*;supporter`, `doc/eng-us/help/sponsors/*;sponsor` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -165,7 +165,7 @@ PathRules[]=doc/eng-us/help/trainers/*;trainer
 PathRules[]=doc/eng-us/help/community/*;community
 PathRules[]=doc/eng-us/help/ecosystem/*;ecosystem
 PathRules[]=doc/eng-us/help/php-developers/*;php-developer
-# ... 80 more in the shipped file
+# ... 84 more in the shipped file
 */ ?>
 ```
 

@@ -121,6 +121,7 @@ the [6.0.15 changelog](../../changelogs/6.0/6.0.15.md).
 ## Related pages
 
 - [Guides: the learning path](../guides/README.md)
+- [History of Exponential (1999 - 2026)](../HISTORY.md): the whole story of the code since 1999
 - [Glossary](../glossary.md)
 - [Coverage: every change accounted for](coverage.md)
 - [Ledger of all repositories](ledger/README.md)

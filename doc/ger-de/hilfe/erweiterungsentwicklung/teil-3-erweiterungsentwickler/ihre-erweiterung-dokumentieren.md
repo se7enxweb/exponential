@@ -3,7 +3,7 @@ title: Ihre Erweiterung dokumentieren, einschließlich Hilfeseiten
 audience: developer, app-creator, designer
 category: extension-development
 order: 370
-summary: Eine Erweiterung dort dokumentieren, wo Menschen suchen, und sie mit ExtensionDocDirs, Front Matter, hervorgehobenen Seiten und Kontexthilfe für Ihre Views in das Hilfe-Center der Administration bringen.
+summary: Eine Erweiterung dort dokumentieren, wo Menschen suchen: README.md und INSTALL.md oben, der Rest als Markdown in doc/, auf Englisch; das Hilfe-Center zeigt sie, solange die Erweiterung aktiv ist, mit Front Matter, hervorgehobenen Seiten und Kontexthilfe für Ihre Views.
 keywords: Dokumentation, README, Changelog, Hilfe-Center, Kontexthilfe, Front Matter, hervorgehoben, documentation, README, doc folder, changelog, help center, exphelp, ExtensionDocDirs, front matter, context help, ContextHelp Map, expHelpContextProviderInterface, featured, GFDL
 type: help
 ---
@@ -16,10 +16,17 @@ Dokumentation neben die des Kernels in das Hilfe-Center der Administration bring
 
 ## Die Dokumente
 
+Die Konvention: `README.md` und `INSTALL.md` oben in `extension/<extensionName>/`, jede weitere Seite als Markdown
+(`.md`) in `extension/<extensionName>/doc/`, auf Englisch. Alte Extensions lieferten Klartext (`README`, `doc/*.txt`),
+der weiterhin angezeigt wird; neue und überarbeitete nutzen Markdown. Die vollständige Referenz, mit einem
+Verzeichnisbaum und einem in Markdown umgewandelten Klartextdokument:
+[Eine Extension dokumentieren](../../../anleitungen/eine-extension-dokumentieren.md).
+
 | Datei | Enthält |
 |---|---|
 | `README.md` | was sie tut, in einem Absatz, Anforderungen, Installation, Aktivierung, Einstellungen, ein erstes Beispiel, Lizenz |
-| `doc/` | längere Anleitungen: Referenz der Einstellungen, Templates und ihre Variablen, Hinweise zum Upgrade |
+| `INSTALL.md` | die Installation Schritt für Schritt |
+| `doc/` | längere Anleitungen als Markdown-Seiten: Referenz der Einstellungen, Templates und ihre Variablen, Hinweise zum Upgrade |
 | `CHANGELOG.md` oder `doc/changelogs/` | was sich in jedem Release geändert hat ([Changelogs](../teil-7-veroeffentlichen/changelogs.md)) |
 | `LICENSE` | der Lizenztext |
 | `ezinfo.php`, `extension.xml` | Name, Version, Lizenz, Website ([ezinfo.php](ezinfo-php.md)) |
@@ -29,19 +36,21 @@ Versionen, die Einstellungen mit ihren Vorgaben und jeden Befehl mit seiner erwa
 
 ## Ihr doc-Ordner im Hilfe-Center
 
-Das Hilfe-Center (`/exphelp/dashboard` in der Administration) zeigt die von Git verfolgten Dateien von `doc/`. Der
-eigene Ordner `doc/` einer Erweiterung wird angezeigt, wenn sich die Installation in `settings/exphelp.ini` dafür
-entscheidet:
+Das Hilfe-Center (`/exphelp/dashboard` in der Administration) zeigt die Dokumentation jeder aktiven Erweiterung von
+selbst (`[IndexSettings] ActiveExtensionDocs=enabled`, die Vorgabe): die Dateien von `extension/mysite_hello/doc/`, die
+das Git-Repository der Erweiterung verfolgt, und oben ihre `README*`, `INSTALL*`, `CHANGELOG*`, `LICENSE*`, `USAGE*`
+und `COPYING*`. Ihre Seiten erhalten die ID `ext/mysite_hello/<path below doc>` und erscheinen unter **Extensions**.
+Nur verfolgte Dateien werden ausgeliefert; sonst wird nichts von der Erweiterung je gelesen.
+
+Auch eine nicht aktive Erweiterung kann angezeigt werden, wenn die Installation sie in `settings/exphelp.ini` nennt:
 
 ```ini
 [IndexSettings]
 ExtensionDocDirs[]=mysite_hello
 ```
 
-Die Hilfe liest dann `extension/mysite_hello/doc`, die Dateien, die vom eigenen Git-Repository der Erweiterung verfolgt
-werden, und gibt ihren Seiten die ID `ext/mysite_hello/<path below doc>`. Nur verfolgte Dateien werden ausgeliefert;
-nichts außerhalb des Ordners wird je gelesen. Siehe
-[Das Hilfesystem](../../../funktionen/6.0/hilfesystem.md).
+Siehe [Eine Extension dokumentieren](../../../anleitungen/eine-extension-dokumentieren.md) und
+[Das Hilfesystem](../../../funktionen/6.0/hilfesystem.md#dokumentation-der-extensions).
 
 ## Front Matter
 

@@ -38,7 +38,9 @@ extension/str_replace/ezinfo.php
 extension/str_replace/settings/site.ini.append.php
 ```
 
-Three files do the work: one setting, one registration, one class.
+Three files do the work: one setting, one registration, one class. The documentation sits where every extension keeps
+it: `README.md` on top, the rest in `doc/`. `doc/readme.txt` is plain text, as older extensions wrote it; new and
+updated extensions write those pages as Markdown (`.md`), in English ([Documenting an extension](../../../guides/documenting-an-extension.md)).
 
 ### Step 2: the setting that plugs it in
 

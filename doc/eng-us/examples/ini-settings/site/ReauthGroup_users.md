@@ -34,6 +34,7 @@ Enabled=true
 ## Rules
 
 > Another user's devices in full (their addresses and browsers) and signing them out  
+> the bulk actions and the CSV; the filter form (FilterButton) is a POST too and never asks  
 > Approve and Deny of a new user account waiting for approval (the workflow event  
 > "Approve user accounts"); content approvals address no account and never ask here  
 

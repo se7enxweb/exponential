@@ -86,6 +86,7 @@ Lesen Sie sie beim ersten Mal in dieser Reihenfolge. Jede steht aber auch für s
 | [Templates und Design](templates-und-design.md) | Das Design, das Sie verwenden, das Template, das ein Stück einer Seite geschrieben hat, einen Override, den Sie rückgängig machen können, das Design admin4 | 15 Minuten |
 | [Extensions](extensions.md) | Eine Extension gefunden, installiert, eingeschaltet und konfiguriert; eine eigene gebaut und veröffentlicht | 45 Minuten |
 | [Die Seite „Extensions“](extensions-seite.md) | Extensions in einer einzigen Liste aktiviert, deaktiviert und sortiert, die Änderungen mit ihren Risiken geprüft und angewendet, die geschriebene und die tatsächliche Ladereihenfolge auseinandergehalten | 10 Minuten |
+| [Eine Extension dokumentieren](eine-extension-dokumentieren.md) | README.md und INSTALL.md oben in der Extension, jede weitere Seite als Markdown (.md) in ihrem doc/, auf Englisch; die Seiten im Hilfecenter mit Reihenfolge, Titeln und Kontexthilfe; ein altes Klartextdokument in Markdown umgewandelt | 20 Minuten |
 | [Bereitstellung](bereitstellung.md) | Die Site ausgeliefert von Apache mit PHP-FPM, von Velocity oder von FrankenPHP, mit HTTPS | 30 Minuten |
 | [.htaccess und config.php von der Konsole aus einrichten](setup-dateien-von-der-konsole.md) | `.htaccess` und `config.php` aus ihren Vorlagen kopiert, mit Sicherung und ohne stilles Überschreiben, eine Einstellung in `config.php` ohne Editor gelesen, gesetzt und entfernt, die Dateien nach einem Upgrade mit den neuen Vorlagen verglichen | 10 Minuten |
 | [Betrieb einer Site](betrieb-einer-website.md) | Die richtigen Caches geleert, Cronjobs in Betrieb genommen, den statischen Cache und Preload eingeschaltet, eine Sicherung, eine Checkliste | 30 Minuten |
@@ -216,6 +217,7 @@ Sie schreiben Extensions, Templates mit Logik, Befehle und Integrationen.
 
 1. [Erste Schritte](erste-schritte.md), dann das Einstellungswerkzeug: [exp:ini](../funktionen/6.0/exp-ini-befehl.md).
 2. [Extensions](extensions.md), Abschnitte 6 und 7: eine Extension von Hand oder mit den RAD-Assistenten bauen und veröffentlichen.
+   Ihre Dokumentation: [Eine Extension dokumentieren](eine-extension-dokumentieren.md) (README.md und INSTALL.md oben, der Rest als Markdown in `doc/`).
    Erweiterungspunkte (RAD): [RAD-Werkzeuge](../funktionen/6.0/rad-werkzeuge.md), [die Erweiterungspunkte](../bc/6.0/rad-erweiterungspunkte.md), [die Erweiterungsoberfläche](../bc/6.0/rad-erweiterungsoberflaeche.md), [RAD-Sicherheit](../bc/6.0/rad-sicherheit.md).
 3. Befehle, Cronjobs und Modul-Views als Klassen: [Befehle, Cronjob-Teile und Modul-Views](../bc/6.0/cli-cronjob-und-view-abstraktionen.md) und die [Spezifikation](../spezifikationen/6.0/ausfuehrbare-befehle-cronjobs-ansichten.md); [Konsole](../bc/6.0/konsole.md).
 4. Metadaten und Dienste: [Remote-Dienste und Apps](entfernte-dienste-und-apps.md) (die Anleitung), [Persönliche API-Schlüssel](api-schluessel.md) (REST mit einem Schlüssel), [Metadaten von Extensions](../spezifikationen/6.0/extension-metadaten.md), [Backend-Dienste über ezjscore](../bc/6.0/backend-dienste-ueber-ezjscore.md).

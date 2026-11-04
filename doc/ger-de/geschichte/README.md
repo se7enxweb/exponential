@@ -122,6 +122,7 @@ Hinweise stehen im [Changelog von 6.0.15](../../changelogs/6.0/6.0.15.md).
 ## Verwandte Seiten
 
 - [Anleitungen: der Lernpfad](../anleitungen/README.md)
+- [Geschichte von Exponential (1999 - 2026)](../HISTORY.md): die ganze Geschichte des Codes seit 1999
 - [Glossar](../glossar.md)
 - [Abdeckung: jede Änderung nachgewiesen](abdeckung.md)
 - [Änderungsverzeichnis aller Repositorys](aenderungsverzeichnis/README.md)

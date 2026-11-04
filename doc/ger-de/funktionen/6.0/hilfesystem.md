@@ -146,7 +146,9 @@ PageOrder[INSTALL.md]=10
 PageOrder[CONFIGURING.md]=11
 PageOrder[EXTENDING.md]=13
 PageOrder[INTEGRATING.md]=14
+PageOrder[DISTRIBUTIONS.md]=15
 PageOrder[languages.md]=20
+PageOrder[HISTORY.md]=25
 PageOrder[branch-overview.md]=30
 PageOrder[release-overview]=40
 PageOrder[project/SECURITY.md]=50
@@ -181,6 +183,12 @@ Ihre eigene Dokumentation wird von selbst angezeigt, solange die Extension aktiv
 haben die IDs `ext/<extension>/<path>`, die die Zuordnung der Kontexthilfe nennen kann.
 
 ## Dokumentation der Extensions
+
+Die Konvention für Autoren von Extensions: `README.md` und `INSTALL.md` oben in `extension/<name>/`, jede weitere Seite
+als Markdown (`.md`) in `extension/<name>/doc/`, auf Englisch. Die Anleitung
+[Eine Extension dokumentieren](../../anleitungen/eine-extension-dokumentieren.md) erklärt sie mit einem
+Verzeichnisbaum und der Umwandlung eines alten Klartextdokuments; dieser Abschnitt nennt die Regeln, die das
+Hilfe-Center anwendet.
 
 Das Hilfe-Center findet die Dokumentation jeder **aktiven** Extension, sobald es nachsieht
 (`[IndexSettings] ActiveExtensionDocs=enabled`, der Standard; `eZExtension::activeExtensions()` der Anfrage): Eine

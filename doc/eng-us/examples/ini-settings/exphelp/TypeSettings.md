@@ -22,7 +22,7 @@ Never edit `settings/exphelp.ini` itself: an update replaces it. Put the setting
 > What kind of page a file is: its front matter (type: guide), else the first rule that matches.  
 > <pattern>;<type>, first match wins  
 
-Default: a list of 16: `doc/eng-us/help/*;help`, `doc/eng-us/guides/*;guide`, `doc/eng-us/features/*;feature`, `doc/eng-us/bc/*;bc`, `doc/changelogs/*;changelog`, `doc/eng-us/install/*;install`, `doc/eng-us/INSTALL.md;install`, `doc/eng-us/UPDATE.md;install`, `doc/eng-us/UNINSTALL.md;install`, `doc/eng-us/specifications/*;specification`, `doc/eng-us/history/*;history`, `doc/eng-us/release-overview;history` ....
+Default: a list of 21: `doc/eng-us/help/*;help`, `doc/eng-us/guides/*;guide`, `doc/eng-us/features/*;feature`, `doc/eng-us/bc/*;bc`, `doc/changelogs/*;changelog`, `doc/eng-us/install/*;install`, `doc/eng-us/INSTALL.md;install`, `doc/eng-us/CONFIGURING.md;install`, `doc/eng-us/UPDATE.md;install`, `doc/eng-us/INTEGRATING.md;install`, `doc/eng-us/DISTRIBUTIONS.md;install`, `doc/eng-us/HISTORY.md;guide` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -40,6 +40,8 @@ PathRules[]=doc/eng-us/INSTALL.md;install
 PathRules[]=doc/eng-us/CONFIGURING.md;install
 PathRules[]=doc/eng-us/UPDATE.md;install
 PathRules[]=doc/eng-us/INTEGRATING.md;install
+PathRules[]=doc/eng-us/DISTRIBUTIONS.md;install
+PathRules[]=doc/eng-us/HISTORY.md;guide
 PathRules[]=doc/eng-us/UNINSTALL.md;install
 PathRules[]=doc/eng-us/EXTENDING.md;guide
 PathRules[]=doc/eng-us/specifications/*;specification
@@ -48,7 +50,7 @@ PathRules[]=doc/eng-us/release-overview;history
 PathRules[]=doc/eng-us/examples/*;example
 PathRules[]=doc/eng-us/standards/patterns/*;catalogue
 PathRules[]=extension/*;extension
-PathRules[]=*;reference
+# ... 1 more in the shipped file
 */ ?>
 ```
 
