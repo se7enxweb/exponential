@@ -355,8 +355,13 @@
             {* The trail links (TrailLinks[]) come after the groups and "More" and belong to none *}
             {set $grouped_keys = $grouped_keys|merge( $trail_keys )}
             {foreach $ini_menu_group_list as $group}
+                {* not cond( ..., array() ): without template compilation (TemplateCompile=disabled) that gives no
+                   empty list, and the first group without GroupLinks_<group>[] took every link not yet placed *}
                 {set $group_items = array()
-                     $group_links = cond( ezini_hasvariable( $ini_section, concat( 'GroupLinks_', $group ), 'menu.ini' ), ezini( $ini_section, concat( 'GroupLinks_', $group ), 'menu.ini' ), array() )}
+                     $group_links = array()}
+                {if ezini_hasvariable( $ini_section, concat( 'GroupLinks_', $group ), 'menu.ini' )}
+                    {set $group_links = ezini( $ini_section, concat( 'GroupLinks_', $group ), 'menu.ini' )}
+                {/if}
                 {* A link already placed in an earlier group stays there: no link shows twice. A link of a section the
                    group adds (GroupSections[]) is in that group. *}
                 {foreach $items as $item}

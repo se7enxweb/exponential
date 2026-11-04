@@ -457,6 +457,22 @@ class AdminLeftMenuGroupsTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( "fetch( 'user', 'can_open'", $tpl );
     }
 
+    /**
+     * A group without GroupLinks_<group>[] gets an empty list from {set ... array()} and an {if}, not from
+     * cond( ..., array() ): without template compilation (TemplateCompile=disabled, as production sites often run) that cond
+     * gives no empty list, and the first such group (audit) took every link not yet placed, measured on the Setup
+     * overview: one group "Audit" holding the links of every group after it.
+     */
+    public function testAGroupWithoutGroupLinksStartsFromAnEmptyListWithoutCond()
+    {
+        $tpl = self::read( 'design/admin4/templates/parts/ini_menu.tpl' );
+        $this->assertDoesNotMatchRegularExpression( "/\\\$group_links = cond\(/", $tpl );
+        $this->assertMatchesRegularExpression(
+            "/\{set \\\$group_items = array\(\)\s+\\\$group_links = array\(\)\}\s*\{if ezini_hasvariable\( \\\$ini_section, concat\( 'GroupLinks_', \\\$group \), 'menu.ini' \)\}\s*\{set \\\$group_links = ezini\( \\\$ini_section, concat\( 'GroupLinks_', \\\$group \), 'menu.ini' \)\}/",
+            $tpl
+        );
+    }
+
     public function testCurrentLinkCarriesAriaCurrent()
     {
         $items = self::read( 'design/admin4/templates/parts/ini_menu_items.tpl' );
