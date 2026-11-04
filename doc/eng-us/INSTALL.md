@@ -771,6 +771,7 @@ Then continue with the guides:
 
 - [Configuring Exponential 6.0](CONFIGURING.md): where settings live and which file wins, siteaccesses, languages, mail, caches, security, extensions and logs.
 - [Extending Exponential 6.0](EXTENDING.md): extensions, modules and views, templates, datatypes, workflow events, cronjob parts, commands, tests and releases.
+- [Integrating With Exponential 6.0](INTEGRATING.md): the APIs, machine sign-in, content and events in and out, single sign-on, front ends and security for integrations.
 - [Getting started](guides/getting-started.md): first login, first content, first template change.
 - [The content model and editing content](guides/content-model-and-editing.md): classes, objects, the online editor, the trash and content jobs.
 - [Templates and design](guides/templates-and-design.md): find the template that wrote a page, override it, switch the admin design.
