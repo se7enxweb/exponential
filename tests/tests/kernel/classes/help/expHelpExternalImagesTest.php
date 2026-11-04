@@ -128,7 +128,7 @@ class expHelpExternalImagesTest extends PHPUnit\Framework\TestCase
             'Directives' => array( 'default-src' => "'self'", 'img-src' => "'self' data: blob:" ),
             'AdditionalSources' => array( 'img-src images.example.org' ),
         );
-        $ini = $this->createMock( 'eZINI' );
+        $ini = $this->createStub( 'eZINI' );
         $ini->method( 'hasVariable' )->willReturnCallback( static function ( $section, $name ) use ( &$values ) {
             return $section === 'ContentSecurityPolicy' && array_key_exists( $name, $values );
         } );

@@ -4,7 +4,8 @@
  * SQLite in process (expUserManagerSqliteTest) and MySQL/MariaDB, PostgreSQL in the database job
  * (expUserManagerDatabaseTest). Each gives a connection with the kernel schema and the clean data (the administrator
  * 14, the anonymous user 10, the groups Guest accounts, Editors and Administrator users), which it may write to. Mail is never
- * sent: expUserManager::setMailSender() keeps every mail in an array.
+ * sent: expUserManager::setMailSender() keeps every mail in an array, and the mails the kernel sends itself (the approval
+ * mail when an administrator activates an account) go to the file transport in var/tmp, removed at the end.
  *
  *  UE-1 create: a dry run changes nothing; --apply publishes an enabled account in its groups (the first is the main
  *       one), with first and last name, and the generated password signs in; the checks refuse a login that is taken,
@@ -32,6 +33,12 @@ trait expUserManagerEngineChecks
 {
     /** @var eZMail[]|null the mails expUserManager handed to the transport; null outside the checks */
     protected $userMails = null;
+
+    /** @var array|null [MailSettings] before the checks: Transport, FileTransportDirectory, DebugSending */
+    protected $userMailSettings = null;
+
+    /** @var string|null the directory of the file transport during the checks */
+    protected $userMailDir = null;
 
     /** A unique login of this run. */
     protected function userLogin( $name )
@@ -61,6 +68,13 @@ trait expUserManagerEngineChecks
         $ini = eZINI::instance();
         $this->userTracking = $ini->hasVariable( 'UserSessionSettings', 'Tracking' ) ? $ini->variable( 'UserSessionSettings', 'Tracking' ) : null;
         $ini->setVariable( 'UserSessionSettings', 'Tracking', 'disabled' );
+        $this->userMailSettings = array();
+        foreach ( array( 'Transport', 'FileTransportDirectory', 'DebugSending' ) as $var )
+            $this->userMailSettings[$var] = $ini->hasVariable( 'MailSettings', $var ) ? $ini->variable( 'MailSettings', $var ) : '';
+        $this->userMailDir = 'var/tmp/expusermanager-mail/run-' . getmypid() . '-' . bin2hex( random_bytes( 3 ) );
+        $ini->setVariable( 'MailSettings', 'Transport', 'file' );
+        $ini->setVariable( 'MailSettings', 'FileTransportDirectory', $this->userMailDir );
+        $ini->setVariable( 'MailSettings', 'DebugSending', 'disabled' );
         expUserSessionTracker::reset();
         $this->assertSame( '', expUserManager::actAs( 'admin' )['error'] );
         $this->assertSame( (int)eZUser::fetchByName( 'admin' )->attribute( 'contentobject_id' ), (int)eZUser::currentUserID() );
@@ -77,6 +91,20 @@ trait expUserManagerEngineChecks
             $ini->removeSetting( 'UserSessionSettings', 'Tracking' );
         else
             $ini->setVariable( 'UserSessionSettings', 'Tracking', $this->userTracking );
+        foreach ( (array)$this->userMailSettings as $var => $value )
+            $ini->setVariable( 'MailSettings', $var, $value );
+        $this->userMailSettings = null;
+        if ( $this->userMailDir !== null )
+        {
+            foreach ( glob( $this->userMailDir . '/*' ) ?: array() as $file )
+            {
+                if ( is_file( $file ) )
+                    unlink( $file );
+            }
+            if ( is_dir( $this->userMailDir ) )
+                rmdir( $this->userMailDir );
+            $this->userMailDir = null;
+        }
         expUserSessionTracker::reset();
     }
 

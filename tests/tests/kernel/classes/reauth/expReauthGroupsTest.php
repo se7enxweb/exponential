@@ -143,7 +143,7 @@ class expReauthGroupsTest extends PHPUnit\Framework\TestCase
     public function testTriggerHandlers()
     {
         $s = self::shipped();
-        $user = $this->getMockBuilder( 'eZUser' )->disableOriginalConstructor()->getMock();
+        $user = $this->createStub( 'eZUser' );
         $s['trigger_handlers'] = array( 'expReauthGroupsTestNotAHandler', 'expReauthGroupsTestMissing', 'expReauthGroupsTestHandler' );
         $m = expReauth::matchHandlers( $s, 'myext', 'wipe', 'POST', array( 'WipeButton' => 1 ), array(), $user );
         $this->assertSame( array( 'group' => 'delete', 'rule' => 'handler:expReauthGroupsTestHandler' ), $m );
