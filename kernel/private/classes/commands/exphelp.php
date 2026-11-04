@@ -45,7 +45,7 @@ class Exphelp extends \Exponential\Runnable\Command
                 'use-extensions' => true
             )
         );
-        $options = $this->startup( '[rebuild][list][no-images][json][audience:][category:][type:][limit:][below:][all][strict][out:][base-url:][language:][fix][paths:][dirnames:]', '', array(
+        $options = $this->startup( '[rebuild][list][no-images][keep-search][json][audience:][category:][type:][limit:][below:][all][strict][out:][base-url:][language:][fix][paths:][dirnames:]', '', array(
             'fix'      => 'maps: write .paths.json and .dirnames.json as the union of their entries, sorted',
             'paths'    => 'maps --fix: also merge the entries of this JSON file into .paths.json',
             'dirnames' => 'maps --fix: also merge the entries of this JSON file into .dirnames.json',
@@ -53,6 +53,7 @@ class Exphelp extends \Exponential\Runnable\Command
             'rebuild'  => 'index: build the index again even when the cached one is current',
             'list'     => 'index: list every page',
             'no-images' => 'index: do not fetch the external images of the pages (they stay links)',
+            'keep-search' => 'index: keep a current search index instead of building it again (the background build a help page starts)',
             'json'     => 'Print one JSON document instead of the text',
             'audience' => 'search, index --list: only pages for this audience (editor, admin, developer, user)',
             'category' => 'search, index --list: only pages of this category',
@@ -131,6 +132,20 @@ class Exphelp extends \Exponential\Runnable\Command
     }
 
     /**
+     * The search index of an index: built again (the deploy, a run by hand), or with --keep-search only when the
+     * cached one is not current. The background build a help page starts after any git operation passes it, so a
+     * rewrite of a git index that changed no page does not build the 30 MB search index again.
+     *
+     * @param \expHelpSearch $search
+     * @param array $options
+     * @return array the statistics
+     */
+    protected static function searchIndex( \expHelpSearch $search, array $options )
+    {
+        return !empty( $options['keep-search'] ) && empty( $options['rebuild'] ) ? $search->stats() : $search->rebuild();
+    }
+
+    /**
      * The report of exp:help index --language=<a translation>.
      *
      * @param array $reports directory => row
@@ -173,7 +188,7 @@ class Exphelp extends \Exponential\Runnable\Command
             $otherDocuments = $other->documents();
             $imageUrls += self::imageUrls( $other );
             $translated = count( array_filter( $otherDocuments, function ( $d ) { return empty( $d['fallback'] ); } ) );
-            $otherSearch = method_exists( 'expHelpSearch', 'rebuild' ) ? ( new \expHelpSearch( $other ) )->rebuild() : null;
+            $otherSearch = method_exists( 'expHelpSearch', 'rebuild' ) ? self::searchIndex( new \expHelpSearch( $other ), $options ) : null;
             $languageReports[$directory] = array( 'pages' => count( $otherDocuments ), 'translated' => $translated,
                                                   'fallback' => count( $otherDocuments ) - $translated,
                                                   'rebuilt' => $otherStats !== null, 'cache' => $other->cacheDir(),
@@ -196,7 +211,7 @@ class Exphelp extends \Exponential\Runnable\Command
         if ( method_exists( 'expHelpSearch', 'rebuild' ) )
         {
             $search = new \expHelpSearch( $index );
-            $searchStats = $search->rebuild();
+            $searchStats = self::searchIndex( $search, $options );
         }
         // the external images of the pages, copied for exphelp/image (expHelpRemoteImages)
         $imageStats = $this->fetchImages( $imageUrls + self::imageUrls( $index ), $options );

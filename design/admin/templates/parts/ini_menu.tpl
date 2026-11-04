@@ -17,6 +17,9 @@
    TrailLinks[] (optional, menu.ini) names links of the section drawn after all its other links, in the order
    TrailLinks[] names them, also after the links extensions append (the Dashboard menu's Change password and Edit
    profile). Access is checked as for every link; a key the user may not open is left out as always.
+   CollapseAfter=<n> (optional, menu.ini): the menu shows its first <n> links, in the order drawn (the trail links
+   last), and the rest in a "More (count)" disclosure below them, closed at first and open when it holds the current
+   page. Without it, or with 0, every link shows. Not used in the tiles.
    * menu_layout : (optional) 'tiles' draws the same links and access checks as an overview page of tiles
      (parts/ini_menu_tiles.tpl, the shared component tiles of admin4; the Setup overview, setup/setupmenu.tpl)
      instead of the menu. The links of LeadLinks[] (the overview itself) are left out; the tiles are grouped by
@@ -237,8 +240,23 @@
 
         {* DESIGN: Content START *}<div class="box-bc"><div class="box-ml"><div class="box-content">
 
+        {* CollapseAfter: the first links, then the rest in a "More" disclosure, open when it holds the current page *}
+        {def $collapse_after = 0
+             $ini_menu_parts = array( $items )
+             $ini_menu_more_open = false()}
+        {if ezini_hasvariable( $ini_section, 'CollapseAfter', 'menu.ini' )}
+            {set $collapse_after = ezini( $ini_section, 'CollapseAfter', 'menu.ini' )}
+        {/if}
+        {if and( $collapse_after|gt( 0 ), $items|count|gt( $collapse_after ) )}
+            {set $ini_menu_parts = array( $items|extract_left( $collapse_after ), $items|extract( $collapse_after ) )}
+            {foreach $ini_menu_parts[1] as $item}
+                {if and( eq( $item.state, 'link' ), $current_uri_string|begins_with( $item.url ) )}{set $ini_menu_more_open = true()}{/if}
+            {/foreach}
+        {/if}
+        {foreach $ini_menu_parts as $ini_menu_part_index => $ini_menu_part}
+        {if $ini_menu_part_index}<details class="leftmenu-more"{if $ini_menu_more_open} open{/if}><summary>{'More'|i18n( 'design/admin/pagelayout' )|wash} ({$ini_menu_part|count})</summary>{/if}
         <ul class="leftmenu-items">
-        {foreach $items as $item}
+        {foreach $ini_menu_part as $item}
             {if eq( $item.state, 'disabled' )}
                 <li><div><span class="disabled">{$item.name}</span></div></li>
             {elseif eq( $item.state, 'link' )}
@@ -248,6 +266,9 @@
             {/if}
         {/foreach}
         </ul>
+        {if $ini_menu_part_index}</details>{/if}
+        {/foreach}
+        {undef $collapse_after $ini_menu_parts $ini_menu_more_open}
 
         {* DESIGN: Content END *}</div></div></div>
     {/if}

@@ -6,7 +6,8 @@
  * navigation. The access checks per link are untouched. The Setup menu ends with the groups "AI" and "Updates" for
  * the links of the se7enx extensions (expai; ezupdate, git_manager) before "More"; a group without a link is not drawn.
  * TrailLinks[] moves links to the end of a menu, after the links extensions append and after every group, in all
- * three copies of the template (admin4, admin, adminui): the Dashboard menu closes with Change password, Edit profile.
+ * three copies of the template (admin4, admin, adminui): the Dashboard menu closes with Audit trail, Change password
+ * and Edit profile. CollapseAfter shows the first links of a one-list menu and the rest in a "More (count)" disclosure.
  *
  * Run: php vendor/bin/phpunit tests/tests/design/AdminLeftMenuGroupsTest.php
  *
@@ -48,7 +49,9 @@ class AdminLeftMenuGroupsTest extends PHPUnit\Framework\TestCase
         $values = array();
         foreach ( explode( "\n", $body ) as $line )
         {
-            if ( preg_match( '/^(\w+)\[([^\]]*)\]=(.*)$/', trim( $line ), $m ) )
+            if ( preg_match( '/^(\w+)=(.*)$/', trim( $line ), $m ) )
+                $values[$m[1]] = $m[2];
+            elseif ( preg_match( '/^(\w+)\[([^\]]*)\]=(.*)$/', trim( $line ), $m ) )
             {
                 if ( $m[2] === '' )
                     $values[$m[1]][] = $m[3];
@@ -238,10 +241,10 @@ class AdminLeftMenuGroupsTest extends PHPUnit\Framework\TestCase
     public function testDashboardMenuOrderInEveryDesign()
     {
         $wanted = array( 'content/dashboard', 'moderation/recent', 'collaboration/view/summary', 'content/pendinglist', 'content/draft', 'content/bookmark',
-                         'mailpreferences/settings', 'notification/settings', 'exphelp/dashboard', 'audit/console', 'expai/summary', 'expai/vector',
+                         'mailpreferences/settings', 'notification/settings', 'exphelp/dashboard', 'expai/summary', 'expai/vector', 'audit/console',
                          'user/password', 'user/edit/(action)/edit' );
         $my = self::iniSection( 'Leftmenu_my' );
-        $this->assertSame( array( 'change_password', 'edit_profile' ), $my['TrailLinks'] ?? null );
+        $this->assertSame( array( 'audit', 'change_password', 'edit_profile' ), $my['TrailLinks'] ?? null );
         $drawn = array();
         foreach ( self::MENU_TEMPLATES as $design => $template )
         {
@@ -264,6 +267,38 @@ class AdminLeftMenuGroupsTest extends PHPUnit\Framework\TestCase
         // tiles without groups: the trail links are the last tiles
         $tiles = self::dashboardMenu( 'Leftmenu_trailtest', 'tiles' );
         $this->assertMatchesRegularExpression( '#expai/vector".*user/password".*user/edit/\(action\)/edit"#s', $tiles );
+    }
+
+    /**
+     * CollapseAfter: a one-list menu shows its first links, in the order drawn, and the rest in a "More (count)"
+     * disclosure, closed at first and open when it holds the current page; the shipped Dashboard menu sets 10.
+     */
+    public function testCollapseAfterShowsTheFirstLinksAndTheRestUnderMore()
+    {
+        $my = self::iniSection( 'Leftmenu_my' );
+        $this->assertSame( '10', $my['CollapseAfter'] ?? null );
+        $links = array_merge( $my['Links'], array( 'expai_summary' => 'expai/summary', 'expai_vector' => 'expai/vector' ) );
+        $settings = array( 'Links' => $links, 'LinkNames' => array(), 'TrailLinks' => $my['TrailLinks'], 'CollapseAfter' => '10' );
+        $designs = array( 'admin4', 'admin' );
+        // AdminUI's menu ships with the extension exp_adminui (1.0.0.61 on), which a checkout may not carry
+        $adminui = dirname( __DIR__, 3 ) . '/' . self::MENU_TEMPLATES['adminui'];
+        if ( is_file( $adminui ) && strpos( self::read( self::MENU_TEMPLATES['adminui'] ), 'CollapseAfter' ) !== false )
+            $designs[] = 'adminui';
+        foreach ( $designs as $design )
+        {
+            $html = self::renderMenu( self::MENU_TEMPLATES[$design], 'Leftmenu_collapsetest', $settings, 'menu', 'content/dashboard' );
+            $hrefs = self::hrefs( $html );
+            $this->assertCount( count( $links ), $hrefs, "$design draws every link" );
+            $this->assertSame( 1, preg_match( '#<details class="[^"]*"[^>]*>\s*<summary[^>]*>[^<]*\((\d+)\)</summary>#', $html, $m ), "$design has the More disclosure" );
+            $this->assertSame( count( $links ) - 10, (int)$m[1], "$design counts the hidden links" );
+            $this->assertSame( array_slice( $hrefs, 0, 10 ), self::hrefs( substr( $html, 0, strpos( $html, '<details' ) ) ), "$design shows the first 10" );
+            $this->assertStringNotContainsString( ' open>', $html, "$design starts closed" );
+            $current = self::renderMenu( self::MENU_TEMPLATES[$design], 'Leftmenu_collapsetest', $settings, 'menu', 'user/password' );
+            $this->assertMatchesRegularExpression( '#<details [^>]* open>#', $current, "$design opens on a hidden current page" );
+        }
+        // without CollapseAfter: one list, as before
+        $plain = self::renderMenu( self::MENU_TEMPLATES['admin4'], 'Leftmenu_collapsetest', array_diff_key( $settings, array( 'CollapseAfter' => 1 ) ), 'menu', 'content/dashboard' );
+        $this->assertStringNotContainsString( '<details', $plain );
     }
 
     public function testTrailLinksFollowTheGroupsAndMore()
