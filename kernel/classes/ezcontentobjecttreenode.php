@@ -2878,6 +2878,7 @@ class eZContentObjectTreeNode extends eZPersistentObject
         $limitation = ( isset( $params['Limitation']  ) && is_array( $params['Limitation']  ) ) ? $params['Limitation']: false;
         $limitationList = eZContentObjectTreeNode::getLimitationList( $limitation );
         $permissionScope = eZContentObjectTreeNode::permissionFetchScope( $limitationList, $nodeID, $nodePaths, $params );
+        $mongoPermissionStages = array();
         if ( eZDB::instance()->databaseName() === 'mongo' )
         {
             $mongoPermissionStages = self::mongoPermissionStages( $limitationList, $permissionScope );
@@ -3505,6 +3506,7 @@ class eZContentObjectTreeNode extends eZPersistentObject
         $limitation = ( isset( $params['Limitation']  ) && is_array( $params['Limitation']  ) ) ? $params['Limitation']: false;
         $limitationList = eZContentObjectTreeNode::getLimitationList( $limitation );
         $permissionScope = eZContentObjectTreeNode::permissionFetchScope( $limitationList, $nodeID, $nodePaths, $params );
+        $mongoPermissionStages = array();
         if ( eZDB::instance()->databaseName() === 'mongo' )
         {
             $mongoPermissionStages = self::mongoPermissionStages( $limitationList, $permissionScope );
