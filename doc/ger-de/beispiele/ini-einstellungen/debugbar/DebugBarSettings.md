@@ -2,20 +2,41 @@
 title: debugbar.ini [DebugBarSettings]
 audience: developer, admin
 category: examples
-summary: "Die Einstellungen von [DebugBarSettings] in debugbar.ini: Settings, Groups, GroupNames, DiscoverBlocks, ExtensionDiscovery, DiscoveryPattern, DiscoveryExclude, Presets ..."
-keywords: Einstellung, debugbar.ini, DebugBarSettings, INI, setting, Settings, Groups, GroupNames, DiscoverBlocks, ExtensionDiscovery, DiscoveryPattern, DiscoveryExclude, Presets, Thresholds, SessionMask, SessionValueMask, SessionWarnBytes, Panels, RenderTree, Theme, LogFile, LogListLimit
+summary: "Die Einstellungen von [DebugBarSettings] in debugbar.ini: ReadAccess, Settings, Groups, GroupNames, DiscoverBlocks, ExtensionDiscovery, DiscoveryPattern, DiscoveryExclude ..."
+keywords: Einstellung, debugbar.ini, DebugBarSettings, INI, setting, ReadAccess, Settings, Groups, GroupNames, DiscoverBlocks, ExtensionDiscovery, DiscoveryPattern, DiscoveryExclude, Presets, Thresholds, SessionMask, SessionValueMask, SessionWarnBytes, Panels, RenderTree, Theme, LogFile, LogListLimit
 type: generated
 generated: exp:help:examples
 ---
 # debugbar.ini [DebugBarSettings]
 
-Der Block `[DebugBarSettings]` von `settings/debugbar.ini`, mit 17 Einstellung(en).
+Der Block `[DebugBarSettings]` von `settings/debugbar.ini`, mit 18 Einstellung(en).
 
 Bearbeiten Sie `settings/debugbar.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
 - `settings/override/debugbar.ini.append.php` für jeden Siteaccess,
 - `settings/siteaccess/<siteaccess>/debugbar.ini.append.php` für einen Siteaccess,
 - `extension/<extension>/settings/debugbar.ini.append.php` in einer Erweiterung (gelesen, wenn die Erweiterung aktiv ist).
+
+## ReadAccess
+
+> Who reads what the bar shows. debug (the default): whoever gets the debug output (DebugByIP, DebugByUser), logged in  
+> or not, reads everything: the settings, their log and the IP test, the cache list, the policies of their roles, the  
+> User and the Rendering tab, the versions of PHP and Exponential, OPcache and APCu. privileged: only users with  
+> setup/setup (settings, log, policies) or setup/managecache (cache list) read those, and the User and the Rendering  
+> tab show to setup/setup and to an anonymous visitor with debug output (the stricter rule). Changing settings and  
+> clearing caches always needs setup/setup or setup/managecache. A reader without setup/setup gets nobody else's data:  
+> the change log without who made each change, the IP and the user list masked, the IP test for their own address.  
+> Debug output on a public address shows every visitor their own session: set privileged in production.  
+
+Standard: `debug`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/debugbar.ini.append.php
+[DebugBarSettings]
+ReadAccess=debug
+*/ ?>
+```
 
 ## Settings
 
@@ -179,11 +200,11 @@ Presets[]=off
 
 ## Thresholds
 
-> Die Farben der Live-Zusammenfassung: <warn>;<high>  
-> Trefferquote des SQL-Abfrage-Caches der Anfrage in Prozent: gelb UNTER dem ersten, rot unter dem zweiten  
-> (auch gelb, wenn ein Schreibvorgang jedes Ergebnis veraltet gemacht hat, rot im gemeinsamen Modus ohne APCu)  
-> Belegter Speicher von OPcache und APCu in Prozent (nur für Benutzer mit Setup- oder Cache-Rechten angezeigt; APCu teilen sich  
-> alle Websites des PHP-Pools, und der Abfrage-Cache fügt unter 25 % frei keine Ergebnisse mehr hinzu, seine ApcuReserve)  
+> The colours of the live summary: <warn>;<high>  
+> SQL query cache hit rate of the request in percent: amber BELOW the first, red below the second  
+> (also amber when a write made every result stale, red in shared mode without APCu)  
+> Memory of OPcache and APCu in use, in percent (shown to who reads everything, see ReadAccess; APCu is shared by  
+> every site of the PHP pool, and the query cache stops adding results below 25 % free, its ApcuReserve)  
 
 Standard: ein Hash mit 8: `time_ms=500;1500`, `sql_count=100;300`, `sql_ms=200;800`, `memory_mb=64;192`, `templates=150;400`, `querycache_hit_rate=50;10`, `opcache_memory=80;95`, `apcu_memory=75;90`.
 

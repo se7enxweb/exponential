@@ -1,0 +1,6 @@
+{
+    "ini:settings/menu.ini [Leftmenu_help]": {
+        "en": "The left menu of the help views (exphelp/*, design:exphelp/menu.tpl): they belong to the Setup tab\n(ezsetupnavigationpart), which stays marked, but draw this menu instead of the Setup menu. Each link is shown only\nto a user who can open it; the names are translated in the context kernel/exphelp.",
+        "de": "Das linke Menü der Hilfeansichten (exphelp/*, design:exphelp/menu.tpl): Sie gehören zum Reiter Setup\n(ezsetupnavigationpart), der markiert bleibt, zeichnen aber dieses Menü statt des Setup-Menüs. Jeder Link wird nur\neinem Benutzer gezeigt, der ihn öffnen darf; die Namen werden im Kontext kernel/exphelp übersetzt."
+    }
+}

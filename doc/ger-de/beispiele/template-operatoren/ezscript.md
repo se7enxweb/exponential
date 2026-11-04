@@ -32,10 +32,10 @@ Aus der Parameterliste oben gebildet; die Werte sind Platzhalter (die Template-H
 
 ## In einem ausgelieferten Template
 
-Die erste Verwendung in den Templates dieser Installation, `design/admin/templates/content/datatype/edit/ezdate.tpl` Zeile 26:
+Die erste Verwendung in den Templates dieser Installation, `design/admin/templates/class/datatype_list.tpl` Zeile 153:
 
 ```tpl
-{ezscript( array( 'page/content_datepicker.js' ) )}
+{ezscript( array( 'page/class_datatypes.js' ) )}
 ```
 
 ## Siehe auch

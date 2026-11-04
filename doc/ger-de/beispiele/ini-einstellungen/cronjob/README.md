@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # cronjob.ini
 
-Die ausgelieferten Einstellungen von `settings/cronjob.ini`: 27 Blöcke, 52 Einstellungen.
+Die ausgelieferten Einstellungen von `settings/cronjob.ini`: 27 Blöcke, 53 Einstellungen.
 
 > Exponential-Konfigurationsdatei für Cronjobs.  
 >
@@ -46,7 +46,7 @@ Die ausgelieferten Einstellungen von `settings/cronjob.ini`: 27 Blöcke, 52 Eins
 | [CronjobPart-usersessions](CronjobPart-usersessions.md) | 1 |
 | [CronjobPart-useraudit](CronjobPart-useraudit.md) | 1 |
 | [CronjobPart-exphelp](CronjobPart-exphelp.md) | 1 |
-| [linkCheckSettings](linkCheckSettings.md) | 9 |
+| [linkCheckSettings](linkCheckSettings.md) | 10 |
 | [CronjobPart-unlock](CronjobPart-unlock.md) | 1 |
 | [CronjobPart-cluster_maintenance](CronjobPart-cluster_maintenance.md) | 1 |
 | [CronjobPart-cleanuprss](CronjobPart-cleanuprss.md) | 1 |

@@ -40,7 +40,8 @@
 {set $header_help_menu = fetch( 'exphelp', 'context_menu', hash( 'module', first_set( $header_help_mp.module_name, '' ),
                                                                  'view', first_set( $header_help_mp.function_name, '' ),
                                                                  'design', ezini( 'DesignSettings', 'SiteDesign', 'site.ini' ) ) )}
-<div id="header-help" class="header-help">
+{* marked on the help's own pages (exphelp/*), as admin4 marks its "?" (the header is cached per address) *}
+<div id="header-help" class="header-help{if eq( first_set( $header_help_mp.module_name, '' ), 'exphelp' )} is-current{/if}">
 {if $header_help_menu}
     {def $header_help_names = hash( 'getting_started',    'Getting started'|i18n( 'kernel/exphelp' ),
                                     'keyboard_shortcuts', 'Keyboard shortcuts'|i18n( 'kernel/exphelp' ),

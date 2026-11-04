@@ -27,7 +27,11 @@ if you write documentation (in `doc/` or in an extension) that should show up in
   page you are on (the module and view), or the dashboard when there is none.
 - **Navigation**: the help pages keep the Setup tab marked and mark the "?" in admin4's header too; their left menu
   is the help's own (`menu.ini [Leftmenu_help]`: Help Start, Contents, Search the help, Extensions, Report an error;
-  `design:exphelp/menu.tpl`), not the Setup menu. Each link needs `exphelp/read`.
+  `design:exphelp/menu.tpl`), not the Setup menu. Each link needs `exphelp/read`. A page the menu does not name marks
+  the link it belongs to: a page of the viewer (a book such as Installing Exponential 6.0), a topic, a manual and the
+  page tree mark Contents, an extension's page marks Extensions, an audience page marks Help Start. The viewer's own
+  page tree, "All help pages" with the books in their order, stays beside the page. design/admin marks its Help link
+  in the header the same way, and exp_adminui (1.0.0.62 and later) its Help button.
 - **Report an error** (`/exphelp/report`): which tracker to use, what to write, a prefilled issue and the
   diagnostics to copy (versions, PHP, engine, design; never passwords, keys, database hosts or personal data), and
   where to report a security issue privately.

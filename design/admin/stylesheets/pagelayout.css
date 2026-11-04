@@ -130,6 +130,8 @@ a.image-text:hover > span
 }
 #header-help .a4-help-context:hover, #header-help .a4-help-context:focus { color: #fff; text-decoration: underline; }
 #header-help .a4-help-context:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+/* on the help's own pages (exphelp/*): the control is the current place, underlined as a marked tab */
+#header-help.is-current .a4-help-context { box-shadow: inset 0 -2px 0 currentColor; }
 /* The Help menu (page_header.tpl): a native <details> disclosure, no script; its panel hangs under the header */
 #header-help { position: relative; }
 #header-help .header-help-menu > summary { list-style: none; cursor: pointer; }

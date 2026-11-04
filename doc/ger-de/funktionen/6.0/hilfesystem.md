@@ -29,7 +29,11 @@ erscheinen soll.
 - **Navigation**: Die Hilfeseiten lassen den Tab Setup markiert und markieren in der Kopfzeile von admin4 zusätzlich
   das „?“; ihr linkes Menü ist das eigene der Hilfe (`menu.ini [Leftmenu_help]`: Hilfe-Startseite, Inhalt, Hilfe
   durchsuchen, Extensions, Fehler melden; `design:exphelp/menu.tpl`), nicht das Setup-Menü. Jeder Link verlangt
-  `exphelp/read`.
+  `exphelp/read`. Eine Seite, die das Menü nicht nennt, markiert den Link, zu dem sie gehört: eine Seite im Betrachter
+  (ein Buch wie „Exponential 6.0 installieren“), ein Thema, ein Handbuch und der Seitenbaum markieren Inhalt, die Seite
+  einer Extension markiert Extensions, die Seite einer Zielgruppe die Hilfe-Startseite. Der eigene Seitenbaum des
+  Betrachters, „Alle Hilfeseiten“ mit den Büchern in ihrer Reihenfolge, bleibt neben der Seite. design/admin markiert
+  seinen Hilfe-Link in der Kopfzeile ebenso, exp_adminui (ab 1.0.0.62) seine Hilfe-Schaltfläche.
 - **Fehler melden** (`/exphelp/report`): welcher Tracker zu verwenden ist, was Sie schreiben sollten, ein vorausgefülltes
   Issue und die Diagnosedaten zum Kopieren (Versionen, PHP, Engine, Design; niemals Passwörter, Schlüssel,
   Datenbank-Hosts oder personenbezogene Daten) sowie wo Sie eine Sicherheitslücke vertraulich melden.

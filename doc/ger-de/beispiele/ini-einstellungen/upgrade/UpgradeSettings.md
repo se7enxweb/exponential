@@ -27,10 +27,11 @@ Bearbeiten Sie `settings/upgrade.ini` nie selbst: Ein Update ersetzt die Datei. 
 > stage database: schema and data, every engine (step 0 first: the record table exp\_migration)  
 > the older record expupgrade\_step of a pre-release of 6.0.15: its rows copied into exp\_migration, then dropped  
 > SQLite only: the tables the .dba keys on more than one column (ezcontentobject\_attribute on id, version) get that key  
+> the tables of every active extension that ships a share/db\_schema.dba, where missing (no data loaded)  
 > stage scripts: the PHP upgrade steps, through the classes of the scripts and setup commands  
 > stage finish: make the changes live and check the site (only when the run changed something)  
 
-Standard: eine Liste mit 46: `expUpgradeStepCodeUpdate`, `expUpgradeStepLibrariesUpdate`, `expUpgradeStepLibrariesInstall`, `expUpgradeStepMigrationTables`, `expUpgradeStepRecordTable`, `expUpgradeStepMigrationRecordingTables`, `expUpgradeStepSqliteCompositeKeys`, `expUpgradeStepPasswordHashWidth`, `expUpgradeStepTrashColumns`, `expUpgradeStepPdfExportFooter`, `expUpgradeStepRssOpmlPodcast`, `expUpgradeStepOrderStatuses` ....
+Standard: eine Liste mit 47: `expUpgradeStepCodeUpdate`, `expUpgradeStepLibrariesUpdate`, `expUpgradeStepLibrariesInstall`, `expUpgradeStepMigrationTables`, `expUpgradeStepRecordTable`, `expUpgradeStepMigrationRecordingTables`, `expUpgradeStepSqliteCompositeKeys`, `expUpgradeStepPasswordHashWidth`, `expUpgradeStepTrashColumns`, `expUpgradeStepPdfExportFooter`, `expUpgradeStepRssOpmlPodcast`, `expUpgradeStepOrderStatuses` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -58,7 +59,7 @@ StepList[]=expUpgradeStepMailPreferenceTables
 StepList[]=expUpgradeStepApiKeyTable
 StepList[]=expUpgradeStepTransferRunTable
 StepList[]=expUpgradeStepDataTableTables
-# ... 26 weitere in der ausgelieferten Datei
+# ... 27 weitere in der ausgelieferten Datei
 */ ?>
 ```
 
