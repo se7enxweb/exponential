@@ -4,7 +4,13 @@
    the link that address starts with): an extension's page in the viewer (exphelp/viewer/ext/...) marks Extensions,
    any other page of the viewer, a topic, a manual and the page tree (exphelp/navigation) mark Contents, an audience's
    landing page marks Help Start. *}
-{def $help_menu_uri = first_set( $uri_string, '' )|trim( '/' )}
+{def $help_menu_uri    = first_set( $uri_string, '' )|trim( '/' )
+     $help_menu_prefix = '/'|ezurl( 'no' )|trim( '/' )}
+{* exp_adminui passes the request address with the siteaccess of a URI siteaccess (adminui/exphelp/...); the
+   menu's links have none *}
+{if and( $help_menu_prefix|ne( '' ), $help_menu_uri|begins_with( concat( $help_menu_prefix, '/' ) ) )}
+    {set $help_menu_uri = $help_menu_uri|extract_right( $help_menu_uri|count_chars|sub( $help_menu_prefix|count_chars, 1 ) )}
+{/if}
 {if $help_menu_uri|begins_with( 'exphelp/viewer/ext/' )}
     {set $help_menu_uri = 'exphelp/extensions'}
 {elseif or( $help_menu_uri|begins_with( 'exphelp/viewer' ), $help_menu_uri|begins_with( 'exphelp/topic' ),
@@ -22,4 +28,4 @@
     'extensions', 'Extensions'|i18n( 'kernel/exphelp' ),
     'report',     'Report an error'|i18n( 'kernel/exphelp' ),
 )}
-{undef $help_menu_uri}
+{undef $help_menu_uri $help_menu_prefix}

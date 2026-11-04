@@ -657,7 +657,7 @@ df3d55f92267b44e4cd1d354d6475cfe  design/admin/templates/exphelp/contents.tpl
 873c6625cb63507c20bab87dbff09219  design/admin/templates/exphelp/dashboard.tpl
 67a36240784ea91d9f97cfefa57c0e0c  design/admin/templates/exphelp/extensions.tpl
 bdab954c675af0938fffa80167587980  design/admin/templates/exphelp/manual.tpl
-46e80e2684d18276c4f3b99de0703e16  design/admin/templates/exphelp/menu.tpl
+154f8568accd6433dc29a22aa715ae19  design/admin/templates/exphelp/menu.tpl
 f43ddf448dd9d05ffcfdbceea1dfc772  design/admin/templates/exphelp/navigation.tpl
 a0087e9d0b5045a47ea11d65361b2c4e  design/admin/templates/exphelp/parts/dashboard_about.tpl
 81d43cbd9fa957ae5d98aa0fc1897450  design/admin/templates/exphelp/parts/dashboard_brand.tpl
@@ -1497,7 +1497,7 @@ df3d55f92267b44e4cd1d354d6475cfe  design/admin4/templates/exphelp/contents.tpl
 873c6625cb63507c20bab87dbff09219  design/admin4/templates/exphelp/dashboard.tpl
 67a36240784ea91d9f97cfefa57c0e0c  design/admin4/templates/exphelp/extensions.tpl
 bdab954c675af0938fffa80167587980  design/admin4/templates/exphelp/manual.tpl
-46e80e2684d18276c4f3b99de0703e16  design/admin4/templates/exphelp/menu.tpl
+154f8568accd6433dc29a22aa715ae19  design/admin4/templates/exphelp/menu.tpl
 f43ddf448dd9d05ffcfdbceea1dfc772  design/admin4/templates/exphelp/navigation.tpl
 a0087e9d0b5045a47ea11d65361b2c4e  design/admin4/templates/exphelp/parts/dashboard_about.tpl
 d2a1fc43b3dcd5c44608181728a04a4e  design/admin4/templates/exphelp/parts/dashboard_brand.tpl
