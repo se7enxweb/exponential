@@ -1,0 +1,29 @@
+*Titel: Verbesserter Umgang mit verknüpften Objekten
+
+Anlass:
+Verknüpfte Objekte sollen sich in content/edit nach ihrem Typ (Inhaltsklasse) gruppieren
+lassen. Zum Beispiel ist es sinnvoll, Bilder getrennt von Dateien zu zeigen.
+
+*Dokumentation:
+
+Neue Template-Variablen:
+In edit.tpl steht die Variable $grouped_related_contentobjects zur Verfügung, ein
+assoziatives Array mit der Gruppe als Schlüssel und der Liste der Verknüpfungen als Element.
+
+Neue INI-Einstellungen:
+content.ini:
+ - RelationGroupSettings/Groups:
+   Ein Array der zu definierenden Gruppen; eine Gruppe wird durch einen Bezeichner als
+   Zeichenkette definiert, z. B. image
+ - RelationGroupSettings/DefaultGroup:
+   Die Gruppe, in die alle nicht zugeordneten Verknüpfungen kommen.
+
+Für jede Gruppe in Groups muss es eine Variable <group>ClassList geben, wobei <group> der
+Bezeichner der Gruppe ist. Die Variable muss ein Array mit den Bezeichnern der
+Inhaltsklassen sein, die zu dieser Gruppe gehören.
+
+
+*Tests:
+
+*SVN-Revisionen:
+7381

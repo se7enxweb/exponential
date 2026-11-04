@@ -1,0 +1,19 @@
+*Titel: Download-Zähler
+
+Anlass:
+Wir müssen wissen, wie oft eine Datei heruntergeladen wurde.
+
+*Dokumentation:
+Neues Feld download_count in der MySQL-Tabelle ezbinaryfile.
+Es enthält die Anzahl der Downloads der zugehörigen Datei.
+Geändert wurden ezbinaryfile.php und ezbinaryfilehandler.php.
+Im Template verwenden Sie file.content.download_count.
+
+*Tests:
+1- Eine Datei in einem Ordner anlegen
+2- Sie mehrmals von verschiedenen Rechnern herunterladen
+3- Die Zahl in einem Template anzeigen (file.content.download_count) und prüfen, dass sie steigt
+(das geht auch direkt mit einer Abfrage in MySQL)
+4- Dasselbe mit einer nicht vorhandenen Datei versuchen (oder die vorige löschen) und prüfen, dass die Downloadzahl in diesem Fall nicht steigt
+
+*SVN-Revisionen:

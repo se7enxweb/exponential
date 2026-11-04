@@ -1,0 +1,26 @@
+*Titel: Statistik der verwendeten Templates im Debug-Modus
+
+*Dokumentation:
+Mit der Statistik der verwendeten Templates in Exponential 3.6 sehen Sie die Liste der
+Templates, mit denen eine Seite dargestellt wurde.
+
+*Einstellungen:
+Zum Einschalten muss Ihre "site.ini.append" Folgendes enthalten:
+[DebugSettings]
+DebugOutput=enabled
+
+[TemplateSettings]
+ShowUsedTemplates=enabled
+
+*Darstellung:
+Danach sehen Sie beim Aufrufen der Website unten auf der Seite die Tabelle "Template Usage
+Statistics". Sie hat 5 Spalten: "Template", "Requested template", "Full filename", "Edit",
+"Override".
+"Template"           - der Name des verwendeten Templates.
+"Requested template" - der Name des angeforderten Templates. Er kann sich von "Template"
+                       unterscheiden. Beispiel: Ein Override-Abschnitt überschreibt
+                       "node/view/full.tpl" mit "bla.tpl". Dann steht "bla.tpl" in der
+                       Spalte "Template" und "node/view/full.tpl" in "Requested template".
+"Full filename"      - "Design-Ressource" + "angefordertes Template".
+"Edit"               - bearbeitet das Template im aktuellen Siteaccess.
+"Override"           - überschreibt das Template im aktuellen Siteaccess.

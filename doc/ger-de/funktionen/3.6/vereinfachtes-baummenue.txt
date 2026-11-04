@@ -1,0 +1,27 @@
+
+Vereinfachtes Baummenü.
+
+Dateien:
+design/standard/templates/simplified_treemenu/
+    ./simplified_treemenu.tpl
+    ./show_simplified_menu.tpl
+
+Das vereinfachte Baummenü beruht auf dem ContentStructure-Menü
+(siehe design/standard/templates/contentstructuremenu/).
+
+Um das vereinfachte Baummenü zu verwenden, binden Sie die Datei simplified_treemenu.tpl
+passend in Ihr Template ein, zum Beispiel:
+
+    {*include uri='design:simplified_treemenu/simplified_treemenu.tpl'*}
+
+Und legen Sie in contentstructuremenu.ini über das Array ChapterClasses fest, welche Klassen
+als Kapitelklassen gelten, zum Beispiel:
+
+ChapterClasses[]
+ChapterClasses[]=chapter
+ChapterClasses[]=lightTOC
+ChapterClasses[]=folder
+
+Ein Knoten einer Kapitelklasse wird im vereinfachten Baummenü als Liste seiner Kinder erster
+Ebene geöffnet. Jeder Knoten eines anderen Typs wird als Teilbaum des ersten gefundenen
+Elternknotens einer Kapitelklasse geöffnet.

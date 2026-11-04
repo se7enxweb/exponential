@@ -1,0 +1,38 @@
+*Titel: INI-Einstellung für die URLs des Topmenüs der Administration
+
+*Anlass:
+Verschiedene Aspekte des Topmenüs der Administrationsoberfläche sollen sich steuern lassen,
+ebenso neue Einträge.
+
+
+*Dokumentation:
+Jeder Eintrag des Topmenüs besteht jetzt aus:
+- Name
+    Der Name des Menüs
+    Hinweis: Übersetzbar sind nur die Namen, die Exponential mitbringt
+- Tooltip
+    Ein Text, der als Tooltip erscheint
+- URL
+    Array der URLs des Menüeintrags.
+    Der Schlüssel im Array bezeichnet den UI-Kontext (z. B. edit);
+    mindestens der Kontext default muss definiert sein
+- NavigationPartIdentifier
+    Der Bezeichner des Navigationsbereichs dieses Eintrags.
+    Stimmt der Bezeichner des aktuellen Moduls damit überein,
+    wird der Eintrag hervorgehoben.
+- Enabled
+    Legt fest, ob das Menü in den verschiedenen UI-Kontexten
+    ausgewählt werden kann.
+- Shown
+    Legt fest, in welchen UI-Kontexten der Menüeintrag angezeigt wird.
+
+Für einen neuen Eintrag fügen Sie ihn einfach in menu.ini hinzu;
+in einer Erweiterung in menu.ini.append.
+
+Zuerst fügen Sie der Variablen Tabs in der Gruppe TopAdminMenu einen Eintrag hinzu. Sie
+enthält die Liste der derzeit verwendeten Reiter-Bezeichner.
+
+Dann legen Sie eine neue INI-Gruppe mit dem gewählten Bezeichner an. Haben Sie ihn
+zum Beispiel custom genannt, heißt die Gruppe Topmenu_custom.
+
+In die Gruppe tragen Sie die oben beschriebenen Elemente ein.

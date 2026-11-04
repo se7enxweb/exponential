@@ -1,0 +1,28 @@
+Titel: Inhaltscache für bestimmte Benutzer vorab erzeugen
+
+Dokumentation:
+Das Vorab-Erzeugen des Inhaltscaches wurde erweitert: Der Administrator der Website kann
+wählen, für welche Benutzer der Inhaltscache erzeugt wird. So lassen sich neue Inhalte für
+bestimmte Benutzer oder Benutzergruppen vorbereiten.
+Standardmäßig wird er für anonyme Benutzer erzeugt.
+
+Konfiguration:
+Dafür gibt es die Variable PreviewCacheUsers in site.ini.
+Sie ist ein Array mit den IDs der zu verwendenden Benutzer. Das System erzeugt die
+Cache-Datei dann mit den Rollen, die dem jeweiligen Benutzer zugewiesen sind.
+
+Außerdem lassen sich diese besonderen Bezeichner als Einträge verwenden:
+- anonymous - Der als anonymer Benutzer definierte Benutzer
+- current - Der Benutzer, der das Objekt veröffentlicht
+
+Wollen Sie den Cache für eine Benutzergruppe erzeugen, wählen Sie einen bestimmten Benutzer
+aus der Gruppe. Sie können dafür zum Beispiel einen Platzhalter-Benutzer anlegen.
+
+Beispiel:
+Hier wird der Cache für den anonymen Benutzer, den aktuellen Benutzer und einen bestimmten
+Benutzer erzeugt.
+
+PreviewCacheUsers[]
+PreviewCacheUsers[]=anonymous
+PreviewCacheUsers[]=current
+PreviewCacheUsers[]=86

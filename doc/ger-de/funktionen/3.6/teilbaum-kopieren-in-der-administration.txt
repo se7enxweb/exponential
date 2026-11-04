@@ -1,0 +1,40 @@
+*Titel: Teilbaum kopieren in der Administration
+
+*Dokumentation:
+Um einen Teilbaum zu kopieren, klicken Sie im Inhaltsbaum-Menü auf das Symbol des Knotens
+und wählen <Teilbaum kopieren>. Wählen Sie dann im Browse-Modus den Elternknoten des neuen
+Orts für den Teilbaum.
+Die Größe des zu kopierenden Teilbaums ist durch MaxNodesCopySubtree begrenzt. Das verhindert
+Zeitüberschreitungen im Browser, die beim Kopieren großer Teilbäume auftreten können. Ohne
+Begrenzung kopieren Sie mit dem Skript zum Kopieren von Teilbäumen (siehe
+bin/php/ezsubtreecopy.php, doc/eng-us/features/subtree_copy_script.txt) statt mit der Funktion
+der Administrationsoberfläche - vorausgesetzt natürlich, Sie dürfen auf Ihrer Website Skripte
+ausführen.
+
+*Einstellungen:
+Die Einstellungen für das Kopieren von Teilbäumen stehen in content.ini im Abschnitt
+[CopySettings]:
+ MaxNodesCopySubtree   - Höchstzahl der Knoten, die mit "Teilbaum kopieren" kopiert werden
+                         dürfen (Standard 30).
+ VersionHandling       - user-defined, last-published oder all
+ CreatorHandling       - Setzt den aktuellen Benutzer als Ersteller der kopierten
+                         Inhaltsobjekte oder lässt die Ersteller unverändert. Standard
+                         'current'; möglich sind 'user-defined', 'keep-unchanged' oder
+                         'current'. Bei 'user-defined' wird der Benutzer während des Kopierens
+                         gefragt, wie mit dieser Option verfahren werden soll.
+ TimeHandling          - Behält den Erstellungszeitpunkt der kopierten Objekte bei oder setzt
+                         den aktuellen. Standard 'current'; möglich sind 'user-defined',
+                         'keep-unchanged' oder 'current'. Bei 'user-defined' wird der Benutzer
+                         während des Kopierens gefragt, wie mit dieser Option verfahren werden soll.
+ ShowCopySubtreeNotification
+                       - Ob nach dem Kopieren eine Mitteilung angezeigt wird (Standard
+                         'enabled'; möglich sind 'enabled' oder 'disabled'). Die Mitteilung
+                         nennt die Anzahl der kopierten Knoten und die Fehler, die beim
+                         Kopieren aufgetreten sind.
+
+*Module:
+kernel/content/copysubtree.php
+
+*Templates:
+templates/content/copy_subtree.tpl
+templates/content/copy_subtree_notification.tpl

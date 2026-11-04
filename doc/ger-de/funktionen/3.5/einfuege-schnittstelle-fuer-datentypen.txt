@@ -1,0 +1,55 @@
+*Titel: Allgemeine Einfüge-Schnittstelle für Datentypen
+
+Anlass:
+Dateien, Text und komplexes XML sollen sich über eine gemeinsame Schnittstelle leichter
+in jeden Datentyp einfügen lassen. Das verringert den nötigen Code und verlagert viel
+interne Variablenbehandlung in den jeweiligen Datentyp. Es vereinfacht auch künftige
+Aktualisierungen von Exponential.
+
+
+*Dokumentation:
+Die Schnittstelle eZDatatype hat neue Methoden: eine fragt ab, ob eine bestimmte
+Einfügeart unterstützt wird, eine nimmt das eigentliche Einfügen vor.
+
+isxxxInsertionSupported(): Gibt true zurück, wenn unterstützt, sonst false; Standard für alle Datentypen ist false
+insertxxx(): Versucht das Einfügen, gibt bei Erfolg true zurück, bei Fehler false oder null, wenn nicht unterstützt.
+
+
+Einfügeart:
+HTTP-Datei: Eine Datei, die der Benutzer über die Weboberfläche hochlädt
+
+Methoden:
+ - isHTTPFileInsertionSupported(): Gibt true zurück, wenn der Datentyp dies unterstützt
+ - insertHTTPFile(): Fügt die angegebene HTTP-Datei ein
+
+Datentypen:
+ - ezimage: Speichert als Bild
+ - ezbinaryfile: Speichert als Binärdatei
+ - ezmedia: Speichert als Mediendatei
+
+
+Einfügeart:
+Normale Datei: Eine Datei, die im System vorhanden ist
+
+Methoden:
+ - isRegularFileInsertionSupported(): Gibt true zurück, wenn der Datentyp dies unterstützt
+ - insertRegularFile(): Fügt die angegebene Datei ein
+
+Datentypen:
+noch keine
+
+Einfügeart:
+Einfache Zeichenkette: Eine einfache Zeichenkette auf einer oder mehreren Zeilen.
+
+Methoden:
+ - isSimpleStringInsertionSupported(): Gibt true zurück, wenn der Datentyp dies unterstützt
+ - insertSimpleString(): Fügt die Zeichenkette ein
+
+Datentypen:
+ - ezstring: Gespeichert als data_text
+ - eztext: Gespeichert als data_text
+
+*Tests:
+
+*SVN-Revisionen:
+7425

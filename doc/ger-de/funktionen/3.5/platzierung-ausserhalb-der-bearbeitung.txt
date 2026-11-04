@@ -1,0 +1,32 @@
+*Titel: Platzierungen der Knoten aus content/edit herauslösen
+
+Anlass:
+Ohne die Liste der Knotenplatzierungen in content/edit bleibt mehr Platz für andere,
+wichtigere Elemente. Außerdem lassen sich Platzierungen von Knoten dann auch außerhalb
+von content/edit bearbeiten.
+
+*Dokumentation:
+Ein neuer INI-Schalter blendet die Bedienelemente in content/edit ein oder aus. Aus
+Gründen der Rückwärtskompatibilität lassen sie sich einschalten.
+
+Die Knotenverwaltung liegt jetzt in der Navigationsoberfläche.
+
+Neue globale Template-Variablen:
+
+Neue globale HTTP-Variablen:
+UseNodeAssigments - Wird gesetzt, wenn die Bedienelemente ausgeschaltet sind, und zwar auf den Wert '0'.
+                    Bei '0' überspringt der Bearbeitungscode die gesamte Knotenverwaltung.
+
+Neue INI-Variablen:
+content.ini:
+[EditSettings]
+EmbedNodeAssignmentHandling - Steuert, ob content/edit die Bedienelemente für Knotenplatzierungen enthält.
+                              'enabled' schaltet sie ein, 'disabled' aus.
+                              Ausgeschaltet stehen diese Template-Variablen nicht mehr zur Verfügung:
+                              assigned_node_array, assigned_remote_map, published_node_array und main_node_id.
+
+
+*Tests:
+
+*SVN-Revisionen:
+

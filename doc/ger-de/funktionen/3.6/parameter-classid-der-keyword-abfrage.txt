@@ -1,0 +1,18 @@
+*Titel: Typ des Parameters 'classid' der Fetch-Funktion keyword geändert
+
+*Dokumentation:
+Die Fetch-Funktion keyword hat einen Parameter 'classid', der vor 3.6 nur eine Ganzzahl
+sein konnte. Jetzt kann er eine einzelne Klassen-ID oder ein Array von Klassen-IDs sein.
+
+*Beispiel:
+Das folgende Beispiel zeigt die Verwendung der Fetch-Funktion keyword:
+
+<code>
+{let kword_list=fetch( 'content', 'keyword',
+                       hash( alphabet, $alphabet,
+                             limit, 10,
+                             offset, $view_parameters.offset,
+                             classid, array( 26, 32 ) ) )}
+code
+{/let}
+</code>

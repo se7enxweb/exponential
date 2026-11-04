@@ -1,0 +1,16 @@
+*Titel: Eingebaute Bezeichner der Navigationsbereiche überschreiben
+
+*Anlass:
+Die eingebauten Bezeichner der Navigationsbereiche von Modulen und Ansichten sollen sich
+überschreiben lassen. Wer ein bestimmtes Modul oder eine Ansicht in ein anderes Topmenü
+verlegen will, kann das so tun, ohne Kernel-Code zu ändern.
+
+*Dokumentation:
+module.ini hat einen neuen Eintrag, ModuleOverrides. Darin steht die Variable
+NavigationPart, die das Überschreiben für ganze Module oder einzelne Ansichten steuert.
+
+Ein ganzes Modul überschreiben Sie zum Beispiel mit
+NavigationPart[content]=ezsetupnavigationpart
+
+eine einzelne Ansicht mit dem Modul- und dem Ansichtsnamen
+NavigationPart[content/trash]=ezsetupnavigationpart

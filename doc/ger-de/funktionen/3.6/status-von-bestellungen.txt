@@ -1,0 +1,38 @@
+Titel: Status von Bestellungen
+
+Dokumentation:
+In der Bestellliste lässt sich jetzt für jede Bestellung ein Status setzen. So kann der
+Shop-Betreiber klar angeben, was mit einer Bestellung geschieht.
+
+Das System bringt 3 vordefinierte Status mit:
+1 - Pending (Offen) - Die Bestellung wurde gerade angelegt und noch von niemandem bearbeitet.
+2 - Processing (In Bearbeitung) - Die Bestellung wird gerade bearbeitet, z. B. stellt jemand die Teile zusammen.
+3 - Delivered (Geliefert) - Die Bestellung ist beim Kunden angekommen, z. B. per Post verschickt.
+
+Der Administrator der Website kann weitere Status anlegen. Diese eigenen Status beginnen
+bei der ID 1000 und zählen von dort aufwärts.
+
+Außerdem gibt es einen besonderen Status, Undefined (Wert 0), für Status, die entfernt wurden.
+
+Ein Status besteht aus:
+- status_id - Eine eindeutige ID des Status; IDs unter 1000 sind interne.
+- name - Ein beschreibender Name des Status
+- is_active - Ob der Status verwendet werden kann; bei false erscheint er nicht in
+              Auswahllisten.
+
+Im Berechtigungssystem gibt es zwei neue Zugriffsfunktionen:
+shop/setstatus - Legt fest, welchen Status ein Benutzer setzen darf, optional auch, welchen
+                 Status die Bestellung vorher haben muss, damit sie geändert werden darf.
+shop/edit_status - Legt fest, ob ein Benutzer Status bearbeiten oder entfernen darf.
+
+Neue Templates:
+shop/status.tpl - Die Oberfläche zum Bearbeiten, Anlegen und Entfernen von Status.
+                  Umgesetzt für das Design admin und standard.
+
+Neue Modulansichten:
+shop/status - Verwaltet die Status, verwendet shop/status.tpl
+shop/setstatus - Ansicht zum Ändern des Status einer Bestellung.
+
+Neue Fetch-Funktionen:
+shop/order_status_history_count - Gibt die Anzahl der Verlaufseinträge einer Bestell-ID zurück
+shop/order_status_history - Gibt die Verlaufseinträge des Status einer Bestell-ID zurück

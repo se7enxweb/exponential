@@ -1,0 +1,59 @@
+*Titel: Template-Funktionen 'fetch' für das Modul 'setup'
+
+Anlass:
+Informationen über die Version von Exponential sollen sich in Templates abrufen lassen.
+
+*Dokumentation:
+Funktionsname   : 'version'
+Parameter       : keine
+Rückgabewert    : vollständige Version von Exponential
+Beispiel        : fetch( setup, version ) => '3.5.0rc1'
+
+Funktionsname   : 'major_version'
+Parameter       : keine
+Rückgabewert    : Hauptversionsnummer
+Beispiel        : fetch( setup, major_version ) => '3'
+
+Funktionsname   : 'minor_version'
+Parameter       : keine
+Rückgabewert    : Nebenversionsnummer
+Beispiel        : fetch( setup, minor_version ) => '5'
+
+Funktionsname   : 'release'
+Parameter       : keine
+Rückgabewert    : Release-Nummer
+Beispiel        : fetch( setup, release ) => '0'
+
+Funktionsname   : 'state'
+Parameter       : keine
+Rückgabewert    : Status
+Beispiel        : fetch( setup, state ) => 'rc1'
+
+Funktionsname   : 'is_development'
+Parameter       : keine
+Rückgabewert    : 'true' bei einer Entwicklungsversion, sonst 'false'
+Beispiel        : fetch( setup, is_development ) => (bool)true
+
+Funktionsname   : 'revision'
+Parameter       : keine
+Rückgabewert    : Revisionsnummer
+Beispiel        : fetch( setup, version ) => '9305'
+
+Funktionsname   : 'database_version'
+Parameter       : Ist der Parameter 'with_release' 'false', wird die Release-Nummer nicht an
+                  die Datenbankversion angehängt.
+                  Standardmäßig ist 'with_release' 'true'.
+Rückgabewert    : Datenbankversion
+Beispiel        : fetch( setup, database_version ) => '3.5.0rc1-3'
+                  fetch( setup, database_version, hash( with_release, false() ) => '3.5.0rc1'
+
+Funktionsname   : 'database_release'
+Parameter       : keine
+Rückgabewert    : Nummer des Datenbank-Releases
+Beispiel        : fetch( setup, database_release ) => '3'
+
+*Tests:
+
+*SVN-Revisionen:
+9309
+

@@ -1,0 +1,48 @@
+*Titel: Erweiterte Filter für content/list* und content/tree*
+
+*Dokumentation:
+Die Fetch-Funktionen content/list, content/list_count, content/tree und content/tree_count
+können zusätzlich filtern.
+
+Filter-Attribut:
+Neu ist das Filter-Attribut 'owner'. Es bezieht sich auf die owner_id des Inhaltsobjekts und
+lässt sich zum Beispiel verwenden, um alle Objekte eines bestimmten Benutzers zu finden.
+
+Filter-Operationen:
+Diese Operationen sind hinzugekommen:
+- in, not_in: Vergleicht das Feld mit einem Array von Werten.
+- between, not_between: Vergleicht das Feld mit einem Start- und Endwert, übergeben als Array
+  mit zwei Elementen. Das Feld muss innerhalb dieses Bereichs (between) oder außerhalb
+  (not_between) liegen.
+- like, not_like: Vergleicht das Feld mit einer Zeichenkette mit Platzhalter. Das
+  Platzhalterzeichen ist *.
+
+Beispiel für 'owner':
+Ruft alle Objekte des aktuellen Benutzers ab.
+{fetch( content, tree,
+        hash( parent_node_id, 2,
+              attribute_filter,
+              array( array( 'owner', '=', $current_user.contentobject_id ) ) ) )}
+
+
+Beispiel für 'in':
+Ruft Fehlerberichte mit Priorität 1 und 4 ab.
+{fetch( content, tree,
+        hash( parent_node_id, 2,
+              attribute_filter,
+              array( array( 'bug/priority', 'in', array( 1, 4 ) ) ) ) )}
+
+Beispiel für 'between':
+Ruft Fehlerberichte mit Priorität 2, 3 und 4 ab.
+{fetch( content, tree,
+        hash( parent_node_id, 2,
+              attribute_filter,
+              array( array( 'bug/priority', 'between', array( 2, 4 ) ) ) ) )}
+
+Beispiel für 'like':
+Ruft alle Fehlerberichte ab, deren Titel den Text 'class' enthält.
+{fetch( content, tree,
+        hash( parent_node_id, 2,
+              attribute_filter,
+              array( array( 'bug/title', 'like', '*class*' ) ) ) )}
+

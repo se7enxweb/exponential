@@ -1,0 +1,18 @@
+*Titel: Template-Liste für Datentypen
+
+Anlass:
+Datentypen sollen angeben können, von welchen Templates sie abhängen. Das
+Exportsystem verwendet diese Liste, um zugehörige Templates genauer auszuwählen.
+
+*Dokumentation:
+eZDataType hat eine neue Methode templateList(). Sie gibt ein Array mit
+Template-Dateien zurück, die gesucht werden sollen, entweder als Dateipfad oder
+als regulärer Ausdruck.
+Der Rückgabewert false bedeutet: keine Template-Abhängigkeiten.
+
+Datentypen, die dies implementieren:
+eZXMLType - Liefert die Abhängigkeit zu ezxmltags.
+
+*Tests:
+
+*SVN-Revisionen:

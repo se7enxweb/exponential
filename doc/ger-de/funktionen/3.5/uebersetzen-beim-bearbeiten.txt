@@ -1,0 +1,18 @@
+*Titel: Übersetzen beim Bearbeiten von Inhalten
+
+*Anlass:
+Inhalte sollen sich leichter von einer Sprache in eine andere übersetzen lassen. Statt eines
+eigenen Bearbeitungsbildschirms wird derselbe wie beim normalen Bearbeiten verwendet. So hat
+der Benutzer alle Bedienelemente, die er sonst auch hat.
+
+*Dokumentation:
+content/edit hat einen neuen Parameter, FromLanguage. Ist er angegeben, werden die
+Attributdaten dieser Sprache neben bzw. über dem bearbeiteten Attribut angezeigt.
+
+Zum Beispiel eine Übersetzung von eng-GB nach nor-NO:
+content/edit/10/1/nor-NO/eng-GB
+
+Außerdem stehen in edit.tpl neue Template-Variablen zur Verfügung:
+- from_language - Die in der URL angegebene Sprache oder false, wenn keine
+- from_content_attributes - Ein Array der Attribute aus FromLanguage oder false, wenn es diese Sprache nicht gibt
+- is_translating_content - true, wenn die Bearbeitungsseite aus einer anderen Sprache übersetzt, sonst false

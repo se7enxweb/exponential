@@ -1,0 +1,12 @@
+*Titel: Verbesserungen am RSS-Modul
+
+*Anlass: Umsetzung der Verbesserungswünsche 6128, 4719, 6148, 6121.
+
+*Dokumentation:
+Jetzt lässt sich einstellen, ob ein RSS-Feed den ganzen Teilbaum einer Quelle liefert oder nur die direkten Kinder des gewählten Quellknotens. Letzteres ist der Standard und war das Verhalten früherer Versionen.
+
+Die Anzahl der exportierten Einträge lässt sich jetzt in einem Auswahlmenü wählen. In älteren Versionen von Exponential war das eine INI-Einstellung. Die verfügbaren Optionen werden in site.ini unter [RSSSettings] konfiguriert.
+
+Der RSS-Cache lässt sich während der Entwicklung abschalten: Setzen Sie einfach CacheTime unter [RSSSettings] auf 0.
+
+Eine neue Option lässt die Links im RSS-Feed immer auf den Hauptknoten des Objekts zeigen. Das ist nützlich, wenn Sie Einträge von Orten exportieren, die keine Vollansicht haben.

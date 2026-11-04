@@ -1,0 +1,14 @@
+Titel: Operation "In den Warenkorb"
+
+Dokumentation:
+Die Aktion "In den Warenkorb" ist in eine Operation gewandert. Sie hat damit einen Vor- und
+einen Nach-Trigger, und Workflows lassen sich verwenden.
+Dafür gibt es die Ansicht shop/add, die die Operation aufruft.
+
+Nach dem Hinzufügen leitet das System gemäß einem neuen Schalter in site.ini weiter.
+Er steht in der Gruppe ShopSettings und heißt RedirectAfterAddToBasket.
+Er kann einen dieser Werte haben:
+- basket - Zurück zum Warenkorb, der den neu hinzugefügten Artikel zeigt
+- reload - Zurück dorthin, wo der Benutzer vorher war, damit er weiter einkaufen kann.
+
+Der Standard ist basket, der zur Warenkorbliste weiterleitet.

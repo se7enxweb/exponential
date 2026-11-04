@@ -1,0 +1,24 @@
+*** Experimentell ***
+Diese neue Funktion ist experimentell und kann in künftigen Versionen entfernt werden.
+
+Titel: Siteaccess-Einstellungen in Erweiterungen
+
+Dokumentation:
+Mit den Siteaccess-Einstellungen in Erweiterungen lassen sich Siteaccess-spezifische
+Einstellungen in Erweiterungen ablegen.
+
+Die Verzeichnisstruktur muss so aussehen:
+extension/<my_extension>/settings/siteaccess/<my_siteaccess>/<file.ini.append.php>
+
+Beispiel:
+extension/ezno/settings/siteaccess/ezno/override.ini.append.php :
+
+<?php /*
+
+[article_full_ezno]
+Source=node/view/full.tpl
+MatchFile=article/full.tpl
+Match[class_identifier]=article
+Subdir=templates
+
+*/ ?>

@@ -1,0 +1,16 @@
+*Titel: Neuer Parameter des Operators 'content_structure_tree'
+
+*Dokumentation:
+Der Operator 'content_structure_tree' hat einen neuen booleschen Parameter: $unfoldNodeID.
+<code>
+{set contentStructureTree = content_structure_tree( $rootNodeID, $classFilter,
+                                                    $maxDepth, $maxNodes,
+                                                    $sortBy, $fetchHidden,
+                                                    $unfoldNodeID ) }
+</code>
+
+Ist $unfoldNodeID nicht gesetzt oder 0 (false), arbeitet 'content_structure_operator' wie
+bisher. Andernfalls gibt $unfoldNodeID einen Knoten an, der aufgeklappt werden soll. Dieser
+Knoten kann nur ein Kind erster Ebene des Wurzelknotens ($rootNodeID) sein. Ist der Knoten
+$unfoldNodeID kein Kind erster Ebene des Wurzelknotens oder lässt er sich gar nicht abrufen,
+arbeitet der Operator 'content_structure_tree' ebenfalls wie bisher.

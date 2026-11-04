@@ -1,0 +1,13 @@
+*Titel: Verbesserte Listenabfrage
+
+*Anlass:
+Alle Kinder eines Knotens sollen sich auflisten lassen, auch wenn der aktuelle Benutzer
+keinen Zugriff auf sie hat.
+Das ist nützlich, wenn man einige Kinder eines Ordners mit ein paar Angaben auflisten will.
+Versucht der Benutzer, das Kindobjekt anzusehen, wird ihm das verwehrt.
+
+*Dokumentation:
+content/list, content/tree, content/list_count und content/tree_count haben einen neuen
+Parameter:
+- limitation - Ein Array mit den Angaben zur Einschränkung. Ein leeres Array bedeutet
+               keine Prüfung, null die Standardprüfung. Die Voreinstellung ist null.

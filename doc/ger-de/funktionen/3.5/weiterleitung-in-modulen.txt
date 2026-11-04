@@ -1,0 +1,21 @@
+*Titel: Erweiterte Weiterleitungsmethoden in Modulen
+
+*Dokumentation:
+Die Weiterleitungsmethoden in eZModule haben zwei zusätzliche Parameter, mit denen sich
+Benutzerparameter und ein Anker angeben lassen. Sind sie angegeben, werden sie an die
+erzeugte URL angehängt.
+
+Beispiel:
+
+// im Modul content
+$module->redirectToView( 'view', array( 'full', 200 ),
+                         null, array( 'MyParam' => 42 ), 'list-of-items' );
+// erzeugt die URL
+content/view/full/200//(MyParam)/42#list-of-items
+
+Methoden, die dies unterstützen:
+redirect():
+redirectToView():
+redirectModule():
+redirectionURI():
+redirectionURIForModule():

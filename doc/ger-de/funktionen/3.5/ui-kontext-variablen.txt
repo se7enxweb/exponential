@@ -1,0 +1,60 @@
+*Titel: Variablen für den UI-Kontext
+
+Anlass:
+Im Pagelayout und in anderen Templates soll sich prüfen lassen, welche Art von Oberfläche
+gerade verwendet wird, etwa um zu entscheiden, welche Menüs oder Werkzeugleisten angezeigt
+werden, oder für andere Logik.
+
+*Dokumentation:
+Mit den Kontextvariablen lässt sich die Oberfläche je nach Kontext und Komponente ändern.
+Der Kontext gibt die allgemeine Art der Oberfläche an, die Komponente das Modul bzw. den
+Bereich, in dem gearbeitet wird. Zwei getrennte Variablen erlauben es, auf das eine oder das
+andere (oder beides) zu prüfen.
+
+Der Wert der Komponente wird nach diesen Regeln in dieser Reihenfolge bestimmt:
+- Der Name des laufenden Moduls
+- Der Name der laufenden Ansicht, wenn 'ui_component_match' im Array $Module (module.php) auf 'view' steht (optional)
+- Die Einstellung 'ui_component' in der Definition der Ansicht ($ViewList in module.php) (optional)
+- Der Wert, den eZModule::setUIComponentName() im laufenden Modul setzt (optional)
+
+ui_component: Das aktuelle Modul oder der Teilbereich, mögliche Werte:
+              content, shop usw., also jedes Modul im System
+              node, Teilbereich des Moduls content
+              toolbar, Teilbereich des Moduls setup
+
+
+Der Wert des Kontexts wird nach diesen Regeln in dieser Reihenfolge bestimmt:
+- Der Standardwert 'navigation'
+- Die Einstellung 'ui_context' in der Definition der Ansicht ($ViewList in module.php) (optional)
+- Der Wert, den eZModule::setUIContextName() im laufenden Modul setzt (optional)
+
+
+Der Kontext kann jede Zeichenkette enthalten; empfohlen ist, diese Standardwerte zu verwenden:
+- navigation:     Navigation auf der Website über URLs; das ist der Standard, sofern das Modul
+                  nichts anderes setzt. Im Allgemeinen sollten alle Ansichten, die keine Werte ändern,
+                  sondern nur navigieren oder auswählen, diesen Wert verwenden, z. B. content/view, class/list
+- edit:           Bearbeiten und Speichern von Benutzereingaben, z. B. content/edit, class/edit;
+                  diese Seiten sollten nicht durch andere Formulare unterbrochen werden.
+- upload:         Hochladen von Dateien, z. B. content/upload
+- administration: Ähnlich wie 'edit', betrifft aber meist Konfiguration oder Verwaltung der
+                  Website, z. B. setup/session
+- browse:         Ähnlich wie navigation, bedeutet aber die Auswahl eines bestimmten Elements,
+                  das an einen Teil des Systems zurückgegeben wird, z. B. content/browse
+
+
+PHP-Code kann den aktuellen Kontext und die Komponente so auslesen:
+$module->uiComponentName()
+$module->uiContextName()
+
+Neue globale Template-Variablen:
+$ui_context
+$ui_component
+
+Sie stehen auch in der Variablen $module_result zur Verfügung:
+$module_result['ui_context']
+$module_result['ui_component']
+
+*Tests:
+
+*SVN-Revisionen:
+7371

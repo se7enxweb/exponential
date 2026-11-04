@@ -1,0 +1,68 @@
+*Titel: Änderungen bei den XML-Tags
+
+*Beschreibung:
+Neue Tags ersetzen und erweitern die Funktion des Tags "object".
+Das Tag "link" erzeugt einen Textlink, entweder direkt oder auf ein internes Objekt, während
+"embed" ein internes Objekt in die dargestellte Seite einbettet.
+
+*Als Link darstellen:
+
+<link href="URL" [ class="" ] [ target="" ] [ title="" ] [ id="" ]> </link>
+
+Attribute:
+target: Gibt das Zielfenster an.
+title: Setzt bei der Darstellung als HTML das Attribut title. Das ist für barrierearme
+Websites nötig.
+id: Setzt bei der Darstellung als HTML das Attribut id. Die ID lässt sich für Anker verwenden.
+
+*Eingebettet darstellen:
+
+<embed href="URL" [ view="..."  ] [ align="left|right|center" ]
+                  [ size="small|medium|large" ] [ id="" ] />
+
+Attribute:
+size: Gilt (derzeit) nur für Bilder. Andere Objekttypen können das Attribut ignorieren.
+view: Die Ansicht, mit der das Objekt dargestellt wird.
+
+*Neue Protokolle:
+
+Um in href-Attributen auf interne Objekte verlinken zu können, gibt es die Protokolle
+"ezobject" und "eznode". Sie legen eine Verknüpfung zu diesem Objekt bzw. Knoten an und werden
+bei der Darstellung in die vollständige URL aufgelöst. Gespeichert wird aber die ID, sodass
+sich Bäume kopieren lassen und die Links innerhalb des Baums angepasst werden.
+
+Beispiel:
+ezobject://[id]#[anchor]
+eznode://[id]#[anchor]
+eznode://[path_string]#[anchor]
+
+Natürlich können Sie wie bisher alle anderen Protokolle wie http, https, ftp usw. verwenden.
+Statt einer ID sollte auch ein Knotenpfad möglich sein. Wird ein Knotenpfad erkannt (z. B.
+community/specs auf der damaligen Website des Herstellers), wird die Seite in die
+entsprechende Knoten- oder Objekt-ID übersetzt, die dann in der URL verwendet wird.
+
+*Rückwärtskompatibilität:
+
+Das alte Tag object, mit dem sowohl Links als auch eingebettete Objekte dargestellt wurden,
+gilt jetzt als veraltet. Es wird aber aus Gründen der Rückwärtskompatibilität nicht entfernt.
+
+*Einzelheiten der Umsetzung:
+
+- Das Attribut 'href' wird nicht in der Datenbank gespeichert. Stattdessen werden je nach
+  Protokoll die Attribute 'node_id', 'object_id' oder 'url_id' gespeichert.
+
+- Verwenden Sie einen Knotenpfad im Protokoll 'eznode://', z. B.
+  " href='eznode://galleries/misc_flowers' ", wird kein Knotenpfad in der Datenbank gespeichert.
+  Gespeichert werden nur Knoten-IDs; der Knotenpfad wird erzeugt, wenn das XML angezeigt wird.
+  So können Sie Knoten verschieben oder umbenennen, ohne sich um die XML-Links zu kümmern.
+
+*Beispiele:
+
+Um ein Bildobjekt mit der Knoten-ID 999 einzubetten und auf ein Objekt mit der Objekt-ID 333
+verlinken zu lassen:
+
+<link href="ezobject://333"><embed href="eznode://999" /></link>
+
+Soll es stattdessen ein Textlink auf diesen Knoten sein:
+
+<link href="eznode://999">Nice cat</link>
