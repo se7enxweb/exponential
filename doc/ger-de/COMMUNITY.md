@@ -301,7 +301,7 @@ Sie ihnen für Neuigkeiten; Fragen stellen Sie in den Kanälen aus [Abschnitt 4]
 |---|---|---|
 | LinkedIn | [Exponential-Gruppe](https://www.linkedin.com/groups/14819081/) | [Unternehmensseite von 7x](https://www.linkedin.com/company/7x/) |
 | X | [@ExponentialCMS](https://x.com/ExponentialCMS) | [@se7enxweb](https://x.com/se7enxweb) |
-| Bluesky | [exponentalcms.bsky.social](https://bsky.app/profile/exponentalcms.bsky.social) | [7xweb.bsky.social](https://bsky.app/profile/7xweb.bsky.social) |
+| Bluesky | [exponentialcms.bsky.social](https://bsky.app/profile/exponentialcms.bsky.social) | [7xweb.bsky.social](https://bsky.app/profile/7xweb.bsky.social) |
 | Instagram | [exponentialcms](https://www.instagram.com/exponentialcms), [exponentialfoundation](https://www.instagram.com/exponentialfoundation) | [se7enxweb](https://www.instagram.com/se7enxweb/) |
 | YouTube | [ExponentialCMSInsights](https://www.youtube.com/@ExponentialCMSInsights) | [7xwebsitehosting](https://www.youtube.com/@7xwebsitehosting) |
 | Facebook | | [7x](https://www.facebook.com/people/7x/61559920663779/) |

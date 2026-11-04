@@ -3625,7 +3625,7 @@ f3810ed1fe8ce28f454c0747ce38f8cb  doc/changelogs/extensions/symfony.md
 ded49d230901ad3762b2ceae14619701  doc/changelogs/extensions/twig.md
 af285ac8d63f408a2ebaf23e88716894  doc/changelogs/extensions/xrowextract.md
 bbcfbb1065eefc4a3f53987a1bad5fb1  doc/changelogs/extensions/xrowmetadata.md
-e9fd3b52538ea89b8a8e06163bd592aa  doc/eng-us/COMMUNITY.md
+15ec016b2488002e88c82b8bd9dccc4f  doc/eng-us/COMMUNITY.md
 9034c228aa36d7fc774fc9e6c38e76ac  doc/eng-us/CONFIGURING.md
 0101a4fc3ef4925f5882b075d3db7478  doc/eng-us/DISTRIBUTIONS.md
 8f1308a0bb70a3295a8a8d9c3a214333  doc/eng-us/EXTENDING.md
@@ -11700,7 +11700,7 @@ c1f7a212ea842e5d20ea84e5fb9f577a  doc/eng-us/help/press/why-it-is-called-exponen
 b2c2e8cb2f45eab8944874c308f83e05  doc/eng-us/help/project/about-the-project.md
 a2b81b7e7e6819b7366db25e6f83c340  doc/eng-us/help/project/build-with-exponential.md
 d8274ba2c6f0dc6eeb9c5d352657328d  doc/eng-us/help/project/code-of-conduct.md
-93600db52dc1e7dceac498622bcfd27e  doc/eng-us/help/project/community-channels.md
+04377cf962ba15fac171d881aeb8d056  doc/eng-us/help/project/community-channels.md
 7a9f8e22d9a4fa715aeb09591c9cee37  doc/eng-us/help/project/contribute-to-the-project.md
 70acb01cfeb58d8b7d087225768c6827  doc/eng-us/help/project/documentation-sources.md
 51340b40199a8cd231d8f26635036317  doc/eng-us/help/project/faq.md
@@ -13511,7 +13511,7 @@ f56beaea3e5d700ac7442b6a68d85cc2  doc/ger-de/.examples/descriptions/35-user-mana
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 84ecf8b47bf44a9a3d53d86b719e8e1b  doc/ger-de/.examples/strings.json
 dc7ff024aa77430c7b263454381d2f50  doc/ger-de/.paths.json
-a7e204b670691a8bb1f2d666eef36abd  doc/ger-de/COMMUNITY.md
+c53156c42000de1416f01525f27d0036  doc/ger-de/COMMUNITY.md
 a8125eb49b252dc31f8db75ef93ca53a  doc/ger-de/CONFIGURING.md
 1cd811669f94673b3ba9db99603f0f42  doc/ger-de/DISTRIBUTIONS.md
 d92e7d32e4f6ac50174e4d7f82ca379b  doc/ger-de/EXTENDING.md
@@ -20564,7 +20564,7 @@ a77a3eb970907ffb52d048db9af3b2b1  doc/ger-de/hilfe/privatpersonen/vereinsseiten/
 28145d52d3b11d05bda8b2a2623fbd64  doc/ger-de/hilfe/privatpersonen/vereinsseiten/vereinsnewsletter.md
 3cb7e9d1f193d7e1320c9631b942cb06  doc/ger-de/hilfe/privatpersonen/was-es-gibt-und-was-nicht.md
 5312c8a5155e25df1b0bd32b40afab85  doc/ger-de/hilfe/projekt/README.md
-3d66aad19e958427806e3afae5cd0c39  doc/ger-de/hilfe/projekt/community-kanaele.md
+c1af3789b444f2861664636402e10599  doc/ger-de/hilfe/projekt/community-kanaele.md
 3aa5689939641aee08f2f82c0a42ba9a  doc/ger-de/hilfe/projekt/faq.md
 3d40985756abb05bf26f0b41eda2f46a  doc/ger-de/hilfe/projekt/geben-und-spenden.md
 412ba5a6614c1dcd2da938172660aa03  doc/ger-de/hilfe/projekt/lizenz-faq.md
