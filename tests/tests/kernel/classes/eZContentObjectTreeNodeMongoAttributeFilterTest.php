@@ -78,7 +78,7 @@ class eZContentObjectTreeNodeMongoAttributeFilterTest extends PHPUnit\Framework\
 
     public function testWithJoins()
     {
-        $stages = eZContentObjectTreeNode::mongoAttributeFilterStages( array( array( 'name', '=', 'x' ) ), true );
+        $stages = eZContentObjectTreeNode::mongoAttributeFilterStages( array( array( 'name', '=', 'x' ) ), array( 'mask' => 1, 'ids' => array() ) );
         $this->assertSame( 'ezcontentobject', $stages[0]['$lookup']['from'] );
         $last = end( $stages );
         $this->assertSame( array( 'name' => array( '$eq' => 'x' ) ), $last['$match'] );

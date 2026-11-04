@@ -2384,7 +2384,8 @@ class eZContentObjectTreeNode extends eZPersistentObject
      * The aggregate stages that apply an AttributeFilter on MongoDB, as createAttributeFilterSQLStrings() does on
      * the SQL engines. They run on tree documents with the object's and class's fields flattened in (id,
      * current_version, published, modified, section_id, owner_id, class_identifier, name; see subTreeByNodeID());
-     * $withJoins puts the stages that flatten them in front, for a pipeline that has not joined yet.
+     * $withJoins puts the stages that flatten them in front, for a pipeline that has not joined yet (true, or the
+     * languages of mongoLanguageInfo() for the name lookup).
      *
      * The filters: path, published, modified, modified_subnode, node_id, contentobject_id, section, state, depth,
      * class_identifier, priority, name, owner, visibility, and class attributes (identifier or id, by their sort
@@ -2393,7 +2394,7 @@ class eZContentObjectTreeNode extends eZPersistentObject
      * subtree.
      *
      * @param array|false $attributeFilter
-     * @param bool $withJoins
+     * @param bool|array $withJoins
      * @return array|false the stages (none for no filter); false when the filter cannot be applied: an unknown
      *                     class attribute in an "and" filter (null on the SQL engines), class_name or an unknown
      *                     operator. The caller returns an empty result then, never the unfiltered subtree.
@@ -2496,7 +2497,7 @@ class eZContentObjectTreeNode extends eZPersistentObject
         if ( $joined )
             $stages[] = array( '$project' => $joined );
         if ( $withJoins )
-            $stages = array_merge( self::mongoFlattenStages(), $stages );
+            $stages = array_merge( self::mongoFlattenStages( is_array( $withJoins ) ? $withJoins : null ), $stages );
         return $stages;
     }
 
@@ -2549,8 +2550,10 @@ class eZContentObjectTreeNode extends eZPersistentObject
      *
      * @return array
      */
-    static function mongoFlattenStages()
+    static function mongoFlattenStages( $languageInfo = null )
     {
+        if ( $languageInfo === null )
+            $languageInfo = self::mongoLanguageInfo();
         return array(
             array( '$lookup' => array( 'from' => 'ezcontentobject', 'localField' => 'contentobject_id', 'foreignField' => 'id', 'as' => '_obj' ) ),
             array( '$unwind' => '$_obj' ),
@@ -2560,18 +2563,209 @@ class eZContentObjectTreeNode extends eZPersistentObject
             array( '$lookup' => array(
                 'from' => 'ezcontentobject_name',
                 'let' => array( 'oid' => '$contentobject_id', 'ver' => '$contentobject_version' ),
-                'pipeline' => array(
-                    array( '$match' => array( '$expr' => array( '$and' => array( array( '$eq' => array( '$contentobject_id', '$$oid' ) ),
-                                                                                 array( '$eq' => array( '$content_version', '$$ver' ) ) ) ) ) ),
-                    array( '$limit' => 1 ),
-                ),
+                'pipeline' => self::mongoNameLookupPipeline( $languageInfo ),
                 'as' => '_name' ) ),
-            array( '$unwind' => array( 'path' => '$_name', 'preserveNullAndEmptyArrays' => true ) ),
+            array( '$unwind' => '$_name' ),
             array( '$addFields' => array(
                 'id' => '$_obj.id', 'current_version' => '$_obj.current_version', 'modified' => '$_obj.modified',
                 'owner_id' => '$_obj.owner_id', 'published' => '$_obj.published', 'section_id' => '$_obj.section_id',
+                'contentclass_id' => '$_obj.contentclass_id', 'language_mask' => '$_obj.language_mask',
                 'class_identifier' => '$_cls.identifier', 'name' => '$_name.name' ) ),
         );
+    }
+
+    /**
+     * The prioritized languages as the MongoDB stages need them, read where the SQL engines read
+     * eZContentLanguage::languagesSQLFilter() and sqlFilter(): while a fetch's Language is set.
+     *
+     * @return array 'mask' (1, always available, plus the id of every prioritized language) and 'ids' (the ids, the
+     *               most prioritized first)
+     */
+    static function mongoLanguageInfo()
+    {
+        $mask = 1;
+        $ids = array();
+        foreach ( eZContentLanguage::prioritizedLanguages() as $language )
+        {
+            $id = (int)$language->attribute( 'id' );
+            $mask += $id;
+            $ids[] = $id;
+        }
+        return array( 'mask' => $mask, 'ids' => $ids );
+    }
+
+    /**
+     * The language filter of a subtree fetch on MongoDB: only objects in a prioritized language or always
+     * available, as languagesSQLFilter() ( language_mask & mask > 0 ).
+     *
+     * @param array $languageInfo from mongoLanguageInfo()
+     * @return array one $match stage, on the flattened language_mask
+     */
+    static function mongoLanguageStages( array $languageInfo )
+    {
+        return array( array( '$match' => array( 'language_mask' => array( '$bitsAnySet' => (int)$languageInfo['mask'] ) ) ) );
+    }
+
+    /**
+     * The $lookup pipeline of an object's name on MongoDB, as eZContentLanguage::sqlFilter() picks it on the SQL
+     * engines: the name in the most prioritized language the version has, else the always available one; a
+     * version with neither has no name, and the fetch leaves it out (the SQL engines' join finds no row).
+     *
+     * @param array $languageInfo from mongoLanguageInfo()
+     * @return array
+     */
+    static function mongoNameLookupPipeline( array $languageInfo )
+    {
+        $branches = array();
+        foreach ( array_values( $languageInfo['ids'] ) as $rank => $id )
+        {
+            // a name row's language_id is the language's id, plus 1 when it is the always available one
+            $branches[] = array( 'case' => array( '$in' => array( '$language_id', array( $id, $id + 1 ) ) ), 'then' => $rank );
+        }
+        $fallback = array( '$cond' => array( array( '$eq' => array( array( '$mod' => array( '$language_id', 2 ) ), 1 ) ), 500, 1000 ) );
+        return array(
+            array( '$match' => array( '$expr' => array( '$and' => array( array( '$eq' => array( '$contentobject_id', '$$oid' ) ),
+                                                                         array( '$eq' => array( '$content_version', '$$ver' ) ) ) ) ) ),
+            array( '$addFields' => array( '_rank' => $branches ? array( '$switch' => array( 'branches' => $branches, 'default' => $fallback ) ) : $fallback ) ),
+            array( '$match' => array( '_rank' => array( '$lt' => 1000 ) ) ),
+            array( '$sort' => array( '_rank' => 1 ) ),
+            array( '$limit' => 1 ),
+        );
+    }
+
+    /**
+     * The read permission of a subtree fetch on MongoDB, as createPermissionCheckingSQL() gives it to the SQL
+     * engines: one condition per policy (its limitations ANDed, its Node and Subtree placements ORed), the policies
+     * ORed. The stages run on tree documents with the object's fields flattened in (contentclass_id, section_id,
+     * owner_id, id). Before this the MongoDB path checked no permission at all, and a fetch listed every node of the
+     * subtree, restricted sections included, to anybody.
+     *
+     * @param array|bool $limitationList from getLimitationList(): false for no read access, an empty array for all
+     * @param array $fetchScope from permissionFetchScope()
+     * @return array the stages: none for full access; a $match no document meets for no access
+     */
+    static function mongoPermissionStages( $limitationList, $fetchScope = array() )
+    {
+        $none = array( array( '$match' => array( '$expr' => false ) ) );
+        if ( $limitationList === false )
+            return $none;
+        if ( !is_array( $limitationList ) || count( $limitationList ) == 0 )
+            return array();
+
+        $prunedPolicies = false;
+        if ( self::permissionSQLOptimization() )
+        {
+            $limitationList = self::mergeLimitationList( $limitationList );
+            $mergedCount = count( $limitationList );
+            if ( isset( $fetchScope['paths'] ) || !empty( $fetchScope['class_ids'] ) )
+            {
+                $limitationList = self::pruneLimitationList( $limitationList,
+                                                             isset( $fetchScope['paths'] ) ? $fetchScope['paths'] : null,
+                                                             isset( $fetchScope['class_filter_type'] ) ? $fetchScope['class_filter_type'] : false,
+                                                             isset( $fetchScope['class_ids'] ) ? $fetchScope['class_ids'] : array() );
+                $prunedPolicies = count( $limitationList ) < $mergedCount;
+            }
+            if ( count( $limitationList ) == 0 )
+                return $none;
+        }
+
+        $stages = array();
+        $groupOwners = null;
+        $statesJoined = false;
+        $policies = array();
+        foreach ( $limitationList as $limitationArray )
+        {
+            $parts = array();
+            $placements = array();
+            foreach ( $limitationArray as $ident => $values )
+            {
+                $values = (array)$values;
+                switch ( $ident )
+                {
+                    case 'Class':
+                        if ( count( $values ) > 0 )
+                            $parts[] = array( 'contentclass_id' => array( '$in' => array_map( 'intval', $values ) ) );
+                        break;
+
+                    case 'Section':
+                    case 'User_Section':
+                        if ( count( $values ) > 0 )
+                            $parts[] = array( 'section_id' => array( '$in' => array_map( 'intval', $values ) ) );
+                        break;
+
+                    case 'Owner':
+                        $parts[] = array( 'owner_id' => (int)eZUser::currentUser()->attribute( 'contentobject_id' ) );
+                        break;
+
+                    case 'Group':
+                        if ( $groupOwners === null )
+                        {
+                            // the owners that share a user group with the current user, as the SQL engines' temporary table
+                            $groupOwners = array();
+                            $userObject = eZUser::currentUser()->attribute( 'contentobject' );
+                            $parentList = $userObject ? array_map( 'intval', (array)$userObject->attribute( 'parent_nodes' ) ) : array();
+                            if ( $parentList )
+                            {
+                                foreach ( (array)eZDB::instance()->aggregate( 'ezcontentobject_tree', array(
+                                    array( '$match' => array( 'parent_node_id' => array( '$in' => $parentList ) ) ),
+                                    array( '$group' => array( '_id' => '$contentobject_id' ) ) ) ) as $row )
+                                    $groupOwners[] = (int)$row['_id'];
+                            }
+                        }
+                        $parts[] = array( 'owner_id' => array( '$in' => $groupOwners ) );
+                        break;
+
+                    case 'Node':
+                        $placements[] = array( 'node_id' => array( '$in' => array_map( 'intval', $values ) ) );
+                        break;
+
+                    case 'Subtree':
+                        foreach ( $values as $pathString )
+                            $placements[] = array( 'path_string' => array( '$regex' => '^' . preg_quote( (string)$pathString ) ) );
+                        break;
+
+                    case 'User_Subtree':
+                        $subtrees = array();
+                        foreach ( $values as $pathString )
+                            $subtrees[] = array( 'path_string' => array( '$regex' => '^' . preg_quote( (string)$pathString ) ) );
+                        if ( $subtrees )
+                            $parts[] = count( $subtrees ) > 1 ? array( '$or' => $subtrees ) : $subtrees[0];
+                        break;
+
+                    default:
+                        if ( strncmp( $ident, 'StateGroup_', 11 ) === 0 )
+                        {
+                            // the state ids of a StateGroup limitation belong to that group: the object has one of them
+                            if ( !$statesJoined )
+                            {
+                                $stages[] = array( '$lookup' => array( 'from' => 'ezcobj_state_link', 'localField' => 'id',
+                                                                       'foreignField' => 'contentobject_id', 'as' => '_perm_states' ) );
+                                $statesJoined = true;
+                            }
+                            $parts[] = array( '_perm_states.contentobject_state_id' => array( '$in' => array_map( 'intval', $values ) ) );
+                        }
+                        // a limitation of an extension: its handler writes SQL, which MongoDB cannot run, so the
+                        // policy gives no access here (the SQL engines without a handler do the same)
+                        else if ( !ezpContentLimitation::isKernelLimitation( $ident ) )
+                        {
+                            $parts[] = array( '$expr' => false );
+                        }
+                }
+            }
+            if ( $placements )
+                $parts[] = count( $placements ) > 1 ? array( '$or' => $placements ) : $placements[0];
+            if ( $parts )
+                $policies[] = count( $parts ) > 1 ? array( '$and' => $parts ) : $parts[0];
+        }
+        if ( $policies )
+            $stages[] = array( '$match' => count( $policies ) > 1 ? array( '$or' => $policies ) : $policies[0] );
+        else if ( $prunedPolicies )
+            return $none;
+        else
+            return array();
+        if ( $statesJoined )
+            $stages[] = array( '$project' => array( '_perm_states' => 0 ) );
+        return $stages;
     }
 
     static function subTreeByNodeID( $params = false, $nodeID = 0 )
@@ -2673,6 +2867,7 @@ class eZContentObjectTreeNode extends eZPersistentObject
 
         $languageFilter = eZContentLanguage::languagesSQLFilter( 'ezcontentobject' );
         $objectNameLanguageFilter = eZContentLanguage::sqlFilter( 'ezcontentobject_name', 'ezcontentobject' );
+        $mongoLanguage = self::mongoLanguageInfo();
 
         if ( $language )
         {
@@ -2682,8 +2877,17 @@ class eZContentObjectTreeNode extends eZPersistentObject
 
         $limitation = ( isset( $params['Limitation']  ) && is_array( $params['Limitation']  ) ) ? $params['Limitation']: false;
         $limitationList = eZContentObjectTreeNode::getLimitationList( $limitation );
-        $sqlPermissionChecking = eZContentObjectTreeNode::createPermissionCheckingSQL( $limitationList, 'ezcontentobject_tree', 'ezcontentobject_tree',
-            eZContentObjectTreeNode::permissionFetchScope( $limitationList, $nodeID, $nodePaths, $params ) );
+        $permissionScope = eZContentObjectTreeNode::permissionFetchScope( $limitationList, $nodeID, $nodePaths, $params );
+        if ( eZDB::instance()->databaseName() === 'mongo' )
+        {
+            $mongoPermissionStages = self::mongoPermissionStages( $limitationList, $permissionScope );
+            $sqlPermissionChecking = array( 'from' => '', 'where' => '', 'temp_tables' => array() );
+        }
+        else
+        {
+            $sqlPermissionChecking = eZContentObjectTreeNode::createPermissionCheckingSQL( $limitationList, 'ezcontentobject_tree', 'ezcontentobject_tree',
+                $permissionScope );
+        }
 
         // Determine whether we should show invisible nodes.
         $showInvisibleNodesCond = eZContentObjectTreeNode::createShowInvisibleSQLString( !$ignoreVisibility );
@@ -2800,20 +3004,15 @@ class eZContentObjectTreeNode extends eZPersistentObject
                     $mPipeline[] = [ '$match' => [ '_obj.contentclass_id' => [ $fop => $filterClassIDs ] ] ];
                 }
             }
-            // Name lookup
+            // Name lookup: the name in the most prioritized language, as the SQL engines' join picks it; a version
+            // without a name in such a language is left out, as there
             $mPipeline[] = [ '$lookup' => [
                 'from'     => 'ezcontentobject_name',
                 'let'      => [ 'oid' => '$contentobject_id', 'ver' => '$contentobject_version' ],
-                'pipeline' => [
-                    [ '$match' => [ '$expr' => [ '$and' => [
-                        [ '$eq' => [ '$contentobject_id', '$$oid' ] ],
-                        [ '$eq' => [ '$content_version', '$$ver' ] ],
-                    ] ] ] ],
-                    [ '$limit' => 1 ],
-                ],
+                'pipeline' => self::mongoNameLookupPipeline( $mongoLanguage ),
                 'as' => '_name',
             ] ];
-            $mPipeline[] = [ '$unwind' => [ 'path' => '$_name', 'preserveNullAndEmptyArrays' => true ] ];
+            $mPipeline[] = [ '$unwind' => '$_name' ];
             // Flatten joined fields
             $mPipeline[] = [ '$addFields' => [
                 'contentclass_id'            => '$_obj.contentclass_id',
@@ -2833,6 +3032,8 @@ class eZContentObjectTreeNode extends eZPersistentObject
                 'name'                       => '$_name.name',
                 'real_translation'           => '$_name.real_translation',
             ] ];
+            // the languages and the read permission (languagesSQLFilter(), createPermissionCheckingSQL())
+            $mPipeline = array_merge( $mPipeline, self::mongoLanguageStages( $mongoLanguage ), $mongoPermissionStages );
             $filterStages = self::mongoAttributeFilterStages( $params['AttributeFilter'] );
             if ( $filterStages === false )
             {
@@ -3278,6 +3479,7 @@ class eZContentObjectTreeNode extends eZPersistentObject
 
         $languageFilter = ' AND '.eZContentLanguage::languagesSQLFilter( 'ezcontentobject' );
         $objectNameLanguageFilter = eZContentLanguage::sqlFilter( 'ezcontentobject_name', 'ezcontentobject' );
+        $mongoLanguage = self::mongoLanguageInfo();
 
         if ( $language )
         {
@@ -3302,8 +3504,17 @@ class eZContentObjectTreeNode extends eZPersistentObject
 
         $limitation = ( isset( $params['Limitation']  ) && is_array( $params['Limitation']  ) ) ? $params['Limitation']: false;
         $limitationList = eZContentObjectTreeNode::getLimitationList( $limitation );
-        $sqlPermissionChecking = eZContentObjectTreeNode::createPermissionCheckingSQL( $limitationList, 'ezcontentobject_tree', 'ezcontentobject_tree',
-            eZContentObjectTreeNode::permissionFetchScope( $limitationList, $nodeID, $nodePaths, $params ) );
+        $permissionScope = eZContentObjectTreeNode::permissionFetchScope( $limitationList, $nodeID, $nodePaths, $params );
+        if ( eZDB::instance()->databaseName() === 'mongo' )
+        {
+            $mongoPermissionStages = self::mongoPermissionStages( $limitationList, $permissionScope );
+            $sqlPermissionChecking = array( 'from' => '', 'where' => '', 'temp_tables' => array() );
+        }
+        else
+        {
+            $sqlPermissionChecking = eZContentObjectTreeNode::createPermissionCheckingSQL( $limitationList, 'ezcontentobject_tree', 'ezcontentobject_tree',
+                $permissionScope );
+        }
 
         $query = "SELECT
                         count( DISTINCT ezcontentobject_tree.node_id ) as count
@@ -3370,20 +3581,16 @@ class eZContentObjectTreeNode extends eZPersistentObject
                 $matchStage['is_invisible'] = 0;
             if ( isset( $params['MainNodeOnly'] ) && $params['MainNodeOnly'] === true )
                 $matchStage['$expr'] = [ '$eq' => [ '$node_id', '$main_node_id' ] ];
-            $countPipeline = [ [ '$match' => $matchStage ] ];
+            // joined and flattened as the fetch does: the name in a prioritized language (none, no count), the
+            // object's class, section, owner and languages for the filters and the read permission
+            $countPipeline = array_merge( [ [ '$match' => $matchStage ] ], self::mongoFlattenStages( $mongoLanguage ) );
             if ( isset( $classIDArray ) && !empty( $classIDArray ) )
             {
-                $countPipeline[] = [ '$lookup' => [
-                    'from'         => 'ezcontentobject',
-                    'localField'   => 'contentobject_id',
-                    'foreignField' => 'id',
-                    'as'           => '_obj',
-                ] ];
-                $countPipeline[] = [ '$unwind' => '$_obj' ];
                 $filterOp = ( isset( $params['ClassFilterType'] ) && $params['ClassFilterType'] === 'include' ) ? '$in' : '$nin';
-                $countPipeline[] = [ '$match' => [ '_obj.contentclass_id' => [ $filterOp => array_map( 'intval', $classIDArray ) ] ] ];
+                $countPipeline[] = [ '$match' => [ 'contentclass_id' => [ $filterOp => array_map( 'intval', $classIDArray ) ] ] ];
             }
-            $filterStages = self::mongoAttributeFilterStages( $attributeFilterParam, true );
+            $countPipeline = array_merge( $countPipeline, self::mongoLanguageStages( $mongoLanguage ), $mongoPermissionStages );
+            $filterStages = self::mongoAttributeFilterStages( $attributeFilterParam );
             if ( $filterStages === false )
             {
                 $db->dropTempTableList( $sqlPermissionChecking['temp_tables'] );
@@ -4448,6 +4655,14 @@ class eZContentObjectTreeNode extends eZPersistentObject
                     else
                         $nodesListArray = $result;
                 }
+                // the SQL engines join each node with its object: the root node 1 has none (object 0) and is never
+                // in a path. Kept here, it put an unnamed node before every page's path, so a front page's title
+                // read "Home / Content" instead of "Home"
+                $nodesListArray = array_values( array_filter( $nodesListArray, function ( $node ) {
+                    $objectID = $node instanceof eZContentObjectTreeNode ? $node->attribute( 'contentobject_id' )
+                              : ( is_array( $node ) && isset( $node['contentobject_id'] ) ? $node['contentobject_id'] : 0 );
+                    return (int)$objectID > 0;
+                } ) );
                 return $nodesListArray;
             }
 
