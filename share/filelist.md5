@@ -3526,7 +3526,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-7999211ac5a671d34c8cade1da4d4bf3  doc/changelogs/6.0/6.0.15.md
+d44fce8899ef1a930a1f3ad9703e3899  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -26508,7 +26508,7 @@ eca147e65440b86a146555c6e4122e0f  lib/ezdbschema/classes/ezdbschema.php
 50c73edff627f9168563109f778a4128  lib/ezdbschema/classes/ezdbschemainterface.php
 975947c78d4d592bfb2d7adcbb8dcdc9  lib/ezdbschema/classes/ezlintschema.php
 157ef075b831bee2452b4d2e0ac8670f  lib/ezdbschema/classes/ezmysqlschema.php
-b800c6276b9af399ce371845516ce132  lib/ezdbschema/classes/ezpgsqlschema.php
+3cf799ad11119e6f6d2ff3aed75e0328  lib/ezdbschema/classes/ezpgsqlschema.php
 a19adc3c2e169f64cd9351e39584b017  lib/ezdbschema/classes/ezsqliteschema.php
 439619c63a7b36b4d672543b8e8bf29c  lib/ezdiff/classes/ezdiff.php
 70301a6b8ab124481f5898a94425b6e4  lib/ezdiff/classes/ezdiffcontainerobject.php
@@ -28251,7 +28251,7 @@ ad3ef84f9d21cd4076b60e33034063b0  tests/bootstrap.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 1b7dcb4dde933b1ebf8f8f93f3df7d55  tests/suite.php
-ca1e57fa28023180ad47f4a35d9315a1  tests/test-map.json
+9d60edcf92aa8311f80895997aac225f  tests/test-map.json
 4f2af04e2bf61d9e7bfbba8181fc08c0  tests/tests/bin/CiWorkflowPullRequestTest.php
 b152194c06e5b05fb18f088d0afd219c  tests/tests/bin/ConsoleExtensionAliasTest.php
 cf640022325724fc8a061137bbc5045e  tests/tests/bin/CopyrightNoticeTest.php
@@ -29919,6 +29919,7 @@ a8db720eaa85d3f75851d582fa9ddcbc  tests/tests/lib/ezdb/mongodb/sevenxMongoDBInte
 0c7f147392a84fb5adf61d7b3ecbb251  tests/tests/lib/ezdb/mongodb/stubs.php
 2249dbb8fa2521ff9fdbce16ffea3010  tests/tests/lib/ezdb/suite.php
 95ddfa330594f260bcc5aa82a946cff5  tests/tests/lib/ezdbschema/eZDbSchemaGenerationTest.php
+25858cc941f5d8a1ceb3039ed6765ea4  tests/tests/lib/ezdbschema/expPgsqlSchemaEngineOnlyTypesTest.php
 bcf86dedfa47add6990b85d5d920b48d  tests/tests/lib/ezdbschema/expSQLiteSchemaReaderTest.php
 eb7407c71668ea71fbf572eed45d4865  tests/tests/lib/ezdiff/eZDiffTextEngineTest.php
 d7164fa46b1305da59937e31451a1888  tests/tests/lib/ezfile/data/file.txt

@@ -64,7 +64,7 @@ class eZPgsqlSchema extends eZDBSchemaInterface
               AND i.indexrelid = c.oid';
 
     const FETCH_INDEX_COL_NAMES_QUERY = '
-        SELECT a.attnum, a.attname
+        SELECT a.attnum, a.attname, pg_catalog.format_type(a.atttypid, a.atttypmod)
         FROM pg_catalog.pg_attribute a
         WHERE a.attrelid = \'<<indexrelid>>\' AND a.attnum IN (<<attids>>) AND NOT a.attisdropped
         ORDER BY a.attnum';
@@ -122,6 +122,11 @@ class eZPgsqlSchema extends eZDBSchemaInterface
         $resultArray = $this->DBInstance->arrayQuery( str_replace( '<<oid>>', $oid, eZPgsqlSchema::FETCH_TABLE_DEF_QUERY ) );
         foreach( $resultArray as $row )
         {
+            if ( $this->isEngineOnlyType( $row['format_type'] ) )
+            {
+                eZDebug::writeNotice( "Column $table.{$row['attname']} ({$row['format_type']}) is PostgreSQL's own and not part of the schema", __METHOD__ );
+                continue;
+            }
             $field = array();
             $autoinc = false;
             $field['type'] = $this->parseType( $row['format_type'], $field['length'] );
@@ -280,9 +285,20 @@ class eZPgsqlSchema extends eZDBSchemaInterface
             $query = str_replace( '<<attids>>', $att_ids, $query );
 
             $fieldsArray = $this->DBInstance->arrayQuery( $query );
+            $engineOnly = false;
             foreach( $fieldsArray as $fields_row )
             {
                 $fields[$fields_row['attnum']] = $fields_row['attname'];
+                if ( isset( $fields_row['format_type'] ) && $this->isEngineOnlyType( $fields_row['format_type'] ) )
+                {
+                    $engineOnly = true;
+                }
+            }
+            // an index over a column the schema leaves out (a GIN index on a tsvector) is left out with it
+            if ( $engineOnly )
+            {
+                unset( $indexes[$kn] );
+                continue;
             }
             foreach ( $column_id_array as $rank => $id )
             {
@@ -295,6 +311,16 @@ class eZPgsqlSchema extends eZDBSchemaInterface
         }
 
         return $indexes;
+    }
+
+    /*!
+     Whether \a $pgType is a type only PostgreSQL has, which the database-independent schema cannot describe:
+     a column of that type is added by engine-specific SQL (the audit log's full-text column is a tsvector),
+     so reading the schema leaves it and the indexes over it out instead of failing on it.
+    */
+    function isEngineOnlyType( $pgType )
+    {
+        return in_array( strtolower( trim( (string)$pgType ) ), array( 'tsvector', 'tsquery' ), true );
     }
 
     function parseType( $type_info, &$length_info )

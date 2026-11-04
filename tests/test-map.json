@@ -3076,6 +3076,9 @@
     "design/admin*/javascript/page/class_datatypes.js": [
       "tests/tests/design/AdminStylingRulesTest.php",
       "tests/tests/design/TranslationFilesValidTest.php"
+    ],
+    "lib/ezdbschema/classes/ezpgsqlschema.php": [
+      "tests/tests/lib/ezdbschema/expPgsqlSchemaEngineOnlyTypesTest.php"
     ]
   },
   "generated": {
