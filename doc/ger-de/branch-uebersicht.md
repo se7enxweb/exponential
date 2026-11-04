@@ -205,3 +205,6 @@ derselben Jahre schon.
 
 Der Datentyp-Branch wurde in Revision 2714 in den Trunk gemergt; die
 [Release-Geschichte](../eng-us/release-overview) enthält seinen Eintrag und die Releases der Linien 3.x und 4.x.
+
+Die ganze Geschichte des Codes, von eZ publish 1999 bis zu Exponential heute, erzählt
+[Geschichte von Exponential (1999 - 2026)](HISTORY.md).

@@ -49,6 +49,7 @@ PageOrder[INTEGRATING.md]=14
 PageOrder[DISTRIBUTIONS.md]=15
 PageOrder[UNINSTALL.md]=16
 PageOrder[languages.md]=20
+PageOrder[HISTORY.md]=25
 PageOrder[branch-overview.md]=30
 PageOrder[release-overview]=40
 PageOrder[project/SECURITY.md]=50

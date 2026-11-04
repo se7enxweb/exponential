@@ -3527,7 +3527,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-d608f06c5b8196a816957d4060b43b69  doc/changelogs/6.0/6.0.15.md
+a9b968a25acfd5d58704e0b83c83d143  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -3628,6 +3628,7 @@ bbcfbb1065eefc4a3f53987a1bad5fb1  doc/changelogs/extensions/xrowmetadata.md
 926abec1d70f433796add752c0db25fd  doc/eng-us/CONFIGURING.md
 0101a4fc3ef4925f5882b075d3db7478  doc/eng-us/DISTRIBUTIONS.md
 6d3a30fd59d8e71b2c1ad0ce019b9c7e  doc/eng-us/EXTENDING.md
+3867b0b3c3f7160677e995eb28012161  doc/eng-us/HISTORY.md
 2b3cb0af24217aa1c20aa63fc3834cf5  doc/eng-us/INSTALL.md
 493ddee0880524da7a6437cabc7cc4ef  doc/eng-us/INTEGRATING.md
 a22d0be1ce2284b67950a4d1673dd1b0  doc/eng-us/LICENSE-GFDL-1.3.txt
@@ -3773,7 +3774,7 @@ e37c2dcbaa794657ef0b6ade79057808  doc/eng-us/bc/6.0/velocity-engine-upgrade-note
 47fd2bff5c237dc0a50c3deb40ab5f34  doc/eng-us/bc/6.0/weak-passwords-and-reset-key-lifetime.md
 c99118cb6b0537f2ca6d975c9ef3918f  doc/eng-us/bc/6.0/webdav-entry-script-index-webdav.md
 67f18c68d2630fcc6c26ac4ee6fe0ab5  doc/eng-us/bc/6.0/yui-removal.md
-715629d1297281bca0c4c15d0cb86564  doc/eng-us/branch-overview.md
+dbf786531ebcae285be530cca616cd1d  doc/eng-us/branch-overview.md
 9aad8564171ca8a3ebbdf24d0ac878f1  doc/eng-us/doxygen/Doxyfile
 96a0cec80eb773687ca28840ecc67ca1  doc/eng-us/doxygen/empty.html
 218a5bdcfb7e8b6199a72d575b78aac8  doc/eng-us/examples/README.md
@@ -4953,8 +4954,8 @@ ca2674ec74f81022f4cd7a748770bf77  doc/eng-us/examples/ini-settings/exphelp/Title
 0ba48a9cf37cdfb565b1e917929eefb3  doc/eng-us/examples/ini-settings/exphelp/Tracker_community.md
 aeec9e7a12212b862a115f962ab8cbc8  doc/eng-us/examples/ini-settings/exphelp/Tracker_software.md
 314874544e21e6b51c13bd6ffc742008  doc/eng-us/examples/ini-settings/exphelp/Tracker_velocity.md
-ba2c71fcb2935e4d038cce112eadf2b9  doc/eng-us/examples/ini-settings/exphelp/TreeSettings.md
-34e2d205b903bce28357f76321f1696c  doc/eng-us/examples/ini-settings/exphelp/TypeSettings.md
+a52676ae775778a834c5e46e7670d496  doc/eng-us/examples/ini-settings/exphelp/TreeSettings.md
+083efeb8cd9436e605e961e5a09d755e  doc/eng-us/examples/ini-settings/exphelp/TypeSettings.md
 dae15689b65dac0b6640120102738692  doc/eng-us/examples/ini-settings/expservices-expportal/Portal.md
 8d6a0e1d1cf136baab84004d31f218ab  doc/eng-us/examples/ini-settings/expservices-expportal/README.md
 18da3e1f07b3db6ebd7885c7f2ec29fd  doc/eng-us/examples/ini-settings/expservices-expservices/Community.md
@@ -6951,7 +6952,7 @@ c1612437070da67fdd2723c6b1e1c2b2  doc/eng-us/features/6.0/extensions/xrowmetadat
 3f29ad01e9f5d278ca8af3fe2d21d253  doc/eng-us/features/6.0/form-expired-page.md
 b388ac5e100e8398638ffe8c4c6c8207  doc/eng-us/features/6.0/graphql.md
 d764ef1d7e05fc5071e8521fe1dbe843  doc/eng-us/features/6.0/help-content.md
-aa0986c8b908d9db8aaf401c0e55c870  doc/eng-us/features/6.0/help-system.md
+db85cba2ed3de670a18b411f201b3b8e  doc/eng-us/features/6.0/help-system.md
 1497f038f1fb68bf320b385032fe2e31  doc/eng-us/features/6.0/hidden-admin-tabs.md
 67e2133c059b3294dd3d9275b167b820  doc/eng-us/features/6.0/icon-themes-in-extensions.md
 c8c732f08abfb2593fd5f7599f60905f  doc/eng-us/features/6.0/install-in-one-command.md
@@ -12818,7 +12819,7 @@ c7cdb0d6a8282f5615c51c97d03961b5  doc/eng-us/history/2026/2026-06b.md
 baf0a1abb1a74ef6750c9fabd489f337  doc/eng-us/history/2026/2026-09a.md
 5d5ee79c7f0a6884d2c882cf316977b0  doc/eng-us/history/2026/2026-09b.md
 cb6bd94501ab228bc30231d0dcdac14c  doc/eng-us/history/2026/2026-10.md
-f141dae6f33c684548da6af923b32140  doc/eng-us/history/README.md
+9e19d5586f13d7ff0c6d800b384a0d4a  doc/eng-us/history/README.md
 ce37311e8dbae6d00d565cabfb7eb117  doc/eng-us/history/coverage.md
 3d3da2c9608f58cec6e8c77f0edcf081  doc/eng-us/history/ecosystem.md
 4282c626398cba0e3b13294c6497c776  doc/eng-us/history/ecosystem/DoctrineBundle.md
@@ -13504,10 +13505,11 @@ f56beaea3e5d700ac7442b6a68d85cc2  doc/ger-de/.examples/descriptions/35-user-mana
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 84ecf8b47bf44a9a3d53d86b719e8e1b  doc/ger-de/.examples/strings.json
-5c5d4b22ed488be7b6fea8053acd36f8  doc/ger-de/.paths.json
+22a6376de867dc11a1f8a7da704528d5  doc/ger-de/.paths.json
 86c4bc42e93188f788000c1f76e44d5b  doc/ger-de/CONFIGURING.md
 1cd811669f94673b3ba9db99603f0f42  doc/ger-de/DISTRIBUTIONS.md
 67d0c51338ceda6e163e950f05431c3a  doc/ger-de/EXTENDING.md
+7bec84c63be0f20f31d152df583d426b  doc/ger-de/HISTORY.md
 f714ac81a205d3c9771c77072df79204  doc/ger-de/INSTALL.md
 1316ffcbd05822078423f926a0f775fa  doc/ger-de/INTEGRATING.md
 28bb0394d0d8b5056ebfe1a57ae0bd12  doc/ger-de/LIZENZ-GFDL-1.3.txt
@@ -14969,8 +14971,8 @@ a0bf82fc93b2f98e337b2bc30484e228  doc/ger-de/beispiele/ini-einstellungen/exphelp
 c33ef1623aecfc5904c4a9dcf73e69bc  doc/ger-de/beispiele/ini-einstellungen/exphelp/Tracker_community.md
 f1fc889c88ef62869c704363e2914a11  doc/ger-de/beispiele/ini-einstellungen/exphelp/Tracker_software.md
 d77071a743107de563390806d2cb44fd  doc/ger-de/beispiele/ini-einstellungen/exphelp/Tracker_velocity.md
-adfb00aab07633dc8a3257c16d30ece7  doc/ger-de/beispiele/ini-einstellungen/exphelp/TreeSettings.md
-d38ffc4fe4ece7898a71bce21bceed97  doc/ger-de/beispiele/ini-einstellungen/exphelp/TypeSettings.md
+0992b5fc5f4118490de4d57a5f9ded13  doc/ger-de/beispiele/ini-einstellungen/exphelp/TreeSettings.md
+9a84e14512044df8e77951955a60b0de  doc/ger-de/beispiele/ini-einstellungen/exphelp/TypeSettings.md
 d4dd3bcf407cd3e2211a65f104d5f211  doc/ger-de/beispiele/ini-einstellungen/expservices-expportal/Portal.md
 dfd63961180fbe5f8501b2620ffadf96  doc/ger-de/beispiele/ini-einstellungen/expservices-expportal/README.md
 0ca07087b4317d31390db9f3b8bb6c9d  doc/ger-de/beispiele/ini-einstellungen/expservices-expservices/Community.md
@@ -16656,7 +16658,7 @@ a437b6de2cfeb8157ec0bd620cfe6f82  doc/ger-de/beispiele/workflow-ereignisse/ezfin
 65dddf148faeeed5b008171d5ecc92c8  doc/ger-de/beispiele/workflow-ereignisse/ezwaituntildate.md
 7bb1b4550c0b752f61d29753d8b8061f  doc/ger-de/bilder/sprachen/abdeckungskarte.svg
 800b87bb88f68ebbb35579602e7f762c  doc/ger-de/bilder/sprachen/abdeckungskarte.webp
-1a99ff81e679dcb26606964706be3852  doc/ger-de/branch-uebersicht.md
+c8f823d883c4ef52e169e1729393f510  doc/ger-de/branch-uebersicht.md
 5c1300ec13825a45839a835e74c558e0  doc/ger-de/funktionen/3.10/berechtigung-sektion-zuweisen.txt
 b514de4f1454d62ac50e3695adbffcb4  doc/ger-de/funktionen/3.10/mehrsprachige-url-aliase.txt
 e0dffdec5d5d7e60e1651602bc20176e  doc/ger-de/funktionen/3.10/override-bedingungen-fuer-weiterempfehlen.txt
@@ -16977,7 +16979,7 @@ eb3d2bb16f19518e5d5f40301852dfa7  doc/ger-de/funktionen/6.0/generator-fuer-den-s
 182d80bb708aaaa1348d28e88f2008aa  doc/ger-de/funktionen/6.0/graphql.md
 e667b2bcfdc637b0ebf0d7ce755249e5  doc/ger-de/funktionen/6.0/handler-fuer-inhaltseinschraenkungen.md
 68d47347beaa485aeeced24a6f68bde7  doc/ger-de/funktionen/6.0/hilfeinhalte.md
-06dabb6fb5802e40a6b22622faf0efee  doc/ger-de/funktionen/6.0/hilfesystem.md
+8be558d1308a4c1413ee470fdcadbfc8  doc/ger-de/funktionen/6.0/hilfesystem.md
 445e9e9efb5d3397ac8acc5ce905b8bb  doc/ger-de/funktionen/6.0/icon-themes-in-extensions.md
 6a93174afff8017d38daaa3e8a6bcebc  doc/ger-de/funktionen/6.0/info-und-paketseiten.md
 5b3b088b68957758753acb3f0e3a1ca5  doc/ger-de/funktionen/6.0/inhalts-finder.md
@@ -17124,7 +17126,7 @@ a5c50abb255008458d9b98ac41541881  doc/ger-de/geschichte/2026/2026-06a.md
 33ed205a05ee7fc7c84b0e998f54977d  doc/ger-de/geschichte/2026/2026-09a.md
 7b97f2a4629b5dbee11a0a6c40ae3b77  doc/ger-de/geschichte/2026/2026-09b.md
 aee0e1a937b203d880e0e4d7bae3dff9  doc/ger-de/geschichte/2026/2026-10.md
-823226bd175d6be0e9923d44deb9c770  doc/ger-de/geschichte/README.md
+6cc361100780f9a0a812f529301ceea3  doc/ger-de/geschichte/README.md
 c4e7bc456b8f458cb84ea8aea45eb564  doc/ger-de/geschichte/abdeckung.md
 9840fec868601cf27213f9723db558de  doc/ger-de/geschichte/aenderungsverzeichnis/AdminAid.md
 422c8e49bfcf7b302132277c12daf679  doc/ger-de/geschichte/aenderungsverzeichnis/DoctrineBundle.md
@@ -24968,7 +24970,7 @@ e36bbe93748e047396c720e927431ea9  kernel/classes/help/content/exphelpmanualsync.
 bdd022a78ded90fa2ef96ce71a1bfeb3  kernel/classes/help/content/rest/exphelprestviewcontroller.php
 87426f43762967b08e1326eeecfd935a  kernel/classes/help/exphelp.php
 a63ff9934a8519aa4b506d0e5cfebfee  kernel/classes/help/exphelpallowlist.php
-d0d090f5ae2ea1b5fa21c9c37ca7ff89  kernel/classes/help/exphelpaudience.php
+484b09c3ee362720ef36bc2b2886fde2  kernel/classes/help/exphelpaudience.php
 0a220545866ed07af78d148550f03023  kernel/classes/help/exphelpcommitfeed.php
 5378d01788118723dc59f7347128b4cd  kernel/classes/help/exphelpcontextpageinterface.php
 f546e5b19a93c07565afe222731b0a3d  kernel/classes/help/exphelpcontextproviderinterface.php
@@ -27128,7 +27130,7 @@ db2bae948264a3a4af9be5be6760321b  settings/debugbar.ini
 b0c004af769060ac23ef847a4250a782  settings/design.ini
 b244336d7be89b1697f8232f4f0fe201  settings/editorpolicies.ini
 32345e49a48d1f9bf1251ad9dde479b7  settings/error.ini
-ab0ba0bfc378c7f74351c5ed0ff0b1c2  settings/exphelp.ini
+b5611dd75b46623c75bef5e94029bd61  settings/exphelp.ini
 4209ce0fc8d74237bef6f2415d450959  settings/extendedattributefilter.ini
 e87b6557bf97b4e7a43f052afcca7015  settings/ezxml.ini
 fb2495206b5c7b42cdef926446b6f7c0  settings/fetchalias.ini
