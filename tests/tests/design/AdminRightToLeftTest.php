@@ -17,6 +17,7 @@
  * @group design
  */
 
+#[\PHPUnit\Framework\Attributes\Group('design')]
 class AdminRightToLeftTest extends PHPUnit\Framework\TestCase
 {
     /** the scripts written right to left (CLDR's characterOrder right-to-left) */

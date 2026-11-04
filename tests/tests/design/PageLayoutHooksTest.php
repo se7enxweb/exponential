@@ -14,6 +14,7 @@
  * @group design
  */
 
+#[\PHPUnit\Framework\Attributes\Group('design')]
 class PageLayoutHooksTest extends PHPUnit\Framework\TestCase
 {
     const HOOK = "{include uri='design:pagelayout/hooks/body_end.tpl'}";

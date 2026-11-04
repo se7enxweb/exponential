@@ -13,6 +13,7 @@
  * @group design
  */
 
+#[\PHPUnit\Framework\Attributes\Group('design')]
 class AdminPopupSiteAccessMenuVariablesTest extends PHPUnit\Framework\TestCase
 {
     public static function designs()

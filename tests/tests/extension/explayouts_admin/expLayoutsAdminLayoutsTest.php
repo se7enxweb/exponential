@@ -21,6 +21,7 @@
  * @group explayouts_admin
  */
 
+#[\PHPUnit\Framework\Attributes\Group('explayouts_admin')]
 class expLayoutsAdminLayoutsTest extends PHPUnit\Framework\TestCase
 {
     protected static $bootError = null;
