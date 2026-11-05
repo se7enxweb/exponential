@@ -30,7 +30,7 @@ Verzeichnis von Verarbeitungstätigkeiten, für Auskunftsanträge und für den A
 |---|---|---|---|---|
 | Benutzerkonten (Benutzer-Inhaltsobjekte, `ezuser`) | Name, Anmeldename, E-Mail, was immer die Benutzerklasse hinzufügt | der Knoten des Benutzers; Benutzer > Benutzerkonten prüfen (CSV) | Entfernen am Knoten (endgültig, kein Papierkorb) | keine |
 | Besuche (`ezuservisit`) | letzter Besuch, Zahl der Anmeldungen | Benutzerkonten prüfen | mit dem Konto | keine |
-| Sitzungen | Sitzungsdaten während der Anmeldung | Setup > Sitzungen (mit `ezpSessionHandlerDB`) | Setup > Sitzungen; Zeitüberschreitung | `SessionTimeout` (3 Tage) |
+| Sitzungen | Sitzungsdaten während der Anmeldung | Setup > Sitzungen (mit `ezpSessionHandlerDB`) | Setup > Sitzungen; Zeitüberschreitung | `SessionTimeout` (360 Tage) |
 | Formulareinsendungen (Informationssammlungen) | was Besucher eingegeben haben | Setup > Gesammelte Informationen, CSV-Export | Setup > Gesammelte Informationen, Entfernen | keine: manuell |
 | E-Mail-Einstellungen und Einwilligungsprotokoll | Adresse, Entscheidungen, Einwilligungsverlauf mit IP-Adresse | Setup > E-Mail-Einstellungen; `exp:mail:preferences export` | `exp:mail:preferences erase` | Einwilligungsprotokoll 1095 Tage für Personen, die nicht mehr da sind |
 | Sperrliste | gesalzener Hash einer Adresse | Prüfen durch Eingabe der Adresse | Aufheben | standardmäßig unbegrenzt |

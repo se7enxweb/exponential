@@ -39,7 +39,7 @@ kann sich ein Konto ohne Zeile in `ezuser_setting` nicht anmelden: Die Anmeldung
 
 ## Sessions
 
-- `site.ini [Session] SessionTimeout` (Standard drei Tage) beendet eine Session nach ihrer letzten Verwendung.
+- `site.ini [Session] SessionTimeout` (Standard 360 Tage) beendet eine Session nach ihrer letzten Verwendung.
 - `[Session] Handler` leer (der Standard) speichert Sessions in PHPs eigenem Speicher; `ezpSessionHandlerDB` speichert sie
   in der Tabelle `ezsession`, die mehrere Webknoten teilen können und die die Administration auflisten und beenden kann
   ([Sessions](../../anleitungen/sitzungen.md)).

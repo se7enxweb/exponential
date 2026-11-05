@@ -278,7 +278,7 @@ Installieren Sie sie in der Crontab des Benutzers der Site (`crontab -e -u <site
 - `frequent` alle paar Minuten ist das, was Benachrichtigungen und Inhaltsjobs erwarten; `infrequent` stündlich oder
   täglich.
 - `session_gc.php` entfernt Sitzungen, die älter als `site.ini [Session] SessionTimeout` sind (ausgeliefert
-  `259200` s, drei Tage), wo die Sitzungsbereinigung von PHP durch das Betriebssystem nicht läuft. Dasselbe von Hand:
+  `31104000` s, 360 Tage), wo die Sitzungsbereinigung von PHP durch das Betriebssystem nicht läuft. Dasselbe von Hand:
   `php bin/php/ezsessiongc.php --allow-root-user`.
 - Rotieren Sie die Dateien `cron-*.log` mit logrotate des Systems ([10.10](#1010-logs-und-log-rotation)).
 

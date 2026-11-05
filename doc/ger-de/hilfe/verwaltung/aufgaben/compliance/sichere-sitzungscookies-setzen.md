@@ -25,7 +25,7 @@ Für Administratoren reiner HTTPS-Sites. Standardmäßig ist das Sitzungscookie 
 
 - Die Site wird nur über HTTPS ausgeliefert; hinter einem Proxy listet `TrustedProxies[]` ihn, und er setzt
   `X-Forwarded-Proto`.
-- Vereinbaren Sie mit den Redakteuren eine Sitzungsdauer (mitgeliefert: 259200 Sekunden, drei Tage).
+- Vereinbaren Sie mit den Redakteuren eine Sitzungsdauer (mitgeliefert: 31104000 Sekunden, 360 Tage, für `SessionTimeout` und `RememberMeTimeout`).
 
 ## Schritte
 

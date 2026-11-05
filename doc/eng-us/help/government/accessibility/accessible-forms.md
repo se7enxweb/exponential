@@ -68,7 +68,7 @@ keyboard and a screen reader, and offer another contact route next to the form.
 - A form token belongs to the session; a refused token shows the "form expired" page
   ([Form expired page](../../../features/6.0/form-expired-page.md)). Check that the page is clear and lets the visitor
   go back without losing work where possible.
-- Sessions end after `[Session] SessionTimeout` (three days by default). If you shorten it for security, think of
+- Sessions end after `[Session] SessionTimeout` (360 days by default). If you shorten it for security, think of
   people who need long to fill in a form (WCAG 2.2.1 Timing adjustable).
 
 ## After sending

@@ -39,7 +39,7 @@ INI-Cache: `php bin/php/ezcache.php --clear-tag=ini`.
 
 | Datei | Block | Schlüssel | Mitgeliefert | Empfehlung | Lesen |
 |---|---|---|---|---|---|
-| `site.ini` | `Session` | `SessionTimeout` | `259200` | kürzer für gemeinsam genutzte Computer | [Sitzungen](../../../../anleitungen/sitzungen.md) |
+| `site.ini` | `Session` | `SessionTimeout` | `31104000` | kürzer für gemeinsam genutzte Computer | [Sitzungen](../../../../anleitungen/sitzungen.md) |
 | `site.ini` | `Session` | `ActivityTimeout` | `3600` | beibehalten | dasselbe |
 | `site.ini` | `Session` | `Handler` | leer | `ezpSessionHandlerDB`, um Sitzungen aufzulisten und zu entfernen | dasselbe |
 | `site.ini` | `Session` | `CookieSecure` | nicht gesetzt (Verhalten `auto`, gemäß den Standards zur Sicherheit) | beibehalten; liefern Sie alles über HTTPS aus | [Standards zur Sicherheit](../../../../standards/sicherheit.md) |

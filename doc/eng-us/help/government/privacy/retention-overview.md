@@ -34,7 +34,7 @@ none and need a manual routine. Use this table to turn your retention schedule i
 | Consent log of people who are gone | cronjob part `mailpreferences` (group `infrequent`) | 1095 days | `mailpreferences.ini [ConsentSettings] RetentionDays` |
 | Pending mail confirmations | same | 7 days | `[ConsentSettings] PendingDays` |
 | Suppression list | same, when set | kept forever (`0`) | `[SuppressionSettings] RetentionDays` |
-| Sessions | expiry | 3 days | `site.ini [Session] SessionTimeout` |
+| Sessions | expiry | 360 days | `site.ini [Session] SessionTimeout` |
 | Content versions | when a new version exceeds the limit, the oldest archived version is removed | 45 per object (75 for class 1) | `content.ini [VersionManagement]` |
 
 Sources: [Audit guide 4.3](../../../bc/6.0/audit.md#43-retention), [Log rotation](../../../features/6.0/log-rotation.md),

@@ -99,7 +99,7 @@ ask for a new one.
 
 You stay signed in while you work. A sign-in belongs to one browser and to this part of the installation: being
 signed in to the Editor does not sign you in to the administration or the public site, and the other way round.
-A session that is not used for a long time (three days with the shipped settings) ends, and you sign in again.
+A session that is not used for a long time (360 days with the shipped settings) ends, and you sign in again.
 
 To sign out, press the last button of the header, an arrow leaving a box (**Logout**). While an item is open for
 editing it is grayed out: store or discard your draft first. Always sign out on a shared computer.

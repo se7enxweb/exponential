@@ -38,8 +38,9 @@ An installation can offer both, and more than one administration (for example on
 3. Press **Sign in** (or Enter). The button says *Signing in…* while it works.
 
 Under the title, *Administration of ...* names the siteaccess you sign in to. Where the site allows it, the page
-also offers **Forgot your password?** and **Register new account**; a **Remember me** box appears only when the site
-has set a remember-me time (`[Session] RememberMeTimeout`).
+also offers **Forgot your password?** and **Register new account**; a **Remember me** box appears when the site
+has set a remember-me time (`[Session] RememberMeTimeout`, shipped 31104000 seconds, 360 days); it is checked by
+default.
 
 ### Two-step sign-in
 
@@ -120,7 +121,7 @@ It works only when the account has a real e-mail address and the site can send m
 
 - A sign-in belongs to one browser and one siteaccess: signing in to the administration does not sign you in to the
   Editor or the public site (`[Session] SessionNamePerSiteAccess=enabled`).
-- A session unused for a long time ends (`[Session] SessionTimeout`, three days as shipped), and you sign in again.
+- A session unused for a long time ends (`[Session] SessionTimeout`, 360 days as shipped), and you sign in again.
 - A password change signs out every other session of the account.
 
 To sign out, press the last button of the header, an arrow leaving a box (**Logout** and your username). While an

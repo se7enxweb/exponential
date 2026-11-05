@@ -47,7 +47,7 @@ changed in overrides (`settings/override/<file>.ini.append.php`); clear the INI 
 | Suppression list | kept (`0`) | `[SuppressionSettings] RetentionDays` | the same, when above 0 |
 | Trash | purged whole when the cronjob runs (empty value) | `content.ini [TrashSettings] KeepItemsForDays` | `cronjobs/trashpurge.php`, when scheduled |
 | Finished content jobs | 30 days | `content.ini [ContentJobSettings] KeepDays` | cronjob part `contentjobs` |
-| Sessions | `SessionTimeout` 259200 s (3 days) | `site.ini [Session]` | PHP's session GC; `bin/php/ezsessiongc.php` on demand |
+| Sessions | `SessionTimeout` 31104000 s (360 days) | `site.ini [Session]` | PHP's session GC; `bin/php/ezsessiongc.php` on demand |
 
 ## Kernel logs
 
@@ -146,7 +146,7 @@ it on before.
   purges the whole trash, as before; a number keeps items that many days (up to 36500). `bin/php/trashpurge.php` takes
   `--trashed-days=<days>`.
 - **Content jobs**: finished jobs are removed after `[ContentJobSettings] KeepDays=30` (`0` keeps them).
-- **Sessions**: `SessionTimeout` (259200 seconds) sets `session.gc_maxlifetime` with PHP's own session handler;
+- **Sessions**: `SessionTimeout` (31104000 seconds, 360 days) sets `session.gc_maxlifetime` with PHP's own session handler;
   `bin/php/ezsessiongc.php` removes expired sessions as defined by `SessionTimeout` on demand.
 - **Versions and drafts** of content follow the content settings of the site; they are content, and their retention is
   the customer's editorial decision.

@@ -46,7 +46,7 @@ Aus [Aufbewahrung von Logs und Daten](../../hosting/sicherheit/aufbewahrung-von-
 | Sperrliste | wird behalten | `[SuppressionSettings] RetentionDays` |
 | Papierkorb | wird vollständig geleert, wenn der Papierkorb-Cronjob läuft | `content.ini [TrashSettings] KeepItemsForDays` |
 | Abgeschlossene Inhaltsjobs | 30 Tage | `content.ini [ContentJobSettings] KeepDays` |
-| Sitzungen | 3 Tage | `site.ini [Session] SessionTimeout` |
+| Sitzungen | 360 Tage | `site.ini [Session] SessionTimeout` |
 
 Die meisten davon werden von Cronjobs durchgesetzt. Laufen die Cronjobs nicht, wird nichts entfernt: Sorgen Sie dafür,
 dass Ihr Administrator oder Hoster sie einplant ([Cronjobs und Hintergrundjobs](../zuverlaessigkeit/cronjobs-und-hintergrundjobs.md)).

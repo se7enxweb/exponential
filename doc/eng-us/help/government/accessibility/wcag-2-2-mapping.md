@@ -68,7 +68,7 @@ Some facts that matter for those criteria and can be verified in the repository:
   that moves the row with Space, Enter and the arrow keys, and the priority cells can still be edited by hand
   ([Reordering sub items by drag and drop](../../../features/6.0/admin4-design.md#reordering-sub-items-by-drag-and-drop)).
   Include other drag interactions of your extensions (for example the layouts editor) in your audit.
-- **2.2.1 Timing adjustable**: sessions end after `site.ini [Session] SessionTimeout` (259200 seconds by default);
+- **2.2.1 Timing adjustable**: sessions end after `site.ini [Session] SessionTimeout` (31104000 seconds, 360 days, by default);
   a shorter value chosen for security can affect editors who work slowly
   ([13.7 Sessions and cookies](../../../install/13-security-hardening.md#137-sessions-and-cookies)).
 - **3.3.8 Accessible authentication**: the sign-in is a username and password form; two-step sign-in, when enabled,

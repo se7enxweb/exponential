@@ -70,7 +70,7 @@ working during an incident, choose the database handler.
 
 | Setting (`site.ini [Session]`) | Default | Meaning |
 |---|---|---|
-| `SessionTimeout` | `259200` (three days) | a session ends this many seconds after its last use |
+| `SessionTimeout` | `31104000` (360 days) | a session ends this many seconds after its last use |
 | `CookieSecure` | `auto` | `Secure` cookie over HTTPS; behind a balancer that terminates TLS it needs `X-Forwarded-Proto` from a trusted proxy |
 | `CookieHttponly` | `true` | the cookie is not readable by scripts |
 | `CookieSameSite` | `Lax` | not sent with cross-site requests |

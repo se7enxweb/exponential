@@ -38,7 +38,7 @@ clear the INI cache afterwards: `php bin/php/ezcache.php --clear-tag=ini`.
 
 | File | Block | Key | Shipped | Recommendation | Read |
 |---|---|---|---|---|---|
-| `site.ini` | `Session` | `SessionTimeout` | `259200` | shorter for shared computers | [Sessions](../../../../guides/sessions.md) |
+| `site.ini` | `Session` | `SessionTimeout` | `31104000` | shorter for shared computers | [Sessions](../../../../guides/sessions.md) |
 | `site.ini` | `Session` | `ActivityTimeout` | `3600` | keep | the same |
 | `site.ini` | `Session` | `Handler` | empty | `ezpSessionHandlerDB` to list and remove sessions | the same |
 | `site.ini` | `Session` | `CookieSecure` | not set (`auto` behavior, per Security standards) | keep; serve everything over HTTPS | [Security standards](../../../../standards/security.md) |

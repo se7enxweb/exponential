@@ -29,7 +29,7 @@ by default. It is the basis for the record of processing, access requests and th
 |---|---|---|---|---|
 | User accounts (user content objects, `ezuser`) | name, login, e-mail, whatever the user class adds | the user's node; Users > Check user accounts (CSV) | node's Remove (final, no trash) | none |
 | Visits (`ezuservisit`) | last visit, number of sign-ins | Check user accounts | with the account | none |
-| Sessions | session data while signed in | Setup > Sessions (with `ezpSessionHandlerDB`) | Setup > Sessions; timeout | `SessionTimeout` (3 days) |
+| Sessions | session data while signed in | Setup > Sessions (with `ezpSessionHandlerDB`) | Setup > Sessions; timeout | `SessionTimeout` (360 days) |
 | Form submissions (information collections) | what visitors typed | Setup > Collected information, CSV export | Setup > Collected information, Remove | none: manual |
 | Mail preferences and consent log | address, choices, consent history with IP address | Setup > E-mail preferences; `exp:mail:preferences export` | `exp:mail:preferences erase` | consent log 1095 days for people who are gone |
 | Suppression list | salted hash of an address | check by typing the address | Lift | kept forever by default |

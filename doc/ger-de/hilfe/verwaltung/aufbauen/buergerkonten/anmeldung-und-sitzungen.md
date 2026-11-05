@@ -38,7 +38,7 @@ und wie fehlgeschlagene Anmeldungen behandelt werden. Quellen: [Sitzungen](../..
 
 | Einstellung (`site.ini [Session]`) | Voreinstellung | Bedeutung |
 |---|---|---|
-| `SessionTimeout` | 259200 (drei Tage) | eine Sitzung endet so lange nach ihrer letzten Nutzung |
+| `SessionTimeout` | 31104000 (360 Tage) | eine Sitzung endet so lange nach ihrer letzten Nutzung |
 | `ActivityTimeout` | 3600 (eine Stunde) | verwendet für „letzter Besuch“ und die Zahlen der Seite **Sitzungen** |
 | `Handler` | leer (der eigene Speicher von PHP) | `ezpSessionHandlerDB` hält Sitzungen in einer Tabelle, sodass die Seite **Sitzungen** sie auflisten und entfernen kann |
 

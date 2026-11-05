@@ -414,15 +414,16 @@ bekannte.
 ## 13.7 Sitzungen und Cookies
 
 `settings/site.ini [Session]`; die drei Cookie-Schlüssel sind in der mitgelieferten Datei auskommentiert, und ihre
-Standardwerte gelten, solange sie nicht gesetzt sind:
+Standardwerte gelten, solange sie nicht gesetzt sind. `SessionTimeout` und `RememberMeTimeout` setzt die
+mitgelieferte Datei:
 
 | Schlüssel | Standard | Bedeutung |
 |---|---|---|
 | `CookieSecure` | `auto` | `Secure`, sobald die Anfrage selbst über HTTPS kam; `true` erzwingt es |
 | `CookieHttponly` | `true` | Skripte können das Sitzungs-Cookie nicht lesen |
 | `CookieSameSite` | `Lax` | `Lax`, `Strict`, `None` (nur mit `Secure`) oder leer |
-| `SessionTimeout` | `259200` | Sekunden, die eine Sitzung dauert (3 Tage) |
-| `RememberMeTimeout` | leer | die Gültigkeitsdauer von „Angemeldet bleiben“ (Remember me); leer schaltet sie ab |
+| `SessionTimeout` | `31104000` | Sekunden, die eine Sitzung nach ihrer letzten Nutzung dauert (360 Tage; bis Oktober 2026 `259200`, drei Tage) |
+| `RememberMeTimeout` | `31104000` | Sekunden, die das Sitzungs-Cookie hält, wenn **Angemeldet bleiben** angehakt ist (360 Tage); das Kästchen ist auf den Anmeldeformularen vorausgewählt. Leer oder `0` schaltet „Angemeldet bleiben“ ab, und das Cookie endet dann mit dem Browser |
 | `SessionNameHandler`, `SessionNamePerSiteAccess` | `default`, `enabled` | `custom` gibt jedem Siteaccess sein eigenes Sitzungs-Cookie, sodass eine Anmeldung auf der öffentlichen Site keine Anmeldung in der Administration ist |
 
 Für eine Site, die nur über HTTPS ausgeliefert wird:
@@ -434,12 +435,15 @@ CookieSecure=true
 CookieHttponly=true
 CookieSameSite=Lax
 SessionTimeout=28800
+RememberMeTimeout=28800
 ```
 
 `CookieSecure=true` stellt sicher, dass das Cookie nie über einfaches HTTP gesendet wird, auch nicht bei einer
 Anfrage, die fälschlicherweise ohne TLS ankommt. Verwenden Sie `Strict` nur, wenn keine andere Site auf Seiten
 verlinkt, die eine Anmeldung voraussetzen. Ein kürzerer `SessionTimeout` begrenzt, wie lange eine gestohlene Sitzung
-brauchbar bleibt.
+brauchbar bleibt. Verkürzen Sie `RememberMeTimeout` mit ihm (oder lassen Sie es leer, um „Angemeldet bleiben“
+abzuschalten): Die mitgelieferte Datei verlangt, `SessionTimeout` mindestens so lang wie `RememberMeTimeout` zu
+halten, weil ein gemerktes Cookie keine Sitzung zurückbringt, die der Server schon entfernt hat.
 
 Getrennte Sitzungs-Cookies je Siteaccess:
 

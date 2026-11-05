@@ -260,7 +260,7 @@ Install it in the crontab of the site user (`crontab -e -u <site user>`, or `php
 - Use the same PHP binary the web server uses (`/opt/.../php` on hosts with several PHP versions); `php -v` in the
   cron environment may differ from your shell's.
 - `frequent` every few minutes is what notifications and content jobs expect; `infrequent` hourly or daily.
-- `session_gc.php` removes sessions older than `site.ini [Session] SessionTimeout` (shipped `259200` s, three days),
+- `session_gc.php` removes sessions older than `site.ini [Session] SessionTimeout` (shipped `31104000` s, 360 days),
   where the operating system's PHP session cleanup does not run. The same by hand:
   `php bin/php/ezsessiongc.php --allow-root-user`.
 - Rotate the `cron-*.log` files with the system's logrotate ([10.10](#1010-logs-and-log-rotation)).

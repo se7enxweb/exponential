@@ -387,15 +387,15 @@ password, and "forgot password" gives the same answer for an unknown address as 
 ## 13.7 Sessions and cookies
 
 `settings/site.ini [Session]`; the three cookie keys are commented out in the shipped file and their defaults apply
-while they are unset:
+while they are unset. `SessionTimeout` and `RememberMeTimeout` are set in the shipped file:
 
 | Key | Default | Meaning |
 |---|---|---|
 | `CookieSecure` | `auto` | `Secure` whenever the request itself came over HTTPS; `true` forces it |
 | `CookieHttponly` | `true` | scripts cannot read the session cookie |
 | `CookieSameSite` | `Lax` | `Lax`, `Strict`, `None` (only with `Secure`) or empty |
-| `SessionTimeout` | `259200` | seconds a session lasts (3 days) |
-| `RememberMeTimeout` | empty | the "Remember me" lifetime; empty disables it |
+| `SessionTimeout` | `31104000` | seconds a session lasts after its last use (360 days; until October 2026 `259200`, three days) |
+| `RememberMeTimeout` | `31104000` | seconds the session cookie lasts when **Remember me** is checked (360 days); the box is checked on the login forms by default. Empty or `0` switches Remember me off, and the cookie then ends with the browser |
 | `SessionNameHandler`, `SessionNamePerSiteAccess` | `default`, `enabled` | `custom` gives every siteaccess its own session cookie, so a sign-in on the public site is not a sign-in in the administration |
 
 For a site that is served only over HTTPS:
@@ -407,11 +407,14 @@ CookieSecure=true
 CookieHttponly=true
 CookieSameSite=Lax
 SessionTimeout=28800
+RememberMeTimeout=28800
 ```
 
 `CookieSecure=true` makes sure the cookie is never sent over plain HTTP, even on a request that wrongly arrives
 without TLS. Use `Strict` only if no other site links into signed-in pages. A shorter `SessionTimeout` limits how long
-a stolen session stays useful.
+a stolen session stays useful. Shorten `RememberMeTimeout` with it (or leave it empty to switch Remember me off):
+the shipped file asks to keep `SessionTimeout` at least as long as `RememberMeTimeout`, because a remembered cookie
+cannot bring back a session the server has already removed.
 
 Separate session cookies per siteaccess:
 

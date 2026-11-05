@@ -3632,7 +3632,7 @@ ded49d230901ad3762b2ceae14619701  doc/changelogs/extensions/twig.md
 af285ac8d63f408a2ebaf23e88716894  doc/changelogs/extensions/xrowextract.md
 bbcfbb1065eefc4a3f53987a1bad5fb1  doc/changelogs/extensions/xrowmetadata.md
 7f3212d2b818141cfb164d47fa2a4d33  doc/eng-us/COMMUNITY.md
-9b7076ad26fcd01bc108eea623a34101  doc/eng-us/CONFIGURING.md
+77e01fdb115a92bfa93b6f172fd4c59f  doc/eng-us/CONFIGURING.md
 aa7617c6f5563d4cd4ff63ed6af720cc  doc/eng-us/DISTRIBUTIONS.md
 8f1308a0bb70a3295a8a8d9c3a214333  doc/eng-us/EXTENDING.md
 ba34fdb46710aeaf4d07089fce9a4354  doc/eng-us/HISTORY.md
@@ -7903,7 +7903,7 @@ eceb9df49202d401bdeefa0e2a814b34  doc/eng-us/help/businesses/intranets/intranet-
 1de43a3e2a0a1011a5459f5168eacfd2  doc/eng-us/help/businesses/intranets/intranet-search.md
 35bf7617e2f2ed7fb34037c157ad7a27  doc/eng-us/help/businesses/intranets/news-and-announcements.md
 8af67f84eb1f9c1884e51c3978993c40  doc/eng-us/help/businesses/intranets/notifications-for-staff.md
-56568e9753c22f754300dfe05ab3ea69  doc/eng-us/help/businesses/intranets/two-factor-and-sign-in.md
+ceda741462defcb2f60218813e3d514d  doc/eng-us/help/businesses/intranets/two-factor-and-sign-in.md
 acb47dfc5dfdd42b99d04d1003a0858a  doc/eng-us/help/businesses/libraries/README.md
 1e2015bcdf5e1e2ba328a11dc22aca8e  doc/eng-us/help/businesses/libraries/catalog-planning.md
 c280350a518855a4de22d5a261f044f8  doc/eng-us/help/businesses/libraries/catalog-search.md
@@ -7994,7 +7994,7 @@ a9ee85567518c7be228c0645bda0825d  doc/eng-us/help/businesses/reliability/uptime-
 59eb5723a67425c7a271bad3109f7acb  doc/eng-us/help/businesses/security/access-reviews.md
 7a730412b0175a250a8442554a4e2d0f  doc/eng-us/help/businesses/security/compliance-evidence-from-the-audit-trail.md
 f74a3f4ae546277eb1c4005573389d6e  doc/eng-us/help/businesses/security/consent-and-forms.md
-66fe0f0ef44d0d1cb73403db3aa782c3  doc/eng-us/help/businesses/security/data-retention-and-deletion.md
+0caa9e0b2143ab2c5f3bfa4da593395a  doc/eng-us/help/businesses/security/data-retention-and-deletion.md
 d1b0a3f46ee1fcd7b75c3b9f7b774fcf  doc/eng-us/help/businesses/security/gdpr-basics.md
 a0d74925468f1b214eb63042f41758a5  doc/eng-us/help/businesses/security/personal-data-in-exponential.md
 7e1bae6965381c324725d67a569df1fd  doc/eng-us/help/businesses/security/security-basics-for-businesses.md
@@ -8290,7 +8290,7 @@ d392dcfb0abc601300a69abf21196768  doc/eng-us/help/creators/website-creators/what
 099b3d4fc9faa4b9c56922affac98102  doc/eng-us/help/customers/commerce/card-payments-and-pci.md
 cc953e71d5dd5ff080accef807a8da45  doc/eng-us/help/customers/commerce/customer-accounts.md
 8f8b741e885883a623a09ae08363230f  doc/eng-us/help/customers/commerce/daily-store-routine.md
-ff68c7823be937526c071ba416562f0e  doc/eng-us/help/customers/commerce/data-export-and-erasure.md
+91ff9d57f49c6e9f909e3018ee078db8  doc/eng-us/help/customers/commerce/data-export-and-erasure.md
 6d36d96baeac86ec99eaf53e57b66bdb  doc/eng-us/help/customers/commerce/discounts.md
 4229c1b6ce875a6453f8449a0bf3da13  doc/eng-us/help/customers/commerce/gdpr-request-log-template.md
 eb2029f82ffe5d963c0224cfa27e7083  doc/eng-us/help/customers/commerce/gdpr-requests.md
@@ -8473,7 +8473,7 @@ e9c4ba2cf653c7d54bdce31441959f14  doc/eng-us/help/database-administrators/postgr
 f8810734b779057cc77056ca700affa3  doc/eng-us/help/database-administrators/schema-tools-dump-insert-diff.md
 3d8518c7ae3af58fc3434a3a62d46802  doc/eng-us/help/database-administrators/search-index-tables.md
 dd859924cccf87cceedaed1607653e7f  doc/eng-us/help/database-administrators/securing-the-database.md
-a9782757cabcd3b1878af7af23cd5eee  doc/eng-us/help/database-administrators/sessions-in-the-database.md
+b145f2ce96c2ca437d2f380c63167a64  doc/eng-us/help/database-administrators/sessions-in-the-database.md
 c61bf834423e847c20f0dcae2fa2c0fa  doc/eng-us/help/database-administrators/sql-query-cache.md
 f0e35bba33be182ae1fe914ebbf3fe93  doc/eng-us/help/database-administrators/sqlite-files-ownership-and-permissions.md
 7df30163dce387c09608d8f8f36eb24f  doc/eng-us/help/database-administrators/sqlite-for-database-administrators.md
@@ -9179,7 +9179,7 @@ bfa16c73c512686009ca10c491a8767c  doc/eng-us/help/free-documentation.md
 05b0efe606d31a62f6ecda37f2f702c7  doc/eng-us/help/getting-started.md
 3a3f9887f08e32228932fec65b882e41  doc/eng-us/help/government/accessibility/README.md
 bedecfb6dc63425aac8e0ef8d09fb9fa  doc/eng-us/help/government/accessibility/accessible-content-for-editors.md
-05af954e0adf2d3d67fd83ccf6d79e70  doc/eng-us/help/government/accessibility/accessible-forms.md
+271324d4de7baffe75f9f0309daf8a4c  doc/eng-us/help/government/accessibility/accessible-forms.md
 e6f269bc8b1dcefd42dd20acf54ad880  doc/eng-us/help/government/accessibility/admin4-what-is-covered.md
 d9f746fa70eb449891f0173d36181d18  doc/eng-us/help/government/accessibility/alternative-text-for-images.md
 f9a5bffdabcc0decf2610d8581561ec6  doc/eng-us/help/government/accessibility/auditing-your-public-design.md
@@ -9196,7 +9196,7 @@ d876ebef261f81e08366cedc6c889413  doc/eng-us/help/government/accessibility/link-
 f4094e9aae01652632bb2c486f2a4783  doc/eng-us/help/government/accessibility/monitoring-and-feedback.md
 fbf59032a3b1e84fd37c06ceb9171d3c  doc/eng-us/help/government/accessibility/online-editor-accessibility.md
 5131b80ccf14655838643b3279acd34d  doc/eng-us/help/government/accessibility/preparing-an-acr.md
-e761e47b3a1c03deb148e27e7c76c5e1  doc/eng-us/help/government/accessibility/principle-operable.md
+f9069afd7f789eabf6e765c7072ea089  doc/eng-us/help/government/accessibility/principle-operable.md
 7e887a082e04220da4eb4d4c74624ec0  doc/eng-us/help/government/accessibility/principle-perceivable.md
 7bcc811034bb8bac5de2aefebbd0631c  doc/eng-us/help/government/accessibility/principle-robust.md
 eec0144dfa6f7dbed3491fac191bb798  doc/eng-us/help/government/accessibility/principle-understandable.md
@@ -9206,7 +9206,7 @@ bba240d4f5be05fd49b39ccfc93b8d4d  doc/eng-us/help/government/accessibility/roles
 1c58dd15a4473edebebb0a4de2e5c1e3  doc/eng-us/help/government/accessibility/section-508.md
 05034975d4e332ea655960bab4bd8fe8  doc/eng-us/help/government/accessibility/tables-in-content.md
 c8b2feb04d6bebab46d95fd1883bde67  doc/eng-us/help/government/accessibility/testing-with-axe-and-the-keyboard.md
-cab6de22870209d6675751e8c7a3d2f9  doc/eng-us/help/government/accessibility/wcag-2-2-mapping.md
+0decfd936157b5f111b64b54e299b2f5  doc/eng-us/help/government/accessibility/wcag-2-2-mapping.md
 44f8935ce437f6235036d39988301d07  doc/eng-us/help/government/accessibility/web-accessibility-directive.md
 e9adb450ba3ebf52a88579ff4ef1a0e8  doc/eng-us/help/government/accessibility/what-exponential-provides.md
 fb4ea84a4e0960955e683f428ad26d87  doc/eng-us/help/government/accessibility/what-is-not-covered.md
@@ -9218,8 +9218,8 @@ dda6daa0eac156bfd8a57efbbd2b66c3  doc/eng-us/help/government/building/citizen-ac
 a3ea14c2372697fe0ceffab785b1e56f  doc/eng-us/help/government/building/citizen-accounts/deactivation-and-removal.md
 8498a9d2e2b9bfa752c0a412be5a4f26  doc/eng-us/help/government/building/citizen-accounts/password-rules.md
 080e2e3cc19d069b38ef76b9ee0d919f  doc/eng-us/help/government/building/citizen-accounts/registration.md
-dcefd9ad89766de38bcad7bd132fcefc  doc/eng-us/help/government/building/citizen-accounts/settings-reference.md
-9b741c6be535e8d8c1f4f135d683a7f8  doc/eng-us/help/government/building/citizen-accounts/sign-in-and-sessions.md
+0a5359ea384ecfb09568283d72910bfa  doc/eng-us/help/government/building/citizen-accounts/settings-reference.md
+0e32dc7679a68563268faa34de1b7d56  doc/eng-us/help/government/building/citizen-accounts/sign-in-and-sessions.md
 c7a56da6a2fcecabad92cfccd07a87bb  doc/eng-us/help/government/building/citizen-accounts/two-factor-sign-in.md
 49bb94268a7762913dc92a19473165c3  doc/eng-us/help/government/building/citizen-accounts/user-documentation-and-support.md
 335df49c68a3a64077eb5e3834327872  doc/eng-us/help/government/building/documents-and-publications/README.md
@@ -9262,7 +9262,7 @@ ed976518729fbe5ab8ebc54271118fff  doc/eng-us/help/government/building/forms/spam
 a4659f336a2bd0673dd8b2037211b29c  doc/eng-us/help/government/building/intranets/intranet-checklist.md
 93ba5eb8e317e214728406fa6709afca  doc/eng-us/help/government/building/intranets/ldap-sign-in.md
 9725a65cca1a8526fc3544b27fcff419  doc/eng-us/help/government/building/intranets/sections-and-roles-for-intranet-content.md
-4ca4ca59deee2096d207974cd222399c  doc/eng-us/help/government/building/intranets/sessions-sign-out-and-shared-computers.md
+a4a89b1a0e2dd338e1465537a0c51c66  doc/eng-us/help/government/building/intranets/sessions-sign-out-and-shared-computers.md
 297bd64329089ace6a656fcb81832664  doc/eng-us/help/government/building/intranets/sign-in-options-for-staff.md
 faa49598e649d08de646f553222cf314  doc/eng-us/help/government/building/intranets/staff-intranets-with-exponential.md
 73b56d9f32da6abee69e5dd09888d21f  doc/eng-us/help/government/building/intranets/two-step-sign-in-for-staff.md
@@ -9498,7 +9498,7 @@ c19ca619b8525895f5fe0cf0b83d4af2  doc/eng-us/help/government/operations/availabi
 37471b0ce44638cb50739b5af3660516  doc/eng-us/help/government/operations/availability/high-availability-overview.md
 7e487a51aee80432f0a4ea395013ed66  doc/eng-us/help/government/operations/availability/maintenance-mode-and-planned-downtime.md
 a497ded1861d2a3a82c19f806081b6ee  doc/eng-us/help/government/operations/availability/read-replicas.md
-0fba64f77e4c10cc96b9f41af958dfcd  doc/eng-us/help/government/operations/availability/sessions-across-servers.md
+64cb1d0cddcb591dc21a58061de49fc4  doc/eng-us/help/government/operations/availability/sessions-across-servers.md
 b2d913cec77a6c46e5c687df3e9184a6  doc/eng-us/help/government/operations/availability/several-web-servers-behind-a-load-balancer.md
 56b8ff9fef1b2132823a0065967ba62c  doc/eng-us/help/government/operations/availability/shared-storage-and-the-dfs-cluster.md
 bacaf5485356ce0c16bf1d175cb07059  doc/eng-us/help/government/operations/availability/static-cache.md
@@ -9619,12 +9619,12 @@ a3b2d21f55df6a407804afcbfdc19772  doc/eng-us/help/government/privacy/mail-catego
 8305cba2bfbe887672d11d7503268d62  doc/eng-us/help/government/privacy/maps-and-embeds.md
 e481f33ae38904fa762ffff3865b1471  doc/eng-us/help/government/privacy/one-click-unsubscribe.md
 bd617e1e5402f69a7d356c7eeae5a2aa  doc/eng-us/help/government/privacy/other-jurisdictions.md
-f080fa4ea0ea3091036aa4ec62f923ff  doc/eng-us/help/government/privacy/personal-data-inventory.md
+e6c33e240b93fc46b60973b8108160c1  doc/eng-us/help/government/privacy/personal-data-inventory.md
 7fd375efd2e3c04c094a36326c0bc237  doc/eng-us/help/government/privacy/privacy-by-design-checklist.md
 9b33d15500dcea16d29a77a5d924b9c3  doc/eng-us/help/government/privacy/privacy-notice-outline.md
 4ffeb4c601abd9ade5bdabd730a8c4be  doc/eng-us/help/government/privacy/records-of-processing.md
 da895e9560152d80517797f4367ff2d7  doc/eng-us/help/government/privacy/restriction-and-deactivate-and-move.md
-8d00fbc0ccc2696af9cefe84f526fad8  doc/eng-us/help/government/privacy/retention-overview.md
+095b46cf95b3253b85fb235ea3d56dd0  doc/eng-us/help/government/privacy/retention-overview.md
 afd112a1f8d35e288d6b21178bb1eace  doc/eng-us/help/government/privacy/right-of-access.md
 bae72c62185d0088efc424ce1441c845  doc/eng-us/help/government/privacy/right-to-erasure.md
 9d204c3261cc69d951a482d17bf3a8ef  doc/eng-us/help/government/privacy/search-phrases.md
@@ -9783,7 +9783,7 @@ aa4fa3007e1f53479d2f1943b2283f79  doc/eng-us/help/government/security/request-lo
 1bede042c2a9f5b05a14ef792e9a0ec5  doc/eng-us/help/government/security/security-headers.md
 1c28700e0e335a11b55c0f1d25d5eeb4  doc/eng-us/help/government/security/security-posture-at-a-glance.md
 7a39703aee21406dd26c07b665dc1fd7  doc/eng-us/help/government/security/separating-the-administration.md
-b8d660a94c24735ab131126ef25a6345  doc/eng-us/help/government/security/sessions-and-cookies.md
+fc027e6ff359cc9a4e9cd935b4340f18  doc/eng-us/help/government/security/sessions-and-cookies.md
 7354b22dcb7d3d654ae2dd6c6f808e96  doc/eng-us/help/government/security/two-step-sign-in.md
 d42af5c91cec8d3ceaaf00bd1bd06b98  doc/eng-us/help/government/security/vulnerability-disclosure.md
 b647eac9c29e28c008b8226fb10ec0b9  doc/eng-us/help/government/sovereignty/README.md
@@ -9854,7 +9854,7 @@ dbc3bd69e370e075d7005e20760c9ad7  doc/eng-us/help/government/tasks/compliance/ro
 024ac72f60168a21d5c86253ae588130  doc/eng-us/help/government/tasks/compliance/run-the-file-consistency-check.md
 de38cc4b85c869274a2cfa7463963245  doc/eng-us/help/government/tasks/compliance/separate-session-cookies-for-the-administration.md
 a35dcd72c4a8b37aef00d65cd801f750  doc/eng-us/help/government/tasks/compliance/set-log-retention.md
-967a24f2db64e86fe3d43251fd58afd5  doc/eng-us/help/government/tasks/compliance/set-secure-session-cookies.md
+61d3c2ffcd5aae4bedc7962aac31c531  doc/eng-us/help/government/tasks/compliance/set-secure-session-cookies.md
 83d730a96b8288ff56189bf361772592  doc/eng-us/help/government/tasks/compliance/set-the-minimum-password-length-to-12.md
 c17390f9f56a00827eb5e1a7c72b96fb  doc/eng-us/help/government/tasks/compliance/set-the-sender-details-in-the-mail-footer.md
 25ff64589154fa4cbb238cfa78b888af  doc/eng-us/help/government/tasks/compliance/sign-out-every-session-of-a-user.md
@@ -10088,7 +10088,7 @@ abd97de027333f9a7e75eaf88ac99db6  doc/eng-us/help/hosting/basics/microsoft-sql-s
 691a9ae07abdca3cc7e62ec2907ee2bd  doc/eng-us/help/hosting/basics/mysql-for-hosts.md
 7a7833c279d0b1916cd090a32e66a5e0  doc/eng-us/help/hosting/basics/operating-systems-for-hosts.md
 f088e27383e27d949cdec8c67fbd2105  doc/eng-us/help/hosting/basics/oracle-for-hosts.md
-40fbd679715b1517102b90f5f89c8c9a  doc/eng-us/help/hosting/basics/php-settings-for-exponential.md
+abc44c7179bc8d1d12bb91bb3a5d14ea  doc/eng-us/help/hosting/basics/php-settings-for-exponential.md
 997e8d96f26eb9a47c3906ecad0a69bb  doc/eng-us/help/hosting/basics/php-versions-and-extensions.md
 2bfc5adc6599e831b3ec6e9c59279caa  doc/eng-us/help/hosting/basics/postgresql-for-hosts.md
 4e2cfb73c1d7bfd1d6b5046e982ff15e  doc/eng-us/help/hosting/basics/requirements-at-a-glance.md
@@ -10200,7 +10200,7 @@ f9e24af157cd9124863971e70d49367d  doc/eng-us/help/hosting/security/content-secur
 69e2d281503127cd1c2ee46b11e60aea  doc/eng-us/help/hosting/security/demo-mode-for-hosts.md
 d1422d12bf074699258312be6c5bf7b7  doc/eng-us/help/hosting/security/first-sign-in-and-default-passwords.md
 d4569e8a25158757780adde5cc99a0bf  doc/eng-us/help/hosting/security/hardening-for-hosts.md
-9cc3a39eea57eb9abaceefda2e920b67  doc/eng-us/help/hosting/security/log-and-data-retention.md
+5494dc5fc6e294d322e97946c9d0616a  doc/eng-us/help/hosting/security/log-and-data-retention.md
 4717a1f7dee918f111c379ed9b1680bc  doc/eng-us/help/hosting/security/multi-tenant-isolation.md
 81f817c5f1445d9bf53a92ae710b62c8  doc/eng-us/help/hosting/security/per-customer-users-and-pools.md
 3cc1dd865d3f1d94a4694e6780d179a9  doc/eng-us/help/hosting/security/request-shield-and-request-rules.md
@@ -11054,8 +11054,8 @@ c329d580bc7a32af9f83029d40467528  doc/eng-us/help/local-businesses/simple-shop/v
 41aaa3879e9b040d810e4785d5522bc8  doc/eng-us/help/local-businesses/templates/README.md
 02d90e4d69d50989a9eeb84776074205  doc/eng-us/help/local-businesses/templates/opening-hours-content-template.md
 60c0aaaa3135cd494a3bb52da730523f  doc/eng-us/help/local-businesses/templates/website-brief-for-a-local-business.md
-a5de3f3c4526b8985edb72c22a685c83  doc/eng-us/help/logging-into-the-admin.md
-93ddf18928befaa8d29b6bb64b5100d7  doc/eng-us/help/logging-into-the-editor.md
+103f8602b67c77474ba768071fd69fe4  doc/eng-us/help/logging-into-the-admin.md
+ea6cb39e8299045c6585c1065bce8d35  doc/eng-us/help/logging-into-the-editor.md
 c1c1bf79b69c184639b2131f844eac8a  doc/eng-us/help/maintaining-help-topics.md
 159bcbf78df72225eec660959e823bf5  doc/eng-us/help/managing-members.md
 b6f53929208624cdd2030096b8bfd298  doc/eng-us/help/manual/README.md
@@ -11778,7 +11778,7 @@ a5222d6181149b9dc971b6b0e7f50ec8  doc/eng-us/help/resellers/sales/naming-and-bra
 41ae0d0facf25f9c806d6926bbc62138  doc/eng-us/help/resellers/sales/pre-sales-questions-and-answers.md
 a420b17ab5dabd8778223cc4aae2b073  doc/eng-us/help/resellers/sales/sales-process.md
 c70361337ad5dd16f517a0ade52890a6  doc/eng-us/help/searching.md
-a5c7ce5b15c58ce20085b4f8951ef35b  doc/eng-us/help/security-hardening.md
+198fd6fc5616d604a165c38a34a5dfa3  doc/eng-us/help/security-hardening.md
 0e664fa25d750b89071708b2406b538c  doc/eng-us/help/setting-up-editor-and-admin-accounts.md
 633930576e562b5c2200cd0a1ae93a7c  doc/eng-us/help/site-packages/README.md
 91942493ef5ce934473bb7e67e280b77  doc/eng-us/help/site-packages/admin-gui/README.md
@@ -11861,7 +11861,7 @@ f36b1de86c35316aeb6882b01053ec74  doc/eng-us/help/site-packages/your-own/running
 7f835af6af8f52b999ea026b1aced6ae  doc/eng-us/help/software-engineers/api-design-rest-ezjscore-headless.md
 deaa858891dafda4d5030ad49c9bae04  doc/eng-us/help/software-engineers/application-servers.md
 cedd9c0bed62aecf3fb0a2e4c4bc2359  doc/eng-us/help/software-engineers/architecture-overview.md
-51d62b802015488af932d183df1469dd  doc/eng-us/help/software-engineers/authentication-sessions-and-2fa.md
+abc07596078129bcab0357e7b168009c  doc/eng-us/help/software-engineers/authentication-sessions-and-2fa.md
 5c1dafaa0aa85e7f0bfea57d10ca31d7  doc/eng-us/help/software-engineers/backward-compatibility-policy.md
 5c8ece2cb5b3b8150c07099ca66ce248  doc/eng-us/help/software-engineers/cache-invalidation-and-clearing.md
 c4695b5779163fafdc6d9c5447766fc4  doc/eng-us/help/software-engineers/caching-layers-for-engineers.md
@@ -12260,7 +12260,7 @@ adb27f9ce9b9aca3f1c5c53b7a476822  doc/eng-us/help/trainers/developers/module-13-
 6f121c1df29f9c0514a672d54fc9ad1c  doc/eng-us/help/trainers/editors-101/README.md
 405ea70657034a6392cd5cd0ad896d3a  doc/eng-us/help/trainers/editors-101/module-01-signing-in-and-the-tour/README.md
 53cc6c27bf550817a6b7559d071a96a1  doc/eng-us/help/trainers/editors-101/module-01-signing-in-and-the-tour/a-tour-of-the-screen.md
-0c6d4263a8374558ffda6f9b7f603537  doc/eng-us/help/trainers/editors-101/module-01-signing-in-and-the-tour/signing-in-and-out.md
+962ae0f3a486e7b9f5b8e1ab2f7472c8  doc/eng-us/help/trainers/editors-101/module-01-signing-in-and-the-tour/signing-in-and-out.md
 558fad3d11735ffe6a07d91389909417  doc/eng-us/help/trainers/editors-101/module-01-signing-in-and-the-tour/what-exponential-is-for-editors.md
 7f986bb9301fb8a6058bfeb532acfe42  doc/eng-us/help/trainers/editors-101/module-02-the-content-tree/README.md
 d0e37d33ba6539bf655405dd842eec03  doc/eng-us/help/trainers/editors-101/module-02-the-content-tree/getting-around-fast.md
@@ -12590,7 +12590,7 @@ a1a6bd4a7a9a20ab38148f2e79657960  doc/eng-us/help/trainers/site-administrators/m
 3f1ae0844775fad39bb18eed6b224b18  doc/eng-us/help/trainers/site-administrators/module-08-security/README.md
 62b63889c7ee03cffd6e49122c14e224  doc/eng-us/help/trainers/site-administrators/module-08-security/content-security-policy.md
 82ca58273ed87f9ae544cbec456d65b6  doc/eng-us/help/trainers/site-administrators/module-08-security/passwords-and-sign-in-policy.md
-7c427ae6b87c5ac6ee4213845dd8a9f0  doc/eng-us/help/trainers/site-administrators/module-08-security/sessions-and-cookies.md
+f4ecee40fc482f3b86401da3fe53a241  doc/eng-us/help/trainers/site-administrators/module-08-security/sessions-and-cookies.md
 f256ac76bcf24ec3b92f0001c3badb3a  doc/eng-us/help/trainers/site-administrators/module-08-security/thinking-like-an-attacker.md
 077698770e2eab7922555bc3f27cf5fc  doc/eng-us/help/trainers/site-administrators/module-08-security/two-step-sign-in.md
 4f88ea0996b009cbc2c0ea4debab9793  doc/eng-us/help/trainers/site-administrators/module-09-backups-and-maintenance/README.md
@@ -12737,7 +12737,7 @@ c66f88b2623081832f2bcecc8608d41e  doc/eng-us/help/user-management-from-the-conso
 f7f2ac6faa7feff719029da24b743a85  doc/eng-us/help/user-management-from-the-console/sessions-and-sign-in-security.md
 615bd6b40e067a565e6ebfdb5e98f629  doc/eng-us/help/user-management-from-the-console/when-a-command-fails.md
 80054e9bfd732903ba0a683d9b791fd8  doc/eng-us/help/velocity-is-part-of-exponential-6-0-15.md
-e6c5ac5da55e4ee96d7c25cd72d1e507  doc/eng-us/help/web-framework-developers/authentication-and-sessions.md
+265ff3a4a26bce4958e0341972b61127  doc/eng-us/help/web-framework-developers/authentication-and-sessions.md
 14c19e4830768047d48cbca63cae588f  doc/eng-us/help/web-framework-developers/authorization-roles-and-policies.md
 1b9ff4a29751110c03514b059046e217  doc/eng-us/help/web-framework-developers/caching-layers.md
 bcbb1a1db79fe4511834972820c18915  doc/eng-us/help/web-framework-developers/checklists-for-framework-developers.md
@@ -13146,10 +13146,10 @@ cbda8dec23b0413752f3eb9abfe7326d  doc/eng-us/install/05-setup-wizard.md
 2715303134a3c94a032f71a9015fbc35  doc/eng-us/install/07-console-install.md
 07aad3b63fb725e2ca3a48aa954e39f6  doc/eng-us/install/08-serving-the-site.md
 775ac59139d5fbe41099044e578388be  doc/eng-us/install/09-databases.md
-10552a7a8037e8e049f0b7adbf7cd26e  doc/eng-us/install/10-after-installing.md
+19e7302db7679cf8534a2437c58206b2  doc/eng-us/install/10-after-installing.md
 37decaa74fbd47826653347e4b02ac49  doc/eng-us/install/11-upgrading.md
 f3298b407f6f04238da76fc2a28296db  doc/eng-us/install/12-troubleshooting.md
-56924c9876d782b4b3f1c429c3000549  doc/eng-us/install/13-security-hardening.md
+e0ed3f1b2800db174a22fcca4f43b5d0  doc/eng-us/install/13-security-hardening.md
 58bdac2e3d9f8272c048d26eb6257e97  doc/eng-us/install/14-migrating-from-4x.md
 7f1291f003a7e01f24f54b60d3fc8d36  doc/eng-us/install/15-migrating-from-5x-legacy.md
 2ed57b0427c09ffc2775582fba0253ba  doc/eng-us/install/16-migrating-from-ez-platform-and-ibexa.md
@@ -13526,7 +13526,7 @@ d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-eve
 84ecf8b47bf44a9a3d53d86b719e8e1b  doc/ger-de/.examples/strings.json
 3acae7fecd570e6d32cb1d7d23c1471e  doc/ger-de/.paths.json
 58fbb842a08662c14cc5994f33594857  doc/ger-de/COMMUNITY.md
-86bcdf4d54e8fdb081900a9e5cd88140  doc/ger-de/CONFIGURING.md
+9bdbb093fbea997ef82dced8249f77e4  doc/ger-de/CONFIGURING.md
 c541e681abb9f1a0541f1e05e061e1c1  doc/ger-de/DISTRIBUTIONS.md
 d92e7d32e4f6ac50174e4d7f82ca379b  doc/ger-de/EXTENDING.md
 72a6daa6760de22190206de884484e7d  doc/ger-de/HISTORY.md
@@ -17453,8 +17453,8 @@ e462cda8d5b6e1e0d0d0185eecad9e94  doc/ger-de/geschichte/velocity/installer-und-p
 1e0475115e2815ba1a8cec3b2d31249f  doc/ger-de/glossar.md
 394932ed045bb76e3f2852067aec99e2  doc/ger-de/hilfe/README.md
 184a29662c44eee5ace950f8eff0cd18  doc/ger-de/hilfe/administratorpasswort-aendern.md
-9d80999100f6fc01d6769705d3ac7e48  doc/ger-de/hilfe/anmelden-im-editor.md
-8bd0a5eb4b20867b8eedd184b9b7873b  doc/ger-de/hilfe/anmelden-in-der-administration.md
+576cb2fcc82b008d018d872d90666a88  doc/ger-de/hilfe/anmelden-im-editor.md
+b473aa8178553d782b630e6635214095  doc/ger-de/hilfe/anmelden-in-der-administration.md
 c1f339d9f8303c7ff5ed088d00f50c9b  doc/ger-de/hilfe/anwender-umsteiger/bewerten/README.md
 fd64ef90dcec5caf7e773cd286268dd6  doc/ger-de/hilfe/anwender-umsteiger/bewerten/anhand-von-fakten-vergleichen.md
 801b5b757f1289c66b56422f348b934d  doc/ger-de/hilfe/anwender-umsteiger/bewerten/bewertungsbogen.md
@@ -18279,7 +18279,7 @@ bc63e8dab1a1450620d9da971606e929  doc/ger-de/hilfe/datenbankadministratoren/php-
 d1c4a87118b654490aa13a108ac70d95  doc/ger-de/hilfe/datenbankadministratoren/postgresql-einrichten.md
 0aa9dc49312a3e367f638bc37d65cd1e  doc/ger-de/hilfe/datenbankadministratoren/referenz-databasesettings.md
 b5ad2c3d067406c04d4aee0c15eaf895  doc/ger-de/hilfe/datenbankadministratoren/schemawerkzeuge-dump-insert-diff.md
-a6e1c9c607e1378bca67350d58dd466d  doc/ger-de/hilfe/datenbankadministratoren/sessions-in-der-datenbank.md
+fbd27ea7fe351cff7ceae6b71c6105b6  doc/ger-de/hilfe/datenbankadministratoren/sessions-in-der-datenbank.md
 8f05978a59c64041c27a54fd76b4bbd5  doc/ger-de/hilfe/datenbankadministratoren/sicherungen-je-engine.md
 11dd4cb96cbe830affe7b3ceb38f2261  doc/ger-de/hilfe/datenbankadministratoren/sql-abfrage-cache.md
 6f471132c12bbc001a088b2d3f2cac85  doc/ger-de/hilfe/datenbankadministratoren/sqlite-dateien-eigentuemer-und-rechte.md
@@ -19441,7 +19441,7 @@ aa446b42ba0454f406c76df554178cbc  doc/ger-de/hilfe/hosting/grundlagen/mariadb-fu
 f1cd61598cee1076aa5bcd1881a3fb93  doc/ger-de/hilfe/hosting/grundlagen/mongodb-fuer-hoster.md
 2cd877b1aff1d712792867feb001e25c  doc/ger-de/hilfe/hosting/grundlagen/mysql-fuer-hoster.md
 417088a36808833e32ea240287a06480  doc/ger-de/hilfe/hosting/grundlagen/oracle-fuer-hoster.md
-8e81c726077d0d5ea9c8dbe7253e5da9  doc/ger-de/hilfe/hosting/grundlagen/php-einstellungen-fuer-exponential.md
+9131a57d3251bbe019f7473c3d496a02  doc/ger-de/hilfe/hosting/grundlagen/php-einstellungen-fuer-exponential.md
 a47317151cc9aaa2fbc41b8b08cef117  doc/ger-de/hilfe/hosting/grundlagen/php-versionen-und-erweiterungen.md
 1f065405bfa09a692081ccf60e5bceab  doc/ger-de/hilfe/hosting/grundlagen/postgresql-fuer-hoster.md
 06fc6de40da3affab558a5e1edbd08aa  doc/ger-de/hilfe/hosting/grundlagen/speicher-cpu-und-festplatte-dimensionieren.md
@@ -19502,7 +19502,7 @@ b14189ffbd4062c79187efd226c467c0  doc/ger-de/hilfe/hosting/server/README.md
 7d54570d6478db4fac98d2a456554795  doc/ger-de/hilfe/hosting/server/velocity-neben-apache-oder-nginx.md
 e4e8cb2115de2fd5cd9dfb97be928763  doc/ger-de/hilfe/hosting/server/velocity-worker-und-pools.md
 c8b12c9829fe3103cc7b2f80ba593768  doc/ger-de/hilfe/hosting/sicherheit/README.md
-2dc51c2967c4739ffc5dd8d4623a94c8  doc/ger-de/hilfe/hosting/sicherheit/aufbewahrung-von-logs-und-daten.md
+a59ad5e8db7c2384e57838faa49c6e6e  doc/ger-de/hilfe/hosting/sicherheit/aufbewahrung-von-logs-und-daten.md
 f58f0579add6439f5ed6beccf6627fd8  doc/ger-de/hilfe/hosting/sicherheit/benutzer-und-pools-pro-kunde.md
 e1a53de8bf6eaaa27eb8221370c5a7c9  doc/ger-de/hilfe/hosting/sicherheit/compliance-und-dsgvo.md
 ee648c450770470300ea2cf6d21f52d8  doc/ger-de/hilfe/hosting/sicherheit/content-security-policy.md
@@ -19731,7 +19731,7 @@ fa358a6a896fe046be693831d4c36bf8  doc/ger-de/hilfe/kunden/gesund-halten/wie-upda
 f3415b4a58e5518e676310c2156272c7  doc/ger-de/hilfe/kunden/handel/bestellbestaetigung-per-e-mail.md
 dba5c36d9ce9435912b98a040bbd5009  doc/ger-de/hilfe/kunden/handel/bestellstatus.md
 b21870f18931dceb6cdeae7f7e47669e  doc/ger-de/hilfe/kunden/handel/bestellungen-im-alltag.md
-ad0bc847f8aa145c908dc68138f5ce4f  doc/ger-de/hilfe/kunden/handel/datenexport-und-loeschung.md
+6b3c34a5536fe88980890eb7162bfc3f  doc/ger-de/hilfe/kunden/handel/datenexport-und-loeschung.md
 7e9812763542e0d858d82462db7fe462  doc/ger-de/hilfe/kunden/handel/dsgvo-anfragen.md
 027fbe53b69716a36efd9ffb1cf839ad  doc/ger-de/hilfe/kunden/handel/ein-produkt-anlegen.md
 f68caa85087d5f7bcfaf87e1bdc1b513  doc/ger-de/hilfe/kunden/handel/kartenzahlungen-und-pci.md
@@ -20674,12 +20674,12 @@ c3b56811a2dda0b6752fd5a0de6b887a  doc/ger-de/hilfe/seitenpakete/sevenx-multisite
 b0200212398d100a07f395dcecc75e21  doc/ger-de/hilfe/seitenpakete/sevenx-multisite/siteaccesses-und-sprachen-von-sevenx-multisite.md
 c3a61289ca948e9b152733bd800f252a  doc/ger-de/hilfe/seitenpakete/sevenx-multisite/was-sie-nach-der-installation-von-sevenx-multisite-haben.md
 27f30d5a9f89ed9593b599f2582c1bdc  doc/ger-de/hilfe/seitenpakete/sevenx-multisite/woraus-sevenx-multisite-besteht.md
-9863e064d2772cdb82b6ea0cf82c4e8f  doc/ger-de/hilfe/sicherheitshaertung.md
+ec4fc365003dc1fcba351e2f18b093ab  doc/ger-de/hilfe/sicherheitshaertung.md
 c702aca91ab21f76627d538e4011e007  doc/ger-de/hilfe/softwareingenieure/abhaengigkeitsverwaltung-mit-composer.md
 476e52a10fdca789926b377d7d701538  doc/ger-de/hilfe/softwareingenieure/anwendungsserver.md
 f6d7722fd05bb14f5012d2a44023f56f  doc/ger-de/hilfe/softwareingenieure/api-design-rest-ezjscore-headless.md
 1c9e9ee95780e5c1e7d54f555e851ac6  doc/ger-de/hilfe/softwareingenieure/architekturueberblick.md
-16ac4125a31b4e96295192ac1c725e2d  doc/ger-de/hilfe/softwareingenieure/authentifizierung-sessions-und-2fa.md
+42dde8b9555c1cd2dc27c7538cccd475  doc/ger-de/hilfe/softwareingenieure/authentifizierung-sessions-und-2fa.md
 89024482620e56e822c9ecbfb03cc5b2  doc/ger-de/hilfe/softwareingenieure/beobachtbarkeit-logs-debug-und-audit.md
 81211003c0836e9b6b2ec6d8c9abe71e  doc/ger-de/hilfe/softwareingenieure/cache-invalidierung-und-leeren.md
 7d2e552c32906a631d228928865bfd78  doc/ger-de/hilfe/softwareingenieure/caching-ebenen-fuer-ingenieure.md
@@ -21206,7 +21206,7 @@ a1bc83f927e3d609e2bd92dd9f22f88f  doc/ger-de/hilfe/trainer/pruefungen/modul-06-a
 b7654b091126433d66a86cd44bd566e0  doc/ger-de/hilfe/trainer/pruefungen/modul-06-abschlussprojekte/ergebnisse-pruefen-und-abgleichen.md
 f4838c1882e86519dbd6683e223d6f33  doc/ger-de/hilfe/trainer/redakteure-101/README.md
 e701381a07402ccde6002578d922c878  doc/ger-de/hilfe/trainer/redakteure-101/modul-01-anmelden-und-rundgang/README.md
-bfe43c2dca95c5f3eebfac382ad224ad  doc/ger-de/hilfe/trainer/redakteure-101/modul-01-anmelden-und-rundgang/anmelden-und-abmelden.md
+18fe6e35be818dc5a416c919939fd797  doc/ger-de/hilfe/trainer/redakteure-101/modul-01-anmelden-und-rundgang/anmelden-und-abmelden.md
 7c0b6cd387d85de3391c174afdbab89c  doc/ger-de/hilfe/trainer/redakteure-101/modul-01-anmelden-und-rundgang/ein-rundgang-ueber-den-bildschirm.md
 419d6624fc0884b368dca9a4ddf7ee06  doc/ger-de/hilfe/trainer/redakteure-101/modul-01-anmelden-und-rundgang/was-exponential-fuer-redakteure-ist.md
 30791d7cb05e8c7033e72d36208d6891  doc/ger-de/hilfe/trainer/redakteure-101/modul-02-der-inhaltsbaum/README.md
@@ -21427,7 +21427,7 @@ a1c2f34bfa0d80070294505d67cec278  doc/ger-de/hilfe/trainer/website-administrator
 ae3cb9a71e666bd1d1d8ad719d2f3e7b  doc/ger-de/hilfe/trainer/website-administratoren/modul-08-sicherheit/README.md
 c4b47c3f743df0236df55c7af8c53298  doc/ger-de/hilfe/trainer/website-administratoren/modul-08-sicherheit/content-security-policy.md
 d6d6c7c7206b533e517986e7ea5ba979  doc/ger-de/hilfe/trainer/website-administratoren/modul-08-sicherheit/passwoerter-und-anmelderichtlinie.md
-dc04d98a70a5030edb1ac5c0dcc43827  doc/ger-de/hilfe/trainer/website-administratoren/modul-08-sicherheit/sitzungen-und-cookies.md
+a82372140f3a4ae3de1a40ced9220cad  doc/ger-de/hilfe/trainer/website-administratoren/modul-08-sicherheit/sitzungen-und-cookies.md
 dc074e405a68c1d0db7ab9f9c9952f4e  doc/ger-de/hilfe/trainer/website-administratoren/modul-08-sicherheit/wie-ein-angreifer-denken.md
 2887a8351b8e395a4c824b0f26abc98c  doc/ger-de/hilfe/trainer/website-administratoren/modul-08-sicherheit/zweistufige-anmeldung.md
 7e38e376cf47ab49b3900072e9739d1e  doc/ger-de/hilfe/trainer/website-administratoren/modul-09-sicherungen-und-wartung/README.md
@@ -21516,7 +21516,7 @@ bbab0be0d9348771e58cb56ffcd9488e  doc/ger-de/hilfe/unternehmen/intranets/intrane
 642d1e7225e521c7322c2e93531acce7  doc/ger-de/hilfe/unternehmen/intranets/neuigkeiten-und-ankuendigungen.md
 d52a9369947d46be4146f6f041a14578  doc/ger-de/hilfe/unternehmen/intranets/suche-im-intranet.md
 b63c8a91b45d4acdd129b25e8553b1ad  doc/ger-de/hilfe/unternehmen/intranets/verzeichnisanmeldung-und-ldap.md
-fe996d8d851f367cd719145ea0284acc  doc/ger-de/hilfe/unternehmen/intranets/zwei-faktor-und-anmeldung.md
+00a75154b33ef69e4a684cbf99ac2dff  doc/ger-de/hilfe/unternehmen/intranets/zwei-faktor-und-anmeldung.md
 a88ecf1c227c09810de2c541329fbdbc  doc/ger-de/hilfe/unternehmen/kosten/README.md
 9b4c5548bcad2b267d03061394d9d8a9  doc/ger-de/hilfe/unternehmen/kosten/arbeitsblatt-kosten-eines-ausfalls.md
 6121b694a507b7d4e1b9800a50eb5b2e  doc/ger-de/hilfe/unternehmen/kosten/budget-fuer-aktualisierungen-und-wartung.md
@@ -21599,7 +21599,7 @@ a4125a4a89ce63dac34616400b1f5581  doc/ger-de/hilfe/unternehmen/shops/warenkorb-u
 63ccfc15b3296fab3e1551a5c666bf03  doc/ger-de/hilfe/unternehmen/shops/zahlungen-mit-paypal.md
 9b5e15d357ffc4f4b2d1ca270dea1810  doc/ger-de/hilfe/unternehmen/shops/zahlungsanbieter-fuer-unternehmen.md
 f4191a40b52863ad747d396b1b9e1d8c  doc/ger-de/hilfe/unternehmen/sicherheit/README.md
-f3cbf8844ec518e1b1dbf5f614c28561  doc/ger-de/hilfe/unternehmen/sicherheit/aufbewahrung-und-loeschung-von-daten.md
+8fe478d104512c5830c8611251bcbff7  doc/ger-de/hilfe/unternehmen/sicherheit/aufbewahrung-und-loeschung-von-daten.md
 d660ac409ac3333ea87046ab87e6a7b1  doc/ger-de/hilfe/unternehmen/sicherheit/benutzerkonten-und-passwoerter.md
 2db05c4200d284bb64d7f6b8a027f3cd  doc/ger-de/hilfe/unternehmen/sicherheit/compliance-nachweise-aus-dem-audit-trail.md
 d813ed25d7fce820531e20d0c55b0417  doc/ger-de/hilfe/unternehmen/sicherheit/dsgvo-grundlagen.md
@@ -21670,13 +21670,13 @@ f0687bf060cce59c0f305119e7688dc4  doc/ger-de/hilfe/unterstuetzer/unterstuetzer-h
 f54354e620ec6d2ecca243b49756962f  doc/ger-de/hilfe/veroeffentlichen-und-versionen.md
 a4250d59379c8916dc799d1011d02f05  doc/ger-de/hilfe/verwaltung/aufbauen/README.md
 aa88a3bd9dc287fb00b08ffd6f9ff54a  doc/ger-de/hilfe/verwaltung/aufbauen/buergerkonten/README.md
-7caff53f7f3590aa4496d587b74eb0e8  doc/ger-de/hilfe/verwaltung/aufbauen/buergerkonten/anmeldung-und-sitzungen.md
+e9d8ffd27e887f3a996c578a30c8f544  doc/ger-de/hilfe/verwaltung/aufbauen/buergerkonten/anmeldung-und-sitzungen.md
 58aa1a0f8ab7442e4994d9f089042bf8  doc/ger-de/hilfe/verwaltung/aufbauen/buergerkonten/benutzerdokumentation-und-support.md
 1d98d357b81654791128690ccca15a42  doc/ger-de/hilfe/verwaltung/aufbauen/buergerkonten/deaktivierung-und-entfernung.md
 e0a490f1ace1203d801e71786bfc1454  doc/ger-de/hilfe/verwaltung/aufbauen/buergerkonten/kontenhygiene.md
 97e7ca6f008130776dbaf7ef433aa4be  doc/ger-de/hilfe/verwaltung/aufbauen/buergerkonten/passwortregeln.md
 e42d63690deb252e267b557cd3a3ab6c  doc/ger-de/hilfe/verwaltung/aufbauen/buergerkonten/registrierung.md
-95d933b12fd88ac26cc3b0cd18f4452e  doc/ger-de/hilfe/verwaltung/aufbauen/buergerkonten/uebersicht-der-kontoeinstellungen.md
+8c1a7fff361a2a205bef956d38b0b5d9  doc/ger-de/hilfe/verwaltung/aufbauen/buergerkonten/uebersicht-der-kontoeinstellungen.md
 d5d0c1768faf47c084dd521ab27b9b66  doc/ger-de/hilfe/verwaltung/aufbauen/buergerkonten/zweistufige-anmeldung.md
 2918ce17c0dbfc18fe615fe29692f3fe  doc/ger-de/hilfe/verwaltung/aufbauen/dokumente-und-publikationen/README.md
 7ec3871a0d8475f99514081df9bc0f01  doc/ger-de/hilfe/verwaltung/aufbauen/dokumente-und-publikationen/aufbau-einer-dokumentenbibliothek.md
@@ -21711,7 +21711,7 @@ c9d59bbc0f8d3da28b98ff3a612ecaf3  doc/ger-de/hilfe/verwaltung/aufbauen/intranets
 c43d9c95bc708addd0ed5de4fec45a3f  doc/ger-de/hilfe/verwaltung/aufbauen/intranets/ein-siteaccess-nur-fuer-mitarbeiter.md
 f9ca2556237faf50a4ab4a5ae47b969f  doc/ger-de/hilfe/verwaltung/aufbauen/intranets/intranets-fuer-mitarbeiter-mit-exponential.md
 8c092f13afc09696f8694e709d7d3bbc  doc/ger-de/hilfe/verwaltung/aufbauen/intranets/sektionen-und-rollen-fuer-intranet-inhalte.md
-4a0e4d61eabe9b642fc445c5536374b2  doc/ger-de/hilfe/verwaltung/aufbauen/intranets/sitzungen-abmeldung-und-gemeinsam-genutzte-computer.md
+a71e3b90a0d17c5e534f97d606bd7aa0  doc/ger-de/hilfe/verwaltung/aufbauen/intranets/sitzungen-abmeldung-und-gemeinsam-genutzte-computer.md
 89d6ccbe5a4146bdd23fcf004c960571  doc/ger-de/hilfe/verwaltung/aufbauen/intranets/zweistufige-anmeldung-fuer-mitarbeiter.md
 b7c3b1ef7cbb6d5e327c0932b409a5ef  doc/ger-de/hilfe/verwaltung/aufbauen/karten/README.md
 579167233d8f49cea1c05363974c77ad  doc/ger-de/hilfe/verwaltung/aufbauen/karten/den-standort-einer-servicestelle-hinzufuegen.md
@@ -21885,7 +21885,7 @@ cdbe3413a35d6894deb86933ce27f9f2  doc/ger-de/hilfe/verwaltung/aufgaben/complianc
 7f60a0fb65d8bd39d4d5081ec3427d29  doc/ger-de/hilfe/verwaltung/aufgaben/compliance/jede-sitzung-eines-benutzers-beenden.md
 e601ba52c16f61ddcda53e02debbef60  doc/ger-de/hilfe/verwaltung/aufgaben/compliance/pruefen-ob-die-formulartoken-aktiv-sind.md
 72b6fe747e42fd098d6f31ebb19b3638  doc/ger-de/hilfe/verwaltung/aufgaben/compliance/redakteure-beim-design-admin4-halten.md
-f735e9ab9678ccf28f388b99641723f7  doc/ger-de/hilfe/verwaltung/aufgaben/compliance/sichere-sitzungscookies-setzen.md
+c576d5ebc6114e9f5e4d1b1f527e64ee  doc/ger-de/hilfe/verwaltung/aufgaben/compliance/sichere-sitzungscookies-setzen.md
 5f9d6b277fa7b7f497d0a4ac5ef4f67a  doc/ger-de/hilfe/verwaltung/aufgaben/personen-und-berechtigungen/README.md
 2d9298e747b56e06a9a2dccb3c288a9c  doc/ger-de/hilfe/verwaltung/aufgaben/personen-und-berechtigungen/besucher-eine-neue-sektion-lesen-lassen.md
 c24a402f413fddbb37b04a2e05a97de7  doc/ger-de/hilfe/verwaltung/aufgaben/personen-und-berechtigungen/das-passwort-eines-mitarbeiters-zuruecksetzen.md
@@ -22024,7 +22024,7 @@ bb0383782cd4dc260fcda4fd3fd8d3f8  doc/ger-de/hilfe/verwaltung/aufgaben/veroeffen
 27f352e61a5ca900011bbb9ac4302fcd  doc/ger-de/hilfe/verwaltung/barrierefreiheit/README.md
 0d506c58d5262012592c5fd7d3a08d5c  doc/ger-de/hilfe/verwaltung/barrierefreiheit/admin4-was-abgedeckt-ist.md
 81dba67bb9533b2d985526eff23672cc  doc/ger-de/hilfe/verwaltung/barrierefreiheit/alternativtext-fuer-bilder.md
-98b43e098c34cee9bdb4231a0d01f54f  doc/ger-de/hilfe/verwaltung/barrierefreiheit/barrierefreie-formulare.md
+49e3eda5c50dd6a4dc7edce1e6dfb989  doc/ger-de/hilfe/verwaltung/barrierefreiheit/barrierefreie-formulare.md
 1bd412fdf6f20a122d9b9ceb3e93aa09  doc/ger-de/hilfe/verwaltung/barrierefreiheit/barrierefreie-inhalte-fuer-die-redaktion.md
 d7b222e09e1612d31b9c2c7ccab9f0bb  doc/ger-de/hilfe/verwaltung/barrierefreiheit/barrierefreiheit-des-online-editors.md
 0475c8cb6c48cd98ec7cac0b4441a244  doc/ger-de/hilfe/verwaltung/barrierefreiheit/barrierefreiheit-von-rechts-nach-links.md
@@ -22039,7 +22039,7 @@ d648a2c79f79c0940db6c7c8c1f34b85  doc/ger-de/hilfe/verwaltung/barrierefreiheit/i
 b15179cdde18eaf1b57a474fd18c8de7  doc/ger-de/hilfe/verwaltung/barrierefreiheit/klauseln-fuer-die-beschaffung.md
 507005f040c29d2175c14ff44e3ae15e  doc/ger-de/hilfe/verwaltung/barrierefreiheit/linktext.md
 f3302b0581a81a166af965412cf1417b  doc/ger-de/hilfe/verwaltung/barrierefreiheit/mit-axe-und-der-tastatur-testen.md
-03f885bba3d3e538679a4b5260d82dcd  doc/ger-de/hilfe/verwaltung/barrierefreiheit/prinzip-bedienbar.md
+5d032b9c08df9321a62097a9a008c80c  doc/ger-de/hilfe/verwaltung/barrierefreiheit/prinzip-bedienbar.md
 2544709b4c2afafdbc00024d34ccd8c3  doc/ger-de/hilfe/verwaltung/barrierefreiheit/prinzip-robust.md
 80659ba5ff214187b40029b45f0e070d  doc/ger-de/hilfe/verwaltung/barrierefreiheit/prinzip-verstaendlich.md
 6f2f24c0282750f0af960f5169207a03  doc/ger-de/hilfe/verwaltung/barrierefreiheit/prinzip-wahrnehmbar.md
@@ -22054,7 +22054,7 @@ d6744876dbdb7bf83197bc6a420d4204  doc/ger-de/hilfe/verwaltung/barrierefreiheit/u
 2b9b1c48c3d1e246202e3bb9aa08855a  doc/ger-de/hilfe/verwaltung/barrierefreiheit/untertitel-und-medien.md
 58678e1e555fc45fb01c22d8ac9371ea  doc/ger-de/hilfe/verwaltung/barrierefreiheit/was-exponential-bietet.md
 949737bdfb9ba31047e63f2bef09675a  doc/ger-de/hilfe/verwaltung/barrierefreiheit/was-nicht-abgedeckt-ist.md
-fa1461962909f8f904a3fc5ee5ff13e5  doc/ger-de/hilfe/verwaltung/barrierefreiheit/wcag-2-2-zuordnung.md
+c0978d54d5d42d2cb0c8f8675da75bbc  doc/ger-de/hilfe/verwaltung/barrierefreiheit/wcag-2-2-zuordnung.md
 e3644e7639106ae9a989f1ff5defb693  doc/ger-de/hilfe/verwaltung/beschaffung/README.md
 2d96cec87a165d8e2d3fa291e7887788  doc/ger-de/hilfe/verwaltung/beschaffung/anforderungen/README.md
 57832b84bc2ad554fb634e47c4debb4e  doc/ger-de/hilfe/verwaltung/beschaffung/anforderungen/anforderungen-an-ausstieg-und-portabilitaet.md
@@ -22236,7 +22236,7 @@ a384d183706b9b2a68813ba738204833  doc/ger-de/hilfe/verwaltung/betrieb/verfuegbar
 8deb24166d82eea3ea9e0fa02e1cb28c  doc/ger-de/hilfe/verwaltung/betrieb/verfuegbarkeit/kapazitaetsplanung.md
 a1338a15665234a17eb8bb745188e41b  doc/ger-de/hilfe/verwaltung/betrieb/verfuegbarkeit/lese-replikate.md
 11ee62b5d810b29a2fc44bf4caec7af2  doc/ger-de/hilfe/verwaltung/betrieb/verfuegbarkeit/mehrere-webserver-hinter-einem-load-balancer.md
-ec8773aa98ca19a2c06bfb152d043cd4  doc/ger-de/hilfe/verwaltung/betrieb/verfuegbarkeit/sitzungen-ueber-mehrere-server.md
+1d6f329d6a18813449a5bf38eb4a1f0e  doc/ger-de/hilfe/verwaltung/betrieb/verfuegbarkeit/sitzungen-ueber-mehrere-server.md
 5208508d0e4401daac4b5555e4625e00  doc/ger-de/hilfe/verwaltung/betrieb/verfuegbarkeit/statischer-cache.md
 897028ee5614e0c055fbac9569b8918c  doc/ger-de/hilfe/verwaltung/betrieb/verfuegbarkeit/velocity-antwortcache-und-http-cache.md
 85a1024ea3d2620214d7f493dafedee6  doc/ger-de/hilfe/verwaltung/betrieb/verfuegbarkeit/verfuegbarkeitsziele-und-service-level.md
@@ -22282,11 +22282,11 @@ fb76eae525cedf123509d79dbdd766fa  doc/ger-de/hilfe/verwaltung/checklisten/vierte
 379820d10be698c4d823239340b3fec5  doc/ger-de/hilfe/verwaltung/datenschutz/README.md
 40d4a6744931d0c50159ca46dc2e12bf  doc/ger-de/hilfe/verwaltung/datenschutz/abmelden-mit-einem-klick.md
 f8ca0b2dec19931765a315ccd654eb6f  doc/ger-de/hilfe/verwaltung/datenschutz/andere-rechtsordnungen.md
-345166bcc66931a8f887ad22d35433b1  doc/ger-de/hilfe/verwaltung/datenschutz/aufbewahrung-im-ueberblick.md
+dab4a9ac7be6f249877fb04e0479973a  doc/ger-de/hilfe/verwaltung/datenschutz/aufbewahrung-im-ueberblick.md
 4700ce34b5b1fb82113f3ad345c31b17  doc/ger-de/hilfe/verwaltung/datenschutz/aufbewahrung-von-audit-eintraegen.md
 433b3dd5244655601a88c26cd99777b8  doc/ger-de/hilfe/verwaltung/datenschutz/aufbewahrung-von-protokollen.md
 cd265b3416d3689e06190f86197413df  doc/ger-de/hilfe/verwaltung/datenschutz/auskunftsrecht.md
-53202b149c6bf35346bf6ed3fe53a69e  doc/ger-de/hilfe/verwaltung/datenschutz/bestandsaufnahme-personenbezogener-daten.md
+16de420d67893824b81585dbe0f31f03  doc/ger-de/hilfe/verwaltung/datenschutz/bestandsaufnahme-personenbezogener-daten.md
 8063610f11251ac1f434dcce88f8fc23  doc/ger-de/hilfe/verwaltung/datenschutz/captchas.md
 a3fe63a71099e6baccc361cfb491579a  doc/ger-de/hilfe/verwaltung/datenschutz/checkliste-datenschutz-durch-technikgestaltung.md
 58514232e6d4fd9ffbd654294b0e2f27  doc/ger-de/hilfe/verwaltung/datenschutz/cookie-banner-und-einwilligung.md
@@ -22489,7 +22489,7 @@ b65bd68e92b9a8ceb4c2a5df6d09d007  doc/ger-de/hilfe/verwaltung/sicherheit/sicherh
 21ae03c55c3d843bba1c2e8b59373b23  doc/ger-de/hilfe/verwaltung/sicherheit/sicherheits-header.md
 985d8db1bab726520ce5f1d7ee4f7b0b  doc/ger-de/hilfe/verwaltung/sicherheit/sicherheitslage-auf-einen-blick.md
 7cc248a616c5fe73c0896edb5802b31a  doc/ger-de/hilfe/verwaltung/sicherheit/sicherung-und-wiederherstellung.md
-7eaec06280b7bb4035c21f69108a5b81  doc/ger-de/hilfe/verwaltung/sicherheit/sitzungen-und-cookies.md
+0fa4acb259b47e84847c33e3e3f6ee67  doc/ger-de/hilfe/verwaltung/sicherheit/sitzungen-und-cookies.md
 0c9df8c3f62cedaea99b6e50c71a5cfb  doc/ger-de/hilfe/verwaltung/sicherheit/von-der-bereitstellung-verwaltet.md
 0262d51c414919dcc55589fe94155f6c  doc/ger-de/hilfe/verwaltung/sicherheit/zweistufige-anmeldung.md
 39fc3ea629769ac952dbdef881c5163f  doc/ger-de/hilfe/verwaltung/souveraenitaet/README.md
@@ -22572,7 +22572,7 @@ da6a75154dccea7f8c8ae10f6b4aebf0  doc/ger-de/hilfe/verwaltung/transparenz-und-in
 cfa697bd0173b4a8b1c03e8a2f968ef5  doc/ger-de/hilfe/warum-exponential-php-7-4-unterstuetzt.md
 eaf218cf108fef60292e0cfb369a6a16  doc/ger-de/hilfe/was-die-redakteursrolle-erlaubt.md
 633650641ad4302fa10226ad95b9a272  doc/ger-de/hilfe/was-sich-fuer-redakteure-aendert-wenn-die-website-statisch-ist.md
-bcefb0645cf813c8c539267f26ce550d  doc/ger-de/hilfe/web-framework-entwickler/authentifizierung-und-sitzungen.md
+3a29effce0f9514fc55a8996cc51a208  doc/ger-de/hilfe/web-framework-entwickler/authentifizierung-und-sitzungen.md
 4dabc94e5cc21ff125e998c68822cb75  doc/ger-de/hilfe/web-framework-entwickler/autorisierung-rollen-und-richtlinien.md
 5b6b7e056fc096064de4b75c9ab132e5  doc/ger-de/hilfe/web-framework-entwickler/begriffswoerterbuch.md
 158bc4cc1475a5e278a5f853b04571e7  doc/ger-de/hilfe/web-framework-entwickler/cache-ebenen.md
@@ -22978,10 +22978,10 @@ bb19e39caf6993f1bcf9f5b660eb3d9d  doc/ger-de/installation/06-kickstarter.md
 19a73d7020c9efdd3373bc905a7a6752  doc/ger-de/installation/07-installation-ueber-die-konsole.md
 49d3969dc5eb57efeccff41886e3a9a0  doc/ger-de/installation/08-die-website-ausliefern.md
 c7ee2583299b7d3cc39b8f46e97d32c8  doc/ger-de/installation/09-datenbanken.md
-d3c779dd5b3a4b50d196e0f41e9a57ce  doc/ger-de/installation/10-nach-der-installation.md
+ca94003c942e8d7a75afec899e9c5842  doc/ger-de/installation/10-nach-der-installation.md
 b8d795ebb1ea91d94d2d59204e2bc9de  doc/ger-de/installation/11-aktualisieren.md
 953bf62bca5d0e3b1a53b764a6a7410b  doc/ger-de/installation/12-fehlerbehebung.md
-f159a990cb201711216fabfaa300a852  doc/ger-de/installation/13-sicherheitshaertung.md
+cdebe1d97bb3bc6c64aeee618b8d897a  doc/ger-de/installation/13-sicherheitshaertung.md
 83b7964c05a1617eb2cbe90e5f4db2ce  doc/ger-de/installation/14-migration-von-4x.md
 f269570dcd2e57c0d7fe7d9c35ccf859  doc/ger-de/installation/15-migration-von-5x-legacy.md
 24ac8d39da2d1c8535535eafc33b5e59  doc/ger-de/installation/16-migration-von-ez-platform-und-ibexa.md

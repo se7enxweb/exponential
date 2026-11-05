@@ -33,7 +33,7 @@ was die Tabelle enthält, wie abgelaufene Zeilen entfernt werden und was sich mi
 | leer (der Standard): `ezpSessionHandlerPHP` | PHPs eigener Session-Speicher (`session.save_handler`, meist Dateien auf dem Webserver) | **Setup > Sitzungen** zeigt jüngste Anmeldungen aus `ezuservisit`, kann aber keine Sessions auflisten oder entfernen |
 | `ezpSessionHandlerDB` | die Tabelle `ezsession` der Datenbank der Website | **Setup > Sitzungen** listet, zählt und entfernt Sessions |
 
-Eine Session endet `[Session] SessionTimeout` Sekunden nach ihrer letzten Verwendung (Standard 259200, drei Tage). Mit dem
+Eine Session endet `[Session] SessionTimeout` Sekunden nach ihrer letzten Verwendung (Standard 31104000, 360 Tage). Mit dem
 PHP-Handler entfernt PHP abgelaufene Sessions selbst (`session.gc_maxlifetime`, das Exponential auf `SessionTimeout` setzt).
 `ezuservisit` (letzter Besuch, Zahl der Anmeldungen, fehlgeschlagene Versuche) wird mit beiden Handlern geführt.
 

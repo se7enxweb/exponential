@@ -10,7 +10,7 @@ type: help
 # Sessions, sign-out and shared computers
 
 This page is for administrators. A session keeps one browser signed in; it ends `site.ini [Session] SessionTimeout`
-seconds after its last use, 259200 (three days) by default ([Sessions](../../../../guides/sessions.md)).
+seconds after its last use, 31104000 (360 days) by default ([Sessions](../../../../guides/sessions.md)).
 
 ## Contents
 
@@ -23,10 +23,12 @@ seconds after its last use, 259200 (three days) by default ([Sessions](../../../
 
 | Setting (`site.ini [Session]`) | Shipped | Meaning |
 |---|---|---|
-| `SessionTimeout` | `259200` | seconds after the last use when a session ends |
+| `SessionTimeout` | `31104000` | seconds after the last use when a session ends (360 days) |
+| `RememberMeTimeout` | `31104000` | seconds the cookie lasts when **Remember me** is checked (checked by default) |
 | `ActivityTimeout` | `3600` | after this pause, the next request counts as a new visit |
 
-Three days suits a public site's members; for an intranet with sensitive content, set a shorter `SessionTimeout` in the
+360 days suits a public site's members; for an intranet with sensitive content, set a shorter `SessionTimeout` and
+`RememberMeTimeout` in the
 intranet siteaccess and test that staff are asked to sign in again after the pause you chose.
 
 ## Seeing and ending sessions

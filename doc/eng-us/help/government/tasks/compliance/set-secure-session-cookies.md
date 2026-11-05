@@ -24,7 +24,7 @@ over HTTPS (`CookieSecure=auto`); `true` forces it, so the cookie is never sent 
 ## Before you start
 
 - The site is served only over HTTPS; behind a proxy, `TrustedProxies[]` lists it and it sets `X-Forwarded-Proto`.
-- Agree a session timeout with editors (shipped: 259200 seconds, three days).
+- Agree a session timeout with editors (shipped: 31104000 seconds, 360 days, for both `SessionTimeout` and `RememberMeTimeout`).
 
 ## Steps
 

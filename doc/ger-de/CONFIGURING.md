@@ -292,7 +292,7 @@ Daten:
 
 ```ini
 [Session]
-SessionTimeout=86400
+SessionTimeout=1209600
 RememberMeTimeout=1209600
 ```
 

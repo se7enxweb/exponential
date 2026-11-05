@@ -45,7 +45,7 @@ Sources: [Sessions: who is signed in, and signing browsers out](../../../../guid
 [Chapter 13, 13.7 Sessions and cookies](../../../../install/13-security-hardening.md#137-sessions-and-cookies).
 
 1. **What a session is** (2 minutes). Opened at the first request that needs it; ends `site.ini [Session]
-   SessionTimeout` seconds after its last use (259200, three days, by default).
+   SessionTimeout` seconds after its last use (31104000, 360 days, by default).
 2. **Two handlers** (4 minutes). `Handler=` empty (the default) means PHP keeps sessions in its own storage: the page
    **Session administration** shows who signed in recently (**Recently signed in**, with **the last 1 h**, **the last
    day**, **the session lifetime** and **Find a user**), but cannot list or remove sessions. With
@@ -131,7 +131,7 @@ private window).
 <details>
 <summary>Answers</summary>
 
-1. 259200 seconds, three days (`site.ini [Session] SessionTimeout`).
+1. 31104000 seconds, 360 days (`site.ini [Session] SessionTimeout`).
 2. The default handler keeps sessions in PHP's own storage, which the page cannot list
    ([Sessions, section 1](../../../../guides/sessions.md#1-the-page-without-a-session-table-the-default)).
 3. **False.** It signs browsers out; disable the user or change the password as well.
