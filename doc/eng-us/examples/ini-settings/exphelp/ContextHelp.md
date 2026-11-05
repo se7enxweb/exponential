@@ -2,14 +2,14 @@
 title: exphelp.ini [ContextHelp]
 audience: developer, admin
 category: examples
-summary: "The settings of [ContextHelp] in exphelp.ini: Providers, CheckPages, MenuTopics, MenuLinks, Map"
-keywords: exphelp.ini, ContextHelp, INI, setting, Providers, CheckPages, MenuTopics, MenuLinks, Map
+summary: "The settings of [ContextHelp] in exphelp.ini: Providers, CheckPages, MenuTopics, MenuLinks, Map, ReportSecurityAnchor"
+keywords: exphelp.ini, ContextHelp, INI, setting, Providers, CheckPages, MenuTopics, MenuLinks, Map, ReportSecurityAnchor
 type: generated
 generated: exp:help:examples
 ---
 # exphelp.ini [ContextHelp]
 
-The block `[ContextHelp]` of `settings/exphelp.ini`, with 5 setting(s).
+The block `[ContextHelp]` of `settings/exphelp.ini`, with 6 setting(s).
 
 Never edit `settings/exphelp.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -137,6 +137,22 @@ Map[content/urlalias]=guides/urls-and-aliases.md
 Map[content/urltranslator]=guides/urls-and-aliases.md#3-global-url-aliases
 Map[content/urlwildcards]=guides/urls-and-aliases.md#4-url-wildcards
 # ... 145 more in the shipped file
+*/ ?>
+```
+
+## ReportSecurityAnchor
+
+> Where a siteaccess switches the view exphelp/report off (site.ini \[SiteAccessRules\]), "Report an error" opens the  
+> page of Map\[exphelp/report\] instead and its security link this heading of it (on a translated page the heading in  
+> the same position: #sicherheitsprobleme in German). expHelp::reportLinks(), fetch( 'exphelp', 'report\_links' ).  
+
+Default: `security-problems`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[ContextHelp]
+ReportSecurityAnchor=security-problems
 */ ?>
 ```
 

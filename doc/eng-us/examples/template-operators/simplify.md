@@ -28,6 +28,14 @@ Built from the parameter list above; the values are placeholders (the operator's
 {$value|simplify( 'char' )}
 ```
 
+## In a shipped template
+
+The first use in the templates of this installation, `design/standard/templates/mail/text_value.tpl` line 22:
+
+```tpl
+{set $tv_part = $tv_raw|explode( "\r" )|implode( ' ' )|explode( "\n" )|implode( ' ' )|explode( "\t" )|implode( ' ' )|simplify|trim}
+```
+
 ## Related
 
 - [All template operators](README.md)

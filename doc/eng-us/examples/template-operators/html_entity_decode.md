@@ -26,6 +26,14 @@ Built from the parameter list above; the values are placeholders (the operator's
 {$value|html_entity_decode}
 ```
 
+## In a shipped template
+
+The first use in the templates of this installation, `design/standard/templates/mail/text_value.tpl` line 20:
+
+```tpl
+{set $tv_html = $tv_html|strip_tags|html_entity_decode}
+```
+
 ## Related
 
 - [All template operators](README.md)

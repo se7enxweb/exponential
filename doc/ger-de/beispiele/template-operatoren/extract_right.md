@@ -30,10 +30,10 @@ Aus der Parameterliste oben gebildet; die Werte sind Platzhalter (die Template-H
 
 ## In einem ausgelieferten Template
 
-Die erste Verwendung in den Templates dieser Installation, `design/admin/templates/package/view/full.tpl` Zeile 410:
+Die erste Verwendung in den Templates dieser Installation, `design/admin/templates/exphelp/menu.tpl` Zeile 12:
 
 ```tpl
-<td class="pvf-col-path"><code>{if $pathParts|count|gt(1)}<span class="pvf-dir">{$pathParts|extract_left( $pathParts|count|dec )|implode( '/' )|wash}/</span>{/if}<span class="pvf-name">{$pathParts|extract_right( 1 )|implode( '' )|wash}</span></code></td>
+{set $help_menu_uri = $help_menu_uri|extract_right( $help_menu_uri|count_chars|sub( $help_menu_prefix|count_chars, 1 ) )}
 ```
 
 ## Siehe auch

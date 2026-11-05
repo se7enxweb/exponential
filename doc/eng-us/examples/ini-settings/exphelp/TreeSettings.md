@@ -60,8 +60,7 @@ PageOrder[project/CODE_OF_CONDUCT.md]=105
 PageOrder[project/COPYRIGHT.md]=110
 PageOrder[README-LICENSE.md]=120
 PageOrder[LICENSE-GFDL-1.3.txt]=130
-PageOrder[project/LICENSE.md]=140
-PageOrder[glossary.md]=9999
+# ... 2 more in the shipped file
 */ ?>
 ```
 

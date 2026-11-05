@@ -117,7 +117,7 @@ Every operator the kernel, its libraries and the bundled extensions register (th
 | [hash](hash.md) | eZTemplateArrayOperator | 0 | yes |
 | [hebrev](hebrev.md) | eZTemplateStringsOperator | ? |  |
 | [hex2bin](hex2bin.md) | eZTemplateStringsOperator | ? |  |
-| [html_entity_decode](html_entity_decode.md) | eZTemplateStringsOperator | ? |  |
+| [html_entity_decode](html_entity_decode.md) | eZTemplateStringsOperator | ? | yes |
 | [htmlentities](htmlentities.md) | eZTemplateStringsOperator | ? |  |
 | [htmlspecialchars_decode](htmlspecialchars_decode.md) | eZTemplateStringsOperator | ? |  |
 | [i18n](i18n.md) | eZi18nOperator | 3 | yes |
@@ -195,7 +195,7 @@ Every operator the kernel, its libraries and the bundled extensions register (th
 | [si](si.md) | eZTemplateUnitOperator | 5 | yes |
 | [similar_text](similar_text.md) | eZTemplateStringsOperator | ? |  |
 | [simpletags](simpletags.md) | eZSimpleTagsOperator | 1 | yes |
-| [simplify](simplify.md) | eZTemplateStringOperator | 1 |  |
+| [simplify](simplify.md) | eZTemplateStringOperator | 1 | yes |
 | [siteaccess_menu](siteaccess_menu.md) | ezpSiteAccessMenuOperator | 1 | yes |
 | [siteaccess_menu_key](siteaccess_menu_key.md) | ezpSiteAccessMenuOperator | 0 | yes |
 | [siteaccess_url](siteaccess_url.md) | ezpSiteAccessURLOperator | 1 | yes |

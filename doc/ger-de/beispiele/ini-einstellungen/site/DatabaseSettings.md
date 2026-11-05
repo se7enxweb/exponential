@@ -2,14 +2,14 @@
 title: site.ini [DatabaseSettings]
 audience: developer, admin
 category: examples
-summary: "Die Einstellungen von [DatabaseSettings] in site.ini: SQLitePragmas, SQLiteTransactionWait, DatabaseImplementation, Server, Port, User, Password, Database ..."
-keywords: Einstellung, site.ini, DatabaseSettings, INI, setting, SQLitePragmas, SQLiteTransactionWait, DatabaseImplementation, Server, Port, User, Password, Database, UseSlaveServer, ConnectRetries, Charset, UseBuiltinEncoding, Socket, QueryAnalysisOutput, SQLOutput, SlowQueriesOutput, DebugTransactions, ImplementationAlias, UsePersistentConnection, Transactions
+summary: "Die Einstellungen von [DatabaseSettings] in site.ini: SQLitePragmas, SQLiteTransactionWait, SQLiteCLITransactionWait, SQLiteBusyTimeout, SQLiteCLIBusyTimeout, DatabaseImplementation, Server, Port ..."
+keywords: Einstellung, site.ini, DatabaseSettings, INI, setting, SQLitePragmas, SQLiteTransactionWait, SQLiteCLITransactionWait, SQLiteBusyTimeout, SQLiteCLIBusyTimeout, DatabaseImplementation, Server, Port, User, Password, Database, UseSlaveServer, ConnectRetries, Charset, UseBuiltinEncoding, Socket, QueryAnalysisOutput, SQLOutput, SlowQueriesOutput, DebugTransactions, ImplementationAlias, UsePersistentConnection, Transactions
 type: generated
 generated: exp:help:examples
 ---
 # site.ini [DatabaseSettings]
 
-Der Block `[DatabaseSettings]` von `settings/site.ini`, mit 20 Einstellung(en).
+Der Block `[DatabaseSettings]` von `settings/site.ini`, mit 23 Einstellung(en).
 
 Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -19,15 +19,16 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## SQLitePragmas
 
-> Nur SQLite (DatabaseImplementation=sqlite3): die PRAGMAs der Verbindung, eines  
-> pro Zeile als name=value, über den Standards des Treibers:  
->   synchronous=NORMAL     mit WAL weiterhin absturzsicher; FULL synchronisierte jeden Commit  
->   cache\_size=-65536      64 MB Seiten-Cache (Standard von SQLite ist 2 MB)  
->   mmap\_size=268435456    die Datei über 256 MB eingeblendeten Speicher lesen  
->   temp\_store=MEMORY      Sortierungen und temporäre Tabellen im Speicher  
->   busy\_timeout=5000      bis zu 5 s auf eine Sperre warten, statt sofort zu scheitern  
-> Führen Sie nach einer Installation php bin/php/ezexec.php mit einem ANALYZE-Skript (oder sqlite3 <file> ANALYZE) aus,  
-> damit der Abfrageplaner Statistiken hat.  
+> SQLite (DatabaseImplementation=sqlite3) only: the connection's PRAGMAs, one  
+> per line as name=value, over the driver's defaults:  
+>   synchronous=NORMAL     with WAL still crash-safe; FULL synced every commit  
+>   cache\_size=-65536      64 MB page cache (SQLite's default is 2 MB)  
+>   mmap\_size=268435456    read the file through 256 MB of mapped memory  
+>   temp\_store=MEMORY      sorts and temporary tables in memory  
+>   busy\_timeout           SQLiteBusyTimeout / SQLiteCLIBusyTimeout below; a  
+>                          busy\_timeout=<ms> line here still wins over both  
+> Run php bin/php/ezexec.php on an ANALYZE script (or sqlite3 <file> ANALYZE)  
+> after an install, so the query planner has statistics.  
 
 Standard: eine leere Liste.
 
@@ -59,6 +60,54 @@ Standard: `25`.
 # settings/override/site.ini.append.php
 [DatabaseSettings]
 SQLiteTransactionWait=25
+*/ ?>
+```
+
+## SQLiteCLITransactionWait
+
+> SQLite only: the same wait on the command line (cronjobs, imports, scripts),  
+> in seconds. Nobody waits for a page there, so a cronjob waits for a long  
+> import's writes instead of stopping with "A database transaction in  
+> Exponential failed".  
+
+Standard: `300`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[DatabaseSettings]
+SQLiteCLITransactionWait=300
+*/ ?>
+```
+
+## SQLiteBusyTimeout
+
+> SQLite only: how many milliseconds a single statement outside a transaction  
+> (an INSERT of a link, an UPDATE of a cronjob) waits for another write to end  
+> before it fails with "database is busy: the statement waited N s". It  
+> queues on the same <database>.writer-lock as a transaction, and a lock SQLite  
+> reports at once is tried again within this time. SQLiteBusyTimeout applies to  
+> web requests (PHP-FPM, Velocity), SQLiteCLIBusyTimeout to the command line.  
+
+Standard: `5000`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[DatabaseSettings]
+SQLiteBusyTimeout=5000
+*/ ?>
+```
+
+## SQLiteCLIBusyTimeout
+
+Standard: `30000`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[DatabaseSettings]
+SQLiteCLIBusyTimeout=30000
 */ ?>
 ```
 

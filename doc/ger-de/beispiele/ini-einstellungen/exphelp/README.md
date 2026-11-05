@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # exphelp.ini
 
-Die ausgelieferten Einstellungen von `settings/exphelp.ini`: 69 Blöcke, 294 Einstellungen.
+Die ausgelieferten Einstellungen von `settings/exphelp.ini`: 69 Blöcke, 295 Einstellungen.
 
 > Das Hilfesystem der Administration: exphelp/dashboard, exphelp/viewer, exphelp/search, exphelp/asset und  
 > exphelp/report (doc/eng-us/features/6.0/help-system.md). Es zeigt die von git versionierten Text- und Markdown-Dateien unter doc/,  
@@ -80,7 +80,7 @@ Die ausgelieferten Einstellungen von `settings/exphelp.ini`: 69 Blöcke, 294 Ein
 | [SupportOrganization_foundation](SupportOrganization_foundation.md) | 6 |
 | [NavigationSettings](NavigationSettings.md) | 1 |
 | [FeaturedSettings](FeaturedSettings.md) | 1 |
-| [ContextHelp](ContextHelp.md) | 5 |
+| [ContextHelp](ContextHelp.md) | 6 |
 | [IssueTrackers](IssueTrackers.md) | 5 |
 | [Tracker_software](Tracker_software.md) | 4 |
 | [Tracker_velocity](Tracker_velocity.md) | 4 |

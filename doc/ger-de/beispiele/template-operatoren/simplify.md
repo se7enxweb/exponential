@@ -28,6 +28,14 @@ Aus der Parameterliste oben gebildet; die Werte sind Platzhalter (die Template-H
 {$value|simplify( 'char' )}
 ```
 
+## In einem ausgelieferten Template
+
+Die erste Verwendung in den Templates dieser Installation, `design/standard/templates/mail/text_value.tpl` Zeile 22:
+
+```tpl
+{set $tv_part = $tv_raw|explode( "\r" )|implode( ' ' )|explode( "\n" )|implode( ' ' )|explode( "\t" )|implode( ' ' )|simplify|trim}
+```
+
 ## Siehe auch
 
 - [Alle Template-Operatoren](README.md)

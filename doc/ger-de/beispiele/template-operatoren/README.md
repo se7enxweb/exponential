@@ -117,7 +117,7 @@ Jeder Operator, den der Kernel, seine Bibliotheken und die mitgelieferten Erweit
 | [hash](hash.md) | eZTemplateArrayOperator | 0 | ja |
 | [hebrev](hebrev.md) | eZTemplateStringsOperator | ? |  |
 | [hex2bin](hex2bin.md) | eZTemplateStringsOperator | ? |  |
-| [html_entity_decode](html_entity_decode.md) | eZTemplateStringsOperator | ? |  |
+| [html_entity_decode](html_entity_decode.md) | eZTemplateStringsOperator | ? | ja |
 | [htmlentities](htmlentities.md) | eZTemplateStringsOperator | ? |  |
 | [htmlspecialchars_decode](htmlspecialchars_decode.md) | eZTemplateStringsOperator | ? |  |
 | [i18n](i18n.md) | eZi18nOperator | 3 | ja |
@@ -195,7 +195,7 @@ Jeder Operator, den der Kernel, seine Bibliotheken und die mitgelieferten Erweit
 | [si](si.md) | eZTemplateUnitOperator | 5 | ja |
 | [similar_text](similar_text.md) | eZTemplateStringsOperator | ? |  |
 | [simpletags](simpletags.md) | eZSimpleTagsOperator | 1 | ja |
-| [simplify](simplify.md) | eZTemplateStringOperator | 1 |  |
+| [simplify](simplify.md) | eZTemplateStringOperator | 1 | ja |
 | [siteaccess_menu](siteaccess_menu.md) | ezpSiteAccessMenuOperator | 1 | ja |
 | [siteaccess_menu_key](siteaccess_menu_key.md) | ezpSiteAccessMenuOperator | 0 | ja |
 | [siteaccess_url](siteaccess_url.md) | ezpSiteAccessURLOperator | 1 | ja |

@@ -4135,7 +4135,7 @@ b6d8c2f2aadc2c4bcd1b4334a65ebc0f  doc/eng-us/examples/extension-points/uiswitch.
 43ef1efbc446af32c0815832790ffe48  doc/eng-us/examples/extension-points/webdav.md
 c697443b2cb0beaf349fdd5c4e59da40  doc/eng-us/examples/extension-points/workflow.md
 ab9aa2703a744da1de0d178a2c75ae39  doc/eng-us/examples/ezpublish.conf
-46dd3d6b59dddb76195e216d84c65fe4  doc/eng-us/examples/fetch-functions/README.md
+2403646f3356633118035e9e4801aa28  doc/eng-us/examples/fetch-functions/README.md
 25ce910ea7fcb5532f1594686358fc71  doc/eng-us/examples/fetch-functions/apikey/README.md
 8b5bdf584f6096ee3ec75ebfddb5f5e4  doc/eng-us/examples/fetch-functions/apikey/can_create.md
 a30de4a815ca96e86a085fc1a72ad45f  doc/eng-us/examples/fetch-functions/apikey/counts.md
@@ -4235,10 +4235,12 @@ fde5482bf2e0bf87c85ef268e625fc29  doc/eng-us/examples/fetch-functions/datatable/
 c3f5069eb5eca1dfc4d9a2ba16b02769  doc/eng-us/examples/fetch-functions/datatable/list.md
 31de1300de6a764889e4104465a351ca  doc/eng-us/examples/fetch-functions/datatable/pointing_at.md
 57eb8acb27fc3534d8906dfbfb4773e7  doc/eng-us/examples/fetch-functions/datatable/row.md
-b48013a8adfcadbdaafc5ef19e726244  doc/eng-us/examples/fetch-functions/exphelp/README.md
+87b2bc87b95b39b8eb39cfc070c76518  doc/eng-us/examples/fetch-functions/exphelp/README.md
 6f554e188a3d3cd8bd5f60a204805ed8  doc/eng-us/examples/fetch-functions/exphelp/context.md
 bc98adb3bf2ab17be58a86ee9139706a  doc/eng-us/examples/fetch-functions/exphelp/context_menu.md
 ea0e650b583eeb8f867d33fc4090835d  doc/eng-us/examples/fetch-functions/exphelp/license.md
+db866a8f474b792a5f4bea29d925a71f  doc/eng-us/examples/fetch-functions/exphelp/reading_key.md
+220f923c40c9f26a1555da60d3fdcb44  doc/eng-us/examples/fetch-functions/exphelp/report_links.md
 da9340e4fbb35e9f156021ad5c60742f  doc/eng-us/examples/fetch-functions/exphelp/site_map.md
 8b87fffc457235c8a8764517c11b74c4  doc/eng-us/examples/fetch-functions/exphelp/site_topic.md
 7a76388b532eb4f8d7d02f37500055fd  doc/eng-us/examples/fetch-functions/expimageeditor/README.md
@@ -4899,11 +4901,11 @@ d9eee41b354d44edaa02d269af60d80b  doc/eng-us/examples/ini-settings/error/HTTPErr
 d7242053330bdcb5eebf5ba020ab24bd  doc/eng-us/examples/ini-settings/error/HTTPError-403.md
 397dcc317ce855be5813c04a6c501781  doc/eng-us/examples/ini-settings/error/HTTPError-404.md
 caf60908b53ecf82087e9a61ba87f97f  doc/eng-us/examples/ini-settings/error/README.md
-5663096fbe6089f0a6471fc575079c98  doc/eng-us/examples/ini-settings/exphelp/AudienceSettings.md
-516d724fcad20012dd0ad7e749da3b91  doc/eng-us/examples/ini-settings/exphelp/CategorySettings.md
+1bb8d8dc789a61f0ecbc6e90b0036c5d  doc/eng-us/examples/ini-settings/exphelp/AudienceSettings.md
+9996b94f7c344f2c03ce28507da4d7e9  doc/eng-us/examples/ini-settings/exphelp/CategorySettings.md
 557fe8ed9a4915b7a452bf8c6227414a  doc/eng-us/examples/ini-settings/exphelp/CommitFeedSettings.md
 911d1187ea9ea5ab50301cfb83357cfc  doc/eng-us/examples/ini-settings/exphelp/ContentSettings.md
-8ba0637bbf69d87f749462646acbeb23  doc/eng-us/examples/ini-settings/exphelp/ContextHelp.md
+75a991c3555cdf9b7e82ab11e83cd442  doc/eng-us/examples/ini-settings/exphelp/ContextHelp.md
 3d307f778430f1bdd6462b040e20299c  doc/eng-us/examples/ini-settings/exphelp/DashboardSettings.md
 90f841d4dbe892c1f296413d1b4d0557  doc/eng-us/examples/ini-settings/exphelp/DocLanguages.md
 129f2a0f3ebae02dbea9bda88c6ecc84  doc/eng-us/examples/ini-settings/exphelp/FeaturedSettings.md
@@ -4957,7 +4959,7 @@ fe2173817721329c4b06c9c1ce90b5bf  doc/eng-us/examples/ini-settings/exphelp/Landi
 c6c944212ad48406f15ae4df0adb435e  doc/eng-us/examples/ini-settings/exphelp/NavigationSettings.md
 a13bbc950bdaa9e2fdceb8ce86dc90e3  doc/eng-us/examples/ini-settings/exphelp/PdfSettings.md
 b29cbc56f5ad26f1024645916ee55962  doc/eng-us/examples/ini-settings/exphelp/ProjectFiles.md
-3b3c992e757076c16890f46edfcd68f6  doc/eng-us/examples/ini-settings/exphelp/README.md
+ebfb66dd18c5fd20798a88d71f7d9003  doc/eng-us/examples/ini-settings/exphelp/README.md
 225ea27d3ea8cf52eb393d4f95124357  doc/eng-us/examples/ini-settings/exphelp/SearchSettings.md
 a049551ead973f7c0d01d422b681c6a1  doc/eng-us/examples/ini-settings/exphelp/SecuritySettings.md
 53262cd9e15b63b8fa26ebcda97c71ee  doc/eng-us/examples/ini-settings/exphelp/SupportOrganization_7x.md
@@ -4967,8 +4969,8 @@ ca2674ec74f81022f4cd7a748770bf77  doc/eng-us/examples/ini-settings/exphelp/Title
 0ba48a9cf37cdfb565b1e917929eefb3  doc/eng-us/examples/ini-settings/exphelp/Tracker_community.md
 aeec9e7a12212b862a115f962ab8cbc8  doc/eng-us/examples/ini-settings/exphelp/Tracker_software.md
 314874544e21e6b51c13bd6ffc742008  doc/eng-us/examples/ini-settings/exphelp/Tracker_velocity.md
-893f0b1c52ee63bdda58267a9a4245bf  doc/eng-us/examples/ini-settings/exphelp/TreeSettings.md
-8ea5884cecade6a6bc32eb83ee513f97  doc/eng-us/examples/ini-settings/exphelp/TypeSettings.md
+bcd9cec4fa7b8209ba0465376f5102d1  doc/eng-us/examples/ini-settings/exphelp/TreeSettings.md
+ca0e0af593db9ee06741ea4b65c3719a  doc/eng-us/examples/ini-settings/exphelp/TypeSettings.md
 dae15689b65dac0b6640120102738692  doc/eng-us/examples/ini-settings/expservices-expportal/Portal.md
 8d6a0e1d1cf136baab84004d31f218ab  doc/eng-us/examples/ini-settings/expservices-expportal/README.md
 18da3e1f07b3db6ebd7885c7f2ec29fd  doc/eng-us/examples/ini-settings/expservices-expservices/Community.md
@@ -6377,7 +6379,7 @@ f75c6717404d181c69a0f42a30bc82e4  doc/eng-us/examples/template-functions/shop_ac
 79ac0e4658285cc066b118bdf7484718  doc/eng-us/examples/template-functions/tool_bar.md
 eb53f689889b090a6a6decbed5277d91  doc/eng-us/examples/template-functions/undef.md
 e5355c40fe515527462c85a880edcf0a  doc/eng-us/examples/template-functions/while.md
-df56593d2aa7c6501bd63bfc87fc8893  doc/eng-us/examples/template-operators/README.md
+04082250c6d85ff8f5166ba2bba10c71  doc/eng-us/examples/template-operators/README.md
 94284652ab561535f9c054c1aff5639f  doc/eng-us/examples/template-operators/abs.md
 6339c9515ce47d063fccf61d1a758040  doc/eng-us/examples/template-operators/action_icon.md
 1fa93d6ac83b522d8c35b316154ce5cc  doc/eng-us/examples/template-operators/addcslashes.md
@@ -6410,7 +6412,7 @@ f471c01ecca5469d6a8f72ea36d2a251  doc/eng-us/examples/template-operators/contain
 a123ccc43cde7a0a3104de3e2ec13002  doc/eng-us/examples/template-operators/convert_uudecode.md
 1bf561d1369ed0d285c2c0a044c1944e  doc/eng-us/examples/template-operators/convert_uuencode.md
 a07d474ffe795a2552088b8a58046eac  doc/eng-us/examples/template-operators/count.md
-94dbe6ec8a5071b9a4bbff4a2d3951e3  doc/eng-us/examples/template-operators/count_chars.md
+a532327a1f3e93c022cbe9a443284adc  doc/eng-us/examples/template-operators/count_chars.md
 a5e30ddb58041606ce8705b2723cfb26  doc/eng-us/examples/template-operators/count_words.md
 f2a50c3f8ce9f472873147e1fcd9ebe5  doc/eng-us/examples/template-operators/crc32.md
 68afbe6c6b5dad32ef302229022857e0  doc/eng-us/examples/template-operators/csp_nonce.md
@@ -6432,7 +6434,7 @@ f708cfe8cbe4d35aa07da1956b5dc138  doc/eng-us/examples/template-operators/exp_twi
 8ee3ea9c700a01bc4fb4e399d5a68f13  doc/eng-us/examples/template-operators/explode.md
 6224b675647f5f15730e131b7bb8b303  doc/eng-us/examples/template-operators/extract.md
 74513281f4605f674da3dedc630041f5  doc/eng-us/examples/template-operators/extract_left.md
-8f5976b9d1993fc4766d9753dd96b2bb  doc/eng-us/examples/template-operators/extract_right.md
+94bfa8c1940b0613dea76aad83db5fc2  doc/eng-us/examples/template-operators/extract_right.md
 7ef2b9c11b1ea3c3fd6c54c581a12dd4  doc/eng-us/examples/template-operators/exturl.md
 066c2e21240b37b3ec2271c7e58ed572  doc/eng-us/examples/template-operators/ezcss.md
 08791b5c992604598f68391778e18985  doc/eng-us/examples/template-operators/ezcss_load.md
@@ -6479,7 +6481,7 @@ c915b6b11a4284ae75ec0541853d6662  doc/eng-us/examples/template-operators/has_pol
 20c14a0a7eb3e73d960e75b83ac906df  doc/eng-us/examples/template-operators/hash.md
 93e367b11ae48b0671840b1411ad0da9  doc/eng-us/examples/template-operators/hebrev.md
 db01d3b7fcfa76d95e73042e49914825  doc/eng-us/examples/template-operators/hex2bin.md
-1f40e9d9f28a7dbc5f50a8537afb2719  doc/eng-us/examples/template-operators/html_entity_decode.md
+1afa9af67e27ccfd811e46027bd82898  doc/eng-us/examples/template-operators/html_entity_decode.md
 3d64f633c8a39c563131b9ac81af27bb  doc/eng-us/examples/template-operators/htmlentities.md
 7b49d05c369cfc041286eccf4bf00a35  doc/eng-us/examples/template-operators/htmlspecialchars_decode.md
 d8fe73b3e0842a483efa60fdf6c7bfa8  doc/eng-us/examples/template-operators/i18n.md
@@ -6557,7 +6559,7 @@ dbb6e32430c1bc0baf6e1b212d146c59  doc/eng-us/examples/template-operators/rtrim.m
 80d5e415d1796d34a93ddeb2d786c039  doc/eng-us/examples/template-operators/si.md
 bd5baf42c609efbf12b61d213a653c42  doc/eng-us/examples/template-operators/similar_text.md
 03f315428aa6943df5a6d6132a52bd9c  doc/eng-us/examples/template-operators/simpletags.md
-83e5323a4d2478904e136b4e7cc976f8  doc/eng-us/examples/template-operators/simplify.md
+231cd0856ba3018c5cf2d565ff95e0ff  doc/eng-us/examples/template-operators/simplify.md
 26c46b1a16a1c7a59cd130cafabe5f24  doc/eng-us/examples/template-operators/siteaccess_menu.md
 09b540442ab56c36b6e3f95d57b2b37d  doc/eng-us/examples/template-operators/siteaccess_menu_key.md
 ac92d5b4905963bf2d2b363aba8b46fa  doc/eng-us/examples/template-operators/siteaccess_url.md
@@ -13524,7 +13526,7 @@ d5481e7bd597218cdc491e7d905b9f58  doc/ger-de/.examples/descriptions/37-help-left
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 84ecf8b47bf44a9a3d53d86b719e8e1b  doc/ger-de/.examples/strings.json
-3acae7fecd570e6d32cb1d7d23c1471e  doc/ger-de/.paths.json
+3625c38f0a4d403981be9c4e787c85b9  doc/ger-de/.paths.json
 58fbb842a08662c14cc5994f33594857  doc/ger-de/COMMUNITY.md
 9bdbb093fbea997ef82dced8249f77e4  doc/ger-de/CONFIGURING.md
 c541e681abb9f1a0541f1e05e061e1c1  doc/ger-de/DISTRIBUTIONS.md
@@ -14163,7 +14165,7 @@ f5ee4c6f63f6f5fba225a68bf1f0b849  doc/ger-de/beispiele/erweiterungspunkte/twig.m
 5b080880de706a34648608809c3d6f66  doc/ger-de/beispiele/erweiterungspunkte/upload.md
 4d4fba5023d6c64e195821e7a47fbf6e  doc/ger-de/beispiele/erweiterungspunkte/webdav.md
 5979faf1ce1cb46dfcd42855660bbcf4  doc/ger-de/beispiele/erweiterungspunkte/workflow.md
-dc45bfda2f5b8be3ab5bd563656ef742  doc/ger-de/beispiele/fetch-funktionen/README.md
+ec69b0e58880f78c51c3a91a337ff935  doc/ger-de/beispiele/fetch-funktionen/README.md
 2ef2e33e62dfbc3e12d34d9a68ef998c  doc/ger-de/beispiele/fetch-funktionen/apikey/README.md
 2d27727b915ab21df42318dba17b848c  doc/ger-de/beispiele/fetch-funktionen/apikey/can_create.md
 e92fd81ffc2d2aa969a2b963db1af285  doc/ger-de/beispiele/fetch-funktionen/apikey/counts.md
@@ -14263,10 +14265,12 @@ c8c24dff8f5ead71231e8f1d021bdfbe  doc/ger-de/beispiele/fetch-funktionen/content/
 84bf8545a2cf7f9a4714f1f25a18301f  doc/ger-de/beispiele/fetch-funktionen/datatable/list.md
 7a455b69c59f41f07bd1f43d8effef67  doc/ger-de/beispiele/fetch-funktionen/datatable/pointing_at.md
 e49f1dbee210b9a61f05f97e04c3800f  doc/ger-de/beispiele/fetch-funktionen/datatable/row.md
-c68708b9e4c084117315fbecccd3af10  doc/ger-de/beispiele/fetch-funktionen/exphelp/README.md
+47d7fe1fce2b8315730cfd2e6764166c  doc/ger-de/beispiele/fetch-funktionen/exphelp/README.md
 65a68bdb310c92c074855551238cd496  doc/ger-de/beispiele/fetch-funktionen/exphelp/context.md
 72dcb5db9093e05ad21ea01c39dceafe  doc/ger-de/beispiele/fetch-funktionen/exphelp/context_menu.md
 003fc72238fc75c8cd31a4a040b212d3  doc/ger-de/beispiele/fetch-funktionen/exphelp/license.md
+b03d0c5c30ab9d7af7d0d4043e33edd7  doc/ger-de/beispiele/fetch-funktionen/exphelp/reading_key.md
+58b0f182842f6fba4d15e8128685c92a  doc/ger-de/beispiele/fetch-funktionen/exphelp/report_links.md
 625437dce541207d89538d3455ed3ae0  doc/ger-de/beispiele/fetch-funktionen/exphelp/site_map.md
 d38b52826a79ba7e4ce91afeb8ed43d7  doc/ger-de/beispiele/fetch-funktionen/exphelp/site_topic.md
 4ed63f341c6750304782fa9872a1b361  doc/ger-de/beispiele/fetch-funktionen/expimageeditor/README.md
@@ -14926,11 +14930,11 @@ b2c5d3d36764f57556c78ae9e5b1f1a5  doc/ger-de/beispiele/ini-einstellungen/error/H
 f1d8c66feaa493c653644e7157d2c84e  doc/ger-de/beispiele/ini-einstellungen/error/HTTPError-403.md
 e2eaf9faf84ee4be370b7cbf3fdd4807  doc/ger-de/beispiele/ini-einstellungen/error/HTTPError-404.md
 6cd7141035a3ac420cd3d90b021c0efd  doc/ger-de/beispiele/ini-einstellungen/error/README.md
-1b07695776c3da039d3beabf705dccef  doc/ger-de/beispiele/ini-einstellungen/exphelp/AudienceSettings.md
-e7afa98594c7331b4cb32e7b165fe0f4  doc/ger-de/beispiele/ini-einstellungen/exphelp/CategorySettings.md
+cea01c0fc2ed389f1a0924a1ef267106  doc/ger-de/beispiele/ini-einstellungen/exphelp/AudienceSettings.md
+a30ddb55e7b2189377bb5f2a57646310  doc/ger-de/beispiele/ini-einstellungen/exphelp/CategorySettings.md
 3ee4d0df3ab50d81df4f1d1fb7418724  doc/ger-de/beispiele/ini-einstellungen/exphelp/CommitFeedSettings.md
 443764edab956661efdf37f507fed418  doc/ger-de/beispiele/ini-einstellungen/exphelp/ContentSettings.md
-55fad90bef5be5d4881a732a85936747  doc/ger-de/beispiele/ini-einstellungen/exphelp/ContextHelp.md
+78586352ae912ef3d2f3d4bb726a88a4  doc/ger-de/beispiele/ini-einstellungen/exphelp/ContextHelp.md
 042fdd336ba3bb20b30720f8cfed518d  doc/ger-de/beispiele/ini-einstellungen/exphelp/DashboardSettings.md
 f59c63f3cbd331c311a4e0d57b5358ed  doc/ger-de/beispiele/ini-einstellungen/exphelp/DocLanguages.md
 9117afc84ad0155a1030b6b3bd3087fd  doc/ger-de/beispiele/ini-einstellungen/exphelp/FeaturedSettings.md
@@ -14984,7 +14988,7 @@ b7a6a3a3d9ec112fa0ca9468eaa81a19  doc/ger-de/beispiele/ini-einstellungen/exphelp
 770986c910fa96958f30430685db1386  doc/ger-de/beispiele/ini-einstellungen/exphelp/NavigationSettings.md
 a07bc3aaf3a104d38caf2a868c6cfc05  doc/ger-de/beispiele/ini-einstellungen/exphelp/PdfSettings.md
 08076023d9b89505a5c1bce49b7d0071  doc/ger-de/beispiele/ini-einstellungen/exphelp/ProjectFiles.md
-7f6a7cbf0a6ab70d5ae25af1033cd4a4  doc/ger-de/beispiele/ini-einstellungen/exphelp/README.md
+9dfec69ef7a3afe586777ede738c4424  doc/ger-de/beispiele/ini-einstellungen/exphelp/README.md
 20d0a84c3383f026ebcf41e4961d7f2a  doc/ger-de/beispiele/ini-einstellungen/exphelp/SearchSettings.md
 8f42949e80479ca116dc36d462fe92a5  doc/ger-de/beispiele/ini-einstellungen/exphelp/SecuritySettings.md
 d2090489dd6847b0e141e6bfd7d459b0  doc/ger-de/beispiele/ini-einstellungen/exphelp/SupportOrganization_7x.md
@@ -14994,8 +14998,8 @@ a0bf82fc93b2f98e337b2bc30484e228  doc/ger-de/beispiele/ini-einstellungen/exphelp
 c33ef1623aecfc5904c4a9dcf73e69bc  doc/ger-de/beispiele/ini-einstellungen/exphelp/Tracker_community.md
 f1fc889c88ef62869c704363e2914a11  doc/ger-de/beispiele/ini-einstellungen/exphelp/Tracker_software.md
 d77071a743107de563390806d2cb44fd  doc/ger-de/beispiele/ini-einstellungen/exphelp/Tracker_velocity.md
-1b58c705d8d387c2658a9ab9f51f75a1  doc/ger-de/beispiele/ini-einstellungen/exphelp/TreeSettings.md
-d7d489112e0d465599751ccece4b4434  doc/ger-de/beispiele/ini-einstellungen/exphelp/TypeSettings.md
+8b09b7d82d5497687cd79a3ad6eb86f2  doc/ger-de/beispiele/ini-einstellungen/exphelp/TreeSettings.md
+b59a7c8db5e0be1f1456def81833fd12  doc/ger-de/beispiele/ini-einstellungen/exphelp/TypeSettings.md
 d4dd3bcf407cd3e2211a65f104d5f211  doc/ger-de/beispiele/ini-einstellungen/expservices-expportal/Portal.md
 dfd63961180fbe5f8501b2620ffadf96  doc/ger-de/beispiele/ini-einstellungen/expservices-expportal/README.md
 0ca07087b4317d31390db9f3b8bb6c9d  doc/ger-de/beispiele/ini-einstellungen/expservices-expservices/Community.md
@@ -15560,7 +15564,7 @@ f503072340f2af52b9d56f76263969b3  doc/ger-de/beispiele/ini-einstellungen/site/Co
 6e5d6cfabf38f8e74b2ebd07f9f1dfc9  doc/ger-de/beispiele/ini-einstellungen/site/ContentFieldMarkerSettings.md
 adf5a0b818f297624ae9d273a8e7542c  doc/ger-de/beispiele/ini-einstellungen/site/ContentSecurityPolicy.md
 f174bcc3029c6b5795d954992f3e8031  doc/ger-de/beispiele/ini-einstellungen/site/ContentSettings.md
-45b9be4efcdd8270d2e1b4b9b1876339  doc/ger-de/beispiele/ini-einstellungen/site/DatabaseSettings.md
+edeaa277087be10908fad0118f00634c  doc/ger-de/beispiele/ini-einstellungen/site/DatabaseSettings.md
 c832464b2837288224ee9b2daefd61d7  doc/ger-de/beispiele/ini-einstellungen/site/DebugSettings.md
 f93d7d401a12e18b6768374a83a7f8fb  doc/ger-de/beispiele/ini-einstellungen/site/DesignSettings.md
 8c39815a26409520ea1bd07c6e802456  doc/ger-de/beispiele/ini-einstellungen/site/Event.md
@@ -15579,7 +15583,7 @@ e3514edc7a2f05db725c62732e108c22  doc/ger-de/beispiele/ini-einstellungen/site/Li
 3643636c3de654ce6a33825846ba893d  doc/ger-de/beispiele/ini-einstellungen/site/PasswordSettings.md
 9f62066afe0d2e372c41d004b3e5c85f  doc/ger-de/beispiele/ini-einstellungen/site/PortAccessSettings.md
 b55d3fdf378e1bcdc3be626fc28ece22  doc/ger-de/beispiele/ini-einstellungen/site/ProxySettings.md
-ea977c79f9232b937fc5c0ec4d7d7799  doc/ger-de/beispiele/ini-einstellungen/site/README.md
+59c7e60469060db06f126dcbbcade0fb  doc/ger-de/beispiele/ini-einstellungen/site/README.md
 7da3655a4fc717865edb47570dea16fd  doc/ger-de/beispiele/ini-einstellungen/site/RSSSettings.md
 c375924685d1a0433a06fea38df0efb6  doc/ger-de/beispiele/ini-einstellungen/site/ReauthGroup_account.md
 2fbb7d1eafbe1175201652854abfc88f  doc/ger-de/beispiele/ini-einstellungen/site/ReauthGroup_content.md
@@ -16418,7 +16422,7 @@ fe3d5c331c6a5a8c1f389b536a63713c  doc/ger-de/beispiele/template-funktionen/set.m
 78ea0116c845fb4f8bd0426c2a195cf8  doc/ger-de/beispiele/template-funktionen/tool_bar.md
 1ba2e1857a0ba2493c968dee2b8bf579  doc/ger-de/beispiele/template-funktionen/undef.md
 e98d6ebabc6727998bd863284f809a63  doc/ger-de/beispiele/template-funktionen/while.md
-6ff1ad02b39f96baccba3abd8b61ad36  doc/ger-de/beispiele/template-operatoren/README.md
+128579d4dfe41e8a372a69d2566205c8  doc/ger-de/beispiele/template-operatoren/README.md
 8cfd3af6a328b63da96036d39ae7b081  doc/ger-de/beispiele/template-operatoren/abs.md
 3cc870fe8dc1a50bed27def6c4195c00  doc/ger-de/beispiele/template-operatoren/action_icon.md
 1a425f5fc4a47ff1cb57710e0e4c7442  doc/ger-de/beispiele/template-operatoren/addcslashes.md
@@ -16451,7 +16455,7 @@ c0abbea2778264e4cf308891b63329c2  doc/ger-de/beispiele/template-operatoren/cond.
 89d86a6fc7f9fb7fcaf8bb3513916aca  doc/ger-de/beispiele/template-operatoren/convert_uudecode.md
 b078478f928b7204a803585726035e11  doc/ger-de/beispiele/template-operatoren/convert_uuencode.md
 6e971b516ead66d532fd8a1788ddc69d  doc/ger-de/beispiele/template-operatoren/count.md
-c16a361baa3519a54a7ad573e2c3bef0  doc/ger-de/beispiele/template-operatoren/count_chars.md
+96a3da67084f88794066f74bb4afa7aa  doc/ger-de/beispiele/template-operatoren/count_chars.md
 b8ca0d6735287f998f0dda30679dace8  doc/ger-de/beispiele/template-operatoren/count_words.md
 0a8ec5a7a2f7a182064c5bf548b3dc83  doc/ger-de/beispiele/template-operatoren/crc32.md
 16f4e980d6b49ad1fe2bfeedafc8590b  doc/ger-de/beispiele/template-operatoren/csp_nonce.md
@@ -16473,7 +16477,7 @@ ffd1cdabe5097f983cf0cf9910e5180c  doc/ger-de/beispiele/template-operatoren/expin
 80a55107af9dba04568d5c2e6c30bf04  doc/ger-de/beispiele/template-operatoren/explode.md
 f5686016f3a10932f1f05c3ce0318156  doc/ger-de/beispiele/template-operatoren/extract.md
 933e9628562f75cbcb1c42421b613098  doc/ger-de/beispiele/template-operatoren/extract_left.md
-4f437b82def9646aa3c3411d74a6ac86  doc/ger-de/beispiele/template-operatoren/extract_right.md
+4decaba2670e6eacb422cc561f944257  doc/ger-de/beispiele/template-operatoren/extract_right.md
 b45910e20b6974fe417135571e137cdf  doc/ger-de/beispiele/template-operatoren/exturl.md
 a1f7ea95bf689aced4f770ab7285275b  doc/ger-de/beispiele/template-operatoren/ezcss.md
 3c29c337bb7c5a9a58a86d526d2e5e4e  doc/ger-de/beispiele/template-operatoren/ezcss_load.md
@@ -16520,7 +16524,7 @@ aaa5804e17783528d44e895e9228bf40  doc/ger-de/beispiele/template-operatoren/has_p
 b4cc3436fc26a984ca4d91e3570c1b00  doc/ger-de/beispiele/template-operatoren/hash.md
 9b791fe6deb2eef2895c94c6a961eaba  doc/ger-de/beispiele/template-operatoren/hebrev.md
 9da49dc18d3c538370f764d36c36afcd  doc/ger-de/beispiele/template-operatoren/hex2bin.md
-ce0f3aace2f689f61612339b947f43b4  doc/ger-de/beispiele/template-operatoren/html_entity_decode.md
+7c6ef826deefc6bcd96f680c3646792c  doc/ger-de/beispiele/template-operatoren/html_entity_decode.md
 78ba77523fcd9033e64aae46d20283b2  doc/ger-de/beispiele/template-operatoren/htmlentities.md
 9a18615f4befeb4d779497099c4ab64e  doc/ger-de/beispiele/template-operatoren/htmlspecialchars_decode.md
 33095f3a00c3f2f1028fdce833cbc0f7  doc/ger-de/beispiele/template-operatoren/i18n.md
@@ -16598,7 +16602,7 @@ e7fa3ca14108953f244dc1806af45d20  doc/ger-de/beispiele/template-operatoren/rtrim
 0ea8baab0ca6aaf534aa7c940b6ffe4c  doc/ger-de/beispiele/template-operatoren/si.md
 0b69af953c5082c5c41a9291edf2509c  doc/ger-de/beispiele/template-operatoren/similar_text.md
 47d40a09c29388cbec45824dfcb5db7e  doc/ger-de/beispiele/template-operatoren/simpletags.md
-28f132423dbb66b11535faf5dca70e0d  doc/ger-de/beispiele/template-operatoren/simplify.md
+ae968ac3a368c2dd55cba183a50dacf2  doc/ger-de/beispiele/template-operatoren/simplify.md
 88356b83227163b05e7bfcee687b2796  doc/ger-de/beispiele/template-operatoren/siteaccess_menu.md
 17f9e35a887379f5cb4daa1df0a05097  doc/ger-de/beispiele/template-operatoren/siteaccess_menu_key.md
 eccdb2f56d965589f3d9675de9797210  doc/ger-de/beispiele/template-operatoren/siteaccess_url.md

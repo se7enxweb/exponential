@@ -26,6 +26,14 @@ Aus der Parameterliste oben gebildet; die Werte sind Platzhalter (die Template-H
 {$value|html_entity_decode}
 ```
 
+## In einem ausgelieferten Template
+
+Die erste Verwendung in den Templates dieser Installation, `design/standard/templates/mail/text_value.tpl` Zeile 20:
+
+```tpl
+{set $tv_html = $tv_html|strip_tags|html_entity_decode}
+```
+
 ## Siehe auch
 
 - [Alle Template-Operatoren](README.md)

@@ -30,10 +30,10 @@ Built from the parameter list above; the values are placeholders (the operator's
 
 ## In a shipped template
 
-The first use in the templates of this installation, `design/admin/templates/package/view/full.tpl` line 410:
+The first use in the templates of this installation, `design/admin/templates/exphelp/menu.tpl` line 12:
 
 ```tpl
-<td class="pvf-col-path"><code>{if $pathParts|count|gt(1)}<span class="pvf-dir">{$pathParts|extract_left( $pathParts|count|dec )|implode( '/' )|wash}/</span>{/if}<span class="pvf-name">{$pathParts|extract_right( 1 )|implode( '' )|wash}</span></code></td>
+{set $help_menu_uri = $help_menu_uri|extract_right( $help_menu_uri|count_chars|sub( $help_menu_prefix|count_chars, 1 ) )}
 ```
 
 ## Related

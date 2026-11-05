@@ -28,10 +28,10 @@ Aus der Parameterliste oben gebildet; die Werte sind Platzhalter (die Template-H
 
 ## In einem ausgelieferten Template
 
-Die erste Verwendung in den Templates dieser Installation, `design/admin4/templates/page_toppath.tpl` Zeile 17:
+Die erste Verwendung in den Templates dieser Installation, `design/admin/templates/exphelp/menu.tpl` Zeile 12:
 
 ```tpl
-$:item.url )|ezurl}{if gt( $:item.text|count_chars, 20 )} title="{$:item.text|wash}"{/if}{if eq( $:number, $:crumb_count )} aria-current="page"{/if}>{$:item.text|wash}</a>
+{set $help_menu_uri = $help_menu_uri|extract_right( $help_menu_uri|count_chars|sub( $help_menu_prefix|count_chars, 1 ) )}
 ```
 
 ## Siehe auch

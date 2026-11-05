@@ -28,10 +28,10 @@ Built from the parameter list above; the values are placeholders (the operator's
 
 ## In a shipped template
 
-The first use in the templates of this installation, `design/admin4/templates/page_toppath.tpl` line 17:
+The first use in the templates of this installation, `design/admin/templates/exphelp/menu.tpl` line 12:
 
 ```tpl
-$:item.url )|ezurl}{if gt( $:item.text|count_chars, 20 )} title="{$:item.text|wash}"{/if}{if eq( $:number, $:crumb_count )} aria-current="page"{/if}>{$:item.text|wash}</a>
+{set $help_menu_uri = $help_menu_uri|extract_right( $help_menu_uri|count_chars|sub( $help_menu_prefix|count_chars, 1 ) )}
 ```
 
 ## Related
