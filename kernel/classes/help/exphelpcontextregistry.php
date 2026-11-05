@@ -362,7 +362,9 @@ class expHelpContextRegistry
             $value = trim( (string)$value );
             if ( preg_match( '#^exphelp/(dashboard|report|search)$#', $value, $m ) )
             {
-                $links[] = array( 'key' => $key, 'id' => '', 'anchor' => '', 'url' => expHelp::url( $m[1] ), 'title' => '' );
+                // the error report guide: its help page where this siteaccess switches the view off
+                $url = $m[1] === 'report' && method_exists( 'expHelp', 'reportLinks' ) ? expHelp::reportLinks()['url'] : expHelp::url( $m[1] );
+                $links[] = array( 'key' => $key, 'id' => '', 'anchor' => '', 'url' => $url, 'title' => '' );
                 continue;
             }
             $target = self::parseTarget( $value );
