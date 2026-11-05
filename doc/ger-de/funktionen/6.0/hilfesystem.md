@@ -586,6 +586,21 @@ gezählt, ohne eine Seite zu lesen). Eine übersetzte Seite verlinkt auf ihr eng
 einer noch nicht übersetzten Seite: Das Original ist dieselbe Adresse mit dem Ansichtsparameter `/(lang)/eng-us` (der
 Verzeichnisname; die alten Schlüssel `en-us` und `de` werden weiterhin akzeptiert; ein Query-Parameter `?lang=` wird nicht gelesen), der die Seite für diese eine Anfrage in jener Sprache zeigt, mit einem Link zurück zur Sprache des Lesers.
 
+Ein Leser, der die Sprachumschaltung der Oberfläche nicht benutzen kann (ein Besucher einer öffentlichen Website wie
+der Dokumentationsseite, ein Konto ohne die Richtlinie `uiswitch/language`, ein Siteaccess, der kein
+Umschalt-Siteaccess ist), bekommt stattdessen jede Sprache mit Seiten als Link (`expHelp::readingLinks()`): dieselbe
+Adresse mit `/(lang)/<Verzeichnis>`, die Sprache des Lesers mit `aria-current` markiert, jeder Name in seiner eigenen
+Sprache (`share/locale/<locale>.ini` LanguageName). Für einen solchen Leser wählt `/(lang)/` die Sprache der ganzen
+Hilfe für die Anfrage (`expHelp::beginReading()`, von jeder Ansicht der Hilfe aufgerufen:
+`expHelpLanguage::current()` und damit `expHelpDocumentIndex::instance()` folgen ihr, nur innerhalb der Anfrage, in
+der sie gesetzt wurde), und `expHelp::endReading()` hängt den Ansichtsparameter an jede Adresse der Hilfe in der
+Ausgabe der Ansicht an: Links, Formulare und die `data-*`-Adressen des Client-Skripts (Endpunkt der Suche, Ordner des
+Seitenbaums), die Brotkrümel und eine Weiterleitung; das JSON der Suche und die Fragmente des Seitenbaums tragen ihn
+ebenfalls. Die gerenderten Seiten und ihre Caches ändern sich nicht: Die Sprache kommt in die Ausgabe jeder Anfrage.
+Die eigenen Hilfe-Links eines Seitenlayouts lesen sie mit `fetch( 'exphelp', 'reading_key' )`. Für einen Leser, der
+umschalten kann, behält `/(lang)/` die oben beschriebene Bedeutung für eine Seite. Beschriftungen und Schaltflächen
+der Hilfe bleiben in der Oberflächensprache der Website.
+
 In einer Oberflächensprache, die von rechts nach links geschrieben wird (Hebräisch, Arabisch), werden die Seiten
 gespiegelt: Navigationsbaum, Inhaltsverzeichnis und die Links für vorherige/nächste Seite wechseln die Seite und ihre
 Pfeile drehen sich, während Pfade, Code und die Diagnosedaten von links nach rechts bleiben. Jede Seite hat genau ein

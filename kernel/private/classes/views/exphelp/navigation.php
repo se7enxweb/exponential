@@ -43,6 +43,9 @@ class Navigation extends \Exponential\Runnable\ModuleView
             // the tree changes with the index; a reader's browser may keep it for a minute
             header( 'Cache-Control: private, max-age=60' );
             header( 'X-Content-Type-Options: nosniff' );
+            // a reader who chose the help's language with /(lang)/ keeps it in the folder's links
+            if ( method_exists( 'expHelp', 'readingKey' ) && \expHelp::readingKey() !== '' )
+                $html = \expHelp::htmlWithLanguage( $html, \expHelp::readingKey(), \eZSys::indexDir() );
             echo $html;
             \eZExecution::cleanExit();
         }

@@ -329,7 +329,10 @@ endet mit 1, wenn etwas falsch ist.
   Originals erreichen (`../../eng-us/help/images/x.webp` aus `doc/ger-de/hilfe/x.md`);
 - TD-13: Ein Anker, der für die Fassung einer Seite in einer anderen Sprache geschrieben ist, wird der Überschrift an
   derselben Position der angezeigten Seite zugeordnet, beim Rendern der Seite und in der Link-Prüfung, in beide
-  Richtungen.
+  Richtungen;
+- TD-15: Ein Leser ohne die Sprachumschaltung der Oberfläche wählt die Sprache der Hilfe mit `/(lang)/<Verzeichnis>`,
+  nur für diese eine Anfrage, angeboten als ein Link je Sprache, und die Adressen der Hilfe (Links, Formulare,
+  `data-*`) behalten sie.
 
 Die ganze Kette auf einer laufenden Website (beide Server, hell und dunkel, die alten Adressen, die Sprachumschaltung
 und eine deutsche Seite) wird in einem Browser als Wegwerf-Administrator geprüft.

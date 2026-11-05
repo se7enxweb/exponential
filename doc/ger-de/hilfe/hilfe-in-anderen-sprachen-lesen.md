@@ -33,8 +33,24 @@ wechseln. Es ist dieselbe Auswahl wie die Sprache der Oberfläche in der oberen 
 wechselt in diese Sprache, und Sie bleiben auf der Seite, die Sie gerade lesen.
 
 Angeboten werden nur die Sprachen, die Hilfeseiten haben. Neben der Auswahl sehen Sie, wie viel der Hilfe übersetzt
-ist, zum Beispiel „Deutsch: 120 von 7.265 Seiten“. Darf Ihr Konto die Sprache der Oberfläche nicht ändern, zeigt die
-Hilfe die Sprache, in der Sie lesen, ohne die Auswahl.
+ist, zum Beispiel „Deutsch: 120 von 7.265 Seiten“.
+
+## Eine Sprache ohne die Auswahl wählen
+
+Auf einer öffentlichen Website, etwa einer Dokumentationsseite, die Besucher ohne Anmeldung lesen, und für ein Konto,
+das die Sprache der Oberfläche nicht ändern darf, gibt es keine Auswahl der Sprache der Oberfläche. Die Hilfe bietet
+dann jede Sprache, die Seiten hat, als Link an: „Lesesprache: English / Deutsch“. Wählen Sie eine, und dieselbe Seite
+öffnet sich in dieser Sprache.
+
+Die gewählte Sprache bleibt, während Sie in der Hilfe lesen: Die Startseite, der Inhalt, der Seitenbaum, die Suche,
+die Themen und jede Seite, die Sie von dort aus öffnen, werden darin angezeigt, und ihre Links behalten sie. Dazu
+hängt die Hilfe `/(lang)/<Sprache>` an ihre Adressen an, zum Beispiel `/exphelp/dashboard/(lang)/ger-de`; so können
+Sie eine Seite in Ihrer Sprache auch als Lesezeichen speichern oder weitergeben. Wählen Sie wieder English, oder
+öffnen Sie die Hilfe ohne `/(lang)/`, um zurückzukehren.
+
+Eine Seite, die noch nicht übersetzt ist, wird mit dem unten beschriebenen Hinweis auf Englisch angezeigt, und die
+Suche durchsucht die Seiten der gewählten Sprache. Die Beschriftungen, Schaltflächen und Menüs rund um die Hilfe
+bleiben in der Sprache der Website.
 
 ## Das englische Original
 

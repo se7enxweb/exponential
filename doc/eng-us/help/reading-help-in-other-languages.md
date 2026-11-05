@@ -32,8 +32,22 @@ same switch as the interface language switch in the top bar, so the whole admini
 and you stay on the page you were reading.
 
 Only the languages that have help pages are offered. Next to the switch you see how much of the help is translated,
-for example "German: 120 of 7,265 pages". If your account may not change the interface language, the help shows
-the language you are reading in without the switch.
+for example "German: 120 of 7,265 pages".
+
+## Choosing a language without the switch
+
+On a public website, such as a documentation site that visitors read without signing in, and for an account that
+may not change the interface language, there is no interface language switch. The help then offers each language
+that has pages as a link: "Reading in: English / Deutsch". Choose one and the same page opens in that language.
+
+The language you chose stays while you read the help: the start page, the contents, the page tree, the search, the
+topics and every page you open from there are shown in it, and their links keep it. Behind the scenes the help adds
+`/(lang)/<language>` to its addresses, for example `/exphelp/dashboard/(lang)/ger-de`, so you can also bookmark or
+share a page in your language. Choose English again, or open the help without `/(lang)/`, to go back.
+
+A page that is not translated yet is shown in English with the note described below, and the search looks through
+the pages of the language you chose. The labels, buttons and menus around the help stay in the language of the
+website.
 
 ## The English original
 

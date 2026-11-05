@@ -89,6 +89,11 @@ class expHelpLanguage
     /** @var array directory => canonical path => translated path */
     protected $reverseMaps = array();
 
+    /** @var array|null array( request, directory ): the language a reader without the interface language switch chose
+     *  for this request (/(lang)/<key>, expHelp::beginReading()); current() returns it. Kept with the request it was
+     *  set in, so a persistent server process never carries it into the next request */
+    protected static $reading = null;
+
     /**
      * @param array $config DEFAULTS keys; missing ones take the default
      * @param string|null $rootDir the installation root (default expHelp::installRoot(), else the working directory)
@@ -341,7 +346,52 @@ class expHelpLanguage
      */
     public function current()
     {
+        $reading = self::reading();
+        if ( $reading !== null && $this->isDirectory( $reading ) )
+            return $reading;
+        return $this->interfaceLanguage();
+    }
+
+    /**
+     * The language of the interface locale (current() without a reading language chosen for the request).
+     *
+     * @return string
+     */
+    public function interfaceLanguage()
+    {
         return $this->forLocale( self::currentLocale() );
+    }
+
+    /**
+     * Sets the language a reader without the interface language switch reads the help in for this request
+     * (/(lang)/<key>); null forgets it. Only expHelp::beginReading() and tests call it.
+     *
+     * @param string|null $directory
+     */
+    public static function setReading( $directory )
+    {
+        $directory = $directory === null ? null : self::cleanDirectory( $directory );
+        self::$reading = $directory === null ? null : array( self::requestKey(), $directory );
+    }
+
+    /**
+     * The language setReading() chose for this request, or null.
+     *
+     * @return string|null
+     */
+    public static function reading()
+    {
+        return self::$reading !== null && self::$reading[0] === self::requestKey() ? self::$reading[1] : null;
+    }
+
+    /**
+     * The current request: the process and the time it started (a persistent worker serves many).
+     *
+     * @return string
+     */
+    protected static function requestKey()
+    {
+        return getmypid() . ':' . ( isset( $_SERVER['REQUEST_TIME_FLOAT'] ) ? $_SERVER['REQUEST_TIME_FLOAT'] : '' );
     }
 
     /**

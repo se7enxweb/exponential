@@ -27,6 +27,8 @@
  *         doc/ger-de since 6.0.15), apart from the history and the code that still answers their old addresses
  *  TD-13  an anchor written for another language's version of a page maps to the shown page's heading at the same
  *         position, when rendered and in the link check, in both directions
+ *  TD-15  a reader without the interface language switch chooses the help's language with /(lang)/<key>: only for
+ *         this request, as links to each language, and the help's addresses (links, forms, data-*) keep it
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -681,5 +683,80 @@ class expHelpTranslatedDocumentationTest extends PHPUnit\Framework\TestCase
         $this->assertNull( expHelp::requestedLanguage( array( 'lang' => array( 'eng-us' ) ), $languages, 'ger-de' ) );
         $this->assertNull( expHelp::requestedLanguage( array( 'lang' => '../eng-us' ), $languages, 'ger-de' ) );
         $this->assertNull( expHelp::requestedLanguage( array(), $languages, 'ger-de' ) );
+    }
+
+    /** TD-15 */
+    public function testReadingLanguageWithoutTheSwitch()
+    {
+        $languages = self::languages();
+        $coverage = self::index( 'ger-de' )->languageCoverage();
+
+        // a reader who cannot switch chooses with /(lang)/; one who can keeps the one-page original of TD-11
+        $this->assertSame( 'ger-de', expHelp::browsingLanguage( array( 'lang' => 'ger-de' ), $languages, 'eng-us', false ) );
+        $this->assertNull( expHelp::browsingLanguage( array( 'lang' => 'ger-de' ), $languages, 'eng-us', true ) );
+        $this->assertNull( expHelp::browsingLanguage( array( 'lang' => 'eng-us' ), $languages, 'eng-us', false ), 'the interface language is no choice' );
+        $this->assertNull( expHelp::browsingLanguage( array( 'lang' => 'fre-fr' ), $languages, 'eng-us', false ) );
+        $this->assertNull( expHelp::browsingLanguage( array(), $languages, 'eng-us', false ) );
+
+        // the chosen language is the reader's language for this request only
+        expHelpLanguage::setReading( 'ger-de' );
+        try
+        {
+            $this->assertSame( 'ger-de', expHelpLanguage::reading() );
+            $this->assertSame( 'ger-de', $languages->current() );
+            $this->assertSame( 'ger-de', expHelp::readingKey() );
+            $this->assertSame( 'eng-us', $languages->interfaceLanguage() );
+            $saved = isset( $_SERVER['REQUEST_TIME_FLOAT'] ) ? $_SERVER['REQUEST_TIME_FLOAT'] : null;
+            $_SERVER['REQUEST_TIME_FLOAT'] = 1.5;
+            $this->assertNull( expHelpLanguage::reading(), 'never carried into the next request of a persistent process' );
+            $this->assertSame( 'eng-us', $languages->current() );
+            if ( $saved === null )
+                unset( $_SERVER['REQUEST_TIME_FLOAT'] );
+            else
+                $_SERVER['REQUEST_TIME_FLOAT'] = $saved;
+        }
+        finally
+        {
+            expHelpLanguage::setReading( null );
+        }
+        $this->assertNull( expHelpLanguage::reading() );
+        $this->assertSame( '', expHelp::readingKey() );
+
+        // the help's addresses keep the language, before the anchor; files, other modules and a given (lang) stay
+        $this->assertSame( '/exphelp/dashboard/(lang)/ger-de', expHelp::withLanguage( '/exphelp/dashboard', 'ger-de' ) );
+        $this->assertSame( 'exphelp/dashboard/(lang)/ger-de', expHelp::withLanguage( 'exphelp/dashboard', 'ger-de' ) );
+        $this->assertSame( '/site/exphelp/viewer/help/a.md/(lang)/ger-de#b', expHelp::withLanguage( '/site/exphelp/viewer/help/a.md#b', 'ger-de', '/site' ) );
+        $this->assertSame( '/exphelp/search/(q)/x/(lang)/ger-de', expHelp::withLanguage( '/exphelp/search/(q)/x', 'ger-de' ) );
+        $this->assertSame( 'https://example.com/site/exphelp/viewer/a.md/(lang)/ger-de', expHelp::withLanguage( 'https://example.com/site/exphelp/viewer/a.md', 'ger-de', '/site' ) );
+        $this->assertSame( '/exphelp/viewer/a.md/(lang)/eng-us', expHelp::withLanguage( '/exphelp/viewer/a.md/(lang)/eng-us', 'ger-de' ) );
+        $this->assertSame( '/exphelp/asset/help/a.png', expHelp::withLanguage( '/exphelp/asset/help/a.png', 'ger-de' ) );
+        $this->assertSame( '/exphelp/image/(id)/x', expHelp::withLanguage( '/exphelp/image/(id)/x', 'ger-de' ) );
+        $this->assertSame( '/exphelp/dashboarding', expHelp::withLanguage( '/exphelp/dashboarding', 'ger-de' ) );
+        $this->assertSame( '/content/view/full/2', expHelp::withLanguage( '/content/view/full/2', 'ger-de' ) );
+        $this->assertSame( '/exphelp/dashboard', expHelp::withLanguage( '/exphelp/dashboard', '' ) );
+        $this->assertSame( '/exphelp/dashboard', expHelp::withLanguage( '/exphelp/dashboard', '../x' ) );
+
+        $html = '<a href="/site/exphelp/contents">C</a><a href="#top">T</a><form action="/site/exphelp/search" data-exphelp-endpoint="/site/exphelp/search">'
+              . '<img src="/site/exphelp/asset/a.png"><a href="https://other.example/exphelp/dashboard">O</a><a href=\'/site/exphelp/viewer/a.md#h\'>V</a>'
+              . '<a href="/site/exphelp/viewer/a.md/(lang)/eng-us">E</a></form>';
+        $this->assertSame( '<a href="/site/exphelp/contents/(lang)/ger-de">C</a><a href="#top">T</a><form action="/site/exphelp/search/(lang)/ger-de" data-exphelp-endpoint="/site/exphelp/search/(lang)/ger-de">'
+                         . '<img src="/site/exphelp/asset/a.png"><a href="https://other.example/exphelp/dashboard">O</a><a href=\'/site/exphelp/viewer/a.md/(lang)/ger-de#h\'>V</a>'
+                         . '<a href="/site/exphelp/viewer/a.md/(lang)/eng-us">E</a></form>',
+                          expHelp::htmlWithLanguage( $html, 'ger-de', '/site' ) );
+        $this->assertSame( $html, expHelp::htmlWithLanguage( $html, '', '/site' ) );
+
+        // the choices: a link per language with pages, to the same address, each with its key and its own name
+        $links = expHelp::readingLinks( $languages, 'eng-us', $coverage, array( 'eng-us' => 'English (United States)', 'ger-de' => 'Deutsch (Deutschland)' ), '/exphelp/viewer/help/start.md' );
+        $this->assertSame( array( 'English', 'Deutsch' ), array_column( $links, 'label' ) );
+        $this->assertSame( array( '/exphelp/viewer/help/start.md/(lang)/eng-us', '/exphelp/viewer/help/start.md/(lang)/ger-de' ), array_column( $links, 'url' ) );
+        $this->assertSame( array( true, false ), array_column( $links, 'current' ) );
+        $this->assertSame( array( 'en-US', 'de-DE' ), array_column( $links, 'lang' ) );
+        // without an own name: the configured name; the shown language is marked
+        $links = expHelp::readingLinks( $languages, 'ger-de', $coverage, array(), '/exphelp/dashboard' );
+        $this->assertSame( array( 'English', 'German' ), array_column( $links, 'label' ) );
+        $this->assertSame( array( false, true ), array_column( $links, 'current' ) );
+        // no translated page: nothing to choose
+        $none = array( 'eng-us' => array( 'pages' => 3, 'total' => 3 ), 'ger-de' => array( 'pages' => 0, 'total' => 3 ) );
+        $this->assertSame( array(), expHelp::readingLinks( $languages, 'eng-us', $none, array(), '/exphelp/dashboard' ) );
     }
 }

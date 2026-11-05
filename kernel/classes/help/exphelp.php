@@ -281,6 +281,221 @@ class expHelp
         return $directory !== null && $directory !== $reader ? $directory : null;
     }
 
+    /** The help views that keep a reading language in their links (/(lang)/<key>): every view of a page a reader
+     *  reads or a form they send; not the files (asset, image) nor the JSON of the header's Help menu (context) */
+    const READING_VIEWS = array( 'dashboard', 'viewer', 'contents', 'navigation', 'search', 'audience', 'extensions',
+                                 'topic', 'manual', 'pdf', 'report', 'feedback', 'state' );
+
+    /**
+     * The language a reader who cannot use the interface language switch reads the help in for this request: the
+     * view parameter /(lang)/<key> when it names a configured language other than the one of the interface locale,
+     * else null. A reader who can switch (signed in, uiswitch/language, a switch siteaccess) gets null: for them
+     * /(lang)/ keeps showing one page in another language (requestedLanguage()), and the switch changes the rest.
+     *
+     * @param array $viewParameters the view's user parameters, name => value
+     * @param expHelpLanguage $languages
+     * @param string $interface the language of the interface locale (expHelpLanguage::interfaceLanguage())
+     * @param bool $canSwitch whether the reader can use the interface language switch (canSwitchReading())
+     * @return string|null
+     */
+    public static function browsingLanguage( array $viewParameters, expHelpLanguage $languages, $interface, $canSwitch )
+    {
+        return $canSwitch ? null : self::requestedLanguage( $viewParameters, $languages, $interface );
+    }
+
+    /**
+     * Whether the current user can choose the help's language with the interface language switch on this siteaccess.
+     *
+     * @return bool
+     */
+    public static function canSwitchReading()
+    {
+        return self::switchProvider() !== null;
+    }
+
+    /**
+     * The interface language switch's provider when the current user may use it on this siteaccess, else null.
+     *
+     * @return expUISwitchProviderInterface|null
+     */
+    protected static function switchProvider()
+    {
+        try
+        {
+            if ( class_exists( 'expUISwitch' ) && expUISwitch::isEnabled() && expUISwitch::isSwitchSiteAccess()
+                 && expUISwitch::canUse( self::READING_PROVIDER ) )
+            {
+                $provider = expUISwitch::provider( self::READING_PROVIDER );
+                return $provider ? $provider : null;
+            }
+        }
+        catch ( Throwable $e )
+        {
+            eZDebug::writeWarning( 'The language switch of the help is not available: ' . $e->getMessage(), __METHOD__ );
+        }
+        return null;
+    }
+
+    /**
+     * Called by every help view before it runs: a reader without the interface language switch who asked for
+     * /(lang)/<key> reads the help in that language for this request (expHelpLanguage::setReading(), which
+     * expHelpLanguage::current() and so expHelpDocumentIndex::instance() follow); anything else forgets an earlier
+     * choice. endReading() then keeps the language in the view's links.
+     *
+     * @param array $params the view's $Params
+     * @return string|null the language chosen for this request
+     */
+    public static function beginReading( array $params )
+    {
+        expHelpLanguage::setReading( null );
+        $viewParameters = isset( $params['UserParameters'] ) && is_array( $params['UserParameters'] ) ? $params['UserParameters'] : array();
+        if ( !isset( $viewParameters['lang'] ) || !self::isEnabled() )
+            return null;
+        $languages = expHelpLanguage::fromIni();
+        $directory = self::browsingLanguage( $viewParameters, $languages, $languages->interfaceLanguage(), self::canSwitchReading() );
+        expHelpLanguage::setReading( $directory );
+        return $directory;
+    }
+
+    /**
+     * The /(lang)/ value the help's links carry in this request: the key of the language beginReading() chose, or ''.
+     *
+     * @return string
+     */
+    public static function readingKey()
+    {
+        $directory = expHelpLanguage::reading();
+        return $directory !== null ? expHelpLanguage::key( $directory ) : '';
+    }
+
+    /**
+     * A help address with the view parameter /(lang)/<key> (before the #anchor), when it is the address of a help
+     * view of READING_VIEWS and has no (lang) yet; any other address unchanged. Works for module-relative addresses
+     * (/exphelp/..., exphelp/...), for those with the siteaccess path in front ($prefix: eZSys::indexDir()) and for
+     * absolute ones (https://host/<prefix>/exphelp/...; callers pass only addresses of this site).
+     *
+     * @param string $url
+     * @param string $key the language key ('' leaves the address as it is)
+     * @param string $prefix the path in front of /exphelp/ ('' or e.g. /index.php/site)
+     * @return string
+     */
+    public static function withLanguage( $url, $key, $prefix = '' )
+    {
+        $url = (string)$url;
+        if ( $key === '' || !preg_match( '/^[a-z0-9-]{1,16}$/', (string)$key ) )
+            return $url;
+        $anchor = '';
+        if ( ( $hash = strpos( $url, '#' ) ) !== false )
+        {
+            $anchor = substr( $url, $hash );
+            $url = substr( $url, 0, $hash );
+        }
+        $prefix = rtrim( (string)$prefix, '/' );
+        $views = implode( '|', self::READING_VIEWS );
+        // an absolute address of this site (expHelpLinks::absolute() for the search's JSON) keeps its origin
+        $pattern = '#^(?:https?://[^/?\#]+)?(?:' . preg_quote( $prefix, '#' ) . ')?/?exphelp/(?:' . $views . ')(?:/|$)#';
+        if ( strpos( $url, '?' ) !== false || strpos( $url, '/(lang)/' ) !== false || !preg_match( $pattern, $url ) )
+            return $url . $anchor;
+        return rtrim( $url, '/' ) . '/(lang)/' . $key . $anchor;
+    }
+
+    /**
+     * Adds /(lang)/<key> to every help address of an HTML fragment (withLanguage()) that sits in an attribute: the
+     * links (href), the forms (action) and the addresses the client script reads (data-*: the search's endpoint and
+     * canonical base, the page tree's folders). Addresses of other sites and of the files (asset, image) stay.
+     *
+     * @param string $html
+     * @param string $key
+     * @param string $prefix eZSys::indexDir()
+     * @return string
+     */
+    public static function htmlWithLanguage( $html, $key, $prefix = '' )
+    {
+        $html = (string)$html;
+        if ( $key === '' || strpos( $html, 'exphelp/' ) === false )
+            return $html;
+        $result = preg_replace_callback( '#(\s(?:href|action|data-[a-z0-9-]+)=)(["\'])(/[^"\'<>\s]*)\2#i', function ( $m ) use ( $key, $prefix ) {
+            return $m[1] . $m[2] . self::withLanguage( $m[3], $key, $prefix ) . $m[2];
+        }, $html );
+        return $result !== null ? $result : $html;
+    }
+
+    /**
+     * Called by every help view with its result: when beginReading() chose a language, its links, forms, path
+     * (breadcrumbs) and a redirect keep /(lang)/<key>, so the reader stays in that language while browsing the help.
+     * The rendered pages and their caches are not touched: the language is added to the output of each request.
+     *
+     * @param mixed $result the view's result
+     * @param eZModule|null $module
+     * @return mixed
+     */
+    public static function endReading( $result, $module = null )
+    {
+        $key = self::readingKey();
+        if ( $key === '' )
+            return $result;
+        $prefix = class_exists( 'eZSys' ) ? (string)eZSys::indexDir() : '';
+        if ( is_array( $result ) )
+        {
+            if ( isset( $result['content'] ) && is_string( $result['content'] ) )
+                $result['content'] = self::htmlWithLanguage( $result['content'], $key, $prefix );
+            if ( isset( $result['path'] ) && is_array( $result['path'] ) )
+            {
+                foreach ( $result['path'] as $i => $item )
+                    if ( is_array( $item ) && isset( $item['url'] ) && is_string( $item['url'] ) && $item['url'] !== '' )
+                        $result['path'][$i]['url'] = self::withLanguage( $item['url'], $key, $prefix );
+            }
+        }
+        if ( $module instanceof eZModule && $module->exitStatus() == eZModule::STATUS_REDIRECT && is_string( $module->redirectURI() ) )
+            $module->setRedirectURI( self::withLanguage( $module->redirectURI(), $key, $prefix ) );
+        return $result;
+    }
+
+    /**
+     * An address of this request's help with its reading language (withLanguage() with readingKey()), for the
+     * addresses a view writes itself: a redirect it sends, the JSON of the search, the page tree's fragments.
+     *
+     * @param string $url
+     * @return string
+     */
+    public static function carryReading( $url )
+    {
+        $key = self::readingKey();
+        return $key === '' ? (string)$url : self::withLanguage( $url, $key, class_exists( 'eZSys' ) ? (string)eZSys::indexDir() : '' );
+    }
+
+    /**
+     * What the "Reading in" control offers a reader who cannot use the interface language switch (pure): a link per
+     * language that has pages (the default always has them), to the same help address with /(lang)/<key>, labelled
+     * with the language's own name ("Deutsch", "English"; $labels, else its name in [DocLanguages] Names[]).
+     *
+     * @param expHelpLanguage $languages
+     * @param string $reader the language shown
+     * @param array $coverage expHelpDocumentIndex::languageCoverage()
+     * @param array $labels directory => the language's own name
+     * @param string $back the module-relative address of the page (/exphelp/dashboard, /exphelp/viewer/<id>)
+     * @return array directory, key, label, lang, url, current
+     */
+    public static function readingLinks( expHelpLanguage $languages, $reader, array $coverage, array $labels, $back )
+    {
+        $default = $languages->defaultDirectory();
+        $links = array();
+        foreach ( $languages->directories() as $directory )
+        {
+            $pages = isset( $coverage[$directory]['pages'] ) ? (int)$coverage[$directory]['pages'] : 0;
+            if ( $directory !== $default && $pages === 0 && $directory !== $reader )
+                continue;
+            $key = expHelpLanguage::key( $directory );
+            $label = isset( $labels[$directory] ) ? trim( preg_replace( '/\s*\(.*$/u', '', (string)$labels[$directory] ) ) : '';
+            $links[] = array( 'directory' => $directory, 'key' => $key,
+                              'label' => $label !== '' ? $label : $languages->name( $directory ),
+                              'lang' => expHelpLanguage::htmlLang( $directory ),
+                              'url' => self::withLanguage( (string)$back, $key ),
+                              'current' => $directory === $reader );
+        }
+        return count( $links ) >= 2 ? $links : array();
+    }
+
     /**
      * What the "Reading in" control of the help shows (pure: every input is given; reading() gathers them).
      *
@@ -359,6 +574,27 @@ class expHelp
     }
 
     /**
+     * A language's own name (share/locale/<locale>.ini LanguageName: "Deutsch (Deutschland)"), '' when unknown.
+     *
+     * @param string $directory
+     * @return string
+     */
+    public static function nativeName( $directory )
+    {
+        if ( !class_exists( 'eZLocale' ) )
+            return '';
+        try
+        {
+            $locale = eZLocale::create( expHelpLanguage::localeOf( $directory ) );
+            return $locale && $locale->isValid() ? trim( (string)$locale->languageName() ) : '';
+        }
+        catch ( Throwable $e )
+        {
+            return '';
+        }
+    }
+
+    /**
      * The "Reading in" control of the help for the current user: readingChoices() with the interface language
      * switch's choices when the user may use it on this siteaccess, plus 'back' (where the switch returns to) and the
      * page counts written as numbers of the reader's locale ('pages_text', 'total_text').
@@ -375,17 +611,13 @@ class expHelp
         $defaultLocale = '';
         try
         {
-            if ( class_exists( 'expUISwitch' ) && expUISwitch::isEnabled() && expUISwitch::isSwitchSiteAccess()
-                 && expUISwitch::canUse( self::READING_PROVIDER ) )
+            $provider = self::switchProvider();
+            if ( $provider )
             {
-                $provider = expUISwitch::provider( self::READING_PROVIDER );
-                if ( $provider )
-                {
-                    $allowed = $provider->allowedValues();
-                    foreach ( $allowed as $locale )
-                        $labels[$locale] = $provider->label( $locale );
-                    $defaultLocale = (string)$provider->defaultValue();
-                }
+                $allowed = $provider->allowedValues();
+                foreach ( $allowed as $locale )
+                    $labels[$locale] = $provider->label( $locale );
+                $defaultLocale = (string)$provider->defaultValue();
             }
         }
         catch ( Throwable $e )
@@ -393,8 +625,18 @@ class expHelp
             eZDebug::writeWarning( 'The language switch of the help is not available: ' . $e->getMessage(), __METHOD__ );
             $allowed = array();
         }
-        $reading = self::readingChoices( $languages, $languages->current(), $index->languageCoverage(), $allowed, $labels,
+        $coverage = $index->languageCoverage();
+        $reading = self::readingChoices( $languages, $languages->current(), $coverage, $allowed, $labels,
                                          expHelpLanguage::currentLocale(), $defaultLocale );
+        // without the switch: a link per language, which the help's links then keep (beginReading(), endReading())
+        $reading['links'] = array();
+        if ( !$reading['can_switch'] )
+        {
+            $native = array();
+            foreach ( $languages->directories() as $directory )
+                $native[$directory] = self::nativeName( $directory );
+            $reading['links'] = self::readingLinks( $languages, $languages->current(), $coverage, $native, $back );
+        }
         $separator = class_exists( 'eZLocale' ) ? (string)eZLocale::instance()->thousandsSeparator() : ',';
         foreach ( $reading['coverage'] as $i => $row )
         {

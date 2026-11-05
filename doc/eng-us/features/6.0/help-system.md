@@ -564,6 +564,19 @@ translated page links to its English original, and so does the note of a page th
 original is the same address with the view parameter `/(lang)/eng-us` (the directory name; the old keys `en-us`
 and `de` are still accepted; a `?lang=` query parameter is not read), which shows the page in that language for the one request, with a link back to the reader's language.
 
+A reader who cannot use the interface language switch (a visitor of a public site such as the documentation site,
+an account without the `uiswitch/language` policy, a siteaccess that is not a switch siteaccess) gets each language
+with pages as a link instead (`expHelp::readingLinks()`): the same address with `/(lang)/<directory>`, the reader's
+language marked with `aria-current`, each name in its own language (`share/locale/<locale>.ini` LanguageName). For
+such a reader `/(lang)/` chooses the language of the whole help for the request (`expHelp::beginReading()`, called
+by every help view: `expHelpLanguage::current()` and so `expHelpDocumentIndex::instance()` follow it, only within
+the request it was set in), and `expHelp::endReading()` adds the view parameter to every help address of the
+view's output: links, forms and the `data-*` addresses of the client script (search endpoint, page tree folders),
+the breadcrumbs and a redirect; the search's JSON and the page tree's fragments carry it too. The rendered pages
+and their caches are not changed: the language goes into each request's output. A page layout's own help links
+read it with `fetch( 'exphelp', 'reading_key' )`. For a reader who can switch, `/(lang)/` keeps its one-page
+meaning above. The help's labels and buttons stay in the site's interface language.
+
 In a right-to-left interface language (Hebrew, Arabic) the pages are mirrored: the navigation tree, the contents
 and the previous/next links swap sides and their arrows turn, while paths, code and the diagnostics stay left to
 right. Every page has one `h1`, named navigation landmarks, labels for each search field and filter, a visible

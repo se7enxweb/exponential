@@ -55,6 +55,9 @@ class Search extends \Exponential\Runnable\ModuleView
             // Sent here, not through $Module->redirectTo(): the kernel carries a request's query string over a module
             // redirect. Without HTML escaping: the address goes into the Location header.
             $target = \expHelp::searchUrl( $state, $defaultLimit );
+            // a reader who chose the help's language with /(lang)/ keeps it (expHelp::beginReading())
+            if ( method_exists( 'expHelp', 'carryReading' ) )
+                $target = \expHelp::carryReading( $target );
             \eZURI::transformURI( $target, false, 'full', false );
             \eZHTTPTool::redirect( $target, array(), '303 See Other', false );
             \eZExecution::cleanExit();
@@ -75,6 +78,8 @@ class Search extends \Exponential\Runnable\ModuleView
 
         if ( $json )
         {
+            if ( method_exists( 'expHelp', 'carryReading' ) )
+                $result = self::carryReading( $result );
             header( 'Content-Type: application/json; charset=utf-8' );
             header( 'Cache-Control: private, no-store' );
             header( 'X-Content-Type-Options: nosniff' );
@@ -114,6 +119,30 @@ class Search extends \Exponential\Runnable\ModuleView
         $Result['path'] = array( array( 'url' => 'exphelp/dashboard', 'text' => \ezpI18n::tr( 'kernel/exphelp', 'Help' ) ),
                                  array( 'url' => false, 'text' => $title ) );
         return $Result;
+    }
+
+    /**
+     * The JSON answer with the reading language a reader chose with /(lang)/ in its addresses (expHelp::carryReading()):
+     * the canonical address the script shows and the address of every hit, so a result opens in that language.
+     *
+     * @param array $result
+     * @return array
+     */
+    public static function carryReading( array $result )
+    {
+        foreach ( array( 'canonical', 'canonical_href' ) as $key )
+            if ( isset( $result[$key] ) && is_string( $result[$key] ) )
+                $result[$key] = \expHelp::carryReading( $result[$key] );
+        foreach ( array( 'hits', 'results' ) as $list )
+        {
+            if ( !isset( $result[$list] ) || !is_array( $result[$list] ) )
+                continue;
+            foreach ( $result[$list] as $i => $hit )
+                foreach ( array( 'url', 'href' ) as $key )
+                    if ( is_array( $hit ) && isset( $hit[$key] ) && is_string( $hit[$key] ) )
+                        $result[$list][$i][$key] = \expHelp::carryReading( $hit[$key] );
+        }
+        return $result;
     }
 
     /**

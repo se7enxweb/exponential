@@ -12,4 +12,7 @@
 /** @var array $Params the view parameters, set by eZModule when it includes this file */
 if ( !class_exists( 'Exponential\\View\\Kernel\\Exphelp\\Audience' ) || !class_exists( 'expHelp' ) || !class_exists( 'expHelpLanding' ) )
     return $Params['Module']->handleError( eZError::KERNEL_NOT_AVAILABLE, 'kernel' );
-return \Exponential\View\Kernel\Exphelp\Audience::main( __FILE__, get_defined_vars() );
+// a reader without the interface language switch keeps the language chosen with /(lang)/<key> in the links
+method_exists( 'expHelp', 'beginReading' ) && expHelp::beginReading( $Params );
+$helpResult = \Exponential\View\Kernel\Exphelp\Audience::main( __FILE__, get_defined_vars() );
+return method_exists( 'expHelp', 'endReading' ) ? expHelp::endReading( $helpResult, $Params['Module'] ) : $helpResult;

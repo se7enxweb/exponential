@@ -52,6 +52,18 @@ class expHelpFunctionCollection
     }
 
     /**
+     * fetch( 'exphelp', 'reading_key' ): the /(lang)/ value the help's links keep in this request (a reader without the
+     * interface language switch who chose a language, expHelp::beginReading()), '' otherwise. For the links a page
+     * layout writes itself, such as a site's help menu: concat( 'exphelp/contents', cond( $key, concat( '/(lang)/', $key ), '' ) ).
+     *
+     * @return array array( 'result' => string )
+     */
+    public static function fetchReadingKey()
+    {
+        return array( 'result' => method_exists( 'expHelp', 'readingKey' ) ? expHelp::readingKey() : '' );
+    }
+
+    /**
      * fetch( 'exphelp', 'site_topic', hash( 'object_id', ... ) ): a help topic for the site's own page
      *
      * @param int $object_id

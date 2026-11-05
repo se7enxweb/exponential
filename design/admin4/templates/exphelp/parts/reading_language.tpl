@@ -4,8 +4,10 @@
    interface language switch can choose (expHelp::reading()). Each button posts to uiswitch/set, the same view as the
    language switch of the top bar (ezformtoken adds its token): it changes the interface language of the whole
    administration and comes back to this page (RedirectURI). The reader's language carries aria-current="true",
-   each language's name its own lang. Without the switch (no uiswitch/language policy, one language) it shows the
-   reader's language only. Below it, how much of the help each translation has ("German: 120 of 7,265 pages").
+   each language's name its own lang. Without the switch (a visitor of a public site, no uiswitch/language policy,
+   not a switch siteaccess) each language with pages is a link to the same address with /(lang)/<key>, and the
+   help's links keep that language while the reader browses (expHelp::beginReading(), endReading()). With one
+   language only it shows that language. Below it, how much of the help each translation has ("German: 120 of 7,265 pages").
    Styles: stylesheets/modules/help.css (.a4-help-reading-*).
 
    Parameters: reading (expHelp::reading()), prefix (id prefix, unique on the page). *}
@@ -29,6 +31,12 @@
         </ul>
         <span class="a4-sr-only" id="{$rl_prefix}-note">{'Choosing a language changes the language of the whole administration.'|i18n( $rl_ctx )}</span>
     </form>
+    {elseif and( is_set( $reading.links ), $reading.links|count )}
+    <ul class="a4-help-reading-list">
+        {foreach $reading.links as $rl_link}
+        <li><a class="a4-help-reading-option" href={$rl_link.url|ezurl} hreflang="{$rl_link.lang|wash}" lang="{$rl_link.lang|wash}"{if $rl_link.current} aria-current="true"{/if}>{$rl_link.label|wash}</a></li>
+        {/foreach}
+    </ul>
     {elseif $rl_current}
     <strong class="a4-help-reading-current" lang="{$rl_current.lang|wash}">{$rl_current.label|wash}</strong>
     {/if}

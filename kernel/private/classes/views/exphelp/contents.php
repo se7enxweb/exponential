@@ -24,11 +24,15 @@ class Contents extends \Exponential\Runnable\ModuleView
         if ( !\expHelp::isEnabled() )
             return $Module->handleError( \eZError::KERNEL_MODULE_NOT_FOUND, 'kernel' );
 
-        $navigation = new \expHelpNavigation( \expHelpDocumentIndex::instance() );
+        $index = \expHelpDocumentIndex::instance();
+        $navigation = new \expHelpNavigation( $index );
         $tpl = \eZTemplate::factory();
         $tpl->setVariable( 'help_i18n_json', \expHelp::clientStringsJson() );
         $tpl->setVariable( 'help_nav_html', self::folderIds( $navigation->html() ) );
         $tpl->setVariable( 'help_nav_count', $navigation->count() );
+        // the reader's language and the choice of the help's other languages (parts/reading_language.tpl)
+        $tpl->setVariable( 'help_reading', method_exists( 'expHelp', 'reading' ) && method_exists( $index, 'languageCoverage' )
+            ? \expHelp::reading( $index, \expHelp::url( 'contents' ) ) : false );
 
         $Result = array();
         // the help's own left menu (menu.ini [Leftmenu_help]); the Setup tab stays marked

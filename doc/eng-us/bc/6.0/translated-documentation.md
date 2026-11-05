@@ -311,7 +311,9 @@ directory either has its translated name or keeps its English one). It exits wit
 - TD-12: a translated page is rendered from its file, so its links and images reach the original's directory
   (`../../eng-us/help/images/x.webp` from `doc/ger-de/hilfe/x.md`);
 - TD-13: an anchor written for another language's version of a page maps to the shown page's heading at the same
-  position, when the page is rendered and in the link check, in both directions.
+  position, when the page is rendered and in the link check, in both directions;
+- TD-15: a reader without the interface language switch chooses the help's language with `/(lang)/<directory>`, for
+  the one request only, offered as a link per language, and the help's addresses (links, forms, `data-*`) keep it.
 
 The whole chain on a running site (both servers, light and dark, the old addresses, the language switch and a German
 page) is checked in a browser as a throwaway administrator.

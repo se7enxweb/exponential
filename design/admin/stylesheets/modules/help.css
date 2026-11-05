@@ -369,6 +369,8 @@
 }
 .a4-help-reading-option:hover { background-color: var(--a4-soft); color: var(--a4-accent-text); }
 .a4-help-reading-option:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: -3px; }
+/* a reader without the interface language switch gets the languages as links (/(lang)/<key>) */
+a.a4-help-reading-option { display: inline-flex; align-items: center; text-decoration: none; }
 .a4-help-reading-option[aria-current="true"] { background-color: var(--a4-accent-strong); color: var(--a4-on-accent); cursor: default; }
 .a4-help-reading-current { color: var(--a4-ink); }
 .a4-help-reading-coverage { display: inline-flex; flex-wrap: wrap; gap: var(--a4-space-1) var(--a4-space-3); margin: 0; padding: 0; list-style: none; font-variant-numeric: tabular-nums; }
