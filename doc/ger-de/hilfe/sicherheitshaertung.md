@@ -266,8 +266,8 @@ Anmeldung. Eine Passwortänderung meldet über den Passwortstempel alle anderen 
 (`[PasswordSettings] EndOtherSessions=enabled`). Die Sitzungen eines deaktivierten Kontos enden bei ihrer nächsten
 Anfrage.
 
-**Härten.** `CookieSecure=true` auf einer reinen HTTPS-Site, ein kürzeres `SessionTimeout`, ein eigenes Sitzungscookie
-pro Siteaccess (`SessionNameHandler=custom`), `session.use_strict_mode=1` in PHP
+**Härten.** `CookieSecure=true` auf einer reinen HTTPS-Site, kürzere Werte für `SessionTimeout` und
+`RememberMeTimeout` (beide mitgeliefert 31104000 Sekunden, 360 Tage), ein eigenes Sitzungscookie pro Siteaccess (`SessionNameHandler=custom`), `session.use_strict_mode=1` in PHP
 ([13.7](../installation/13-sicherheitshaertung.md#137-sitzungen-und-cookies)). Nach einer vermuteten Kompromittierung: Ändern
 Sie das Passwort und entfernen Sie alle Sitzungen (**Setup** > **Sitzungen**, mit dem Datenbank-Session-Handler).
 

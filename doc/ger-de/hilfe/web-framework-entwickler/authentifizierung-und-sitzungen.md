@@ -53,7 +53,7 @@ jeder andere Inhalt.
 ## Sitzungen
 
 - Eine Sitzung hält einen Browser angemeldet. Sie endet `site.ini [Session] SessionTimeout` Sekunden nach ihrer
-  letzten Nutzung (mitgeliefert: 259200, also drei Tage).
+  letzten Nutzung (mitgeliefert: 31104000, also 360 Tage).
 - Ein leeres `site.ini [Session] Handler` (die Voreinstellung) bedeutet `ezpSessionHandlerPHP`: die
   Sitzungsspeicherung von PHP selbst. `ezpSessionHandlerDB` speichert Sitzungen in der Tabelle `ezsession`, sodass
   **Setup > Sitzungen** sie auflisten und entfernen kann ([Sitzungen](../../anleitungen/sitzungen.md)). Ein Symfony-basierter

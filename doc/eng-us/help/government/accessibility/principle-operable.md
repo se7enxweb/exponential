@@ -36,7 +36,7 @@ focus".
 
 | Role | Does |
 |---|---|
-| Administrators | weigh session length for security against people who work slowly: `site.ini [Session] SessionTimeout` (259200 s shipped) ([13.7](../../../install/13-security-hardening.md#137-sessions-and-cookies)) |
+| Administrators | weigh session length for security against people who work slowly: `site.ini [Session] SessionTimeout` (31104000 s, 360 days, shipped) ([13.7](../../../install/13-security-hardening.md#137-sessions-and-cookies)) |
 | Designers | sliders and carousels can be paused; no automatic page refresh |
 | Editors | no content that moves by itself without a pause control |
 

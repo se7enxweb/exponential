@@ -33,7 +33,7 @@ holds, how expired rows are removed, and what changes with several web servers. 
 | empty (the default): `ezpSessionHandlerPHP` | PHP's own session storage (`session.save_handler`, usually files on the web server) | **Setup > Sessions** shows recent sign-ins from `ezuservisit`, but cannot list or remove sessions |
 | `ezpSessionHandlerDB` | the table `ezsession` of the site's database | **Setup > Sessions** lists, counts and removes sessions |
 
-A session ends `[Session] SessionTimeout` seconds after its last use (default 259200, three days). With the PHP handler
+A session ends `[Session] SessionTimeout` seconds after its last use (default 31104000, 360 days). With the PHP handler
 PHP removes expired sessions itself (`session.gc_maxlifetime`, which Exponential sets to `SessionTimeout`).
 `ezuservisit` (last visit, sign-in count, failed attempts) is kept with either handler.
 

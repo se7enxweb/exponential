@@ -35,7 +35,7 @@ Nutzen Sie diese Tabelle, um Ihren Aufbewahrungsplan in Einstellungen umzusetzen
 | Einwilligungsprotokoll von Personen, die nicht mehr da sind | Cronjob-Teil `mailpreferences` (Gruppe `infrequent`) | 1095 Tage | `mailpreferences.ini [ConsentSettings] RetentionDays` |
 | Ausstehende E-Mail-Bestätigungen | ebenso | 7 Tage | `[ConsentSettings] PendingDays` |
 | Sperrliste | ebenso, wenn gesetzt | unbegrenzt aufbewahrt (`0`) | `[SuppressionSettings] RetentionDays` |
-| Sitzungen | Ablauf | 3 Tage | `site.ini [Session] SessionTimeout` |
+| Sitzungen | Ablauf | 360 Tage | `site.ini [Session] SessionTimeout` |
 | Inhaltsversionen | wenn eine neue Version die Grenze überschreitet, wird die älteste archivierte Version entfernt | 45 pro Objekt (75 für Klasse 1) | `content.ini [VersionManagement]` |
 
 Quellen: [Audit-Leitfaden 4.3](../../../bc/6.0/audit.md#43-aufbewahrung), [Protokollrotation](../../../funktionen/6.0/log-rotation.md),

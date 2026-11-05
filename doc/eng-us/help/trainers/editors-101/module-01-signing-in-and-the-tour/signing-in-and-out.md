@@ -81,7 +81,7 @@ because every account's e-mail address is unique
 **Am I signed in to the site too?** No. A sign-in belongs to one browser and to one part of the installation:
 being signed in to the Editor does not sign you in to the administration or the public site.
 
-**How long do I stay signed in?** While you work. A session that is not used for a long time ends (three days with
+**How long do I stay signed in?** While you work. A session that is not used for a long time ends (360 days with
 the shipped settings), and you sign in again.
 
 **My browser asked for a user name and password in a small window before the page appeared.** That is an extra

@@ -47,7 +47,7 @@ Quellen: [Sitzungen: wer angemeldet ist und wie Sie Browser abmelden](../../../.
 [Kapitel 13, 13.7 Sitzungen und Cookies](../../../../installation/13-sicherheitshaertung.md#137-sitzungen-und-cookies).
 
 1. **Was eine Sitzung ist** (2 Minuten). Sie wird bei der ersten Anfrage geöffnet, die sie braucht, und endet
-   `site.ini [Session] SessionTimeout` Sekunden nach ihrer letzten Nutzung (standardmäßig 259200, also drei Tage).
+   `site.ini [Session] SessionTimeout` Sekunden nach ihrer letzten Nutzung (standardmäßig 31104000, also 360 Tage).
 2. **Zwei Handler** (4 Minuten). Ein leeres `Handler=` (die Voreinstellung) bedeutet, dass PHP die Sitzungen in seinem
    eigenen Speicher hält: Die Seite **Sitzungsverwaltung** zeigt, wer sich kürzlich angemeldet hat
    (**Kürzlich angemeldet**, mit **die letzte Stunde**, **der letzte Tag**, **die Sitzungsdauer** und
@@ -142,7 +142,7 @@ Browsern (oder einem normalen und einem privaten Fenster).
 <details>
 <summary>Antworten</summary>
 
-1. 259200 Sekunden, drei Tage (`site.ini [Session] SessionTimeout`).
+1. 31104000 Sekunden, 360 Tage (`site.ini [Session] SessionTimeout`).
 2. Der Standard-Handler hält die Sitzungen im eigenen Speicher von PHP, den die Seite nicht auflisten kann
    ([Sitzungen, Abschnitt 1](../../../../anleitungen/sitzungen.md#1-die-seite-ohne-sitzungstabelle-der-standard)).
 3. **Falsch.** Es meldet Browser ab; deaktivieren Sie zusätzlich den Benutzer oder ändern Sie das Passwort.

@@ -31,7 +31,8 @@ by default and signs other sessions out when a password changes; a few settings 
 | `CookieSecure` | `auto` | `Secure` when the request came over HTTPS |
 | `CookieHttponly` | `true` | scripts cannot read the cookie |
 | `CookieSameSite` | `Lax` | not sent with most cross-site requests |
-| `SessionTimeout` | `259200` | seconds (3 days) |
+| `SessionTimeout` | `31104000` | seconds (360 days) |
+| `RememberMeTimeout` | `31104000` | seconds (360 days); **Remember me** is checked by default |
 | `SessionNameHandler` | `default` | `custom` gives every siteaccess its own cookie |
 
 Also: a new session id at sign-in; logging out ends the session for good; a password change signs out every other

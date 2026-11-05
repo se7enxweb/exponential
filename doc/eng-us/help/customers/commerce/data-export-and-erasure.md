@@ -51,7 +51,7 @@ passed. Write your periods into a retention schedule; the one on
 
 ## The defaults that run on their own
 
-Several kinds of data are removed by cron jobs, with periods you can change, for example sessions after 3 days
+Several kinds of data are removed by cron jobs, with periods you can change, for example sessions after 360 days
 (`site.ini [Session] SessionTimeout`), `404.log` after 30 days and `security.log` after 90 days
 ([Data retention and deletion](../../businesses/security/data-retention-and-deletion.md)).
 

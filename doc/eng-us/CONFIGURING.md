@@ -287,7 +287,7 @@ for a site with sensitive data:
 
 ```ini
 [Session]
-SessionTimeout=86400
+SessionTimeout=1209600
 RememberMeTimeout=1209600
 ```
 

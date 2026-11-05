@@ -74,7 +74,7 @@ Website, auf der die Redaktion während eines Vorfalls weiterarbeiten muss, den 
 
 | Einstellung (`site.ini [Session]`) | Standard | Bedeutung |
 |---|---|---|
-| `SessionTimeout` | `259200` (drei Tage) | eine Sitzung endet so viele Sekunden nach ihrer letzten Nutzung |
+| `SessionTimeout` | `31104000` (360 Tage) | eine Sitzung endet so viele Sekunden nach ihrer letzten Nutzung |
 | `CookieSecure` | `auto` | `Secure`-Cookie über HTTPS; hinter einem Load Balancer, der TLS terminiert, braucht es `X-Forwarded-Proto` von einem vertrauenswürdigen Proxy |
 | `CookieHttponly` | `true` | das Cookie ist für Skripte nicht lesbar |
 | `CookieSameSite` | `Lax` | wird bei Anfragen von fremden Websites nicht mitgesendet |

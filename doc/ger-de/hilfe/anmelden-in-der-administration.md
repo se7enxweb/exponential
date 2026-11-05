@@ -42,7 +42,8 @@ Adresse auf, unter der die Installation antwortet.
 
 Unter dem Titel nennt *Administration von ...* den Siteaccess, in dem Sie sich anmelden. Wo die Site es zulässt,
 bietet die Seite außerdem **Passwort vergessen?** und **Neues Konto registrieren** an; ein Feld zum Angemeldetbleiben
-(**Angemeldet bleiben**) erscheint nur, wenn die Site dafür eine Dauer eingestellt hat (`[Session] RememberMeTimeout`).
+(**Angemeldet bleiben**) erscheint, wenn die Site dafür eine Dauer eingestellt hat (`[Session] RememberMeTimeout`, mitgeliefert 31104000
+Sekunden, 360 Tage); es ist vorausgewählt.
 
 ### Zweistufige Anmeldung
 
@@ -127,7 +128,7 @@ Das funktioniert nur, wenn das Konto eine echte E-Mail-Adresse hat und die Site 
 
 - Eine Anmeldung gehört zu einem Browser und einem Siteaccess: Wer sich in der Administration anmeldet, ist damit
   nicht im Editor oder auf der öffentlichen Site angemeldet (`[Session] SessionNamePerSiteAccess=enabled`).
-- Eine Sitzung, die lange nicht genutzt wird, endet (`[Session] SessionTimeout`, in der Auslieferung drei Tage), und
+- Eine Sitzung, die lange nicht genutzt wird, endet (`[Session] SessionTimeout`, in der Auslieferung 360 Tage), und
   Sie melden sich erneut an.
 - Eine Änderung des Passworts meldet alle anderen Sitzungen des Kontos ab.
 

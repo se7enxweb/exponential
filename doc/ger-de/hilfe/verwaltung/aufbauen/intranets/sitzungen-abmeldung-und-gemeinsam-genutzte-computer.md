@@ -10,7 +10,7 @@ type: help
 # Sitzungen, Abmeldung und gemeinsam genutzte Computer
 
 Diese Seite richtet sich an Administratoren. Eine Sitzung hält einen Browser angemeldet; sie endet
-`site.ini [Session] SessionTimeout` Sekunden nach ihrer letzten Nutzung, voreingestellt 259200 (drei Tage)
+`site.ini [Session] SessionTimeout` Sekunden nach ihrer letzten Nutzung, voreingestellt 31104000 (360 Tage)
 ([Sitzungen](../../../../anleitungen/sitzungen.md)).
 
 ## Inhalt
@@ -24,11 +24,12 @@ Diese Seite richtet sich an Administratoren. Eine Sitzung hält einen Browser an
 
 | Einstellung (`site.ini [Session]`) | Mitgeliefert | Bedeutung |
 |---|---|---|
-| `SessionTimeout` | `259200` | Sekunden nach der letzten Nutzung, nach denen eine Sitzung endet |
+| `SessionTimeout` | `31104000` | Sekunden nach der letzten Nutzung, nach denen eine Sitzung endet (360 Tage) |
+| `RememberMeTimeout` | `31104000` | Sekunden, die das Cookie hält, wenn **Angemeldet bleiben** angehakt ist (vorausgewählt) |
 | `ActivityTimeout` | `3600` | nach dieser Pause zählt die nächste Anfrage als neuer Besuch |
 
-Drei Tage passen für die Mitglieder einer öffentlichen Site; für ein Intranet mit sensiblen Inhalten setzen Sie im
-Intranet-Siteaccess einen kürzeren `SessionTimeout` und testen, dass Mitarbeiter nach der gewählten Pause erneut zur
+360 Tage passen für die Mitglieder einer öffentlichen Site; für ein Intranet mit sensiblen Inhalten setzen Sie im
+Intranet-Siteaccess kürzere Werte für `SessionTimeout` und `RememberMeTimeout` und testen, dass Mitarbeiter nach der gewählten Pause erneut zur
 Anmeldung aufgefordert werden.
 
 ## Sitzungen sehen und beenden

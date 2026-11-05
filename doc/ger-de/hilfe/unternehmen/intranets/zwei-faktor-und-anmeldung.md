@@ -114,8 +114,8 @@ zu Ihrer Richtlinie passt, entscheidet Ihr Sicherheitsbeauftragter.
 
 ## Sitzungen und Abmelden
 
-Eine Sitzung endet `site.ini [Session] SessionTimeout` Sekunden nach ihrer letzten Nutzung; der Standard ist 259200,
-drei Tage. Administratoren können sehen, wer sich kürzlich angemeldet hat, und mit dem Datenbank-Session-Handler
+Eine Sitzung endet `site.ini [Session] SessionTimeout` Sekunden nach ihrer letzten Nutzung; der Standard ist 31104000,
+360 Tage. Administratoren können sehen, wer sich kürzlich angemeldet hat, und mit dem Datenbank-Session-Handler
 Sitzungen einzeln entfernen ([Sitzungen](../../../anleitungen/sitzungen.md)). Kürzere Zeitlimits passen zu gemeinsam
 genutzten Computern.
 

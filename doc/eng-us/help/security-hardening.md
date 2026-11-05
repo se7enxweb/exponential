@@ -242,7 +242,8 @@ Regenerate extensions made by the RAD wizards before their fix
 A password change signs out every other session of the user, through the password stamp
 (`[PasswordSettings] EndOtherSessions=enabled`). A disabled account's sessions end at their next request.
 
-**Harden.** `CookieSecure=true` on an HTTPS-only site, a shorter `SessionTimeout`, a separate session cookie per
+**Harden.** `CookieSecure=true` on an HTTPS-only site, a shorter `SessionTimeout` and `RememberMeTimeout` (both
+ship as 31104000 seconds, 360 days), a separate session cookie per
 siteaccess (`SessionNameHandler=custom`), PHP's `session.use_strict_mode=1`
 ([13.7](../install/13-security-hardening.md#137-sessions-and-cookies)). After a suspected compromise: change the
 password, and remove all sessions (**Setup** > **Sessions**, with the database session handler).

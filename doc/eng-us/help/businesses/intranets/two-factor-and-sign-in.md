@@ -108,7 +108,7 @@ your policy is a decision for your security officer.
 
 ## Sessions and signing out
 
-A session ends `site.ini [Session] SessionTimeout` seconds after its last use; the default is 259200, three days.
+A session ends `site.ini [Session] SessionTimeout` seconds after its last use; the default is 31104000, 360 days.
 Administrators can see who signed in recently and, with the database session handler, remove sessions one by one
 ([Sessions](../../../guides/sessions.md)). Shorter timeouts suit shared computers.
 

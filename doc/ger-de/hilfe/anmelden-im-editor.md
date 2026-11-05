@@ -107,7 +107,7 @@ geöffneter Link meldet *Dieser Link ist abgelaufen.*; fordern Sie dann einen ne
 
 Solange Sie arbeiten, bleiben Sie angemeldet. Eine Anmeldung gehört zu einem Browser und zu diesem Teil der
 Installation: Wer im Editor angemeldet ist, ist damit nicht in der Administration oder auf der öffentlichen Site
-angemeldet, und umgekehrt. Eine Sitzung, die lange nicht genutzt wird (mit den ausgelieferten Einstellungen drei
+angemeldet, und umgekehrt. Eine Sitzung, die lange nicht genutzt wird (mit den ausgelieferten Einstellungen 360
 Tage), endet, und Sie melden sich erneut an.
 
 Zum Abmelden klicken Sie auf die letzte Schaltfläche der Kopfzeile, einen Pfeil, der ein Kästchen verlässt

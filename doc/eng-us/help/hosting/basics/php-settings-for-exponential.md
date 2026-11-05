@@ -140,7 +140,7 @@ A command-line PHP for cron and Velocity usually has its own `php.ini` without s
   waiting writer is killed before the driver can report ([SQLite for hosts](sqlite-for-hosts.md)).
 - The setup wizard's configuration step on MongoDB can take one to three minutes; raise
   `request_terminate_timeout` for that install or use the console ([MongoDB for hosts](mongodb-for-hosts.md)).
-- Sessions: `site.ini [Session] SessionTimeout` (shipped `259200` seconds, three days) overwrites
+- Sessions: `site.ini [Session] SessionTimeout` (shipped `31104000` seconds, 360 days) overwrites
   `session.gc_maxlifetime` with PHP's own session handler.
 
 ## Velocity and FrankenPHP

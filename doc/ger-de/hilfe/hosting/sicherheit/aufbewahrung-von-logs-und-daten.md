@@ -48,7 +48,7 @@ leeren Sie danach den INI-Cache.
 | Unterdrückungsliste | behalten (`0`) | `[SuppressionSettings] RetentionDays` | dasselbe, wenn über 0 |
 | Papierkorb | vollständig geleert, wenn der Cronjob läuft (leerer Wert) | `content.ini [TrashSettings] KeepItemsForDays` | `cronjobs/trashpurge.php`, wenn geplant |
 | Abgeschlossene Inhaltsjobs | 30 Tage | `content.ini [ContentJobSettings] KeepDays` | Cronjob-Teil `contentjobs` |
-| Sitzungen | `SessionTimeout` 259200 s (3 Tage) | `site.ini [Session]` | die Sitzungsbereinigung von PHP; `bin/php/ezsessiongc.php` auf Anforderung |
+| Sitzungen | `SessionTimeout` 31104000 s (360 Tage) | `site.ini [Session]` | die Sitzungsbereinigung von PHP; `bin/php/ezsessiongc.php` auf Anforderung |
 
 ## Logs des Kernels
 
@@ -147,7 +147,7 @@ Person sie vorher eingeschaltet hatte.
   bisher den ganzen Papierkorb leert; eine Zahl behält Elemente so viele Tage (bis zu 36500). `bin/php/trashpurge.php` nimmt
   `--trashed-days=<days>`.
 - **Inhaltsjobs**: Abgeschlossene Jobs werden nach `[ContentJobSettings] KeepDays=30` entfernt (`0` behält sie).
-- **Sitzungen**: `SessionTimeout` (259200 Sekunden) setzt `session.gc_maxlifetime` beim eigenen Session-Handler von PHP;
+- **Sitzungen**: `SessionTimeout` (31104000 Sekunden, 360 Tage) setzt `session.gc_maxlifetime` beim eigenen Session-Handler von PHP;
   `bin/php/ezsessiongc.php` entfernt auf Anforderung abgelaufene Sitzungen nach `SessionTimeout`.
 - **Versionen und Entwürfe** von Inhalten folgen den Inhaltseinstellungen der Website; sie sind Inhalte, und ihre Aufbewahrung ist die
   redaktionelle Entscheidung des Kunden.

@@ -50,7 +50,7 @@ other content.
 ## Sessions
 
 - A session keeps one browser signed in. It ends `site.ini [Session] SessionTimeout` seconds after its last use
-  (259200, three days, shipped).
+  (31104000, 360 days, shipped).
 - `site.ini [Session] Handler` empty (the default) means `ezpSessionHandlerPHP`: PHP's own session storage.
   `ezpSessionHandlerDB` keeps sessions in the table `ezsession`, which lets **Setup > Sessions** list and remove them
   ([Sessions](../../guides/sessions.md)). A Symfony-based handler (`ezpSessionHandlerSymfony`) is used when the kernel

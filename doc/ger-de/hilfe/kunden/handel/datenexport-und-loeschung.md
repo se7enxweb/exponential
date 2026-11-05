@@ -55,7 +55,7 @@ Bestellungen.
 ## Die Standardwerte, die von selbst greifen
 
 Mehrere Arten von Daten werden von Cronjobs entfernt, mit Fristen, die Sie ändern können, zum Beispiel Sitzungen nach
-3 Tagen (`site.ini [Session] SessionTimeout`), `404.log` nach 30 Tagen und `security.log` nach 90 Tagen
+360 Tagen (`site.ini [Session] SessionTimeout`), `404.log` nach 30 Tagen und `security.log` nach 90 Tagen
 ([Datenaufbewahrung und Löschung](../../unternehmen/sicherheit/aufbewahrung-und-loeschung-von-daten.md)).
 
 > **Warnung**

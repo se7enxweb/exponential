@@ -72,8 +72,8 @@ Einige Fakten, die für diese Kriterien zählen und sich im Repository prüfen l
   sich weiterhin von Hand bearbeiten
   ([Unterelemente per Ziehen und Ablegen umsortieren](../../../funktionen/6.0/admin4-design.md#unterelemente-per-drag-and-drop-neu-anordnen)).
   Nehmen Sie andere Ziehinteraktionen Ihrer Erweiterungen (zum Beispiel den Layout-Editor) in Ihre Prüfung auf.
-- **2.2.1 Zeiteinteilung anpassbar**: Sitzungen enden nach `site.ini [Session] SessionTimeout` (standardmäßig 259200
-  Sekunden); ein aus Sicherheitsgründen gewählter kürzerer Wert kann Redakteurinnen und Redakteure betreffen, die
+- **2.2.1 Zeiteinteilung anpassbar**: Sitzungen enden nach `site.ini [Session] SessionTimeout` (standardmäßig 31104000
+  Sekunden, 360 Tage); ein aus Sicherheitsgründen gewählter kürzerer Wert kann Redakteurinnen und Redakteure betreffen, die
   langsam arbeiten
   ([13.7 Sitzungen und Cookies](../../../installation/13-sicherheitshaertung.md#137-sitzungen-und-cookies)).
 - **3.3.8 Barrierefreie Authentifizierung**: Die Anmeldung ist ein Formular mit Benutzername und Passwort; die

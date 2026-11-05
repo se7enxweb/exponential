@@ -71,7 +71,7 @@ Tastatur und einem Screenreader und bieten Sie neben dem Formular einen anderen 
 - Ein Formular-Token gehört zur Sitzung; ein abgewiesenes Token zeigt die Seite „Formular abgelaufen“
   ([Seite „Formular abgelaufen“](../../../funktionen/6.0/seite-abgelaufenes-formular.md)). Prüfen Sie, dass die Seite verständlich
   ist und den Besucher nach Möglichkeit ohne Verlust seiner Arbeit zurückgehen lässt.
-- Sitzungen enden nach `[Session] SessionTimeout` (standardmäßig drei Tage). Wenn Sie den Wert aus Sicherheitsgründen
+- Sitzungen enden nach `[Session] SessionTimeout` (standardmäßig 360 Tage). Wenn Sie den Wert aus Sicherheitsgründen
   verkürzen, denken Sie an Menschen, die lange zum Ausfüllen eines Formulars brauchen (WCAG 2.2.1 Zeiteinteilung
   anpassbar).
 

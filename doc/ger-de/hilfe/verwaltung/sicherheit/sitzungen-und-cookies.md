@@ -32,7 +32,8 @@ Sitzungen ab; einige Einstellungen machen es strenger
 | `CookieSecure` | `auto` | `Secure`, wenn die Anfrage über HTTPS kam |
 | `CookieHttponly` | `true` | Skripte können das Cookie nicht lesen |
 | `CookieSameSite` | `Lax` | wird bei den meisten websiteübergreifenden Anfragen nicht mitgesendet |
-| `SessionTimeout` | `259200` | Sekunden (3 Tage) |
+| `SessionTimeout` | `31104000` | Sekunden (360 Tage) |
+| `RememberMeTimeout` | `31104000` | Sekunden (360 Tage); **Angemeldet bleiben** ist vorausgewählt |
 | `SessionNameHandler` | `default` | `custom` gibt jedem Siteaccess ein eigenes Cookie |
 
 Außerdem: eine neue Sitzungs-ID bei der Anmeldung; das Abmelden beendet die Sitzung endgültig; eine Passwortänderung

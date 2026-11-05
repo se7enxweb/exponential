@@ -44,7 +44,7 @@ From [Log and data retention](../../hosting/security/log-and-data-retention.md#a
 | Suppression list | kept | `[SuppressionSettings] RetentionDays` |
 | Trash | purged whole when the trash cronjob runs | `content.ini [TrashSettings] KeepItemsForDays` |
 | Finished content jobs | 30 days | `content.ini [ContentJobSettings] KeepDays` |
-| Sessions | 3 days | `site.ini [Session] SessionTimeout` |
+| Sessions | 360 days | `site.ini [Session] SessionTimeout` |
 
 Most of these are enforced by cronjobs. If the cronjobs do not run, nothing is removed: make sure your administrator
 or host schedules them ([Cronjobs and background jobs](../reliability/cronjobs-and-background-jobs.md)).

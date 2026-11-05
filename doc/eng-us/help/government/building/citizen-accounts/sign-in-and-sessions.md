@@ -37,7 +37,7 @@ and [Security standards](../../../../standards/security.md).
 
 | Setting (`site.ini [Session]`) | Default | Meaning |
 |---|---|---|
-| `SessionTimeout` | 259200 (three days) | a session ends this long after its last use |
+| `SessionTimeout` | 31104000 (360 days) | a session ends this long after its last use |
 | `ActivityTimeout` | 3600 (one hour) | used for "last visit" and the Sessions page figures |
 | `Handler` | empty (PHP's own storage) | `ezpSessionHandlerDB` keeps sessions in a table so the Sessions page can list and remove them |
 

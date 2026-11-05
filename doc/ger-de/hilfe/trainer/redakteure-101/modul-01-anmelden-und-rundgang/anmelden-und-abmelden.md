@@ -90,7 +90,7 @@ Installation: Wer im Editor angemeldet ist, ist dadurch weder in der Administrat
 angemeldet.
 
 **Wie lange bleibe ich angemeldet?** Solange Sie arbeiten. Eine Sitzung, die lange nicht genutzt wird, endet (mit den
-mitgelieferten Einstellungen nach drei Tagen), und Sie melden sich erneut an.
+mitgelieferten Einstellungen nach 360 Tagen), und Sie melden sich erneut an.
 
 **Mein Browser hat in einem kleinen Fenster nach Benutzername und Passwort gefragt, bevor die Seite erschien.** Das
 ist ein zusätzliches Passwort des Webservers, wie es auf Test- und Staging-Servern üblich ist. Es ist kein

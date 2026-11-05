@@ -38,7 +38,7 @@ cannot list accounts ([Security standards](../../standards/security.md)). Since 
 
 ## Sessions
 
-- `site.ini [Session] SessionTimeout` (default three days) ends a session after its last use.
+- `site.ini [Session] SessionTimeout` (default 360 days) ends a session after its last use.
 - `[Session] Handler` empty (the default) keeps sessions in PHP's own storage; `ezpSessionHandlerDB` keeps them in the
   `ezsession` table, which several web nodes can share and the administration can list and end
   ([Sessions](../../guides/sessions.md)).
