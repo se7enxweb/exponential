@@ -11,8 +11,8 @@ generated: exp:help:examples
 
 Der Block `[DashboardBlock_moderation]` von `settings/dashboard.ini`, mit 3 Einstellung(en).
 
-> Recent content: how many objects are held for review and how many were created today, with links to  
-> Dashboard > Recent content (moderation/recent) filtered on them.  
+> Neue Inhalte: wie viele Objekte zur Prüfung zurückgehalten werden und wie viele heute erstellt wurden, mit Links zu  
+> Dashboard > Neue Inhalte (moderation/recent), darauf gefiltert.  
 
 Bearbeiten Sie `settings/dashboard.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

@@ -19,11 +19,11 @@ Bearbeiten Sie `settings/content.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## Enabled
 
-> Share links to the preview of a draft (content/sharedpreview/<token>, expContentPreviewLink): a  
-> reviewer without an account sees that one version through a signed, expiring and revocable link.  
-> The signing key is the secret content.previewlink.key of the secret store (made with the first  
-> link; removing it on Setup > Secrets ends every link). Guide: doc/eng-us/features/6.0/preview-links.md  
-> true or false  
+> Links zum Teilen der Vorschau eines Entwurfs (content/sharedpreview/<token>, expContentPreviewLink): Ein  
+> Prüfer ohne Konto sieht diese eine Version über einen signierten, ablaufenden und widerrufbaren Link.  
+> Der Signaturschlüssel ist das Geheimnis content.previewlink.key des Secret-Stores (mit dem ersten  
+> Link angelegt; es auf Setup > Geheimnisse zu entfernen, beendet jeden Link). Anleitung: doc/eng-us/features/6.0/preview-links.md  
+> true oder false  
 
 Standard: `true`.
 
@@ -37,7 +37,7 @@ Enabled=true
 
 ## DefaultLifetime
 
-> Seconds a new link works when its maker does not choose (one day)  
+> Sekunden, die ein neuer Link funktioniert, wenn sein Ersteller nichts wählt (ein Tag)  
 
 Standard: `86400`.
 
@@ -51,7 +51,7 @@ DefaultLifetime=86400
 
 ## MaxLifetime
 
-> The longest a link may work, in seconds (seven days); at least 300  
+> Die längste Zeit, die ein Link funktionieren darf, in Sekunden (sieben Tage); mindestens 300  
 
 Standard: `604800`.
 
@@ -65,7 +65,7 @@ MaxLifetime=604800
 
 ## MaxActivePerVersion
 
-> Links that work at the same time for one version  
+> Links, die für eine Version gleichzeitig funktionieren  
 
 Standard: `20`.
 

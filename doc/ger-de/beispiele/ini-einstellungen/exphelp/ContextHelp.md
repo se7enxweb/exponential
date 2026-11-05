@@ -95,18 +95,18 @@ MenuLinks[git]=install/03-getting-the-code.md#b-git-clone-and-composer-install
 
 ## Map
 
-> Content  
-> Content model  
-> Users and access  
+> Inhalte  
+> Inhaltsmodell  
+> Benutzer und Zugriff  
 > Setup  
-> Dashboard > Recent content (module moderation)  
-> Setup > Migrations (module migration)  
-> Setup > Static publishing (module staticpublish)  
-> admin4l: the administration drawn by admin layouts  
-> The editor siteaccess (SiteDesign=editor): the pages written for editors, before the administrators' guides  
-> Modules of extensions that ship without help entries of their own (an extension's exphelp.ini.append.php wins over  
-> these: it is read after this file)  
-> The database manager of sevenx\_dse (module dse)  
+> Dashboard > Neue Inhalte (Modul moderation)  
+> Setup > Migrationen (Modul migration)  
+> Setup > Statisches Veröffentlichen (Modul staticpublish)  
+> admin4l: die mit Admin-Layouts gezeichnete Administration  
+> Der Siteaccess editor (SiteDesign=editor): die für Redakteure geschriebenen Seiten, vor den Anleitungen für Administratoren  
+> Module von Erweiterungen, die ohne eigene Hilfeeinträge ausgeliefert werden (die exphelp.ini.append.php einer Erweiterung gewinnt gegen  
+> diese: Sie wird nach dieser Datei gelesen)  
+> Der Datenbankmanager von sevenx\_dse (Modul dse)  
 
 Standard: ein Hash mit 165: `content=guides/content-model-and-editing.md`, `content/dashboard=help/admin-tour.md`, `content/view=help/editing-content.md`, `content/edit=help/editing-content.md`, `content/multiedit=guides/content-model-and-editing.md#6-edit-many-items-in-one-form-multi-node-edit`, `content/versionview=guides/content-history.md`, `content/history=guides/content-history.md`, `content/draft=guides/drafts-and-pending.md#1-my-drafts`, `content/pendinglist=guides/drafts-and-pending.md#2-my-pending-items`, `content/trash=guides/content-model-and-editing.md#7-the-trash`, `content/restore=guides/content-model-and-editing.md#7-the-trash`, `content/bookmark=guides/bookmarks.md` ....
 
@@ -142,9 +142,9 @@ Map[content/urlwildcards]=guides/urls-and-aliases.md#4-url-wildcards
 
 ## ReportSecurityAnchor
 
-> Where a siteaccess switches the view exphelp/report off (site.ini \[SiteAccessRules\]), "Report an error" opens the  
-> page of Map\[exphelp/report\] instead and its security link this heading of it (on a translated page the heading in  
-> the same position: #sicherheitsprobleme in German). expHelp::reportLinks(), fetch( 'exphelp', 'report\_links' ).  
+> Wo ein Siteaccess die Ansicht exphelp/report abschaltet (site.ini \[SiteAccessRules\]), öffnet „Fehler melden“ stattdessen die  
+> Seite von Map\[exphelp/report\] und ihr Sicherheitslink diese Überschrift darin (auf einer übersetzten Seite die Überschrift an  
+> derselben Stelle: #sicherheitsprobleme im Deutschen). expHelp::reportLinks(), fetch( 'exphelp', 'report\_links' ).  
 
 Standard: `security-problems`.
 

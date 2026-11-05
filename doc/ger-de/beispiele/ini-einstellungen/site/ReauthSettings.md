@@ -19,14 +19,14 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## Reauth
 
-> "Verify it's you": before a sensitive action the signed-in user confirms who they are  
-> again (the password and a passkey, see Factors\[\]) and is not  
-> asked again for Minutes. Only the web pages ask (index.php and Velocity); REST, SOAP,  
-> WebDAV, the expservices login and the command line are never asked. Anonymous visitors  
-> are never asked. The groups and their switches are edited on setup/reauth.  
-> Guide: doc/eng-us/guides/verify-its-you.md  
+> „Identität bestätigen“ (in der Oberfläche „Bestätigen Sie, dass Sie es sind“): Vor einer heiklen Aktion bestätigt der angemeldete Benutzer noch einmal, wer er ist  
+> (Passwort und Passkey, siehe Factors\[\]), und wird  
+> Minutes lang nicht wieder gefragt. Nur die Webseiten fragen (index.php und Velocity); REST, SOAP,  
+> WebDAV, die expservices-Anmeldung und die Kommandozeile werden nie gefragt. Anonyme Besucher  
+> werden nie gefragt. Die Gruppen und ihre Schalter werden auf setup/reauth bearbeitet.  
+> Anleitung: doc/ger-de/anleitungen/identitaet-bestaetigen.md  
 >
-> enabled or disabled (all groups).  
+> enabled oder disabled (alle Gruppen).  
 
 Standard: `enabled`.
 

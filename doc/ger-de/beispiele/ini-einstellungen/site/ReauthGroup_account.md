@@ -11,18 +11,18 @@ generated: exp:help:examples
 
 Der Block `[ReauthGroup_account]` von `settings/site.ini`, mit 2 Einstellung(en).
 
-> Rules, in every group: "module/view \[token ...\]"  
->   module/view    the view (view \* for every view of the module); a POST to it is asked  
->   \*              every request, GET too (a page that downloads, or a form with a file upload)  
->   Name           only a POST that carries this field (any of several names)  
->   self, other    only when the account addressed is the user's own / another user's  
->                  (content/edit of a user object, user/password, user/setting; the  
->                  pending account of an approval item of "Approve user accounts")  
->   credentials    only when the POST changes the login, e-mail or password of a user  
->   !module/view   never asked for this view (an exception to a module/\* rule)  
->   bulk           only when several items are removed at once (BulkCount)  
-> A group may name UserGroups\[\] (content object ids of user groups): it then asks only  
-> their members; empty or missing: every user.  
+> Regeln, in jeder Gruppe: „modul/ansicht \[token ...\]“  
+>   module/view    die Ansicht (view \* für jede Ansicht des Moduls); ein POST an sie wird gefragt  
+>   \*              jede Anfrage, auch GET (eine Seite, die herunterlädt, oder ein Formular mit Datei-Upload)  
+>   Name           nur ein POST, der dieses Feld trägt (einen von mehreren Namen)  
+>   self, other    nur wenn das betroffene Konto das eigene / das eines anderen Benutzers ist  
+>                  (content/edit eines Benutzerobjekts, user/password, user/setting; das  
+>                  wartende Konto eines Freigabe-Elements von „Benutzerkonten freigeben“)  
+>   credentials    nur wenn der POST Login, E-Mail oder Passwort eines Benutzers ändert  
+>   !module/view   für diese Ansicht nie gefragt (eine Ausnahme zu einer module/\*-Regel)  
+>   bulk           nur wenn mehrere Elemente auf einmal entfernt werden (BulkCount)  
+> Eine Gruppe kann UserGroups\[\] nennen (Content-Objekt-IDs von Benutzergruppen): Sie fragt dann nur  
+> deren Mitglieder; leer oder fehlend: jeden Benutzer.  
 
 Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

@@ -54,8 +54,8 @@ would start.
 | `--site-wide` |  | Die websiteweite Aufzeichnung: jede Änderung jedes Benutzers und der Konsole (ohne: die eigenen Änderungen eines Benutzers) |
 | `--label` | erforderlich | Die Bezeichnung des Sicherungspunkts oder der Aufzeichnung (ein Sicherungspunkt ohne eine: "manual caption" mit der Uhrzeit) |
 | `--user` | erforderlich | Der Benutzer, nach Login, dessen eigene Änderungen eine Sitzungsaufzeichnung festhält (Standard: [RunSettings] RunAsUser der migration.ini) |
-| `--for` | erforderlich | A window of this many minutes: the recording stops by itself when it ends |
-| `--until` | erforderlich | A window until this time (2026-11-20 18:00, the server's time zone): the recording stops by itself then |
+| `--for` | erforderlich | Ein Fenster von so vielen Minuten: Die Aufzeichnung endet von selbst, wenn es abläuft |
+| `--until` | erforderlich | Ein Fenster bis zu diesem Zeitpunkt (2026-11-20 18:00, in der Zeitzone des Servers): Die Aufzeichnung endet dann von selbst |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

@@ -35,7 +35,7 @@ Enabled=true
 
 ## Rules
 
-> Dashboard > Recent content: moving the selected items to the trash or deleting them (the confirmation's button)  
+> Dashboard > Neue Inhalte: die ausgewählten Elemente in den Papierkorb verschieben oder löschen (die Schaltfläche der Bestätigung)  
 
 Standard: eine Liste mit 3: `content/trash EmptyButton RemoveButton`, `content/removeobject * bulk`, `moderation/action ConfirmDestructiveButton`.
 

@@ -35,13 +35,13 @@ Name=dashboard
 
 ## Links
 
-> Recent content (module moderation): the newest content of the site, held submissions, actions on a selection;  
-> the second link, right after the dashboard. LinkNames is translated in design/admin/parts/my/menu  
-> The user's own work, right after Collaboration  
-> The e-mail preferences: which optional e-mail the user gets, consent history, data download  
-> The Help center (exphelp/dashboard), the start page of the help: guides, search, how to report an error  
-> The audit console, only with audit/read (doc/eng-us/bc/6.0/audit.md, "Placement"); drawn third to last, after the  
-> links extensions append and before Change password (TrailLinks\[\] below)  
+> Neue Inhalte (Modul moderation): die neuesten Inhalte der Site, zurückgehaltene Einreichungen, Aktionen auf einer Auswahl;  
+> der zweite Link, direkt nach dem Dashboard. LinkNames wird in design/admin/parts/my/menu übersetzt  
+> Die eigene Arbeit des Benutzers, direkt nach Zusammenarbeit  
+> Die E-Mail-Einstellungen: welche optionalen E-Mails der Benutzer erhält, Einwilligungsverlauf, Datendownload  
+> Das Hilfe-Center (exphelp/dashboard), die Startseite der Hilfe: Anleitungen, Suche, wie man einen Fehler meldet  
+> Die Audit-Konsole, nur mit audit/read (doc/eng-us/bc/6.0/audit.md, „Placement“); als drittletzter Link gezeichnet, nach den  
+> Links, die Erweiterungen anhängen, und vor Passwort ändern (TrailLinks\[\] unten)  
 
 Standard: ein Hash mit 12: `dashboard=content/dashboard`, `recent_content=moderation/recent`, `collaboration=collaboration/view/summary`, `my_pending=content/pendinglist`, `my_drafts=content/draft`, `my_bookmarks=content/bookmark`, `my_mail=mailpreferences/settings`, `my_notifications=notification/settings`, `help_center=exphelp/dashboard`, `audit=audit/console`, `change_password=user/password`, `edit_profile=user/edit/(action)/edit`.
 
@@ -289,7 +289,7 @@ LinkDescriptions[expai_help]=How the AI features work and how to use them.
 
 ## TrailLinks
 
-> Audit trail, Change password and Edit profile close the menu, after the links extensions append (parts/ini\_menu.tpl)  
+> Audit-Protokoll, Passwort ändern und Profil bearbeiten schließen das Menü ab, nach den Links, die Erweiterungen anhängen (parts/ini\_menu.tpl)  
 
 Standard: eine Liste mit 3: `audit`, `change_password`, `edit_profile`.
 
@@ -307,8 +307,8 @@ TrailLinks[]=edit_profile
 
 ## CollapseAfter
 
-> The first 10 links show; the rest, the trail links among them on a long menu, follow in a "More (count)"  
-> disclosure, open when it holds the current page (parts/ini\_menu.tpl). 0, or no value, shows every link.  
+> Die ersten 10 Links werden gezeigt; der Rest, bei einem langen Menü darunter die abschließenden Links, folgt in einem aufklappbaren  
+> „Mehr (Anzahl)“, das offen ist, wenn es die aktuelle Seite enthält (parts/ini\_menu.tpl). 0 oder kein Wert zeigt jeden Link.  
 
 Standard: `10`.
 

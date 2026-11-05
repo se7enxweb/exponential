@@ -145,8 +145,8 @@ CommitEmail=
 
 ## JobHistory
 
-> How many jobs (builds, publishes, rollbacks started in the administration) keep their files  
-> in <WorkDir>/.jobs; older ones are removed. A job that is running is always kept.  
+> Wie viele Jobs (in der Administration gestartete Builds, Veröffentlichungen, Rücknahmen) ihre Dateien  
+> in <WorkDir>/.jobs behalten; ältere werden entfernt. Ein laufender Job wird immer behalten.  
 
 Standard: `50`.
 

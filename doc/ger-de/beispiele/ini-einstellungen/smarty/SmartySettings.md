@@ -19,9 +19,9 @@ Bearbeiten Sie `settings/smarty.ini` nie selbst: Ein Update ersetzt die Datei. S
 
 ## LibraryPath
 
-> Where Smarty 5 is, when it is not installed with Composer (smarty/smarty ^5) in the  
-> installation's vendor/: the directory that holds src/Smarty.php, relative to the  
-> installation root or absolute. Empty: Composer's autoload only.  
+> Wo Smarty 5 liegt, wenn es nicht mit Composer (smarty/smarty ^5) im  
+> vendor/ der Installation installiert ist: das Verzeichnis, das src/Smarty.php enthält, relativ zum  
+> Wurzelverzeichnis der Installation oder absolut. Leer: nur das Autoload von Composer.  
 
 Standard: leer.
 
@@ -35,8 +35,8 @@ LibraryPath=
 
 ## CompileCheck
 
-> enabled: Smarty recompiles a .stpl when it changed. disabled: never checks (production;  
-> clear the template cache after a template change).  
+> enabled: Smarty kompiliert eine .stpl neu, wenn sie sich geändert hat. disabled: prüft nie (Produktivbetrieb;  
+> leeren Sie nach einer Template-Änderung den Template-Cache).  
 
 Standard: `enabled`.
 
@@ -50,7 +50,7 @@ CompileCheck=enabled
 
 ## Debugging
 
-> enabled: Smarty's debug console.  
+> enabled: die Debug-Konsole von Smarty.  
 
 Standard: `disabled`.
 
@@ -64,8 +64,8 @@ Debugging=disabled
 
 ## FunctionList
 
-> Exponential template functions callable as Smarty tags with named parameters,  
-> e.g. {attribute\_view\_gui attribute=$node.data\_map.body}  
+> Exponential-Template-Funktionen, die als Smarty-Tags mit benannten Parametern aufrufbar sind,  
+> z. B. {attribute\_view\_gui attribute=$node.data\_map.body}  
 
 Standard: eine Liste mit 11: `attribute_view_gui`, `attribute_edit_gui`, `attribute_result_gui`, `attribute_pdf_gui`, `node_view_gui`, `content_view_gui`, `content_version_view_gui`, `class_attribute_view_gui`, `class_attribute_edit_gui`, `related_view_gui`, `shop_account_view_gui`.
 
@@ -91,11 +91,11 @@ FunctionList[]=shop_account_view_gui
 
 ## ParameterOperatorList
 
-> Template operators that always take their arguments as parameters and never read the value they are  
-> applied to, for operators without template hints (the bridge cannot see that from the operator). With it,  
-> {myop('a', 'b')} calls the operator with the parameters 'a' and 'b', as myop( 'a', 'b' ) does in a .tpl;  
-> without it, 'a' would be its input. The kernel's own (ezhttp, ezhttp\_hasvariable, has\_role, topmenu ...) are  
-> built in. Read once per process: a change needs a deploy (a restart of the PHP workers).  
+> Template-Operatoren, die ihre Argumente immer als Parameter nehmen und nie den Wert lesen, auf den sie  
+> angewendet werden, für Operatoren ohne Template-Hinweise (die Brücke kann das dem Operator nicht ansehen). Damit  
+> ruft {myop('a', 'b')} den Operator mit den Parametern 'a' und 'b' auf, wie myop( 'a', 'b' ) in einer .tpl;  
+> ohne es wäre 'a' seine Eingabe. Die eigenen des Kernels (ezhttp, ezhttp\_hasvariable, has\_role, topmenu ...) sind  
+> eingebaut. Einmal je Prozess gelesen: Eine Änderung braucht ein Deploy (einen Neustart der PHP-Worker).  
 
 Standard: eine leere Liste.
 
@@ -110,10 +110,10 @@ ParameterOperatorList[]
 
 ## Security
 
-> Smarty security policy for .stpl templates: enabled or disabled. Enabled, a template is compiled with the  
-> lists below and refused at compile time when it uses something they do not allow. A template compiled  
-> with the policy is kept apart from one compiled without it (<cache dir>/smarty/compile-secure).  
-> See doc/eng-us/guides/smarty-templates-security.md.  
+> Smarty-Sicherheitsrichtlinie für .stpl-Templates: enabled oder disabled. Eingeschaltet wird ein Template mit den  
+> Listen unten kompiliert und beim Kompilieren abgelehnt, wenn es etwas verwendet, das sie nicht erlauben. Ein Template, das  
+> mit der Richtlinie kompiliert wurde, wird getrennt von einem ohne sie kompilierten aufbewahrt (<cache dir>/smarty/compile-secure).  
+> Siehe doc/eng-us/guides/smarty-templates-security.md.  
 
 Standard: `enabled`.
 
@@ -127,10 +127,10 @@ Security=enabled
 
 ## SecurityAllowedTagList
 
-> Smarty's own tags a template may use; empty: all of them except SecurityDisabledTagList. The tags of  
-> Exponential's template functions ({attribute\_view\_gui}, {expinclude}, {expcacheblock} ...) and the  
-> functions a template defines with {function} are always allowed unless they are disabled below.  
-> A closing tag ({/if}) follows its opening tag.  
+> Die eigenen Tags von Smarty, die ein Template verwenden darf; leer: alle außer SecurityDisabledTagList. Die Tags der  
+> Template-Funktionen von Exponential ({attribute\_view\_gui}, {expinclude}, {expcacheblock} ...) und die  
+> Funktionen, die ein Template mit {function} definiert, sind immer erlaubt, solange sie unten nicht abgeschaltet sind.  
+> Ein schließender Tag ({/if}) folgt seinem öffnenden Tag.  
 
 Standard: eine Liste mit 32: `if`, `elseif`, `else`, `foreach`, `foreachelse`, `for`, `forelse`, `while`, `section`, `sectionelse`, `break`, `continue` ....
 
@@ -166,9 +166,9 @@ SecurityAllowedTagList[]=function
 
 ## SecurityDisabledTagList
 
-> Tags never allowed, Smarty's or Exponential's: {eval} (runs a string as a template), {fetch} (reads a file  
-> or a URL), {math} (evaluates an expression), {debug} (shows every variable), {config\_load} (reads  
-> configuration files), {html\_image} (reads image files).  
+> Tags, die nie erlaubt sind, die von Smarty oder von Exponential: {eval} (führt einen String als Template aus), {fetch} (liest eine Datei  
+> oder eine URL), {math} (wertet einen Ausdruck aus), {debug} (zeigt jede Variable), {config\_load} (liest  
+> Konfigurationsdateien), {html\_image} (liest Bilddateien).  
 
 Standard: eine Liste mit 6: `eval`, `fetch`, `math`, `debug`, `config_load`, `html_image`.
 
@@ -189,9 +189,9 @@ SecurityDisabledTagList[]=html_image
 
 ## SecurityAllowedModifierList
 
-> Smarty's own modifiers a template may use; empty: all of them except SecurityDisabledModifierList.  
-> Exponential's operators ({$text|wash}, {concat($a, $b)}, {fetch('content', 'node', ...)}) are always  
-> allowed unless they are disabled below.  
+> Die eigenen Modifikatoren von Smarty, die ein Template verwenden darf; leer: alle außer SecurityDisabledModifierList.  
+> Die Operatoren von Exponential ({$text|wash}, {concat($a, $b)}, {fetch('content', 'node', ...)}) sind immer  
+> erlaubt, solange sie unten nicht abgeschaltet sind.  
 
 Standard: eine leere Liste.
 
@@ -206,7 +206,7 @@ SecurityAllowedModifierList[]
 
 ## SecurityDisabledModifierList
 
-> Modifiers never allowed, Smarty's or Exponential's operators.  
+> Modifikatoren, die nie erlaubt sind, die von Smarty oder Operatoren von Exponential.  
 
 Standard: eine Liste mit 1: `debug_print_var`.
 
@@ -222,9 +222,9 @@ SecurityDisabledModifierList[]=debug_print_var
 
 ## SecurityDisabledSpecialVariableList
 
-> $smarty.<name> special variables a template may not read: the request and the environment  
-> ($smarty.get, .post, .cookies, .session, .server, .env, .request), PHP constants ($smarty.const) and the  
-> template object ($smarty.template\_object, which reaches the Smarty instance and its settings).  
+> Spezialvariablen $smarty.<name>, die ein Template nicht lesen darf: die Anfrage und die Umgebung  
+> ($smarty.get, .post, .cookies, .session, .server, .env, .request), PHP-Konstanten ($smarty.const) und das  
+> Template-Objekt ($smarty.template\_object, das die Smarty-Instanz und ihre Einstellungen erreicht).  
 
 Standard: eine Liste mit 9: `get`, `post`, `cookies`, `session`, `server`, `env`, `request`, `const`, `template_object`.
 
@@ -248,7 +248,7 @@ SecurityDisabledSpecialVariableList[]=template_object
 
 ## SecurityConstants
 
-> PHP constants in templates ({if $x == E\_ALL}, {$smarty.const.X}): enabled or disabled.  
+> PHP-Konstanten in Templates ({if $x == E\_ALL}, {$smarty.const.X}): enabled oder disabled.  
 
 Standard: `disabled`.
 
@@ -262,7 +262,7 @@ SecurityConstants=disabled
 
 ## SecurityStaticClassList
 
-> Classes whose static methods and properties a template may use ({Foo::bar()}); empty: none.  
+> Klassen, deren statische Methoden und Eigenschaften ein Template verwenden darf ({Foo::bar()}); leer: keine.  
 
 Standard: eine leere Liste.
 
@@ -277,8 +277,8 @@ SecurityStaticClassList[]
 
 ## SecurityStreamList
 
-> Stream wrappers a template may be loaded from ({include file='php://...'}); empty: none. Template files  
-> themselves are no stream.  
+> Stream-Wrapper, aus denen ein Template geladen werden darf ({include file='php://...'}); leer: keine. Template-Dateien  
+> selbst sind kein Stream.  
 
 Standard: eine leere Liste.
 
@@ -293,8 +293,8 @@ SecurityStreamList[]
 
 ## SecurityObjectAccess
 
-> Methods and properties of objects ({$node->expSmartyObject()->remove()}): enabled or disabled. Disabled, a  
-> template that uses -> in a tag is refused; templates read attributes as $node.name, which stays allowed.  
+> Methoden und Eigenschaften von Objekten ({$node->expSmartyObject()->remove()}): enabled oder disabled. Abgeschaltet wird ein  
+> Template abgelehnt, das -> in einem Tag verwendet; Templates lesen Attribute als $node.name, was erlaubt bleibt.  
 
 Standard: `disabled`.
 
@@ -308,8 +308,8 @@ SecurityObjectAccess=disabled
 
 ## SecurityTrustedDirList
 
-> Directories, besides the template directories of the design bases, that templates may be loaded from  
-> ({include file=...}, {exp\_smarty\_render( '<file>' )}), relative to the installation root or absolute.  
+> Verzeichnisse, neben den Template-Verzeichnissen der Design-Basen, aus denen Templates geladen werden dürfen  
+> ({include file=...}, {exp\_smarty\_render( '<file>' )}), relativ zum Wurzelverzeichnis der Installation oder absolut.  
 
 Standard: eine leere Liste.
 

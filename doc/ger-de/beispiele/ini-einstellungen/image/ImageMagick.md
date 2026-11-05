@@ -226,9 +226,9 @@ FrameRangeParameters[]=application/x-photoshop;[0]
 
 ## Filters
 
-> A list of filter ImageMagick supports, add more if needed  
-> The same filter names are used in aliases and MIME type overrides with optional parameters.  
-> +repage: the cut image starts at 0,0, so a filter after it (another crop, a scale) works on what was cut  
+> Eine Liste der Filter, die ImageMagick unterstützt; fügen Sie bei Bedarf weitere hinzu  
+> Dieselben Filternamen werden in Aliasen und Overrides für MIME-Typen mit optionalen Parametern verwendet.  
+> +repage: Das zugeschnittene Bild beginnt bei 0,0, sodass ein Filter danach (ein weiterer Zuschnitt, eine Skalierung) auf dem Ausschnitt arbeitet  
 
 Standard: eine Liste mit 19: `geometry/scale=-geometry %1x%2`, `geometry/scalewidth=-geometry %1`, `geometry/scaleheight=-geometry x%1`, `geometry/scaledownonly=-geometry %1x%2>`, `geometry/scalewidthdownonly=-geometry %1>`, `geometry/scaleheightdownonly=-geometry x%1>`, `geometry/scaleexact=-geometry %1x%2!`, `geometry/scalepercent=-geometry %1x%2%`, `geometry/crop=-crop %1x%2+%3+%4 +repage`, `filter/noise=-noise %1`, `filter/swirl=-swirl %1`, `colorspace/gray=-colorspace GRAY` ....
 

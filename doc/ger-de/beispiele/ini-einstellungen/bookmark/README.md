@@ -12,20 +12,19 @@ generated: exp:help:examples
 
 Die ausgelieferten Einstellungen von `settings/bookmark.ini`: 2 Blöcke, 6 Einstellungen.
 
-> Exponential configuration file for bookmarks of system pages.  
+> Exponential-Konfigurationsdatei für Lesezeichen von Systemseiten.  
 >
-> NOTE: It is not recommended to edit this files directly, instead  
->       a file in override should be created for setting the  
->       values that is required for your site. Either create  
->       a file called settings/override/bookmark.ini.append or  
->       settings/override/bookmark.ini.append.php for more security  
->       in non-virtualhost modes (the .php file may already be present  
->       and can be used for this purpose).  
+> HINWEIS: Es wird nicht empfohlen, diese Datei direkt zu bearbeiten; legen Sie stattdessen  
+>       eine Datei in override an, um die Werte zu setzen, die Ihre Site braucht. Legen Sie  
+>       dazu eine Datei settings/override/bookmark.ini.append an, oder  
+>       settings/override/bookmark.ini.append.php für mehr Sicherheit  
+>       ohne virtuelle Hosts (die .php-Datei ist vielleicht schon vorhanden  
+>       und kann dafür benutzt werden).  
 >
-> A bookmark can point to a node or to a system page: the page of a module view with its parameters  
-> (setup/info, role/view/3, audit/console/(user)/14, content/search/(text)/...). The address is stored without  
-> the host and the siteaccess, so the same bookmark opens on every host and in every administration siteaccess  
-> the user can use. Guide: doc/eng-us/features/6.0/bookmarks-of-system-pages.md  
+> Ein Lesezeichen kann auf einen Knoten oder auf eine Systemseite zeigen: die Seite einer Modulansicht mit ihren Parametern  
+> (setup/info, role/view/3, audit/console/(user)/14, content/search/(text)/...). Die Adresse wird ohne  
+> Host und Siteaccess gespeichert, so öffnet dasselbe Lesezeichen auf jedem Host und in jedem Administrations-Siteaccess,  
+> den der Benutzer benutzen darf. Anleitung: doc/eng-us/features/6.0/bookmarks-of-system-pages.md  
 
 | Block | Einstellungen |
 |---|---|

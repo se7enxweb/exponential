@@ -11,8 +11,8 @@ generated: exp:help:examples
 
 Der Block `[ExpImageFromObjectToDataType]` von `settings/browse.ini`, mit 3 Einstellung(en).
 
-> Action for choosing an existing image for the image datatype (ezimage):  
-> the image of the chosen object is copied into the field being edited  
+> Aktion zum Auswählen eines vorhandenen Bildes für den Bild-Datentyp (ezimage):  
+> das Bild des gewählten Objekts wird in das bearbeitete Feld kopiert  
 
 Bearbeiten Sie `settings/browse.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

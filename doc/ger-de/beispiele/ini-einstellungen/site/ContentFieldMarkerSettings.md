@@ -19,13 +19,13 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## Handlers
 
-> Markers around every rendered attribute ({attribute\_view\_gui}) for a tool that edits the page in place:  
+> Markierungen um jedes gerenderte Attribut ({attribute\_view\_gui}) für ein Werkzeug, das die Seite an Ort und Stelle bearbeitet:  
 >   <!--exp-field data-exp-field="title" data-exp-object="61" data-exp-version="7" data-exp-attribute="402" data-exp-language="eng-US"-->  
->   ... the attribute's output ... <!--/exp-field-->  
-> HTML comments, so a page looks and matches CSS selectors the same with or without them. Only when one of  
-> these classes says so for the request (a static active(); the website sidebar expwt adds  
-> expwtFieldMarkerHandler: a signed-in user who may edit with the sidebar). None (the default): nothing is  
-> emitted, and visitors' pages and their caches stay exactly as they are.  
+>   ... die Ausgabe des Attributs ... <!--/exp-field-->  
+> HTML-Kommentare, sodass eine Seite mit oder ohne sie gleich aussieht und auf CSS-Selektoren gleich passt. Nur wenn eine  
+> dieser Klassen es für die Anfrage sagt (ein statisches active(); die Website-Seitenleiste expwt fügt  
+> expwtFieldMarkerHandler hinzu: ein angemeldeter Benutzer, der mit der Seitenleiste bearbeiten darf). Keine (der Standard): Es wird nichts  
+> ausgegeben, und die Seiten der Besucher und ihre Caches bleiben genau, wie sie sind.  
 
 Standard: eine leere Liste.
 

@@ -51,11 +51,11 @@ JobHistory=50
 
 ## Background
 
-> How a run started there goes to the background:  
->   process  a console process of its own, started at once (the default)  
->   queue    a job of expqueue (the extension), run by its worker, when expqueue is active, its tables are installed,  
->            expqueue.ini has the job type below and a worker is running; else a process as above  
-> The job type, in the site's expqueue.ini.append.php:  
+> Wie ein dort gestarteter Lauf in den Hintergrund geht:  
+>   process  ein eigener Konsolenprozess, sofort gestartet (der Standard)  
+>   queue    ein Job von expqueue (der Erweiterung), von ihrem Worker ausgeführt, wenn expqueue aktiv ist, seine Tabellen installiert sind,  
+>            expqueue.ini den Job-Typ unten hat und ein Worker läuft; sonst ein Prozess wie oben  
+> Der Job-Typ, in der expqueue.ini.append.php der Site:  
 >   \[JobType\_migration.run\]  
 >   Handler=expMigrationQueueHandler  
 >   Class=bulk  
@@ -74,7 +74,7 @@ Background=process
 
 ## QueueJobType
 
-> The expqueue job type of Background=queue.  
+> Der expqueue-Job-Typ von Background=queue.  
 
 Standard: `migration.run`.
 

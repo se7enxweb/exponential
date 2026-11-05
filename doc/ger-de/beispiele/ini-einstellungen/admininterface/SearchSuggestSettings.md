@@ -19,18 +19,18 @@ Bearbeiten Sie `settings/admininterface.ini` nie selbst: Ein Update ersetzt die 
 
 ## Enabled
 
-> Suggestions under the header search field of the administration (design admin and admin4) while the user types:  
-> content, PDF pages, users, content classes and the administration's own pages, in groups, each only as far as  
-> the user may see it, with "View all results" leading to the full search (content/search). The script  
-> (javascript/page/search\_suggest.js) asks content/suggest/(text)/<text> for them (expSearchSuggest).  
-> Guide: doc/eng-us/help/searching.md ("Suggestions while typing").  
+> Vorschläge unter dem Suchfeld im Kopf der Administration (Designs admin und admin4), während der Benutzer tippt:  
+> Inhalte, PDF-Seiten, Benutzer, Inhaltsklassen und die eigenen Seiten der Administration, in Gruppen, jeweils nur so weit,  
+> wie der Benutzer sie sehen darf, und „Alle Ergebnisse anzeigen“ führt zur vollständigen Suche (content/search). Das Skript  
+> (javascript/page/search\_suggest.js) fragt content/suggest/(text)/<text> danach (expSearchSuggest).  
+> Anleitung: doc/eng-us/help/searching.md („Vorschläge beim Tippen“).  
 >
-> The view content/suggest needs the policy content/read (as content/search): a user without it gets no  
-> suggestions at all, not even the administration's pages, and the field is a plain search field for them.  
-> The groups pages and limits below also bound the load: one request per typed pause (250 ms), plus at most  
-> Limits\[pages\] requests for the pages of documents.  
+> Die Ansicht content/suggest braucht die Richtlinie content/read (wie content/search): Ein Benutzer ohne sie bekommt gar keine  
+> Vorschläge, nicht einmal die Seiten der Administration, und das Feld ist für ihn ein einfaches Suchfeld.  
+> Die Gruppen pages und die Grenzen unten begrenzen auch die Last: eine Anfrage pro Tipppause (250 ms), dazu höchstens  
+> Limits\[pages\] Anfragen für die Seiten von Dokumenten.  
 >
-> true or false. false: the field is a plain search field, content/suggest answers 404.  
+> true oder false. false: Das Feld ist ein einfaches Suchfeld, content/suggest antwortet mit 404.  
 
 Standard: `true`.
 
@@ -44,7 +44,7 @@ Enabled=true
 
 ## MinLength
 
-> The fewest characters typed before suggestions are asked for.  
+> Die wenigsten getippten Zeichen, bevor Vorschläge angefragt werden.  
 
 Standard: `3`.
 
@@ -58,14 +58,14 @@ MinLength=3
 
 ## Groups
 
-> The groups, in the order they are shown. Leave one out to switch it off:  
->   content  the content search (eZ Find when it is the search engine, else the kernel's search engine), with the  
->            user's read permissions applied by the search itself  
->   pages    the PDF pages holding the words: only with eZ Find and the extension ezfindpdfdeepsearch active;  
->            without them a document is suggested as a whole, in the content group  
->   users    user accounts by login, e-mail address or name, only those the user may read  
->   classes  content classes by name or identifier, only for a user who may open the class module  
->   admin    the top tabs and the links of their left menus, as the design draws them for the user ("Setup › Cache")  
+> Die Gruppen, in der Reihenfolge, in der sie gezeigt werden. Lassen Sie eine weg, um sie abzuschalten:  
+>   content  die Inhaltssuche (eZ Find, wenn es die Suchmaschine ist, sonst die Suchmaschine des Kernels), mit den  
+>            Leserechten des Benutzers, die die Suche selbst anwendet  
+>   pages    die PDF-Seiten, die die Wörter enthalten: nur mit eZ Find und aktiver Erweiterung ezfindpdfdeepsearch;  
+>            ohne sie wird ein Dokument als Ganzes vorgeschlagen, in der Gruppe content  
+>   users    Benutzerkonten nach Login, E-Mail-Adresse oder Name, nur die, die der Benutzer lesen darf  
+>   classes  Inhaltsklassen nach Name oder Bezeichner, nur für einen Benutzer, der das Modul class öffnen darf  
+>   admin    die oberen Reiter und die Links ihrer linken Menüs, wie das Design sie für den Benutzer zeichnet („Setup › Cache“)  
 
 Standard: eine Liste mit 5: `content`, `pages`, `users`, `classes`, `admin`.
 
@@ -85,7 +85,7 @@ Groups[]=admin
 
 ## Limits
 
-> The most suggestions per group (0 to 20; 0 switches the group off).  
+> Die meisten Vorschläge pro Gruppe (0 bis 20; 0 schaltet die Gruppe ab).  
 
 Standard: ein Hash mit 5: `content=6`, `pages=3`, `users=3`, `classes=3`, `admin=4`.
 
@@ -105,7 +105,7 @@ Limits[admin]=4
 
 ## PagesPerDocument
 
-> The pages of one document, at most (pages group).  
+> Die Seiten eines Dokuments, höchstens (Gruppe pages).  
 
 Standard: `2`.
 
@@ -119,7 +119,7 @@ PagesPerDocument=2
 
 ## PageHitClasses
 
-> The classes whose objects are documents with pages (pages group): the file class of the binary files.  
+> Die Klassen, deren Objekte Dokumente mit Seiten sind (Gruppe pages): die Dateiklasse der Binärdateien.  
 
 Standard: eine Liste mit 1: `file`.
 
@@ -135,11 +135,11 @@ PageHitClasses[]=file
 
 ## Wildcard
 
-> A "\*" after the last word typed, so that a word is found while it is typed ("Oste" finds "Ostern"):  
->   auto      only when site.ini \[SearchSettings\] EnableWildcard=true (both search engines honour it only then),  
->             and only for a word of MinCharacterWildcard characters or more  
->   enabled   always (for a word of MinCharacterWildcard characters or more)  
->   disabled  never: only whole words are found  
+> Ein „\*“ nach dem zuletzt getippten Wort, damit ein Wort schon beim Tippen gefunden wird („Oste“ findet „Ostern“):  
+>   auto      nur wenn site.ini \[SearchSettings\] EnableWildcard=true (beide Suchmaschinen beachten es nur dann),  
+>             und nur für ein Wort mit MinCharacterWildcard oder mehr Zeichen  
+>   enabled   immer (für ein Wort mit MinCharacterWildcard oder mehr Zeichen)  
+>   disabled  nie: Nur ganze Wörter werden gefunden  
 
 Standard: `auto`.
 
@@ -153,8 +153,8 @@ Wildcard=auto
 
 ## AdminPagesCacheTTL
 
-> The administration's pages of a user are drawn from the menus once and kept for this many seconds, per user  
-> and rights (cache item searchsuggest, cleared with the template caches). 0: drawn on every request.  
+> Die Seiten der Administration für einen Benutzer werden einmal aus den Menüs ermittelt und so viele Sekunden aufbewahrt, je Benutzer  
+> und Rechten (Cache-Eintrag searchsuggest, geleert mit den Template-Caches). 0: bei jeder Anfrage ermittelt.  
 
 Standard: `300`.
 
@@ -168,7 +168,7 @@ AdminPagesCacheTTL=300
 
 ## AdminMenuSkipParts
 
-> Navigation parts whose left menu holds no list of pages (a tree): only their tab is suggested.  
+> Navigationsteile, deren linkes Menü keine Liste von Seiten enthält (ein Baum): Nur ihr Reiter wird vorgeschlagen.  
 
 Standard: eine Liste mit 2: `ezcontentnavigationpart`, `ezmedianavigationpart`.
 

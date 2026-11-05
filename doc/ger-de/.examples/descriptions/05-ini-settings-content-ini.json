@@ -36,8 +36,8 @@
         "de": "Pause zwischen den Stapeln in Millisekunden (0 = keine), um anderen Schreibern Raum zu lassen."
     },
     "ini:settings/content.ini [ContentJobSettings] BatchSize": {
-        "en": "Nodes per batch (one transaction each).",
-        "de": "Knoten pro Stapel (jeder eine Transaktion)."
+        "en": "Nodes per batch (one transaction each). On SQLite (one writer at a time) the worker halves the next batch\nwhile one holds the write lock over 2 s, and grows it back to BatchSize when they are quick again.",
+        "de": "Knoten pro Stapel (jeder eine Transaktion). Auf SQLite (ein Schreiber zur Zeit) halbiert der Worker den nächsten Stapel,\nsolange einer die Schreibsperre über 2 s hält, und vergrößert ihn wieder bis BatchSize, wenn sie wieder schnell sind."
     },
     "ini:settings/content.ini [ContentJobSettings] BusyBackoffMax": {
         "en": "The longest pause between two of those tries, in seconds.",
@@ -48,8 +48,8 @@
         "de": "Ein Stapel, der scheitert, weil die Datenbank belegt oder gesperrt ist (SQLite \"database is busy\" oder \"locked\",\nMySQL Zeitüberschreitung beim Warten auf eine Sperre 1205 oder Deadlock 1213), wird zurückgerollt und ab dem letzten Checkpoint\nbis zu so vielen Malen erneut ausgeführt, nach einer Pause, die sich jedes Mal verdoppelt (1, 2, 4 ... Sekunden). Dann schlägt der Auftrag\nmit einem vorübergehenden Fehler fehl, den der Cronjob-Teil von selbst fortsetzt. 0 = beim ersten solchen Fehler fehlschlagen."
     },
     "ini:settings/content.ini [ContentJobSettings] JobTypes": {
-        "en": "The job types: JobTypes[<name>]=<class implementing expContentJobType>.\nA package install in the background (Setup > Packages > Install, \"Install in the background\"), doc/eng-us/bc/6.0/package-json-format.md\nAn export of the audit console in the background (Audit > Export, \"Export in the background\"), doc/eng-us/bc/6.0/audit.md\nThe help's manuals built from the Markdown help in the background (a new installation queues it), doc/eng-us/features/6.0/help-content.md\nA background run of an import or export tool (Export, CIE ...) when there is no job queue,\ndoc/eng-us/features/6.0/transfer-runs.md (transfer.ini)",
-        "de": "Die Job-Typen: JobTypes[<name>]=<Klasse, die expContentJobType implementiert>.\nEine Paketinstallation im Hintergrund (Setup > Pakete > Installieren, \"Im Hintergrund installieren\"), doc/eng-us/bc/6.0/package-json-format.md\nEin Export der Audit-Konsole im Hintergrund (Audit > Export, \"Im Hintergrund exportieren\"), doc/eng-us/bc/6.0/audit.md\nDie Handbücher der Hilfe, im Hintergrund aus der Markdown-Hilfe gebaut (eine neue Installation reiht es ein), doc/eng-us/features/6.0/help-content.md\nEin Hintergrundlauf eines Import- oder Export-Werkzeugs (Export, CIE ...), wenn es keine Job-Warteschlange gibt,\ndoc/eng-us/features/6.0/transfer-runs.md (transfer.ini)"
+        "en": "The job types: JobTypes[<name>]=<class implementing expContentJobType>.\nA package install in the background (Setup > Packages > Install, \"Install in the background\"), doc/eng-us/bc/6.0/package-json-format.md\nAn export of the audit console in the background (Audit > Export, \"Export in the background\"), doc/eng-us/bc/6.0/audit.md\nThe help's manuals built from the Markdown help in the background (a new installation queues it), doc/eng-us/features/6.0/help-content.md\nA background run of an import or export tool (Export, CIE ...) when there is no job queue,\ndoc/eng-us/features/6.0/transfer-runs.md (transfer.ini)\nA mass action of Dashboard > Recent content on more than [ModerationSettings] JobThreshold objects, doc/eng-us/features/6.0/moderation.md",
+        "de": "Die Job-Typen: JobTypes[<name>]=<Klasse, die expContentJobType implementiert>.\nEine Paketinstallation im Hintergrund (Setup > Pakete > Installieren, „Im Hintergrund installieren“), doc/eng-us/bc/6.0/package-json-format.md\nEin Export der Audit-Konsole im Hintergrund (Audit > Export, „Im Hintergrund exportieren“), doc/eng-us/bc/6.0/audit.md\nDie Handbücher der Hilfe, im Hintergrund aus der Markdown-Hilfe gebaut (eine neue Installation reiht es ein), doc/eng-us/features/6.0/help-content.md\nEin Hintergrundlauf eines Import- oder Export-Werkzeugs (Export, CIE ...), wenn es keine Job-Warteschlange gibt,\ndoc/eng-us/features/6.0/transfer-runs.md (transfer.ini)\nEine Massenaktion von Dashboard > Neue Inhalte auf mehr als [ModerationSettings] JobThreshold Objekte, doc/eng-us/features/6.0/moderation.md"
     },
     "ini:settings/content.ini [ContentJobSettings] KeepDays": {
         "en": "Finished (done or cancelled) jobs are removed by the cronjob part after this many days. 0 = never.",
@@ -807,13 +807,13 @@
         "en": "Redirects followed before a link counts as broken",
         "de": "Weiterleitungen, denen gefolgt wird, bevor ein Link als defekt gilt"
     },
-    "ini:settings/cronjob.ini [linkCheckSettings] MaxURLsPerRun": {
-        "en": "Links checked in one run, the ones checked longest ago first; 0 checks all",
-        "de": "In einem Lauf geprüfte Links, die am längsten nicht geprüften zuerst; 0 prüft alle"
-    },
     "ini:settings/cronjob.ini [linkCheckSettings] MaxRunTime": {
         "en": "Seconds a run may spend checking links; the links left are the ones checked\nmost recently, and the next run starts with them. 0 checks until all are done.\nMost of a long run is HostDelay between links to the same host.",
         "de": "Sekunden, die ein Lauf Links prüfen darf; übrig bleiben die zuletzt geprüften,\nund mit ihnen beginnt der nächste Lauf. 0 prüft, bis alle fertig sind.\nDen größten Teil eines langen Laufs macht HostDelay zwischen Links auf denselben Host aus."
+    },
+    "ini:settings/cronjob.ini [linkCheckSettings] MaxURLsPerRun": {
+        "en": "Links checked in one run, the ones checked longest ago first; 0 checks all",
+        "de": "In einem Lauf geprüfte Links, die am längsten nicht geprüften zuerst; 0 prüft alle"
     },
     "ini:settings/cronjob.ini [linkCheckSettings] RecheckInterval": {
         "en": "Seconds before a checked link is checked again; 0 checks every link on every run",

@@ -109,11 +109,11 @@ GroupTabs[audit]=audit
 
 ## GroupTabsLeftMenu
 
-> The left menu of the pages of such a tab while it is moved into Setup (admin4 page\_leftmenu.tpl, admin4l's left menu  
-> block): setup draws this menu with the tab's group open (default); tab draws the tab's own left menu (the view's  
-> left\_menu, else parts/<part>/menu.tpl), while the top menu still marks the Setup tab and opens the Setup mega menu;  
-> the path above the page is the view's own either way. design/admin and exp\_adminui never move a tab into Setup, so they always draw the tab's own menu  
-> (doc/eng-us/features/6.0/admin4-design.md, "Moving a tab into Setup").  
+> Das linke Menü der Seiten eines solchen Reiters, während er in Setup verschoben ist (admin4 page\_leftmenu.tpl, der Block des linken Menüs  
+> von admin4l): setup zeichnet dieses Menü mit geöffneter Gruppe des Reiters (Standard); tab zeichnet das eigene linke Menü des Reiters (das  
+> left\_menu der Ansicht, sonst parts/<part>/menu.tpl), während das obere Menü weiter den Reiter Setup markiert und das Setup-Megamenü öffnet;  
+> der Pfad über der Seite ist in beiden Fällen der der Ansicht. design/admin und exp\_adminui verschieben nie einen Reiter in Setup, sie zeichnen also immer das eigene Menü des Reiters  
+> (doc/eng-us/features/6.0/admin4-design.md, „Moving a tab into Setup“).  
 
 Standard: `setup`.
 
@@ -475,51 +475,51 @@ LinkFigureTemplates[cronjobs]=design:setup/setupmenu_figure.tpl
 
 ## Links
 
-> No PolicyList\_overview\[\]: the view opens with any one of the setup module's functions (kernel/setup/module.php),  
-> which one PolicyList entry cannot say; CheckViewAccess asks the view itself.  
-> Static publishing (module staticpublish): a site published as static files to GitHub Pages or any git host  
+> Kein PolicyList\_overview\[\]: die Ansicht öffnet sich mit jeder einzelnen Funktion des Moduls setup (kernel/setup/module.php),  
+> was ein einzelner PolicyList-Eintrag nicht ausdrücken kann; CheckViewAccess fragt die Ansicht selbst.  
+> Statisches Veröffentlichen (Modul staticpublish): eine Site, als statische Dateien auf GitHub Pages oder einem beliebigen Git-Host veröffentlicht  
 > (doc/eng-us/help/static-publishing/README.md)  
-> The audit settings and archives (doc/eng-us/bc/6.0/audit.md, "Placement"), only with audit/manage  
-> The datatypes (class/datatype): every registered datatype, its provider and how the content model uses it  
-> The content finder (doc/eng-us/features/6.0/content-finder.md): find content by id or path, only with contentfinder/search  
-> The content checks (doc/eng-us/features/6.0/content-checks.md): unreferenced objects and broken relations, each only  
-> with its policy  
-> The cronjobs console. LinkNames is what the entry reads as: without it the  
-> menu falls back to the key, and "cronjobs" is not a label.  
-> Migrations (module migration): the migrations of the site and its extensions, their runs, a run or a rollback in  
-> the background, the log of each run  
-> The log viewer (doc/eng-us/features/6.0/log-viewer.md): follow, search and cross-reference the log files, only with setup/logs  
-> The Design tab's page (its URL\[default\]), in the group that stands for the tab (GroupTabs\[design\]): shown only  
-> while the tab is not in the top menu  
-> Removed from 4.3. Enable if you have special requirements.  
+> Die Audit-Einstellungen und Archive (doc/eng-us/bc/6.0/audit.md, „Placement“), nur mit audit/manage  
+> Die Datentypen (class/datatype): jeder registrierte Datentyp, sein Anbieter und wie das Inhaltsmodell ihn verwendet  
+> Der Inhaltsfinder (doc/eng-us/features/6.0/content-finder.md): Inhalt nach ID oder Pfad finden, nur mit contentfinder/search  
+> Die Inhaltsprüfungen (doc/eng-us/features/6.0/content-checks.md): nicht referenzierte Objekte und defekte Relationen, jeweils nur  
+> mit ihrer Richtlinie  
+> Die Cronjob-Konsole. LinkNames ist das, als was der Eintrag erscheint: ohne es  
+> fällt das Menü auf den Schlüssel zurück, und „cronjobs“ ist keine Bezeichnung.  
+> Migrationen (Modul migration): die Migrationen der Site und ihrer Erweiterungen, ihre Läufe, ein Lauf oder eine Rücknahme im  
+> Hintergrund, das Protokoll jedes Laufs  
+> Der Log-Viewer (doc/eng-us/features/6.0/log-viewer.md): Logdateien verfolgen, durchsuchen und querverweisen, nur mit setup/logs  
+> Die Seite des Reiters Design (sein URL\[default\]), in der Gruppe, die für den Reiter steht (GroupTabs\[design\]): nur angezeigt,  
+> solange der Reiter nicht im oberen Menü ist  
+> Entfernt seit 4.3. Aktivieren, wenn Sie besondere Anforderungen haben.  
 > Links\[global\_setting\]=content/edit/52  
 > PolicyList\_global\_setting\[\]=54  
-> The translation fallbacks of every interface language (doc/eng-us/languages.md), read only  
-> The e-mail preferences for administrators: status, categories, suppression list, consent log  
-> Removed from 4.3. Enable if you have special requirements.  
+> Die Übersetzungs-Fallbacks jeder Oberflächensprache (doc/eng-us/languages.md), nur lesbar  
+> Die E-Mail-Einstellungen für Administratoren: Status, Kategorien, Sperrliste, Einwilligungs-Log  
+> Entfernt seit 4.3. Aktivieren, wenn Sie besondere Anforderungen haben.  
 > Links\[look\_and\_feel\]=content/edit/54  
 > PolicyList\_look\_and\_feel\[\]=56  
-> The menus of the classic site designs (visual/menuconfig) are a link of the Design menu (\[Leftmenu\_design\])  
-> The notification status (pending events, digest messages, the last runs of the notification cronjob, problems)  
-> Preload Sites, RSS and Packages open the group "Site and URLs" (GroupLinks\_site\[\]), RAD closes it: a group draws its  
-> links in the order of Links\[\], so their order here is the order of the group  
-> Disabled by default in 4.3 as it is also present in user account tab.  
+> Die Menüs der klassischen Site-Designs (visual/menuconfig) sind ein Link des Menüs Design (\[Leftmenu\_design\])  
+> Der Benachrichtigungsstatus (ausstehende Ereignisse, Digest-Nachrichten, die letzten Läufe des Benachrichtigungs-Cronjobs, Probleme)  
+> Preload Sites, RSS und Packages öffnen die Gruppe „Site und URLs“ (GroupLinks\_site\[\]), RAD schließt sie: Eine Gruppe zeichnet ihre  
+> Links in der Reihenfolge von Links\[\], also ist ihre Reihenfolge hier die Reihenfolge der Gruppe  
+> Standardmäßig in 4.3 deaktiviert, da es auch im Reiter Benutzerkonto vorhanden ist.  
 > Links\[roles\_and\_policies\]=role/list  
 > PolicyList\_roles\_and\_policies\[\]=role/\*  
-> Check user accounts (doc/eng-us/features/6.0/user-hygiene.md): never signed in, not seen for long, disabled, locked,  
-> orphaned, a shared e-mail address; only with user/hygiene. The same key is in \[Leftmenu\_user\].  
-> The data tables, the named database connections and the secret store (doc/eng-us/features/6.0/data-tables.md,  
+> Benutzerkonten prüfen (doc/eng-us/features/6.0/user-hygiene.md): nie angemeldet, lange nicht gesehen, deaktiviert, gesperrt,  
+> verwaist, eine gemeinsame E-Mail-Adresse; nur mit user/hygiene. Derselbe Schlüssel steht in \[Leftmenu\_user\].  
+> Die Datentabellen, die benannten Datenbankverbindungen und der Secret-Store (doc/eng-us/features/6.0/data-tables.md,  
 > doc/eng-us/features/6.0/secret-store.md)  
-> The GraphQL API (doc/eng-us/features/6.0/graphql.md)  
-> The rows of ezsite\_data, read only (Setup > Site data)  
-> The Help center, the start page of the help (exphelp/dashboard)  
-> Removed from 4.3. Enable if you have special requirements.  
+> Die GraphQL-API (doc/eng-us/features/6.0/graphql.md)  
+> Die Zeilen von ezsite\_data, nur lesbar (Setup > Site-Daten)  
+> Das Hilfe-Center, die Startseite der Hilfe (exphelp/dashboard)  
+> Entfernt seit 4.3. Aktivieren, wenn Sie besondere Anforderungen haben.  
 > Links\[templates\]=visual/templatelist  
 > PolicyList\_templates\[\]=visual/\*  
-> Removed from 4.3. Enable if you have special requirements.  
+> Entfernt seit 4.3. Aktivieren, wenn Sie besondere Anforderungen haben.  
 > Links\[toolbar\_management\]=visual/toolbarlist  
 > PolicyList\_toolbar\_management\[\]=visual/\*  
-> RAD closes the group "Site and URLs"  
+> RAD schließt die Gruppe „Site und URLs“  
 
 Standard: ein Hash mit 48: `overview=setup/menu`, `cache=setup/cache`, `static_publishing=staticpublish/dashboard`, `audit=audit/settings`, `classes=class/grouplist`, `datatypes=class/datatype/list`, `collected=infocollector/overview`, `contentfinder=contentfinder/search`, `unreferenced_objects=contentcheck/unreferenced`, `broken_relations=contentcheck/brokenrelations`, `storage_files=contentcheck/storage`, `maintenance=setup/maintenance` ....
 

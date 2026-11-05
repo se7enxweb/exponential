@@ -78,19 +78,19 @@ AdditionalSiteDesignList[]
 
 ## SwitchableDesigns
 
-> A front siteaccess can let every visitor switch between designs with one  
-> click (doc/eng-us/features/6.0/front-design-switch.md). Off while the list is  
-> empty; never on an administration siteaccess. The siteaccess's SiteDesign is  
-> the default; a link with the view parameter /(design)/<name> chooses another  
-> one and keeps it in a cookie. In the siteaccess's site.ini.append.php:  
+> Ein Front-Siteaccess kann jeden Besucher mit einem Klick zwischen Designs wechseln lassen  
+> (doc/eng-us/features/6.0/front-design-switch.md). Aus, solange die Liste  
+> leer ist; nie in einem Administrations-Siteaccess. Das SiteDesign des Siteaccess ist  
+> der Standard; ein Link mit dem Ansichtsparameter /(design)/<name> wählt ein anderes  
+> und bewahrt es in einem Cookie. In der site.ini.append.php des Siteaccess:  
 >   SwitchableDesigns\[\]  
 >   SwitchableDesigns\[\]=doc2025  
 >   SwitchableDesignLabel\[doc\]=Modern  
 >   SwitchableDesignLabel\[doc2025\]=Classic  
 >   SwitchableDesignChain\[doc2025\]=standard  
-> SwitchableDesignChain\[<design>\] is the fallback chain of a design, designs  
-> separated by ";" (without one the siteaccess's AdditionalSiteDesignList\[\]  
-> stays). fetch( 'uiswitch', 'front\_designs' ) gives templates the choices.  
+> SwitchableDesignChain\[<design>\] ist die Fallback-Kette eines Designs, Designs  
+> getrennt durch „;“ (ohne sie bleibt die AdditionalSiteDesignList\[\] des Siteaccess  
+> bestehen). fetch( 'uiswitch', 'front\_designs' ) gibt Templates die Auswahl.  
 
 Standard: eine leere Liste.
 
@@ -131,7 +131,7 @@ SwitchableDesignChain[]
 
 ## DesignSwitchCookie
 
-> The cookie that keeps the visitor's choice  
+> Das Cookie, das die Wahl des Besuchers aufbewahrt  
 
 Standard: `exp_design`.
 

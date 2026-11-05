@@ -21,13 +21,13 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## BodyEnd
 
-> Templates an extension adds at the end of every page body, in this order (design: paths without "design:").  
-> Every pagelayout includes design:pagelayout/hooks/body\_end.tpl just before </body>, once per engine:  
+> Templates, die eine Erweiterung am Ende jedes Seiten-Bodys hinzufügt, in dieser Reihenfolge (design: Pfade ohne „design:“).  
+> Jedes Pagelayout bindet design:pagelayout/hooks/body\_end.tpl direkt vor </body> ein, einmal je Engine:  
 >   .tpl  {include uri='design:pagelayout/hooks/body\_end.tpl'}  
 >   .stpl {expinclude uri='design:pagelayout/hooks/body\_end.tpl'}  
 >   .twig {% expinclude uri='design:pagelayout/hooks/body\_end.tpl' %}  
-> What a hook prints may depend only on what the pagelayout's cache blocks key on (siteaccess, node, signed-in  
-> state, roles). Guide: doc/eng-us/features/6.0/pagelayout-hooks.md  
+> Was ein Hook ausgibt, darf nur von dem abhängen, wonach die Cache-Blöcke des Pagelayouts schlüsseln (Siteaccess, Knoten, Anmelde-  
+> status, Rollen). Anleitung: doc/eng-us/features/6.0/pagelayout-hooks.md  
 > BodyEnd\[\]=expwt/hook.tpl  
 
 Standard: eine leere Liste.

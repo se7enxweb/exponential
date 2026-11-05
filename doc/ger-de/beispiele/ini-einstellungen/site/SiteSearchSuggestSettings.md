@@ -11,14 +11,14 @@ generated: exp:help:examples
 
 Der Block `[SiteSearchSuggestSettings]` von `settings/site.ini`, mit 10 Einstellung(en).
 
-> Suggestions under the header search field of a site's design while the visitor types (the include  
-> design:parts/front\_search\_suggest.tpl in the design's search form; the script javascript/page/search\_suggest.js asks  
-> content/sitesuggest/(text)/<text>, expSearchSuggest::siteSuggest()). Per siteaccess: switch it off in the  
-> siteaccess's site.ini.append.php. Guide: doc/eng-us/help/searching.md ("Suggestions on the site").  
+> Vorschläge unter dem Suchfeld im Kopf des Designs einer Site, während der Besucher tippt (das Include  
+> design:parts/front\_search\_suggest.tpl im Suchformular des Designs; das Skript javascript/page/search\_suggest.js fragt  
+> content/sitesuggest/(text)/<text>, expSearchSuggest::siteSuggest()). Je Siteaccess: Schalten Sie es in der  
+> site.ini.append.php des Siteaccess ab. Anleitung: doc/eng-us/help/searching.md („Vorschläge auf der Site“).  
 >
-> Only content objects the user may read are suggested (the anonymous user: what is public), with their name, address,  
-> class name and a small image; never user accounts, content classes, administration pages or settings. The view  
-> needs the policy content/read, as content/search.  
+> Nur Inhaltsobjekte, die der Benutzer lesen darf, werden vorgeschlagen (der anonyme Benutzer: was öffentlich ist), mit Name, Adresse,  
+> Klassenname und einem kleinen Bild; nie Benutzerkonten, Inhaltsklassen, Seiten der Administration oder Einstellungen. Die Ansicht  
+> braucht die Richtlinie content/read, wie content/search.  
 
 Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -28,7 +28,7 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## Enabled
 
-> true or false. false: the field is a plain search field, content/sitesuggest answers 404.  
+> true oder false. false: Das Feld ist ein einfaches Suchfeld, content/sitesuggest antwortet mit 404.  
 
 Standard: `true`.
 
@@ -42,7 +42,7 @@ Enabled=true
 
 ## MinLength
 
-> The fewest characters typed before suggestions are asked for.  
+> Die wenigsten getippten Zeichen, bevor Vorschläge angefragt werden.  
 
 Standard: `3`.
 
@@ -56,7 +56,7 @@ MinLength=3
 
 ## Limit
 
-> The most suggestions (0 to 20).  
+> Die meisten Vorschläge (0 bis 20).  
 
 Standard: `6`.
 
@@ -70,7 +70,7 @@ Limit=6
 
 ## ExcludeClasses
 
-> Classes never suggested (besides every class with a user account attribute, which never is).  
+> Klassen, die nie vorgeschlagen werden (neben jeder Klasse mit einem Benutzerkonto-Attribut, die es nie wird).  
 
 Standard: eine Liste mit 2: `user`, `user_group`.
 
@@ -87,9 +87,9 @@ ExcludeClasses[]=user_group
 
 ## IncludeClasses
 
-> Only these classes are suggested and offered in the content type filter of the search page  
-> (content/front\_search\_page.tpl); empty: every class not excluded above. A site whose tree holds other sites' classes  
-> (a multisite package) names its own here, in the siteaccess's site.ini.append.php.  
+> Nur diese Klassen werden vorgeschlagen und im Inhaltstyp-Filter der Suchseite angeboten  
+> (content/front\_search\_page.tpl); leer: jede Klasse, die oben nicht ausgeschlossen ist. Eine Site, deren Baum Klassen anderer Sites enthält  
+> (ein Multisite-Paket), nennt hier ihre eigenen, in der site.ini.append.php des Siteaccess.  
 
 Standard: eine leere Liste.
 
@@ -104,8 +104,8 @@ IncludeClasses[]
 
 ## ThumbnailAlias
 
-> The image alias of the small picture of a suggestion (image.ini), from the object's first image attribute; empty:  
-> the class icon only.  
+> Der Bildalias des kleinen Bildes eines Vorschlags (image.ini), aus dem ersten Bildattribut des Objekts; leer:  
+> nur das Klassensymbol.  
 
 Standard: `small`.
 
@@ -119,7 +119,7 @@ ThumbnailAlias=small
 
 ## Wildcard
 
-> auto, enabled or disabled, as admininterface.ini \[SearchSuggestSettings\] Wildcard.  
+> auto, enabled oder disabled, wie admininterface.ini \[SearchSuggestSettings\] Wildcard.  
 
 Standard: `auto`.
 
@@ -133,8 +133,8 @@ Wildcard=auto
 
 ## PublicCacheTTL
 
-> Seconds an anonymous answer is kept (on the server and as Cache-Control: public, max-age), 0 to 3600. 0: not kept.  
-> A signed-in user's answer is never kept (private, no-store).  
+> Sekunden, die eine anonyme Antwort aufbewahrt wird (auf dem Server und als Cache-Control: public, max-age), 0 bis 3600. 0: nicht aufbewahrt.  
+> Die Antwort an einen angemeldeten Benutzer wird nie aufbewahrt (private, no-store).  
 
 Standard: `60`.
 
@@ -148,7 +148,7 @@ PublicCacheTTL=60
 
 ## RateLimit
 
-> Requests of one address within RateWindow seconds; more are answered 429 with Retry-After. 0: no limit.  
+> Anfragen einer Adresse innerhalb von RateWindow Sekunden; weitere werden mit 429 und Retry-After beantwortet. 0: keine Grenze.  
 
 Standard: `60`.
 

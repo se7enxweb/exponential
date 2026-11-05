@@ -19,11 +19,11 @@ Bearbeiten Sie `settings/migration.ini` nie selbst: Ein Update ersetzt die Datei
 
 ## AllowedRootList
 
-> The folders, relative to the installation, below which the step type code\_file writes, replaces or removes code and  
-> design files (templates, stylesheets, scripts, an extension's files). Nothing outside them is written, nor a .git  
-> folder, settings/override, var or vendor below them, nor a link that leads out of them. The file as it was is kept  
-> in var/backup/migration/files/<migration id>/ first, with its SHA-256 before and after; a failed migration and a  
-> rollback put it back. Empty (AllowedRootList\[\] alone): no file can be written, the step type is off.  
+> Die Ordner, relativ zur Installation, unterhalb derer der Schritttyp code\_file Code- und Designdateien schreibt, ersetzt oder entfernt  
+> (Templates, Stylesheets, Skripte, die Dateien einer Erweiterung). Nichts außerhalb davon wird geschrieben, auch kein .git-Ordner,  
+> settings/override, var oder vendor darunter, und kein Link, der aus ihnen hinausführt. Die Datei, wie sie war, wird zuerst  
+> in var/backup/migration/files/<migration id>/ aufbewahrt, mit ihrem SHA-256 vorher und nachher; eine gescheiterte Migration und eine  
+> Rücknahme stellen sie wieder her. Leer (AllowedRootList\[\] allein): Keine Datei kann geschrieben werden, der Schritttyp ist aus.  
 
 Standard: eine Liste mit 2: `design`, `extension`.
 

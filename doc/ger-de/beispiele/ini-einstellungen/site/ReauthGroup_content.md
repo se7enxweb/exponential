@@ -19,10 +19,10 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 
 ## Enabled
 
-> Removing content (also to the trash), publishing and storing a draft, asked when the form  
-> is sent, before the page goes on to the content. Off by default; switched on setup/reauth,  
-> for every siteaccess or one, and for every user or the members of some user groups.  
-> A confirmation counts for Minutes, so an editor is not asked at every save.  
+> Inhalte entfernen (auch in den Papierkorb), veröffentlichen und einen Entwurf speichern, gefragt beim Senden  
+> des Formulars, bevor die Seite zum Inhalt weitergeht. Standardmäßig aus; eingeschaltet auf setup/reauth,  
+> für jeden Siteaccess oder einen, und für jeden Benutzer oder die Mitglieder bestimmter Benutzergruppen.  
+> Eine Bestätigung gilt Minutes lang, ein Redakteur wird also nicht bei jedem Speichern gefragt.  
 
 Standard: `false`.
 

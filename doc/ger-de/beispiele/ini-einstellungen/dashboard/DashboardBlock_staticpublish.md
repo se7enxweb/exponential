@@ -11,8 +11,8 @@ generated: exp:help:examples
 
 Der Block `[DashboardBlock_staticpublish]` von `settings/dashboard.ini`, mit 3 Einstellung(en).
 
-> Static publishing: the targets with their stale pages and last publish, or (without a target) a one-line  
-> invitation to the wizard and the tutorial that each user can dismiss, with links to Setup > Static publishing.  
+> Statisches Veröffentlichen: die Ziele mit ihren veralteten Seiten und der letzten Veröffentlichung, oder (ohne Ziel) eine einzeilige  
+> Einladung zum Assistenten und zum Tutorial, die jeder Benutzer ausblenden kann, mit Links zu Setup > Statisches Veröffentlichen.  
 
 Bearbeiten Sie `settings/dashboard.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

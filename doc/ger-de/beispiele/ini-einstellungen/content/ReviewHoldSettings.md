@@ -19,16 +19,16 @@ Bearbeiten Sie `settings/content.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## AutoHold
 
-> Auto-hold of content submitted by visitors (doc/eng-us/features/6.0/review-hold.md, "Auto-hold"): the first  
-> publication of an object of a class in AutoHoldClassList\[\], made by a user who is not exempt (ExemptPolicyList\[\]),  
-> is put into the review hold (review\_hold/held) and its locations are hidden, in the publish operation itself (the  
-> step auto-review-hold, right before the content edit handlers, the view cache and the search index), so visitors  
-> never see it. A reviewer releases it in Dashboard > Recent content (moderation/recent) or in the website sidebar:  
-> the hold is released and the locations hidden by the auto-hold are revealed. Recorded in the audit as  
-> content.object.hold.auto. Needs the state group of the review hold (the upgrade step 6.0.15-review-hold); without  
-> it nothing is held. Read in the siteaccess the content is published in.  
+> Automatische Zurückhaltung von Inhalten, die Besucher einreichen (doc/eng-us/features/6.0/review-hold.md, „Auto-hold“): Die erste  
+> Veröffentlichung eines Objekts einer Klasse aus AutoHoldClassList\[\], durch einen Benutzer, der nicht ausgenommen ist (ExemptPolicyList\[\]),  
+> kommt in die Zurückhaltung zur Prüfung (review\_hold/held), und ihre Orte werden verborgen, in der Veröffentlichungsoperation selbst (dem  
+> Schritt auto-review-hold, direkt vor den Content-Edit-Handlern, dem View-Cache und dem Suchindex), sodass Besucher  
+> sie nie sehen. Ein Prüfer gibt sie unter Dashboard > Neue Inhalte (moderation/recent) oder in der Website-Seitenleiste frei:  
+> Die Zurückhaltung wird aufgehoben, und die von der automatischen Zurückhaltung verborgenen Orte werden wieder sichtbar. Im Audit aufgezeichnet als  
+> content.object.hold.auto. Braucht die Zustandsgruppe der Zurückhaltung zur Prüfung (den Upgrade-Schritt 6.0.15-review-hold); ohne  
+> sie wird nichts zurückgehalten. Gelesen im Siteaccess, in dem der Inhalt veröffentlicht wird.  
 >
-> enabled or disabled  
+> enabled oder disabled  
 
 Standard: `disabled`.
 
@@ -42,7 +42,7 @@ AutoHold=disabled
 
 ## AutoHoldClassList
 
-> The class identifiers whose new objects are held (comments, reviews, forum posts, user submissions ...).  
+> Die Klassenbezeichner, deren neue Objekte zurückgehalten werden (Kommentare, Bewertungen, Forenbeiträge, Einreichungen von Benutzern ...).  
 
 Standard: eine Liste mit 1: `comment`.
 
@@ -58,11 +58,11 @@ AutoHoldClassList[]=comment
 
 ## ExemptPolicyList
 
-> Who is never auto-held: a user who has any of these (module/function). Three are read in detail:  
->   state/assign   may place the held state on the object (the state/assign policy with its limitations)  
->   content/hide   may hide (and so reveal) the object's location  
->   moderation/act may run the actions of Dashboard > Recent content  
-> any other module/function counts when the user has it at all.  
+> Wer nie automatisch zurückgehalten wird: ein Benutzer, der eine davon hat (Modul/Funktion). Drei werden genau gelesen:  
+>   state/assign   darf den Zustand „zurückgehalten“ auf das Objekt setzen (die Richtlinie state/assign mit ihren Einschränkungen)  
+>   content/hide   darf den Ort des Objekts verbergen (und damit wieder sichtbar machen)  
+>   moderation/act darf die Aktionen von Dashboard > Neue Inhalte ausführen  
+> jedes andere Modul/jede andere Funktion zählt, wenn der Benutzer sie überhaupt hat.  
 
 Standard: eine Liste mit 2: `state/assign`, `moderation/act`.
 

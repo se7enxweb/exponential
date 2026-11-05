@@ -36,12 +36,12 @@ Roots[]=doc
 
 ## ActiveExtensionDocs
 
-> enabled: the documentation of every active extension is shown too, found when the help looks (an extension  
-> switched on or off is added or left out at once). Active means ActiveExtensions\[\] or the ActiveAccessExtensions\[\]  
-> of any siteaccess of AvailableSiteAccessList\[\], so every siteaccess and the console build the same index: the files of extension/<name>/doc tracked by the extension's own  
-> repository (or listed in its share/filelist.md5), and its README, CHANGELOG, LICENSE ... (ExtensionTopFiles\[\]).  
-> Their pages have the id ext/<name>/<path below doc> (ext/<name>/README.md for a top file), in the folder and  
-> category "Extensions" and on exphelp/extensions. disabled: only the extensions of ExtensionDocDirs\[\].  
+> enabled: Die Dokumentation jeder aktiven Erweiterung wird ebenfalls angezeigt, gefunden, wenn die Hilfe nachsieht (eine Erweiterung,  
+> die ein- oder ausgeschaltet wird, kommt sofort hinzu oder fällt weg). Aktiv heißt ActiveExtensions\[\] oder die ActiveAccessExtensions\[\]  
+> eines Siteaccess aus AvailableSiteAccessList\[\], sodass jeder Siteaccess und die Konsole denselben Index bauen: die Dateien von extension/<name>/doc, die das eigene  
+> Repository der Erweiterung versioniert (oder ihre share/filelist.md5 aufführt), und ihre README, CHANGELOG, LICENSE ... (ExtensionTopFiles\[\]).  
+> Ihre Seiten haben die ID ext/<name>/<path below doc> (ext/<name>/README.md für eine Datei der obersten Ebene), im Ordner und in der  
+> Kategorie „Erweiterungen“ und auf exphelp/extensions. disabled: nur die Erweiterungen aus ExtensionDocDirs\[\].  
 
 Standard: `enabled`.
 

@@ -107,6 +107,10 @@
         "en": "Where the builds are kept, relative to the var directory of the site\n(var/<site>/static-publish) unless absolute. Each target has its own\nfolder below it, never inside the site's own repository.",
         "de": "Wo die Builds liegen, relativ zum var-Verzeichnis der Website\n(var/<site>/static-publish), sofern nicht absolut. Jedes Ziel hat darunter seinen eigenen\nOrdner, nie im eigenen Repository der Website."
     },
+    "ini:settings/staticcache.ini [Target_example] AdminLinks": {
+        "en": "Links into an administration siteaccess (/admin/..., on the site's own host\nor LiveURL): keep (as OutsideLinks=keep) or unlink. The administration\nsiteaccesses are the ones the target's checks already know: a login is\nrequired, an administration design, or a name such as admin or editor.",
+        "de": "Links in einen Siteaccess der Administration (/admin/..., auf dem eigenen Host der\nWebsite oder LiveURL): keep (wie OutsideLinks=keep) oder unlink. Die Siteaccesses der\nAdministration sind die, die die Prüfungen des Ziels schon kennen: eine Anmeldung ist\nnötig, ein Administrationsdesign oder ein Name wie admin oder editor."
+    },
     "ini:settings/staticcache.ini [Target_example] Assets": {
         "en": "The files copied: referenced (what the pages and style sheets name) or\nreferenced-and-storage (also every image of var/<site>/storage that belongs\nto published content the anonymous user may see).",
         "de": "Die kopierten Dateien: referenced (was die Seiten und Stylesheets nennen) oder\nreferenced-and-storage (zusätzlich jedes Bild aus var/<site>/storage, das zu\nveröffentlichten Inhalten gehört, die der anonyme Benutzer sehen darf)."
@@ -124,8 +128,8 @@
         "de": "Die Seiten von dieser Adresse abrufen statt von der SiteURL des Siteaccess\n(eine interne Adresse derselben Website, http://127.0.0.1:8080)."
     },
     "ini:settings/staticcache.ini [Target_example] Credential": {
-        "en": "The credential the push uses: token:<secret name>, sshkey:<key id>,\napp:<installation> or none. Only a name; the value stays in Setup > Secrets.",
-        "de": "Die Zugangsdaten, die der Push nutzt: token:<geheimnisname>, sshkey:<schlüssel-id>,\napp:<installation> oder none. Nur ein Name; der Wert bleibt in Setup > Geheimnisse."
+        "en": "The credential the push uses: token:<secret name> (or token:env:<VARIABLE>)\nfor an https Remote, sshkey:<secret name> for an SSH Remote (exp:static:keys\n<target> --generate makes the key: sshkey:staticpublish.<target>.deploy_key),\napp:<installation> (a GitHub App, with the GitHub integration), or none (the\nhost's own SSH agent or credential helper). Only a name; the value stays in\nSetup > Secrets and reaches git only through its environment.",
+        "de": "Die Zugangsdaten, die der Push nutzt: token:<geheimnisname> (oder token:env:<VARIABLE>)\nfür ein https-Remote, sshkey:<geheimnisname> für ein SSH-Remote (exp:static:keys\n<ziel> --generate erzeugt den Schlüssel: sshkey:staticpublish.<ziel>.deploy_key),\napp:<installation> (eine GitHub-App, mit der GitHub-Anbindung) oder none (der\neigene SSH-Agent oder Credential-Helper des Hosts). Nur ein Name; der Wert bleibt in\nSetup > Geheimnisse und gelangt nur über seine Umgebung zu git."
     },
     "ini:settings/staticcache.ini [Target_example] CustomDomain": {
         "en": "A custom domain (www.example.com): written to CNAME; with it the site is\nserved at the root of the domain.",
@@ -167,14 +171,6 @@
         "en": "Where links to what the build does not hold go (the search, the login, a\nform, another siteaccess): the live site, https://www.example.com. Empty:\nhttps:// and the host of the siteaccess's SiteURL.",
         "de": "Wohin Links auf das gehen, was der Build nicht enthält (die Suche, die Anmeldung, ein\nFormular, ein anderer Siteaccess): die Live-Website, https://www.example.com. Leer:\nhttps:// und der Host der SiteURL des Siteaccess."
     },
-    "ini:settings/staticcache.ini [Target_example] OutsideLinks": {
-        "en": "Links to pages of the site's own host (or LiveURL) that the build does not\nhold (a module view such as /user/login or /shop/basket, a page with a\nquery string, a page left out, another siteaccess): keep (they go to the\nlive site, or stay as they are without one) or unlink (the link stays an\n<a> with its classes but without an address, marked aria-disabled and\ngreyed out by the build's exp-static.css, so the theme's look holds).\nImages, style sheets, forms (see Forms) and links to other hosts are never\ntaken out.",
-        "de": "Links auf Seiten des eigenen Hosts der Website (oder LiveURL), die der Build nicht\nenthält (eine Modulansicht wie /user/login oder /shop/basket, eine Seite mit\nQuery-String, eine ausgelassene Seite, ein anderer Siteaccess): keep (sie gehen zur\nLive-Website, oder bleiben ohne eine, wie sie sind) oder unlink (der Link bleibt\nein <a> mit seinen Klassen, aber ohne Adresse, mit aria-disabled markiert und von der\nexp-static.css des Builds ausgegraut, so dass das Aussehen des Themes bleibt). Bilder,\nStylesheets, Formulare (siehe Forms) und Links auf andere Hosts werden nie\nherausgenommen."
-    },
-    "ini:settings/staticcache.ini [Target_example] AdminLinks": {
-        "en": "Links into an administration siteaccess (/admin/..., on the site's own host\nor LiveURL): keep (as OutsideLinks=keep) or unlink. The administration\nsiteaccesses are the ones the target's checks already know: a login is\nrequired, an administration design, or a name such as admin or editor.",
-        "de": "Links in einen Siteaccess der Administration (/admin/..., auf dem eigenen Host der\nWebsite oder LiveURL): keep (wie OutsideLinks=keep) oder unlink. Die Siteaccesses der\nAdministration sind die, die die Prüfungen des Ziels schon kennen: eine Anmeldung ist\nnötig, ein Administrationsdesign oder ein Name wie admin oder editor."
-    },
     "ini:settings/staticcache.ini [Target_example] MaxDepth": {
         "en": "How many links away from the front page the crawl goes (0 to 30). Empty:\n[CacheSettings] MaxCacheDepth.",
         "de": "Wie viele Links von der Startseite entfernt das Durchlaufen geht (0 bis 30). Leer:\n[CacheSettings] MaxCacheDepth."
@@ -190,6 +186,10 @@
     "ini:settings/staticcache.ini [Target_example] Notify": {
         "en": "When to send a notice by e-mail ([StaticPublishSettings] NotifyEmail):\nfailure, success.",
         "de": "Wann eine Benachrichtigung per E-Mail gesendet wird ([StaticPublishSettings]\nNotifyEmail): failure, success."
+    },
+    "ini:settings/staticcache.ini [Target_example] OutsideLinks": {
+        "en": "Links to pages of the site's own host (or LiveURL) that the build does not\nhold (a module view such as /user/login or /shop/basket, a page with a\nquery string, a page left out, another siteaccess): keep (they go to the\nlive site, or stay as they are without one) or unlink (the link stays an\n<a> with its classes but without an address, marked aria-disabled and\ngreyed out by the build's exp-static.css, so the theme's look holds).\nImages, style sheets, forms (see Forms) and links to other hosts are never\ntaken out.",
+        "de": "Links auf Seiten des eigenen Hosts der Website (oder LiveURL), die der Build nicht\nenthält (eine Modulansicht wie /user/login oder /shop/basket, eine Seite mit\nQuery-String, eine ausgelassene Seite, ein anderer Siteaccess): keep (sie gehen zur\nLive-Website, oder bleiben ohne eine, wie sie sind) oder unlink (der Link bleibt\nein <a> mit seinen Klassen, aber ohne Adresse, mit aria-disabled markiert und von der\nexp-static.css des Builds ausgegraut, so dass das Aussehen des Themes bleibt). Bilder,\nStylesheets, Formulare (siehe Forms) und Links auf andere Hosts werden nie\nherausgenommen."
     },
     "ini:settings/staticcache.ini [Target_example] PostProcess": {
         "en": "What is done to every page: strip (always) removes debug output, form\ntokens, session ids and Content Security Policy nonces. Optional: minify\n(less white space, no comments), precompress (.gz, and .br with PHP's\nbrotli extension, next to every text file), fingerprint (style sheets and\nscripts named by the hash of their content, site.3f2a9c1b.css).",

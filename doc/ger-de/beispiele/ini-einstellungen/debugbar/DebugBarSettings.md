@@ -19,14 +19,14 @@ Bearbeiten Sie `settings/debugbar.ini` nie selbst: Ein Update ersetzt die Datei.
 
 ## ReadAccess
 
-> Who reads what the bar shows. debug (the default): whoever gets the debug output (DebugByIP, DebugByUser), logged in  
-> or not, reads everything: the settings, their log and the IP test, the cache list, the policies of their roles, the  
-> User and the Rendering tab, the versions of PHP and Exponential, OPcache and APCu. privileged: only users with  
-> setup/setup (settings, log, policies) or setup/managecache (cache list) read those, and the User and the Rendering  
-> tab show to setup/setup and to an anonymous visitor with debug output (the stricter rule). Changing settings and  
-> clearing caches always needs setup/setup or setup/managecache. A reader without setup/setup gets nobody else's data:  
-> the change log without who made each change, the IP and the user list masked, the IP test for their own address.  
-> Debug output on a public address shows every visitor their own session: set privileged in production.  
+> Wer liest, was die Leiste zeigt. debug (der Standard): Wer die Debug-Ausgabe bekommt (DebugByIP, DebugByUser), angemeldet  
+> oder nicht, liest alles: die Einstellungen, ihr Protokoll und den IP-Test, die Cache-Liste, die Richtlinien seiner Rollen, die  
+> Reiter User und Rendering, die Versionen von PHP und Exponential, OPcache und APCu. privileged: Nur Benutzer mit  
+> setup/setup (Einstellungen, Protokoll, Richtlinien) oder setup/managecache (Cache-Liste) lesen diese, und die Reiter User und Rendering  
+> erscheinen für setup/setup und für einen anonymen Besucher mit Debug-Ausgabe (die strengere Regel). Einstellungen ändern und  
+> Caches leeren braucht immer setup/setup oder setup/managecache. Ein Leser ohne setup/setup bekommt keine Daten anderer:  
+> das Änderungsprotokoll ohne den Urheber jeder Änderung, die IP- und die Benutzerliste maskiert, den IP-Test für die eigene Adresse.  
+> Debug-Ausgabe auf einer öffentlichen Adresse zeigt jedem Besucher seine eigene Sitzung: Setzen Sie im Produktivbetrieb privileged.  
 
 Standard: `debug`.
 
@@ -200,11 +200,11 @@ Presets[]=off
 
 ## Thresholds
 
-> The colours of the live summary: <warn>;<high>  
-> SQL query cache hit rate of the request in percent: amber BELOW the first, red below the second  
-> (also amber when a write made every result stale, red in shared mode without APCu)  
-> Memory of OPcache and APCu in use, in percent (shown to who reads everything, see ReadAccess; APCu is shared by  
-> every site of the PHP pool, and the query cache stops adding results below 25 % free, its ApcuReserve)  
+> Die Farben der Live-Zusammenfassung: <warn>;<high>  
+> Trefferquote des SQL-Abfrage-Caches der Anfrage in Prozent: gelb UNTER dem ersten, rot unter dem zweiten  
+> (auch gelb, wenn ein Schreibvorgang jedes Ergebnis veraltet gemacht hat, rot im gemeinsamen Modus ohne APCu)  
+> Belegter Speicher von OPcache und APCu in Prozent (gezeigt für den, der alles liest, siehe ReadAccess; APCu teilen sich  
+> alle Websites des PHP-Pools, und der Abfrage-Cache fügt unter 25 % frei keine Ergebnisse mehr hinzu, seine ApcuReserve)  
 
 Standard: ein Hash mit 8: `time_ms=500;1500`, `sql_count=100;300`, `sql_ms=200;800`, `memory_mb=64;192`, `templates=150;400`, `querycache_hit_rate=50;10`, `opcache_memory=80;95`, `apcu_memory=75;90`.
 

@@ -50,9 +50,9 @@ StopOnFailure=enabled
 
 ## Throttle
 
-> A pause between migrations, in seconds (0.5 is half a second, at most 60), to keep a long run from loading the  
-> server; PHP migrations that work in batches (expMigrationPhp::batches()) pause as long between their batches.  
-> Empty: none. --throttle=<seconds> of a run wins.  
+> Eine Pause zwischen Migrationen, in Sekunden (0.5 ist eine halbe Sekunde, höchstens 60), damit ein langer Lauf den  
+> Server nicht belastet; PHP-Migrationen, die in Stapeln arbeiten (expMigrationPhp::batches()), pausieren genauso lange zwischen ihren Stapeln.  
+> Leer: keine. --throttle=<seconds> eines Laufs gewinnt.  
 
 Standard: leer.
 
@@ -66,10 +66,10 @@ Throttle=
 
 ## MaxMigrations
 
-> A long run in parts. MaxMigrations: apply at most this many migrations in one run; MaxTime: start no further migration  
-> after this many seconds (the one running is finished). The rest stay pending: the next run (or exp:migration:resume)  
-> goes on with them, and a PHP migration that works in batches goes on from its checkpoint. Empty: no limit.  
-> --max-migrations=<n> and --max-time=<seconds> of a run win.  
+> Ein langer Lauf in Teilen. MaxMigrations: höchstens so viele Migrationen in einem Lauf anwenden; MaxTime: nach so vielen Sekunden keine weitere  
+> Migration beginnen (die laufende wird beendet). Der Rest bleibt ausstehend: Der nächste Lauf (oder exp:migration:resume)  
+> macht mit ihnen weiter, und eine PHP-Migration, die in Stapeln arbeitet, macht an ihrem Checkpoint weiter. Leer: keine Grenze.  
+> --max-migrations=<n> und --max-time=<seconds> eines Laufs gewinnen.  
 
 Standard: leer.
 
@@ -95,8 +95,8 @@ MaxTime=
 
 ## Nice
 
-> A lower priority for runs on the command line (and the administration's background runs), 1 to 19 as nice(1).  
-> Empty: unchanged. --nice=<n> of a run wins.  
+> Eine niedrigere Priorität für Läufe auf der Kommandozeile (und die Hintergrundläufe der Administration), 1 bis 19 wie nice(1).  
+> Leer: unverändert. --nice=<n> eines Laufs gewinnt.  
 
 Standard: leer.
 

@@ -44,8 +44,8 @@ php bin/php/velocity.php --help
 | `--clear-content` |  | deploy: die Caches content, exphttpcache, template-block und den Antwort-Cache auch leeren, wenn sich kein Template, keine Design-Datei, keine Einstellung und keine Übersetzung geändert hat |
 | `--all-caches` |  | deploy: jeden Cache leeren, gleich was sich seit dem letzten Deployment geändert hat |
 | `--caches` | erforderlich | deploy: diese Caches auch leeren, was immer sich geändert hat (IDs oder Tags von ezcache, durch Kommas getrennt: die Liste, die ein Migrationslauf meldet) |
-| `--migrate` |  | deploy: run the pending migrations (exp:migration:migrate --apply) before PHP-FPM and Velocity run the new code, whatever [DeploySettings] Migrate says |
-| `--no-migrate` |  | deploy: do not run the pending migrations, whatever [DeploySettings] Migrate says |
+| `--migrate` |  | deploy: die ausstehenden Migrationen ausführen (exp:migration:migrate --apply), bevor PHP-FPM und Velocity den neuen Code ausführen, unabhängig von [DeploySettings] Migrate |
+| `--no-migrate` |  | deploy: die ausstehenden Migrationen nicht ausführen, unabhängig von [DeploySettings] Migrate |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

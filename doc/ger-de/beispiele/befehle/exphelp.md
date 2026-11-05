@@ -53,7 +53,7 @@ Exit code: 0 fine, 1 check found errors (with --strict also warnings) or nothing
 | `--rebuild` |  | index: den Index neu aufbauen, auch wenn der im Cache aktuell ist |
 | `--list` |  | index: jede Seite auflisten |
 | `--no-images` |  | index: die externen Bilder der Seiten nicht abrufen (sie bleiben Links) |
-| `--keep-search` |  | index: keep a current search index instead of building it again (the background build a help page starts) |
+| `--keep-search` |  | index: einen aktuellen Suchindex behalten, statt ihn neu zu bauen (den Bau im Hintergrund, den eine Hilfeseite startet) |
 | `--json` |  | Ein JSON-Dokument statt des Textes ausgeben |
 | `--audience` | erforderlich | search, index --list: nur Seiten für diese Zielgruppe (editor, admin, developer, user) |
 | `--category` | erforderlich | search, index --list: nur Seiten dieser Kategorie |

@@ -142,14 +142,14 @@ ShowTemplatePathComments=disabled
 
 ## TemplatesWithoutDebugComments
 
-> Templates that Debug and ShowTemplatePathComments never wrap in comments, by their path below templates/  
-> (a file of that path in any design or extension), like  
-> <h1 class="title"{include uri='design:parts/exp\_content\_direction.tpl' ...}>, which prints into a start tag.  
-> Most templates need no entry: the comments are taken out of every rendered output where they would break it  
-> (inside a tag or an attribute value, inside <script>, <style>, <title> and <textarea>, and everywhere in output  
-> that is not HTML: XML, JSON, plain text), and a set-block that captures a value rather than HTML (a name, a URL,  
-> attributes, nothing) gets no comments. List a template whose output reaches the page some other way, e.g. through  
-> an operator that changes it before it is printed.  
+> Templates, die Debug und ShowTemplatePathComments nie in Kommentare einschließen, nach ihrem Pfad unterhalb von templates/  
+> (eine Datei dieses Pfads in einem beliebigen Design oder einer Erweiterung), wie  
+> <h1 class="title"{include uri='design:parts/exp\_content\_direction.tpl' ...}>, das in einen Start-Tag schreibt.  
+> Die meisten Templates brauchen keinen Eintrag: Die Kommentare werden aus jeder gerenderten Ausgabe entfernt, wo sie sie zerstören würden  
+> (in einem Tag oder einem Attributwert, in <script>, <style>, <title> und <textarea>, und überall in einer Ausgabe,  
+> die kein HTML ist: XML, JSON, reiner Text), und ein set-block, der einen Wert statt HTML erfasst (einen Namen, eine URL,  
+> Attribute, nichts), bekommt keine Kommentare. Nennen Sie ein Template, dessen Ausgabe auf anderem Weg in die Seite gelangt, z. B. über  
+> einen Operator, der sie ändert, bevor sie ausgegeben wird.  
 
 Standard: eine Liste mit 1: `parts/exp_content_direction.tpl`.
 

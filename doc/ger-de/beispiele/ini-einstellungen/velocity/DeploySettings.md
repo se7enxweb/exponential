@@ -104,11 +104,11 @@ WarmUpURL[]
 
 ## Migrate
 
-> Whether a deploy runs the pending migrations (./console exp:migration:migrate  
-> --apply, with its captions, record, commit and push), after the caches of  
-> settings and templates and before PHP-FPM and Velocity run the new code. A  
-> migration that fails stops the deploy there. enabled: every deploy;  
-> disabled: only deploy --migrate. deploy --no-migrate skips them either way.  
+> Ob ein Deploy die ausstehenden Migrationen ausführt (./console exp:migration:migrate  
+> --apply, mit seinen Sicherungspunkten, Aufzeichnung, Commit und Push), nach den Caches der  
+> Einstellungen und Templates und bevor PHP-FPM und Velocity den neuen Code ausführen. Eine  
+> Migration, die scheitert, stoppt das Deploy an dieser Stelle. enabled: jedes Deploy;  
+> disabled: nur deploy --migrate. deploy --no-migrate überspringt sie in jedem Fall.  
 
 Standard: `disabled`.
 

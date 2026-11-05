@@ -19,17 +19,17 @@ Bearbeiten Sie `settings/upgrade.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## StepList
 
-> The kernel's upgrade steps, class names (expUpgradeStep). Each step belongs to a stage  
-> (code, libraries, database, scripts, finish); they run by stage, then by version, then in  
-> the order listed here, after the steps they name in after().  
-> stage code: the git checkouts, fast-forward only, through git\_manager  
-> stage libraries: Composer (an update only when asked with --update, then install from composer.lock)  
-> stage database: schema and data, every engine (step 0 first: the record table exp\_migration)  
-> the older record expupgrade\_step of a pre-release of 6.0.15: its rows copied into exp\_migration, then dropped  
-> SQLite only: the tables the .dba keys on more than one column (ezcontentobject\_attribute on id, version) get that key  
-> the tables of every active extension that ships a share/db\_schema.dba, where missing (no data loaded)  
-> stage scripts: the PHP upgrade steps, through the classes of the scripts and setup commands  
-> stage finish: make the changes live and check the site (only when the run changed something)  
+> Die Upgrade-Schritte des Kernels, Klassennamen (expUpgradeStep). Jeder Schritt gehört zu einer Stufe  
+> (code, libraries, database, scripts, finish); sie laufen nach Stufe, dann nach Version, dann in  
+> der hier genannten Reihenfolge, nach den Schritten, die sie in after() nennen.  
+> Stufe code: die Git-Checkouts, nur Fast-Forward, über git\_manager  
+> Stufe libraries: Composer (ein Update nur auf Wunsch mit --update, dann install aus composer.lock)  
+> Stufe database: Schema und Daten, jede Engine (Schritt 0 zuerst: die Aufzeichnungstabelle exp\_migration)  
+> die ältere Aufzeichnung expupgrade\_step einer Vorabversion von 6.0.15: ihre Zeilen in exp\_migration kopiert, dann gelöscht  
+> Nur SQLite: Die Tabellen, deren Schlüssel die .dba über mehr als eine Spalte legt (ezcontentobject\_attribute auf id, version), bekommen diesen Schlüssel  
+> die Tabellen jeder aktiven Erweiterung, die eine share/db\_schema.dba mitbringt, wo sie fehlen (ohne Daten zu laden)  
+> Stufe scripts: die PHP-Upgrade-Schritte, über die Klassen der Skripte und Setup-Befehle  
+> Stufe finish: die Änderungen wirksam machen und die Site prüfen (nur wenn der Lauf etwas geändert hat)  
 
 Standard: eine Liste mit 47: `expUpgradeStepCodeUpdate`, `expUpgradeStepLibrariesUpdate`, `expUpgradeStepLibrariesInstall`, `expUpgradeStepMigrationTables`, `expUpgradeStepRecordTable`, `expUpgradeStepMigrationRecordingTables`, `expUpgradeStepSqliteCompositeKeys`, `expUpgradeStepPasswordHashWidth`, `expUpgradeStepTrashColumns`, `expUpgradeStepPdfExportFooter`, `expUpgradeStepRssOpmlPodcast`, `expUpgradeStepOrderStatuses` ....
 

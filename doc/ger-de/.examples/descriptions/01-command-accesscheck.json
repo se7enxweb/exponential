@@ -536,12 +536,12 @@
         "de": "Prüft die Datenbank-Update-Dateien gegen den Upgrade-Pfad; meldet fehlende oder überzählige Dateien"
     },
     "command:checkdbfiles --export-path": {
-        "en": "Directory in which a new directory for the SVN exports is made and removed again (default var/tmp)",
-        "de": "Verzeichnis, in dem ein neues Verzeichnis für die SVN-Exporte angelegt und wieder entfernt wird (Standard var/tmp)"
+        "en": "Directory in which a new directory for the release's files is made and removed again (default var/tmp)",
+        "de": "Verzeichnis, in dem ein neues Verzeichnis für die Dateien des Release angelegt und wieder entfernt wird (Standard var/tmp)"
     },
     "command:checkdbfiles --no-verify-branches": {
-        "en": "Do not verify the content of the files with previous branches (To avoid SVN usage)",
-        "de": "Den Inhalt der Dateien nicht mit früheren Branches vergleichen (um SVN zu vermeiden)"
+        "en": "Do not compare the files with a release (needs no git checkout)",
+        "de": "Die Dateien nicht mit einem Release vergleichen (braucht keinen Git-Checkout)"
     },
     "command:cleanuppolicies": {
         "en": "Remove policies of modules that no longer exist (dry run unless --apply)",

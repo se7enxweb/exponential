@@ -1,0 +1,434 @@
+{
+    "command:checkdbfiles --compare-with": {
+        "en": "The release to compare with: a tag or commit of the kernel's git repository (default: the newest tag v<major>.<minor>.<patch>)",
+        "de": "Das Release, mit dem verglichen wird: ein Tag oder Commit des Git-Repositorys des Kernels (Standard: das neueste Tag v<major>.<minor>.<patch>)"
+    },
+    "command:exphelp --keep-search": {
+        "en": "index: keep a current search index instead of building it again (the background build a help page starts)",
+        "de": "index: einen aktuellen Suchindex behalten, statt ihn neu zu bauen (den Bau im Hintergrund, den eine Hilfeseite startet)"
+    },
+    "command:expmigrationmigrate --max-migrations": {
+        "en": "Apply at most this many migrations; the rest stay pending for the next run (default [RunSettings] MaxMigrations, empty: all)",
+        "de": "Höchstens so viele Migrationen anwenden; der Rest bleibt für den nächsten Lauf ausstehend (Standard [RunSettings] MaxMigrations, leer: alle)"
+    },
+    "command:expmigrationmigrate --max-time": {
+        "en": "Start no further migration after this many seconds; the rest stay pending for the next run (default [RunSettings] MaxTime)",
+        "de": "Nach so vielen Sekunden keine weitere Migration mehr beginnen; der Rest bleibt für den nächsten Lauf ausstehend (Standard [RunSettings] MaxTime)"
+    },
+    "command:expmigrationmigrate --nice": {
+        "en": "Run at this lower priority, 1 to 19 as nice(1) (default [RunSettings] Nice)",
+        "de": "Mit dieser niedrigeren Priorität laufen, 1 bis 19 wie nice(1) (Standard [RunSettings] Nice)"
+    },
+    "command:expmigrationmigrate --throttle": {
+        "en": "Pause this many seconds between two migrations and between the batches of a long migration (default [RunSettings] Throttle)",
+        "de": "So viele Sekunden zwischen zwei Migrationen und zwischen den Stapeln einer langen Migration pausieren (Standard [RunSettings] Throttle)"
+    },
+    "command:expmigrationrecordstart --for": {
+        "en": "A window of this many minutes: the recording stops by itself when it ends",
+        "de": "Ein Fenster von so vielen Minuten: Die Aufzeichnung endet von selbst, wenn es abläuft"
+    },
+    "command:expmigrationrecordstart --until": {
+        "en": "A window until this time (2026-11-20 18:00, the server's time zone): the recording stops by itself then",
+        "de": "Ein Fenster bis zu diesem Zeitpunkt (2026-11-20 18:00, in der Zeitzone des Servers): Die Aufzeichnung endet dann von selbst"
+    },
+    "command:expmigrationresume --max-migrations": {
+        "en": "Apply at most this many migrations; the rest stay pending for the next run (default [RunSettings] MaxMigrations, empty: all)",
+        "de": "Höchstens so viele Migrationen anwenden; der Rest bleibt für den nächsten Lauf ausstehend (Standard [RunSettings] MaxMigrations, leer: alle)"
+    },
+    "command:expmigrationresume --max-time": {
+        "en": "Start no further migration after this many seconds; the rest stay pending for the next run (default [RunSettings] MaxTime)",
+        "de": "Nach so vielen Sekunden keine weitere Migration mehr beginnen; der Rest bleibt für den nächsten Lauf ausstehend (Standard [RunSettings] MaxTime)"
+    },
+    "command:expmigrationresume --nice": {
+        "en": "Run at this lower priority, 1 to 19 as nice(1) (default [RunSettings] Nice)",
+        "de": "Mit dieser niedrigeren Priorität laufen, 1 bis 19 wie nice(1) (Standard [RunSettings] Nice)"
+    },
+    "command:expmigrationresume --throttle": {
+        "en": "Pause this many seconds between two migrations and between the batches of a long migration (default [RunSettings] Throttle)",
+        "de": "So viele Sekunden zwischen zwei Migrationen und zwischen den Stapeln einer langen Migration pausieren (Standard [RunSettings] Throttle)"
+    },
+    "command:expstaticbuild --login": {
+        "en": "Run as this user (the administration starts its jobs so); recorded as who ran it",
+        "de": "Als dieser Benutzer laufen (so startet die Administration ihre Jobs); als Ausführender aufgezeichnet"
+    },
+    "command:expstaticbuild --progress": {
+        "en": "Also append the progress, one JSON object per line, to this file (the administration follows it)",
+        "de": "Den Fortschritt zusätzlich an diese Datei anhängen, ein JSON-Objekt pro Zeile (die Administration verfolgt sie)"
+    },
+    "command:expstaticbuild --run-id": {
+        "en": "The id of the run (date-time-6 hex digits) instead of a new one (the administration passes its job's id)",
+        "de": "Die ID des Laufs (Datum-Uhrzeit-6 Hexziffern) statt einer neuen (die Administration übergibt die ID ihres Jobs)"
+    },
+    "command:expstaticpublish --login": {
+        "en": "Run as this user (the administration starts its jobs so); recorded as who ran it",
+        "de": "Als dieser Benutzer laufen (so startet die Administration ihre Jobs); als Ausführender aufgezeichnet"
+    },
+    "command:expstaticpublish --progress": {
+        "en": "Also append the progress, one JSON object per line, to this file (the administration follows it)",
+        "de": "Den Fortschritt zusätzlich an diese Datei anhängen, ein JSON-Objekt pro Zeile (die Administration verfolgt sie)"
+    },
+    "command:expstaticpublish --run-id": {
+        "en": "The id of the run (date-time-6 hex digits) instead of a new one (the administration passes its job's id)",
+        "de": "Die ID des Laufs (Datum-Uhrzeit-6 Hexziffern) statt einer neuen (die Administration übergibt die ID ihres Jobs)"
+    },
+    "command:expstaticrollback --login": {
+        "en": "Run as this user (the administration starts its jobs so); recorded as who ran it",
+        "de": "Als dieser Benutzer laufen (so startet die Administration ihre Jobs); als Ausführender aufgezeichnet"
+    },
+    "command:expstaticrollback --progress": {
+        "en": "Also append the progress, one JSON object per line, to this file (the administration follows it)",
+        "de": "Den Fortschritt zusätzlich an diese Datei anhängen, ein JSON-Objekt pro Zeile (die Administration verfolgt sie)"
+    },
+    "command:expstaticrollback --run-id": {
+        "en": "The id of the run (date-time-6 hex digits) instead of a new one (the administration passes its job's id)",
+        "de": "Die ID des Laufs (Datum-Uhrzeit-6 Hexziffern) statt einer neuen (die Administration übergibt die ID ihres Jobs)"
+    },
+    "command:velocity --migrate": {
+        "en": "deploy: run the pending migrations (exp:migration:migrate --apply) before PHP-FPM and Velocity run the new code, whatever [DeploySettings] Migrate says",
+        "de": "deploy: die ausstehenden Migrationen ausführen (exp:migration:migrate --apply), bevor PHP-FPM und Velocity den neuen Code ausführen, unabhängig von [DeploySettings] Migrate"
+    },
+    "command:velocity --no-migrate": {
+        "en": "deploy: do not run the pending migrations, whatever [DeploySettings] Migrate says",
+        "de": "deploy: die ausstehenden Migrationen nicht ausführen, unabhängig von [DeploySettings] Migrate"
+    },
+    "ini:settings/admininterface.ini [PaginationSettings] ItemsPerPageList_moderation_recent": {
+        "en": "Dashboard > Recent content (moderation/recent): the objects shown at once. The first size is the default; the viewer's\nchoice is remembered (the preference admin_moderation_limit). At most 1000 are shown whatever is set here.",
+        "de": "Dashboard > Neue Inhalte (moderation/recent): die auf einmal gezeigten Objekte. Die erste Größe ist der Standard; die Wahl\ndes Betrachters wird gespeichert (die Einstellung admin_moderation_limit). Höchstens 1000 werden gezeigt, gleich was hier steht."
+    },
+    "ini:settings/admininterface.ini [SearchSuggestSettings] AdminMenuSkipParts": {
+        "en": "Navigation parts whose left menu holds no list of pages (a tree): only their tab is suggested.",
+        "de": "Navigationsteile, deren linkes Menü keine Liste von Seiten enthält (ein Baum): Nur ihr Reiter wird vorgeschlagen."
+    },
+    "ini:settings/admininterface.ini [SearchSuggestSettings] AdminPagesCacheTTL": {
+        "en": "The administration's pages of a user are drawn from the menus once and kept for this many seconds, per user\nand rights (cache item searchsuggest, cleared with the template caches). 0: drawn on every request.",
+        "de": "Die Seiten der Administration für einen Benutzer werden einmal aus den Menüs ermittelt und so viele Sekunden aufbewahrt, je Benutzer\nund Rechten (Cache-Eintrag searchsuggest, geleert mit den Template-Caches). 0: bei jeder Anfrage ermittelt."
+    },
+    "ini:settings/admininterface.ini [SearchSuggestSettings] Enabled": {
+        "en": "Suggestions under the header search field of the administration (design admin and admin4) while the user types:\ncontent, PDF pages, users, content classes and the administration's own pages, in groups, each only as far as\nthe user may see it, with \"View all results\" leading to the full search (content/search). The script\n(javascript/page/search_suggest.js) asks content/suggest/(text)/<text> for them (expSearchSuggest).\nGuide: doc/eng-us/help/searching.md (\"Suggestions while typing\").\n\nThe view content/suggest needs the policy content/read (as content/search): a user without it gets no\nsuggestions at all, not even the administration's pages, and the field is a plain search field for them.\nThe groups pages and limits below also bound the load: one request per typed pause (250 ms), plus at most\nLimits[pages] requests for the pages of documents.\n\ntrue or false. false: the field is a plain search field, content/suggest answers 404.",
+        "de": "Vorschläge unter dem Suchfeld im Kopf der Administration (Designs admin und admin4), während der Benutzer tippt:\nInhalte, PDF-Seiten, Benutzer, Inhaltsklassen und die eigenen Seiten der Administration, in Gruppen, jeweils nur so weit,\nwie der Benutzer sie sehen darf, und „Alle Ergebnisse anzeigen“ führt zur vollständigen Suche (content/search). Das Skript\n(javascript/page/search_suggest.js) fragt content/suggest/(text)/<text> danach (expSearchSuggest).\nAnleitung: doc/eng-us/help/searching.md („Vorschläge beim Tippen“).\n\nDie Ansicht content/suggest braucht die Richtlinie content/read (wie content/search): Ein Benutzer ohne sie bekommt gar keine\nVorschläge, nicht einmal die Seiten der Administration, und das Feld ist für ihn ein einfaches Suchfeld.\nDie Gruppen pages und die Grenzen unten begrenzen auch die Last: eine Anfrage pro Tipppause (250 ms), dazu höchstens\nLimits[pages] Anfragen für die Seiten von Dokumenten.\n\ntrue oder false. false: Das Feld ist ein einfaches Suchfeld, content/suggest antwortet mit 404."
+    },
+    "ini:settings/admininterface.ini [SearchSuggestSettings] Groups": {
+        "en": "The groups, in the order they are shown. Leave one out to switch it off:\n  content  the content search (eZ Find when it is the search engine, else the kernel's search engine), with the\n           user's read permissions applied by the search itself\n  pages    the PDF pages holding the words: only with eZ Find and the extension ezfindpdfdeepsearch active;\n           without them a document is suggested as a whole, in the content group\n  users    user accounts by login, e-mail address or name, only those the user may read\n  classes  content classes by name or identifier, only for a user who may open the class module\n  admin    the top tabs and the links of their left menus, as the design draws them for the user (\"Setup › Cache\")",
+        "de": "Die Gruppen, in der Reihenfolge, in der sie gezeigt werden. Lassen Sie eine weg, um sie abzuschalten:\n  content  die Inhaltssuche (eZ Find, wenn es die Suchmaschine ist, sonst die Suchmaschine des Kernels), mit den\n           Leserechten des Benutzers, die die Suche selbst anwendet\n  pages    die PDF-Seiten, die die Wörter enthalten: nur mit eZ Find und aktiver Erweiterung ezfindpdfdeepsearch;\n           ohne sie wird ein Dokument als Ganzes vorgeschlagen, in der Gruppe content\n  users    Benutzerkonten nach Login, E-Mail-Adresse oder Name, nur die, die der Benutzer lesen darf\n  classes  Inhaltsklassen nach Name oder Bezeichner, nur für einen Benutzer, der das Modul class öffnen darf\n  admin    die oberen Reiter und die Links ihrer linken Menüs, wie das Design sie für den Benutzer zeichnet („Setup › Cache“)"
+    },
+    "ini:settings/admininterface.ini [SearchSuggestSettings] Limits": {
+        "en": "The most suggestions per group (0 to 20; 0 switches the group off).",
+        "de": "Die meisten Vorschläge pro Gruppe (0 bis 20; 0 schaltet die Gruppe ab)."
+    },
+    "ini:settings/admininterface.ini [SearchSuggestSettings] MinLength": {
+        "en": "The fewest characters typed before suggestions are asked for.",
+        "de": "Die wenigsten getippten Zeichen, bevor Vorschläge angefragt werden."
+    },
+    "ini:settings/admininterface.ini [SearchSuggestSettings] PageHitClasses": {
+        "en": "The classes whose objects are documents with pages (pages group): the file class of the binary files.",
+        "de": "Die Klassen, deren Objekte Dokumente mit Seiten sind (Gruppe pages): die Dateiklasse der Binärdateien."
+    },
+    "ini:settings/admininterface.ini [SearchSuggestSettings] PagesPerDocument": {
+        "en": "The pages of one document, at most (pages group).",
+        "de": "Die Seiten eines Dokuments, höchstens (Gruppe pages)."
+    },
+    "ini:settings/admininterface.ini [SearchSuggestSettings] Wildcard": {
+        "en": "A \"*\" after the last word typed, so that a word is found while it is typed (\"Oste\" finds \"Ostern\"):\n  auto      only when site.ini [SearchSettings] EnableWildcard=true (both search engines honour it only then),\n            and only for a word of MinCharacterWildcard characters or more\n  enabled   always (for a word of MinCharacterWildcard characters or more)\n  disabled  never: only whole words are found",
+        "de": "Ein „*“ nach dem zuletzt getippten Wort, damit ein Wort schon beim Tippen gefunden wird („Oste“ findet „Ostern“):\n  auto      nur wenn site.ini [SearchSettings] EnableWildcard=true (beide Suchmaschinen beachten es nur dann),\n            und nur für ein Wort mit MinCharacterWildcard oder mehr Zeichen\n  enabled   immer (für ein Wort mit MinCharacterWildcard oder mehr Zeichen)\n  disabled  nie: Nur ganze Wörter werden gefunden"
+    },
+    "ini:settings/browse.ini [ExpImageFromObjectToDataType]": {
+        "en": "Action for choosing an existing image for the image datatype (ezimage):\nthe image of the chosen object is copied into the field being edited",
+        "de": "Aktion zum Auswählen eines vorhandenen Bildes für den Bild-Datentyp (ezimage):\ndas Bild des gewählten Objekts wird in das bearbeitete Feld kopiert"
+    },
+    "ini:settings/content.ini [ModerationSettings] JobThreshold": {
+        "en": "Dashboard > Recent content (the module moderation, doc/eng-us/features/6.0/moderation.md): the most recently created\nand modified content with its status, the review hold, who submitted it and from where, and actions on a selection.\nThe page sizes are admininterface.ini [PaginationSettings] ItemsPerPageList_moderation_recent[].\n\nA selection of more than this many objects runs as a content job in the background, with its progress on\ncontent/job/<id> and the result per object on moderation/report/<id>; up to it, the action runs in the request.",
+        "de": "Dashboard > Neue Inhalte (das Modul moderation, doc/eng-us/features/6.0/moderation.md): die zuletzt erstellten\nund geänderten Inhalte mit ihrem Status, der Zurückhaltung zur Prüfung, wer sie eingereicht hat und von wo, und Aktionen auf einer Auswahl.\nDie Seitengrößen sind admininterface.ini [PaginationSettings] ItemsPerPageList_moderation_recent[].\n\nEine Auswahl von mehr als so vielen Objekten läuft als Inhaltsjob im Hintergrund, mit ihrem Fortschritt auf\ncontent/job/<id> und dem Ergebnis je Objekt auf moderation/report/<id>; bis dahin läuft die Aktion in der Anfrage."
+    },
+    "ini:settings/content.ini [ModerationSettings] SubmissionEvents": {
+        "en": "The audit events the IP address and the browser of a submission are read from (the earliest of them per object,\nfrom the audit index): the auto-hold always records one; content.object.publish and content.object.create are off\nby default (audit.ini [AuditEventSettings]). The address and the browser are as the audit keeps them\n(audit.ini [AuditPrivacySettings]: truncated by default) and are shown only with the policy moderation/personaldata.",
+        "de": "Die Audit-Ereignisse, aus denen die IP-Adresse und der Browser einer Einreichung gelesen werden (das früheste davon je Objekt,\naus dem Audit-Index): Die automatische Zurückhaltung zeichnet immer eines auf; content.object.publish und content.object.create sind\nstandardmäßig aus (audit.ini [AuditEventSettings]). Adresse und Browser sind so, wie das Audit sie aufbewahrt\n(audit.ini [AuditPrivacySettings]: standardmäßig gekürzt), und werden nur mit der Richtlinie moderation/personaldata gezeigt."
+    },
+    "ini:settings/content.ini [PreviewLinkSettings] DefaultLifetime": {
+        "en": "Seconds a new link works when its maker does not choose (one day)",
+        "de": "Sekunden, die ein neuer Link funktioniert, wenn sein Ersteller nichts wählt (ein Tag)"
+    },
+    "ini:settings/content.ini [PreviewLinkSettings] Enabled": {
+        "en": "Share links to the preview of a draft (content/sharedpreview/<token>, expContentPreviewLink): a\nreviewer without an account sees that one version through a signed, expiring and revocable link.\nThe signing key is the secret content.previewlink.key of the secret store (made with the first\nlink; removing it on Setup > Secrets ends every link). Guide: doc/eng-us/features/6.0/preview-links.md\ntrue or false",
+        "de": "Links zum Teilen der Vorschau eines Entwurfs (content/sharedpreview/<token>, expContentPreviewLink): Ein\nPrüfer ohne Konto sieht diese eine Version über einen signierten, ablaufenden und widerrufbaren Link.\nDer Signaturschlüssel ist das Geheimnis content.previewlink.key des Secret-Stores (mit dem ersten\nLink angelegt; es auf Setup > Geheimnisse zu entfernen, beendet jeden Link). Anleitung: doc/eng-us/features/6.0/preview-links.md\ntrue oder false"
+    },
+    "ini:settings/content.ini [PreviewLinkSettings] MaxActivePerVersion": {
+        "en": "Links that work at the same time for one version",
+        "de": "Links, die für eine Version gleichzeitig funktionieren"
+    },
+    "ini:settings/content.ini [PreviewLinkSettings] MaxLifetime": {
+        "en": "The longest a link may work, in seconds (seven days); at least 300",
+        "de": "Die längste Zeit, die ein Link funktionieren darf, in Sekunden (sieben Tage); mindestens 300"
+    },
+    "ini:settings/content.ini [ReviewHoldSettings] AutoHold": {
+        "en": "Auto-hold of content submitted by visitors (doc/eng-us/features/6.0/review-hold.md, \"Auto-hold\"): the first\npublication of an object of a class in AutoHoldClassList[], made by a user who is not exempt (ExemptPolicyList[]),\nis put into the review hold (review_hold/held) and its locations are hidden, in the publish operation itself (the\nstep auto-review-hold, right before the content edit handlers, the view cache and the search index), so visitors\nnever see it. A reviewer releases it in Dashboard > Recent content (moderation/recent) or in the website sidebar:\nthe hold is released and the locations hidden by the auto-hold are revealed. Recorded in the audit as\ncontent.object.hold.auto. Needs the state group of the review hold (the upgrade step 6.0.15-review-hold); without\nit nothing is held. Read in the siteaccess the content is published in.\n\nenabled or disabled",
+        "de": "Automatische Zurückhaltung von Inhalten, die Besucher einreichen (doc/eng-us/features/6.0/review-hold.md, „Auto-hold“): Die erste\nVeröffentlichung eines Objekts einer Klasse aus AutoHoldClassList[], durch einen Benutzer, der nicht ausgenommen ist (ExemptPolicyList[]),\nkommt in die Zurückhaltung zur Prüfung (review_hold/held), und ihre Orte werden verborgen, in der Veröffentlichungsoperation selbst (dem\nSchritt auto-review-hold, direkt vor den Content-Edit-Handlern, dem View-Cache und dem Suchindex), sodass Besucher\nsie nie sehen. Ein Prüfer gibt sie unter Dashboard > Neue Inhalte (moderation/recent) oder in der Website-Seitenleiste frei:\nDie Zurückhaltung wird aufgehoben, und die von der automatischen Zurückhaltung verborgenen Orte werden wieder sichtbar. Im Audit aufgezeichnet als\ncontent.object.hold.auto. Braucht die Zustandsgruppe der Zurückhaltung zur Prüfung (den Upgrade-Schritt 6.0.15-review-hold); ohne\nsie wird nichts zurückgehalten. Gelesen im Siteaccess, in dem der Inhalt veröffentlicht wird.\n\nenabled oder disabled"
+    },
+    "ini:settings/content.ini [ReviewHoldSettings] AutoHoldClassList": {
+        "en": "The class identifiers whose new objects are held (comments, reviews, forum posts, user submissions ...).",
+        "de": "Die Klassenbezeichner, deren neue Objekte zurückgehalten werden (Kommentare, Bewertungen, Forenbeiträge, Einreichungen von Benutzern ...)."
+    },
+    "ini:settings/content.ini [ReviewHoldSettings] ExemptPolicyList": {
+        "en": "Who is never auto-held: a user who has any of these (module/function). Three are read in detail:\n  state/assign   may place the held state on the object (the state/assign policy with its limitations)\n  content/hide   may hide (and so reveal) the object's location\n  moderation/act may run the actions of Dashboard > Recent content\nany other module/function counts when the user has it at all.",
+        "de": "Wer nie automatisch zurückgehalten wird: ein Benutzer, der eine davon hat (Modul/Funktion). Drei werden genau gelesen:\n  state/assign   darf den Zustand „zurückgehalten“ auf das Objekt setzen (die Richtlinie state/assign mit ihren Einschränkungen)\n  content/hide   darf den Ort des Objekts verbergen (und damit wieder sichtbar machen)\n  moderation/act darf die Aktionen von Dashboard > Neue Inhalte ausführen\njedes andere Modul/jede andere Funktion zählt, wenn der Benutzer sie überhaupt hat."
+    },
+    "ini:settings/dashboard.ini [DashboardBlock_moderation]": {
+        "en": "Recent content: how many objects are held for review and how many were created today, with links to\nDashboard > Recent content (moderation/recent) filtered on them.",
+        "de": "Neue Inhalte: wie viele Objekte zur Prüfung zurückgehalten werden und wie viele heute erstellt wurden, mit Links zu\nDashboard > Neue Inhalte (moderation/recent), darauf gefiltert."
+    },
+    "ini:settings/dashboard.ini [DashboardBlock_staticpublish]": {
+        "en": "Static publishing: the targets with their stale pages and last publish, or (without a target) a one-line\ninvitation to the wizard and the tutorial that each user can dismiss, with links to Setup > Static publishing.",
+        "de": "Statisches Veröffentlichen: die Ziele mit ihren veralteten Seiten und der letzten Veröffentlichung, oder (ohne Ziel) eine einzeilige\nEinladung zum Assistenten und zum Tutorial, die jeder Benutzer ausblenden kann, mit Links zu Setup > Statisches Veröffentlichen."
+    },
+    "ini:settings/debugbar.ini [DebugBarSettings] ReadAccess": {
+        "en": "Who reads what the bar shows. debug (the default): whoever gets the debug output (DebugByIP, DebugByUser), logged in\nor not, reads everything: the settings, their log and the IP test, the cache list, the policies of their roles, the\nUser and the Rendering tab, the versions of PHP and Exponential, OPcache and APCu. privileged: only users with\nsetup/setup (settings, log, policies) or setup/managecache (cache list) read those, and the User and the Rendering\ntab show to setup/setup and to an anonymous visitor with debug output (the stricter rule). Changing settings and\nclearing caches always needs setup/setup or setup/managecache. A reader without setup/setup gets nobody else's data:\nthe change log without who made each change, the IP and the user list masked, the IP test for their own address.\nDebug output on a public address shows every visitor their own session: set privileged in production.",
+        "de": "Wer liest, was die Leiste zeigt. debug (der Standard): Wer die Debug-Ausgabe bekommt (DebugByIP, DebugByUser), angemeldet\noder nicht, liest alles: die Einstellungen, ihr Protokoll und den IP-Test, die Cache-Liste, die Richtlinien seiner Rollen, die\nReiter User und Rendering, die Versionen von PHP und Exponential, OPcache und APCu. privileged: Nur Benutzer mit\nsetup/setup (Einstellungen, Protokoll, Richtlinien) oder setup/managecache (Cache-Liste) lesen diese, und die Reiter User und Rendering\nerscheinen für setup/setup und für einen anonymen Besucher mit Debug-Ausgabe (die strengere Regel). Einstellungen ändern und\nCaches leeren braucht immer setup/setup oder setup/managecache. Ein Leser ohne setup/setup bekommt keine Daten anderer:\ndas Änderungsprotokoll ohne den Urheber jeder Änderung, die IP- und die Benutzerliste maskiert, den IP-Test für die eigene Adresse.\nDebug-Ausgabe auf einer öffentlichen Adresse zeigt jedem Besucher seine eigene Sitzung: Setzen Sie im Produktivbetrieb privileged."
+    },
+    "ini:settings/exphelp.ini [ContextHelp] ReportSecurityAnchor": {
+        "en": "Where a siteaccess switches the view exphelp/report off (site.ini [SiteAccessRules]), \"Report an error\" opens the\npage of Map[exphelp/report] instead and its security link this heading of it (on a translated page the heading in\nthe same position: #sicherheitsprobleme in German). expHelp::reportLinks(), fetch( 'exphelp', 'report_links' ).",
+        "de": "Wo ein Siteaccess die Ansicht exphelp/report abschaltet (site.ini [SiteAccessRules]), öffnet „Fehler melden“ stattdessen die\nSeite von Map[exphelp/report] und ihr Sicherheitslink diese Überschrift darin (auf einer übersetzten Seite die Überschrift an\nderselben Stelle: #sicherheitsprobleme im Deutschen). expHelp::reportLinks(), fetch( 'exphelp', 'report_links' )."
+    },
+    "ini:settings/menu.ini [Leftmenu_my] CollapseAfter": {
+        "en": "The first 10 links show; the rest, the trail links among them on a long menu, follow in a \"More (count)\"\ndisclosure, open when it holds the current page (parts/ini_menu.tpl). 0, or no value, shows every link.",
+        "de": "Die ersten 10 Links werden gezeigt; der Rest, bei einem langen Menü darunter die abschließenden Links, folgt in einem aufklappbaren\n„Mehr (Anzahl)“, das offen ist, wenn es die aktuelle Seite enthält (parts/ini_menu.tpl). 0 oder kein Wert zeigt jeden Link."
+    },
+    "ini:settings/menu.ini [Leftmenu_setup] GroupTabsLeftMenu": {
+        "en": "The left menu of the pages of such a tab while it is moved into Setup (admin4 page_leftmenu.tpl, admin4l's left menu\nblock): setup draws this menu with the tab's group open (default); tab draws the tab's own left menu (the view's\nleft_menu, else parts/<part>/menu.tpl), while the top menu still marks the Setup tab and opens the Setup mega menu;\nthe path above the page is the view's own either way. design/admin and exp_adminui never move a tab into Setup, so they always draw the tab's own menu\n(doc/eng-us/features/6.0/admin4-design.md, \"Moving a tab into Setup\").",
+        "de": "Das linke Menü der Seiten eines solchen Reiters, während er in Setup verschoben ist (admin4 page_leftmenu.tpl, der Block des linken Menüs\nvon admin4l): setup zeichnet dieses Menü mit geöffneter Gruppe des Reiters (Standard); tab zeichnet das eigene linke Menü des Reiters (das\nleft_menu der Ansicht, sonst parts/<part>/menu.tpl), während das obere Menü weiter den Reiter Setup markiert und das Setup-Megamenü öffnet;\nder Pfad über der Seite ist in beiden Fällen der der Ansicht. design/admin und exp_adminui verschieben nie einen Reiter in Setup, sie zeichnen also immer das eigene Menü des Reiters\n(doc/eng-us/features/6.0/admin4-design.md, „Moving a tab into Setup“)."
+    },
+    "ini:settings/migration.ini [AdminSettings] Background": {
+        "en": "How a run started there goes to the background:\n  process  a console process of its own, started at once (the default)\n  queue    a job of expqueue (the extension), run by its worker, when expqueue is active, its tables are installed,\n           expqueue.ini has the job type below and a worker is running; else a process as above\nThe job type, in the site's expqueue.ini.append.php:\n  [JobType_migration.run]\n  Handler=expMigrationQueueHandler\n  Class=bulk\n  Timeout=86400\n  Description=A migration run started in Setup > Migrations",
+        "de": "Wie ein dort gestarteter Lauf in den Hintergrund geht:\n  process  ein eigener Konsolenprozess, sofort gestartet (der Standard)\n  queue    ein Job von expqueue (der Erweiterung), von ihrem Worker ausgeführt, wenn expqueue aktiv ist, seine Tabellen installiert sind,\n           expqueue.ini den Job-Typ unten hat und ein Worker läuft; sonst ein Prozess wie oben\nDer Job-Typ, in der expqueue.ini.append.php der Site:\n  [JobType_migration.run]\n  Handler=expMigrationQueueHandler\n  Class=bulk\n  Timeout=86400\n  Description=A migration run started in Setup > Migrations"
+    },
+    "ini:settings/migration.ini [AdminSettings] QueueJobType": {
+        "en": "The expqueue job type of Background=queue.",
+        "de": "Der expqueue-Job-Typ von Background=queue."
+    },
+    "ini:settings/migration.ini [FileStepSettings] AllowedRootList": {
+        "en": "The folders, relative to the installation, below which the step type code_file writes, replaces or removes code and\ndesign files (templates, stylesheets, scripts, an extension's files). Nothing outside them is written, nor a .git\nfolder, settings/override, var or vendor below them, nor a link that leads out of them. The file as it was is kept\nin var/backup/migration/files/<migration id>/ first, with its SHA-256 before and after; a failed migration and a\nrollback put it back. Empty (AllowedRootList[] alone): no file can be written, the step type is off.",
+        "de": "Die Ordner, relativ zur Installation, unterhalb derer der Schritttyp code_file Code- und Designdateien schreibt, ersetzt oder entfernt\n(Templates, Stylesheets, Skripte, die Dateien einer Erweiterung). Nichts außerhalb davon wird geschrieben, auch kein .git-Ordner,\nsettings/override, var oder vendor darunter, und kein Link, der aus ihnen hinausführt. Die Datei, wie sie war, wird zuerst\nin var/backup/migration/files/<migration id>/ aufbewahrt, mit ihrem SHA-256 vorher und nachher; eine gescheiterte Migration und eine\nRücknahme stellen sie wieder her. Leer (AllowedRootList[] allein): Keine Datei kann geschrieben werden, der Schritttyp ist aus."
+    },
+    "ini:settings/migration.ini [InstallSettings] RunOnKickstart": {
+        "en": "The kickstarter (php bin/php/kickstarter.php run --apply) runs every pending migration of the new installation\n(./console exp:migration:migrate --apply) after the sites are created, while maintenance mode is still on.\ndisabled: it does not.",
+        "de": "Der Kickstarter (php bin/php/kickstarter.php run --apply) führt jede ausstehende Migration der neuen Installation aus\n(./console exp:migration:migrate --apply), nachdem die Sites angelegt sind, während der Wartungsmodus noch an ist.\ndisabled: Er tut es nicht."
+    },
+    "ini:settings/migration.ini [InstallSettings] RunOnPackageInstall": {
+        "en": "Migrations shipped with a package (a directory migrations/ at the top of the package, next to its package.xml or\npackage.json): installing the package (Setup > Packages, or a package the setup wizard or the kickstarter installs\nitem by item) runs them once its items are installed, with ./console exp:migration:migrate\n--path=<the package's migrations> --apply as the user who installs it (the console: [RunSettings] RunAsUser). A\nmigration that fails leaves the package not installed, so installing it again runs what is still pending.\ndisabled: the package's migrations are not run; ./console exp:migration:migrate --apply runs them with the others.",
+        "de": "Mit einem Paket ausgelieferte Migrationen (ein Verzeichnis migrations/ oben im Paket, neben seiner package.xml oder\npackage.json): Das Installieren des Pakets (Setup > Pakete, oder ein Paket, das der Setup-Assistent oder der Kickstarter\nElement für Element installiert) führt sie aus, sobald seine Elemente installiert sind, mit ./console exp:migration:migrate\n--path=<die Migrationen des Pakets> --apply als der installierende Benutzer (auf der Konsole: [RunSettings] RunAsUser). Eine\nMigration, die scheitert, lässt das Paket nicht installiert, sodass eine erneute Installation ausführt, was noch aussteht.\ndisabled: Die Migrationen des Pakets werden nicht ausgeführt; ./console exp:migration:migrate --apply führt sie mit den anderen aus."
+    },
+    "ini:settings/migration.ini [InstallSettings] RunOptions": {
+        "en": "The options of exp:migration:migrate for these runs: no-caption, no-restore, no-commit, no-push, no-tag,\ninclude-uncommitted. Installing writes settings, design and extension files the run would otherwise refuse as\nchanges that are not committed, and a new installation has nothing to push yet.",
+        "de": "Die Optionen von exp:migration:migrate für diese Läufe: no-caption, no-restore, no-commit, no-push, no-tag,\ninclude-uncommitted. Das Installieren schreibt Einstellungs-, Design- und Erweiterungsdateien, die der Lauf sonst als nicht\ncommittete Änderungen ablehnen würde, und eine neue Installation hat noch nichts zu pushen."
+    },
+    "ini:settings/migration.ini [InstallSettings] Timeout": {
+        "en": "Seconds a run at installation may take before it is stopped (and reported as failed).",
+        "de": "Sekunden, die ein Lauf bei der Installation dauern darf, bevor er gestoppt (und als gescheitert gemeldet) wird."
+    },
+    "ini:settings/migration.ini [RunSettings] MaxMigrations": {
+        "en": "A long run in parts. MaxMigrations: apply at most this many migrations in one run; MaxTime: start no further migration\nafter this many seconds (the one running is finished). The rest stay pending: the next run (or exp:migration:resume)\ngoes on with them, and a PHP migration that works in batches goes on from its checkpoint. Empty: no limit.\n--max-migrations=<n> and --max-time=<seconds> of a run win.",
+        "de": "Ein langer Lauf in Teilen. MaxMigrations: höchstens so viele Migrationen in einem Lauf anwenden; MaxTime: nach so vielen Sekunden keine weitere\nMigration beginnen (die laufende wird beendet). Der Rest bleibt ausstehend: Der nächste Lauf (oder exp:migration:resume)\nmacht mit ihnen weiter, und eine PHP-Migration, die in Stapeln arbeitet, macht an ihrem Checkpoint weiter. Leer: keine Grenze.\n--max-migrations=<n> und --max-time=<seconds> eines Laufs gewinnen."
+    },
+    "ini:settings/migration.ini [RunSettings] Nice": {
+        "en": "A lower priority for runs on the command line (and the administration's background runs), 1 to 19 as nice(1).\nEmpty: unchanged. --nice=<n> of a run wins.",
+        "de": "Eine niedrigere Priorität für Läufe auf der Kommandozeile (und die Hintergrundläufe der Administration), 1 bis 19 wie nice(1).\nLeer: unverändert. --nice=<n> eines Laufs gewinnt."
+    },
+    "ini:settings/setup.ini [phpversion] MinimumVersion": {
+        "en": "Supported: PHP 8.0 to 8.5. Usable without support: PHP 7.4 (Exponential 6.0.15 and later).\nMinimumVersion: older PHP is refused. SupportedVersion: below it the check passes with an\n\"unsupported\" notice (no bug-fix or security commitment; the features that need PHP 8 are missing).\ndoc/eng-us/help/why-exponential-supports-php-7-4.md",
+        "de": "Unterstützt: PHP 8.0 bis 8.5. Ohne Unterstützung nutzbar: PHP 7.4 (Exponential 6.0.15 und später).\nMinimumVersion: Älteres PHP wird abgelehnt. SupportedVersion: darunter besteht die Prüfung mit einem\nHinweis „nicht unterstützt“ (keine Zusage für Fehler- oder Sicherheitskorrekturen; die Funktionen, die PHP 8 brauchen, fehlen).\ndoc/eng-us/help/why-exponential-supports-php-7-4.md"
+    },
+    "ini:settings/site.ini [Cache_searchsuggest]": {
+        "en": "The administration's pages per user and rights that the header search suggests (expSearchSuggest,\nadmininterface.ini [SearchSuggestSettings] AdminPagesCacheTTL), in <cache directory>/searchsuggest/.\nCleared with the template caches and the user caches.",
+        "de": "Die Seiten der Administration je Benutzer und Rechten, die die Suche im Kopf vorschlägt (expSearchSuggest,\nadmininterface.ini [SearchSuggestSettings] AdminPagesCacheTTL), in <cache directory>/searchsuggest/.\nGeleert mit den Template-Caches und den Benutzer-Caches."
+    },
+    "ini:settings/site.ini [Cache_smarty]": {
+        "en": "Smarty's compiled .stpl templates (lib/smarty), in <cache directory>/smarty/. Cleared with\nthe template caches.",
+        "de": "Die kompilierten .stpl-Templates von Smarty (lib/smarty), in <cache directory>/smarty/. Geleert mit\nden Template-Caches."
+    },
+    "ini:settings/site.ini [ContentFieldMarkerSettings] Handlers": {
+        "en": "Markers around every rendered attribute ({attribute_view_gui}) for a tool that edits the page in place:\n  <!--exp-field data-exp-field=\"title\" data-exp-object=\"61\" data-exp-version=\"7\" data-exp-attribute=\"402\" data-exp-language=\"eng-US\"-->\n  ... the attribute's output ... <!--/exp-field-->\nHTML comments, so a page looks and matches CSS selectors the same with or without them. Only when one of\nthese classes says so for the request (a static active(); the website sidebar expwt adds\nexpwtFieldMarkerHandler: a signed-in user who may edit with the sidebar). None (the default): nothing is\nemitted, and visitors' pages and their caches stay exactly as they are.",
+        "de": "Markierungen um jedes gerenderte Attribut ({attribute_view_gui}) für ein Werkzeug, das die Seite an Ort und Stelle bearbeitet:\n  <!--exp-field data-exp-field=\"title\" data-exp-object=\"61\" data-exp-version=\"7\" data-exp-attribute=\"402\" data-exp-language=\"eng-US\"-->\n  ... die Ausgabe des Attributs ... <!--/exp-field-->\nHTML-Kommentare, sodass eine Seite mit oder ohne sie gleich aussieht und auf CSS-Selektoren gleich passt. Nur wenn eine\ndieser Klassen es für die Anfrage sagt (ein statisches active(); die Website-Seitenleiste expwt fügt\nexpwtFieldMarkerHandler hinzu: ein angemeldeter Benutzer, der mit der Seitenleiste bearbeiten darf). Keine (der Standard): Es wird nichts\nausgegeben, und die Seiten der Besucher und ihre Caches bleiben genau, wie sie sind."
+    },
+    "ini:settings/site.ini [DatabaseSettings] SQLiteBusyTimeout": {
+        "en": "SQLite only: how many milliseconds a single statement outside a transaction\n(an INSERT of a link, an UPDATE of a cronjob) waits for another write to end\nbefore it fails with \"database is busy: the statement waited N s\". It\nqueues on the same <database>.writer-lock as a transaction, and a lock SQLite\nreports at once is tried again within this time. SQLiteBusyTimeout applies to\nweb requests (PHP-FPM, Velocity), SQLiteCLIBusyTimeout to the command line.",
+        "de": "Nur SQLite: wie viele Millisekunden eine einzelne Anweisung außerhalb einer Transaktion\n(ein INSERT eines Links, ein UPDATE eines Cronjobs) auf das Ende eines anderen Schreibvorgangs wartet,\nbevor sie mit „database is busy: the statement waited N s“ scheitert. Sie\nreiht sich an derselben <database>.writer-lock ein wie eine Transaktion, und eine Sperre, die SQLite\nsofort meldet, wird innerhalb dieser Zeit erneut versucht. SQLiteBusyTimeout gilt für\nWebanfragen (PHP-FPM, Velocity), SQLiteCLIBusyTimeout für die Kommandozeile."
+    },
+    "ini:settings/site.ini [DatabaseSettings] SQLiteCLITransactionWait": {
+        "en": "SQLite only: the same wait on the command line (cronjobs, imports, scripts),\nin seconds. Nobody waits for a page there, so a cronjob waits for a long\nimport's writes instead of stopping with \"A database transaction in\nExponential failed\".",
+        "de": "Nur SQLite: dasselbe Warten auf der Kommandozeile (Cronjobs, Importe, Skripte),\nin Sekunden. Dort wartet niemand auf eine Seite, also wartet ein Cronjob auf die Schreibvorgänge eines langen\nImports, statt mit „A database transaction in\nExponential failed“ abzubrechen."
+    },
+    "ini:settings/site.ini [DebugSettings] CollectStatsPolicyList": {
+        "en": "Examples\nDebugUserIDList[]=14\nSigned-in users who hold one of these policies (module/function) get each\nrequest's statistics collected without any debug output: page time, SQL\nstatements, the content view cache, cache-blocks and the template tree, as\nthe debug bar shows them. Nothing is printed and no debug message is kept;\na tool of theirs shows the figures (the website sidebar's Performance panel\nadds expwt/performance here). Empty: only with debug output on.",
+        "de": "Beispiele\nDebugUserIDList[]=14\nAngemeldete Benutzer mit einer dieser Richtlinien (Modul/Funktion) bekommen die Statistik jeder\nAnfrage gesammelt, ohne jede Debug-Ausgabe: Seitenzeit, SQL-Anweisungen, den Content-View-Cache, Cache-Blöcke und den Template-Baum, so wie\ndie Debug-Leiste sie zeigt. Nichts wird ausgegeben und keine Debug-Meldung aufbewahrt;\nein Werkzeug von ihnen zeigt die Zahlen (das Leistungs-Panel der Website-Seitenleiste\nfügt hier expwt/performance hinzu). Leer: nur mit eingeschalteter Debug-Ausgabe."
+    },
+    "ini:settings/site.ini [DesignSettings] DesignSwitchCookie": {
+        "en": "The cookie that keeps the visitor's choice",
+        "de": "Das Cookie, das die Wahl des Besuchers aufbewahrt"
+    },
+    "ini:settings/site.ini [DesignSettings] SwitchableDesigns": {
+        "en": "A front siteaccess can let every visitor switch between designs with one\nclick (doc/eng-us/features/6.0/front-design-switch.md). Off while the list is\nempty; never on an administration siteaccess. The siteaccess's SiteDesign is\nthe default; a link with the view parameter /(design)/<name> chooses another\none and keeps it in a cookie. In the siteaccess's site.ini.append.php:\n  SwitchableDesigns[]\n  SwitchableDesigns[]=doc2025\n  SwitchableDesignLabel[doc]=Modern\n  SwitchableDesignLabel[doc2025]=Classic\n  SwitchableDesignChain[doc2025]=standard\nSwitchableDesignChain[<design>] is the fallback chain of a design, designs\nseparated by \";\" (without one the siteaccess's AdditionalSiteDesignList[]\nstays). fetch( 'uiswitch', 'front_designs' ) gives templates the choices.",
+        "de": "Ein Front-Siteaccess kann jeden Besucher mit einem Klick zwischen Designs wechseln lassen\n(doc/eng-us/features/6.0/front-design-switch.md). Aus, solange die Liste\nleer ist; nie in einem Administrations-Siteaccess. Das SiteDesign des Siteaccess ist\nder Standard; ein Link mit dem Ansichtsparameter /(design)/<name> wählt ein anderes\nund bewahrt es in einem Cookie. In der site.ini.append.php des Siteaccess:\n  SwitchableDesigns[]\n  SwitchableDesigns[]=doc2025\n  SwitchableDesignLabel[doc]=Modern\n  SwitchableDesignLabel[doc2025]=Classic\n  SwitchableDesignChain[doc2025]=standard\nSwitchableDesignChain[<design>] ist die Fallback-Kette eines Designs, Designs\ngetrennt durch „;“ (ohne sie bleibt die AdditionalSiteDesignList[] des Siteaccess\nbestehen). fetch( 'uiswitch', 'front_designs' ) gibt Templates die Auswahl."
+    },
+    "ini:settings/site.ini [PageLayoutHooks] BodyEnd": {
+        "en": "Templates an extension adds at the end of every page body, in this order (design: paths without \"design:\").\nEvery pagelayout includes design:pagelayout/hooks/body_end.tpl just before </body>, once per engine:\n  .tpl  {include uri='design:pagelayout/hooks/body_end.tpl'}\n  .stpl {expinclude uri='design:pagelayout/hooks/body_end.tpl'}\n  .twig {% expinclude uri='design:pagelayout/hooks/body_end.tpl' %}\nWhat a hook prints may depend only on what the pagelayout's cache blocks key on (siteaccess, node, signed-in\nstate, roles). Guide: doc/eng-us/features/6.0/pagelayout-hooks.md\nBodyEnd[]=expwt/hook.tpl",
+        "de": "Templates, die eine Erweiterung am Ende jedes Seiten-Bodys hinzufügt, in dieser Reihenfolge (design: Pfade ohne „design:“).\nJedes Pagelayout bindet design:pagelayout/hooks/body_end.tpl direkt vor </body> ein, einmal je Engine:\n  .tpl  {include uri='design:pagelayout/hooks/body_end.tpl'}\n  .stpl {expinclude uri='design:pagelayout/hooks/body_end.tpl'}\n  .twig {% expinclude uri='design:pagelayout/hooks/body_end.tpl' %}\nWas ein Hook ausgibt, darf nur von dem abhängen, wonach die Cache-Blöcke des Pagelayouts schlüsseln (Siteaccess, Knoten, Anmelde-\nstatus, Rollen). Anleitung: doc/eng-us/features/6.0/pagelayout-hooks.md\nBodyEnd[]=expwt/hook.tpl"
+    },
+    "ini:settings/site.ini [ReauthGroup_delete] Rules": {
+        "en": "Dashboard > Recent content: moving the selected items to the trash or deleting them (the confirmation's button)",
+        "de": "Dashboard > Neue Inhalte: die ausgewählten Elemente in den Papierkorb verschieben oder löschen (die Schaltfläche der Bestätigung)"
+    },
+    "ini:settings/site.ini [SiteSearchSuggestSettings]": {
+        "en": "Suggestions under the header search field of a site's design while the visitor types (the include\ndesign:parts/front_search_suggest.tpl in the design's search form; the script javascript/page/search_suggest.js asks\ncontent/sitesuggest/(text)/<text>, expSearchSuggest::siteSuggest()). Per siteaccess: switch it off in the\nsiteaccess's site.ini.append.php. Guide: doc/eng-us/help/searching.md (\"Suggestions on the site\").\n\nOnly content objects the user may read are suggested (the anonymous user: what is public), with their name, address,\nclass name and a small image; never user accounts, content classes, administration pages or settings. The view\nneeds the policy content/read, as content/search.",
+        "de": "Vorschläge unter dem Suchfeld im Kopf des Designs einer Site, während der Besucher tippt (das Include\ndesign:parts/front_search_suggest.tpl im Suchformular des Designs; das Skript javascript/page/search_suggest.js fragt\ncontent/sitesuggest/(text)/<text>, expSearchSuggest::siteSuggest()). Je Siteaccess: Schalten Sie es in der\nsite.ini.append.php des Siteaccess ab. Anleitung: doc/eng-us/help/searching.md („Vorschläge auf der Site“).\n\nNur Inhaltsobjekte, die der Benutzer lesen darf, werden vorgeschlagen (der anonyme Benutzer: was öffentlich ist), mit Name, Adresse,\nKlassenname und einem kleinen Bild; nie Benutzerkonten, Inhaltsklassen, Seiten der Administration oder Einstellungen. Die Ansicht\nbraucht die Richtlinie content/read, wie content/search."
+    },
+    "ini:settings/site.ini [SiteSearchSuggestSettings] Enabled": {
+        "en": "true or false. false: the field is a plain search field, content/sitesuggest answers 404.",
+        "de": "true oder false. false: Das Feld ist ein einfaches Suchfeld, content/sitesuggest antwortet mit 404."
+    },
+    "ini:settings/site.ini [SiteSearchSuggestSettings] ExcludeClasses": {
+        "en": "Classes never suggested (besides every class with a user account attribute, which never is).",
+        "de": "Klassen, die nie vorgeschlagen werden (neben jeder Klasse mit einem Benutzerkonto-Attribut, die es nie wird)."
+    },
+    "ini:settings/site.ini [SiteSearchSuggestSettings] IncludeClasses": {
+        "en": "Only these classes are suggested and offered in the content type filter of the search page\n(content/front_search_page.tpl); empty: every class not excluded above. A site whose tree holds other sites' classes\n(a multisite package) names its own here, in the siteaccess's site.ini.append.php.",
+        "de": "Nur diese Klassen werden vorgeschlagen und im Inhaltstyp-Filter der Suchseite angeboten\n(content/front_search_page.tpl); leer: jede Klasse, die oben nicht ausgeschlossen ist. Eine Site, deren Baum Klassen anderer Sites enthält\n(ein Multisite-Paket), nennt hier ihre eigenen, in der site.ini.append.php des Siteaccess."
+    },
+    "ini:settings/site.ini [SiteSearchSuggestSettings] Limit": {
+        "en": "The most suggestions (0 to 20).",
+        "de": "Die meisten Vorschläge (0 bis 20)."
+    },
+    "ini:settings/site.ini [SiteSearchSuggestSettings] MinLength": {
+        "en": "The fewest characters typed before suggestions are asked for.",
+        "de": "Die wenigsten getippten Zeichen, bevor Vorschläge angefragt werden."
+    },
+    "ini:settings/site.ini [SiteSearchSuggestSettings] PublicCacheTTL": {
+        "en": "Seconds an anonymous answer is kept (on the server and as Cache-Control: public, max-age), 0 to 3600. 0: not kept.\nA signed-in user's answer is never kept (private, no-store).",
+        "de": "Sekunden, die eine anonyme Antwort aufbewahrt wird (auf dem Server und als Cache-Control: public, max-age), 0 bis 3600. 0: nicht aufbewahrt.\nDie Antwort an einen angemeldeten Benutzer wird nie aufbewahrt (private, no-store)."
+    },
+    "ini:settings/site.ini [SiteSearchSuggestSettings] RateLimit": {
+        "en": "Requests of one address within RateWindow seconds; more are answered 429 with Retry-After. 0: no limit.",
+        "de": "Anfragen einer Adresse innerhalb von RateWindow Sekunden; weitere werden mit 429 und Retry-After beantwortet. 0: keine Grenze."
+    },
+    "ini:settings/site.ini [SiteSearchSuggestSettings] ThumbnailAlias": {
+        "en": "The image alias of the small picture of a suggestion (image.ini), from the object's first image attribute; empty:\nthe class icon only.",
+        "de": "Der Bildalias des kleinen Bildes eines Vorschlags (image.ini), aus dem ersten Bildattribut des Objekts; leer:\nnur das Klassensymbol."
+    },
+    "ini:settings/site.ini [SiteSearchSuggestSettings] Wildcard": {
+        "en": "auto, enabled or disabled, as admininterface.ini [SearchSuggestSettings] Wildcard.",
+        "de": "auto, enabled oder disabled, wie admininterface.ini [SearchSuggestSettings] Wildcard."
+    },
+    "ini:settings/site.ini [TemplateSettings] TemplatesWithoutDebugComments": {
+        "en": "Templates that Debug and ShowTemplatePathComments never wrap in comments, by their path below templates/\n(a file of that path in any design or extension), like\n<h1 class=\"title\"{include uri='design:parts/exp_content_direction.tpl' ...}>, which prints into a start tag.\nMost templates need no entry: the comments are taken out of every rendered output where they would break it\n(inside a tag or an attribute value, inside <script>, <style>, <title> and <textarea>, and everywhere in output\nthat is not HTML: XML, JSON, plain text), and a set-block that captures a value rather than HTML (a name, a URL,\nattributes, nothing) gets no comments. List a template whose output reaches the page some other way, e.g. through\nan operator that changes it before it is printed.",
+        "de": "Templates, die Debug und ShowTemplatePathComments nie in Kommentare einschließen, nach ihrem Pfad unterhalb von templates/\n(eine Datei dieses Pfads in einem beliebigen Design oder einer Erweiterung), wie\n<h1 class=\"title\"{include uri='design:parts/exp_content_direction.tpl' ...}>, das in einen Start-Tag schreibt.\nDie meisten Templates brauchen keinen Eintrag: Die Kommentare werden aus jeder gerenderten Ausgabe entfernt, wo sie sie zerstören würden\n(in einem Tag oder einem Attributwert, in <script>, <style>, <title> und <textarea>, und überall in einer Ausgabe,\ndie kein HTML ist: XML, JSON, reiner Text), und ein set-block, der einen Wert statt HTML erfasst (einen Namen, eine URL,\nAttribute, nichts), bekommt keine Kommentare. Nennen Sie ein Template, dessen Ausgabe auf anderem Weg in die Seite gelangt, z. B. über\neinen Operator, der sie ändert, bevor sie ausgegeben wird."
+    },
+    "ini:settings/smarty.ini": {
+        "en": "Smarty (.stpl) template settings, lib/smarty. Override in settings/override/smarty.ini.append.php.",
+        "de": "Einstellungen für Smarty-Templates (.stpl), lib/smarty. Überschreiben in settings/override/smarty.ini.append.php."
+    },
+    "ini:settings/smarty.ini [SmartySettings] CompileCheck": {
+        "en": "enabled: Smarty recompiles a .stpl when it changed. disabled: never checks (production;\nclear the template cache after a template change).",
+        "de": "enabled: Smarty kompiliert eine .stpl neu, wenn sie sich geändert hat. disabled: prüft nie (Produktivbetrieb;\nleeren Sie nach einer Template-Änderung den Template-Cache)."
+    },
+    "ini:settings/smarty.ini [SmartySettings] Debugging": {
+        "en": "enabled: Smarty's debug console.",
+        "de": "enabled: die Debug-Konsole von Smarty."
+    },
+    "ini:settings/smarty.ini [SmartySettings] FunctionList": {
+        "en": "Exponential template functions callable as Smarty tags with named parameters,\ne.g. {attribute_view_gui attribute=$node.data_map.body}",
+        "de": "Exponential-Template-Funktionen, die als Smarty-Tags mit benannten Parametern aufrufbar sind,\nz. B. {attribute_view_gui attribute=$node.data_map.body}"
+    },
+    "ini:settings/smarty.ini [SmartySettings] LibraryPath": {
+        "en": "Where Smarty 5 is, when it is not installed with Composer (smarty/smarty ^5) in the\ninstallation's vendor/: the directory that holds src/Smarty.php, relative to the\ninstallation root or absolute. Empty: Composer's autoload only.",
+        "de": "Wo Smarty 5 liegt, wenn es nicht mit Composer (smarty/smarty ^5) im\nvendor/ der Installation installiert ist: das Verzeichnis, das src/Smarty.php enthält, relativ zum\nWurzelverzeichnis der Installation oder absolut. Leer: nur das Autoload von Composer."
+    },
+    "ini:settings/smarty.ini [SmartySettings] ParameterOperatorList": {
+        "en": "Template operators that always take their arguments as parameters and never read the value they are\napplied to, for operators without template hints (the bridge cannot see that from the operator). With it,\n{myop('a', 'b')} calls the operator with the parameters 'a' and 'b', as myop( 'a', 'b' ) does in a .tpl;\nwithout it, 'a' would be its input. The kernel's own (ezhttp, ezhttp_hasvariable, has_role, topmenu ...) are\nbuilt in. Read once per process: a change needs a deploy (a restart of the PHP workers).",
+        "de": "Template-Operatoren, die ihre Argumente immer als Parameter nehmen und nie den Wert lesen, auf den sie\nangewendet werden, für Operatoren ohne Template-Hinweise (die Brücke kann das dem Operator nicht ansehen). Damit\nruft {myop('a', 'b')} den Operator mit den Parametern 'a' und 'b' auf, wie myop( 'a', 'b' ) in einer .tpl;\nohne es wäre 'a' seine Eingabe. Die eigenen des Kernels (ezhttp, ezhttp_hasvariable, has_role, topmenu ...) sind\neingebaut. Einmal je Prozess gelesen: Eine Änderung braucht ein Deploy (einen Neustart der PHP-Worker)."
+    },
+    "ini:settings/smarty.ini [SmartySettings] Security": {
+        "en": "Smarty security policy for .stpl templates: enabled or disabled. Enabled, a template is compiled with the\nlists below and refused at compile time when it uses something they do not allow. A template compiled\nwith the policy is kept apart from one compiled without it (<cache dir>/smarty/compile-secure).\nSee doc/eng-us/guides/smarty-templates-security.md.",
+        "de": "Smarty-Sicherheitsrichtlinie für .stpl-Templates: enabled oder disabled. Eingeschaltet wird ein Template mit den\nListen unten kompiliert und beim Kompilieren abgelehnt, wenn es etwas verwendet, das sie nicht erlauben. Ein Template, das\nmit der Richtlinie kompiliert wurde, wird getrennt von einem ohne sie kompilierten aufbewahrt (<cache dir>/smarty/compile-secure).\nSiehe doc/eng-us/guides/smarty-templates-security.md."
+    },
+    "ini:settings/smarty.ini [SmartySettings] SecurityAllowedModifierList": {
+        "en": "Smarty's own modifiers a template may use; empty: all of them except SecurityDisabledModifierList.\nExponential's operators ({$text|wash}, {concat($a, $b)}, {fetch('content', 'node', ...)}) are always\nallowed unless they are disabled below.",
+        "de": "Die eigenen Modifikatoren von Smarty, die ein Template verwenden darf; leer: alle außer SecurityDisabledModifierList.\nDie Operatoren von Exponential ({$text|wash}, {concat($a, $b)}, {fetch('content', 'node', ...)}) sind immer\nerlaubt, solange sie unten nicht abgeschaltet sind."
+    },
+    "ini:settings/smarty.ini [SmartySettings] SecurityAllowedTagList": {
+        "en": "Smarty's own tags a template may use; empty: all of them except SecurityDisabledTagList. The tags of\nExponential's template functions ({attribute_view_gui}, {expinclude}, {expcacheblock} ...) and the\nfunctions a template defines with {function} are always allowed unless they are disabled below.\nA closing tag ({/if}) follows its opening tag.",
+        "de": "Die eigenen Tags von Smarty, die ein Template verwenden darf; leer: alle außer SecurityDisabledTagList. Die Tags der\nTemplate-Funktionen von Exponential ({attribute_view_gui}, {expinclude}, {expcacheblock} ...) und die\nFunktionen, die ein Template mit {function} definiert, sind immer erlaubt, solange sie unten nicht abgeschaltet sind.\nEin schließender Tag ({/if}) folgt seinem öffnenden Tag."
+    },
+    "ini:settings/smarty.ini [SmartySettings] SecurityConstants": {
+        "en": "PHP constants in templates ({if $x == E_ALL}, {$smarty.const.X}): enabled or disabled.",
+        "de": "PHP-Konstanten in Templates ({if $x == E_ALL}, {$smarty.const.X}): enabled oder disabled."
+    },
+    "ini:settings/smarty.ini [SmartySettings] SecurityDisabledModifierList": {
+        "en": "Modifiers never allowed, Smarty's or Exponential's operators.",
+        "de": "Modifikatoren, die nie erlaubt sind, die von Smarty oder Operatoren von Exponential."
+    },
+    "ini:settings/smarty.ini [SmartySettings] SecurityDisabledSpecialVariableList": {
+        "en": "$smarty.<name> special variables a template may not read: the request and the environment\n($smarty.get, .post, .cookies, .session, .server, .env, .request), PHP constants ($smarty.const) and the\ntemplate object ($smarty.template_object, which reaches the Smarty instance and its settings).",
+        "de": "Spezialvariablen $smarty.<name>, die ein Template nicht lesen darf: die Anfrage und die Umgebung\n($smarty.get, .post, .cookies, .session, .server, .env, .request), PHP-Konstanten ($smarty.const) und das\nTemplate-Objekt ($smarty.template_object, das die Smarty-Instanz und ihre Einstellungen erreicht)."
+    },
+    "ini:settings/smarty.ini [SmartySettings] SecurityDisabledTagList": {
+        "en": "Tags never allowed, Smarty's or Exponential's: {eval} (runs a string as a template), {fetch} (reads a file\nor a URL), {math} (evaluates an expression), {debug} (shows every variable), {config_load} (reads\nconfiguration files), {html_image} (reads image files).",
+        "de": "Tags, die nie erlaubt sind, die von Smarty oder von Exponential: {eval} (führt einen String als Template aus), {fetch} (liest eine Datei\noder eine URL), {math} (wertet einen Ausdruck aus), {debug} (zeigt jede Variable), {config_load} (liest\nKonfigurationsdateien), {html_image} (liest Bilddateien)."
+    },
+    "ini:settings/smarty.ini [SmartySettings] SecurityObjectAccess": {
+        "en": "Methods and properties of objects ({$node->expSmartyObject()->remove()}): enabled or disabled. Disabled, a\ntemplate that uses -> in a tag is refused; templates read attributes as $node.name, which stays allowed.",
+        "de": "Methoden und Eigenschaften von Objekten ({$node->expSmartyObject()->remove()}): enabled oder disabled. Abgeschaltet wird ein\nTemplate abgelehnt, das -> in einem Tag verwendet; Templates lesen Attribute als $node.name, was erlaubt bleibt."
+    },
+    "ini:settings/smarty.ini [SmartySettings] SecurityStaticClassList": {
+        "en": "Classes whose static methods and properties a template may use ({Foo::bar()}); empty: none.",
+        "de": "Klassen, deren statische Methoden und Eigenschaften ein Template verwenden darf ({Foo::bar()}); leer: keine."
+    },
+    "ini:settings/smarty.ini [SmartySettings] SecurityStreamList": {
+        "en": "Stream wrappers a template may be loaded from ({include file='php://...'}); empty: none. Template files\nthemselves are no stream.",
+        "de": "Stream-Wrapper, aus denen ein Template geladen werden darf ({include file='php://...'}); leer: keine. Template-Dateien\nselbst sind kein Stream."
+    },
+    "ini:settings/smarty.ini [SmartySettings] SecurityTrustedDirList": {
+        "en": "Directories, besides the template directories of the design bases, that templates may be loaded from\n({include file=...}, {exp_smarty_render( '<file>' )}), relative to the installation root or absolute.",
+        "de": "Verzeichnisse, neben den Template-Verzeichnissen der Design-Basen, aus denen Templates geladen werden dürfen\n({include file=...}, {exp_smarty_render( '<file>' )}), relativ zum Wurzelverzeichnis der Installation oder absolut."
+    },
+    "ini:settings/staticcache.ini [StaticPublishSettings] JobHistory": {
+        "en": "How many jobs (builds, publishes, rollbacks started in the administration) keep their files\nin <WorkDir>/.jobs; older ones are removed. A job that is running is always kept.",
+        "de": "Wie viele Jobs (in der Administration gestartete Builds, Veröffentlichungen, Rücknahmen) ihre Dateien\nin <WorkDir>/.jobs behalten; ältere werden entfernt. Ein laufender Job wird immer behalten."
+    },
+    "ini:settings/velocity.ini [DeploySettings] Migrate": {
+        "en": "Whether a deploy runs the pending migrations (./console exp:migration:migrate\n--apply, with its captions, record, commit and push), after the caches of\nsettings and templates and before PHP-FPM and Velocity run the new code. A\nmigration that fails stops the deploy there. enabled: every deploy;\ndisabled: only deploy --migrate. deploy --no-migrate skips them either way.",
+        "de": "Ob ein Deploy die ausstehenden Migrationen ausführt (./console exp:migration:migrate\n--apply, mit seinen Sicherungspunkten, Aufzeichnung, Commit und Push), nach den Caches der\nEinstellungen und Templates und bevor PHP-FPM und Velocity den neuen Code ausführen. Eine\nMigration, die scheitert, stoppt das Deploy an dieser Stelle. enabled: jedes Deploy;\ndisabled: nur deploy --migrate. deploy --no-migrate überspringt sie in jedem Fall."
+    },
+    "step:code_file": {
+        "en": "Writes, replaces or removes one code or design file below the allowed folders, with a backup and checksums",
+        "de": "Schreibt, ersetzt oder entfernt eine Code- oder Designdatei unterhalb der erlaubten Ordner, mit Sicherung und Prüfsummen"
+    },
+    "step:code_file checksum": {
+        "en": "the SHA-256 the new content must have (64 hex digits)",
+        "de": "der SHA-256, den der neue Inhalt haben muss (64 Hexziffern)"
+    },
+    "step:code_file content": {
+        "en": "the new content itself (instead of source:)",
+        "de": "der neue Inhalt selbst (statt source:)"
+    },
+    "step:code_file expect": {
+        "en": "the SHA-256 the file must have before the step, or absent: it must not exist",
+        "de": "der SHA-256, den die Datei vor dem Schritt haben muss, oder fehlend: Sie darf nicht existieren"
+    },
+    "step:code_file path": {
+        "en": "the file, relative to the installation, below a folder of [FileStepSettings] AllowedRootList[] (design, extension)",
+        "de": "die Datei, relativ zur Installation, unterhalb eines Ordners aus [FileStepSettings] AllowedRootList[] (design, extension)"
+    },
+    "step:code_file source": {
+        "en": "the new content: a file below the folder of the migration file (files/page.tpl)",
+        "de": "der neue Inhalt: eine Datei unterhalb des Ordners der Migrationsdatei (files/page.tpl)"
+    },
+    "step:code_file value after": {
+        "en": "its SHA-256 after (empty: removed)",
+        "de": "ihr SHA-256 danach (leer: entfernt)"
+    },
+    "step:code_file value before": {
+        "en": "its SHA-256 before (empty: it did not exist)",
+        "de": "ihr SHA-256 vorher (leer: Sie existierte nicht)"
+    },
+    "step:code_file value path": {
+        "en": "the file, relative to the installation",
+        "de": "die Datei, relativ zur Installation"
+    }
+}

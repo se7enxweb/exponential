@@ -19,12 +19,12 @@ Bearbeiten Sie `settings/migration.ini` nie selbst: Ein Update ersetzt die Datei
 
 ## RunOnPackageInstall
 
-> Migrations shipped with a package (a directory migrations/ at the top of the package, next to its package.xml or  
-> package.json): installing the package (Setup > Packages, or a package the setup wizard or the kickstarter installs  
-> item by item) runs them once its items are installed, with ./console exp:migration:migrate  
-> --path=<the package's migrations> --apply as the user who installs it (the console: \[RunSettings\] RunAsUser). A  
-> migration that fails leaves the package not installed, so installing it again runs what is still pending.  
-> disabled: the package's migrations are not run; ./console exp:migration:migrate --apply runs them with the others.  
+> Mit einem Paket ausgelieferte Migrationen (ein Verzeichnis migrations/ oben im Paket, neben seiner package.xml oder  
+> package.json): Das Installieren des Pakets (Setup > Pakete, oder ein Paket, das der Setup-Assistent oder der Kickstarter  
+> Element für Element installiert) führt sie aus, sobald seine Elemente installiert sind, mit ./console exp:migration:migrate  
+> --path=<die Migrationen des Pakets> --apply als der installierende Benutzer (auf der Konsole: \[RunSettings\] RunAsUser). Eine  
+> Migration, die scheitert, lässt das Paket nicht installiert, sodass eine erneute Installation ausführt, was noch aussteht.  
+> disabled: Die Migrationen des Pakets werden nicht ausgeführt; ./console exp:migration:migrate --apply führt sie mit den anderen aus.  
 
 Standard: `enabled`.
 
@@ -38,9 +38,9 @@ RunOnPackageInstall=enabled
 
 ## RunOnKickstart
 
-> The kickstarter (php bin/php/kickstarter.php run --apply) runs every pending migration of the new installation  
-> (./console exp:migration:migrate --apply) after the sites are created, while maintenance mode is still on.  
-> disabled: it does not.  
+> Der Kickstarter (php bin/php/kickstarter.php run --apply) führt jede ausstehende Migration der neuen Installation aus  
+> (./console exp:migration:migrate --apply), nachdem die Sites angelegt sind, während der Wartungsmodus noch an ist.  
+> disabled: Er tut es nicht.  
 
 Standard: `enabled`.
 
@@ -54,9 +54,9 @@ RunOnKickstart=enabled
 
 ## RunOptions
 
-> The options of exp:migration:migrate for these runs: no-caption, no-restore, no-commit, no-push, no-tag,  
-> include-uncommitted. Installing writes settings, design and extension files the run would otherwise refuse as  
-> changes that are not committed, and a new installation has nothing to push yet.  
+> Die Optionen von exp:migration:migrate für diese Läufe: no-caption, no-restore, no-commit, no-push, no-tag,  
+> include-uncommitted. Das Installieren schreibt Einstellungs-, Design- und Erweiterungsdateien, die der Lauf sonst als nicht  
+> committete Änderungen ablehnen würde, und eine neue Installation hat noch nichts zu pushen.  
 
 Standard: eine Liste mit 2: `include-uncommitted`, `no-push`.
 
@@ -73,7 +73,7 @@ RunOptions[]=no-push
 
 ## Timeout
 
-> Seconds a run at installation may take before it is stopped (and reported as failed).  
+> Sekunden, die ein Lauf bei der Installation dauern darf, bevor er gestoppt (und als gescheitert gemeldet) wird.  
 
 Standard: `3600`.
 

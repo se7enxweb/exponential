@@ -33,13 +33,13 @@ Enabled=true
 
 ## Rules
 
-> Migrations: a run, a resume or a simulation, a rollback, and (later) the editor and the generators; seeing them  
-> (status, history, log, the dry run) is never asked  
-> Remotes and deploys: saving or removing a remote, a deploy (not its preflight), approving the next stage of a  
-> staged deploy, rolling a deploy back; the lists and Test connection are never asked  
-> a site-wide recording window (every user's changes); a user's own recording is not asked  
-> Static publishing: a publish, a rollback, saving a target, the deploy key and the switch; seeing, building and the  
-> preview are never asked  
+> Migrationen: ein Lauf, eine Fortsetzung oder eine Simulation, eine Rücknahme und (später) der Editor und die Generatoren;  
+> fürs Ansehen (Status, Verlauf, Log, Probelauf) wird nie gefragt  
+> Gegenstellen und Deploys: das Speichern oder Entfernen einer Gegenstelle, ein Deploy (nicht sein Preflight), das Freigeben  
+> der nächsten Stufe eines Deploys in Stufen, das Zurücknehmen eines Deploys; für die Listen und Verbindung testen wird nie gefragt  
+> ein websiteweites Aufzeichnungsfenster (die Änderungen aller Benutzer); die eigene Aufzeichnung eines Benutzers wird nicht abgefragt  
+> Statisches Veröffentlichen: eine Veröffentlichung, eine Rücknahme, das Speichern eines Ziels, der Deploy-Key und der  
+> Schalter; fürs Ansehen, Bauen und die Vorschau wird nie gefragt  
 
 Standard: eine Liste mit 34: `setup/*`, `!setup/info`, `!setup/logs`, `!setup/logshealth`, `!setup/logsdigest`, `!setup/logsfeed`, `!setup/templatelist`, `!setup/templateview`, `!setup/menu`, `!setup/preloadstream`, `!setup/cronjobsstream`, `!setup/staticcachestream` ....
 

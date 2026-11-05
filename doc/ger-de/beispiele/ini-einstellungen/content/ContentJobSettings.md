@@ -56,8 +56,8 @@ NowLimit=1000
 
 ## BatchSize
 
-> Nodes per batch (one transaction each). On SQLite (one writer at a time) the worker halves the next batch  
-> while one holds the write lock over 2 s, and grows it back to BatchSize when they are quick again.  
+> Knoten pro Stapel (jeder eine Transaktion). Auf SQLite (ein Schreiber zur Zeit) halbiert der Worker den nächsten Stapel,  
+> solange einer die Schreibsperre über 2 s hält, und vergrößert ihn wieder bis BatchSize, wenn sie wieder schnell sind.  
 
 Standard: `50`.
 
@@ -192,13 +192,13 @@ PhpBinary=
 
 ## JobTypes
 
-> The job types: JobTypes\[<name>\]=<class implementing expContentJobType>.  
-> A package install in the background (Setup > Packages > Install, "Install in the background"), doc/eng-us/bc/6.0/package-json-format.md  
-> An export of the audit console in the background (Audit > Export, "Export in the background"), doc/eng-us/bc/6.0/audit.md  
-> The help's manuals built from the Markdown help in the background (a new installation queues it), doc/eng-us/features/6.0/help-content.md  
-> A background run of an import or export tool (Export, CIE ...) when there is no job queue,  
+> Die Job-Typen: JobTypes\[<name>\]=<Klasse, die expContentJobType implementiert>.  
+> Eine Paketinstallation im Hintergrund (Setup > Pakete > Installieren, „Im Hintergrund installieren“), doc/eng-us/bc/6.0/package-json-format.md  
+> Ein Export der Audit-Konsole im Hintergrund (Audit > Export, „Im Hintergrund exportieren“), doc/eng-us/bc/6.0/audit.md  
+> Die Handbücher der Hilfe, im Hintergrund aus der Markdown-Hilfe gebaut (eine neue Installation reiht es ein), doc/eng-us/features/6.0/help-content.md  
+> Ein Hintergrundlauf eines Import- oder Export-Werkzeugs (Export, CIE ...), wenn es keine Job-Warteschlange gibt,  
 > doc/eng-us/features/6.0/transfer-runs.md (transfer.ini)  
-> A mass action of Dashboard > Recent content on more than \[ModerationSettings\] JobThreshold objects, doc/eng-us/features/6.0/moderation.md  
+> Eine Massenaktion von Dashboard > Neue Inhalte auf mehr als \[ModerationSettings\] JobThreshold Objekte, doc/eng-us/features/6.0/moderation.md  
 
 Standard: ein Hash mit 14: `remove=expContentJobRemoveSubtree`, `copy=expContentJobCopySubtree`, `move=expContentJobMoveSubtree`, `hide=expContentJobHideSubtree`, `reveal=expContentJobRevealSubtree`, `section=expContentJobSectionSubtree`, `state=expContentJobStateSubtree`, `addlocation=expContentJobAddLocation`, `removelocation=expContentJobRemoveLocation`, `packageinstall=expContentJobPackageInstall`, `auditexport=expContentJobAuditExport`, `helpmanuals=expContentJobHelpManuals` ....
 

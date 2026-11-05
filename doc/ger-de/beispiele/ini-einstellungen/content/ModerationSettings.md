@@ -19,12 +19,12 @@ Bearbeiten Sie `settings/content.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## JobThreshold
 
-> Dashboard > Recent content (the module moderation, doc/eng-us/features/6.0/moderation.md): the most recently created  
-> and modified content with its status, the review hold, who submitted it and from where, and actions on a selection.  
-> The page sizes are admininterface.ini \[PaginationSettings\] ItemsPerPageList\_moderation\_recent\[\].  
+> Dashboard > Neue Inhalte (das Modul moderation, doc/eng-us/features/6.0/moderation.md): die zuletzt erstellten  
+> und geänderten Inhalte mit ihrem Status, der Zurückhaltung zur Prüfung, wer sie eingereicht hat und von wo, und Aktionen auf einer Auswahl.  
+> Die Seitengrößen sind admininterface.ini \[PaginationSettings\] ItemsPerPageList\_moderation\_recent\[\].  
 >
-> A selection of more than this many objects runs as a content job in the background, with its progress on  
-> content/job/<id> and the result per object on moderation/report/<id>; up to it, the action runs in the request.  
+> Eine Auswahl von mehr als so vielen Objekten läuft als Inhaltsjob im Hintergrund, mit ihrem Fortschritt auf  
+> content/job/<id> und dem Ergebnis je Objekt auf moderation/report/<id>; bis dahin läuft die Aktion in der Anfrage.  
 
 Standard: `100`.
 
@@ -38,10 +38,10 @@ JobThreshold=100
 
 ## SubmissionEvents
 
-> The audit events the IP address and the browser of a submission are read from (the earliest of them per object,  
-> from the audit index): the auto-hold always records one; content.object.publish and content.object.create are off  
-> by default (audit.ini \[AuditEventSettings\]). The address and the browser are as the audit keeps them  
-> (audit.ini \[AuditPrivacySettings\]: truncated by default) and are shown only with the policy moderation/personaldata.  
+> Die Audit-Ereignisse, aus denen die IP-Adresse und der Browser einer Einreichung gelesen werden (das früheste davon je Objekt,  
+> aus dem Audit-Index): Die automatische Zurückhaltung zeichnet immer eines auf; content.object.publish und content.object.create sind  
+> standardmäßig aus (audit.ini \[AuditEventSettings\]). Adresse und Browser sind so, wie das Audit sie aufbewahrt  
+> (audit.ini \[AuditPrivacySettings\]: standardmäßig gekürzt), und werden nur mit der Richtlinie moderation/personaldata gezeigt.  
 
 Standard: eine Liste mit 3: `content.object.hold.auto`, `content.object.publish`, `content.object.create`.
 

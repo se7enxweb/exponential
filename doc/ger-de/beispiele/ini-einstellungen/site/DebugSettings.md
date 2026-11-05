@@ -160,14 +160,13 @@ DebugUserIDList[]
 
 ## CollectStatsPolicyList
 
-> Examples  
+> Beispiele  
 > DebugUserIDList\[\]=14  
-> Signed-in users who hold one of these policies (module/function) get each  
-> request's statistics collected without any debug output: page time, SQL  
-> statements, the content view cache, cache-blocks and the template tree, as  
-> the debug bar shows them. Nothing is printed and no debug message is kept;  
-> a tool of theirs shows the figures (the website sidebar's Performance panel  
-> adds expwt/performance here). Empty: only with debug output on.  
+> Angemeldete Benutzer mit einer dieser Richtlinien (Modul/Funktion) bekommen die Statistik jeder  
+> Anfrage gesammelt, ohne jede Debug-Ausgabe: Seitenzeit, SQL-Anweisungen, den Content-View-Cache, Cache-Blöcke und den Template-Baum, so wie  
+> die Debug-Leiste sie zeigt. Nichts wird ausgegeben und keine Debug-Meldung aufbewahrt;  
+> ein Werkzeug von ihnen zeigt die Zahlen (das Leistungs-Panel der Website-Seitenleiste  
+> fügt hier expwt/performance hinzu). Leer: nur mit eingeschalteter Debug-Ausgabe.  
 
 Standard: eine leere Liste.
 
@@ -182,15 +181,15 @@ CollectStatsPolicyList[]
 
 ## Debug
 
-> Examples  
+> Beispiele  
 > CollectStatsPolicyList\[\]=expwt/performance  
-> Controls how debug is displayed, inline means that the debug is displayed in  
-> page itself while popup will create a new popup window with the debug.  
-> Popup window might not work in all browsers.  
-> Use either disabled, inline or popup  
-> If you use popup you must make sure that a rewrite rules exists for .html files  
-> or that your site is running in non-virtual host mode. Also some browsers  
-> have problems with this feature.  
+> Steuert, wie das Debugging angezeigt wird: inline bedeutet, dass das Debugging  
+> in der Seite selbst angezeigt wird, popup öffnet ein neues Popup-Fenster mit dem Debugging.  
+> Das Popup-Fenster funktioniert eventuell nicht in allen Browsern.  
+> Verwenden Sie disabled, inline oder popup  
+> Wenn Sie popup verwenden, muss es eine Rewrite-Regel für .html-Dateien geben,  
+> oder Ihre Website muss im Modus ohne virtuellen Host laufen. Außerdem haben manche Browser  
+> Probleme mit dieser Funktion.  
 
 Standard: `inline`.
 

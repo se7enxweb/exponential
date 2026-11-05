@@ -12,7 +12,7 @@ generated: exp:help:examples
 
 Die ausgelieferten Einstellungen von `settings/smarty.ini`: 1 Blöcke, 16 Einstellungen.
 
-> Smarty (.stpl) template settings, lib/smarty. Override in settings/override/smarty.ini.append.php.  
+> Einstellungen für Smarty-Templates (.stpl), lib/smarty. Überschreiben in settings/override/smarty.ini.append.php.  
 
 | Block | Einstellungen |
 |---|---|

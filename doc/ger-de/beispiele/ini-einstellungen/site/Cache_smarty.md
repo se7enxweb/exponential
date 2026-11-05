@@ -11,8 +11,8 @@ generated: exp:help:examples
 
 Der Block `[Cache_smarty]` von `settings/site.ini`, mit 4 Einstellung(en).
 
-> Smarty's compiled .stpl templates (lib/smarty), in <cache directory>/smarty/. Cleared with  
-> the template caches.  
+> Die kompilierten .stpl-Templates von Smarty (lib/smarty), in <cache directory>/smarty/. Geleert mit  
+> den Template-Caches.  
 
 Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

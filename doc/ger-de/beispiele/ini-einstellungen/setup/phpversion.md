@@ -19,9 +19,9 @@ Bearbeiten Sie `settings/setup.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 
 ## MinimumVersion
 
-> Supported: PHP 8.0 to 8.5. Usable without support: PHP 7.4 (Exponential 6.0.15 and later).  
-> MinimumVersion: older PHP is refused. SupportedVersion: below it the check passes with an  
-> "unsupported" notice (no bug-fix or security commitment; the features that need PHP 8 are missing).  
+> Unterstützt: PHP 8.0 bis 8.5. Ohne Unterstützung nutzbar: PHP 7.4 (Exponential 6.0.15 und später).  
+> MinimumVersion: Älteres PHP wird abgelehnt. SupportedVersion: darunter besteht die Prüfung mit einem  
+> Hinweis „nicht unterstützt“ (keine Zusage für Fehler- oder Sicherheitskorrekturen; die Funktionen, die PHP 8 brauchen, fehlen).  
 > doc/eng-us/help/why-exponential-supports-php-7-4.md  
 
 Standard: `7.4.0`.

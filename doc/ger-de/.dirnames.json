@@ -43,6 +43,7 @@
     "commerce": "handel",
     "communications": "kommunikation",
     "community": "gemeinschaft",
+    "competition": "wettbewerb",
     "compliance": "compliance",
     "contact-and-forms": "kontakt-und-formulare",
     "content-modeling": "inhaltsmodellierung",
@@ -373,6 +374,5 @@
     "words": "begriffe",
     "workflow-events": "workflow-ereignisse",
     "workshops": "workshops",
-    "your-own": "eigene",
-    "competition": "wettbewerb"
+    "your-own": "eigene"
 }

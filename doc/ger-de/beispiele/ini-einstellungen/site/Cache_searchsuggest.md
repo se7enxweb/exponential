@@ -11,9 +11,9 @@ generated: exp:help:examples
 
 Der Block `[Cache_searchsuggest]` von `settings/site.ini`, mit 5 Einstellung(en).
 
-> The administration's pages per user and rights that the header search suggests (expSearchSuggest,  
+> Die Seiten der Administration je Benutzer und Rechten, die die Suche im Kopf vorschlägt (expSearchSuggest,  
 > admininterface.ini \[SearchSuggestSettings\] AdminPagesCacheTTL), in <cache directory>/searchsuggest/.  
-> Cleared with the template caches and the user caches.  
+> Geleert mit den Template-Caches und den Benutzer-Caches.  
 
 Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

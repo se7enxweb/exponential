@@ -46,9 +46,9 @@ cronjob part staticpublish tries again. Every publish is a row of exp_static_run
 | `--message` | erforderlich | Die Commit-Nachricht (Standard: was veröffentlicht wurde, oder welche Veröffentlichung wiederhergestellt wird) |
 | `--no-push` |  | Committen und taggen, aber nicht pushen (exp:static:push pusht später) |
 | `--format` | erforderlich | text (Standard) oder json (die Maschinenausgabe exp-static/1) |
-| `--login` | erforderlich | Run as this user (the administration starts its jobs so); recorded as who ran it |
-| `--run-id` | erforderlich | The id of the run (date-time-6 hex digits) instead of a new one (the administration passes its job's id) |
-| `--progress` | erforderlich | Also append the progress, one JSON object per line, to this file (the administration follows it) |
+| `--login` | erforderlich | Als dieser Benutzer laufen (so startet die Administration ihre Jobs); als Ausführender aufgezeichnet |
+| `--run-id` | erforderlich | Die ID des Laufs (Datum-Uhrzeit-6 Hexziffern) statt einer neuen (die Administration übergibt die ID ihres Jobs) |
+| `--progress` | erforderlich | Den Fortschritt zusätzlich an diese Datei anhängen, ein JSON-Objekt pro Zeile (die Administration verfolgt sie) |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

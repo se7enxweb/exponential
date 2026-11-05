@@ -33,10 +33,10 @@ Enabled=true
 
 ## Rules
 
-> Another user's devices in full (their addresses and browsers) and signing them out  
-> the bulk actions and the CSV; the filter form (FilterButton) is a POST too and never asks  
-> Approve and Deny of a new user account waiting for approval (the workflow event  
-> "Approve user accounts"); content approvals address no account and never ask here  
+> Die Geräte eines anderen Benutzers vollständig (ihre Adressen und Browser) und deren Abmeldung  
+> die Massenaktionen und die CSV-Datei; das Filterformular (FilterButton) ist auch ein POST und fragt nie  
+> Freigeben und Ablehnen eines neuen Benutzerkontos, das auf Freigabe wartet (das Workflow-Ereignis  
+> „Benutzerkonten freigeben“); Inhaltsfreigaben betreffen kein Konto und fragen hier nie  
 
 Standard: eine Liste mit 13: `content/edit other`, `user/password other`, `user/sessions other *`, `user/sessionreport *`, `user/setting`, `user/unactivated`, `user/hygiene DisableButton EnableButton UnlockButton ConfirmButton ExportButton`, `user/deactivate`, `user/registration`, `content/removeuserobject ConfirmButton`, `collaboration/action other CollaborationAction_Accept CollaborationAction_Deny CollaborationAction_Defer`, `role/*` ....
 
