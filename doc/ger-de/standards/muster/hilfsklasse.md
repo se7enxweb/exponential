@@ -133,7 +133,7 @@ Eine Klasse statischer Funktionen, nach Thema gruppiert; keine Instanzen.
 
 ### extension/expai (56)
 
-[Alle Muster von extension/expai](area-extension-expai.md)
+[Alle Muster von extension/expai](bereich-extension-expai.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -205,7 +205,7 @@ Eine Klasse statischer Funktionen, nach Thema gruppiert; keine Instanzen.
 
 ### extension/expimageeditor (1)
 
-[Alle Muster von extension/expimageeditor](area-extension-expimageeditor.md)
+[Alle Muster von extension/expimageeditor](bereich-extension-expimageeditor.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -307,7 +307,7 @@ Eine Klasse statischer Funktionen, nach Thema gruppiert; keine Instanzen.
 
 ### extension/expqueue (7)
 
-[Alle Muster von extension/expqueue](area-extension-expqueue.md)
+[Alle Muster von extension/expqueue](bereich-extension-expqueue.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -633,7 +633,7 @@ Eine Klasse statischer Funktionen, nach Thema gruppiert; keine Instanzen.
 
 ### extension/sqliimport (50)
 
-[Alle Muster von extension/sqliimport](area-extension-sqliimport.md)
+[Alle Muster von extension/sqliimport](bereich-extension-sqliimport.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -915,7 +915,7 @@ Eine Klasse statischer Funktionen, nach Thema gruppiert; keine Instanzen.
 
 ### kernel/classes/datatable (9)
 
-[Alle Muster von kernel/classes/datatable](area-kernel-classes-datatable.md)
+[Alle Muster von kernel/classes/datatable](bereich-kernel-classes-datatable.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -1039,7 +1039,7 @@ Eine Klasse statischer Funktionen, nach Thema gruppiert; keine Instanzen.
 
 ### kernel/classes/passkey (1)
 
-[Alle Muster von kernel/classes/passkey](area-kernel-classes-passkey.md)
+[Alle Muster von kernel/classes/passkey](bereich-kernel-classes-passkey.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -1058,7 +1058,7 @@ Eine Klasse statischer Funktionen, nach Thema gruppiert; keine Instanzen.
 
 ### kernel/classes/reauth (3)
 
-[Alle Muster von kernel/classes/reauth](area-kernel-classes-reauth.md)
+[Alle Muster von kernel/classes/reauth](bereich-kernel-classes-reauth.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -1084,7 +1084,7 @@ Eine Klasse statischer Funktionen, nach Thema gruppiert; keine Instanzen.
 
 ### kernel/classes/secrets (2)
 
-[Alle Muster von kernel/classes/secrets](area-kernel-classes-secrets.md)
+[Alle Muster von kernel/classes/secrets](bereich-kernel-classes-secrets.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -1104,7 +1104,7 @@ Eine Klasse statischer Funktionen, nach Thema gruppiert; keine Instanzen.
 
 ### kernel/classes/syscard (1)
 
-[Alle Muster von kernel/classes/syscard](area-kernel-classes-syscard.md)
+[Alle Muster von kernel/classes/syscard](bereich-kernel-classes-syscard.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -1112,7 +1112,7 @@ Eine Klasse statischer Funktionen, nach Thema gruppiert; keine Instanzen.
 
 ### kernel/classes/transfer (3)
 
-[Alle Muster von kernel/classes/transfer](area-kernel-classes-transfer.md)
+[Alle Muster von kernel/classes/transfer](bereich-kernel-classes-transfer.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -1147,7 +1147,7 @@ Eine Klasse statischer Funktionen, nach Thema gruppiert; keine Instanzen.
 
 ### kernel/classes/webauthn (4)
 
-[Alle Muster von kernel/classes/webauthn](area-kernel-classes-webauthn.md)
+[Alle Muster von kernel/classes/webauthn](bereich-kernel-classes-webauthn.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |

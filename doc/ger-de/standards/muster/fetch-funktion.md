@@ -42,7 +42,7 @@ Eine benannte Abfrage, die Templates mit fetch( module, function, hash(...) ) au
 
 ### extension/expai (6)
 
-[Alle Muster von extension/expai](area-extension-expai.md)
+[Alle Muster von extension/expai](bereich-extension-expai.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -55,7 +55,7 @@ Eine benannte Abfrage, die Templates mit fetch( module, function, hash(...) ) au
 
 ### extension/expimageeditor (1)
 
-[Alle Muster von extension/expimageeditor](area-extension-expimageeditor.md)
+[Alle Muster von extension/expimageeditor](bereich-extension-expimageeditor.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -119,7 +119,7 @@ Eine benannte Abfrage, die Templates mit fetch( module, function, hash(...) ) au
 
 ### extension/sqliimport (1)
 
-[Alle Muster von extension/sqliimport](area-extension-sqliimport.md)
+[Alle Muster von extension/sqliimport](bereich-extension-sqliimport.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -151,7 +151,7 @@ Eine benannte Abfrage, die Templates mit fetch( module, function, hash(...) ) au
 
 ### kernel/classes/datatable (1)
 
-[Alle Muster von kernel/classes/datatable](area-kernel-classes-datatable.md)
+[Alle Muster von kernel/classes/datatable](bereich-kernel-classes-datatable.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |

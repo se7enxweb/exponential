@@ -35,7 +35,7 @@ Code, der auf etwas reagiert, das anderswo geschehen ist, ohne dass die Quelle d
 
 ### extension/expai (1)
 
-[Alle Muster von extension/expai](area-extension-expai.md)
+[Alle Muster von extension/expai](bereich-extension-expai.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -52,7 +52,7 @@ Code, der auf etwas reagiert, das anderswo geschehen ist, ohne dass die Quelle d
 
 ### kernel/classes/datatable (1)
 
-[Alle Muster von kernel/classes/datatable](area-kernel-classes-datatable.md)
+[Alle Muster von kernel/classes/datatable](bereich-kernel-classes-datatable.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |

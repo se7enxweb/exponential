@@ -26,7 +26,7 @@ Eine Anfrage wird entlang einer Liste von Handlern weitergereicht, bis einer sie
 
 ### extension/expai (12)
 
-[Alle Muster von extension/expai](area-extension-expai.md)
+[Alle Muster von extension/expai](bereich-extension-expai.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |

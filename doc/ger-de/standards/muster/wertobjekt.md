@@ -113,7 +113,7 @@ Ein kleines Objekt, das Daten trägt und keine eigene Identität hat.
 
 ### extension/expai (2)
 
-[Alle Muster von extension/expai](area-extension-expai.md)
+[Alle Muster von extension/expai](bereich-extension-expai.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -130,7 +130,7 @@ Ein kleines Objekt, das Daten trägt und keine eigene Identität hat.
 
 ### extension/exphelpsite (1)
 
-[Alle Muster von extension/exphelpsite](area-extension-exphelpsite.md)
+[Alle Muster von extension/exphelpsite](bereich-extension-exphelpsite.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -138,7 +138,7 @@ Ein kleines Objekt, das Daten trägt und keine eigene Identität hat.
 
 ### extension/expimageeditor (1)
 
-[Alle Muster von extension/expimageeditor](area-extension-expimageeditor.md)
+[Alle Muster von extension/expimageeditor](bereich-extension-expimageeditor.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -252,7 +252,7 @@ Ein kleines Objekt, das Daten trägt und keine eigene Identität hat.
 
 ### extension/expqueue (1)
 
-[Alle Muster von extension/expqueue](area-extension-expqueue.md)
+[Alle Muster von extension/expqueue](bereich-extension-expqueue.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -429,7 +429,7 @@ Ein kleines Objekt, das Daten trägt und keine eigene Identität hat.
 
 ### extension/ezoracle (1)
 
-[Alle Muster von extension/ezoracle](area-extension-ezoracle.md)
+[Alle Muster von extension/ezoracle](bereich-extension-ezoracle.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -630,7 +630,7 @@ Ein kleines Objekt, das Daten trägt und keine eigene Identität hat.
 
 ### extension/sqliimport (1)
 
-[Alle Muster von extension/sqliimport](area-extension-sqliimport.md)
+[Alle Muster von extension/sqliimport](bereich-extension-sqliimport.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |

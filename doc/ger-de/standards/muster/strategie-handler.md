@@ -101,7 +101,7 @@ Austauschbare Implementierungen einer Aufgabe, gewählt über eine Einstellung: 
 
 ### extension/expai (18)
 
-[Alle Muster von extension/expai](area-extension-expai.md)
+[Alle Muster von extension/expai](bereich-extension-expai.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -247,7 +247,7 @@ Austauschbare Implementierungen einer Aufgabe, gewählt über eine Einstellung: 
 
 ### extension/expqueue (5)
 
-[Alle Muster von extension/expqueue](area-extension-expqueue.md)
+[Alle Muster von extension/expqueue](bereich-extension-expqueue.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -340,7 +340,7 @@ Austauschbare Implementierungen einer Aufgabe, gewählt über eine Einstellung: 
 
 ### extension/ezoracle (2)
 
-[Alle Muster von extension/ezoracle](area-extension-ezoracle.md)
+[Alle Muster von extension/ezoracle](bereich-extension-ezoracle.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -410,7 +410,7 @@ Austauschbare Implementierungen einer Aufgabe, gewählt über eine Einstellung: 
 
 ### extension/sqliimport (29)
 
-[Alle Muster von extension/sqliimport](area-extension-sqliimport.md)
+[Alle Muster von extension/sqliimport](bereich-extension-sqliimport.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -643,7 +643,7 @@ Austauschbare Implementierungen einer Aufgabe, gewählt über eine Einstellung: 
 
 ### kernel/classes/reauth (2)
 
-[Alle Muster von kernel/classes/reauth](area-kernel-classes-reauth.md)
+[Alle Muster von kernel/classes/reauth](bereich-kernel-classes-reauth.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -663,7 +663,7 @@ Austauschbare Implementierungen einer Aufgabe, gewählt über eine Einstellung: 
 
 ### kernel/classes/syscard (18)
 
-[Alle Muster von kernel/classes/syscard](area-kernel-classes-syscard.md)
+[Alle Muster von kernel/classes/syscard](bereich-kernel-classes-syscard.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -688,7 +688,7 @@ Austauschbare Implementierungen einer Aufgabe, gewählt über eine Einstellung: 
 
 ### kernel/classes/transfer (1)
 
-[Alle Muster von kernel/classes/transfer](area-kernel-classes-transfer.md)
+[Alle Muster von kernel/classes/transfer](bereich-kernel-classes-transfer.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |

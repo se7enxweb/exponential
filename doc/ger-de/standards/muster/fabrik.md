@@ -96,7 +96,7 @@ Eine Klasse oder statische Methode, die Objekte für den Aufrufer erzeugt, sodas
 
 ### extension/expai (22)
 
-[Alle Muster von extension/expai](area-extension-expai.md)
+[Alle Muster von extension/expai](bereich-extension-expai.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -164,7 +164,7 @@ Eine Klasse oder statische Methode, die Objekte für den Aufrufer erzeugt, sodas
 
 ### extension/expqueue (4)
 
-[Alle Muster von extension/expqueue](area-extension-expqueue.md)
+[Alle Muster von extension/expqueue](bereich-extension-expqueue.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -371,7 +371,7 @@ Eine Klasse oder statische Methode, die Objekte für den Aufrufer erzeugt, sodas
 
 ### extension/sqliimport (32)
 
-[Alle Muster von extension/sqliimport](area-extension-sqliimport.md)
+[Alle Muster von extension/sqliimport](bereich-extension-sqliimport.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -585,7 +585,7 @@ Eine Klasse oder statische Methode, die Objekte für den Aufrufer erzeugt, sodas
 
 ### kernel/classes/datatable (2)
 
-[Alle Muster von kernel/classes/datatable](area-kernel-classes-datatable.md)
+[Alle Muster von kernel/classes/datatable](bereich-kernel-classes-datatable.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -702,7 +702,7 @@ Eine Klasse oder statische Methode, die Objekte für den Aufrufer erzeugt, sodas
 
 ### kernel/classes/passkey (2)
 
-[Alle Muster von kernel/classes/passkey](area-kernel-classes-passkey.md)
+[Alle Muster von kernel/classes/passkey](bereich-kernel-classes-passkey.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -711,7 +711,7 @@ Eine Klasse oder statische Methode, die Objekte für den Aufrufer erzeugt, sodas
 
 ### kernel/classes/reauth (1)
 
-[Alle Muster von kernel/classes/reauth](area-kernel-classes-reauth.md)
+[Alle Muster von kernel/classes/reauth](bereich-kernel-classes-reauth.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -743,7 +743,7 @@ Eine Klasse oder statische Methode, die Objekte für den Aufrufer erzeugt, sodas
 
 ### kernel/classes/syscard (5)
 
-[Alle Muster von kernel/classes/syscard](area-kernel-classes-syscard.md)
+[Alle Muster von kernel/classes/syscard](bereich-kernel-classes-syscard.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -755,7 +755,7 @@ Eine Klasse oder statische Methode, die Objekte für den Aufrufer erzeugt, sodas
 
 ### kernel/classes/transfer (2)
 
-[Alle Muster von kernel/classes/transfer](area-kernel-classes-transfer.md)
+[Alle Muster von kernel/classes/transfer](bereich-kernel-classes-transfer.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |

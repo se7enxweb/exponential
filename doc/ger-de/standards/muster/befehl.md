@@ -97,7 +97,7 @@ Eine Arbeitseinheit, die eigenständig läuft: ein Konsolenbefehl (./console exp
 
 ### extension/expqueue (1)
 
-[Alle Muster von extension/expqueue](area-extension-expqueue.md)
+[Alle Muster von extension/expqueue](bereich-extension-expqueue.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -143,7 +143,7 @@ Eine Arbeitseinheit, die eigenständig läuft: ein Konsolenbefehl (./console exp
 
 ### extension/sqliimport (1)
 
-[Alle Muster von extension/sqliimport](area-extension-sqliimport.md)
+[Alle Muster von extension/sqliimport](bereich-extension-sqliimport.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |

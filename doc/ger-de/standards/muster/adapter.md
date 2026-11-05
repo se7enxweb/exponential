@@ -33,7 +33,7 @@ Macht eine Schnittstelle über eine andere nutzbar: Wrapper um Bibliotheken, Bri
 
 ### extension/expai (1)
 
-[Alle Muster von extension/expai](area-extension-expai.md)
+[Alle Muster von extension/expai](bereich-extension-expai.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -41,7 +41,7 @@ Macht eine Schnittstelle über eine andere nutzbar: Wrapper um Bibliotheken, Bri
 
 ### extension/sqliimport (1)
 
-[Alle Muster von extension/sqliimport](area-extension-sqliimport.md)
+[Alle Muster von extension/sqliimport](bereich-extension-sqliimport.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |

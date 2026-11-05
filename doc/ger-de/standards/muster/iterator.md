@@ -33,7 +33,7 @@ Durchläuft eine Sammlung, ohne offenzulegen, wie sie gespeichert ist.
 
 ### extension/sqliimport (11)
 
-[Alle Muster von extension/sqliimport](area-extension-sqliimport.md)
+[Alle Muster von extension/sqliimport](bereich-extension-sqliimport.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |

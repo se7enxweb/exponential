@@ -25,7 +25,7 @@ Fehler als Klassen, damit Aufrufer abfangen, was sie behandeln können.
 
 ### extension/expai (3)
 
-[Alle Muster von extension/expai](area-extension-expai.md)
+[Alle Muster von extension/expai](bereich-extension-expai.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -43,7 +43,7 @@ Fehler als Klassen, damit Aufrufer abfangen, was sie behandeln können.
 
 ### extension/expimageeditor (1)
 
-[Alle Muster von extension/expimageeditor](area-extension-expimageeditor.md)
+[Alle Muster von extension/expimageeditor](bereich-extension-expimageeditor.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -51,7 +51,7 @@ Fehler als Klassen, damit Aufrufer abfangen, was sie behandeln können.
 
 ### extension/expqueue (4)
 
-[Alle Muster von extension/expqueue](area-extension-expqueue.md)
+[Alle Muster von extension/expqueue](bereich-extension-expqueue.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -111,7 +111,7 @@ Fehler als Klassen, damit Aufrufer abfangen, was sie behandeln können.
 
 ### extension/sqliimport (12)
 
-[Alle Muster von extension/sqliimport](area-extension-sqliimport.md)
+[Alle Muster von extension/sqliimport](bereich-extension-sqliimport.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -154,7 +154,7 @@ Fehler als Klassen, damit Aufrufer abfangen, was sie behandeln können.
 
 ### kernel/classes/transfer (1)
 
-[Alle Muster von kernel/classes/transfer](area-kernel-classes-transfer.md)
+[Alle Muster von kernel/classes/transfer](bereich-kernel-classes-transfer.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |

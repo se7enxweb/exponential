@@ -118,7 +118,7 @@ Jede Ansicht ist ein Page Controller: Der Front Controller leitet /MODULE/VIEW a
 
 ### extension/expimageeditor (1)
 
-[Alle Muster von extension/expimageeditor](area-extension-expimageeditor.md)
+[Alle Muster von extension/expimageeditor](bereich-extension-expimageeditor.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |

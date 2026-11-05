@@ -25,7 +25,7 @@ Ein einfacher Einstiegspunkt vor einem Subsystem oder eine Dienstklasse, die die
 
 ### extension/expai (1)
 
-[Alle Muster von extension/expai](area-extension-expai.md)
+[Alle Muster von extension/expai](bereich-extension-expai.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -63,7 +63,7 @@ Ein einfacher Einstiegspunkt vor einem Subsystem oder eine Dienstklasse, die die
 
 ### extension/expqueue (1)
 
-[Alle Muster von extension/expqueue](area-extension-expqueue.md)
+[Alle Muster von extension/expqueue](bereich-extension-expqueue.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -179,7 +179,7 @@ Ein einfacher Einstiegspunkt vor einem Subsystem oder eine Dienstklasse, die die
 
 ### kernel/classes/passkey (1)
 
-[Alle Muster von kernel/classes/passkey](area-kernel-classes-passkey.md)
+[Alle Muster von kernel/classes/passkey](bereich-kernel-classes-passkey.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |

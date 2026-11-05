@@ -51,7 +51,7 @@ Eine Klasse, die der Template-Sprache Operatoren hinzufügt: Sie listet sie in o
 
 ### extension/expai (1)
 
-[Alle Muster von extension/expai](area-extension-expai.md)
+[Alle Muster von extension/expai](bereich-extension-expai.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |

@@ -42,7 +42,7 @@ Eine Klasse, die pro Schlüssel eine gemeinsame Instanz ausgibt, meist über ein
 
 ### extension/expai (2)
 
-[Alle Muster von extension/expai](area-extension-expai.md)
+[Alle Muster von extension/expai](bereich-extension-expai.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -59,7 +59,7 @@ Eine Klasse, die pro Schlüssel eine gemeinsame Instanz ausgibt, meist über ein
 
 ### extension/expqueue (1)
 
-[Alle Muster von extension/expqueue](area-extension-expqueue.md)
+[Alle Muster von extension/expqueue](bereich-extension-expqueue.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -116,7 +116,7 @@ Eine Klasse, die pro Schlüssel eine gemeinsame Instanz ausgibt, meist über ein
 
 ### extension/sqliimport (3)
 
-[Alle Muster von extension/sqliimport](area-extension-sqliimport.md)
+[Alle Muster von extension/sqliimport](bereich-extension-sqliimport.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -153,7 +153,7 @@ Eine Klasse, die pro Schlüssel eine gemeinsame Instanz ausgibt, meist über ein
 
 ### kernel/classes/datatable (1)
 
-[Alle Muster von kernel/classes/datatable](area-kernel-classes-datatable.md)
+[Alle Muster von kernel/classes/datatable](bereich-kernel-classes-datatable.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -223,7 +223,7 @@ Eine Klasse, die pro Schlüssel eine gemeinsame Instanz ausgibt, meist über ein
 
 ### kernel/classes/transfer (1)
 
-[Alle Muster von kernel/classes/transfer](area-kernel-classes-transfer.md)
+[Alle Muster von kernel/classes/transfer](bereich-kernel-classes-transfer.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |

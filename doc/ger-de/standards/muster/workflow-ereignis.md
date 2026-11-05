@@ -42,7 +42,7 @@ Ein Schritt eines Workflows, der läuft, wenn ein Trigger auslöst (vor oder nac
 
 ### extension/expai (1)
 
-[Alle Muster von extension/expai](area-extension-expai.md)
+[Alle Muster von extension/expai](bereich-extension-expai.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |

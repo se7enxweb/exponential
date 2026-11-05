@@ -34,7 +34,7 @@ Eine abstrakte Klasse, die die Schritte eines Algorithmus festlegt und einige da
 
 ### extension/expai (6)
 
-[Alle Muster von extension/expai](area-extension-expai.md)
+[Alle Muster von extension/expai](bereich-extension-expai.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -64,7 +64,7 @@ Eine abstrakte Klasse, die die Schritte eines Algorithmus festlegt und einige da
 
 ### extension/expqueue (1)
 
-[Alle Muster von extension/expqueue](area-extension-expqueue.md)
+[Alle Muster von extension/expqueue](bereich-extension-expqueue.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -115,7 +115,7 @@ Eine abstrakte Klasse, die die Schritte eines Algorithmus festlegt und einige da
 
 ### extension/sqliimport (8)
 
-[Alle Muster von extension/sqliimport](area-extension-sqliimport.md)
+[Alle Muster von extension/sqliimport](bereich-extension-sqliimport.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -198,7 +198,7 @@ Eine abstrakte Klasse, die die Schritte eines Algorithmus festlegt und einige da
 
 ### kernel/classes/syscard (1)
 
-[Alle Muster von kernel/classes/syscard](area-kernel-classes-syscard.md)
+[Alle Muster von kernel/classes/syscard](bereich-kernel-classes-syscard.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |

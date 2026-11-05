@@ -79,7 +79,7 @@ Eine Klasse, deren Objekte Zeilen einer Datenbanktabelle sind: Sie beschreibt di
 
 ### extension/expai (14)
 
-[Alle Muster von extension/expai](area-extension-expai.md)
+[Alle Muster von extension/expai](bereich-extension-expai.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -117,7 +117,7 @@ Eine Klasse, deren Objekte Zeilen einer Datenbanktabelle sind: Sie beschreibt di
 
 ### extension/expqueue (3)
 
-[Alle Muster von extension/expqueue](area-extension-expqueue.md)
+[Alle Muster von extension/expqueue](bereich-extension-expqueue.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -216,7 +216,7 @@ Eine Klasse, deren Objekte Zeilen einer Datenbanktabelle sind: Sie beschreibt di
 
 ### extension/sqliimport (13)
 
-[Alle Muster von extension/sqliimport](area-extension-sqliimport.md)
+[Alle Muster von extension/sqliimport](bereich-extension-sqliimport.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -345,7 +345,7 @@ Eine Klasse, deren Objekte Zeilen einer Datenbanktabelle sind: Sie beschreibt di
 
 ### kernel/classes/datatable (4)
 
-[Alle Muster von kernel/classes/datatable](area-kernel-classes-datatable.md)
+[Alle Muster von kernel/classes/datatable](bereich-kernel-classes-datatable.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -404,7 +404,7 @@ Eine Klasse, deren Objekte Zeilen einer Datenbanktabelle sind: Sie beschreibt di
 
 ### kernel/classes/passkey (2)
 
-[Alle Muster von kernel/classes/passkey](area-kernel-classes-passkey.md)
+[Alle Muster von kernel/classes/passkey](bereich-kernel-classes-passkey.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -413,7 +413,7 @@ Eine Klasse, deren Objekte Zeilen einer Datenbanktabelle sind: Sie beschreibt di
 
 ### kernel/classes/secrets (1)
 
-[Alle Muster von kernel/classes/secrets](area-kernel-classes-secrets.md)
+[Alle Muster von kernel/classes/secrets](bereich-kernel-classes-secrets.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -430,7 +430,7 @@ Eine Klasse, deren Objekte Zeilen einer Datenbanktabelle sind: Sie beschreibt di
 
 ### kernel/classes/transfer (1)
 
-[Alle Muster von kernel/classes/transfer](area-kernel-classes-transfer.md)
+[Alle Muster von kernel/classes/transfer](bereich-kernel-classes-transfer.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |

@@ -25,7 +25,7 @@ Ein zentraler Ort, an dem Objekte oder Callbacks unter einem Namen registriert u
 
 ### extension/expai (4)
 
-[Alle Muster von extension/expai](area-extension-expai.md)
+[Alle Muster von extension/expai](bereich-extension-expai.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -60,7 +60,7 @@ Ein zentraler Ort, an dem Objekte oder Callbacks unter einem Namen registriert u
 
 ### extension/sqliimport (3)
 
-[Alle Muster von extension/sqliimport](area-extension-sqliimport.md)
+[Alle Muster von extension/sqliimport](bereich-extension-sqliimport.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -151,7 +151,7 @@ Ein zentraler Ort, an dem Objekte oder Callbacks unter einem Namen registriert u
 
 ### kernel/classes/syscard (1)
 
-[Alle Muster von kernel/classes/syscard](area-kernel-classes-syscard.md)
+[Alle Muster von kernel/classes/syscard](bereich-kernel-classes-syscard.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -159,7 +159,7 @@ Ein zentraler Ort, an dem Objekte oder Callbacks unter einem Namen registriert u
 
 ### kernel/classes/transfer (1)
 
-[Alle Muster von kernel/classes/transfer](area-kernel-classes-transfer.md)
+[Alle Muster von kernel/classes/transfer](bereich-kernel-classes-transfer.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |

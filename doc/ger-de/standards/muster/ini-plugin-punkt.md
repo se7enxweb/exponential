@@ -117,7 +117,7 @@ Eine Einstellung, die die Klasse nennt, die der Kernel für eine Aufgabe verwend
 
 ### extension/expai (49)
 
-[Alle Muster von extension/expai](area-extension-expai.md)
+[Alle Muster von extension/expai](bereich-extension-expai.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -251,7 +251,7 @@ Eine Einstellung, die die Klasse nennt, die der Kernel für eine Aufgabe verwend
 
 ### extension/expqueue (5)
 
-[Alle Muster von extension/expqueue](area-extension-expqueue.md)
+[Alle Muster von extension/expqueue](bereich-extension-expqueue.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -445,7 +445,7 @@ Eine Einstellung, die die Klasse nennt, die der Kernel für eine Aufgabe verwend
 
 ### extension/ezoracle (2)
 
-[Alle Muster von extension/ezoracle](area-extension-ezoracle.md)
+[Alle Muster von extension/ezoracle](bereich-extension-ezoracle.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -533,7 +533,7 @@ Eine Einstellung, die die Klasse nennt, die der Kernel für eine Aufgabe verwend
 
 ### extension/sqliimport (66)
 
-[Alle Muster von extension/sqliimport](area-extension-sqliimport.md)
+[Alle Muster von extension/sqliimport](bereich-extension-sqliimport.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -839,7 +839,7 @@ Eine Einstellung, die die Klasse nennt, die der Kernel für eine Aufgabe verwend
 
 ### kernel/classes/reauth (1)
 
-[Alle Muster von kernel/classes/reauth](area-kernel-classes-reauth.md)
+[Alle Muster von kernel/classes/reauth](bereich-kernel-classes-reauth.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -866,7 +866,7 @@ Eine Einstellung, die die Klasse nennt, die der Kernel für eine Aufgabe verwend
 
 ### kernel/classes/syscard (16)
 
-[Alle Muster von kernel/classes/syscard](area-kernel-classes-syscard.md)
+[Alle Muster von kernel/classes/syscard](bereich-kernel-classes-syscard.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
@@ -889,7 +889,7 @@ Eine Einstellung, die die Klasse nennt, die der Kernel für eine Aufgabe verwend
 
 ### kernel/classes/transfer (3)
 
-[Alle Muster von kernel/classes/transfer](area-kernel-classes-transfer.md)
+[Alle Muster von kernel/classes/transfer](bereich-kernel-classes-transfer.md)
 
 | Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
 | --- | --- | --- | --- | --- |
