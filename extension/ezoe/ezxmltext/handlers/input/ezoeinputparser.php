@@ -539,8 +539,10 @@ class eZOEInputParser extends eZXMLInputParser
         $text = preg_replace( "/<p.*?>/i", "\n\n", $text );
         $text = preg_replace( "/<\/?\s?br.*?>/i", "\n", $text );
 
-        $text = $this->entitiesDecode( $text );
+        // the numeric references first: decoded after the named ones, an escaped reference shown as text
+        // ("&amp;#1234;", the code "&#1234;") was decoded twice and stored as the character
         $text = $this->convertNumericEntities( $text );
+        $text = $this->entitiesDecode( $text );
 
         $textNode = $this->Document->createTextNode( $text );
         $element->appendChild( $textNode );

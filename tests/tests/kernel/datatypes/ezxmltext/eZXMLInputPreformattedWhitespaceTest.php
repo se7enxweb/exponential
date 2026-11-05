@@ -3,7 +3,8 @@
  * A code block (<pre> in the online editor, <literal> in the stored XML) keeps its line breaks, tabs and leading
  * spaces when it is saved. eZXMLInputParser::process() removes every line break of HTML input and makes tabs spaces,
  * so a code block was stored as one long line, its indentation left as runs of spaces in the middle of it (every
- * code example of an imported documentation site, and every block an editor saved). No database.
+ * code example of an imported documentation site, and every block an editor saved). A reference shown as text in
+ * a block ("&amp;#1234;") was decoded twice and stored as the character. No database.
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -39,6 +40,8 @@ class eZXMLInputPreformattedWhitespaceTest extends PHPUnit\Framework\TestCase
             '<br> from the editor' => array( '<pre>one<br />  two<br>three</pre>', "one\n  two\nthree" ),
             'the line break after the opening tag is no content' => array( "<pre class=\"wordwrap\">\nfirst\nsecond</pre>", "first\nsecond" ),
             'entities' => array( "<pre>\$a = array( 'x' =&gt; '&lt;b&gt;' );\n// &amp; done</pre>", "\$a = array( 'x' => '<b>' );\n// & done" ),
+            'a reference shown as text is decoded once' => array( '<pre>Allowed: &amp;#1234; and &amp;#x3A9;, not &amp;amp;</pre>', 'Allowed: &#1234; and &#x3A9;, not &amp;' ),
+            'a numeric reference is a character' => array( '<pre>&#1234; &#x3A9;</pre>', "\u{04D2} \u{03A9}" ),
         );
     }
 

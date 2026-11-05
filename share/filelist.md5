@@ -24337,7 +24337,7 @@ f3bffc88e81741de46f06135aac557bf  extension/ezoe/design/standard/templates/ezoe/
 432508f8b8c2b01e6ced699e524f4abe  extension/ezoe/doc/oe5_intro.pdf
 70322a77a52a65c55b7f33427a6c6eb4  extension/ezoe/doc/path_concept.gif
 d68aef10c475f5d39441e5210cce2634  extension/ezoe/extension.xml
-0e59f547cb18032b1c3670271ff9d935  extension/ezoe/ezxmltext/handlers/input/ezoeinputparser.php
+c9989e354c39c19890be7a2a7abe5f10  extension/ezoe/ezxmltext/handlers/input/ezoeinputparser.php
 34731dfbf828917f9a97e597cf0fcb36  extension/ezoe/ezxmltext/handlers/input/ezoexmlinput.php
 84be03f87c6a63ead6d791281c09bda5  extension/ezoe/modules/ezoe/classes/EnchantSpell.php
 18f870446f4fbe17ed7e04874d42d544  extension/ezoe/modules/ezoe/classes/GoogleSpell.php
@@ -29891,7 +29891,7 @@ ae45a4eb7776a6157ba9c12d26f20c70  tests/tests/kernel/datatypes/ezuser/ezuser_tes
 7ab46a27a34f5849054e87885470b6f1  tests/tests/kernel/datatypes/ezuser/ezusercache_test.php
 70b1a25d514e44f32615efd30dfd106e  tests/tests/kernel/datatypes/ezuser/ezusertype_regression.php
 a8f63511100320d2e6d96960cd736af0  tests/tests/kernel/datatypes/ezuser/setup_accounts.php
-3e1f3ecf25c32cd9dc41003cc9e951ad  tests/tests/kernel/datatypes/ezxmltext/eZXMLInputPreformattedWhitespaceTest.php
+0d677d0b8f6d2949af82e954ef32dedb  tests/tests/kernel/datatypes/ezxmltext/eZXMLInputPreformattedWhitespaceTest.php
 b11272e7e5c824dcfc5af55555a54740  tests/tests/kernel/datatypes/ezxmltext/eZXMLInputSupplementaryCharactersTest.php
 9b9ba0defc7f50d87a468761b2eae3d5  tests/tests/kernel/datatypes/ezxmltext/eZXMLTextTest.php
 a68260d3be33a41af159890031d3f580  tests/tests/kernel/datatypes/ezxmltext/ezxmlinputparser.php
