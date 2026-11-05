@@ -37,7 +37,9 @@ insert, upsert and delete operations on collections named like the kernel's tabl
 ## Known limits
 
 - Hand-written SQL that the adapter cannot translate returns an **empty result** and logs a warning. Extensions with
-  SQL of their own may need a MongoDB path.
+  SQL of their own may need a MongoDB path. An empty result is not an answer: code that decides access with its own
+  SQL must read it as "no", never as "nothing restricts this". Check the log for untranslated SQL
+  ([below](#finding-untranslated-sql)) before a site goes into production.
 - Deep URL alias regeneration after moving subtrees is incomplete.
 - Role and policy list pages can be empty although permissions are enforced.
 - Some cronjobs are not ported.

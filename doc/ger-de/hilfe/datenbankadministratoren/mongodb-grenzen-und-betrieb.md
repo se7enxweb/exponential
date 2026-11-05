@@ -37,7 +37,9 @@ umzieht. Quellen: [MongoDB als Datenbank](../../funktionen/6.0/mongodb-datenbank
 ## Bekannte Grenzen
 
 - Handgeschriebenes SQL, das der Adapter nicht übersetzen kann, liefert ein **leeres Ergebnis** und protokolliert eine
-  Warnung. Erweiterungen mit eigenem SQL können einen MongoDB-Weg brauchen.
+  Warnung. Erweiterungen mit eigenem SQL können einen MongoDB-Weg brauchen. Ein leeres Ergebnis ist keine Antwort:
+  Code, der mit eigenem SQL über Zugriffe entscheidet, muss es als „nein“ lesen, nie als „nichts schränkt das ein“.
+  Prüfen Sie das Protokoll auf nicht übersetztes SQL, bevor eine Site in Produktion geht.
 - Die tiefe Neuerzeugung von URL-Aliasen nach dem Verschieben von Teilbäumen ist unvollständig.
 - Listenseiten für Rollen und Richtlinien können leer sein, obwohl Berechtigungen durchgesetzt werden.
 - Einige Cronjobs sind nicht portiert.

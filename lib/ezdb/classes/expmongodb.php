@@ -15,6 +15,17 @@
  use Exception as Exception;
  use MongoDB\Client;
 
+/**
+ * The MongoDB database adapter: turns the kernel's SQL-shaped calls into MongoDB operations.
+ *
+ * Security notes for code that runs on it:
+ * - Values from a WHERE clause become scalar comparisons (equality, integers, quoted regular expressions), never
+ *   query operators, so a value cannot add an operator to a query. escapeString() therefore returns the value as
+ *   it is: nothing is ever built into a query string.
+ * - SQL the adapter cannot translate returns an empty result and logs a warning. An empty result is not an answer:
+ *   code that decides access must treat it as "no", never as "nothing restricts this". Review the warnings
+ *   (doc/eng-us/help/database-administrators/mongodb-limits-and-operations.md) before a site goes into production.
+ */
 class expMongoDB extends eZDBInterface
 {
     /**
