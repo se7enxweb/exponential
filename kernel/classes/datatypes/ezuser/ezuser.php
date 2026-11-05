@@ -2510,33 +2510,20 @@ WHERE user_id = '" . $userID . "' AND
     /*!
      \static
      Creates a password with number of characters equal to \a $passwordLength and returns it.
-     If you want pass a value in \a $seed it will be used as basis for the password, if not
-     it will use the current time value as seed.
-     \note If \a $passwordLength exceeds 16 it will need to generate new seed for the remaining
-           characters.
+     Every character is drawn on its own from passwordCharacterTable() with random_int(), the
+     cryptographically secure random source of PHP, so each character of the table is equally likely.
+     \a $seed is accepted for compatibility and no longer used: a password must never be reproducible
+     from a value someone else can know or guess, such as the time of the request. No caller passed one.
     */
     static function createPassword( $passwordLength, $seed = false )
     {
-        $chars = 0;
+        $passwordLength = max( 1, (int)$passwordLength );
+        $characterTable = array_values( eZUser::passwordCharacterTable() );
+        $last = count( $characterTable ) - 1;
         $password = '';
-        if ( $passwordLength < 1 )
-            $passwordLength = 1;
-        $decimal = 0;
-        while ( $chars < $passwordLength )
+        for ( $i = 0; $i < $passwordLength; ++$i )
         {
-            if ( $seed == false )
-                $seed = time() . ":" . mt_rand();
-            $text = md5( $seed );
-            $characterTable = eZUser::passwordCharacterTable();
-            $tableCount = count( $characterTable );
-            for ( $i = 0; ( $chars < $passwordLength ) and $i < 32; ++$chars, $i += 2 )
-            {
-                $decimal += hexdec( substr( $text, $i, 2 ) );
-                $index = ( $decimal % $tableCount );
-                $character = $characterTable[$index];
-                $password .= $character;
-            }
-            $seed = false;
+            $password .= $characterTable[random_int( 0, $last )];
         }
         return $password;
     }

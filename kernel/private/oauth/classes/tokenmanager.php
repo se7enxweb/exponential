@@ -21,13 +21,15 @@ class ezpRestTokenManager
      *
      * @todo See if this should maybe return a token object with token + expiry
      *
+     * The token comes from ezpRestToken::generateToken(): 40 hex characters from the secure random source of PHP.
+     *
      * @param string $scope
      *
      * @return string $token
      */
     public static function generateToken( $scope )
     {
-        return md5( 'uniqid' );
+        return ezpRestToken::generateToken( $scope );
     }
 }
 ?>

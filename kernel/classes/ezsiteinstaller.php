@@ -1013,11 +1013,14 @@ class eZSiteInstaller
                         $user = eZUser::create( $objectID );
                     }
 
+                    // A login, address and password nobody knows: the account exists for the content only.
+                    // Whoever needs to sign in with it sets a password in the administration.
+                    $password = eZUser::createPassword( 24 );
                     $user->setInformation( $objectID,
-                                           md5( time() . '-' . mt_rand() ),
-                                           md5( time() . '-' . mt_rand() ) . '@ez.no',
-                                           'publish',
-                                           'publish' );
+                                           bin2hex( random_bytes( 16 ) ),
+                                           bin2hex( random_bytes( 16 ) ) . '@example.invalid',
+                                           $password,
+                                           $password );
                     $user->store();
                 } break;
             }

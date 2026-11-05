@@ -7,8 +7,11 @@ d3c3da531de3f903a6857f522f3ba0db  .gitattributes
 e399d1ae8564340ae3012f346d90bfa0  .githooks/pre-push
 a65c763ef0340e232cfe8c274f56fca0  .github/FUNDING.yml
 7b502a7347b204c809b1a9c75e77651c  .github/PULL_REQUEST_TEMPLATE.md
+79b69ec6b35b2e67c7d09d42140a517b  .github/codeql/codeql-config.yml
+8fe2fdb4518283799c82843714155961  .github/dependabot.yml
 615b46b2d4c1115974bae173147c099f  .github/scripts/ci_health_report.py
 83ebb7a0d04f421bdff8ef89b268e003  .github/workflows/ci-health.yml
+dcd2c18968f0d52e402cd003ab6e2c67  .github/workflows/codeql.yml
 ae7e2ed631182f7180278f4953795ccb  .github/workflows/performance.yml
 3d1a8a27909923838d941600b44ddd29  .github/workflows/phpunit.yml
 3a78993c3989bbdf75b2fd1e608397f7  .github/workflows/quality.yml
@@ -3530,7 +3533,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-1079d721d4a149a2677610187b5d3722  doc/changelogs/6.0/6.0.15.md
+0190ab5db30dbf782bb8f82feafb079c  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -8450,7 +8453,7 @@ c81764b03ba7c00e6911865fb07cd4a2  doc/eng-us/help/database-administrators/findin
 f01187ea5ce028a25be35cbdd830a654  doc/eng-us/help/database-administrators/glossary-for-database-administrators.md
 6ea0bd34199d042a66c75ba8e2e138f0  doc/eng-us/help/database-administrators/housekeeping-cronjobs-and-queues.md
 dd764d8bb34cf0c66c2b5113b93c4988  doc/eng-us/help/database-administrators/microsoft-sql-server-status.md
-a8d7cb12ef81f7cd08ead392418e6eca  doc/eng-us/help/database-administrators/mongodb-limits-and-operations.md
+5c7972049b978fb728327b255b64df07  doc/eng-us/help/database-administrators/mongodb-limits-and-operations.md
 ee73db4449c98d3c83b16fc6b1fa962e  doc/eng-us/help/database-administrators/mongodb-setup.md
 7802db700ce9e89308630df226577447  doc/eng-us/help/database-administrators/monitoring-the-database.md
 5e07f9df29c72b16e8b65b39c731003d  doc/eng-us/help/database-administrators/moving-between-engines.md
@@ -18263,7 +18266,7 @@ c3214dbd9328fef7dc12e74adbabdd50  doc/ger-de/hilfe/datenbankadministratoren/die-
 5d135439df92da4e5139322c93243d2c  doc/ger-de/hilfe/datenbankadministratoren/leistung-und-skalierung.md
 db1d525d27fd53dd10f2daccea02cd57  doc/ger-de/hilfe/datenbankadministratoren/lesepfad-fuer-datenbankadministratoren.md
 21fe1e3783ad8930e794d0c415b470bc  doc/ger-de/hilfe/datenbankadministratoren/mongodb-einrichten.md
-18b512e5a3cf6d69ee597faddc19c94a  doc/ger-de/hilfe/datenbankadministratoren/mongodb-grenzen-und-betrieb.md
+145ae04773321b12ae6beb4ed9dd809b  doc/ger-de/hilfe/datenbankadministratoren/mongodb-grenzen-und-betrieb.md
 791fcd409d5aecc4a15f418980774ef5  doc/ger-de/hilfe/datenbankadministratoren/mysql-lesereplikate.md
 dcd1742bb388f93e09782a6df8d8846a  doc/ger-de/hilfe/datenbankadministratoren/mysql-und-mariadb-einrichten.md
 5a358920e4c742b438c7afc4e3721a91  doc/ger-de/hilfe/datenbankadministratoren/mysql-und-mariadb-zeichensatz-und-innodb.md
@@ -24593,10 +24596,10 @@ cda32345bdf57a9717f559a416005a7f  kernel/classes/datatable/sync/expdatasync.php
 8496d42ad205b056aa73e0602f744df7  kernel/classes/datatypes/ezauthor/ezauthor.php
 89bc5e682620149b9336a291ab2dbab8  kernel/classes/datatypes/ezauthor/ezauthortype.php
 dbea0d8e5a34f89440434c8fa4c582ae  kernel/classes/datatypes/ezbinaryfile/ezbinaryfile.php
-24e953878ca83e909f35b2455d4dddeb  kernel/classes/datatypes/ezbinaryfile/ezbinaryfiletype.php
+632cb4d2527b589a5b2987b4136edf4c  kernel/classes/datatypes/ezbinaryfile/ezbinaryfiletype.php
 35d73c4e30f868b6635d7b20b28dd797  kernel/classes/datatypes/ezbinaryfile/plugins/ezpdfparser.php
 56b22d6fc7450841f2807b422174c7bf  kernel/classes/datatypes/ezbinaryfile/plugins/ezplaintextparser.php
-5ca43e485bb4a4fee1a1255442bcf048  kernel/classes/datatypes/ezbinaryfile/plugins/ezwordparser.php
+d6c2c46ec20298775bb1f4eefdd4b5f6  kernel/classes/datatypes/ezbinaryfile/plugins/ezwordparser.php
 44132e3edfeebf71ec12c937c8b89a71  kernel/classes/datatypes/ezboolean/ezbooleantype.php
 28d42a22ecb3fb549f012f550b637156  kernel/classes/datatypes/ezcountry/expcountrygroups.php
 6829986bce721f78829de1470f24fbfc  kernel/classes/datatypes/ezcountry/ezcountrytype.php
@@ -24630,7 +24633,7 @@ f8941c5570047c76cff3e63199828257  kernel/classes/datatypes/ezmatrix/ezmatrix.php
 749509a8edc9df295c0c6c4fbd9fe72d  kernel/classes/datatypes/ezmatrix/ezmatrixdefinition.php
 ae6d3e58d0f51fe4a284b4e5e7095e3b  kernel/classes/datatypes/ezmatrix/ezmatrixtype.php
 36215103c741c5bd361d07babb553ae4  kernel/classes/datatypes/ezmedia/ezmedia.php
-8c65e842ceb173fc0450064743adc81f  kernel/classes/datatypes/ezmedia/ezmediatype.php
+a008fd10825c44a0f2743f3aee286b8b  kernel/classes/datatypes/ezmedia/ezmediatype.php
 e5b84b0003a1bc96822938071f6099cb  kernel/classes/datatypes/ezmultioption/ezmultioption.php
 d25e83fcbeb0148a7f0509eb9e6ecb53  kernel/classes/datatypes/ezmultioption/ezmultioptiontype.php
 70133e23b5593f0b16eb848756683b14  kernel/classes/datatypes/ezmultioption2/ezmultioption2.php
@@ -24658,7 +24661,7 @@ bf1026f2ac0b922b659de8ea093ff73f  kernel/classes/datatypes/ezurl/ezurlobjectlink
 30182d376df7c170f7121d9eac7ecf8c  kernel/classes/datatypes/ezuser/ezforgotpassword.php
 39e149968aa8c1f438371064ba7e3a04  kernel/classes/datatypes/ezuser/ezldapuser.php
 d444628f4be6393b7ae42aece2e08e8b  kernel/classes/datatypes/ezuser/eztextfileuser.php
-f44e667d9d9b0ea5caee91982f30cce5  kernel/classes/datatypes/ezuser/ezuser.php
+4d76c8ad1b38ef94f82caf9d3466cd18  kernel/classes/datatypes/ezuser/ezuser.php
 6943cee33b53b79052527ebbea0e1106  kernel/classes/datatypes/ezuser/ezuseraccountkey.php
 c26836efbe528fca54adae7a0e13a513  kernel/classes/datatypes/ezuser/ezuserloginhandler.php
 50b0471b1a41c23145acf34cc25af11b  kernel/classes/datatypes/ezuser/ezusersetting.php
@@ -24895,7 +24898,7 @@ fa1efc92321777aaa6bf1976ab13f48f  kernel/classes/ezshippingmanager.php
 ce4d669e185092be2e6f870615a8b9e7  kernel/classes/ezshopaccounthandler.php
 cc36dc1db3569e799588b5f0f633fd64  kernel/classes/ezsiteaccess.php
 919046fec0ffb6aacd3fdd5b10d4045d  kernel/classes/ezsitedata.php
-293628393537b29810191bf24eee5ef0  kernel/classes/ezsiteinstaller.php
+f322fbad890ffe3361e071d69578c1df  kernel/classes/ezsiteinstaller.php
 c28bc6243b66186944a4758389e33c14  kernel/classes/ezsslzone.php
 62fec4d87605d5c0491791b1ee46d900  kernel/classes/ezstaticcache.php
 2bdea4f1b23c6d139caff374628e4293  kernel/classes/ezsubtreecache.php
@@ -26338,7 +26341,7 @@ aa3f3fda18c6d3a7e664691570572fad  kernel/private/classes/views/url/list.php
 40f4a7d768d76ebf932c36657a929284  kernel/private/classes/views/user/audit.php
 de9b46dc488ab5e9063b83040333323c  kernel/private/classes/views/user/deactivate.php
 8ca367249930a7c668cb04966777726f  kernel/private/classes/views/user/edit.php
-258137c12ffd732646ecc849663b570d  kernel/private/classes/views/user/forgotpassword.php
+f056a8b58e475debea76f21f0f9186be  kernel/private/classes/views/user/forgotpassword.php
 4e0c9f3bc16e3b0ec3f415f376911106  kernel/private/classes/views/user/hygiene.php
 5110af70755ab371c67ed4198a793a1b  kernel/private/classes/views/user/login.php
 d6121e021ee499a2fac1406d63555ce5  kernel/private/classes/views/user/logout.php
@@ -26409,7 +26412,7 @@ a7ccc5638b3974e064f4f30a9b6128e0  kernel/private/modules/oauthadmin/module.php
 58c2bbf0430ef4e3ee6fb285b9005264  kernel/private/oauth/classes/persistentobjects/ezprestclient.php
 ae8586b654b9a1a432531e370859bf08  kernel/private/oauth/classes/restauthorizedclient.php
 2e6ad9697f5a65e09eb728f96527c37f  kernel/private/oauth/classes/restclient.php
-7b93cdc1fff2ae63553f268fea0e9874  kernel/private/oauth/classes/tokenmanager.php
+5c8c02394e47de36a6f857db2cd8d3dd  kernel/private/oauth/classes/tokenmanager.php
 cd927c02a44dcfb6ece0b65e829b3927  kernel/private/options/ezpautoloadgeneratoroptions.php
 71f88116fc87041f46755e3ea43be8b4  kernel/private/options/ezpextensionoptions.php
 8b5a21f10ae4a65b39ffc2cf1138d048  kernel/private/rest/classes/auth/apikey_auth_filter.php
@@ -26777,7 +26780,7 @@ f8422b2d7c5983552ff65b4105c20766  kernel/workflow/view.php
 4ca5c95269d6a6ee11b56bab377d82e9  kernel/workflow/workflowlist.php
 0dfe9528cfa06ba3902bafd352aaaae0  kickstart.ini--example
 29a9398e1ffaf0295240ff21451d1f16  kickstart.ini-dist
-618611071f6391dadcbd72e1d1f75d09  lib/ezdb/classes/expmongodb.php
+1e9f3dead0e1a181a1cf28a06113e4e2  lib/ezdb/classes/expmongodb.php
 13f0a583c9b7da0867680d243ffdcb5e  lib/ezdb/classes/exppdodb.php
 4a4c9ff3c3b806245f6e3e709208198b  lib/ezdb/classes/ezdb.php
 661ef313a4ddad8e41cfa06a5e021a1e  lib/ezdb/classes/ezdbinterface.php
@@ -26974,7 +26977,7 @@ b671b6c2a143cd801f3ce3ce4a01248c  lib/ezutils/classes/ezexpiryhandler.php
 bc9273bdffd0c33f2850f1f79167860a  lib/ezutils/classes/ezfiletransport.php
 d7ab655e877ac2a6cb313bba14f33505  lib/ezutils/classes/ezfloatvalidator.php
 20ec69994d508c11a4a98d02edb6334e  lib/ezutils/classes/ezfunctionhandler.php
-7a2bd096bd646542db1fa4a81d03bdcd  lib/ezutils/classes/ezhttpfile.php
+f9d998128a4cb21044f46fb2474919ce  lib/ezutils/classes/ezhttpfile.php
 96744a5512d7d89c096150ae2f50183a  lib/ezutils/classes/ezhttppersistence.php
 6fa9bafc7b70c2a6a8b56ce25b25906a  lib/ezutils/classes/ezhttptool.php
 4783b723ac5c2bb2ae972e88d93aef3a  lib/ezutils/classes/ezini.php
@@ -29612,6 +29615,7 @@ d0ea9a4c520bbe7ab0159713536c2a79  tests/tests/kernel/classes/security/eZRSSSecur
 59cbc146f3181f483a89469ebf4a0936  tests/tests/kernel/classes/security/eZSecurityHardeningTest.php
 175f88ec915fce2ac2bccd82b09f0d98  tests/tests/kernel/classes/security/expFileModeLimitsTest.php
 d42e8271f8b1691c651022d17322d3e9  tests/tests/kernel/classes/security/expIniPhpWrapperTest.php
+7dcfb160f23092cbcb90c5a591ed8e89  tests/tests/kernel/classes/security/expRandomSourcesTest.php
 83de9ec554e2cfff5dc802dca2d2bfdf  tests/tests/kernel/classes/security/fixtures/expfilemodecalls.php
 7be009bfcecb326228952697b7b84c2d  tests/tests/kernel/classes/security/stubs.php
 09873cba35e52f484db87ebe458dceac  tests/tests/kernel/classes/setup/AdminUISiteaccessTest.php
