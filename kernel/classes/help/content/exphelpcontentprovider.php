@@ -42,6 +42,9 @@ class expHelpContentProvider implements expHelpContextProviderInterface, expHelp
     /** @var array|null releasedHelpIds() of this request (a static property: a persistent worker resets it per request) */
     protected static $releasedMemo = null;
 
+    /** @var array|null array( index signature, topic remote_id => help page id ) of pageUrl(), rebuilt when the help changes */
+    protected static $pagesMemo = null;
+
     public function __construct( ?expHelpContentRepository $repository = null )
     {
         $this->repository = $repository;
@@ -282,8 +285,47 @@ class expHelpContentProvider implements expHelpContextProviderInterface, expHelp
     public static function linkResolver( $href, $currentId = '' )
     {
         if ( preg_match( '#^/?content/([a-z0-9.-]{1,80})\.md(?:\#(.*))?$#', (string)$href, $m ) )
-            return expHelpLinks::absolute( expHelp::url( 'topic', $m[1], isset( $m[2] ) ? rawurldecode( $m[2] ) : '' ) );
+        {
+            $anchor = isset( $m[2] ) ? rawurldecode( $m[2] ) : '';
+            // only a topic the reader may see is linked; one they may not (not Released, restricted) leads to its
+            // page in the help center when it was made from one (pageUrl()), else its text stays without a link
+            $provider = self::instance();
+            $row = $provider->repository()->topic( $m[1] );
+            if ( $row !== null && $provider->visible( $row ) !== null )
+                return expHelpLinks::absolute( expHelp::url( 'topic', $m[1], $anchor ) );
+            return $row !== null ? self::pageUrl( $row, $anchor ) : null;
+        }
         return expHelpLinks::link( $href, '' );
+    }
+
+    /**
+     * The help center's page a topic was made from (a topic of a generated manual, expHelpManualBuilder: its remote_id
+     * names the page), for a link to a topic the reader may not see: the viewer's address of that page when the reader
+     * may open it, else null
+     *
+     * @param array $topic a topic of the repository
+     * @param string $anchor
+     * @return string|null
+     */
+    public static function pageUrl( array $topic, $anchor = '' )
+    {
+        if ( !isset( $topic['remote_id'] ) || !expHelpManualBuilder::isGenerated( $topic['remote_id'] ) )
+            return null;
+        $index = expHelpDocumentIndex::instance();
+        $signature = $index->signature();
+        if ( self::$pagesMemo === null || self::$pagesMemo[0] !== $signature )
+        {
+            $pages = array();
+            foreach ( array_keys( $index->documents() ) as $pageId )
+                $pages[expHelpManualBuilder::topicRemoteId( (string)$pageId )] = (string)$pageId;
+            self::$pagesMemo = array( $signature, $pages );
+        }
+        $pageId = isset( self::$pagesMemo[1][$topic['remote_id']] ) ? self::$pagesMemo[1][$topic['remote_id']] : null;
+        if ( $pageId === null || $index->document( $pageId ) === null || !$index->isAllowed( $pageId ) )
+            return null;
+        if ( $anchor !== '' && method_exists( $index, 'anchorOf' ) )
+            $anchor = $index->anchorOf( $pageId, $anchor );
+        return expHelpLinks::absolute( expHelp::url( 'viewer', $pageId, $anchor ) );
     }
 
     /**

@@ -24980,12 +24980,12 @@ c26de433c91a861f302698fce98abc3c  kernel/classes/help/content/exphelpcontenthelp
 1512e10d6d878650f30ea15e1a74ee00  kernel/classes/help/content/exphelpcontentinstaller.php
 0ff824a485df2ef18041439d94e0da07  kernel/classes/help/content/exphelpcontentmetadata.php
 85e09660283bc7f6fabafb017ed8b037  kernel/classes/help/content/exphelpcontentpackage.php
-5b3beeb549127c883524019bac3e8960  kernel/classes/help/content/exphelpcontentprovider.php
+9de9168a4aec948228ec826c3109e126  kernel/classes/help/content/exphelpcontentprovider.php
 f9f7327ecca94e79c06dab89c6894076  kernel/classes/help/content/exphelpcontentrepository.php
 fe5616c64f649c59b52d2bfcf44e9004  kernel/classes/help/content/exphelpcontentreview.php
 815ce8d36f16b92cb9fa38867abf4de2  kernel/classes/help/content/exphelpcontentschema.php
 984abefd704bd58b471663a52a3cc561  kernel/classes/help/content/exphelpcontentseeder.php
-b02343413e0d4682d00eba14e0e1c8d0  kernel/classes/help/content/exphelpcontentsite.php
+ca7fe440626e9c03bec44d83b4808ec2  kernel/classes/help/content/exphelpcontentsite.php
 156598d0356beef921d790a8384da2f9  kernel/classes/help/content/exphelpcontenttables.php
 04767ed6378681cb4bd3d1ca2809bf9b  kernel/classes/help/content/exphelpcontentvalidator.php
 fb1cd3ed77230c90d7857c5063879cd5  kernel/classes/help/content/exphelpcontentworkflow.php
