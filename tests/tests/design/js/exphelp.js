@@ -1,4 +1,4 @@
-// Runs design/admin4/javascript/exphelp.js (the help pages) against mini_dom.js: the instant search (request, stale
+// Runs design/standard/javascript/exphelp.js (the help pages) against mini_dom.js: the instant search (request, stale
 // answers, filters, results built as text, unsafe links dropped, errors), its keys (/, arrows, Enter, Esc), copy buttons
 // on code, collapsible sections, the table of contents following the reading position, j/k and [ ]. Each case gets a
 // fresh document and script. Prints one JSON line per case.

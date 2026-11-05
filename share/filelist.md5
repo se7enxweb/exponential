@@ -408,7 +408,6 @@ c298e839ce3acde72bc6126b87eb17c6  design/admin/javascript/contentcheck_storage.j
 8a56464f4fccc291d296587e29a0a118  design/admin/javascript/contentstructuremenu_dynamic.js
 9d718f7191966f84d8c4fd05a110a6e0  design/admin/javascript/exp_admin_head.js
 0cc5124dcf574cd0a721838e6bc96fae  design/admin/javascript/expajaxuploader.js
-e999dfbc5213fda2c620cd165159f9d7  design/admin/javascript/exphelp.js
 c8843ddf550376326f1f449d3f1f6043  design/admin/javascript/ezajaxrelations_jquery.js
 41c787ac03e0607a1874403535cc65a7  design/admin/javascript/ezajaxsubitems_expdatatable.js
 f8ed2fb594b5741b9c856eb9b1b493d0  design/admin/javascript/leftmenu_widthcontrol.js
@@ -1161,7 +1160,6 @@ c500ef710f1fcf31270ce339c169589c  design/admin4/javascript/a4_url.js
 c298e839ce3acde72bc6126b87eb17c6  design/admin4/javascript/contentcheck_storage.js
 8a56464f4fccc291d296587e29a0a118  design/admin4/javascript/contentstructuremenu_dynamic.js
 0cc5124dcf574cd0a721838e6bc96fae  design/admin4/javascript/expajaxuploader.js
-e999dfbc5213fda2c620cd165159f9d7  design/admin4/javascript/exphelp.js
 16a43b2509a3b08eace145a605e79c92  design/admin4/javascript/ezadmin_menubar.js
 c8843ddf550376326f1f449d3f1f6043  design/admin4/javascript/ezajaxrelations_jquery.js
 41c787ac03e0607a1874403535cc65a7  design/admin4/javascript/ezajaxsubitems_expdatatable.js
@@ -2367,6 +2365,7 @@ ff23b2b1387845ae5f541b38a7951963  design/standard/javascript/exp_bookmarks.js
 3e27389cb0e9b7fcbc78aa9f77b83e9f  design/standard/javascript/exp_password_field.js
 b8c91691f6f4c2a012fac6884a2523b7  design/standard/javascript/expdebugbar-head.js
 28ded16c3e8e8a1c6c1eab4b68f23558  design/standard/javascript/expdebugbar.js
+e999dfbc5213fda2c620cd165159f9d7  design/standard/javascript/exphelp.js
 603cddcdfbe3f90ca4c42bd0a0b2eca4  design/standard/javascript/expimagepick.js
 c9d4a91276689383a1be79bb68937c1d  design/standard/javascript/ezasynchronouspublishing.js
 c1f77f113c9e98c8d69676a294815077  design/standard/javascript/ezmedia_silverlight.js
@@ -28569,7 +28568,7 @@ ad3ef84f9d21cd4076b60e33034063b0  tests/bootstrap.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 1b7dcb4dde933b1ebf8f8f93f3df7d55  tests/suite.php
-e69168c080d239a42b661e3e5b97c405  tests/test-map.json
+dba8194b4a2c418a2aee242f5f89b4fe  tests/test-map.json
 4f2af04e2bf61d9e7bfbba8181fc08c0  tests/tests/bin/CiWorkflowPullRequestTest.php
 b152194c06e5b05fb18f088d0afd219c  tests/tests/bin/ConsoleExtensionAliasTest.php
 cf640022325724fc8a061137bbc5045e  tests/tests/bin/CopyrightNoticeTest.php
@@ -28611,8 +28610,8 @@ ea1a269082152f8dde9365c7154fc73d  tests/tests/design/AdminFormLabelsTest.php
 3ca1b7ccc51475cf1cf4e572e25a7c7f  tests/tests/design/AdminHelpFrameClassScopeTest.php
 0b6c210a98f8937b84577dc64170b49f  tests/tests/design/AdminHelpLanguageLineTest.php
 c3e6c6d20d8201f3eab228399108492a  tests/tests/design/AdminHelpLeftMenuTest.php
-99e2c87996d18a40fee1d89b93a67188  tests/tests/design/AdminHelpScriptTest.php
-20ac10dce2925906bc1d0073a81da7e6  tests/tests/design/AdminHelpViewParametersOnlyTest.php
+0e795f8badddce1c479da18fe12ab0f8  tests/tests/design/AdminHelpScriptTest.php
+5b04c3e5bb79c6b01c30af73014bf529  tests/tests/design/AdminHelpViewParametersOnlyTest.php
 a842a8ac7d67f7e4f74ffa1300ca22d9  tests/tests/design/AdminI18nStringTagsTest.php
 0187cbef9eae45ad64742fb7dc041362  tests/tests/design/AdminIconsTest.php
 c9da5a94d56cef4b491128b85c181193  tests/tests/design/AdminJQuery4RemovedApisTest.php
@@ -28703,7 +28702,7 @@ e7f2cf5bab63f8efd977392d31350c7f  tests/tests/design/js/csp_popupmenu.js
 b24983c34e0ac1bf2b048fd6feb0a26a  tests/tests/design/js/csp_tinymce8.js
 98315311bc4ed172e4b5e80e6cf1c5ec  tests/tests/design/js/csp_tree.js
 ea2584f9208c35d5087694b08ebd88aa  tests/tests/design/js/editor_skin.js
-2a2f5362767b37fdc56ccb2f935e543b  tests/tests/design/js/exphelp.js
+9a6ffacfd610b19aadef07320e8960ae  tests/tests/design/js/exphelp.js
 2cd02ee700265f54388571d31c52a9c3  tests/tests/design/js/first_paint.js
 3d6b833cb28bc11e5253fd161fc97006  tests/tests/design/js/language_states.js
 ea34845202a0b1a352b977d9366e4116  tests/tests/design/js/left_resize.js
@@ -29339,7 +29338,7 @@ ced53606a9e6fdb45b22b9719a58fd65  tests/tests/kernel/classes/help/expHelpMarkdow
 5e4406562fde93edb391e8c843a9defa  tests/tests/kernel/classes/help/expHelpPageOrderTest.php
 ec18d53c6d3fca9b1eb24a7d42060d7a  tests/tests/kernel/classes/help/expHelpPageTitlesTest.php
 2f838d8ddf87342d6e98e4b3e366ef2a  tests/tests/kernel/classes/help/expHelpPartnerCardTest.php
-04392666afe0ab395a7fd8866bfbad47  tests/tests/kernel/classes/help/expHelpPdfTest.php
+be93fc209c6f360b67d9510176439a67  tests/tests/kernel/classes/help/expHelpPdfTest.php
 e13055c68ca8d3755a317b1f6e5be33a  tests/tests/kernel/classes/help/expHelpProjectFilesTest.php
 a75bec75ab665b7e15c596bc4982753a  tests/tests/kernel/classes/help/expHelpReadPolicyGrantTest.php
 3a8abae711d189637fba36633f0467de  tests/tests/kernel/classes/help/expHelpRecordRendererTest.php

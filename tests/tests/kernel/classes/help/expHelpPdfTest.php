@@ -15,7 +15,8 @@
  *  HP-08  right to left text in visual order, the paragraph direction
  *  HP-09  the view: registered with policy read, headers attachment + nosniff + a CSP that allows nothing
  *  HP-10  the print hook: a hidden button exphelp.js shows and handles, a PDF link, no inline style or script, print
- *         CSS for the actions and the address, the same files in design/admin and design/admin4
+ *         CSS for the actions and the address, the same files in design/admin and design/admin4, the script in
+ *         design/standard
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -262,14 +263,13 @@ class expHelpPdfTest extends PHPUnit\Framework\TestCase
             $this->assertDoesNotMatchRegularExpression( '/<style|style="|<script|\son[a-z]+=/i', $part );
             $this->assertStringContainsString( "design:exphelp/parts/viewer_actions.tpl", (string)file_get_contents( "$dir/templates/exphelp/viewer.tpl" ) );
 
-            $js = (string)file_get_contents( "$dir/javascript/exphelp.js" );
-            $this->assertStringContainsString( '[data-exphelp-print]', $js );
-            $this->assertStringContainsString( 'window.print()', $js );
-
             $css = (string)file_get_contents( "$dir/stylesheets/modules/help.css" );
             $this->assertStringContainsString( '.a4-help-print-url { display: none; }', $css );
             $this->assertMatchesRegularExpression( '/@media print \{[^@]*\.a4-help-actions[^@]*display: none/s', $css );
         }
+        $js = (string)file_get_contents( self::repo() . '/design/standard/javascript/exphelp.js' );
+        $this->assertStringContainsString( '[data-exphelp-print]', $js );
+        $this->assertStringContainsString( 'window.print()', $js );
         $this->assertFileEquals( self::repo() . '/design/admin4/templates/exphelp/parts/viewer_actions.tpl',
                                  self::repo() . '/design/admin/templates/exphelp/parts/viewer_actions.tpl' );
     }

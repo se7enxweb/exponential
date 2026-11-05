@@ -1,6 +1,8 @@
 <?php
 /**
- * The script of the help pages (design/admin4/javascript/exphelp.js, module exphelp). Checked on the file and, in node,
+ * The script of the help pages (design/standard/javascript/exphelp.js, module exphelp: one copy, found by every design
+ * through the standard fallback, the admin designs and the front-end ones such as the doc site's). Checked on the file
+ * and, in node,
  * against a small stand-in for the DOM (js/mini_dom.js, harness js/exphelp.js); no database.
  *
  * - HELPJS-01: the instant search asks the JSON view named by data-exphelp-endpoint (q trimmed, the checked filters,
@@ -55,7 +57,7 @@ require_once __DIR__ . '/AdminNodeBinary.php';
 
 class AdminHelpScriptTest extends PHPUnit\Framework\TestCase
 {
-    const SCRIPT = 'design/admin4/javascript/exphelp.js';
+    const SCRIPT = 'design/standard/javascript/exphelp.js';
 
     private static $cases = null;
 
@@ -314,10 +316,10 @@ class AdminHelpScriptTest extends PHPUnit\Framework\TestCase
             $this->assertDoesNotMatchRegularExpression( $re, $js, "exphelp.js must not match $re" );
         }
         $root = self::root();
-        foreach ( glob( "$root/design/*/javascript/exphelp.js" ) as $copy )
-        {
-            $this->assertSame( $js, (string)file_get_contents( $copy ), "$copy is the same as admin4's" );
-        }
+        // One copy, in design/standard: a copy in one design only (admin, admin4) left every other design that renders the
+        // help pages (the doc site's front-end designs) without its filter, search and buttons, silently
+        $copies = glob( "$root/{design/*,extension/*/design/*}/javascript/exphelp.js", GLOB_BRACE );
+        $this->assertSame( array( "$root/design/standard/javascript/exphelp.js" ), $copies, 'exphelp.js lives only in design/standard' );
         foreach ( glob( "$root/{design/*,extension/*/design/*}/templates/exphelp", GLOB_BRACE | GLOB_ONLYDIR ) as $dir )
         {
             $all = '';

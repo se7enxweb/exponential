@@ -59,7 +59,9 @@ class AdminHelpViewParametersOnlyTest extends PHPUnit\Framework\TestCase
     /** HV-02 */
     public function testHelpScriptBuildsNoQueryString()
     {
-        foreach ( glob( self::root() . '/design/*/javascript/exphelp.js' ) as $file )
+        $files = glob( self::root() . '/design/*/javascript/exphelp.js' );
+        $this->assertNotEmpty( $files );
+        foreach ( $files as $file )
         {
             $source = file_get_contents( $file );
             foreach ( array( "'?'", "'q='", "'lang='", "'format=json'", "'&limit='", "'limit='", '?lang=', '?format=' ) as $needle )
