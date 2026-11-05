@@ -34,7 +34,10 @@ if you write documentation (in `doc/` or in an extension) that should show up in
   in the header the same way, and exp_adminui (1.0.0.62 and later) its Help button.
 - **Report an error** (`/exphelp/report`): which tracker to use, what to write, a prefilled issue and the
   diagnostics to copy (versions, PHP, engine, design; never passwords, keys, database hosts or personal data), and
-  where to report a security issue privately.
+  where to report a security issue privately. Where a siteaccess switches the view off (`site.ini [SiteAccessRules]`,
+  a public documentation site), every "Report an error" link of the help leads to the page of
+  `[ContextHelp] Map[exphelp/report]` instead and its security link to that page's heading `ReportSecurityAnchor`
+  (`expHelp::reportLinks()`, `fetch( 'exphelp', 'report_links' )`), so no link answers 404.
 
 ## Who may read it
 

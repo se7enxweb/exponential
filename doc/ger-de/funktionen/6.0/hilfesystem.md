@@ -36,7 +36,11 @@ erscheinen soll.
   seinen Hilfe-Link in der Kopfzeile ebenso, exp_adminui (ab 1.0.0.62) seine Hilfe-Schaltfläche.
 - **Fehler melden** (`/exphelp/report`): welcher Tracker zu verwenden ist, was Sie schreiben sollten, ein vorausgefülltes
   Issue und die Diagnosedaten zum Kopieren (Versionen, PHP, Engine, Design; niemals Passwörter, Schlüssel,
-  Datenbank-Hosts oder personenbezogene Daten) sowie wo Sie eine Sicherheitslücke vertraulich melden.
+  Datenbank-Hosts oder personenbezogene Daten) sowie wo Sie eine Sicherheitslücke vertraulich melden. Wo ein
+  Siteaccess die Ansicht abschaltet (`site.ini [SiteAccessRules]`, eine öffentliche Dokumentationssite), führt jeder
+  Link „Fehler melden“ der Hilfe stattdessen zur Seite von `[ContextHelp] Map[exphelp/report]` und sein
+  Sicherheitslink zu deren Überschrift `ReportSecurityAnchor` (`expHelp::reportLinks()`,
+  `fetch( 'exphelp', 'report_links' )`), sodass kein Link mit 404 antwortet.
 
 ## Wer sie lesen darf
 

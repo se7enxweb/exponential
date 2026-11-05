@@ -109,7 +109,7 @@
                      findings=$help_findings findings_counts=$help_findings_counts feedback=$help_feedback_summary prefix='exphelp-topic'}
             {/if}
 
-            <p class="a4-help-foot a4-meta"><a href={'exphelp/report'|ezurl}><span class="a4-icon a4-bi-exclamation-diamond" aria-hidden="true"></span> {'Something wrong on this page? Report an error'|i18n( 'kernel/exphelp' )}</a></p>
+            <p class="a4-help-foot a4-meta"><a href={fetch( 'exphelp', 'report_links' ).url|ezurl}><span class="a4-icon a4-bi-exclamation-diamond" aria-hidden="true"></span> {'Something wrong on this page? Report an error'|i18n( 'kernel/exphelp' )}</a></p>
         </div>
 
         <nav class="a4-help-nav" id="exphelp-nav" aria-labelledby="exphelp-nav-title" tabindex="-1">

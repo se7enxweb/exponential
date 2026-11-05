@@ -7,7 +7,7 @@
    Variables (kernel/private/classes/views/exphelp/dashboard.php): help_audiences (id => id, name, count), help_audience_pages (id => up to 4 documents),
    help_categories (id => id, name, icon, count), help_featured (documents: id, path, title, summary, category,
    audience[]), help_recent (id, title, time, subject), help_trackers (key => key, label, description, url,
-   new_issue_url), help_search_url, help_report_url; optional help_i18n_json (client strings), help_reading (the reader's language and its switch, parts/reading_language.tpl) and help_stats
+   new_issue_url), help_search_url, help_report_url, help_report_security_url; optional help_i18n_json (client strings), help_reading (the reader's language and its switch, parts/reading_language.tpl) and help_stats
    (pages, categories), help_support (the Support Exponential block or false). Every part is left out when its list is
    empty. *}
 {def $help_ctx = 'kernel/exphelp'
@@ -69,6 +69,7 @@
               'ids', array( 'community', 'ecosystem', 'advocate', 'supporter', 'sponsor', 'press', 'podcaster', 'trainer', 'student' ) ) )
      $help_search_action = cond( is_set( $help_search_url ), $help_search_url, '/exphelp/search' )
      $help_report = cond( is_set( $help_report_url ), $help_report_url, '/exphelp/report' )
+     $help_report_security = cond( is_set( $help_report_security_url ), $help_report_security_url, concat( $help_report, '#security' ) )
      $help_i18n = cond( is_set( $help_i18n_json ), $help_i18n_json, '' )
      $help_audience = false()
      $help_pages = array()
@@ -268,7 +269,7 @@
         <div>
             <h2 id="help-dash-report">{'Found an error?'|i18n( $help_ctx )}</h2>
             <p>{'Tell us on GitHub: the guide shows which tracker fits, what to include and the system details to copy, without any secrets.'|i18n( $help_ctx )}</p>
-            <a class="a4-help-report-security" href={concat( $help_report, '#security' )|ezurl}><span class="a4-icon a4-bi-shield-lock" aria-hidden="true"></span>{'A security issue? Report it privately, not in a public issue.'|i18n( $help_ctx )}</a>
+            <a class="a4-help-report-security" href={$help_report_security|ezurl}><span class="a4-icon a4-bi-shield-lock" aria-hidden="true"></span>{'A security issue? Report it privately, not in a public issue.'|i18n( $help_ctx )}</a>
         </div>
         <div class="a4-help-report-actions">
             <a class="a4-btn a4-btn-primary" href={$help_report|ezurl}><span class="a4-icon a4-bi-list-task" aria-hidden="true"></span>{'How to report an error'|i18n( $help_ctx )}</a>

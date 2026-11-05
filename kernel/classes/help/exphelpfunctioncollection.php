@@ -64,6 +64,20 @@ class expHelpFunctionCollection
     }
 
     /**
+     * fetch( 'exphelp', 'report_links' ): where "Report an error" and its security link lead on this siteaccess
+     * (expHelp::reportLinks(): exphelp/report and #security, or the help page of [ContextHelp] Map[exphelp/report]
+     * and its security section where the view is switched off). Addresses are module-relative, for |ezurl.
+     *
+     * @return array array( 'result' => array( 'url', 'security', 'view' ) )
+     */
+    public static function fetchReportLinks()
+    {
+        if ( !method_exists( 'expHelp', 'reportLinks' ) )
+            return array( 'result' => array( 'url' => '/exphelp/report', 'security' => '/exphelp/report#security', 'view' => true ) );
+        return array( 'result' => expHelp::reportLinks() );
+    }
+
+    /**
      * fetch( 'exphelp', 'site_topic', hash( 'object_id', ... ) ): a help topic for the site's own page
      *
      * @param int $object_id

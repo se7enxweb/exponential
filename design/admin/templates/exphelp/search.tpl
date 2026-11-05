@@ -194,7 +194,7 @@
                 </p>
                 {/if}
                 <p><a class="a4-btn" href={'/exphelp/search'|ezurl}>{'Browse all help pages'|i18n( $help_ctx )}</a>
-                   <a class="a4-btn" href={'/exphelp/report'|ezurl}><span class="a4-icon a4-bi-exclamation-diamond" aria-hidden="true"></span>{'Missing a page? Tell us'|i18n( $help_ctx )}</a></p>
+                   <a class="a4-btn" href={fetch( 'exphelp', 'report_links' ).url|ezurl}><span class="a4-icon a4-bi-exclamation-diamond" aria-hidden="true"></span>{'Missing a page? Tell us'|i18n( $help_ctx )}</a></p>
             </div>
         {/if}
         </div>

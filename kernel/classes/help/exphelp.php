@@ -109,6 +109,56 @@ class expHelp
         return $url;
     }
 
+    /** The heading of the page [ContextHelp] Map[exphelp/report] names that the security link opens, without "#" */
+    const REPORT_SECURITY_ANCHOR = 'security-problems';
+
+    /**
+     * Where "Report an error" and its security link lead (doc/eng-us/features/6.0/help-system.md, "Reporting an
+     * error"): the view exphelp/report and its section #security when this siteaccess allows the view
+     * (site.ini [SiteAccessRules]; the view needs exphelp/read like every other view of the help, so a reader who
+     * sees the link may open it), else the help page [ContextHelp] Map[exphelp/report] names (exphelp/viewer/<page>)
+     * and its security section ([ContextHelp] ReportSecurityAnchor, by default #security-problems; on a translated
+     * page the heading in the same position, #sicherheitsprobleme on the German page), else the help dashboard. A
+     * site that switches the view off never links an address that answers 404.
+     *
+     * @param bool|null $viewAllowed whether exphelp/report is reachable here; null asks eZModule::accessAllowed()
+     * @return array array( 'url' => module-relative address (not yet passed through ezurl), 'security' => the same
+     *               with the security anchor, 'view' => bool, true when it is the view exphelp/report )
+     */
+    public static function reportLinks( $viewAllowed = null )
+    {
+        if ( $viewAllowed === null )
+        {
+            $access = eZModule::accessAllowed( new eZURI( 'exphelp/report' ) );
+            $viewAllowed = !empty( $access['result'] );
+        }
+        if ( $viewAllowed )
+            return array( 'url' => self::url( 'report' ), 'security' => self::url( 'report', '', 'security' ), 'view' => true );
+
+        $map = (array)self::setting( 'ContextHelp', 'Map', array() );
+        $target = isset( $map['exphelp/report'] ) && is_scalar( $map['exphelp/report'] )
+            ? expHelpContextRegistry::parseTarget( trim( (string)$map['exphelp/report'] ) ) : null;
+        if ( $target === null || $target['id'] === '' )
+        {
+            $dashboard = self::url( 'dashboard' );
+            return array( 'url' => $dashboard, 'security' => $dashboard, 'view' => false );
+        }
+        $security = trim( (string)self::setting( 'ContextHelp', 'ReportSecurityAnchor', self::REPORT_SECURITY_ANCHOR ) );
+        if ( !preg_match( '#^[\p{L}\p{N}_-]{1,200}$#u', $security ) )
+            $security = self::REPORT_SECURITY_ANCHOR;
+        // the reader may see the page in another language: its heading in the same position
+        try
+        {
+            $security = expHelpDocumentIndex::instance()->anchorOf( $target['id'], $security );
+        }
+        catch ( Throwable $e )
+        {
+        }
+        return array( 'url' => self::url( 'viewer', $target['id'], $target['anchor'] ),
+                      'security' => self::url( 'viewer', $target['id'], $security ),
+                      'view' => false );
+    }
+
     /** The view parameters of exphelp/search, in the order of the canonical address. */
     const SEARCH_PARAMS = array( 'q', 'category', 'audience', 'type', 'extension', 'offset', 'limit' );
 

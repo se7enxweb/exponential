@@ -48,6 +48,15 @@ $FunctionList['reading_key'] = array( 'name' => 'reading_key',
                                       'parameter_type' => 'standard',
                                       'parameters' => array() );
 
+// Where "Report an error" and its security link lead on this siteaccess: fetch( 'exphelp', 'report_links' ) (url,
+// security, view; expHelp::reportLinks(): the help page of [ContextHelp] Map[exphelp/report] where the view is off)
+$FunctionList['report_links'] = array( 'name' => 'report_links',
+                                       'operation_types' => array( 'read' ),
+                                       'call_method' => array( 'class' => 'expHelpFunctionCollection',
+                                                               'method' => 'fetchReportLinks' ),
+                                       'parameter_type' => 'standard',
+                                       'parameters' => array() );
+
 // Help maintained as content on the site's own pages (the node templates of help_*, extension exphelpsite):
 // fetch( 'exphelp', 'site_topic', hash( 'object_id', $node.contentobject_id ) ) and 'site_map' for a manual or
 // chapter (expHelpContentSite); false when the reader may not see it

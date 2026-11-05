@@ -4,7 +4,7 @@
  *
  * Template variables: help_audiences (id => id, name, count), help_categories (id => id, name, icon, count),
  * help_featured (documents), help_recent (id, title, time, subject), help_tree, help_trackers (expHelpIssueReport),
- * help_search_url, help_report_url, help_reading (expHelp::reading(): the reader's language, the switch, the translated share),
+ * help_search_url, help_report_url, help_report_security_url (expHelp::reportLinks()), help_reading (expHelp::reading(): the reader's language, the switch, the translated share),
  * help_content (manuals and topics of help maintained as content), help_review (the topics overdue for review the user
  * can act on, reviewSummary()), help_waiting (the topics waiting for release the user may release, waitingSummary();
  * paged by the view parameter (offset), view_parameters).
@@ -49,7 +49,12 @@ class Dashboard extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'help_tree', $index->tree() );
         $tpl->setVariable( 'help_trackers', \expHelp::translatedNames( $report->trackers(), array( 'label', 'description' ) ) );
         $tpl->setVariable( 'help_search_url', \expHelp::url( 'search' ) );
-        $tpl->setVariable( 'help_report_url', \expHelp::url( 'report' ) );
+        // exphelp/report, or its help page where this siteaccess switches the view off (a worker started before the
+        // method existed keeps the view's address)
+        $reportLinks = method_exists( 'expHelp', 'reportLinks' ) ? \expHelp::reportLinks()
+            : array( 'url' => \expHelp::url( 'report' ), 'security' => \expHelp::url( 'report', '', 'security' ) );
+        $tpl->setVariable( 'help_report_url', $reportLinks['url'] );
+        $tpl->setVariable( 'help_report_security_url', $reportLinks['security'] );
         // help maintained as content (doc/eng-us/features/6.0/help-content.md): the manuals and topics the user may see
         $tpl->setVariable( 'help_content', self::contentSummary() );
         // the topics overdue for review, for help editors and release managers (those who can act on them)
