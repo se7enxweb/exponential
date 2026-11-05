@@ -218,12 +218,49 @@ class eZXMLInputParser
         return $this->Document;
     }
 
+    /**
+     * Keeps the white space of every <pre> block of the input (the online editor's code blocks, which become
+     * <literal>): process() removes every line break of the input when line breaks are not parsed (in HTML they are
+     * no content) and makes every tab a space, so a code block was stored as one long line, its indentation left as
+     * runs of spaces in the middle of it. Inside <pre> a line break (LF, CRLF or CR) becomes <br />, which the literal
+     * handler stores as a line break again, a tab becomes &#9; and stays a tab; the line break that may follow the
+     * opening tag is no content, as in HTML. Input without <pre> is returned unchanged.
+     *
+     * @param string $text
+     * @return string
+     */
+    function preformattedWhitespace( $text )
+    {
+        if ( stripos( (string) $text, '<pre' ) === false )
+        {
+            return $text;
+        }
+        $parseLineBreaks = $this->ParseLineBreaks;
+        return preg_replace_callback( '#(<pre\b[^>]*>)(.*?)(</pre\s*>)#is', function ( $m ) use ( $parseLineBreaks )
+        {
+            $content = str_replace( array( "\r\n", "\r" ), "\n", $m[2] );
+            if ( strpos( $content, "\n" ) === 0 )
+            {
+                $content = (string) substr( $content, 1 );
+            }
+            $content = str_replace( "\t", '&#9;', $content );
+            if ( !$parseLineBreaks )
+            {
+                $content = str_replace( "\n", '<br />', $content );
+            }
+            return $m[1] . $content . $m[3];
+        }, (string) $text );
+    }
+
     /*!
         \public
         Call this function to process your input
     */
     function process( $text, $createRootNode = true )
     {
+        // the white space of a preformatted block is its content: its line breaks and tabs are kept (see
+        // preformattedWhitespace()) before the rest of the input loses them
+        $text = $this->preformattedWhitespace( $text );
         $text = str_replace( "\r", '', $text);
         $text = str_replace( "\t", ' ', $text);
         // replace unicode chars that will break the XML validity

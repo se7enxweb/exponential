@@ -24671,7 +24671,7 @@ c26836efbe528fca54adae7a0e13a513  kernel/classes/datatypes/ezuser/ezuserloginhan
 50b0471b1a41c23145acf34cc25af11b  kernel/classes/datatypes/ezuser/ezusersetting.php
 eaa55dcb0f71b833f076c832f1d78c26  kernel/classes/datatypes/ezuser/ezusertype.php
 7f82789cd841aff0e7f7940155ef532d  kernel/classes/datatypes/ezxmltext/ezxmlinputhandler.php
-d2b413191b8a8a116d7a94d452f8a4bf  kernel/classes/datatypes/ezxmltext/ezxmlinputparser.php
+c60127dca950625bb947d5f7467a7e47  kernel/classes/datatypes/ezxmltext/ezxmlinputparser.php
 3029c3f55770a685dc51ebe4e34a750a  kernel/classes/datatypes/ezxmltext/ezxmloutputhandler.php
 e5b274ce197c786a1e6d789742259907  kernel/classes/datatypes/ezxmltext/ezxmlschema.php
 d7606e56ba0ec0768bcd737626dd8e74  kernel/classes/datatypes/ezxmltext/ezxmltext.php
@@ -29891,6 +29891,7 @@ ae45a4eb7776a6157ba9c12d26f20c70  tests/tests/kernel/datatypes/ezuser/ezuser_tes
 7ab46a27a34f5849054e87885470b6f1  tests/tests/kernel/datatypes/ezuser/ezusercache_test.php
 70b1a25d514e44f32615efd30dfd106e  tests/tests/kernel/datatypes/ezuser/ezusertype_regression.php
 a8f63511100320d2e6d96960cd736af0  tests/tests/kernel/datatypes/ezuser/setup_accounts.php
+3e1f3ecf25c32cd9dc41003cc9e951ad  tests/tests/kernel/datatypes/ezxmltext/eZXMLInputPreformattedWhitespaceTest.php
 b11272e7e5c824dcfc5af55555a54740  tests/tests/kernel/datatypes/ezxmltext/eZXMLInputSupplementaryCharactersTest.php
 9b9ba0defc7f50d87a468761b2eae3d5  tests/tests/kernel/datatypes/ezxmltext/eZXMLTextTest.php
 a68260d3be33a41af159890031d3f580  tests/tests/kernel/datatypes/ezxmltext/ezxmlinputparser.php
