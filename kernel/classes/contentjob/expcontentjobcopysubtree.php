@@ -557,78 +557,143 @@ class expContentJobCopySubtree implements expContentJobType
 
     /**
      * The XML text with node_id and object_id of links and embeds, and id of objects, inside the copied subtree
-     * changed to the copies (the scan of copySubtree() step 5, literal blocks skipped).
+     * changed to the copies (copySubtree() step 5); see remapXMLText().
      *
      * @param string $xmlText
      * @return string
      */
     public function fixXMLString( $xmlText )
     {
-        $xmlTextLen = strlen( $xmlText );
-        $curPos = 0;
-        while ( $curPos < $xmlTextLen )
-        {
-            $literalTagBeginPos = strpos( $xmlText, '<literal', $curPos );
-            if ( $literalTagBeginPos )
-            {
-                $literalTagEndPos = strpos( $xmlText, '</literal>', $literalTagBeginPos );
-                if ( $literalTagEndPos === false )
-                    break;
-                $curPos = $literalTagEndPos + 9;
-            }
-            if ( ( $tagBeginPos = strpos( $xmlText, '<link', $curPos ) ) !== false or
-                 ( $tagBeginPos = strpos( $xmlText, '<a', $curPos ) ) !== false or
-                 ( $tagBeginPos = strpos( $xmlText, '<embed', $curPos ) ) !== false )
-            {
-                $tagEndPos = strpos( $xmlText, '>', $tagBeginPos + 1 );
-                if ( $tagEndPos === false )
-                    break;
-                $tagText = substr( $xmlText, $tagBeginPos, $tagEndPos - $tagBeginPos );
-                if ( ( $pos = strpos( $tagText, ' node_id="' ) ) !== false )
-                    $newTag = $this->replaceID( $tagText, $pos + 10, $this->nodeMap );
-                else if ( ( $pos = strpos( $tagText, ' object_id="' ) ) !== false )
-                    $newTag = $this->replaceID( $tagText, $pos + 12, $this->objectMap );
-                else
-                    $newTag = $tagText;
-                if ( $newTag !== $tagText )
-                {
-                    $xmlText = substr_replace( $xmlText, $newTag, $tagBeginPos, $tagEndPos - $tagBeginPos );
-                    $xmlTextLen = strlen( $xmlText );
-                    $tagEndPos += strlen( $newTag ) - strlen( $tagText );
-                }
-                $curPos = $tagEndPos;
-            }
-            else if ( ( $tagBeginPos = strpos( $xmlText, '<object', $curPos ) ) !== false )
-            {
-                $tagEndPos = strpos( $xmlText, '>', $tagBeginPos + 1 );
-                if ( !$tagEndPos )
-                    break;
-                $tagText = substr( $xmlText, $tagBeginPos, $tagEndPos - $tagBeginPos );
-                $newTag = ( $pos = strpos( $tagText, ' id="' ) ) !== false ? $this->replaceID( $tagText, $pos + 5, $this->objectMap ) : $tagText;
-                if ( $newTag !== $tagText )
-                {
-                    $xmlText = substr_replace( $xmlText, $newTag, $tagBeginPos, $tagEndPos - $tagBeginPos );
-                    $xmlTextLen = strlen( $xmlText );
-                    $tagEndPos += strlen( $newTag ) - strlen( $tagText );
-                }
-                $curPos = $tagEndPos;
-            }
-            else
-                break;
-        }
-        return $xmlText;
+        return self::remapXMLText( $xmlText, $this->nodeMap, $this->objectMap );
     }
 
-    /** The tag with the number at $idPos replaced through $map (unchanged when it is not in the map). */
-    protected function replaceID( $tagText, $idPos, array $map )
+    /** Elements whose node_id and object_id attributes point at content. */
+    protected static $linkElements = array( 'link' => true, 'embed' => true, 'embed-inline' => true, 'a' => true );
+
+    /**
+     * Re-points the content references of an XML text (ezxmltext) at the copies of a subtree copy: node_id and
+     * object_id of link, embed, embed-inline and a, id of object (the old format), and href values
+     * "eznode://<node id>" and "ezobject://<object id>". Ids that are not in the maps stay as they are.
+     *
+     * The text is parsed as XML, so every reference is found wherever it is, also before, between and after
+     * literal blocks; nothing inside a literal block is ever changed. A text that is not one XML document is
+     * read as a fragment (several elements side by side). The text is returned byte for byte unchanged when no
+     * reference changed or when it cannot be parsed at all.
+     *
+     * Used by the content job "copy" and by the copies of a subtree made directly (content/copysubtree,
+     * eZContentObjectTreeNodeOperations::copySubtree(), bin/php/ezsubtreecopy.php).
+     *
+     * @param string $xmlText
+     * @param array $nodeMap source node id => new node id
+     * @param array $objectMap source object id => new object id
+     * @return string
+     */
+    public static function remapXMLText( $xmlText, array $nodeMap, array $objectMap )
     {
-        $quoteEndPos = strpos( $tagText, '"', $idPos );
-        if ( $quoteEndPos === false )
-            return $tagText;
-        $id = (int) substr( $tagText, $idPos, $quoteEndPos - $idPos );
+        $xmlText = (string) $xmlText;
+        if ( ( !$nodeMap && !$objectMap ) || strpos( $xmlText, '<' ) === false )
+            return $xmlText;
+
+        $useErrors = libxml_use_internal_errors( true );
+        $dom = new DOMDocument();
+        $isFragment = false;
+        $loaded = $dom->loadXML( $xmlText, LIBXML_NONET );
+        if ( !$loaded )
+        {
+            libxml_clear_errors();
+            $dom = new DOMDocument();
+            $isFragment = $dom->loadXML( '<exp-xmltext-fragment>' . $xmlText . '</exp-xmltext-fragment>', LIBXML_NONET );
+        }
+        libxml_clear_errors();
+        libxml_use_internal_errors( $useErrors );
+        if ( ( !$loaded && !$isFragment ) || !$dom->documentElement )
+        {
+            if ( class_exists( 'eZDebug', false ) )
+                eZDebug::writeWarning( 'XML text is not well-formed, its links were not re-pointed at the copies', __METHOD__ );
+            return $xmlText;
+        }
+
+        if ( !self::remapElements( $dom->documentElement, $nodeMap, $objectMap ) )
+            return $xmlText;
+
+        if ( $isFragment )
+        {
+            $result = '';
+            foreach ( $dom->documentElement->childNodes as $child )
+                $result .= $dom->saveXML( $child );
+            return $result;
+        }
+        // keep the declaration and the trailing white space as they were
+        $result = strncmp( ltrim( $xmlText ), '<?xml', 5 ) === 0 ? $dom->saveXML() : $dom->saveXML( $dom->documentElement );
+        $tail = substr( $xmlText, strlen( rtrim( $xmlText ) ) );
+        return rtrim( $result ) . $tail;
+    }
+
+    /** Re-points the references below $root (literal blocks skipped); whether anything changed. */
+    protected static function remapElements( DOMElement $root, array $nodeMap, array $objectMap )
+    {
+        $changed = false;
+        $stack = array( $root );
+        while ( $stack )
+        {
+            $element = array_pop( $stack );
+            $name = $element->nodeName;
+            if ( $name === 'literal' )
+                continue;
+            if ( isset( self::$linkElements[$name] ) )
+            {
+                $changed = self::remapIDAttribute( $element, 'node_id', $nodeMap ) || $changed;
+                $changed = self::remapIDAttribute( $element, 'object_id', $objectMap ) || $changed;
+            }
+            else if ( $name === 'object' )
+                $changed = self::remapIDAttribute( $element, 'id', $objectMap ) || $changed;
+            if ( $element->hasAttribute( 'href' )
+                 && preg_match( '#^(\s*)(eznode|ezobject)://(\d+)(?=$|[/?\#\s])(.*)$#s', $element->getAttribute( 'href' ), $m ) )
+            {
+                $map = $m[2] === 'eznode' ? $nodeMap : $objectMap;
+                if ( isset( $map[(int) $m[3]] ) )
+                {
+                    $element->setAttribute( 'href', $m[1] . $m[2] . '://' . (int) $map[(int) $m[3]] . $m[4] );
+                    $changed = true;
+                }
+            }
+            foreach ( $element->childNodes as $child )
+            {
+                if ( $child instanceof DOMElement )
+                    $stack[] = $child;
+            }
+        }
+        return $changed;
+    }
+
+    /** Replaces the number in $element's attribute $attribute through $map; whether it changed. */
+    protected static function remapIDAttribute( DOMElement $element, $attribute, array $map )
+    {
+        if ( !$element->hasAttribute( $attribute ) || !preg_match( '/^\s*(\d+)\s*$/', $element->getAttribute( $attribute ), $m ) )
+            return false;
+        $id = (int) $m[1];
         if ( !isset( $map[$id] ) )
-            return $tagText;
-        return substr_replace( $tagText, (string) $map[$id], $idPos, $quoteEndPos - $idPos );
+            return false;
+        $element->setAttribute( $attribute, (string) (int) $map[$id] );
+        return true;
+    }
+
+    /**
+     * The map source id => new id of two parallel lists, as the direct subtree copies keep them.
+     *
+     * @param array $sourceIDs
+     * @param array $newIDs
+     * @return array
+     */
+    public static function idMap( array $sourceIDs, array $newIDs )
+    {
+        $map = array();
+        foreach ( $sourceIDs as $key => $sourceID )
+        {
+            if ( isset( $newIDs[$key] ) )
+                $map[(int) $sourceID] = (int) $newIDs[$key];
+        }
+        return $map;
     }
 
     protected function fixRelationLists( array $newObjectIDs )

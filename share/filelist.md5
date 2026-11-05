@@ -3533,7 +3533,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-0190ab5db30dbf782bb8f82feafb079c  doc/changelogs/6.0/6.0.15.md
+39903f005580c058961ecfed884e783b  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -24561,7 +24561,7 @@ e6c6e4ffb6af083e15ee22a0d8703df8  kernel/classes/contentjob/expcontentjob.php
 01cf8df02dc8586ff06b67a9a98b94ef  kernel/classes/contentjob/expcontentjobaddlocation.php
 2fdd06efb4a8294596eea99a2c2f1768  kernel/classes/contentjob/expcontentjobauditexport.php
 e2e0fa25963bc9a15e8f91970f1060f5  kernel/classes/contentjob/expcontentjobbatchtype.php
-3d15811b39e428d9bf33fd83581e9d62  kernel/classes/contentjob/expcontentjobcopysubtree.php
+e7e1b4952088645c062628978e806bce  kernel/classes/contentjob/expcontentjobcopysubtree.php
 3473972a2d9e2687062c55823bc70986  kernel/classes/contentjob/expcontentjobexception.php
 1efeeb573617b8b19db1127be8fb8149  kernel/classes/contentjob/expcontentjobhelpmanuals.php
 a3971ab3f53079bc5e93968607db6158  kernel/classes/contentjob/expcontentjobhidesubtree.php
@@ -24832,7 +24832,7 @@ fc6f6834eed639ece543d094ba8e8d86  kernel/classes/ezcontentclassname.php
 b88ed727eb2e649bb566de243808c35d  kernel/classes/ezcontentobjecttranslation.php
 3111400be468fd9f63e203de1285120a  kernel/classes/ezcontentobjecttrashnode.php
 d61555209de4191ce3226d3c9f0eab77  kernel/classes/ezcontentobjecttreenode.php
-f73d8bab1442410d9b14c551a8643e15  kernel/classes/ezcontentobjecttreenodeoperations.php
+bdcc4a1367d97df7bf69dbcb835f8b4e  kernel/classes/ezcontentobjecttreenodeoperations.php
 b9770c6b028f7ba0c9d70639acd1e354  kernel/classes/ezcontentobjectversion.php
 2287cb6e7a772477b9e052f4f8ecbd70  kernel/classes/ezcontentupload.php
 0c51424f6f4a79ac302bff26c237f94a  kernel/classes/ezcontentuploadhandler.php
@@ -25881,7 +25881,7 @@ af7d074b05867b4f34357f0f2546ab54  kernel/private/classes/commands/ezsqldiff.php
 3c503da39d5fad90d3c269d8e41601c2  kernel/private/classes/commands/ezsqldumpisbndata.php
 c6b86cfc262760028122a02400ae4dfe  kernel/private/classes/commands/ezsqldumpschema.php
 8a425f64919316668897483da163eeae  kernel/private/classes/commands/ezsqlinsertschema.php
-4ec0c5098c81aa06950c3924e6c22429  kernel/private/classes/commands/ezsubtreecopy.php
+f9900cbf6e2cacb8cbb269c3d2ba31aa  kernel/private/classes/commands/ezsubtreecopy.php
 73250950c1eab9cda07b4a6f1b2ecafa  kernel/private/classes/commands/ezsubtreeremove.php
 5724bccd328b4ea163e1cd88865e2e06  kernel/private/classes/commands/eztc.php
 2c57c36389dbedfe0fd91c77eb265ef4  kernel/private/classes/commands/eztemplatecheck.php
@@ -26091,7 +26091,7 @@ a0dfae33c90fce6b6e3e2ac283ec7355  kernel/private/classes/views/collaboration/vie
 7deea2188b33b0c4b5b5e880f9210ab5  kernel/private/classes/views/content/collectedinfo.php
 9deecff02c2905462b708c1ecbd4b2e3  kernel/private/classes/views/content/collectinformation.php
 eca41f08ae6162bd0fde7d1844e29ac7  kernel/private/classes/views/content/copy.php
-efd226ebbbaac3c0af074a937ea79ba2  kernel/private/classes/views/content/copysubtree.php
+c48cb915c5fe22aa3f3683a547d7b831  kernel/private/classes/views/content/copysubtree.php
 f68f99eb2eee686c7f3e9f5133b3f8b3  kernel/private/classes/views/content/dashboard.php
 efa682f58a2b0f40837f4910ca67a56c  kernel/private/classes/views/content/download.php
 3648e1cbd79ddd6595e040f573f944ff  kernel/private/classes/views/content/draft.php
@@ -28975,7 +28975,9 @@ d8533fb893d68d66e1aa6fae63aae860  tests/tests/kernel/classes/codetemplate/eZCode
 9315340226b52e7d9d1599ee220711ad  tests/tests/kernel/classes/commands/expVelocityHelpTextTest.php
 e412a69623c1f4765321d36ddfe79eca  tests/tests/kernel/classes/contentjob/ContentJobEngineTest.php
 8576454518714afd3196b1602a232008  tests/tests/kernel/classes/contentjob/expContentJobWorkerBatchSizeTest.php
-bc5aa87fdfc443d2182df2328d907134  tests/tests/kernel/classes/contentjobs/expContentJobCopyLinksTest.php
+d65acba08e12257974d5f2ff55d34e7d  tests/tests/kernel/classes/contentjobs/expContentJobCopyLinksTest.php
+a0b40f8213ef259e2e88f0cb06d02a08  tests/tests/kernel/classes/contentjobs/fixtures/copy-xmltext-with-literals.expected.xml
+c07639a272063558c2b99ea6396c9211  tests/tests/kernel/classes/contentjobs/fixtures/copy-xmltext-with-literals.source.xml
 3507e0d69216bb386162b759df18fc3d  tests/tests/kernel/classes/contentmodel/eZContentClassLiveTest.php
 2de9135f26f3e6e54ddc85c76fd348a9  tests/tests/kernel/classes/contentmodel/eZContentFunctionCollectionLiveTest.php
 6ca3a7211ad9f9ba703077b0d22382ed  tests/tests/kernel/classes/contentmodel/eZContentLanguageLiveTest.php

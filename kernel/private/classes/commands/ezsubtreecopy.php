@@ -458,8 +458,10 @@ class Ezsubtreecopy extends \Exponential\Runnable\Command
 
         // 4. duplicating of global links for new contentobjects (in ezurl_object_link) are automatic during copy of contentobject.
 
-        // 5. loop on new nodes and REPLACE node_ids and object_ids
-
+        // 5. fixing node_ids and object_ids of links and embeds in ezxmltext attributes of copied objects
+        //    (parsed as XML: links before, between and after literal blocks are found, literal blocks stay untouched)
+        $nodeIDMap = \expContentJobCopySubtree::idMap( $syncNodeIDListSrc, $syncNodeIDListNew );
+        $objectIDMap = \expContentJobCopySubtree::idMap( $syncObjectIDListSrc, $syncObjectIDListNew );
         $conditions = array( 'contentobject_id' => '', // 5
                              'data_type_string' => 'ezxmltext' );
 
@@ -467,129 +469,16 @@ class Ezsubtreecopy extends \Exponential\Runnable\Command
         {
             $conditions[ 'contentobject_id' ] = $contentObjectID;
             $attributeList = \eZPersistentObject::fetchObjectList( \eZContentObjectAttribute::definition(), null, $conditions );
-            if ( count( $attributeList ) == 0 )
+            foreach ( (array) $attributeList as $xmlAttribute )
             {
-                continue;
-            }
-            foreach ( $attributeList as $xmlAttribute )
-            {
-                $xmlText = $xmlAttribute->attribute( 'data_text' );
-                $xmlTextLen = strlen ( $xmlText );
-                $isTextModified = false;
-                $curPos = 0;
-
-                while ( $curPos < $xmlTextLen )
+                $xmlText = (string) $xmlAttribute->attribute( 'data_text' );
+                $fixedXmlText = \expContentJobCopySubtree::remapXMLText( $xmlText, $nodeIDMap, $objectIDMap );
+                if ( $fixedXmlText !== $xmlText )
                 {
-                    // JK: find out what is the first tag
-                    // This is not the optimal solution, there is better way how to do. This is just a quick fix.
-                    $tmpArray = array();
-                    if ( $literalTagBeginPos = strpos( $xmlText, "<literal", $curPos ) )
-                        $tmpArray[] = $literalTagBeginPos;
-                    if ( $linkTagBeginPos = strpos( $xmlText, "<link", $curPos ) )
-                        $tmpArray[] = $linkTagBeginPos;
-                    if ( $aTagBeginPos = strpos( $xmlText, "<a", $curPos ) )
-                        $tmpArray[] = $aTagBeginPos;
-                    if ( $embedTagBeginPos = strpos( $xmlText, "<embed", $curPos ) )
-                        $tmpArray[] = $embedTagBeginPos;
-                    if ( $objectTagBeginPos = strpos( $xmlText, "<object", $curPos ) )
-                        $tmpArray[] = $objectTagBeginPos;
-
-                    if ( !$tmpArray )
-                    {
-                        break;
-                    }
-
-                    $tagBeginPos = min( $tmpArray );
-
-                    if ( $tagBeginPos == $literalTagBeginPos )
-                    {
-                        $literalTagEndPos = strpos( $xmlText, "</literal>", $literalTagBeginPos );
-                        if ( $literalTagEndPos === false )
-                            break;
-                        $curPos = $literalTagEndPos + 9;
-                    }
-
-                    if ( $tagBeginPos == $linkTagBeginPos || $tagBeginPos == $aTagBeginPos || $tagBeginPos == $embedTagBeginPos )
-                    {
-                        $tagEndPos = strpos( $xmlText, ">", $tagBeginPos + 1 );
-                        if ( $tagEndPos === false )
-                            break;
-
-                        $tagText = substr( $xmlText, $tagBeginPos, $tagEndPos - $tagBeginPos );
-
-                        if ( ($nodeIDAttributePos = strpos( $tagText, " node_id=\"" )) !== false )
-                        {
-                            $idNumberPos = $nodeIDAttributePos + 10;
-                            $quoteEndPos = strpos( $tagText, "\"", $idNumberPos );
-
-                            if ( $quoteEndPos !== false )
-                            {
-                                $idNumber = substr( $tagText, $idNumberPos, $quoteEndPos - $idNumberPos );
-                                $key = array_search( (int) $idNumber, $syncNodeIDListSrc );
-
-                                if ( $key !== false )
-                                {
-                                    $tagText = substr_replace( $tagText, (string) $syncNodeIDListNew[ $key ], $idNumberPos, $quoteEndPos - $idNumberPos );
-                                    $xmlText = substr_replace( $xmlText, $tagText, $tagBeginPos, $tagEndPos - $tagBeginPos );
-                                    $isTextModified = true;
-                                }
-                            }
-                        }
-                        else if ( ($objectIDAttributePos = strpos( $tagText, " object_id=\"" )) !== false )
-                        {
-                            $idNumberPos = $objectIDAttributePos + 12;
-                            $quoteEndPos = strpos( $tagText, "\"", $idNumberPos );
-
-                            if ( $quoteEndPos !== false )
-                            {
-                                $idNumber = substr( $tagText, $idNumberPos, $quoteEndPos - $idNumberPos );
-                                $key = array_search( (int) $idNumber, $syncObjectIDListSrc );
-                                if ( $key !== false )
-                                {
-                                    $tagText = substr_replace( $tagText, (string) $syncObjectIDListNew[ $key ], $idNumberPos, $quoteEndPos - $idNumberPos );
-                                    $xmlText = substr_replace( $xmlText, $tagText, $tagBeginPos, $tagEndPos - $tagBeginPos );
-                                    $isTextModified = true;
-                                }
-                            }
-                        }
-                        $curPos = $tagEndPos;
-                    }
-                    else if ( $tagBeginPos == $objectTagBeginPos )
-                    {
-                        $tagEndPos = strpos( $xmlText, ">", $tagBeginPos + 1 );
-                        if ( !$tagEndPos )
-                            break;
-
-                        $tagText = substr( $xmlText, $tagBeginPos, $tagEndPos - $tagBeginPos );
-
-                        if ( ($idAttributePos = strpos( $tagText, " id=\"" )) !== false )
-                        {
-                            $idNumberPos = $idAttributePos + 5;
-                            $quoteEndPos = strpos( $tagText, "\"", $idNumberPos );
-
-                            if ( $quoteEndPos !== false )
-                            {
-                                $idNumber = substr( $tagText, $idNumberPos, $quoteEndPos - $idNumberPos );
-                                $key = array_search( (int) $idNumber, $syncObjectIDListSrc );
-                                if ( $key !== false )
-                                {
-                                    $tagText = substr_replace( $tagText, (string) $syncObjectIDListNew[ $key ], $idNumberPos, $quoteEndPos - $idNumberPos );
-                                    $xmlText = substr_replace( $xmlText, $tagText, $tagBeginPos, $tagEndPos - $tagBeginPos );
-                                    $isTextModified = true;
-                                }
-                            }
-                        }
-                        $curPos = $tagEndPos;
-                    }
-
-                } // while END
-
-                if ( $isTextModified )
-                {
-                    $xmlAttribute->setAttribute( 'data_text', $xmlText );
+                    $xmlAttribute->setAttribute( 'data_text', $fixedXmlText );
                     $xmlAttribute->store();
                 }
-            } // foreach END
+            }
         }
 
         // 6. fixing datatype ezobjectrelationlist
