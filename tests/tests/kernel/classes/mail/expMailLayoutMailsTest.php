@@ -18,6 +18,8 @@
  *  ML-12 - a notification (text) is sent as text and HTML, as text only with notification.ini HTMLLayout=disabled
  *  ML-11 - the layout: the code (mail_code) large and selectable, the preheader hidden, dark colors only in the
  *          media query, mail_rows marked washed printed as they are
+ *  ML-13 - the text part of a collected answer is the plain text of its info view (mail/text_value.tpl): a checkbox
+ *          reads "Yes", a choice of several "A, B", escaped text as typed, never markup; the body passes ci_mail on
  *
  * DB-less: templates are rendered as the kernel does (eZTemplate::factory(), fetch), uncompiled, with hashes standing
  * in for users, orders and collections; nothing is sent. Fake addresses use the .invalid domain.
@@ -446,5 +448,63 @@ class expMailLayoutMailsTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( '@media (prefers-color-scheme: dark)', $style );
         $body = explode( '</head>', $html )[1];
         $this->assertStringNotContainsString( '#0d1117', $body, 'dark colors only in the media query' );
+    }
+
+    /** The output of design:mail/text_value.tpl for an HTML value */
+    private function textValue( $html )
+    {
+        $tpl = eZTemplate::factory();
+        $tpl->resetVariables();
+        $tpl->setVariable( 'html', $html );
+        $handler = self::exceptionHandler();
+        try
+        {
+            return trim( $tpl->fetch( 'design/standard/templates/mail/text_value.tpl' ) );
+        }
+        finally
+        {
+            if ( self::exceptionHandler() !== $handler )
+                restore_exception_handler();
+            $tpl->resetVariables();
+        }
+    }
+
+    /** ML-13 */
+    public function testCollectedAnswerTextIsThePlainTextOfItsView()
+    {
+        $this->assertSame( 'Yes', $this->textValue( "\n    Yes\n" ) );
+        $this->assertSame( 'Red, Green', $this->textValue( 'Red<br/>Green' ) );
+        $this->assertSame( 'Norway, Sweden', $this->textValue( "<p>Norway</p>\n<p>Sweden</p>\n" ) );
+        $this->assertSame( '<script>alert(1)</script>"x & \'y\'', $this->textValue( '&lt;script&gt;alert(1)&lt;/script&gt;&quot;x &amp; &#039;y&#039;' ) );
+        $this->assertSame( 'Hello there', $this->textValue( "  Hello\n\t\tthere  " ) );
+        $this->assertSame( '2026.11.4 12:30', $this->textValue( '2026.11.4&nbsp;12:30' ) );
+        $this->assertSame( 'a.pdf successfully uploaded., Link: a.pdf', $this->textValue( "a.pdf successfully uploaded.\n\t\t<br>Link: <a href=\"/f/a.pdf\">a.pdf</a>" ) );
+        $this->assertSame( '', $this->textValue( '' ) );
+
+        // A checkbox (ezboolean): the info view says Yes or No, and so does the text part, not the stored 1 or 0
+        foreach ( array( 1 => 'Yes', 0 => 'No' ) as $stored => $shown )
+        {
+            $tpl = eZTemplate::factory();
+            $tpl->resetVariables();
+            $tpl->setVariable( 'attribute', new eZInformationCollectionAttribute( array( 'data_int' => $stored, 'data_text' => '' ) ) );
+            $handler = self::exceptionHandler();
+            try
+            {
+                $view = $tpl->fetch( 'design/standard/templates/content/datatype/result/info/ezboolean.tpl' );
+            }
+            finally
+            {
+                if ( self::exceptionHandler() !== $handler )
+                    restore_exception_handler();
+                $tpl->resetVariables();
+            }
+            $this->assertSame( $shown, $this->textValue( $view ) );
+        }
+
+        $body = file_get_contents( 'design/standard/templates/content/collectedinfomail_body.tpl' );
+        $this->assertStringContainsString( "include uri='design:mail/text_value.tpl' html=\$ci_value", $body );
+        $this->assertStringContainsString( 'mail=$ci_mail_flag', $body, 'the body passes ci_mail to the info view as mail' );
+        $source = preg_replace( '/\{\*.*?\*\}/s', '', file_get_contents( 'design/standard/templates/mail/text_value.tpl' ) );
+        $this->assertDoesNotMatchRegularExpression( '/style\s*=|<style|ez\s*publish/i', $source );
     }
 }

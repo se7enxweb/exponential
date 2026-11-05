@@ -2536,7 +2536,7 @@ d10eaf3b86459adc8368b26375377270  design/standard/templates/content/collectedinf
 1f2f0550e0ed1177b761a1683e6e7f14  design/standard/templates/content/collectedinfomail.tpl
 98def5c393f139c87c536e3e421589f3  design/standard/templates/content/collectedinfomail/feedback.tpl
 cbd6f7f362eb62c8cd34caa78ac6f246  design/standard/templates/content/collectedinfomail/form.tpl
-d357ac290b7790bbc5a2e6e21ffd4863  design/standard/templates/content/collectedinfomail_body.tpl
+6a50236590d7744df3d5049e51ada0d8  design/standard/templates/content/collectedinfomail_body.tpl
 04a2dc911b40e778fb2ac0b62fa061a7  design/standard/templates/content/confirmtranslationremove.tpl
 1c38a30d43dbe7d376ca88f6d08195aa  design/standard/templates/content/copy.tpl
 f95ead2d93d1d90cd077f4fffe36d7f6  design/standard/templates/content/copy_subtree.tpl
@@ -2947,6 +2947,7 @@ a35b8c33e69b1fb1baacd7e1de2df542  design/standard/templates/image/layer.tpl
 4774287900b516aebb5e1ef8e83f3e43  design/standard/templates/loginpagelayout.tpl
 9d5749fc8d6e8a0bd3b3c5ac99edc491  design/standard/templates/mail/layout.tpl
 303a0862c895235db66384dc912d1477  design/standard/templates/mail/layout_text.tpl
+5fddb130e14ffe02660455a4ef94f8c8  design/standard/templates/mail/text_value.tpl
 038a22c7143b460f65a6f72195bdaa1d  design/standard/templates/mailpreferences/admin/categories.tpl
 e7f7072d5affbe8aff519a2b5a365b3c  design/standard/templates/mailpreferences/admin/consent.tpl
 1feb06689e2b59a65134743bc0c9c27e  design/standard/templates/mailpreferences/admin/status.tpl
@@ -29360,7 +29361,7 @@ dd7f274ea21a1a88848ce1f649f530f6  tests/tests/kernel/classes/ini/expIniRoundTrip
 7839471f3133dc2fd7c076941a947f37  tests/tests/kernel/classes/ini/fixtures/expiniezinichain.php
 bd25076f8b7ba02a3816eb1c5ffc7ed0  tests/tests/kernel/classes/ini/fixtures/expinisaveasuser.php
 7b4ca49e14dbc25e151be867350808cb  tests/tests/kernel/classes/installationdetails/ExpInstallationDetailsTest.php
-3e2c5dfde385185baa8738d000c7a03a  tests/tests/kernel/classes/mail/expMailLayoutMailsTest.php
+ec56419b8f81359360afffd966df8bea  tests/tests/kernel/classes/mail/expMailLayoutMailsTest.php
 9ff27e0531dcf1671ef85dd7d7399bcb  tests/tests/kernel/classes/mail/expMailTemplateBodyTest.php
 f40856b781c318dab05e018c6ea674a0  tests/tests/kernel/classes/mail/expTipafriendSenderTest.php
 3e29462061fb2c25e82b15b09690a6c2  tests/tests/kernel/classes/mail/ezpMailMessageIdTest.php

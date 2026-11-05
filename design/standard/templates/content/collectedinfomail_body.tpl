@@ -6,21 +6,29 @@
 
     Variables: collection (eZInformationCollection), ci_title (the heading), ci_intro (the first sentence),
     ci_gui (true: each value is the attribute's "info" result view, attribute_result_gui, which escapes its output
-    itself, as on the result page; false: the stored text, escaped by the layout).
-    The look is design:mail/layout.tpl (HTML) and design:mail/layout_text.tpl (text). In the text part a value is the
-    stored text or number, never markup.
+    itself, as on the result page; false: the stored text, escaped by the layout), ci_mail (optional, default false:
+    passed to the view as mail, for a datatype whose info view prints a text form for mails).
+    The look is design:mail/layout.tpl (HTML) and design:mail/layout_text.tpl (text). In the text part a value is never
+    markup: with ci_gui the info view's value as plain text (design:mail/text_value.tpl), so a selection, an option, a
+    checkbox or a country reads as in the HTML part ("Yes", not its stored "0" or "1"); otherwise, or when the view
+    prints nothing, the stored text or number.
 *}
 {def $ci_html_rows = array()
      $ci_text_rows = array()
      $ci_value = ''
-     $ci_text = ''}
+     $ci_text = ''
+     $ci_plain = ''
+     $ci_mail_flag = first_set( $ci_mail, false() )}
 {foreach $collection.attributes as $ci_attribute}
     {set $ci_text = cond( $ci_attribute.data_text|ne( '' ), $ci_attribute.data_text,
                           $ci_attribute.data_int|ne( 0 ), $ci_attribute.data_int,
                           $ci_attribute.data_float|ne( 0 ), $ci_attribute.data_float, '' )}
     {if first_set( $ci_gui, false() )}
-        {set-block variable=ci_value}{attribute_result_gui view=info attribute=$ci_attribute}{/set-block}
-        {set $ci_html_rows = $ci_html_rows|append( hash( 'label', $ci_attribute.contentclass_attribute_name, 'value', $ci_value|trim, 'washed', true() ) )}
+        {set-block variable=ci_value}{attribute_result_gui view=info attribute=$ci_attribute mail=$ci_mail_flag}{/set-block}
+        {set $ci_value = $ci_value|trim}
+        {set $ci_html_rows = $ci_html_rows|append( hash( 'label', $ci_attribute.contentclass_attribute_name, 'value', $ci_value, 'washed', true() ) )}
+        {set-block variable=ci_plain}{include uri='design:mail/text_value.tpl' html=$ci_value}{/set-block}
+        {if $ci_plain|trim|ne( '' )}{set $ci_text = $ci_plain|trim}{/if}
     {else}
         {set $ci_html_rows = $ci_html_rows|append( hash( 'label', $ci_attribute.contentclass_attribute_name, 'value', $ci_text ) )}
     {/if}
@@ -31,4 +39,4 @@
     mail_title=$ci_title mail_intro=$ci_intro mail_rows=$ci_text_rows}{/set-block}
 {include uri='design:mail/layout.tpl'
     mail_title=$ci_title mail_intro=$ci_intro mail_rows=$ci_html_rows}
-{undef $ci_html_rows $ci_text_rows $ci_value $ci_text}
+{undef $ci_html_rows $ci_text_rows $ci_value $ci_text $ci_plain $ci_mail_flag}
