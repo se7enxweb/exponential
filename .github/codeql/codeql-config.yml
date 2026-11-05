@@ -1,0 +1,16 @@
+# CodeQL configuration (.github/workflows/codeql.yml): the repository's own code only.
+name: Exponential CodeQL configuration
+paths-ignore:
+  - "**/*.min.js"
+  - "**/node_modules/**"
+  - "vendor/**"
+  - "doc/**"
+  - "tests/**"
+  - "var/**"
+  - "extension/ezjscore/design/standard/javascript/jquery-*.js"
+  - "extension/ezoe/design/standard/javascript/tiny_mce*.js"
+  - "extension/ezoe/design/standard/javascript/tinymce8/**"
+  - "extension/ezoe/design/standard/javascript/themes/**"
+  - "extension/ezoe/design/standard/javascript/plugins/**"
+  - "extension/ezoe/design/standard/javascript/langs/**"
+  - "extension/expservices/design/expportal_react/javascript/vendor/**"

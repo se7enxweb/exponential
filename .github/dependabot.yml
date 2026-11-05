@@ -1,0 +1,37 @@
+# Dependabot: weekly update pull requests for the third-party dependencies of this repository, and the
+# security alerts of the dependency graph. Each ecosystem's updates come grouped in one pull request.
+# The se7enxweb/* packages are left out: their versions in composer.json are pinned by hand when the
+# package is released (see doc/eng-us/features/6.0/quality-checks.md).
+version: 2
+updates:
+  - package-ecosystem: composer
+    directory: "/"
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    ignore:
+      - dependency-name: "se7enxweb/*"
+    groups:
+      composer:
+        patterns: [ "*" ]
+
+  - package-ecosystem: npm
+    directories:
+      - "/extension/ezoe/tests/tinymce8"
+      - "/extension/expimageeditor/build/opentype"
+      - "/extension/expimageeditor/build/svgcanvas"
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    groups:
+      npm:
+        patterns: [ "*" ]
+
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    groups:
+      github-actions:
+        patterns: [ "*" ]
