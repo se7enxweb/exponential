@@ -146,9 +146,10 @@ class expHelpContentSite
             $row = $this->provider->repository()->topic( $m[1] );
             $visible = $row !== null ? $this->provider->visible( $row ) : null;
             $url = $visible !== null ? $this->nodeUrl( (int)$visible['node_id'] ) : '';
-            // a topic the reader may not see is not linked: its text stays, without a way to probe for it
+            // a topic the reader may not see is not linked: the help center's page it was made from when the reader may
+            // open that (a public file, nothing to probe), else its text stays, without a way to probe for it
             if ( $url === '' )
-                return null;
+                return $row !== null ? expHelpContentProvider::pageUrl( $row, isset( $m[2] ) ? rawurldecode( $m[2] ) : '' ) : null;
             return $url . ( isset( $m[2] ) && $m[2] !== '' ? '#' . rawurlencode( rawurldecode( $m[2] ) ) : '' );
         }
         return expHelpLinks::link( $href, '' );
