@@ -844,7 +844,7 @@ class eZMediaType extends eZDataType
             return $node;
         }
 
-        $fileKey = md5( mt_rand() );
+        $fileKey = bin2hex( random_bytes( 16 ) );
 
         $fileInfo = $mediaFile->storedFileInfo();
         $package->appendSimpleFile( $fileKey, $fileInfo['filepath'] );
@@ -913,7 +913,7 @@ class eZMediaType extends eZDataType
         $basename = eZMedia::safeFileName( $mediaNode->getAttribute( 'filename' ) );
         while ( $basename === '' || file_exists( $destinationPath . $basename ) )
         {
-            $basename = substr( md5( mt_rand() ), 0, 8 ) . '.' . eZFile::suffix( eZMedia::safeFileName( $mediaNode->getAttribute( 'filename' ) ) );
+            $basename = bin2hex( random_bytes( 4 ) ) . '.' . eZFile::suffix( eZMedia::safeFileName( $mediaNode->getAttribute( 'filename' ) ) );
         }
 
         eZFileHandler::copy( $sourcePath, $destinationPath . $basename );

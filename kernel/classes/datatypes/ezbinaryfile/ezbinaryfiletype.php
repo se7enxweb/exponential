@@ -795,7 +795,7 @@ class eZBinaryFileType extends eZDataType
         $binaryFile = $objectAttribute->attribute( 'content' );
         if ( is_object( $binaryFile ) )
         {
-            $fileKey = md5( mt_rand() );
+            $fileKey = bin2hex( random_bytes( 16 ) );
             $package->appendSimpleFile( $fileKey, $binaryFile->attribute( 'filepath' ) );
 
             $dom = $node->ownerDocument;
@@ -851,7 +851,7 @@ class eZBinaryFileType extends eZDataType
         $basename = eZBinaryFile::safeFileName( $fileNode->getAttribute( 'filename' ) );
         while ( $basename === '' || file_exists( $destinationPath . $basename ) )
         {
-            $basename = substr( md5( mt_rand() ), 0, 8 ) . '.' . eZFile::suffix( eZBinaryFile::safeFileName( $fileNode->getAttribute( 'filename' ) ) );
+            $basename = bin2hex( random_bytes( 4 ) ) . '.' . eZFile::suffix( eZBinaryFile::safeFileName( $fileNode->getAttribute( 'filename' ) ) );
         }
 
         eZFileHandler::copy( $sourcePath, $destinationPath . $basename );

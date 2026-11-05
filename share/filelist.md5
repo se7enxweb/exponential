@@ -24596,7 +24596,7 @@ cda32345bdf57a9717f559a416005a7f  kernel/classes/datatable/sync/expdatasync.php
 8496d42ad205b056aa73e0602f744df7  kernel/classes/datatypes/ezauthor/ezauthor.php
 89bc5e682620149b9336a291ab2dbab8  kernel/classes/datatypes/ezauthor/ezauthortype.php
 dbea0d8e5a34f89440434c8fa4c582ae  kernel/classes/datatypes/ezbinaryfile/ezbinaryfile.php
-632cb4d2527b589a5b2987b4136edf4c  kernel/classes/datatypes/ezbinaryfile/ezbinaryfiletype.php
+1c6b2127b9871551de58f5a07488569a  kernel/classes/datatypes/ezbinaryfile/ezbinaryfiletype.php
 35d73c4e30f868b6635d7b20b28dd797  kernel/classes/datatypes/ezbinaryfile/plugins/ezpdfparser.php
 56b22d6fc7450841f2807b422174c7bf  kernel/classes/datatypes/ezbinaryfile/plugins/ezplaintextparser.php
 d6c2c46ec20298775bb1f4eefdd4b5f6  kernel/classes/datatypes/ezbinaryfile/plugins/ezwordparser.php
@@ -24633,7 +24633,7 @@ f8941c5570047c76cff3e63199828257  kernel/classes/datatypes/ezmatrix/ezmatrix.php
 749509a8edc9df295c0c6c4fbd9fe72d  kernel/classes/datatypes/ezmatrix/ezmatrixdefinition.php
 ae6d3e58d0f51fe4a284b4e5e7095e3b  kernel/classes/datatypes/ezmatrix/ezmatrixtype.php
 36215103c741c5bd361d07babb553ae4  kernel/classes/datatypes/ezmedia/ezmedia.php
-a008fd10825c44a0f2743f3aee286b8b  kernel/classes/datatypes/ezmedia/ezmediatype.php
+6752b8e55b2bb8a3e7f2ce57e1ba8339  kernel/classes/datatypes/ezmedia/ezmediatype.php
 e5b84b0003a1bc96822938071f6099cb  kernel/classes/datatypes/ezmultioption/ezmultioption.php
 d25e83fcbeb0148a7f0509eb9e6ecb53  kernel/classes/datatypes/ezmultioption/ezmultioptiontype.php
 70133e23b5593f0b16eb848756683b14  kernel/classes/datatypes/ezmultioption2/ezmultioption2.php
