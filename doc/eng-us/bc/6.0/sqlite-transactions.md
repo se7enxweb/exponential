@@ -25,6 +25,22 @@ MongoDB installations are not affected.
 - **`subString()` without a length returns the rest of the string.** Before, a node move on SQLite dropped the last
   character of the moved subtree's `path_string` and `path_identification_string`.
 
+## Waiting on the command line and for single statements (5 November 2026)
+
+- **Cronjobs and scripts wait longer.** On the command line a transaction start waits
+  `[DatabaseSettings] SQLiteCLITransactionWait` seconds (default 300), not the 25 s of a web request. Before, a
+  cronjob (`runcronjobs.php frequent`, `global`) behind an import's long write stopped with "A database transaction
+  in Exponential failed".
+- **A single write outside a transaction queues like a transaction.** It takes its turn on `<database>.writer-lock`
+  and waits up to `SQLiteBusyTimeout` ms in a web request (default 5000) or `SQLiteCLIBusyTimeout` ms on the command
+  line (default 30000). Before, it lost every race against a loop of short transactions and failed with "database
+  is locked": an external link saved in the online editor could lose its URL id while an import ran.
+- **A lock SQLite reports at once is tried again** within the same wait, with a short growing pause, for reads,
+  single writes and the start of a transaction.
+- **The error says what happened**: "database is busy: the statement waited 5.0 s for another write to end (limit
+  5 s, [DatabaseSettings] SQLiteBusyTimeout) and was not run; nothing was written".
+- `SQLitePragmas[]=busy_timeout=<ms>`, where an installation set it, still wins over the two new settings.
+
 ## How to check
 
 1. Confirm the setting is present:
@@ -54,6 +70,9 @@ MongoDB installations are not affected.
 | File | Block | Key | Default | Scope |
 |---|---|---|---|---|
 | `settings/site.ini` | `DatabaseSettings` | `SQLiteTransactionWait` | `25` (seconds) | installation |
+| `settings/site.ini` | `DatabaseSettings` | `SQLiteCLITransactionWait` | `300` (seconds) | command line |
+| `settings/site.ini` | `DatabaseSettings` | `SQLiteBusyTimeout` | `5000` (ms) | web requests |
+| `settings/site.ini` | `DatabaseSettings` | `SQLiteCLIBusyTimeout` | `30000` (ms) | command line |
 
 Override it in `settings/override/site.ini.append.php`, then clear the INI cache:
 

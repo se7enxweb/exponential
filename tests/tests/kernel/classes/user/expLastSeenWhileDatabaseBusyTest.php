@@ -121,7 +121,8 @@ class expLastSeenWhileDatabaseBusyTest extends PHPUnit\Framework\TestCase
         $this->assertFalse( $written );
         $this->assertLessThan( 1.0, $seconds, 'it waited for the lock' );
         // the statements' wait is back
-        $this->assertSame( 5000, (int)$this->db->arrayQuery( 'PRAGMA busy_timeout' )[0]['timeout'] );
+        $this->assertSame( $this->db->statementWaitMs(), (int)$this->db->arrayQuery( 'PRAGMA busy_timeout' )[0]['timeout'] );
+        $this->assertGreaterThanOrEqual( 5000, $this->db->statementWaitMs() );
         $this->unlock();
 
         $this->assertTrue( $this->db->queryUnlessBusy( 'UPDATE ezuservisit SET current_visit_timestamp=3 WHERE user_id=14' ) );

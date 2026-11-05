@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # site.ini
 
-The shipped settings of `settings/site.ini`: 67 blocks, 523 settings.
+The shipped settings of `settings/site.ini`: 67 blocks, 526 settings.
 
 > Exponential configuration file.  
 >
@@ -32,7 +32,7 @@ The shipped settings of `settings/site.ini`: 67 blocks, 523 settings.
 | [Cache_twig](Cache_twig.md) | 4 |
 | [Cache_searchsuggest](Cache_searchsuggest.md) | 5 |
 | [SiteSearchSuggestSettings](SiteSearchSuggestSettings.md) | 10 |
-| [DatabaseSettings](DatabaseSettings.md) | 20 |
+| [DatabaseSettings](DatabaseSettings.md) | 23 |
 | [Event](Event.md) | 1 |
 | [RunnableSettings](RunnableSettings.md) | 2 |
 | [ExtensionSettings](ExtensionSettings.md) | 6 |

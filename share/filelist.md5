@@ -3530,7 +3530,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-789b5229ba9e9ec5e181da47d023bd1f  doc/changelogs/6.0/6.0.15.md
+1079d721d4a149a2677610187b5d3722  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -3633,7 +3633,7 @@ bbcfbb1065eefc4a3f53987a1bad5fb1  doc/changelogs/extensions/xrowmetadata.md
 aa7617c6f5563d4cd4ff63ed6af720cc  doc/eng-us/DISTRIBUTIONS.md
 8f1308a0bb70a3295a8a8d9c3a214333  doc/eng-us/EXTENDING.md
 ba34fdb46710aeaf4d07089fce9a4354  doc/eng-us/HISTORY.md
-fbdaf5f0670fc0f90ca9cdeff2cf7a3c  doc/eng-us/INSTALL.md
+2c7373287b234ee365eebee015e07fd3  doc/eng-us/INSTALL.md
 0ab219a2e330c3db1c8ea1532fd3972e  doc/eng-us/INTEGRATING.md
 a22d0be1ce2284b67950a4d1673dd1b0  doc/eng-us/LICENSE-GFDL-1.3.txt
 d1b7052b2035b91ce9c4cece454f14bf  doc/eng-us/README-LICENSE.md
@@ -3759,7 +3759,7 @@ c418d47a0244a80e9498e192d9572f52  doc/eng-us/bc/6.0/search-links-with-view-param
 fb079d25e9f453e35fa16aba655bf77b  doc/eng-us/bc/6.0/site-packages-no-extension-packages.md
 1bb2ec9b10e67e5c692f4140f388681a  doc/eng-us/bc/6.0/soap-entry-script-index-soap.md
 1b035a77f2a56fa9b0225c8aca76b934  doc/eng-us/bc/6.0/sql-query-cache.md
-fb85be121ac1186257310cd979fc3c1e  doc/eng-us/bc/6.0/sqlite-transactions.md
+5104cdda217ab0a6590d9f2dda233730  doc/eng-us/bc/6.0/sqlite-transactions.md
 04e2b3effc91ccae524c980b807607a9  doc/eng-us/bc/6.0/static-cache-defaults.md
 6a059f73dc479c2c0b901465f5930e48  doc/eng-us/bc/6.0/static-publishing.md
 7889f36fad4374eb4863c2f13552e5f1  doc/eng-us/bc/6.0/subitems-table-options.md
@@ -5530,7 +5530,7 @@ c4fdc5d37599dac35848bfa97715d9ba  doc/eng-us/examples/ini-settings/site/Cache_sm
 5f79e6f3ab15057a996ace5d3a30f956  doc/eng-us/examples/ini-settings/site/ContentFieldMarkerSettings.md
 f311c5d5d20f5036068fdba09b2deed5  doc/eng-us/examples/ini-settings/site/ContentSecurityPolicy.md
 7869acbb1be381db5fec80446b7b6317  doc/eng-us/examples/ini-settings/site/ContentSettings.md
-bda7a015ca9b392c2c680d0d3dcce12f  doc/eng-us/examples/ini-settings/site/DatabaseSettings.md
+923c2bfa74fc79e3605c913cbd3c3481  doc/eng-us/examples/ini-settings/site/DatabaseSettings.md
 947f63b02dedac4aaf027440ec826319  doc/eng-us/examples/ini-settings/site/DebugSettings.md
 13ee278f2215a69a9b06e8501a4780b1  doc/eng-us/examples/ini-settings/site/DesignSettings.md
 912320a3e49bd1fa7e3df135b803e06b  doc/eng-us/examples/ini-settings/site/Event.md
@@ -5549,7 +5549,7 @@ d98157d9fa323471a1d85edbd71dadbb  doc/eng-us/examples/ini-settings/site/PasskeyS
 026229cc329f932cef3703538e24c34b  doc/eng-us/examples/ini-settings/site/PasswordSettings.md
 db568a7c6a790ae47b375a22aff291ab  doc/eng-us/examples/ini-settings/site/PortAccessSettings.md
 3714ba86f9deca30858e35271af055af  doc/eng-us/examples/ini-settings/site/ProxySettings.md
-f82f8f4a242f2f9a8bb8516b266ba3f6  doc/eng-us/examples/ini-settings/site/README.md
+a651501f50cc9fd7e066d43cffe8ee62  doc/eng-us/examples/ini-settings/site/README.md
 08b294507b813f03bbb995305d430031  doc/eng-us/examples/ini-settings/site/RSSSettings.md
 4d12fc781fc7be917617fa4f3d165142  doc/eng-us/examples/ini-settings/site/ReauthGroup_account.md
 abc8f5ba626146a4e03e45d2cd0a21c8  doc/eng-us/examples/ini-settings/site/ReauthGroup_content.md
@@ -8442,7 +8442,7 @@ ff6fc0bde2ddf85fa9c64732934cee2d  doc/eng-us/help/database-administrators/choosi
 0e52e11826cd52af5a7460bd5c8c8d1f  doc/eng-us/help/database-administrators/database-accounts-and-privileges.md
 946fcc652bca6b9599883f6f7d4b3b70  doc/eng-us/help/database-administrators/database-administrators-start-here.md
 9b0dbdd0409985b0191f99d842839722  doc/eng-us/help/database-administrators/database-faq.md
-c2a823945580bf01f1ae3920a6209bff  doc/eng-us/help/database-administrators/databasesettings-reference.md
+ac89cf5e69dc6873c7ad7419e82f074e  doc/eng-us/help/database-administrators/databasesettings-reference.md
 c98789a6bb12d06a60295240b0c25248  doc/eng-us/help/database-administrators/dba-checklists.md
 d165e88414e952c9826dac5e3b4e2c08  doc/eng-us/help/database-administrators/dba-reading-path.md
 7c1fb5d81e060574f0c1bbf15c85499d  doc/eng-us/help/database-administrators/error-codes-and-messages.md
@@ -8475,7 +8475,7 @@ c61bf834423e847c20f0dcae2fa2c0fa  doc/eng-us/help/database-administrators/sql-qu
 f0e35bba33be182ae1fe914ebbf3fe93  doc/eng-us/help/database-administrators/sqlite-files-ownership-and-permissions.md
 7df30163dce387c09608d8f8f36eb24f  doc/eng-us/help/database-administrators/sqlite-for-database-administrators.md
 2b2f3aac251b7d211500ce6dcb6275b9  doc/eng-us/help/database-administrators/sqlite-maintenance.md
-1cad61a7af0bf5c247fea61ff0b71afa  doc/eng-us/help/database-administrators/sqlite-write-queue-and-locking.md
+ddbaeb0fe5633f3ba5d9d48873b85c1c  doc/eng-us/help/database-administrators/sqlite-write-queue-and-locking.md
 bc489746b529cc9960734fceb34525d4  doc/eng-us/help/database-administrators/supported-engines-and-versions.md
 174a8672bbff65e841ea06c36235d033  doc/eng-us/help/database-administrators/tables-you-should-know.md
 ff468b8e02ccdb0729605357e6a63157  doc/eng-us/help/database-administrators/the-database-layer-in-one-page.md
@@ -13246,7 +13246,7 @@ acf80981b12ccd8ca2d672ee2d1c1ec0  doc/eng-us/specifications/6.0/runnable-command
 68c7ab1fd35cdcc4ced2bf0ce5acf477  doc/eng-us/specifications/6.0/security-defaults-2026-09.md
 7cfa35396e92191dbe2408004e86d416  doc/eng-us/specifications/6.0/security-hardening-2026-08.md
 8e5d88b3a7f5bd9ec543ac03aa7463ec  doc/eng-us/specifications/6.0/security-hardening-6.0.13.md
-b1abda78002856148896b955b0067d78  doc/eng-us/specifications/6.0/sqlite3-database-driver.md
+28648af91d4c51790b859010b9fa3ea7  doc/eng-us/specifications/6.0/sqlite3-database-driver.md
 378697ca7ea56ed5c4ea042fa95c4a4f  doc/eng-us/specifications/6.0/static-publishing-build-format.md
 c267a0550b900807dfed443c52266c85  doc/eng-us/specifications/6.0/static-publishing-form-endpoint.md
 b452d0a629e4af725d82380f64c0b4b2  doc/eng-us/specifications/6.0/static-publishing-manifest.md
@@ -13813,7 +13813,7 @@ d1cf560d1b942596beff989679e73cdc  doc/ger-de/bc/6.0/seitenweise-anzeige-von-roll
 b8c6635746a56bda4315d93d3df53edf  doc/ger-de/bc/6.0/sicherheit-von-content-view-full.md
 f16c71aee0885dfb239e5224c8791a7f  doc/ger-de/bc/6.0/soap-einstiegsskript-index-soap.md
 b6f5671a6d8c8c99ad7a188252af1387  doc/ger-de/bc/6.0/sql-abfrage-cache.md
-18a8a897af6e9f4e71e174f2b2423e5d  doc/ger-de/bc/6.0/sqlite-transaktionen.md
+b1a0f7ae57d116312dfc9820889fa4fc  doc/ger-de/bc/6.0/sqlite-transaktionen.md
 ed99f303639d301e1bf5ddb4e8c4facc  doc/ger-de/bc/6.0/standardwerte-des-statischen-caches.md
 f16f5e23b0a3ebfd383e1385efc1d390  doc/ger-de/bc/6.0/statisches-veroeffentlichen.md
 7a45e2508aeba6955cd3c0aa45fb6e56  doc/ger-de/bc/6.0/suchlinks-mit-view-parametern.md
@@ -26787,7 +26787,7 @@ b66248e35051b10fab37396107632d39  lib/ezdb/classes/ezdbquerycache.php
 30844fe013028638ef2816877e83baa5  lib/ezdb/classes/ezmysqlidb.php
 ec6538c99af5eb7c84f089898a6907d2  lib/ezdb/classes/eznulldb.php
 d2b9ad028227c37896ac352d2c697f71  lib/ezdb/classes/ezpostgresqldb.php
-58965c4b33a069845bd9cd855203b292  lib/ezdb/classes/ezsqlite3db.php
+0962e8b7c5413af7373c4c305a1cb207  lib/ezdb/classes/ezsqlite3db.php
 ac6df8d4565b779eff3ff9c41b2da301  lib/ezdbschema/classes/expmongoschema.php
 eca147e65440b86a146555c6e4122e0f  lib/ezdbschema/classes/ezdbschema.php
 7f09acd4dab532f71ff61c004d1f4af8  lib/ezdbschema/classes/ezdbschemachecker.php
@@ -27195,7 +27195,7 @@ f7103c5bfddb7fcd5cbd36dc6cab1df1  settings/requestrules.ini
 3d58b3c9abd483644a07965e143cb05f  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
-6de89f2c9bc124ea661df42a9b36bdf8  settings/site.ini
+a3c37c7b75725b2c33a32fcdba6de778  settings/site.ini
 6ab42322e9bd79fffa4d3ff3e7876b61  settings/siteaccess/mysite/override.ini.append
 2f9737c378b44049bb74006cdbae6bb9  settings/siteaccess/mysite/site.ini.append
 459570c4f6e440a4f8fdc53cc37675b2  settings/siteaccess/plain/override.ini.append
@@ -28970,7 +28970,7 @@ f03b44386d1b3b6a08befee48341b80b  tests/tests/kernel/classes/clusterfilehandlers
 d8533fb893d68d66e1aa6fae63aae860  tests/tests/kernel/classes/codetemplate/eZCodeTemplateTest.php
 068e25a410ce6242cafb2cf8b83c1b54  tests/tests/kernel/classes/collaboration/CollaborationSampleDataTest.php
 9315340226b52e7d9d1599ee220711ad  tests/tests/kernel/classes/commands/expVelocityHelpTextTest.php
-fb4afabd8a224fc7d5bc621763617be4  tests/tests/kernel/classes/contentjob/ContentJobEngineTest.php
+e412a69623c1f4765321d36ddfe79eca  tests/tests/kernel/classes/contentjob/ContentJobEngineTest.php
 8576454518714afd3196b1602a232008  tests/tests/kernel/classes/contentjob/expContentJobWorkerBatchSizeTest.php
 bc5aa87fdfc443d2182df2328d907134  tests/tests/kernel/classes/contentjobs/expContentJobCopyLinksTest.php
 3507e0d69216bb386162b759df18fc3d  tests/tests/kernel/classes/contentmodel/eZContentClassLiveTest.php
@@ -29733,7 +29733,7 @@ a09b2df9595fc9d27ae263c2122378c5  tests/tests/kernel/classes/urlaliasml_regressi
 460ddd4a97aee2a64e9e1f94070a929d  tests/tests/kernel/classes/urlaliasml_test.php
 80952619aef3d9d88170d24801103dc1  tests/tests/kernel/classes/user/eZForgotPasswordExpiryTest.php
 eea22495dd791b559b5c8438030bdd83  tests/tests/kernel/classes/user/expDemoModeTest.php
-e7b7cc4719c3f900b5c6b802d9741e3a  tests/tests/kernel/classes/user/expLastSeenWhileDatabaseBusyTest.php
+49e773a5e7fd7f059579a3c03078dfdc  tests/tests/kernel/classes/user/expLastSeenWhileDatabaseBusyTest.php
 68d5ee71998ad0e0392789957f1afc1b  tests/tests/kernel/classes/user/expPasswordChangeRequiredTest.php
 ce0dccf22b28774e6e7caacfac27098c  tests/tests/kernel/classes/user/expPasswordPolicyTest.php
 c7a5edf71b5db67fed879faef8e98286  tests/tests/kernel/classes/user/expPasswordSessionStampTest.php
@@ -30199,6 +30199,7 @@ b60dc460fe5444f72a0e09fc1305a105  tests/tests/lib/ezdb/eZDBInterfaceHelpersTest.
 f3399840342f3a31b1c4c5b958f23a49  tests/tests/lib/ezdb/eZPostgreSQLDBEscapeStringNullTest.php
 8ae9857e8cf6448ba425d2bdb7253eef  tests/tests/lib/ezdb/eZPostgreSQLDBTest.php
 5bcd39d973a0ad530333df3bb0df7c99  tests/tests/lib/ezdb/eZSQLite3BackgroundWriterHandoffTest.php
+48ffc3af51fa88ce77cc2e1de4091893  tests/tests/lib/ezdb/eZSQLite3BusyWaitTest.php
 bb4f98cbc0c7d040ffde87e354830fb5  tests/tests/lib/ezdb/eZSQLite3DBQueryCountTest.php
 99334cff65dad7c143b284eff4d3ba8b  tests/tests/lib/ezdb/eZSQLite3InsertOrReplaceTest.php
 e7c428ffa18e115fd9afa3ac417d175c  tests/tests/lib/ezdb/eZSQLite3MirrorTest.php

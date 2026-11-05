@@ -75,12 +75,24 @@ request timeout and `SQLiteTransactionWait` together, the wait always a few seco
 php bin/php/console exp:ini get site.ini/DatabaseSettings/SQLiteTransactionWait --allow-root-user
 ```
 
+On the command line (cronjobs, imports, scripts) the wait is `SQLiteCLITransactionWait` instead, default `300`
+seconds: nobody waits for a page there, and a cronjob waits for a long import rather than stopping with "A database
+transaction in Exponential failed".
+
+## Single statements
+
+A write outside a transaction (an `INSERT` of a link, an `UPDATE` of a cronjob) takes its turn on the same
+`.writer-lock` and waits up to `SQLiteBusyTimeout` milliseconds in a web request (default `5000`) or
+`SQLiteCLIBusyTimeout` on the command line (default `30000`). A lock that SQLite reports at once is tried again
+within that time. Reads never queue.
+
 ## What a timeout looks like
 
 In `var/log/error.log` and on the error page:
 
 ```text
-database is busy: the transaction could not start within 25 s, another write held the lock all that time; nothing was written
+database is busy: the transaction could not start within 25 s (waited 25.0 s, [DatabaseSettings] SQLiteTransactionWait), another write held the lock all that time; nothing was written
+database is busy: the statement waited 5.0 s for another write to end (limit 5 s, [DatabaseSettings] SQLiteBusyTimeout) and was not run; nothing was written
 ```
 
 Any other failure at the start reads `the transaction could not start: <SQLite's message>; nothing was written`. In

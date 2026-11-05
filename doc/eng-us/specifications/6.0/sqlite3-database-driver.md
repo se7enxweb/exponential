@@ -13,6 +13,9 @@ write SQL that must run on every engine. The task-oriented introduction is
 | `settings/site.ini` | `DatabaseSettings` | `ImplementationAlias[sqlite3]` | `eZSQLite3DB` | installation |
 | `settings/site.ini` | `DatabaseSettings` | `SQLitePragmas[]` | none; entries `name=value` override the [PRAGMA defaults](#pragma-defaults-and-overrides) | installation |
 | `settings/site.ini` | `DatabaseSettings` | `SQLiteTransactionWait` | `25` (seconds) | installation |
+| `settings/site.ini` | `DatabaseSettings` | `SQLiteCLITransactionWait` | `300` (seconds) | installation, command line only |
+| `settings/site.ini` | `DatabaseSettings` | `SQLiteBusyTimeout` | `5000` (ms) | installation, web requests |
+| `settings/site.ini` | `DatabaseSettings` | `SQLiteCLIBusyTimeout` | `30000` (ms) | installation, command line only |
 | `settings/dbschema.ini` | `SchemaSettings` | `SchemaPaths[sqlite]`, `SchemaPaths[sqlite3]` | `lib/ezdbschema/classes/ezsqliteschema.php` | installation |
 | `settings/dbschema.ini` | `SchemaSettings` | `SchemaHandlerClasses[sqlite]`, `SchemaHandlerClasses[sqlite3]` | `eZSQLiteSchema` | installation |
 | `settings/setup.ini` | `DatabaseSettings` | `DefaultType` | `sqlite3` | setup wizard |
@@ -67,7 +70,7 @@ demo data available, Unicode supported.
 | `cache_size` | `-65536` | 64 MB page cache (SQLite default is 2 MB). |
 | `mmap_size` | `268435456` | Read through 256 MB of mapped memory. |
 | `temp_store` | `MEMORY` | Sorts and temporary tables in memory. |
-| `busy_timeout` | `5000` | Wait up to 5 s for a lock instead of failing at once. |
+| `busy_timeout` | `5000` in a web request, `30000` on the command line | How long a statement waits for a lock: `SQLiteBusyTimeout` or `SQLiteCLIBusyTimeout`. A `busy_timeout=<ms>` entry in `SQLitePragmas[]` still wins over both. |
 
 Override or add entries with `[DatabaseSettings] SQLitePragmas[]=name=value` in
 `settings/site.ini`.
@@ -79,7 +82,9 @@ SQLite has one writer. Since 6.0.15 (1-2 October 2026) a transaction starts with
 | Aspect | Behaviour |
 |---|---|
 | Waiting | `begin()` queues behind a writer gate (a lock file named `<database>.writer-lock` beside the database file, released by the operating system when a process ends) for at most `[DatabaseSettings] SQLiteTransactionWait` seconds (default `25`); tries thin out as the wait grows and the writers that waited longest go first. A waiting writer holds a shared lock on `<database>.writer-queue`; a writer that finds the gate free while others wait leaves it to them for `eZSQLite3DB::HANDOFF_MS` (30 ms), so a loop of back-to-back transactions (a cronjob part, a content job) cannot keep the gate from the writers queued behind it. Waiting here is safe because nothing has been written yet. Keep the value below the request timeout: Velocity ends a request after `Q.webserver.requestTimeout`, 30 s unless changed, hence the default of 25. |
-| Failure | A start that still gets nothing is reported at once as a failed transaction with the reason, and nothing is written. Before, the generic `begin()` counted it as started and later statements ran one by one, each committed on its own. |
+| Command line | Cronjobs, imports and scripts wait `[DatabaseSettings] SQLiteCLITransactionWait` seconds (default `300`) instead: nobody waits for a page there. A web request is any process that is not PHP's command line, or a Velocity worker (`eZSQLite3DB::isWebProcess()`). Before 5 November 2026 a cronjob gave up after 25 s behind an import's long write and stopped with "A database transaction in Exponential failed". |
+| Single statements | A write outside a transaction (an `INSERT` of a link, an `UPDATE` of a cronjob) queues on the same writer gate, then runs (`eZSQLite3DB::execWaitingForLock()`). It waits at most the statement wait: `SQLiteBusyTimeout` ms in a web request (default `5000`), `SQLiteCLIBusyTimeout` ms on the command line (default `30000`). A `SQLITE_BUSY` or `SQLITE_LOCKED` that SQLite returns without calling its busy handler (WAL recovery, a `COMMIT` waiting for readers in rollback-journal mode) is tried again with a pause of 2 to 32 ms within that wait; a statement that failed for a lock has changed nothing, so the retry is safe. Reads (`SELECT`, a `PRAGMA` that only asks) never queue and are retried the same way. Before, a single write waited only in SQLite's busy handler, which sleeps up to 100 ms between tries, while the writers on the gate took the lock back within milliseconds of each commit: behind an import's loop of short transactions it failed with "database is locked", and links saved in the online editor lost their URL id. |
+| Failure | A start that still gets nothing is reported at once as a failed transaction with the reason, and nothing is written. The message says the database was busy, how long it waited, the limit and the setting: "database is busy: the transaction could not start within 25 s (waited 25.0 s, [DatabaseSettings] SQLiteTransactionWait), another write held the lock all that time; nothing was written", for a statement "database is busy: the statement waited 5.0 s for another write to end (limit 5 s, [DatabaseSettings] SQLiteBusyTimeout) and was not run; nothing was written". Before, the generic `begin()` counted it as started and later statements ran one by one, each committed on its own. |
 | Rollback | `ROLLBACK` is sent only when SQLite has a transaction open (no more "cannot rollback - no transaction is active"). |
 | Measured | In the change's test run, 64 concurrent publishers: before 6 of 192 failed, after 192 of 192 completed whole (not repeated for this page). |
 
