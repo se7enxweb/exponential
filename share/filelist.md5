@@ -13467,7 +13467,7 @@ aa57a726dc0740993dd6d133be08b6f5  doc/eng-us/standards/patterns/value-object.md
 965ab8e3c5a29dc3c29e89f7f5a9c31c  doc/eng-us/standards/source-control-and-releases.md
 6076499d7dc68d5e1fb7dae4e8a7c41c  doc/eng-us/standards/testing-and-ci.md
 d540df62aa49e479062d2e4c943f13b8  doc/eng-us/standards/web-platform.md
-857ad0b1849f25c0d266d0d30219b642  doc/eng-us/translation-waves.md
+05a428113c6eede8230567bb0cba636d  doc/eng-us/translation-waves.md
 1bfe80927d309dbfdef43522262579d6  doc/ger-de/.dirnames.json
 5326137e7fef823ead0a674a13e47dc1  doc/ger-de/.examples/descriptions/01-command-accesscheck.json
 0e81113b726d51b19af7e2cfe986c37e  doc/ger-de/.examples/descriptions/02-command-explogs-file.json
@@ -23280,7 +23280,7 @@ f5ff4f18d94e1c80ff309a29ec39ac4d  doc/ger-de/standards/sicherheit.md
 3e355cb14e5eefd2bf6bb2044c682f56  doc/ger-de/standards/tests-und-ci.md
 f1b4a7cf645fcdcd0e1f0c602ecdd3b5  doc/ger-de/standards/versionsverwaltung-und-releases.md
 9e515575ffc50620e08b29cbb7a63894  doc/ger-de/standards/webplattform.md
-bd602563db4fd1232daa5328f49ec848  doc/ger-de/uebersetzungswellen.md
+926a0e3f09560866770d5e46024a1ddb  doc/ger-de/uebersetzungswellen.md
 d9e9ce839a81021a31411fb57ae96eba  doc/ger-de/wettbewerb/README.md
 fe69325110b28a3d4f93bea4c20e0564  doc/ger-de/wettbewerb/andere-sprachen.md
 6c44cb5435a6f2a5302356e0175921cb  doc/ger-de/wettbewerb/php-cms-und-frameworks.md
