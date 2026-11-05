@@ -1296,7 +1296,7 @@ class ContentJobEngineTest extends PHPUnit\Framework\TestCase
 
     /**
      * CJ-32: on a real SQLite database (a file in the test's scratch directory) a second connection holds the write
-     * lock (BEGIN IMMEDIATE) for 2.5 s; with SQLiteTransactionWait=1 the worker's first starts give up with "database
+     * lock (BEGIN IMMEDIATE) for 2.5 s; with SQLite(CLI)TransactionWait=1 the worker's first starts give up with "database
      * is busy", it waits, tries again and finishes, every item recorded once.
      */
     public function testRealSqliteWriteLockHeldByAnotherConnectionIsWaitedOut()
@@ -1334,6 +1334,7 @@ class ContentJobEngineTest extends PHPUnit\Framework\TestCase
         $worker = self::fork( function () use ( $id, $file, $codeFile )
         {
             ezpINIHelper::setINISetting( 'site.ini', 'DatabaseSettings', 'SQLiteTransactionWait', '1' );
+            ezpINIHelper::setINISetting( 'site.ini', 'DatabaseSettings', 'SQLiteCLITransactionWait', '1' );   // the worker runs on the command line
             ezpINIHelper::setINISetting( 'site.ini', 'DatabaseSettings', 'Transactions', 'enabled' );
             $db = new eZSQLite3DB( array(
                 'server' => '', 'port' => '', 'user' => '', 'password' => '', 'database' => $file,

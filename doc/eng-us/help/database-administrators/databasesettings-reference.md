@@ -4,7 +4,7 @@ audience: dba
 category: database-administration
 order: 6
 summary: Every key of site.ini [DatabaseSettings] with its shipped default, the engines that read it and what it does - connection, character set, retries, persistent connections, replicas, transactions, debug output and the SQLite keys - plus the per-engine blocks to copy into settings/override.
-keywords: DatabaseSettings, site.ini, DatabaseImplementation, Server, Port, Socket, User, Password, Database, Charset, UseBuiltinEncoding, ConnectRetries, UsePersistentConnection, UseSlaveServer, SlaveServerArray, Transactions, SQLOutput, SlowQueriesOutput, QueryAnalysisOutput, DebugTransactions, SQLitePragmas, SQLiteTransactionWait, ImplementationAlias
+keywords: DatabaseSettings, site.ini, DatabaseImplementation, Server, Port, Socket, User, Password, Database, Charset, UseBuiltinEncoding, ConnectRetries, UsePersistentConnection, UseSlaveServer, SlaveServerArray, Transactions, SQLOutput, SlowQueriesOutput, QueryAnalysisOutput, DebugTransactions, SQLitePragmas, SQLiteTransactionWait, SQLiteCLITransactionWait, SQLiteBusyTimeout, SQLiteCLIBusyTimeout, ImplementationAlias
 type: help
 ---
 # The DatabaseSettings reference
@@ -78,6 +78,9 @@ These only show when the debug output is on for your address. See [Finding slow 
 |---|---|---|
 | `SQLitePragmas[]` | empty | PRAGMAs over the driver's defaults, one `name=value` per entry. |
 | `SQLiteTransactionWait` | `25` | Seconds a transaction waits for the writers ahead of it. Keep it below the web server's request timeout. |
+| `SQLiteCLITransactionWait` | `300` | The same on the command line (cronjobs, imports, scripts). |
+| `SQLiteBusyTimeout` | `5000` | Milliseconds a single statement waits for another write in a web request. |
+| `SQLiteCLIBusyTimeout` | `30000` | The same on the command line. |
 
 Details: [SQLite: the write queue and locking](sqlite-write-queue-and-locking.md) and
 [SQLite maintenance](sqlite-maintenance.md).

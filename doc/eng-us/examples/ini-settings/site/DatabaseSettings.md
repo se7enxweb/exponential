@@ -2,14 +2,14 @@
 title: site.ini [DatabaseSettings]
 audience: developer, admin
 category: examples
-summary: "The settings of [DatabaseSettings] in site.ini: SQLitePragmas, SQLiteTransactionWait, DatabaseImplementation, Server, Port, User, Password, Database ..."
-keywords: site.ini, DatabaseSettings, INI, setting, SQLitePragmas, SQLiteTransactionWait, DatabaseImplementation, Server, Port, User, Password, Database, UseSlaveServer, ConnectRetries, Charset, UseBuiltinEncoding, Socket, QueryAnalysisOutput, SQLOutput, SlowQueriesOutput, DebugTransactions, ImplementationAlias, UsePersistentConnection, Transactions
+summary: "The settings of [DatabaseSettings] in site.ini: SQLitePragmas, SQLiteTransactionWait, SQLiteCLITransactionWait, SQLiteBusyTimeout, SQLiteCLIBusyTimeout, DatabaseImplementation, Server, Port ..."
+keywords: site.ini, DatabaseSettings, INI, setting, SQLitePragmas, SQLiteTransactionWait, SQLiteCLITransactionWait, SQLiteBusyTimeout, SQLiteCLIBusyTimeout, DatabaseImplementation, Server, Port, User, Password, Database, UseSlaveServer, ConnectRetries, Charset, UseBuiltinEncoding, Socket, QueryAnalysisOutput, SQLOutput, SlowQueriesOutput, DebugTransactions, ImplementationAlias, UsePersistentConnection, Transactions
 type: generated
 generated: exp:help:examples
 ---
 # site.ini [DatabaseSettings]
 
-The block `[DatabaseSettings]` of `settings/site.ini`, with 20 setting(s).
+The block `[DatabaseSettings]` of `settings/site.ini`, with 23 setting(s).
 
 Never edit `settings/site.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -25,7 +25,8 @@ Never edit `settings/site.ini` itself: an update replaces it. Put the settings y
 >   cache\_size=-65536      64 MB page cache (SQLite's default is 2 MB)  
 >   mmap\_size=268435456    read the file through 256 MB of mapped memory  
 >   temp\_store=MEMORY      sorts and temporary tables in memory  
->   busy\_timeout=5000      wait up to 5 s for a lock instead of failing at once  
+>   busy\_timeout           SQLiteBusyTimeout / SQLiteCLIBusyTimeout below; a  
+>                          busy\_timeout=<ms> line here still wins over both  
 > Run php bin/php/ezexec.php on an ANALYZE script (or sqlite3 <file> ANALYZE)  
 > after an install, so the query planner has statistics.  
 
@@ -59,6 +60,54 @@ Default: `25`.
 # settings/override/site.ini.append.php
 [DatabaseSettings]
 SQLiteTransactionWait=25
+*/ ?>
+```
+
+## SQLiteCLITransactionWait
+
+> SQLite only: the same wait on the command line (cronjobs, imports, scripts),  
+> in seconds. Nobody waits for a page there, so a cronjob waits for a long  
+> import's writes instead of stopping with "A database transaction in  
+> Exponential failed".  
+
+Default: `300`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[DatabaseSettings]
+SQLiteCLITransactionWait=300
+*/ ?>
+```
+
+## SQLiteBusyTimeout
+
+> SQLite only: how many milliseconds a single statement outside a transaction  
+> (an INSERT of a link, an UPDATE of a cronjob) waits for another write to end  
+> before it fails with "database is busy: the statement waited N s". It  
+> queues on the same <database>.writer-lock as a transaction, and a lock SQLite  
+> reports at once is tried again within this time. SQLiteBusyTimeout applies to  
+> web requests (PHP-FPM, Velocity), SQLiteCLIBusyTimeout to the command line.  
+
+Default: `5000`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[DatabaseSettings]
+SQLiteBusyTimeout=5000
+*/ ?>
+```
+
+## SQLiteCLIBusyTimeout
+
+Default: `30000`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[DatabaseSettings]
+SQLiteCLIBusyTimeout=30000
 */ ?>
 ```
 

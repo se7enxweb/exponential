@@ -636,9 +636,11 @@ SQLite is not only for trying Exponential. The kernel driver (`lib/ezdb/classes/
 | | |
 |---|---|
 | WAL | The driver switches the database to `journal_mode=WAL` (set once, stored in the file). Readers do not block the writer and the writer does not block readers, so reads run concurrently. |
-| Connection tuning | `synchronous=NORMAL` (crash-safe with WAL), `cache_size=-65536` (64 MB), `mmap_size=268435456` (256 MB), `temp_store=MEMORY`, `busy_timeout=5000` (5 s per statement). |
+| Connection tuning | `synchronous=NORMAL` (crash-safe with WAL), `cache_size=-65536` (64 MB), `mmap_size=268435456` (256 MB), `temp_store=MEMORY`, `busy_timeout` 5000 ms in a web request (`SQLiteBusyTimeout`) and 30000 ms on the command line (`SQLiteCLIBusyTimeout`). |
 | Queued writes | SQLite has one writer at a time. Each transaction starts with `BEGIN IMMEDIATE` after taking an exclusive lock on `<database file>.writer-lock`, next to the database. Writers wait their turn there for up to `SQLiteTransactionWait` seconds instead of failing with "database is locked". Waiting is safe: nothing has been written yet, and a started transaction cannot fail for a lock. The lock is released at commit or rollback, and by the operating system if the process dies. |
-| Timeout | Only a transaction that waits longer than `SQLiteTransactionWait` fails, with "database is busy: the transaction could not start within N s, another write held the lock all that time; nothing was written". |
+| Single writes | A write outside a transaction queues on the same lock file and waits up to the statement wait; a lock SQLite reports at once is tried again within it. |
+| Command line | Cronjobs and scripts wait `SQLiteCLITransactionWait` seconds (default 300) for a transaction and `SQLiteCLIBusyTimeout` ms (default 30000) for a statement, so a cronjob waits for a long import instead of failing. |
+| Timeout | Only work that waits longer than its limit fails, with "database is busy: the transaction could not start within N s (waited N s, [DatabaseSettings] <setting>) ..." or "database is busy: the statement waited N s for another write to end (limit N s, [DatabaseSettings] <setting>) and was not run; nothing was written". |
 
 **Settings** (`settings/site.ini`, block `[DatabaseSettings]`; override in `settings/override/site.ini.append.php`):
 
@@ -651,6 +653,11 @@ Database=exponential.db
 # keep it below the request timeout: Velocity's Q.webserver.requestTimeout
 # (30 s unless changed), or PHP-FPM's request_terminate_timeout
 SQLiteTransactionWait=25
+# the same on the command line (cronjobs, imports), seconds
+SQLiteCLITransactionWait=300
+# ms a single statement waits for another write: web requests, command line
+SQLiteBusyTimeout=5000
+SQLiteCLIBusyTimeout=30000
 # PRAGMAs over the driver's defaults, one per line as name=value
 SQLitePragmas[]
 #SQLitePragmas[]=cache_size=-131072

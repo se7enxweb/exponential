@@ -50,8 +50,9 @@ class eZSQLite3DB extends eZDBInterface
      * - mmap_size=268435456: read the file through 256 MB of mapped memory,
      *   no read() call and copy per page
      * - temp_store=MEMORY: sorts and temporary tables in memory, not on disk
-     * - busy_timeout=5000: wait up to 5 s for a lock instead of failing at
-     *   once (0 made a request that met another's write fail)
+     * - busy_timeout: how long a statement waits for a lock instead of failing
+     *   at once (0 made a request that met another's write fail), from
+     *   configuredStatementWaitMs(): 5 s in a web request, 30 s on the command line
      *
      * Applied at every connection: most PRAGMAs belong to the connection.
      */
@@ -60,7 +61,7 @@ class eZSQLite3DB extends eZDBInterface
         if ( !$this->DBConnection )
             return;
         $pragmas = array( 'synchronous' => 'NORMAL', 'cache_size' => '-65536', 'mmap_size' => '268435456',
-                          'temp_store' => 'MEMORY', 'busy_timeout' => '5000' );
+                          'temp_store' => 'MEMORY', 'busy_timeout' => (string)self::configuredStatementWaitMs() );
         $ini = eZINI::instance();
         if ( $ini->hasVariable( 'DatabaseSettings', 'SQLitePragmas' ) )
         {
@@ -77,8 +78,9 @@ class eZSQLite3DB extends eZDBInterface
                 $pragmas[$name] = $value;
             }
         }
-        // The busy timeout before the rest, so they wait for a lock as well
-        $this->StatementWaitMs = (int)$pragmas['busy_timeout'];
+        // The busy timeout before the rest, so they wait for a lock as well. An explicit
+        // SQLitePragmas[]=busy_timeout=<ms> still wins over SQLiteBusyTimeout, as it did before that setting.
+        $this->StatementWaitMs = max( 0, (int)$pragmas['busy_timeout'] );
         $this->DBConnection->busyTimeout( $this->StatementWaitMs );
         unset( $pragmas['busy_timeout'] );
         foreach ( $pragmas as $name => $value )
@@ -391,9 +393,7 @@ class eZSQLite3DB extends eZDBInterface
 
             $sql = $this->rewriteJoinedUpdate( $sql );
 
-            // A failure is reported below with its reason and the statement; the
-            // warning PHP adds for it said the same a second time
-            $result = @$this->DBConnection->exec( $sql );
+            $result = $this->execWaitingForLock( $sql );
             eZDebug::accumulatorStop( 'sqlite3_query' );
             if ( $this->OutputSQL )
             {
@@ -407,9 +407,8 @@ class eZSQLite3DB extends eZDBInterface
 
             if ( !$result )
             {
-                $this->setError();
-
-                eZDebug::writeError( self::failedQueryMessage( $this->DBConnection ? $this->DBConnection->lastErrorMsg() : "", $sql ), "eZSQLite3DB" );
+                // execWaitingForLock() has set the error, with the busy wait's own message when it ran out of time
+                eZDebug::writeError( self::failedQueryMessage( $this->ErrorMessage, $sql ), "eZSQLite3DB" );
                 $this->reportError();
             }
             else
@@ -425,6 +424,191 @@ class eZSQLite3DB extends eZDBInterface
         }
 
         return false;
+    }
+
+    /**
+     * Runs one statement of query(), waiting for the write lock instead of failing at once.
+     *
+     * A write outside a transaction (eZURL's insert of an external link, a single UPDATE of a cronjob) queues on
+     * the writer gate like a transaction's start (acquireWriterGate()), then runs. Without the gate it waited
+     * only in SQLite's busy handler, which sleeps up to 100 ms between tries, while the writers on the gate took
+     * the lock back within milliseconds of each commit: behind an import's link pass, which writes in a loop of
+     * short transactions, every such insert lost each race for its whole busy_timeout and failed with "database
+     * is locked", and the online editor's links lost their URL id. A statement that SQLite answers with
+     * SQLITE_BUSY or SQLITE_LOCKED without calling the busy handler (WAL recovery, a COMMIT that waits for
+     * readers in rollback-journal mode) is tried again with a short, growing pause. Either way the wait ends
+     * after the statements' wait (statementWaitMs(), [DatabaseSettings] SQLiteBusyTimeout or
+     * SQLiteCLIBusyTimeout), and the error then says the database was busy and for how long.
+     *
+     * Retrying is safe: a statement that failed for a lock has changed nothing. Inside a transaction the
+     * connection holds the write lock already (BEGIN IMMEDIATE), so only a COMMIT can still meet a lock.
+     *
+     * @param string $sql
+     * @return bool
+     */
+    protected function execWaitingForLock( $sql )
+    {
+        $start = microtime( true );
+        $deadline = $start + $this->StatementWaitMs / 1000;
+        $gated = false;
+        if ( !$this->InSQLTransaction && !$this->HoldsWriterGate && self::isWriteStatement( $sql ) )
+        {
+            if ( !$this->acquireWriterGate( $start, $deadline ) )
+            {
+                $this->ErrorNumber = 5;   // SQLITE_BUSY
+                $this->ErrorMessage = $this->busyMessage( 'statement', microtime( true ) - $start );
+                return false;
+            }
+            $gated = $this->HoldsWriterGate;   // false: no gate file, SQLite's own wait does the queueing
+        }
+
+        $tries = 0;
+        while ( true )
+        {
+            // The busy handler waits what is left of the statement's wait, never longer
+            $this->DBConnection->busyTimeout( (int)max( 1, ( $deadline - microtime( true ) ) * 1000 ) );
+            // A failure is reported by query() with its reason and the statement; the warning PHP adds for it
+            // said the same a second time
+            $result = @$this->DBConnection->exec( $sql );
+            if ( $result )
+                break;
+            $code = $this->DBConnection->lastErrorCode();
+            // SQLITE_LOCKED inside a transaction is a conflict of this connection with itself; waiting cannot end it
+            if ( !self::isBusyCode( $code ) || ( $this->InSQLTransaction && ( $code & 0xff ) == 6 )
+                 || microtime( true ) >= $deadline )
+                break;
+            self::backoff( $tries++, $deadline );
+        }
+        $this->DBConnection->busyTimeout( $this->StatementWaitMs );
+
+        if ( !$result )
+        {
+            $this->setError();
+            if ( self::isBusyCode( $this->ErrorNumber ) )
+                $this->ErrorMessage = $this->busyMessage( 'statement', microtime( true ) - $start );
+        }
+        if ( $gated )
+            $this->releaseWriterGate();
+        return (bool)$result;
+    }
+
+    /**
+     * Whether $sql may write, and so has to queue for the write lock. Reads (SELECT, EXPLAIN, a PRAGMA that only
+     * asks) run beside a writer under WAL and never queue; transaction control (BEGIN, COMMIT, ROLLBACK,
+     * SAVEPOINT, RELEASE) is not a write of its own. Anything else counts as a write, the safe side.
+     *
+     * @param string $sql
+     * @return bool
+     */
+    public static function isWriteStatement( $sql )
+    {
+        // Only the start matters; an import's statement can be megabytes long
+        $head = substr( (string)$sql, 0, 4096 );
+        $head = preg_replace( '#^(?:\s+|--[^\n]*(?:\n|$)|/\*.*?\*/)+#s', '', $head );
+        if ( preg_match( '/^(?:SELECT|EXPLAIN|VALUES|BEGIN|COMMIT|END|ROLLBACK|SAVEPOINT|RELEASE)\b/i', $head ) )
+            return false;
+        if ( preg_match( '/^PRAGMA\b/i', $head ) )
+            return strpos( $head, '=' ) !== false || preg_match( '/\b(?:wal_checkpoint|optimize|incremental_vacuum)\b/i', $head ) === 1;
+        return true;
+    }
+
+    /**
+     * Whether an SQLite result code means another connection held a lock: SQLITE_BUSY (5) or SQLITE_LOCKED (6),
+     * extended codes included (SQLITE_BUSY_RECOVERY, SQLITE_BUSY_SNAPSHOT ...).
+     *
+     * @param int $code
+     * @return bool
+     */
+    public static function isBusyCode( $code )
+    {
+        $primary = (int)$code & 0xff;
+        return $primary === 5 || $primary === 6;
+    }
+
+    /**
+     * A pause before the next try at a lock: 2, 4, 8, 16, then 32 ms, with jitter so waiters do not wake
+     * together, and never past $deadline.
+     *
+     * @param int $tries the tries so far
+     * @param float $deadline microtime( true ) when the wait ends
+     */
+    protected static function backoff( $tries, $deadline )
+    {
+        $ms = ( 2 << min( 4, (int)$tries ) ) * mt_rand( 75, 125 ) / 100;
+        $left = ( $deadline - microtime( true ) ) * 1000;
+        if ( $left > 0 )
+            usleep( (int)( min( $ms, $left ) * 1000 ) );
+    }
+
+    /**
+     * The message of a statement or a transaction that did not get the lock in time: that the database was
+     * busy, how long it waited, the limit and the setting that sets it.
+     *
+     * @param string $what 'statement' or 'transaction'
+     * @param float $waited seconds
+     * @return string
+     */
+    protected function busyMessage( $what, $waited )
+    {
+        $web = self::isWebProcess();
+        if ( $what === 'transaction' )
+        {
+            $limit = $this->transactionWaitMs() / 1000;
+            $setting = $web ? 'SQLiteTransactionWait' : 'SQLiteCLITransactionWait';
+            return sprintf( 'database is busy: the transaction could not start within %s s (waited %.1f s, [DatabaseSettings] %s), another write held the lock all that time; nothing was written',
+                            self::seconds( $limit ), $waited, $setting );
+        }
+        $limit = $this->StatementWaitMs / 1000;
+        $setting = $web ? 'SQLiteBusyTimeout' : 'SQLiteCLIBusyTimeout';
+        return sprintf( 'database is busy: the statement waited %.1f s for another write to end (limit %s s, [DatabaseSettings] %s) and was not run; nothing was written',
+                        $waited, self::seconds( $limit ), $setting );
+    }
+
+    /// 25 for 25.0, 0.5 for 0.5
+    private static function seconds( $value )
+    {
+        return rtrim( rtrim( sprintf( '%.1f', $value ), '0' ), '.' );
+    }
+
+    /**
+     * Whether this process answers web requests: PHP-FPM, Apache, or a Velocity worker (PHP's command line SAPI,
+     * serving requests). Cronjobs and scripts are the command line and may wait longer for a lock.
+     *
+     * @return bool
+     */
+    public static function isWebProcess()
+    {
+        return PHP_SAPI !== 'cli' || defined( 'QBIX_WEBSERVER' ) || isset( $_SERVER['QBIX_WORKER'] )
+               || isset( $_SERVER['VELOCITY'] ) || class_exists( 'Q_WebServer', false );
+    }
+
+    /**
+     * How long a statement waits for a lock, in ms, as configured: [DatabaseSettings] SQLiteBusyTimeout in a
+     * web request (default 5000), SQLiteCLIBusyTimeout on the command line (default 30000: a cronjob or an
+     * import waits for the other writers, nobody is waiting for a page). SQLitePragmas[]=busy_timeout=<ms>,
+     * where set, still wins (applyPragmas()).
+     *
+     * @return int
+     */
+    public static function configuredStatementWaitMs()
+    {
+        $web = self::isWebProcess();
+        $ms = $web ? 5000 : 30000;
+        $key = $web ? 'SQLiteBusyTimeout' : 'SQLiteCLIBusyTimeout';
+        $ini = eZINI::instance();
+        if ( $ini->hasVariable( 'DatabaseSettings', $key ) && is_numeric( $ini->variable( 'DatabaseSettings', $key ) ) )
+            $ms = max( 0, (int)$ini->variable( 'DatabaseSettings', $key ) );
+        return $ms;
+    }
+
+    /**
+     * This connection's statement wait for a lock, in ms (its busy_timeout).
+     *
+     * @return int
+     */
+    public function statementWaitMs()
+    {
+        return $this->StatementWaitMs;
     }
 
     /**
@@ -541,7 +725,17 @@ class eZSQLite3DB extends eZDBInterface
                 $this->startTimer();
             }
 
-            $results = @$this->DBConnection->query( $sql );   // reported below when it fails
+            // Reported below when it fails. A read meets a lock only for a moment (WAL recovery, a checkpoint that
+            // restarts the log), and SQLite answers some of those at once without its busy handler: try again
+            // within the statements' wait instead of failing the page.
+            $readStart = microtime( true );
+            $deadline = $readStart + $this->StatementWaitMs / 1000;
+            $tries = 0;
+            while ( ( $results = @$this->DBConnection->query( $sql ) ) === false
+                    && self::isBusyCode( $this->DBConnection->lastErrorCode() ) && microtime( true ) < $deadline )
+            {
+                self::backoff( $tries++, $deadline );
+            }
 
             eZDebug::accumulatorStop( 'sqlite3_query' );
             if ( $this->OutputSQL )
@@ -557,7 +751,9 @@ class eZSQLite3DB extends eZDBInterface
             if ( $results === false )
             {
                 $this->setError();
-                eZDebug::writeError( self::failedQueryMessage( $this->DBConnection ? $this->DBConnection->lastErrorMsg() : "", $sql ), "eZSQLite3DB" );
+                if ( self::isBusyCode( $this->ErrorNumber ) )
+                    $this->ErrorMessage = $this->busyMessage( 'statement', microtime( true ) - $readStart );
+                eZDebug::writeError( self::failedQueryMessage( $this->ErrorMessage, $sql ), "eZSQLite3DB" );
                 $this->reportError();
 
                 return false;
@@ -690,6 +886,50 @@ class eZSQLite3DB extends eZDBInterface
     {
         $start = microtime( true );
         $deadline = $start + $this->transactionWaitMs() / 1000;
+        if ( !$this->acquireWriterGate( $start, $deadline ) )
+        {
+            $this->ErrorNumber = 5;
+            $this->ErrorMessage = 'database is locked';
+            $this->BeginFailed = true;
+            return false;
+        }
+        // SQLite's busy handler waits for a writer outside the gate (another program); a BUSY it answers at once
+        // (WAL recovery) is tried again, within the same wait
+        $tries = 0;
+        while ( true )
+        {
+            $this->DBConnection->busyTimeout( (int)max( 1, ( $deadline - microtime( true ) ) * 1000 ) );
+            $ok = @$this->DBConnection->exec( "BEGIN IMMEDIATE" );
+            if ( $ok || !self::isBusyCode( $this->DBConnection->lastErrorCode() ) || microtime( true ) >= $deadline )
+                break;
+            self::backoff( $tries++, $deadline );
+        }
+        $this->DBConnection->busyTimeout( $this->StatementWaitMs );
+        if ( $ok )
+        {
+            $this->InSQLTransaction = true;
+            return true;
+        }
+        $this->setError();
+        $this->releaseWriterGate();
+        $this->BeginFailed = true;
+        return false;
+    }
+
+    /**
+     * Takes the writer gate (<database>.writer-lock) for a transaction's start or a single write, waiting in
+     * line until $deadline (see beginQuery()). True when this connection holds it, or when there is no gate
+     * (an in-memory database, a lock file that cannot be opened: SQLite's own wait queues then); false when the
+     * wait ran out.
+     *
+     * @param float $start microtime( true ) when the wait began
+     * @param float $deadline microtime( true ) when it ends
+     * @return bool
+     */
+    protected function acquireWriterGate( $start, $deadline )
+    {
+        if ( $this->HoldsWriterGate && $this->WriterGatePid === getmypid() )
+            return true;
         $gate = $this->writerGate();
         if ( $gate )
         {
@@ -721,9 +961,6 @@ class eZSQLite3DB extends eZDBInterface
                     {
                         if ( $queue )
                             flock( $queue, LOCK_UN );
-                        $this->ErrorNumber = 5;
-                        $this->ErrorMessage = 'database is locked';
-                        $this->BeginFailed = true;
                         return false;
                     }
                     // Every wake-up costs CPU (about 50 us here, whatever is done awake), so the tries thin out
@@ -737,19 +974,7 @@ class eZSQLite3DB extends eZDBInterface
                 $this->HoldsWriterGate = true;
             }
         }
-        $left = (int)max( 1, ( $deadline - microtime( true ) ) * 1000 );
-        $this->DBConnection->busyTimeout( $left );
-        $ok = @$this->DBConnection->exec( "BEGIN IMMEDIATE" );
-        $this->DBConnection->busyTimeout( $this->StatementWaitMs );
-        if ( $ok )
-        {
-            $this->InSQLTransaction = true;
-            return true;
-        }
-        $this->setError();
-        $this->releaseWriterGate();
-        $this->BeginFailed = true;
-        return false;
+        return true;
     }
 
     /**
@@ -827,14 +1052,24 @@ class eZSQLite3DB extends eZDBInterface
      * [DatabaseSettings] SQLiteTransactionWait, in seconds (default 25: below
      * Velocity's request timeout, Q.webserver.requestTimeout, 30 s unless
      * changed, so a request that waits too long fails with this driver's own
-     * message rather than being killed with a 504).
+     * message rather than being killed with a 504). On the command line
+     * (cronjobs, imports, scripts) SQLiteCLITransactionWait instead, default
+     * 300: nobody waits for a page there, and a cronjob that gave up after 25 s
+     * behind an import's long write stopped with "A database transaction in
+     * Exponential failed".
      */
     protected function transactionWaitMs()
     {
         $seconds = 25;
+        $key = 'SQLiteTransactionWait';
+        if ( !self::isWebProcess() )
+        {
+            $seconds = 300;
+            $key = 'SQLiteCLITransactionWait';
+        }
         $ini = eZINI::instance();
-        if ( $ini->hasVariable( 'DatabaseSettings', 'SQLiteTransactionWait' ) && is_numeric( $ini->variable( 'DatabaseSettings', 'SQLiteTransactionWait' ) ) )
-            $seconds = max( 1, (int)$ini->variable( 'DatabaseSettings', 'SQLiteTransactionWait' ) );
+        if ( $ini->hasVariable( 'DatabaseSettings', $key ) && is_numeric( $ini->variable( 'DatabaseSettings', $key ) ) )
+            $seconds = max( 1, (int)$ini->variable( 'DatabaseSettings', $key ) );
         return $seconds * 1000;
     }
 
@@ -851,13 +1086,13 @@ class eZSQLite3DB extends eZDBInterface
     function begin()
     {
         $this->BeginFailed = false;
+        $start = microtime( true );
         $result = parent::begin();
         if ( $this->BeginFailed )
         {
             $this->BeginFailed = false;
-            if ( $this->ErrorNumber == 5 || $this->ErrorNumber == 6 )   // SQLITE_BUSY, SQLITE_LOCKED: out of time, say so
-                $this->ErrorMessage = sprintf( 'database is busy: the transaction could not start within %d s, another write held the lock all that time; nothing was written',
-                                               $this->transactionWaitMs() / 1000 );
+            if ( self::isBusyCode( $this->ErrorNumber ) )   // SQLITE_BUSY, SQLITE_LOCKED: out of time, say so
+                $this->ErrorMessage = $this->busyMessage( 'transaction', microtime( true ) - $start );
             else
                 $this->ErrorMessage = 'the transaction could not start: ' . $this->ErrorMessage . '; nothing was written';
             eZDebug::writeError( $this->ErrorMessage, 'eZSQLite3DB' );
