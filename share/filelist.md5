@@ -1662,7 +1662,7 @@ e6fe56c836e1e8315b4d7aa9e9fb4b74  design/admin4/templates/parts/audit_timeline.t
 98b5d02f7a30659b0132afed6d238bf1  design/admin4/templates/parts/content/menu.tpl
 71164a00de34020162cef18d2f918a17  design/admin4/templates/parts/exp_demo_mode_banner.tpl
 be6235aaa80cfc22cade128cc3a3aefb  design/admin4/templates/parts/exp_migration_recording_bar.tpl
-4f5b8d4e2e586479ab7738c32f51e0f9  design/admin4/templates/parts/ini_menu.tpl
+7bc7ee26d601b2b83ebf0f4f8b13cdaa  design/admin4/templates/parts/ini_menu.tpl
 3dff8ecf3c880bf2261cc89a9b39d8bd  design/admin4/templates/parts/ini_menu_items.tpl
 e36329025b09f023b15222452941ff02  design/admin4/templates/parts/ini_menu_tiles.tpl
 377177c4ae5a5b55ebaad3add2df9f24  design/admin4/templates/parts/language_badge.tpl
@@ -3532,7 +3532,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-39903f005580c058961ecfed884e783b  doc/changelogs/6.0/6.0.15.md
+e353e2197581f519d7d5c7fd00b9a12f  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -12041,7 +12041,7 @@ de6f319784e9403e4400b26a3c9e94b0  doc/eng-us/help/template-language/namespaces.m
 5e68abc4a43139bdbd4a0d9852c7bf79  doc/eng-us/help/template-language/node-attributes-reference.md
 4bc89d67828f77bfccd304187313d777  doc/eng-us/help/template-language/object-attributes-reference.md
 74c44c09fbbbd39e4c68a1b136fa8587  doc/eng-us/help/template-language/object-model.md
-8ebd79b3f2effc3fb9620fe5ef185cab  doc/eng-us/help/template-language/operators-in-expressions.md
+79482913ba4bc9d75dfc50b6c41efe09  doc/eng-us/help/template-language/operators-in-expressions.md
 5a3cb980ee2a8e32fd6eed4582014a74  doc/eng-us/help/template-language/persistent-variable-internals.md
 85db8be62fbc7466e9329cf44034b928  doc/eng-us/help/template-language/resources-and-overrides.md
 e7eb9d8f731b44033c838bc290a85d67  doc/eng-us/help/template-language/sections-vs-foreach.md
@@ -20839,7 +20839,7 @@ c2e7e2c6c791d4527b40fae18e69ca26  doc/ger-de/hilfe/template-sprache/fehler-und-f
 9fe26b54b60dffbccc693c05ee92c7e6  doc/ger-de/hilfe/template-sprache/geschichte-der-template-sprache.md
 1f241d381b635a215e96904daf7425fd  doc/ger-de/hilfe/template-sprache/lexikalische-struktur.md
 68a7583ae97166aa2eb9a561647717d5  doc/ger-de/hilfe/template-sprache/namensraeume.md
-0bfedf06fa9b933c631f74cb5ebeb59c  doc/ger-de/hilfe/template-sprache/operatoren-in-ausdruecken.md
+9f8bab5e5dd7fc29f21de0aaf3b6b0e3  doc/ger-de/hilfe/template-sprache/operatoren-in-ausdruecken.md
 80f5e478554ec45489c422059c52c776  doc/ger-de/hilfe/template-sprache/referenz-der-knotenattribute.md
 cfd45e86306f9727d26564d782ac234d  doc/ger-de/hilfe/template-sprache/referenz-der-kontrollstrukturen.md
 20a7069b251f514073c1530b78c173de  doc/ger-de/hilfe/template-sprache/referenz-der-objektattribute.md
@@ -26921,7 +26921,7 @@ d3e633d1d2f63fba8e8b7abb64ddbd82  lib/eztemplate/classes/eztemplatecacheblock.ph
 8f8043e61bfe6f34e0516da3593afaca  lib/eztemplate/classes/eztemplatecachefunction.php
 df982b7fdb42512379f07f2031433806  lib/eztemplate/classes/eztemplatecompiledloop.php
 03f8c39006c33d4af2bb605c5527f4fe  lib/eztemplate/classes/eztemplatecompiler.php
-aeeac874e149fe1afe1c8e79b205d856  lib/eztemplate/classes/eztemplatecontroloperator.php
+b408742fde2f81e5e99055cea1254ea1  lib/eztemplate/classes/eztemplatecontroloperator.php
 c26dbec4684104037b6b62edc581dde1  lib/eztemplate/classes/eztemplatedebugfunction.php
 06acc5b180ea347235f69be822c47365  lib/eztemplate/classes/eztemplatedeffunction.php
 9fe8bcfb026bf199ec0c120d16564f91  lib/eztemplate/classes/eztemplatedelimitfunction.php
@@ -28624,7 +28624,7 @@ ccc489478d2785b688efd1917ca86655  tests/tests/design/AdminLandmarksTest.php
 a32fa43c595684b473e151bfc9b9c4d6  tests/tests/design/AdminLanguageStatesTest.php
 51ec96b2b7c395f221a474277ff288e1  tests/tests/design/AdminLayoutEditorWithoutJQueryTest.php
 956519f9852214a1669801d1f034832c  tests/tests/design/AdminLeftColumnFontTest.php
-9db80fa1b8323711c8cb4c53a70e1863  tests/tests/design/AdminLeftMenuGroupsTest.php
+71dd1f17a0c84a7b63469a3577676de0  tests/tests/design/AdminLeftMenuGroupsTest.php
 0c8668e57e44493f51bd9bbe18bd7e0c  tests/tests/design/AdminLegacyControlsTest.php
 b834d5022efb348245eeada601da2b5d  tests/tests/design/AdminListRowsTest.php
 20bcb545bc9e0806923db66e69d34793  tests/tests/design/AdminLogoTest.php
@@ -30322,7 +30322,7 @@ fe39740f0befd9d339599cdf0900e368  tests/tests/lib/ezsoap/ezsoapclient_test.php
 1c339ddaa049ff920ab6f35fbca6adf0  tests/tests/lib/eztemplate/eZTemplateCacheBlockAccessPathTest.php
 9d50d2022cf80ca4065e6426a6145ee2  tests/tests/lib/eztemplate/eZTemplateCacheBlockRecursionTest.php
 64248bd0d2d39b5ed7261f248335478d  tests/tests/lib/eztemplate/eZTemplateCompiledDoContinueTest.php
-0d01d88c99eaf6abc661b1517fd6a6e7  tests/tests/lib/eztemplate/eZTemplateCompiledInterpretedParityTest.php
+9ee4bac9e7ca54ad27a347eb30c6b3f3  tests/tests/lib/eztemplate/eZTemplateCompiledInterpretedParityTest.php
 50fdf8b57f54194fa460f549900d8e07  tests/tests/lib/eztemplate/eZTemplateCompiledLoopRecursionTest.php
 2094df3ace8bd20d15e7886b30fcb4e7  tests/tests/lib/eztemplate/eZTemplateDebugCommentsTest.php
 7d2335b2a28e289c6052e4a02e4cb8fe  tests/tests/lib/eztemplate/eZTemplateEngineRenderTest.php

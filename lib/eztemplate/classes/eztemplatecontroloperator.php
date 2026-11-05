@@ -218,15 +218,13 @@ class eZTemplateControlOperator
                         break;
                     }
                 }
+                // The last parameter of an odd count is the value when no condition holds, whatever it is: an empty
+                // array, 0, '' or false too, as in a compiled template. Taking it only when it was true left the
+                // operator without a value, so cond( ..., array() ) gave no empty list without template compilation.
                 if ( !$conditionSuccess and
                      $clauseMod > 0 )
                 {
-                    $condition = $tpl->elementValue( $operatorParameters[count($operatorParameters) - 1], $rootNamespace, $currentNamespace, $placement );
-                    if ( $condition )
-                    {
-                        $conditionSuccess = true;
-                        $value = $condition;
-                    }
+                    $value = $tpl->elementValue( $operatorParameters[count($operatorParameters) - 1], $rootNamespace, $currentNamespace, $placement );
                 }
             } break;
             case $this->FirstSetName:

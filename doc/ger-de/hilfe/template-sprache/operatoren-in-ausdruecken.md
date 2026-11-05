@@ -101,6 +101,14 @@ Ausgabe:
 [a wins]
 ```
 
+`cond` gibt den Wert nach der ersten zutreffenden Bedingung zurück; bei einer ungeraden Zahl von Parametern ist der
+letzte der Wert, wenn keine zutrifft, gleich welcher: `cond( ezini_hasvariable( 'S', 'List', 'menu.ini' ), ezini(
+'S', 'List', 'menu.ini' ), array() )` ist eine leere Liste, wenn die Einstellung fehlt, mit und ohne
+Template-Kompilierung. Bis Exponential 6.0.14 ging einem Template ohne Kompilierung (`TemplateCompile=disabled`) dort
+ein leeres Array, ein leerer Hash, `0`, `''` oder `false()` verloren und es bekam keinen Wert, der alles enthält
+(`$list|contains( 'x' )` war wahr). Templates, die auch auf diesen Versionen laufen müssen, setzen zuerst den leeren
+Wert und ändern ihn in einem `{if}`.
+
 ## Attribute nach einem Operator
 
 Ein Punkt oder eckige Klammern können auf einen Operatoraufruf folgen. Das Attribut wird aus dem Ergebnis des Operators gelesen:

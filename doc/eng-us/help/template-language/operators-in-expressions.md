@@ -101,6 +101,13 @@ Output:
 [a wins]
 ```
 
+`cond` returns the value after the first condition that holds; with an odd number of parameters the last one is the
+value when none holds, whatever it is: `cond( ezini_hasvariable( 'S', 'List', 'menu.ini' ), ezini( 'S', 'List',
+'menu.ini' ), array() )` is an empty list when the setting is missing, with and without template compilation. Up to
+Exponential 6.0.14 a template that ran without compilation (`TemplateCompile=disabled`) lost an empty array, hash,
+`0`, `''` or `false()` there and got no value, which contains everything (`$list|contains( 'x' )` was true). Templates
+that must also run on those versions set the empty value first and change it in an `{if}`.
+
 ## Attributes after an operator
 
 A dot or brackets can follow an operator call. The attribute is read from the operator's result:

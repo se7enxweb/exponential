@@ -13,6 +13,11 @@
  *     the interpreter compares counts (array count, string length, the number). Both compare counts now.
  *   - eZTemplateLocaleOperator gettime: the weeknumber of a Sunday was one higher in both ways of running a
  *     template; it is the ISO-8601 week number, date( 'W' ), on every day now.
+ *   - eZTemplateControlOperator cond: the interpreter took the last parameter (the value when no condition holds)
+ *     only when it was true, so cond( ..., array() ), cond( ..., hash() ), cond( ..., 0 ), cond( ..., '' ) and
+ *     cond( ..., false() ) gave no value without template compilation (TemplateCompile=disabled). That empty
+ *     value then contained everything ($l|contains( 1 ) was true), which put every link of the admin4 left menu and
+ *     the Setup overview into the first group without GroupLinks_<group>[]. The interpreter takes it as given now.
  *
  * No kernel bootstrap, no database and no siteaccess: a bare eZTemplate with the lib/eztemplate autoloads. Template
  * files and compiled templates go to a private directory under var/tmp that tearDownAfterClass() removes.
@@ -142,6 +147,16 @@ class eZTemplateCompiledInterpretedParityTest extends PHPUnit\Framework\TestCase
             'gt piped string length'    => array( '{if "abc"|gt("z")}y{else}n{/if}', '{if $a|gt($b)}y{else}n{/if}', array( 'a' => 'abc', 'b' => 'z' ), 'y' ),
             'lt true and two'           => array( '{if lt(true(),2)}y{else}n{/if}', '{if lt($a,$b)}y{else}n{/if}', array( 'a' => true, 'b' => 2 ), 'y' ),
             'ge false and zero'         => array( '{if ge(false(),0)}y{else}n{/if}', '{if ge($a,$b)}y{else}n{/if}', array( 'a' => false, 'b' => 0 ), 'y' ),
+
+            // cond returns its last parameter when no condition holds, also when that value is empty or false
+            'cond default empty array'  => array( '{def $l=cond(false(),array(1),array())}{if is_array($l)}a{$l|count}{else}n{/if}{undef $l}', '{def $l=cond($c,array(1),array())}{if is_array($l)}a{$l|count}{else}n{/if}{undef $l}', array( 'c' => false ), 'a0' ),
+            'cond default empty hash'   => array( '{def $l=cond(false(),hash(1,2),hash())}{if is_array($l)}a{$l|count}{else}n{/if}{undef $l}', '{def $l=cond($c,hash(1,2),hash())}{if is_array($l)}a{$l|count}{else}n{/if}{undef $l}', array( 'c' => false ), 'a0' ),
+            'cond default zero'         => array( '[{cond(false(),5,0)}]', '[{cond($c,5,0)}]', array( 'c' => false ), '[0]' ),
+            'cond default false'        => array( '{if is_boolean(cond(false(),1,false()))}b{else}n{/if}', '{if is_boolean(cond($c,1,false()))}b{else}n{/if}', array( 'c' => false ), 'b' ),
+            'cond default empty string' => array( '{if is_string(cond(false(),"x",""))}s{else}n{/if}', '{if is_string(cond($c,"x",""))}s{else}n{/if}', array( 'c' => false ), 's' ),
+            'cond second clause'        => array( '[{cond(false(),1,true(),0,7)}]', '[{cond($c,1,$d,0,7)}]', array( 'c' => false, 'd' => true ), '[0]' ),
+            'cond default variable'     => array( '{def $l=cond(false(),array(1),array())}{$l|contains(1)|choose("n","y")}{undef $l}', '{def $l=cond($c,array(1),$e)}{$l|contains(1)|choose("n","y")}{undef $l}', array( 'c' => false, 'e' => array() ), 'n' ),
+            'cond first clause'         => array( '[{cond(true(),3,9)}]', '[{cond($c,3,9)}]', array( 'c' => true ), '[3]' ),
         );
     }
 
