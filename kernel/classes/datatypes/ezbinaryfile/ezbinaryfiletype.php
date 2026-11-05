@@ -151,7 +151,7 @@ class eZBinaryFileType extends eZDataType
                 // grab filename without suffix
                 $fileBaseName = basename( $fileName, $fileSuffix );
                 // create dest filename
-                $newFileName = md5( $fileBaseName . microtime() . mt_rand() ) . $fileSuffix;
+                $newFileName = bin2hex( random_bytes( 16 ) ) . $fileSuffix;
                 $newFilePath = $orig_dir . "/" . $newFileName;
 
                 // rename the file, and update the database data
@@ -571,7 +571,7 @@ class eZBinaryFileType extends eZDataType
         // grab filename without suffix
         $fileBaseName = basename( $fileName, $fileSuffix );
         // create dest filename
-        $destFileName = md5( $fileBaseName . microtime() . mt_rand() ) . $fileSuffix;
+        $destFileName = bin2hex( random_bytes( 16 ) ) . $fileSuffix;
         $destination = $destination . '/' . $destFileName;
 
         if ( !copy( $filePath, $destination ) )

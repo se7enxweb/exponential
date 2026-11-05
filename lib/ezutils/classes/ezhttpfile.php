@@ -107,7 +107,7 @@ class eZHTTPFile
         }
         else
         {
-            $dest_name = $dir . "/" . md5( basename( $this->Filename ) . microtime() . mt_rand() ) . $suffixString;
+            $dest_name = $dir . "/" . bin2hex( random_bytes( 16 ) ) . $suffixString;
         }
 
         if ( !move_uploaded_file( $this->Filename, $dest_name ) )

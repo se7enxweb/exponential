@@ -24,7 +24,7 @@ class eZWordParser
 
         $textExtractionTool = $binaryINI->variable( 'WordHandlerSettings', 'TextExtractionTool' );
 
-        $tmpName = "var/cache/" . md5( time() ) . '.txt';
+        $tmpName = "var/cache/" . bin2hex( random_bytes( 16 ) ) . '.txt';
         $handle = fopen( $tmpName, "w" );
         fclose( $handle );
 
