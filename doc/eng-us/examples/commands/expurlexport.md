@@ -36,12 +36,12 @@ redirect's -s filter is the siteaccess it belongs to. Importing the file again g
 
 | Option | Value | Help |
 |---|---|---|
-| `--format` | required | import: the format of the file (csv, json, xlsx, ods, apache, nginx; default from its name or content); export: the format to write (default from --output, else csv); batches, undo: text (default) or json (the machine output exp-url/1) |
+| `--format` | required | import: the format of the file (csv, json, xlsx, ods, apache, nginx; default from its name or content); export: the format to write (default from --output, else csv); batches, undo, from-sitemap, from-404, suggest, test: text (default) or json (the machine output exp-url/1) |
 | `--kind` | required | Only these kinds: alias (the URL translator), wildcard, redirect (a comma list or repeated; default all) |
 | `--language` | required | import: the language of rows without one (default the siteaccess's); export: only this language |
 | `--output` | required | The file to write (default the standard output; needed for xlsx and ods) |
 | `--include-node-aliases` |  | Also the custom URL aliases of nodes (target node:<id>), not only the URL translator's |
-| `--output-format` | required | import, export: what the command prints, text (default) or json (the machine output exp-url/1); --format is the file's format there |
+| `--output-format` | required | import, export: what the command prints, text (default) or json (the machine output exp-url/1); --format is the file's format there; from-sitemap, from-404, suggest: the format of the file written (csv, json, xlsx, ods, apache, nginx; default from --output, else csv) |
 
 Read from the option definitions in the code (`startup()`, `getOptions()`, `options()` or `ezcConsoleOption`). Every script also takes the standard options of the script framework (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

@@ -38,7 +38,7 @@ partly-undone), unless --force is given. exp:url:batches lists the imports.
 | Option | Wert | Hilfe |
 |---|---|---|
 | `--force` |  | Auch die Einträge zurücknehmen, die sich nach dem Import geändert haben (Standard: sie bleiben) |
-| `--format` | erforderlich | import: das Format der Datei (csv, json, xlsx, ods, apache, nginx; Standard nach ihrem Namen oder Inhalt); export: das zu schreibende Format (Standard nach --output, sonst csv); batches, undo: text (Standard) oder json (die Maschinenausgabe exp-url/1) |
+| `--format` | erforderlich | import: das Format der Datei (csv, json, xlsx, ods, apache, nginx; Standard nach ihrem Namen oder Inhalt); export: das zu schreibende Format (Standard nach --output, sonst csv); batches, undo, from-sitemap, from-404, suggest, test: text (Standard) oder json (die Maschinenausgabe exp-url/1) |
 | `--login` | erforderlich | Als dieser Benutzer ausführen (mit dem Import und im Audit aufgezeichnet) |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).

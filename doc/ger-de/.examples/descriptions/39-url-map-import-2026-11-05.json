@@ -4,20 +4,20 @@
         "de": "Die Importe von URL-Zuordnungen auflisten: wer wann welche Datei importiert hat, die Anzahlen und ob er zurückgenommen wurde"
     },
     "command:expurlbatches --format": {
-        "en": "import: the format of the file (csv, json, xlsx, ods, apache, nginx; default from its name or content); export: the format to write (default from --output, else csv); batches, undo: text (default) or json (the machine output exp-url/1)",
-        "de": "import: das Format der Datei (csv, json, xlsx, ods, apache, nginx; Standard nach ihrem Namen oder Inhalt); export: das zu schreibende Format (Standard nach --output, sonst csv); batches, undo: text (Standard) oder json (die Maschinenausgabe exp-url/1)"
+        "en": "import: the format of the file (csv, json, xlsx, ods, apache, nginx; default from its name or content); export: the format to write (default from --output, else csv); batches, undo, from-sitemap, from-404, suggest, test: text (default) or json (the machine output exp-url/1)",
+        "de": "import: das Format der Datei (csv, json, xlsx, ods, apache, nginx; Standard nach ihrem Namen oder Inhalt); export: das zu schreibende Format (Standard nach --output, sonst csv); batches, undo, from-sitemap, from-404, suggest, test: text (Standard) oder json (die Maschinenausgabe exp-url/1)"
     },
     "command:expurlbatches --limit": {
-        "en": "How many of the last imports to list (default 20)",
-        "de": "Wie viele der letzten Importe aufgelistet werden (Standard 20)"
+        "en": "batches: how many of the last imports to list (default 20); from-sitemap, from-404, test: the most rows (default all)",
+        "de": "batches: wie viele der letzten Importe aufgelistet werden (Standard 20); from-sitemap, from-404, test: die meisten Zeilen (Standard alle)"
     },
     "command:expurlexport": {
         "en": "Export the URL translator, the wildcards and the redirects as a URL map (CSV, JSON, .xlsx, .ods, Apache or nginx rules)",
         "de": "Den URL-Übersetzer, die Platzhalter und die Weiterleitungen als URL-Zuordnung exportieren (CSV, JSON, .xlsx, .ods, Apache- oder nginx-Regeln)"
     },
     "command:expurlexport --format": {
-        "en": "import: the format of the file (csv, json, xlsx, ods, apache, nginx; default from its name or content); export: the format to write (default from --output, else csv); batches, undo: text (default) or json (the machine output exp-url/1)",
-        "de": "import: das Format der Datei (csv, json, xlsx, ods, apache, nginx; Standard nach ihrem Namen oder Inhalt); export: das zu schreibende Format (Standard nach --output, sonst csv); batches, undo: text (Standard) oder json (die Maschinenausgabe exp-url/1)"
+        "en": "import: the format of the file (csv, json, xlsx, ods, apache, nginx; default from its name or content); export: the format to write (default from --output, else csv); batches, undo, from-sitemap, from-404, suggest, test: text (default) or json (the machine output exp-url/1)",
+        "de": "import: das Format der Datei (csv, json, xlsx, ods, apache, nginx; Standard nach ihrem Namen oder Inhalt); export: das zu schreibende Format (Standard nach --output, sonst csv); batches, undo, from-sitemap, from-404, suggest, test: text (Standard) oder json (die Maschinenausgabe exp-url/1)"
     },
     "command:expurlexport --include-node-aliases": {
         "en": "Also the custom URL aliases of nodes (target node:<id>), not only the URL translator's",
@@ -36,8 +36,8 @@
         "de": "Die zu schreibende Datei (Standard die Standardausgabe; nötig für xlsx und ods)"
     },
     "command:expurlexport --output-format": {
-        "en": "import, export: what the command prints, text (default) or json (the machine output exp-url/1); --format is the file's format there",
-        "de": "import, export: was der Befehl ausgibt, text (Standard) oder json (die Maschinenausgabe exp-url/1); --format ist dort das Format der Datei"
+        "en": "import, export: what the command prints, text (default) or json (the machine output exp-url/1); --format is the file's format there; from-sitemap, from-404, suggest: the format of the file written (csv, json, xlsx, ods, apache, nginx; default from --output, else csv)",
+        "de": "import, export: was der Befehl ausgibt, text (Standard) oder json (die Maschinenausgabe exp-url/1); --format ist dort das Format der Datei; from-sitemap, from-404, suggest: das Format der geschriebenen Datei (csv, json, xlsx, ods, apache, nginx; Standard nach --output, sonst csv)"
     },
     "command:expurlimport": {
         "en": "Import a URL map (CSV, JSON, .xlsx, .ods, Apache or nginx rules) into the URL translator, the wildcards and the redirects, as one batch that can be undone",
@@ -48,8 +48,8 @@
         "de": "Nur planen und prüfen: auflisten, was importiert würde, nichts schreiben"
     },
     "command:expurlimport --format": {
-        "en": "import: the format of the file (csv, json, xlsx, ods, apache, nginx; default from its name or content); export: the format to write (default from --output, else csv); batches, undo: text (default) or json (the machine output exp-url/1)",
-        "de": "import: das Format der Datei (csv, json, xlsx, ods, apache, nginx; Standard nach ihrem Namen oder Inhalt); export: das zu schreibende Format (Standard nach --output, sonst csv); batches, undo: text (Standard) oder json (die Maschinenausgabe exp-url/1)"
+        "en": "import: the format of the file (csv, json, xlsx, ods, apache, nginx; default from its name or content); export: the format to write (default from --output, else csv); batches, undo, from-sitemap, from-404, suggest, test: text (default) or json (the machine output exp-url/1)",
+        "de": "import: das Format der Datei (csv, json, xlsx, ods, apache, nginx; Standard nach ihrem Namen oder Inhalt); export: das zu schreibende Format (Standard nach --output, sonst csv); batches, undo, from-sitemap, from-404, suggest, test: text (Standard) oder json (die Maschinenausgabe exp-url/1)"
     },
     "command:expurlimport --host": {
         "en": "An old host and the siteaccess it stands for, old-site.com=site (a comma list or repeated): for full addresses of a host that is not this installation's",
@@ -68,12 +68,12 @@
         "de": "Was mit einer alten Adresse geschieht, die schon einen anderen Eintrag hat: skip (überspringen, Standard) oder overwrite (überschreiben)"
     },
     "command:expurlimport --output-format": {
-        "en": "import, export: what the command prints, text (default) or json (the machine output exp-url/1); --format is the file's format there",
-        "de": "import, export: was der Befehl ausgibt, text (Standard) oder json (die Maschinenausgabe exp-url/1); --format ist dort das Format der Datei"
+        "en": "import, export: what the command prints, text (default) or json (the machine output exp-url/1); --format is the file's format there; from-sitemap, from-404, suggest: the format of the file written (csv, json, xlsx, ods, apache, nginx; default from --output, else csv)",
+        "de": "import, export: was der Befehl ausgibt, text (Standard) oder json (die Maschinenausgabe exp-url/1); --format ist dort das Format der Datei; from-sitemap, from-404, suggest: das Format der geschriebenen Datei (csv, json, xlsx, ods, apache, nginx; Standard nach --output, sonst csv)"
     },
     "command:expurlimport --report": {
-        "en": "Also write the plan, row by row, to this file (.json, or .csv)",
-        "de": "Den Plan zusätzlich Zeile für Zeile in diese Datei schreiben (.json oder .csv)"
+        "en": "import: also write the plan, row by row, to this file (.json, or .csv); suggest, test: also write every row with its suggestions or its result to this file (.json, or .csv)",
+        "de": "import: den Plan zusätzlich Zeile für Zeile in diese Datei schreiben (.json oder .csv); suggest, test: jede Zeile mit ihren Vorschlägen oder ihrem Ergebnis zusätzlich in diese Datei schreiben (.json oder .csv)"
     },
     "command:expurlundo": {
         "en": "Undo a URL map import: every alias, wildcard and redirect it created or changed back as it was",
@@ -84,8 +84,8 @@
         "de": "Auch die Einträge zurücknehmen, die sich nach dem Import geändert haben (Standard: sie bleiben)"
     },
     "command:expurlundo --format": {
-        "en": "import: the format of the file (csv, json, xlsx, ods, apache, nginx; default from its name or content); export: the format to write (default from --output, else csv); batches, undo: text (default) or json (the machine output exp-url/1)",
-        "de": "import: das Format der Datei (csv, json, xlsx, ods, apache, nginx; Standard nach ihrem Namen oder Inhalt); export: das zu schreibende Format (Standard nach --output, sonst csv); batches, undo: text (Standard) oder json (die Maschinenausgabe exp-url/1)"
+        "en": "import: the format of the file (csv, json, xlsx, ods, apache, nginx; default from its name or content); export: the format to write (default from --output, else csv); batches, undo, from-sitemap, from-404, suggest, test: text (default) or json (the machine output exp-url/1)",
+        "de": "import: das Format der Datei (csv, json, xlsx, ods, apache, nginx; Standard nach ihrem Namen oder Inhalt); export: das zu schreibende Format (Standard nach --output, sonst csv); batches, undo, from-sitemap, from-404, suggest, test: text (Standard) oder json (die Maschinenausgabe exp-url/1)"
     },
     "command:expurlundo --login": {
         "en": "Run as this user (recorded with the import and in the audit)",

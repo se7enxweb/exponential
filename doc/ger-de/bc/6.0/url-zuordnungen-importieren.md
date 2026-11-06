@@ -106,6 +106,30 @@ Standard-Siteaccess; die Sprache ist die der Zeile, sonst `--language`, sonst di
 Aliase von Knoten, Ziel `node:<id>`), die Platzhalter und die Weiterleitungen, in jedem Format, das der Import liest,
 und als `.ods`. Der Import des Exports in dieselbe Installation findet jede Zeile unverändert.
 
+## Hilfen für den Umzug einer Website
+
+Vier Konsolenbefehle erstellen und prüfen eine URL-Zuordnung; keiner von ihnen ändert die Installation:
+
+| Befehl | Was er tut |
+|---|---|
+| [`exp:url:from-sitemap <Adresse oder Datei>`](../../beispiele/befehle/expurlfromsitemap.md) | die Adressen der alten Website aus ihrer Sitemap, einem Sitemap-Index (mit den Sitemaps, die er nennt), `.gz` oder einer Crawl-Liste mit einer Adresse je Zeile, als Zeilen mit leerem `new_url`; nur der Host der Sitemap (`--only-host`, `--any-host`), jede Adresse einmal (`--keep-duplicates`), `--limit`, Pfade oder `--full-urls` |
+| [`exp:url:suggest <Datei>`](../../beispiele/befehle/expurlsuggest.md) | für jede Zeile ohne Ziel die Seiten des Siteaccess von `-s`, die der alten Adresse am ähnlichsten sind (ihr URL-Alias und Name, bewertet von 0 bis 100); `--fill-above=<Bewertung>` schreibt die beste in `new_url`, die anderen stehen in der Notiz oder in `--report` |
+| [`exp:url:from-404`](../../beispiele/befehle/expurlfrom404.md) | die Adressen des Protokolls nicht gefundener Seiten, die häufigsten zuerst (`--min-hits`, `--since`, `--limit`), ohne Assets und Bots; `--log` liest stattdessen Zugriffsprotokolle des Webservers |
+| [`exp:url:test <Datei> --base=<Adresse>`](../../beispiele/befehle/expurltest.md) | ruft jede alte Adresse auf einer Website auf, mehrere gleichzeitig (`--concurrency`), folgt den Weiterleitungen und meldet je Zeile landed, wrong-status, wrong-target, not-redirected oder error; Exit 1, wenn eine Zeile nicht angekommen ist; `--insecure` für einen Testhost mit selbst signiertem Zertifikat |
+
+- Die Quelle der 404-Adressen ist das Protokoll nicht gefundener Seiten, das der Kernel schon schreibt
+  (`site.ini [RequestLogSettings] NotFoundLog=enabled`, der Standard; `var/log/404.log` und seine rotierten Dateien).
+  Es kommt kein neues Protokoll und keine Tabelle hinzu. Das Protokoll schreibt jeden Abfragewert als `***`, deshalb
+  fällt die Abfrage einer Adresse dort weg; Zugriffsprotokolle behalten sie.
+- Die Vorschläge lesen die URL-Aliase, den Baum und die Objektnamen einmal (drei Abfragen), nur sichtbare Knoten
+  unterhalb des Inhaltsstamms des Siteaccess, und schreiben Ziele so, wie Besucher sie verwenden, ohne den `PathPrefix`.
+- Anfragen laufen über `expUrlMapHttp`: nur GET, nur http und https, ein Zeitlimit, der User-Agent
+  `Exponential URL map`, eine Größengrenze, der Proxy aus `site.ini [ProxySettings]`. Das XML einer Sitemap wird nie
+  mit einer DOCTYPE-Angabe oder aus dem Netz gelesen.
+- Die Befehle folgen dem Vertrag der anderen `exp:url`-Befehle: `--format=json` gibt die Maschinenausgabe
+  `exp-url/1` aus, `--output` und `--output-format` schreiben die Zuordnung in jedem Format, das der Import liest,
+  die Exit-Codes sind dieselben.
+
 ## In der Administration
 
 Die Seiten des URL-Übersetzers und der Platzhalter haben die Schaltflächen **Importieren**, **Exportieren**,

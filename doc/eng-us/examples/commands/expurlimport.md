@@ -38,14 +38,14 @@ default siteaccess); a full address's host picks the siteaccess, or --host maps 
 
 | Option | Value | Help |
 |---|---|---|
-| `--format` | required | import: the format of the file (csv, json, xlsx, ods, apache, nginx; default from its name or content); export: the format to write (default from --output, else csv); batches, undo: text (default) or json (the machine output exp-url/1) |
+| `--format` | required | import: the format of the file (csv, json, xlsx, ods, apache, nginx; default from its name or content); export: the format to write (default from --output, else csv); batches, undo, from-sitemap, from-404, suggest, test: text (default) or json (the machine output exp-url/1) |
 | `--language` | required | import: the language of rows without one (default the siteaccess's); export: only this language |
 | `--on-conflict` | required | What happens to an old address that has another entry already: skip (default) or overwrite |
 | `--dry-run` |  | Plan and check only: list what would be imported, write nothing |
-| `--report` | required | Also write the plan, row by row, to this file (.json, or .csv) |
+| `--report` | required | import: also write the plan, row by row, to this file (.json, or .csv); suggest, test: also write every row with its suggestions or its result to this file (.json, or .csv) |
 | `--host` | required | An old host and the siteaccess it stands for, old-site.com=site (a comma list or repeated): for full addresses of a host that is not this installation's |
 | `--login` | required | Run as this user (recorded with the import and in the audit) |
-| `--output-format` | required | import, export: what the command prints, text (default) or json (the machine output exp-url/1); --format is the file's format there |
+| `--output-format` | required | import, export: what the command prints, text (default) or json (the machine output exp-url/1); --format is the file's format there; from-sitemap, from-404, suggest: the format of the file written (csv, json, xlsx, ods, apache, nginx; default from --output, else csv) |
 
 Read from the option definitions in the code (`startup()`, `getOptions()`, `options()` or `ezcConsoleOption`). Every script also takes the standard options of the script framework (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

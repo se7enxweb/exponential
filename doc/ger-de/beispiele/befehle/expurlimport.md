@@ -40,14 +40,14 @@ default siteaccess); a full address's host picks the siteaccess, or --host maps 
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--format` | erforderlich | import: das Format der Datei (csv, json, xlsx, ods, apache, nginx; Standard nach ihrem Namen oder Inhalt); export: das zu schreibende Format (Standard nach --output, sonst csv); batches, undo: text (Standard) oder json (die Maschinenausgabe exp-url/1) |
+| `--format` | erforderlich | import: das Format der Datei (csv, json, xlsx, ods, apache, nginx; Standard nach ihrem Namen oder Inhalt); export: das zu schreibende Format (Standard nach --output, sonst csv); batches, undo, from-sitemap, from-404, suggest, test: text (Standard) oder json (die Maschinenausgabe exp-url/1) |
 | `--language` | erforderlich | import: die Sprache von Zeilen ohne eigene (Standard die des Siteaccess); export: nur diese Sprache |
 | `--on-conflict` | erforderlich | Was mit einer alten Adresse geschieht, die schon einen anderen Eintrag hat: skip (überspringen, Standard) oder overwrite (überschreiben) |
 | `--dry-run` |  | Nur planen und prüfen: auflisten, was importiert würde, nichts schreiben |
-| `--report` | erforderlich | Den Plan zusätzlich Zeile für Zeile in diese Datei schreiben (.json oder .csv) |
+| `--report` | erforderlich | import: den Plan zusätzlich Zeile für Zeile in diese Datei schreiben (.json oder .csv); suggest, test: jede Zeile mit ihren Vorschlägen oder ihrem Ergebnis zusätzlich in diese Datei schreiben (.json oder .csv) |
 | `--host` | erforderlich | Ein alter Host und der Siteaccess, für den er steht, alte-website.de=site (durch Kommas getrennt oder wiederholt): für vollständige Adressen eines Hosts, der nicht zu dieser Installation gehört |
 | `--login` | erforderlich | Als dieser Benutzer ausführen (mit dem Import und im Audit aufgezeichnet) |
-| `--output-format` | erforderlich | import, export: was der Befehl ausgibt, text (Standard) oder json (die Maschinenausgabe exp-url/1); --format ist dort das Format der Datei |
+| `--output-format` | erforderlich | import, export: was der Befehl ausgibt, text (Standard) oder json (die Maschinenausgabe exp-url/1); --format ist dort das Format der Datei; from-sitemap, from-404, suggest: das Format der geschriebenen Datei (csv, json, xlsx, ods, apache, nginx; Standard nach --output, sonst csv) |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 
