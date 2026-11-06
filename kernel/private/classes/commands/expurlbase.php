@@ -85,6 +85,16 @@ abstract class ExpurlBase extends \Exponential\Runnable\Command
      */
     abstract protected function begin();
 
+    /**
+     * The command's work: parse with begin(), call the expUrlMap* classes, print with finish(). Every command
+     * overrides it; this one only starts the script and ends with a usage error.
+     */
+    public function run()
+    {
+        $this->begin();
+        $this->usage( $this->name() . ' has no work of its own' );
+    }
+
     /** The script settings every command shares besides its description. */
     const SCRIPT = array( 'use-session' => false, 'use-modules' => true, 'use-extensions' => true );
 

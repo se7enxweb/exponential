@@ -234,7 +234,7 @@ class expSpreadsheetWriter
         foreach ( $candidates as $directory )
         {
             if ( !is_dir( $directory ) )
-                @mkdir( $directory, 0775, true );
+                eZDir::mkdir( $directory, false, true );
             if ( is_dir( $directory ) && is_writable( $directory ) )
                 return $directory;
         }
