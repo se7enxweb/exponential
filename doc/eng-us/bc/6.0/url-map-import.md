@@ -33,6 +33,7 @@ before; there is a new table of redirects that is checked first, and it is empty
 |---|---|
 | `redirect` (301) to a page of this site, old address without a query | a global URL alias that redirects (`ezurlalias_ml`) |
 | `alias` | a global URL alias that does not redirect |
+| (either) | for a siteaccess with a `PathPrefix`, the alias is stored below the prefix (as the siteaccess looks it up), unless its first element is one of `PathPrefixExclude[]` |
 | `wildcard-forward`, `wildcard-forward-temporary`, `wildcard-direct` | a URL wildcard of type 1, 3 or 2 (`ezurlwildcard`); wildcards apply in every siteaccess, and 303 or 307 are answered as 302, 308 as 301 |
 | every other redirect: an old address with a query, a temporary status (302, 303, 307), 308, a target with a query, a target on another site | a row of `exp_url_redirect` |
 

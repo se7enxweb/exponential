@@ -135,6 +135,46 @@ class expUrlMapKernelEnvironment implements expUrlMapEnvironment
         return null;
     }
 
+    public function aliasPath( $siteaccess, $path )
+    {
+        $prefix = '';
+        $exclude = array();
+        if ( $siteaccess !== '' && in_array( $siteaccess, $this->siteaccesses(), true ) )
+        {
+            $ini = eZSiteAccess::getIni( $siteaccess, 'site.ini' );
+            if ( $ini && $ini->hasVariable( 'SiteAccessSettings', 'PathPrefix' ) )
+                $prefix = trim( (string)$ini->variable( 'SiteAccessSettings', 'PathPrefix' ), '/' );
+            if ( $ini && $ini->hasVariable( 'SiteAccessSettings', 'PathPrefixExclude' ) )
+                $exclude = (array)$ini->variable( 'SiteAccessSettings', 'PathPrefixExclude' );
+        }
+        return self::prefixedPath( $path, $prefix, $exclude );
+    }
+
+    /**
+     * A path below a PathPrefix, unless it is the prefix already or its first element is excluded. Pure.
+     *
+     * @param string $path
+     * @param string $prefix
+     * @param string[] $exclude
+     * @return string
+     */
+    public static function prefixedPath( $path, $prefix, array $exclude )
+    {
+        $path = '/' . trim( (string)$path, '/' );
+        $prefix = trim( (string)$prefix, '/' );
+        if ( $prefix === '' )
+            return $path;
+        $first = strtolower( (string)explode( '/', ltrim( $path, '/' ) )[0] );
+        if ( $first === strtolower( explode( '/', $prefix )[0] ) && stripos( ltrim( $path, '/' ) . '/', $prefix . '/' ) === 0 )
+            return $path;
+        foreach ( $exclude as $item )
+        {
+            if ( strtolower( trim( (string)$item, '/' ) ) === $first )
+                return $path;
+        }
+        return '/' . $prefix . ( $path === '/' ? '' : $path );
+    }
+
     public function isSystemPath( $path )
     {
         $path = trim( (string)$path, '/' );

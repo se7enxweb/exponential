@@ -3536,7 +3536,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-ebf4cf9c095736bf9b7f1ac558509b27  doc/changelogs/6.0/6.0.15.md
+2584fbae3b9037b506b9ee81558ac72d  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -3775,7 +3775,7 @@ cd72965db1f76b02f5d4df61cda1e0b5  doc/eng-us/bc/6.0/translated-documentation.md
 64389016aada25c568fdafc2ebe6ce5e  doc/eng-us/bc/6.0/trusted-proxies.md
 78f77d46a1c4fda9c55f0f24527261ed  doc/eng-us/bc/6.0/ui-switch-design.md
 0637dd8b6d6bcb69afd7fa771041c8f5  doc/eng-us/bc/6.0/ui-switch.md
-ef00ccb7aa270e76310343591fb39649  doc/eng-us/bc/6.0/url-map-import.md
+5a35e8a2e832ee6fac74486270a54f86  doc/eng-us/bc/6.0/url-map-import.md
 69d804d80e2da3a6139cf129f4fba8de  doc/eng-us/bc/6.0/user-account-approval.md
 7928239ba6369a6bb899ee998ce94b05  doc/eng-us/bc/6.0/user-password-change.md
 e37c2dcbaa794657ef0b6ade79057808  doc/eng-us/bc/6.0/velocity-engine-upgrade-notes.md
@@ -13845,7 +13845,7 @@ e4869727f8ce40ea4e61fe437f8030e0  doc/ger-de/bc/6.0/tabellenoptionen-der-unterel
 cc494c00ecd01129c6c76c3e175c8e48  doc/ger-de/bc/6.0/ui-umschalter-design.md
 fb7e473b95d422399e463bfe56d9395d  doc/ger-de/bc/6.0/ui-umschalter.md
 6444af39a4f005b744ebce2ec72a46cf  doc/ger-de/bc/6.0/unterelemente-weitere-aktionen-verstecken-einblenden.md
-6e5c1ab86d75abc86f329df701470774  doc/ger-de/bc/6.0/url-zuordnungen-importieren.md
+7fc7c30c9aff05c80cda166dfe4ca611  doc/ger-de/bc/6.0/url-zuordnungen-importieren.md
 271c73727f0fff7506e5831158e4122d  doc/ger-de/bc/6.0/velocity-engine-upgrade-hinweise.md
 5f2fa56405a5e809d03e0b2383de4457  doc/ger-de/bc/6.0/velocity-engines.md
 5d2e214aff835b2b72b2c43b01fd5ffa  doc/ger-de/bc/6.0/velocity-verzeichnisstruktur.md
@@ -25484,19 +25484,19 @@ eb5b19516b103fa6f771fa670e270485  kernel/classes/upgrade/steps/expupgradestepuse
 e395bba7f1217e32d51a79d1279d57f4  kernel/classes/urlmap/expurlmapbatchitem.php
 04b006fdd7bb29048a2798f7837cf248  kernel/classes/urlmap/expurlmapcsvreader.php
 b9a9056129e61e051e6848eb238a42d4  kernel/classes/urlmap/expurlmapcsvwriter.php
-63fb8e0c3e6700e78bccbab10d1ad54f  kernel/classes/urlmap/expurlmapenvironment.php
+8061e58b42b1502b06618c4ee14c4147  kernel/classes/urlmap/expurlmapenvironment.php
 ec20d46fe9381ce86b14bf3e230e9f29  kernel/classes/urlmap/expurlmapexporter.php
 5aa39fb68813a6d944add1003466fd63  kernel/classes/urlmap/expurlmapformatexception.php
 3a49064535caf05223d915a4d51d72c9  kernel/classes/urlmap/expurlmapformats.php
 8467a6dc721ee2d2c9fc7a9d720d014a  kernel/classes/urlmap/expurlmapimporter.php
 b6f78fdaf6457dfc3af49a2df1714b40  kernel/classes/urlmap/expurlmapjsonreader.php
 793217a13d5e4888280a01d0e5ec4e73  kernel/classes/urlmap/expurlmapjsonwriter.php
-254ae3237dd03b7aefca8963265c19a4  kernel/classes/urlmap/expurlmapkernelenvironment.php
+11329a1647f0fa4830ef25f7d4b9d0a0  kernel/classes/urlmap/expurlmapkernelenvironment.php
 1c5a80020033dd76bb789be211ca8fca  kernel/classes/urlmap/expurlmapnginxreader.php
 cca4ea9c911098de5272784f1d3ffc08  kernel/classes/urlmap/expurlmapnginxwriter.php
 89c99105e18717b5ba328c4828e03719  kernel/classes/urlmap/expurlmapodsreader.php
 52626cd0653672057b1461c0d495d694  kernel/classes/urlmap/expurlmapplan.php
-2de6ac694e29630a056cfe736b7a1546  kernel/classes/urlmap/expurlmapplanner.php
+34d852704f12047e250534efc2e7d561  kernel/classes/urlmap/expurlmapplanner.php
 9654ccab133f340324074f2e7722c48a  kernel/classes/urlmap/expurlmapreader.php
 e5f2b379a0e4185980b1a1f584cad83a  kernel/classes/urlmap/expurlmapregex.php
 9c9fea58abf7b6a0e8bb53de7b9e7d8c  kernel/classes/urlmap/expurlmaprow.php
@@ -26081,7 +26081,7 @@ bf34065e5f75151f013ae21ece24fae9  kernel/private/classes/ezpkernel.php
 ab090cf255ce57bb21cc03ce89494ff3  kernel/private/classes/ezpkernelredirect.php
 a9ad609aedf5b203a871d18ff1d63ceb  kernel/private/classes/ezpkernelresult.php
 0ffc521218c97a36fd624c1aaff8d598  kernel/private/classes/ezpkerneltreemenu.php
-2b078342befd5413aabfdb16f27807fc  kernel/private/classes/ezpkernelweb.php
+45bbe5ab8f9140dcf33322db71aa05d2  kernel/private/classes/ezpkernelweb.php
 1145d66875a01e743f97b49990fd3a8b  kernel/private/classes/ezplanguageswitcher.php
 c99ddccb64a9bb469e69b80c2078eb6c  kernel/private/classes/ezpmail.php
 cd076c0418540f66f88ff705df128ec8  kernel/private/classes/ezpmobiledevicedetect.php
@@ -29807,7 +29807,7 @@ ba1c13331f5a293417fb7496fce962c3  tests/tests/kernel/classes/urlmap/expUrlComman
 3a3a8651b05c62e8c5b42e3dd1b5bc46  tests/tests/kernel/classes/urlmap/expUrlMapEngineChecks.php
 a4266d9f957049f7f3dcc0707c72b0e1  tests/tests/kernel/classes/urlmap/expUrlMapImportDatabaseTest.php
 2fa7e39ed2897a3c7c3d08f0c8ef81cb  tests/tests/kernel/classes/urlmap/expUrlMapImportSqliteTest.php
-fb1e2d355f786a206063f47e39b87b13  tests/tests/kernel/classes/urlmap/expUrlMapPlannerTest.php
+c63e70d187bacdef3ff3964f487abe20  tests/tests/kernel/classes/urlmap/expUrlMapPlannerTest.php
 1fc60694d6f19b6ebdc1187b95f0982c  tests/tests/kernel/classes/urlmap/expUrlMapRewriteRulesTest.php
 b3e90a92f928431b20b0fd78511d0e58  tests/tests/kernel/classes/urlmap/expUrlMapRoundTripTest.php
 adb0ed6b36dbfb3669976aab271f97bb  tests/tests/kernel/classes/urlmap/expUrlMapRowTest.php

@@ -226,12 +226,15 @@ class expUrlMapPlanner
         $isAlias = $kind === expUrlMapRow::KIND_ALIAS
                    || ( $kind === expUrlMapRow::KIND_REDIRECT && $item['status'] === 301 && $query === '' && !$target['external'] && $target['query'] === '' );
 
+        // where the siteaccess looks a URL alias of the old address up (below its PathPrefix)
+        $aliasPath = $item['siteaccess'] === '*' ? $path : $this->environment->aliasPath( $siteaccess, $path );
+
         // an old address that is this site's own page, a module address or the front page is never replaced
         if ( $query === '' )
         {
             if ( trim( $path, '/' ) === '' )
                 return self::finish( $item, expUrlMapPlan::STATE_CONFLICT, array( 'the old address is the front page of this site' ) );
-            $alias = $this->environment->existingAlias( $path );
+            $alias = $this->environment->existingAlias( $aliasPath );
             if ( $alias !== null && !empty( $alias['page'] ) )
                 return self::finish( $item, expUrlMapPlan::STATE_CONFLICT, array( 'the old address is the address of a page of this site (' . $alias['action'] . ')' ), $alias );
             if ( $this->environment->isSystemPath( $path ) )
@@ -242,11 +245,11 @@ class expUrlMapPlanner
         {
             $redirects = $kind !== expUrlMapRow::KIND_ALIAS;
             $item['store'] = expUrlMapPlan::STORE_ALIAS;
-            $item['key'] = 'alias|' . self::lower( $path );
-            $item['write'] = array( 'path' => $path, 'action' => $resolved['action'], 'link' => $resolved['link'], 'redirects' => $redirects, 'language' => $language );
+            $item['key'] = 'alias|' . self::lower( $aliasPath );
+            $item['write'] = array( 'path' => $aliasPath, 'action' => $resolved['action'], 'link' => $resolved['link'], 'redirects' => $redirects, 'language' => $language );
             if ( !$redirects )
                 $item['status'] = 0;
-            $existing = $this->environment->existingAlias( $path );
+            $existing = $this->environment->existingAlias( $aliasPath );
             $item['existing'] = $existing;
             if ( $existing === null )
                 return self::finish( $item, expUrlMapPlan::STATE_NEW );

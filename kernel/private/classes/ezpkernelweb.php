@@ -874,6 +874,9 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
                 $objectHasMovedStatus = $urlRedirect['status'];
                 $objectHasMovedError = true;
                 $this->dropRedirectQuery = true;
+                // the module that runs is the error module, as for a moved URL alias or wildcard (eZURLAliasML and
+                // eZURLWildcard::translate() set the same): the old address need not be a module of this site
+                $this->uri->setURIString( 'error/301', false );
             }
             // Check for URL translation
             elseif ( $this->siteBasics['url-translator-allowed'] && eZURLAliasML::urlTranslationEnabledByUri( $this->uri ) )

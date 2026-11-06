@@ -10,7 +10,8 @@
  *        module address, the front page), broken target, unknown host, not importable (the row's problems, an
  *        unknown siteaccess or language, an alias with a query or to another site, /index.php without a query)
  *  UP-03 the siteaccess: a full address's host (its URI part taken off), the option hosts, the row's own, * for every
- *        siteaccess, the chosen one for bare paths; the language: the row's, the option's, the siteaccess's
+ *        siteaccess, the chosen one for bare paths; the language: the row's, the option's, the siteaccess's; a URL
+ *        alias below the siteaccess's PathPrefix (not for PathPrefixExclude[])
  *  UP-04 decisions: new is imported, changed only with on_conflict overwrite; setDecision() per row; counts; the
  *        report as JSON and CSV
  *  UP-05 expUrlRedirect: the canonical query (order ignored, + is a space, a is a=), the source key (case of the
@@ -48,6 +49,7 @@ class expUrlMapPlannerTestEnvironment implements expUrlMapEnvironment
     public function defaultLanguage( $siteaccess ) { return $siteaccess === 'ger' ? 'ger-DE' : 'eng-GB'; }
     public function languageExists( $locale ) { return in_array( $locale, array( 'eng-GB', 'ger-DE' ), true ); }
     public function resolveTarget( $target, $siteaccess, $language ) { return isset( $this->targets[$target] ) ? $this->targets[$target] : null; }
+    public function aliasPath( $siteaccess, $path ) { return $siteaccess === 'ger' ? expUrlMapKernelEnvironment::prefixedPath( $path, 'de', array( 'media' ) ) : $path; }
     public function isSystemPath( $path ) { return (bool)preg_match( '#^/(content|user)(/|$)#', $path ); }
     public function existingAlias( $path ) { return isset( $this->aliases[strtolower( $path )] ) ? $this->aliases[strtolower( $path )] : null; }
     public function existingWildcard( $source ) { return isset( $this->wildcards[$source] ) ? $this->wildcards[$source] : null; }
@@ -198,7 +200,11 @@ class expUrlMapPlannerTest extends PHPUnit\Framework\TestCase
         $items = $plan->items();
         $this->assertSame( array( 'ger', 'site', 'ger', 'site', 'ger', 'site', '*', 'site' ), array_column( $items, 'siteaccess' ) );
         $this->assertSame( array( 'ger-DE', 'eng-GB', 'ger-DE', 'eng-GB', 'ger-DE', 'ger-DE', 'eng-GB', 'eng-GB' ), array_column( $items, 'language' ) );
-        $this->assertSame( '/ueber-uns', $items[0]['write']['path'] );
+        $this->assertSame( '/de/ueber-uns', $items[0]['write']['path'], 'below the PathPrefix of the siteaccess' );
+        $this->assertSame( array( '/de/x', '/de/x', '/media/x', '/de', '/Other' ), array(
+            expUrlMapKernelEnvironment::prefixedPath( '/x', 'de', array() ), expUrlMapKernelEnvironment::prefixedPath( '/de/x', '/de/', array() ),
+            expUrlMapKernelEnvironment::prefixedPath( '/media/x', 'de', array( 'Media' ) ), expUrlMapKernelEnvironment::prefixedPath( '/', 'de', array() ),
+            expUrlMapKernelEnvironment::prefixedPath( '/Other', '', array() ) ) );
         $this->assertSame( '', $items[6]['write']['siteaccess'], 'a redirect of every siteaccess is stored without one' );
         // a full target on a host of this installation is a path of this site
         $this->assertSame( 'alias', $items[7]['store'] );

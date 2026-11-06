@@ -34,6 +34,7 @@ leer ist, bis Sie in sie importieren.
 |---|---|
 | `redirect` (301) auf eine Seite dieser Website, alte Adresse ohne Abfrage | ein globaler URL-Alias, der weiterleitet (`ezurlalias_ml`) |
 | `alias` | ein globaler URL-Alias, der nicht weiterleitet |
+| (beide) | für einen Siteaccess mit `PathPrefix` wird der Alias unter dem Präfix gespeichert (wo der Siteaccess ihn sucht), außer sein erstes Element steht in `PathPrefixExclude[]` |
 | `wildcard-forward`, `wildcard-forward-temporary`, `wildcard-direct` | ein URL-Platzhalter vom Typ 1, 3 oder 2 (`ezurlwildcard`); Platzhalter gelten in jedem Siteaccess, 303 und 307 werden als 302 beantwortet, 308 als 301 |
 | jede andere Weiterleitung: eine alte Adresse mit Abfrage, ein vorübergehender Status (302, 303, 307), 308, ein Ziel mit Abfrage, ein Ziel auf einer anderen Website | eine Zeile von `exp_url_redirect` |
 

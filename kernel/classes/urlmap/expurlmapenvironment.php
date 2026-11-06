@@ -65,6 +65,17 @@ interface expUrlMapEnvironment
     public function isSystemPath( $path );
 
     /**
+     * The path a global URL alias of an old address is stored at for a siteaccess: below its PathPrefix
+     * (site.ini [SiteAccessSettings]) unless the first element is one of its PathPrefixExclude[], as the siteaccess
+     * looks the address up.
+     *
+     * @param string $siteaccess
+     * @param string $path
+     * @return string
+     */
+    public function aliasPath( $siteaccess, $path );
+
+    /**
      * The URL alias element at a path (its last element), or null when there is none or only a placeholder.
      *
      * @param string $path
