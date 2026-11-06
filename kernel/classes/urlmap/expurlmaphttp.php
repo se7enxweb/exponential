@@ -202,12 +202,14 @@ class expUrlMapHttp
         $handles = array();
         $bodies = array();
         $truncated = array();
+        $locations = array();
         $result = array();
         foreach ( $urls as $i => $url )
         {
             $bodies[$i] = '';
             $truncated[$i] = false;
-            $options = $this->curlOptions( $bodies[$i], $truncated[$i] );
+            $locations[$i] = '';
+            $options = $this->curlOptions( $bodies[$i], $truncated[$i], $locations[$i] );
             if ( !empty( $this->options['public_only'] ) )
             {
                 $pinned = self::publicAddress( $url, $this->options['resolver'] );
@@ -241,7 +243,8 @@ class expUrlMapHttp
         {
             $code = (int)curl_getinfo( $ch, CURLINFO_RESPONSE_CODE );
             $error = curl_error( $ch );
-            $location = curl_getinfo( $ch, CURLINFO_REDIRECT_URL );
+            // a transfer stopped early (no body wanted, or the size limit) leaves CURLINFO_REDIRECT_URL empty: the header then
+            $location = curl_getinfo( $ch, CURLINFO_REDIRECT_URL ) ?: $locations[$i];
             $type = curl_getinfo( $ch, CURLINFO_CONTENT_TYPE );
             // a body cut at max_bytes ends the transfer with a write error: the answer is still the answer
             if ( $truncated[$i] && $code > 0 )
@@ -258,9 +261,10 @@ class expUrlMapHttp
     /**
      * @param string $body filled with the body
      * @param bool $truncated set when the body was cut
+     * @param string $location set to the Location header of the answer
      * @return array
      */
-    protected function curlOptions( &$body, &$truncated )
+    protected function curlOptions( &$body, &$truncated, &$location )
     {
         $max = max( 1, (int)$this->options['max_bytes'] );
         $withBody = !empty( $this->options['with_body'] );
@@ -273,6 +277,14 @@ class expUrlMapHttp
                           CURLOPT_SSL_VERIFYHOST => empty( $this->options['insecure'] ) ? 2 : 0,
                           CURLOPT_ENCODING => '',
                           CURLOPT_HTTPHEADER => array( 'Accept: */*' ),
+                          CURLOPT_HEADERFUNCTION => function ( $handle, $line ) use ( &$location )
+                          {
+                              if ( preg_match( '#^HTTP/#i', $line ) )
+                                  $location = '';
+                              elseif ( preg_match( '/^Location:\s*(.+?)\s*$/i', $line, $m ) )
+                                  $location = $m[1];
+                              return strlen( $line );
+                          },
                           CURLOPT_WRITEFUNCTION => function ( $handle, $data ) use ( &$body, &$truncated, $max, $withBody )
                           {
                               if ( !$withBody )
